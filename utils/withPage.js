@@ -46,13 +46,17 @@ const withPage = WrappedComponent => {
         return
       }
 
-      setTimeout(() => {
+      this.timeout = setTimeout(() => {
         this.setState({ fadeOut: true })
 
-        setTimeout(() => {
+        this.timeout = setTimeout(() => {
           this.setState({ afterTransitioning: true })
         }, 350)
       })
+    }
+
+    componentWillUnmount() {
+      clearTimeout(this.timeout)
     }
 
     render() {
