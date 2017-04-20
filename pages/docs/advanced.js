@@ -1,4 +1,5 @@
 import React from 'react'
+import withPage from '../../utils/withPage'
 import DocsLayout from '../../components/DocsLayout'
 import NextPage from '../../components/NextPage'
 
@@ -27,4 +28,4 @@ const Advanced = () => (
   </DocsLayout>
 )
 
-export default Advanced
+export default withPage(Advanced)

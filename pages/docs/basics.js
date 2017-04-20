@@ -1,4 +1,5 @@
 import React from 'react'
+import withPage from '../../utils/withPage'
 import DocsLayout from '../../components/DocsLayout'
 import NextPage from '../../components/NextPage'
 
@@ -31,4 +32,4 @@ const Basics = () => (
   </DocsLayout>
 )
 
-export default Basics
+export default withPage(Basics)

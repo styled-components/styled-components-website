@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import rem from 'polished/lib/helpers/rem'
-import Link, { StyledLink } from '../Link'
+import Link from '../Link'
 import titleToDash from '../../utils/titleToDash'
 import { lightGrey } from '../../utils/colors'
 import { mobile } from '../../utils/media'
@@ -63,9 +63,9 @@ const Menu = ({ isFolded, onRouteChange }) => (
             {
               sections.map(({ title }) => (
                 <SubSection key={title}>
-                  <StyledLink href={`/docs/${pathname}#${titleToDash(title)}`}>
+                  <Link href={`/docs/${pathname}#${titleToDash(title)}`}>
                     {title}
-                  </StyledLink>
+                  </Link>
                 </SubSection>
               ))
             }

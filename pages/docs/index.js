@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import rem from 'polished/lib/helpers/rem'
 
+import withPage from '../../utils/withPage'
 import DocsLayout from '../../components/DocsLayout'
 import { Title, Header } from '../../components/Layout'
 import Link from '../../components/Link'
@@ -72,4 +73,4 @@ const Documentation = () => (
   </DocsLayout>
 )
 
-export default Documentation
+export default withPage(Documentation)

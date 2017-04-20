@@ -1,4 +1,5 @@
 import React from 'react'
+import withPage from '../../utils/withPage'
 import DocsLayout from '../../components/DocsLayout'
 
 import Primary from '../../components/api/primary'
@@ -17,4 +18,4 @@ const APIReference = () => (
   </DocsLayout>
 )
 
-export default APIReference
+export default withPage(APIReference)
