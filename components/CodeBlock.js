@@ -10,7 +10,7 @@ const CodeBlock = styled(Editor).attrs({
 })`
   background: ${darkGrey};
   font-size: 0.8rem;
-  font-family: monospace;
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
   white-space: pre-wrap;
 
   border-radius: ${rem(3)};

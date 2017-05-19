@@ -131,6 +131,9 @@ export default class MyDocument extends Document {
           <meta name="author" content="Styled Components" />
           <meta name="description" content={description} />
 
+          {/* cloud.typography */}
+          <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
+
           {/* Open Graph */}
           <link itemprop="url" href="http://styled-components.com/"/>
           <meta itemprop="name" content="Styled Components" />
