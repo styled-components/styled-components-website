@@ -81,7 +81,7 @@ const ServerSideRendering = () => (
       The basic API goes as follows:
     </p>
 
-    <CodeBlock code={sample} />
+    <CodeBlock code={sample} language="jsx" />
 
     <p>
       The <Code>collectStyles</Code> method wraps your element in a provider. Optionally you can use
@@ -89,7 +89,7 @@ const ServerSideRendering = () => (
       use it on the client-side.
     </p>
 
-    <CodeBlock code={managerSample} />
+    <CodeBlock code={managerSample} language="jsx" />
 
     <p>
       The <Code>sheet.getStyleTags()</Code> returns a string of multiple <Code>&lt;style&gt;</Code> tags.
@@ -107,7 +107,7 @@ const ServerSideRendering = () => (
         the provided example in their repository for v1.
       </p>
 
-      <CodeBlock code={nextSample} />
+      <CodeBlock code={nextSample} language="jsx" />
 
       <p>
         Here we're wrapping the <Code>Main</Code> component, which contains the Next.js app, and are using this
