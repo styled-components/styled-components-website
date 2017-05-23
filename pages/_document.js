@@ -34,6 +34,9 @@ const resetStyles = `
   .token.cdata {
     color: hsl(30, 20%, 50%);
   }
+  .token.comment {
+    font-style: italic;
+  }
   .token.punctuation {
     opacity: .7;
   }

@@ -31,10 +31,6 @@ const Highlight = styled.pre.attrs({
   margin: ${rem(55)} 0;
 
   overflow-x: hidden;
-
-  .token.comment {
-    font-style: italic;
-  }
 `
 
 class CodeBlock extends Component {
