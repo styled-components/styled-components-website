@@ -52,6 +52,19 @@ const Logo = styled.img.attrs({
   height: ${rem(125)};
 `;
 
+const SmallText = styled.p`
+  text-transform: uppercase;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0;
+`
+
+const CompanyLogo = styled.img`
+  height: ${p => p.height || '2rem'};
+  margin: 0 1rem;
+`
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -68,6 +81,7 @@ const Wrapper = styled.div`
 
 const HeroContent = Content.extend`
   font-family: ${headerFont};
+  width: 75rem;
 `
 
 const EditorContainer = styled.div`
@@ -179,6 +193,13 @@ class Index extends Component {
                 <StyledError />
               </EditorContainer>
             </LiveProvider>
+            <SmallText>USED BY FOLKS AT</SmallText>
+            <CompanyLogo style={{ marginTop: '0.5rem' }} height="1.75rem" src="/static/bloomberg-logo.svg" />
+            <CompanyLogo src="/static/reddit-logo.svg" />
+            <CompanyLogo src="/static/target-logo.svg" />
+            <CompanyLogo height="3rem" src="/static/eurovision-logo.svg" />
+            <CompanyLogo height="2.25rem" src="/static/artsy-logo.svg" />
+            <CompanyLogo height="1.5rem" src="/static/ideo-logo.svg" />
           </HeroContent>
         </Wrapper>
 
