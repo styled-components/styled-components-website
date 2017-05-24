@@ -199,7 +199,7 @@ class Index extends Component {
             {', '}
             <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
             {' & '}
-            <Link inline white href="https://twitter.com/_philpl‬">@_philpl‬</Link>
+            <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
           </HeroContent>
         </Footer>
       </div>
