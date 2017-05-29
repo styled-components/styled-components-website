@@ -69,6 +69,12 @@ app.prepare()
       res.sendFile(path.resolve('./.next/sw.js'))
     });
 
+    server.use('/static', express.static('./static', {
+      maxage: '48h',
+      index: false,
+      redirect: false
+    }))
+
     server.get('*', (req, res) => {
       const parsedUrl = parse(req.url, true)
       handle(req, res, parsedUrl)
