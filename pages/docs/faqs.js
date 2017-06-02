@@ -5,7 +5,7 @@ import Nesting from '../../components/faqs/nesting'
 import ReverseSelectors from '../../components/faqs/reverse-selectors'
 
 const APIReference = () => (
-  <DocsLayout title="FAQ's and Tips & Tricks">
+  <DocsLayout title="FAQs">
     <Nesting />
     <ReverseSelectors />
   </DocsLayout>

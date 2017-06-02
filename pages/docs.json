@@ -63,7 +63,7 @@
         }
       ]
     }, {
-      "title": "FAQ's and Tips & Tricks",
+      "title": "FAQs",
       "pathname": "faqs",
       "sections": [
         {"title": "Nesting"},
