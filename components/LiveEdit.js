@@ -3,7 +3,7 @@ import styled, { css, keyframes } from 'styled-components'
 import rem from '../utils/rem'
 import { darkGrey, red } from '../utils/colors'
 import { phone } from '../utils/media'
-import { sansSerif, monospace } from '../utils/fonts'
+import { headerFont, monospace } from '../utils/fonts'
 import captureScroll from './CaptureScroll'
 
 import '../utils/prismTemplateString'
@@ -16,7 +16,6 @@ import {
 } from 'react-live'
 
 const StyledProvider = styled(LiveProvider)`
-  border-radius: ${rem(3)};
   box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
   overflow: hidden;
   margin: ${rem(35)} 0;
@@ -47,7 +46,7 @@ const columnMixin = css`
   `)}
 `
 
-const StyledEditor = styled(LiveEditor)`
+export const editorMixin = `
   background: ${darkGrey};
   font-size: 0.8rem;
   font-family: ${monospace};
@@ -57,7 +56,10 @@ const StyledEditor = styled(LiveEditor)`
   overflow-x: hidden;
   cursor: text;
   white-space: pre-wrap;
+`
 
+const StyledEditor = styled(LiveEditor)`
+  ${editorMixin}
   ${columnMixin}
 `
 
@@ -74,14 +76,14 @@ const StyledPreview = styled(LivePreview)`
   ${columnMixin}
 `
 
-const StyledError = styled(LiveError)`
+export const StyledError = styled(LiveError)`
   display: block;
   width: 100%;
   padding: ${rem(8)};
   background: ${red};
   color: white;
   font-size: 0.8rem;
-  font-family: ${sansSerif};
+  font-family: ${headerFont};
   white-space: pre;
 `
 

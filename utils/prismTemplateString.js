@@ -1,14 +1,10 @@
-import 'prismjs/components/prism-core'
-import 'prismjs/components/prism-clike'
-import 'prismjs/components/prism-javascript'
-import 'prismjs/components/prism-markup'
-import 'prismjs/components/prism-jsx'
+import 'react-live'
 import 'prismjs/components/prism-css'
 
 // NOTE: This highlights template-strings as strings of CSS
-Prism.languages.insertBefore('jsx', 'string', {
-  'template-string': {
-    pattern: /(styled(\.\w+|\([^\)]*\))(\.\w+(\([^\)]*\))*)*|css|injectGlobal|keyframes)`(?:\\\\|\\?[^\\])*?`/,
+Prism.languages.insertBefore('jsx', 'template-string', {
+  'styled-template-string': {
+    pattern: /(styled(\.\w+|\([^\)]*\))(\.\w+(\([^\)]*\))*)*|css|injectGlobal|keyframes|\.extend)`(?:\$\{[^}]+\}|\\\\|\\?[^\\])*?`/,
     lookbehind: true,
     greedy: true,
     inside: {
@@ -19,7 +15,7 @@ Prism.languages.insertBefore('jsx', 'string', {
             pattern: /^\$\{|\}$/,
             alias: 'punctuation'
           },
-          rest: Prism.languages.javascript
+          rest: Prism.languages.jsx
         }
       },
       string: {
