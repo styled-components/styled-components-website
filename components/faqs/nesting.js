@@ -59,8 +59,8 @@ render(
 `).trim()
 
 const Nesting = () => (
-  <SectionLayout title="Nesting">
-    <p>Nesting is a feature ported from Sass. Used sparingly it's a great way to lighten your code by reducing the need to create explicit classes for every element.</p>
+  <SectionLayout title="Can I nest rules?">
+    <p>Yes: nesting is a feature intentionally ported from Sass. Used sparingly it's a great way to lighten your code by reducing the need to create explicit classes for every element.</p>
     <p>It can also be used by parent components to define contextual constraints that aren't properly a concern of the affected children:</p>
     <LiveEdit code={sampleEqualDivider} noInline />
     <p>It's also incredibly convenient to co-locate media queries, since we can see at a glance exactly how the component will respond at any resolution.</p>

@@ -45,10 +45,11 @@ render(
 `).trim()
 
 const ReverseSelectors = () => (
-  <SectionLayout title="Reverse Selectors">
-    <p>A good practice is for components to encapsulate the entirety of their styling: as with media queries, it lets components describe how they will behave when affected by external changes, without needing to refer to other parts of your codebase.</p>
+  <SectionLayout title="Can I refer to other components?">
+    <p>Yes! This lets you adopt the Reverse Selector pattern, which lets components encapsulate the entirety of their styling: as with media queries, it lets components describe how they will behave when affected by external changes, without needing to refer to other parts of your codebase.</p>
+    <p>Here, our Icon component defines its response to its parent Link being hovered:</p>
     <LiveEdit code={sample} noInline />
-    <p>In this example we could have nested the color-changing rule within our Link component, but then we'd have to consider both sets of rules to understand why Icon behaves as it does.</p>
+    <p>We could have nested the color-changing rule within our Link component, but then we'd have to consider both sets of rules to understand why Icon behaves as it does.</p>
   </SectionLayout>
 )
 

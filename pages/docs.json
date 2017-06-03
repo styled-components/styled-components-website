@@ -66,8 +66,8 @@
       "title": "FAQs",
       "pathname": "faqs",
       "sections": [
-        {"title": "Nesting"},
-        {"title": "Reverse Selectors"}
+        {"title": "Support for nesting"},
+        {"title": "Referring to other components"}
       ]
     }
   ]
