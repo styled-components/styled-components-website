@@ -1,10 +1,8 @@
 import React from 'react'
-import { withTheme, ThemeProvider } from 'styled-components'
 
 import SectionLayout from '../SectionLayout'
 import LiveEdit from '../LiveEdit'
 
-const scope = { withTheme, ThemeProvider }
 const sample = (`
 const Link = styled.a\`
   display:     flex;
@@ -49,11 +47,7 @@ render(
 const ReverseSelectors = () => (
   <SectionLayout title="Reverse Selectors">
     <p>A good practice is for components to encapsulate the entirety of their styling: as with media queries, it lets components describe how they will behave when affected by external changes, without needing to refer to other parts of your codebase.</p>
-    <LiveEdit
-      code={sample}
-      scope={scope}
-      noInline
-    />
+    <LiveEdit code={sample} noInline />
     <p>In this example we could have nested the color-changing rule within our Link component, but then we'd have to consider both sets of rules to understand why Icon behaves as it does.</p>
   </SectionLayout>
 )
