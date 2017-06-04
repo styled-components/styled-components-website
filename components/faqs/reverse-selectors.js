@@ -5,17 +5,17 @@ import LiveEdit from '../LiveEdit'
 
 const sample = (`
 const Link = styled.a\`
-  display:     flex;
+  display: flex;
   align-items: center;
-  padding:     5px 10px;
-  background:  papayawhip;
-  color:       palevioletred;
+  padding: 5px 10px;
+  background: papayawhip;
+  color: palevioletred;
 \`;
 
 const Icon = styled.svg\`
   transition: fill 0.25s;
-  width:      48px;
-  height:     48px;
+  width: 48px;
+  height: 48px;
 
   \${Link}:hover & {
     fill: rebeccapurple;
@@ -23,11 +23,10 @@ const Icon = styled.svg\`
 \`;
 
 const Label = styled.span\`
-  display:     flex;
+  display: flex;
   align-items: center;
-
   line-height: 1.2;
-  
+
   &::before {
     content: '◀';
     margin: 0 10px;
