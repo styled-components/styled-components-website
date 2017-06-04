@@ -33,6 +33,10 @@ const StylingAnyComponents = () => (
       components as well, as long as they're accepting the <Code>className</Code> prop.
     </p>
 
+    <Note>
+      If you are using <Code>react-native</Code> keep in mind to use <Code>style</Code> instead of <Code>className</Code>.
+    </Note>
+
     <p>
       If you're using any external library, you can consider using this pattern to turn them
       into styled components. The same pattern works for your own components as well, if you
