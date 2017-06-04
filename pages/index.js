@@ -13,6 +13,7 @@ import Code from '../components/Code'
 import Link from '../components/Link'
 import { Content } from '../components/Layout'
 import HomepageGettingStarted from '../components/homepage-getting-started'
+import HomepageUsers from '../components/homepageUsers'
 import captureScroll from '../components/CaptureScroll'
 
 const Tagline = styled.h1`
@@ -239,6 +240,7 @@ class Index extends Component {
         </Wrapper>
 
         <HomepageGettingStarted />
+        <HomepageUsers />
 
         <Footer>
           <HeroContent>
