@@ -65,6 +65,10 @@ app.prepare()
       cachedRender(req, res, '/docs/api')
     })
 
+    server.get('/wall-of-love', (req, res) => {
+      cachedRender(req, res, '/wall-of-love')
+    })
+
     server.get('/sw.js', (req, res) => {
       res.sendFile(path.resolve('./.next/sw.js'))
     });

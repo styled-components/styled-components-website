@@ -3150,6 +3150,10 @@ react-proxy@^3.0.0-alpha.0:
   dependencies:
     lodash "^4.6.1"
 
+react-tweet-embed@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-tweet-embed/-/react-tweet-embed-1.0.6.tgz#a5e1c9cd633f18db3ef1c604c472afe3ce5ee746"
+
 react@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.2.tgz#41f7991b26185392ba9bae96c8889e7e018397ef"

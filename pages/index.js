@@ -67,6 +67,9 @@ const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button }
       <InternalButton href="/docs" prefetch>
         Documentation
       </InternalButton>
+      <InternalButton href="/wall-of-love" prefetch>
+        Wall of Love
+      </InternalButton>
     </div>
   )
 }
