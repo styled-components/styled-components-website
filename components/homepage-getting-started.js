@@ -109,7 +109,7 @@ const HomepageGettingStarted = () => (
       	<Badge src="https://img.shields.io/npm/v/styled-components.svg" alt="Current version" />
       </a>
       <Badge src="https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600" alt="Monthly downloads" />
-      <Badge src="http://img.badgesize.io/https://unpkg.com/styled-components/dist/styled-components.min.js?compression=gzip&label=gzip%20size" alt="Gzipped size" />
+      <Badge src="https://img.shields.io/badge/gzip size-13.3 kB-brightgreen.svg?maxAge=3600" alt="Gzipped size" />
       <a href="https://spectrum.chat/styled-components">
         <Badge alt="Join the community on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
       </a>
