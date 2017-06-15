@@ -153,7 +153,7 @@ export default class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-          <meta name="theme-color" content="#db7093" />
+          <meta name="theme-color" content="#da936a" />
           <meta name="author" content="styled-components" />
           <meta name="description" content={description} />
 
