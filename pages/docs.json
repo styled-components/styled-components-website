@@ -67,7 +67,8 @@
       "pathname": "faqs",
       "sections": [
         {"title": "Support for nesting"},
-        {"title": "Referring to other components"}
+        {"title": "Referring to other components"},
+        {"title": "Support for CSS frameworks"}
       ]
     }
   ]
