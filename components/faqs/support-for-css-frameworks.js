@@ -2,36 +2,34 @@ import React from 'react'
 
 import SectionLayout from '../SectionLayout'
 import CodeBlock from '../CodeBlock'
+import LiveEdit from '../LiveEdit'
 
 const sampleTachyonsExample = (`
 const Button = styled.button.attrs({
-  className: 'pa4 ba b--black-80',
+  className: 'small',
 })\`
-	background: red;
-	color: white;
-
-	font-size: 1em;
+	background: black;
+  color: white;
+  cursor: pointer;
 	margin: 1em;
 	padding: 0.25em 1em;
-	border: 2px solid palevioletred;
+	border: 2px solid black;
 	border-radius: 3px;
 \`;
 
-/* And use in render as: */
-
 render(
 	<div>
-		<Button>Hello from Tachyons</Button>
+<Button>Styled Components</Button>
+		<Button>The new way to style components!</Button>
 	</div>
 );
 `).trim()
 
 const CSSFrameworks = () => (
-  <SectionLayout title="Support for CSS Frameworks">
-    <p>Class names defined from a referenced CSS file can be used <b>along</b> with the style definitions! This will let styles to be separated from the markup making it very clean & readable.</p>
-    <p>Consider we are using the <b><a href="http://tachyons.io/">Tachyons</a></b> library. The classes <b>pa4</b>, <b>ba</b>, <b>bg--black-80</b> from the library can be provided along with the style definition so that the markup will be clean without any style related noise.</p>
-    <p>Same can be done with Bootstrap, Foundation or any similar CSS frameworks.</p>
-    <CodeBlock code={sampleTachyonsExample} language="jsx" />
+  <SectionLayout title="Can I use CSS frameworks?">
+    <p>Integrating an existing CSS framework with styled-components is really easy! You can use its existing class names alongside your components.</p>
+    <p>Consider you have an existing app with some CSS that have the classes: <b>.small</b> and <b>.big</b>. Now try swapping the <b>small</b> class with <b>big</b>!</p>
+    <LiveEdit code={sampleTachyonsExample} noInline />
   </SectionLayout>
 )
 
