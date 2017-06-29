@@ -30,6 +30,7 @@ const CSSFrameworks = () => (
     <p>Integrating an existing CSS framework with styled-components is really easy! You can use its existing class names alongside your components.</p>
     <p>Consider you have an existing app with some CSS that have the classes: <b>.small</b> and <b>.big</b>. Now try swapping the <b>small</b> class with <b>big</b>!</p>
     <LiveEdit code={sampleTachyonsExample} noInline />
+    <p>Do read about <b><a href="https://www.styled-components.com/docs/api#attrs">attrs</a></b> to know how arbitary attributes can be passed to a styled component.</p>
   </SectionLayout>
 )
 
