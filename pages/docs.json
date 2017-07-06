@@ -66,8 +66,9 @@
       "title": "FAQs",
       "pathname": "faqs",
       "sections": [
-        {"title": "Support for nesting"},
-        {"title": "Referring to other components"}
+        {"title": "Can I nest rules?"},
+        {"title": "Can I refer to other components?"},
+        {"title": "Can I use css frameworks?"}
       ]
     }
   ]

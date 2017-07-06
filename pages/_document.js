@@ -130,6 +130,16 @@ const resetStyles = `
     position: relative;
     overflow: auto;
   }
+
+  .big {
+    color: white;
+    font-size: 1.4em;
+  }
+
+  .small {
+    color: white;
+    font-size: 0.5em;
+  }
 `
 
 const description = 'Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress 💅'
