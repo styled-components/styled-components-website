@@ -3,6 +3,7 @@ import React from 'react'
 import SectionLayout from '../SectionLayout'
 import CodeBlock from '../CodeBlock'
 import Code from '../Code'
+import { InlineLink } from '../Link'
 
 const sampleCssTransitionGroup = (`
 import {CSSTransitionGroup} from 'react-transition-group'
@@ -53,8 +54,8 @@ render(
 
 const Nesting = () => (
   <SectionLayout title="Can I use CSSTransitionGroup?">
-    <p><a href="https://github.com/reactjs/react-transition-group"><Code>react-transition-group</Code></a> is a popular React package for animating components as they enter or leave.</p>
-    <p><Code>CSSTransitionGroup</Code>, the high-level animation component exported by react-transition-group, works by applying class names to the components when they're transitioning; they leave the exact animation implementation up to you.</p>
+    <p><InlineLink href="https://github.com/reactjs/react-transition-group"><Code>react-transition-group</Code></InlineLink> is a popular React package for animating components as they enter or leave.</p>
+    <p><Code>CSSTransitionGroup</Code>, the high-level animation component exported by <Code>react-transition-group</Code>, works by applying class names to the components when they're transitioning; they leave the exact animation implementation up to you.</p>
     <p>We can use it with styled-components by using <Code>attrs</Code> to map the class names it expects to ones we define, and then defining styles for those class names:</p>
     <CodeBlock code={sampleCssTransitionGroup} language="jsx" />
   </SectionLayout>
