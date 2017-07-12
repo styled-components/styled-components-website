@@ -4,6 +4,7 @@ import SectionLayout from '../SectionLayout'
 import { InlineLink } from '../Link'
 import CodeBlock from '../CodeBlock'
 import Code from '../Code'
+import Note from '../Note'
 
 const install = (`
 npm i -g flow-typed # if you do not already have flow-typed
@@ -14,10 +15,6 @@ flow-typed install styled-components@<version>
 const flowconfig = (`
 [ignore]
 .*/node_modules/styled-components/.*
-`).trim()
-
-const npxinstall = (`
-npx flow-typed install styled-components@<version>
 `).trim()
 
 const Flow = ({ url }) => (
@@ -40,9 +37,12 @@ const Flow = ({ url }) => (
       <CodeBlock code={install} />
     </SectionLayout>
   
-    <p>If you are on npm >= 5.2 you could simply use npx</p>
-    
-    <CodeBlock code={npxinstall} />
+    <Note>
+      {'If you are on npm >= 5.2 you could simply use '}
+      <InlineLink href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">
+        npx
+      </InlineLink>
+    </Note>
 
     <SectionLayout sub title="Ignore styled-components source">
       <p>
