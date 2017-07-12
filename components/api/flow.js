@@ -16,6 +16,10 @@ const flowconfig = (`
 .*/node_modules/styled-components/.*
 `).trim()
 
+const npxinstall = (`
+npx flow-typed install styled-components@<version>
+`).trim()
+
 const Flow = ({ url }) => (
   <SectionLayout title="Flow">
     <p>
@@ -35,6 +39,10 @@ const Flow = ({ url }) => (
     <SectionLayout sub title="Installing the definitions">
       <CodeBlock code={install} />
     </SectionLayout>
+  
+    <p>If you are on npm >= 5.2 you could simply use npx</p>
+    
+    <CodeBlock code={npxinstall} />
 
     <SectionLayout sub title="Ignore styled-components source">
       <p>
