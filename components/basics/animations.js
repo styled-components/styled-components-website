@@ -37,8 +37,8 @@ const Animations = () => (
     </p>
 
     <p>
-      This way, you get all the benefits of using JavaScript, are avoiding name clashes and get your keyframes
-      like always:
+      To use it, <Code>import { keyframes } from 'styled-components'</Code>, generate your animation name with
+      <Code>keyframes</Code>, then inject that animation name into your styles:
     </p>
 
     <LiveEdit
