@@ -4,7 +4,7 @@ import { findDOMNode } from 'react-dom'
 let isMobile
 let lastWheelTimestamp
 
-if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined' && window.matchMedia) {
   isMobile = window.matchMedia(`(max-width: ${1000 / 16}em)`).matches
 
   if (!isMobile) {

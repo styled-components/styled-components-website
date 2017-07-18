@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "test": "jest"
   },
   "dependencies": {
     "babel-plugin-polished": "^1.0.3",
@@ -26,5 +27,18 @@
     "styled-components": "^2.0.0",
     "sw-precache-webpack-plugin": "^0.9.1",
     "webpack-bundle-analyzer": "^2.4.0"
+  },
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "enzyme-to-json": "^1.5.1",
+    "jest": "^20.0.4",
+    "jest-styled-components": "^4.1.0",
+    "react-addons-test-utils": "15.4.2",
+    "react-test-renderer": "15.4.2"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
