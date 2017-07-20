@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Code renders correctly 1`] = `
+.c0 {
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B", monospace;
+  font-weight: 500;
+}
+
+<span
+  className="c0"
+/>
+`;

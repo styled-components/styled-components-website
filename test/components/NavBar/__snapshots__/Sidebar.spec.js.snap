@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar renders correctly 1`] = `
+.c0 {
+  position: fixed;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  display: block;
+  z-index: 1;
+  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: auto;
+  width: 16.666666666666668rem;
+  height: 100%;
+  background: linear-gradient(20deg, rgb(219, 112, 147), #daa357);
+  box-sizing: border-box;
+  color: white;
+  overflow-y: scroll;
+}
+
+@media (max-width: 62.5em) {
+  .c0 {
+    bottom: auto;
+    right: 0;
+    height: auto;
+    width: 100%;
+    overflow-y: visible;
+  }
+}
+
+<styled.nav>
+  <styled.nav>
+    <nav
+      className="c0"
+    />
+  </styled.nav>
+</styled.nav>
+`;

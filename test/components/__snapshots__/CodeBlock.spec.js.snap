@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CodeBlock renders correctly 1`] = `
+.c0 {
+  background: #1d1f27;
+  font-size: 0.8rem;
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B", monospace;
+  font-weight: 300;
+  white-space: pre-wrap;
+  border-radius: 0.16666666666666666rem;
+  box-shadow: 1px 1px 20px rgba(20, 20, 20, 0.27);
+  margin: 1.9444444444444444rem 0;
+  overflow-x: hidden;
+}
+
+<pre
+  className="prism-code c0"
+/>
+`;

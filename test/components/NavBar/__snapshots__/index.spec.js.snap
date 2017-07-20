@@ -1,0 +1,839 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar renders correctly 1`] = `
+.c0 {
+  position: fixed;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  display: block;
+  z-index: 1;
+  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: auto;
+  width: 16.666666666666668rem;
+  height: 100%;
+  background: linear-gradient(20deg, rgb(219, 112, 147), #daa357);
+  box-sizing: border-box;
+  color: white;
+  overflow-y: scroll;
+}
+
+.c1 {
+  height: 16.666666666666668rem;
+  padding: 3.611111111111111rem 4.722222222222222rem 2.5rem;
+}
+
+.c2 {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-image: url(/static/logo.png);
+  background-size: contain;
+  background-position: center;
+}
+
+.c3 {
+  display: none;
+  margin-left: 0.8333333333333334rem;
+  margin-top: 0.2777777777777778rem;
+  font-size: 1rem;
+}
+
+.c5 {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.1111111111111111rem 0.4444444444444444rem;
+  margin: -0.1111111111111111rem -0.4444444444444444rem;
+}
+
+.c7 {
+  display: block;
+  box-sizing: border-box;
+}
+
+.c8 {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.c9 {
+  margin-bottom: 1.6666666666666667rem;
+}
+
+.c10 {
+  display: block;
+  margin: 0.5555555555555556rem 2.2222222222222223rem;
+  font-weight: normal;
+}
+
+.c11 {
+  display: block;
+  margin: 0.5555555555555556rem 2.2222222222222223rem 0.5555555555555556rem 3.0555555555555554rem;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.c4 {
+  display: none;
+  height: 100%;
+  padding: 1.1111111111111112rem 0;
+  margin: 0 0 0 auto;
+  color: white;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+}
+
+.c4:active {
+  opacity: 0.8;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.c4:hover {
+  background: none;
+}
+
+.c6 {
+  height: 1.6666666666666667rem;
+}
+
+@media (max-width: 62.5em) {
+  .c0 {
+    bottom: auto;
+    right: 0;
+    height: auto;
+    width: 100%;
+    overflow-y: visible;
+  }
+}
+
+@media (max-width: 62.5em) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 3.888888888888889rem;
+    padding: 0 0.8333333333333334rem;
+  }
+}
+
+@media (max-width: 62.5em) {
+  .c2 {
+    background-image: url(/static/icon.png);
+    background-position: center;
+    width: 3.888888888888889rem;
+    height: 3.888888888888889rem;
+  }
+}
+
+@media (max-width: 62.5em) {
+  .c3 {
+    display: block;
+  }
+}
+
+@media (min-width: 62.5em) {
+  .c5 {
+    border-radius: 0.16666666666666666rem;
+  }
+
+  .c5:hover {
+    background: rgba(20, 20, 20, 0.1);
+  }
+}
+
+@media (max-width: 62.5em) {
+  .c7 {
+    height: 0;
+    -webkit-transition: height .2s ease-in-out;
+    transition: height .2s ease-in-out;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 62.5em) {
+  .c8 {
+    border-top: 2px solid rgba(20, 20, 20, 0.1);
+    padding-top: 0.5555555555555556rem;
+    padding-bottom: 3.3333333333333335rem;
+    overflow-y: scroll;
+  }
+}
+
+@media (max-width: 62.5em) {
+  .c4 {
+    display: block;
+  }
+}
+
+<Navbar>
+  <styled.nav>
+    <styled.nav>
+      <nav
+        className="c0"
+      >
+        <styled.div>
+          <div
+            className="c1"
+          >
+            <Link
+              href="/docs"
+              unstyled={true}
+            >
+              <Link
+                href="/docs"
+              >
+                <a
+                  href="/docs"
+                  onClick={[Function]}
+                >
+                  <styled.div>
+                    <div
+                      className="c2"
+                    />
+                  </styled.div>
+                </a>
+              </Link>
+            </Link>
+            <styled.div>
+              <div
+                className="c3"
+              >
+                <Link
+                  href="/docs"
+                  unstyled={true}
+                >
+                  <Link
+                    href="/docs"
+                  >
+                    <a
+                      href="/docs"
+                      onClick={[Function]}
+                    >
+                      styled-components
+                    </a>
+                  </Link>
+                </Link>
+              </div>
+            </styled.div>
+            <Component
+              onClick={[Function]}
+            >
+              <Styled(styled.a)
+                onClick={[Function]}
+              >
+                <styled.a
+                  className="c4"
+                  onClick={[Function]}
+                >
+                  <a
+                    className="c4 c5"
+                    onClick={[Function]}
+                  >
+                    <Styled(ThreeBarsIcon)>
+                      <ThreeBarsIcon
+                        className="c6"
+                        height={null}
+                        width={null}
+                      >
+                        <svg
+                          className="octicons octicons-three-bars-icon c6"
+                          height={null}
+                          viewBox="0 0 12 16"
+                          width={null}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </ThreeBarsIcon>
+                    </Styled(ThreeBarsIcon)>
+                  </a>
+                </styled.a>
+              </Styled(styled.a)>
+            </Component>
+          </div>
+        </styled.div>
+        <Menu
+          isFolded={true}
+          onRouteChange={[Function]}
+        >
+          <styled.aside
+            isFolded={true}
+          >
+            <aside
+              className="c7"
+            >
+              <styled.div>
+                <div
+                  className="c8"
+                >
+                  <styled.div
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="c9"
+                      onClick={[Function]}
+                    >
+                      <styled.h4>
+                        <h4
+                          className="c10"
+                        >
+                          <Link
+                            href="/docs/basics"
+                          >
+                            <Link
+                              href="/docs/basics"
+                            >
+                              <styled.a
+                                href="/docs/basics"
+                                onClick={[Function]}
+                              >
+                                <a
+                                  className="c5"
+                                  href="/docs/basics"
+                                  onClick={[Function]}
+                                >
+                                  Basics
+                                </a>
+                              </styled.a>
+                            </Link>
+                          </Link>
+                        </h4>
+                      </styled.h4>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/basics#motivation"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/basics#motivation"
+                            >
+                              Motivation
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/basics#installation"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/basics#installation"
+                            >
+                              Installation
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/basics#getting-started"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/basics#getting-started"
+                            >
+                              Getting Started
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/basics#passed-props"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/basics#passed-props"
+                            >
+                              Passed props
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/basics#adapting-based-on-props"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/basics#adapting-based-on-props"
+                            >
+                              Adapting based on props
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/basics#styling-any-components"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/basics#styling-any-components"
+                            >
+                              Styling any components
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/basics#extending-styles"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/basics#extending-styles"
+                            >
+                              Extending styles
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/basics#attaching-additional-props"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/basics#attaching-additional-props"
+                            >
+                              Attaching additional props
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/basics#animations"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/basics#animations"
+                            >
+                              Animations
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/basics#react-native"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/basics#react-native"
+                            >
+                              React Native
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                    </div>
+                  </styled.div>
+                  <styled.div
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="c9"
+                      onClick={[Function]}
+                    >
+                      <styled.h4>
+                        <h4
+                          className="c10"
+                        >
+                          <Link
+                            href="/docs/advanced"
+                          >
+                            <Link
+                              href="/docs/advanced"
+                            >
+                              <styled.a
+                                href="/docs/advanced"
+                                onClick={[Function]}
+                              >
+                                <a
+                                  className="c5"
+                                  href="/docs/advanced"
+                                  onClick={[Function]}
+                                >
+                                  Advanced
+                                </a>
+                              </styled.a>
+                            </Link>
+                          </Link>
+                        </h4>
+                      </styled.h4>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/advanced#theming"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/advanced#theming"
+                            >
+                              Theming
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/advanced#refs"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/advanced#refs"
+                            >
+                              Refs
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/advanced#security"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/advanced#security"
+                            >
+                              Security
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/advanced#existing-css"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/advanced#existing-css"
+                            >
+                              Existing CSS
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/advanced#media-templates"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/advanced#media-templates"
+                            >
+                              Media Templates
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/advanced#tagged-template-literals"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/advanced#tagged-template-literals"
+                            >
+                              Tagged Template Literals
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/advanced#server-side-rendering"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/advanced#server-side-rendering"
+                            >
+                              Server Side Rendering
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                    </div>
+                  </styled.div>
+                  <styled.div
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="c9"
+                      onClick={[Function]}
+                    >
+                      <styled.h4>
+                        <h4
+                          className="c10"
+                        >
+                          <Link
+                            href="/docs/api"
+                          >
+                            <Link
+                              href="/docs/api"
+                            >
+                              <styled.a
+                                href="/docs/api"
+                                onClick={[Function]}
+                              >
+                                <a
+                                  className="c5"
+                                  href="/docs/api"
+                                  onClick={[Function]}
+                                >
+                                  API Reference
+                                </a>
+                              </styled.a>
+                            </Link>
+                          </Link>
+                        </h4>
+                      </styled.h4>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/api#primary"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/api#primary"
+                            >
+                              Primary
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/api#helpers"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/api#helpers"
+                            >
+                              Helpers
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/api#supported-css"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/api#supported-css"
+                            >
+                              Supported CSS
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/api#flow"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/api#flow"
+                            >
+                              Flow
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/api#typescript"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/api#typescript"
+                            >
+                              TypeScript
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                    </div>
+                  </styled.div>
+                  <styled.div
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="c9"
+                      onClick={[Function]}
+                    >
+                      <styled.h4>
+                        <h4
+                          className="c10"
+                        >
+                          <Link
+                            href="/docs/faqs"
+                          >
+                            <Link
+                              href="/docs/faqs"
+                            >
+                              <styled.a
+                                href="/docs/faqs"
+                                onClick={[Function]}
+                              >
+                                <a
+                                  className="c5"
+                                  href="/docs/faqs"
+                                  onClick={[Function]}
+                                >
+                                  FAQs
+                                </a>
+                              </styled.a>
+                            </Link>
+                          </Link>
+                        </h4>
+                      </styled.h4>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/faqs#can-i-nest-rules"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/faqs#can-i-nest-rules"
+                            >
+                              Can I nest rules?
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/faqs#can-i-refer-to-other-components"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/faqs#can-i-refer-to-other-components"
+                            >
+                              Can I refer to other components?
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/faqs#can-i-use-css-frameworks"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/faqs#can-i-use-css-frameworks"
+                            >
+                              Can I use css frameworks?
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                    </div>
+                  </styled.div>
+                </div>
+              </styled.div>
+            </aside>
+          </styled.aside>
+        </Menu>
+      </nav>
+    </styled.nav>
+  </styled.nav>
+</Navbar>
+`;

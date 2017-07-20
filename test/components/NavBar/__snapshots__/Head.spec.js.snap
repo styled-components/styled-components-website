@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Head renders correctly 1`] = `
+.c0 {
+  height: 16.666666666666668rem;
+  padding: 3.611111111111111rem 4.722222222222222rem 2.5rem;
+}
+
+@media (max-width: 62.5em) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 3.888888888888889rem;
+    padding: 0 0.8333333333333334rem;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
