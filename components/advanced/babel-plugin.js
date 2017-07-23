@@ -126,16 +126,14 @@ const BabelPlugin = () =>
       </p>
       <CodeBlock code={preprocess} language="node" />
     </SectionLayout>
-    <SectionLayout sub title="Preprocessing">
+    <SectionLayout sub title="Minification">
       <Note>
-        This option is turned on by default! If you experience mangled CSS
+        This option is turned on by default. If you experience mangled CSS
         results, turn it off and open an issue please.
       </Note>
       <p>
         This plugin minifies your styles in the tagged template literals, giving
-        you big bundle size savings. (note that you will not see the effect of
-        minification in generated <Code>&lt;style&gt;</Code> tags, it solely
-        affects the style strings inside your JS bundle)
+        you big bundle size savings.
       </p>
       <Note>
         This operation may potentially break your styles in some rare cases, so
