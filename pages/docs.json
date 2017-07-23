@@ -6,69 +6,94 @@
       "sections": [
         {
           "title": "Motivation"
-        }, {
+        },
+        {
           "title": "Installation"
-        }, {
+        },
+        {
           "title": "Getting Started"
-        }, {
+        },
+        {
           "title": "Passed props"
-        }, {
+        },
+        {
           "title": "Adapting based on props"
-        }, {
+        },
+        {
           "title": "Styling any components"
-        }, {
+        },
+        {
           "title": "Extending styles"
-        }, {
+        },
+        {
           "title": "Attaching additional props"
-        }, {
+        },
+        {
           "title": "Animations"
-        }, {
+        },
+        {
           "title": "React Native"
         }
       ]
-    }, {
+    },
+    {
       "title": "Advanced",
       "pathname": "advanced",
       "sections": [
         {
           "title": "Theming"
-        }, {
+        },
+        {
           "title": "Refs"
-        }, {
+        },
+        {
           "title": "Security"
-        }, {
+        },
+        {
           "title": "Existing CSS"
-        }, {
+        },
+        {
           "title": "Media Templates"
-        }, {
+        },
+        {
           "title": "Tagged Template Literals"
-        }, {
+        },
+        {
           "title": "Server Side Rendering"
+        },
+        {
+          "title": "Babel Plugin"
         }
       ]
-    }, {
+    },
+    {
       "title": "API Reference",
       "pathname": "api",
       "sections": [
         {
           "title": "Primary"
-        }, {
+        },
+        {
           "title": "Helpers"
-        }, {
+        },
+        {
           "title": "Supported CSS"
-        }, {
+        },
+        {
           "title": "Flow"
-        }, {
+        },
+        {
           "title": "TypeScript"
         }
       ]
-    }, {
+    },
+    {
       "title": "FAQs",
       "pathname": "faqs",
       "sections": [
-        {"title": "Can I nest rules?"},
-        {"title": "Can I refer to other components?"},
-        {"title": "Can I use css frameworks?"}
+        { "title": "Can I nest rules?" },
+        { "title": "Can I refer to other components?" },
+        { "title": "Can I use css frameworks?" }
       ]
     }
   ]

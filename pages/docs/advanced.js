@@ -1,16 +1,17 @@
-import React from 'react'
-import DocsLayout from '../../components/DocsLayout'
-import NextPage from '../../components/NextPage'
+import React from 'react';
+import DocsLayout from '../../components/DocsLayout';
+import NextPage from '../../components/NextPage';
 
-import Theming from '../../components/advanced/theming'
-import Refs from '../../components/advanced/refs'
-import Security from '../../components/advanced/security'
-import ExistingCSS from '../../components/advanced/existing-css'
-import MediaTemplates from '../../components/advanced/media-templates'
-import TaggedTemplateLiterals from '../../components/advanced/tagged-template-literals'
-import ServerSideRendering from '../../components/advanced/server-side-rendering'
+import Theming from '../../components/advanced/theming';
+import Refs from '../../components/advanced/refs';
+import Security from '../../components/advanced/security';
+import ExistingCSS from '../../components/advanced/existing-css';
+import MediaTemplates from '../../components/advanced/media-templates';
+import TaggedTemplateLiterals from '../../components/advanced/tagged-template-literals';
+import ServerSideRendering from '../../components/advanced/server-side-rendering';
+import BabelPlugin from '../../components/advanced/babel-plugin';
 
-const Advanced = () => (
+const Advanced = () =>
   <DocsLayout title="Advanced">
     <Theming />
     <Refs />
@@ -19,12 +20,9 @@ const Advanced = () => (
     <MediaTemplates />
     <TaggedTemplateLiterals />
     <ServerSideRendering />
+    <BabelPlugin />
 
-    <NextPage
-      href="/docs/api"
-      title="API Reference"
-    />
-  </DocsLayout>
-)
+    <NextPage href="/docs/api" title="API Reference" />
+  </DocsLayout>;
 
-export default Advanced
+export default Advanced;
