@@ -72,18 +72,17 @@ const BabelPlugin = () =>
         By adding a unique identifier to every styled component this plugin
         avoids checksum mismatches due to different class generation on the
         client and on the server. If you do not use this plugin and try to
-        server-side render <Code>styled-components</Code> React will complain.
+        server-side render styled-components React will complain.
       </p>
       <p>
-        If you want server-side rendering support you can enable it with the{' '}
-        <Code>ssr</Code> option:
+        You can enable it with the <Code>ssr</Code> option:
       </p>
       <CodeBlock code={ssr} language="node" />
     </SectionLayout>
     <SectionLayout sub title="Better debugging">
       <p>
-        This babel plugin adds the components' name to the class name attached
-        to the DOM node. In your browsers DevTools you'll see:{' '}
+        This options adds the components' name and displayName to the class name
+        attached to the DOM node. In your browser's DevTools you'll see:{' '}
         <Code>
           &lt;button class=&quot;sc-Button-asdf123 asdf123&quot; /&gt;
         </Code>{' '}
