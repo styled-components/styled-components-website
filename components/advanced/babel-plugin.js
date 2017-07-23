@@ -58,15 +58,14 @@ const BabelPlugin = () =>
   <SectionLayout title="Babel Plugin" labels={['v2']}>
     <p>
       This plugin adds support for server-side rendering, for minification of
-      styles and gives you a nicer debugging experience when using{' '}
-      <Code>styled-components</Code>.
+      styles and gives you a nicer debugging experience.
     </p>
-    <p>Usage</p>
-    <CodeBlock code={installNPM} language="node" />
-    <p>
-      Then in your babel configuration (probably <Code>.babelrc</Code>):
-    </p>
-    <CodeBlock code={usage} language="node" />
+    <SectionLayout sub title="Usage">
+      <p>Install the babel-plugin first:</p>
+      <CodeBlock code={installNPM} language="node" />
+      <p>Then add it to your babel configuration like so:</p>
+      <CodeBlock code={usage} language="node" />
+    </SectionLayout>
     <SectionLayout sub title="Server-side rendering">
       <Note>This option is turned off by default</Note>
       <p>
