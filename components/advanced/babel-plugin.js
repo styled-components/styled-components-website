@@ -90,9 +90,11 @@ const BabelPlugin = () =>
       </p>
       <p>
         This also adds support for showing your components' real name in the
-        React DevTools. They will normally show{' '}
-        <Code>&lt;styled.button&gt;</Code> for all of your components, but with
-        this plugin they show <Code>&lt;MyButton /&gt;</Code>.
+        React DevTools. Consider writing a styled component that renders a{' '}
+        <Code>button</Code> element, called <Code>MyButton</Code>. It will
+        normally show up as <Code>&lt;styled.button&gt;</Code> for all of your
+        components, but with this plugin they show{' '}
+        <Code>&lt;MyButton /&gt;</Code>.
       </p>
       <p>
         This makes it easier to find your components and to figure out where
