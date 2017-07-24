@@ -54,6 +54,16 @@ const minify = `
 }
 `.trim();
 
+const transpilation = `
+{
+  "plugins": [
+    ["styled-components", {
+      "transpileTemplateLiterals": false
+    }]
+  ]
+}
+`.trim();
+
 const BabelPlugin = () =>
   <SectionLayout title="Babel Plugin" labels={['v2']}>
     <p>
@@ -146,17 +156,18 @@ const BabelPlugin = () =>
         You can disable minification with the <Code>minify</Code> option:
       </p>
       <CodeBlock code={minify} language="node" />
+    </SectionLayout>
+    <SectionLayout sub title="Template String Transpilation">
       <p>
         We also transpile <Code>styled-components</Code> tagged template
         literals down to a smaller representation than what Babel normally does,
         because <Code>styled-components</Code> template literals don't need to
         be 100% spec compliant. see{' '}
-        <a href="https://github.com/styled-components/babel-plugin-styled-components/blob/master/minification.md">
-          minification.md
-        </a>{' '}
-        for more information about that) You can use the
+        <a href="#tagged-template-literals">Tagged Template Literals</a> for
+        more information about that) You can use the {' '}
         <Code>transpileTemplateLiterals</Code> option to turn this feature off.
       </p>
+      <CodeBlock code={transpilation} language="node" />
     </SectionLayout>
   </SectionLayout>;
 
