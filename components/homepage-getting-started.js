@@ -12,10 +12,7 @@ const AlignCenter = styled.div`
 `
 
 const Badge = styled.img`
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  margin-top: 0em;
-  margin-bottom: 3em;
+  margin: 0 0.5em 3em;
   height: 1.5em;
 `
 
@@ -32,8 +29,6 @@ const ExampleButton = styled.button`
     color: white;
   `}
 `
-
-const FirstButton = styled.button``
 
 const SecondButton = styled.button`
   border-radius: 3px;
@@ -129,7 +124,7 @@ const HomepageGettingStarted = () => (
 
     <p>If you render our lovely component now (just like any other component: <Code>&lt;Button /&gt;</Code>) this is what you get:</p>
     <AlignCenter>
-      <FirstButton>I'm a &lt;Button /&gt;!</FirstButton>
+      <button>I'm a &lt;Button /&gt;!</button>
     </AlignCenter>
     <p>It renders a button! That's not a very nice button though 😕 we can do better than this, let's give it a bit of styling and tickle out the hidden beauty within!</p>
     <CodeBlock language="jsx" code={firstStyling} />

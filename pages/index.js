@@ -89,8 +89,7 @@ const Logo = styled.img.attrs({
 
 const UsersWrapper = styled.section`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: center;
   padding: 0.5rem;
   margin-bottom: 2rem;
@@ -128,7 +127,7 @@ const Wrapper = styled.div`
   color: white;
 
   background: linear-gradient(20deg, ${violetRed}, ${gold});
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.17);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
   min-height: 100vh;
 `
@@ -167,7 +166,7 @@ const Footer = styled.footer`
   color: white;
 
   background: ${violetRed};
-  box-shadow: 0px -2px 20px rgba(0, 0, 0, 0.17);
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
   margin-top: ${rem(50)};
 `

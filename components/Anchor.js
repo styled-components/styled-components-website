@@ -48,6 +48,7 @@ const AnchorHeader = styled(Header)`
   ${mobile(css`
     margin-left: 0;
 
+    /* stylelint-disable-next-line */
     ${Anchor} {
       display: inline-block;
     }
