@@ -671,6 +671,22 @@ exports[`DocsLayout renders correctly 1`] = `
                                 </styled.a>
                               </h5>
                             </styled.h5>
+                            <styled.h5>
+                              <h5
+                                className="c12"
+                              >
+                                <styled.a
+                                  href="/docs/advanced#babel-plugin"
+                                >
+                                  <a
+                                    className="c6"
+                                    href="/docs/advanced#babel-plugin"
+                                  >
+                                    Babel Plugin
+                                  </a>
+                                </styled.a>
+                              </h5>
+                            </styled.h5>
                           </div>
                         </styled.div>
                         <styled.div
