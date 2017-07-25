@@ -60,7 +60,7 @@ const AnchorHeader = styled(Header)`
 
 const AnchorSubHeader = AnchorHeader.withComponent(SubHeader)
 
-export default ({ children, id, sub }) => {
+const Link = ({ children, id, sub }) => {
   const Child = sub ? AnchorSubHeader : AnchorHeader
 
   return (
@@ -75,3 +75,5 @@ export default ({ children, id, sub }) => {
     </Child>
   )
 }
+
+export default Link

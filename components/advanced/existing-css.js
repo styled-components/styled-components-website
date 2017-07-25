@@ -1,9 +1,7 @@
 import React from 'react'
 import SectionLayout from '../SectionLayout'
-import LiveEdit from '../LiveEdit'
 import CodeBlock from '../CodeBlock'
 import Code from '../Code'
-import Note from '../Note'
 
 const classNameSample = (`
 class MyComponent extends React.Component {

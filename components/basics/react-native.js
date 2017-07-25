@@ -1,9 +1,9 @@
 import React from 'react'
 import SectionLayout from '../SectionLayout'
 import CodeBlock from '../CodeBlock'
-import Code from '../Code';
-import Note from '../Note';
-import Link from '../Link';
+import Code from '../Code'
+import Note from '../Note'
+import Link from '../Link'
 
 const sample = (`
 import styled from 'styled-components/native';
