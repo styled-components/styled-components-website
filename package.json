@@ -15,7 +15,7 @@
     "isomorphic-fetch": "^2.2.1",
     "lru-cache": "^4.0.2",
     "module-alias": "^2.0.0",
-    "next": "./vendor/next-v2.4.8.tgz",
+    "next": "https://github.com/styled-components/styled-components-website/blob/master/vendor/next-v2.4.8.tgz?raw=true",
     "polished": "^1.3.0",
     "preact": "^8.2.1",
     "preact-compat": "^3.16.0",
