@@ -122,10 +122,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
 }
 
 .c2 {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  margin-top: 0em;
-  margin-bottom: 3em;
+  margin: 0 0.5em 3em;
   height: 1.5em;
 }
 
@@ -468,13 +465,9 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         <div
           className="c1"
         >
-          <styled.button>
-            <button
-              className=""
-            >
-              I'm a &lt;Button /&gt;!
-            </button>
-          </styled.button>
+          <button>
+            I'm a &lt;Button /&gt;!
+          </button>
         </div>
       </styled.div>
       <p>

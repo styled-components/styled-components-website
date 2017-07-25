@@ -162,8 +162,8 @@ exports[`NavBar renders correctly 1`] = `
 @media (max-width:62.5em) {
   .c7 {
     height: 0;
-    -webkit-transition: height .2s ease-in-out;
-    transition: height .2s ease-in-out;
+    -webkit-transition: height 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
     overflow: hidden;
   }
 }

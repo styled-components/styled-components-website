@@ -7,7 +7,7 @@ import CodeBlock from '../CodeBlock'
 const Command = styled(CodeBlock)`
   margin: ${rem(35)} 0;
 
-  &:before {
+  &::before {
     content: "$ ";
   }
 `

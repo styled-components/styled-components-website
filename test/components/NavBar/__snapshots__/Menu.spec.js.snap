@@ -51,8 +51,8 @@ exports[`Menu renders correctly 1`] = `
 @media (max-width:62.5em) {
   .c0 {
     height: calc(100vh - 3.888888888888889rem);
-    -webkit-transition: height .2s ease-in-out;
-    transition: height .2s ease-in-out;
+    -webkit-transition: height 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
     overflow: hidden;
   }
 }

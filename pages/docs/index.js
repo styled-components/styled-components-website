@@ -11,8 +11,7 @@ import { headerFont } from '../../utils/fonts'
 
 const Row = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
 `
 
 const Column = styled.div`
