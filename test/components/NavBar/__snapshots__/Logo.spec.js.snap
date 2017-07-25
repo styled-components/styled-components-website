@@ -11,7 +11,7 @@ exports[`Logo renders correctly 1`] = `
   background-position: center;
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c0 {
     background-image: url(/static/icon.png);
     background-position: center;

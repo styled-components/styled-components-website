@@ -6,7 +6,7 @@ exports[`Head renders correctly 1`] = `
   padding: 3.611111111111111rem 4.722222222222222rem 2.5rem;
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;

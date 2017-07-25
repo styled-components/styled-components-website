@@ -7,27 +7,27 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
   margin: 0 auto;
   padding: 2.7777777777777777rem 2.2222222222222223rem 1.6666666666666667rem 2.2222222222222223rem;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 .c3 {
   display: block;
   text-align: left;
   width: 100%;
-  color: rgb(243, 182, 97);
+  color: rgb(243,182,97);
   font-size: 2.3333333333333335rem;
   font-weight: bold;
-  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 .c4 {
   font-size: 1.7777777777777777rem;
   font-weight: 500;
-  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 .c11 {
-  box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20, 20, 20, 0.27);
+  box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20,20,20,0.27);
   overflow: hidden;
   margin: 1.9444444444444444rem 0;
   text-align: left;
@@ -54,7 +54,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
 .c13 {
   background: #1d1f27;
   font-size: 0.8rem;
-  font-family: "Operator Mono SSm A", "Operator Mono SSm B", monospace;
+  font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
   font-weight: 300;
   height: 22.22222222222222rem;
   overflow-y: scroll;
@@ -89,29 +89,29 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
   background: #ff5555;
   color: white;
   font-size: 0.8rem;
-  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   white-space: pre;
 }
 
 .c8 {
   background: #1d1f27;
   font-size: 0.8rem;
-  font-family: "Operator Mono SSm A", "Operator Mono SSm B", monospace;
+  font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
   font-weight: 300;
   white-space: pre-wrap;
   border-radius: 0.16666666666666666rem;
-  box-shadow: 1px 1px 20px rgba(20, 20, 20, 0.27);
+  box-shadow: 1px 1px 20px rgba(20,20,20,0.27);
   margin: 1.9444444444444444rem 0;
   overflow-x: hidden;
 }
 
 .c5 {
-  font-family: "Operator Mono SSm A", "Operator Mono SSm B", monospace;
+  font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
   font-weight: 500;
 }
 
 .c9 {
-  color: rgb(219, 112, 147);
+  color: rgb(219,112,147);
   text-decoration: underline;
   font-weight: 600;
   cursor: pointer;
@@ -177,13 +177,13 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
   color: white;
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c0 {
     padding: 1.6666666666666667rem 1.1111111111111112rem;
   }
 }
 
-@media (max-width: 40.625em) {
+@media (max-width:40.625em) {
   .c12 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -191,7 +191,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
   }
 }
 
-@media (max-width: 40.625em) {
+@media (max-width:40.625em) {
   .c13 {
     -webkit-flex-basis: auto;
     -ms-flex-basis: auto;
@@ -202,7 +202,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
   }
 }
 
-@media (max-width: 40.625em) {
+@media (max-width:40.625em) {
   .c14 {
     -webkit-flex-basis: auto;
     -ms-flex-basis: auto;

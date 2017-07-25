@@ -38,17 +38,17 @@ exports[`Menu renders correctly 1`] = `
   font-weight: normal;
 }
 
-@media (min-width: 62.5em) {
+@media (min-width:62.5em) {
   .c4 {
     border-radius: 0.16666666666666666rem;
   }
 
   .c4:hover {
-    background: rgba(20, 20, 20, 0.1);
+    background: rgba(20,20,20,0.1);
   }
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c0 {
     height: calc(100vh - 3.888888888888889rem);
     -webkit-transition: height .2s ease-in-out;
@@ -57,9 +57,9 @@ exports[`Menu renders correctly 1`] = `
   }
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c1 {
-    border-top: 2px solid rgba(20, 20, 20, 0.1);
+    border-top: 2px solid rgba(20,20,20,0.1);
     padding-top: 0.5555555555555556rem;
     padding-bottom: 3.3333333333333335rem;
     overflow-y: scroll;

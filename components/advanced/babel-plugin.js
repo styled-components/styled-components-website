@@ -163,9 +163,9 @@ const BabelPlugin = () =>
         We also transpile <Code>styled-components</Code> tagged template
         literals down to a smaller representation than what Babel normally does,
         because <Code>styled-components</Code> template literals don't need to
-        be 100% spec compliant. see{' '}
+        be 100% spec compliant. Read more about{' '}
         <Link inline href="#tagged-template-literals">Tagged Template Literals</Link> for
-        more information about that) You can use the {' '}
+        more information about this. You can use the {' '}
         <Code>transpileTemplateLiterals</Code> option to turn this feature off.
       </p>
       <CodeBlock code={transpilation} language="node" />

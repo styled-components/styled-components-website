@@ -8,7 +8,7 @@ exports[`Text renders correctly 1`] = `
   font-size: 1rem;
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c0 {
     display: block;
   }

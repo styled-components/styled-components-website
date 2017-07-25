@@ -36,17 +36,17 @@ exports[`MenuButton renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-@media (min-width: 62.5em) {
+@media (min-width:62.5em) {
   .c1 {
     border-radius: 0.16666666666666666rem;
   }
 
   .c1:hover {
-    background: rgba(20, 20, 20, 0.1);
+    background: rgba(20,20,20,0.1);
   }
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c0 {
     display: block;
   }

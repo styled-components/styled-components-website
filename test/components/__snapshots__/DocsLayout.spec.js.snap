@@ -8,14 +8,14 @@ exports[`DocsLayout renders correctly 1`] = `
   transform: translateZ(0);
   display: block;
   z-index: 1;
-  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   left: 0;
   top: 0;
   bottom: 0;
   right: auto;
   width: 16.666666666666668rem;
   height: 100%;
-  background: linear-gradient(20deg, rgb(219, 112, 147), #daa357);
+  background: linear-gradient(20deg,rgb(219,112,147),#daa357);
   box-sizing: border-box;
   color: white;
   overflow-y: scroll;
@@ -116,20 +116,20 @@ exports[`DocsLayout renders correctly 1`] = `
   margin: 0 auto;
   padding: 2.7777777777777777rem 2.2222222222222223rem 1.6666666666666667rem 2.2222222222222223rem;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 .c14 {
   display: block;
   text-align: left;
   width: 100%;
-  color: rgb(243, 182, 97);
+  color: rgb(243,182,97);
   font-size: 2.3333333333333335rem;
   font-weight: bold;
-  font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c1 {
     bottom: auto;
     right: 0;
@@ -139,7 +139,7 @@ exports[`DocsLayout renders correctly 1`] = `
   }
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c2 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -157,7 +157,7 @@ exports[`DocsLayout renders correctly 1`] = `
   }
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c3 {
     background-image: url(/static/icon.png);
     background-position: center;
@@ -166,23 +166,23 @@ exports[`DocsLayout renders correctly 1`] = `
   }
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c4 {
     display: block;
   }
 }
 
-@media (min-width: 62.5em) {
+@media (min-width:62.5em) {
   .c6 {
     border-radius: 0.16666666666666666rem;
   }
 
   .c6:hover {
-    background: rgba(20, 20, 20, 0.1);
+    background: rgba(20,20,20,0.1);
   }
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c8 {
     height: 0;
     -webkit-transition: height .2s ease-in-out;
@@ -191,29 +191,29 @@ exports[`DocsLayout renders correctly 1`] = `
   }
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c9 {
-    border-top: 2px solid rgba(20, 20, 20, 0.1);
+    border-top: 2px solid rgba(20,20,20,0.1);
     padding-top: 0.5555555555555556rem;
     padding-bottom: 3.3333333333333335rem;
     overflow-y: scroll;
   }
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c5 {
     display: block;
   }
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c0 {
     padding-left: 0;
     padding-top: 3.888888888888889rem;
   }
 }
 
-@media (max-width: 62.5em) {
+@media (max-width:62.5em) {
   .c13 {
     padding: 1.6666666666666667rem 1.1111111111111112rem;
   }

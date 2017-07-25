@@ -145,10 +145,20 @@ const resetStyles = `
 const description = 'Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress 💅'
 
 export default class MyDocument extends Document {
-  render () {
+  static getInitialProps ({ renderPage }) {
     const sheet = new ServerStyleSheet()
-    const main = sheet.collectStyles(<Main />)
-    const styleTags = sheet.getStyleElement()
+
+    const page = renderPage(Component => props =>
+      sheet.collectStyles(<Component {...props} />
+    ))
+
+    const styles = sheet.getStyleElement()
+
+    return { ...page, styles }
+  }
+
+  render () {
+    const { styles } = this.props
 
     return (
       <html>
@@ -194,12 +204,13 @@ export default class MyDocument extends Document {
           <meta property="og:site_name" content="styled-components" />
 
           <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
-          {styleTags}
+
+          {styles}
        </Head>
 
        <body>
          <div className="root">
-           {main}
+           <Main />
          </div>
 
          <NextScript />
