@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import SectionLayout from '../SectionLayout'
-import Note from '../Note'
 import rem from '../../utils/rem'
 
 const videoHtml = (`

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react' // eslint-disable-line
 import { findDOMNode } from 'react-dom'
 
 let isMobile
@@ -61,7 +61,7 @@ const captureScroll = Component => {
       }
     }
 
-    onResize = evt => {
+    onResize = () => {
       isMobile = window.matchMedia(`(max-width: ${1000 / 16}em)`).matches
       if(isMobile) {
         this.node.removeEventListener('wheel', this.onScroll)

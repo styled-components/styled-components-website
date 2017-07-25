@@ -27,7 +27,7 @@ render(
 );
 `).trim()
 
-const GettingStarted = ({ url }) => (
+const GettingStarted = () => (
   <SectionLayout title="Getting Started">
     <p>
       styled-components utilises tagged template literals to style your components.

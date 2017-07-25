@@ -17,7 +17,7 @@ const flowconfig = (`
 .*/node_modules/styled-components/.*
 `).trim()
 
-const Flow = ({ url }) => (
+const Flow = () => (
   <SectionLayout title="Flow">
     <p>
       {'styled-components has first-class '}
@@ -36,7 +36,7 @@ const Flow = ({ url }) => (
     <SectionLayout sub title="Installing the definitions">
       <CodeBlock code={install} />
     </SectionLayout>
-  
+
     <Note>
       {'If you are on npm >= 5.2 you could simply use '}
       <InlineLink href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">
