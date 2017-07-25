@@ -164,7 +164,7 @@ const BabelPlugin = () =>
         literals down to a smaller representation than what Babel normally does,
         because <Code>styled-components</Code> template literals don't need to
         be 100% spec compliant. see{' '}
-        <Link href="#tagged-template-literals">Tagged Template Literals</Link> for
+        <Link inline href="#tagged-template-literals">Tagged Template Literals</Link> for
         more information about that) You can use the {' '}
         <Code>transpileTemplateLiterals</Code> option to turn this feature off.
       </p>
