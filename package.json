@@ -9,7 +9,8 @@
     "lint:fix": "eslint . --fix",
     "start": "NODE_ENV=production node server.js",
     "jest": "jest",
-    "test": "run-s jest lint:js"
+    "test": "run-s jest lint:js",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "babel-plugin-polished": "^1.1.0",
@@ -49,7 +50,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "jest --findRelatedTests"
+      "jest --findRelatedTests",
       "eslint --fix",
       "git add"
     ]

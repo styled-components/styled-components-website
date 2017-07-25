@@ -277,7 +277,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       </Link>
                     </div>
                   </styled.div>
-                  <Component
+                  <Navbar
                     onClick={[Function]}
                   >
                     <Styled(styled.a)
@@ -314,7 +314,7 @@ exports[`DocsLayout renders correctly 1`] = `
                         </a>
                       </styled.a>
                     </Styled(styled.a)>
-                  </Component>
+                  </Navbar>
                 </div>
               </styled.div>
               <Menu
