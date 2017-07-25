@@ -3,6 +3,7 @@ import SectionLayout from '../SectionLayout';
 import CodeBlock from '../CodeBlock';
 import Code from '../Code';
 import Note from '../Note';
+import Link from '../Link'
 
 const installNPM = `
 npm install --save-dev babel-plugin-styled-components
@@ -163,7 +164,7 @@ const BabelPlugin = () =>
         literals down to a smaller representation than what Babel normally does,
         because <Code>styled-components</Code> template literals don't need to
         be 100% spec compliant. see{' '}
-        <a href="#tagged-template-literals">Tagged Template Literals</a> for
+        <Link href="#tagged-template-literals">Tagged Template Literals</Link> for
         more information about that) You can use the {' '}
         <Code>transpileTemplateLiterals</Code> option to turn this feature off.
       </p>
