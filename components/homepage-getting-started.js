@@ -33,7 +33,7 @@ const ExampleButton = styled.button`
   `}
 `
 
-const FirstButton = styled.button``;
+const FirstButton = styled.button``
 
 const SecondButton = styled.button`
   border-radius: 3px;

@@ -34,9 +34,10 @@ const MenuIcon = styled(ThreeBarsIcon).attrs({
   height: ${rem(30)};
 `
 
-export default props => (
+const Navbar = props => (
   <MenuButton {...props}>
     <MenuIcon />
   </MenuButton>
 )
 
+export default Navbar

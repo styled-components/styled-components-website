@@ -42,7 +42,7 @@ render(
 );
 `).trim()
 
-const SupportedCSS = ({ url }) => (
+const SupportedCSS = () => (
   <SectionLayout title="Supported CSS">
     <p>
       Within a styled component, we support all of CSS, including nesting – since we generate an

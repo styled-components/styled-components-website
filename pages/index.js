@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
-import { LiveProvider, LivePreview, LiveEditor } from 'react-live'
-import fetch from 'isomorphic-fetch'
-import StarIcon from 'react-octicons-svg/dist/StarIcon'
+import { LiveProvider, LiveEditor } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
 import { headerFont } from '../utils/fonts'
 import { violetRed, gold } from '../utils/colors'
 import { editorMixin, StyledError } from '../components/LiveEdit'
-import Code from '../components/Code'
 import Link from '../components/Link'
 import { Content } from '../components/Layout'
 import HomepageGettingStarted from '../components/homepage-getting-started'
@@ -48,8 +45,8 @@ const Button = styled.a\`
 
 import { LiveContextTypes } from 'react-live/lib/components/Live/LiveProvider'
 
-const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button }, live }) => {
-  const InternalButton = Button.withComponent(Link);
+const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button } }) => {
+  const InternalButton = Button.withComponent(Link)
   return (
     <div
       {...rest}
@@ -88,7 +85,7 @@ const Logo = styled.img.attrs({
 })`
   width: ${rem(125)};
   height: ${rem(125)};
-`;
+`
 
 const UsersWrapper = styled.section`
   display: flex;
@@ -159,17 +156,6 @@ const Editor = captureScroll(styled(LiveEditor)`
 
 const Links = styled.div`
   margin: ${rem(36)} 0;
-`
-
-const Star = styled(StarIcon).attrs({
-  width: null,
-  height: null
-})`
-  position: relative;
-  display: inline;
-  width: ${rem(15)};
-  color: ${violetRed};
-  bottom: ${rem(2)};
 `
 
 const Footer = styled.footer`

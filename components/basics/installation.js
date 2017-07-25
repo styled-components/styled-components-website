@@ -12,7 +12,7 @@ const Command = styled(CodeBlock)`
   }
 `
 
-const GettingStarted = ({ url }) => (
+const GettingStarted = () => (
   <SectionLayout title="Installation">
     <p>Install styled-components from npm:</p>
     <Command code="npm install --save styled-components"></Command>
