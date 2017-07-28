@@ -3,6 +3,7 @@ import React from 'react'
 import SectionLayout from '../SectionLayout'
 import CodeBlock from '../CodeBlock'
 import Code from '../Code'
+import Link from '../Link'
 import LiveEdit from '../LiveEdit'
 
 const sampleTachyonsExample = (`
