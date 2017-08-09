@@ -5,20 +5,22 @@ import Code from '../Code';
 import Note from '../Note';
 import Link from '../Link'
 
+const pluginName = "babel-plugin-styled-components";
+
 const installNPM = `
-npm install --save-dev babel-plugin-styled-components
+npm install --save-dev ${pluginName}
 `.trim();
 
 const usage = `
 {
-  "plugins": ["styled-components"]
+  "plugins": ["${pluginName}"]
 }
 `.trim();
 
 const ssr = `
 {
   "plugins": [
-    ["styled-components", {
+    ["${pluginName}", {
       "ssr": true
     }]
   ]
@@ -28,7 +30,7 @@ const ssr = `
 const displayName = `
 {
   "plugins": [
-    ["styled-components", {
+    ["${pluginName}", {
       "displayName": false
     }]
   ]
@@ -38,7 +40,7 @@ const displayName = `
 const preprocess = `
 {
   "plugins": [
-    ["styled-components", {
+    ["${pluginName}", {
       "preprocess": true
     }]
   ]
@@ -48,7 +50,7 @@ const preprocess = `
 const minify = `
 {
   "plugins": [
-    ["styled-components", {
+    ["${pluginName}", {
       "minify": false
     }]
   ]
@@ -58,7 +60,7 @@ const minify = `
 const transpilation = `
 {
   "plugins": [
-    ["styled-components", {
+    ["${pluginName}", {
       "transpileTemplateLiterals": false
     }]
   ]
