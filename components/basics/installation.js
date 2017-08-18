@@ -7,12 +7,12 @@ import CodeBlock from '../CodeBlock'
 const Command = styled(CodeBlock)`
   margin: ${rem(35)} 0;
 
-  &:before {
+  &::before {
     content: "$ ";
   }
 `
 
-const GettingStarted = ({ url }) => (
+const GettingStarted = () => (
   <SectionLayout title="Installation">
     <p>Install styled-components from npm:</p>
     <Command code="npm install --save styled-components"></Command>

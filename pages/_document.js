@@ -181,10 +181,10 @@ export default class MyDocument extends Document {
           <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
 
           {/* Open Graph */}
-          <link itemprop="url" href="https://styled-components.com/"/>
-          <meta itemprop="name" content="styled-components" />
-          <meta itemprop="description" content={description} />
-          <meta itemprop="image" content="/static/atom.png" />
+          <link itemProp="url" href="https://styled-components.com/"/>
+          <meta itemProp="name" content="styled-components" />
+          <meta itemProp="description" content={description} />
+          <meta itemProp="image" content="/static/atom.png" />
 
           {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />

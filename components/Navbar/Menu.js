@@ -14,7 +14,7 @@ const MenuOuter = styled.aside`
 
   ${mobile(css`
     height: ${p => p.isFolded ? '0' : `calc(100vh - ${rem(70)})`};
-    transition: height .2s ease-in-out;
+    transition: height 0.2s ease-in-out;
     overflow: hidden;
   `)}
 `

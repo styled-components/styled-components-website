@@ -2,7 +2,6 @@ import React from 'react'
 import SectionLayout from '../SectionLayout'
 import LiveEdit from '../LiveEdit'
 import Code from '../Code'
-import Note from '../Note'
 
 const sample = (`
 const Input = styled.input.attrs({

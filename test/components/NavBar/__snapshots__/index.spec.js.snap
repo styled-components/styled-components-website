@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavBar renders correctly 1`] = `
+exports[`Navbar renders correctly 1`] = `
 .c0 {
   position: fixed;
   -webkit-transform: translateZ(0);
@@ -162,8 +162,8 @@ exports[`NavBar renders correctly 1`] = `
 @media (max-width:62.5em) {
   .c7 {
     height: 0;
-    -webkit-transition: height .2s ease-in-out;
-    transition: height .2s ease-in-out;
+    -webkit-transition: height 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
     overflow: hidden;
   }
 }
@@ -233,7 +233,7 @@ exports[`NavBar renders correctly 1`] = `
                 </Link>
               </div>
             </styled.div>
-            <Component
+            <Navbar
               onClick={[Function]}
             >
               <Styled(styled.a)
@@ -270,7 +270,7 @@ exports[`NavBar renders correctly 1`] = `
                   </a>
                 </styled.a>
               </Styled(styled.a)>
-            </Component>
+            </Navbar>
           </div>
         </styled.div>
         <Menu

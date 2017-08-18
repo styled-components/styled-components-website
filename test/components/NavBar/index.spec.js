@@ -1,10 +1,10 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import 'jest-styled-components'
-import NavBar from '../../../components/NavBar'
+import Navbar from '../../../components/Navbar'
 
-test('NavBar renders correctly', () => {
-  const wrapper = mount(<NavBar />)
+test('Navbar renders correctly', () => {
+  const wrapper = mount(<Navbar />)
 
   expect(wrapper).toMatchSnapshot()
 })

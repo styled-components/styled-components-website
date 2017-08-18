@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import UnstyledLink from 'next/link'
 
 import rem from '../utils/rem'

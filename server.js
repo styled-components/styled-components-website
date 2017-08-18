@@ -67,7 +67,7 @@ app.prepare()
 
     server.get('/sw.js', (req, res) => {
       res.sendFile(path.resolve('./.next/sw.js'))
-    });
+    })
 
     server.use('/static', express.static('./static', {
       maxage: '48h',

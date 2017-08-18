@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 import rem from '../../utils/rem'
 import DocsLayout from '../../components/DocsLayout'
-import { Title, Header } from '../../components/Layout'
+import { Header } from '../../components/Layout'
 import Link from '../../components/Link'
 import titleToDash from '../../utils/titleToDash'
 import { pages } from '../docs.json'
@@ -11,8 +11,7 @@ import { headerFont } from '../../utils/fonts'
 
 const Row = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
 `
 
 const Column = styled.div`

@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import 'jest-styled-components'
-import Menu from '../../../components/NavBar/Menu'
+import Menu from '../../../components/Navbar/Menu'
 
 test('Menu renders correctly', () => {
   const tree = renderer.create(<Menu />).toJSON()
