@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavBar renders correctly 1`] = `
+exports[`Navbar renders correctly 1`] = `
 .c0 {
   position: fixed;
   -webkit-transform: translateZ(0);
