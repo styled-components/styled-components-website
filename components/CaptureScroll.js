@@ -71,7 +71,9 @@ const captureScroll = Component => {
     }
 
     componentDidMount() {
+      // eslint-disable-next-line react/no-find-dom-node
       this.node = findDOMNode(this.ref)
+
       this.node.addEventListener('wheel', this.onScroll)
       window.addEventListener('resize', this.onResize)
     }

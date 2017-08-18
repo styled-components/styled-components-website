@@ -1,21 +1,21 @@
-import React from 'react';
-import SectionLayout from '../SectionLayout';
-import CodeBlock from '../CodeBlock';
-import Code from '../Code';
-import Note from '../Note';
+import React from 'react'
+import SectionLayout from '../SectionLayout'
+import CodeBlock from '../CodeBlock'
+import Code from '../Code'
+import Note from '../Note'
 import Link from '../Link'
 
-const pluginName = "babel-plugin-styled-components";
+const pluginName = "babel-plugin-styled-components"
 
 const installNPM = `
 npm install --save-dev ${pluginName}
-`.trim();
+`.trim()
 
 const usage = `
 {
   "plugins": ["${pluginName}"]
 }
-`.trim();
+`.trim()
 
 const ssr = `
 {
@@ -25,7 +25,7 @@ const ssr = `
     }]
   ]
 }
-`.trim();
+`.trim()
 
 const displayName = `
 {
@@ -35,7 +35,7 @@ const displayName = `
     }]
   ]
 }
-`.trim();
+`.trim()
 
 const preprocess = `
 {
@@ -45,7 +45,7 @@ const preprocess = `
     }]
   ]
 }
-`.trim();
+`.trim()
 
 const minify = `
 {
@@ -55,7 +55,7 @@ const minify = `
     }]
   ]
 }
-`.trim();
+`.trim()
 
 const transpilation = `
 {
@@ -65,7 +65,7 @@ const transpilation = `
     }]
   ]
 }
-`.trim();
+`.trim()
 
 const BabelPlugin = () =>
   <SectionLayout title="Babel Plugin" labels={['v2']}>
@@ -172,6 +172,6 @@ const BabelPlugin = () =>
       </p>
       <CodeBlock code={transpilation} language="node" />
     </SectionLayout>
-  </SectionLayout>;
+  </SectionLayout>
 
-export default BabelPlugin;
+export default BabelPlugin
