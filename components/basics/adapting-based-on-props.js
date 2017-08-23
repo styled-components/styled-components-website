@@ -1,46 +1,34 @@
-import React from 'react'
-import SectionLayout from '../SectionLayout'
-import LiveEdit from '../LiveEdit'
-import Code from '../Code'
+import md from '../md'
 
-const sample = (`
-const Button = styled.button\`
-  /* Adapt the colours based on primary prop */
-  background: \${props => props.primary ? 'palevioletred' : 'white'};
-  color: \${props => props.primary ? 'white' : 'palevioletred'};
+const AdaptingBasedOnProps = () => md`
+  ## Adapting based on props
 
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
-\`;
+  You can pass a function ("interpolations") to a styled component's template literal
+  to adapt it based on its props.
 
-render(
-  <div>
-    <Button>Normal</Button>
-    <Button primary>Primary</Button>
-  </div>
-);
-`).trim()
+  This button component has a primary state that changes its colour.
+  When setting the <Code>primary</Code> prop to true, we are swapping out its background and text colour.
 
-const AdaptingBasedOnProps = () => (
-  <SectionLayout title="Adapting based on props">
-    <p>
-      You can pass a function ("interpolations") to a styled component's template literal
-      to adapt it based on its props.
-    </p>
+  \`\`\`react
+  const Button = styled.button\`
+    /* Adapt the colours based on primary prop */
+    background: \${props => props.primary ? 'palevioletred' : 'white'};
+    color: \${props => props.primary ? 'white' : 'palevioletred'};
 
-    <p>
-      This button component has a primary state that changes its colour.
-      When setting the <Code>primary</Code> prop to true, we are swapping out its background and text colour.
-    </p>
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+  \`;
 
-    <LiveEdit
-      code={sample}
-      noInline
-    />
-  </SectionLayout>
-)
+  render(
+    <div>
+      <Button>Normal</Button>
+      <Button primary>Primary</Button>
+    </div>
+  );
+  \`\`\`
+`
 
 export default AdaptingBasedOnProps

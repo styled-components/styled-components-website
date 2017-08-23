@@ -1,22 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import rem from '../../utils/rem'
-import SectionLayout from '../SectionLayout'
-import CodeBlock from '../CodeBlock'
+import md from '../md'
 
-const Command = styled(CodeBlock)`
-  margin: ${rem(35)} 0;
+const Installation = () => md`
+  ## Installation
 
-  &::before {
-    content: "$ ";
-  }
+  Install styled-components from npm:
+
+  \`\`\`
+  npm install --save styled-components
+  \`\`\`
 `
 
-const GettingStarted = () => (
-  <SectionLayout title="Installation">
-    <p>Install styled-components from npm:</p>
-    <Command code="npm install --save styled-components"></Command>
-  </SectionLayout>
-)
-
-export default GettingStarted
+export default Installation

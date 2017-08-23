@@ -1,69 +1,51 @@
-import React from 'react'
-import SectionLayout from '../SectionLayout'
-import LiveEdit from '../LiveEdit'
-import Code from '../Code'
+import md from '../md'
 
-const sample = (`
-const Input = styled.input.attrs({
-  // we can define static props
-  type: 'password',
+const AttachingAdditionalProps = () => md`
+  ## Attaching additional props | v2
 
-  // or we can define dynamic ones
-  margin: props => props.size || '1em',
-  padding: props => props.size || '1em'
-})\`
-  color: palevioletred;
-  font-size: 1em;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
+  To avoid unnecessary wrappers that just pass on some props to the rendered component,
+  or element, you can use the \`.attrs\` constructor. It allows you to attach
+  additional props (or "attributes") to a component.
 
-  /* here we use the dynamically computed props */
-  margin: \${props => props.margin};
-  padding: \${props => props.padding};
-\`;
+  This way you can for example attach static props to an element, or pass a prop third-party prop
+  like \`activeClassName\` to React Router's Link component. Furthermore you can also
+  attach more dynamic props to a component. The \`.attrs\` object also takes functions,
+  that receive the props that the component receives. The return value will be merged into the
+  resulting props as well.
 
-render(
-  <div>
-    <Input placeholder="A small text input" size="1em" />
-    <br />
-    <Input placeholder="A bigger text input" size="2em" />
-  </div>
-);
-`).trim()
+  Here we render an \`Input\` component and attach some dynamic and static attributes
+  to it:
 
-const AttachingAdditionalProps = () => (
-  <SectionLayout title="Attaching additional props" labels={[ 'v2' ]}>
-    <p>
-      To avoid unnecessary wrappers that just pass on some props to the rendered component,
-      or element, you can use the <Code>.attrs</Code> constructor. It allows you to attach
-      additional props (or "attributes") to a component.
-    </p>
+  \`\`\`react
+  const Input = styled.input.attrs({
+    // we can define static props
+    type: 'password',
 
-    <p>
-      This way you can for example attach static props to an element, or pass a prop third-party prop
-      like <Code>activeClassName</Code> to React Router's Link component. Furthermore you can also
-      attach more dynamic props to a component. The <Code>.attrs</Code> object also takes functions,
-      that receive the props that the component receives. The return value will be merged into the
-      resulting props as well.
-    </p>
+    // or we can define dynamic ones
+    margin: props => props.size || '1em',
+    padding: props => props.size || '1em'
+  })\`
+    color: palevioletred;
+    font-size: 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
 
-    <p>
-      Here we render an <Code>Input</Code> component and attach some dynamic and static attributes
-      to it:
-    </p>
+    /* here we use the dynamically computed props */
+    margin: \${props => props.margin};
+    padding: \${props => props.padding};
+  \`;
 
-    <LiveEdit
-      code={sample}
-      noInline
-    />
+  render(
+    <div>
+      <Input placeholder="A small text input" size="1em" />
+      <br />
+      <Input placeholder="A bigger text input" size="2em" />
+    </div>
+  );
+  \`\`\`
 
-    <p>
-      As you can see, we get access to our newly created props in the interpolations, and
-      the <Code>type</Code> attribute is passed down to the element.
-    </p>
-
-
-  </SectionLayout>
-)
+  As you can see, we get access to our newly created props in the interpolations, and
+  the \`type\` attribute is passed down to the element.
+`
 
 export default AttachingAdditionalProps
