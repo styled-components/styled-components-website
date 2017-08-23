@@ -16,6 +16,8 @@
   "dependencies": {
     "babel-plugin-polished": "^1.1.0",
     "babel-plugin-styled-components": "^1.1.7",
+    "commonmark": "^0.28.1",
+    "commonmark-react-renderer": "^4.3.3",
     "express": "^4.15.2",
     "isomorphic-fetch": "^2.2.1",
     "lru-cache": "^4.0.2",
@@ -29,6 +31,7 @@
     "react-dom": "^15.6.1",
     "react-live": "^1.7.0",
     "react-octicons-svg": "^1.1.13",
+    "strip-indent": "^2.0.0",
     "styled-components": "^2.1.2",
     "sw-precache-webpack-plugin": "^0.11.4",
     "webpack-bundle-analyzer": "^2.4.0"
