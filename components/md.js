@@ -1,7 +1,6 @@
 /*
  * This is totally an adapted version of react-markings, but we need to be able
- * to render custom elements for each markdown feature to make contributions
- * reasonably easy
+ * to render custom elements for each markdown feature to make contributions reasonably easy
  * See: https://github.com/Thinkmill/react-markings
  */
 
@@ -10,6 +9,7 @@ import { Parser } from 'commonmark'
 import Renderer from 'commonmark-react-renderer'
 import stripIndent from 'strip-indent'
 
+import elementToText from '../utils/elementToText'
 import titleToDash from '../utils/titleToDash'
 
 // Components to be used as renderers
@@ -95,7 +95,17 @@ const md = (strings, ...values) => {
         }
 
         // The pipe indicates labels after the initial title
-        const [title, ...labels] = children.join('').split('|')
+        const [_, ...labels] = elementToText(children).split('|')
+
+        const title = children.map(child => {
+          if (typeof child === 'string') {
+            const pipeIndex = child.indexOf('|')
+            return pipeIndex > -1 ? child.slice(0, pipeIndex) : child
+          }
+
+          return child
+        })
+
         const hash = titleToDash(title)
 
         return (
