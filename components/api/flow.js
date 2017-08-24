@@ -1,58 +1,33 @@
-import React from 'react'
+import md from '../md'
 
-import SectionLayout from '../SectionLayout'
-import { InlineLink } from '../Link'
-import CodeBlock from '../CodeBlock'
-import Code from '../Code'
-import Note from '../Note'
+const Flow = () => md`
+  ## Flow
 
-const install = (`
-npm i -g flow-typed # if you do not already have flow-typed
+  styled-components has first-class [Flow](https://flowtype.org) support to help
+  you find typing errors while using our public API.
 
-flow-typed install styled-components@<version>
-`).trim()
+  To use Flow with the public api of styled-components we recommend that you use the library definition in \`flow-typed\`.
+  To install it you can use the \`flow-typed\` cli or download it manually from the git repository and store it in
+  a \`flow-typed/\` folder in the same directory with your \`flowconfig\`.
 
-const flowconfig = (`
-[ignore]
-.*/node_modules/styled-components/.*
-`).trim()
+  ### Installing the definitions
 
-const Flow = () => (
-  <SectionLayout title="Flow">
-    <p>
-      {'styled-components has first-class '}
-      <InlineLink href="https://flowtype.org">
-        Flow
-      </InlineLink>
-      {' support to help you find typing errors while using our public API.'}
-    </p>
+  \`\`\`
+  npm i -g flow-typed # if you do not already have flow-typed
+  flow-typed install styled-components@<version>
+  \`\`\`
 
-    <p>
-      To use Flow with the public api of styled-components we recommend that you use the library definition in <Code>flow-typed</Code>.
-      To install it you can use the <Code>flow-typed</Code> cli or download it manually from the git repository and store it in
-      a <Code>flow-typed/</Code> folder in the same directory with your <Code>flowconfig</Code>.
-    </p>
+  > If you are on npm >= 5.2 you could simply use [npx](https://github.com/zkat/npx)
 
-    <SectionLayout sub title="Installing the definitions">
-      <CodeBlock code={install} />
-    </SectionLayout>
+  ### Ignore styled-components source
 
-    <Note>
-      {'If you are on npm >= 5.2 you could simply use '}
-      <InlineLink href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">
-        npx
-      </InlineLink>
-    </Note>
+  You should add the following lines to your \`.flowconfig\`, if you run into Flow errors, coming from the styled-components
+  package in your \`node_modules\` directory.
 
-    <SectionLayout sub title="Ignore styled-components source">
-      <p>
-        You should add the following lines to your <Code>.flowconfig</Code>, if you run into Flow errors, coming from the styled-components
-        package in your <Code>node_modules</Code> directory.
-      </p>
-
-      <CodeBlock code={flowconfig} />
-    </SectionLayout>
-  </SectionLayout>
-)
+  \`\`\`
+  [ignore]
+  .*/node_modules/styled-components/.*
+  \`\`\`
+`
 
 export default Flow

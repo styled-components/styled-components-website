@@ -1,94 +1,65 @@
 import React from 'react'
 
-import SectionLayout from '../../SectionLayout'
-import Table, { Row, Column } from '../../Table'
-import Link from '../../Link'
+import md from '../../md'
 import Code from '../../Code'
+import Table, { Row, Column } from '../../Table'
 
-const StyledComponent = () => (
-  <SectionLayout sub title={<Code>StyledComponent</Code>} labels={[ 'web', 'native' ]}>
-    <p>
-      A styled React component. This is returned when you
-      call <Code>styled.tagname</Code> or <Code>styled(Component)</Code> with styles.
-    </p>
+const StyledComponent = () => md`
+  ### \`StyledComponent\` | web | native
 
-    <p>
-      This component can take any prop. It passes it on to the HTML node if it's a valid attribute,
-      otherwise it only passes it into interpolated functions. (see <Code>TaggedTemplateLiteral</Code>)
-    </p>
+  A styled React component. This is returned when you
+  call \`styled.tagname\` or \`styled(Component)\` with styles.
 
-    <p>
-      You can pass an arbitrary classname to a styled component without problem and it will be applied
-      next to the styles defined by the styled call.
-      (e.g. <Code>&lt;MyStyledComp className="bootstrap__btn" /&gt;</Code>)
-    </p>
+  This component can take any prop. It passes it on to the HTML node if it's a valid attribute,
+  otherwise it only passes it into interpolated functions. (see [Tagged Template Literal](/advanced/#tagged-template-literals))
 
-    <SectionLayout sub title=".extend">
-      <p>
-        This is a method that creates a new <Code>StyledComponent</Code> and extends its rules.
-      </p>
+  You can pass an arbitrary classname to a styled component without problem and it will be applied
+  next to the styles defined by the styled call.
+  (e.g. \`<MyStyledComp className="bootstrap__btn" />\`)
 
-      <Table head={[ 'Arguments', 'Description' ]}>
-        <Row>
-          <Column>
-            1. <Code>TaggedTemplateLiteral</Code>
-          </Column>
-          <Column>
-            A tagged template literal with your CSS and interpolations.
-          </Column>
-        </Row>
-      </Table>
+  #### .extend
 
-      <p>
-        Returns a new <Code>StyledComponent</Code> with the new rules merged into the ones of the component
-        this method was called on.
-      </p>
+  This is a method that creates a new \`StyledComponent\` and extends its rules.
 
-      <p>
-        {'You can see it in action in the '}
-        <Link
-          inline
-          href="/docs/basics#extending-styles"
-        >
-          Extending Styles
-        </Link>
-        {' section.'}
-      </p>
-    </SectionLayout>
+  ${
+    <Table head={[ 'Arguments', 'Description' ]}>
+      <Row>
+        <Column>
+          1. <Code>TaggedTemplateLiteral</Code>
+        </Column>
+        <Column>
+          A tagged template literal with your CSS and interpolations.
+        </Column>
+      </Row>
+    </Table>
+  }
 
-    <SectionLayout sub title=".withComponent">
-      <p>
-        This is a method that creates a new <Code>StyledComponent</Code> with a different tag or component
-        applied to it, but all the same rules of the one it's called on.
-      </p>
+  Returns a new \`StyledComponent\` with the new rules merged into the ones of the component
+  this method was called on.
 
-      <Table head={[ 'Arguments', 'Description' ]}>
-        <Row>
-          <Column>
-            1. <Code>component</Code> / <Code>tagname</Code>
-          </Column>
-          <Column>
-            Either a valid react component or a tagname like <Code>'div'</Code>.
-          </Column>
-        </Row>
-      </Table>
+  You can see it in action in the (Extending Styles)[/docs/basics#extending-styles] section.
 
-      <p>
-        Returns a new <Code>StyledComponent</Code> with the new tag / component being applied when it's used.
-      </p>
+  #### .withComponent
 
-      <p>
-        {'You can see it in action in the '}
-        <Link
-          inline
-          href="/docs/basics#extending-styles"
-        >
-          Extending Styles
-        </Link>
-        {' section.'}
-      </p>
-    </SectionLayout>
-  </SectionLayout>
-)
+  This is a method that creates a new \`StyledComponent\` with a different tag or component
+  applied to it, but all the same rules of the one it's called on.
+
+  ${
+    <Table head={[ 'Arguments', 'Description' ]}>
+      <Row>
+        <Column>
+          1. <Code>component</Code> / <Code>tagname</Code>
+        </Column>
+        <Column>
+          Either a valid react component or a tagname like \`'div'\`.
+        </Column>
+      </Row>
+    </Table>
+  }
+
+  Returns a new \`StyledComponent\` with the new tag / component being applied when it's used.
+
+  You can see it in action in the (Extending Styles)[/docs/basics#extending-styles] section.
+`
 
 export default StyledComponent

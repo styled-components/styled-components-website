@@ -1,27 +1,21 @@
 import React from 'react'
-import SectionLayout from '../../SectionLayout'
 
+import md from '../../md'
 import Styled from './styled'
 import TaggedTemplateLiteral from './tagged-template-literal'
 import StyledComponent from './styled-component'
 import ThemeProvider from './theme-provider'
 
-const Primary = () => (
-  <SectionLayout title="Primary">
-    <Styled />
+const Primary = () => md`
+  ## Primary
 
-    <br /><br />
+  ${<Styled />}
 
-    <TaggedTemplateLiteral />
+  ${<TaggedTemplateLiteral />}
 
-    <br /><br />
+  ${<StyledComponent />}
 
-    <StyledComponent />
-
-    <br /><br />
-
-    <ThemeProvider />
-  </SectionLayout>
-)
+  ${<ThemeProvider />}
+`
 
 export default Primary
