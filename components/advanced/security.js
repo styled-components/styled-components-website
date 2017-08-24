@@ -1,37 +1,27 @@
-import React from 'react'
-import SectionLayout from '../SectionLayout'
-import CodeBlock from '../CodeBlock'
+import md from '../md'
 
-const sample = (`
-// Oh no! The user has given us a bad URL!
-const userInput = '/api/withdraw-funds';
+const Security = () => md`
+  ## Security
 
-const ArbitraryComponent = styled.div\`
-  background: url(\${userInput});
-  /* More styles here... */
-\`;
-`).trim()
+  Since styled-components allows you to use arbitrary input as interpolations, you must be
+  careful to sanitize that input. Using user input as styles can lead to any CSS being evaluated in the user's
+  browser that an attacker can place in your application.
 
-const Security = () => (
-  <SectionLayout title="Security">
-    <p>
-      Since styled-components allows you to use arbitrary input as interpolations, you must be
-      careful to sanitize that input. Using user input as styles can lead to any CSS being evaluated in the user's
-      browser that an attacker can place in your application.
-    </p>
+  This example shows how bad user input can even lead to API endpoints being called on a user's
+  behalf.
 
-    <p>
-      This example shows how bad user input can even lead to API endpoints being called on a user's
-      behalf.
-    </p>
+  \`\`\`jsx
+  // Oh no! The user has given us a bad URL!
+  const userInput = '/api/withdraw-funds';
 
-    <CodeBlock code={sample} language="jsx" />
+  const ArbitraryComponent = styled.div\`
+    background: url(\${userInput});
+    /* More styles here... */
+  \`;
+  \`\`\`
 
-    <p>
-      Be very careful! This is obviously a made-up example, but CSS injection can be unobvious and
-      have bad repercussions. Some IE versions even execute arbitrary JavaScript within url declarations.
-    </p>
-  </SectionLayout>
-)
+  Be very careful! This is obviously a made-up example, but CSS injection can be unobvious and
+  have bad repercussions. Some IE versions even execute arbitrary JavaScript within url declarations.
+`
 
 export default Security

@@ -1,60 +1,42 @@
-import React from 'react'
-import SectionLayout from '../SectionLayout'
-import LiveEdit from '../LiveEdit'
-import Code from '../Code'
-import Note from '../Note'
+import md from '../md'
 
-const sample = (`
-const Input = styled.input\`
-  padding: 0.5em;
-  margin: 0.5em;
-  color: palevioletred;
-  background: papayawhip;
-  border: none;
-  border-radius: 3px;
-\`;
+const Refs = () => md`
+  ## Refs
 
-const Form = () => (
-  <Input
-    placeholder="Hover here..."
-    innerRef={x => this.input = x}
-    onMouseEnter={() => this.input.focus()}
-  />
-);
+  Passing a \`ref\` prop to a styled component will give you an instance of
+  the \`StyledComponent\` wrapper, but not to the underlying DOM node.
+  This is due to how refs work.
+  It's not possible to call DOM methods, like \`focus\`, on our wrappers directly.
 
-render(
-  <Form />
-);
-`).trim()
+  To get a ref to the actual, wrapped DOM node, pass the callback to the \`innerRef\` prop instead.
 
-const Refs = () => (
-  <SectionLayout title="Refs">
-    <p>
-      Passing a <Code>ref</Code> prop to a styled component will give you an instance of
-      the <Code>StyledComponent</Code> wrapper, but not to the underlying DOM node.
-      This is due to how refs work.
-      It's not possible to call DOM methods, like <Code>focus</Code>, on our wrappers directly.
-    </p>
+  > We don't support string refs (i.e. \`innerRef="node"\`), since they're already deprecated in React.
 
-    <p>
-      To get a ref to the actual, wrapped DOM node, pass the callback to the <Code>innerRef</Code> prop instead.
-    </p>
+  This example uses \`innerRef\` to save a ref to the styled input and focuses it once the user
+  hovers over it.
 
-    <Note>
-      We don't support string refs (i.e. <Code>innerRef="node"</Code>), since they're already deprecated in
-      React.
-    </Note>
+  \`\`\`react
+  const Input = styled.input\`
+    padding: 0.5em;
+    margin: 0.5em;
+    color: palevioletred;
+    background: papayawhip;
+    border: none;
+    border-radius: 3px;
+  \`;
 
-    <p>
-      This example uses <Code>innerRef</Code> to save a ref to the styled input and focuses it once the user
-      hovers over it.
-    </p>
-
-    <LiveEdit
-      code={sample}
-      noInline
+  const Form = () => (
+    <Input
+      placeholder="Hover here..."
+      innerRef={x => this.input = x}
+      onMouseEnter={() => this.input.focus()}
     />
-  </SectionLayout>
-)
+  );
+
+  render(
+    <Form />
+  );
+  \`\`\`
+`
 
 export default Refs

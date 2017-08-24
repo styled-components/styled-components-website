@@ -685,9 +685,11 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           noInline={true}
           scope={
             Object {
+              "ThemeProvider": [Function],
               "css": [Function],
               "keyframes": [Function],
               "styled": [Function],
+              "withTheme": [Function],
             }
           }
         >
@@ -717,9 +719,11 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             noInline={true}
             scope={
               Object {
+                "ThemeProvider": [Function],
                 "css": [Function],
                 "keyframes": [Function],
                 "styled": [Function],
+                "withTheme": [Function],
               }
             }
           >
@@ -727,9 +731,11 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
               className="react-live c11"
               scope={
                 Object {
+                  "ThemeProvider": [Function],
                   "css": [Function],
                   "keyframes": [Function],
                   "styled": [Function],
+                  "withTheme": [Function],
                 }
               }
             >

@@ -1,177 +1,148 @@
-import React from 'react'
-import SectionLayout from '../SectionLayout'
-import CodeBlock from '../CodeBlock'
-import Code from '../Code'
-import Note from '../Note'
-import Link from '../Link'
+import md from '../md'
 
-const pluginName = "babel-plugin-styled-components"
+const BabelPlugin = () => md`
+  ## Babel Plugin | v2
 
-const installNPM = `
-npm install --save-dev ${pluginName}
-`.trim()
+  This plugin adds support for server-side rendering, for minification of
+  styles and gives you a nicer debugging experience.
 
-const usage = `
-{
-  "plugins": ["${pluginName}"]
-}
-`.trim()
+  ### Usage
 
-const ssr = `
-{
-  "plugins": [
-    ["${pluginName}", {
-      "ssr": true
-    }]
-  ]
-}
-`.trim()
+  Install the babel-plugin first:
 
-const displayName = `
-{
-  "plugins": [
-    ["${pluginName}", {
-      "displayName": false
-    }]
-  ]
-}
-`.trim()
+  \`\`\`
+  npm install --save-dev babel-plugin-styled-components
+  \`\`\`
 
-const preprocess = `
-{
-  "plugins": [
-    ["${pluginName}", {
-      "preprocess": true
-    }]
-  ]
-}
-`.trim()
+  Then add it to your babel configuration like so:
 
-const minify = `
-{
-  "plugins": [
-    ["${pluginName}", {
-      "minify": false
-    }]
-  ]
-}
-`.trim()
+  \`\`\`js
+  {
+    "plugins": ["babel-plugin-styled-components"]
+  }
+  \`\`\`
 
-const transpilation = `
-{
-  "plugins": [
-    ["${pluginName}", {
-      "transpileTemplateLiterals": false
-    }]
-  ]
-}
-`.trim()
+  ### Server-side rendering
 
-const BabelPlugin = () =>
-  <SectionLayout title="Babel Plugin" labels={['v2']}>
-    <p>
-      This plugin adds support for server-side rendering, for minification of
-      styles and gives you a nicer debugging experience.
-    </p>
-    <SectionLayout sub title="Usage">
-      <p>Install the babel-plugin first:</p>
-      <CodeBlock code={installNPM} language="node" />
-      <p>Then add it to your babel configuration like so:</p>
-      <CodeBlock code={usage} language="node" />
-    </SectionLayout>
-    <SectionLayout sub title="Server-side rendering">
-      <Note>This option is turned off by default</Note>
-      <p>
-        By adding a unique identifier to every styled component this plugin
-        avoids checksum mismatches due to different class generation on the
-        client and on the server. If you do not use this plugin and try to
-        server-side render styled-components React will complain.
-      </p>
-      <p>
-        You can enable it with the <Code>ssr</Code> option:
-      </p>
-      <CodeBlock code={ssr} language="node" />
-    </SectionLayout>
-    <SectionLayout sub title="Better debugging">
-      <p>
-        This options adds the components' name and displayName to the class name
-        attached to the DOM node. In your browser's DevTools you'll see:{' '}
-        <Code>
-          &lt;button class=&quot;sc-Button-asdf123 asdf123&quot; /&gt;
-        </Code>{' '}
-        instead of just <Code>&lt;button class=&quot;asdf123&quot; /&gt;</Code>.
-      </p>
-      <p>
-        This also adds support for showing your components' real name in the
-        React DevTools. Consider writing a styled component that renders a{' '}
-        <Code>button</Code> element, called <Code>MyButton</Code>. It will
-        normally show up as <Code>&lt;styled.button&gt;</Code> for all of your
-        components, but with this plugin they show{' '}
-        <Code>&lt;MyButton /&gt;</Code>.
-      </p>
-      <p>
-        This makes it easier to find your components and to figure out where
-        they live in your app.
-      </p>
-      <p>
-        If you don't need this feature, you can disable it with the{' '}
-        <Code>displayName</Code> option:
-      </p>
-      <CodeBlock code={displayName} language="node" />
-    </SectionLayout>
-    <SectionLayout sub title="Preprocessing">
-      <Note>
-        This is experimental and we don't yet know of all limitations and bugs!
-        Consider this non-production ready for now. ⚠️
-      </Note>
-      <p>
-        This plugin preprocesses your styles with stylis and uses the{' '}
-        <Code>no-parser.js</Code> entrypoint on styled-components.
-      </p>
-      <p>
-        This effectively removes stylis from your runtime bundle and should
-        slightly improve runtime performance and shrink your bundle size.
-      </p>
-      <p>
-        It automatically disables the <Code>minify</Code> option, since stylis
-        already does some minification on your CSS.
-      </p>
-      <p>
-        You can enable preprocessing with the <Code>preprocess</Code> option:
-      </p>
-      <CodeBlock code={preprocess} language="node" />
-    </SectionLayout>
-    <SectionLayout sub title="Minification">
-      <Note>
-        This option is turned on by default. If you experience mangled CSS
-        results, turn it off and open an issue please.
-      </Note>
-      <p>
-        This plugin minifies your styles in the tagged template literals, giving
-        you big bundle size savings.
-      </p>
-      <Note>
-        This operation may potentially break your styles in some rare cases, so
-        we recommend to keep this option enabled in development if it's enabled
-        in the production build.
-      </Note>
-      <p>
-        You can disable minification with the <Code>minify</Code> option:
-      </p>
-      <CodeBlock code={minify} language="node" />
-    </SectionLayout>
-    <SectionLayout sub title="Template String Transpilation">
-      <p>
-        We also transpile <Code>styled-components</Code> tagged template
-        literals down to a smaller representation than what Babel normally does,
-        because <Code>styled-components</Code> template literals don't need to
-        be 100% spec compliant. Read more about{' '}
-        <Link inline href="#tagged-template-literals">Tagged Template Literals</Link> for
-        more information about this. You can use the {' '}
-        <Code>transpileTemplateLiterals</Code> option to turn this feature off.
-      </p>
-      <CodeBlock code={transpilation} language="node" />
-    </SectionLayout>
-  </SectionLayout>
+  > This option is turned off by default
+
+  By adding a unique identifier to every styled component this plugin
+  avoids checksum mismatches due to different class generation on the
+  client and on the server. If you do not use this plugin and try to
+  server-side render styled-components React will complain.
+
+  You can enable it with the \`ssr\` option:
+
+  \`\`\`js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "ssr": true
+      }]
+    ]
+  }
+  \`\`\`
+
+  ### Better debugging
+
+  This options adds the components' name and displayName to the class name
+  attached to the DOM node. In your browser's DevTools you'll see:
+  \`<button class="sc-Button-asdf123 asdf123" />\`
+  instead of just \`<button class="asdf123" />\`.
+
+  This also adds support for showing your components' real name in the
+  React DevTools. Consider writing a styled component that renders a
+  \`button\` element, called \`MyButton\`. It will
+  normally show up as \`<styled.button>\` for all of your
+  components, but with this plugin they show
+  \`<MyButton />\`.
+
+  This makes it easier to find your components and to figure out where
+  they live in your app.
+
+  If you don't need this feature, you can disable it with the
+  \`displayName\` option:
+
+  \`\`\`
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "displayName": false
+      }]
+    ]
+  }
+  \`\`\`
+
+  ### Preprocessing
+
+  > This is experimental and we don't yet know of all limitations and bugs!
+  > Consider this non-production ready for now. ⚠️
+
+  This plugin preprocesses your styles with stylis and uses the
+  \`no-parser.js\` entrypoint on styled-components.
+  This effectively removes stylis from your runtime bundle and should
+  slightly improve runtime performance and shrink your bundle size.
+
+  It automatically disables the \`minify\` option, since stylis
+  already does some minification on your CSS.
+
+  You can enable preprocessing with the \`preprocess\` option:
+
+  \`\`\`js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "preprocess": true
+      }]
+    ]
+  }
+  \`\`\`
+
+  ### Minification
+
+  > This option is turned on by default. If you experience mangled CSS
+  > results, turn it off and open an issue please.
+
+  This plugin minifies your styles in the tagged template literals, giving
+  you big bundle size savings.
+
+  This operation may potentially break your styles in some rare cases, so
+  we recommend to keep this option enabled in development if it's enabled
+  in the production build.
+
+  You can disable minification with the \`minify\` option:
+
+  \`\`\`js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "minify": false
+      }]
+    ]
+  }
+  \`\`\`
+
+  ### Template String Transpilation
+
+  We transpile \`styled-components\` tagged template literals down to a
+  smaller representation than what Babel normally does,
+  because \`styled-components\` template literals don't need to
+  be 100% spec compliant.
+
+  Read more about [Tagged Template Literals](#tagged-template-literals) in
+  our dedicated section explaining them.
+
+  You can use the \`transpileTemplateLiterals\` option to turn this feature off.
+
+  \`\`\`js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "transpileTemplateLiterals": false
+      }]
+    ]
+  }
+  \`\`\`
+`
 
 export default BabelPlugin

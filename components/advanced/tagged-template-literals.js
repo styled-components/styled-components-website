@@ -1,56 +1,35 @@
-import React from 'react'
-import SectionLayout from '../SectionLayout'
-import CodeBlock from '../CodeBlock'
-import Code from '../Code'
-import { InlineLink } from '../Link'
+import md from '../md'
 
-const basicSample = (`
-// These are equivalent:
-fn\`some string here\`;
-fn([ 'some string here' ]);
-`).trim()
+const TaggedTemplateLiterals = () => md`
+  ## Tagged Template Literals
 
-const interpolationsSample = (`
-const aVar = 'good';
+  Tagged Template Literals are a new feature in ES6. They let you define custom string interpolation rules,
+  which is how we're able to create styled components.
 
-// These are equivalent:
-fn\`this is a \${aVar} day\`;
-fn([ 'this is a ', ' day' ], aVar);
-`).trim()
+  If you pass no interpolations, the first argument your function receives is an array with a string in it.
 
-const TaggedTemplateLiterals = () => (
-  <SectionLayout title="Tagged Template Literals">
-    <p>
-      Tagged Template Literals are a new feature in ES6. They let you define custom string interpolation rules,
-      which is how we're able to create styled components.
-    </p>
+  \`\`\`jsx
+  // These are equivalent:
+  fn\`some string here\`;
+  fn([ 'some string here' ]);
+  \`\`\`
 
-    <p>
-      If you pass no interpolations, the first argument your function receives is an array with a string in it.
-    </p>
+  Once you pass interpolations, the array contains the passed string, split at the positions of the interpolations.
+  The rest of the arguments will be the interpolations, in order.
 
-    <CodeBlock code={basicSample} language="jsx" />
+  \`\`\`jsx
+  const aVar = 'good';
 
-    <p>
-      Once you pass interpolations, the array contains the passed string, split at the positions of the interpolations.
-      The rest of the arguments will be the interpolations, in order.
-    </p>
+  // These are equivalent:
+  fn\`this is a \${aVar} day\`;
+  fn([ 'this is a ', ' day' ], aVar);
+  \`\`\`
 
-    <CodeBlock code={interpolationsSample} language="jsx" />
+  This is a bit cumbersome to work with, but it means that we can receive variables, functions, or mixins
+  (\`css\` helper) in styled components and can flatten that into pure CSS.
 
-    <p>
-      This is a bit cumbersome to work with, but it means that we can receive variables, functions, or mixins
-      (<Code>css``</Code>) in styled components and can flatten that into pure CSS.
-    </p>
-
-    <p>
-      If you want to learn more about tagged template literals, check out Max Stoiber's article:
-      <br />
-      <InlineLink href="https://mxstbr.blog/2016/11/styled-components-magic-explained/">
-        The magic behind 💅 styled-components
-      </InlineLink>
-    </p>
-  </SectionLayout>
-)
+  If you want to learn more about tagged template literals, check out Max Stoiber's article:
+  [The magic behind 💅 styled-components](https://mxstbr.blog/2016/11/styled-components-magic-explained/)
+`
 
 export default TaggedTemplateLiterals
