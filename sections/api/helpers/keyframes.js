@@ -1,34 +1,15 @@
 import React from 'react'
 
-import SectionLayout from '../../SectionLayout'
-import Table, { Row, Column } from 'components/Table'
-import Link from '../../Link'
-import CodeBlock from 'components/CodeBlock'
+import md from 'components/md'
 import Code from 'components/Code'
+import Table, { Row, Column } from 'components/Table'
 
-const keyframesSample = (`
-import styled, { keyframes } from 'styled-components';
+const Keyframes = () => md`
+  ### \`keyframes\` | web
 
-const fadeIn = keyframes\`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-\`;
+  A helper method to create keyframes for animations.
 
-const FadeInButton = styled.button\`
-  animation: 1s \${fadeIn} ease-out;
-\`;
-`).trim()
-
-const Keyframes = () => (
-  <SectionLayout sub title={<Code>keyframes</Code>} labels={[ 'web' ]}>
-    <p>
-      A helper method to create keyframes for animations.
-    </p>
-
+  ${
     <Table head={[ 'Arguments', 'Description' ]}>
       <Row>
         <Column>
@@ -39,24 +20,28 @@ const Keyframes = () => (
         </Column>
       </Row>
     </Table>
+  }
 
-    <p>
-      Returns a unique name for these keyframes, to be used in your animation declarations.
-    </p>
+  Returns a unique name for these keyframes, to be used in your animation declarations.
 
-    <CodeBlock code={keyframesSample} language="jsx" />
+  \`\`\`jsx
+  import styled, { keyframes } from 'styled-components';
 
-    <p>
-      {'You can learn more about styled-components with Animations in the '}
-      <Link
-        inline
-        href="/docs/basics#animations"
-      >
-        Animations
-      </Link>
-      {' section.'}
-    </p>
-  </SectionLayout>
-)
+  const fadeIn = keyframes\`
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  \`;
+
+  const FadeInButton = styled.button\`
+    animation: 1s \${fadeIn} ease-out;
+  \`;
+  \`\`\`
+
+  You can learn more about styled-components with Animations in the [Animations](/docs/basics#animations)
+`
 
 export default Keyframes

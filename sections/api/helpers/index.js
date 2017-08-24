@@ -1,27 +1,22 @@
 import React from 'react'
-import SectionLayout from '../../SectionLayout'
 
+import md from 'components/md'
 import CSS from './css'
 import Keyframes from './keyframes'
 import InjectGlobal from './inject-global'
 import WithTheme from './with-theme'
 
-const Helpers = () => (
+const Helpers = () => md`
   <SectionLayout title="Helpers">
-    <CSS />
+  ## Helpers
 
-    <br /><br />
+  ${<CSS />}
 
-    <Keyframes />
+  ${<Keyframes />}
 
-    <br /><br />
+  ${<InjectGlobal />}
 
-    <InjectGlobal />
-
-    <br /><br />
-
-    <WithTheme />
-  </SectionLayout>
-)
+  ${<WithTheme />}
+`
 
 export default Helpers
