@@ -4,7 +4,7 @@
  * See: https://github.com/Thinkmill/react-markings
  */
 
-import React from 'react'
+import React, { Children } from 'react'
 import { Parser } from 'commonmark'
 import Renderer from 'commonmark-react-renderer'
 import stripIndent from '../utils/stripIndent'
@@ -62,9 +62,14 @@ const md = (strings, ...values) => {
   const renderer = new Renderer({
     renderers: {
       Paragraph({ children }) {
-        return (children.length === 1 && children[0] === PLACEHOLDER)
-          ? values.shift()
-          : <p>{children}</p>
+        if (
+          (Array.isArray(children) && children.length === 1 && children[0] === PLACEHOLDER) ||
+          children === PLACEHOLDER
+        ) {
+          return values.shift()
+        }
+
+        return <p>{children}</p>
       },
 
       Code({ literal }) {
@@ -97,7 +102,7 @@ const md = (strings, ...values) => {
         // The pipe indicates labels after the initial title
         const [_, ...labels] = elementToText(children).split('|')
 
-        const title = children.map(child => {
+        const title = Children.map(children, child => {
           if (typeof child === 'string') {
             const pipeIndex = child.indexOf('|')
             return pipeIndex > -1 ? child.slice(0, pipeIndex) : child
