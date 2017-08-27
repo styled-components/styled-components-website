@@ -4,7 +4,6 @@ import SectionLayout from '../SectionLayout'
 import Code from '../Code'
 import Link from '../Link'
 import LiveEdit from '../LiveEdit'
-import Link from '../Link'
 
 const sampleTachyonsExample = (`
 const Button = styled.button.attrs({

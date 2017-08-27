@@ -60,9 +60,6 @@
         },
         {
           "title": "Server Side Rendering"
-        },
-        {
-          "title": "Babel Plugin"
         }
       ]
     },
@@ -84,6 +81,18 @@
         },
         {
           "title": "TypeScript"
+        }
+      ]
+    },
+    {
+      "title": "Tooling",
+      "pathname": "tooling",
+      "sections": [
+        {
+          "title": "Babel Plugin"
+        },
+        {
+          "title": "Test Utilities"
         }
       ]
     },

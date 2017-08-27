@@ -9,7 +9,6 @@ import ExistingCSS from '../../components/advanced/existing-css'
 import MediaTemplates from '../../components/advanced/media-templates'
 import TaggedTemplateLiterals from '../../components/advanced/tagged-template-literals'
 import ServerSideRendering from '../../components/advanced/server-side-rendering'
-import BabelPlugin from '../../components/advanced/babel-plugin'
 
 const Advanced = () =>
   <DocsLayout title="Advanced">
@@ -20,7 +19,6 @@ const Advanced = () =>
     <MediaTemplates />
     <TaggedTemplateLiterals />
     <ServerSideRendering />
-    <BabelPlugin />
 
     <NextPage href="/docs/api" title="API Reference" />
   </DocsLayout>
