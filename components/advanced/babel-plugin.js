@@ -97,7 +97,7 @@ const BabelPlugin = () =>
         This options adds the components' name and displayName to the class name
         attached to the DOM node. In your browser's DevTools you'll see:{' '}
         <Code>
-          &lt;button class=&quot;sc-Button-asdf123 asdf123&quot; /&gt;
+          &lt;button class=&quot;Button-asdf123 asdf123&quot; /&gt;
         </Code>{' '}
         instead of just <Code>&lt;button class=&quot;asdf123&quot; /&gt;</Code>.
       </p>
