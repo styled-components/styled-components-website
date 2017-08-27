@@ -1,4 +1,4 @@
-import md from 'components/md'
+import md from 'components/md';
 
 const BabelPlugin = () => md`
   ## Babel Plugin | v2
@@ -47,7 +47,7 @@ const BabelPlugin = () => md`
 
   This options adds the components' name and displayName to the class name
   attached to the DOM node. In your browser's DevTools you'll see:
-  \`<button class="sc-Button-asdf123 asdf123" />\`
+  \`<button class="Button-asdf123 asdf123" />\`
   instead of just \`<button class="asdf123" />\`.
 
   This also adds support for showing your components' real name in the
@@ -143,6 +143,6 @@ const BabelPlugin = () => md`
     ]
   }
   \`\`\`
-`
+`;
 
-export default BabelPlugin
+export default BabelPlugin;
