@@ -1,4 +1,4 @@
-import md from 'components/md';
+import md from 'components/md'
 
 const CSSFrameworks = () => md`
   ## Can I use CSS frameworks?
@@ -31,6 +31,6 @@ const CSSFrameworks = () => md`
 
   Please do read about [the attrs method](/docs/api#attrs) to learn how arbitary props can be passed
   down to a styled component without wrapping it.
-`;
+`
 
-export default CSSFrameworks;
+export default CSSFrameworks

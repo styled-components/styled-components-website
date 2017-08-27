@@ -7,7 +7,7 @@
 import React from 'react'
 import { Parser } from 'commonmark'
 import Renderer from 'commonmark-react-renderer'
-import stripIndent from 'strip-indent'
+import stripIndent from '../utils/stripIndent'
 
 import elementToText from '../utils/elementToText'
 import titleToDash from '../utils/titleToDash'

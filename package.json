@@ -31,7 +31,6 @@
     "react-dom": "^15.6.1",
     "react-live": "^1.7.0",
     "react-octicons-svg": "^1.1.13",
-    "strip-indent": "^2.0.0",
     "styled-components": "^2.1.2",
     "sw-precache-webpack-plugin": "^0.11.4",
     "webpack-bundle-analyzer": "^2.4.0"

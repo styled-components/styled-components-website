@@ -1,4 +1,4 @@
-import md from 'components/md';
+import md from 'components/md'
 
 const BabelPlugin = () => md`
   ## Babel Plugin | v2
@@ -143,6 +143,6 @@ const BabelPlugin = () => md`
     ]
   }
   \`\`\`
-`;
+`
 
-export default BabelPlugin;
+export default BabelPlugin
