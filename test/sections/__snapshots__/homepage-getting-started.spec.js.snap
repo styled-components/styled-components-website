@@ -410,14 +410,14 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         </Heading>
         <Paragraph
           literal={null}
-          nodeKey="5:1-6:9910"
+          nodeKey="5:1-6:989"
         >
           <p>
             To download styled-components run 
             <Code
               inline={true}
               literal="npm install --save styled-components"
-              nodeKey="5:1-6:991"
+              nodeKey="5:1-6:981"
             >
               <styled.span>
                 <span
@@ -428,7 +428,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
               </styled.span>
             </Code>
             .
-            That's all you need to do, you are now ready to use it in your app! (yep, no build step needed 👌)&lt;
+            That's all you need to do, you are now ready to use it in your app! (yep, no build step needed 👌)
           </p>
         </Paragraph>
         <Heading
@@ -1259,14 +1259,14 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         </Paragraph>
         <Paragraph
           literal={null}
-          nodeKey="103:1-103:14214"
+          nodeKey="103:1-103:14113"
         >
           <p>
             Once you're done take a look at the 
             <Link
               href="/docs"
               literal={null}
-              nodeKey="103:1-103:1425"
+              nodeKey="103:1-103:1415"
             >
               <Link
                 href="/docs"
@@ -1292,7 +1292,37 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                 </Link>
               </Link>
             </Link>
-            , specifically the (Getting started)[/docs/basics#getting-started] section! Enjoy ✨&lt;
+            , specifically the 
+            <Link
+              href="/docs/basics#getting-started"
+              literal={null}
+              nodeKey="103:1-103:1419"
+            >
+              <Link
+                href="/docs/basics#getting-started"
+                inline={true}
+              >
+                <Link
+                  href="/docs/basics#getting-started"
+                >
+                  <styled.a
+                    href="/docs/basics#getting-started"
+                    onClick={[Function]}
+                  >
+                    <a
+                      className="c14"
+                      href="/docs/basics#getting-started"
+                      onClick={[Function]}
+                      rel="noopener"
+                      target="_blank"
+                    >
+                      Getting started
+                    </a>
+                  </styled.a>
+                </Link>
+              </Link>
+            </Link>
+             section! Enjoy ✨
           </p>
         </Paragraph>
       </div>

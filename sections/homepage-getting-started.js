@@ -56,7 +56,7 @@ const HomepageGettingStarted = () => (
       ## Installation
 
       To download styled-components run \`npm install --save styled-components\`.
-      That's all you need to do, you are now ready to use it in your app! (yep, no build step needed 👌)<
+      That's all you need to do, you are now ready to use it in your app! (yep, no build step needed 👌)
 
       ## Your first styled component
 
@@ -166,7 +166,7 @@ const HomepageGettingStarted = () => (
 
       Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components!<
 
-      Once you're done take a look at the [documentation](/docs), specifically the (Getting started)[/docs/basics#getting-started] section! Enjoy ✨<
+      Once you're done take a look at the [documentation](/docs), specifically the [Getting started](/docs/basics#getting-started) section! Enjoy ✨
     `}
   </Content>
 )
