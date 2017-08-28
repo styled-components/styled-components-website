@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css, keyframes } from 'styled-components'
+import styled, { css, keyframes, withTheme, ThemeProvider } from 'styled-components'
 import rem from '../utils/rem'
 import { darkGrey, red } from '../utils/colors'
 import { phone } from '../utils/media'
@@ -96,7 +96,9 @@ const LiveEdit = ({ noInline, code, scope = {} }) => (
       ...scope,
       styled,
       css,
-      keyframes
+      keyframes,
+      withTheme,
+      ThemeProvider
     }}
   >
     <Row>
