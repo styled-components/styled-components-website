@@ -775,12 +775,12 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
-                  <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px<span class=\\"token punctuation\\">;</span>
-                  <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em<span class=\\"token punctuation\\">;</span>
-                  <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em<span class=\\"token punctuation\\">;</span>
-                  <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent<span class=\\"token punctuation\\">;</span>
-                  <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred<span class=\\"token punctuation\\">;</span>
-                  <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred<span class=\\"token punctuation\\">;</span>
+                  <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                  <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                  <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                  <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                  <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                  <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
                 \`</span></span><span class=\\"token punctuation\\">;</span>
                 ",
                 }
@@ -791,12 +791,12 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
-                    <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px<span class=\\"token punctuation\\">;</span>
-                    <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em<span class=\\"token punctuation\\">;</span>
-                    <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em<span class=\\"token punctuation\\">;</span>
-                    <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent<span class=\\"token punctuation\\">;</span>
-                    <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred<span class=\\"token punctuation\\">;</span>
-                    <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred<span class=\\"token punctuation\\">;</span>
+                    <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                    <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                    <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                    <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                    <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                    <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
                   \`</span></span><span class=\\"token punctuation\\">;</span>
                   ",
                   }
@@ -917,12 +917,12 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
-                  <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px<span class=\\"token punctuation\\">;</span>
-                  <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em<span class=\\"token punctuation\\">;</span>
-                  <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em<span class=\\"token punctuation\\">;</span>
-                  <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent<span class=\\"token punctuation\\">;</span>
-                  <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred<span class=\\"token punctuation\\">;</span>
-                  <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred<span class=\\"token punctuation\\">;</span>
+                  <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                  <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                  <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                  <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                  <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                  <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
                 
                   </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
                     background: palevioletred;
@@ -938,12 +938,12 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
-                    <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px<span class=\\"token punctuation\\">;</span>
-                    <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em<span class=\\"token punctuation\\">;</span>
-                    <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em<span class=\\"token punctuation\\">;</span>
-                    <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent<span class=\\"token punctuation\\">;</span>
-                    <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred<span class=\\"token punctuation\\">;</span>
-                    <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred<span class=\\"token punctuation\\">;</span>
+                    <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                    <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                    <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                    <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                    <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                    <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
                   
                     </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
                       background: palevioletred;
@@ -1178,12 +1178,12 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                                 dangerouslySetInnerHTML={
                                   Object {
                                     "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
-                                  	<span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px<span class=\\"token punctuation\\">;</span>
-                                  	<span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em<span class=\\"token punctuation\\">;</span>
-                                  	<span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em<span class=\\"token punctuation\\">;</span>
-                                  	<span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent<span class=\\"token punctuation\\">;</span>
-                                  	<span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred<span class=\\"token punctuation\\">;</span>
-                                  	<span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred<span class=\\"token punctuation\\">;</span>
+                                  	<span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                                  	<span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                                  	<span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                                  	<span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                                  	<span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                                  	<span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
                                   
                                   	</span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
                                   		background: palevioletred;
