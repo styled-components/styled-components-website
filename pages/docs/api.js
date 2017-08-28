@@ -1,5 +1,6 @@
 import React from 'react'
 import DocsLayout from '../../components/DocsLayout'
+import NextPage from '../../components/NextPage'
 
 import Primary from '../../sections/api/primary'
 import Helpers from '../../sections/api/helpers'
@@ -14,6 +15,8 @@ const APIReference = () => (
     <SupportedCSS />
     <Flow />
     <TypeScript />
+
+    <NextPage href="/docs/tooling" title="Tooling" />
   </DocsLayout>
 )
 

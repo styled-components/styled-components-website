@@ -273,16 +273,6 @@ exports[`Menu renders correctly 1`] = `
           Server Side Rendering
         </a>
       </h5>
-      <h5
-        className="c5"
-      >
-        <a
-          className="c4"
-          href="/docs/advanced#babel-plugin"
-        >
-          Babel Plugin
-        </a>
-      </h5>
     </div>
     <div
       className="c2"
@@ -347,6 +337,42 @@ exports[`Menu renders correctly 1`] = `
           href="/docs/api#typescript"
         >
           TypeScript
+        </a>
+      </h5>
+    </div>
+    <div
+      className="c2"
+      onClick={undefined}
+    >
+      <h4
+        className="c3"
+      >
+        <a
+          className="c4"
+          href="/docs/tooling"
+          onClick={[Function]}
+        >
+          Tooling
+        </a>
+      </h4>
+      <h5
+        className="c5"
+      >
+        <a
+          className="c4"
+          href="/docs/tooling#babel-plugin"
+        >
+          Babel Plugin
+        </a>
+      </h5>
+      <h5
+        className="c5"
+      >
+        <a
+          className="c4"
+          href="/docs/tooling#test-utilities"
+        >
+          Test Utilities
         </a>
       </h5>
     </div>

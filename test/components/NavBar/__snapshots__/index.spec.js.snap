@@ -627,22 +627,6 @@ exports[`Navbar renders correctly 1`] = `
                           </styled.a>
                         </h5>
                       </styled.h5>
-                      <styled.h5>
-                        <h5
-                          className="c11"
-                        >
-                          <styled.a
-                            href="/docs/advanced#babel-plugin"
-                          >
-                            <a
-                              className="c5"
-                              href="/docs/advanced#babel-plugin"
-                            >
-                              Babel Plugin
-                            </a>
-                          </styled.a>
-                        </h5>
-                      </styled.h5>
                     </div>
                   </styled.div>
                   <styled.div
@@ -754,6 +738,73 @@ exports[`Navbar renders correctly 1`] = `
                               href="/docs/api#typescript"
                             >
                               TypeScript
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                    </div>
+                  </styled.div>
+                  <styled.div
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="c9"
+                      onClick={[Function]}
+                    >
+                      <styled.h4>
+                        <h4
+                          className="c10"
+                        >
+                          <Link
+                            href="/docs/tooling"
+                          >
+                            <Link
+                              href="/docs/tooling"
+                            >
+                              <styled.a
+                                href="/docs/tooling"
+                                onClick={[Function]}
+                              >
+                                <a
+                                  className="c5"
+                                  href="/docs/tooling"
+                                  onClick={[Function]}
+                                >
+                                  Tooling
+                                </a>
+                              </styled.a>
+                            </Link>
+                          </Link>
+                        </h4>
+                      </styled.h4>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/tooling#babel-plugin"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/tooling#babel-plugin"
+                            >
+                              Babel Plugin
+                            </a>
+                          </styled.a>
+                        </h5>
+                      </styled.h5>
+                      <styled.h5>
+                        <h5
+                          className="c11"
+                        >
+                          <styled.a
+                            href="/docs/tooling#test-utilities"
+                          >
+                            <a
+                              className="c5"
+                              href="/docs/tooling#test-utilities"
+                            >
+                              Test Utilities
                             </a>
                           </styled.a>
                         </h5>
