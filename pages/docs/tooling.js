@@ -2,8 +2,8 @@ import React from 'react'
 import DocsLayout from '../../components/DocsLayout'
 import NextPage from '../../components/NextPage'
 
-import BabelPlugin from '../../components/tooling/babel-plugin'
-import TestUtilities from '../../components/tooling/test-utilities'
+import BabelPlugin from '../../sections/tooling/babel-plugin'
+import TestUtilities from '../../sections/tooling/test-utilities'
 
 const Tooling = () =>
   <DocsLayout title="Tooling">

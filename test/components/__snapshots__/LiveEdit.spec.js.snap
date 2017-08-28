@@ -103,9 +103,11 @@ exports[`LiveEdit renders correctly 1`] = `
     mountStylesheet={false}
     scope={
       Object {
+        "ThemeProvider": [Function],
         "css": [Function],
         "keyframes": [Function],
         "styled": [Function],
+        "withTheme": [Function],
       }
     }
   >
@@ -116,9 +118,11 @@ exports[`LiveEdit renders correctly 1`] = `
       noInline={false}
       scope={
         Object {
+          "ThemeProvider": [Function],
           "css": [Function],
           "keyframes": [Function],
           "styled": [Function],
+          "withTheme": [Function],
         }
       }
     >
@@ -126,9 +130,11 @@ exports[`LiveEdit renders correctly 1`] = `
         className="react-live c0"
         scope={
           Object {
+            "ThemeProvider": [Function],
             "css": [Function],
             "keyframes": [Function],
             "styled": [Function],
+            "withTheme": [Function],
           }
         }
       >

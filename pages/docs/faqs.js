@@ -1,9 +1,9 @@
 import React from 'react'
 import DocsLayout from '../../components/DocsLayout'
 
-import Nesting from '../../components/faqs/nesting'
-import ReverseSelectors from '../../components/faqs/reverse-selectors'
-import CSSFrameworks from '../../components/faqs/support-for-css-frameworks'
+import Nesting from '../../sections/faqs/nesting'
+import ReverseSelectors from '../../sections/faqs/reverse-selectors'
+import CSSFrameworks from '../../sections/faqs/support-for-css-frameworks'
 
 const FAQs = () => (
   <DocsLayout title="FAQs">

@@ -19,7 +19,7 @@ Prism.languages.insertBefore('jsx', 'template-string', {
         }
       },
       string: {
-        pattern: /[\s\S]+/,
+        pattern: /[^$;]+/,
         inside: Prism.languages.css,
         alias: 'language-css'
       }

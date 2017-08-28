@@ -9,8 +9,9 @@ import { violetRed, gold } from '../utils/colors'
 import { editorMixin, StyledError } from '../components/LiveEdit'
 import Link from '../components/Link'
 import { Content } from '../components/Layout'
-import HomepageGettingStarted from '../components/homepage-getting-started'
 import captureScroll from '../components/CaptureScroll'
+
+import HomepageGettingStarted from '../sections/homepage-getting-started'
 
 const Tagline = styled.h1`
   font-weight: 600;

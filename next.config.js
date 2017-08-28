@@ -27,7 +27,7 @@ module.exports = {
         return entry
       })
 
-    config.resolve.alias = config.resolve.alias || []
+    config.resolve.alias = config.resolve.alias || {}
 
     if (dev) {
       return config
