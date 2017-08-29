@@ -814,29 +814,13 @@ exports[`Navbar renders correctly 1`] = `
                           className="c11"
                         >
                           <styled.a
-                            href="/docs/tooling#stylelint-processor"
+                            href="/docs/tooling#stylelint"
                           >
                             <a
                               className="c5"
-                              href="/docs/tooling#stylelint-processor"
+                              href="/docs/tooling#stylelint"
                             >
-                              Stylelint Processor
-                            </a>
-                          </styled.a>
-                        </h5>
-                      </styled.h5>
-                      <styled.h5>
-                        <h5
-                          className="c11"
-                        >
-                          <styled.a
-                            href="/docs/tooling#stylelint-config"
-                          >
-                            <a
-                              className="c5"
-                              href="/docs/tooling#stylelint-config"
-                            >
-                              Stylelint Config
+                              Stylelint
                             </a>
                           </styled.a>
                         </h5>

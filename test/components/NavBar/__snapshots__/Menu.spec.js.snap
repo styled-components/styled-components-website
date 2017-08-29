@@ -380,19 +380,9 @@ exports[`Menu renders correctly 1`] = `
       >
         <a
           className="c4"
-          href="/docs/tooling#stylelint-processor"
+          href="/docs/tooling#stylelint"
         >
-          Stylelint Processor
-        </a>
-      </h5>
-      <h5
-        className="c5"
-      >
-        <a
-          className="c4"
-          href="/docs/tooling#stylelint-config"
-        >
-          Stylelint Config
+          Stylelint
         </a>
       </h5>
     </div>

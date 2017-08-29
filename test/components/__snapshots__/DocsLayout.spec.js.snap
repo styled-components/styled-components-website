@@ -858,29 +858,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                 className="c12"
                               >
                                 <styled.a
-                                  href="/docs/tooling#stylelint-processor"
+                                  href="/docs/tooling#stylelint"
                                 >
                                   <a
                                     className="c6"
-                                    href="/docs/tooling#stylelint-processor"
+                                    href="/docs/tooling#stylelint"
                                   >
-                                    Stylelint Processor
-                                  </a>
-                                </styled.a>
-                              </h5>
-                            </styled.h5>
-                            <styled.h5>
-                              <h5
-                                className="c12"
-                              >
-                                <styled.a
-                                  href="/docs/tooling#stylelint-config"
-                                >
-                                  <a
-                                    className="c6"
-                                    href="/docs/tooling#stylelint-config"
-                                  >
-                                    Stylelint Config
+                                    Stylelint
                                   </a>
                                 </styled.a>
                               </h5>
