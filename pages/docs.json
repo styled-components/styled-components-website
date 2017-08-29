@@ -93,6 +93,9 @@
         },
         {
           "title": "Test Utilities"
+        },
+        {
+          "title": "Stylelint"
         }
       ]
     },
