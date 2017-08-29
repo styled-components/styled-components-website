@@ -2,6 +2,7 @@ import React from 'react'
 import Head from './SeoHead'
 import Navbar from './Navbar'
 import { Container, Content, Title } from './Layout'
+import GaWrapper from './GaWrapper'
 
 const DocsLayout = ({ children, title="", description="" }) => (
   <Container>
@@ -24,4 +25,4 @@ const DocsLayout = ({ children, title="", description="" }) => (
   </Container>
 )
 
-export default DocsLayout
+export default GaWrapper(DocsLayout)

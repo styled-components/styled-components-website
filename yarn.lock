@@ -297,7 +297,7 @@ babel-code-frame@^6.20.0, babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
     esutils "^2.0.2"
     js-tokens "^3.0.2"
 
-babel-core@6.24.0:
+babel-core@6.24.0, babel-core@^6.0.0:
   version "6.24.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.24.0.tgz#8f36a0a77f5c155aed6f920b844d23ba56742a02"
   dependencies:
@@ -321,7 +321,7 @@ babel-core@6.24.0:
     slash "^1.0.0"
     source-map "^0.5.0"
 
-babel-core@^6.0.0, babel-core@^6.26.0:
+babel-core@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.26.0.tgz#af32f78b31a6fcef119c87b0fd8d9753f03a0bb8"
   dependencies:
@@ -918,14 +918,14 @@ babel-register@^6.24.0, babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.23.0, babel-runtime@^6.22.0:
+babel-runtime@6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
   dependencies:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
 
-babel-runtime@^6.18.0, babel-runtime@^6.20.0, babel-runtime@^6.26.0:
+babel-runtime@^6.18.0, babel-runtime@^6.20.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -1587,7 +1587,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.6.0:
+create-react-class@^15.5.2, create-react-class@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.0.tgz#ab448497c26566e1e29413e883207d57cfe7bed4"
   dependencies:
@@ -4721,7 +4721,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.5.10, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8:
+prop-types@15.5.10, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -4828,6 +4828,14 @@ react-dom@^15.6.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
+
+react-ga@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.2.0.tgz#45235de1356e4d988d9b82214d615a08489c9291"
+  dependencies:
+    create-react-class "^15.5.2"
+    object-assign "^4.0.1"
+    prop-types "^15.5.6"
 
 react-hot-loader@3.0.0-beta.7:
   version "3.0.0-beta.7"

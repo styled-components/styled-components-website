@@ -13,6 +13,8 @@ import captureScroll from '../components/CaptureScroll'
 import SeoHead from '../components/SeoHead'
 import HomepageGettingStarted from '../sections/homepage-getting-started'
 
+import GaWrapper from '../components/GaWrapper'
+
 const Tagline = styled.h1`
   font-weight: 600;
   font-size: 1.3rem;
@@ -180,10 +182,16 @@ const Heart = styled(HeartIcon).attrs({
   width: ${rem(17)};
 `
 
+
+const WrappedWithGA = GaWrapper(({ children }) =>
+<div>
+  {children}
+</div>)
+
 class Index extends Component {
   render() {
     return (
-      <div>
+      <WrappedWithGA>
         <SeoHead title="styled-components">
             <meta name="robots" content="noodp" />
         </SeoHead>
@@ -241,9 +249,11 @@ class Index extends Component {
             <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
           </HeroContent>
         </Footer>
-      </div>
+      </WrappedWithGA>
     )
   }
 }
 
 export default Index
+
+
