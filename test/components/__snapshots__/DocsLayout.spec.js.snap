@@ -224,9 +224,14 @@ exports[`DocsLayout renders correctly 1`] = `
     <div
       className="c0"
     >
-      <SideEffect(Head)>
-        <Head />
-      </SideEffect(Head)>
+      <SeoHead
+        description=""
+        title="styled-components"
+      >
+        <SideEffect(Head)>
+          <Head />
+        </SideEffect(Head)>
+      </SeoHead>
       <Navbar>
         <styled.nav>
           <styled.nav>

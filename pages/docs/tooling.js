@@ -7,7 +7,7 @@ import TestUtilities from '../../sections/tooling/test-utilities'
 import Stylelint from '../../sections/tooling/stylelint'
 
 const Tooling = () =>
-  <DocsLayout title="Tooling">
+  <DocsLayout title="Tooling" description="Additional Tools for styled-components, babel plugin, testing">
     <BabelPlugin />
     <TestUtilities />
     <Stylelint />

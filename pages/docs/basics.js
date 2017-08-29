@@ -14,7 +14,7 @@ import Animations from '../../sections/basics/animations'
 import ReactNative from '../../sections/basics/react-native'
 
 const Basics = () => (
-  <DocsLayout title="Basics">
+  <DocsLayout title="Basics" description="Get Started with styled-components basics.">
     <Motivation />
     <Installation />
     <GettingStarted />

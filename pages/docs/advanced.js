@@ -11,7 +11,7 @@ import TaggedTemplateLiterals from '../../sections/advanced/tagged-template-lite
 import ServerSideRendering from '../../sections/advanced/server-side-rendering'
 
 const Advanced = () =>
-  <DocsLayout title="Advanced">
+  <DocsLayout title="Advanced" description="Advanced usage of styled-components - Theming, refs, Security, Existing CSS, Media Templates, Tagged Template Literals, SSR">
     <Theming />
     <Refs />
     <Security />

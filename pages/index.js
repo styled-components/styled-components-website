@@ -10,7 +10,7 @@ import { editorMixin, StyledError } from '../components/LiveEdit'
 import Link from '../components/Link'
 import { Content } from '../components/Layout'
 import captureScroll from '../components/CaptureScroll'
-
+import SeoHead from '../components/SeoHead'
 import HomepageGettingStarted from '../sections/homepage-getting-started'
 
 const Tagline = styled.h1`
@@ -184,6 +184,9 @@ class Index extends Component {
   render() {
     return (
       <div>
+        <SeoHead title="styled-components">
+            <meta name="robots" content="noodp" />
+        </SeoHead>
         <Wrapper>
           <HeroContent>
             <LiveProvider
