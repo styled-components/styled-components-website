@@ -10,8 +10,9 @@ export default WrappedComponent =>
     }
 
     componentDidMount() {
-      // initialise GA and CT
-      this.initGa()
+      if (window !== undefined) {
+        this.initGa()
+      }
       
       // Track Page event for GA
       this.trackPageview()
