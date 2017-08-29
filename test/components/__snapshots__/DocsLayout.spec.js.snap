@@ -226,7 +226,7 @@ exports[`DocsLayout renders correctly 1`] = `
     >
       <SeoHead
         description=""
-        title="styled-components "
+        title="styled-components"
       >
         <SideEffect(Head)>
           <Head />
