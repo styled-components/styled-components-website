@@ -2,17 +2,15 @@ import React, { Component } from 'react'
 import ReactGA from 'react-ga'
 import Router from 'next/router'
 
-export default WrappedComponent =>
-  class GaWrapper extends Component {
+export default WrappedComponent => {
+  return typeof window !== undefined ? class GaWrapper extends Component {
     constructor(props) {
       super(props)
       this.trackPageview = this.trackPageview.bind(this)
     }
 
     componentDidMount() {
-      if (window !== undefined) {
-        this.initGa()
-      }
+      this.initGa()
       
       // Track Page event for GA
       this.trackPageview()
@@ -43,4 +41,6 @@ export default WrappedComponent =>
     render() {
       return <WrappedComponent {...this.props} />
     }
-  }
+  } : WrappedComponent
+}
+  
