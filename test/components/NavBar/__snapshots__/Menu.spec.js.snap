@@ -375,6 +375,16 @@ exports[`Menu renders correctly 1`] = `
           Test Utilities
         </a>
       </h5>
+      <h5
+        className="c5"
+      >
+        <a
+          className="c4"
+          href="/docs/tooling#stylelint"
+        >
+          Stylelint
+        </a>
+      </h5>
     </div>
     <div
       className="c2"
