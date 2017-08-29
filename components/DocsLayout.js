@@ -7,7 +7,7 @@ const DocsLayout = ({ children, title="", description="" }) => (
   <Container>
 
     <Head
-      title={`styled-components ${title}`}
+      title={`styled-components${title ? `: ${title}` : ''}`}
       description={description}>
         <meta name="robots" content="noodp" />
     </Head>
