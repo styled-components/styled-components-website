@@ -1,13 +1,15 @@
 import React from 'react'
-import Head from 'next/head'
+import Head from './SeoHead'
 import Navbar from './Navbar'
 import { Container, Content, Title } from './Layout'
 
-const DocsLayout = ({ children, title }) => (
+const DocsLayout = ({ children, title="", description="" }) => (
   <Container>
-    <Head>
-      <title>styled-components: {title}</title>
-      <meta name="twitter:title" content={`styled-components: ${title}`} />
+
+    <Head
+      title={`styled-components ${title}`}
+      description={description}>
+        <meta name="robots" content="noodp" />
     </Head>
 
     <Navbar />

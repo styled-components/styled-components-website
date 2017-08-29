@@ -6,7 +6,7 @@ import BabelPlugin from '../../sections/tooling/babel-plugin'
 import TestUtilities from '../../sections/tooling/test-utilities'
 
 const Tooling = () =>
-  <DocsLayout title="Tooling">
+  <DocsLayout title="Tooling" description="Additional Tools for styled components, babel plugin, testing">
     <BabelPlugin />
     <TestUtilities />
 
