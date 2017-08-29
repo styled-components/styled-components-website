@@ -4,15 +4,13 @@ import NextPage from '../../components/NextPage'
 
 import BabelPlugin from '../../sections/tooling/babel-plugin'
 import TestUtilities from '../../sections/tooling/test-utilities'
-import StylelintProcessor from '../../sections/tooling/stylelint-processor'
-import StylelintConfig from '../../sections/tooling/stylelint-config'
+import Stylelint from '../../sections/tooling/stylelint'
 
 const Tooling = () =>
   <DocsLayout title="Tooling">
     <BabelPlugin />
     <TestUtilities />
-    <StylelintProcessor />
-    <StylelintConfig />
+    <Stylelint />
 
     <NextPage href="/docs/faqs" title="FAQs" />
   </DocsLayout>
