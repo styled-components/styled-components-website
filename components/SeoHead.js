@@ -3,16 +3,15 @@ import { Component } from 'react'
 
 // const CreateMarkup = text => ({ __html: text })
 
-
 export default class SeoHead extends Component {
   render() {
     const {
-      title = "styled-components", 
-      description="Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress 💅", 
-      image="https://www.styled-components.com/static/atom.png", 
-      children, 
-      canonical, 
-      url = ""
+      title = 'styled-components',
+      description = 'Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress 💅',
+      image = 'https://www.styled-components.com/static/atom.png',
+      children,
+      canonical,
+      url = '',
     } = this.props
     const properCanonical = canonical || url
     return (
@@ -24,11 +23,15 @@ export default class SeoHead extends Component {
         <meta name="description" content={description} />
 
         {/* Open Graph */}
-        <link itemProp="url" href="https://styled-components.com/"/>
+        <link itemProp="url" href="https://styled-components.com/" />
         <meta itemProp="name" content={title} />
         <meta itemProp="description" content={description} />
         <meta itemProp="image" content="/static/atom.png" />
 
+        <meta
+          name="google-site-verification"
+          content="lWntYW6AWVMcShSIWLmOzKr8Wyek2TR-zuQn6_XGu_c"
+        />
 
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
@@ -47,15 +50,20 @@ export default class SeoHead extends Component {
         <meta name="twitter:creator" content="@mxstbr" />
         <meta name="twitter:image" content={image} />
         <meta name="twitter:url" content={url} />
-        <meta name="twitter:image:src" content="https://styled-components.com/static/meta.png" />
+        <meta
+          name="twitter:image:src"
+          content="https://styled-components.com/static/meta.png"
+        />
 
-        <link rel="canonical" href={`https://www.styled-components.com${properCanonical}`} />
+        <link
+          rel="canonical"
+          href={`https://www.styled-components.com${properCanonical}`}
+        />
 
         {children}
 
         <link rel="shortcut icon" href="/static/atom.png" />
         <link rel="icon" href="/static/atom.png" />
-      
       </NextHead>
     )
   }
