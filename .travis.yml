@@ -14,3 +14,10 @@ cache:
   bundler: true
   directories:
     - node_modules
+deploy:
+  skip_cleanup: true
+  on:
+    branch: master
+  provider: script
+  script:
+    - yarn build && now build --public --token $NOW_TOKEN --name styled-components-website && now alias --token $NOW_TOKEN --force
