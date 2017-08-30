@@ -93,7 +93,7 @@ const Styled = () => md`
   \`;
   \`\`\`
 
-  Learn more about this constructor in the (Attaching Additional Props)[/docs/basics#attaching-additional-props] section.
+  Learn more about this constructor in the [Attaching Additional Props](/docs/basics#attaching-additional-props) section.
 `
 
 export default Styled
