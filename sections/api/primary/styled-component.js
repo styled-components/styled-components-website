@@ -37,7 +37,7 @@ const StyledComponent = () => md`
   Returns a new \`StyledComponent\` with the new rules merged into the ones of the component
   this method was called on.
 
-  You can see it in action in the (Extending Styles)[/docs/basics#extending-styles] section.
+  You can see it in action in the [Extending Styles](/docs/basics#extending-styles) section.
 
   #### .withComponent
 
@@ -59,7 +59,7 @@ const StyledComponent = () => md`
 
   Returns a new \`StyledComponent\` with the new tag / component being applied when it's used.
 
-  You can see it in action in the (Extending Styles)[/docs/basics#extending-styles] section.
+  You can see it in action in the [Extending Styles](/docs/basics#extending-styles) section.
 `
 
 export default StyledComponent
