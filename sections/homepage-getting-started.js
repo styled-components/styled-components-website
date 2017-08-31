@@ -42,7 +42,7 @@ const HomepageGettingStarted = () => (
         <Badge src="https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600" alt="Stars on GitHub" />
       </a>
       <a href="https://www.npmjs.com/package/styled-components">
-      	<Badge src="https://img.shields.io/npm/v/styled-components.svg" alt="Current version" />
+        <Badge src="https://img.shields.io/npm/v/styled-components.svg" alt="Current version" />
       </a>
       <Badge src="https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600" alt="Monthly downloads" />
       <Badge src="http://img.badgesize.io/https://unpkg.com/styled-components/dist/styled-components.min.js?compression=gzip&label=gzip%20size" alt="Gzipped size" />
@@ -65,10 +65,10 @@ const HomepageGettingStarted = () => (
       This is what it should look like when rendered: (this is a live example, click on them!)
 
       ${
-        <AlignCenter>
-          <ExampleButton onClick={() => { alert('You clicked the normal button!') }}>Normal button</ExampleButton>
-          <ExampleButton primary onClick={() => { alert('You clicked the primary button!') }}>Primary button</ExampleButton>
-        </AlignCenter>
+      <AlignCenter>
+        <ExampleButton onClick={() => { alert('You clicked the normal button!') }}>Normal button</ExampleButton>
+        <ExampleButton primary onClick={() => { alert('You clicked the primary button!') }}>Primary button</ExampleButton>
+      </AlignCenter>
       }
 
       First, let's import styled-components and create a \`styled.button\`:
@@ -87,9 +87,9 @@ const HomepageGettingStarted = () => (
       If you render our lovely component now (just like any other component: \`<Button />\`) this is what you get:
 
       ${
-        <AlignCenter>
-          <button>I'm a &lt;Button /&gt;!</button>
-        </AlignCenter>
+      <AlignCenter>
+        <button>I'm a &lt;Button /&gt;!</button>
+      </AlignCenter>
       }
 
       It renders a button! That's not a very nice button though 😕 we can do better than this,
@@ -107,9 +107,9 @@ const HomepageGettingStarted = () => (
       \`\`\`
 
       ${
-        <AlignCenter>
-          <SecondButton>I'm a styled &lt;Button /&gt;</SecondButton>
-        </AlignCenter>
+      <AlignCenter>
+        <SecondButton>I'm a styled &lt;Button /&gt;</SecondButton>
+      </AlignCenter>
       }
 
       As you can see, styled-components lets you write actual CSS in your JavaScript. This means you can use all
@@ -118,9 +118,11 @@ const HomepageGettingStarted = () => (
       (learn more about [the ideas behind styled-components here](/docs/basics#motivation))
 
       The last step is that we need to define what a primary button looks like.
-      To do that we interpolate a function into our template literal, which gets passed the props of our component:
+      To do that we also import \`{ css }\` from \`styled-components\` and interpolate a function into our template literal, which gets passed the props of our component:
 
       \`\`\`jsx
+      import styled, { css } from styled-components
+
       const Button = styled.button\`
         border-radius: 3px;
         padding: 0.25em 1em;

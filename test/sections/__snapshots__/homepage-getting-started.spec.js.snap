@@ -866,11 +866,39 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         </Paragraph>
         <Paragraph
           literal={null}
-          nodeKey="54:1-55:1093"
+          nodeKey="54:1-55:1607"
         >
           <p>
             The last step is that we need to define what a primary button looks like.
-            To do that we interpolate a function into our template literal, which gets passed the props of our component:
+            To do that we also import 
+            <Code
+              inline={true}
+              literal="{ css }"
+              nodeKey="54:1-55:1603"
+            >
+              <styled.span>
+                <span
+                  className="c10"
+                >
+                  { css }
+                </span>
+              </styled.span>
+            </Code>
+             from 
+            <Code
+              inline={true}
+              literal="styled-components"
+              nodeKey="54:1-55:1605"
+            >
+              <styled.span>
+                <span
+                  className="c10"
+                >
+                  styled-components
+                </span>
+              </styled.span>
+            </Code>
+             and interpolate a function into our template literal, which gets passed the props of our component:
           </p>
         </Paragraph>
         <CodeBlock
@@ -880,7 +908,9 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             ]
           }
           language="jsx"
-          literal="const Button = styled.button\`
+          literal="import styled, { css } from styled-components
+        
+        const Button = styled.button\`
           border-radius: 3px;
           padding: 0.25em 1em;
           margin: 0 1em;
@@ -894,10 +924,12 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           \`}
         \`;
         "
-          nodeKey="57:1-71:2"
+          nodeKey="57:1-73:2"
         >
           <CodeBlock
-            code="const Button = styled.button\`
+            code="import styled, { css } from styled-components
+          
+          const Button = styled.button\`
             border-radius: 3px;
             padding: 0.25em 1em;
             margin: 0 1em;
@@ -916,7 +948,9 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             <styled.pre
               dangerouslySetInnerHTML={
                 Object {
-                  "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
+                  "__html": "<span class=\\"token keyword\\">import</span> styled<span class=\\"token punctuation\\">,</span> <span class=\\"token punctuation\\">{</span> css <span class=\\"token punctuation\\">}</span> <span class=\\"token keyword\\">from</span> styled<span class=\\"token operator\\">-</span>components
+                
+                <span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
                   <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
                   <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
                   <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
@@ -937,7 +971,9 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                 className="prism-code c13"
                 dangerouslySetInnerHTML={
                   Object {
-                    "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
+                    "__html": "<span class=\\"token keyword\\">import</span> styled<span class=\\"token punctuation\\">,</span> <span class=\\"token punctuation\\">{</span> css <span class=\\"token punctuation\\">}</span> <span class=\\"token keyword\\">from</span> styled<span class=\\"token operator\\">-</span>components
+                  
+                  <span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
                     <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
                     <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
                     <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
@@ -959,14 +995,14 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         </CodeBlock>
         <Paragraph
           literal={null}
-          nodeKey="73:1-74:459"
+          nodeKey="75:1-76:459"
         >
           <p>
             All we're saying here is that when the 
             <Code
               inline={true}
               literal="primary"
-              nodeKey="73:1-74:453"
+              nodeKey="75:1-76:453"
             >
               <styled.span>
                 <span
@@ -980,7 +1016,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             <Code
               inline={true}
               literal="css"
-              nodeKey="73:1-74:455"
+              nodeKey="75:1-76:455"
             >
               <styled.span>
                 <span
@@ -996,7 +1032,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         </Paragraph>
         <Paragraph
           literal={null}
-          nodeKey="76:1-76:627"
+          nodeKey="78:1-78:627"
         >
           <p>
             That's all, we're done! Take a look at our finished component:
@@ -1030,7 +1066,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </div>
         );
         "
-          nodeKey="78:1-99:2"
+          nodeKey="80:1-101:2"
         >
           <LiveEdit
             code="const Button = styled.button\`
@@ -1251,7 +1287,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         </CodeBlock>
         <Paragraph
           literal={null}
-          nodeKey="101:1-101:1377"
+          nodeKey="103:1-103:1377"
         >
           <p>
             Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components!&lt;
@@ -1259,14 +1295,14 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         </Paragraph>
         <Paragraph
           literal={null}
-          nodeKey="103:1-103:14113"
+          nodeKey="105:1-105:14113"
         >
           <p>
             Once you're done take a look at the 
             <Link
               href="/docs"
               literal={null}
-              nodeKey="103:1-103:1415"
+              nodeKey="105:1-105:1415"
             >
               <Link
                 href="/docs"
@@ -1296,7 +1332,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             <Link
               href="/docs/basics#getting-started"
               literal={null}
-              nodeKey="103:1-103:1419"
+              nodeKey="105:1-105:1419"
             >
               <Link
                 href="/docs/basics#getting-started"
