@@ -25,6 +25,9 @@ exports[`Content renders correctly 1`] = `
   padding: 2.7777777777777777rem 2.2222222222222223rem 1.6666666666666667rem 2.2222222222222223rem;
   box-sizing: border-box;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  -webkit-transition: -webkit-transform 150ms ease-out;
+  -webkit-transition: transform 150ms ease-out;
+  transition: transform 150ms ease-out;
 }
 
 @media (max-width:62.5em) {

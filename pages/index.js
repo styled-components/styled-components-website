@@ -185,7 +185,7 @@ class Index extends Component {
     return (
       <div>
         <SeoHead title="styled-components">
-            <meta name="robots" content="noodp" />
+          <meta name="robots" content="noodp" />
         </SeoHead>
         <Wrapper>
           <HeroContent>

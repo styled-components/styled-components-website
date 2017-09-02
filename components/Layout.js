@@ -19,9 +19,14 @@ export const Content = styled.div`
   padding: ${rem(50)} ${rem(40)} ${rem(30)} ${rem(40)};
   box-sizing: border-box;
   font-family: ${bodyFont};
+  transition: transform 150ms ease-out;
 
   ${mobile(css`
     padding: ${rem(30)} ${rem(20)};
+
+    ${p => p.moveRight && css`
+      transform: translateX(${rem(300)});
+    `}
   `)}
 `
 

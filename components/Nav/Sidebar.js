@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 import rem from '../../utils/rem'
 import { mobile } from '../../utils/media'
-import { violetRed, gold } from '../../utils/colors'
+import { paleGrey } from '../../utils/colors'
 import { headerFont } from '../../utils/fonts'
 import captureScroll from '../CaptureScroll'
 
@@ -10,7 +10,7 @@ const Sidebar = styled.nav`
   position: fixed;
   transform: translateZ(0);
   display: block;
-  z-index: 1;
+  z-index: 5;
   font-family: ${headerFont};
 
   left: 0;
@@ -20,17 +20,16 @@ const Sidebar = styled.nav`
 
   width: ${rem(300)};
   height: 100%;
-  background: linear-gradient(20deg, ${violetRed}, ${gold});
+  background: ${paleGrey};
   box-sizing: border-box;
-  color: white;
+  color: inherit;
   overflow-y: scroll;
+  transition: transform 150ms ease-out;
 
   ${mobile(css`
-    bottom: auto;
-    right: 0;
-    height: auto;
-    width: 100%;
-    overflow-y: visible;
+    ${p => p.isFolded ? css`
+      transform: translateX(${rem(-300)});
+    `: ``}
   `)}
 `
 
