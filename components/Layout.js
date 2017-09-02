@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components'
 import rem from '../utils/rem'
 import { mobile } from '../utils/media'
+import { sidebarWidth } from '../utils/sizes'
 import { bodyFont, headerFont } from '../utils/fonts'
 
 export const Container = styled.div`
-  padding-left: ${rem(300)};
+  padding-left: ${rem(sidebarWidth)};
 
   ${mobile(css`
     padding-left: 0;
@@ -25,7 +26,7 @@ export const Content = styled.div`
     padding: ${rem(30)} ${rem(20)};
 
     ${p => p.moveRight && css`
-      transform: translateX(${rem(300)});
+      transform: translateX(${rem(sidebarWidth)});
     `}
   `)}
 `

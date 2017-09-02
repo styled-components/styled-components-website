@@ -1,1 +1,2 @@
-export const menuSize = 50
+export const sidebarWidth = 300
+export const menuHeight = 50
