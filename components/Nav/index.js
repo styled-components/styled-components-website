@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import SidebarMenu from './SidebarMenu'
 
@@ -12,6 +13,7 @@ class Nav extends Component {
 
     return (
       <div>
+        <Navbar />
         <Sidebar isFolded={isSideFolded}>
           <SidebarMenu onRouteChange={onRouteChange} />
         </Sidebar>

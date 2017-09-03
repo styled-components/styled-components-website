@@ -1,16 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav renders correctly 1`] = `
+.c9 {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.1111111111111111rem 0.4444444444444444rem;
+  margin: -0.1111111111111111rem -0.4444444444444444rem;
+}
+
+.c3 {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 9.11111111111111rem;
+  height: 2.2222222222222223rem;
+  background-image: url(/static/nav-logo.png);
+  background-position: center;
+  background-size: contain;
+}
+
 .c0 {
+  position: fixed;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-between;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  width: 100%;
+  height: 2.7777777777777777rem;
+  padding: 0 1.1111111111111112rem;
+  background: rgb(219,112,147);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c2 {
+  display: inline-block;
+  vertical-align: center;
+}
+
+.c5 {
   position: fixed;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
   display: block;
-  z-index: 5;
+  z-index: 1;
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   left: 0;
-  top: 0;
+  top: 2.7777777777777777rem;
   bottom: 0;
   right: auto;
   width: 16.666666666666668rem;
@@ -24,33 +102,24 @@ exports[`Nav renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c4 {
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  padding: 0.1111111111111111rem 0.4444444444444444rem;
-  margin: -0.1111111111111111rem -0.4444444444444444rem;
-}
-
-.c1 {
+.c6 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 1.3888888888888888rem;
 }
 
-.c2 {
+.c7 {
   margin-bottom: 1.6666666666666667rem;
 }
 
-.c3 {
+.c8 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
 }
 
-.c5 {
+.c10 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem 0.5555555555555556rem 3.0555555555555554rem;
   font-size: 0.9rem;
@@ -58,34 +127,78 @@ exports[`Nav renders correctly 1`] = `
 }
 
 @media (min-width:62.5em) {
-  .c4 {
+  .c9 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c4:hover {
+  .c9:hover {
     background: rgba(20,20,20,0.1);
   }
 }
 
 <Nav>
   <div>
-    <styled.nav>
+    <Navbar>
       <styled.nav>
         <nav
           className="c0"
         >
+          <styled.div>
+            <div
+              className="c1"
+            >
+              <Styled(Link)>
+                <Link
+                  className="c2"
+                  href="/"
+                  unstyled={true}
+                >
+                  <Link
+                    href="/"
+                  >
+                    <a
+                      className="c2"
+                      href="/"
+                      onClick={[Function]}
+                    >
+                      <styled.div>
+                        <div
+                          className="c3"
+                        />
+                      </styled.div>
+                    </a>
+                  </Link>
+                </Link>
+              </Styled(Link)>
+            </div>
+          </styled.div>
+          <styled.div>
+            <div
+              className="c4"
+            >
+              ss
+            </div>
+          </styled.div>
+        </nav>
+      </styled.nav>
+    </Navbar>
+    <styled.nav>
+      <styled.nav>
+        <nav
+          className="c5"
+        >
           <SidebarMenu>
             <styled.div>
               <div
-                className="c1"
+                className="c6"
               >
                 <styled.div>
                   <div
-                    className="c2"
+                    className="c7"
                   >
                     <styled.h4>
                       <h4
-                        className="c3"
+                        className="c8"
                       >
                         <Link
                           href="/docs/basics"
@@ -98,7 +211,7 @@ exports[`Nav renders correctly 1`] = `
                               onClick={[Function]}
                             >
                               <a
-                                className="c4"
+                                className="c9"
                                 href="/docs/basics"
                                 onClick={[Function]}
                               >
@@ -111,13 +224,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h4>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/basics#motivation"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/basics#motivation"
                           >
                             Motivation
@@ -127,13 +240,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/basics#installation"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/basics#installation"
                           >
                             Installation
@@ -143,13 +256,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/basics#getting-started"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/basics#getting-started"
                           >
                             Getting Started
@@ -159,13 +272,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/basics#passed-props"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/basics#passed-props"
                           >
                             Passed props
@@ -175,13 +288,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/basics#adapting-based-on-props"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/basics#adapting-based-on-props"
                           >
                             Adapting based on props
@@ -191,13 +304,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/basics#styling-any-components"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/basics#styling-any-components"
                           >
                             Styling any components
@@ -207,13 +320,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/basics#extending-styles"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/basics#extending-styles"
                           >
                             Extending styles
@@ -223,13 +336,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/basics#attaching-additional-props"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/basics#attaching-additional-props"
                           >
                             Attaching additional props
@@ -239,13 +352,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/basics#animations"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/basics#animations"
                           >
                             Animations
@@ -255,13 +368,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/basics#react-native"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/basics#react-native"
                           >
                             React Native
@@ -273,11 +386,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c2"
+                    className="c7"
                   >
                     <styled.h4>
                       <h4
-                        className="c3"
+                        className="c8"
                       >
                         <Link
                           href="/docs/advanced"
@@ -290,7 +403,7 @@ exports[`Nav renders correctly 1`] = `
                               onClick={[Function]}
                             >
                               <a
-                                className="c4"
+                                className="c9"
                                 href="/docs/advanced"
                                 onClick={[Function]}
                               >
@@ -303,13 +416,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h4>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/advanced#theming"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/advanced#theming"
                           >
                             Theming
@@ -319,13 +432,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/advanced#refs"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/advanced#refs"
                           >
                             Refs
@@ -335,13 +448,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/advanced#security"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/advanced#security"
                           >
                             Security
@@ -351,13 +464,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/advanced#existing-css"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/advanced#existing-css"
                           >
                             Existing CSS
@@ -367,13 +480,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/advanced#media-templates"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/advanced#media-templates"
                           >
                             Media Templates
@@ -383,13 +496,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/advanced#tagged-template-literals"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/advanced#tagged-template-literals"
                           >
                             Tagged Template Literals
@@ -399,13 +512,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/advanced#server-side-rendering"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/advanced#server-side-rendering"
                           >
                             Server Side Rendering
@@ -417,11 +530,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c2"
+                    className="c7"
                   >
                     <styled.h4>
                       <h4
-                        className="c3"
+                        className="c8"
                       >
                         <Link
                           href="/docs/api"
@@ -434,7 +547,7 @@ exports[`Nav renders correctly 1`] = `
                               onClick={[Function]}
                             >
                               <a
-                                className="c4"
+                                className="c9"
                                 href="/docs/api"
                                 onClick={[Function]}
                               >
@@ -447,13 +560,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h4>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/api#primary"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/api#primary"
                           >
                             Primary
@@ -463,13 +576,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/api#helpers"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/api#helpers"
                           >
                             Helpers
@@ -479,13 +592,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/api#supported-css"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/api#supported-css"
                           >
                             Supported CSS
@@ -495,13 +608,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/api#flow"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/api#flow"
                           >
                             Flow
@@ -511,13 +624,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/api#typescript"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/api#typescript"
                           >
                             TypeScript
@@ -529,11 +642,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c2"
+                    className="c7"
                   >
                     <styled.h4>
                       <h4
-                        className="c3"
+                        className="c8"
                       >
                         <Link
                           href="/docs/tooling"
@@ -546,7 +659,7 @@ exports[`Nav renders correctly 1`] = `
                               onClick={[Function]}
                             >
                               <a
-                                className="c4"
+                                className="c9"
                                 href="/docs/tooling"
                                 onClick={[Function]}
                               >
@@ -559,13 +672,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h4>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/tooling#babel-plugin"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/tooling#babel-plugin"
                           >
                             Babel Plugin
@@ -575,13 +688,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/tooling#test-utilities"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/tooling#test-utilities"
                           >
                             Test Utilities
@@ -591,13 +704,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/tooling#stylelint"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/tooling#stylelint"
                           >
                             Stylelint
@@ -609,11 +722,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c2"
+                    className="c7"
                   >
                     <styled.h4>
                       <h4
-                        className="c3"
+                        className="c8"
                       >
                         <Link
                           href="/docs/faqs"
@@ -626,7 +739,7 @@ exports[`Nav renders correctly 1`] = `
                               onClick={[Function]}
                             >
                               <a
-                                className="c4"
+                                className="c9"
                                 href="/docs/faqs"
                                 onClick={[Function]}
                               >
@@ -639,13 +752,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h4>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/faqs#can-i-nest-rules"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/faqs#can-i-nest-rules"
                           >
                             Can I nest rules?
@@ -655,13 +768,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/faqs#can-i-refer-to-other-components"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/faqs#can-i-refer-to-other-components"
                           >
                             Can I refer to other components?
@@ -671,13 +784,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c5"
+                        className="c10"
                       >
                         <styled.a
                           href="/docs/faqs#can-i-use-css-frameworks"
                         >
                           <a
-                            className="c4"
+                            className="c9"
                             href="/docs/faqs#can-i-use-css-frameworks"
                           >
                             Can I use css frameworks?

@@ -4,6 +4,7 @@ import rem from '../../utils/rem'
 
 const Logo = styled.div`
   display: inline-block;
+  vertical-align: middle;
   box-sizing: border-box;
   width: ${rem(164)};
   height: ${rem(40)};
