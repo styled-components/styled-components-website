@@ -3,8 +3,10 @@ import md from 'components/md'
 const StylingAnyComponents = () => md`
   ## Styling any components
 
-  The \`styled\` method works perfectly on all of your own or any third-party
-  components as well, as long as they pass the \`className\` prop to their rendered sub-components.
+  The \`styled\` method works perfectly on all of your own or any third-party 
+  components as well, as long as they pass the \`className\` prop to their rendered sub-components,
+  which should pass it too, and so on.
+  Ultimately, the `className` must be passed down the line to an actual DOM node for the styling to take any effect.
 
   > If you are using \`react-native\` keep in mind to use \`style\` instead of \`className\`.
 
