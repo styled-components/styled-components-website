@@ -7,6 +7,7 @@ import { navbarHeight } from '../../utils/sizes'
 import { headerFont } from '../../utils/fonts'
 import Link from '../Link'
 import NavLinks from './NavLinks'
+import Social from './Social'
 import Logo from './Logo'
 
 const Wrapper = styled.nav`
@@ -64,7 +65,7 @@ class Navbar extends PureComponent {
         </StartWrapper>
 
         <EndWrapper>
-          ss
+          <Social />
         </EndWrapper>
       </Wrapper>
     )

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import rem from '../../utils/rem'
@@ -33,18 +33,14 @@ const NavLink = styled(Link).attrs({
   }
 `
 
-class NavLinks extends PureComponent {
-  render() {
-    return (
-      <Wrapper>
-        <NavLink>Concepts</NavLink>
-        <NavSeparator />
-        <NavLink>Try it out</NavLink>
-        <NavSeparator />
-        <NavLink>Documentation</NavLink>
-      </Wrapper>
-    )
-  }
-}
+const NavLinks = () => (
+  <Wrapper>
+    <NavLink>Concepts</NavLink>
+    <NavSeparator />
+    <NavLink>Try it out</NavLink>
+    <NavSeparator />
+    <NavLink>Documentation</NavLink>
+  </Wrapper>
+)
 
 export default NavLinks
