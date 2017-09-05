@@ -69,6 +69,32 @@ The [\`stylelint-config-styled-components\`](https://github.com/styled-component
 
 > You can override rules defined in shared configs in your custom \`.stylelintrc\`.
 
+### Usage with other libraries
+
+Some other libraries also implement the `styled.x` pattern with tagged template literals. This processor will lint the CSS in those tagged template literals too, as long as they use the `styled` keyword.
+
+If you want to use the processor with another library but you also want to change the keyword (e.g. to write `cool.div` instead of `styled.div`) use the `moduleName` option:
+
+```js
+import cool from 'other-library';
+
+const Button = cool.button`
+  color: blue;
+`
+```
+
+```json
+{
+  "processors": [["stylelint-processor-styled-components", {
+      "moduleName": "other-library"
+  }]]
+}
+```
+
+> **NOTE:** That double array is on purpose but only necessary if you set options, see the [processors configuration docs](https://stylelint.io/user-guide/configuration/#processors).
+
+> **NOTE:** We only officially support `styled-components`, but the hope is that other libraries can also benefit from the processor.
+
 ### Interpolation tagging
 
 Sometimes \`stylelint\` can throw an error (e.g. \`CssSyntaxError\`) even though nothing is wrong with your CSS. This is often due to an interpolation, more specifically the fact that the processor doesn't know what you're interpolating.
