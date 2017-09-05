@@ -71,7 +71,7 @@ The [\`stylelint-config-styled-components\`](https://github.com/styled-component
 
 ### Usage with other libraries
 
-Some other libraries also implement the \`styled.x\` pattern with tagged template literals. This processor will lint the CSS in those tagged template literals too, as long as they use the `styled` keyword.
+Some other libraries also implement the \`styled.x\` pattern with tagged template literals. This processor will lint the CSS in those tagged template literals too, as long as they use the \`styled\` keyword.
 
 If you want to use the processor with another library but you also want to change the keyword (e.g. to write \`cool.div\` instead of `styled.div`) use the `moduleName` option:
 
