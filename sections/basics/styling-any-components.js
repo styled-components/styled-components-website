@@ -4,7 +4,7 @@ const StylingAnyComponents = () => md`
   ## Styling any components
 
   The \`styled\` method works perfectly on all of your own or any third-party
-  components as well, as long as they're accepting the \`className\` prop.
+  components as well, as long as they pass the \`className\` prop to their rendered sub-components.
 
   > If you are using \`react-native\` keep in mind to use \`style\` instead of \`className\`.
 
