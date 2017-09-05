@@ -166,7 +166,7 @@ const HomepageGettingStarted = () => (
       );
       \`\`\`
 
-      Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components!<
+      Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components!
 
       Once you're done take a look at the [documentation](/docs), specifically the [Getting started](/docs/basics#getting-started) section! Enjoy ✨
     `}
