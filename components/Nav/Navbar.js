@@ -4,7 +4,9 @@ import styled from 'styled-components'
 import rem from '../../utils/rem'
 import { violetRed } from '../../utils/colors'
 import { navbarHeight } from '../../utils/sizes'
+import { headerFont } from '../../utils/fonts'
 import Link from '../Link'
+import NavLinks from './NavLinks'
 import Logo from './Logo'
 
 const Wrapper = styled.nav`
@@ -16,11 +18,16 @@ const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   width: 100%;
   height: ${rem(navbarHeight)};
   padding: 0 ${rem(20)};
 
+  font-family: ${headerFont};
+  font-size: ${rem(15)};
+  font-weight: 500;
   background: ${violetRed};
+  color: white;
 `
 
 const StartWrapper = styled.div`
@@ -41,6 +48,7 @@ const LogoLink = styled(Link).attrs({
 })`
   display: inline-block;
   vertical-align: center;
+  margin-right: ${rem(35)};
 `
 
 class Navbar extends PureComponent {
@@ -51,6 +59,8 @@ class Navbar extends PureComponent {
           <LogoLink>
             <Logo />
           </LogoLink>
+
+          <NavLinks />
         </StartWrapper>
 
         <EndWrapper>
