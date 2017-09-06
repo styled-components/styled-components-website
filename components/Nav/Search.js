@@ -20,9 +20,11 @@ const Input = styled.input`
   width: ${rem(130)};
   line-height: ${rem(navbarHeight)};
   font-size: ${rem(15)};
+  color: currentColor;
 
   ::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: currentColor;
+    opacity: 0.5;
   }
 `
 
@@ -45,6 +47,10 @@ const Button = styled.button`
   svg {
     width: ${rem(16)};
     height: ${rem(17)};
+
+    path {
+      fill: currentColor;
+    }
   }
 `
 
