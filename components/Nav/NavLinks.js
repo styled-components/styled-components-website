@@ -18,7 +18,7 @@ const NavLink = styled(Link).attrs({
   flex: 0 0 auto;
   display: inline-block;
   line-height: ${rem(navbarHeight)};
-  transition: opacity 200ms, transfrom 200ms;
+  transition: opacity 0.2s, transform 0.2s;
   cursor: pointer;
 
   letter-spacing: ${rem(.4)}

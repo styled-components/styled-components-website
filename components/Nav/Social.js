@@ -17,6 +17,7 @@ const SocialLink = styled(Link).attrs({
   display: inline-block;
   margin-right: ${rem(20)};
   line-height: ${rem(navbarHeight)};
+  transition: opacity 0.2s, transform 0.2s;
   cursor: pointer;
 
   &:last-child {
