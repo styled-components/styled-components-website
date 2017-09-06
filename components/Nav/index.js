@@ -9,11 +9,14 @@ class Nav extends Component {
   }
 
   render() {
-    const { onRouteChange, isSideFolded } = this.props
+    const { onRouteChange, onSideFold, isSideFolded } = this.props
 
     return (
       <div>
-        <Navbar />
+        <Navbar
+          isFolded={isSideFolded}
+          onFold={onSideFold}
+        />
         <Sidebar isFolded={isSideFolded}>
           <SidebarMenu onRouteChange={onRouteChange} />
         </Sidebar>

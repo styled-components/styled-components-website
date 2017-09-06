@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav renders correctly 1`] = `
-.c20 {
+.c29 {
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -10,15 +10,19 @@ exports[`Nav renders correctly 1`] = `
   margin: -0.1111111111111111rem -0.4444444444444444rem;
 }
 
-.c6 {
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 0.2777777777777778rem;
   height: 0.2777777777777778rem;
   margin: 0 0.8333333333333334rem;
   border-radius: 50%;
-  background: rgba(255,255,255,0.35);
+  background: currentColor;
+  opacity: 0.35;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -27,9 +31,15 @@ exports[`Nav renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
-.c5 {
+.c6 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   display: inline-block;
   line-height: 2.7777777777777777rem;
   -webkit-transition: opacity 200ms,transfrom 200ms;
@@ -41,19 +51,19 @@ exports[`Nav renders correctly 1`] = `
   letter-spacing: 0.022222222222222223rem color:currentColor;
 }
 
-.c5:hover,
-.c5:focus {
+.c6:hover,
+.c6:focus {
   opacity: 0.8;
 }
 
-.c5:active {
+.c6:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -62,51 +72,54 @@ exports[`Nav renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
-.c12 {
+.c13 {
   display: inline-block;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
   cursor: pointer;
 }
 
-.c12:last-child {
+.c13:last-child {
   margin-right: 0;
 }
 
-.c12:hover,
-.c12:focus {
+.c13:hover,
+.c13:focus {
   opacity: 0.8;
 }
 
-.c12:active {
+.c13:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c12 svg path {
+.c13 svg path {
   fill: currentColor;
 }
 
-.c13 {
+.c14 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c14 {
+.c15 {
   width: 1.0555555555555556rem;
   height: 0.8333333333333334rem;
 }
 
-.c15 {
+.c16 {
   width: 0.9444444444444444rem;
   height: 0.9444444444444444rem;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -115,77 +128,173 @@ exports[`Nav renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c11 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 7.222222222222222rem;
+  line-height: 1.6666666666666667rem;
+  font-size: 0.8333333333333334rem;
+  color: currentColor;
+}
+
+.c11::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c11::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c11:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c11::placeholder {
+  color: currentColor;
+  opacity: 0.5;
 }
 
 .c10 {
   background: none;
   outline: none;
   border: none;
-  width: 7.222222222222222rem;
-  line-height: 2.7777777777777777rem;
-  font-size: 0.8333333333333334rem;
-}
-
-.c10::-webkit-input-placeholder {
-  color: rgba(255,255,255,0.5);
-}
-
-.c10::-moz-placeholder {
-  color: rgba(255,255,255,0.5);
-}
-
-.c10:-ms-input-placeholder {
-  color: rgba(255,255,255,0.5);
-}
-
-.c10::placeholder {
-  color: rgba(255,255,255,0.5);
-}
-
-.c9 {
-  background: none;
-  outline: none;
-  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   height: 2.7777777777777777rem;
   margin-right: 0.2222222222222222rem;
   cursor: pointer;
 }
 
-.c9:hover,
-.c9:focus {
+.c10:hover,
+.c10:focus {
   opacity: 0.7;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
 }
 
-.c9:active {
+.c10:active {
   background: rgba(0,0,0,0.1);
 }
 
-.c9 svg {
+.c10 svg {
   width: 0.8888888888888888rem;
   height: 0.9444444444444444rem;
 }
 
-.c3 {
+.c10 svg path {
+  fill: currentColor;
+}
+
+.c4 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
-  width: 9.11111111111111rem;
-  height: 2.2222222222222223rem;
-  background-image: url(/static/nav-logo.png);
   background-position: center;
   background-size: contain;
+  background-image: url(/static/nav-logo.png);
+  width: 9.11111111111111rem;
+  height: 2.2222222222222223rem;
 }
 
-.c0 {
-  position: fixed;
-  left: 0;
+.c20 {
+  display: inline-block;
+  vertical-align: middle;
   box-sizing: border-box;
-  z-index: 3;
+  background-position: center;
+  background-size: contain;
+  background-image: url(/static/icon.png);
+  width: 5.555555555555555rem;
+  height: 1.6666666666666667rem;
+}
+
+.c18 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  min-width: 2.7777777777777777rem;
+  height: 2.7777777777777777rem;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background: rgba(0,0,0,0.07);
+}
+
+.c18:focus {
+  border: 0.1111111111111111rem solid currentColor;
+  border-radius: 0.1111111111111111rem;
+}
+
+.c18 svg {
+  display: inline-block;
+}
+
+.c18 svg path {
+  fill: currentColor;
+}
+
+.c21 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  min-width: 2.7777777777777777rem;
+  height: 2.7777777777777777rem;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.c21:focus {
+  border: 0.1111111111111111rem solid currentColor;
+  border-radius: 0.1111111111111111rem;
+}
+
+.c21 svg {
+  display: inline-block;
+}
+
+.c21 svg path {
+  fill: currentColor;
+}
+
+.c17 {
+  display: none;
+}
+
+.c23 {
+  position: absolute;
+  top: 2.7777777777777777rem;
+  left: 0;
+  right: 0;
+  height: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -194,9 +303,40 @@ exports[`Nav renders correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: space-between;
   justify-content: space-between;
+  padding: 0 1.1111111111111112rem;
+  -webkit-transition: height 0.1s;
+  transition: height 0.1s;
+  -webkit-user-select: none;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background: #efefef;
+  color: #868686;
+}
+
+.c19 {
+  display: inline-block;
+  vertical-align: center;
+  margin-right: 1.9444444444444444rem;
+}
+
+.c22 {
+  -webkit-transition: -webkit-transform 0.1s;
+  -webkit-transition: transform 0.1s;
+  transition: transform 0.1s;
+}
+
+.c24 {
+  padding-right: 1.1111111111111112rem;
+}
+
+.c0 {
+  position: fixed;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 3;
   width: 100%;
   height: 2.7777777777777777rem;
-  padding: 0 1.1111111111111112rem;
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 0.8333333333333334rem;
   font-weight: 500;
@@ -213,13 +353,29 @@ exports[`Nav renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: space-between;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  padding: 0 1.1111111111111112rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -234,13 +390,13 @@ exports[`Nav renders correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c2 {
+.c3 {
   display: inline-block;
   vertical-align: center;
   margin-right: 1.9444444444444444rem;
 }
 
-.c16 {
+.c25 {
   position: fixed;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -253,7 +409,6 @@ exports[`Nav renders correctly 1`] = `
   bottom: 0;
   right: auto;
   width: 16.666666666666668rem;
-  height: 100%;
   background: #efefef;
   box-sizing: border-box;
   color: inherit;
@@ -263,24 +418,24 @@ exports[`Nav renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c17 {
+.c26 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 1.3888888888888888rem;
 }
 
-.c18 {
+.c27 {
   margin-bottom: 1.6666666666666667rem;
 }
 
-.c19 {
+.c28 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
 }
 
-.c21 {
+.c30 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem 0.5555555555555556rem 3.0555555555555554rem;
   font-size: 0.9rem;
@@ -288,12 +443,36 @@ exports[`Nav renders correctly 1`] = `
 }
 
 @media (min-width:62.5em) {
-  .c20 {
+  .c29 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c20:hover {
+  .c29:hover {
     background: rgba(20,20,20,0.1);
+  }
+}
+
+@media (max-width:62.5em) {
+  .c17 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: space-between;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    height: 2.7777777777777777rem;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c1 {
+    display: none;
   }
 }
 
@@ -308,333 +487,743 @@ exports[`Nav renders correctly 1`] = `
             <div
               className="c1"
             >
-              <Styled(Link)>
-                <Link
+              <styled.div>
+                <div
                   className="c2"
-                  href="/"
-                  unstyled={true}
                 >
-                  <Link
-                    href="/"
-                  >
-                    <a
-                      className="c2"
+                  <Styled(Link)>
+                    <Link
+                      className="c3"
                       href="/"
-                      onClick={[Function]}
+                      unstyled={true}
                     >
-                      <styled.div>
-                        <div
+                      <Link
+                        href="/"
+                      >
+                        <a
                           className="c3"
-                        />
-                      </styled.div>
-                    </a>
-                  </Link>
-                </Link>
-              </Styled(Link)>
-              <NavLinks>
-                <styled.nav>
-                  <nav
-                    className="c4"
-                  >
-                    <Styled(Link)>
-                      <Link
-                        className="c5"
-                        unstyled={true}
-                      >
-                        <Link>
-                          <a
-                            className="c5"
-                            onClick={[Function]}
-                          >
-                            Concepts
-                          </a>
-                        </Link>
+                          href="/"
+                          onClick={[Function]}
+                        >
+                          <styled.div>
+                            <div
+                              className="c4"
+                            />
+                          </styled.div>
+                        </a>
                       </Link>
-                    </Styled(Link)>
-                    <styled.span>
-                      <span
-                        className="c6"
-                      />
-                    </styled.span>
-                    <Styled(Link)>
-                      <Link
+                    </Link>
+                  </Styled(Link)>
+                  <NavLinks>
+                    <styled.nav>
+                      <nav
                         className="c5"
-                        unstyled={true}
                       >
-                        <Link>
-                          <a
-                            className="c5"
-                            onClick={[Function]}
+                        <Styled(Link)>
+                          <Link
+                            className="c6"
+                            unstyled={true}
                           >
-                            Try it out
-                          </a>
-                        </Link>
-                      </Link>
-                    </Styled(Link)>
-                    <styled.span>
-                      <span
-                        className="c6"
-                      />
-                    </styled.span>
-                    <Styled(Link)>
-                      <Link
-                        className="c5"
-                        unstyled={true}
+                            <Link>
+                              <a
+                                className="c6"
+                                onClick={[Function]}
+                              >
+                                Concepts
+                              </a>
+                            </Link>
+                          </Link>
+                        </Styled(Link)>
+                        <styled.span>
+                          <span
+                            className="c7"
+                          />
+                        </styled.span>
+                        <Styled(Link)>
+                          <Link
+                            className="c6"
+                            unstyled={true}
+                          >
+                            <Link>
+                              <a
+                                className="c6"
+                                onClick={[Function]}
+                              >
+                                Try it out
+                              </a>
+                            </Link>
+                          </Link>
+                        </Styled(Link)>
+                        <styled.span>
+                          <span
+                            className="c7"
+                          />
+                        </styled.span>
+                        <Styled(Link)>
+                          <Link
+                            className="c6"
+                            unstyled={true}
+                          >
+                            <Link>
+                              <a
+                                className="c6"
+                                onClick={[Function]}
+                              >
+                                Documentation
+                              </a>
+                            </Link>
+                          </Link>
+                        </Styled(Link)>
+                      </nav>
+                    </styled.nav>
+                  </NavLinks>
+                </div>
+              </styled.div>
+              <styled.div>
+                <div
+                  className="c8"
+                >
+                  <Search>
+                    <styled.form>
+                      <form
+                        className="c9"
                       >
-                        <Link>
-                          <a
-                            className="c5"
-                            onClick={[Function]}
+                        <SearchButton>
+                          <styled.button>
+                            <button
+                              className="c10"
+                            >
+                              <svg
+                                height="16"
+                                width="15"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlnsXlink="http://www.w3.org/1999/xlink"
+                              >
+                                <title>
+                                  search
+                                </title>
+                                <use
+                                  fill="#FFF"
+                                  xlinkHref="#search-icon"
+                                />
+                                <defs>
+                                  <path
+                                    d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
+                                    id="search-icon"
+                                  />
+                                </defs>
+                              </svg>
+                            </button>
+                          </styled.button>
+                        </SearchButton>
+                        <styled.input
+                          placeholder="Search ..."
+                        >
+                          <input
+                            className="c11"
+                            placeholder="Search ..."
+                          />
+                        </styled.input>
+                      </form>
+                    </styled.form>
+                  </Search>
+                  <styled.span>
+                    <span
+                      className="c7"
+                    />
+                  </styled.span>
+                  <Social>
+                    <styled.nav>
+                      <nav
+                        className="c12"
+                      >
+                        <Styled(Link)
+                          href="https://spectrum.chat/styled-components/"
+                        >
+                          <Link
+                            className="c13"
+                            href="https://spectrum.chat/styled-components/"
+                            unstyled={true}
                           >
-                            Documentation
-                          </a>
-                        </Link>
-                      </Link>
-                    </Styled(Link)>
-                  </nav>
-                </styled.nav>
-              </NavLinks>
+                            <Link
+                              href="https://spectrum.chat/styled-components/"
+                            >
+                              <a
+                                className="c13"
+                                href="https://spectrum.chat/styled-components/"
+                                onClick={[Function]}
+                              >
+                                <Spectrum>
+                                  <styled.svg
+                                    height="14"
+                                    viewBox="0 0 15 15"
+                                    width="14"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                                  >
+                                    <svg
+                                      className="c14"
+                                      height="14"
+                                      viewBox="0 0 15 15"
+                                      width="14"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                                    >
+                                      <title>
+                                        spectrum-logo
+                                      </title>
+                                      <use
+                                        fill="#FFF"
+                                        xlinkHref="#spectrum"
+                                      />
+                                      <defs>
+                                        <path
+                                          d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
+                                          id="spectrum"
+                                        />
+                                      </defs>
+                                    </svg>
+                                  </styled.svg>
+                                </Spectrum>
+                              </a>
+                            </Link>
+                          </Link>
+                        </Styled(Link)>
+                        <Styled(Link)
+                          href="https://twitter.com/someone"
+                        >
+                          <Link
+                            className="c13"
+                            href="https://twitter.com/someone"
+                            unstyled={true}
+                          >
+                            <Link
+                              href="https://twitter.com/someone"
+                            >
+                              <a
+                                className="c13"
+                                href="https://twitter.com/someone"
+                                onClick={[Function]}
+                              >
+                                <Twitter>
+                                  <styled.svg
+                                    height="15"
+                                    viewBox="0 0 19 15"
+                                    width="19"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                                  >
+                                    <svg
+                                      className="c15"
+                                      height="15"
+                                      viewBox="0 0 19 15"
+                                      width="19"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                                    >
+                                      <title>
+                                        twitter-logo
+                                      </title>
+                                      <use
+                                        fill="#FFF"
+                                        xlinkHref="#b"
+                                      />
+                                      <defs>
+                                        <path
+                                          d="M18.2 1.8l-2 .6c.6-.5 1.2-1.2 1.5-2l-2.4.8C14.7.5 13.7 0 12.6 0 10.6 0 9 1.7 9 3.8v1C6 4.4 3 3 1.3.8 1 1 .8 1.8.8 2.4c0 1.3.6 2.5 1.6 3-.6 0-1.2 0-1.7-.3 0 2 1.3 3.7 3 4H2c.5 1.6 2 2.7 3.5 2.7-1.2 1-3 1.6-4.6 1.6H0c1.7 1 3.6 1.7 5.7 1.7 7 0 10.7-6 10.7-11v-.5c.7-.5 1.3-1.2 1.8-2z"
+                                          id="b"
+                                        />
+                                      </defs>
+                                    </svg>
+                                  </styled.svg>
+                                </Twitter>
+                              </a>
+                            </Link>
+                          </Link>
+                        </Styled(Link)>
+                        <Styled(Link)
+                          href="https://github.com/styled-components"
+                        >
+                          <Link
+                            className="c13"
+                            href="https://github.com/styled-components"
+                            unstyled={true}
+                          >
+                            <Link
+                              href="https://github.com/styled-components"
+                            >
+                              <a
+                                className="c13"
+                                href="https://github.com/styled-components"
+                                onClick={[Function]}
+                              >
+                                <Github>
+                                  <styled.svg
+                                    height="17"
+                                    viewBox="0 0 17 17"
+                                    width="17"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                                  >
+                                    <svg
+                                      className="c16"
+                                      height="17"
+                                      viewBox="0 0 17 17"
+                                      width="17"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                                    >
+                                      <title>
+                                        github-logo
+                                      </title>
+                                      <use
+                                        fill="#FFF"
+                                        xlinkHref="#a"
+                                      />
+                                      <defs>
+                                        <path
+                                          d="M15.86 4.34c-.76-1.335-1.79-2.392-3.093-3.17C11.463.39 10.042 0 8.5 0 6.958 0 5.536.39 4.233 1.17 2.93 1.947 1.9 3.004 1.14 4.34.38 5.674 0 7.132 0 8.713c0 1.898.54 3.606 1.62 5.122 1.082 1.517 2.48 2.566 4.19 3.148.2.038.347.01.443-.08.096-.09.144-.203.144-.34l-.006-.612v-1l-.25.05c-.16.03-.36.05-.61.04-.24 0-.5-.03-.77-.08-.26-.05-.51-.16-.74-.34-.23-.18-.39-.41-.49-.7l-.11-.26c-.07-.17-.19-.36-.35-.58-.16-.21-.32-.35-.48-.43l-.08-.05c-.05-.04-.09-.08-.14-.132-.04-.053-.08-.106-.1-.16-.02-.053 0-.097.06-.13.06-.035.17-.052.32-.052l.22.036c.15.03.33.12.55.27.22.154.4.35.54.59.17.31.375.55.615.71.24.164.484.245.727.245s.456-.02.63-.056c.18-.037.346-.094.5-.17.067-.507.248-.896.54-1.17-.42-.043-.795-.112-1.13-.203-.34-.09-.685-.24-1.04-.44-.36-.2-.657-.455-.894-.76-.234-.3-.43-.7-.58-1.19-.15-.49-.225-1.06-.225-1.7 0-.917.29-1.695.875-2.34-.27-.69-.244-1.46.08-2.313.214-.07.53-.015.95.155.42.17.73.314.926.435.195.12.35.225.47.308.684-.2 1.394-.3 2.124-.3s1.44.1 2.124.297l.42-.27c.288-.184.628-.35 1.02-.5.39-.15.69-.195.895-.126.334.857.364 1.63.09 2.317.584.645.875 1.42.875 2.34 0 .64-.072 1.21-.223 1.707-.15.5-.343.897-.583 1.196-.24.298-.54.55-.896.754-.355.202-.702.35-1.04.44-.334.09-.712.16-1.132.205.38.34.57.875.57 1.61v2.39c0 .136.045.25.137.34.096.09.24.118.44.08 1.71-.582 3.11-1.632 4.19-3.15 1.06-1.525 1.6-3.235 1.6-5.13 0-1.58-.38-3.04-1.14-4.37z"
+                                          id="a"
+                                        />
+                                      </defs>
+                                    </svg>
+                                  </styled.svg>
+                                </Github>
+                              </a>
+                            </Link>
+                          </Link>
+                        </Styled(Link)>
+                      </nav>
+                    </styled.nav>
+                  </Social>
+                </div>
+              </styled.div>
             </div>
           </styled.div>
-          <styled.div>
-            <div
-              className="c7"
-            >
-              <Search>
-                <styled.form>
-                  <form
-                    className="c8"
+          <MobileNavbar>
+            <styled.div>
+              <div
+                className="c17"
+              >
+                <styled.button
+                  active={true}
+                >
+                  <button
+                    className="c18"
                   >
-                    <SearchButton>
-                      <styled.button>
-                        <button
-                          className="c9"
+                    <CloseIcon>
+                      <svg
+                        height="15"
+                        width="15"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                      >
+                        <title>
+                          close
+                        </title>
+                        <use
+                          fill="#FFF"
+                          transform="translate(1 1)"
+                          xlinkHref="#close"
+                        />
+                        <defs>
+                          <path
+                            d="M-.7.7l13 13 1.4-1.4-13-13L-.7.7zm13-1.4l-13 13 1.4 1.4 13-13-1.4-1.4z"
+                            id="close"
+                          />
+                        </defs>
+                      </svg>
+                    </CloseIcon>
+                  </button>
+                </styled.button>
+                <Styled(Link)>
+                  <Link
+                    className="c19"
+                    href="/"
+                    unstyled={true}
+                  >
+                    <Link
+                      href="/"
+                    >
+                      <a
+                        className="c19"
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        <styled.div
+                          compact={true}
+                        >
+                          <div
+                            className="c20"
+                          />
+                        </styled.div>
+                      </a>
+                    </Link>
+                  </Link>
+                </Styled(Link)>
+                <styled.button
+                  active={false}
+                  onClick={[Function]}
+                >
+                  <button
+                    className="c21"
+                    onClick={[Function]}
+                  >
+                    <ArrowIcon
+                      rotate={false}
+                    >
+                      <styled.div
+                        rotate={false}
+                      >
+                        <div
+                          className="c22"
+                          rotate={false}
                         >
                           <svg
-                            height="16"
-                            width="15"
+                            height="8"
+                            width="12"
                             xmlns="http://www.w3.org/2000/svg"
                             xmlnsXlink="http://www.w3.org/1999/xlink"
                           >
                             <title>
-                              search
+                              arrow down
                             </title>
                             <use
                               fill="#FFF"
-                              xlinkHref="#search-icon"
+                              transform="translate(1 1)"
+                              xlinkHref="#menuArrow"
                             />
                             <defs>
                               <path
-                                d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
-                                id="search-icon"
+                                d="M5 5l-.7.7.7.7.7-.7L5 5zM9.3-.7l-5 5 1.4 1.4 5-5L9.3-.7zm-3.6 5l-5-5L-.7.7l5 5 1.4-1.4z"
+                                id="menuArrow"
                               />
                             </defs>
                           </svg>
-                        </button>
-                      </styled.button>
-                    </SearchButton>
-                    <styled.input
-                      placeholder="Search ..."
-                    >
-                      <input
-                        className="c10"
-                        placeholder="Search ..."
-                      />
-                    </styled.input>
-                  </form>
-                </styled.form>
-              </Search>
-              <styled.span>
-                <span
-                  className="c6"
-                />
-              </styled.span>
-              <Social>
-                <styled.nav>
-                  <nav
-                    className="c11"
+                        </div>
+                      </styled.div>
+                    </ArrowIcon>
+                  </button>
+                </styled.button>
+                <styled.div
+                  open={false}
+                >
+                  <div
+                    className="c23"
+                    open={false}
                   >
-                    <Styled(Link)
-                      href="https://spectrum.chat/styled-components/"
-                    >
-                      <Link
-                        className="c12"
-                        href="https://spectrum.chat/styled-components/"
-                        unstyled={true}
-                      >
-                        <Link
-                          href="https://spectrum.chat/styled-components/"
+                    <NavLinks>
+                      <styled.nav>
+                        <nav
+                          className="c5"
                         >
-                          <a
-                            className="c12"
-                            href="https://spectrum.chat/styled-components/"
-                            onClick={[Function]}
-                          >
-                            <Spectrum>
-                              <styled.svg
-                                height="14"
-                                viewBox="0 0 15 15"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlnsXlink="http://www.w3.org/1999/xlink"
+                          <Styled(Link)>
+                            <Link
+                              className="c6"
+                              unstyled={true}
+                            >
+                              <Link>
+                                <a
+                                  className="c6"
+                                  onClick={[Function]}
+                                >
+                                  Concepts
+                                </a>
+                              </Link>
+                            </Link>
+                          </Styled(Link)>
+                          <styled.span>
+                            <span
+                              className="c7"
+                            />
+                          </styled.span>
+                          <Styled(Link)>
+                            <Link
+                              className="c6"
+                              unstyled={true}
+                            >
+                              <Link>
+                                <a
+                                  className="c6"
+                                  onClick={[Function]}
+                                >
+                                  Try it out
+                                </a>
+                              </Link>
+                            </Link>
+                          </Styled(Link)>
+                          <styled.span>
+                            <span
+                              className="c7"
+                            />
+                          </styled.span>
+                          <Styled(Link)>
+                            <Link
+                              className="c6"
+                              unstyled={true}
+                            >
+                              <Link>
+                                <a
+                                  className="c6"
+                                  onClick={[Function]}
+                                >
+                                  Documentation
+                                </a>
+                              </Link>
+                            </Link>
+                          </Styled(Link)>
+                        </nav>
+                      </styled.nav>
+                    </NavLinks>
+                    <styled.span>
+                      <span
+                        className="c7"
+                      />
+                    </styled.span>
+                    <Search>
+                      <styled.form>
+                        <form
+                          className="c9"
+                        >
+                          <SearchButton>
+                            <styled.button>
+                              <button
+                                className="c10"
                               >
                                 <svg
-                                  className="c13"
-                                  height="14"
-                                  viewBox="0 0 15 15"
-                                  width="14"
+                                  height="16"
+                                  width="15"
                                   xmlns="http://www.w3.org/2000/svg"
                                   xmlnsXlink="http://www.w3.org/1999/xlink"
                                 >
                                   <title>
-                                    spectrum-logo
+                                    search
                                   </title>
                                   <use
                                     fill="#FFF"
-                                    xlinkHref="#spectrum"
+                                    xlinkHref="#search-icon"
                                   />
                                   <defs>
                                     <path
-                                      d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
-                                      id="spectrum"
+                                      d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
+                                      id="search-icon"
                                     />
                                   </defs>
                                 </svg>
-                              </styled.svg>
-                            </Spectrum>
-                          </a>
-                        </Link>
-                      </Link>
-                    </Styled(Link)>
-                    <Styled(Link)
-                      href="https://twitter.com/someone"
-                    >
-                      <Link
-                        className="c12"
-                        href="https://twitter.com/someone"
-                        unstyled={true}
-                      >
-                        <Link
-                          href="https://twitter.com/someone"
-                        >
-                          <a
-                            className="c12"
-                            href="https://twitter.com/someone"
-                            onClick={[Function]}
+                              </button>
+                            </styled.button>
+                          </SearchButton>
+                          <styled.input
+                            placeholder="Search ..."
                           >
-                            <Twitter>
-                              <styled.svg
-                                height="15"
-                                viewBox="0 0 19 15"
-                                width="19"
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlnsXlink="http://www.w3.org/1999/xlink"
-                              >
-                                <svg
-                                  className="c14"
-                                  height="15"
-                                  viewBox="0 0 19 15"
-                                  width="19"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                                >
-                                  <title>
-                                    twitter-logo
-                                  </title>
-                                  <use
-                                    fill="#FFF"
-                                    xlinkHref="#b"
-                                  />
-                                  <defs>
-                                    <path
-                                      d="M18.2 1.8l-2 .6c.6-.5 1.2-1.2 1.5-2l-2.4.8C14.7.5 13.7 0 12.6 0 10.6 0 9 1.7 9 3.8v1C6 4.4 3 3 1.3.8 1 1 .8 1.8.8 2.4c0 1.3.6 2.5 1.6 3-.6 0-1.2 0-1.7-.3 0 2 1.3 3.7 3 4H2c.5 1.6 2 2.7 3.5 2.7-1.2 1-3 1.6-4.6 1.6H0c1.7 1 3.6 1.7 5.7 1.7 7 0 10.7-6 10.7-11v-.5c.7-.5 1.3-1.2 1.8-2z"
-                                      id="b"
-                                    />
-                                  </defs>
-                                </svg>
-                              </styled.svg>
-                            </Twitter>
-                          </a>
-                        </Link>
-                      </Link>
-                    </Styled(Link)>
-                    <Styled(Link)
-                      href="https://github.com/styled-components"
-                    >
-                      <Link
-                        className="c12"
-                        href="https://github.com/styled-components"
-                        unstyled={true}
+                            <input
+                              className="c11"
+                              placeholder="Search ..."
+                            />
+                          </styled.input>
+                        </form>
+                      </styled.form>
+                    </Search>
+                    <styled.span>
+                      <span
+                        className="c7"
+                      />
+                    </styled.span>
+                    <Styled(Social)>
+                      <Social
+                        className="c24"
                       >
-                        <Link
-                          href="https://github.com/styled-components"
+                        <styled.nav
+                          className="c24"
                         >
-                          <a
-                            className="c12"
-                            href="https://github.com/styled-components"
-                            onClick={[Function]}
+                          <nav
+                            className="c24 c12"
                           >
-                            <Github>
-                              <styled.svg
-                                height="17"
-                                viewBox="0 0 17 17"
-                                width="17"
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlnsXlink="http://www.w3.org/1999/xlink"
+                            <Styled(Link)
+                              href="https://spectrum.chat/styled-components/"
+                            >
+                              <Link
+                                className="c13"
+                                href="https://spectrum.chat/styled-components/"
+                                unstyled={true}
                               >
-                                <svg
-                                  className="c15"
-                                  height="17"
-                                  viewBox="0 0 17 17"
-                                  width="17"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                                <Link
+                                  href="https://spectrum.chat/styled-components/"
                                 >
-                                  <title>
-                                    github-logo
-                                  </title>
-                                  <use
-                                    fill="#FFF"
-                                    xlinkHref="#a"
-                                  />
-                                  <defs>
-                                    <path
-                                      d="M15.86 4.34c-.76-1.335-1.79-2.392-3.093-3.17C11.463.39 10.042 0 8.5 0 6.958 0 5.536.39 4.233 1.17 2.93 1.947 1.9 3.004 1.14 4.34.38 5.674 0 7.132 0 8.713c0 1.898.54 3.606 1.62 5.122 1.082 1.517 2.48 2.566 4.19 3.148.2.038.347.01.443-.08.096-.09.144-.203.144-.34l-.006-.612v-1l-.25.05c-.16.03-.36.05-.61.04-.24 0-.5-.03-.77-.08-.26-.05-.51-.16-.74-.34-.23-.18-.39-.41-.49-.7l-.11-.26c-.07-.17-.19-.36-.35-.58-.16-.21-.32-.35-.48-.43l-.08-.05c-.05-.04-.09-.08-.14-.132-.04-.053-.08-.106-.1-.16-.02-.053 0-.097.06-.13.06-.035.17-.052.32-.052l.22.036c.15.03.33.12.55.27.22.154.4.35.54.59.17.31.375.55.615.71.24.164.484.245.727.245s.456-.02.63-.056c.18-.037.346-.094.5-.17.067-.507.248-.896.54-1.17-.42-.043-.795-.112-1.13-.203-.34-.09-.685-.24-1.04-.44-.36-.2-.657-.455-.894-.76-.234-.3-.43-.7-.58-1.19-.15-.49-.225-1.06-.225-1.7 0-.917.29-1.695.875-2.34-.27-.69-.244-1.46.08-2.313.214-.07.53-.015.95.155.42.17.73.314.926.435.195.12.35.225.47.308.684-.2 1.394-.3 2.124-.3s1.44.1 2.124.297l.42-.27c.288-.184.628-.35 1.02-.5.39-.15.69-.195.895-.126.334.857.364 1.63.09 2.317.584.645.875 1.42.875 2.34 0 .64-.072 1.21-.223 1.707-.15.5-.343.897-.583 1.196-.24.298-.54.55-.896.754-.355.202-.702.35-1.04.44-.334.09-.712.16-1.132.205.38.34.57.875.57 1.61v2.39c0 .136.045.25.137.34.096.09.24.118.44.08 1.71-.582 3.11-1.632 4.19-3.15 1.06-1.525 1.6-3.235 1.6-5.13 0-1.58-.38-3.04-1.14-4.37z"
-                                      id="a"
-                                    />
-                                  </defs>
-                                </svg>
-                              </styled.svg>
-                            </Github>
-                          </a>
-                        </Link>
-                      </Link>
-                    </Styled(Link)>
-                  </nav>
-                </styled.nav>
-              </Social>
-            </div>
-          </styled.div>
+                                  <a
+                                    className="c13"
+                                    href="https://spectrum.chat/styled-components/"
+                                    onClick={[Function]}
+                                  >
+                                    <Spectrum>
+                                      <styled.svg
+                                        height="14"
+                                        viewBox="0 0 15 15"
+                                        width="14"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                                      >
+                                        <svg
+                                          className="c14"
+                                          height="14"
+                                          viewBox="0 0 15 15"
+                                          width="14"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          xmlnsXlink="http://www.w3.org/1999/xlink"
+                                        >
+                                          <title>
+                                            spectrum-logo
+                                          </title>
+                                          <use
+                                            fill="#FFF"
+                                            xlinkHref="#spectrum"
+                                          />
+                                          <defs>
+                                            <path
+                                              d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
+                                              id="spectrum"
+                                            />
+                                          </defs>
+                                        </svg>
+                                      </styled.svg>
+                                    </Spectrum>
+                                  </a>
+                                </Link>
+                              </Link>
+                            </Styled(Link)>
+                            <Styled(Link)
+                              href="https://twitter.com/someone"
+                            >
+                              <Link
+                                className="c13"
+                                href="https://twitter.com/someone"
+                                unstyled={true}
+                              >
+                                <Link
+                                  href="https://twitter.com/someone"
+                                >
+                                  <a
+                                    className="c13"
+                                    href="https://twitter.com/someone"
+                                    onClick={[Function]}
+                                  >
+                                    <Twitter>
+                                      <styled.svg
+                                        height="15"
+                                        viewBox="0 0 19 15"
+                                        width="19"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                                      >
+                                        <svg
+                                          className="c15"
+                                          height="15"
+                                          viewBox="0 0 19 15"
+                                          width="19"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          xmlnsXlink="http://www.w3.org/1999/xlink"
+                                        >
+                                          <title>
+                                            twitter-logo
+                                          </title>
+                                          <use
+                                            fill="#FFF"
+                                            xlinkHref="#b"
+                                          />
+                                          <defs>
+                                            <path
+                                              d="M18.2 1.8l-2 .6c.6-.5 1.2-1.2 1.5-2l-2.4.8C14.7.5 13.7 0 12.6 0 10.6 0 9 1.7 9 3.8v1C6 4.4 3 3 1.3.8 1 1 .8 1.8.8 2.4c0 1.3.6 2.5 1.6 3-.6 0-1.2 0-1.7-.3 0 2 1.3 3.7 3 4H2c.5 1.6 2 2.7 3.5 2.7-1.2 1-3 1.6-4.6 1.6H0c1.7 1 3.6 1.7 5.7 1.7 7 0 10.7-6 10.7-11v-.5c.7-.5 1.3-1.2 1.8-2z"
+                                              id="b"
+                                            />
+                                          </defs>
+                                        </svg>
+                                      </styled.svg>
+                                    </Twitter>
+                                  </a>
+                                </Link>
+                              </Link>
+                            </Styled(Link)>
+                            <Styled(Link)
+                              href="https://github.com/styled-components"
+                            >
+                              <Link
+                                className="c13"
+                                href="https://github.com/styled-components"
+                                unstyled={true}
+                              >
+                                <Link
+                                  href="https://github.com/styled-components"
+                                >
+                                  <a
+                                    className="c13"
+                                    href="https://github.com/styled-components"
+                                    onClick={[Function]}
+                                  >
+                                    <Github>
+                                      <styled.svg
+                                        height="17"
+                                        viewBox="0 0 17 17"
+                                        width="17"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                                      >
+                                        <svg
+                                          className="c16"
+                                          height="17"
+                                          viewBox="0 0 17 17"
+                                          width="17"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          xmlnsXlink="http://www.w3.org/1999/xlink"
+                                        >
+                                          <title>
+                                            github-logo
+                                          </title>
+                                          <use
+                                            fill="#FFF"
+                                            xlinkHref="#a"
+                                          />
+                                          <defs>
+                                            <path
+                                              d="M15.86 4.34c-.76-1.335-1.79-2.392-3.093-3.17C11.463.39 10.042 0 8.5 0 6.958 0 5.536.39 4.233 1.17 2.93 1.947 1.9 3.004 1.14 4.34.38 5.674 0 7.132 0 8.713c0 1.898.54 3.606 1.62 5.122 1.082 1.517 2.48 2.566 4.19 3.148.2.038.347.01.443-.08.096-.09.144-.203.144-.34l-.006-.612v-1l-.25.05c-.16.03-.36.05-.61.04-.24 0-.5-.03-.77-.08-.26-.05-.51-.16-.74-.34-.23-.18-.39-.41-.49-.7l-.11-.26c-.07-.17-.19-.36-.35-.58-.16-.21-.32-.35-.48-.43l-.08-.05c-.05-.04-.09-.08-.14-.132-.04-.053-.08-.106-.1-.16-.02-.053 0-.097.06-.13.06-.035.17-.052.32-.052l.22.036c.15.03.33.12.55.27.22.154.4.35.54.59.17.31.375.55.615.71.24.164.484.245.727.245s.456-.02.63-.056c.18-.037.346-.094.5-.17.067-.507.248-.896.54-1.17-.42-.043-.795-.112-1.13-.203-.34-.09-.685-.24-1.04-.44-.36-.2-.657-.455-.894-.76-.234-.3-.43-.7-.58-1.19-.15-.49-.225-1.06-.225-1.7 0-.917.29-1.695.875-2.34-.27-.69-.244-1.46.08-2.313.214-.07.53-.015.95.155.42.17.73.314.926.435.195.12.35.225.47.308.684-.2 1.394-.3 2.124-.3s1.44.1 2.124.297l.42-.27c.288-.184.628-.35 1.02-.5.39-.15.69-.195.895-.126.334.857.364 1.63.09 2.317.584.645.875 1.42.875 2.34 0 .64-.072 1.21-.223 1.707-.15.5-.343.897-.583 1.196-.24.298-.54.55-.896.754-.355.202-.702.35-1.04.44-.334.09-.712.16-1.132.205.38.34.57.875.57 1.61v2.39c0 .136.045.25.137.34.096.09.24.118.44.08 1.71-.582 3.11-1.632 4.19-3.15 1.06-1.525 1.6-3.235 1.6-5.13 0-1.58-.38-3.04-1.14-4.37z"
+                                              id="a"
+                                            />
+                                          </defs>
+                                        </svg>
+                                      </styled.svg>
+                                    </Github>
+                                  </a>
+                                </Link>
+                              </Link>
+                            </Styled(Link)>
+                          </nav>
+                        </styled.nav>
+                      </Social>
+                    </Styled(Social)>
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </MobileNavbar>
         </nav>
       </styled.nav>
     </Navbar>
     <styled.nav>
       <styled.nav>
         <nav
-          className="c16"
+          className="c25"
         >
           <SidebarMenu>
             <styled.div>
               <div
-                className="c17"
+                className="c26"
               >
                 <styled.div>
                   <div
-                    className="c18"
+                    className="c27"
                   >
                     <styled.h4>
                       <h4
-                        className="c19"
+                        className="c28"
                       >
                         <Link
                           href="/docs/basics"
@@ -647,7 +1236,7 @@ exports[`Nav renders correctly 1`] = `
                               onClick={[Function]}
                             >
                               <a
-                                className="c20"
+                                className="c29"
                                 href="/docs/basics"
                                 onClick={[Function]}
                               >
@@ -660,13 +1249,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h4>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/basics#motivation"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/basics#motivation"
                           >
                             Motivation
@@ -676,13 +1265,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/basics#installation"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/basics#installation"
                           >
                             Installation
@@ -692,13 +1281,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/basics#getting-started"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/basics#getting-started"
                           >
                             Getting Started
@@ -708,13 +1297,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/basics#passed-props"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/basics#passed-props"
                           >
                             Passed props
@@ -724,13 +1313,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/basics#adapting-based-on-props"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/basics#adapting-based-on-props"
                           >
                             Adapting based on props
@@ -740,13 +1329,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/basics#styling-any-components"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/basics#styling-any-components"
                           >
                             Styling any components
@@ -756,13 +1345,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/basics#extending-styles"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/basics#extending-styles"
                           >
                             Extending styles
@@ -772,13 +1361,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/basics#attaching-additional-props"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/basics#attaching-additional-props"
                           >
                             Attaching additional props
@@ -788,13 +1377,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/basics#animations"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/basics#animations"
                           >
                             Animations
@@ -804,13 +1393,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/basics#react-native"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/basics#react-native"
                           >
                             React Native
@@ -822,11 +1411,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c18"
+                    className="c27"
                   >
                     <styled.h4>
                       <h4
-                        className="c19"
+                        className="c28"
                       >
                         <Link
                           href="/docs/advanced"
@@ -839,7 +1428,7 @@ exports[`Nav renders correctly 1`] = `
                               onClick={[Function]}
                             >
                               <a
-                                className="c20"
+                                className="c29"
                                 href="/docs/advanced"
                                 onClick={[Function]}
                               >
@@ -852,13 +1441,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h4>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/advanced#theming"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/advanced#theming"
                           >
                             Theming
@@ -868,13 +1457,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/advanced#refs"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/advanced#refs"
                           >
                             Refs
@@ -884,13 +1473,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/advanced#security"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/advanced#security"
                           >
                             Security
@@ -900,13 +1489,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/advanced#existing-css"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/advanced#existing-css"
                           >
                             Existing CSS
@@ -916,13 +1505,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/advanced#media-templates"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/advanced#media-templates"
                           >
                             Media Templates
@@ -932,13 +1521,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/advanced#tagged-template-literals"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/advanced#tagged-template-literals"
                           >
                             Tagged Template Literals
@@ -948,13 +1537,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/advanced#server-side-rendering"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/advanced#server-side-rendering"
                           >
                             Server Side Rendering
@@ -966,11 +1555,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c18"
+                    className="c27"
                   >
                     <styled.h4>
                       <h4
-                        className="c19"
+                        className="c28"
                       >
                         <Link
                           href="/docs/api"
@@ -983,7 +1572,7 @@ exports[`Nav renders correctly 1`] = `
                               onClick={[Function]}
                             >
                               <a
-                                className="c20"
+                                className="c29"
                                 href="/docs/api"
                                 onClick={[Function]}
                               >
@@ -996,13 +1585,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h4>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/api#primary"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/api#primary"
                           >
                             Primary
@@ -1012,13 +1601,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/api#helpers"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/api#helpers"
                           >
                             Helpers
@@ -1028,13 +1617,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/api#supported-css"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/api#supported-css"
                           >
                             Supported CSS
@@ -1044,13 +1633,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/api#flow"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/api#flow"
                           >
                             Flow
@@ -1060,13 +1649,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/api#typescript"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/api#typescript"
                           >
                             TypeScript
@@ -1078,11 +1667,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c18"
+                    className="c27"
                   >
                     <styled.h4>
                       <h4
-                        className="c19"
+                        className="c28"
                       >
                         <Link
                           href="/docs/tooling"
@@ -1095,7 +1684,7 @@ exports[`Nav renders correctly 1`] = `
                               onClick={[Function]}
                             >
                               <a
-                                className="c20"
+                                className="c29"
                                 href="/docs/tooling"
                                 onClick={[Function]}
                               >
@@ -1108,13 +1697,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h4>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/tooling#babel-plugin"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/tooling#babel-plugin"
                           >
                             Babel Plugin
@@ -1124,13 +1713,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/tooling#test-utilities"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/tooling#test-utilities"
                           >
                             Test Utilities
@@ -1140,13 +1729,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/tooling#stylelint"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/tooling#stylelint"
                           >
                             Stylelint
@@ -1158,11 +1747,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c18"
+                    className="c27"
                   >
                     <styled.h4>
                       <h4
-                        className="c19"
+                        className="c28"
                       >
                         <Link
                           href="/docs/faqs"
@@ -1175,7 +1764,7 @@ exports[`Nav renders correctly 1`] = `
                               onClick={[Function]}
                             >
                               <a
-                                className="c20"
+                                className="c29"
                                 href="/docs/faqs"
                                 onClick={[Function]}
                               >
@@ -1188,13 +1777,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h4>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/faqs#can-i-nest-rules"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/faqs#can-i-nest-rules"
                           >
                             Can I nest rules?
@@ -1204,13 +1793,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/faqs#can-i-refer-to-other-components"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/faqs#can-i-refer-to-other-components"
                           >
                             Can I refer to other components?
@@ -1220,13 +1809,13 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                     <styled.h5>
                       <h5
-                        className="c21"
+                        className="c30"
                       >
                         <styled.a
                           href="/docs/faqs#can-i-use-css-frameworks"
                         >
                           <a
-                            className="c20"
+                            className="c29"
                             href="/docs/faqs#can-i-use-css-frameworks"
                           >
                             Can I use css frameworks?

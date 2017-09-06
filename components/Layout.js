@@ -22,8 +22,7 @@ export const Content = styled.div`
   transition: transform 150ms ease-out;
 
   ${mobile(css`
-    padding: ${rem(30)} ${rem(20)};
-    padding-top: ${rem(70)};
+    padding: ${rem(70)} ${rem(20)} ${rem(30)} ${rem(20)};
 
     ${p => p.moveRight && css`
       transform: translateX(${rem(sidebarWidth)});

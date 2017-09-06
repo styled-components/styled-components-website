@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavLinks renders correctly 1`] = `
+.c2 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 0.2777777777777778rem;
+  height: 0.2777777777777778rem;
+  margin: 0 0.8333333333333334rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: 2.7777777777777777rem;
+  -webkit-transition: opacity 200ms,transfrom 200ms;
+  transition: opacity 200ms,transfrom 200ms;
+  cursor: pointer;
+  -webkit-letter-spacing: 0.022222222222222223rem color:currentColor;
+  -moz-letter-spacing: 0.022222222222222223rem color:currentColor;
+  -ms-letter-spacing: 0.022222222222222223rem color:currentColor;
+  letter-spacing: 0.022222222222222223rem color:currentColor;
+}
+
+.c1:hover,
+.c1:focus {
+  opacity: 0.8;
+}
+
+.c1:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+<nav
+  className="c0"
+>
+  <a
+    className="c1"
+    href={undefined}
+    onClick={[Function]}
+  >
+    Concepts
+  </a>
+  <span
+    className="c2"
+  />
+  <a
+    className="c1"
+    href={undefined}
+    onClick={[Function]}
+  >
+    Try it out
+  </a>
+  <span
+    className="c2"
+  />
+  <a
+    className="c1"
+    href={undefined}
+    onClick={[Function]}
+  >
+    Documentation
+  </a>
+</nav>
+`;

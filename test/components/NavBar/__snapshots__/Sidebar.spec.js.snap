@@ -14,7 +14,6 @@ exports[`Sidebar renders correctly 1`] = `
   bottom: 0;
   right: auto;
   width: 16.666666666666668rem;
-  height: 100%;
   background: #efefef;
   box-sizing: border-box;
   color: inherit;

@@ -5,11 +5,11 @@ exports[`Logo renders correctly 1`] = `
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
-  width: 9.11111111111111rem;
-  height: 2.2222222222222223rem;
-  background-image: url(/static/nav-logo.png);
   background-position: center;
   background-size: contain;
+  background-image: url(/static/nav-logo.png);
+  width: 9.11111111111111rem;
+  height: 2.2222222222222223rem;
 }
 
 <div

@@ -1,16 +1,18 @@
 import React, { PureComponent } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import rem from '../../utils/rem'
 import { violetRed } from '../../utils/colors'
 import { navbarHeight } from '../../utils/sizes'
 import { headerFont } from '../../utils/fonts'
+import { mobile } from '../../utils/media'
 import Link from '../Link'
 import NavLinks from './NavLinks'
 import Social from './Social'
 import Search from './Search'
 import Logo from './Logo'
 import NavSeparator from './NavSeparator'
+import MobileNavbar from './MobileNavbar'
 
 const Wrapper = styled.nav`
   position: fixed;
@@ -18,19 +20,25 @@ const Wrapper = styled.nav`
   box-sizing: border-box;
   z-index: 3;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   width: 100%;
   height: ${rem(navbarHeight)};
-  padding: 0 ${rem(20)};
 
   font-family: ${headerFont};
   font-size: ${rem(15)};
   font-weight: 500;
   background: ${violetRed};
   color: white;
+`
+
+const NormalNavbar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 ${rem(20)};
+
+  ${mobile(css`
+    display: none;
+  `)}
 `
 
 const StartWrapper = styled.div`
@@ -56,21 +64,30 @@ const LogoLink = styled(Link).attrs({
 
 class Navbar extends PureComponent {
   render() {
+    const { onFold, isFolded } = this.props
+
     return (
       <Wrapper>
-        <StartWrapper>
-          <LogoLink>
-            <Logo />
-          </LogoLink>
+        <NormalNavbar>
+          <StartWrapper>
+            <LogoLink>
+              <Logo />
+            </LogoLink>
 
-          <NavLinks />
-        </StartWrapper>
+            <NavLinks />
+          </StartWrapper>
 
-        <EndWrapper>
-          <Search />
-          <NavSeparator />
-          <Social />
-        </EndWrapper>
+          <EndWrapper>
+            <Search />
+            <NavSeparator />
+            <Social />
+          </EndWrapper>
+        </NormalNavbar>
+
+        <MobileNavbar
+          isFolded={isFolded}
+          onFold={onFold}
+        />
       </Wrapper>
     )
   }

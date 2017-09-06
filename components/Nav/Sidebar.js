@@ -18,9 +18,7 @@ const Sidebar = styled.nav`
   top: ${rem(navbarHeight)};
   bottom: 0;
   right: auto;
-
   width: ${rem(sidebarWidth)};
-  height: 100%;
   background: ${paleGrey};
   box-sizing: border-box;
   color: inherit;

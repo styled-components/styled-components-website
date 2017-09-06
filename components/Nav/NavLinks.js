@@ -9,11 +9,13 @@ import Link from '../Link'
 const Wrapper = styled.nav`
   display: flex;
   align-items: center;
+  flex: 0 0 auto;
 `
 
 const NavLink = styled(Link).attrs({
   unstyled: true,
 })`
+  flex: 0 0 auto;
   display: inline-block;
   line-height: ${rem(navbarHeight)};
   transition: opacity 200ms, transfrom 200ms;

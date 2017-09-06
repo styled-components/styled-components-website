@@ -1,24 +1,23 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import rem from '../../utils/rem'
 import { navbarHeight } from '../../utils/sizes'
-
-const resetInput = css`
-  background: none;
-  outline: none;
-  border: none;
-`
+import { resetInput } from '../../utils/form'
 
 const Wrapper = styled.form`
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  flex: 0 0 auto;
 `
 
 const Input = styled.input`
   ${resetInput}
+
+  flex: 0 0 auto;
   width: ${rem(130)};
-  line-height: ${rem(navbarHeight)};
+  line-height: ${rem(navbarHeight - 20)};
   font-size: ${rem(15)};
   color: currentColor;
 
@@ -30,6 +29,8 @@ const Input = styled.input`
 
 const Button = styled.button`
   ${resetInput}
+
+  flex: 0 0 auto;
   height: ${rem(navbarHeight)};
   margin-right: ${rem(4)};
   cursor: pointer;
@@ -68,7 +69,7 @@ const SearchButton = () => (
 
 const Search = () => (
   <Wrapper>
-    <SearchButton/>
+    <SearchButton />
     <Input
       placeholder="Search ..."
     />

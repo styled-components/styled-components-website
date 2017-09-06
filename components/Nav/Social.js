@@ -8,6 +8,7 @@ import Link from '../Link'
 const Wrapper = styled.nav`
   display: flex;
   align-items: center;
+  flex: 1 1 auto;
 `
 
 const SocialLink = styled(Link).attrs({
@@ -74,8 +75,8 @@ const Spectrum = () => (
   </Svg>
 )
 
-const Social = () => (
-  <Wrapper>
+const Social = props => (
+  <Wrapper {...props}>
     <SocialLink href="https://spectrum.chat/styled-components/">
       <Spectrum />
     </SocialLink>
