@@ -33,8 +33,9 @@ exports[`MobileNavbar renders correctly 1`] = `
   flex: 0 0 auto;
   display: inline-block;
   line-height: 2.7777777777777777rem;
-  -webkit-transition: opacity 200ms,transfrom 200ms;
-  transition: opacity 200ms,transfrom 200ms;
+  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
+  -webkit-transition: opacity 0.2s,transform 0.2s;
+  transition: opacity 0.2s,transform 0.2s;
   cursor: pointer;
   -webkit-letter-spacing: 0.022222222222222223rem color:currentColor;
   -moz-letter-spacing: 0.022222222222222223rem color:currentColor;
@@ -72,6 +73,9 @@ exports[`MobileNavbar renders correctly 1`] = `
   display: inline-block;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
+  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
+  -webkit-transition: opacity 0.2s,transform 0.2s;
+  transition: opacity 0.2s,transform 0.2s;
   cursor: pointer;
 }
 
