@@ -8,7 +8,9 @@ import { headerFont } from '../../utils/fonts'
 import Link from '../Link'
 import NavLinks from './NavLinks'
 import Social from './Social'
+import Search from './Search'
 import Logo from './Logo'
+import NavSeparator from './NavSeparator'
 
 const Wrapper = styled.nav`
   position: fixed;
@@ -65,6 +67,8 @@ class Navbar extends PureComponent {
         </StartWrapper>
 
         <EndWrapper>
+          <Search />
+          <NavSeparator />
           <Social />
         </EndWrapper>
       </Wrapper>

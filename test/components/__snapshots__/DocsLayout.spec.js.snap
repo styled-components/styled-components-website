@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DocsLayout renders correctly 1`] = `
-.c18 {
+.c21 {
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -53,6 +53,59 @@ exports[`DocsLayout renders correctly 1`] = `
   opacity: 0.6;
 }
 
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c13 {
+  display: inline-block;
+  margin-right: 1.1111111111111112rem;
+  line-height: 2.7777777777777777rem;
+  cursor: pointer;
+}
+
+.c13:last-child {
+  margin-right: 0;
+}
+
+.c13:hover,
+.c13:focus {
+  opacity: 0.8;
+}
+
+.c13:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c13 svg path {
+  fill: currentColor;
+}
+
+.c14 {
+  width: 0.7777777777777778rem;
+  height: 0.7777777777777778rem;
+}
+
+.c15 {
+  width: 1.0555555555555556rem;
+  height: 0.8333333333333334rem;
+}
+
+.c16 {
+  width: 0.9444444444444444rem;
+  height: 0.9444444444444444rem;
+}
+
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -64,45 +117,52 @@ exports[`DocsLayout renders correctly 1`] = `
   align-items: center;
 }
 
-.c10 {
-  display: inline-block;
-  margin-right: 1.1111111111111112rem;
+.c11 {
+  background: none;
+  outline: none;
+  border: none;
+  width: 7.222222222222222rem;
   line-height: 2.7777777777777777rem;
-  cursor: pointer;
+  font-size: 0.8333333333333334rem;
 }
 
-.c10:last-child {
-  margin-right: 0;
+.c11::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.c11::-moz-placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.c11:-ms-input-placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.c11::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.c10 {
+  background: none;
+  outline: none;
+  border: none;
+  height: 2.7777777777777777rem;
+  margin-right: 0.2222222222222222rem;
+  cursor: pointer;
 }
 
 .c10:hover,
 .c10:focus {
-  opacity: 0.8;
+  opacity: 0.7;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
 }
 
 .c10:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
-  opacity: 0.6;
+  background: rgba(0,0,0,0.1);
 }
 
-.c10 svg path {
-  fill: currentColor;
-}
-
-.c11 {
-  width: 0.7777777777777778rem;
-  height: 0.7777777777777778rem;
-}
-
-.c12 {
-  width: 1.0555555555555556rem;
-  height: 0.8333333333333334rem;
-}
-
-.c13 {
-  width: 0.9444444444444444rem;
+.c10 svg {
+  width: 0.8888888888888888rem;
   height: 0.9444444444444444rem;
 }
 
@@ -180,7 +240,7 @@ exports[`DocsLayout renders correctly 1`] = `
   margin-right: 1.9444444444444444rem;
 }
 
-.c14 {
+.c17 {
   position: fixed;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -203,24 +263,24 @@ exports[`DocsLayout renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c15 {
+.c18 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 1.3888888888888888rem;
 }
 
-.c16 {
+.c19 {
   margin-bottom: 1.6666666666666667rem;
 }
 
-.c17 {
+.c20 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
 }
 
-.c19 {
+.c22 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem 0.5555555555555556rem 3.0555555555555554rem;
   font-size: 0.9rem;
@@ -231,7 +291,7 @@ exports[`DocsLayout renders correctly 1`] = `
   padding-left: 16.666666666666668rem;
 }
 
-.c20 {
+.c23 {
   width: 56.888888888888886rem;
   max-width: 100%;
   margin: 0 auto;
@@ -243,7 +303,7 @@ exports[`DocsLayout renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c21 {
+.c24 {
   display: block;
   text-align: left;
   width: 100%;
@@ -254,17 +314,17 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (min-width:62.5em) {
-  .c18 {
+  .c21 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c18:hover {
+  .c21:hover {
     background: rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
-  .c14 {
+  .c17 {
     -webkit-transform: translateX(-16.666666666666668rem);
     -ms-transform: translateX(-16.666666666666668rem);
     transform: translateX(-16.666666666666668rem);
@@ -278,7 +338,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c20 {
+  .c23 {
     padding: 1.6666666666666667rem 1.1111111111111112rem;
     padding-top: 3.888888888888889rem;
   }
@@ -407,16 +467,65 @@ exports[`DocsLayout renders correctly 1`] = `
                   <div
                     className="c8"
                   >
+                    <Search>
+                      <styled.form>
+                        <form
+                          className="c9"
+                        >
+                          <SearchButton>
+                            <styled.button>
+                              <button
+                                className="c10"
+                              >
+                                <svg
+                                  height="16"
+                                  width="15"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                                >
+                                  <title>
+                                    search
+                                  </title>
+                                  <use
+                                    fill="#FFF"
+                                    xlinkHref="#search-icon"
+                                  />
+                                  <defs>
+                                    <path
+                                      d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
+                                      id="search-icon"
+                                    />
+                                  </defs>
+                                </svg>
+                              </button>
+                            </styled.button>
+                          </SearchButton>
+                          <styled.input
+                            placeholder="Search ..."
+                          >
+                            <input
+                              className="c11"
+                              placeholder="Search ..."
+                            />
+                          </styled.input>
+                        </form>
+                      </styled.form>
+                    </Search>
+                    <styled.span>
+                      <span
+                        className="c7"
+                      />
+                    </styled.span>
                     <Social>
                       <styled.nav>
                         <nav
-                          className="c9"
+                          className="c12"
                         >
                           <Styled(Link)
                             href="https://spectrum.chat/styled-components/"
                           >
                             <Link
-                              className="c10"
+                              className="c13"
                               href="https://spectrum.chat/styled-components/"
                               unstyled={true}
                             >
@@ -424,7 +533,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 href="https://spectrum.chat/styled-components/"
                               >
                                 <a
-                                  className="c10"
+                                  className="c13"
                                   href="https://spectrum.chat/styled-components/"
                                   onClick={[Function]}
                                 >
@@ -437,7 +546,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       xmlnsXlink="http://www.w3.org/1999/xlink"
                                     >
                                       <svg
-                                        className="c11"
+                                        className="c14"
                                         height="14"
                                         viewBox="0 0 15 15"
                                         width="14"
@@ -468,7 +577,7 @@ exports[`DocsLayout renders correctly 1`] = `
                             href="https://twitter.com/someone"
                           >
                             <Link
-                              className="c10"
+                              className="c13"
                               href="https://twitter.com/someone"
                               unstyled={true}
                             >
@@ -476,7 +585,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 href="https://twitter.com/someone"
                               >
                                 <a
-                                  className="c10"
+                                  className="c13"
                                   href="https://twitter.com/someone"
                                   onClick={[Function]}
                                 >
@@ -489,7 +598,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       xmlnsXlink="http://www.w3.org/1999/xlink"
                                     >
                                       <svg
-                                        className="c12"
+                                        className="c15"
                                         height="15"
                                         viewBox="0 0 19 15"
                                         width="19"
@@ -520,7 +629,7 @@ exports[`DocsLayout renders correctly 1`] = `
                             href="https://github.com/styled-components"
                           >
                             <Link
-                              className="c10"
+                              className="c13"
                               href="https://github.com/styled-components"
                               unstyled={true}
                             >
@@ -528,7 +637,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 href="https://github.com/styled-components"
                               >
                                 <a
-                                  className="c10"
+                                  className="c13"
                                   href="https://github.com/styled-components"
                                   onClick={[Function]}
                                 >
@@ -541,7 +650,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       xmlnsXlink="http://www.w3.org/1999/xlink"
                                     >
                                       <svg
-                                        className="c13"
+                                        className="c16"
                                         height="17"
                                         viewBox="0 0 17 17"
                                         width="17"
@@ -583,25 +692,25 @@ exports[`DocsLayout renders correctly 1`] = `
               isFolded={true}
             >
               <nav
-                className="c14"
+                className="c17"
               >
                 <SidebarMenu
                   onRouteChange={[Function]}
                 >
                   <styled.div>
                     <div
-                      className="c15"
+                      className="c18"
                     >
                       <styled.div
                         onClick={[Function]}
                       >
                         <div
-                          className="c16"
+                          className="c19"
                           onClick={[Function]}
                         >
                           <styled.h4>
                             <h4
-                              className="c17"
+                              className="c20"
                             >
                               <Link
                                 href="/docs/basics"
@@ -614,7 +723,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     onClick={[Function]}
                                   >
                                     <a
-                                      className="c18"
+                                      className="c21"
                                       href="/docs/basics"
                                       onClick={[Function]}
                                     >
@@ -627,13 +736,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h4>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/basics#motivation"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/basics#motivation"
                                 >
                                   Motivation
@@ -643,13 +752,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/basics#installation"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/basics#installation"
                                 >
                                   Installation
@@ -659,13 +768,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/basics#getting-started"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/basics#getting-started"
                                 >
                                   Getting Started
@@ -675,13 +784,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/basics#passed-props"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/basics#passed-props"
                                 >
                                   Passed props
@@ -691,13 +800,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/basics#adapting-based-on-props"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/basics#adapting-based-on-props"
                                 >
                                   Adapting based on props
@@ -707,13 +816,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/basics#styling-any-components"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/basics#styling-any-components"
                                 >
                                   Styling any components
@@ -723,13 +832,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/basics#extending-styles"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/basics#extending-styles"
                                 >
                                   Extending styles
@@ -739,13 +848,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/basics#attaching-additional-props"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/basics#attaching-additional-props"
                                 >
                                   Attaching additional props
@@ -755,13 +864,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/basics#animations"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/basics#animations"
                                 >
                                   Animations
@@ -771,13 +880,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/basics#react-native"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/basics#react-native"
                                 >
                                   React Native
@@ -791,12 +900,12 @@ exports[`DocsLayout renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <div
-                          className="c16"
+                          className="c19"
                           onClick={[Function]}
                         >
                           <styled.h4>
                             <h4
-                              className="c17"
+                              className="c20"
                             >
                               <Link
                                 href="/docs/advanced"
@@ -809,7 +918,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     onClick={[Function]}
                                   >
                                     <a
-                                      className="c18"
+                                      className="c21"
                                       href="/docs/advanced"
                                       onClick={[Function]}
                                     >
@@ -822,13 +931,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h4>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/advanced#theming"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/advanced#theming"
                                 >
                                   Theming
@@ -838,13 +947,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/advanced#refs"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/advanced#refs"
                                 >
                                   Refs
@@ -854,13 +963,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/advanced#security"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/advanced#security"
                                 >
                                   Security
@@ -870,13 +979,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/advanced#existing-css"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/advanced#existing-css"
                                 >
                                   Existing CSS
@@ -886,13 +995,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/advanced#media-templates"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/advanced#media-templates"
                                 >
                                   Media Templates
@@ -902,13 +1011,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/advanced#tagged-template-literals"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/advanced#tagged-template-literals"
                                 >
                                   Tagged Template Literals
@@ -918,13 +1027,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/advanced#server-side-rendering"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/advanced#server-side-rendering"
                                 >
                                   Server Side Rendering
@@ -938,12 +1047,12 @@ exports[`DocsLayout renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <div
-                          className="c16"
+                          className="c19"
                           onClick={[Function]}
                         >
                           <styled.h4>
                             <h4
-                              className="c17"
+                              className="c20"
                             >
                               <Link
                                 href="/docs/api"
@@ -956,7 +1065,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     onClick={[Function]}
                                   >
                                     <a
-                                      className="c18"
+                                      className="c21"
                                       href="/docs/api"
                                       onClick={[Function]}
                                     >
@@ -969,13 +1078,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h4>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/api#primary"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/api#primary"
                                 >
                                   Primary
@@ -985,13 +1094,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/api#helpers"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/api#helpers"
                                 >
                                   Helpers
@@ -1001,13 +1110,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/api#supported-css"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/api#supported-css"
                                 >
                                   Supported CSS
@@ -1017,13 +1126,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/api#flow"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/api#flow"
                                 >
                                   Flow
@@ -1033,13 +1142,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/api#typescript"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/api#typescript"
                                 >
                                   TypeScript
@@ -1053,12 +1162,12 @@ exports[`DocsLayout renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <div
-                          className="c16"
+                          className="c19"
                           onClick={[Function]}
                         >
                           <styled.h4>
                             <h4
-                              className="c17"
+                              className="c20"
                             >
                               <Link
                                 href="/docs/tooling"
@@ -1071,7 +1180,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     onClick={[Function]}
                                   >
                                     <a
-                                      className="c18"
+                                      className="c21"
                                       href="/docs/tooling"
                                       onClick={[Function]}
                                     >
@@ -1084,13 +1193,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h4>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/tooling#babel-plugin"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/tooling#babel-plugin"
                                 >
                                   Babel Plugin
@@ -1100,13 +1209,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/tooling#test-utilities"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/tooling#test-utilities"
                                 >
                                   Test Utilities
@@ -1116,13 +1225,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/tooling#stylelint"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/tooling#stylelint"
                                 >
                                   Stylelint
@@ -1136,12 +1245,12 @@ exports[`DocsLayout renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <div
-                          className="c16"
+                          className="c19"
                           onClick={[Function]}
                         >
                           <styled.h4>
                             <h4
-                              className="c17"
+                              className="c20"
                             >
                               <Link
                                 href="/docs/faqs"
@@ -1154,7 +1263,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     onClick={[Function]}
                                   >
                                     <a
-                                      className="c18"
+                                      className="c21"
                                       href="/docs/faqs"
                                       onClick={[Function]}
                                     >
@@ -1167,13 +1276,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h4>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/faqs#can-i-nest-rules"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/faqs#can-i-nest-rules"
                                 >
                                   Can I nest rules?
@@ -1183,13 +1292,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/faqs#can-i-refer-to-other-components"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/faqs#can-i-refer-to-other-components"
                                 >
                                   Can I refer to other components?
@@ -1199,13 +1308,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                           <styled.h5>
                             <h5
-                              className="c19"
+                              className="c22"
                             >
                               <styled.a
                                 href="/docs/faqs#can-i-use-css-frameworks"
                               >
                                 <a
-                                  className="c18"
+                                  className="c21"
                                   href="/docs/faqs#can-i-use-css-frameworks"
                                 >
                                   Can I use css frameworks?
@@ -1227,11 +1336,11 @@ exports[`DocsLayout renders correctly 1`] = `
         moveRight={false}
       >
         <div
-          className="c20"
+          className="c23"
         >
           <styled.h1>
             <h1
-              className="c21"
+              className="c24"
             />
           </styled.h1>
         </div>
