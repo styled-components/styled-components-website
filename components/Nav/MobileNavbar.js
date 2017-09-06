@@ -8,7 +8,7 @@ import { mobile } from '../../utils/media'
 import Link from '../Link'
 import NavLinks from './NavLinks'
 import Social from './Social'
-import Search from './Search'
+// import Search from './Search'
 import Logo from './Logo'
 import NavSeparator from './NavSeparator'
 import NavButton from './NavButton'
@@ -138,8 +138,8 @@ class MobileNavbar extends PureComponent {
         <SecondaryMenu open={isMenuOpen}>
           <NavLinks />
           <NavSeparator />
-          <Search />
-          <NavSeparator />
+          {/* <Search /> */}
+          {/* <NavSeparator /> */}
           <PaddedSocial />
         </SecondaryMenu>
       </Wrapper>

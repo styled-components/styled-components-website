@@ -56,15 +56,15 @@ const Github = () => (
   </Svg>
 )
 
-const Twitter = () => (
-  <Svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 19 15" xmlnsXlink="http://www.w3.org/1999/xlink">
-    <title>twitter-logo</title>
-    <use fill="#FFF" xlinkHref="#b"/>
-    <defs>
-      <path id="b" d="M18.2 1.8l-2 .6c.6-.5 1.2-1.2 1.5-2l-2.4.8C14.7.5 13.7 0 12.6 0 10.6 0 9 1.7 9 3.8v1C6 4.4 3 3 1.3.8 1 1 .8 1.8.8 2.4c0 1.3.6 2.5 1.6 3-.6 0-1.2 0-1.7-.3 0 2 1.3 3.7 3 4H2c.5 1.6 2 2.7 3.5 2.7-1.2 1-3 1.6-4.6 1.6H0c1.7 1 3.6 1.7 5.7 1.7 7 0 10.7-6 10.7-11v-.5c.7-.5 1.3-1.2 1.8-2z"/>
-    </defs>
-  </Svg>
-)
+// const Twitter = () => (
+//   <Svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 19 15" xmlnsXlink="http://www.w3.org/1999/xlink">
+//     <title>twitter-logo</title>
+//     <use fill="#FFF" xlinkHref="#b"/>
+//     <defs>
+//       <path id="b" d="M18.2 1.8l-2 .6c.6-.5 1.2-1.2 1.5-2l-2.4.8C14.7.5 13.7 0 12.6 0 10.6 0 9 1.7 9 3.8v1C6 4.4 3 3 1.3.8 1 1 .8 1.8.8 2.4c0 1.3.6 2.5 1.6 3-.6 0-1.2 0-1.7-.3 0 2 1.3 3.7 3 4H2c.5 1.6 2 2.7 3.5 2.7-1.2 1-3 1.6-4.6 1.6H0c1.7 1 3.6 1.7 5.7 1.7 7 0 10.7-6 10.7-11v-.5c.7-.5 1.3-1.2 1.8-2z"/>
+//     </defs>
+//   </Svg>
+// )
 
 const Spectrum = () => (
   <Svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 15 15" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -81,9 +81,9 @@ const Social = props => (
     <SocialLink href="https://spectrum.chat/styled-components/">
       <Spectrum />
     </SocialLink>
-    <SocialLink href="https://twitter.com/someone">
+    {/* <SocialLink href="https://twitter.com/someone">
       <Twitter />
-    </SocialLink>
+    </SocialLink> */}
     <SocialLink href="https://github.com/styled-components">
       <Github />
     </SocialLink>
