@@ -64,77 +64,49 @@ exports[`Navbar renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c11 {
-  background: none;
-  outline: none;
-  border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 7.222222222222222rem;
-  line-height: 1.6666666666666667rem;
-  font-size: 0.8333333333333334rem;
-  color: currentColor;
-}
-
-.c11::-webkit-input-placeholder {
-  color: currentColor;
-  opacity: 0.5;
-}
-
-.c11::-moz-placeholder {
-  color: currentColor;
-  opacity: 0.5;
-}
-
-.c11:-ms-input-placeholder {
-  color: currentColor;
-  opacity: 0.5;
-}
-
-.c11::placeholder {
-  color: currentColor;
-  opacity: 0.5;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .c10 {
-  background: none;
-  outline: none;
-  border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  height: 2.7777777777777777rem;
-  margin-right: 0.2222222222222222rem;
+  display: inline-block;
+  margin-right: 1.1111111111111112rem;
+  line-height: 2.7777777777777777rem;
+  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
+  -webkit-transition: opacity 0.2s,transform 0.2s;
+  transition: opacity 0.2s,transform 0.2s;
   cursor: pointer;
+}
+
+.c10:last-child {
+  margin-right: 0;
 }
 
 .c10:hover,
 .c10:focus {
-  opacity: 0.7;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+  opacity: 0.8;
 }
 
 .c10:active {
-  background: rgba(0,0,0,0.1);
-}
-
-.c10 svg {
-  width: 0.8888888888888888rem;
-  height: 0.9444444444444444rem;
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  opacity: 0.6;
 }
 
 .c10 svg path {
   fill: currentColor;
+}
+
+.c11 {
+  width: 0.7777777777777778rem;
+  height: 0.7777777777777778rem;
+}
+
+.c12 {
+  width: 0.9444444444444444rem;
+  height: 0.9444444444444444rem;
 }
 
 .c4 {
@@ -148,7 +120,7 @@ exports[`Navbar renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c15 {
+.c16 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -159,61 +131,7 @@ exports[`Navbar renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-}
-
-.c21 {
-  display: inline-block;
-  margin-right: 1.1111111111111112rem;
-  line-height: 2.7777777777777777rem;
-  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
-  -webkit-transition: opacity 0.2s,transform 0.2s;
-  transition: opacity 0.2s,transform 0.2s;
-  cursor: pointer;
-}
-
-.c21:last-child {
-  margin-right: 0;
-}
-
-.c21:hover,
-.c21:focus {
-  opacity: 0.8;
-}
-
-.c21:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
-.c21 svg path {
-  fill: currentColor;
-}
-
-.c22 {
-  width: 0.7777777777777778rem;
-  height: 0.7777777777777778rem;
-}
-
-.c23 {
-  width: 0.9444444444444444rem;
-  height: 0.9444444444444444rem;
-}
-
-.c13 {
+.c14 {
   background: none;
   outline: none;
   border: none;
@@ -228,20 +146,20 @@ exports[`Navbar renders correctly 1`] = `
   background: rgba(0,0,0,0.07);
 }
 
-.c13:focus {
+.c14:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
 }
 
-.c13 svg {
+.c14 svg {
   display: inline-block;
 }
 
-.c13 svg path {
+.c14 svg path {
   fill: currentColor;
 }
 
-.c16 {
+.c17 {
   background: none;
   outline: none;
   border: none;
@@ -255,24 +173,24 @@ exports[`Navbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c16:focus {
+.c17:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
 }
 
-.c16 svg {
+.c17 svg {
   display: inline-block;
 }
 
-.c16 svg path {
+.c17 svg path {
   fill: currentColor;
 }
 
-.c12 {
+.c13 {
   display: none;
 }
 
-.c18 {
+.c19 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -304,19 +222,19 @@ exports[`Navbar renders correctly 1`] = `
   color: #868686;
 }
 
-.c14 {
+.c15 {
   display: inline-block;
   vertical-align: center;
   margin-right: 1.9444444444444444rem;
 }
 
-.c17 {
+.c18 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
 }
 
-.c19 {
+.c20 {
   padding-right: 1.1111111111111112rem;
 }
 
@@ -387,7 +305,7 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c12 {
+  .c13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -463,48 +381,73 @@ exports[`Navbar renders correctly 1`] = `
     <div
       className="c8"
     >
-      <form
+      <nav
         className="c9"
       >
-        <button
+        <a
           className="c10"
+          href="https://spectrum.chat/styled-components/"
+          onClick={[Function]}
         >
           <svg
-            height="16"
-            width="15"
+            className="c11"
+            height="14"
+            viewBox="0 0 15 15"
+            width="14"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
           >
             <title>
-              search
+              spectrum-logo
             </title>
             <use
               fill="#FFF"
-              xlinkHref="#search-icon"
+              xlinkHref="#spectrum"
             />
             <defs>
               <path
-                d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
-                id="search-icon"
+                d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
+                id="spectrum"
               />
             </defs>
           </svg>
-        </button>
-        <input
-          className="c11"
-          placeholder="Search ..."
-        />
-      </form>
-      <span
-        className="c7"
-      />
+        </a>
+        <a
+          className="c10"
+          href="https://github.com/styled-components"
+          onClick={[Function]}
+        >
+          <svg
+            className="c12"
+            height="17"
+            viewBox="0 0 17 17"
+            width="17"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            <title>
+              github-logo
+            </title>
+            <use
+              fill="#FFF"
+              xlinkHref="#a"
+            />
+            <defs>
+              <path
+                d="M15.86 4.34c-.76-1.335-1.79-2.392-3.093-3.17C11.463.39 10.042 0 8.5 0 6.958 0 5.536.39 4.233 1.17 2.93 1.947 1.9 3.004 1.14 4.34.38 5.674 0 7.132 0 8.713c0 1.898.54 3.606 1.62 5.122 1.082 1.517 2.48 2.566 4.19 3.148.2.038.347.01.443-.08.096-.09.144-.203.144-.34l-.006-.612v-1l-.25.05c-.16.03-.36.05-.61.04-.24 0-.5-.03-.77-.08-.26-.05-.51-.16-.74-.34-.23-.18-.39-.41-.49-.7l-.11-.26c-.07-.17-.19-.36-.35-.58-.16-.21-.32-.35-.48-.43l-.08-.05c-.05-.04-.09-.08-.14-.132-.04-.053-.08-.106-.1-.16-.02-.053 0-.097.06-.13.06-.035.17-.052.32-.052l.22.036c.15.03.33.12.55.27.22.154.4.35.54.59.17.31.375.55.615.71.24.164.484.245.727.245s.456-.02.63-.056c.18-.037.346-.094.5-.17.067-.507.248-.896.54-1.17-.42-.043-.795-.112-1.13-.203-.34-.09-.685-.24-1.04-.44-.36-.2-.657-.455-.894-.76-.234-.3-.43-.7-.58-1.19-.15-.49-.225-1.06-.225-1.7 0-.917.29-1.695.875-2.34-.27-.69-.244-1.46.08-2.313.214-.07.53-.015.95.155.42.17.73.314.926.435.195.12.35.225.47.308.684-.2 1.394-.3 2.124-.3s1.44.1 2.124.297l.42-.27c.288-.184.628-.35 1.02-.5.39-.15.69-.195.895-.126.334.857.364 1.63.09 2.317.584.645.875 1.42.875 2.34 0 .64-.072 1.21-.223 1.707-.15.5-.343.897-.583 1.196-.24.298-.54.55-.896.754-.355.202-.702.35-1.04.44-.334.09-.712.16-1.132.205.38.34.57.875.57 1.61v2.39c0 .136.045.25.137.34.096.09.24.118.44.08 1.71-.582 3.11-1.632 4.19-3.15 1.06-1.525 1.6-3.235 1.6-5.13 0-1.58-.38-3.04-1.14-4.37z"
+                id="a"
+              />
+            </defs>
+          </svg>
+        </a>
+      </nav>
     </div>
   </div>
   <div
-    className="c12"
+    className="c13"
   >
     <button
-      className="c13"
+      className="c14"
       onClick={undefined}
     >
       <svg
@@ -530,20 +473,20 @@ exports[`Navbar renders correctly 1`] = `
       </svg>
     </button>
     <a
-      className="c14"
+      className="c15"
       href="/"
       onClick={[Function]}
     >
       <div
-        className="c15"
+        className="c16"
       />
     </a>
     <button
-      className="c16"
+      className="c17"
       onClick={[Function]}
     >
       <div
-        className="c17"
+        className="c18"
         rotate={false}
       >
         <svg
@@ -570,7 +513,7 @@ exports[`Navbar renders correctly 1`] = `
       </div>
     </button>
     <div
-      className="c18"
+      className="c19"
       open={false}
     >
       <nav
@@ -608,15 +551,15 @@ exports[`Navbar renders correctly 1`] = `
         className="c7"
       />
       <nav
-        className="c19 c20"
+        className="c20 c9"
       >
         <a
-          className="c21"
+          className="c10"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
         >
           <svg
-            className="c22"
+            className="c11"
             height="14"
             viewBox="0 0 15 15"
             width="14"
@@ -639,12 +582,12 @@ exports[`Navbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="c21"
+          className="c10"
           href="https://github.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c23"
+            className="c12"
             height="17"
             viewBox="0 0 17 17"
             width="17"
