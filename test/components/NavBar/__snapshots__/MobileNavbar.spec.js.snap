@@ -323,7 +323,7 @@ exports[`MobileNavbar renders correctly 1`] = `
     >
       <a
         className="c8"
-        href={undefined}
+        href="/docs/basics#motivation"
         onClick={[Function]}
       >
         Concepts
@@ -333,7 +333,7 @@ exports[`MobileNavbar renders correctly 1`] = `
       />
       <a
         className="c8"
-        href={undefined}
+        href="/"
         onClick={[Function]}
       >
         Try it out
@@ -343,7 +343,7 @@ exports[`MobileNavbar renders correctly 1`] = `
       />
       <a
         className="c8"
-        href={undefined}
+        href="/docs"
         onClick={[Function]}
       >
         Documentation

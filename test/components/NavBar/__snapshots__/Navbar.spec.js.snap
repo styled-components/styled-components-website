@@ -351,7 +351,7 @@ exports[`Navbar renders correctly 1`] = `
       >
         <a
           className="c6"
-          href={undefined}
+          href="/docs/basics#motivation"
           onClick={[Function]}
         >
           Concepts
@@ -361,7 +361,7 @@ exports[`Navbar renders correctly 1`] = `
         />
         <a
           className="c6"
-          href={undefined}
+          href="/"
           onClick={[Function]}
         >
           Try it out
@@ -371,7 +371,7 @@ exports[`Navbar renders correctly 1`] = `
         />
         <a
           className="c6"
-          href={undefined}
+          href="/docs"
           onClick={[Function]}
         >
           Documentation
@@ -521,7 +521,7 @@ exports[`Navbar renders correctly 1`] = `
       >
         <a
           className="c6"
-          href={undefined}
+          href="/docs/basics#motivation"
           onClick={[Function]}
         >
           Concepts
@@ -531,7 +531,7 @@ exports[`Navbar renders correctly 1`] = `
         />
         <a
           className="c6"
-          href={undefined}
+          href="/"
           onClick={[Function]}
         >
           Try it out
@@ -541,7 +541,7 @@ exports[`Navbar renders correctly 1`] = `
         />
         <a
           className="c6"
-          href={undefined}
+          href="/docs"
           onClick={[Function]}
         >
           Documentation

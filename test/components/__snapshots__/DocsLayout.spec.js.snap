@@ -470,14 +470,20 @@ exports[`DocsLayout renders correctly 1`] = `
                             <nav
                               className="c6"
                             >
-                              <Styled(Link)>
+                              <Styled(Link)
+                                href="/docs/basics#motivation"
+                              >
                                 <Link
                                   className="c7"
+                                  href="/docs/basics#motivation"
                                   unstyled={true}
                                 >
-                                  <Link>
+                                  <Link
+                                    href="/docs/basics#motivation"
+                                  >
                                     <a
                                       className="c7"
+                                      href="/docs/basics#motivation"
                                       onClick={[Function]}
                                     >
                                       Concepts
@@ -490,14 +496,20 @@ exports[`DocsLayout renders correctly 1`] = `
                                   className="c8"
                                 />
                               </styled.span>
-                              <Styled(Link)>
+                              <Styled(Link)
+                                href="/"
+                              >
                                 <Link
                                   className="c7"
+                                  href="/"
                                   unstyled={true}
                                 >
-                                  <Link>
+                                  <Link
+                                    href="/"
+                                  >
                                     <a
                                       className="c7"
+                                      href="/"
                                       onClick={[Function]}
                                     >
                                       Try it out
@@ -510,14 +522,20 @@ exports[`DocsLayout renders correctly 1`] = `
                                   className="c8"
                                 />
                               </styled.span>
-                              <Styled(Link)>
+                              <Styled(Link)
+                                href="/docs"
+                              >
                                 <Link
                                   className="c7"
+                                  href="/docs"
                                   unstyled={true}
                                 >
-                                  <Link>
+                                  <Link
+                                    href="/docs"
+                                  >
                                     <a
                                       className="c7"
+                                      href="/docs"
                                       onClick={[Function]}
                                     >
                                       Documentation
@@ -772,14 +790,20 @@ exports[`DocsLayout renders correctly 1`] = `
                               <nav
                                 className="c6"
                               >
-                                <Styled(Link)>
+                                <Styled(Link)
+                                  href="/docs/basics#motivation"
+                                >
                                   <Link
                                     className="c7"
+                                    href="/docs/basics#motivation"
                                     unstyled={true}
                                   >
-                                    <Link>
+                                    <Link
+                                      href="/docs/basics#motivation"
+                                    >
                                       <a
                                         className="c7"
+                                        href="/docs/basics#motivation"
                                         onClick={[Function]}
                                       >
                                         Concepts
@@ -792,14 +816,20 @@ exports[`DocsLayout renders correctly 1`] = `
                                     className="c8"
                                   />
                                 </styled.span>
-                                <Styled(Link)>
+                                <Styled(Link)
+                                  href="/"
+                                >
                                   <Link
                                     className="c7"
+                                    href="/"
                                     unstyled={true}
                                   >
-                                    <Link>
+                                    <Link
+                                      href="/"
+                                    >
                                       <a
                                         className="c7"
+                                        href="/"
                                         onClick={[Function]}
                                       >
                                         Try it out
@@ -812,14 +842,20 @@ exports[`DocsLayout renders correctly 1`] = `
                                     className="c8"
                                   />
                                 </styled.span>
-                                <Styled(Link)>
+                                <Styled(Link)
+                                  href="/docs"
+                                >
                                   <Link
                                     className="c7"
+                                    href="/docs"
                                     unstyled={true}
                                   >
-                                    <Link>
+                                    <Link
+                                      href="/docs"
+                                    >
                                       <a
                                         className="c7"
+                                        href="/docs"
                                         onClick={[Function]}
                                       >
                                         Documentation

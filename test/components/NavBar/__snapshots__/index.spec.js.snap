@@ -429,14 +429,20 @@ exports[`Nav renders correctly 1`] = `
                       <nav
                         className="c5"
                       >
-                        <Styled(Link)>
+                        <Styled(Link)
+                          href="/docs/basics#motivation"
+                        >
                           <Link
                             className="c6"
+                            href="/docs/basics#motivation"
                             unstyled={true}
                           >
-                            <Link>
+                            <Link
+                              href="/docs/basics#motivation"
+                            >
                               <a
                                 className="c6"
+                                href="/docs/basics#motivation"
                                 onClick={[Function]}
                               >
                                 Concepts
@@ -449,14 +455,20 @@ exports[`Nav renders correctly 1`] = `
                             className="c7"
                           />
                         </styled.span>
-                        <Styled(Link)>
+                        <Styled(Link)
+                          href="/"
+                        >
                           <Link
                             className="c6"
+                            href="/"
                             unstyled={true}
                           >
-                            <Link>
+                            <Link
+                              href="/"
+                            >
                               <a
                                 className="c6"
+                                href="/"
                                 onClick={[Function]}
                               >
                                 Try it out
@@ -469,14 +481,20 @@ exports[`Nav renders correctly 1`] = `
                             className="c7"
                           />
                         </styled.span>
-                        <Styled(Link)>
+                        <Styled(Link)
+                          href="/docs"
+                        >
                           <Link
                             className="c6"
+                            href="/docs"
                             unstyled={true}
                           >
-                            <Link>
+                            <Link
+                              href="/docs"
+                            >
                               <a
                                 className="c6"
+                                href="/docs"
                                 onClick={[Function]}
                               >
                                 Documentation
@@ -726,14 +744,20 @@ exports[`Nav renders correctly 1`] = `
                         <nav
                           className="c5"
                         >
-                          <Styled(Link)>
+                          <Styled(Link)
+                            href="/docs/basics#motivation"
+                          >
                             <Link
                               className="c6"
+                              href="/docs/basics#motivation"
                               unstyled={true}
                             >
-                              <Link>
+                              <Link
+                                href="/docs/basics#motivation"
+                              >
                                 <a
                                   className="c6"
+                                  href="/docs/basics#motivation"
                                   onClick={[Function]}
                                 >
                                   Concepts
@@ -746,14 +770,20 @@ exports[`Nav renders correctly 1`] = `
                               className="c7"
                             />
                           </styled.span>
-                          <Styled(Link)>
+                          <Styled(Link)
+                            href="/"
+                          >
                             <Link
                               className="c6"
+                              href="/"
                               unstyled={true}
                             >
-                              <Link>
+                              <Link
+                                href="/"
+                              >
                                 <a
                                   className="c6"
+                                  href="/"
                                   onClick={[Function]}
                                 >
                                   Try it out
@@ -766,14 +796,20 @@ exports[`Nav renders correctly 1`] = `
                               className="c7"
                             />
                           </styled.span>
-                          <Styled(Link)>
+                          <Styled(Link)
+                            href="/docs"
+                          >
                             <Link
                               className="c6"
+                              href="/docs"
                               unstyled={true}
                             >
-                              <Link>
+                              <Link
+                                href="/docs"
+                              >
                                 <a
                                   className="c6"
+                                  href="/docs"
                                   onClick={[Function]}
                                 >
                                   Documentation
