@@ -22,7 +22,7 @@ const Sidebar = styled.nav`
   background: ${paleGrey};
   box-sizing: border-box;
   color: inherit;
-  overflow-y: scroll;
+  overflow-y: auto;
   transition: transform 150ms ease-out;
 
   ${mobile(css`

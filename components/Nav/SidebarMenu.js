@@ -1,3 +1,4 @@
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import rem from '../../utils/rem'
@@ -16,7 +17,7 @@ const MenuInner = styled.div`
 `
 
 const Section = styled.div`
-  margin-bottom: ${rem(30)};
+  margin-bottom: ${rem(20)};
 `
 
 const SectionTitle = styled.h4`
@@ -32,30 +33,72 @@ const SubSection = styled.h5`
   font-weight: normal;
 `
 
+class Folder extends Component {
+  state = {
+    isOpen: false,
+  }
+
+  toggleSubSections = () => {
+    this.setState({ isOpen: !this.state.isOpen })
+  }
+
+  componentWillMount() {
+    this.setState({ isOpen: this.props.isOpenDefault })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ isOpen: nextProps.isOpenDefault })
+  }
+
+  render() {
+    // eslint-disable-next-line
+    const { children, isOpenDefault, ...props } = this.props
+    const { isOpen } = this.state
+
+    return typeof children === 'function'
+      ? children({ rootProps: props, toggleSubSections: this.toggleSubSections, isOpen })
+      : null
+  }
+}
+
 const SidebarMenu = ({ onRouteChange }) => (
   <MenuInner>
     {
       pages.map(({ title, pathname, sections }) => (
-        <Section key={title} onClick={onRouteChange}>
-          <SectionTitle>
-            <Link href={`/docs/${pathname}`}>
-              {title}
-            </Link>
-          </SectionTitle>
+          <Folder
+            key={title}
+            isOpenDefault={
+              typeof window !== 'undefined' &&
+                (window.location.pathname === `/docs/${pathname}`)
+            }
+          >
+            {({
+              rootProps,
+              toggleSubSections,
+              isOpen,
+            }) => (
+              <Section {...rootProps} onClick={onRouteChange}>
+                <SectionTitle onClick={toggleSubSections}>
+                  <Link href={`/docs/${pathname}`}>
+                    {title}
+                  </Link>
+                </SectionTitle>
 
-          {
-            sections.map(({ title }) => (
-              <SubSection key={title}>
-                <StyledLink href={`/docs/${pathname}#${titleToDash(title)}`}>
-                  {title}
-                </StyledLink>
-              </SubSection>
-            ))
-          }
-        </Section>
+                {
+                  isOpen && sections.map(({ title }) => (
+                    <SubSection key={title}>
+                      <StyledLink href={`/docs/${pathname}#${titleToDash(title)}`}>
+                        {title}
+                      </StyledLink>
+                    </SubSection>
+                  ))
+                }
+                </Section>
+            )}
+          </Folder>
       ))
     }
   </MenuInner>
 )
 
-export default SidebarMenu
+export default (SidebarMenu)

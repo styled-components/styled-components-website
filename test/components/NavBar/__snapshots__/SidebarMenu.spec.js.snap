@@ -18,19 +18,12 @@ exports[`SidebarMenu renders correctly 1`] = `
 }
 
 .c1 {
-  margin-bottom: 1.6666666666666667rem;
+  margin-bottom: 1.1111111111111112rem;
 }
 
 .c2 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
-  font-weight: normal;
-}
-
-.c4 {
-  display: block;
-  margin: 0.5555555555555556rem 2.2222222222222223rem 0.5555555555555556rem 3.0555555555555554rem;
-  font-size: 0.9rem;
   font-weight: normal;
 }
 
@@ -53,6 +46,7 @@ exports[`SidebarMenu renders correctly 1`] = `
   >
     <h4
       className="c2"
+      onClick={[Function]}
     >
       <a
         className="c3"
@@ -62,106 +56,6 @@ exports[`SidebarMenu renders correctly 1`] = `
         Basics
       </a>
     </h4>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#motivation"
-      >
-        Motivation
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#installation"
-      >
-        Installation
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#getting-started"
-      >
-        Getting Started
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#passed-props"
-      >
-        Passed props
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#adapting-based-on-props"
-      >
-        Adapting based on props
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#styling-any-components"
-      >
-        Styling any components
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#extending-styles"
-      >
-        Extending styles
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#attaching-additional-props"
-      >
-        Attaching additional props
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#animations"
-      >
-        Animations
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#react-native"
-      >
-        React Native
-      </a>
-    </h5>
   </div>
   <div
     className="c1"
@@ -169,6 +63,7 @@ exports[`SidebarMenu renders correctly 1`] = `
   >
     <h4
       className="c2"
+      onClick={[Function]}
     >
       <a
         className="c3"
@@ -178,76 +73,6 @@ exports[`SidebarMenu renders correctly 1`] = `
         Advanced
       </a>
     </h4>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#theming"
-      >
-        Theming
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#refs"
-      >
-        Refs
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#security"
-      >
-        Security
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#existing-css"
-      >
-        Existing CSS
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#media-templates"
-      >
-        Media Templates
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#tagged-template-literals"
-      >
-        Tagged Template Literals
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#server-side-rendering"
-      >
-        Server Side Rendering
-      </a>
-    </h5>
   </div>
   <div
     className="c1"
@@ -255,6 +80,7 @@ exports[`SidebarMenu renders correctly 1`] = `
   >
     <h4
       className="c2"
+      onClick={[Function]}
     >
       <a
         className="c3"
@@ -264,56 +90,6 @@ exports[`SidebarMenu renders correctly 1`] = `
         API Reference
       </a>
     </h4>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/api#primary"
-      >
-        Primary
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/api#helpers"
-      >
-        Helpers
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/api#supported-css"
-      >
-        Supported CSS
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/api#flow"
-      >
-        Flow
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/api#typescript"
-      >
-        TypeScript
-      </a>
-    </h5>
   </div>
   <div
     className="c1"
@@ -321,6 +97,7 @@ exports[`SidebarMenu renders correctly 1`] = `
   >
     <h4
       className="c2"
+      onClick={[Function]}
     >
       <a
         className="c3"
@@ -330,36 +107,6 @@ exports[`SidebarMenu renders correctly 1`] = `
         Tooling
       </a>
     </h4>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/tooling#babel-plugin"
-      >
-        Babel Plugin
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/tooling#test-utilities"
-      >
-        Test Utilities
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/tooling#stylelint"
-      >
-        Stylelint
-      </a>
-    </h5>
   </div>
   <div
     className="c1"
@@ -367,6 +114,7 @@ exports[`SidebarMenu renders correctly 1`] = `
   >
     <h4
       className="c2"
+      onClick={[Function]}
     >
       <a
         className="c3"
@@ -376,36 +124,6 @@ exports[`SidebarMenu renders correctly 1`] = `
         FAQs
       </a>
     </h4>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#can-i-nest-rules"
-      >
-        Can I nest rules?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#can-i-refer-to-other-components"
-      >
-        Can I refer to other components?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#can-i-use-css-frameworks"
-      >
-        Can I use css frameworks?
-      </a>
-    </h5>
   </div>
 </div>
 `;

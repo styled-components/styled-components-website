@@ -301,7 +301,7 @@ exports[`DocsLayout renders correctly 1`] = `
   background: #efefef;
   box-sizing: border-box;
   color: inherit;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-transition: -webkit-transform 150ms ease-out;
   -webkit-transition: transform 150ms ease-out;
   transition: transform 150ms ease-out;
@@ -315,7 +315,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c23 {
-  margin-bottom: 1.6666666666666667rem;
+  margin-bottom: 1.1111111111111112rem;
 }
 
 .c24 {
@@ -324,18 +324,11 @@ exports[`DocsLayout renders correctly 1`] = `
   font-weight: normal;
 }
 
-.c26 {
-  display: block;
-  margin: 0.5555555555555556rem 2.2222222222222223rem 0.5555555555555556rem 3.0555555555555554rem;
-  font-size: 0.9rem;
-  font-weight: normal;
-}
-
 .c0 {
   padding-left: 16.666666666666668rem;
 }
 
-.c27 {
+.c26 {
   width: 56.888888888888886rem;
   max-width: 100%;
   margin: 0 auto;
@@ -347,7 +340,7 @@ exports[`DocsLayout renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c28 {
+.c27 {
   display: block;
   text-align: left;
   width: 100%;
@@ -406,7 +399,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c27 {
+  .c26 {
     padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
   }
 }
@@ -984,629 +977,216 @@ exports[`DocsLayout renders correctly 1`] = `
                     <div
                       className="c22"
                     >
-                      <styled.div
-                        onClick={[Function]}
+                      <Folder
+                        isOpenDefault={false}
                       >
-                        <div
-                          className="c23"
+                        <styled.div
                           onClick={[Function]}
                         >
-                          <styled.h4>
-                            <h4
-                              className="c24"
+                          <div
+                            className="c23"
+                            onClick={[Function]}
+                          >
+                            <styled.h4
+                              onClick={[Function]}
                             >
-                              <Link
-                                href="/docs/basics"
+                              <h4
+                                className="c24"
+                                onClick={[Function]}
                               >
                                 <Link
                                   href="/docs/basics"
                                 >
-                                  <styled.a
+                                  <Link
                                     href="/docs/basics"
-                                    onClick={[Function]}
                                   >
-                                    <a
-                                      className="c25"
+                                    <styled.a
                                       href="/docs/basics"
                                       onClick={[Function]}
                                     >
-                                      Basics
-                                    </a>
-                                  </styled.a>
+                                      <a
+                                        className="c25"
+                                        href="/docs/basics"
+                                        onClick={[Function]}
+                                      >
+                                        Basics
+                                      </a>
+                                    </styled.a>
+                                  </Link>
                                 </Link>
-                              </Link>
-                            </h4>
-                          </styled.h4>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/basics#motivation"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/basics#motivation"
-                                >
-                                  Motivation
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/basics#installation"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/basics#installation"
-                                >
-                                  Installation
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/basics#getting-started"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/basics#getting-started"
-                                >
-                                  Getting Started
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/basics#passed-props"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/basics#passed-props"
-                                >
-                                  Passed props
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/basics#adapting-based-on-props"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/basics#adapting-based-on-props"
-                                >
-                                  Adapting based on props
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/basics#styling-any-components"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/basics#styling-any-components"
-                                >
-                                  Styling any components
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/basics#extending-styles"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/basics#extending-styles"
-                                >
-                                  Extending styles
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/basics#attaching-additional-props"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/basics#attaching-additional-props"
-                                >
-                                  Attaching additional props
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/basics#animations"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/basics#animations"
-                                >
-                                  Animations
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/basics#react-native"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/basics#react-native"
-                                >
-                                  React Native
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                        </div>
-                      </styled.div>
-                      <styled.div
-                        onClick={[Function]}
+                              </h4>
+                            </styled.h4>
+                          </div>
+                        </styled.div>
+                      </Folder>
+                      <Folder
+                        isOpenDefault={false}
                       >
-                        <div
-                          className="c23"
+                        <styled.div
                           onClick={[Function]}
                         >
-                          <styled.h4>
-                            <h4
-                              className="c24"
+                          <div
+                            className="c23"
+                            onClick={[Function]}
+                          >
+                            <styled.h4
+                              onClick={[Function]}
                             >
-                              <Link
-                                href="/docs/advanced"
+                              <h4
+                                className="c24"
+                                onClick={[Function]}
                               >
                                 <Link
                                   href="/docs/advanced"
                                 >
-                                  <styled.a
+                                  <Link
                                     href="/docs/advanced"
-                                    onClick={[Function]}
                                   >
-                                    <a
-                                      className="c25"
+                                    <styled.a
                                       href="/docs/advanced"
                                       onClick={[Function]}
                                     >
-                                      Advanced
-                                    </a>
-                                  </styled.a>
+                                      <a
+                                        className="c25"
+                                        href="/docs/advanced"
+                                        onClick={[Function]}
+                                      >
+                                        Advanced
+                                      </a>
+                                    </styled.a>
+                                  </Link>
                                 </Link>
-                              </Link>
-                            </h4>
-                          </styled.h4>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/advanced#theming"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/advanced#theming"
-                                >
-                                  Theming
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/advanced#refs"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/advanced#refs"
-                                >
-                                  Refs
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/advanced#security"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/advanced#security"
-                                >
-                                  Security
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/advanced#existing-css"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/advanced#existing-css"
-                                >
-                                  Existing CSS
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/advanced#media-templates"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/advanced#media-templates"
-                                >
-                                  Media Templates
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/advanced#tagged-template-literals"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/advanced#tagged-template-literals"
-                                >
-                                  Tagged Template Literals
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/advanced#server-side-rendering"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/advanced#server-side-rendering"
-                                >
-                                  Server Side Rendering
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                        </div>
-                      </styled.div>
-                      <styled.div
-                        onClick={[Function]}
+                              </h4>
+                            </styled.h4>
+                          </div>
+                        </styled.div>
+                      </Folder>
+                      <Folder
+                        isOpenDefault={false}
                       >
-                        <div
-                          className="c23"
+                        <styled.div
                           onClick={[Function]}
                         >
-                          <styled.h4>
-                            <h4
-                              className="c24"
+                          <div
+                            className="c23"
+                            onClick={[Function]}
+                          >
+                            <styled.h4
+                              onClick={[Function]}
                             >
-                              <Link
-                                href="/docs/api"
+                              <h4
+                                className="c24"
+                                onClick={[Function]}
                               >
                                 <Link
                                   href="/docs/api"
                                 >
-                                  <styled.a
+                                  <Link
                                     href="/docs/api"
-                                    onClick={[Function]}
                                   >
-                                    <a
-                                      className="c25"
+                                    <styled.a
                                       href="/docs/api"
                                       onClick={[Function]}
                                     >
-                                      API Reference
-                                    </a>
-                                  </styled.a>
+                                      <a
+                                        className="c25"
+                                        href="/docs/api"
+                                        onClick={[Function]}
+                                      >
+                                        API Reference
+                                      </a>
+                                    </styled.a>
+                                  </Link>
                                 </Link>
-                              </Link>
-                            </h4>
-                          </styled.h4>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/api#primary"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/api#primary"
-                                >
-                                  Primary
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/api#helpers"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/api#helpers"
-                                >
-                                  Helpers
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/api#supported-css"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/api#supported-css"
-                                >
-                                  Supported CSS
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/api#flow"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/api#flow"
-                                >
-                                  Flow
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/api#typescript"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/api#typescript"
-                                >
-                                  TypeScript
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                        </div>
-                      </styled.div>
-                      <styled.div
-                        onClick={[Function]}
+                              </h4>
+                            </styled.h4>
+                          </div>
+                        </styled.div>
+                      </Folder>
+                      <Folder
+                        isOpenDefault={false}
                       >
-                        <div
-                          className="c23"
+                        <styled.div
                           onClick={[Function]}
                         >
-                          <styled.h4>
-                            <h4
-                              className="c24"
+                          <div
+                            className="c23"
+                            onClick={[Function]}
+                          >
+                            <styled.h4
+                              onClick={[Function]}
                             >
-                              <Link
-                                href="/docs/tooling"
+                              <h4
+                                className="c24"
+                                onClick={[Function]}
                               >
                                 <Link
                                   href="/docs/tooling"
                                 >
-                                  <styled.a
+                                  <Link
                                     href="/docs/tooling"
-                                    onClick={[Function]}
                                   >
-                                    <a
-                                      className="c25"
+                                    <styled.a
                                       href="/docs/tooling"
                                       onClick={[Function]}
                                     >
-                                      Tooling
-                                    </a>
-                                  </styled.a>
+                                      <a
+                                        className="c25"
+                                        href="/docs/tooling"
+                                        onClick={[Function]}
+                                      >
+                                        Tooling
+                                      </a>
+                                    </styled.a>
+                                  </Link>
                                 </Link>
-                              </Link>
-                            </h4>
-                          </styled.h4>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/tooling#babel-plugin"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/tooling#babel-plugin"
-                                >
-                                  Babel Plugin
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/tooling#test-utilities"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/tooling#test-utilities"
-                                >
-                                  Test Utilities
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/tooling#stylelint"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/tooling#stylelint"
-                                >
-                                  Stylelint
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                        </div>
-                      </styled.div>
-                      <styled.div
-                        onClick={[Function]}
+                              </h4>
+                            </styled.h4>
+                          </div>
+                        </styled.div>
+                      </Folder>
+                      <Folder
+                        isOpenDefault={false}
                       >
-                        <div
-                          className="c23"
+                        <styled.div
                           onClick={[Function]}
                         >
-                          <styled.h4>
-                            <h4
-                              className="c24"
+                          <div
+                            className="c23"
+                            onClick={[Function]}
+                          >
+                            <styled.h4
+                              onClick={[Function]}
                             >
-                              <Link
-                                href="/docs/faqs"
+                              <h4
+                                className="c24"
+                                onClick={[Function]}
                               >
                                 <Link
                                   href="/docs/faqs"
                                 >
-                                  <styled.a
+                                  <Link
                                     href="/docs/faqs"
-                                    onClick={[Function]}
                                   >
-                                    <a
-                                      className="c25"
+                                    <styled.a
                                       href="/docs/faqs"
                                       onClick={[Function]}
                                     >
-                                      FAQs
-                                    </a>
-                                  </styled.a>
+                                      <a
+                                        className="c25"
+                                        href="/docs/faqs"
+                                        onClick={[Function]}
+                                      >
+                                        FAQs
+                                      </a>
+                                    </styled.a>
+                                  </Link>
                                 </Link>
-                              </Link>
-                            </h4>
-                          </styled.h4>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/faqs#can-i-nest-rules"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/faqs#can-i-nest-rules"
-                                >
-                                  Can I nest rules?
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/faqs#can-i-refer-to-other-components"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/faqs#can-i-refer-to-other-components"
-                                >
-                                  Can I refer to other components?
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                          <styled.h5>
-                            <h5
-                              className="c26"
-                            >
-                              <styled.a
-                                href="/docs/faqs#can-i-use-css-frameworks"
-                              >
-                                <a
-                                  className="c25"
-                                  href="/docs/faqs#can-i-use-css-frameworks"
-                                >
-                                  Can I use css frameworks?
-                                </a>
-                              </styled.a>
-                            </h5>
-                          </styled.h5>
-                        </div>
-                      </styled.div>
+                              </h4>
+                            </styled.h4>
+                          </div>
+                        </styled.div>
+                      </Folder>
                     </div>
                   </styled.div>
                 </SidebarMenu>
@@ -1619,11 +1199,11 @@ exports[`DocsLayout renders correctly 1`] = `
         moveRight={false}
       >
         <div
-          className="c27"
+          className="c26"
         >
           <styled.h1>
             <h1
-              className="c28"
+              className="c27"
             />
           </styled.h1>
         </div>

@@ -17,7 +17,7 @@ exports[`Sidebar renders correctly 1`] = `
   background: #efefef;
   box-sizing: border-box;
   color: inherit;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-transition: -webkit-transform 150ms ease-out;
   -webkit-transition: transform 150ms ease-out;
   transition: transform 150ms ease-out;
