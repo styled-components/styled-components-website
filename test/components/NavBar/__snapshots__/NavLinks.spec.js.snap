@@ -37,10 +37,11 @@ exports[`NavLinks renders correctly 1`] = `
   -webkit-transition: opacity 0.2s,transform 0.2s;
   transition: opacity 0.2s,transform 0.2s;
   cursor: pointer;
-  -webkit-letter-spacing: 0.022222222222222223rem color:currentColor;
-  -moz-letter-spacing: 0.022222222222222223rem color:currentColor;
-  -ms-letter-spacing: 0.022222222222222223rem color:currentColor;
-  letter-spacing: 0.022222222222222223rem color:currentColor;
+  -webkit-letter-spacing: 0.022222222222222223rem;
+  -moz-letter-spacing: 0.022222222222222223rem;
+  -ms-letter-spacing: 0.022222222222222223rem;
+  letter-spacing: 0.022222222222222223rem;
+  color: currentColor;
 }
 
 .c1:hover,

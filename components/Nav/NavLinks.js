@@ -21,7 +21,7 @@ const NavLink = styled(Link).attrs({
   transition: opacity 0.2s, transform 0.2s;
   cursor: pointer;
 
-  letter-spacing: ${rem(.4)}
+  letter-spacing: ${rem(.4)};
   color: currentColor;
 
   &:hover,
