@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DocsLayout renders correctly 1`] = `
-.c25 {
+.c26 {
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -130,7 +130,7 @@ exports[`DocsLayout renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c17 {
+.c18 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -139,6 +139,14 @@ exports[`DocsLayout renders correctly 1`] = `
   background-image: url(/static/icon.png);
   width: 5.555555555555555rem;
   height: 1.6666666666666667rem;
+}
+
+.c16 svg {
+  display: inline-block;
+}
+
+.c16 svg path {
+  fill: currentColor;
 }
 
 .c15 {
@@ -160,19 +168,11 @@ exports[`DocsLayout renders correctly 1`] = `
   border-radius: 0.1111111111111111rem;
 }
 
-.c15 svg {
-  display: inline-block;
-}
-
-.c15 svg path {
-  fill: currentColor;
-}
-
 .c14 {
   display: none;
 }
 
-.c19 {
+.c20 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -207,19 +207,18 @@ exports[`DocsLayout renders correctly 1`] = `
   color: #868686;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   vertical-align: center;
-  margin-right: 1.9444444444444444rem;
 }
 
-.c18 {
+.c19 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
 }
 
-.c20 {
+.c21 {
   padding-right: 1.1111111111111112rem;
 }
 
@@ -289,7 +288,7 @@ exports[`DocsLayout renders correctly 1`] = `
   margin-right: 1.9444444444444444rem;
 }
 
-.c21 {
+.c22 {
   position: fixed;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -311,18 +310,18 @@ exports[`DocsLayout renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c22 {
+.c23 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 1.3888888888888888rem;
 }
 
-.c23 {
+.c24 {
   margin-bottom: 1.1111111111111112rem;
 }
 
-.c24 {
+.c25 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
@@ -332,7 +331,7 @@ exports[`DocsLayout renders correctly 1`] = `
   padding-left: 16.666666666666668rem;
 }
 
-.c26 {
+.c27 {
   width: 56.888888888888886rem;
   max-width: 100%;
   margin: 0 auto;
@@ -344,7 +343,7 @@ exports[`DocsLayout renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c27 {
+.c28 {
   display: block;
   text-align: left;
   width: 100%;
@@ -355,11 +354,11 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (min-width:62.5em) {
-  .c25 {
+  .c26 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c25:hover {
+  .c26:hover {
     background: rgba(20,20,20,0.1);
   }
 }
@@ -389,7 +388,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c21 {
+  .c22 {
     -webkit-transform: translateX(-16.666666666666668rem);
     -ms-transform: translateX(-16.666666666666668rem);
     transform: translateX(-16.666666666666668rem);
@@ -403,7 +402,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c26 {
+  .c27 {
     padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
   }
 }
@@ -689,33 +688,41 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <FoldIcon>
-                            <svg
+                            <styled.svg
                               height="14"
                               width="17"
                               xmlns="http://www.w3.org/2000/svg"
                               xmlnsXlink="http://www.w3.org/1999/xlink"
                             >
-                              <title>
-                                fold
-                              </title>
-                              <use
-                                fill="#FFF"
-                                transform="translate(0 1)"
-                                xlinkHref="#fold"
-                              />
-                              <defs>
-                                <path
-                                  d="M0 1h17v-2H0v2zm17 4H0v2h17V5zM0 13h17v-2H0v2z"
-                                  id="fold"
+                              <svg
+                                className="c16"
+                                height="14"
+                                width="17"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlnsXlink="http://www.w3.org/1999/xlink"
+                              >
+                                <title>
+                                  fold
+                                </title>
+                                <use
+                                  fill="#FFF"
+                                  transform="translate(0 1)"
+                                  xlinkHref="#fold"
                                 />
-                              </defs>
-                            </svg>
+                                <defs>
+                                  <path
+                                    d="M0 1h17v-2H0v2zm17 4H0v2h17V5zM0 13h17v-2H0v2z"
+                                    id="fold"
+                                  />
+                                </defs>
+                              </svg>
+                            </styled.svg>
                           </FoldIcon>
                         </button>
                       </styled.button>
                       <Styled(Link)>
                         <Link
-                          className="c16"
+                          className="c17"
                           href="/"
                           unstyled={true}
                         >
@@ -723,7 +730,7 @@ exports[`DocsLayout renders correctly 1`] = `
                             href="/"
                           >
                             <a
-                              className="c16"
+                              className="c17"
                               href="/"
                               onClick={[Function]}
                             >
@@ -731,7 +738,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 compact={true}
                               >
                                 <div
-                                  className="c17"
+                                  className="c18"
                                 />
                               </styled.div>
                             </a>
@@ -746,47 +753,53 @@ exports[`DocsLayout renders correctly 1`] = `
                           className="c15"
                           onClick={[Function]}
                         >
-                          <ArrowIcon
+                          <styled.div
                             rotate={false}
                           >
-                            <styled.div
+                            <div
+                              className="c19"
                               rotate={false}
                             >
-                              <div
-                                className="c18"
-                                rotate={false}
-                              >
-                                <svg
+                              <ArrowIcon>
+                                <styled.svg
                                   height="8"
                                   width="12"
                                   xmlns="http://www.w3.org/2000/svg"
                                   xmlnsXlink="http://www.w3.org/1999/xlink"
                                 >
-                                  <title>
-                                    arrow down
-                                  </title>
-                                  <use
-                                    fill="#FFF"
-                                    transform="translate(1 1)"
-                                    xlinkHref="#menuArrow"
-                                  />
-                                  <defs>
-                                    <path
-                                      d="M5 5l-.7.7.7.7.7-.7L5 5zM9.3-.7l-5 5 1.4 1.4 5-5L9.3-.7zm-3.6 5l-5-5L-.7.7l5 5 1.4-1.4z"
-                                      id="menuArrow"
+                                  <svg
+                                    className="c16"
+                                    height="8"
+                                    width="12"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                                  >
+                                    <title>
+                                      arrow down
+                                    </title>
+                                    <use
+                                      fill="#FFF"
+                                      transform="translate(1 1)"
+                                      xlinkHref="#menuArrow"
                                     />
-                                  </defs>
-                                </svg>
-                              </div>
-                            </styled.div>
-                          </ArrowIcon>
+                                    <defs>
+                                      <path
+                                        d="M5 5l-.7.7.7.7.7-.7L5 5zM9.3-.7l-5 5 1.4 1.4 5-5L9.3-.7zm-3.6 5l-5-5L-.7.7l5 5 1.4-1.4z"
+                                        id="menuArrow"
+                                      />
+                                    </defs>
+                                  </svg>
+                                </styled.svg>
+                              </ArrowIcon>
+                            </div>
+                          </styled.div>
                         </button>
                       </styled.button>
                       <styled.div
                         open={false}
                       >
                         <div
-                          className="c19"
+                          className="c20"
                           open={false}
                         >
                           <NavLinks>
@@ -877,7 +890,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.span>
                           <styled.div>
                             <div
-                              className="c20"
+                              className="c21"
                             >
                               <Social>
                                 <styled.nav>
@@ -1008,14 +1021,14 @@ exports[`DocsLayout renders correctly 1`] = `
               isFolded={true}
             >
               <nav
-                className="c21"
+                className="c22"
               >
                 <SidebarMenu
                   onRouteChange={[Function]}
                 >
                   <styled.div>
                     <div
-                      className="c22"
+                      className="c23"
                     >
                       <Folder
                         isOpenDefault={false}
@@ -1024,14 +1037,14 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <div
-                            className="c23"
+                            className="c24"
                             onClick={[Function]}
                           >
                             <styled.h4
                               onClick={[Function]}
                             >
                               <h4
-                                className="c24"
+                                className="c25"
                                 onClick={[Function]}
                               >
                                 <Link
@@ -1045,7 +1058,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       onClick={[Function]}
                                     >
                                       <a
-                                        className="c25"
+                                        className="c26"
                                         href="/docs/basics"
                                         onClick={[Function]}
                                       >
@@ -1066,14 +1079,14 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <div
-                            className="c23"
+                            className="c24"
                             onClick={[Function]}
                           >
                             <styled.h4
                               onClick={[Function]}
                             >
                               <h4
-                                className="c24"
+                                className="c25"
                                 onClick={[Function]}
                               >
                                 <Link
@@ -1087,7 +1100,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       onClick={[Function]}
                                     >
                                       <a
-                                        className="c25"
+                                        className="c26"
                                         href="/docs/advanced"
                                         onClick={[Function]}
                                       >
@@ -1108,14 +1121,14 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <div
-                            className="c23"
+                            className="c24"
                             onClick={[Function]}
                           >
                             <styled.h4
                               onClick={[Function]}
                             >
                               <h4
-                                className="c24"
+                                className="c25"
                                 onClick={[Function]}
                               >
                                 <Link
@@ -1129,7 +1142,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       onClick={[Function]}
                                     >
                                       <a
-                                        className="c25"
+                                        className="c26"
                                         href="/docs/api"
                                         onClick={[Function]}
                                       >
@@ -1150,14 +1163,14 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <div
-                            className="c23"
+                            className="c24"
                             onClick={[Function]}
                           >
                             <styled.h4
                               onClick={[Function]}
                             >
                               <h4
-                                className="c24"
+                                className="c25"
                                 onClick={[Function]}
                               >
                                 <Link
@@ -1171,7 +1184,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       onClick={[Function]}
                                     >
                                       <a
-                                        className="c25"
+                                        className="c26"
                                         href="/docs/tooling"
                                         onClick={[Function]}
                                       >
@@ -1192,14 +1205,14 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <div
-                            className="c23"
+                            className="c24"
                             onClick={[Function]}
                           >
                             <styled.h4
                               onClick={[Function]}
                             >
                               <h4
-                                className="c24"
+                                className="c25"
                                 onClick={[Function]}
                               >
                                 <Link
@@ -1213,7 +1226,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       onClick={[Function]}
                                     >
                                       <a
-                                        className="c25"
+                                        className="c26"
                                         href="/docs/faqs"
                                         onClick={[Function]}
                                       >
@@ -1239,11 +1252,11 @@ exports[`DocsLayout renders correctly 1`] = `
         moveRight={false}
       >
         <div
-          className="c26"
+          className="c27"
         >
           <styled.h1>
             <h1
-              className="c27"
+              className="c28"
             />
           </styled.h1>
         </div>

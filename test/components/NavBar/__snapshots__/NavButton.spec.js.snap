@@ -20,14 +20,6 @@ exports[`NavButton renders correctly 1`] = `
   border-radius: 0.1111111111111111rem;
 }
 
-.c0 svg {
-  display: inline-block;
-}
-
-.c0 svg path {
-  fill: currentColor;
-}
-
 <button
   className="c0"
 />

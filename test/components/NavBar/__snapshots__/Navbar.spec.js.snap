@@ -121,7 +121,7 @@ exports[`Navbar renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -130,6 +130,14 @@ exports[`Navbar renders correctly 1`] = `
   background-image: url(/static/icon.png);
   width: 5.555555555555555rem;
   height: 1.6666666666666667rem;
+}
+
+.c15 svg {
+  display: inline-block;
+}
+
+.c15 svg path {
+  fill: currentColor;
 }
 
 .c14 {
@@ -152,15 +160,7 @@ exports[`Navbar renders correctly 1`] = `
   border-radius: 0.1111111111111111rem;
 }
 
-.c14 svg {
-  display: inline-block;
-}
-
-.c14 svg path {
-  fill: currentColor;
-}
-
-.c17 {
+.c18 {
   background: none;
   outline: none;
   border: none;
@@ -174,24 +174,16 @@ exports[`Navbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c17:focus {
+.c18:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
-}
-
-.c17 svg {
-  display: inline-block;
-}
-
-.c17 svg path {
-  fill: currentColor;
 }
 
 .c13 {
   display: none;
 }
 
-.c19 {
+.c20 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -226,19 +218,18 @@ exports[`Navbar renders correctly 1`] = `
   color: #868686;
 }
 
-.c15 {
+.c16 {
   display: inline-block;
   vertical-align: center;
-  margin-right: 1.9444444444444444rem;
 }
 
-.c18 {
+.c19 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
 }
 
-.c20 {
+.c21 {
   padding-right: 1.1111111111111112rem;
 }
 
@@ -455,6 +446,7 @@ exports[`Navbar renders correctly 1`] = `
       onClick={undefined}
     >
       <svg
+        className="c15"
         height="15"
         width="15"
         xmlns="http://www.w3.org/2000/svg"
@@ -477,23 +469,24 @@ exports[`Navbar renders correctly 1`] = `
       </svg>
     </button>
     <a
-      className="c15"
+      className="c16"
       href="/"
       onClick={[Function]}
     >
       <div
-        className="c16"
+        className="c17"
       />
     </a>
     <button
-      className="c17"
+      className="c18"
       onClick={[Function]}
     >
       <div
-        className="c18"
+        className="c19"
         rotate={false}
       >
         <svg
+          className="c15"
           height="8"
           width="12"
           xmlns="http://www.w3.org/2000/svg"
@@ -517,7 +510,7 @@ exports[`Navbar renders correctly 1`] = `
       </div>
     </button>
     <div
-      className="c19"
+      className="c20"
       open={false}
     >
       <nav
@@ -555,7 +548,7 @@ exports[`Navbar renders correctly 1`] = `
         className="c7"
       />
       <div
-        className="c20"
+        className="c21"
       >
         <nav
           className="c9"

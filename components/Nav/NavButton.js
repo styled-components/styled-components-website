@@ -22,14 +22,6 @@ const NavButton = styled.button`
     border: ${rem(2)} solid currentColor;
     border-radius: ${rem(2)};
   }
-
-  svg {
-    display: inline-block;
-
-    path {
-      fill: currentColor;
-    }
-  }
 `
 
 export default NavButton

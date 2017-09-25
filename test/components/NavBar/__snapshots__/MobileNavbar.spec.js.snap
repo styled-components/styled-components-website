@@ -1,7 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MobileNavbar renders correctly 1`] = `
-.c9 {
+.c2 svg {
+  display: inline-block;
+}
+
+.c2 svg path {
+  fill: currentColor;
+}
+
+.c10 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -13,7 +21,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   opacity: 0.35;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -27,7 +35,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   flex: 0 0 auto;
 }
 
-.c8 {
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -44,19 +52,19 @@ exports[`MobileNavbar renders correctly 1`] = `
   color: currentColor;
 }
 
-.c8:hover,
-.c8:focus {
+.c9:hover,
+.c9:focus {
   opacity: 0.8;
 }
 
-.c8:active {
+.c9:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -70,7 +78,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c12 {
+.c13 {
   display: inline-block;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
@@ -80,37 +88,37 @@ exports[`MobileNavbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c12:last-child {
+.c13:last-child {
   margin-right: 0;
 }
 
-.c12:hover,
-.c12:focus {
+.c13:hover,
+.c13:focus {
   opacity: 0.8;
 }
 
-.c12:active {
+.c13:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c12 svg path {
+.c13 svg path {
   fill: currentColor;
 }
 
-.c13 {
+.c14 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c14 {
+.c15 {
   width: 0.9444444444444444rem;
   height: 0.9444444444444444rem;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -141,15 +149,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   border-radius: 0.1111111111111111rem;
 }
 
-.c1 svg {
-  display: inline-block;
-}
-
-.c1 svg path {
-  fill: currentColor;
-}
-
-.c4 {
+.c5 {
   background: none;
   outline: none;
   border: none;
@@ -163,24 +163,16 @@ exports[`MobileNavbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c4:focus {
+.c5:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
-}
-
-.c4 svg {
-  display: inline-block;
-}
-
-.c4 svg path {
-  fill: currentColor;
 }
 
 .c0 {
   display: none;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -215,19 +207,18 @@ exports[`MobileNavbar renders correctly 1`] = `
   color: #868686;
 }
 
-.c2 {
+.c3 {
   display: inline-block;
   vertical-align: center;
-  margin-right: 1.9444444444444444rem;
 }
 
-.c5 {
+.c6 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
 }
 
-.c10 {
+.c11 {
   padding-right: 1.1111111111111112rem;
 }
 
@@ -257,6 +248,7 @@ exports[`MobileNavbar renders correctly 1`] = `
     onClick={undefined}
   >
     <svg
+      className="c2"
       height="15"
       width="15"
       xmlns="http://www.w3.org/2000/svg"
@@ -279,23 +271,24 @@ exports[`MobileNavbar renders correctly 1`] = `
     </svg>
   </button>
   <a
-    className="c2"
+    className="c3"
     href="/"
     onClick={[Function]}
   >
     <div
-      className="c3"
+      className="c4"
     />
   </a>
   <button
-    className="c4"
+    className="c5"
     onClick={[Function]}
   >
     <div
-      className="c5"
+      className="c6"
       rotate={false}
     >
       <svg
+        className="c2"
         height="8"
         width="12"
         xmlns="http://www.w3.org/2000/svg"
@@ -319,34 +312,34 @@ exports[`MobileNavbar renders correctly 1`] = `
     </div>
   </button>
   <div
-    className="c6"
+    className="c7"
     open={false}
   >
     <nav
-      className="c7"
+      className="c8"
     >
       <a
-        className="c8"
+        className="c9"
         href="/docs/basics#motivation"
         onClick={[Function]}
       >
         Concepts
       </a>
       <span
-        className="c9"
+        className="c10"
       />
       <a
-        className="c8"
+        className="c9"
         href="/"
         onClick={[Function]}
       >
         Try it out
       </a>
       <span
-        className="c9"
+        className="c10"
       />
       <a
-        className="c8"
+        className="c9"
         href="/docs"
         onClick={[Function]}
       >
@@ -354,21 +347,21 @@ exports[`MobileNavbar renders correctly 1`] = `
       </a>
     </nav>
     <span
-      className="c9"
+      className="c10"
     />
     <div
-      className="c10"
+      className="c11"
     >
       <nav
-        className="c11"
+        className="c12"
       >
         <a
-          className="c12"
+          className="c13"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
         >
           <svg
-            className="c13"
+            className="c14"
             height="14"
             viewBox="0 0 15 15"
             width="14"
@@ -391,12 +384,12 @@ exports[`MobileNavbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="c12"
+          className="c13"
           href="https://github.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c14"
+            className="c15"
             height="17"
             viewBox="0 0 17 17"
             width="17"
