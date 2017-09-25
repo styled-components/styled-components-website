@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components'
 import rem from '../utils/rem'
 import { mobile } from '../utils/media'
+import { sidebarWidth } from '../utils/sizes'
 import { bodyFont, headerFont } from '../utils/fonts'
 
 export const Container = styled.div`
-  padding-left: ${rem(300)};
+  padding-left: ${rem(sidebarWidth)};
 
   ${mobile(css`
     padding-left: 0;
-    padding-top: ${rem(70)};
   `)}
 `
 
@@ -16,12 +16,17 @@ export const Content = styled.div`
   width: ${rem(1024)};
   max-width: 100%;
   margin: 0 auto;
-  padding: ${rem(50)} ${rem(40)} ${rem(30)} ${rem(40)};
+  padding: ${rem(90)} ${rem(40)} ${rem(30)} ${rem(40)};
   box-sizing: border-box;
   font-family: ${bodyFont};
+  transition: transform 150ms ease-out;
 
   ${mobile(css`
-    padding: ${rem(30)} ${rem(20)};
+    padding: ${rem(70)} ${rem(20)} ${rem(30)} ${rem(20)};
+
+    ${p => p.moveRight && css`
+      transform: translateX(${rem(sidebarWidth)});
+    `}
   `)}
 `
 
