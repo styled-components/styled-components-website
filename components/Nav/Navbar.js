@@ -62,7 +62,12 @@ const LogoLink = styled(Link).attrs({
 
 class Navbar extends PureComponent {
   render() {
-    const { onFold, isFolded } = this.props
+    const {
+      onSideToggle,
+      onMobileNavToggle,
+      isSideFolded,
+      isMobileNavFolded,
+    } = this.props
 
     return (
       <Wrapper>
@@ -81,8 +86,10 @@ class Navbar extends PureComponent {
         </NormalNavbar>
 
         <MobileNavbar
-          isFolded={isFolded}
-          onFold={onFold}
+          isSideFolded={isSideFolded}
+          isMobileNavFolded={isMobileNavFolded}
+          onSideToggle={onSideToggle}
+          onMobileNavToggle={onMobileNavToggle}
         />
       </Wrapper>
     )

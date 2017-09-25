@@ -6,7 +6,8 @@ import { Container, Content, Title } from './Layout'
 
 class DocsLayout extends Component {
   state = {
-    isSideFolded: true
+    isSideFolded: true,
+    isMobileNavFolded: true
   }
 
   static defaultProps = {
@@ -14,17 +15,27 @@ class DocsLayout extends Component {
     description: '',
   }
 
-  onSideFold = () => {
-    this.setState({ isSideFolded: !this.state.isSideFolded })
+  onSideToggle = () => {
+    this.setState({
+      isSideFolded: !this.state.isSideFolded,
+      isMobileNavFolded: true,
+    })
+  }
+
+  onMobileNavToggle = () => {
+    this.setState({
+      isMobileNavFolded: !this.state.isMobileNavFolded,
+      isSideFolded: true,
+    })
   }
 
   onRouteChange = () => {
-    this.setState({ isSideFolded: true })
+    this.setState({ isSideFolded: true, isMobileNavFolded: true })
   }
 
   render() {
     const { children, title, description } = this.props
-    const { isSideFolded } = this.state
+    const { isSideFolded, isMobileNavFolded } = this.state
 
     return (
       <Container>
@@ -37,7 +48,9 @@ class DocsLayout extends Component {
 
         <Nav
           isSideFolded={isSideFolded}
-          onSideFold={this.onSideFold}
+          isMobileNavFolded={isMobileNavFolded}
+          onSideToggle={this.onSideToggle}
+          onMobileNavToggle={this.onMobileNavToggle}
           onRouteChange={this.onRouteChange}
         />
 

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav renders correctly 1`] = `
-.c27 {
+.c26 {
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -174,35 +174,16 @@ exports[`Nav renders correctly 1`] = `
   border-radius: 0.1111111111111111rem;
 }
 
-.c19 {
-  background: none;
-  outline: none;
-  border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  min-width: 2.7777777777777777rem;
-  height: 2.7777777777777777rem;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-.c19:focus {
-  border: 0.1111111111111111rem solid currentColor;
-  border-radius: 0.1111111111111111rem;
-}
-
 .c14 {
   display: none;
 }
 
-.c21 {
+.c20 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
   right: 0;
-  height: 0;
+  height: 2.7777777777777777rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -237,13 +218,19 @@ exports[`Nav renders correctly 1`] = `
   vertical-align: center;
 }
 
-.c20 {
+.c19 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
+  -webkit-transform-origin: 50% 55%;
+  -ms-transform-origin: 50% 55%;
+  transform-origin: 50% 55%;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-.c22 {
+.c21 {
   padding-right: 1.1111111111111112rem;
 }
 
@@ -313,7 +300,7 @@ exports[`Nav renders correctly 1`] = `
   margin-right: 1.9444444444444444rem;
 }
 
-.c23 {
+.c22 {
   position: fixed;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -335,29 +322,29 @@ exports[`Nav renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c24 {
+.c23 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 1.3888888888888888rem;
 }
 
-.c25 {
+.c24 {
   margin-bottom: 1.1111111111111112rem;
 }
 
-.c26 {
+.c25 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
 }
 
 @media (min-width:62.5em) {
-  .c27 {
+  .c26 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c27:hover {
+  .c26:hover {
     background: rgba(20,20,20,0.1);
   }
 }
@@ -743,19 +730,17 @@ exports[`Nav renders correctly 1`] = `
                   </Link>
                 </Styled(Link)>
                 <styled.button
-                  active={false}
-                  onClick={[Function]}
+                  active={true}
                 >
                   <button
-                    className="c19"
-                    onClick={[Function]}
+                    className="c15"
                   >
                     <styled.div
-                      rotate={false}
+                      rotate={true}
                     >
                       <div
-                        className="c20"
-                        rotate={false}
+                        className="c19"
+                        rotate={true}
                       >
                         <ArrowIcon>
                           <styled.svg
@@ -793,11 +778,11 @@ exports[`Nav renders correctly 1`] = `
                   </button>
                 </styled.button>
                 <styled.div
-                  open={false}
+                  open={true}
                 >
                   <div
-                    className="c21"
-                    open={false}
+                    className="c20"
+                    open={true}
                   >
                     <NavLinks>
                       <styled.nav>
@@ -887,7 +872,7 @@ exports[`Nav renders correctly 1`] = `
                     </styled.span>
                     <styled.div>
                       <div
-                        className="c22"
+                        className="c21"
                       >
                         <Social>
                           <styled.nav>
@@ -1060,25 +1045,25 @@ exports[`Nav renders correctly 1`] = `
     <styled.nav>
       <styled.nav>
         <nav
-          className="c23"
+          className="c22"
         >
           <SidebarMenu>
             <styled.div>
               <div
-                className="c24"
+                className="c23"
               >
                 <Folder
                   isOpenDefault={false}
                 >
                   <styled.div>
                     <div
-                      className="c25"
+                      className="c24"
                     >
                       <styled.h4
                         onClick={[Function]}
                       >
                         <h4
-                          className="c26"
+                          className="c25"
                           onClick={[Function]}
                         >
                           <Link
@@ -1092,7 +1077,7 @@ exports[`Nav renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <a
-                                  className="c27"
+                                  className="c26"
                                   href="/docs/basics"
                                   onClick={[Function]}
                                 >
@@ -1111,13 +1096,13 @@ exports[`Nav renders correctly 1`] = `
                 >
                   <styled.div>
                     <div
-                      className="c25"
+                      className="c24"
                     >
                       <styled.h4
                         onClick={[Function]}
                       >
                         <h4
-                          className="c26"
+                          className="c25"
                           onClick={[Function]}
                         >
                           <Link
@@ -1131,7 +1116,7 @@ exports[`Nav renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <a
-                                  className="c27"
+                                  className="c26"
                                   href="/docs/advanced"
                                   onClick={[Function]}
                                 >
@@ -1150,13 +1135,13 @@ exports[`Nav renders correctly 1`] = `
                 >
                   <styled.div>
                     <div
-                      className="c25"
+                      className="c24"
                     >
                       <styled.h4
                         onClick={[Function]}
                       >
                         <h4
-                          className="c26"
+                          className="c25"
                           onClick={[Function]}
                         >
                           <Link
@@ -1170,7 +1155,7 @@ exports[`Nav renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <a
-                                  className="c27"
+                                  className="c26"
                                   href="/docs/api"
                                   onClick={[Function]}
                                 >
@@ -1189,13 +1174,13 @@ exports[`Nav renders correctly 1`] = `
                 >
                   <styled.div>
                     <div
-                      className="c25"
+                      className="c24"
                     >
                       <styled.h4
                         onClick={[Function]}
                       >
                         <h4
-                          className="c26"
+                          className="c25"
                           onClick={[Function]}
                         >
                           <Link
@@ -1209,7 +1194,7 @@ exports[`Nav renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <a
-                                  className="c27"
+                                  className="c26"
                                   href="/docs/tooling"
                                   onClick={[Function]}
                                 >
@@ -1228,13 +1213,13 @@ exports[`Nav renders correctly 1`] = `
                 >
                   <styled.div>
                     <div
-                      className="c25"
+                      className="c24"
                     >
                       <styled.h4
                         onClick={[Function]}
                       >
                         <h4
-                          className="c26"
+                          className="c25"
                           onClick={[Function]}
                         >
                           <Link
@@ -1248,7 +1233,7 @@ exports[`Nav renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <a
-                                  className="c27"
+                                  className="c26"
                                   href="/docs/faqs"
                                   onClick={[Function]}
                                 >

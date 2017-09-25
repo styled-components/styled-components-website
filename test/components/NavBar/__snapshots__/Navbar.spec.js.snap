@@ -165,35 +165,16 @@ exports[`Navbar renders correctly 1`] = `
   border-radius: 0.1111111111111111rem;
 }
 
-.c19 {
-  background: none;
-  outline: none;
-  border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  min-width: 2.7777777777777777rem;
-  height: 2.7777777777777777rem;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-.c19:focus {
-  border: 0.1111111111111111rem solid currentColor;
-  border-radius: 0.1111111111111111rem;
-}
-
 .c14 {
   display: none;
 }
 
-.c21 {
+.c20 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
   right: 0;
-  height: 0;
+  height: 2.7777777777777777rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -228,13 +209,19 @@ exports[`Navbar renders correctly 1`] = `
   vertical-align: center;
 }
 
-.c20 {
+.c19 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
+  -webkit-transform-origin: 50% 55%;
+  -ms-transform-origin: 50% 55%;
+  transform-origin: 50% 55%;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-.c22 {
+.c21 {
   padding-right: 1.1111111111111112rem;
 }
 
@@ -505,12 +492,12 @@ exports[`Navbar renders correctly 1`] = `
       />
     </a>
     <button
-      className="c19"
-      onClick={[Function]}
+      className="c15"
+      onClick={undefined}
     >
       <div
-        className="c20"
-        rotate={false}
+        className="c19"
+        rotate={true}
       >
         <svg
           className="c16"
@@ -537,8 +524,8 @@ exports[`Navbar renders correctly 1`] = `
       </div>
     </button>
     <div
-      className="c21"
-      open={false}
+      className="c20"
+      open={true}
     >
       <nav
         className="c5"
@@ -575,7 +562,7 @@ exports[`Navbar renders correctly 1`] = `
         className="c7"
       />
       <div
-        className="c22"
+        className="c21"
       >
         <nav
           className="c9"

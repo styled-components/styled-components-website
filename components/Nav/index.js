@@ -1,28 +1,30 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import SidebarMenu from './SidebarMenu'
 
-class Nav extends Component {
-  state = {
-    isNavbarMenuFolded: true
-  }
+const Nav = props => {
+  const {
+    isSideFolded,
+    isMobileNavFolded,
+    onSideToggle,
+    onMobileNavToggle,
+    onRouteChange,
+  } = props
 
-  render() {
-    const { onRouteChange, onSideFold, isSideFolded } = this.props
-
-    return (
-      <div>
-        <Navbar
-          isFolded={isSideFolded}
-          onFold={onSideFold}
-        />
-        <Sidebar isFolded={isSideFolded}>
-          <SidebarMenu onRouteChange={onRouteChange} />
-        </Sidebar>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Navbar
+        isSideFolded={isSideFolded}
+        isMobileNavFolded={isMobileNavFolded}
+        onSideToggle={onSideToggle}
+        onMobileNavToggle={onMobileNavToggle}
+      />
+      <Sidebar isFolded={isSideFolded}>
+        <SidebarMenu onRouteChange={onRouteChange} />
+      </Sidebar>
+    </div>
+  )
 }
 
 export default Nav

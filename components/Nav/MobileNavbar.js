@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import styled, { css } from 'styled-components'
 
 import rem from '../../utils/rem'
@@ -73,51 +73,45 @@ const SecondaryMenuItem = styled.div`
   padding-right: ${rem(20)};
 `
 
-class MobileNavbar extends PureComponent {
-  state = {
-    isMenuOpen: false,
-  }
+const MobileNavbar = props => {
+  const {
+    isSideFolded,
+    isMobileNavFolded,
+    onSideToggle,
+    onMobileNavToggle,
+  } = props
 
-  render() {
-    const { isMenuOpen } = this.state
-    const { isFolded, onFold } = this.props
+  return (
+    <Wrapper>
+      <NavButton
+        active={!isSideFolded}
+        onClick={onSideToggle}
+      >
+        {isSideFolded ? <FoldIcon /> : <CloseIcon />}
+      </NavButton>
 
-    return (
-      <Wrapper>
-        <NavButton
-          active={!isFolded}
-          onClick={onFold}
-        >
-          {isFolded ? <FoldIcon /> : <CloseIcon />}
-        </NavButton>
+      <LogoLink>
+        <Logo compact />
+      </LogoLink>
 
-        <LogoLink>
-          <Logo compact />
-        </LogoLink>
+      <NavButton
+        onClick={onMobileNavToggle}
+        active={!isMobileNavFolded}
+      >
+        <ArrowWrapper rotate={!isMobileNavFolded}>
+          <ArrowIcon />
+        </ArrowWrapper>
+      </NavButton>
 
-        <NavButton
-          onClick={this.toggleMenu}
-          active={isMenuOpen}
-        >
-          <ArrowWrapper rotate={isMenuOpen}>
-            <ArrowIcon />
-          </ArrowWrapper>
-        </NavButton>
-
-        <SecondaryMenu open={isMenuOpen}>
-          <NavLinks />
-          <NavSeparator />
-          <SecondaryMenuItem>
-            <Social />
-          </SecondaryMenuItem>
-        </SecondaryMenu>
-      </Wrapper>
-    )
-  }
-
-  toggleMenu = () => {
-    this.setState({ isMenuOpen: !this.state.isMenuOpen })
-  }
+      <SecondaryMenu open={!isMobileNavFolded}>
+        <NavLinks />
+        <NavSeparator />
+        <SecondaryMenuItem>
+          <Social />
+        </SecondaryMenuItem>
+      </SecondaryMenu>
+    </Wrapper>
+  )
 }
 
 export default MobileNavbar

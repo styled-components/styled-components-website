@@ -429,14 +429,18 @@ exports[`DocsLayout renders correctly 1`] = `
         </SideEffect(Head)>
       </SeoHead>
       <Nav
+        isMobileNavFolded={true}
         isSideFolded={true}
+        onMobileNavToggle={[Function]}
         onRouteChange={[Function]}
-        onSideFold={[Function]}
+        onSideToggle={[Function]}
       >
         <div>
           <Navbar
-            isFolded={true}
-            onFold={[Function]}
+            isMobileNavFolded={true}
+            isSideFolded={true}
+            onMobileNavToggle={[Function]}
+            onSideToggle={[Function]}
           >
             <styled.nav>
               <nav
@@ -723,8 +727,10 @@ exports[`DocsLayout renders correctly 1`] = `
                   </div>
                 </styled.div>
                 <MobileNavbar
-                  isFolded={true}
-                  onFold={[Function]}
+                  isMobileNavFolded={true}
+                  isSideFolded={true}
+                  onMobileNavToggle={[Function]}
+                  onSideToggle={[Function]}
                 >
                   <styled.div>
                     <div

@@ -9,7 +9,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   fill: currentColor;
 }
 
-.c10 {
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -21,7 +21,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   opacity: 0.35;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -35,7 +35,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   flex: 0 0 auto;
 }
 
-.c9 {
+.c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -52,19 +52,19 @@ exports[`MobileNavbar renders correctly 1`] = `
   color: currentColor;
 }
 
-.c9:hover,
-.c9:focus {
+.c8:hover,
+.c8:focus {
   opacity: 0.8;
 }
 
-.c9:active {
+.c8:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -78,7 +78,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c13 {
+.c12 {
   display: inline-block;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
@@ -88,37 +88,37 @@ exports[`MobileNavbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c13:last-child {
+.c12:last-child {
   margin-right: 0;
 }
 
-.c13:hover,
-.c13:focus {
+.c12:hover,
+.c12:focus {
   opacity: 0.8;
 }
 
-.c13:active {
+.c12:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c13 svg path {
+.c12 svg path {
   fill: currentColor;
 }
 
-.c14 {
+.c13 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c15 {
+.c14 {
   width: 0.9444444444444444rem;
   height: 0.9444444444444444rem;
 }
 
-.c16 {
+.c15 {
   width: 0.9444444444444444rem;
   height: 0.7777777777777778rem;
 }
@@ -154,35 +154,16 @@ exports[`MobileNavbar renders correctly 1`] = `
   border-radius: 0.1111111111111111rem;
 }
 
-.c5 {
-  background: none;
-  outline: none;
-  border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  min-width: 2.7777777777777777rem;
-  height: 2.7777777777777777rem;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-.c5:focus {
-  border: 0.1111111111111111rem solid currentColor;
-  border-radius: 0.1111111111111111rem;
-}
-
 .c0 {
   display: none;
 }
 
-.c7 {
+.c6 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
   right: 0;
-  height: 0;
+  height: 2.7777777777777777rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -217,13 +198,19 @@ exports[`MobileNavbar renders correctly 1`] = `
   vertical-align: center;
 }
 
-.c6 {
+.c5 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
+  -webkit-transform-origin: 50% 55%;
+  -ms-transform-origin: 50% 55%;
+  transform-origin: 50% 55%;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-.c11 {
+.c10 {
   padding-right: 1.1111111111111112rem;
 }
 
@@ -285,12 +272,12 @@ exports[`MobileNavbar renders correctly 1`] = `
     />
   </a>
   <button
-    className="c5"
-    onClick={[Function]}
+    className="c1"
+    onClick={undefined}
   >
     <div
-      className="c6"
-      rotate={false}
+      className="c5"
+      rotate={true}
     >
       <svg
         className="c2"
@@ -317,34 +304,34 @@ exports[`MobileNavbar renders correctly 1`] = `
     </div>
   </button>
   <div
-    className="c7"
-    open={false}
+    className="c6"
+    open={true}
   >
     <nav
-      className="c8"
+      className="c7"
     >
       <a
-        className="c9"
+        className="c8"
         href="/docs/basics#motivation"
         onClick={[Function]}
       >
         Concepts
       </a>
       <span
-        className="c10"
+        className="c9"
       />
       <a
-        className="c9"
+        className="c8"
         href="/"
         onClick={[Function]}
       >
         Try it out
       </a>
       <span
-        className="c10"
+        className="c9"
       />
       <a
-        className="c9"
+        className="c8"
         href="/docs"
         onClick={[Function]}
       >
@@ -352,21 +339,21 @@ exports[`MobileNavbar renders correctly 1`] = `
       </a>
     </nav>
     <span
-      className="c10"
+      className="c9"
     />
     <div
-      className="c11"
+      className="c10"
     >
       <nav
-        className="c12"
+        className="c11"
       >
         <a
-          className="c13"
+          className="c12"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
         >
           <svg
-            className="c14"
+            className="c13"
             height="14"
             viewBox="0 0 15 15"
             width="14"
@@ -389,12 +376,12 @@ exports[`MobileNavbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="c13"
+          className="c12"
           href="https://github.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c15"
+            className="c14"
             height="17"
             viewBox="0 0 17 17"
             width="17"
@@ -417,12 +404,12 @@ exports[`MobileNavbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="c13"
+          className="c12"
           href="https://medium.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c16"
+            className="c15"
             height="14"
             viewBox="0 0 17 14"
             width="17"
