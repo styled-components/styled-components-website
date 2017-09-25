@@ -110,6 +110,11 @@ exports[`Navbar renders correctly 1`] = `
   height: 0.9444444444444444rem;
 }
 
+.c13 {
+  width: 0.9444444444444444rem;
+  height: 0.7777777777777778rem;
+}
+
 .c4 {
   display: inline-block;
   vertical-align: middle;
@@ -121,7 +126,7 @@ exports[`Navbar renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c17 {
+.c18 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -132,15 +137,15 @@ exports[`Navbar renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c15 svg {
+.c16 svg {
   display: inline-block;
 }
 
-.c15 svg path {
+.c16 svg path {
   fill: currentColor;
 }
 
-.c14 {
+.c15 {
   background: none;
   outline: none;
   border: none;
@@ -155,12 +160,12 @@ exports[`Navbar renders correctly 1`] = `
   background: rgba(0,0,0,0.07);
 }
 
-.c14:focus {
+.c15:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
 }
 
-.c18 {
+.c19 {
   background: none;
   outline: none;
   border: none;
@@ -174,16 +179,16 @@ exports[`Navbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c18:focus {
+.c19:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
 }
 
-.c13 {
+.c14 {
   display: none;
 }
 
-.c20 {
+.c21 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -218,18 +223,18 @@ exports[`Navbar renders correctly 1`] = `
   color: #868686;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c19 {
+.c20 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
 }
 
-.c21 {
+.c22 {
   padding-right: 1.1111111111111112rem;
 }
 
@@ -300,7 +305,7 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c13 {
+  .c14 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -435,18 +440,40 @@ exports[`Navbar renders correctly 1`] = `
             </defs>
           </svg>
         </a>
+        <a
+          className="c10"
+          href="https://medium.com/styled-components"
+          onClick={[Function]}
+        >
+          <svg
+            className="c13"
+            height="14"
+            viewBox="0 0 17 14"
+            width="17"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            <title>
+              medium
+            </title>
+            <path
+              d="M5.3 0H.5l1.8 2.4v9L0 13.7h5.3l-2-2.3V3.7L7.8 14 12 3.7v8.7l-1.3 1.3H17l-1.5-1.3v-11L17 0h-4.5L9 8.2 5.2 0z"
+              fill="#fff"
+            />
+          </svg>
+        </a>
       </nav>
     </div>
   </div>
   <div
-    className="c13"
+    className="c14"
   >
     <button
-      className="c14"
+      className="c15"
       onClick={undefined}
     >
       <svg
-        className="c15"
+        className="c16"
         height="15"
         width="15"
         xmlns="http://www.w3.org/2000/svg"
@@ -469,24 +496,24 @@ exports[`Navbar renders correctly 1`] = `
       </svg>
     </button>
     <a
-      className="c16"
+      className="c17"
       href="/"
       onClick={[Function]}
     >
       <div
-        className="c17"
+        className="c18"
       />
     </a>
     <button
-      className="c18"
+      className="c19"
       onClick={[Function]}
     >
       <div
-        className="c19"
+        className="c20"
         rotate={false}
       >
         <svg
-          className="c15"
+          className="c16"
           height="8"
           width="12"
           xmlns="http://www.w3.org/2000/svg"
@@ -510,7 +537,7 @@ exports[`Navbar renders correctly 1`] = `
       </div>
     </button>
     <div
-      className="c20"
+      className="c21"
       open={false}
     >
       <nav
@@ -548,7 +575,7 @@ exports[`Navbar renders correctly 1`] = `
         className="c7"
       />
       <div
-        className="c21"
+        className="c22"
       >
         <nav
           className="c9"
@@ -607,6 +634,28 @@ exports[`Navbar renders correctly 1`] = `
                   id="a"
                 />
               </defs>
+            </svg>
+          </a>
+          <a
+            className="c10"
+            href="https://medium.com/styled-components"
+            onClick={[Function]}
+          >
+            <svg
+              className="c13"
+              height="14"
+              viewBox="0 0 17 14"
+              width="17"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
+              <title>
+                medium
+              </title>
+              <path
+                d="M5.3 0H.5l1.8 2.4v9L0 13.7h5.3l-2-2.3V3.7L7.8 14 12 3.7v8.7l-1.3 1.3H17l-1.5-1.3v-11L17 0h-4.5L9 8.2 5.2 0z"
+                fill="#fff"
+              />
             </svg>
           </a>
         </nav>

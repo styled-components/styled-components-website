@@ -66,6 +66,13 @@ const Github = () => (
 //   </Svg>
 // )
 
+const Medium = () => (
+  <Svg width="17" height="14" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <title>medium</title>
+    <path fill="#fff" d="M5.3 0H.5l1.8 2.4v9L0 13.7h5.3l-2-2.3V3.7L7.8 14 12 3.7v8.7l-1.3 1.3H17l-1.5-1.3v-11L17 0h-4.5L9 8.2 5.2 0z"/>
+  </Svg>
+)
+
 const Spectrum = () => (
   <Svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 15 15" xmlnsXlink="http://www.w3.org/1999/xlink">
     <title>spectrum-logo</title>
@@ -86,6 +93,9 @@ const Social = props => (
     </SocialLink> */}
     <SocialLink href="https://github.com/styled-components">
       <Github />
+    </SocialLink>
+    <SocialLink href="https://medium.com/styled-components">
+      <Medium />
     </SocialLink>
   </Wrapper>
 )
