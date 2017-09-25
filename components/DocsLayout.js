@@ -15,15 +15,7 @@ class DocsLayout extends Component {
   }
 
   onSideFold = () => {
-    let isSideFolded = !this.state.isSideFolded
-    // if(!isSideFolded) {
-    //   document.body.classList.add('sticky')
-    // } else {
-    //   document.body.classList.remove('sticky')
-    // }
-    this.setState({
-      isSideFolded: isSideFolded
-    })
+    this.setState({ isSideFolded: !this.state.isSideFolded })
   }
 
   onRouteChange = () => {

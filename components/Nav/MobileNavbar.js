@@ -8,7 +8,6 @@ import { mobile } from '../../utils/media'
 import Link from '../Link'
 import NavLinks from './NavLinks'
 import Social from './Social'
-// import Search from './Search'
 import Logo from './Logo'
 import NavSeparator from './NavSeparator'
 import NavButton from './NavButton'
@@ -43,7 +42,7 @@ const SecondaryMenu = styled.div`
   padding: 0 ${rem(20)};
   transition: height 0.1s;
 
-  -webkit-user-select: none;
+  user-select: none;
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -70,7 +69,7 @@ const ArrowWrapper = styled.div`
   `}
 `
 
-const PaddedSocial = styled(Social)`
+const SecondaryMenuItem = styled.div`
   padding-right: ${rem(20)};
 `
 
@@ -138,9 +137,9 @@ class MobileNavbar extends PureComponent {
         <SecondaryMenu open={isMenuOpen}>
           <NavLinks />
           <NavSeparator />
-          {/* <Search /> */}
-          {/* <NavSeparator /> */}
-          <PaddedSocial />
+          <SecondaryMenuItem>
+            <Social />
+          </SecondaryMenuItem>
         </SecondaryMenu>
       </Wrapper>
     )
