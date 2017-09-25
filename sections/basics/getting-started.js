@@ -36,6 +36,8 @@ const GettingStarted = () => md`
   \`\`\`
 
   > The CSS rules are automatically vendor prefixed, so you don't have to think about it.
+
+  If you prefer a video introduction, you can watch [this video introduction to styled-components by Jack Franklin and Glen Maddern](https://javascriptplayground.com/blog/2017/08/introduction-to-styled-components-react/).
 `
 
 export default GettingStarted
