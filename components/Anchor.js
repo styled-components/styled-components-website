@@ -13,7 +13,7 @@ const InvisibleAnchor = styled.div.attrs({
   visibility: hidden;
   height: 0;
 
-  top: ${rem(-80)};
+  top: ${rem(-70)};
 
   ${mobile(css`
     top: ${rem(-90)};

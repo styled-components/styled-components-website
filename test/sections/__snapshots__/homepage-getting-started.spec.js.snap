@@ -125,7 +125,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
   display: block;
   visibility: hidden;
   height: 0;
-  top: -4.444444444444445rem;
+  top: -3.888888888888889rem;
 }
 
 .c8 {
