@@ -7,7 +7,6 @@ import InjectGlobal from './inject-global'
 import WithTheme from './with-theme'
 
 const Helpers = () => md`
-  <SectionLayout title="Helpers">
   ## Helpers
 
   ${<CSS />}
