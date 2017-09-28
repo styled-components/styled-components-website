@@ -56,24 +56,26 @@ const ServerSideRendering = () => md`
   import { ServerStyleSheet } from 'styled-components'
 
   export default class MyDocument extends Document {
-    render() {
+    static getInitialProps ({ renderPage }) {
       const sheet = new ServerStyleSheet()
-      const main = sheet.collectStyles(<Main />)
+      const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
       const styleTags = sheet.getStyleElement()
+      return {
+        ...page, 
+        styleTags
+      }
+    }
 
+    render() {
       return (
         <html>
           <Head>
             {/* ... */}
 
-            {styleTags}
+            {this.props.styleTags}
           </Head>
-
           <body>
-            <div className="root">
-              {main}
-            </div>
-
+            <Main />
             <NextScript />
           </body>
         </html>
@@ -81,9 +83,8 @@ const ServerSideRendering = () => md`
     }
   }
   \`\`\`
-
-  Here we're wrapping the \`Main\` component, which contains the Next.js app, and are using this
-  to extract the styles on the server side.
+ 
+  > Refer to [Next.js example `with-styled-components`](https://github.com/zeit/next.js/tree/master/examples/with-styled-components)
 
   > This is unfortunately only a workaround! It will accumulate rules over time, so you will need
   > to cache the SSR response to mitigate this for now.
