@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Head from './SeoHead'
 import Nav from './Nav'
 import { Container, Content, Title } from './Layout'
+import GaWrapper from './GaWrapper'
 
 
 class DocsLayout extends Component {
@@ -67,4 +68,4 @@ class DocsLayout extends Component {
 }
 
 
-export default DocsLayout
+export default GaWrapper(DocsLayout)
