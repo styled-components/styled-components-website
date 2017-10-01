@@ -176,6 +176,16 @@ export default class MyDocument extends Document {
           <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
 
           {styles}
+
+          <script dangerouslySetInnerHTML={{ __html: `
+            !function(s,t,y,l,e,d,c){s.GoogleAnalyticsObject=y;s[y]||(s[y]=function(){
+            (s[y].q=s[y].q||[]).push(arguments)});s[y].l=+new Date;d=t.createElement(l);
+            c=t.getElementsByTagName(l)[0];d.src=e;c.parentNode.insertBefore(d,c)}
+            (window,document,'ga','script','//www.google-analytics.com/analytics.js');
+
+            ga('create', 'UA-105613776-1', 'auto');
+            ga('send', 'pageview');
+            `}}></script>
        </Head>
 
        <body>
