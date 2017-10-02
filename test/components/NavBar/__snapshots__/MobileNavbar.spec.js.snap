@@ -337,6 +337,16 @@ exports[`MobileNavbar renders correctly 1`] = `
       >
         Documentation
       </a>
+      <span
+        className="c9"
+      />
+      <a
+        className="c8"
+        href="/ecosystem"
+        onClick={[Function]}
+      >
+        Ecosystem
+      </a>
     </nav>
     <span
       className="c9"

@@ -363,6 +363,16 @@ exports[`Navbar renders correctly 1`] = `
         >
           Documentation
         </a>
+        <span
+          className="c7"
+        />
+        <a
+          className="c6"
+          href="/ecosystem"
+          onClick={[Function]}
+        >
+          Ecosystem
+        </a>
       </nav>
     </div>
     <div
@@ -556,6 +566,16 @@ exports[`Navbar renders correctly 1`] = `
           onClick={[Function]}
         >
           Documentation
+        </a>
+        <span
+          className="c7"
+        />
+        <a
+          className="c6"
+          href="/ecosystem"
+          onClick={[Function]}
+        >
+          Ecosystem
         </a>
       </nav>
       <span
