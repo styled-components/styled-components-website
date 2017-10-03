@@ -185,7 +185,7 @@ class Index extends Component {
     return (
       <div>
         <SeoHead title="styled-components">
-            <meta name="robots" content="noodp" />
+          <meta name="robots" content="noodp" />
         </SeoHead>
         <Wrapper>
           <HeroContent>
@@ -223,6 +223,7 @@ class Index extends Component {
               <CompanyLogo bottom="0.625rem" height="3rem" src="/static/eurovision-logo.svg" />
               <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg" />
               <CompanyLogo bottom="-0.15rem" height="1.5rem" src="/static/ideo-logo.svg" />
+              <CompanyLogo src="/static/huffpost-logo.svg" />
             </UsersWrapper>
           </HeroContent>
         </Wrapper>
