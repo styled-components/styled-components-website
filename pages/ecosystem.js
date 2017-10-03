@@ -4,16 +4,11 @@ import { getReadme } from '../utils/githubApi'
 import md from '../components/md'
 import Loading from '../components/Loading'
 
-const Ecosystem = ({readme}) => {
-  console.log(typeof readme)
-      return (<DocsLayout
-        title="Ecosystem"
-        description="Ecosystem of styled-components"
-      >
-        {typeof readme !== 'string' ? <Loading /> : md`${readme}`}
-      </DocsLayout>)
-}
-
+const Ecosystem = ({ readme }) => (
+    <DocsLayout title="Ecosystem" description="Ecosystem of styled-components">
+      {typeof readme !== 'string' ? <Loading /> : md([readme])}
+    </DocsLayout>
+  )
 
 Ecosystem.getInitialProps = async () => {
   const readme = await getReadme()
