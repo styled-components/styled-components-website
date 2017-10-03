@@ -51,7 +51,11 @@ const isValid = node => {
 }
 
 const md = (strings, ...values) => {
-  const input = stripIndent(strings.join(PLACEHOLDER))
+  // Check if it's called as a normal function or as a tagged function
+  const input = typeof strings === 'string' ?
+    stripIndent(strings) :
+    stripIndent(strings.join(PLACEHOLDER))
+
   const parser = new Parser()
   const ast = parser.parse(input)
 
