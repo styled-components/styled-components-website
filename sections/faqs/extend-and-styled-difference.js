@@ -1,25 +1,25 @@
 import md from 'components/md'
 
-const CSSFrameworks = () => md`
+const ExtendAndStyled = () => md`
   ## What is the difference between \`Comp.extend\` and \`styled(Comp)\`?
 
+  ### Behind the scenes
+  The \`styled()\` factory generates new component styles with a new class. The classnames are
+  then passed to the React component via the \`className\` prop.
+  Calling \`extend\` creates new component styles by extending the old one, and thus doesn't
+  generate two classes for a single component. (\`styled()\` factory does that)
 
-  You have two choices to add additional styles to a component or a styled component,
-  one is using [\`Comp.extend\`](/docs/basics#extending-styles) and the other is wrapping your
-  component in the styled method like this: [\`styled(Comp)\`](/docs/basics#styling-any-components).
+  ### Which one should you use
+  We recommend to use \`.extend\` where possible for internal \`StyledComponents\`,
+  but the \`styled()\` factory for external components and cross-file containers/components
+  where it isn't clear what it's going to be when writing the wrapper.
 
-  The styled method works perfectly on all of your own or any third-party components
-  as well, but the extend method can only be used on a styled component only.
+  > Wrapping a container is not recommended. It should always be attempted to wrap
+  > presentational and structural components only ince cleaner logic can be achieved when
+  > the container abstracts and encapsulates the presentational logic.
 
-  Styled method always generates a real stylesheet with classes. The classnames are
-  then passed to the React component (including third party components) via the className prop.
-  Calling \`extend\` creates a new stylesheet by extending the old one, and thus doesn't
-  generate two classes for a single component.
-
-  [\`Comp.extend\`](/docs/basics#extending-styles) and the other is wrapping your
-  component in the styled method like this: [\`styled(Comp)\`](/docs/basics#styling-any-components).
-
-  Please do read about [\`Styling any components\`](/docs/basics#styling-any-components). and [\`extend\`](/docs/basics#extending-styles).
+  Also if you haven't read yet [\`Styling any components\`](/docs/basics#styling-any-components)
+  and [\`extend\`](/docs/basics#extending-styles) sections, they contain more info and examples.
 `
 
-export default CSSFrameworks
+export default ExtendAndStyled
