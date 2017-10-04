@@ -19,7 +19,6 @@
     "commonmark": "^0.28.1",
     "commonmark-react-renderer": "^4.3.3",
     "express": "^4.15.2",
-    "isomorphic-base64": "^1.0.2",
     "isomorphic-fetch": "^2.2.1",
     "lru-cache": "^4.0.2",
     "module-alias": "^2.0.0",
