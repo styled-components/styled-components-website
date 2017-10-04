@@ -165,7 +165,6 @@ exports[`LiveEdit renders correctly 1`] = `
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
-                      spellCheck="false"
                     />
                   </Editor>
                 </LiveEditor>

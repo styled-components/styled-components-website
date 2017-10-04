@@ -194,9 +194,9 @@ exports[`DocsLayout renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
+  -webkit-box-pack: space-between;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
+  -ms-flex-pack: space-between;
   justify-content: space-between;
   padding: 0 1.1111111111111112rem;
   -webkit-transition: height 0.1s;
@@ -250,9 +250,9 @@ exports[`DocsLayout renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
+  -webkit-box-pack: space-between;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
+  -ms-flex-pack: space-between;
   justify-content: space-between;
   padding: 0 1.1111111111111112rem;
 }
@@ -378,9 +378,9 @@ exports[`DocsLayout renders correctly 1`] = `
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: justify;
+    -webkit-box-pack: space-between;
     -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
+    -ms-flex-pack: space-between;
     justify-content: space-between;
     height: 2.7777777777777777rem;
   }
