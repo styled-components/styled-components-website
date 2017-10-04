@@ -483,32 +483,6 @@ exports[`DocsLayout renders correctly 1`] = `
                               className="c6"
                             >
                               <Styled(Link)
-                                href="/docs/basics#motivation"
-                              >
-                                <Link
-                                  className="c7"
-                                  href="/docs/basics#motivation"
-                                  unstyled={true}
-                                >
-                                  <Link
-                                    href="/docs/basics#motivation"
-                                  >
-                                    <a
-                                      className="c7"
-                                      href="/docs/basics#motivation"
-                                      onClick={[Function]}
-                                    >
-                                      Concepts
-                                    </a>
-                                  </Link>
-                                </Link>
-                              </Styled(Link)>
-                              <styled.span>
-                                <span
-                                  className="c8"
-                                />
-                              </styled.span>
-                              <Styled(Link)
                                 href="/"
                               >
                                 <Link
@@ -524,7 +498,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       href="/"
                                       onClick={[Function]}
                                     >
-                                      Try it out
+                                      Homepage
                                     </a>
                                   </Link>
                                 </Link>
@@ -891,32 +865,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                 className="c6"
                               >
                                 <Styled(Link)
-                                  href="/docs/basics#motivation"
-                                >
-                                  <Link
-                                    className="c7"
-                                    href="/docs/basics#motivation"
-                                    unstyled={true}
-                                  >
-                                    <Link
-                                      href="/docs/basics#motivation"
-                                    >
-                                      <a
-                                        className="c7"
-                                        href="/docs/basics#motivation"
-                                        onClick={[Function]}
-                                      >
-                                        Concepts
-                                      </a>
-                                    </Link>
-                                  </Link>
-                                </Styled(Link)>
-                                <styled.span>
-                                  <span
-                                    className="c8"
-                                  />
-                                </styled.span>
-                                <Styled(Link)
                                   href="/"
                                 >
                                   <Link
@@ -932,7 +880,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         href="/"
                                         onClick={[Function]}
                                       >
-                                        Try it out
+                                        Homepage
                                       </a>
                                     </Link>
                                   </Link>

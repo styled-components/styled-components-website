@@ -338,20 +338,10 @@ exports[`Navbar renders correctly 1`] = `
       >
         <a
           className="c6"
-          href="/docs/basics#motivation"
-          onClick={[Function]}
-        >
-          Concepts
-        </a>
-        <span
-          className="c7"
-        />
-        <a
-          className="c6"
           href="/"
           onClick={[Function]}
         >
-          Try it out
+          Homepage
         </a>
         <span
           className="c7"
@@ -542,20 +532,10 @@ exports[`Navbar renders correctly 1`] = `
       >
         <a
           className="c6"
-          href="/docs/basics#motivation"
-          onClick={[Function]}
-        >
-          Concepts
-        </a>
-        <span
-          className="c7"
-        />
-        <a
-          className="c6"
           href="/"
           onClick={[Function]}
         >
-          Try it out
+          Homepage
         </a>
         <span
           className="c7"

@@ -37,9 +37,7 @@ const NavLink = styled(Link).attrs({
 
 const NavLinks = () =>
   <Wrapper>
-    <NavLink href="/docs/basics#motivation">Concepts</NavLink>
-    <NavSeparator />
-    <NavLink href="/">Try it out</NavLink>
+    <NavLink href="/">Homepage</NavLink>
     <NavSeparator />
     <NavLink href="/docs">Documentation</NavLink>
     <NavSeparator />

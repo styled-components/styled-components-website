@@ -61,20 +61,10 @@ exports[`NavLinks renders correctly 1`] = `
 >
   <a
     className="c1"
-    href="/docs/basics#motivation"
-    onClick={[Function]}
-  >
-    Concepts
-  </a>
-  <span
-    className="c2"
-  />
-  <a
-    className="c1"
     href="/"
     onClick={[Function]}
   >
-    Try it out
+    Homepage
   </a>
   <span
     className="c2"
