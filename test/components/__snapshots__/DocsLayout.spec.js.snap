@@ -194,9 +194,9 @@ exports[`DocsLayout renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: space-between;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 1.1111111111111112rem;
   -webkit-transition: height 0.1s;
@@ -250,9 +250,9 @@ exports[`DocsLayout renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: space-between;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 1.1111111111111112rem;
 }
@@ -378,9 +378,9 @@ exports[`DocsLayout renders correctly 1`] = `
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: space-between;
+    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
-    -ms-flex-pack: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     height: 2.7777777777777777rem;
   }
@@ -483,32 +483,6 @@ exports[`DocsLayout renders correctly 1`] = `
                               className="c6"
                             >
                               <Styled(Link)
-                                href="/docs/basics#motivation"
-                              >
-                                <Link
-                                  className="c7"
-                                  href="/docs/basics#motivation"
-                                  unstyled={true}
-                                >
-                                  <Link
-                                    href="/docs/basics#motivation"
-                                  >
-                                    <a
-                                      className="c7"
-                                      href="/docs/basics#motivation"
-                                      onClick={[Function]}
-                                    >
-                                      Concepts
-                                    </a>
-                                  </Link>
-                                </Link>
-                              </Styled(Link)>
-                              <styled.span>
-                                <span
-                                  className="c8"
-                                />
-                              </styled.span>
-                              <Styled(Link)
                                 href="/"
                               >
                                 <Link
@@ -524,7 +498,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       href="/"
                                       onClick={[Function]}
                                     >
-                                      Try it out
+                                      Homepage
                                     </a>
                                   </Link>
                                 </Link>
@@ -865,32 +839,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                 className="c6"
                               >
                                 <Styled(Link)
-                                  href="/docs/basics#motivation"
-                                >
-                                  <Link
-                                    className="c7"
-                                    href="/docs/basics#motivation"
-                                    unstyled={true}
-                                  >
-                                    <Link
-                                      href="/docs/basics#motivation"
-                                    >
-                                      <a
-                                        className="c7"
-                                        href="/docs/basics#motivation"
-                                        onClick={[Function]}
-                                      >
-                                        Concepts
-                                      </a>
-                                    </Link>
-                                  </Link>
-                                </Styled(Link)>
-                                <styled.span>
-                                  <span
-                                    className="c8"
-                                  />
-                                </styled.span>
-                                <Styled(Link)
                                   href="/"
                                 >
                                   <Link
@@ -906,7 +854,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         href="/"
                                         onClick={[Function]}
                                       >
-                                        Try it out
+                                        Homepage
                                       </a>
                                     </Link>
                                   </Link>

@@ -961,7 +961,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                   <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
                   <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
                 
-                  </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
+                  </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
                     background: palevioletred;
                     color: white;
                   \`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
@@ -984,7 +984,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                     <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
                     <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
                   
-                    </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
+                    </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
                       background: palevioletred;
                       color: white;
                     \`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
@@ -1224,7 +1224,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                                   	<span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
                                   	<span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
                                   
-                                  	</span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
+                                  	</span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
                                   		background: palevioletred;
                                   		color: white;
                                   	\`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
@@ -1243,6 +1243,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
                                 onKeyUp={[Function]}
+                                spellCheck="false"
                               />
                             </Editor>
                           </LiveEditor>

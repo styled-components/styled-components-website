@@ -175,9 +175,9 @@ exports[`MobileNavbar renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: space-between;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 1.1111111111111112rem;
   -webkit-transition: height 0.1s;
@@ -224,9 +224,9 @@ exports[`MobileNavbar renders correctly 1`] = `
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: space-between;
+    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
-    -ms-flex-pack: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     height: 2.7777777777777777rem;
   }
@@ -312,20 +312,10 @@ exports[`MobileNavbar renders correctly 1`] = `
     >
       <a
         className="c8"
-        href="/docs/basics#motivation"
-        onClick={[Function]}
-      >
-        Concepts
-      </a>
-      <span
-        className="c9"
-      />
-      <a
-        className="c8"
         href="/"
         onClick={[Function]}
       >
-        Try it out
+        Homepage
       </a>
       <span
         className="c9"
