@@ -12,8 +12,8 @@ const Code = styled.span`
   font-weight: 300;
   padding: 0.15em 0;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     letter-spacing: -0.2em;
     content: "\00a0";
   }
