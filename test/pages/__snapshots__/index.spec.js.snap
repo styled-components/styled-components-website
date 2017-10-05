@@ -1,0 +1,2088 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index renders correctly 1`] = `
+.c37 {
+  box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20,20,20,0.27);
+  overflow: hidden;
+  margin: 1.9444444444444444rem 0;
+  text-align: left;
+}
+
+.c38 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: stretch;
+  -webkit-justify-content: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.c39 {
+  background: #1d1f27;
+  font-size: 0.8rem;
+  font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
+  font-weight: 300;
+  height: 22.22222222222222rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: text;
+  white-space: pre-wrap;
+  -webkit-flex-basis: 50%;
+  -ms-flex-basis: 50%;
+  flex-basis: 50%;
+  width: 50%;
+  max-width: 50%;
+}
+
+.c40 {
+  position: relative;
+  padding: 0.5rem;
+  background: white;
+  color: black;
+  height: auto;
+  overflow: hidden;
+  -webkit-flex-basis: 50%;
+  -ms-flex-basis: 50%;
+  flex-basis: 50%;
+  width: 50%;
+  max-width: 50%;
+}
+
+.c12 {
+  display: block;
+  width: 100%;
+  padding: 0.4444444444444444rem;
+  background: #ff5555;
+  color: white;
+  font-size: 0.8rem;
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  white-space: pre;
+}
+
+.c9 {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.1111111111111111rem 0.4444444444444444rem;
+  margin: -0.1111111111111111rem -0.4444444444444444rem;
+}
+
+.c35 {
+  color: rgb(219,112,147);
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.c45 {
+  color: white;
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.c21 {
+  width: 56.888888888888886rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2.2222222222222223rem 1.6666666666666667rem 2.2222222222222223rem;
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  -webkit-transition: -webkit-transform 150ms ease-out;
+  -webkit-transition: transform 150ms ease-out;
+  transition: transform 150ms ease-out;
+}
+
+.c24 {
+  display: block;
+  text-align: left;
+  width: 100%;
+  color: rgb(243,182,97);
+  font-size: 2.3333333333333335rem;
+  font-weight: bold;
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c26 {
+  font-size: 1.7777777777777777rem;
+  font-weight: 500;
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c31 {
+  font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
+  font-weight: 500;
+}
+
+.c34 {
+  background: #1d1f27;
+  font-size: 0.8rem;
+  font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
+  font-weight: 300;
+  white-space: pre-wrap;
+  border-radius: 0.16666666666666666rem;
+  box-shadow: 1px 1px 20px rgba(20,20,20,0.27);
+  margin: 1.9444444444444444rem 0;
+  overflow-x: hidden;
+}
+
+.c27 {
+  position: relative;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  top: -3.888888888888889rem;
+}
+
+.c29 {
+  display: none;
+  position: absolute;
+  left: 0;
+  color: inherit;
+}
+
+.c30 {
+  width: 1.1111111111111112rem;
+  opacity: 0.7;
+  margin-top: -0.2777777777777778rem;
+}
+
+.c30:hover {
+  opacity: 0.9;
+}
+
+.c25 {
+  position: relative;
+  margin-left: -1.6666666666666667rem;
+  padding-left: 1.6666666666666667rem;
+}
+
+.c25:hover .c28 {
+  display: inline-block;
+}
+
+.c22 {
+  text-align: center;
+}
+
+.c23 {
+  margin: 0 0.5em 3em;
+  height: 1.5em;
+}
+
+.c32 {
+  border-radius: 3px;
+  padding: 0.25em 1em;
+  margin: 0 1em;
+  background: transparent;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+}
+
+.c33 {
+  border-radius: 3px;
+  padding: 0.25em 1em;
+  margin: 0 1em;
+  background: transparent;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+  background: palevioletred;
+  color: white;
+}
+
+.c36 {
+  border-radius: 3px;
+  padding: 0.25em 1em;
+  background: transparent;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+}
+
+.c4 {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.c5 {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.c3 {
+  margin: 2rem 0;
+}
+
+.c3 h1,
+.c3 h2 {
+  margin: 0;
+}
+
+.c2 {
+  width: 6.944444444444445rem;
+  height: 6.944444444444445rem;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.c13 {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 2.5rem 0 0.5rem;
+  opacity: 0.8;
+}
+
+.c15 {
+  position: relative;
+  height: 1.75rem;
+  margin: 0.5rem;
+  bottom: -0.2rem;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c15:hover {
+  opacity: 1;
+}
+
+.c16 {
+  position: relative;
+  height: 1.75rem;
+  margin: 0.5rem;
+  bottom: 0;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c16:hover {
+  opacity: 1;
+}
+
+.c17 {
+  position: relative;
+  height: 2rem;
+  margin: 0.5rem;
+  bottom: 0;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c17:hover {
+  opacity: 1;
+}
+
+.c18 {
+  position: relative;
+  height: 3rem;
+  margin: 0.5rem;
+  bottom: 0.625rem;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c18:hover {
+  opacity: 1;
+}
+
+.c19 {
+  position: relative;
+  height: 2.25rem;
+  margin: 0.5rem;
+  bottom: 0.16rem;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c19:hover {
+  opacity: 1;
+}
+
+.c20 {
+  position: relative;
+  height: 1.5rem;
+  margin: 0.5rem;
+  bottom: -0.15rem;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c20:hover {
+  opacity: 1;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: linear-gradient(20deg,rgb(219,112,147),#daa357);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.17);
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.c1 {
+  width: 56.888888888888886rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2.2222222222222223rem 1.6666666666666667rem 2.2222222222222223rem;
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  -webkit-transition: -webkit-transform 150ms ease-out;
+  -webkit-transition: transform 150ms ease-out;
+  transition: transform 150ms ease-out;
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  width: 75rem;
+}
+
+.c10 {
+  display: inline-block;
+  box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20,20,20,0.27);
+  margin: 1.9444444444444444rem 0;
+  text-align: left;
+  width: 100%;
+  max-width: 34rem;
+}
+
+.c11 {
+  background: #1d1f27;
+  font-size: 0.8rem;
+  font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
+  font-weight: 300;
+  height: 22.22222222222222rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: text;
+  white-space: pre-wrap;
+  height: 24rem;
+  white-space: pre;
+  width: 100%;
+}
+
+.c6 {
+  margin: 2rem 0;
+}
+
+.c43 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: rgb(219,112,147);
+  box-shadow: 0 -2px 20px rgba(0,0,0,0.17);
+  box-sizing: border-box;
+  margin-top: 2.7777777777777777rem;
+}
+
+.c44 {
+  display: inline-block;
+  width: 0.9444444444444444rem;
+}
+
+.c7 {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  background: white;
+  color: palevioletred;
+}
+
+.c8 {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.c41 {
+  border-radius: 3px;
+  padding: 0.25em 1em;
+  margin: 0 1em;
+  background: transparent;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+}
+
+.c42 {
+  border-radius: 3px;
+  padding: 0.25em 1em;
+  margin: 0 1em;
+  background: transparent;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+  background: palevioletred;
+  color: white;
+}
+
+@media (max-width:40.625em) {
+  .c38 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media (max-width:40.625em) {
+  .c39 {
+    -webkit-flex-basis: auto;
+    -ms-flex-basis: auto;
+    flex-basis: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width:40.625em) {
+  .c40 {
+    -webkit-flex-basis: auto;
+    -ms-flex-basis: auto;
+    flex-basis: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width:62.5em) {
+  .c9 {
+    border-radius: 0.16666666666666666rem;
+  }
+
+  .c9:hover {
+    background: rgba(20,20,20,0.1);
+  }
+}
+
+@media (max-width:62.5em) {
+  .c21 {
+    padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c27 {
+    top: -5rem;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c25 {
+    margin-left: 0;
+  }
+
+  .c25 .c28 {
+    display: inline-block;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c1 {
+    padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
+  }
+}
+
+<Index>
+  <div>
+    <SeoHead
+      title="styled-components"
+    >
+      <SideEffect(Head)>
+        <Head />
+      </SideEffect(Head)>
+    </SeoHead>
+    <styled.div>
+      <div
+        className="c0"
+      >
+        <styled.div>
+          <div
+            className="c1"
+          >
+            <LiveProvider
+              code="const Button = styled.a\`
+              /* This renders the buttons above... Edit me! */
+              display: inline-block;
+              border-radius: 3px;
+              padding: 0.5rem 0;
+              margin: 0.5rem 1rem;
+              width: 11rem;
+              background: transparent;
+              color: white;
+              border: 2px solid white;
+            
+              /* The GitHub button is a primary button
+               * edit this to target it specifically! */
+              \${props => props.primary && css\`
+                background: white;
+                color: palevioletred;
+              \`}
+            \`"
+              mountStylesheet={false}
+              noInline={false}
+              scope={
+                Object {
+                  "Link": [Function],
+                  "css": [Function],
+                  "rem": [Function],
+                  "styled": [Function],
+                }
+              }
+            >
+              <div
+                className="react-live"
+                scope={
+                  Object {
+                    "Link": [Function],
+                    "css": [Function],
+                    "rem": [Function],
+                    "styled": [Function],
+                  }
+                }
+              >
+                <styled.img>
+                  <img
+                    alt="styled-components Logo"
+                    className="c2"
+                    src="/static/logo.png"
+                  />
+                </styled.img>
+                <styled.div>
+                  <div
+                    className="c3"
+                  >
+                    <styled.h1>
+                      <h1
+                        className="c4"
+                      >
+                        Visual primitives for the component age.
+                      </h1>
+                    </styled.h1>
+                    <styled.h2>
+                      <h2
+                        className="c5"
+                      >
+                        Use the best bits of ES6 and CSS to style your apps without stress 💅
+                      </h2>
+                    </styled.h2>
+                  </div>
+                </styled.div>
+                <styled.div>
+                  <div
+                    className="c6"
+                  >
+                    <HomepageLivePreview>
+                      <div
+                        className="react-live-preview undefined"
+                      >
+                        <styled.a
+                          href="https://github.com/styled-components/styled-components"
+                          primary={true}
+                          rel="noopener"
+                          target="_blank"
+                        >
+                          <a
+                            className="c7"
+                            href="https://github.com/styled-components/styled-components"
+                            rel="noopener"
+                            target="_blank"
+                          >
+                            GitHub
+                          </a>
+                        </styled.a>
+                        <Styled(Link)
+                          href="/docs"
+                          prefetch={true}
+                        >
+                          <Link
+                            className="c8"
+                            href="/docs"
+                            prefetch={true}
+                          >
+                            <Link
+                              href="/docs"
+                              prefetch={true}
+                            >
+                              <styled.a
+                                className="c8"
+                                href="/docs"
+                                onClick={[Function]}
+                              >
+                                <a
+                                  className="c8 c9"
+                                  href="/docs"
+                                  onClick={[Function]}
+                                >
+                                  Documentation
+                                </a>
+                              </styled.a>
+                            </Link>
+                          </Link>
+                        </Styled(Link)>
+                      </div>
+                    </HomepageLivePreview>
+                  </div>
+                </styled.div>
+                <styled.div>
+                  <div
+                    className="c10"
+                  >
+                    <Styled(LiveEditor)>
+                      <Styled(LiveEditor)>
+                        <LiveEditor
+                          className="c11"
+                        >
+                          <Editor
+                            className="c11"
+                            code="const Button = styled.a\`
+                            /* This renders the buttons above... Edit me! */
+                            display: inline-block;
+                            border-radius: 3px;
+                            padding: 0.5rem 0;
+                            margin: 0.5rem 1rem;
+                            width: 11rem;
+                            background: transparent;
+                            color: white;
+                            border: 2px solid white;
+                          
+                            /* The GitHub button is a primary button
+                             * edit this to target it specifically! */
+                            \${props => props.primary && css\`
+                              background: white;
+                              color: palevioletred;
+                            \`}
+                          \`"
+                            contentEditable={true}
+                            onChange={[Function]}
+                          >
+                            <pre
+                              className="prism-code c11"
+                              contentEditable={true}
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>a<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
+                                	<span class=\\"token comment\\" spellcheck=\\"true\\">/* This renders the buttons above... Edit me! */</span>
+                                	<span class=\\"token property\\">display</span><span class=\\"token punctuation\\">:</span> inline-block</span>;<span class=\\"token string language-css\\">
+                                	<span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                                	<span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.5rem 0</span>;<span class=\\"token string language-css\\">
+                                	<span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0.5rem 1rem</span>;<span class=\\"token string language-css\\">
+                                	<span class=\\"token property\\">width</span><span class=\\"token punctuation\\">:</span> 11rem</span>;<span class=\\"token string language-css\\">
+                                	<span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                                	<span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> white</span>;<span class=\\"token string language-css\\">
+                                	<span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid white</span>;<span class=\\"token string language-css\\">
+                                
+                                	<span class=\\"token comment\\" spellcheck=\\"true\\">/* The GitHub button is a primary button
+                                	 * edit this to target it specifically! */</span>
+                                	</span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
+                                		background: white;
+                                		color: palevioletred;
+                                	\`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
+                                \`</span></span>",
+                                }
+                              }
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                            />
+                          </Editor>
+                        </LiveEditor>
+                      </Styled(LiveEditor)>
+                    </Styled(LiveEditor)>
+                    <Styled(LiveError)>
+                      <LiveError
+                        className="c12"
+                      />
+                    </Styled(LiveError)>
+                  </div>
+                </styled.div>
+              </div>
+            </LiveProvider>
+            <styled.p>
+              <p
+                className="c13"
+              >
+                Used by folks at
+              </p>
+            </styled.p>
+            <styled.section>
+              <section
+                className="c14"
+              >
+                <styled.img
+                  bottom="-0.2rem"
+                  height="1.75rem"
+                  src="/static/bloomberg-logo.svg"
+                >
+                  <img
+                    className="c15"
+                    height="1.75rem"
+                    src="/static/bloomberg-logo.svg"
+                  />
+                </styled.img>
+                <styled.img
+                  height="1.75rem"
+                  src="/static/atlassian-logo.svg"
+                >
+                  <img
+                    className="c16"
+                    height="1.75rem"
+                    src="/static/atlassian-logo.svg"
+                  />
+                </styled.img>
+                <styled.img
+                  src="/static/reddit-logo.svg"
+                >
+                  <img
+                    className="c17"
+                    src="/static/reddit-logo.svg"
+                  />
+                </styled.img>
+                <styled.img
+                  src="/static/target-logo.svg"
+                >
+                  <img
+                    className="c17"
+                    src="/static/target-logo.svg"
+                  />
+                </styled.img>
+                <styled.img
+                  bottom="0.625rem"
+                  height="3rem"
+                  src="/static/eurovision-logo.svg"
+                >
+                  <img
+                    className="c18"
+                    height="3rem"
+                    src="/static/eurovision-logo.svg"
+                  />
+                </styled.img>
+                <styled.img
+                  bottom="0.16rem"
+                  height="2.25rem"
+                  src="/static/artsy-logo.svg"
+                >
+                  <img
+                    className="c19"
+                    height="2.25rem"
+                    src="/static/artsy-logo.svg"
+                  />
+                </styled.img>
+                <styled.img
+                  bottom="-0.15rem"
+                  height="1.5rem"
+                  src="/static/ideo-logo.svg"
+                >
+                  <img
+                    className="c20"
+                    height="1.5rem"
+                    src="/static/ideo-logo.svg"
+                  />
+                </styled.img>
+                <styled.img
+                  src="/static/huffpost-logo.svg"
+                >
+                  <img
+                    className="c17"
+                    src="/static/huffpost-logo.svg"
+                  />
+                </styled.img>
+              </section>
+            </styled.section>
+          </div>
+        </styled.div>
+      </div>
+    </styled.div>
+    <HomepageGettingStarted>
+      <styled.div>
+        <div
+          className="c21"
+        >
+          <styled.div>
+            <div
+              className="c22"
+            >
+              <a
+                href="https://github.com/styled-components/styled-components"
+              >
+                <styled.img
+                  alt="Stars on GitHub"
+                  src="https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600"
+                >
+                  <img
+                    alt="Stars on GitHub"
+                    className="c23"
+                    src="https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600"
+                  />
+                </styled.img>
+              </a>
+              <a
+                href="https://www.npmjs.com/package/styled-components"
+              >
+                <styled.img
+                  alt="Current version"
+                  src="https://img.shields.io/npm/v/styled-components.svg"
+                >
+                  <img
+                    alt="Current version"
+                    className="c23"
+                    src="https://img.shields.io/npm/v/styled-components.svg"
+                  />
+                </styled.img>
+              </a>
+              <styled.img
+                alt="Monthly downloads"
+                src="https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600"
+              >
+                <img
+                  alt="Monthly downloads"
+                  className="c23"
+                  src="https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600"
+                />
+              </styled.img>
+              <styled.img
+                alt="Gzipped size"
+                src="http://img.badgesize.io/https://unpkg.com/styled-components/dist/styled-components.min.js?compression=gzip&label=gzip%20size"
+              >
+                <img
+                  alt="Gzipped size"
+                  className="c23"
+                  src="http://img.badgesize.io/https://unpkg.com/styled-components/dist/styled-components.min.js?compression=gzip&label=gzip%20size"
+                />
+              </styled.img>
+              <a
+                href="https://spectrum.chat/styled-components"
+              >
+                <styled.img
+                  alt="Join the community on Spectrum"
+                  src="https://withspectrum.github.io/badge/badge.svg"
+                >
+                  <img
+                    alt="Join the community on Spectrum"
+                    className="c23"
+                    src="https://withspectrum.github.io/badge/badge.svg"
+                  />
+                </styled.img>
+              </a>
+            </div>
+          </styled.div>
+          <div>
+            <Heading
+              level={1}
+              literal={null}
+              nodeKey="2:1-2:171"
+            >
+              <styled.h1>
+                <h1
+                  className="c24"
+                >
+                  Getting started
+                </h1>
+              </styled.h1>
+            </Heading>
+            <Heading
+              level={2}
+              literal={null}
+              nodeKey="3:1-3:151"
+            >
+              <Link
+                id="installation"
+                sub={false}
+              >
+                <Styled(styled.h2)>
+                  <styled.h2
+                    className="c25"
+                  >
+                    <h2
+                      className="c25 c26"
+                    >
+                      <styled.div
+                        id="installation"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="c27"
+                          id="installation"
+                        />
+                      </styled.div>
+                      <styled.a
+                        href="#installation"
+                      >
+                        <a
+                          className="c28 c29"
+                          href="#installation"
+                        >
+                          <Styled(LinkIcon)>
+                            <LinkIcon
+                              className="c30"
+                              height={null}
+                              width={null}
+                            >
+                              <svg
+                                className="octicons octicons-link-icon c30"
+                                height={null}
+                                viewBox="0 0 16 16"
+                                width={null}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"
+                                  fillRule="evenodd"
+                                />
+                              </svg>
+                            </LinkIcon>
+                          </Styled(LinkIcon)>
+                        </a>
+                      </styled.a>
+                      Installation
+                    </h2>
+                  </styled.h2>
+                </Styled(styled.h2)>
+              </Link>
+            </Heading>
+            <Paragraph
+              literal={null}
+              nodeKey="5:1-6:989"
+            >
+              <p>
+                To download styled-components run 
+                <Code
+                  inline={true}
+                  literal="npm install --save styled-components"
+                  nodeKey="5:1-6:981"
+                >
+                  <styled.span>
+                    <span
+                      className="c31"
+                    >
+                      npm install --save styled-components
+                    </span>
+                  </styled.span>
+                </Code>
+                .
+                That's all you need to do, you are now ready to use it in your app! (yep, no build step needed 👌)
+              </p>
+            </Paragraph>
+            <Heading
+              level={2}
+              literal={null}
+              nodeKey="8:1-8:301"
+            >
+              <Link
+                id="your-first-styled-component"
+                sub={false}
+              >
+                <Styled(styled.h2)>
+                  <styled.h2
+                    className="c25"
+                  >
+                    <h2
+                      className="c25 c26"
+                    >
+                      <styled.div
+                        id="your-first-styled-component"
+                      >
+                        <div
+                          aria-hidden={true}
+                          className="c27"
+                          id="your-first-styled-component"
+                        />
+                      </styled.div>
+                      <styled.a
+                        href="#your-first-styled-component"
+                      >
+                        <a
+                          className="c28 c29"
+                          href="#your-first-styled-component"
+                        >
+                          <Styled(LinkIcon)>
+                            <LinkIcon
+                              className="c30"
+                              height={null}
+                              width={null}
+                            >
+                              <svg
+                                className="octicons octicons-link-icon c30"
+                                height={null}
+                                viewBox="0 0 16 16"
+                                width={null}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"
+                                  fillRule="evenodd"
+                                />
+                              </svg>
+                            </LinkIcon>
+                          </Styled(LinkIcon)>
+                        </a>
+                      </styled.a>
+                      Your first styled component
+                    </h2>
+                  </styled.h2>
+                </Styled(styled.h2)>
+              </Link>
+            </Heading>
+            <Paragraph
+              literal={null}
+              nodeKey="10:1-12:8813"
+            >
+              <p>
+                Let's say you want to create a simple and reusable 
+                <Code
+                  inline={true}
+                  literal="<Button />"
+                  nodeKey="10:1-12:883"
+                >
+                  <styled.span>
+                    <span
+                      className="c31"
+                    >
+                      &lt;Button /&gt;
+                    </span>
+                  </styled.span>
+                </Code>
+                 component that you can use throughout your application.
+                There should be a normal version and a big and 
+                <Code
+                  inline={true}
+                  literal="primary"
+                  nodeKey="10:1-12:887"
+                >
+                  <styled.span>
+                    <span
+                      className="c31"
+                    >
+                      primary
+                    </span>
+                  </styled.span>
+                </Code>
+                 version for the important buttons.
+                This is what it should look like when rendered: (this is a live example, click on them!)
+              </p>
+            </Paragraph>
+            <Paragraph
+              literal={null}
+              nodeKey="14:1-14:5423"
+            >
+              <styled.div>
+                <div
+                  className="c22"
+                >
+                  <styled.button
+                    onClick={[Function]}
+                  >
+                    <button
+                      className="c32"
+                      onClick={[Function]}
+                    >
+                      Normal button
+                    </button>
+                  </styled.button>
+                  <styled.button
+                    onClick={[Function]}
+                    primary={true}
+                  >
+                    <button
+                      className="c33"
+                      onClick={[Function]}
+                    >
+                      Primary button
+                    </button>
+                  </styled.button>
+                </div>
+              </styled.div>
+            </Paragraph>
+            <Paragraph
+              literal={null}
+              nodeKey="16:1-16:675"
+            >
+              <p>
+                First, let's import styled-components and create a 
+                <Code
+                  inline={true}
+                  literal="styled.button"
+                  nodeKey="16:1-16:673"
+                >
+                  <styled.span>
+                    <span
+                      className="c31"
+                    >
+                      styled.button
+                    </span>
+                  </styled.span>
+                </Code>
+                :
+              </p>
+            </Paragraph>
+            <CodeBlock
+              codeinfo={
+                Array [
+                  "jsx",
+                ]
+              }
+              language="jsx"
+              literal="import styled from 'styled-components';
+            
+            const Button = styled.button\`\`;
+            "
+              nodeKey="18:1-22:31"
+            >
+              <CodeBlock
+                code="import styled from 'styled-components';
+              
+              const Button = styled.button\`\`;
+              "
+                language="jsx"
+              >
+                <styled.pre
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<span class=\\"token keyword\\">import</span> styled <span class=\\"token keyword\\">from</span> <span class=\\"token string\\">'styled-components'</span><span class=\\"token punctuation\\">;</span>
+                    
+                    <span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`\`</span></span><span class=\\"token punctuation\\">;</span>
+                    ",
+                    }
+                  }
+                >
+                  <pre
+                    className="prism-code c34"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<span class=\\"token keyword\\">import</span> styled <span class=\\"token keyword\\">from</span> <span class=\\"token string\\">'styled-components'</span><span class=\\"token punctuation\\">;</span>
+                      
+                      <span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`\`</span></span><span class=\\"token punctuation\\">;</span>
+                      ",
+                      }
+                    }
+                  />
+                </styled.pre>
+              </CodeBlock>
+            </CodeBlock>
+            <Paragraph
+              literal={null}
+              nodeKey="24:1-27:9216"
+            >
+              <p>
+                This 
+                <Code
+                  inline={true}
+                  literal="Button"
+                  nodeKey="24:1-27:921"
+                >
+                  <styled.span>
+                    <span
+                      className="c31"
+                    >
+                      Button
+                    </span>
+                  </styled.span>
+                </Code>
+                 variable here is now a React component that you can use like any other React component!
+                This unusual backtick syntax is a new JavaScript feature called a tagged template literal.
+                You know how you can call functions with parenthesis? (
+                <Code
+                  inline={true}
+                  literal="myFunc()"
+                  nodeKey="24:1-27:928"
+                >
+                  <styled.span>
+                    <span
+                      className="c31"
+                    >
+                      myFunc()
+                    </span>
+                  </styled.span>
+                </Code>
+                ) Well, now you can also call functions with backticks!
+                
+                <Link
+                  href="/docs/advanced#tagged-template-literals"
+                  literal={null}
+                  nodeKey="24:1-27:9214"
+                >
+                  <Link
+                    href="/docs/advanced#tagged-template-literals"
+                    inline={true}
+                  >
+                    <Link
+                      href="/docs/advanced#tagged-template-literals"
+                    >
+                      <styled.a
+                        href="/docs/advanced#tagged-template-literals"
+                        onClick={[Function]}
+                      >
+                        <a
+                          className="c35"
+                          href="/docs/advanced#tagged-template-literals"
+                          onClick={[Function]}
+                          rel="noopener"
+                          target="_blank"
+                        >
+                          here is an explanation
+                        </a>
+                      </styled.a>
+                    </Link>
+                  </Link>
+                </Link>
+                 of how that works exactly.
+              </p>
+            </Paragraph>
+            <Paragraph
+              literal={null}
+              nodeKey="29:1-29:1063"
+            >
+              <p>
+                If you render our lovely component now (just like any other component: 
+                <Code
+                  inline={true}
+                  literal="<Button />"
+                  nodeKey="29:1-29:1061"
+                >
+                  <styled.span>
+                    <span
+                      className="c31"
+                    >
+                      &lt;Button /&gt;
+                    </span>
+                  </styled.span>
+                </Code>
+                ) this is what you get:
+              </p>
+            </Paragraph>
+            <Paragraph
+              literal={null}
+              nodeKey="31:1-31:5423"
+            >
+              <styled.div>
+                <div
+                  className="c22"
+                >
+                  <button>
+                    I'm a &lt;Button /&gt;!
+                  </button>
+                </div>
+              </styled.div>
+            </Paragraph>
+            <Paragraph
+              literal={null}
+              nodeKey="33:1-34:7110"
+            >
+              <p>
+                It renders a button! That's not a very nice button though 😕 we can do better than this,
+                let's give it a bit of styling and tickle out the hidden beauty within!
+              </p>
+            </Paragraph>
+            <CodeBlock
+              codeinfo={
+                Array [
+                  "jsx",
+                ]
+              }
+              language="jsx"
+              literal="const Button = styled.button\`
+              border-radius: 3px;
+              padding: 0.25em 1em;
+              margin: 0 1em;
+              background: transparent;
+              color: palevioletred;
+              border: 2px solid palevioletred;
+            \`;
+            "
+              nodeKey="36:1-45:2"
+            >
+              <CodeBlock
+                code="const Button = styled.button\`
+                border-radius: 3px;
+                padding: 0.25em 1em;
+                margin: 0 1em;
+                background: transparent;
+                color: palevioletred;
+                border: 2px solid palevioletred;
+              \`;
+              "
+                language="jsx"
+              >
+                <styled.pre
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
+                      <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
+                    \`</span></span><span class=\\"token punctuation\\">;</span>
+                    ",
+                    }
+                  }
+                >
+                  <pre
+                    className="prism-code c34"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
+                        <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                        <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                        <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                        <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                        <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                        <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
+                      \`</span></span><span class=\\"token punctuation\\">;</span>
+                      ",
+                      }
+                    }
+                  />
+                </styled.pre>
+              </CodeBlock>
+            </CodeBlock>
+            <Paragraph
+              literal={null}
+              nodeKey="47:1-47:5423"
+            >
+              <styled.div>
+                <div
+                  className="c22"
+                >
+                  <styled.button>
+                    <button
+                      className="c36"
+                    >
+                      I'm a styled &lt;Button /&gt;
+                    </button>
+                  </styled.button>
+                </div>
+              </styled.div>
+            </Paragraph>
+            <Paragraph
+              literal={null}
+              nodeKey="49:1-52:8511"
+            >
+              <p>
+                As you can see, styled-components lets you write actual CSS in your JavaScript. This means you can use all
+                the features of CSS you use and love, including (but by far not limited to) media queries, all
+                pseudo-selectors, nesting, etc. It also binds styles to components, which has some interesting properties.
+                (learn more about 
+                <Link
+                  href="/docs/basics#motivation"
+                  literal={null}
+                  nodeKey="49:1-52:859"
+                >
+                  <Link
+                    href="/docs/basics#motivation"
+                    inline={true}
+                  >
+                    <Link
+                      href="/docs/basics#motivation"
+                    >
+                      <styled.a
+                        href="/docs/basics#motivation"
+                        onClick={[Function]}
+                      >
+                        <a
+                          className="c35"
+                          href="/docs/basics#motivation"
+                          onClick={[Function]}
+                          rel="noopener"
+                          target="_blank"
+                        >
+                          the ideas behind styled-components here
+                        </a>
+                      </styled.a>
+                    </Link>
+                  </Link>
+                </Link>
+                )
+              </p>
+            </Paragraph>
+            <Paragraph
+              literal={null}
+              nodeKey="54:1-55:1607"
+            >
+              <p>
+                The last step is that we need to define what a primary button looks like.
+                To do that we also import 
+                <Code
+                  inline={true}
+                  literal="{ css }"
+                  nodeKey="54:1-55:1603"
+                >
+                  <styled.span>
+                    <span
+                      className="c31"
+                    >
+                      { css }
+                    </span>
+                  </styled.span>
+                </Code>
+                 from 
+                <Code
+                  inline={true}
+                  literal="styled-components"
+                  nodeKey="54:1-55:1605"
+                >
+                  <styled.span>
+                    <span
+                      className="c31"
+                    >
+                      styled-components
+                    </span>
+                  </styled.span>
+                </Code>
+                 and interpolate a function into our template literal, which gets passed the props of our component:
+              </p>
+            </Paragraph>
+            <CodeBlock
+              codeinfo={
+                Array [
+                  "jsx",
+                ]
+              }
+              language="jsx"
+              literal="import styled, { css } from styled-components
+            
+            const Button = styled.button\`
+              border-radius: 3px;
+              padding: 0.25em 1em;
+              margin: 0 1em;
+              background: transparent;
+              color: palevioletred;
+              border: 2px solid palevioletred;
+            
+              \${props => props.primary && css\`
+                background: palevioletred;
+                color: white;
+              \`}
+            \`;
+            "
+              nodeKey="57:1-73:2"
+            >
+              <CodeBlock
+                code="import styled, { css } from styled-components
+              
+              const Button = styled.button\`
+                border-radius: 3px;
+                padding: 0.25em 1em;
+                margin: 0 1em;
+                background: transparent;
+                color: palevioletred;
+                border: 2px solid palevioletred;
+              
+                \${props => props.primary && css\`
+                  background: palevioletred;
+                  color: white;
+                \`}
+              \`;
+              "
+                language="jsx"
+              >
+                <styled.pre
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<span class=\\"token keyword\\">import</span> styled<span class=\\"token punctuation\\">,</span> <span class=\\"token punctuation\\">{</span> css <span class=\\"token punctuation\\">}</span> <span class=\\"token keyword\\">from</span> styled<span class=\\"token operator\\">-</span>components
+                    
+                    <span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
+                      <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
+                    
+                      </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
+                        background: palevioletred;
+                        color: white;
+                      \`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
+                    \`</span></span><span class=\\"token punctuation\\">;</span>
+                    ",
+                    }
+                  }
+                >
+                  <pre
+                    className="prism-code c34"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<span class=\\"token keyword\\">import</span> styled<span class=\\"token punctuation\\">,</span> <span class=\\"token punctuation\\">{</span> css <span class=\\"token punctuation\\">}</span> <span class=\\"token keyword\\">from</span> styled<span class=\\"token operator\\">-</span>components
+                      
+                      <span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
+                        <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                        <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                        <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                        <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                        <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                        <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
+                      
+                        </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
+                          background: palevioletred;
+                          color: white;
+                        \`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
+                      \`</span></span><span class=\\"token punctuation\\">;</span>
+                      ",
+                      }
+                    }
+                  />
+                </styled.pre>
+              </CodeBlock>
+            </CodeBlock>
+            <Paragraph
+              literal={null}
+              nodeKey="75:1-76:459"
+            >
+              <p>
+                All we're saying here is that when the 
+                <Code
+                  inline={true}
+                  literal="primary"
+                  nodeKey="75:1-76:453"
+                >
+                  <styled.span>
+                    <span
+                      className="c31"
+                    >
+                      primary
+                    </span>
+                  </styled.span>
+                </Code>
+                 property is set we want to add some more 
+                <Code
+                  inline={true}
+                  literal="css"
+                  nodeKey="75:1-76:455"
+                >
+                  <styled.span>
+                    <span
+                      className="c31"
+                    >
+                      css
+                    </span>
+                  </styled.span>
+                </Code>
+                 to our component,
+                in this case change the background and color.
+              </p>
+            </Paragraph>
+            <Paragraph
+              literal={null}
+              nodeKey="78:1-78:627"
+            >
+              <p>
+                That's all, we're done! Take a look at our finished component:
+              </p>
+            </Paragraph>
+            <CodeBlock
+              codeinfo={
+                Array [
+                  "react",
+                ]
+              }
+              language="react"
+              literal="const Button = styled.button\`
+              border-radius: 3px;
+              padding: 0.25em 1em;
+              margin: 0 1em;
+              background: transparent;
+              color: palevioletred;
+              border: 2px solid palevioletred;
+            
+              \${props => props.primary && css\`
+                background: palevioletred;
+                color: white;
+              \`}
+            \`;
+            
+            render(
+              <div>
+                <Button>Normal Button</Button>
+                <Button primary>Primary Button</Button>
+              </div>
+            );
+            "
+              nodeKey="80:1-101:2"
+            >
+              <LiveEdit
+                code="const Button = styled.button\`
+                border-radius: 3px;
+                padding: 0.25em 1em;
+                margin: 0 1em;
+                background: transparent;
+                color: palevioletred;
+                border: 2px solid palevioletred;
+              
+                \${props => props.primary && css\`
+                  background: palevioletred;
+                  color: white;
+                \`}
+              \`;
+              
+              render(
+                <div>
+                  <Button>Normal Button</Button>
+                  <Button primary>Primary Button</Button>
+                </div>
+              );
+              "
+                noInline={true}
+              >
+                <Styled(LiveProvider)
+                  code="const Button = styled.button\`
+                  border-radius: 3px;
+                  padding: 0.25em 1em;
+                  margin: 0 1em;
+                  background: transparent;
+                  color: palevioletred;
+                  border: 2px solid palevioletred;
+                
+                  \${props => props.primary && css\`
+                    background: palevioletred;
+                    color: white;
+                  \`}
+                \`;
+                
+                render(
+                  <div>
+                    <Button>Normal Button</Button>
+                    <Button primary>Primary Button</Button>
+                  </div>
+                );
+                "
+                  mountStylesheet={false}
+                  noInline={true}
+                  scope={
+                    Object {
+                      "ThemeProvider": [Function],
+                      "css": [Function],
+                      "keyframes": [Function],
+                      "styled": [Function],
+                      "withTheme": [Function],
+                    }
+                  }
+                >
+                  <LiveProvider
+                    className="c37"
+                    code="const Button = styled.button\`
+                    border-radius: 3px;
+                    padding: 0.25em 1em;
+                    margin: 0 1em;
+                    background: transparent;
+                    color: palevioletred;
+                    border: 2px solid palevioletred;
+                  
+                    \${props => props.primary && css\`
+                      background: palevioletred;
+                      color: white;
+                    \`}
+                  \`;
+                  
+                  render(
+                    <div>
+                      <Button>Normal Button</Button>
+                      <Button primary>Primary Button</Button>
+                    </div>
+                  );
+                  "
+                    mountStylesheet={false}
+                    noInline={true}
+                    scope={
+                      Object {
+                        "ThemeProvider": [Function],
+                        "css": [Function],
+                        "keyframes": [Function],
+                        "styled": [Function],
+                        "withTheme": [Function],
+                      }
+                    }
+                  >
+                    <div
+                      className="react-live c37"
+                      scope={
+                        Object {
+                          "ThemeProvider": [Function],
+                          "css": [Function],
+                          "keyframes": [Function],
+                          "styled": [Function],
+                          "withTheme": [Function],
+                        }
+                      }
+                    >
+                      <styled.div>
+                        <div
+                          className="c38"
+                        >
+                          <Styled(LiveEditor)>
+                            <Styled(LiveEditor)>
+                              <LiveEditor
+                                className="c39"
+                              >
+                                <Editor
+                                  className="c39"
+                                  code="const Button = styled.button\`
+                                  border-radius: 3px;
+                                  padding: 0.25em 1em;
+                                  margin: 0 1em;
+                                  background: transparent;
+                                  color: palevioletred;
+                                  border: 2px solid palevioletred;
+                                
+                                  \${props => props.primary && css\`
+                                    background: palevioletred;
+                                    color: white;
+                                  \`}
+                                \`;
+                                
+                                render(
+                                  <div>
+                                    <Button>Normal Button</Button>
+                                    <Button primary>Primary Button</Button>
+                                  </div>
+                                );
+                                "
+                                  contentEditable={true}
+                                  onChange={[Function]}
+                                >
+                                  <pre
+                                    className="prism-code c39"
+                                    contentEditable={true}
+                                    dangerouslySetInnerHTML={
+                                      Object {
+                                        "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
+                                      	<span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                                      	<span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                                      	<span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                                      	<span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                                      	<span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                                      	<span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
+                                      
+                                      	</span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
+                                      		background: palevioletred;
+                                      		color: white;
+                                      	\`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
+                                      \`</span></span><span class=\\"token punctuation\\">;</span>
+                                      
+                                      <span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span>
+                                      	<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>div</span><span class=\\"token punctuation\\">></span></span>
+                                      		<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Button</span><span class=\\"token punctuation\\">></span></span>Normal Button<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>Button</span><span class=\\"token punctuation\\">></span></span>
+                                      		<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Button</span> <span class=\\"token attr-name\\">primary</span><span class=\\"token punctuation\\">></span></span>Primary Button<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>Button</span><span class=\\"token punctuation\\">></span></span>
+                                      	<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>div</span><span class=\\"token punctuation\\">></span></span>
+                                      <span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+                                      ",
+                                      }
+                                    }
+                                    onChange={[Function]}
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                  />
+                                </Editor>
+                              </LiveEditor>
+                            </Styled(LiveEditor)>
+                          </Styled(LiveEditor)>
+                          <Styled(LivePreview)>
+                            <LivePreview
+                              className="c40"
+                            >
+                              <div
+                                className="react-live-preview c40"
+                              >
+                                <div>
+                                  <styled.button>
+                                    <button
+                                      className="c41"
+                                    >
+                                      Normal Button
+                                    </button>
+                                  </styled.button>
+                                  <styled.button
+                                    primary={true}
+                                  >
+                                    <button
+                                      className="c42"
+                                    >
+                                      Primary Button
+                                    </button>
+                                  </styled.button>
+                                </div>
+                              </div>
+                            </LivePreview>
+                          </Styled(LivePreview)>
+                        </div>
+                      </styled.div>
+                      <Styled(LiveError)>
+                        <LiveError
+                          className="c12"
+                        />
+                      </Styled(LiveError)>
+                    </div>
+                  </LiveProvider>
+                </Styled(LiveProvider)>
+              </LiveEdit>
+            </CodeBlock>
+            <Paragraph
+              literal={null}
+              nodeKey="103:1-103:1366"
+            >
+              <p>
+                Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components!
+              </p>
+            </Paragraph>
+            <Paragraph
+              literal={null}
+              nodeKey="105:1-105:14113"
+            >
+              <p>
+                Once you're done take a look at the 
+                <Link
+                  href="/docs"
+                  literal={null}
+                  nodeKey="105:1-105:1415"
+                >
+                  <Link
+                    href="/docs"
+                    inline={true}
+                  >
+                    <Link
+                      href="/docs"
+                    >
+                      <styled.a
+                        href="/docs"
+                        onClick={[Function]}
+                      >
+                        <a
+                          className="c35"
+                          href="/docs"
+                          onClick={[Function]}
+                          rel="noopener"
+                          target="_blank"
+                        >
+                          documentation
+                        </a>
+                      </styled.a>
+                    </Link>
+                  </Link>
+                </Link>
+                , specifically the 
+                <Link
+                  href="/docs/basics#getting-started"
+                  literal={null}
+                  nodeKey="105:1-105:1419"
+                >
+                  <Link
+                    href="/docs/basics#getting-started"
+                    inline={true}
+                  >
+                    <Link
+                      href="/docs/basics#getting-started"
+                    >
+                      <styled.a
+                        href="/docs/basics#getting-started"
+                        onClick={[Function]}
+                      >
+                        <a
+                          className="c35"
+                          href="/docs/basics#getting-started"
+                          onClick={[Function]}
+                          rel="noopener"
+                          target="_blank"
+                        >
+                          Getting started
+                        </a>
+                      </styled.a>
+                    </Link>
+                  </Link>
+                </Link>
+                 section! Enjoy ✨
+              </p>
+            </Paragraph>
+          </div>
+        </div>
+      </styled.div>
+    </HomepageGettingStarted>
+    <styled.footer>
+      <footer
+        className="c43"
+      >
+        <styled.div>
+          <div
+            className="c1"
+          >
+            Made with 
+            <Styled(HeartIcon)>
+              <HeartIcon
+                className="c44"
+                height={null}
+                width={null}
+              >
+                <svg
+                  className="octicons octicons-heart-icon c44"
+                  height={null}
+                  viewBox="0 0 12 16"
+                  width={null}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.2 3c-.52-.63-1.25-.95-2.2-1-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-.95.05-1.69.38-2.2 1-.52.61-.78 1.28-.8 2 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.02-.72-.28-1.39-.8-2.02V3z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </HeartIcon>
+            </Styled(HeartIcon)>
+             by 
+            <Link
+              href="https://twitter.com/glenmaddern"
+              inline={true}
+              white={true}
+            >
+              <Link
+                href="https://twitter.com/glenmaddern"
+              >
+                <styled.a
+                  data-white={true}
+                  href="https://twitter.com/glenmaddern"
+                  onClick={[Function]}
+                >
+                  <a
+                    className="c45"
+                    data-white={true}
+                    href="https://twitter.com/glenmaddern"
+                    onClick={[Function]}
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    @glenmaddern
+                  </a>
+                </styled.a>
+              </Link>
+            </Link>
+            , 
+            <Link
+              href="https://twitter.com/mxstbr"
+              inline={true}
+              white={true}
+            >
+              <Link
+                href="https://twitter.com/mxstbr"
+              >
+                <styled.a
+                  data-white={true}
+                  href="https://twitter.com/mxstbr"
+                  onClick={[Function]}
+                >
+                  <a
+                    className="c45"
+                    data-white={true}
+                    href="https://twitter.com/mxstbr"
+                    onClick={[Function]}
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    @mxstbr
+                  </a>
+                </styled.a>
+              </Link>
+            </Link>
+             & 
+            <Link
+              href="https://twitter.com/_philpl"
+              inline={true}
+              white={true}
+            >
+              <Link
+                href="https://twitter.com/_philpl"
+              >
+                <styled.a
+                  data-white={true}
+                  href="https://twitter.com/_philpl"
+                  onClick={[Function]}
+                >
+                  <a
+                    className="c45"
+                    data-white={true}
+                    href="https://twitter.com/_philpl"
+                    onClick={[Function]}
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    @_philpl‬
+                  </a>
+                </styled.a>
+              </Link>
+            </Link>
+          </div>
+        </styled.div>
+      </footer>
+    </styled.footer>
+  </div>
+</Index>
+`;
