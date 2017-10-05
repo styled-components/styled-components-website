@@ -140,6 +140,11 @@ const resetStyles = `
     color: white;
     font-size: 0.5em;
   }
+
+  ul li {
+    margin-bottom: 0.2em;
+    line-height: 1.7;
+  }
 `
 
 
