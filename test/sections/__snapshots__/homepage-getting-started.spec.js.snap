@@ -2,8 +2,21 @@
 
 exports[`HomepageGettingStarted renders correctly 1`] = `
 .c10 {
+  background: #efefef;
+  border-radius: 3px;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
-  font-weight: 500;
+  font-size: 85%;
+  font-weight: 300;
+  padding: 0.15em 0;
+}
+
+.c10::before,
+.c10::after {
+  -webkit-letter-spacing: -0.2em;
+  -moz-letter-spacing: -0.2em;
+  -ms-letter-spacing: -0.2em;
+  letter-spacing: -0.2em;
+  content: "\\0a0";
 }
 
 .c16 {
