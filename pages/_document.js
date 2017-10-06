@@ -176,8 +176,6 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#da936a" />
           <meta name="author" content="styled-components" />
 
-          {/* cloud.typography */}
-          <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
           <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
 
           {styles}
@@ -192,6 +190,9 @@ export default class MyDocument extends Document {
          </div>
 
          <NextScript />
+
+         {/* cloud.typography */}
+         <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
        </body>
      </html>
     )
