@@ -79,16 +79,19 @@ const MobileNavbar = props => {
     isMobileNavFolded,
     onSideToggle,
     onMobileNavToggle,
+    showSideNav,
   } = props
 
   return (
     <Wrapper>
-      <NavButton
-        active={!isSideFolded}
-        onClick={onSideToggle}
-      >
-        {isSideFolded ? <FoldIcon /> : <CloseIcon />}
-      </NavButton>
+      {showSideNav !== false && (
+        <NavButton
+          active={!isSideFolded}
+          onClick={onSideToggle}
+        >
+          {isSideFolded ? <FoldIcon /> : <CloseIcon />}
+        </NavButton>
+      )}
 
       <LogoLink>
         <Logo compact />

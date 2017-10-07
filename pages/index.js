@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
 import { LiveProvider, LiveEditor } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
+import debounce from 'debounce'
 
 import rem from '../utils/rem'
 import { headerFont } from '../utils/fonts'
@@ -12,6 +13,7 @@ import { Content } from '../components/Layout'
 import captureScroll from '../components/CaptureScroll'
 import SeoHead from '../components/SeoHead'
 import HomepageGettingStarted from '../sections/homepage-getting-started'
+import Nav from '../components/Nav'
 
 const Tagline = styled.h1`
   font-weight: 600;
@@ -181,12 +183,57 @@ const Heart = styled(HeartIcon).attrs({
 `
 
 class Index extends Component {
+  constructor(props) {
+    super(props)
+    this.checkScroll = debounce(this.checkScroll, 100)
+  }
+
+  state = {
+    isMobileNavFolded: true,
+    isScrolled: false,
+  };
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.checkScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.checkScroll)
+  }
+
+  checkScroll = () => {
+    const scrollPos = window.pageYOffset || document.body.scrollTop
+    this.setState({
+      isScrolled: scrollPos > 0,
+    })
+  }
+
+  toggleMobileNav = () => {
+    this.setState(prevState => ({
+      isMobileNavFolded: !prevState.isMobileNavFolded,
+    }))
+  }
+
+  onRouteChange = () => {
+    this.setState({
+      isMobileNavFolded: true,
+    })
+  }
+
   render() {
+    const { isMobileNavFolded, isScrolled } = this.state
     return (
       <div>
         <SeoHead title="styled-components">
           <meta name="robots" content="noodp" />
         </SeoHead>
+        <Nav
+          showSideNav={false}
+          transparent={!isScrolled}
+          isMobileNavFolded={isMobileNavFolded}
+          onMobileNavToggle={this.toggleMobileNav}
+          onRouteChange={this.onRouteChange}
+        />
         <Wrapper>
           <HeroContent>
             <LiveProvider

@@ -24,7 +24,8 @@ const Wrapper = styled.nav`
   font-family: ${headerFont};
   font-size: ${rem(15)};
   font-weight: 500;
-  background: ${violetRed};
+  background: ${props => props.transparent ? 'transparent' : violetRed};
+  transition: background 100ms ease-out;
   color: white;
 `
 
@@ -67,10 +68,12 @@ class Navbar extends PureComponent {
       onMobileNavToggle,
       isSideFolded,
       isMobileNavFolded,
+      showSideNav,
+      transparent,
     } = this.props
 
     return (
-      <Wrapper>
+      <Wrapper transparent={transparent}>
         <NormalNavbar>
           <StartWrapper>
             <LogoLink>
@@ -90,6 +93,7 @@ class Navbar extends PureComponent {
           isMobileNavFolded={isMobileNavFolded}
           onSideToggle={onSideToggle}
           onMobileNavToggle={onMobileNavToggle}
+          showSideNav={showSideNav}
         />
       </Wrapper>
     )
