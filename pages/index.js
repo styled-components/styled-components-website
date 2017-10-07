@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
 import { LiveProvider, LiveEditor } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
@@ -182,23 +182,24 @@ const Heart = styled(HeartIcon).attrs({
   width: ${rem(17)};
 `
 
-class Index extends Component {
+class WithIsScrolled extends PureComponent {
   constructor(props) {
     super(props)
-    this.checkScroll = debounce(this.checkScroll, 100)
+    this.checkScroll = debounce(this.checkScroll, 50)
   }
 
   state = {
-    isMobileNavFolded: true,
     isScrolled: false,
-  };
+  }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.checkScroll)
+    // Learn more about how { passive: true } improves scrolling performance
+    // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners
+    window.addEventListener('scroll', this.checkScroll, { passive: true })
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.checkScroll)
+    window.removeEventListener('scroll', this.checkScroll, { passive: true })
   }
 
   checkScroll = () => {
@@ -206,6 +207,21 @@ class Index extends Component {
     this.setState({
       isScrolled: scrollPos > 0,
     })
+  }
+
+  render() {
+    const { children } = this.props
+    const { isScrolled } = this.state
+    const childrenProps = {
+      isScrolled,
+    }
+    return typeof children === 'function' ? children(childrenProps) : null
+  }
+}
+
+class Index extends PureComponent {
+  state = {
+    isMobileNavFolded: true,
   }
 
   toggleMobileNav = () => {
@@ -221,19 +237,25 @@ class Index extends Component {
   }
 
   render() {
-    const { isMobileNavFolded, isScrolled } = this.state
+    const { isMobileNavFolded } = this.state
     return (
       <div>
         <SeoHead title="styled-components">
           <meta name="robots" content="noodp" />
         </SeoHead>
-        <Nav
-          showSideNav={false}
-          transparent={!isScrolled}
-          isMobileNavFolded={isMobileNavFolded}
-          onMobileNavToggle={this.toggleMobileNav}
-          onRouteChange={this.onRouteChange}
-        />
+
+        <WithIsScrolled>
+          {({ isScrolled }) => (
+            <Nav
+              showSideNav={false}
+              transparent={!isScrolled}
+              isMobileNavFolded={isMobileNavFolded}
+              onMobileNavToggle={this.toggleMobileNav}
+              onRouteChange={this.onRouteChange}
+            />
+          )}
+        </WithIsScrolled>
+
         <Wrapper>
           <HeroContent>
             <LiveProvider
