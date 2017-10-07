@@ -4,8 +4,12 @@ import { monospace } from '../utils/fonts'
 import '../utils/prismTemplateString'
 
 const Code = styled.span`
+  display: inline-block;
   font-family: ${monospace};
-  font-weight: 500;
+  font-size: 90%;
+  font-weight: 300;
+  padding: 0 0.05em 0.1em;
+  vertical-align: bottom;
 `
 
 export default Code
