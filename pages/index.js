@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
 import { LiveProvider, LiveEditor } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
-import debounce from 'debounce'
 
 import rem from '../utils/rem'
 import { headerFont } from '../utils/fonts'
@@ -13,6 +12,7 @@ import { Content } from '../components/Layout'
 import captureScroll from '../components/CaptureScroll'
 import SeoHead from '../components/SeoHead'
 import HomepageGettingStarted from '../sections/homepage-getting-started'
+import WithIsScrolled from '../components/WithIsScrolled'
 import Nav from '../components/Nav'
 
 const Tagline = styled.h1`
@@ -181,43 +181,6 @@ const Heart = styled(HeartIcon).attrs({
   display: inline-block;
   width: ${rem(17)};
 `
-
-class WithIsScrolled extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.checkScroll = debounce(this.checkScroll, 50)
-  }
-
-  state = {
-    isScrolled: false,
-  }
-
-  componentDidMount() {
-    // Learn more about how { passive: true } improves scrolling performance
-    // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners
-    window.addEventListener('scroll', this.checkScroll, { passive: true })
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.checkScroll, { passive: true })
-  }
-
-  checkScroll = () => {
-    const scrollPos = window.pageYOffset || document.body.scrollTop
-    this.setState({
-      isScrolled: scrollPos > 0,
-    })
-  }
-
-  render() {
-    const { children } = this.props
-    const { isScrolled } = this.state
-    const childrenProps = {
-      isScrolled,
-    }
-    return typeof children === 'function' ? children(childrenProps) : null
-  }
-}
 
 class Index extends PureComponent {
   state = {
