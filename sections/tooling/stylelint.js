@@ -57,6 +57,8 @@ Now you can lint your CSS by running the script! 🎉
 npm run lint:css
 \`\`\`
 
+> Beware that due to limitations on what is possible for Stylelint custom processors we cannot support the \`--fix\` option
+
 #### Webpack
 
 If you want to lint on build, rather than as a separate command, you can use the [\`stylelint-custom-processor-loader\`](https://github.com/emilgoldsmith/stylelint-custom-processor-loader) for webpack.
@@ -91,9 +93,9 @@ const Button = cool.button\`
 }
 \`\`\`
 
-> **NOTE:** That double array is on purpose but only necessary if you set options, see the [processors configuration docs](https://stylelint.io/user-guide/configuration/#processors).
+> That double array is on purpose but only necessary if you set options, see the [processors configuration docs](https://stylelint.io/user-guide/configuration/#processors).
 
-> **NOTE:** We only officially support \`styled-components\`, but the hope is that other libraries can also benefit from the processor.
+> We only officially support \`styled-components\`, but the hope is that other libraries can also benefit from the processor.
 
 ### Interpolation tagging
 
