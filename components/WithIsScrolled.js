@@ -19,6 +19,9 @@ class WithIsScrolled extends PureComponent {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.checkScroll, { passive: true })
+
+    // Clear the debounce timer
+    this.checkScroll.clear()
   }
 
   checkScroll = () => {
