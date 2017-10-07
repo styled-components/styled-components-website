@@ -120,8 +120,12 @@ exports[`Index renders correctly 1`] = `
 }
 
 .c31 {
+  display: inline-block;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
-  font-weight: 500;
+  font-size: 90%;
+  font-weight: 300;
+  padding: 0 0.05em 0.1em;
+  vertical-align: bottom;
 }
 
 .c34 {
