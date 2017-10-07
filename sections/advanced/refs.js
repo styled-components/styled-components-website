@@ -30,7 +30,7 @@ const Refs = () => md`
       return (
         <Input
           placeholder="Hover here..."
-          innerRef={x => this.input = x}
+          innerRef={x => { this.input = x }}
           onMouseEnter={() => this.input.focus()}
         />
       );
