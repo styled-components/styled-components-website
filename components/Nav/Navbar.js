@@ -25,7 +25,7 @@ const Wrapper = styled.nav`
   font-size: ${rem(15)};
   font-weight: 500;
   background: ${props => props.transparent ? 'transparent' : violetRed};
-  transition: background 100ms ease-out;
+  transition: background 300ms ease-out;
   color: white;
 `
 
