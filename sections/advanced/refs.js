@@ -25,13 +25,17 @@ const Refs = () => md`
     border-radius: 3px;
   \`;
 
-  const Form = () => (
-    <Input
-      placeholder="Hover here..."
-      innerRef={x => this.input = x}
-      onMouseEnter={() => this.input.focus()}
-    />
-  );
+  class Form extends React.Component {
+    render() {
+      return (
+        <Input
+          placeholder="Hover here..."
+          innerRef={x => { this.input = x }}
+          onMouseEnter={() => this.input.focus()}
+        />
+      );
+    }
+  }
 
   render(
     <Form />
