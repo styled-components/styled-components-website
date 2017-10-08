@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SidebarMenu renders correctly 1`] = `
+exports[`DocsSidebarMenu renders correctly 1`] = `
 .c3 {
   display: inline-block;
   text-decoration: none;

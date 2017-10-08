@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import SidebarMenu from './SidebarMenu'
+import { DocsSidebarMenu } from './SidebarMenus'
 
 const Nav = props => {
   const {
@@ -26,8 +26,8 @@ const Nav = props => {
       />
       {showSideNav !== false && (
         <Sidebar isFolded={isSideFolded}>
-          <SidebarMenu onRouteChange={onRouteChange} />
-          </Sidebar>
+          <DocsSidebarMenu onRouteChange={onRouteChange} />
+        </Sidebar>
       )}
     </div>
   )

@@ -2,12 +2,9 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import rem from '../../utils/rem'
-import Link, { StyledLink } from '../Link'
 import titleToDash from '../../utils/titleToDash'
-// import { lightGrey } from '../../utils/colors'
-// import { mobile } from '../../utils/media'
-
 import { pages } from '../../pages/docs.json'
+import Link, { StyledLink } from '../Link'
 
 const MenuInner = styled.div`
   display: block;
@@ -61,7 +58,7 @@ class Folder extends Component {
   }
 }
 
-const SidebarMenu = ({ onRouteChange }) => (
+export const DocsSidebarMenu = ({ onRouteChange }) => (
   <MenuInner>
     {
       pages.map(({ title, pathname, sections }) => (
@@ -101,4 +98,42 @@ const SidebarMenu = ({ onRouteChange }) => (
   </MenuInner>
 )
 
-export default (SidebarMenu)
+export const SimpleSidebarMenu = ({ onRouteChange }) => (
+  <MenuInner>
+    {
+      pages.map(({ title, pathname, sections }) => (
+          <Folder
+            key={title}
+            isOpenDefault={
+              typeof window !== 'undefined' &&
+                (window.location.pathname === `/docs/${pathname}`)
+            }
+          >
+            {({
+              rootProps,
+              toggleSubSections,
+              isOpen,
+            }) => (
+              <Section {...rootProps} onClick={onRouteChange}>
+                <SectionTitle onClick={toggleSubSections}>
+                  <Link href={`/docs/${pathname}`}>
+                    {title}
+                  </Link>
+                </SectionTitle>
+
+                {
+                  isOpen && sections.map(({ title }) => (
+                    <SubSection key={title}>
+                      <StyledLink href={`/docs/${pathname}#${titleToDash(title)}`}>
+                        {title}
+                      </StyledLink>
+                    </SubSection>
+                  ))
+                }
+                </Section>
+            )}
+          </Folder>
+      ))
+    }
+  </MenuInner>
+)

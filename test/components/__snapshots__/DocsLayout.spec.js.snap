@@ -1128,7 +1128,7 @@ exports[`DocsLayout renders correctly 1`] = `
               <nav
                 className="c23"
               >
-                <SidebarMenu
+                <DocsSidebarMenu
                   onRouteChange={[Function]}
                 >
                   <styled.div>
@@ -1347,7 +1347,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       </Folder>
                     </div>
                   </styled.div>
-                </SidebarMenu>
+                </DocsSidebarMenu>
               </nav>
             </styled.nav>
           </styled.nav>
