@@ -245,6 +245,8 @@ exports[`Nav renders correctly 1`] = `
   font-size: 0.8333333333333334rem;
   font-weight: 500;
   background: rgb(219,112,147);
+  -webkit-transition: background 300ms ease-out;
+  transition: background 300ms ease-out;
   color: white;
 }
 

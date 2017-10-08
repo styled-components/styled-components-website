@@ -10,19 +10,25 @@ const Nav = props => {
     onSideToggle,
     onMobileNavToggle,
     onRouteChange,
+    showSideNav,
+    transparent,
   } = props
 
   return (
     <div>
       <Navbar
+        showSideNav={showSideNav}
+        transparent={transparent}
         isSideFolded={isSideFolded}
         isMobileNavFolded={isMobileNavFolded}
         onSideToggle={onSideToggle}
         onMobileNavToggle={onMobileNavToggle}
       />
-      <Sidebar isFolded={isSideFolded}>
-        <SidebarMenu onRouteChange={onRouteChange} />
-      </Sidebar>
+      {showSideNav !== false && (
+        <Sidebar isFolded={isSideFolded}>
+          <SidebarMenu onRouteChange={onRouteChange} />
+          </Sidebar>
+      )}
     </div>
   )
 }
