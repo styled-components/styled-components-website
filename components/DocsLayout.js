@@ -34,7 +34,13 @@ class DocsLayout extends Component {
   }
 
   render() {
-    const { children, title, description } = this.props
+    const {
+      children,
+      title,
+      description,
+      useDocsSidebarMenu = true,
+      pages,
+    } = this.props
     const { isSideFolded, isMobileNavFolded } = this.state
 
     return (
@@ -47,8 +53,10 @@ class DocsLayout extends Component {
         </Head>
 
         <Nav
+          useDocsSidebarMenu={useDocsSidebarMenu}
           isSideFolded={isSideFolded}
           isMobileNavFolded={isMobileNavFolded}
+          pages={pages}
           onSideToggle={this.onSideToggle}
           onMobileNavToggle={this.onMobileNavToggle}
           onRouteChange={this.onRouteChange}

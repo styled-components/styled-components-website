@@ -436,6 +436,7 @@ exports[`DocsLayout renders correctly 1`] = `
         onMobileNavToggle={[Function]}
         onRouteChange={[Function]}
         onSideToggle={[Function]}
+        useDocsSidebarMenu={true}
       >
         <div>
           <Navbar

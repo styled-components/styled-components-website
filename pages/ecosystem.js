@@ -5,13 +5,16 @@ import md from '../components/md'
 import Loading from '../components/Loading'
 import Link from '../components/Link'
 
-
-
-const Ecosystem = ({ readme }) => (
-    <DocsLayout title="Ecosystem" description="Ecosystem of styled-components">
-    <p>
-      This is an incomplete list of awesome things built with styled-components. If you have something to share, please add it to the <Link href="https://github.com/styled-components/awesome-styled-components" inline>awesome-styled-components</Link> repo on GitHub and it will automatically show up here!
-    </p>
+const Ecosystem = ({ readme, sidebarPages }) => (
+    <DocsLayout
+      useDocsSidebarMenu={false}
+      pages={sidebarPages}
+      title="Ecosystem"
+      description="Ecosystem of styled-components"
+    >
+      <p>
+        This is an incomplete list of awesome things built with styled-components. If you have something to share, please add it to the <Link href="https://github.com/styled-components/awesome-styled-components" inline>awesome-styled-components</Link> repo on GitHub and it will automatically show up here!
+      </p>
       {typeof readme !== 'string' ? <Loading /> : md(
           `
           ${readme}
@@ -26,10 +29,13 @@ Please read the [contribution guidelines](https://github.com/styled-components/a
 
 Ecosystem.getInitialProps = async () => {
   const readme = await getReadme('awesome-styled-components')
+  const editedReadme = readme
+    .split('### Built with styled-components')[1]
+    .split('### Contribute')[0]
+
   return {
-    readme: readme
-      .split('### Built with styled-components')[1]
-      .split('### Contribute')[0]
+    readme: editedReadme,
+    sidebarPages: [],
   }
 }
 

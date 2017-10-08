@@ -127,3 +127,16 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`SimpleSidebarMenu renders correctly 1`] = `
+.c0 {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 1.3888888888888888rem;
+}
+
+<div
+  className="c0"
+/>
+`;

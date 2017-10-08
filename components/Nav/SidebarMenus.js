@@ -13,6 +13,11 @@ const MenuInner = styled.div`
   padding-top: ${rem(25)};
 `
 
+const TopLevelLink = styled.div`
+  display: block;
+  margin: ${rem(10)} ${rem(40)};
+`
+
 const Section = styled.div`
   margin-bottom: ${rem(20)};
 `
@@ -98,15 +103,27 @@ export const DocsSidebarMenu = ({ onRouteChange }) => (
   </MenuInner>
 )
 
-export const SimpleSidebarMenu = ({ onRouteChange }) => (
+export const SimpleSidebarMenu = ({ onRouteChange, pages = [] }) => (
   <MenuInner>
     {
-      pages.map(({ title, pathname, sections }) => (
+      pages.map(({ title, pathname, sections }) => {
+
+        if (!sections) {
+          return (
+            <TopLevelLink>
+              <StyledLink href={`${pathname}#${titleToDash(title)}`}>
+                {title}
+              </StyledLink>
+            </TopLevelLink>
+          )
+        }
+
+        return (
           <Folder
             key={title}
             isOpenDefault={
               typeof window !== 'undefined' &&
-                (window.location.pathname === `/docs/${pathname}`)
+                (window.location.pathname === pathname)
             }
           >
             {({
@@ -116,24 +133,23 @@ export const SimpleSidebarMenu = ({ onRouteChange }) => (
             }) => (
               <Section {...rootProps} onClick={onRouteChange}>
                 <SectionTitle onClick={toggleSubSections}>
-                  <Link href={`/docs/${pathname}`}>
+                  <Link href={pathname || titleToDash(title)}>
                     {title}
                   </Link>
                 </SectionTitle>
 
-                {
-                  isOpen && sections.map(({ title }) => (
-                    <SubSection key={title}>
-                      <StyledLink href={`/docs/${pathname}#${titleToDash(title)}`}>
-                        {title}
-                      </StyledLink>
-                    </SubSection>
-                  ))
-                }
-                </Section>
+                {isOpen && sections.map(({ title, pathname: linkPathname }) => (
+                  <SubSection key={title}>
+                    <StyledLink href={linkPathname || `${pathname}#${titleToDash(title)}`}>
+                      {title}
+                    </StyledLink>
+                  </SubSection>
+                ))}
+              </Section>
             )}
           </Folder>
-      ))
+        )
+      })
     }
   </MenuInner>
 )
