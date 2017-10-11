@@ -84,10 +84,7 @@ const ServerSideRendering = () => md`
   }
   \`\`\`
  
-  > Refer to [Next.js example `with-styled-components`](https://github.com/zeit/next.js/tree/master/examples/with-styled-components)
-
-  > This is unfortunately only a workaround! It will accumulate rules over time, so you will need
-  > to cache the SSR response to mitigate this for now.
+  > Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo fro an up-to-date usage example.
 `
 
 export default ServerSideRendering
