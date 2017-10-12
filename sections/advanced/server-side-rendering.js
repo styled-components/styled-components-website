@@ -84,7 +84,7 @@ const ServerSideRendering = () => md`
   }
   \`\`\`
  
-  > Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo fro an up-to-date usage example.
+  Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo fro an up-to-date usage example.
 `
 
 export default ServerSideRendering
