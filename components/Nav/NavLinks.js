@@ -13,7 +13,7 @@ const Wrapper = styled.nav`
 `
 
 const NavLink = styled(Link).attrs({
-  unstyled: true,
+  unstyled: true
 })`
   flex: 0 0 auto;
   display: inline-block;
@@ -21,7 +21,7 @@ const NavLink = styled(Link).attrs({
   transition: opacity 0.2s, transform 0.2s;
   cursor: pointer;
 
-  letter-spacing: ${rem(.4)};
+  letter-spacing: ${rem(0.4)};
   color: currentColor;
 
   &:hover,
@@ -35,14 +35,13 @@ const NavLink = styled(Link).attrs({
   }
 `
 
-const NavLinks = () => (
+const NavLinks = () =>
   <Wrapper>
-    <NavLink href="/docs/basics#motivation">Concepts</NavLink>
-    <NavSeparator />
-    <NavLink href="/">Try it out</NavLink>
+    <NavLink href="/">Homepage</NavLink>
     <NavSeparator />
     <NavLink href="/docs">Documentation</NavLink>
+    <NavSeparator />
+    <NavLink href="/ecosystem">Ecosystem</NavLink>
   </Wrapper>
-)
 
 export default NavLinks

@@ -140,6 +140,11 @@ const resetStyles = `
     color: white;
     font-size: 0.5em;
   }
+
+  ul li {
+    margin-bottom: 0.2em;
+    line-height: 1.7;
+  }
 `
 
 
@@ -171,29 +176,23 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#da936a" />
           <meta name="author" content="styled-components" />
 
-          {/* cloud.typography */}
-          <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
           <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
 
           {styles}
 
-          <script dangerouslySetInnerHTML={{ __html: `
-            !function(s,t,y,l,e,d,c){s.GoogleAnalyticsObject=y;s[y]||(s[y]=function(){
-            (s[y].q=s[y].q||[]).push(arguments)});s[y].l=+new Date;d=t.createElement(l);
-            c=t.getElementsByTagName(l)[0];d.src=e;c.parentNode.insertBefore(d,c)}
-            (window,document,'ga','script','//www.google-analytics.com/analytics.js');
-
-            ga('create', 'UA-105613776-1', 'auto');
-            ga('send', 'pageview');
-            `}}></script>
+      <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WDWNSLK');` }}></script>
        </Head>
 
        <body>
+      <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDWNSLK" height="0" width="0" style="display:none;visibility:hidden"></iframe>` }}></noscript>
          <div className="root">
            <Main />
          </div>
 
          <NextScript />
+
+         {/* cloud.typography */}
+         <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
        </body>
      </html>
     )

@@ -2,8 +2,12 @@
 
 exports[`HomepageGettingStarted renders correctly 1`] = `
 .c10 {
+  display: inline-block;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
-  font-weight: 500;
+  font-size: 90%;
+  font-weight: 300;
+  padding: 0 0.05em 0.1em;
+  vertical-align: bottom;
 }
 
 .c16 {
@@ -1290,10 +1294,10 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         </CodeBlock>
         <Paragraph
           literal={null}
-          nodeKey="103:1-103:1377"
+          nodeKey="103:1-103:1366"
         >
           <p>
-            Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components!&lt;
+            Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components!
           </p>
         </Paragraph>
         <Paragraph

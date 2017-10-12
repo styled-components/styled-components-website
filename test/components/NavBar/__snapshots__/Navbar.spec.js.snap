@@ -236,6 +236,8 @@ exports[`Navbar renders correctly 1`] = `
   font-size: 0.8333333333333334rem;
   font-weight: 500;
   background: rgb(219,112,147);
+  -webkit-transition: background 300ms ease-out;
+  transition: background 300ms ease-out;
   color: white;
 }
 
@@ -338,20 +340,10 @@ exports[`Navbar renders correctly 1`] = `
       >
         <a
           className="c6"
-          href="/docs/basics#motivation"
-          onClick={[Function]}
-        >
-          Concepts
-        </a>
-        <span
-          className="c7"
-        />
-        <a
-          className="c6"
           href="/"
           onClick={[Function]}
         >
-          Try it out
+          Homepage
         </a>
         <span
           className="c7"
@@ -362,6 +354,16 @@ exports[`Navbar renders correctly 1`] = `
           onClick={[Function]}
         >
           Documentation
+        </a>
+        <span
+          className="c7"
+        />
+        <a
+          className="c6"
+          href="/ecosystem"
+          onClick={[Function]}
+        >
+          Ecosystem
         </a>
       </nav>
     </div>
@@ -532,20 +534,10 @@ exports[`Navbar renders correctly 1`] = `
       >
         <a
           className="c6"
-          href="/docs/basics#motivation"
-          onClick={[Function]}
-        >
-          Concepts
-        </a>
-        <span
-          className="c7"
-        />
-        <a
-          className="c6"
           href="/"
           onClick={[Function]}
         >
-          Try it out
+          Homepage
         </a>
         <span
           className="c7"
@@ -556,6 +548,16 @@ exports[`Navbar renders correctly 1`] = `
           onClick={[Function]}
         >
           Documentation
+        </a>
+        <span
+          className="c7"
+        />
+        <a
+          className="c6"
+          href="/ecosystem"
+          onClick={[Function]}
+        >
+          Ecosystem
         </a>
       </nav>
       <span
