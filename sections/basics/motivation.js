@@ -13,9 +13,20 @@ const Video = styled.div.attrs({
     __html: videoHtml
   }
 })`
-  display: inline-block;
+  display: block;
   box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
   margin: ${rem(35)} 0;
+  position: relative;
+  padding-top: calc(1 / (16 / 9) * 100%);
+  height: 0;
+  
+  & iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 `
 
 const Motivation = () => md`
