@@ -27,6 +27,12 @@ const Video = styled.div.attrs({
     width: 100%;
     height: 100%;
   }
+  
+  @media (min-width: 768px) {
+    width: 560px;
+    height: 315px;
+    padding-top: 0;
+  }
 `
 
 const Motivation = () => md`
