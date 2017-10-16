@@ -146,14 +146,14 @@ export const SimpleSidebarMenu = ({ onRouteChange, pages = [] }) => (
             }) => (
               <Section {...rootProps} onClick={onRouteChange}>
                 <SectionTitle onClick={toggleSubSections}>
-                  <Link href={pathname || '#' + titleToDash(title)}>
+                  <StyledLink unstyled href={pathname || '#' + titleToDash(title)}>
                     {title}
-                  </Link>
+                  </StyledLink>
                 </SectionTitle>
 
                 {isOpen && sections.map(({ title }) => (
                   <SubSection key={title}>
-                    <StyledLink href={getSectionPath(pathname, title)}>
+                    <StyledLink unstyled href={getSectionPath(pathname, title)}>
                       {title}
                     </StyledLink>
                   </SubSection>

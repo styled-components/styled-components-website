@@ -60,9 +60,9 @@ function collectPagesFromMd(md) {
 
   for (let line of linesOfToC) {
     if (line.startsWith(headingIdentifier)) {
-      const { title, href: pathname } = parseMarkdownLink(line)
+      const { title } = parseMarkdownLink(line)
       // Add heading to the sidePages array
-      sidePages.push({ title, pathname })
+      sidePages.push({ title, /* pathname */ })
       // Due a bug in our strigifier these Github
       // generated links does not work here :(
 
