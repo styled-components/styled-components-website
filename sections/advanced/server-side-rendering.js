@@ -84,6 +84,8 @@ const ServerSideRendering = () => md`
   }
   \`\`\`
  
+  You will need to install \`babel-plugin-styled-components\` to get this working: \`npm install -D babel-plugin-styled-components\`
+  
   Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo fro an up-to-date usage example.
 `
 
