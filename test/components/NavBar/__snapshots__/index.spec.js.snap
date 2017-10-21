@@ -377,8 +377,17 @@ exports[`Nav renders correctly 1`] = `
 
 <Nav>
   <div>
-    <Navbar>
-      <styled.nav>
+    <Navbar
+      isMobileNavFolded={undefined}
+      isSideFolded={undefined}
+      onMobileNavToggle={undefined}
+      onSideToggle={undefined}
+      showSideNav={undefined}
+      transparent={undefined}
+    >
+      <styled.nav
+        transparent={undefined}
+      >
         <nav
           className="c0"
         >
@@ -662,16 +671,24 @@ exports[`Nav renders correctly 1`] = `
               </styled.div>
             </div>
           </styled.div>
-          <MobileNavbar>
+          <MobileNavbar
+            isMobileNavFolded={undefined}
+            isSideFolded={undefined}
+            onMobileNavToggle={undefined}
+            onSideToggle={undefined}
+            showSideNav={undefined}
+          >
             <styled.div>
               <div
                 className="c14"
               >
                 <styled.button
                   active={true}
+                  onClick={undefined}
                 >
                   <button
                     className="c15"
+                    onClick={undefined}
                   >
                     <CloseIcon>
                       <styled.svg
@@ -733,9 +750,11 @@ exports[`Nav renders correctly 1`] = `
                 </Styled(Link)>
                 <styled.button
                   active={true}
+                  onClick={undefined}
                 >
                   <button
                     className="c15"
+                    onClick={undefined}
                   >
                     <styled.div
                       rotate={true}
@@ -1044,22 +1063,32 @@ exports[`Nav renders correctly 1`] = `
         </nav>
       </styled.nav>
     </Navbar>
-    <styled.nav>
-      <styled.nav>
+    <styled.nav
+      isFolded={undefined}
+    >
+      <styled.nav
+        isFolded={undefined}
+      >
         <nav
           className="c22"
         >
-          <SidebarMenu>
+          <SidebarMenu
+            onRouteChange={undefined}
+          >
             <styled.div>
               <div
                 className="c23"
               >
                 <Folder
                   isOpenDefault={false}
+                  key="Basics"
                 >
-                  <styled.div>
+                  <styled.div
+                    onClick={undefined}
+                  >
                     <div
                       className="c24"
+                      onClick={undefined}
                     >
                       <styled.h4
                         onClick={[Function]}
@@ -1075,6 +1104,7 @@ exports[`Nav renders correctly 1`] = `
                               href="/docs/basics"
                             >
                               <styled.a
+                                className={undefined}
                                 href="/docs/basics"
                                 onClick={[Function]}
                               >
@@ -1095,10 +1125,14 @@ exports[`Nav renders correctly 1`] = `
                 </Folder>
                 <Folder
                   isOpenDefault={false}
+                  key="Advanced"
                 >
-                  <styled.div>
+                  <styled.div
+                    onClick={undefined}
+                  >
                     <div
                       className="c24"
+                      onClick={undefined}
                     >
                       <styled.h4
                         onClick={[Function]}
@@ -1114,6 +1148,7 @@ exports[`Nav renders correctly 1`] = `
                               href="/docs/advanced"
                             >
                               <styled.a
+                                className={undefined}
                                 href="/docs/advanced"
                                 onClick={[Function]}
                               >
@@ -1134,10 +1169,14 @@ exports[`Nav renders correctly 1`] = `
                 </Folder>
                 <Folder
                   isOpenDefault={false}
+                  key="API Reference"
                 >
-                  <styled.div>
+                  <styled.div
+                    onClick={undefined}
+                  >
                     <div
                       className="c24"
+                      onClick={undefined}
                     >
                       <styled.h4
                         onClick={[Function]}
@@ -1153,6 +1192,7 @@ exports[`Nav renders correctly 1`] = `
                               href="/docs/api"
                             >
                               <styled.a
+                                className={undefined}
                                 href="/docs/api"
                                 onClick={[Function]}
                               >
@@ -1173,10 +1213,14 @@ exports[`Nav renders correctly 1`] = `
                 </Folder>
                 <Folder
                   isOpenDefault={false}
+                  key="Tooling"
                 >
-                  <styled.div>
+                  <styled.div
+                    onClick={undefined}
+                  >
                     <div
                       className="c24"
+                      onClick={undefined}
                     >
                       <styled.h4
                         onClick={[Function]}
@@ -1192,6 +1236,7 @@ exports[`Nav renders correctly 1`] = `
                               href="/docs/tooling"
                             >
                               <styled.a
+                                className={undefined}
                                 href="/docs/tooling"
                                 onClick={[Function]}
                               >
@@ -1212,10 +1257,14 @@ exports[`Nav renders correctly 1`] = `
                 </Folder>
                 <Folder
                   isOpenDefault={false}
+                  key="FAQs"
                 >
-                  <styled.div>
+                  <styled.div
+                    onClick={undefined}
+                  >
                     <div
                       className="c24"
+                      onClick={undefined}
                     >
                       <styled.h4
                         onClick={[Function]}
@@ -1231,6 +1280,7 @@ exports[`Nav renders correctly 1`] = `
                               href="/docs/faqs"
                             >
                               <styled.a
+                                className={undefined}
                                 href="/docs/faqs"
                                 onClick={[Function]}
                               >

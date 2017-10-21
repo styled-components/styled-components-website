@@ -23,13 +23,14 @@
     "isomorphic-fetch": "^2.2.1",
     "lru-cache": "^4.0.2",
     "module-alias": "^2.0.0",
-    "next": "https://github.com/styled-components/styled-components-website/blob/master/vendor/next-v2.4.8.tgz?raw=true",
+    "next": "^4.1.2",
     "polished": "^1.3.0",
     "preact": "^8.2.1",
     "preact-compat": "^3.16.0",
     "prismjs": "^1.6.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-live": "^1.7.0",
     "react-octicons-svg": "^1.1.13",
     "styled-components": "^2.1.2",
@@ -40,8 +41,9 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "babel-plugin-module-resolver": "^2.7.1",
-    "enzyme": "^2.9.1",
-    "enzyme-to-json": "^1.5.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "enzyme-to-json": "^3.1.4",
     "eslint": "^4.3.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-prettier": "^2.1.2",
@@ -52,8 +54,7 @@
     "lint-staged": "^4.0.2",
     "npm-run-all": "^4.0.2",
     "prettier": "^1.5.3",
-    "react-addons-test-utils": "15.4.2",
-    "react-test-renderer": "15.4.2",
+    "react-test-renderer": "^16.0.0",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",
     "stylelint-processor-styled-components": "^0.2.1",
@@ -70,6 +71,8 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "setupTestFrameworkScriptFile": "./test/enzymeSetup.js",
+    "setupFiles": ["./test/tempPolyfills.js"]
   }
 }

@@ -443,8 +443,12 @@ exports[`DocsLayout renders correctly 1`] = `
             isSideFolded={true}
             onMobileNavToggle={[Function]}
             onSideToggle={[Function]}
+            showSideNav={undefined}
+            transparent={undefined}
           >
-            <styled.nav>
+            <styled.nav
+              transparent={undefined}
+            >
               <nav
                 className="c1"
               >
@@ -733,6 +737,7 @@ exports[`DocsLayout renders correctly 1`] = `
                   isSideFolded={true}
                   onMobileNavToggle={[Function]}
                   onSideToggle={[Function]}
+                  showSideNav={undefined}
                 >
                   <styled.div>
                     <div
@@ -1137,6 +1142,7 @@ exports[`DocsLayout renders correctly 1`] = `
                     >
                       <Folder
                         isOpenDefault={false}
+                        key="Basics"
                       >
                         <styled.div
                           onClick={[Function]}
@@ -1159,6 +1165,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     href="/docs/basics"
                                   >
                                     <styled.a
+                                      className={undefined}
                                       href="/docs/basics"
                                       onClick={[Function]}
                                     >
@@ -1179,6 +1186,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       </Folder>
                       <Folder
                         isOpenDefault={false}
+                        key="Advanced"
                       >
                         <styled.div
                           onClick={[Function]}
@@ -1201,6 +1209,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     href="/docs/advanced"
                                   >
                                     <styled.a
+                                      className={undefined}
                                       href="/docs/advanced"
                                       onClick={[Function]}
                                     >
@@ -1221,6 +1230,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       </Folder>
                       <Folder
                         isOpenDefault={false}
+                        key="API Reference"
                       >
                         <styled.div
                           onClick={[Function]}
@@ -1243,6 +1253,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     href="/docs/api"
                                   >
                                     <styled.a
+                                      className={undefined}
                                       href="/docs/api"
                                       onClick={[Function]}
                                     >
@@ -1263,6 +1274,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       </Folder>
                       <Folder
                         isOpenDefault={false}
+                        key="Tooling"
                       >
                         <styled.div
                           onClick={[Function]}
@@ -1285,6 +1297,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     href="/docs/tooling"
                                   >
                                     <styled.a
+                                      className={undefined}
                                       href="/docs/tooling"
                                       onClick={[Function]}
                                     >
@@ -1305,6 +1318,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       </Folder>
                       <Folder
                         isOpenDefault={false}
+                        key="FAQs"
                       >
                         <styled.div
                           onClick={[Function]}
@@ -1327,6 +1341,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     href="/docs/faqs"
                                   >
                                     <styled.a
+                                      className={undefined}
                                       href="/docs/faqs"
                                       onClick={[Function]}
                                     >

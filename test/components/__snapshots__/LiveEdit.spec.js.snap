@@ -100,7 +100,9 @@ exports[`LiveEdit renders correctly 1`] = `
 
 <LiveEdit>
   <Styled(LiveProvider)
+    code={undefined}
     mountStylesheet={false}
+    noInline={undefined}
     scope={
       Object {
         "ThemeProvider": [Function],
@@ -165,6 +167,7 @@ exports[`LiveEdit renders correctly 1`] = `
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
+                      style={undefined}
                     />
                   </Editor>
                 </LiveEditor>

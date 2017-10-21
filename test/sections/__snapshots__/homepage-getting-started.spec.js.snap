@@ -343,6 +343,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
       </styled.div>
       <div>
         <Heading
+          key="2:1-2:171"
           level={1}
           literal={null}
           nodeKey="2:1-2:171"
@@ -356,6 +357,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </styled.h1>
         </Heading>
         <Heading
+          key="3:1-3:151"
           level={2}
           literal={null}
           nodeKey="3:1-3:151"
@@ -367,6 +369,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             <Styled(styled.h2)>
               <styled.h2
                 className="c4"
+                innerRef={undefined}
               >
                 <h2
                   className="c4 c5"
@@ -416,6 +419,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </Link>
         </Heading>
         <Paragraph
+          key="5:1-6:989"
           literal={null}
           nodeKey="5:1-6:989"
         >
@@ -423,6 +427,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             To download styled-components run 
             <Code
               inline={true}
+              key="5:1-6:981"
               literal="npm install --save styled-components"
               nodeKey="5:1-6:981"
             >
@@ -439,6 +444,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </p>
         </Paragraph>
         <Heading
+          key="8:1-8:301"
           level={2}
           literal={null}
           nodeKey="8:1-8:301"
@@ -450,6 +456,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             <Styled(styled.h2)>
               <styled.h2
                 className="c4"
+                innerRef={undefined}
               >
                 <h2
                   className="c4 c5"
@@ -499,6 +506,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </Link>
         </Heading>
         <Paragraph
+          key="10:1-12:8813"
           literal={null}
           nodeKey="10:1-12:8813"
         >
@@ -506,6 +514,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             Let's say you want to create a simple and reusable 
             <Code
               inline={true}
+              key="10:1-12:883"
               literal="<Button />"
               nodeKey="10:1-12:883"
             >
@@ -521,6 +530,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             There should be a normal version and a big and 
             <Code
               inline={true}
+              key="10:1-12:887"
               literal="primary"
               nodeKey="10:1-12:887"
             >
@@ -537,6 +547,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </p>
         </Paragraph>
         <Paragraph
+          key="14:1-14:5423"
           literal={null}
           nodeKey="14:1-14:5423"
         >
@@ -569,6 +580,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </styled.div>
         </Paragraph>
         <Paragraph
+          key="16:1-16:675"
           literal={null}
           nodeKey="16:1-16:675"
         >
@@ -576,6 +588,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             First, let's import styled-components and create a 
             <Code
               inline={true}
+              key="16:1-16:673"
               literal="styled.button"
               nodeKey="16:1-16:673"
             >
@@ -596,6 +609,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
               "jsx",
             ]
           }
+          key="18:1-22:31"
           language="jsx"
           literal="import styled from 'styled-components';
         
@@ -611,6 +625,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             language="jsx"
           >
             <styled.pre
+              code={undefined}
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<span class=\\"token keyword\\">import</span> styled <span class=\\"token keyword\\">from</span> <span class=\\"token string\\">'styled-components'</span><span class=\\"token punctuation\\">;</span>
@@ -619,6 +634,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                 ",
                 }
               }
+              language={undefined}
             >
               <pre
                 className="prism-code c13"
@@ -635,6 +651,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </CodeBlock>
         </CodeBlock>
         <Paragraph
+          key="24:1-27:9216"
           literal={null}
           nodeKey="24:1-27:9216"
         >
@@ -642,6 +659,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             This 
             <Code
               inline={true}
+              key="24:1-27:921"
               literal="Button"
               nodeKey="24:1-27:921"
             >
@@ -658,6 +676,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             You know how you can call functions with parenthesis? (
             <Code
               inline={true}
+              key="24:1-27:928"
               literal="myFunc()"
               nodeKey="24:1-27:928"
             >
@@ -673,8 +692,10 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             
             <Link
               href="/docs/advanced#tagged-template-literals"
+              key="24:1-27:9214"
               literal={null}
               nodeKey="24:1-27:9214"
+              title={undefined}
             >
               <Link
                 href="/docs/advanced#tagged-template-literals"
@@ -684,6 +705,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                   href="/docs/advanced#tagged-template-literals"
                 >
                   <styled.a
+                    className={undefined}
                     href="/docs/advanced#tagged-template-literals"
                     onClick={[Function]}
                   >
@@ -704,6 +726,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </p>
         </Paragraph>
         <Paragraph
+          key="29:1-29:1063"
           literal={null}
           nodeKey="29:1-29:1063"
         >
@@ -711,6 +734,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             If you render our lovely component now (just like any other component: 
             <Code
               inline={true}
+              key="29:1-29:1061"
               literal="<Button />"
               nodeKey="29:1-29:1061"
             >
@@ -726,6 +750,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </p>
         </Paragraph>
         <Paragraph
+          key="31:1-31:5423"
           literal={null}
           nodeKey="31:1-31:5423"
         >
@@ -740,6 +765,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </styled.div>
         </Paragraph>
         <Paragraph
+          key="33:1-34:7110"
           literal={null}
           nodeKey="33:1-34:7110"
         >
@@ -754,6 +780,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
               "jsx",
             ]
           }
+          key="36:1-45:2"
           language="jsx"
           literal="const Button = styled.button\`
           border-radius: 3px;
@@ -779,6 +806,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             language="jsx"
           >
             <styled.pre
+              code={undefined}
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
@@ -792,6 +820,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                 ",
                 }
               }
+              language={undefined}
             >
               <pre
                 className="prism-code c13"
@@ -813,6 +842,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </CodeBlock>
         </CodeBlock>
         <Paragraph
+          key="47:1-47:5423"
           literal={null}
           nodeKey="47:1-47:5423"
         >
@@ -831,6 +861,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </styled.div>
         </Paragraph>
         <Paragraph
+          key="49:1-52:8511"
           literal={null}
           nodeKey="49:1-52:8511"
         >
@@ -841,8 +872,10 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             (learn more about 
             <Link
               href="/docs/basics#motivation"
+              key="49:1-52:859"
               literal={null}
               nodeKey="49:1-52:859"
+              title={undefined}
             >
               <Link
                 href="/docs/basics#motivation"
@@ -852,6 +885,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                   href="/docs/basics#motivation"
                 >
                   <styled.a
+                    className={undefined}
                     href="/docs/basics#motivation"
                     onClick={[Function]}
                   >
@@ -872,6 +906,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </p>
         </Paragraph>
         <Paragraph
+          key="54:1-55:1607"
           literal={null}
           nodeKey="54:1-55:1607"
         >
@@ -880,6 +915,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             To do that we also import 
             <Code
               inline={true}
+              key="54:1-55:1603"
               literal="{ css }"
               nodeKey="54:1-55:1603"
             >
@@ -894,6 +930,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
              from 
             <Code
               inline={true}
+              key="54:1-55:1605"
               literal="styled-components"
               nodeKey="54:1-55:1605"
             >
@@ -914,6 +951,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
               "jsx",
             ]
           }
+          key="57:1-73:2"
           language="jsx"
           literal="import styled, { css } from styled-components
         
@@ -953,6 +991,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             language="jsx"
           >
             <styled.pre
+              code={undefined}
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<span class=\\"token keyword\\">import</span> styled<span class=\\"token punctuation\\">,</span> <span class=\\"token punctuation\\">{</span> css <span class=\\"token punctuation\\">}</span> <span class=\\"token keyword\\">from</span> styled<span class=\\"token operator\\">-</span>components
@@ -973,6 +1012,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                 ",
                 }
               }
+              language={undefined}
             >
               <pre
                 className="prism-code c13"
@@ -1001,6 +1041,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </CodeBlock>
         </CodeBlock>
         <Paragraph
+          key="75:1-76:459"
           literal={null}
           nodeKey="75:1-76:459"
         >
@@ -1008,6 +1049,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             All we're saying here is that when the 
             <Code
               inline={true}
+              key="75:1-76:453"
               literal="primary"
               nodeKey="75:1-76:453"
             >
@@ -1022,6 +1064,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
              property is set we want to add some more 
             <Code
               inline={true}
+              key="75:1-76:455"
               literal="css"
               nodeKey="75:1-76:455"
             >
@@ -1038,6 +1081,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </p>
         </Paragraph>
         <Paragraph
+          key="78:1-78:627"
           literal={null}
           nodeKey="78:1-78:627"
         >
@@ -1051,6 +1095,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
               "react",
             ]
           }
+          key="80:1-101:2"
           language="react"
           literal="const Button = styled.button\`
           border-radius: 3px;
@@ -1247,6 +1292,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
                                 onKeyUp={[Function]}
+                                style={undefined}
                               />
                             </Editor>
                           </LiveEditor>
@@ -1293,6 +1339,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </LiveEdit>
         </CodeBlock>
         <Paragraph
+          key="103:1-103:1366"
           literal={null}
           nodeKey="103:1-103:1366"
         >
@@ -1301,6 +1348,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           </p>
         </Paragraph>
         <Paragraph
+          key="105:1-105:14113"
           literal={null}
           nodeKey="105:1-105:14113"
         >
@@ -1308,8 +1356,10 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             Once you're done take a look at the 
             <Link
               href="/docs"
+              key="105:1-105:1415"
               literal={null}
               nodeKey="105:1-105:1415"
+              title={undefined}
             >
               <Link
                 href="/docs"
@@ -1319,6 +1369,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                   href="/docs"
                 >
                   <styled.a
+                    className={undefined}
                     href="/docs"
                     onClick={[Function]}
                   >
@@ -1338,8 +1389,10 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
             , specifically the 
             <Link
               href="/docs/basics#getting-started"
+              key="105:1-105:1419"
               literal={null}
               nodeKey="105:1-105:1419"
+              title={undefined}
             >
               <Link
                 href="/docs/basics#getting-started"
@@ -1349,6 +1402,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
                   href="/docs/basics#getting-started"
                 >
                   <styled.a
+                    className={undefined}
                     href="/docs/basics#getting-started"
                     onClick={[Function]}
                   >
