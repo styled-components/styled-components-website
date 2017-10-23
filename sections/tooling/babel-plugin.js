@@ -16,6 +16,8 @@ const BabelPlugin = () => md`
 
   Then add it to your babel configuration like so:
 
+  > The plugin call order in your .babelrc file matters. You should put the babel-plugin into your env's plugin. See [this](https://github.com/styled-components/babel-plugin-styled-components/issues/78) for more information. ⚠️
+  
   \`\`\`js
   {
     "plugins": ["babel-plugin-styled-components"]
