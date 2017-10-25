@@ -41,7 +41,7 @@ const Theming = () => md`
 
       <ThemeProvider theme={theme}>
         <Button>Themed</Button>
-      </ThemeProvider>
+      </ThemeProvider>      
     </div>
   );
   \`\`\`
@@ -109,6 +109,45 @@ const Theming = () => md`
 
   export default withTheme(MyComponent)
   \`\`\`
+
+  ### The \`theme\` prop
+
+  A theme can also be passed down to a component using the \`theme\` prop.
+
+  This is useful to circumvent a missing \`ThemeProvider\` or to override it.
+
+  \`\`\`react
+  // Define our button
+  const Button = styled.button\`
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border-radius: 3px;
+
+    /* Color the border and text with theme.main */
+    color: \${props => props.theme.main};
+    border: 2px solid \${props => props.theme.main};
+  \`;
+
+  // Define what main theme will look like
+  const theme = {
+    main: 'mediumseagreen'
+  };
+
+  render(
+    <div>
+      <Button theme={{ main: 'royalblue' }}>Ad hoc theme</Button>
+      <ThemeProvider theme={theme}>
+        <div>
+          <Button>Themed</Button>
+          <Button theme={{ main: 'darkorange' }}>Overidden</Button>
+        </div>
+      </ThemeProvider>      
+    </div>
+  );
+  \`\`\`
+
+  
 `
 
 export default Theming
