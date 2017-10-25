@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
 import { LiveProvider, LiveEditor } from 'react-live'
-import { I18n } from 'react-i18next'
+import { I18n, Trans } from 'react-i18next'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
@@ -251,7 +251,7 @@ class Index extends PureComponent {
                     </EditorContainer>
                   </LiveProvider>
 
-                  <UsersHeading>Used by folks at</UsersHeading>
+                  <UsersHeading>{translate('usedBy')}</UsersHeading>
 
                   <UsersWrapper>
                     <CompanyLogo bottom="-0.2rem" height="1.75rem" src="/static/bloomberg-logo.svg" />
@@ -270,14 +270,12 @@ class Index extends PureComponent {
 
               <Footer>
                 <HeroContent>
-                  {'Made with '}
-                  <Heart />
-                  {' by '}
-                  <Link inline white href="https://twitter.com/glenmaddern">@glenmaddern</Link>
-                  {', '}
-                  <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
-                  {' & '}
-                  <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
+                  <Trans i18nKey="madeWithLove">
+                    <Heart />
+                    <Link inline white href="https://twitter.com/glenmaddern">@glenmaddern</Link>
+                    <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
+                    <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
+                  </Trans>
                 </HeroContent>
               </Footer>
             </div>

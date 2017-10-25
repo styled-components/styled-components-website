@@ -2946,108 +2946,115 @@ exports[`Index renders correctly 1`] = `
             <div
               className="c23"
             >
-              Made with 
-              <Styled(HeartIcon)>
-                <HeartIcon
-                  className="c66"
-                  height={null}
-                  width={null}
-                >
-                  <svg
-                    className="octicons octicons-heart-icon c66"
-                    height={null}
-                    viewBox="0 0 12 16"
-                    width={null}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.2 3c-.52-.63-1.25-.95-2.2-1-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-.95.05-1.69.38-2.2 1-.52.61-.78 1.28-.8 2 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.02-.72-.28-1.39-.8-2.02V3z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
-                </HeartIcon>
-              </Styled(HeartIcon)>
-               by 
-              <Link
-                href="https://twitter.com/glenmaddern"
-                inline={true}
-                white={true}
+              <Trans
+                i18nKey="madeWithLove"
+                parent="div"
               >
-                <Link
-                  href="https://twitter.com/glenmaddern"
-                >
-                  <styled.a
-                    data-white={true}
+                <div>
+                  Made with 
+                  <Styled(HeartIcon)>
+                    <HeartIcon
+                      className="c66"
+                      height={null}
+                      width={null}
+                    >
+                      <svg
+                        className="octicons octicons-heart-icon c66"
+                        height={null}
+                        viewBox="0 0 12 16"
+                        width={null}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2 3c-.52-.63-1.25-.95-2.2-1-.97 0-1.69.42-2.2 1-.51.58-.78.92-.8 1-.02-.08-.28-.42-.8-1-.52-.58-1.17-1-2.2-1-.95.05-1.69.38-2.2 1-.52.61-.78 1.28-.8 2 0 .52.09 1.52.67 2.67C1.25 8.82 3.01 10.61 6 13c2.98-2.39 4.77-4.17 5.34-5.33C11.91 6.51 12 5.5 12 5c-.02-.72-.28-1.39-.8-2.02V3z"
+                          fillRule="evenodd"
+                        />
+                      </svg>
+                    </HeartIcon>
+                  </Styled(HeartIcon)>
+                   by 
+                  <Link
                     href="https://twitter.com/glenmaddern"
-                    onClick={[Function]}
+                    inline={true}
+                    white={true}
                   >
-                    <a
-                      className="c67"
-                      data-white={true}
+                    <Link
                       href="https://twitter.com/glenmaddern"
-                      onClick={[Function]}
-                      rel="noopener"
-                      target="_blank"
                     >
-                      @glenmaddern
-                    </a>
-                  </styled.a>
-                </Link>
-              </Link>
-              , 
-              <Link
-                href="https://twitter.com/mxstbr"
-                inline={true}
-                white={true}
-              >
-                <Link
-                  href="https://twitter.com/mxstbr"
-                >
-                  <styled.a
-                    data-white={true}
+                      <styled.a
+                        data-white={true}
+                        href="https://twitter.com/glenmaddern"
+                        onClick={[Function]}
+                      >
+                        <a
+                          className="c67"
+                          data-white={true}
+                          href="https://twitter.com/glenmaddern"
+                          onClick={[Function]}
+                          rel="noopener"
+                          target="_blank"
+                        >
+                          @glenmaddern
+                        </a>
+                      </styled.a>
+                    </Link>
+                  </Link>
+                  , 
+                  <Link
                     href="https://twitter.com/mxstbr"
-                    onClick={[Function]}
+                    inline={true}
+                    white={true}
                   >
-                    <a
-                      className="c67"
-                      data-white={true}
+                    <Link
                       href="https://twitter.com/mxstbr"
-                      onClick={[Function]}
-                      rel="noopener"
-                      target="_blank"
                     >
-                      @mxstbr
-                    </a>
-                  </styled.a>
-                </Link>
-              </Link>
-               & 
-              <Link
-                href="https://twitter.com/_philpl"
-                inline={true}
-                white={true}
-              >
-                <Link
-                  href="https://twitter.com/_philpl"
-                >
-                  <styled.a
-                    data-white={true}
+                      <styled.a
+                        data-white={true}
+                        href="https://twitter.com/mxstbr"
+                        onClick={[Function]}
+                      >
+                        <a
+                          className="c67"
+                          data-white={true}
+                          href="https://twitter.com/mxstbr"
+                          onClick={[Function]}
+                          rel="noopener"
+                          target="_blank"
+                        >
+                          @mxstbr
+                        </a>
+                      </styled.a>
+                    </Link>
+                  </Link>
+                   & 
+                  <Link
                     href="https://twitter.com/_philpl"
-                    onClick={[Function]}
+                    inline={true}
+                    white={true}
                   >
-                    <a
-                      className="c67"
-                      data-white={true}
+                    <Link
                       href="https://twitter.com/_philpl"
-                      onClick={[Function]}
-                      rel="noopener"
-                      target="_blank"
                     >
-                      @_philpl‬
-                    </a>
-                  </styled.a>
-                </Link>
-              </Link>
+                      <styled.a
+                        data-white={true}
+                        href="https://twitter.com/_philpl"
+                        onClick={[Function]}
+                      >
+                        <a
+                          className="c67"
+                          data-white={true}
+                          href="https://twitter.com/_philpl"
+                          onClick={[Function]}
+                          rel="noopener"
+                          target="_blank"
+                        >
+                          @_philpl‬
+                        </a>
+                      </styled.a>
+                    </Link>
+                  </Link>
+                </div>
+              </Trans>
             </div>
           </styled.div>
         </footer>
