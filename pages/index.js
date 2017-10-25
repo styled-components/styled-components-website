@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
 import { LiveProvider, LiveEditor } from 'react-live'
+import { I18n } from 'react-i18next'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
@@ -14,6 +15,8 @@ import SeoHead from '../components/SeoHead'
 import HomepageGettingStarted from '../sections/homepage-getting-started'
 import WithIsScrolled from '../components/WithIsScrolled'
 import Nav from '../components/Nav'
+
+import '../utils/i18n'
 
 const Tagline = styled.h1`
   font-weight: 600;
@@ -202,79 +205,85 @@ class Index extends PureComponent {
   render() {
     const { isMobileNavFolded } = this.state
     return (
-      <div>
-        <SeoHead title="styled-components">
-          <meta name="robots" content="noodp" />
-        </SeoHead>
+      <I18n ns="homepage">
+        {
+          (translate) => (
+            <div>
+              <SeoHead title="styled-components">
+                <meta name="robots" content="noodp" />
+              </SeoHead>
 
-        <WithIsScrolled>
-          {({ isScrolled }) => (
-            <Nav
-              showSideNav={false}
-              transparent={!isScrolled}
-              isMobileNavFolded={isMobileNavFolded}
-              onMobileNavToggle={this.toggleMobileNav}
-              onRouteChange={this.onRouteChange}
-            />
-          )}
-        </WithIsScrolled>
+              <WithIsScrolled>
+                {({ isScrolled }) => (
+                  <Nav
+                    showSideNav={false}
+                    transparent={!isScrolled}
+                    isMobileNavFolded={isMobileNavFolded}
+                    onMobileNavToggle={this.toggleMobileNav}
+                    onRouteChange={this.onRouteChange}
+                  />
+                )}
+              </WithIsScrolled>
 
-        <Wrapper>
-          <HeroContent>
-            <LiveProvider
-              code={headerCode}
-              mountStylesheet={false}
-              scope={{ styled, css, rem, Link }}>
+              <Wrapper>
+                <HeroContent>
+                  <LiveProvider
+                    code={headerCode}
+                    mountStylesheet={false}
+                    scope={{ styled, css, rem, Link }}>
 
-              <Logo />
+                    <Logo />
 
-              <Title>
-                <Tagline>Visual primitives for the component age.</Tagline>
-                <SupportingTagline>
-                  Use the best bits of ES6 and CSS to style your apps without stress 💅
-                </SupportingTagline>
-              </Title>
+                    <Title>
+                      <Tagline>{translate('title')}</Tagline>
+                      <SupportingTagline>
+                        {translate('subtitle')}
+                      </SupportingTagline>
+                    </Title>
 
-              <Links>
-                <HomepageLivePreview />
-              </Links>
+                    <Links>
+                      <HomepageLivePreview />
+                    </Links>
 
-              <EditorContainer>
-                <Editor />
-                <StyledError />
-              </EditorContainer>
-            </LiveProvider>
+                    <EditorContainer>
+                      <Editor />
+                      <StyledError />
+                    </EditorContainer>
+                  </LiveProvider>
 
-            <UsersHeading>Used by folks at</UsersHeading>
+                  <UsersHeading>Used by folks at</UsersHeading>
 
-            <UsersWrapper>
-              <CompanyLogo bottom="-0.2rem" height="1.75rem" src="/static/bloomberg-logo.svg" />
-              <CompanyLogo height="1.75rem" src="/static/atlassian-logo.svg" />
-              <CompanyLogo src="/static/reddit-logo.svg" />
-              <CompanyLogo src="/static/target-logo.svg" />
-              <CompanyLogo bottom="0.625rem" height="3rem" src="/static/eurovision-logo.svg" />
-              <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg" />
-              <CompanyLogo bottom="-0.15rem" height="1.5rem" src="/static/ideo-logo.svg" />
-              <CompanyLogo src="/static/huffpost-logo.svg" />
-            </UsersWrapper>
-          </HeroContent>
-        </Wrapper>
+                  <UsersWrapper>
+                    <CompanyLogo bottom="-0.2rem" height="1.75rem" src="/static/bloomberg-logo.svg" />
+                    <CompanyLogo height="1.75rem" src="/static/atlassian-logo.svg" />
+                    <CompanyLogo src="/static/reddit-logo.svg" />
+                    <CompanyLogo src="/static/target-logo.svg" />
+                    <CompanyLogo bottom="0.625rem" height="3rem" src="/static/eurovision-logo.svg" />
+                    <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg" />
+                    <CompanyLogo bottom="-0.15rem" height="1.5rem" src="/static/ideo-logo.svg" />
+                    <CompanyLogo src="/static/huffpost-logo.svg" />
+                  </UsersWrapper>
+                </HeroContent>
+              </Wrapper>
 
-        <HomepageGettingStarted />
+              <HomepageGettingStarted />
 
-        <Footer>
-          <HeroContent>
-            {'Made with '}
-            <Heart />
-            {' by '}
-            <Link inline white href="https://twitter.com/glenmaddern">@glenmaddern</Link>
-            {', '}
-            <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
-            {' & '}
-            <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
-          </HeroContent>
-        </Footer>
-      </div>
+              <Footer>
+                <HeroContent>
+                  {'Made with '}
+                  <Heart />
+                  {' by '}
+                  <Link inline white href="https://twitter.com/glenmaddern">@glenmaddern</Link>
+                  {', '}
+                  <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
+                  {' & '}
+                  <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
+                </HeroContent>
+              </Footer>
+            </div>
+          )
+        }
+      </I18n>
     )
   }
 }
