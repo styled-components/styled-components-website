@@ -41,7 +41,7 @@ const Theming = () => md`
 
       <ThemeProvider theme={theme}>
         <Button>Themed</Button>
-      </ThemeProvider>      
+      </ThemeProvider>
     </div>
   );
   \`\`\`
