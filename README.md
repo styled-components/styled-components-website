@@ -42,7 +42,8 @@ styled-components-website
 ├── static/      # Assets
 ├── test/        # Tests
 ├── utils/       # Various utilities use across the site
-└── vendor/      # Cached dependencies
+├── vendor/      # Cached dependencies
+└── locales/     # Translations
 ```
 
 ### Got stuck?
