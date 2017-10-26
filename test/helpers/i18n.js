@@ -9,9 +9,14 @@ i18n
   .use(reactI18nextModule)
   .init({
     fallbackLng: 'en',
+    languages: ['en', 'es'],
 
     // have a common namespace used around the full app
-    ns: ['translations', 'home'],
+    ns: [
+      'translations',
+      'home',
+      'homeGettingStarted',
+    ],
     defaultNS: 'translations',
 
     debug: false,

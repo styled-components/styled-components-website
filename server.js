@@ -50,11 +50,9 @@ i18n
   .use(Backend)
   .use(i18nextMiddleware.LanguageDetector)
   .init({
-    preload: ['en', 'es'], // preload all langages
-    ns: ['translations', 'home'], // need to preload all the namespaces
     backend: {
-      loadPath: __dirname + '/locales/{{lng}}/{{ns}}.json',
-      addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.json'
+      loadPath: __dirname + '/locales/{{lng}}/{{ns}}.yml',
+      addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.yml'
     }
 }, () => {
   app.prepare()

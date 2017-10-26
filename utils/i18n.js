@@ -4,14 +4,21 @@ const LanguageDetector = require('i18next-browser-languagedetector')
 
 const options = {
   fallbackLng: 'en',
+  languages: ['en', 'es'],
   load: 'languageOnly', // we only provide en, de -> no region specific locals like en-US, de-DE
 
   // have a common namespace used around the full app
-  ns: ['translations', 'home'],
+  ns: [
+    'translations',
+    'home',
+    'homeGettingStarted',
+  ],
   defaultNS: 'translations',
 
   debug: process.env.NODE_ENV !== 'production', // debug when not in production
   saveMissing: true,
+
+  // loadPath: '/locales/{{lng}}/{{ns}}.yml',
 
   interpolation: {
     escapeValue: false, // not needed for react!!

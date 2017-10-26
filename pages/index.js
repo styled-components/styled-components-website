@@ -50,7 +50,7 @@ const Button = styled.a\`
 
 import { LiveContextTypes } from 'react-live/lib/components/Live/LiveProvider'
 
-const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button } }) => {
+const HomepageLivePreview = ({ className, translate, ...rest }, { live: { element: Button } }) => {
   const InternalButton = Button.withComponent(Link)
   return (
     <div
@@ -67,7 +67,7 @@ const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button }
       </Button>
 
       <InternalButton href="/docs" prefetch>
-        Documentation
+        {translate('documentation')}
       </InternalButton>
     </div>
   )
@@ -249,7 +249,7 @@ export class Index extends PureComponent {
                       </Title>
 
                       <Links>
-                        <HomepageLivePreview />
+                        <HomepageLivePreview translate={translate} />
                       </Links>
 
                       <EditorContainer>
@@ -294,17 +294,30 @@ export class Index extends PureComponent {
   }
 }
 
-const TranslateIndex = (props) => (
-  <I18nextProvider i18n={i18n} {...props}>
-    <Index />
-  </I18nextProvider>
-)
+const TranslateIndex = (props) => {
+  const injectedProps = props.i18n ? props : {
+    ...props,
+    i18n
+  }
+
+  return (
+    <I18nextProvider {...injectedProps}>
+      <Index />
+    </I18nextProvider>
+  )
+}
 
 // Passing down initial translations
 // use req.i18n instance on serverside to avoid overlapping requests set the language wrong
 TranslateIndex.getInitialProps = async ({ req }) => {
-  if (req && !process.browser) return i18n.getInitialProps(req, ['home', 'translations'])
+  if (req && !process.browser) return i18n.getInitialProps(req, [
+    'home',
+    'translations',
+    'homeGettingStarted',
+  ])
   return {}
 }
+
+
 
 export default TranslateIndex
