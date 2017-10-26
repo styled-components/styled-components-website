@@ -256,6 +256,7 @@ class Index extends PureComponent {
               <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg" />
               <CompanyLogo bottom="-0.15rem" height="1.5rem" src="/static/ideo-logo.svg" />
               <CompanyLogo src="/static/huffpost-logo.svg" />
+              <CompanyLogo bottom="0.25rem" height="2rem" src="/static/coinbase-logo.svg" />
             </UsersWrapper>
           </HeroContent>
         </Wrapper>
