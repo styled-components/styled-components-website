@@ -28,9 +28,9 @@ const SupportingTagline = styled.h2`
   font-weight: 400;
 `
 
-const headerCode = (`
+const headerCode = (translate) => (`
 const Button = styled.a\`
-  /* This renders the buttons above... Edit me! */
+  ${translate('headerCodeComment')}
   display: inline-block;
   border-radius: 3px;
   padding: 0.5rem 0;
@@ -40,8 +40,7 @@ const Button = styled.a\`
   color: white;
   border: 2px solid white;
 
-  /* The GitHub button is a primary button
-   * edit this to target it specifically! */
+  ${translate('headerCodeSecondComment')}
   \${props => props.primary && css\`
     background: white;
     color: palevioletred;
@@ -236,7 +235,7 @@ export class Index extends PureComponent {
                 <Wrapper>
                   <HeroContent>
                     <LiveProvider
-                      code={headerCode}
+                      code={headerCode(translate)}
                       mountStylesheet={false}
                       scope={{ styled, css, rem, Link }}>
 
