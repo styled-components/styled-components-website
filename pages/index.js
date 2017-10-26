@@ -1,5 +1,3 @@
-'use babel'
-
 import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
 import { LiveProvider, LiveEditor } from 'react-live'
@@ -297,8 +295,8 @@ export class Index extends PureComponent {
   }
 }
 
-const TranslateIndex = () => (
-  <I18nextProvider i18n={i18n}>
+const TranslateIndex = (props) => (
+  <I18nextProvider i18n={i18n} {...props}>
     <Index />
   </I18nextProvider>
 )
