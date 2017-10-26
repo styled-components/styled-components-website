@@ -2433,8 +2433,8 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
           
           render(
             <div>
-              <Button>Normal Button</Button>
-              <Button primary>Primary Button</Button>
+              <Button>Botón normal</Button>
+              <Button primary>Botón primario</Button>
             </div>
           );
           "
@@ -2457,8 +2457,8 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
             
             render(
               <div>
-                <Button>Normal Button</Button>
-                <Button primary>Primary Button</Button>
+                <Button>Botón normal</Button>
+                <Button primary>Botón primario</Button>
               </div>
             );
             "
@@ -2481,8 +2481,8 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
               
               render(
                 <div>
-                  <Button>Normal Button</Button>
-                  <Button primary>Primary Button</Button>
+                  <Button>Botón normal</Button>
+                  <Button primary>Botón primario</Button>
                 </div>
               );
               "
@@ -2516,8 +2516,8 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                 
                 render(
                   <div>
-                    <Button>Normal Button</Button>
-                    <Button primary>Primary Button</Button>
+                    <Button>Botón normal</Button>
+                    <Button primary>Botón primario</Button>
                   </div>
                 );
                 "
@@ -2572,8 +2572,8 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                               
                               render(
                                 <div>
-                                  <Button>Normal Button</Button>
-                                  <Button primary>Primary Button</Button>
+                                  <Button>Botón normal</Button>
+                                  <Button primary>Botón primario</Button>
                                 </div>
                               );
                               "
@@ -2601,8 +2601,8 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                                     
                                     <span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span>
                                     	<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>div</span><span class=\\"token punctuation\\">></span></span>
-                                    		<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Button</span><span class=\\"token punctuation\\">></span></span>Normal Button<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>Button</span><span class=\\"token punctuation\\">></span></span>
-                                    		<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Button</span> <span class=\\"token attr-name\\">primary</span><span class=\\"token punctuation\\">></span></span>Primary Button<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>Button</span><span class=\\"token punctuation\\">></span></span>
+                                    		<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Button</span><span class=\\"token punctuation\\">></span></span>Botón normal<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>Button</span><span class=\\"token punctuation\\">></span></span>
+                                    		<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Button</span> <span class=\\"token attr-name\\">primary</span><span class=\\"token punctuation\\">></span></span>Botón primario<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>Button</span><span class=\\"token punctuation\\">></span></span>
                                     	<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>div</span><span class=\\"token punctuation\\">></span></span>
                                     <span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
                                     ",
@@ -2629,7 +2629,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                                   <button
                                     className="c20"
                                   >
-                                    Normal Button
+                                    Botón normal
                                   </button>
                                 </styled.button>
                                 <styled.button
@@ -2638,7 +2638,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                                   <button
                                     className="c21"
                                   >
-                                    Primary Button
+                                    Botón primario
                                   </button>
                                 </styled.button>
                               </div>
