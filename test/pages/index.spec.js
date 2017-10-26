@@ -4,7 +4,8 @@ import React from 'react'
 import { mount } from 'enzyme'
 import 'jest-styled-components'
 import { mockRouter } from '../../utils/test-utils'
-import Index from '../../pages'
+import { Index } from '../../pages'
+import i18n from '../helpers/i18n'
 
 mockRouter()
 

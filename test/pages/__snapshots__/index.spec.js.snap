@@ -870,7 +870,7 @@ exports[`Index renders correctly 1`] = `
 
 <Index>
   <I18n
-    ns="homepage"
+    ns="home"
   >
     <div>
       <SeoHead

@@ -1,7 +1,7 @@
-import homepage from './homepage'
+import home from './home'
+import translations from './translations'
 
-const translations = {
-  homepage,
+export default {
+  home,
+  translations
 }
-
-export default translations

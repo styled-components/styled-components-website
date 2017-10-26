@@ -1,7 +1,9 @@
+'use babel'
+
 import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
 import { LiveProvider, LiveEditor } from 'react-live'
-import { I18n, Trans } from 'react-i18next'
+import { I18nextProvider, I18n, Trans } from 'react-i18next'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
@@ -16,7 +18,7 @@ import HomepageGettingStarted from '../sections/homepage-getting-started'
 import WithIsScrolled from '../components/WithIsScrolled'
 import Nav from '../components/Nav'
 
-import '../utils/i18n'
+import i18n from '../utils/i18n'
 
 const Tagline = styled.h1`
   font-weight: 600;
@@ -185,7 +187,7 @@ const Heart = styled(HeartIcon).attrs({
   width: ${rem(17)};
 `
 
-class Index extends PureComponent {
+export class Index extends PureComponent {
   state = {
     isMobileNavFolded: true,
   }
@@ -205,85 +207,100 @@ class Index extends PureComponent {
   render() {
     const { isMobileNavFolded } = this.state
     return (
-      <I18n ns="homepage">
+      <I18n
+        ns="home"
+        wait={process.browser}
+      >
         {
-          (translate) => (
-            <div>
-              <SeoHead title="styled-components">
-                <meta name="robots" content="noodp" />
-              </SeoHead>
+          (translate) => {
+            if (!translate) {
+              return null
+            }
 
-              <WithIsScrolled>
-                {({ isScrolled }) => (
-                  <Nav
-                    showSideNav={false}
-                    transparent={!isScrolled}
-                    isMobileNavFolded={isMobileNavFolded}
-                    onMobileNavToggle={this.toggleMobileNav}
-                    onRouteChange={this.onRouteChange}
-                  />
-                )}
-              </WithIsScrolled>
+            return (
+              <div>
+                <SeoHead title="styled-components">
+                  <meta name="robots" content="noodp" />
+                </SeoHead>
 
-              <Wrapper>
-                <HeroContent>
-                  <LiveProvider
-                    code={headerCode}
-                    mountStylesheet={false}
-                    scope={{ styled, css, rem, Link }}>
+                <WithIsScrolled>
+                  {({ isScrolled }) => (
+                    <Nav
+                      showSideNav={false}
+                      transparent={!isScrolled}
+                      isMobileNavFolded={isMobileNavFolded}
+                      onMobileNavToggle={this.toggleMobileNav}
+                      onRouteChange={this.onRouteChange}
+                    />
+                  )}
+                </WithIsScrolled>
 
-                    <Logo />
+                <Wrapper>
+                  <HeroContent>
+                    <LiveProvider
+                      code={headerCode}
+                      mountStylesheet={false}
+                      scope={{ styled, css, rem, Link }}>
 
-                    <Title>
-                      <Tagline>{translate('title')}</Tagline>
-                      <SupportingTagline>
-                        {translate('subtitle')}
-                      </SupportingTagline>
-                    </Title>
+                      <Logo />
 
-                    <Links>
-                      <HomepageLivePreview />
-                    </Links>
+                      <Title>
+                        <Tagline>{translate('title')}</Tagline>
+                        <SupportingTagline>
+                          {translate('subtitle')}
+                        </SupportingTagline>
+                      </Title>
 
-                    <EditorContainer>
-                      <Editor />
-                      <StyledError />
-                    </EditorContainer>
-                  </LiveProvider>
+                      <Links>
+                        <HomepageLivePreview />
+                      </Links>
 
-                  <UsersHeading>{translate('usedBy')}</UsersHeading>
+                      <EditorContainer>
+                        <Editor />
+                        <StyledError />
+                      </EditorContainer>
+                    </LiveProvider>
 
-                  <UsersWrapper>
-                    <CompanyLogo bottom="-0.2rem" height="1.75rem" src="/static/bloomberg-logo.svg" />
-                    <CompanyLogo height="1.75rem" src="/static/atlassian-logo.svg" />
-                    <CompanyLogo src="/static/reddit-logo.svg" />
-                    <CompanyLogo src="/static/target-logo.svg" />
-                    <CompanyLogo bottom="0.625rem" height="3rem" src="/static/eurovision-logo.svg" />
-                    <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg" />
-                    <CompanyLogo bottom="-0.15rem" height="1.5rem" src="/static/ideo-logo.svg" />
-                    <CompanyLogo src="/static/huffpost-logo.svg" />
-                  </UsersWrapper>
-                </HeroContent>
-              </Wrapper>
+                    <UsersHeading>{translate('usedBy')}</UsersHeading>
 
-              <HomepageGettingStarted />
+                    <UsersWrapper>
+                      <CompanyLogo bottom="-0.2rem" height="1.75rem" src="/static/bloomberg-logo.svg" />
+                      <CompanyLogo height="1.75rem" src="/static/atlassian-logo.svg" />
+                      <CompanyLogo src="/static/reddit-logo.svg" />
+                      <CompanyLogo src="/static/target-logo.svg" />
+                      <CompanyLogo bottom="0.625rem" height="3rem" src="/static/eurovision-logo.svg" />
+                      <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg" />
+                      <CompanyLogo bottom="-0.15rem" height="1.5rem" src="/static/ideo-logo.svg" />
+                      <CompanyLogo src="/static/huffpost-logo.svg" />
+                    </UsersWrapper>
+                  </HeroContent>
+                </Wrapper>
 
-              <Footer>
-                <HeroContent>
-                  <Trans i18nKey="madeWithLove">
-                    <Heart />
-                    <Link inline white href="https://twitter.com/glenmaddern">@glenmaddern</Link>
-                    <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
-                    <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
-                  </Trans>
-                </HeroContent>
-              </Footer>
-            </div>
-          )
+                <HomepageGettingStarted />
+
+                <Footer>
+                  <HeroContent>
+                    <Trans i18nKey="madeWithLove">
+                      <Heart />
+                      <Link inline white href="https://twitter.com/glenmaddern">@glenmaddern</Link>
+                      <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
+                      <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
+                    </Trans>
+                  </HeroContent>
+                </Footer>
+              </div>
+            )
+          }
         }
       </I18n>
     )
   }
 }
 
-export default Index
+const TranslateIndex = () => (
+  <I18nextProvider i18n={i18n}>
+    <Index />
+  </I18nextProvider>
+)
+
+export default TranslateIndex
