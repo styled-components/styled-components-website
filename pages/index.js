@@ -303,4 +303,11 @@ const TranslateIndex = () => (
   </I18nextProvider>
 )
 
+// Passing down initial translations
+// use req.i18n instance on serverside to avoid overlapping requests set the language wrong
+TranslateIndex.getInitialProps = async ({ req }) => {
+  if (req && !process.browser) return i18n.getInitialProps(req, ['home', 'translations'])
+  return {}
+}
+
 export default TranslateIndex
