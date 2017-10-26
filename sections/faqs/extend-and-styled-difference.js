@@ -10,16 +10,16 @@ const ExtendAndStyled = () => md`
   generate two classes for a single component. (\`styled()\` factory does that)
 
   ### Which one should you use
-  We recommend to use \`.extend\` where possible for internal \`StyledComponents\`,
-  but the \`styled()\` factory for external components and cross-file containers/components
-  where it isn't clear what it's going to be when writing the wrapper.
+  We recommend to use \`.extend\` where possible for internal \`StyledComponents\`.
+  Try to use the \`styled()\` factory however for external components and cross-file components
+  where it isn't clear what it's going to be when writing the \`StyledComponent\`.
 
-  > Wrapping a container is not recommended. It should always be attempted to wrap
-  > presentational and structural components only ince cleaner logic can be achieved when
-  > the container abstracts and encapsulates the presentational logic.
+  Keep in mind that wrapping your own container and structural components is not recommended.
+  It should always be attempted to wrap presentational components only since
+  cleaner logic can be achieved when the structural abstracts and encapsulates the presentational logic.
 
-  Also if you haven't read yet [\`Styling any components\`](/docs/basics#styling-any-components)
-  and [\`extend\`](/docs/basics#extending-styles) sections, they contain more info and examples.
+  Also if you haven't read the section on [\`Styling any components\`](/docs/basics#styling-any-components)
+  and [\`extend\`](/docs/basics#extending-styles) yet, they contain more information and examples.
 `
 
 export default ExtendAndStyled
