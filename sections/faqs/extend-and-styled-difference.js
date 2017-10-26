@@ -11,8 +11,8 @@ const ExtendAndStyled = () => md`
 
   ### Which one should you use
   We recommend to use \`.extend\` where possible for internal \`StyledComponents\`.
-  Try to use the \`styled()\` factory however for external components and cross-file components
-  where it isn't clear what it's going to be when writing the \`StyledComponent\`.
+  Try to use the \`styled()\` factory however for external or cross-file components
+  where it isn't clear what it's going to be when writing the wrapper \`StyledComponent\`.
 
   Keep in mind that wrapping your own container and structural components is not recommended.
   It should always be attempted to wrap presentational components only since
