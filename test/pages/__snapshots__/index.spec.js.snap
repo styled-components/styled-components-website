@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Index renders correctly 1`] = `
-.c59 {
+.c60 {
   box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20,20,20,0.27);
   overflow: hidden;
   margin: 1.9444444444444444rem 0;
   text-align: left;
 }
 
-.c60 {
+.c61 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26,7 +26,7 @@ exports[`Index renders correctly 1`] = `
   align-items: stretch;
 }
 
-.c61 {
+.c62 {
   background: #1d1f27;
   font-size: 0.8rem;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
@@ -43,7 +43,7 @@ exports[`Index renders correctly 1`] = `
   max-width: 50%;
 }
 
-.c62 {
+.c63 {
   position: relative;
   padding: 0.5rem;
   background: white;
@@ -77,21 +77,21 @@ exports[`Index renders correctly 1`] = `
   margin: -0.1111111111111111rem -0.4444444444444444rem;
 }
 
-.c57 {
+.c58 {
   color: rgb(219,112,147);
   text-decoration: underline;
   font-weight: 600;
   cursor: pointer;
 }
 
-.c67 {
+.c68 {
   color: white;
   text-decoration: underline;
   font-weight: 600;
   cursor: pointer;
 }
 
-.c43 {
+.c44 {
   width: 56.888888888888886rem;
   max-width: 100%;
   margin: 0 auto;
@@ -103,7 +103,7 @@ exports[`Index renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c46 {
+.c47 {
   display: block;
   text-align: left;
   width: 100%;
@@ -113,13 +113,13 @@ exports[`Index renders correctly 1`] = `
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c48 {
+.c49 {
   font-size: 1.7777777777777777rem;
   font-weight: 500;
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c53 {
+.c54 {
   display: inline-block;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
   font-size: 90%;
@@ -129,7 +129,7 @@ exports[`Index renders correctly 1`] = `
   line-height: 1.4;
 }
 
-.c56 {
+.c57 {
   background: #1d1f27;
   font-size: 0.8rem;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
@@ -141,7 +141,7 @@ exports[`Index renders correctly 1`] = `
   overflow-x: hidden;
 }
 
-.c49 {
+.c50 {
   position: relative;
   display: block;
   visibility: hidden;
@@ -149,43 +149,43 @@ exports[`Index renders correctly 1`] = `
   top: -3.888888888888889rem;
 }
 
-.c51 {
+.c52 {
   display: none;
   position: absolute;
   left: 0;
   color: inherit;
 }
 
-.c52 {
+.c53 {
   width: 1.1111111111111112rem;
   opacity: 0.7;
   margin-top: -0.2777777777777778rem;
 }
 
-.c52:hover {
+.c53:hover {
   opacity: 0.9;
 }
 
-.c47 {
+.c48 {
   position: relative;
   margin-left: -1.6666666666666667rem;
   padding-left: 1.6666666666666667rem;
 }
 
-.c47:hover .c50 {
+.c48:hover .c51 {
   display: inline-block;
 }
 
-.c44 {
+.c45 {
   text-align: center;
 }
 
-.c45 {
+.c46 {
   margin: 0 0.5em 3em;
   height: 1.5em;
 }
 
-.c54 {
+.c55 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -194,7 +194,7 @@ exports[`Index renders correctly 1`] = `
   border: 2px solid palevioletred;
 }
 
-.c55 {
+.c56 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -205,7 +205,7 @@ exports[`Index renders correctly 1`] = `
   color: white;
 }
 
-.c58 {
+.c59 {
   border-radius: 3px;
   padding: 0.25em 1em;
   background: transparent;
@@ -637,6 +637,21 @@ exports[`Index renders correctly 1`] = `
   opacity: 1;
 }
 
+.c43 {
+  position: relative;
+  height: 2rem;
+  margin: 0.5rem;
+  bottom: 0.25rem;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c43:hover {
+  opacity: 1;
+}
+
 .c22 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -703,7 +718,7 @@ exports[`Index renders correctly 1`] = `
   margin: 2rem 0;
 }
 
-.c65 {
+.c66 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -727,7 +742,7 @@ exports[`Index renders correctly 1`] = `
   margin-top: 2.7777777777777777rem;
 }
 
-.c66 {
+.c67 {
   display: inline-block;
   width: 0.9444444444444444rem;
 }
@@ -756,7 +771,7 @@ exports[`Index renders correctly 1`] = `
   border: 2px solid white;
 }
 
-.c63 {
+.c64 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -765,7 +780,7 @@ exports[`Index renders correctly 1`] = `
   border: 2px solid palevioletred;
 }
 
-.c64 {
+.c65 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -777,7 +792,7 @@ exports[`Index renders correctly 1`] = `
 }
 
 @media (max-width:40.625em) {
-  .c60 {
+  .c61 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
@@ -785,7 +800,7 @@ exports[`Index renders correctly 1`] = `
 }
 
 @media (max-width:40.625em) {
-  .c61 {
+  .c62 {
     -webkit-flex-basis: auto;
     -ms-flex-basis: auto;
     flex-basis: auto;
@@ -796,7 +811,7 @@ exports[`Index renders correctly 1`] = `
 }
 
 @media (max-width:40.625em) {
-  .c62 {
+  .c63 {
     -webkit-flex-basis: auto;
     -ms-flex-basis: auto;
     flex-basis: auto;
@@ -817,23 +832,23 @@ exports[`Index renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c43 {
+  .c44 {
     padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
   }
 }
 
 @media (max-width:62.5em) {
-  .c49 {
+  .c50 {
     top: -5rem;
   }
 }
 
 @media (max-width:62.5em) {
-  .c47 {
+  .c48 {
     margin-left: 0;
   }
 
-  .c47 .c50 {
+  .c48 .c51 {
     display: inline-block;
   }
 }
@@ -1834,6 +1849,17 @@ exports[`Index renders correctly 1`] = `
                       src="/static/huffpost-logo.svg"
                     />
                   </styled.img>
+                  <styled.img
+                    bottom="0.25rem"
+                    height="2rem"
+                    src="/static/coinbase-logo.svg"
+                  >
+                    <img
+                      className="c43"
+                      height="2rem"
+                      src="/static/coinbase-logo.svg"
+                    />
+                  </styled.img>
                 </section>
               </styled.section>
             </div>
@@ -1846,11 +1872,11 @@ exports[`Index renders correctly 1`] = `
         >
           <styled.div>
             <div
-              className="c43"
+              className="c44"
             >
               <styled.div>
                 <div
-                  className="c44"
+                  className="c45"
                 >
                   <a
                     href="https://github.com/styled-components/styled-components"
@@ -1861,7 +1887,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <img
                         alt="Stars on GitHub"
-                        className="c45"
+                        className="c46"
                         src="https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600"
                       />
                     </styled.img>
@@ -1875,7 +1901,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <img
                         alt="Current Version"
-                        className="c45"
+                        className="c46"
                         src="https://img.shields.io/npm/v/styled-components.svg"
                       />
                     </styled.img>
@@ -1886,7 +1912,7 @@ exports[`Index renders correctly 1`] = `
                   >
                     <img
                       alt="Monthly downloads"
-                      className="c45"
+                      className="c46"
                       src="https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600"
                     />
                   </styled.img>
@@ -1896,7 +1922,7 @@ exports[`Index renders correctly 1`] = `
                   >
                     <img
                       alt="Gzipped size"
-                      className="c45"
+                      className="c46"
                       src="http://img.badgesize.io/https://unpkg.com/styled-components/dist/styled-components.min.js?compression=gzip&label=gzip%20size"
                     />
                   </styled.img>
@@ -1909,7 +1935,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <img
                         alt="Join the community on Spectrum"
-                        className="c45"
+                        className="c46"
                         src="https://withspectrum.github.io/badge/badge.svg"
                       />
                     </styled.img>
@@ -1924,7 +1950,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.h1>
                     <h1
-                      className="c46"
+                      className="c47"
                     >
                       Getting started
                     </h1>
@@ -1941,17 +1967,17 @@ exports[`Index renders correctly 1`] = `
                   >
                     <Styled(styled.h2)>
                       <styled.h2
-                        className="c47"
+                        className="c48"
                       >
                         <h2
-                          className="c47 c48"
+                          className="c48 c49"
                         >
                           <styled.div
                             id="installation"
                           >
                             <div
                               aria-hidden={true}
-                              className="c49"
+                              className="c50"
                               id="installation"
                             />
                           </styled.div>
@@ -1959,17 +1985,17 @@ exports[`Index renders correctly 1`] = `
                             href="#installation"
                           >
                             <a
-                              className="c50 c51"
+                              className="c51 c52"
                               href="#installation"
                             >
                               <Styled(LinkIcon)>
                                 <LinkIcon
-                                  className="c52"
+                                  className="c53"
                                   height={null}
                                   width={null}
                                 >
                                   <svg
-                                    className="octicons octicons-link-icon c52"
+                                    className="octicons octicons-link-icon c53"
                                     height={null}
                                     viewBox="0 0 16 16"
                                     width={null}
@@ -2003,7 +2029,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           npm install --save styled-components
                         </span>
@@ -2024,17 +2050,17 @@ exports[`Index renders correctly 1`] = `
                   >
                     <Styled(styled.h2)>
                       <styled.h2
-                        className="c47"
+                        className="c48"
                       >
                         <h2
-                          className="c47 c48"
+                          className="c48 c49"
                         >
                           <styled.div
                             id="your-first-styled-component"
                           >
                             <div
                               aria-hidden={true}
-                              className="c49"
+                              className="c50"
                               id="your-first-styled-component"
                             />
                           </styled.div>
@@ -2042,17 +2068,17 @@ exports[`Index renders correctly 1`] = `
                             href="#your-first-styled-component"
                           >
                             <a
-                              className="c50 c51"
+                              className="c51 c52"
                               href="#your-first-styled-component"
                             >
                               <Styled(LinkIcon)>
                                 <LinkIcon
-                                  className="c52"
+                                  className="c53"
                                   height={null}
                                   width={null}
                                 >
                                   <svg
-                                    className="octicons octicons-link-icon c52"
+                                    className="octicons octicons-link-icon c53"
                                     height={null}
                                     viewBox="0 0 16 16"
                                     width={null}
@@ -2086,7 +2112,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           &lt;Button /&gt;
                         </span>
@@ -2101,7 +2127,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           primary
                         </span>
@@ -2114,13 +2140,13 @@ exports[`Index renders correctly 1`] = `
               </div>
               <styled.div>
                 <div
-                  className="c44"
+                  className="c45"
                 >
                   <styled.button
                     onClick={[Function]}
                   >
                     <button
-                      className="c54"
+                      className="c55"
                       onClick={[Function]}
                     >
                       Normal button
@@ -2131,7 +2157,7 @@ exports[`Index renders correctly 1`] = `
                     primary={true}
                   >
                     <button
-                      className="c55"
+                      className="c56"
                       onClick={[Function]}
                     >
                       Primary button
@@ -2153,7 +2179,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           styled.button
                         </span>
@@ -2193,7 +2219,7 @@ exports[`Index renders correctly 1`] = `
                       }
                     >
                       <pre
-                        className="prism-code c56"
+                        className="prism-code c57"
                         dangerouslySetInnerHTML={
                           Object {
                             "__html": "<span class=\\"token keyword\\">import</span> styled <span class=\\"token keyword\\">from</span> <span class=\\"token string\\">'styled-components'</span><span class=\\"token punctuation\\">;</span>
@@ -2219,7 +2245,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           Button
                         </span>
@@ -2235,7 +2261,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           myFunc()
                         </span>
@@ -2260,7 +2286,7 @@ exports[`Index renders correctly 1`] = `
                             onClick={[Function]}
                           >
                             <a
-                              className="c57"
+                              className="c58"
                               href="/docs/advanced#tagged-template-literals"
                               onClick={[Function]}
                               rel="noopener"
@@ -2288,7 +2314,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           &lt;Button /&gt;
                         </span>
@@ -2300,7 +2326,7 @@ exports[`Index renders correctly 1`] = `
               </div>
               <styled.div>
                 <div
-                  className="c44"
+                  className="c45"
                 >
                   <button>
                     I'm a &lt;Button /&gt;!
@@ -2363,7 +2389,7 @@ exports[`Index renders correctly 1`] = `
                       }
                     >
                       <pre
-                        className="prism-code c56"
+                        className="prism-code c57"
                         dangerouslySetInnerHTML={
                           Object {
                             "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
@@ -2384,11 +2410,11 @@ exports[`Index renders correctly 1`] = `
               </div>
               <styled.div>
                 <div
-                  className="c44"
+                  className="c45"
                 >
                   <styled.button>
                     <button
-                      className="c58"
+                      className="c59"
                     >
                       I'm a styled &lt;Button /&gt;
                     </button>
@@ -2422,7 +2448,7 @@ exports[`Index renders correctly 1`] = `
                             onClick={[Function]}
                           >
                             <a
-                              className="c57"
+                              className="c58"
                               href="/docs/basics#motivation"
                               onClick={[Function]}
                               rel="noopener"
@@ -2451,7 +2477,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           { css }
                         </span>
@@ -2465,7 +2491,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           styled-components
                         </span>
@@ -2541,7 +2567,7 @@ exports[`Index renders correctly 1`] = `
                       }
                     >
                       <pre
-                        className="prism-code c56"
+                        className="prism-code c57"
                         dangerouslySetInnerHTML={
                           Object {
                             "__html": "<span class=\\"token keyword\\">import</span> styled<span class=\\"token punctuation\\">,</span> <span class=\\"token punctuation\\">{</span> css <span class=\\"token punctuation\\">}</span> <span class=\\"token keyword\\">from</span> styled<span class=\\"token operator\\">-</span>components
@@ -2579,7 +2605,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           primary
                         </span>
@@ -2593,7 +2619,7 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           css
                         </span>
@@ -2700,7 +2726,7 @@ exports[`Index renders correctly 1`] = `
                       }
                     >
                       <LiveProvider
-                        className="c59"
+                        className="c60"
                         code="const Button = styled.button\`
                         border-radius: 3px;
                         padding: 0.25em 1em;
@@ -2735,7 +2761,7 @@ exports[`Index renders correctly 1`] = `
                         }
                       >
                         <div
-                          className="react-live c59"
+                          className="react-live c60"
                           scope={
                             Object {
                               "ThemeProvider": [Function],
@@ -2748,15 +2774,15 @@ exports[`Index renders correctly 1`] = `
                         >
                           <styled.div>
                             <div
-                              className="c60"
+                              className="c61"
                             >
                               <Styled(LiveEditor)>
                                 <Styled(LiveEditor)>
                                   <LiveEditor
-                                    className="c61"
+                                    className="c62"
                                   >
                                     <Editor
-                                      className="c61"
+                                      className="c62"
                                       code="const Button = styled.button\`
                                       border-radius: 3px;
                                       padding: 0.25em 1em;
@@ -2782,7 +2808,7 @@ exports[`Index renders correctly 1`] = `
                                       onChange={[Function]}
                                     >
                                       <pre
-                                        className="prism-code c61"
+                                        className="prism-code c62"
                                         contentEditable={true}
                                         dangerouslySetInnerHTML={
                                           Object {
@@ -2820,15 +2846,15 @@ exports[`Index renders correctly 1`] = `
                               </Styled(LiveEditor)>
                               <Styled(LivePreview)>
                                 <LivePreview
-                                  className="c62"
+                                  className="c63"
                                 >
                                   <div
-                                    className="react-live-preview c62"
+                                    className="react-live-preview c63"
                                   >
                                     <div>
                                       <styled.button>
                                         <button
-                                          className="c63"
+                                          className="c64"
                                         >
                                           Normal Button
                                         </button>
@@ -2837,7 +2863,7 @@ exports[`Index renders correctly 1`] = `
                                         primary={true}
                                       >
                                         <button
-                                          className="c64"
+                                          className="c65"
                                         >
                                           Primary Button
                                         </button>
@@ -2889,7 +2915,7 @@ exports[`Index renders correctly 1`] = `
                             onClick={[Function]}
                           >
                             <a
-                              className="c57"
+                              className="c58"
                               href="/docs"
                               onClick={[Function]}
                               rel="noopener"
@@ -2919,7 +2945,7 @@ exports[`Index renders correctly 1`] = `
                             onClick={[Function]}
                           >
                             <a
-                              className="c57"
+                              className="c58"
                               href="/docs/basics#getting-started"
                               onClick={[Function]}
                               rel="noopener"
@@ -2941,7 +2967,7 @@ exports[`Index renders correctly 1`] = `
       </HomepageGettingStarted>
       <styled.footer>
         <footer
-          className="c65"
+          className="c66"
         >
           <styled.div>
             <div
@@ -2955,12 +2981,12 @@ exports[`Index renders correctly 1`] = `
                   Made with 
                   <Styled(HeartIcon)>
                     <HeartIcon
-                      className="c66"
+                      className="c67"
                       height={null}
                       width={null}
                     >
                       <svg
-                        className="octicons octicons-heart-icon c66"
+                        className="octicons octicons-heart-icon c67"
                         height={null}
                         viewBox="0 0 12 16"
                         width={null}
@@ -2988,7 +3014,7 @@ exports[`Index renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <a
-                          className="c67"
+                          className="c68"
                           data-white={true}
                           href="https://twitter.com/glenmaddern"
                           onClick={[Function]}
@@ -3015,7 +3041,7 @@ exports[`Index renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <a
-                          className="c67"
+                          className="c68"
                           data-white={true}
                           href="https://twitter.com/mxstbr"
                           onClick={[Function]}
@@ -3042,7 +3068,7 @@ exports[`Index renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <a
-                          className="c67"
+                          className="c68"
                           data-white={true}
                           href="https://twitter.com/_philpl"
                           onClick={[Function]}
@@ -3066,14 +3092,14 @@ exports[`Index renders correctly 1`] = `
 `;
 
 exports[`Index renders in spanish 1`] = `
-.c59 {
+.c60 {
   box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20,20,20,0.27);
   overflow: hidden;
   margin: 1.9444444444444444rem 0;
   text-align: left;
 }
 
-.c60 {
+.c61 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3091,7 +3117,7 @@ exports[`Index renders in spanish 1`] = `
   align-items: stretch;
 }
 
-.c61 {
+.c62 {
   background: #1d1f27;
   font-size: 0.8rem;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
@@ -3108,7 +3134,7 @@ exports[`Index renders in spanish 1`] = `
   max-width: 50%;
 }
 
-.c62 {
+.c63 {
   position: relative;
   padding: 0.5rem;
   background: white;
@@ -3142,21 +3168,21 @@ exports[`Index renders in spanish 1`] = `
   margin: -0.1111111111111111rem -0.4444444444444444rem;
 }
 
-.c57 {
+.c58 {
   color: rgb(219,112,147);
   text-decoration: underline;
   font-weight: 600;
   cursor: pointer;
 }
 
-.c67 {
+.c68 {
   color: white;
   text-decoration: underline;
   font-weight: 600;
   cursor: pointer;
 }
 
-.c43 {
+.c44 {
   width: 56.888888888888886rem;
   max-width: 100%;
   margin: 0 auto;
@@ -3168,7 +3194,7 @@ exports[`Index renders in spanish 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c46 {
+.c47 {
   display: block;
   text-align: left;
   width: 100%;
@@ -3178,13 +3204,13 @@ exports[`Index renders in spanish 1`] = `
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c48 {
+.c49 {
   font-size: 1.7777777777777777rem;
   font-weight: 500;
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c53 {
+.c54 {
   display: inline-block;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
   font-size: 90%;
@@ -3194,7 +3220,7 @@ exports[`Index renders in spanish 1`] = `
   line-height: 1.4;
 }
 
-.c56 {
+.c57 {
   background: #1d1f27;
   font-size: 0.8rem;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
@@ -3206,7 +3232,7 @@ exports[`Index renders in spanish 1`] = `
   overflow-x: hidden;
 }
 
-.c49 {
+.c50 {
   position: relative;
   display: block;
   visibility: hidden;
@@ -3214,43 +3240,43 @@ exports[`Index renders in spanish 1`] = `
   top: -3.888888888888889rem;
 }
 
-.c51 {
+.c52 {
   display: none;
   position: absolute;
   left: 0;
   color: inherit;
 }
 
-.c52 {
+.c53 {
   width: 1.1111111111111112rem;
   opacity: 0.7;
   margin-top: -0.2777777777777778rem;
 }
 
-.c52:hover {
+.c53:hover {
   opacity: 0.9;
 }
 
-.c47 {
+.c48 {
   position: relative;
   margin-left: -1.6666666666666667rem;
   padding-left: 1.6666666666666667rem;
 }
 
-.c47:hover .c50 {
+.c48:hover .c51 {
   display: inline-block;
 }
 
-.c44 {
+.c45 {
   text-align: center;
 }
 
-.c45 {
+.c46 {
   margin: 0 0.5em 3em;
   height: 1.5em;
 }
 
-.c54 {
+.c55 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -3259,7 +3285,7 @@ exports[`Index renders in spanish 1`] = `
   border: 2px solid palevioletred;
 }
 
-.c55 {
+.c56 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -3270,7 +3296,7 @@ exports[`Index renders in spanish 1`] = `
   color: white;
 }
 
-.c58 {
+.c59 {
   border-radius: 3px;
   padding: 0.25em 1em;
   background: transparent;
@@ -3702,6 +3728,21 @@ exports[`Index renders in spanish 1`] = `
   opacity: 1;
 }
 
+.c43 {
+  position: relative;
+  height: 2rem;
+  margin: 0.5rem;
+  bottom: 0.25rem;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c43:hover {
+  opacity: 1;
+}
+
 .c22 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3768,7 +3809,7 @@ exports[`Index renders in spanish 1`] = `
   margin: 2rem 0;
 }
 
-.c65 {
+.c66 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3792,7 +3833,7 @@ exports[`Index renders in spanish 1`] = `
   margin-top: 2.7777777777777777rem;
 }
 
-.c66 {
+.c67 {
   display: inline-block;
   width: 0.9444444444444444rem;
 }
@@ -3821,7 +3862,7 @@ exports[`Index renders in spanish 1`] = `
   border: 2px solid white;
 }
 
-.c63 {
+.c64 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -3830,7 +3871,7 @@ exports[`Index renders in spanish 1`] = `
   border: 2px solid palevioletred;
 }
 
-.c64 {
+.c65 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -3842,7 +3883,7 @@ exports[`Index renders in spanish 1`] = `
 }
 
 @media (max-width:40.625em) {
-  .c60 {
+  .c61 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
@@ -3850,7 +3891,7 @@ exports[`Index renders in spanish 1`] = `
 }
 
 @media (max-width:40.625em) {
-  .c61 {
+  .c62 {
     -webkit-flex-basis: auto;
     -ms-flex-basis: auto;
     flex-basis: auto;
@@ -3861,7 +3902,7 @@ exports[`Index renders in spanish 1`] = `
 }
 
 @media (max-width:40.625em) {
-  .c62 {
+  .c63 {
     -webkit-flex-basis: auto;
     -ms-flex-basis: auto;
     flex-basis: auto;
@@ -3882,23 +3923,23 @@ exports[`Index renders in spanish 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c43 {
+  .c44 {
     padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
   }
 }
 
 @media (max-width:62.5em) {
-  .c49 {
+  .c50 {
     top: -5rem;
   }
 }
 
 @media (max-width:62.5em) {
-  .c47 {
+  .c48 {
     margin-left: 0;
   }
 
-  .c47 .c50 {
+  .c48 .c51 {
     display: inline-block;
   }
 }
@@ -4899,6 +4940,17 @@ exports[`Index renders in spanish 1`] = `
                       src="/static/huffpost-logo.svg"
                     />
                   </styled.img>
+                  <styled.img
+                    bottom="0.25rem"
+                    height="2rem"
+                    src="/static/coinbase-logo.svg"
+                  >
+                    <img
+                      className="c43"
+                      height="2rem"
+                      src="/static/coinbase-logo.svg"
+                    />
+                  </styled.img>
                 </section>
               </styled.section>
             </div>
@@ -4911,11 +4963,11 @@ exports[`Index renders in spanish 1`] = `
         >
           <styled.div>
             <div
-              className="c43"
+              className="c44"
             >
               <styled.div>
                 <div
-                  className="c44"
+                  className="c45"
                 >
                   <a
                     href="https://github.com/styled-components/styled-components"
@@ -4926,7 +4978,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <img
                         alt="Estrellas en Github"
-                        className="c45"
+                        className="c46"
                         src="https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600"
                       />
                     </styled.img>
@@ -4940,7 +4992,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <img
                         alt="Versión actual"
-                        className="c45"
+                        className="c46"
                         src="https://img.shields.io/npm/v/styled-components.svg"
                       />
                     </styled.img>
@@ -4951,7 +5003,7 @@ exports[`Index renders in spanish 1`] = `
                   >
                     <img
                       alt="Descargas mensuales"
-                      className="c45"
+                      className="c46"
                       src="https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600"
                     />
                   </styled.img>
@@ -4961,7 +5013,7 @@ exports[`Index renders in spanish 1`] = `
                   >
                     <img
                       alt="Tamaño en gzip"
-                      className="c45"
+                      className="c46"
                       src="http://img.badgesize.io/https://unpkg.com/styled-components/dist/styled-components.min.js?compression=gzip&label=gzip%20size"
                     />
                   </styled.img>
@@ -4974,7 +5026,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <img
                         alt="Únete a la comunidad en Spectrum"
-                        className="c45"
+                        className="c46"
                         src="https://withspectrum.github.io/badge/badge.svg"
                       />
                     </styled.img>
@@ -4989,7 +5041,7 @@ exports[`Index renders in spanish 1`] = `
                 >
                   <styled.h1>
                     <h1
-                      className="c46"
+                      className="c47"
                     >
                       Empezando
                     </h1>
@@ -5006,17 +5058,17 @@ exports[`Index renders in spanish 1`] = `
                   >
                     <Styled(styled.h2)>
                       <styled.h2
-                        className="c47"
+                        className="c48"
                       >
                         <h2
-                          className="c47 c48"
+                          className="c48 c49"
                         >
                           <styled.div
                             id="instalacin"
                           >
                             <div
                               aria-hidden={true}
-                              className="c49"
+                              className="c50"
                               id="instalacin"
                             />
                           </styled.div>
@@ -5024,17 +5076,17 @@ exports[`Index renders in spanish 1`] = `
                             href="#instalacin"
                           >
                             <a
-                              className="c50 c51"
+                              className="c51 c52"
                               href="#instalacin"
                             >
                               <Styled(LinkIcon)>
                                 <LinkIcon
-                                  className="c52"
+                                  className="c53"
                                   height={null}
                                   width={null}
                                 >
                                   <svg
-                                    className="octicons octicons-link-icon c52"
+                                    className="octicons octicons-link-icon c53"
                                     height={null}
                                     viewBox="0 0 16 16"
                                     width={null}
@@ -5068,7 +5120,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           npm install --save styled-components
                         </span>
@@ -5089,17 +5141,17 @@ exports[`Index renders in spanish 1`] = `
                   >
                     <Styled(styled.h2)>
                       <styled.h2
-                        className="c47"
+                        className="c48"
                       >
                         <h2
-                          className="c47 c48"
+                          className="c48 c49"
                         >
                           <styled.div
                             id="tu-primer-componente-estilizado"
                           >
                             <div
                               aria-hidden={true}
-                              className="c49"
+                              className="c50"
                               id="tu-primer-componente-estilizado"
                             />
                           </styled.div>
@@ -5107,17 +5159,17 @@ exports[`Index renders in spanish 1`] = `
                             href="#tu-primer-componente-estilizado"
                           >
                             <a
-                              className="c50 c51"
+                              className="c51 c52"
                               href="#tu-primer-componente-estilizado"
                             >
                               <Styled(LinkIcon)>
                                 <LinkIcon
-                                  className="c52"
+                                  className="c53"
                                   height={null}
                                   width={null}
                                 >
                                   <svg
-                                    className="octicons octicons-link-icon c52"
+                                    className="octicons octicons-link-icon c53"
                                     height={null}
                                     viewBox="0 0 16 16"
                                     width={null}
@@ -5151,7 +5203,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           &lt;Button /&gt;
                         </span>
@@ -5166,7 +5218,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           primaria
                         </span>
@@ -5179,13 +5231,13 @@ exports[`Index renders in spanish 1`] = `
               </div>
               <styled.div>
                 <div
-                  className="c44"
+                  className="c45"
                 >
                   <styled.button
                     onClick={[Function]}
                   >
                     <button
-                      className="c54"
+                      className="c55"
                       onClick={[Function]}
                     >
                       Botón normal
@@ -5196,7 +5248,7 @@ exports[`Index renders in spanish 1`] = `
                     primary={true}
                   >
                     <button
-                      className="c55"
+                      className="c56"
                       onClick={[Function]}
                     >
                       Botón primario
@@ -5218,7 +5270,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           styled.button
                         </span>
@@ -5258,7 +5310,7 @@ exports[`Index renders in spanish 1`] = `
                       }
                     >
                       <pre
-                        className="prism-code c56"
+                        className="prism-code c57"
                         dangerouslySetInnerHTML={
                           Object {
                             "__html": "<span class=\\"token keyword\\">import</span> styled <span class=\\"token keyword\\">from</span> <span class=\\"token string\\">'styled-components'</span><span class=\\"token punctuation\\">;</span>
@@ -5284,7 +5336,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           Button
                         </span>
@@ -5300,7 +5352,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           miFuncion()
                         </span>
@@ -5325,7 +5377,7 @@ exports[`Index renders in spanish 1`] = `
                             onClick={[Function]}
                           >
                             <a
-                              className="c57"
+                              className="c58"
                               href="/docs/advanced#tagged-template-literals"
                               onClick={[Function]}
                               rel="noopener"
@@ -5353,7 +5405,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           &lt;Button /&gt;
                         </span>
@@ -5365,7 +5417,7 @@ exports[`Index renders in spanish 1`] = `
               </div>
               <styled.div>
                 <div
-                  className="c44"
+                  className="c45"
                 >
                   <button>
                     Soy un &lt;Button /&gt;!
@@ -5428,7 +5480,7 @@ exports[`Index renders in spanish 1`] = `
                       }
                     >
                       <pre
-                        className="prism-code c56"
+                        className="prism-code c57"
                         dangerouslySetInnerHTML={
                           Object {
                             "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
@@ -5449,11 +5501,11 @@ exports[`Index renders in spanish 1`] = `
               </div>
               <styled.div>
                 <div
-                  className="c44"
+                  className="c45"
                 >
                   <styled.button>
                     <button
-                      className="c58"
+                      className="c59"
                     >
                       Soy un &lt;Button /&gt; estilizado
                     </button>
@@ -5487,7 +5539,7 @@ exports[`Index renders in spanish 1`] = `
                             onClick={[Function]}
                           >
                             <a
-                              className="c57"
+                              className="c58"
                               href="/docs/basics#motivation"
                               onClick={[Function]}
                               rel="noopener"
@@ -5516,7 +5568,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           { css }
                         </span>
@@ -5530,7 +5582,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           styled-components
                         </span>
@@ -5606,7 +5658,7 @@ exports[`Index renders in spanish 1`] = `
                       }
                     >
                       <pre
-                        className="prism-code c56"
+                        className="prism-code c57"
                         dangerouslySetInnerHTML={
                           Object {
                             "__html": "<span class=\\"token keyword\\">import</span> styled<span class=\\"token punctuation\\">,</span> <span class=\\"token punctuation\\">{</span> css <span class=\\"token punctuation\\">}</span> <span class=\\"token keyword\\">from</span> styled<span class=\\"token operator\\">-</span>components
@@ -5644,7 +5696,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           primary
                         </span>
@@ -5658,7 +5710,7 @@ exports[`Index renders in spanish 1`] = `
                     >
                       <styled.span>
                         <span
-                          className="c53"
+                          className="c54"
                         >
                           css
                         </span>
@@ -5765,7 +5817,7 @@ exports[`Index renders in spanish 1`] = `
                       }
                     >
                       <LiveProvider
-                        className="c59"
+                        className="c60"
                         code="const Button = styled.button\`
                         border-radius: 3px;
                         padding: 0.25em 1em;
@@ -5800,7 +5852,7 @@ exports[`Index renders in spanish 1`] = `
                         }
                       >
                         <div
-                          className="react-live c59"
+                          className="react-live c60"
                           scope={
                             Object {
                               "ThemeProvider": [Function],
@@ -5813,15 +5865,15 @@ exports[`Index renders in spanish 1`] = `
                         >
                           <styled.div>
                             <div
-                              className="c60"
+                              className="c61"
                             >
                               <Styled(LiveEditor)>
                                 <Styled(LiveEditor)>
                                   <LiveEditor
-                                    className="c61"
+                                    className="c62"
                                   >
                                     <Editor
-                                      className="c61"
+                                      className="c62"
                                       code="const Button = styled.button\`
                                       border-radius: 3px;
                                       padding: 0.25em 1em;
@@ -5847,7 +5899,7 @@ exports[`Index renders in spanish 1`] = `
                                       onChange={[Function]}
                                     >
                                       <pre
-                                        className="prism-code c61"
+                                        className="prism-code c62"
                                         contentEditable={true}
                                         dangerouslySetInnerHTML={
                                           Object {
@@ -5885,15 +5937,15 @@ exports[`Index renders in spanish 1`] = `
                               </Styled(LiveEditor)>
                               <Styled(LivePreview)>
                                 <LivePreview
-                                  className="c62"
+                                  className="c63"
                                 >
                                   <div
-                                    className="react-live-preview c62"
+                                    className="react-live-preview c63"
                                   >
                                     <div>
                                       <styled.button>
                                         <button
-                                          className="c63"
+                                          className="c64"
                                         >
                                           Normal Button
                                         </button>
@@ -5902,7 +5954,7 @@ exports[`Index renders in spanish 1`] = `
                                         primary={true}
                                       >
                                         <button
-                                          className="c64"
+                                          className="c65"
                                         >
                                           Primary Button
                                         </button>
@@ -5954,7 +6006,7 @@ exports[`Index renders in spanish 1`] = `
                             onClick={[Function]}
                           >
                             <a
-                              className="c57"
+                              className="c58"
                               href="/docs"
                               onClick={[Function]}
                               rel="noopener"
@@ -5984,7 +6036,7 @@ exports[`Index renders in spanish 1`] = `
                             onClick={[Function]}
                           >
                             <a
-                              className="c57"
+                              className="c58"
                               href="/docs/basics#getting-started"
                               onClick={[Function]}
                               rel="noopener"
@@ -6006,7 +6058,7 @@ exports[`Index renders in spanish 1`] = `
       </HomepageGettingStarted>
       <styled.footer>
         <footer
-          className="c65"
+          className="c66"
         >
           <styled.div>
             <div
@@ -6020,12 +6072,12 @@ exports[`Index renders in spanish 1`] = `
                   Hecho con 
                   <Styled(HeartIcon)>
                     <HeartIcon
-                      className="c66"
+                      className="c67"
                       height={null}
                       width={null}
                     >
                       <svg
-                        className="octicons octicons-heart-icon c66"
+                        className="octicons octicons-heart-icon c67"
                         height={null}
                         viewBox="0 0 12 16"
                         width={null}
@@ -6053,7 +6105,7 @@ exports[`Index renders in spanish 1`] = `
                         onClick={[Function]}
                       >
                         <a
-                          className="c67"
+                          className="c68"
                           data-white={true}
                           href="https://twitter.com/glenmaddern"
                           onClick={[Function]}
@@ -6080,7 +6132,7 @@ exports[`Index renders in spanish 1`] = `
                         onClick={[Function]}
                       >
                         <a
-                          className="c67"
+                          className="c68"
                           data-white={true}
                           href="https://twitter.com/mxstbr"
                           onClick={[Function]}
@@ -6107,7 +6159,7 @@ exports[`Index renders in spanish 1`] = `
                         onClick={[Function]}
                       >
                         <a
-                          className="c67"
+                          className="c68"
                           data-white={true}
                           href="https://twitter.com/_philpl"
                           onClick={[Function]}
