@@ -6,7 +6,7 @@ import md from 'components/md'
 import { Content } from 'components/Layout'
 
 import {
-  HOME_GETTING_STARTED_TRANSLATION,
+  HOME_TRANSLATION,
 } from '../constants/i18n'
 
 const AlignCenter = styled.div`
@@ -42,7 +42,7 @@ const SecondButton = styled.button`
 
 const HomepageGettingStarted = () => (
   <I18n
-    ns={HOME_GETTING_STARTED_TRANSLATION}
+    ns={HOME_TRANSLATION}
     wait={process.browser}
   >
     {
@@ -82,7 +82,7 @@ const HomepageGettingStarted = () => (
               </a>
             </AlignCenter>
 
-            {md(translate('markdown.first'))}
+            {md(translate('gettingStarted.first'))}
             <AlignCenter>
               <ExampleButton
                 onClick={() => { alert(translate('clickedNormal')) }}
@@ -96,15 +96,15 @@ const HomepageGettingStarted = () => (
                 {translate('primaryButton')}
               </ExampleButton>
             </AlignCenter>
-            {md(translate('markdown.second'))}
+            {md(translate('gettingStarted.second'))}
             <AlignCenter>
               <button>{translate('imAButton')}</button>
             </AlignCenter>
-            {md(translate('markdown.third'))}
+            {md(translate('gettingStarted.third'))}
             <AlignCenter>
               <SecondButton>{translate('imAStyledButton')}</SecondButton>
             </AlignCenter>
-            {md(translate('markdown.fourth'))}
+            {md(translate('gettingStarted.fourth'))}
           </Content>
         )
       }

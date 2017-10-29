@@ -1868,7 +1868,7 @@ exports[`Index renders correctly 1`] = `
       </styled.div>
       <HomepageGettingStarted>
         <I18n
-          ns="homeGettingStarted"
+          ns="home"
         >
           <styled.div>
             <div
@@ -4959,7 +4959,7 @@ exports[`Index renders in spanish 1`] = `
       </styled.div>
       <HomepageGettingStarted>
         <I18n
-          ns="homeGettingStarted"
+          ns="home"
         >
           <styled.div>
             <div

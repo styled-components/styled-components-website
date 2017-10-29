@@ -12,7 +12,7 @@ import { headerFont } from '../../utils/fonts'
 
 import i18n from '../../utils/i18n'
 import {
-  DOCS_INDEX_TRANSLATION,
+  DOCS_TRANSLATION,
   TRANSLATIONS,
 } from '../../constants/i18n'
 
@@ -50,7 +50,7 @@ const SubHeader = styled.h3`
 
 export const Documentation = () => (
   <I18n
-    ns={DOCS_INDEX_TRANSLATION}
+    ns={DOCS_TRANSLATION}
     wait={process.browser}
   >
     {(translate) => {

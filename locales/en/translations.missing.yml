@@ -2,8 +2,5 @@
   "docs": "docs",
   "basics": "basics",
   "advanced": "advanced",
-  "api": "api",
-  "title": "title",
-  "description": "description",
-  "about": "about"
+  "api": "api"
 }

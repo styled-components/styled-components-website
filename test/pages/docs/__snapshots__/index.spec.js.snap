@@ -469,7 +469,7 @@ exports[`Documentation renders correctly 1`] = `
 
 <Documentation>
   <I18n
-    ns="docsIndex"
+    ns="docs"
   >
     <DocsLayout
       description="Learn how to use styled-components and to style your apps without stress"
@@ -2824,7 +2824,7 @@ exports[`Documentation renders in spanish 1`] = `
 
 <Documentation>
   <I18n
-    ns="docsIndex"
+    ns="docs"
   >
     <DocsLayout
       description="Aprende como usar styled-components y a estilizar tus apps sin estrés"

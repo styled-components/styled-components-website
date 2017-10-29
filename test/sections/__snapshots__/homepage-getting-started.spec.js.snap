@@ -271,7 +271,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
 
 <HomepageGettingStarted>
   <I18n
-    ns="homeGettingStarted"
+    ns="home"
   >
     <styled.div>
       <div
@@ -1641,7 +1641,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
 
 <HomepageGettingStarted>
   <I18n
-    ns="homeGettingStarted"
+    ns="home"
   >
     <styled.div>
       <div
