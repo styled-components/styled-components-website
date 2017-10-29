@@ -1,6 +1,13 @@
 homepage: Homepage
 documentation: Documentation
 esosystem: Ecosystem
-basics: Basics
-advanced: Advanced
-api: API
+# Name collition with routing, unfortunately
+basicsTitle: Basics
+advancedTitle: Advanced
+apiTitle: API
+
+# Used by routing. Don't
+basics: basics
+advanced: advanced
+api: api
+docs: docs

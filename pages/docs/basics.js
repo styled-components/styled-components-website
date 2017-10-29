@@ -24,7 +24,7 @@ export const Basics = () => (
   <I18n ns={[DOCS_TRANSLATION, DEFAULT_TRANSLATION]}>
     {translate => (
       <DocsLayout
-        title={translate(`${DEFAULT_TRANSLATION}:basics`)}
+        title={translate(`${DEFAULT_TRANSLATION}:basicsTitle`)}
         description={translate('basicsDescription')}
       >
         <Motivation />
@@ -40,7 +40,7 @@ export const Basics = () => (
 
         <NextPage
           href="/docs/advanced"
-          title={translate(`${DEFAULT_TRANSLATION}:advanced`)}
+          title={translate(`${DEFAULT_TRANSLATION}:advancedTitle`)}
         />
       </DocsLayout>)}
   </I18n>
