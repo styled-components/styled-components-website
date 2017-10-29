@@ -19,6 +19,7 @@ const i18n = require('./utils/i18n')
 const {
     LANGUAGES,
     TRANSLATIONS,
+    DEFAULT_LANGUAGE,
 } = require('./constants/i18n')
 
 const app = next({ dir: '.', dev })
@@ -51,6 +52,9 @@ const cachedRender = (req, res, pagePath, queryParams) => {
       app.renderError(err, req, res, pagePath, queryParams)
     })
 }
+
+const isUsingDefaultLanguage = (req, defaultLanguage = DEFAULT_LANGUAGE) =>
+  req.route.path.match(new RegExp(`/${defaultLanguage}/?`, 'i'))
 
 i18n
   .use(Backend)
@@ -86,22 +90,42 @@ i18n
       server.disable('x-powered-by')
 
       i18nextMiddleware.addRoute(i18n, '/:lng', LANGUAGES, router, 'get', (req, res) => {
-        cachedRender(req, res, '/')
+        if (isUsingDefaultLanguage(req)) {
+          return res.redirect('/')
+        }
+
+        return cachedRender(req, res, '/')
       })
 
       i18nextMiddleware.addRoute(i18n, '/:lng/docs', LANGUAGES, router, 'get', (req, res) => {
-        cachedRender(req, res, '/docs')
+        if (isUsingDefaultLanguage(req)) {
+          return res.redirect('/docs')
+        }
+
+        return cachedRender(req, res, '/docs')
       })
 
       i18nextMiddleware.addRoute(i18n, '/:lng/docs/basics', LANGUAGES, router, 'get', (req, res) => {
-        cachedRender(req, res, '/docs/basics')
+        if (isUsingDefaultLanguage(req)) {
+          return res.redirect('/docs/basics')
+        }
+
+        return cachedRender(req, res, '/docs/basics')
       })
 
       i18nextMiddleware.addRoute(i18n, '/:lng/docs/advanced', LANGUAGES, router, 'get', (req, res) => {
-        cachedRender(req, res, '/docs/advanced')
+        if (isUsingDefaultLanguage(req)) {
+          return res.redirect('/docs/advanced')
+        }
+
+        return cachedRender(req, res, '/docs/advanced')
       })
 
       i18nextMiddleware.addRoute(i18n, '/:lng/docs/api', LANGUAGES, router, 'get', (req, res) => {
+        if (isUsingDefaultLanguage(req)) {
+          return res.redirect('/docs/api')
+        }
+
         cachedRender(req, res, '/docs/api')
       })
 
