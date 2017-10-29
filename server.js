@@ -85,11 +85,6 @@ i18n
 
       server.disable('x-powered-by')
 
-      i18nextMiddleware.addRoute(i18n, '/', LANGUAGES, router, 'get', (req, res) => {
-        const lng = req.i18n.languages[0]
-        res.redirect(`/${lng}`)
-      })
-
       i18nextMiddleware.addRoute(i18n, '/:lng', LANGUAGES, router, 'get', (req, res) => {
         cachedRender(req, res, '/')
       })
