@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
 import { LiveProvider, LiveEditor } from 'react-live'
-import { I18nextProvider, I18n, Trans } from 'react-i18next'
+import { I18n, Trans } from 'react-i18next'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
@@ -16,9 +16,8 @@ import HomepageGettingStarted from '../sections/homepage-getting-started'
 import WithIsScrolled from '../components/WithIsScrolled'
 import Nav from '../components/Nav'
 
-import i18n from '../utils/i18n'
+import withI18n from '../components/withI18n'
 import {
-  TRANSLATIONS,
   DEFAULT_TRANSLATION,
   HOME_TRANSLATION,
 } from '../constants/i18n'
@@ -300,24 +299,4 @@ export class Index extends PureComponent {
   }
 }
 
-const TranslateIndex = (props) => {
-  const injectedProps = props.i18n ? props : {
-    ...props,
-    i18n
-  }
-
-  return (
-    <I18nextProvider {...injectedProps}>
-      <Index />
-    </I18nextProvider>
-  )
-}
-
-// Passing down initial translations
-// use req.i18n instance on serverside to avoid overlapping requests set the language wrong
-TranslateIndex.getInitialProps = async ({ req }) => {
-  if (req && !process.browser) return i18n.getInitialProps(req, TRANSLATIONS)
-  return {}
-}
-
-export default TranslateIndex
+export default withI18n(Index)

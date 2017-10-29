@@ -14,11 +14,13 @@ import AttachingAdditionalProps from '../../sections/basics/attaching-additional
 import Animations from '../../sections/basics/animations'
 import ReactNative from '../../sections/basics/react-native'
 
+import withI18n from '../../components/withI18n'
 import {
   DOCS_TRANSLATION,
-} from '../../../constants/i18n'
+  DEFAULT_TRANSLATION,
+} from '../../constants/i18n'
 
-const Basics = () => (
+export const Basics = () => (
   <I18n ns={[DOCS_TRANSLATION, DEFAULT_TRANSLATION]}>
     {translate => (
       <DocsLayout
@@ -44,4 +46,4 @@ const Basics = () => (
   </I18n>
 )
 
-export default Basics
+export default withI18n(Basics)

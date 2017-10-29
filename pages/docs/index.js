@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { I18nextProvider, I18n } from 'react-i18next'
+import { I18n } from 'react-i18next'
 
 import rem from '../../utils/rem'
 import DocsLayout from '../../components/DocsLayout'
@@ -10,11 +10,10 @@ import { pages } from '../docs.json'
 import { mobile, phone } from '../../utils/media'
 import { headerFont } from '../../utils/fonts'
 
-import i18n from '../../utils/i18n'
+import withI18n from '../../components/withI18n'
 import {
   DEFAULT_TRANSLATION,
   DOCS_TRANSLATION,
-  TRANSLATIONS,
 } from '../../constants/i18n'
 
 const Row = styled.div`
@@ -97,24 +96,4 @@ export const Documentation = () => (
   </I18n>
 )
 
-const TranslateDocumentation = (props) => {
-  const injectedProps = props.i18n ? props : {
-    ...props,
-    i18n
-  }
-
-  return (
-    <I18nextProvider {...injectedProps}>
-      <Documentation />
-    </I18nextProvider>
-  )
-}
-
-// Passing down initial translations
-// use req.i18n instance on serverside to avoid overlapping requests set the language wrong
-TranslateDocumentation.getInitialProps = async ({ req }) => {
-  if (req && !process.browser) return i18n.getInitialProps(req, TRANSLATIONS)
-  return {}
-}
-
-export default TranslateDocumentation
+export default withI18n(Documentation)
