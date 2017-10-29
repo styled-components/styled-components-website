@@ -4649,7 +4649,7 @@ exports[`Index renders in spanish 1`] = `
             >
               <LiveProvider
                 code="const Button = styled.a\`
-                /* Esto renderiza los botones de arriba... Edítame! */
+                /* Esto renderiza los botones de arriba... ¡Edítame! */
                 display: inline-block;
                 border-radius: 3px;
                 padding: 0.5rem 0;
@@ -4660,7 +4660,7 @@ exports[`Index renders in spanish 1`] = `
                 border: 2px solid white;
               
                 /* El botón de GitHub es un botón primario
-                * edita esto para elegirlo específicamente! */
+                * ¡Edita esto para elegirlo específicamente! */
               
                 \${props => props.primary && css\`
                   background: white;
@@ -4786,7 +4786,7 @@ exports[`Index renders in spanish 1`] = `
                             <Editor
                               className="c33"
                               code="const Button = styled.a\`
-                              /* Esto renderiza los botones de arriba... Edítame! */
+                              /* Esto renderiza los botones de arriba... ¡Edítame! */
                               display: inline-block;
                               border-radius: 3px;
                               padding: 0.5rem 0;
@@ -4797,7 +4797,7 @@ exports[`Index renders in spanish 1`] = `
                               border: 2px solid white;
                             
                               /* El botón de GitHub es un botón primario
-                              * edita esto para elegirlo específicamente! */
+                              * ¡Edita esto para elegirlo específicamente! */
                             
                               \${props => props.primary && css\`
                                 background: white;
@@ -4813,7 +4813,7 @@ exports[`Index renders in spanish 1`] = `
                                 dangerouslySetInnerHTML={
                                   Object {
                                     "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>a<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
-                                  	<span class=\\"token comment\\" spellcheck=\\"true\\">/* Esto renderiza los botones de arriba... Edítame! */</span>
+                                  	<span class=\\"token comment\\" spellcheck=\\"true\\">/* Esto renderiza los botones de arriba... ¡Edítame! */</span>
                                   	<span class=\\"token property\\">display</span><span class=\\"token punctuation\\">:</span> inline-block</span>;<span class=\\"token string language-css\\">
                                   	<span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
                                   	<span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.5rem 0</span>;<span class=\\"token string language-css\\">
@@ -4824,7 +4824,7 @@ exports[`Index renders in spanish 1`] = `
                                   	<span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid white</span>;<span class=\\"token string language-css\\">
                                   
                                   	<span class=\\"token comment\\" spellcheck=\\"true\\">/* El botón de GitHub es un botón primario
-                                  	* edita esto para elegirlo específicamente! */</span>
+                                  	* ¡Edita esto para elegirlo específicamente! */</span>
                                   
                                   	</span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
                                   		background: white;
@@ -5109,14 +5109,14 @@ exports[`Index renders in spanish 1`] = `
                 </Heading>
                 <Paragraph
                   literal={null}
-                  nodeKey="4:1-5:1137"
+                  nodeKey="4:1-5:1147"
                 >
                   <p>
                     Para descargar styled-components ejecuta 
                     <Code
                       inline={true}
                       literal="npm install --save styled-components"
-                      nodeKey="4:1-5:1131"
+                      nodeKey="4:1-5:1141"
                     >
                       <styled.span>
                         <span
@@ -5127,7 +5127,7 @@ exports[`Index renders in spanish 1`] = `
                       </styled.span>
                     </Code>
                     .
-                    Eso es todo lo que necesitas hacer, ahora estás listo para usarlo en tu app! (sip, no es necesario compilarlo 👌)
+                    Eso es todo lo que necesitas hacer, ¡Ahora estás listo para usarlo en tu app! (sip, no es necesario compilarlo 👌)
                   </p>
                 </Paragraph>
                 <Heading
@@ -5192,14 +5192,14 @@ exports[`Index renders in spanish 1`] = `
                 </Heading>
                 <Paragraph
                   literal={null}
-                  nodeKey="9:1-11:9611"
+                  nodeKey="9:1-11:9711"
                 >
                   <p>
                     Digamos que quieres crear un componente 
                     <Code
                       inline={true}
                       literal="<Button />"
-                      nodeKey="9:1-11:961"
+                      nodeKey="9:1-11:971"
                     >
                       <styled.span>
                         <span
@@ -5214,7 +5214,7 @@ exports[`Index renders in spanish 1`] = `
                     <Code
                       inline={true}
                       literal="primaria"
-                      nodeKey="9:1-11:965"
+                      nodeKey="9:1-11:975"
                     >
                       <styled.span>
                         <span
@@ -5225,7 +5225,7 @@ exports[`Index renders in spanish 1`] = `
                       </styled.span>
                     </Code>
                      para los botones importantes.
-                    Así es como debe de verse una vez renderizado: (Esto es un ejemplo en vivo, haz click en ellos!)
+                    Así es como debe de verse una vez renderizado: (Esto es un ejemplo en vivo, ¡Haz click en ellos!)
                   </p>
                 </Paragraph>
               </div>
@@ -5328,7 +5328,7 @@ exports[`Index renders in spanish 1`] = `
                   nodeKey="9:1-12:9723"
                 >
                   <p>
-                    Esta variable 
+                    ¡Esta variable 
                     <Code
                       inline={true}
                       literal="Button"
@@ -5358,7 +5358,7 @@ exports[`Index renders in spanish 1`] = `
                         </span>
                       </styled.span>
                     </Code>
-                    ) Bueno, ahora también puedes ejecutar funciones con "backticks"!
+                    ) Bueno, ¡Ahora también puedes ejecutar funciones con "backticks"!
                     
                     <Link
                       href="/docs/advanced#tagged-template-literals"
@@ -5420,18 +5420,18 @@ exports[`Index renders in spanish 1`] = `
                   className="c45"
                 >
                   <button>
-                    Soy un &lt;Button /&gt;!
+                    ¡Soy un &lt;Button /&gt;!
                   </button>
                 </div>
               </styled.div>
               <div>
                 <Paragraph
                   literal={null}
-                  nodeKey="1:1-2:776"
+                  nodeKey="1:1-2:786"
                 >
                   <p>
-                    Eso renderiza un botón! aunque no es muy bonito 😕 podemos hacerlo mejor,
-                    démosle un poco de estilo y obtengamos la belleza escondida que lleva dentro!
+                    ¡Eso renderiza un botón! aunque no es muy bonito 😕 podemos hacerlo mejor,
+                    démosle un poco de estilo y ¡Obtengamos la belleza escondida que lleva dentro!
                   </p>
                 </Paragraph>
                 <CodeBlock
@@ -5722,10 +5722,10 @@ exports[`Index renders in spanish 1`] = `
                 </Paragraph>
                 <Paragraph
                   literal={null}
-                  nodeKey="30:1-30:673"
+                  nodeKey="30:1-30:683"
                 >
                   <p>
-                    Eso es todo, hemos acabado! Echa un vistazo al componente terminado
+                    Eso es todo, ¡Hemos acabado! Echa un vistazo al componente terminado
                   </p>
                 </Paragraph>
                 <CodeBlock
@@ -5977,22 +5977,22 @@ exports[`Index renders in spanish 1`] = `
                 </CodeBlock>
                 <Paragraph
                   literal={null}
-                  nodeKey="55:1-55:1442"
+                  nodeKey="55:1-55:1452"
                 >
                   <p>
-                    Genial 😍 ese es un editor en vivo también, así que juega un poco con él para obtener una sensación de lo que es trabajar con styled-components!
+                    ¡Genial 😍 ese es un editor en vivo también, así que juega un poco con él para obtener una sensación de lo que es trabajar con styled-components!
                   </p>
                 </Paragraph>
                 <Paragraph
                   literal={null}
-                  nodeKey="57:1-57:14610"
+                  nodeKey="57:1-57:14710"
                 >
                   <p>
-                    Una vez que acabes, echa un vistazo a la 
+                    Una vez que acabes, ¡Echa un vistazo a la 
                     <Link
                       href="/docs"
                       literal={null}
-                      nodeKey="57:1-57:1463"
+                      nodeKey="57:1-57:1473"
                     >
                       <Link
                         href="/docs"
@@ -6022,7 +6022,7 @@ exports[`Index renders in spanish 1`] = `
                     <Link
                       href="/docs/basics#getting-started"
                       literal={null}
-                      nodeKey="57:1-57:1467"
+                      nodeKey="57:1-57:1477"
                     >
                       <Link
                         href="/docs/basics#getting-started"

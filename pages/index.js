@@ -319,6 +319,4 @@ TranslateIndex.getInitialProps = async ({ req }) => {
   return {}
 }
 
-
-
 export default TranslateIndex

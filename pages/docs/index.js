@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { I18nextProvider, I18n } from 'react-i18next'
 
 import rem from '../../utils/rem'
 import DocsLayout from '../../components/DocsLayout'
@@ -8,6 +9,12 @@ import titleToDash from '../../utils/titleToDash'
 import { pages } from '../docs.json'
 import { mobile, phone } from '../../utils/media'
 import { headerFont } from '../../utils/fonts'
+
+import i18n from '../../utils/i18n'
+import {
+  DOCS_INDEX_TRANSLATION,
+  TRANSLATIONS,
+} from '../../constants/i18n'
 
 const Row = styled.div`
   display: flex;
@@ -41,36 +48,72 @@ const SubHeader = styled.h3`
   font-family: ${headerFont};
 `
 
-const Documentation = () => (
-  <DocsLayout title="Documentation" description="Learn how to use styled-components and to style your apps without stress">
-    <p>
-      Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components. It also removes the mapping between components and styles – using components as a low-level styling construct could not be easier!
-    </p>
+export const Documentation = () => (
+  <I18n
+    ns={DOCS_INDEX_TRANSLATION}
+    wait={process.browser}
+  >
+    {(translate) => {
+      if (!translate) {
+        return null
+      }
 
-    <Row>
-      {
-        pages.map(({ title, pathname, sections }) => (
-          <Column key={title}>
-            <Header>
-              <Link href={`/docs/${pathname}`}>
-                {title}
-              </Link>
-            </Header>
+      return (
+        <DocsLayout
+          title={translate('title')}
+          description={translate('description')}
+        >
+          <p>
+            {translate('about')}
+          </p>
 
+          <Row>
             {
-              sections.map(({ title }) => (
-                <SubHeader key={title}>
-                  <Link href={`/docs/${pathname}#${titleToDash(title)}`}>
-                    {title}
-                  </Link>
-                </SubHeader>
+              pages.map(({ title, pathname, sections }) => (
+                <Column key={title}>
+                  <Header>
+                    <Link href={`/docs/${pathname}`}>
+                      {title}
+                    </Link>
+                  </Header>
+
+                  {
+                    sections.map(({ title }) => (
+                      <SubHeader key={title}>
+                        <Link href={`/docs/${pathname}#${titleToDash(title)}`}>
+                          {title}
+                        </Link>
+                      </SubHeader>
+                    ))
+                  }
+                </Column>
               ))
             }
-          </Column>
-        ))
-      }
-    </Row>
-  </DocsLayout>
+          </Row>
+        </DocsLayout>
+      )
+    }}
+  </I18n>
 )
 
-export default Documentation
+const TranslateDocumentation = (props) => {
+  const injectedProps = props.i18n ? props : {
+    ...props,
+    i18n
+  }
+
+  return (
+    <I18nextProvider {...injectedProps}>
+      <Documentation />
+    </I18nextProvider>
+  )
+}
+
+// Passing down initial translations
+// use req.i18n instance on serverside to avoid overlapping requests set the language wrong
+TranslateDocumentation.getInitialProps = async ({ req }) => {
+  if (req && !process.browser) return i18n.getInitialProps(req, TRANSLATIONS)
+  return {}
+}
+
+export default TranslateDocumentation

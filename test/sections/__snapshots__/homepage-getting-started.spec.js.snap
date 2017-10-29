@@ -1791,14 +1791,14 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
           </Heading>
           <Paragraph
             literal={null}
-            nodeKey="4:1-5:1137"
+            nodeKey="4:1-5:1147"
           >
             <p>
               Para descargar styled-components ejecuta 
               <Code
                 inline={true}
                 literal="npm install --save styled-components"
-                nodeKey="4:1-5:1131"
+                nodeKey="4:1-5:1141"
               >
                 <styled.span>
                   <span
@@ -1809,7 +1809,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                 </styled.span>
               </Code>
               .
-              Eso es todo lo que necesitas hacer, ahora estás listo para usarlo en tu app! (sip, no es necesario compilarlo 👌)
+              Eso es todo lo que necesitas hacer, ¡Ahora estás listo para usarlo en tu app! (sip, no es necesario compilarlo 👌)
             </p>
           </Paragraph>
           <Heading
@@ -1874,14 +1874,14 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
           </Heading>
           <Paragraph
             literal={null}
-            nodeKey="9:1-11:9611"
+            nodeKey="9:1-11:9711"
           >
             <p>
               Digamos que quieres crear un componente 
               <Code
                 inline={true}
                 literal="<Button />"
-                nodeKey="9:1-11:961"
+                nodeKey="9:1-11:971"
               >
                 <styled.span>
                   <span
@@ -1896,7 +1896,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
               <Code
                 inline={true}
                 literal="primaria"
-                nodeKey="9:1-11:965"
+                nodeKey="9:1-11:975"
               >
                 <styled.span>
                   <span
@@ -1907,7 +1907,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                 </styled.span>
               </Code>
                para los botones importantes.
-              Así es como debe de verse una vez renderizado: (Esto es un ejemplo en vivo, haz click en ellos!)
+              Así es como debe de verse una vez renderizado: (Esto es un ejemplo en vivo, ¡Haz click en ellos!)
             </p>
           </Paragraph>
         </div>
@@ -2010,7 +2010,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
             nodeKey="9:1-12:9723"
           >
             <p>
-              Esta variable 
+              ¡Esta variable 
               <Code
                 inline={true}
                 literal="Button"
@@ -2040,7 +2040,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                   </span>
                 </styled.span>
               </Code>
-              ) Bueno, ahora también puedes ejecutar funciones con "backticks"!
+              ) Bueno, ¡Ahora también puedes ejecutar funciones con "backticks"!
               
               <Link
                 href="/docs/advanced#tagged-template-literals"
@@ -2102,18 +2102,18 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
             className="c1"
           >
             <button>
-              Soy un &lt;Button /&gt;!
+              ¡Soy un &lt;Button /&gt;!
             </button>
           </div>
         </styled.div>
         <div>
           <Paragraph
             literal={null}
-            nodeKey="1:1-2:776"
+            nodeKey="1:1-2:786"
           >
             <p>
-              Eso renderiza un botón! aunque no es muy bonito 😕 podemos hacerlo mejor,
-              démosle un poco de estilo y obtengamos la belleza escondida que lleva dentro!
+              ¡Eso renderiza un botón! aunque no es muy bonito 😕 podemos hacerlo mejor,
+              démosle un poco de estilo y ¡Obtengamos la belleza escondida que lleva dentro!
             </p>
           </Paragraph>
           <CodeBlock
@@ -2404,10 +2404,10 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
           </Paragraph>
           <Paragraph
             literal={null}
-            nodeKey="30:1-30:673"
+            nodeKey="30:1-30:683"
           >
             <p>
-              Eso es todo, hemos acabado! Echa un vistazo al componente terminado
+              Eso es todo, ¡Hemos acabado! Echa un vistazo al componente terminado
             </p>
           </Paragraph>
           <CodeBlock
@@ -2659,22 +2659,22 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
           </CodeBlock>
           <Paragraph
             literal={null}
-            nodeKey="55:1-55:1442"
+            nodeKey="55:1-55:1452"
           >
             <p>
-              Genial 😍 ese es un editor en vivo también, así que juega un poco con él para obtener una sensación de lo que es trabajar con styled-components!
+              ¡Genial 😍 ese es un editor en vivo también, así que juega un poco con él para obtener una sensación de lo que es trabajar con styled-components!
             </p>
           </Paragraph>
           <Paragraph
             literal={null}
-            nodeKey="57:1-57:14610"
+            nodeKey="57:1-57:14710"
           >
             <p>
-              Una vez que acabes, echa un vistazo a la 
+              Una vez que acabes, ¡Echa un vistazo a la 
               <Link
                 href="/docs"
                 literal={null}
-                nodeKey="57:1-57:1463"
+                nodeKey="57:1-57:1473"
               >
                 <Link
                   href="/docs"
@@ -2704,7 +2704,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
               <Link
                 href="/docs/basics#getting-started"
                 literal={null}
-                nodeKey="57:1-57:1467"
+                nodeKey="57:1-57:1477"
               >
                 <Link
                   href="/docs/basics#getting-started"

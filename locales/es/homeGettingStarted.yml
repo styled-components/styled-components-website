@@ -3,11 +3,11 @@ currentVersion: Versión actual
 monthlyDownloads: Descargas mensuales
 gzipSize: Tamaño en gzip
 joinTheCommunity: Únete a la comunidad en Spectrum
-clickedNormal: Has dado click en un botón normal!
+clickedNormal: ¡Has dado click en un botón normal!
 normalButton: Botón normal
-clickedPrimary: Has dado click en un botón primario!
+clickedPrimary: ¡Has dado click en un botón primario!
 primaryButton: Botón primario
-imAButton: Soy un <Button />!
+imAButton: ¡Soy un <Button />!
 imAStyledButton: Soy un <Button /> estilizado
 markdown:
   first: |
@@ -15,13 +15,13 @@ markdown:
     ## Instalación
 
     Para descargar styled-components ejecuta `npm install --save styled-components`.
-    Eso es todo lo que necesitas hacer, ahora estás listo para usarlo en tu app! (sip, no es necesario compilarlo 👌)
+    Eso es todo lo que necesitas hacer, ¡Ahora estás listo para usarlo en tu app! (sip, no es necesario compilarlo 👌)
 
     ## Tu primer componente estilizado
 
     Digamos que quieres crear un componente `<Button />` simplre y reusable que puedas usar utilizar en toda tu aplicación.
     Debe de haber una versión normal y una grande y una versión `primaria` para los botones importantes.
-    Así es como debe de verse una vez renderizado: (Esto es un ejemplo en vivo, haz click en ellos!)
+    Así es como debe de verse una vez renderizado: (Esto es un ejemplo en vivo, ¡Haz click en ellos!)
   second: |
     Primero, hay que importar styled-components y crear un `styled.button`:
 
@@ -31,15 +31,15 @@ markdown:
     const Button = styled.button``;
     ```
 
-    Esta variable `Button` aquí ahora es un componente de React que puedes usar como cualquier otro componente de React!
+    ¡Esta variable `Button` aquí ahora es un componente de React que puedes usar como cualquier otro componente de React!
     Este inusual sintaxis "backtick" es una característica nueva de JavaScript llamada una plantilla etiquetada literal (tagged template literal).
-    Sabes como ejecutar funciones con paréntesis? (`miFuncion()`) Bueno, ahora también puedes ejecutar funciones con "backticks"!
+    Sabes como ejecutar funciones con paréntesis? (`miFuncion()`) Bueno, ¡Ahora también puedes ejecutar funciones con "backticks"!
     [Aquí hay una explicación](/docs/advanced#tagged-template-literals) de como funciona exactamente.
 
     Si renderizas nuestro encantador componente ahora (Justo como cualquier otro componente: `<Button />`) esto es lo que obtienes:
   third: |
-    Eso renderiza un botón! aunque no es muy bonito 😕 podemos hacerlo mejor,
-    démosle un poco de estilo y obtengamos la belleza escondida que lleva dentro!
+    ¡Eso renderiza un botón! aunque no es muy bonito 😕 podemos hacerlo mejor,
+    démosle un poco de estilo y ¡Obtengamos la belleza escondida que lleva dentro!
 
     ```jsx
     const Button = styled.button`
@@ -81,7 +81,7 @@ markdown:
     Todo lo que estamos diciendo aquí es que cuando la pripiedad `primary` esté puesta queremos que añada un poco más de `css` a nuestro componente,
     en este caso, cambiar el color de fondo y el color.
 
-    Eso es todo, hemos acabado! Echa un vistazo al componente terminado
+    Eso es todo, ¡Hemos acabado! Echa un vistazo al componente terminado
 
     ```react
     const Button = styled.button`
@@ -106,6 +106,6 @@ markdown:
     );
     ```
 
-    Genial 😍 ese es un editor en vivo también, así que juega un poco con él para obtener una sensación de lo que es trabajar con styled-components!
+    ¡Genial 😍 ese es un editor en vivo también, así que juega un poco con él para obtener una sensación de lo que es trabajar con styled-components!
 
-    Una vez que acabes, echa un vistazo a la [documentación](/docs), especialmente la sección de [empezando](/docs/basics#getting-started)! Disfruta ✨
+    Una vez que acabes, ¡Echa un vistazo a la [documentación](/docs), especialmente la sección de [empezando](/docs/basics#getting-started)! Disfruta ✨
