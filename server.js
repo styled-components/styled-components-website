@@ -56,6 +56,9 @@ const cachedRender = (req, res, pagePath, queryParams) => {
 const isUsingDefaultLanguage = (req, defaultLanguage = DEFAULT_LANGUAGE) =>
   req.route.path.match(new RegExp(`/${defaultLanguage}/?`, 'i'))
 
+const redirectTo = (res, path) =>
+  res.redirect(301, path)
+
 i18n
   .use(Backend)
   .use(i18nextMiddleware.LanguageDetector)
@@ -91,7 +94,7 @@ i18n
 
       i18nextMiddleware.addRoute(i18n, '/:lng', LANGUAGES, router, 'get', (req, res) => {
         if (isUsingDefaultLanguage(req)) {
-          return res.redirect('/')
+          return redirectTo(res, '/')
         }
 
         return cachedRender(req, res, '/')
@@ -99,7 +102,7 @@ i18n
 
       i18nextMiddleware.addRoute(i18n, '/:lng/docs', LANGUAGES, router, 'get', (req, res) => {
         if (isUsingDefaultLanguage(req)) {
-          return res.redirect('/docs')
+          return redirectTo(res, '/docs')
         }
 
         return cachedRender(req, res, '/docs')
@@ -107,7 +110,7 @@ i18n
 
       i18nextMiddleware.addRoute(i18n, '/:lng/docs/basics', LANGUAGES, router, 'get', (req, res) => {
         if (isUsingDefaultLanguage(req)) {
-          return res.redirect('/docs/basics')
+          return redirectTo(res, '/docs/basics')
         }
 
         return cachedRender(req, res, '/docs/basics')
@@ -115,7 +118,7 @@ i18n
 
       i18nextMiddleware.addRoute(i18n, '/:lng/docs/advanced', LANGUAGES, router, 'get', (req, res) => {
         if (isUsingDefaultLanguage(req)) {
-          return res.redirect('/docs/advanced')
+          return redirectTo(res, '/docs/advanced')
         }
 
         return cachedRender(req, res, '/docs/advanced')
@@ -123,7 +126,7 @@ i18n
 
       i18nextMiddleware.addRoute(i18n, '/:lng/docs/api', LANGUAGES, router, 'get', (req, res) => {
         if (isUsingDefaultLanguage(req)) {
-          return res.redirect('/docs/api')
+          return redirectTo(res, '/docs/api')
         }
 
         cachedRender(req, res, '/docs/api')
