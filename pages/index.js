@@ -17,6 +17,10 @@ import WithIsScrolled from '../components/WithIsScrolled'
 import Nav from '../components/Nav'
 
 import i18n from '../utils/i18n'
+import {
+  TRANSLATIONS,
+  HOME_TRANSLATION,
+} from '../constants/i18n'
 
 const Tagline = styled.h1`
   font-weight: 600;
@@ -205,7 +209,7 @@ export class Index extends PureComponent {
     const { isMobileNavFolded } = this.state
     return (
       <I18n
-        ns="home"
+        ns={HOME_TRANSLATION}
         wait={process.browser}
       >
         {
@@ -311,11 +315,7 @@ const TranslateIndex = (props) => {
 // Passing down initial translations
 // use req.i18n instance on serverside to avoid overlapping requests set the language wrong
 TranslateIndex.getInitialProps = async ({ req }) => {
-  if (req && !process.browser) return i18n.getInitialProps(req, [
-    'home',
-    'translations',
-    'homeGettingStarted',
-  ])
+  if (req && !process.browser) return i18n.getInitialProps(req, TRANSLATIONS)
   return {}
 }
 

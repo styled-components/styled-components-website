@@ -16,9 +16,15 @@ const next = require('next')
 const i18nextMiddleware = require('i18next-express-middleware')
 const Backend = require('i18next-node-fs-backend')
 const i18n = require('./utils/i18n')
+const {
+    LANGUAGES,
+    TRANSLATIONS,
+} = require('./constants/i18n')
 
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
+
+const router = express.Router()
 
 const ssrCache = new LRUCache({
   max: 100,
@@ -50,9 +56,16 @@ i18n
   .use(Backend)
   .use(i18nextMiddleware.LanguageDetector)
   .init({
+    preload: LANGUAGES,
+    languages: LANGUAGES,
+    ns: TRANSLATIONS,
+    load: 'languageOnly', // we only provide en, de -> no region specific locals like en-US, de-DE
     backend: {
       loadPath: __dirname + '/locales/{{lng}}/{{ns}}.yml',
       addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.yml'
+    },
+    detection: {
+      order: ['path', 'querystring', 'header'],
     }
 }, () => {
   app.prepare()
@@ -72,19 +85,28 @@ i18n
 
       server.disable('x-powered-by')
 
-      server.get('/docs', (req, res) => {
+      i18nextMiddleware.addRoute(i18n, '/', LANGUAGES, router, 'get', (req, res) => {
+        const lng = req.i18n.languages[0]
+        res.redirect(`/${lng}`)
+      })
+
+      i18nextMiddleware.addRoute(i18n, '/:lng', LANGUAGES, router, 'get', (req, res) => {
+        cachedRender(req, res, '/')
+      })
+
+      i18nextMiddleware.addRoute(i18n, '/:lng/docs', LANGUAGES, router, 'get', (req, res) => {
         cachedRender(req, res, '/docs')
       })
 
-      server.get('/docs/basics', (req, res) => {
+      i18nextMiddleware.addRoute(i18n, '/:lng/docs/basics', LANGUAGES, router, 'get', (req, res) => {
         cachedRender(req, res, '/docs/basics')
       })
 
-      server.get('/docs/advanced', (req, res) => {
+      i18nextMiddleware.addRoute(i18n, '/:lng/docs/advanced', LANGUAGES, router, 'get', (req, res) => {
         cachedRender(req, res, '/docs/advanced')
       })
 
-      server.get('/docs/api', (req, res) => {
+      i18nextMiddleware.addRoute(i18n, '/:lng/docs/api', LANGUAGES, router, 'get', (req, res) => {
         cachedRender(req, res, '/docs/api')
       })
 
@@ -98,10 +120,12 @@ i18n
         redirect: false
       }))
 
-      server.get('*', (req, res) => {
+      router.get('*', (req, res) => {
         const parsedUrl = parse(req.url, true)
         handle(req, res, parsedUrl)
       })
+
+      server.use('/', router)
 
       server.listen(PORT, err => {
         if (err) {

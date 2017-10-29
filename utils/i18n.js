@@ -1,21 +1,24 @@
 const i18n = require('i18next')
 const XHR = require('i18next-xhr-backend')
 const LanguageDetector = require('i18next-browser-languagedetector')
+const {
+    LANGUAGES,
+    DEFAULT_LANGUAGE,
+    TRANSLATIONS,
+    DEFAULT_TRANSLATION,
+} = require('../constants/i18n')
 
 const options = {
-  fallbackLng: 'en',
-  languages: ['en', 'es'],
+  fallbackLng: DEFAULT_LANGUAGE,
+  languages: LANGUAGES,
   load: 'languageOnly', // we only provide en, de -> no region specific locals like en-US, de-DE
 
   // have a common namespace used around the full app
-  ns: [
-    'translations',
-    'home',
-    'homeGettingStarted',
-  ],
-  defaultNS: 'translations',
+  ns: TRANSLATIONS,
+  defaultNS: DEFAULT_TRANSLATION,
 
-  debug: process.env.NODE_ENV !== 'production', // debug when not in production
+  debug: false,
+  // debug: process.env.NODE_ENV !== 'production', // debug when not in production
   saveMissing: true,
 
   // loadPath: '/locales/{{lng}}/{{ns}}.yml',

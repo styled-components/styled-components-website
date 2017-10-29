@@ -5,6 +5,10 @@ import { I18n } from 'react-i18next'
 import md from 'components/md'
 import { Content } from 'components/Layout'
 
+import {
+  HOME_GETTING_STARTED_TRANSLATION,
+} from '../constants/i18n'
+
 const AlignCenter = styled.div`
   text-align: center;
 `
@@ -38,7 +42,7 @@ const SecondButton = styled.button`
 
 const HomepageGettingStarted = () => (
   <I18n
-    ns="homeGettingStarted"
+    ns={HOME_GETTING_STARTED_TRANSLATION}
     wait={process.browser}
   >
     {
