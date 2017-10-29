@@ -2007,7 +2007,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
           </CodeBlock>
           <Paragraph
             literal={null}
-            nodeKey="9:1-12:9723"
+            nodeKey="9:1-12:9727"
           >
             <p>
               ¡Esta variable 
@@ -2025,12 +2025,12 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                 </styled.span>
               </Code>
                aquí ahora es un componente de React que puedes usar como cualquier otro componente de React!
-              Este inusual sintaxis "backtick" es una característica nueva de JavaScript llamada una plantilla etiquetada literal (tagged template literal).
+              Este inusual sintaxis "backtick" es una característica nueva de JavaScript llamada una "tagged template literal".
               Sabes como ejecutar funciones con paréntesis? (
               <Code
                 inline={true}
                 literal="miFuncion()"
-                nodeKey="9:1-12:9712"
+                nodeKey="9:1-12:9716"
               >
                 <styled.span>
                   <span
@@ -2045,7 +2045,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
               <Link
                 href="/docs/advanced#tagged-template-literals"
                 literal={null}
-                nodeKey="9:1-12:9721"
+                nodeKey="9:1-12:9725"
               >
                 <Link
                   href="/docs/advanced#tagged-template-literals"
@@ -2238,7 +2238,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
           </Paragraph>
           <Paragraph
             literal={null}
-            nodeKey="6:1-7:1687"
+            nodeKey="6:1-7:1867"
           >
             <p>
               El último paso es que tenemos que definir como se ve un botón primario.
@@ -2246,7 +2246,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
               <Code
                 inline={true}
                 literal="{ css }"
-                nodeKey="6:1-7:1683"
+                nodeKey="6:1-7:1863"
               >
                 <styled.span>
                   <span
@@ -2260,7 +2260,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
               <Code
                 inline={true}
                 literal="styled-components"
-                nodeKey="6:1-7:1685"
+                nodeKey="6:1-7:1865"
               >
                 <styled.span>
                   <span
@@ -2270,7 +2270,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                   </span>
                 </styled.span>
               </Code>
-               e interpolamos una función dentro de nuestra plantilla literal, la cual pasa los props de nuestro componente:
+               e interpolamos una función dentro de nuestra plantilla (tagged template literal), la cual pasa los props de nuestro componente:
             </p>
           </Paragraph>
           <CodeBlock

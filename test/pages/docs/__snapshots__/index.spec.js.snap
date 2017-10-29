@@ -469,7 +469,12 @@ exports[`Documentation renders correctly 1`] = `
 
 <Documentation>
   <I18n
-    ns="docs"
+    ns={
+      Array [
+        "docs",
+        "translations",
+      ]
+    }
   >
     <DocsLayout
       description="Learn how to use styled-components and to style your apps without stress"
@@ -2824,7 +2829,12 @@ exports[`Documentation renders in spanish 1`] = `
 
 <Documentation>
   <I18n
-    ns="docs"
+    ns={
+      Array [
+        "docs",
+        "translations",
+      ]
+    }
   >
     <DocsLayout
       description="Aprende como usar styled-components y a estilizar tus apps sin estrés"
@@ -3779,7 +3789,7 @@ exports[`Documentation renders in spanish 1`] = `
                 </h1>
               </styled.h1>
               <p>
-                Usando plantillas etiquetadas literales (una adición nueva a JavaScript) y el pode de CSS, styled-components permite utilizar código CSS real para estilizar tus componentes. Además provee el mapeo entro componentes y estilos - ¡Utilizando componentes como un estructrura de estilo de bajo nivel no podría ser más fácil!
+                Usando "tagged template literals" (una nueva característica en JavaScript) y el pode de CSS, styled-components permite utilizar código CSS real para estilizar tus componentes. Además provee el mapeo entro componentes y estilos - ¡Utilizando componentes como un estructrura de estilo de bajo nivel no podría ser más fácil!
               </p>
               <styled.div>
                 <div

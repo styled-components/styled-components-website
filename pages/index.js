@@ -19,6 +19,7 @@ import Nav from '../components/Nav'
 import i18n from '../utils/i18n'
 import {
   TRANSLATIONS,
+  DEFAULT_TRANSLATION,
   HOME_TRANSLATION,
 } from '../constants/i18n'
 
@@ -71,7 +72,7 @@ const HomepageLivePreview = ({ className, translate, ...rest }, { live: { elemen
       </Button>
 
       <InternalButton href="/docs" prefetch>
-        {translate('documentation')}
+        {translate(`${DEFAULT_TRANSLATION}:documentation`)}
       </InternalButton>
     </div>
   )
@@ -209,7 +210,7 @@ export class Index extends PureComponent {
     const { isMobileNavFolded } = this.state
     return (
       <I18n
-        ns={HOME_TRANSLATION}
+        ns={[HOME_TRANSLATION, DEFAULT_TRANSLATION]}
         wait={process.browser}
       >
         {

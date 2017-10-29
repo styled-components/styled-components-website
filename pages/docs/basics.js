@@ -1,6 +1,7 @@
 import React from 'react'
 import DocsLayout from '../../components/DocsLayout'
 import NextPage from '../../components/NextPage'
+import { I18n } from 'react-i18next'
 
 import Motivation from '../../sections/basics/motivation'
 import GettingStarted from '../../sections/basics/getting-started'
@@ -13,24 +14,34 @@ import AttachingAdditionalProps from '../../sections/basics/attaching-additional
 import Animations from '../../sections/basics/animations'
 import ReactNative from '../../sections/basics/react-native'
 
-const Basics = () => (
-  <DocsLayout title="Basics" description="Get Started with styled-components basics.">
-    <Motivation />
-    <Installation />
-    <GettingStarted />
-    <PassedProps />
-    <AdaptingBasedOnProps />
-    <StylingAnyComponents />
-    <ExtendingStyles />
-    <AttachingAdditionalProps />
-    <Animations />
-    <ReactNative />
+import {
+  DOCS_TRANSLATION,
+} from '../../../constants/i18n'
 
-    <NextPage
-      href="/docs/advanced"
-      title="Advanced"
-    />
-  </DocsLayout>
+const Basics = () => (
+  <I18n ns={[DOCS_TRANSLATION, DEFAULT_TRANSLATION]}>
+    {translate => (
+      <DocsLayout
+        title={translate(`${DEFAULT_TRANSLATION}:basics`)}
+        description={translate('basicsDescription')}
+      >
+        <Motivation />
+        <Installation />
+        <GettingStarted />
+        <PassedProps />
+        <AdaptingBasedOnProps />
+        <StylingAnyComponents />
+        <ExtendingStyles />
+        <AttachingAdditionalProps />
+        <Animations />
+        <ReactNative />
+
+        <NextPage
+          href="/docs/advanced"
+          title={translate(`${DEFAULT_TRANSLATION}:advanced`)}
+        />
+      </DocsLayout>)}
+  </I18n>
 )
 
 export default Basics

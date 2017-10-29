@@ -1,6 +1,5 @@
 title: Visual primitives for the component age.
 subtitle: Use the best bits of ES6 and CSS to style your apps without stress 💅
-documentation: Documentation
 headerCodeComment: /* This renders the buttons above... Edit me! */
 headerCodeSecondComment: |
   /* The GitHub button is a primary button

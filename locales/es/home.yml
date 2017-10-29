@@ -1,6 +1,5 @@
 title: Primitivos visuales para la era de los componentes
 subtitle: Usa los mejores bits de ES6 y CSS para estilizar tus apps sin estrés 💅
-documentation: Documentación
 headerCodeComment: /* Esto renderiza los botones de arriba... ¡Edítame! */
 headerCodeSecondComment: |
   /* El botón de GitHub es un botón primario
@@ -41,7 +40,7 @@ gettingStarted:
     ```
 
     ¡Esta variable `Button` aquí ahora es un componente de React que puedes usar como cualquier otro componente de React!
-    Este inusual sintaxis "backtick" es una característica nueva de JavaScript llamada una plantilla etiquetada literal (tagged template literal).
+    Este inusual sintaxis "backtick" es una característica nueva de JavaScript llamada una "tagged template literal".
     Sabes como ejecutar funciones con paréntesis? (`miFuncion()`) Bueno, ¡Ahora también puedes ejecutar funciones con "backticks"!
     [Aquí hay una explicación](/docs/advanced#tagged-template-literals) de como funciona exactamente.
 
@@ -67,7 +66,7 @@ gettingStarted:
     (aprende más acerca [de las ideas detrás de styled-components aquí](/docs/basics#motivation))
 
     El último paso es que tenemos que definir como se ve un botón primario.
-    Para hacer eso importamos `{ css }` de `styled-components` e interpolamos una función dentro de nuestra plantilla literal, la cual pasa los props de nuestro componente:
+    Para hacer eso importamos `{ css }` de `styled-components` e interpolamos una función dentro de nuestra plantilla (tagged template literal), la cual pasa los props de nuestro componente:
 
     ```jsx
     import styled, { css } from styled-components
