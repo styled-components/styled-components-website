@@ -3,14 +3,14 @@ description: Aprende como usar styled-components y a estilizar tus apps sin estr
 about: |
   Usando "tagged template literals" (una nueva característica en JavaScript) y el poder de CSS,
   styled-components permite utilizar código CSS real para estilizar tus componentes.
-  Además provee el mapeo entro componentes y estilos - ¡Utilizando componentes como un estructrura
-  de estilo de bajo nivel no podría ser más fácil!
+  Además provee el mapeo dentro componentes y estilos - ¡No podría ser más fácil utilizar componentes
+  como un estructrura de estilo de bajo nivel!
 basicsTitle: Bases
 basicsDescription: Comenzando con las bases de styled-components.
 motivation: |
   ## Motivación
 
-  Esta charla por Max Stoiber es una muy introdución detallada a styled-components
+  Esta charla por Max Stoiber es una introdución muy detallada a styled-components
   y habla acerca de las motivaciones detrás de su creacón, junto con información de como empezar.
 advanced: Avanzado
 installation: |
@@ -26,11 +26,11 @@ gettingStarted: |
 
   styled-components utiliza "tagged template literals" para estilizar tus componentes.
 
-  Esto remueve el mapeo entre componentes y estilos. Esto significa que cuando defines tus estilos,
-  estás de hecho creando un componente de React normal, el cual tiene tus estilos adjuntados a sí mismo.
+  Remueve el mapeo entre componentes y estilos. Esto significa que cuando defines tus estilos,
+  estás de hecho creando un componente normal de React, el cual tiene tus estilos adjuntados a sí mismo.
 
   Este ejemplo crea dos componentes simples, una envoltura y un título, con algunos estilos adjuntados.
-  Puedes editar el código y tener una sensación de como trabajarías con styled-components.
+  Puedes editar el código y tener una sensación de como es trabajar con styled-components.
 
   ```react
   // Crea el componente Título, el cual renderiza una etiqueta <h1> con algunos estilos
@@ -61,7 +61,7 @@ gettingStarted: |
 passedProps: |
   ## "Props" enviadas
 
-  styled-components pasan todas sus "props".
+  styled-components pasan hacía abajo todas sus "props".
 
   Este ejemplo muestra como todas las "props" del componente Input se pasan al nodo de DOM que está
   montado, como con los elementos de React.
@@ -77,7 +77,7 @@ passedProps: |
     border-radius: 3px;
   `;
 
-  // Renderiza un "input" de texto estilizado con un "placeholder" de "@mxstbr", y uno con valor de "geelen"
+  // Renderiza un "input" de texto estilizado con un "placeholder" de "@mxstbr", y otro con valor de "geelen"
   render(
     <div>
       <Input placeholder="@mxstbr" type="text" />
@@ -118,15 +118,14 @@ adaptingBasedOnProps: |
 stylingAnyComponents: |
   ## Estilizando cualquier componente
 
-  El método `styled` funciona perfectamente en todos tus componentes o componentes de terceros también,
-  siempre y cuando pasen la "prop" `className` a sus sub componentes renderizados, que deberían
-  pasarlo también, y así sucesivamente.
+  El método `styled` funciona perfectamente en todos tus componentes y también en componentes de terceros,
+  siempre y cuando pasen la "prop" `className` a sus sub componentes renderizados.
   Finalmente, la `className` debe ser pasada hasta alcanzar el nodo DOM para que el estilizado
   tenga cualquier efecto.
 
   > Sí estás usando `react-native` ten en cuenta usar `style` en lugar de `className`.
 
-  Si estás utilizando cualquier librería externa, considera usar este patrón para convertirlos en
+  Sí estás utilizando cualquier librería externa, considera usar este patrón para convertirlos en
   componentes estilizados. El mismo patrón funciona con tus propios componentes también, sí necesitas
   que algún componente se mantenga sin estilo por sí mismo.
 
@@ -152,8 +151,8 @@ stylingAnyComponents: |
   );
   ```
 
-  Considera cuidadosamente envolver tus componentes en un componente estilizado, cuando no es necesario.
-  Deshabilitarás el "whitelisting" automático de "props", y revertirás el orden recomendado de
+  Considera cuidadosamente envolver tus componentes en un componente estilizado, cuando no es necesario,
+  deshabilitarás el "whitelisting" automático de "props", y revertirás el orden recomendado de
   componentes estilizados y componentes estructurales.
 
   También puedes pasar nombres de etiquetas a la fábrica `styled()` en su llamada, por ejemplo: `styled('div')`.
@@ -165,13 +164,13 @@ stylingAnyComponents: |
 extendingStyles: |
   ## Extendiendo estilos | v2
 
-  Frecuentemente podrías querer usar un componente, pero cambiarlo ligeramente por un sólo caso.
-  Ahora puedes pasar una función  interpolada y cambiarlo basado en algunos "props", pero eso
-  es mucho esfuerzo para sobreescribir los estilos una vez.
+  Frecuentemente te gustaría usar un componente, y cambiarlo ligeramente en un sólo caso.
+  Puedes pasar una función  interpolada y cambiarlo basado en algunos "props", pero eso
+  es mucho esfuerzo para sobreescribir los estilos una sola vez.
 
-  Para hacer esto más facilmente, puedes llamar `extend` en el componente para generar otro. Lo
-  estilizas como cualquier otro componente estilizado. Sobreescribe estilos duplicados del
-  componente original y mantiene los otros.
+  Para hacer esto más facilmente, puedes llamar `extend` en el componente para generar otro nuevo.
+  Lo estilizas como cualquier otro componente y éste sobreescribe los estilos duplicados del
+  componente original y mantiene los nuevos.
 
   Aquí uamos un botón de la última sección y creamos uno especial, extendiéndolo con unos estilos
   relativos a su color.
@@ -195,8 +194,8 @@ extendingStyles: |
 
   render(
     <div>
-      <Button>Normal Button</Button>
-      <TomatoButton>Tomato Button</TomatoButton>
+      <Button>Botón normal</Button>
+      <TomatoButton>Botón tomate</TomatoButton>
     </div>
   );
   ```
@@ -208,8 +207,8 @@ extendingStyles: |
   > Llamando `extend` crea una nueva hoja de estilos, extendiendo del viejo, por lo tanto
   > no crea dos clases para un sólo componente.
 
-  En los muy raros casos que quieras cambiar que etiqueta o componente estilizado renderizar.
-  Tenemos una salida de escape. Puedes usar el <Code>withComponent</Code> para extender los
+  En los muy raros casos que quieras cambiar que etiqueta o componente renderiza el componente estilizado.
+  Tenemos una manera de solucionarlo. Puedes usar el <Code>withComponent</Code> para extender los
   estilos y usar una etiqueta completamente diferente.
 
   ```react
@@ -344,7 +343,7 @@ reactNative: |
   }
   ```
 
-  También soportamos estilos más complejos (como `transform`), los cuales normalmente serían un arreglo,
+  También soportamos estilos más complejos (como `transform`), los cuales, normalmente serían un arreglo,
   (por ejemplo para `margin`) ¡Gracias a `css-to-react-native`!
 
   Imagina como escribirías una propiedad en React Native, adivina como lo transferirías a CSS,

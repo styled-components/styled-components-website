@@ -4065,8 +4065,8 @@ exports[`Documentation renders in spanish 1`] = `
               <p>
                 Usando "tagged template literals" (una nueva característica en JavaScript) y el poder de CSS,
                 styled-components permite utilizar código CSS real para estilizar tus componentes.
-                Además provee el mapeo entro componentes y estilos - ¡Utilizando componentes como un estructrura
-                de estilo de bajo nivel no podría ser más fácil!
+                Además provee el mapeo dentro componentes y estilos - ¡No podría ser más fácil utilizar componentes
+                como un estructrura de estilo de bajo nivel!
                 
               </p>
               <styled.div>
