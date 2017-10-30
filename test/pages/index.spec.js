@@ -15,13 +15,3 @@ test('Index renders correctly', () => {
 
   expect(wrapper).toMatchSnapshot()
 })
-
-test('Index renders in spanish', () => {
-  const wrapper = mount(
-    <I18nextProvider i18n={i18n} initialLanguage="es">
-      <Index />
-    </I18nextProvider>
-  )
-
-  expect(wrapper.find(Index)).toMatchSnapshot()
-})

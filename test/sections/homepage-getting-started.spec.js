@@ -17,7 +17,3 @@ const wrapper = (props, language) => mount(
 test('HomepageGettingStarted renders correctly', () => {
   expect(wrapper({}, 'en').find(HomepageGettingStarted)).toMatchSnapshot()
 })
-
-test('HomepageGettingStarted renders in spanish', () => {
-  expect(wrapper({}, 'es').find(HomepageGettingStarted)).toMatchSnapshot()
-})

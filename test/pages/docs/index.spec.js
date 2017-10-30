@@ -19,7 +19,3 @@ const wrapper = (language, props) => mount(
 test('Documentation renders correctly', () => {
   expect(wrapper('en').find(Documentation)).toMatchSnapshot()
 })
-
-test('Documentation renders in spanish', () => {
-  expect(wrapper('es').find(Documentation)).toMatchSnapshot()
-})
