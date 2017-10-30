@@ -9,3 +9,47 @@ motivation: |
   Esta charla por Max Stoiber es una muy introdución detallada a styled-components
   y habla acerca de las motivaciones detrás de su creacón, junto con información de como empezar.
 advanced: Avanzado
+installation: |
+  ## Instalación
+
+  Instala styled-components desde npm:
+
+  ```
+  npm install --save styled-components
+  ```
+gettingStarted: |
+  ## Comenzando
+
+  styled-components utiliza "tagged template literals" para estilizar tus componentes.
+
+  Esto remueve el mapeo entre componentes y estilos. Esto significa que cuando defines tus estilos,
+  estás de hecho creando un componente de React normal, el cual tiene tus estilos adjuntados a sí mismo.
+
+  Este ejemplo crea dos componentes simples, una envoltura y un título, con algunos estilos adjuntados.
+  Puedes editar el código y tener una sensación de como trabajarías con styled-components.
+
+  ```react
+  // Crea el componente Título, el cual renderiza una etiqueta <h1> con algunos estilos
+  const Title = styled.h1`
+    font-size: 1.5em;
+    text-align: center;
+    color: palevioletred;
+  `;
+
+  // Crea la componente envoltura, el cual renderiza una etiqueta <section> con algunos estilos
+  const Wrapper = styled.section`
+    padding: 4em;
+    background: papayawhip;
+  `;
+
+  // Usa el título y envoltura como cualquier otro componente de React - ¡Excepto que están estilizados!
+  render(
+    <Wrapper>
+      <Title>
+        ¡Hola mundo, éste es mi primer componente estilizado!
+      </Title>
+    </Wrapper>
+  );
+  ```
+
+  > Las reglas de CSS automáticamente añaden el prefijo específico del navegador, así que no tienes que pensar en ello.
