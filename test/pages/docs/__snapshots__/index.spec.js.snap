@@ -3918,18 +3918,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#props\\"-enviadas"
+                            href="/docs/basics#props-enviadas-"
                           >
                             <Link
-                              href="/docs/basics#props\\"-enviadas"
+                              href="/docs/basics#props-enviadas-"
                             >
                               <styled.a
-                                href="/docs/basics#props\\"-enviadas"
+                                href="/docs/basics#props-enviadas-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#props\\"-enviadas"
+                                  href="/docs/basics#props-enviadas-"
                                   onClick={[Function]}
                                 >
                                   "Props" enviadas
@@ -3945,18 +3945,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#adaptacin-basada-en-\\"props\\""
+                            href="/docs/basics#adaptacin-basada-en-props-"
                           >
                             <Link
-                              href="/docs/basics#adaptacin-basada-en-\\"props\\""
+                              href="/docs/basics#adaptacin-basada-en-props-"
                             >
                               <styled.a
-                                href="/docs/basics#adaptacin-basada-en-\\"props\\""
+                                href="/docs/basics#adaptacin-basada-en-props-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#adaptacin-basada-en-\\"props\\""
+                                  href="/docs/basics#adaptacin-basada-en-props-"
                                   onClick={[Function]}
                                 >
                                   Adaptación basada en "props"
@@ -4024,18 +4024,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#adjuntando-props\\"-adicionales"
+                            href="/docs/basics#adjuntando-props-adicionales-"
                           >
                             <Link
-                              href="/docs/basics#adjuntando-props\\"-adicionales"
+                              href="/docs/basics#adjuntando-props-adicionales-"
                             >
                               <styled.a
-                                href="/docs/basics#adjuntando-props\\"-adicionales"
+                                href="/docs/basics#adjuntando-props-adicionales-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#adjuntando-props\\"-adicionales"
+                                  href="/docs/basics#adjuntando-props-adicionales-"
                                   onClick={[Function]}
                                 >
                                   Adjuntando "props" adicionales
@@ -4647,18 +4647,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/faqs#puedo-anidar-reglas?"
+                            href="/docs/faqs#puedo-anidar-reglas-"
                           >
                             <Link
-                              href="/docs/faqs#puedo-anidar-reglas?"
+                              href="/docs/faqs#puedo-anidar-reglas-"
                             >
                               <styled.a
-                                href="/docs/faqs#puedo-anidar-reglas?"
+                                href="/docs/faqs#puedo-anidar-reglas-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/faqs#puedo-anidar-reglas?"
+                                  href="/docs/faqs#puedo-anidar-reglas-"
                                   onClick={[Function]}
                                 >
                                   ¿Puedo anidar reglas?
@@ -4674,18 +4674,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/faqs#puedo-referirme-a-otros-componentes?"
+                            href="/docs/faqs#puedo-referirme-a-otros-componentes-"
                           >
                             <Link
-                              href="/docs/faqs#puedo-referirme-a-otros-componentes?"
+                              href="/docs/faqs#puedo-referirme-a-otros-componentes-"
                             >
                               <styled.a
-                                href="/docs/faqs#puedo-referirme-a-otros-componentes?"
+                                href="/docs/faqs#puedo-referirme-a-otros-componentes-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/faqs#puedo-referirme-a-otros-componentes?"
+                                  href="/docs/faqs#puedo-referirme-a-otros-componentes-"
                                   onClick={[Function]}
                                 >
                                   ¿Puedo referirme a otros componentes?
@@ -4701,18 +4701,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/faqs#puedo-usar-un-framework-de-css?"
+                            href="/docs/faqs#puedo-usar-un-framework-de-css-"
                           >
                             <Link
-                              href="/docs/faqs#puedo-usar-un-framework-de-css?"
+                              href="/docs/faqs#puedo-usar-un-framework-de-css-"
                             >
                               <styled.a
-                                href="/docs/faqs#puedo-usar-un-framework-de-css?"
+                                href="/docs/faqs#puedo-usar-un-framework-de-css-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/faqs#puedo-usar-un-framework-de-css?"
+                                  href="/docs/faqs#puedo-usar-un-framework-de-css-"
                                   onClick={[Function]}
                                 >
                                   ¿Puedo usar un framework de css?
