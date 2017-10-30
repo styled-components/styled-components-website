@@ -164,7 +164,6 @@ stylingAnyComponents: |
   > A través del "prop" `className`
 extendingStyles: |
   ## Extendiendo estilos | v2
-  ## Extending Styles | v2
 
   Frecuentemente podrías querer usar un componente, pero cambiarlo ligeramente por un sólo caso.
   Ahora puedes pasar una función  interpolada y cambiarlo basado en algunos "props", pero eso

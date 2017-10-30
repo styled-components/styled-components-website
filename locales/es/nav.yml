@@ -7,7 +7,7 @@ passedProps: |
 adaptingBasedOnProps: |
   Adaptación basada en "props"
 stylingAnyComponents: Estilizando cualquier componente
-extendingStyles: Estendiendo estilos
+extendingStyles: Extendiendo estilos
 attachingAdditionalProps: |
   Adjuntando "props" adicionales
 animations: Animaciones

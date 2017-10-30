@@ -1156,18 +1156,44 @@ exports[`DocsLayout renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <Link
-                                    href="/docs/basics"
+                                    as={
+                                      Object {
+                                        "pathname": "/docs/basics",
+                                      }
+                                    }
+                                    href={
+                                      Object {
+                                        "pathname": "/docs/basics",
+                                      }
+                                    }
                                   >
                                     <Link
-                                      href="/docs/basics"
+                                      as={
+                                        Object {
+                                          "pathname": "/docs/basics",
+                                        }
+                                      }
+                                      href={
+                                        Object {
+                                          "pathname": "/docs/basics",
+                                        }
+                                      }
                                     >
                                       <styled.a
-                                        href="/docs/basics"
+                                        href={
+                                          Object {
+                                            "pathname": "/docs/basics",
+                                          }
+                                        }
                                         onClick={[Function]}
                                       >
                                         <a
                                           className="c27"
-                                          href="/docs/basics"
+                                          href={
+                                            Object {
+                                              "pathname": "/docs/basics",
+                                            }
+                                          }
                                           onClick={[Function]}
                                         >
                                           Basics
@@ -1198,18 +1224,44 @@ exports[`DocsLayout renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <Link
-                                    href="/docs/advanced"
+                                    as={
+                                      Object {
+                                        "pathname": "/docs/advanced",
+                                      }
+                                    }
+                                    href={
+                                      Object {
+                                        "pathname": "/docs/advanced",
+                                      }
+                                    }
                                   >
                                     <Link
-                                      href="/docs/advanced"
+                                      as={
+                                        Object {
+                                          "pathname": "/docs/advanced",
+                                        }
+                                      }
+                                      href={
+                                        Object {
+                                          "pathname": "/docs/advanced",
+                                        }
+                                      }
                                     >
                                       <styled.a
-                                        href="/docs/advanced"
+                                        href={
+                                          Object {
+                                            "pathname": "/docs/advanced",
+                                          }
+                                        }
                                         onClick={[Function]}
                                       >
                                         <a
                                           className="c27"
-                                          href="/docs/advanced"
+                                          href={
+                                            Object {
+                                              "pathname": "/docs/advanced",
+                                            }
+                                          }
                                           onClick={[Function]}
                                         >
                                           Advanced
@@ -1240,18 +1292,44 @@ exports[`DocsLayout renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <Link
-                                    href="/docs/api"
+                                    as={
+                                      Object {
+                                        "pathname": "/docs/api",
+                                      }
+                                    }
+                                    href={
+                                      Object {
+                                        "pathname": "/docs/api",
+                                      }
+                                    }
                                   >
                                     <Link
-                                      href="/docs/api"
+                                      as={
+                                        Object {
+                                          "pathname": "/docs/api",
+                                        }
+                                      }
+                                      href={
+                                        Object {
+                                          "pathname": "/docs/api",
+                                        }
+                                      }
                                     >
                                       <styled.a
-                                        href="/docs/api"
+                                        href={
+                                          Object {
+                                            "pathname": "/docs/api",
+                                          }
+                                        }
                                         onClick={[Function]}
                                       >
                                         <a
                                           className="c27"
-                                          href="/docs/api"
+                                          href={
+                                            Object {
+                                              "pathname": "/docs/api",
+                                            }
+                                          }
                                           onClick={[Function]}
                                         >
                                           API Reference
@@ -1282,18 +1360,44 @@ exports[`DocsLayout renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <Link
-                                    href="/docs/tooling"
+                                    as={
+                                      Object {
+                                        "pathname": "/docs/tooling",
+                                      }
+                                    }
+                                    href={
+                                      Object {
+                                        "pathname": "/docs/tooling",
+                                      }
+                                    }
                                   >
                                     <Link
-                                      href="/docs/tooling"
+                                      as={
+                                        Object {
+                                          "pathname": "/docs/tooling",
+                                        }
+                                      }
+                                      href={
+                                        Object {
+                                          "pathname": "/docs/tooling",
+                                        }
+                                      }
                                     >
                                       <styled.a
-                                        href="/docs/tooling"
+                                        href={
+                                          Object {
+                                            "pathname": "/docs/tooling",
+                                          }
+                                        }
                                         onClick={[Function]}
                                       >
                                         <a
                                           className="c27"
-                                          href="/docs/tooling"
+                                          href={
+                                            Object {
+                                              "pathname": "/docs/tooling",
+                                            }
+                                          }
                                           onClick={[Function]}
                                         >
                                           Tooling
@@ -1324,18 +1428,44 @@ exports[`DocsLayout renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <Link
-                                    href="/docs/faqs"
+                                    as={
+                                      Object {
+                                        "pathname": "/docs/faqs",
+                                      }
+                                    }
+                                    href={
+                                      Object {
+                                        "pathname": "/docs/faqs",
+                                      }
+                                    }
                                   >
                                     <Link
-                                      href="/docs/faqs"
+                                      as={
+                                        Object {
+                                          "pathname": "/docs/faqs",
+                                        }
+                                      }
+                                      href={
+                                        Object {
+                                          "pathname": "/docs/faqs",
+                                        }
+                                      }
                                     >
                                       <styled.a
-                                        href="/docs/faqs"
+                                        href={
+                                          Object {
+                                            "pathname": "/docs/faqs",
+                                          }
+                                        }
                                         onClick={[Function]}
                                       >
                                         <a
                                           className="c27"
-                                          href="/docs/faqs"
+                                          href={
+                                            Object {
+                                              "pathname": "/docs/faqs",
+                                            }
+                                          }
                                           onClick={[Function]}
                                         >
                                           FAQs

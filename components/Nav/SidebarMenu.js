@@ -14,6 +14,10 @@ import {
   NAV_TRANSLATION,
 } from '../../constants/i18n'
 
+import {
+  addLanguageToPath,
+} from '../../utils/translations'
+
 const MenuInner = styled.div`
   display: block;
   box-sizing: border-box;
@@ -70,7 +74,7 @@ const SidebarMenu = ({ onRouteChange }) => (
   <I18n
     ns={NAV_TRANSLATION}
   >
-    {translate => (
+    {(translate, { i18n }) => (
       <MenuInner>
         {
           pages.map(({ title, pathname, sections }) => (
@@ -78,7 +82,7 @@ const SidebarMenu = ({ onRouteChange }) => (
                 key={title}
                 isOpenDefault={
                   typeof window !== 'undefined' &&
-                    (window.location.pathname === `/docs/${pathname}`)
+                    (window.location.pathname === addLanguageToPath(i18n, `/docs/${pathname}`))
                 }
               >
                 {({
@@ -88,7 +92,14 @@ const SidebarMenu = ({ onRouteChange }) => (
                 }) => (
                   <Section {...rootProps} onClick={onRouteChange}>
                     <SectionTitle onClick={toggleSubSections}>
-                      <Link href={`/docs/${pathname}`}>
+                      <Link
+                        href={{
+                          pathname: `/docs/${pathname}`
+                        }}
+                        as={{
+                          pathname: addLanguageToPath(i18n, `/docs/${pathname}`)
+                        }}
+                      >
                         {translate(title)}
                       </Link>
                     </SectionTitle>
@@ -96,7 +107,11 @@ const SidebarMenu = ({ onRouteChange }) => (
                     {
                       isOpen && sections.map(({ title }) => (
                         <SubSection key={title}>
-                          <StyledLink href={`/docs/${pathname}#${titleToDash(translate(title))}`}>
+                          <StyledLink
+                            href={addLanguageToPath(
+                              i18n, `/docs/${pathname}#${titleToDash(translate(title))}`
+                            )}
+                          >
                             {translate(title)}
                           </StyledLink>
                         </SubSection>
