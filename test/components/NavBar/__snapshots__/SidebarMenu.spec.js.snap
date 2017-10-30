@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarMenu renders correctly 1`] = `
+.c3 {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.1111111111111111rem 0.4444444444444444rem;
+  margin: -0.1111111111111111rem -0.4444444444444444rem;
+}
+
+.c0 {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 1.3888888888888888rem;
+}
+
+.c1 {
+  margin-bottom: 1.1111111111111112rem;
+}
+
+.c2 {
+  display: block;
+  margin: 0.5555555555555556rem 2.2222222222222223rem;
+  font-weight: normal;
+}
+
+@media (min-width:62.5em) {
+  .c3 {
+    border-radius: 0.16666666666666666rem;
+  }
+
+  .c3:hover {
+    background: rgba(20,20,20,0.1);
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    onClick={undefined}
+  >
+    <h4
+      className="c2"
+      onClick={[Function]}
+    >
+      <a
+        className="c3"
+        href="/docs/basics"
+        onClick={[Function]}
+      >
+        Basics
+      </a>
+    </h4>
+  </div>
+  <div
+    className="c1"
+    onClick={undefined}
+  >
+    <h4
+      className="c2"
+      onClick={[Function]}
+    >
+      <a
+        className="c3"
+        href="/docs/advanced"
+        onClick={[Function]}
+      >
+        Advanced
+      </a>
+    </h4>
+  </div>
+  <div
+    className="c1"
+    onClick={undefined}
+  >
+    <h4
+      className="c2"
+      onClick={[Function]}
+    >
+      <a
+        className="c3"
+        href="/docs/api"
+        onClick={[Function]}
+      >
+        API Reference
+      </a>
+    </h4>
+  </div>
+  <div
+    className="c1"
+    onClick={undefined}
+  >
+    <h4
+      className="c2"
+      onClick={[Function]}
+    >
+      <a
+        className="c3"
+        href="/docs/tooling"
+        onClick={[Function]}
+      >
+        Tooling
+      </a>
+    </h4>
+  </div>
+  <div
+    className="c1"
+    onClick={undefined}
+  >
+    <h4
+      className="c2"
+      onClick={[Function]}
+    >
+      <a
+        className="c3"
+        href="/docs/faqs"
+        onClick={[Function]}
+      >
+        FAQs
+      </a>
+    </h4>
+  </div>
+</div>
+`;

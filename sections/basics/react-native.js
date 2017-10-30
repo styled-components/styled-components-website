@@ -7,6 +7,7 @@ const ReactNative = () => md`
   except you import it from \`styled-components/native\` instead.
 
   \`\`\`jsx
+  import React from 'react'
   import styled from 'styled-components/native';
 
   const StyledView = styled.View\`

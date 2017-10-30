@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
 import { LiveProvider, LiveEditor } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
@@ -12,6 +12,8 @@ import { Content } from '../components/Layout'
 import captureScroll from '../components/CaptureScroll'
 import SeoHead from '../components/SeoHead'
 import HomepageGettingStarted from '../sections/homepage-getting-started'
+import WithIsScrolled from '../components/WithIsScrolled'
+import Nav from '../components/Nav'
 
 const Tagline = styled.h1`
   font-weight: 600;
@@ -180,13 +182,43 @@ const Heart = styled(HeartIcon).attrs({
   width: ${rem(17)};
 `
 
-class Index extends Component {
+class Index extends PureComponent {
+  state = {
+    isMobileNavFolded: true,
+  }
+
+  toggleMobileNav = () => {
+    this.setState(prevState => ({
+      isMobileNavFolded: !prevState.isMobileNavFolded,
+    }))
+  }
+
+  onRouteChange = () => {
+    this.setState({
+      isMobileNavFolded: true,
+    })
+  }
+
   render() {
+    const { isMobileNavFolded } = this.state
     return (
       <div>
         <SeoHead title="styled-components">
-            <meta name="robots" content="noodp" />
+          <meta name="robots" content="noodp" />
         </SeoHead>
+
+        <WithIsScrolled>
+          {({ isScrolled }) => (
+            <Nav
+              showSideNav={false}
+              transparent={!isScrolled}
+              isMobileNavFolded={isMobileNavFolded}
+              onMobileNavToggle={this.toggleMobileNav}
+              onRouteChange={this.onRouteChange}
+            />
+          )}
+        </WithIsScrolled>
+
         <Wrapper>
           <HeroContent>
             <LiveProvider
@@ -224,6 +256,7 @@ class Index extends Component {
               <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg" />
               <CompanyLogo bottom="-0.15rem" height="1.5rem" src="/static/ideo-logo.svg" />
               <CompanyLogo src="/static/huffpost-logo.svg" />
+              <CompanyLogo bottom="0.25rem" height="2rem" src="/static/coinbase-logo.svg" />
             </UsersWrapper>
           </HeroContent>
         </Wrapper>

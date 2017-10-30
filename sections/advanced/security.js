@@ -22,6 +22,8 @@ const Security = () => md`
 
   Be very careful! This is obviously a made-up example, but CSS injection can be unobvious and
   have bad repercussions. Some IE versions even execute arbitrary JavaScript within url declarations.
+
+  There is an upcoming standard to sanitize CSS from JavaScript, [\`CSS.escape\`](https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape). It's not very well supported across browsers yet, so we recommend using the [polyfill by Mathias Bynens](https://github.com/mathiasbynens/CSS.escape) in your app.
 `
 
 export default Security
