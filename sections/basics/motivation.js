@@ -7,7 +7,7 @@ import rem from '../../utils/rem'
 import md from 'components/md'
 
 import {
-  DOCS_TRANSLATION,
+  DOCS_BASICS_TRANSLATION,
 } from '../../constants/i18n'
 
 const videoHtml = (`
@@ -43,7 +43,7 @@ const Video = styled.div.attrs({
 `
 
 const Motivation = () => (
-  <I18n ns={DOCS_TRANSLATION}>
+  <I18n ns={DOCS_BASICS_TRANSLATION}>
     {translate => (
       <div>
         {md(translate('motivation'))}

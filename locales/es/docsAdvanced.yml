@@ -1,0 +1,478 @@
+theming: |
+  ## Tematización
+
+  styled-components tiene soporte completo para tematización exportando un componente `<ThemeProvider>`.
+  Éste componente provee un tema a todos los componentes de React debajo de él via el API de contexto.
+  en el árbol de renderizado todos los "styled-components" tendrán acceso al tema provisto, incluso
+  cuando están a varios niveles de profundidad.
+
+  Para ilustrar mejor esto, vamos a crear nuestro componente Botón, pero ésta vez pasaremos algunas
+  variables como un tema.
+
+  ```react
+  // Definimos nuestro botó, pero usando props.theme ésta vez
+  const Button = styled.button`
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border-radius: 3px;
+
+    /* Colorea el borde y texto con theme.main */
+    color: ${props => props.theme.main};
+    border: 2px solid ${props => props.theme.main};
+  `;
+
+  // Estamos pasando el tema por default para botones que no están envueltos por un "ThemeProvider"
+  Button.defaultProps = {
+    theme: {
+      main: 'palevioletred'
+    }
+  }
+
+  // Definimos cómo lucirá props.theme
+  const theme = {
+    main: 'mediumseagreen'
+  };
+
+  render(
+    <div>
+      <Button>Normal</Button>
+
+      <ThemeProvider theme={theme}>
+        <Button>Tematizado</Button>
+      </ThemeProvider>
+    </div>
+  );
+  ```
+
+  ### Funciones de temas
+
+  También puedes pasar una función para "prop" de tema. Ésta funcióm recivirá el tema padre, enviado
+  por otro `<ThemeProvider>` más arriba en el árbol. De ésta manera, los temas pueden hacerse contextuales.
+
+  Este ejemplo renderiza nuestro tema botón tematizado y un segundo que isa un segundo ThemeProvider
+  que invierte el color de fondo. La función `invertTheme` (Invertir tema) recive el tema superior y
+  crea uno nuevo.
+
+  ```react
+  // Definimos nuestro botón, pro con el uso de props.theme ésta vez
+  const Button = styled.button`
+    color: ${props => props.theme.fg};
+    border: 2px solid ${props => props.theme.fg};
+    background: ${props => props.theme.bg};
+
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border-radius: 3px;
+  `;
+
+  // Definimos nuestro `fg` y `bg` en el tema
+  const theme = {
+    fg: 'palevioletred',
+    bg: 'white'
+  };
+
+  // Éste tema invierte `fg` y `bg`
+  const invertTheme = ({ fg, bg }) => ({
+    fg: bg,
+    bg: fg
+  });
+
+  render(
+    <ThemeProvider theme={theme}>
+      <div>
+        <Button>Tema por default</Button>
+
+        <ThemeProvider theme={invertTheme}>
+          <Button>Tema invertido</Button>
+        </ThemeProvider>
+      </div>
+    </ThemeProvider>
+  );
+  ```
+
+  ### Comenzando con el tema sin "styled-components"
+
+  Sí alguna vez necesitas usar el tema actual fuera de "styled-components" (por ejemplo, dentro de
+  componentes muy grandes), puedes usar el componente de alto órden `withTheme`.
+
+  ```jsx
+  import { withTheme } from 'styled-components'
+
+  class MyComponent extends React.Component {
+    render() {
+      console.log('Tema actual: ', this.props.theme);
+      // ...
+    }
+  }
+
+  export default withTheme(MyComponent)
+  ```
+
+  ### la propiedad `theme`
+
+  Un tema puede ser pasado hacía abajo a un componente usando el "prop" `theme`.
+
+  Esto es útil para burlar a un `ThemeProvider` ausente o sobreescribirlo.
+
+  ```react
+  // Definimos nuestro botón
+  const Button = styled.button`
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border-radius: 3px;
+
+    /* Colorea el borde y texto con theme.main */
+    color: ${props => props.theme.main};
+    border: 2px solid ${props => props.theme.main};
+  `;
+
+  // Definimos como el tema principal lucirá
+  const theme = {
+    main: 'mediumseagreen'
+  };
+
+  const adHocTheme = {
+    main: 'royalblue'
+  };
+
+  const overiddenTheme = {
+    main: 'darkorange'
+  };
+
+  render(
+    <div>
+      <Button theme={adHocTheme}>Tema ad hoc</Button>
+      <ThemeProvider theme={theme}>
+        <div>
+          <Button>Tematizado</Button>
+          <Button theme={overiddenTheme}>Sobreescrito</Button>
+        </div>
+      </ThemeProvider>
+    </div>
+  );
+  ```
+refs: |
+  ## Refs
+
+  Pasando un "prop" `ref` a un "styled-component" te dará una instancia de una envoltura `StyledComponent`,
+  pero no el elemento DOM subyacente.
+  Esto es debido a como "refs" funciona.
+  No es posible utilizar métodos de DOM como `focus` en nuestros componentes directamente.
+
+  Para obtener un "ref" con el nodo DOM envuelto, pasa una función "callback" al "prop" `innerRef`.
+
+  > No soportamos refs como cadena (por ejemplo, `innerRef="node"`), ya que están obsoletos en React.
+
+  Este ejemplo utiliza `innerRef` para guardar la referencia al input estilizado y lo enfoca una vez
+  que el usuario pasa el ratón sobre él.
+
+  ```react
+  const Input = styled.input`
+    padding: 0.5em;
+    margin: 0.5em;
+    color: palevioletred;
+    background: papayawhip;
+    border: none;
+    border-radius: 3px;
+  `;
+
+  class Form extends React.Component {
+    render() {
+      return (
+        <Input
+          placeholder="Pasa el ratón por aquí..."
+          innerRef={x => { this.input = x }}
+          onMouseEnter={() => this.input.focus()}
+        />
+      );
+    }
+  }
+
+  render(
+    <Form />
+  );
+  ```
+security: |
+  ## Seguridad
+
+  Ya que "styled-components" te permite usar entradas arbitriarias como interpolaciones, debes de
+  ser cuidadoso de como limpiar esa entrada. Usando entradas de usuario como estilos, puede llevar
+  a que cualquier CSS se evalúe en el navegador del usuario que un agresor puede poner en tu aplicación.
+
+  Este ejemplo muestra como una mala entrada de usuario puede llevar a llamadas a APIs en nombre del
+  usuario.
+
+  ```jsx
+  // ¡Oh no, el usuario ha dado una mala URL!
+  const userInput = '/api/retirar-fondos';
+
+  const ArbitraryComponent = styled.div`
+    background: url(${userInput});
+    /* Más estilos aquí... */
+  `;
+  ```
+
+  ¡Ten mucho cuidado! Ésto es obvuamente un ejemplo inventado, pero la inyección de CSS puede no ser
+  nada obvia y puede tener malas repercuciones. Algunas versiones de IE incluso pueden ejecutar
+  JavaScript arbitriario dentro de la declaración de url.
+
+  Hay un estándar de como limpiar CSS dentro de JavaScript,
+  [`CSS.escape`](https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape).
+  No está muy bien soportado a través de los exploradores aún, así que recomendamos también utilizar el
+  [polyfill por Mathias Bynens](https://github.com/mathiasbynens/CSS.escape) en tu app.
+existingCSS: |
+  ## CSS existente
+
+  Hay ciertos detalles de implementación de los cuales necesitas estar consciente, si eliges usar
+  styled-components junto a CSS existente.
+
+  styled-components genera una hoja de estilos con clases y adjunta esas clases a los nodos de
+  DOM del "styled-component" a través del "prop" `className`.
+  Inyecta la hoja de estilos generada al final del `head` del documento durante ejecución.
+
+  ### Estilizando componentes de React normales
+
+  Sí usas la notación `styled(MiComponente)` y `MiComponente` no renderiza el `className` enviado,
+  entonces ningún estilo se ha aplicado. Para evitar este problema, asegurate que tu componente
+  adjunte el `className` enviado al nodo de DOM:
+
+  ```jsx
+  class MiComponente extends React.Component {
+    render() {
+      // Adjunta el `className` enviado al nodo de DOM
+      return <div className={this.props.className} />;
+    }
+  }
+  ```
+
+  Si tienes algunos estilos preexistentes con una clase, puedes combinar la clase global con la
+  enviada:
+
+  ```jsx
+  class MiComponente extends React.Component {
+    render() {
+      // Adjunta el `className` enviado al nodo de DOM
+      return <div className={`alguna-clase-global ${this.props.className}`} />;
+    }
+  }
+  ```
+
+  ### Problemas con la especificidad
+
+  Si aplicas una clase global junto a una clase de "styled-component", el resultado puede que no
+  sea lo que estás esperando. Si una propiedad está definida en ambas clases con la misma
+  especificidad, la última es la que se aplicará.
+
+  ```jsx
+  // MiComponente.js
+  const MiComponente = styled.div`background-color: green;`;
+
+  // mi-componente.css
+  .bg-rojo {
+    background-color: red;
+  }
+
+  // Por alguna razón este componente aún tendrá el fondo color verde,
+  // ¡Incluso cuando estás tratando de sobreescribirlo con la clase "bg-rojo"!
+  <MiComponente className="bg-rojo" />
+  ```
+
+  En el ejemplo de arriba, la clase del "styled-component" tiene precedencia sobre la clase global,
+  ya que styled-components inyecta sus estilos durante ejecución dentro del DOM al final del head.
+  Por lo tanto, sus estilos ganan sobre otros.
+
+  Ya que es difícil controlar donde tu CSS global es inyectado al DOM con herramientas como Webpack,
+  la manera más sencilla de subir la especificidad de tu clase global repitiendo el nombre de clase:
+
+  ```css
+  /* mi-componente.css */
+  .bg-rojo.bg-rojo {
+    background-color: red;
+  }
+  ```
+mediaTemplates: |
+  ## Media Templates
+
+  Los "Media queries" son una herramienta indispensable cuando se desarrollan aplicaciones web
+  responsivas.
+
+  Este es un ejemplo muy simple. Muestra a un componente básico cambiando su color de fondo, una
+  vez que el ancho de la pantalla es menor al límite de `700px`.
+
+  ```react
+  const Content = styled.div`
+    background: papayawhip;
+    height: 3em;
+    width: 3em;
+
+    @media (max-width: 700px) {
+      background: palevioletred;
+    }
+  `;
+
+  render(
+    <Content />
+  );
+  ```
+
+  Ya que los "media queries" son largos y muchas veces repetidos a través de las aplicaciones, es
+  útil crear un componente para ellos.
+
+  Debido a la naturaleza funcional de JavaScript, puedes facilmente definir tu propio "template literal"
+  para cambiar estilos dentro de "media queries". Reescribamos el último ejemplo para probar justo eso.
+
+  ```react
+  const sizes = {
+    desktop: 992,
+    tablet: 768,
+    phone: 376
+  }
+
+  // Iterar a través de los tamaños y crear un "media template"
+  const media = Object.keys(sizes).reduce((acc, label) => {
+    acc[label] = (...args) => css`
+      @media (max-width: ${sizes[label] / 16}em) {
+        ${css(...args)}
+      }
+    `
+
+    return acc
+  }, {})
+
+  const Content = styled.div`
+    height: 3em;
+    width: 3em;
+    background: papayawhip;
+
+    /* Ahora tenemos nuestros métodos de media y podemos usarlos en vez de utilizarlos directamente */
+    ${media.desktop`background: dodgerblue;`}
+    ${media.tablet`background: mediumseagreen;`}
+    ${media.phone`background: palevioletred;`}
+  `;
+
+  render(
+    <Content />
+  );
+  ```
+taggedTemplateLiterals: |
+  ## Tagged Template Literals
+
+  Las "tagged template literals" son una característica nueva en ES6. Te permiten definir reglas
+  customizadas de interpolación. Que es como somos capaces de crear "styled-components".
+
+  Si no pasas interpolaciones, el primer argumento de tu función, recibe un arreglo con la cadena en él.
+
+  ```jsx
+  // Estos son equivalentes:
+  fn`una cadena aquí`;
+  fn([ 'una cadena aquí' ]);
+  ```
+
+  Una vez que pases las interpolaciones, el arreglo contiene la cadena enviada, separada en las
+  posiciones de las interpolaciones. El resto de los argumentos serán las interpolaciones en órden.
+
+  ```jsx
+  const aVar = 'buen';
+
+  // Éstos son equivalentes:
+  fn`este es un ${aVar} día`;
+  fn([ 'este es un ', ' día' ], aVar);
+  ```
+
+  Esto es un poco engorroso para trabajar, pero significa que podemos recibir variables, funciones, o
+  mixins (ayudante de `css`) en los "styled components" y se puede convertir a CSS puro.
+
+  Si quieres aprender más sobre "tagged template literals", revisa el artículo de Max Stoiber:
+  [The magic behind 💅 styled-components](https://mxstbr.blog/2016/11/styled-components-magic-explained/)
+serverSideRendering: |
+  ## Renderizado del lado del servidor | v2
+
+  styled-components soporta renderizado del lado del servidor de manera concurrente, con rehidratación
+  de hojas de estilo. La idea básica es que cada vez que renderices tu app en el servidor, puedes
+  crear un `ServerStyleSheet` y añadirlo a un "provider" en tu árbol de React, esto acepta estilos
+  via el API de contexto.
+
+  Esto no interfiere con los estilos globales. como por ejemplo `keyframes` o `injectGlobal` además
+  te permite usar styled-components con el SSR de React DOM o incluso Rapscallion.
+
+  El API básico va de la siguiente manera:
+
+  ```jsx
+  import { renderToString } from 'react-dom/server'
+  import { ServerStyleSheet } from 'styled-components'
+
+  const sheet = new ServerStyleSheet()
+  const html = renderToString(sheet.collectStyles(<TuApp />))
+  const styleTags = sheet.getStyleTags() // o sheet.getStyleElement()
+  ```
+
+  El método `collectStyles` envuelve tu elemento en un proveedor. Opcionalmente puedes usar el
+  proveedor `StyleSheetManager` directamente, en vez de éste método. Tan sólo asegurate de no usarlo
+  en el lado del cliente.
+
+  ```jsx
+  import { renderToString } from 'react-dom/server'
+  import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
+
+  const sheet = new ServerStyleSheet()
+  const html = renderToString(
+    <StyleSheetManager sheet={sheet.instance}>
+      <TuApp />
+    </StyleSheetManager>
+  )
+
+  const styleTags = sheet.getStyleTags() // o sheet.getStyleElement()
+  ```
+
+  `sheet.getStyleTags()` retorna una cadena de múltiples etiquetas `<style>`.
+  Necesitas tomar esto en cuenta cuando añadas la cadena de CSS a tu salida de HTML.
+
+  Alternativamente la instancia de `ServerStyleSheet` también tiene un método `getStyleElement()`
+  que retorna un arreglo de elementos de React.
+
+  ### Next.js
+
+  En Next.js, necesitarás estructurar tu archivo `_document.js` de manera diferente, que la que se
+  provee en su ejemplo de su repositorio para la versión 1.
+
+  ```jsx
+  import Document, { Head, Main, NextScript } from 'next/document'
+  import { ServerStyleSheet } from 'styled-components'
+
+  export default class MyDocument extends Document {
+    static getInitialProps ({ renderPage }) {
+      const sheet = new ServerStyleSheet()
+      const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
+      const styleTags = sheet.getStyleElement()
+      return {
+        ...page,
+        styleTags
+      }
+    }
+
+    render() {
+      return (
+        <html>
+          <Head>
+            {/* ... */}
+
+            {this.props.styleTags}
+          </Head>
+          <body>
+            <Main />
+            <NextScript />
+          </body>
+        </html>
+      )
+    }
+  }
+  ```
+
+  Necesitarás usar `babel-plugin-styled-components` para que esto funcione.
+  Más detalles [aquí](https://www.npmjs.com/package/babel-plugin-styled-components)
+
+  Refiérete a [nuestro ejemplo](https://github.com/zeit/next.js/tree/master/examples/with-styled-components)
+  en el repositorio de Next.js de un ejemplo de uso actualizado.
