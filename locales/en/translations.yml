@@ -4,7 +4,7 @@ esosystem: Ecosystem
 # Name collition with routing, unfortunately
 basicsTitle: Basics
 advancedTitle: Advanced
-apiTitle: API
+apiTitle: API Reference
 continueOnNextPage: Continue on the next page
 
 # Used by routing. Don't

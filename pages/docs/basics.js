@@ -1,7 +1,7 @@
 import React from 'react'
+import { I18n } from 'react-i18next'
 import DocsLayout from '../../components/DocsLayout'
 import NextPage from '../../components/NextPage'
-import { I18n } from 'react-i18next'
 
 import Motivation from '../../sections/basics/motivation'
 import GettingStarted from '../../sections/basics/getting-started'
@@ -20,8 +20,14 @@ import {
   DEFAULT_TRANSLATION,
 } from '../../constants/i18n'
 
+import {
+  addLanguageToPath,
+} from '../../utils/translations'
+
 export const Basics = () => (
-  <I18n ns={[DOCS_TRANSLATION, DEFAULT_TRANSLATION]}>
+  <I18n
+    ns={[DOCS_TRANSLATION, DEFAULT_TRANSLATION]}
+  >
     {(translate, { i18n }) => (
       <DocsLayout
         title={translate(`${DEFAULT_TRANSLATION}:basicsTitle`)}
@@ -40,7 +46,12 @@ export const Basics = () => (
         <ReactNative />
 
         <NextPage
-          href="/docs/advanced"
+          href={{
+            pathname: '/docs/advanced'
+          }}
+          as={{
+            pathname: addLanguageToPath(i18n, '/docs/advanced')
+          }}
           title={translate(`${DEFAULT_TRANSLATION}:advancedTitle`)}
           description={translate(`${DEFAULT_TRANSLATION}:continueOnNextPage`)}
         />

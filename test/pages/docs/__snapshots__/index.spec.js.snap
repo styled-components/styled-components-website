@@ -1583,18 +1583,44 @@ exports[`Documentation renders correctly 1`] = `
                           className="c32"
                         >
                           <Link
-                            href="/docs/basics"
+                            as={
+                              Object {
+                                "pathname": "/docs/basics",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs/basics",
+                              }
+                            }
                           >
                             <Link
-                              href="/docs/basics"
+                              as={
+                                Object {
+                                  "pathname": "/docs/basics",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/basics",
+                                }
+                              }
                             >
                               <styled.a
-                                href="/docs/basics"
+                                href={
+                                  Object {
+                                    "pathname": "/docs/basics",
+                                  }
+                                }
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/basics",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   Basics
@@ -1875,18 +1901,44 @@ exports[`Documentation renders correctly 1`] = `
                           className="c32"
                         >
                           <Link
-                            href="/docs/advanced"
+                            as={
+                              Object {
+                                "pathname": "/docs/advanced",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs/advanced",
+                              }
+                            }
                           >
                             <Link
-                              href="/docs/advanced"
+                              as={
+                                Object {
+                                  "pathname": "/docs/advanced",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/advanced",
+                                }
+                              }
                             >
                               <styled.a
-                                href="/docs/advanced"
+                                href={
+                                  Object {
+                                    "pathname": "/docs/advanced",
+                                  }
+                                }
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/advanced"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/advanced",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   Advanced
@@ -2089,18 +2141,44 @@ exports[`Documentation renders correctly 1`] = `
                           className="c32"
                         >
                           <Link
-                            href="/docs/api"
+                            as={
+                              Object {
+                                "pathname": "/docs/api",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs/api",
+                              }
+                            }
                           >
                             <Link
-                              href="/docs/api"
+                              as={
+                                Object {
+                                  "pathname": "/docs/api",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/api",
+                                }
+                              }
                             >
                               <styled.a
-                                href="/docs/api"
+                                href={
+                                  Object {
+                                    "pathname": "/docs/api",
+                                  }
+                                }
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/api"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/api",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   API Reference
@@ -2251,18 +2329,44 @@ exports[`Documentation renders correctly 1`] = `
                           className="c32"
                         >
                           <Link
-                            href="/docs/tooling"
+                            as={
+                              Object {
+                                "pathname": "/docs/tooling",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs/tooling",
+                              }
+                            }
                           >
                             <Link
-                              href="/docs/tooling"
+                              as={
+                                Object {
+                                  "pathname": "/docs/tooling",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/tooling",
+                                }
+                              }
                             >
                               <styled.a
-                                href="/docs/tooling"
+                                href={
+                                  Object {
+                                    "pathname": "/docs/tooling",
+                                  }
+                                }
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/tooling"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/tooling",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   Tooling
@@ -2387,18 +2491,44 @@ exports[`Documentation renders correctly 1`] = `
                           className="c32"
                         >
                           <Link
-                            href="/docs/faqs"
+                            as={
+                              Object {
+                                "pathname": "/docs/faqs",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs/faqs",
+                              }
+                            }
                           >
                             <Link
-                              href="/docs/faqs"
+                              as={
+                                Object {
+                                  "pathname": "/docs/faqs",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/faqs",
+                                }
+                              }
                             >
                               <styled.a
-                                href="/docs/faqs"
+                                href={
+                                  Object {
+                                    "pathname": "/docs/faqs",
+                                  }
+                                }
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/faqs"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/faqs",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   FAQs
@@ -4108,18 +4238,44 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c32"
                         >
                           <Link
-                            href="/docs/basics"
+                            as={
+                              Object {
+                                "pathname": "/es/docs/basics",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs/basics",
+                              }
+                            }
                           >
                             <Link
-                              href="/docs/basics"
+                              as={
+                                Object {
+                                  "pathname": "/es/docs/basics",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/basics",
+                                }
+                              }
                             >
                               <styled.a
-                                href="/docs/basics"
+                                href={
+                                  Object {
+                                    "pathname": "/docs/basics",
+                                  }
+                                }
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/basics",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   Bases
@@ -4134,18 +4290,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#motivacin"
+                            href="/es/docs/basics#motivacin"
                           >
                             <Link
-                              href="/docs/basics#motivacin"
+                              href="/es/docs/basics#motivacin"
                             >
                               <styled.a
-                                href="/docs/basics#motivacin"
+                                href="/es/docs/basics#motivacin"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#motivacin"
+                                  href="/es/docs/basics#motivacin"
                                   onClick={[Function]}
                                 >
                                   Motivación
@@ -4160,18 +4316,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#instalacin"
+                            href="/es/docs/basics#instalacin"
                           >
                             <Link
-                              href="/docs/basics#instalacin"
+                              href="/es/docs/basics#instalacin"
                             >
                               <styled.a
-                                href="/docs/basics#instalacin"
+                                href="/es/docs/basics#instalacin"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#instalacin"
+                                  href="/es/docs/basics#instalacin"
                                   onClick={[Function]}
                                 >
                                   Instalación
@@ -4186,18 +4342,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#comenzando"
+                            href="/es/docs/basics#comenzando"
                           >
                             <Link
-                              href="/docs/basics#comenzando"
+                              href="/es/docs/basics#comenzando"
                             >
                               <styled.a
-                                href="/docs/basics#comenzando"
+                                href="/es/docs/basics#comenzando"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#comenzando"
+                                  href="/es/docs/basics#comenzando"
                                   onClick={[Function]}
                                 >
                                   Comenzando
@@ -4212,18 +4368,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#props-enviadas-"
+                            href="/es/docs/basics#props-enviadas-"
                           >
                             <Link
-                              href="/docs/basics#props-enviadas-"
+                              href="/es/docs/basics#props-enviadas-"
                             >
                               <styled.a
-                                href="/docs/basics#props-enviadas-"
+                                href="/es/docs/basics#props-enviadas-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#props-enviadas-"
+                                  href="/es/docs/basics#props-enviadas-"
                                   onClick={[Function]}
                                 >
                                   "Props" enviadas
@@ -4239,18 +4395,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#adaptacin-basada-en-props-"
+                            href="/es/docs/basics#adaptacin-basada-en-props-"
                           >
                             <Link
-                              href="/docs/basics#adaptacin-basada-en-props-"
+                              href="/es/docs/basics#adaptacin-basada-en-props-"
                             >
                               <styled.a
-                                href="/docs/basics#adaptacin-basada-en-props-"
+                                href="/es/docs/basics#adaptacin-basada-en-props-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#adaptacin-basada-en-props-"
+                                  href="/es/docs/basics#adaptacin-basada-en-props-"
                                   onClick={[Function]}
                                 >
                                   Adaptación basada en "props"
@@ -4266,18 +4422,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#estilizando-cualquier-componente"
+                            href="/es/docs/basics#estilizando-cualquier-componente"
                           >
                             <Link
-                              href="/docs/basics#estilizando-cualquier-componente"
+                              href="/es/docs/basics#estilizando-cualquier-componente"
                             >
                               <styled.a
-                                href="/docs/basics#estilizando-cualquier-componente"
+                                href="/es/docs/basics#estilizando-cualquier-componente"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#estilizando-cualquier-componente"
+                                  href="/es/docs/basics#estilizando-cualquier-componente"
                                   onClick={[Function]}
                                 >
                                   Estilizando cualquier componente
@@ -4292,18 +4448,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#extendiendo-estilos"
+                            href="/es/docs/basics#extendiendo-estilos"
                           >
                             <Link
-                              href="/docs/basics#extendiendo-estilos"
+                              href="/es/docs/basics#extendiendo-estilos"
                             >
                               <styled.a
-                                href="/docs/basics#extendiendo-estilos"
+                                href="/es/docs/basics#extendiendo-estilos"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#extendiendo-estilos"
+                                  href="/es/docs/basics#extendiendo-estilos"
                                   onClick={[Function]}
                                 >
                                   Extendiendo estilos
@@ -4318,18 +4474,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#adjuntando-props-adicionales-"
+                            href="/es/docs/basics#adjuntando-props-adicionales-"
                           >
                             <Link
-                              href="/docs/basics#adjuntando-props-adicionales-"
+                              href="/es/docs/basics#adjuntando-props-adicionales-"
                             >
                               <styled.a
-                                href="/docs/basics#adjuntando-props-adicionales-"
+                                href="/es/docs/basics#adjuntando-props-adicionales-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#adjuntando-props-adicionales-"
+                                  href="/es/docs/basics#adjuntando-props-adicionales-"
                                   onClick={[Function]}
                                 >
                                   Adjuntando "props" adicionales
@@ -4345,18 +4501,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#animaciones"
+                            href="/es/docs/basics#animaciones"
                           >
                             <Link
-                              href="/docs/basics#animaciones"
+                              href="/es/docs/basics#animaciones"
                             >
                               <styled.a
-                                href="/docs/basics#animaciones"
+                                href="/es/docs/basics#animaciones"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#animaciones"
+                                  href="/es/docs/basics#animaciones"
                                   onClick={[Function]}
                                 >
                                   Animaciones
@@ -4371,18 +4527,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/basics#react-native"
+                            href="/es/docs/basics#react-native"
                           >
                             <Link
-                              href="/docs/basics#react-native"
+                              href="/es/docs/basics#react-native"
                             >
                               <styled.a
-                                href="/docs/basics#react-native"
+                                href="/es/docs/basics#react-native"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/basics#react-native"
+                                  href="/es/docs/basics#react-native"
                                   onClick={[Function]}
                                 >
                                   React Native
@@ -4403,18 +4559,44 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c32"
                         >
                           <Link
-                            href="/docs/advanced"
+                            as={
+                              Object {
+                                "pathname": "/es/docs/advanced",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs/advanced",
+                              }
+                            }
                           >
                             <Link
-                              href="/docs/advanced"
+                              as={
+                                Object {
+                                  "pathname": "/es/docs/advanced",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/advanced",
+                                }
+                              }
                             >
                               <styled.a
-                                href="/docs/advanced"
+                                href={
+                                  Object {
+                                    "pathname": "/docs/advanced",
+                                  }
+                                }
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/advanced"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/advanced",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   Avanzado
@@ -4429,18 +4611,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/advanced#tematizacin"
+                            href="/es/docs/advanced#tematizacin"
                           >
                             <Link
-                              href="/docs/advanced#tematizacin"
+                              href="/es/docs/advanced#tematizacin"
                             >
                               <styled.a
-                                href="/docs/advanced#tematizacin"
+                                href="/es/docs/advanced#tematizacin"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/advanced#tematizacin"
+                                  href="/es/docs/advanced#tematizacin"
                                   onClick={[Function]}
                                 >
                                   Tematización
@@ -4455,18 +4637,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/advanced#refs"
+                            href="/es/docs/advanced#refs"
                           >
                             <Link
-                              href="/docs/advanced#refs"
+                              href="/es/docs/advanced#refs"
                             >
                               <styled.a
-                                href="/docs/advanced#refs"
+                                href="/es/docs/advanced#refs"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/advanced#refs"
+                                  href="/es/docs/advanced#refs"
                                   onClick={[Function]}
                                 >
                                   Refs
@@ -4481,18 +4663,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/advanced#seguridad"
+                            href="/es/docs/advanced#seguridad"
                           >
                             <Link
-                              href="/docs/advanced#seguridad"
+                              href="/es/docs/advanced#seguridad"
                             >
                               <styled.a
-                                href="/docs/advanced#seguridad"
+                                href="/es/docs/advanced#seguridad"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/advanced#seguridad"
+                                  href="/es/docs/advanced#seguridad"
                                   onClick={[Function]}
                                 >
                                   Seguridad
@@ -4507,18 +4689,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/advanced#extendiendo-css"
+                            href="/es/docs/advanced#extendiendo-css"
                           >
                             <Link
-                              href="/docs/advanced#extendiendo-css"
+                              href="/es/docs/advanced#extendiendo-css"
                             >
                               <styled.a
-                                href="/docs/advanced#extendiendo-css"
+                                href="/es/docs/advanced#extendiendo-css"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/advanced#extendiendo-css"
+                                  href="/es/docs/advanced#extendiendo-css"
                                   onClick={[Function]}
                                 >
                                   Extendiendo CSS
@@ -4533,18 +4715,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/advanced#media-templates"
+                            href="/es/docs/advanced#media-templates"
                           >
                             <Link
-                              href="/docs/advanced#media-templates"
+                              href="/es/docs/advanced#media-templates"
                             >
                               <styled.a
-                                href="/docs/advanced#media-templates"
+                                href="/es/docs/advanced#media-templates"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/advanced#media-templates"
+                                  href="/es/docs/advanced#media-templates"
                                   onClick={[Function]}
                                 >
                                   Media Templates
@@ -4559,18 +4741,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/advanced#tagged-template-literals"
+                            href="/es/docs/advanced#tagged-template-literals"
                           >
                             <Link
-                              href="/docs/advanced#tagged-template-literals"
+                              href="/es/docs/advanced#tagged-template-literals"
                             >
                               <styled.a
-                                href="/docs/advanced#tagged-template-literals"
+                                href="/es/docs/advanced#tagged-template-literals"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/advanced#tagged-template-literals"
+                                  href="/es/docs/advanced#tagged-template-literals"
                                   onClick={[Function]}
                                 >
                                   Tagged Template Literals
@@ -4585,18 +4767,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/advanced#renderizacin-del-lado-del-servidor"
+                            href="/es/docs/advanced#renderizacin-del-lado-del-servidor"
                           >
                             <Link
-                              href="/docs/advanced#renderizacin-del-lado-del-servidor"
+                              href="/es/docs/advanced#renderizacin-del-lado-del-servidor"
                             >
                               <styled.a
-                                href="/docs/advanced#renderizacin-del-lado-del-servidor"
+                                href="/es/docs/advanced#renderizacin-del-lado-del-servidor"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/advanced#renderizacin-del-lado-del-servidor"
+                                  href="/es/docs/advanced#renderizacin-del-lado-del-servidor"
                                   onClick={[Function]}
                                 >
                                   Renderización del lado del servidor
@@ -4617,18 +4799,44 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c32"
                         >
                           <Link
-                            href="/docs/api"
+                            as={
+                              Object {
+                                "pathname": "/es/docs/api",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs/api",
+                              }
+                            }
                           >
                             <Link
-                              href="/docs/api"
+                              as={
+                                Object {
+                                  "pathname": "/es/docs/api",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/api",
+                                }
+                              }
                             >
                               <styled.a
-                                href="/docs/api"
+                                href={
+                                  Object {
+                                    "pathname": "/docs/api",
+                                  }
+                                }
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/api"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/api",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   Referencia del API
@@ -4643,18 +4851,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/api#primario"
+                            href="/es/docs/api#primario"
                           >
                             <Link
-                              href="/docs/api#primario"
+                              href="/es/docs/api#primario"
                             >
                               <styled.a
-                                href="/docs/api#primario"
+                                href="/es/docs/api#primario"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/api#primario"
+                                  href="/es/docs/api#primario"
                                   onClick={[Function]}
                                 >
                                   Primario
@@ -4669,18 +4877,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/api#ayudantes"
+                            href="/es/docs/api#ayudantes"
                           >
                             <Link
-                              href="/docs/api#ayudantes"
+                              href="/es/docs/api#ayudantes"
                             >
                               <styled.a
-                                href="/docs/api#ayudantes"
+                                href="/es/docs/api#ayudantes"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/api#ayudantes"
+                                  href="/es/docs/api#ayudantes"
                                   onClick={[Function]}
                                 >
                                   Ayudantes
@@ -4695,18 +4903,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/api#css-soportado"
+                            href="/es/docs/api#css-soportado"
                           >
                             <Link
-                              href="/docs/api#css-soportado"
+                              href="/es/docs/api#css-soportado"
                             >
                               <styled.a
-                                href="/docs/api#css-soportado"
+                                href="/es/docs/api#css-soportado"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/api#css-soportado"
+                                  href="/es/docs/api#css-soportado"
                                   onClick={[Function]}
                                 >
                                   CSS soportado
@@ -4721,18 +4929,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/api#flow"
+                            href="/es/docs/api#flow"
                           >
                             <Link
-                              href="/docs/api#flow"
+                              href="/es/docs/api#flow"
                             >
                               <styled.a
-                                href="/docs/api#flow"
+                                href="/es/docs/api#flow"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/api#flow"
+                                  href="/es/docs/api#flow"
                                   onClick={[Function]}
                                 >
                                   Flow
@@ -4747,18 +4955,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/api#typescript"
+                            href="/es/docs/api#typescript"
                           >
                             <Link
-                              href="/docs/api#typescript"
+                              href="/es/docs/api#typescript"
                             >
                               <styled.a
-                                href="/docs/api#typescript"
+                                href="/es/docs/api#typescript"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/api#typescript"
+                                  href="/es/docs/api#typescript"
                                   onClick={[Function]}
                                 >
                                   TypeScript
@@ -4779,18 +4987,44 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c32"
                         >
                           <Link
-                            href="/docs/tooling"
+                            as={
+                              Object {
+                                "pathname": "/es/docs/tooling",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs/tooling",
+                              }
+                            }
                           >
                             <Link
-                              href="/docs/tooling"
+                              as={
+                                Object {
+                                  "pathname": "/es/docs/tooling",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/tooling",
+                                }
+                              }
                             >
                               <styled.a
-                                href="/docs/tooling"
+                                href={
+                                  Object {
+                                    "pathname": "/docs/tooling",
+                                  }
+                                }
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/tooling"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/tooling",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   Tooling
@@ -4805,18 +5039,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/tooling#babel-plugin"
+                            href="/es/docs/tooling#babel-plugin"
                           >
                             <Link
-                              href="/docs/tooling#babel-plugin"
+                              href="/es/docs/tooling#babel-plugin"
                             >
                               <styled.a
-                                href="/docs/tooling#babel-plugin"
+                                href="/es/docs/tooling#babel-plugin"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/tooling#babel-plugin"
+                                  href="/es/docs/tooling#babel-plugin"
                                   onClick={[Function]}
                                 >
                                   Babel Plugin
@@ -4831,18 +5065,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/tooling#utilidades-de-prueba"
+                            href="/es/docs/tooling#utilidades-de-prueba"
                           >
                             <Link
-                              href="/docs/tooling#utilidades-de-prueba"
+                              href="/es/docs/tooling#utilidades-de-prueba"
                             >
                               <styled.a
-                                href="/docs/tooling#utilidades-de-prueba"
+                                href="/es/docs/tooling#utilidades-de-prueba"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/tooling#utilidades-de-prueba"
+                                  href="/es/docs/tooling#utilidades-de-prueba"
                                   onClick={[Function]}
                                 >
                                   Utilidades de prueba
@@ -4857,18 +5091,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/tooling#stylelint"
+                            href="/es/docs/tooling#stylelint"
                           >
                             <Link
-                              href="/docs/tooling#stylelint"
+                              href="/es/docs/tooling#stylelint"
                             >
                               <styled.a
-                                href="/docs/tooling#stylelint"
+                                href="/es/docs/tooling#stylelint"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/tooling#stylelint"
+                                  href="/es/docs/tooling#stylelint"
                                   onClick={[Function]}
                                 >
                                   Stylelint
@@ -4883,18 +5117,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/tooling#styled-theming"
+                            href="/es/docs/tooling#styled-theming"
                           >
                             <Link
-                              href="/docs/tooling#styled-theming"
+                              href="/es/docs/tooling#styled-theming"
                             >
                               <styled.a
-                                href="/docs/tooling#styled-theming"
+                                href="/es/docs/tooling#styled-theming"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/tooling#styled-theming"
+                                  href="/es/docs/tooling#styled-theming"
                                   onClick={[Function]}
                                 >
                                   Styled Theming
@@ -4915,18 +5149,44 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c32"
                         >
                           <Link
-                            href="/docs/faqs"
+                            as={
+                              Object {
+                                "pathname": "/es/docs/faqs",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs/faqs",
+                              }
+                            }
                           >
                             <Link
-                              href="/docs/faqs"
+                              as={
+                                Object {
+                                  "pathname": "/es/docs/faqs",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/faqs",
+                                }
+                              }
                             >
                               <styled.a
-                                href="/docs/faqs"
+                                href={
+                                  Object {
+                                    "pathname": "/docs/faqs",
+                                  }
+                                }
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/faqs"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/faqs",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   Preguntas frecuentes
@@ -4941,18 +5201,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/faqs#puedo-anidar-reglas-"
+                            href="/es/docs/faqs#puedo-anidar-reglas-"
                           >
                             <Link
-                              href="/docs/faqs#puedo-anidar-reglas-"
+                              href="/es/docs/faqs#puedo-anidar-reglas-"
                             >
                               <styled.a
-                                href="/docs/faqs#puedo-anidar-reglas-"
+                                href="/es/docs/faqs#puedo-anidar-reglas-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/faqs#puedo-anidar-reglas-"
+                                  href="/es/docs/faqs#puedo-anidar-reglas-"
                                   onClick={[Function]}
                                 >
                                   ¿Puedo anidar reglas?
@@ -4968,18 +5228,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/faqs#puedo-referirme-a-otros-componentes-"
+                            href="/es/docs/faqs#puedo-referirme-a-otros-componentes-"
                           >
                             <Link
-                              href="/docs/faqs#puedo-referirme-a-otros-componentes-"
+                              href="/es/docs/faqs#puedo-referirme-a-otros-componentes-"
                             >
                               <styled.a
-                                href="/docs/faqs#puedo-referirme-a-otros-componentes-"
+                                href="/es/docs/faqs#puedo-referirme-a-otros-componentes-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/faqs#puedo-referirme-a-otros-componentes-"
+                                  href="/es/docs/faqs#puedo-referirme-a-otros-componentes-"
                                   onClick={[Function]}
                                 >
                                   ¿Puedo referirme a otros componentes?
@@ -4995,18 +5255,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/faqs#cundo-debo-de-usar-styled-"
+                            href="/es/docs/faqs#cundo-debo-de-usar-styled-"
                           >
                             <Link
-                              href="/docs/faqs#cundo-debo-de-usar-styled-"
+                              href="/es/docs/faqs#cundo-debo-de-usar-styled-"
                             >
                               <styled.a
-                                href="/docs/faqs#cundo-debo-de-usar-styled-"
+                                href="/es/docs/faqs#cundo-debo-de-usar-styled-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/faqs#cundo-debo-de-usar-styled-"
+                                  href="/es/docs/faqs#cundo-debo-de-usar-styled-"
                                   onClick={[Function]}
                                 >
                                   ¿Cuándo debo de usar styled()?
@@ -5022,18 +5282,18 @@ exports[`Documentation renders in spanish 1`] = `
                           className="c33"
                         >
                           <Link
-                            href="/docs/faqs#puedo-usar-un-framework-de-css-"
+                            href="/es/docs/faqs#puedo-usar-un-framework-de-css-"
                           >
                             <Link
-                              href="/docs/faqs#puedo-usar-un-framework-de-css-"
+                              href="/es/docs/faqs#puedo-usar-un-framework-de-css-"
                             >
                               <styled.a
-                                href="/docs/faqs#puedo-usar-un-framework-de-css-"
+                                href="/es/docs/faqs#puedo-usar-un-framework-de-css-"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href="/docs/faqs#puedo-usar-un-framework-de-css-"
+                                  href="/es/docs/faqs#puedo-usar-un-framework-de-css-"
                                   onClick={[Function]}
                                 >
                                   ¿Puedo usar un framework de css?

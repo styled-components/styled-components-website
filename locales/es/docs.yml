@@ -366,3 +366,6 @@ reactNative: |
   > En la v2 soportamos porcentajes. Para hacerlo posible necesitamos forzar las unidades en todas
   > las abreviaciones. Si estás migrando a la v2,
   > [Hay un ejemplo en codemod](https://github.com/styled-components/styled-components-native-code-mod).
+advancedDescription: |
+  Uso avanzado de styled-components - Tematización, refs, seguridad, CSS existente, Media Templates,
+  Tagged Template Literals, SSR

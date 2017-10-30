@@ -45,8 +45,8 @@ const Icon = styled(ChevronRightIcon).attrs({
   width: ${rem(30)};
 `
 
-const NextPage = ({ title, description, href }) => (
-  <Wrapper unstyled prefetch href={href}>
+const NextPage = ({ title, description, ...props }) => (
+  <Wrapper unstyled prefetch {...props}>
     <div>
       <Text>{description}</Text>
       <PageName>{title}</PageName>

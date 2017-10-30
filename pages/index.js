@@ -22,6 +22,10 @@ import {
   HOME_TRANSLATION,
 } from '../constants/i18n'
 
+import {
+  addLanguageToPath,
+} from '../utils/translations'
+
 const Tagline = styled.h1`
   font-weight: 600;
   font-size: 1.3rem;
@@ -54,7 +58,7 @@ const Button = styled.a\`
 
 import { LiveContextTypes } from 'react-live/lib/components/Live/LiveProvider'
 
-const HomepageLivePreview = ({ className, translate, ...rest }, { live: { element: Button } }) => {
+const HomepageLivePreview = ({ className, pathToDocs, translate, ...rest }, { live: { element: Button } }) => {
   const InternalButton = Button.withComponent(Link)
   return (
     <div
@@ -70,7 +74,15 @@ const HomepageLivePreview = ({ className, translate, ...rest }, { live: { elemen
         GitHub
       </Button>
 
-      <InternalButton href="/docs" prefetch>
+      <InternalButton
+        href={{
+          pathname: '/docs'
+        }}
+        as={{
+          pathname: pathToDocs
+        }}
+        prefetch
+      >
         {translate(`${DEFAULT_TRANSLATION}:documentation`)}
       </InternalButton>
     </div>
@@ -213,7 +225,7 @@ export class Index extends PureComponent {
         wait={process.browser}
       >
         {
-          (translate) => {
+          (translate, { i18n }) => {
             if (!translate) {
               return null
             }
@@ -253,7 +265,11 @@ export class Index extends PureComponent {
                       </Title>
 
                       <Links>
-                        <HomepageLivePreview translate={translate} />
+                        <HomepageLivePreview
+                          // Calculate path here or tests hang
+                          pathToDocs={addLanguageToPath(i18n, '/docs')}
+                          translate={translate}
+                        />
                       </Links>
 
                       <EditorContainer>

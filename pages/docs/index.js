@@ -19,6 +19,10 @@ import {
   DOCS_TRANSLATION,
 } from '../../constants/i18n'
 
+import {
+  addLanguageToPath,
+} from '../../utils/translations'
+
 const Row = styled.div`
   display: flex;
   flex-flow: row wrap;
@@ -56,7 +60,7 @@ export const Documentation = () => (
     ns={[DOCS_TRANSLATION, NAV_TRANSLATION, DEFAULT_TRANSLATION]}
     wait={process.browser}
   >
-    {(translate) => {
+    {(translate, { i18n }) => {
       if (!translate) {
         return null
       }
@@ -75,7 +79,14 @@ export const Documentation = () => (
               pages.map(({ title, pathname, sections }) => (
                 <Column key={title}>
                   <Header>
-                    <Link href={`/docs/${pathname}`}>
+                    <Link
+                      href={{
+                        pathname: `/docs/${pathname}`
+                      }}
+                      as={{
+                        pathname: addLanguageToPath(i18n, `/docs/${pathname}`)
+                      }}
+                    >
                       {translate(`${NAV_TRANSLATION}:${title}`)}
                     </Link>
                   </Header>
@@ -83,7 +94,12 @@ export const Documentation = () => (
                   {
                     sections.map(({ title }) => (
                       <SubHeader key={title}>
-                        <Link href={`/docs/${pathname}#${titleToDash(translate(`${NAV_TRANSLATION}:${title}`))}`}>
+                        <Link
+                          href={addLanguageToPath(
+                            i18n,
+                            `/docs/${pathname}#${titleToDash(translate(`${NAV_TRANSLATION}:${title}`))}`,
+                          )}
+                        >
                           {translate(`${NAV_TRANSLATION}:${title}`)}
                         </Link>
                       </SubHeader>

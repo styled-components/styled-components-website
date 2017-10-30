@@ -1635,6 +1635,7 @@ exports[`Index renders correctly 1`] = `
                       className="c28"
                     >
                       <HomepageLivePreview
+                        pathToDocs="/docs"
                         translate={[Function]}
                       >
                         <div
@@ -1656,26 +1657,61 @@ exports[`Index renders correctly 1`] = `
                             </a>
                           </styled.a>
                           <Styled(Link)
-                            href="/docs"
+                            as={
+                              Object {
+                                "pathname": "/docs",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs",
+                              }
+                            }
                             prefetch={true}
                           >
                             <Link
+                              as={
+                                Object {
+                                  "pathname": "/docs",
+                                }
+                              }
                               className="c30"
-                              href="/docs"
+                              href={
+                                Object {
+                                  "pathname": "/docs",
+                                }
+                              }
                               prefetch={true}
                             >
                               <Link
-                                href="/docs"
+                                as={
+                                  Object {
+                                    "pathname": "/docs",
+                                  }
+                                }
+                                href={
+                                  Object {
+                                    "pathname": "/docs",
+                                  }
+                                }
                                 prefetch={true}
                               >
                                 <styled.a
                                   className="c30"
-                                  href="/docs"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   <a
                                     className="c30 c31"
-                                    href="/docs"
+                                    href={
+                                      Object {
+                                        "pathname": "/docs",
+                                      }
+                                    }
                                     onClick={[Function]}
                                   >
                                     Documentation
@@ -4731,6 +4767,7 @@ exports[`Index renders in spanish 1`] = `
                       className="c28"
                     >
                       <HomepageLivePreview
+                        pathToDocs="/es/docs"
                         translate={[Function]}
                       >
                         <div
@@ -4752,26 +4789,61 @@ exports[`Index renders in spanish 1`] = `
                             </a>
                           </styled.a>
                           <Styled(Link)
-                            href="/docs"
+                            as={
+                              Object {
+                                "pathname": "/es/docs",
+                              }
+                            }
+                            href={
+                              Object {
+                                "pathname": "/docs",
+                              }
+                            }
                             prefetch={true}
                           >
                             <Link
+                              as={
+                                Object {
+                                  "pathname": "/es/docs",
+                                }
+                              }
                               className="c30"
-                              href="/docs"
+                              href={
+                                Object {
+                                  "pathname": "/docs",
+                                }
+                              }
                               prefetch={true}
                             >
                               <Link
-                                href="/docs"
+                                as={
+                                  Object {
+                                    "pathname": "/es/docs",
+                                  }
+                                }
+                                href={
+                                  Object {
+                                    "pathname": "/docs",
+                                  }
+                                }
                                 prefetch={true}
                               >
                                 <styled.a
                                   className="c30"
-                                  href="/docs"
+                                  href={
+                                    Object {
+                                      "pathname": "/docs",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
                                   <a
                                     className="c30 c31"
-                                    href="/docs"
+                                    href={
+                                      Object {
+                                        "pathname": "/docs",
+                                      }
+                                    }
                                     onClick={[Function]}
                                   >
                                     Documentación
