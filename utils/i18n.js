@@ -21,7 +21,11 @@ const options = {
   // debug: process.env.NODE_ENV !== 'production', // debug when not in production
   saveMissing: true,
 
-  // loadPath: '/locales/{{lng}}/{{ns}}.yml',
+  loadPath: '/locales/{{lng}}/{{ns}}.yml',
+
+  detection: {
+    order: ['htmlTag', 'navigator'],
+  },
 
   interpolation: {
     escapeValue: false, // not needed for react!!

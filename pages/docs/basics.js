@@ -22,10 +22,11 @@ import {
 
 export const Basics = () => (
   <I18n ns={[DOCS_TRANSLATION, DEFAULT_TRANSLATION]}>
-    {translate => (
+    {(translate, { i18n }) => (
       <DocsLayout
         title={translate(`${DEFAULT_TRANSLATION}:basicsTitle`)}
         description={translate('basicsDescription')}
+        i18n={i18n}
       >
         <Motivation />
         <Installation />

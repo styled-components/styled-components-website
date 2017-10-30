@@ -1,114 +1,114 @@
 {
   "pages": [
     {
-      "title": "Basics",
+      "title": "basics",
       "pathname": "basics",
       "sections": [
         {
-          "title": "Motivation"
+          "title": "motivation"
         },
         {
-          "title": "Installation"
+          "title": "installation"
         },
         {
-          "title": "Getting Started"
+          "title": "gettingStarted"
         },
         {
-          "title": "Passed props"
+          "title": "passedProps"
         },
         {
-          "title": "Adapting based on props"
+          "title": "adaptingBasedOnProps"
         },
         {
-          "title": "Styling any components"
+          "title": "stylingAnyComponents"
         },
         {
-          "title": "Extending styles"
+          "title": "extendingStyles"
         },
         {
-          "title": "Attaching additional props"
+          "title": "attachingAdditionalProps"
         },
         {
-          "title": "Animations"
+          "title": "animations"
         },
         {
-          "title": "React Native"
+          "title": "reactNative"
         }
       ]
     },
     {
-      "title": "Advanced",
+      "title": "advanced",
       "pathname": "advanced",
       "sections": [
         {
-          "title": "Theming"
+          "title": "theming"
         },
         {
-          "title": "Refs"
+          "title": "refs"
         },
         {
-          "title": "Security"
+          "title": "security"
         },
         {
-          "title": "Existing CSS"
+          "title": "existingCSS"
         },
         {
-          "title": "Media Templates"
+          "title": "mediaTemplates"
         },
         {
-          "title": "Tagged Template Literals"
+          "title": "taggedTemplateLiterals"
         },
         {
-          "title": "Server Side Rendering"
+          "title": "serverSideRendering"
         }
       ]
     },
     {
-      "title": "API Reference",
+      "title": "api",
       "pathname": "api",
       "sections": [
         {
-          "title": "Primary"
+          "title": "primary"
         },
         {
-          "title": "Helpers"
+          "title": "helpers"
         },
         {
-          "title": "Supported CSS"
+          "title": "supportedCSS"
         },
         {
-          "title": "Flow"
+          "title": "flow"
         },
         {
-          "title": "TypeScript"
+          "title": "typeScript"
         }
       ]
     },
     {
-      "title": "Tooling",
+      "title": "tooling",
       "pathname": "tooling",
       "sections": [
         {
-          "title": "Babel Plugin"
+          "title": "babelPlugin"
         },
         {
-          "title": "Test Utilities"
+          "title": "testUtilities"
         },
         {
-          "title": "Stylelint"
+          "title": "stylelint"
         },
         {
-          "title": "Styled Theming"
+          "title": "styledTheming"
         }
       ]
     },
     {
-      "title": "FAQs",
+      "title": "faqs",
       "pathname": "faqs",
       "sections": [
-        { "title": "Can I nest rules?" },
-        { "title": "Can I refer to other components?" },
-        { "title": "Can I use css frameworks?" }
+        { "title": "canINestRules" },
+        { "title": "canIReferToOtherComponents" },
+        { "title": "canIUseCssFrameworks" }
       ]
     }
   ]

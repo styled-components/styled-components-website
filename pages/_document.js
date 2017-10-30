@@ -1,5 +1,11 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import { I18n } from 'react-i18next'
+
+import i18n from '../utils/i18n'
+import {
+  TRANSLATIONS,
+} from '../constants/i18n'
 
 import { bodyFont } from '../utils/fonts'
 
@@ -149,52 +155,65 @@ const resetStyles = `
 
 
 export default class MyDocument extends Document {
-  static getInitialProps ({ renderPage }) {
-    const sheet = new ServerStyleSheet()
-
-    const page = renderPage(Component => props =>
-      sheet.collectStyles(<Component {...props} />
-    ))
-
-    const styles = sheet.getStyleElement()
-
-    return { ...page, styles }
-  }
-
   render () {
-    const { styles } = this.props
+    const { styles, i18n } = this.props
 
     return (
-      <html>
-        <Head>
-          <link rel="icon" type="image/png" href="/static/favicon.png" />
-          <link rel="manifest" href="/static/manifest.json" />
+      <I18n i18n={i18n} wait={process.browser}>
+        {(t, { i18n }) => (
+          <html lang={i18n.languages[0]}>
+            <Head>
+              <link rel="icon" type="image/png" href="/static/favicon.png" />
+              <link rel="manifest" href="/static/manifest.json" />
 
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+              <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-          <meta name="theme-color" content="#da936a" />
-          <meta name="author" content="styled-components" />
+              <meta name="theme-color" content="#da936a" />
+              <meta name="author" content="styled-components" />
 
-          <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
+              <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
 
-          {styles}
+              {styles}
 
-      <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WDWNSLK');` }}></script>
-       </Head>
+          <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WDWNSLK');` }}></script>
+           </Head>
 
-       <body>
-      <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDWNSLK" height="0" width="0" style="display:none;visibility:hidden"></iframe>` }}></noscript>
-         <div className="root">
-           <Main />
-         </div>
+           <body>
+          <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDWNSLK" height="0" width="0" style="display:none;visibility:hidden"></iframe>` }}></noscript>
+             <div className="root">
+               <Main />
+             </div>
 
-         <NextScript />
+             <NextScript />
 
-         {/* cloud.typography */}
-         <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
-       </body>
-     </html>
+             {/* cloud.typography */}
+             <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
+           </body>
+         </html>
+        )}
+      </I18n>
     )
   }
+}
+
+MyDocument.getInitialProps = async ({ renderPage, req }) => {
+  const sheet = new ServerStyleSheet()
+
+  const page = renderPage(Component => props =>
+    sheet.collectStyles(<Component {...props} />
+  ))
+
+  const styles = sheet.getStyleElement()
+
+  const mainProps = { ...page, styles }
+
+  if (req && !process.browser) {
+    return {
+      ...i18n.getInitialProps(req, TRANSLATIONS),
+      ...mainProps
+    }
+  }
+
+  return mainProps
 }

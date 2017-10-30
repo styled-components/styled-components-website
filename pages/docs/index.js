@@ -1,3 +1,5 @@
+'use babel'
+
 import styled, { css } from 'styled-components'
 import { I18n } from 'react-i18next'
 
@@ -13,6 +15,7 @@ import { headerFont } from '../../utils/fonts'
 import withI18n from '../../components/withI18n'
 import {
   DEFAULT_TRANSLATION,
+  NAV_TRANSLATION,
   DOCS_TRANSLATION,
 } from '../../constants/i18n'
 
@@ -50,7 +53,7 @@ const SubHeader = styled.h3`
 
 export const Documentation = () => (
   <I18n
-    ns={[DOCS_TRANSLATION, DEFAULT_TRANSLATION]}
+    ns={[DOCS_TRANSLATION, NAV_TRANSLATION, DEFAULT_TRANSLATION]}
     wait={process.browser}
   >
     {(translate) => {
@@ -73,15 +76,15 @@ export const Documentation = () => (
                 <Column key={title}>
                   <Header>
                     <Link href={`/docs/${pathname}`}>
-                      {title}
+                      {translate(`${NAV_TRANSLATION}:${title}`)}
                     </Link>
                   </Header>
 
                   {
                     sections.map(({ title }) => (
                       <SubHeader key={title}>
-                        <Link href={`/docs/${pathname}#${titleToDash(title)}`}>
-                          {title}
+                        <Link href={`/docs/${pathname}#${titleToDash(translate(`${NAV_TRANSLATION}:${title}`))}`}>
+                          {translate(`${NAV_TRANSLATION}:${title}`)}
                         </Link>
                       </SubHeader>
                     ))

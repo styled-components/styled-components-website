@@ -10,18 +10,16 @@ import i18n from '../../helpers/i18n'
 
 mockRouter()
 
-test('Documentation renders correctly', () => {
-  const wrapper = mount(<Documentation />)
+const wrapper = (language, props) => mount(
+  <I18nextProvider i18n={i18n} initialLanguage={language}>
+    <Documentation />
+  </I18nextProvider>
+)
 
-  expect(wrapper).toMatchSnapshot()
+test('Documentation renders correctly', () => {
+  expect(wrapper('en').find(Documentation)).toMatchSnapshot()
 })
 
 test('Documentation renders in spanish', () => {
-  const wrapper = mount(
-    <I18nextProvider i18n={i18n} initialLanguage="es">
-      <Documentation />
-    </I18nextProvider>
-  )
-
-  expect(wrapper.find(Documentation)).toMatchSnapshot()
+  expect(wrapper('es').find(Documentation)).toMatchSnapshot()
 })

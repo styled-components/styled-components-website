@@ -1,0 +1,40 @@
+basics: Bases
+motivation: Motivación
+installation: Instalación
+gettingStarted: Comenzando
+passedProps: |
+  "Props" enviadas
+adaptingBasedOnProps: |
+  Adaptación basada en "props"
+stylingAnyComponents: Estilizando cualquier componente
+extendingStyles: Estendiendo estilos
+attachingAdditionalProps: |
+  Adjuntando "props" adicionales
+animations: Animaciones
+reactNative: React Native
+advanced: Avanzado
+theming: Tematización
+refs: Refs
+security: Seguridad
+existingCSS: Extendiendo CSS
+mediaTemplates: Media Templates
+taggedTemplateLiterals: Tagged Template Literals
+serverSideRendering: Renderización del lado del servidor
+api: Referencia del API
+primary: Primario
+helpers: Ayudantes
+supportedCSS: CSS soportado
+flow: Flow
+typeScript: TypeScript
+tooling: Tooling
+babelPlugin: Babel Plugin
+testUtilities: Utilidades de prueba
+stylelint: Stylelint
+styledTheming: Styled Theming
+faqs: Preguntas frecuentes
+canINestRules: |
+  ¿Puedo anidar reglas?
+canIReferToOtherComponents: |
+  ¿Puedo referirme a otros componentes?
+canIUseCssFrameworks: |
+  ¿Puedo usar un framework de css?

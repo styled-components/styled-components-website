@@ -1050,207 +1050,211 @@ exports[`Nav renders correctly 1`] = `
           className="c22"
         >
           <SidebarMenu>
-            <styled.div>
-              <div
-                className="c23"
-              >
-                <Folder
-                  isOpenDefault={false}
+            <I18n
+              ns="nav"
+            >
+              <styled.div>
+                <div
+                  className="c23"
                 >
-                  <styled.div>
-                    <div
-                      className="c24"
-                    >
-                      <styled.h4
-                        onClick={[Function]}
+                  <Folder
+                    isOpenDefault={false}
+                  >
+                    <styled.div>
+                      <div
+                        className="c24"
                       >
-                        <h4
-                          className="c25"
+                        <styled.h4
                           onClick={[Function]}
                         >
-                          <Link
-                            href="/docs/basics"
+                          <h4
+                            className="c25"
+                            onClick={[Function]}
                           >
                             <Link
                               href="/docs/basics"
                             >
-                              <styled.a
+                              <Link
                                 href="/docs/basics"
-                                onClick={[Function]}
                               >
-                                <a
-                                  className="c26"
+                                <styled.a
                                   href="/docs/basics"
                                   onClick={[Function]}
                                 >
-                                  Basics
-                                </a>
-                              </styled.a>
+                                  <a
+                                    className="c26"
+                                    href="/docs/basics"
+                                    onClick={[Function]}
+                                  >
+                                    Basics
+                                  </a>
+                                </styled.a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={false}
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
-                    >
-                      <styled.h4
-                        onClick={[Function]}
+                          </h4>
+                        </styled.h4>
+                      </div>
+                    </styled.div>
+                  </Folder>
+                  <Folder
+                    isOpenDefault={false}
+                  >
+                    <styled.div>
+                      <div
+                        className="c24"
                       >
-                        <h4
-                          className="c25"
+                        <styled.h4
                           onClick={[Function]}
                         >
-                          <Link
-                            href="/docs/advanced"
+                          <h4
+                            className="c25"
+                            onClick={[Function]}
                           >
                             <Link
                               href="/docs/advanced"
                             >
-                              <styled.a
+                              <Link
                                 href="/docs/advanced"
-                                onClick={[Function]}
                               >
-                                <a
-                                  className="c26"
+                                <styled.a
                                   href="/docs/advanced"
                                   onClick={[Function]}
                                 >
-                                  Advanced
-                                </a>
-                              </styled.a>
+                                  <a
+                                    className="c26"
+                                    href="/docs/advanced"
+                                    onClick={[Function]}
+                                  >
+                                    Advanced
+                                  </a>
+                                </styled.a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={false}
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
-                    >
-                      <styled.h4
-                        onClick={[Function]}
+                          </h4>
+                        </styled.h4>
+                      </div>
+                    </styled.div>
+                  </Folder>
+                  <Folder
+                    isOpenDefault={false}
+                  >
+                    <styled.div>
+                      <div
+                        className="c24"
                       >
-                        <h4
-                          className="c25"
+                        <styled.h4
                           onClick={[Function]}
                         >
-                          <Link
-                            href="/docs/api"
+                          <h4
+                            className="c25"
+                            onClick={[Function]}
                           >
                             <Link
                               href="/docs/api"
                             >
-                              <styled.a
+                              <Link
                                 href="/docs/api"
-                                onClick={[Function]}
                               >
-                                <a
-                                  className="c26"
+                                <styled.a
                                   href="/docs/api"
                                   onClick={[Function]}
                                 >
-                                  API Reference
-                                </a>
-                              </styled.a>
+                                  <a
+                                    className="c26"
+                                    href="/docs/api"
+                                    onClick={[Function]}
+                                  >
+                                    API Reference
+                                  </a>
+                                </styled.a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={false}
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
-                    >
-                      <styled.h4
-                        onClick={[Function]}
+                          </h4>
+                        </styled.h4>
+                      </div>
+                    </styled.div>
+                  </Folder>
+                  <Folder
+                    isOpenDefault={false}
+                  >
+                    <styled.div>
+                      <div
+                        className="c24"
                       >
-                        <h4
-                          className="c25"
+                        <styled.h4
                           onClick={[Function]}
                         >
-                          <Link
-                            href="/docs/tooling"
+                          <h4
+                            className="c25"
+                            onClick={[Function]}
                           >
                             <Link
                               href="/docs/tooling"
                             >
-                              <styled.a
+                              <Link
                                 href="/docs/tooling"
-                                onClick={[Function]}
                               >
-                                <a
-                                  className="c26"
+                                <styled.a
                                   href="/docs/tooling"
                                   onClick={[Function]}
                                 >
-                                  Tooling
-                                </a>
-                              </styled.a>
+                                  <a
+                                    className="c26"
+                                    href="/docs/tooling"
+                                    onClick={[Function]}
+                                  >
+                                    Tooling
+                                  </a>
+                                </styled.a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={false}
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
-                    >
-                      <styled.h4
-                        onClick={[Function]}
+                          </h4>
+                        </styled.h4>
+                      </div>
+                    </styled.div>
+                  </Folder>
+                  <Folder
+                    isOpenDefault={false}
+                  >
+                    <styled.div>
+                      <div
+                        className="c24"
                       >
-                        <h4
-                          className="c25"
+                        <styled.h4
                           onClick={[Function]}
                         >
-                          <Link
-                            href="/docs/faqs"
+                          <h4
+                            className="c25"
+                            onClick={[Function]}
                           >
                             <Link
                               href="/docs/faqs"
                             >
-                              <styled.a
+                              <Link
                                 href="/docs/faqs"
-                                onClick={[Function]}
                               >
-                                <a
-                                  className="c26"
+                                <styled.a
                                   href="/docs/faqs"
                                   onClick={[Function]}
                                 >
-                                  FAQs
-                                </a>
-                              </styled.a>
+                                  <a
+                                    className="c26"
+                                    href="/docs/faqs"
+                                    onClick={[Function]}
+                                  >
+                                    FAQs
+                                  </a>
+                                </styled.a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-              </div>
-            </styled.div>
+                          </h4>
+                        </styled.h4>
+                      </div>
+                    </styled.div>
+                  </Folder>
+                </div>
+              </styled.div>
+            </I18n>
           </SidebarMenu>
         </nav>
       </styled.nav>
