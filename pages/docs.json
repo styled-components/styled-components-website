@@ -105,7 +105,7 @@
       "sections": [
         { "title": "Can I nest rules?" },
         { "title": "Can I refer to other components?" },
-        { "title": "What is the difference between Comp.extend and styled(Comp)?" },
+        { "title": "When should I use styled()?" },
         { "title": "Can I use css frameworks?" }
       ]
     }
