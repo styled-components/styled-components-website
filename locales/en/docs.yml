@@ -509,13 +509,21 @@ theming: |
     main: 'mediumseagreen'
   };
 
+  const adHocTheme = {
+    main: 'royalblue'
+  };
+
+  const overiddenTheme = {
+    main: 'darkorange'
+  };
+
   render(
     <div>
-      <Button theme={{ main: 'royalblue' }}>Ad hoc theme</Button>
+      <Button theme={adHocTheme}>Ad hoc theme</Button>
       <ThemeProvider theme={theme}>
         <div>
           <Button>Themed</Button>
-          <Button theme={{ main: 'darkorange' }}>Overidden</Button>
+          <Button theme={overiddenTheme}>Overidden</Button>
         </div>
       </ThemeProvider>
     </div>
