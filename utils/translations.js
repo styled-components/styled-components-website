@@ -1,9 +1,23 @@
 import {
   DEFAULT_LANGUAGE,
+  LANGUAGES,
 } from '../constants/i18n'
 
-export const addLanguageToPath = (i18n, path, defaultLanguage = DEFAULT_LANGUAGE) => {
-  if (i18n.languages[0] === defaultLanguage) {
+const defaultValues = () => ({
+  defaultLanguage: DEFAULT_LANGUAGE,
+  languages: LANGUAGES,
+})
+
+export const isValidLanguage = (i18n, { languages } = defaultValues()) =>
+  languages.indexOf(i18n.languages[0]) >= 0
+
+export const addLanguageToPath = (i18n, path, {
+  defaultLanguage,
+} = defaultValues()) => {
+  if (
+    !isValidLanguage(i18n)
+    || i18n.languages[0] === defaultLanguage
+  ) {
     return path
   }
 

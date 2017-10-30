@@ -5,7 +5,11 @@ import { I18n } from 'react-i18next'
 import i18n from '../utils/i18n'
 import {
   TRANSLATIONS,
+  DEFAULT_LANGUAGE,
 } from '../constants/i18n'
+import {
+  isValidLanguage,
+} from '../utils/translations'
 
 import { bodyFont } from '../utils/fonts'
 
@@ -161,7 +165,9 @@ export default class MyDocument extends Document {
     return (
       <I18n i18n={i18n} wait={process.browser}>
         {(t, { i18n }) => (
-          <html lang={i18n.languages[0]}>
+          <html
+            lang={isValidLanguage(i18n) ? i18n.languages[0] : DEFAULT_LANGUAGE}
+          >
             <Head>
               <link rel="icon" type="image/png" href="/static/favicon.png" />
               <link rel="manifest" href="/static/manifest.json" />
