@@ -54,3 +54,105 @@ gettingStarted: |
   ```
 
   > The CSS rules are automatically vendor prefixed, so you don't have to think about it.
+passedProps: |
+  ## Passed props
+
+  styled-components pass on all their props.
+
+  This example shows how all props of the Input component are passed on to the
+  DOM node that is mounted, as with React elements.
+
+  ```react
+  // Create an Input component that'll render an <input> tag with some styles
+  const Input = styled.input`
+    padding: 0.5em;
+    margin: 0.5em;
+    color: palevioletred;
+    background: papayawhip;
+    border: none;
+    border-radius: 3px;
+  `;
+
+  // Render a styled text input with a placeholder of "@mxstbr", and one with a value of "@geelen"
+  render(
+    <div>
+      <Input placeholder="@mxstbr" type="text" />
+      <Input value="@geelen" type="text" />
+    </div>
+  );
+  ```
+adaptingBasedOnProps: |
+  ## Adapting based on props
+
+  You can pass a function ("interpolations") to a styled component's template literal
+  to adapt it based on its props.
+
+  This button component has a primary state that changes its colour.
+  When setting the <Code>primary</Code> prop to true, we are swapping out its background and text colour.
+
+  ```react
+  const Button = styled.button`
+    /* Adapt the colours based on primary prop */
+    background: ${props => props.primary ? 'palevioletred' : 'white'};
+    color: ${props => props.primary ? 'white' : 'palevioletred'};
+
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+  `;
+
+  render(
+    <div>
+      <Button>Normal</Button>
+      <Button primary>Primary</Button>
+    </div>
+  );
+  ```
+stylingAnyComponents: |
+  ## Styling any components
+
+  The `styled` method works perfectly on all of your own or any third-party
+  components as well, as long as they pass the `className` prop to their rendered sub-components,
+  which should pass it too, and so on.
+  Ultimately, the `className` must be passed down the line to an actual DOM node for the styling to take any effect.
+
+  > If you are using `react-native` keep in mind to use `style` instead of `className`.
+
+  If you're using any external library, you can consider using this pattern to turn them
+  into styled components. The same pattern works for your own components as well, if you
+  need some components to stay unstyled on their own.
+
+  ```react
+  // This could be react-router's Link for example
+  const Link = ({ className, children }) => (
+    <a className={className}>
+      {children}
+    </a>
+  )
+
+  const StyledLink = styled(Link)`
+    color: palevioletred;
+    font-weight: bold;
+  `;
+
+  render(
+    <div>
+      <Link>Unstyled, boring Link</Link>
+      <br />
+      <StyledLink>Styled, exciting Link</StyledLink>
+    </div>
+  );
+  ```
+
+  Consider carefully whether to wrap your own components in a styled component, when it isn't necessary.
+  You will disable the automatic whitelisting of props, and reverse the recommended order of styled
+  components and structural components.
+
+  You can also pass tag names into the `styled()` factory call, like so: `styled('div')`.
+  In fact, the `styled.tagname` helpers are just aliases that do the same.
+
+  > styled-components always generates a real stylesheet with classes.
+  > The classnames are then passed to the React component (including third party components)
+  > via the `className` prop.

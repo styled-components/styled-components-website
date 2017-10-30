@@ -53,3 +53,106 @@ gettingStarted: |
   ```
 
   > Las reglas de CSS automáticamente añaden el prefijo específico del navegador, así que no tienes que pensar en ello.
+passedProps: |
+  ## "Props" enviadas
+
+  styled-components pasan todas sus "props".
+
+  Este ejemplo muestra como todas las "props" del componente Input se pasan al nodo de DOM que está
+  montado, como con los elementos de React.
+
+  ```react
+  // Crea un componente "Input" que renderizará una etiqueta <input> con algunos estilos
+  const Input = styled.input`
+    padding: 0.5em;
+    margin: 0.5em;
+    color: palevioletred;
+    background: papayawhip;
+    border: none;
+    border-radius: 3px;
+  `;
+
+  // Renderiza un "input" de texto estilizado con un "placeholder" de "@mxstbr", y uno con valor de "geelen"
+  render(
+    <div>
+      <Input placeholder="@mxstbr" type="text" />
+      <Input value="@geelen" type="text" />
+    </div>
+  );
+  ```
+adaptingBasedOnProps: |
+  ## Adaptación basada en "props"
+
+  Puedes pasar una función ("interpolación") a la plantilla del componente estilizado para
+  adaptarlo basándose en sus "props".
+
+  Este componente botón tiene un estado primario el cual cambia su color.
+  Cuando se ajusta el prop como true <Code>primario</Code>, estamos intercambiando el color de fondo
+  y el color de texto.
+
+  ```react
+  const Button = styled.button`
+    /* Adapta los colores basado en el "prop" primario */
+    background: ${props => props.primario ? 'palevioletred' : 'white'};
+    color: ${props => props.primario ? 'white' : 'palevioletred'};
+
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+  `;
+
+  render(
+    <div>
+      <Button>Normal</Button>
+      <Button primario>Primario</Button>
+    </div>
+  );
+  ```
+stylingAnyComponents: |
+  ## Estilizando cualquier componente
+
+  El método `styled` funciona perfectamente en todos tus componentes o componentes de terceros también,
+  siempre y cuando pasen la "prop" `className` a sus sub componentes renderizados, que deberían
+  pasarlo también, y así sucesivamente.
+  Finalmente, la `className` debe ser pasada hasta alcanzar el nodo DOM para que el estilizado tenga cualquier efecto.
+
+  > Sí estás usando `react-native` ten en cuenta usar `style` en lugar de `className`.
+
+  Si estás utilizando cualquier librería externa, considera usar este patrón para convertirlos en
+  componentes estilizados. El mismo patrón funciona con tus propios componentes también, sí necesitas
+  que algún componente se mantenga sin estilo por sí mismo.
+
+  ```react
+  // Esto puede ser el Link de react-router por ejemplo
+  const Link = ({ className, children }) => (
+    <a className={className}>
+      {children}
+    </a>
+  )
+
+  const StyledLink = styled(Link)`
+    color: palevioletred;
+    font-weight: bold;
+  `;
+
+  render(
+    <div>
+      <Link>Link sin estilo, aburrido</Link>
+      <br />
+      <StyledLink>Link emocionante, estilizado</StyledLink>
+    </div>
+  );
+  ```
+
+  Considera cuidadosamente envolver tus componentes en un componente estilizado, cuando no es necesario.
+  Deshabilitarás el "whitelisting" automático de "props", y revertirás el orden recomendado de
+  componentes estilizados y componentes estructurales.
+
+  También puedes pasar nombres de etiquetas a la fábrica `styled()` en su llamada, por ejemplo: `styled('div')`.
+  De hecho, los ayudantes `styled.etiqueta` son sólo alias que hacen lo mismo.
+
+  > styled-components siempre genera una hoja de estilos real con clases.
+  > Los nombres de clase son pasados al componente de React (incluyendo componentes de terceros)
+  > A través del "prop" `className`
