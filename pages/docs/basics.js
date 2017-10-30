@@ -32,7 +32,6 @@ export const Basics = () => (
       <DocsLayout
         title={translate(`${DEFAULT_TRANSLATION}:basicsTitle`)}
         description={translate('basicsDescription')}
-        i18n={i18n}
       >
         <Motivation />
         <Installation />

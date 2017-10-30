@@ -25,7 +25,7 @@ gettingStarted:
     Para descargar styled-components ejecuta `npm install --save styled-components`.
     Eso es todo lo que necesitas hacer, ¡Ahora estás listo para usarlo en tu app! (sip, no es necesario compilarlo 👌)
 
-    ## Tu primer componente estilizado
+    ## Tu primer "styled-component"
 
     Digamos que quieres crear un componente `<Button />` simplre y reusable que puedas usar utilizar en toda tu aplicación.
     Debe de haber una versión normal y una grande y una versión `primaria` para los botones importantes.

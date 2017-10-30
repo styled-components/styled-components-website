@@ -21,7 +21,7 @@ import {
   addLanguageToPath,
 } from '../../utils/translations'
 
-const Advanced = () => (
+export const Advanced = () => (
   <I18n
     ns={[DOCS_TRANSLATION, DEFAULT_TRANSLATION]}
   >
@@ -29,7 +29,6 @@ const Advanced = () => (
       <DocsLayout
         title={translate(`${DEFAULT_TRANSLATION}:advancedTitle`)}
         description={translate('advancedDescription')}
-        i18n={i18n}
       >
         <Theming />
         <Refs />
