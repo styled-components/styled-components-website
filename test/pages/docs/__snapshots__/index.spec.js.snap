@@ -2465,6 +2465,32 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            href="/docs/faqs#when-should-i-use-styled"
+                          >
+                            <Link
+                              href="/docs/faqs#when-should-i-use-styled"
+                            >
+                              <styled.a
+                                href="/docs/faqs#when-should-i-use-styled"
+                                onClick={[Function]}
+                              >
+                                <a
+                                  className="c27"
+                                  href="/docs/faqs#when-should-i-use-styled"
+                                  onClick={[Function]}
+                                >
+                                  When should I use styled()?
+                                </a>
+                              </styled.a>
+                            </Link>
+                          </Link>
+                        </h3>
+                      </styled.h3>
+                      <styled.h3>
+                        <h3
+                          className="c33"
+                        >
+                          <Link
                             href="/docs/faqs#can-i-use-css-frameworks"
                           >
                             <Link
@@ -4957,6 +4983,33 @@ exports[`Documentation renders in spanish 1`] = `
                                   onClick={[Function]}
                                 >
                                   ¿Puedo referirme a otros componentes?
+                                  
+                                </a>
+                              </styled.a>
+                            </Link>
+                          </Link>
+                        </h3>
+                      </styled.h3>
+                      <styled.h3>
+                        <h3
+                          className="c33"
+                        >
+                          <Link
+                            href="/docs/faqs#cundo-debo-de-usar-styled-"
+                          >
+                            <Link
+                              href="/docs/faqs#cundo-debo-de-usar-styled-"
+                            >
+                              <styled.a
+                                href="/docs/faqs#cundo-debo-de-usar-styled-"
+                                onClick={[Function]}
+                              >
+                                <a
+                                  className="c27"
+                                  href="/docs/faqs#cundo-debo-de-usar-styled-"
+                                  onClick={[Function]}
+                                >
+                                  ¿Cuándo debo de usar styled()?
                                   
                                 </a>
                               </styled.a>

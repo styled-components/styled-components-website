@@ -108,6 +108,7 @@
       "sections": [
         { "title": "canINestRules" },
         { "title": "canIReferToOtherComponents" },
+        { "title": "whenShouldIUseStyled" },
         { "title": "canIUseCssFrameworks" }
       ]
     }

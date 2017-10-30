@@ -32,3 +32,4 @@ faqs: FAQs
 canINestRules: Can I nest rules?
 canIReferToOtherComponents: Can I refer to other components?
 canIUseCssFrameworks: Can I use css frameworks?
+whenShouldIUseStyled: When should I use styled()?

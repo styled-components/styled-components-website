@@ -38,3 +38,5 @@ canIReferToOtherComponents: |
   ¿Puedo referirme a otros componentes?
 canIUseCssFrameworks: |
   ¿Puedo usar un framework de css?
+whenShouldIUseStyled: |
+  ¿Cuándo debo de usar styled()?

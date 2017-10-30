@@ -203,9 +203,10 @@ extendingStyles: |
   Podemos ver que el nuevo `TomatoButton` aún se asemeja a `Button`, cuándo sólo le añadimos dos
   reglas nuevas.
 
-  > Esto es diferente de pasar tu componente estilizado dentro de la fábrica `styled()`.
-  > Llamando `extend` crea una nueva hoja de estilos, extendiendo del viejo, por lo tanto
-  > no crea dos clases para un sólo componente.
+  > Sólo debes usar `Comp.estend` sí sabes que ese `Comp` es un componente estilizado.
+  > Si estás importando de otro archivo o librería de terceros, es mejor que uses
+  > `styled(Comp)` ya que logra el mismo resultado, pero functiona con *cualquier* componente de
+  > React. Lee más acerca de [las diferencias entre `Comp.extend` y `styled(Comp)`](/es/docs/#)
 
   En los muy raros casos que quieras cambiar que etiqueta o componente renderiza el componente estilizado.
   Tenemos una manera de solucionarlo. Puedes usar el <Code>withComponent</Code> para extender los
