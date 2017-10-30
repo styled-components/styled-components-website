@@ -42,6 +42,7 @@ export const Basics = () => (
         <NextPage
           href="/docs/advanced"
           title={translate(`${DEFAULT_TRANSLATION}:advancedTitle`)}
+          description={translate(`${DEFAULT_TRANSLATION}:continueOnNextPage`)}
         />
       </DocsLayout>)}
   </I18n>

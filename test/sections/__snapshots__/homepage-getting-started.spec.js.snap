@@ -2290,7 +2290,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
             color: palevioletred;
             border: 2px solid palevioletred;
           
-            \${props => props.primary && css\`
+            \${props => props.primario && css\`
               background: palevioletred;
               color: white;
             \`}
@@ -2309,7 +2309,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
               color: palevioletred;
               border: 2px solid palevioletred;
             
-              \${props => props.primary && css\`
+              \${props => props.primario && css\`
                 background: palevioletred;
                 color: white;
               \`}
@@ -2330,7 +2330,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                     <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
                     <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
                   
-                    </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
+                    </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primario <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
                       background: palevioletred;
                       color: white;
                     \`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
@@ -2353,7 +2353,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                       <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
                       <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
                     
-                      </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
+                      </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primario <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
                         background: palevioletred;
                         color: white;
                       \`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
@@ -2373,14 +2373,14 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
               Todo lo que estamos diciendo aquí es que cuando la pripiedad 
               <Code
                 inline={true}
-                literal="primary"
+                literal="primario"
                 nodeKey="27:1-28:511"
               >
                 <styled.span>
                   <span
                     className="c10"
                   >
-                    primary
+                    primario
                   </span>
                 </styled.span>
               </Code>
@@ -2425,7 +2425,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
             color: palevioletred;
             border: 2px solid palevioletred;
           
-            \${props => props.primary && css\`
+            \${props => props.primario && css\`
               background: palevioletred;
               color: white;
             \`}
@@ -2434,7 +2434,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
           render(
             <div>
               <Button>Botón normal</Button>
-              <Button primary>Botón primario</Button>
+              <Button primario>Botón primario</Button>
             </div>
           );
           "
@@ -2449,7 +2449,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
               color: palevioletred;
               border: 2px solid palevioletred;
             
-              \${props => props.primary && css\`
+              \${props => props.primario && css\`
                 background: palevioletred;
                 color: white;
               \`}
@@ -2458,7 +2458,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
             render(
               <div>
                 <Button>Botón normal</Button>
-                <Button primary>Botón primario</Button>
+                <Button primario>Botón primario</Button>
               </div>
             );
             "
@@ -2473,7 +2473,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                 color: palevioletred;
                 border: 2px solid palevioletred;
               
-                \${props => props.primary && css\`
+                \${props => props.primario && css\`
                   background: palevioletred;
                   color: white;
                 \`}
@@ -2482,7 +2482,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
               render(
                 <div>
                   <Button>Botón normal</Button>
-                  <Button primary>Botón primario</Button>
+                  <Button primario>Botón primario</Button>
                 </div>
               );
               "
@@ -2508,7 +2508,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                   color: palevioletred;
                   border: 2px solid palevioletred;
                 
-                  \${props => props.primary && css\`
+                  \${props => props.primario && css\`
                     background: palevioletred;
                     color: white;
                   \`}
@@ -2517,7 +2517,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                 render(
                   <div>
                     <Button>Botón normal</Button>
-                    <Button primary>Botón primario</Button>
+                    <Button primario>Botón primario</Button>
                   </div>
                 );
                 "
@@ -2564,7 +2564,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                                 color: palevioletred;
                                 border: 2px solid palevioletred;
                               
-                                \${props => props.primary && css\`
+                                \${props => props.primario && css\`
                                   background: palevioletred;
                                   color: white;
                                 \`}
@@ -2573,7 +2573,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                               render(
                                 <div>
                                   <Button>Botón normal</Button>
-                                  <Button primary>Botón primario</Button>
+                                  <Button primario>Botón primario</Button>
                                 </div>
                               );
                               "
@@ -2593,7 +2593,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                                     	<span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
                                     	<span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
                                     
-                                    	</span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
+                                    	</span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=</span><span class=\\"token operator\\">></span> props<span class=\\"token punctuation\\">.</span>primario <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
                                     		background: palevioletred;
                                     		color: white;
                                     	\`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
@@ -2602,7 +2602,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                                     <span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span>
                                     	<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>div</span><span class=\\"token punctuation\\">></span></span>
                                     		<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Button</span><span class=\\"token punctuation\\">></span></span>Botón normal<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>Button</span><span class=\\"token punctuation\\">></span></span>
-                                    		<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Button</span> <span class=\\"token attr-name\\">primary</span><span class=\\"token punctuation\\">></span></span>Botón primario<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>Button</span><span class=\\"token punctuation\\">></span></span>
+                                    		<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>Button</span> <span class=\\"token attr-name\\">primario</span><span class=\\"token punctuation\\">></span></span>Botón primario<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>Button</span><span class=\\"token punctuation\\">></span></span>
                                     	<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>div</span><span class=\\"token punctuation\\">></span></span>
                                     <span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
                                     ",
@@ -2633,7 +2633,7 @@ exports[`HomepageGettingStarted renders in spanish 1`] = `
                                   </button>
                                 </styled.button>
                                 <styled.button
-                                  primary={true}
+                                  primario={true}
                                 >
                                   <button
                                     className="c21"

@@ -79,14 +79,14 @@ gettingStarted:
       color: palevioletred;
       border: 2px solid palevioletred;
 
-      ${props => props.primary && css`
+      ${props => props.primario && css`
         background: palevioletred;
         color: white;
       `}
     `;
     ```
 
-    Todo lo que estamos diciendo aquí es que cuando la pripiedad `primary` esté puesta queremos que añada un poco más de `css` a nuestro componente,
+    Todo lo que estamos diciendo aquí es que cuando la pripiedad `primario` esté puesta queremos que añada un poco más de `css` a nuestro componente,
     en este caso, cambiar el color de fondo y el color.
 
     Eso es todo, ¡Hemos acabado! Echa un vistazo al componente terminado
@@ -100,7 +100,7 @@ gettingStarted:
       color: palevioletred;
       border: 2px solid palevioletred;
 
-      ${props => props.primary && css`
+      ${props => props.primario && css`
         background: palevioletred;
         color: white;
       `}
@@ -109,7 +109,7 @@ gettingStarted:
     render(
       <div>
         <Button>Botón normal</Button>
-        <Button primary>Botón primario</Button>
+        <Button primario>Botón primario</Button>
       </div>
     );
     ```

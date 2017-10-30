@@ -1434,7 +1434,11 @@ exports[`Documentation renders correctly 1`] = `
                 </h1>
               </styled.h1>
               <p>
-                Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components. It also removes the mapping between components and styles – using components as a low-level styling construct could not be easier!
+                Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS,
+                styled-components allows you to write actual CSS code to style your components. It also removes
+                the mapping between components and styles – using components as a low-level styling construct
+                could not be easier!
+                
               </p>
               <styled.div>
                 <div
@@ -3799,7 +3803,11 @@ exports[`Documentation renders in spanish 1`] = `
                 </h1>
               </styled.h1>
               <p>
-                Usando "tagged template literals" (una nueva característica en JavaScript) y el poder de CSS, styled-components permite utilizar código CSS real para estilizar tus componentes. Además provee el mapeo entro componentes y estilos - ¡Utilizando componentes como un estructrura de estilo de bajo nivel no podría ser más fácil!
+                Usando "tagged template literals" (una nueva característica en JavaScript) y el poder de CSS,
+                styled-components permite utilizar código CSS real para estilizar tus componentes.
+                Además provee el mapeo entro componentes y estilos - ¡Utilizando componentes como un estructrura
+                de estilo de bajo nivel no podría ser más fácil!
+                
               </p>
               <styled.div>
                 <div

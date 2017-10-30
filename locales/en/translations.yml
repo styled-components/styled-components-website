@@ -5,6 +5,7 @@ esosystem: Ecosystem
 basicsTitle: Basics
 advancedTitle: Advanced
 apiTitle: API
+continueOnNextPage: Continue on the next page
 
 # Used by routing. Don't
 basics: basics

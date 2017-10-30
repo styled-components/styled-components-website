@@ -1,6 +1,10 @@
 title: Documentación
 description: Aprende como usar styled-components y a estilizar tus apps sin estrés
-about: Usando "tagged template literals" (una nueva característica en JavaScript) y el poder de CSS, styled-components permite utilizar código CSS real para estilizar tus componentes. Además provee el mapeo entro componentes y estilos - ¡Utilizando componentes como un estructrura de estilo de bajo nivel no podría ser más fácil!
+about: |
+  Usando "tagged template literals" (una nueva característica en JavaScript) y el poder de CSS,
+  styled-components permite utilizar código CSS real para estilizar tus componentes.
+  Además provee el mapeo entro componentes y estilos - ¡Utilizando componentes como un estructrura
+  de estilo de bajo nivel no podría ser más fácil!
 basicsTitle: Bases
 basicsDescription: Comenzando con las bases de styled-components.
 motivation: |
@@ -52,7 +56,8 @@ gettingStarted: |
   );
   ```
 
-  > Las reglas de CSS automáticamente añaden el prefijo específico del navegador, así que no tienes que pensar en ello.
+  > Las reglas de CSS automáticamente añaden el prefijo específico del navegador,
+  > así que no tienes que pensar en ello.
 passedProps: |
   ## "Props" enviadas
 
@@ -116,7 +121,8 @@ stylingAnyComponents: |
   El método `styled` funciona perfectamente en todos tus componentes o componentes de terceros también,
   siempre y cuando pasen la "prop" `className` a sus sub componentes renderizados, que deberían
   pasarlo también, y así sucesivamente.
-  Finalmente, la `className` debe ser pasada hasta alcanzar el nodo DOM para que el estilizado tenga cualquier efecto.
+  Finalmente, la `className` debe ser pasada hasta alcanzar el nodo DOM para que el estilizado
+  tenga cualquier efecto.
 
   > Sí estás usando `react-native` ten en cuenta usar `style` en lugar de `className`.
 
@@ -156,3 +162,208 @@ stylingAnyComponents: |
   > styled-components siempre genera una hoja de estilos real con clases.
   > Los nombres de clase son pasados al componente de React (incluyendo componentes de terceros)
   > A través del "prop" `className`
+extendingStyles: |
+  ## Extendiendo estilos | v2
+  ## Extending Styles | v2
+
+  Frecuentemente podrías querer usar un componente, pero cambiarlo ligeramente por un sólo caso.
+  Ahora puedes pasar una función  interpolada y cambiarlo basado en algunos "props", pero eso
+  es mucho esfuerzo para sobreescribir los estilos una vez.
+
+  Para hacer esto más facilmente, puedes llamar `extend` en el componente para generar otro. Lo
+  estilizas como cualquier otro componente estilizado. Sobreescribe estilos duplicados del
+  componente original y mantiene los otros.
+
+  Aquí uamos un botón de la última sección y creamos uno especial, extendiéndolo con unos estilos
+  relativos a su color.
+
+  ```react
+  // El botón de la última sección sin interpolaciones
+  const Button = styled.button`
+    color: palevioletred;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+  `;
+
+  // Estamos extendiendo el botón con unos estilos extra
+  const TomatoButton = Button.extend`
+    color: tomato;
+    border-color: tomato;
+  `;
+
+  render(
+    <div>
+      <Button>Normal Button</Button>
+      <TomatoButton>Tomato Button</TomatoButton>
+    </div>
+  );
+  ```
+
+  Podemos ver que el nuevo `TomatoButton` aún se asemeja a `Button`, cuándo sólo le añadimos dos
+  reglas nuevas.
+
+  > Esto es diferente de pasar tu componente estilizado dentro de la fábrica `styled()`.
+  > Llamando `extend` crea una nueva hoja de estilos, extendiendo del viejo, por lo tanto
+  > no crea dos clases para un sólo componente.
+
+  En los muy raros casos que quieras cambiar que etiqueta o componente estilizado renderizar.
+  Tenemos una salida de escape. Puedes usar el <Code>withComponent</Code> para extender los
+  estilos y usar una etiqueta completamente diferente.
+
+  ```react
+  const Button = styled.button`
+    display: inline-block;
+    color: palevioletred;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+  `;
+
+  // Estamos reemplazando la etiqueta <button> con una etiqueta <a>, pero reusamos todos los estilos
+  const Link = Button.withComponent('a')
+
+  // Usa `.withComponent` junto a `.extend` para cambiar la etiqueta y usar estilos adicionales
+  const TomatoLink = Link.extend`
+    color: tomato;
+    border-color: tomato;
+  `;
+
+  render(
+    <div>
+      <Button>Normal Button</Button>
+      <Link>Normal Link</Link>
+      <TomatoLink>Tomato Link</TomatoLink>
+    </div>
+  );
+  ```
+attachingAdditionalProps: |
+  ## Adjuntando "props" adicionales | v2
+
+  Para evitar envolturas innecesarias que sólo pasan algunos "props" al componente renderizado,
+  o elemento, puedes usar el constructor `.attrs`. Éste te permite adjuntar "props" adicionales
+  (o atributos) a un componente. Además, puedes añadir más "props" dinámicos a un componente. El
+  objeto `.attrs` también recive funciones, que reciben "props" que el componente recibe. El valor
+  de resultado se combinará a los "props" resultantes también.
+
+  Aquí renderizamos un componente `Input` y le adjuntamos algunos atributos estáticos y dinámicos:
+
+  ```react
+  const Input = styled.input.attrs({
+    // Podemos definir "props" estáticos
+    type: 'password',
+
+    // o podemos definirlos dinámicos
+    margin: props => props.size || '1em',
+    padding: props => props.size || '1em'
+  })`
+    color: palevioletred;
+    font-size: 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+
+    /* aquí usamos "props" calculados dinamicamente */
+    margin: ${props => props.margin};
+    padding: ${props => props.padding};
+  `;
+
+  render(
+    <div>
+      <Input placeholder="un input de texto pequeño" size="1em" />
+      <br />
+      <Input placeholder="un input de texto más grande" size="2em" />
+    </div>
+  );
+  ```
+
+  Como puedes ver, tenemos acceso a nuestros nuevos "props" creados en las interpolaciones, y el
+  atributo `type` es pasado hacia abajo al elemento.
+animations: |
+  ## Animaciones
+
+  Las animaciones de CSS con `@keyframes` no tienen alcance sólo para un componente, pero aún así,
+  no quieres tenerlos de manera global. Es por eso que exportamos un ayudante `keyframes` el cual
+  genera un nombre único para tus "keyframes". Puedes usar el nombre único en toda tu app.
+
+  De esta manera, tienes todos los beneficios de usar JavaScript, evitando conflicto de nombres y
+  tener tus "keyframes" como siempre:
+
+  ```react
+  // keyframes retorna un nombre único basado en los contenidos de los "keyframes"
+  const rotate360 = keyframes`
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  `;
+
+  // Aquí creamos un componente que girará todo lo que pasemos en dos segundos
+  const Rotate = styled.div`
+    display: inline-block;
+    animation: ${rotate360} 2s linear infinite;
+    padding: 2rem 1rem;
+    font-size: 1.2rem;
+  `;
+
+  render(
+    <Rotate>&lt; 💅 &gt;</Rotate>
+  );
+  ```
+reactNative: |
+  ## React Native
+
+  styled-components puede usarse con "React Native" en la misma manera,
+  excepto que necesitas importarlo de `styled-components/native`.
+
+  ```jsx
+  import React from 'react'
+  import styled from 'styled-components/native';
+
+  const StyledView = styled.View`
+    background-color: papayawhip;
+  `;
+
+  const StyledText = styled.Text`
+    color: palevioletred;
+  `;
+
+  class MyReactNativeComponent extends React.Component {
+    render() {
+      return (
+        <StyledView>
+          <StyledText>¡Hola Mundo!</StyledText>
+        </StyledView>
+      )
+    }
+  }
+  ```
+
+  También soportamos estilos más complejos (como `transform`), los cuales normalmente serían un arreglo,
+  (por ejemplo para `margin`) ¡Gracias a `css-to-react-native`!
+
+  Imagina como escribirías una propiedad en React Native, adivina como lo transferirías a CSS,
+  y posiblemente estés en lo correcto:
+
+  ```jsx
+  const RotatedBox = styled.View`
+    transform: rotate(90deg);
+    text-shadow-offset: 10px 5px;
+    font-variant: small-caps;
+    margin: 5px 7px 2px;
+  `;
+  ```
+
+  Algunas de las diferencias con la versión web, son que no puedes usar los ayudantes `keyframes` e
+  `injectGlobal` ya que React Native no soporta "keyframes" o estilos globales.También te advertimos
+  si usas "media queries" o CSS anidado.
+
+  > En la v2 soportamos porcentajes. Para hacerlo posible necesitamos forzar las unidades en todas
+  > las abreviaciones. Si estás migrando a la v2,
+  > [Hay un ejemplo en codemod](https://github.com/styled-components/styled-components-native-code-mod).
