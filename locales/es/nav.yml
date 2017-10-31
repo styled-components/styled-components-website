@@ -33,7 +33,7 @@ stylelint: Stylelint
 styledTheming: Styled Theming
 faqs: Preguntas frecuentes
 canINestRules: |
-  ¿Puedo anidar reglas?
+  ¿Puedo usar reglas anidadas?
 canIReferToOtherComponents: |
   ¿Puedo referirme a otros componentes?
 canIUseCssFrameworks: |

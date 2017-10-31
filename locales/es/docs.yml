@@ -12,4 +12,5 @@ advancedDescription: |
   Tagged Template Literals, SSR
 apiDescription: Referencia de API para styled-components
 toolingTitle: Herramientas
+toolingDescription: Herramientas adicionales para styled-components, plugin de babel, pruebas
 faqsDescription: Preguntas frecuentes acerca de styled-components

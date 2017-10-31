@@ -1,0 +1,143 @@
+babelPlugin: |
+  ## Plugin de Babel| v2
+
+  Este plugin añade soporte para renderizado del lado del servidor, para minificación de estilos
+  y da una mejor experiencia de debugeo.
+
+  ### Uso
+
+  Primero instala el plugin de babel:
+
+  ```
+  npm install --save-dev babel-plugin-styled-components
+  ```
+
+  Después añadelo a tu configuración de babel de la siguiente manera:
+
+  > ⚠️ El orden de llamada del plugin en tu ```.babelrc``` importa. Si usas la propiedad env
+  > en tu configuración de babel. entonces poner éste plugin en el arreglo de plugins no será suficiente.
+  > En cambio, necesita ser puesto en cada arreglo de plugins de cada "env" para que mantenga ser
+  > ejecutado primero.
+  > Ve [esto](https://github.com/styled-components/babel-plugin-styled-components/issues/78)
+  > para más información.
+
+  ```js
+  {
+    "plugins": ["babel-plugin-styled-components"]
+  }
+  ```
+
+  ### Renderizado del lado del servidor
+
+  > Esta opción está desactivada por default
+
+  Añadiendo un identificador único por cada "styled component" este plugin evita desajustes en
+  el checksum debido a la generaciǿn de clases diferente en el servidor y en el cliente. Si no usas
+  este plugin y tratas de hacer renderizado del lado del servidor de styled-components, React se
+  quejará.
+
+  Puedes activar esto en la opción de `ssr`:
+
+  ```js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "ssr": true
+      }]
+    ]
+  }
+  ```
+
+  ### Mejor debugeo
+
+  Esta opción añade el nombre y displayName del componente al nombre de clase adjuntado al nodo
+  de DOM. En el DevTools de tu browser verás:
+  `<button class="Button-asdf123 asdf123" />`
+  en lugar de sólo `<button class="asdf123" />`.
+
+  Además esto añade soporte para mostrar el nombre real de tu componente en el DevTools de React.
+  Considera escribir un "styled component" que renderize un elemento `button` llamado `MiBoton`.
+  Normalmente lo mostrará como `<styled.button>` para todos tus componentes, pero con este plugin,
+  se mostrarán como `<MiBoton />`.
+
+  Esto hace más fácil encontrar tus componentes y descifrar donde viven en tu aplicación.
+
+  Si no necesitas esta característica, puedes desactivarla en la opción de `displayName`:
+
+  ```
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "displayName": false
+      }]
+    ]
+  }
+  ```
+
+  ### Preprocesamiento
+
+  > ¡Esto es experimental y no sabemos las limitaciones y errores!
+  > No está listo para producción por ahora. ⚠️
+
+  Este plugin preprocesa tus estilos con stylis y usa el punto de entrada `no-parser.js`
+  en styled-components. Esto elimina efectivamente stylis de tu ejecición de paquete y debe de mejorar
+  un poco el rendimiento de ejecución y reducir el tamaño del paquete.
+
+  Automáticamente deshabilita la opción de `minify`, ya que stylis ya hace algo de minificación
+  en tu CSS.
+
+  Puedes activar el preprocesamiento con la opción de `preprocess`:
+
+  ```js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "preprocess": true
+      }]
+    ]
+  }
+  ```
+
+  ### Minificación
+
+  > Esta opción está activada por defecto. Si experimentas resultados estropeados de CSS,
+  > desactiva la opción y reporta el problema por favor.
+
+  Este plugin minifica tus estilos en los "tagged templ literals", dándole a tu paquete, grandes
+  ahorros de tamaño.
+
+  Esta operación posiblemente rompa tus estilos en algunos raros casos, así que te recomendamos
+  dejar esta opción activada durante el desarrollo si está activada en producción.
+
+  Puedes desactivar la minificación en la opción de `minify`:
+
+  ```js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "minify": false
+      }]
+    ]
+  }
+  ```
+
+  ### Transpilación de Template String
+
+  Transpilamos "tagged template literals" de `styled-components` a una representación más pequeña
+  que Babel normalmente usa, porque los "template literals" de `styled-components` no necesitan
+  ser 100% compatibles con las especificaciones.
+
+  Lee más acerca de [Tagged Template Literals](#tagged-template-literals) en nuestra sección
+  dedicada a ellos.
+
+  Puedes usar la opción de `transpileTemplateLiterals` para desactivar esta característica.
+
+  ```js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "transpileTemplateLiterals": false
+      }]
+    ]
+  }
+  ```

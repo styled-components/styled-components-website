@@ -1,5 +1,5 @@
 nesting: |
-  ## ¿Puedo anidar reglas?
+  ## ¿Puedo usar reglas anidadas?
 
   Si: Las anidaciones son una característica intencional traída de Sass. Usado con moderación
   es una gran forma de aligerar tu código reduciendo la necesidad de crear clases explícitas para

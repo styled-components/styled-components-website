@@ -8,6 +8,7 @@ const docs = yaml.load(fs.readFileSync(__dirname + '/docs.yml'))
 const docsBasics = yaml.load(fs.readFileSync(__dirname + '/docsBasics.yml'))
 const docsAdvanced = yaml.load(fs.readFileSync(__dirname + '/docsAdvanced.yml'))
 const docsApi = yaml.load(fs.readFileSync(__dirname + '/docsApi.yml'))
+const docsTooling = yaml.load(fs.readFileSync(__dirname + '/docsTooling.yml'))
 const docsFaqs = yaml.load(fs.readFileSync(__dirname + '/docsFaqs.yml'))
 
 export default {
@@ -18,5 +19,6 @@ export default {
   docsBasics,
   docsAdvanced,
   docsApi,
+  docsTooling,
   docsFaqs,
 }
