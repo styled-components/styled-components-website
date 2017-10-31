@@ -295,6 +295,7 @@ export class Index extends PureComponent {
                 <Footer>
                   <HeroContent>
                     <Trans i18nKey="madeWithLove">
+                      <br />
                       <Heart />
                       <Link inline white href="https://twitter.com/glenmaddern">@glenmaddern</Link>
                       <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>

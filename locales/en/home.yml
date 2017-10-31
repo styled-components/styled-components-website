@@ -5,7 +5,10 @@ headerCodeSecondComment: |
   /* The GitHub button is a primary button
     * edit this to target it specifically! */
 usedBy: Used by folks at
-madeWithLove: Made with <0 /> by <1>@glenmaddern</1>, <2>@mxstbr</2> & <3>@_philpl‬</3>
+madeWithLove: |
+  Hosted on ▲ ZEIT Now
+  <0/>
+  Made with <1/> by <2>@glenmaddern</2>, <3>@mxstbr</3> & <4>@_philpl‬</4>
 starsOnGithub: Stars on GitHub
 currentVersion: Current Version
 monthlyDownloads: Monthly downloads

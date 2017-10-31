@@ -2995,6 +2995,10 @@ exports[`Index renders correctly 1`] = `
                 parent="div"
               >
                 <div>
+                  Hosted on ▲ ZEIT Now
+                  
+                  <br />
+                  
                   Made with 
                   <Styled(HeartIcon)>
                     <HeartIcon
@@ -3097,6 +3101,7 @@ exports[`Index renders correctly 1`] = `
                       </styled.a>
                     </Link>
                   </Link>
+                   
                 </div>
               </Trans>
             </div>

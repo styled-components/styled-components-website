@@ -5,7 +5,10 @@ headerCodeSecondComment: |
   /* El botón de GitHub es un botón primario
     * ¡Edita esto para elegirlo específicamente! */
 usedBy: Usado por gente en
-madeWithLove: Hecho con <0 /> por <1>@glenmaddern</1>, <2>@mxstbr</2> & <3>@_philpl‬</3>
+madeWithLove: |
+  Ahora hospedado en ▲ ZEIT
+  <0/>
+  Hecho con <1 /> por <2>@glenmaddern</2>, <3>@mxstbr</3> & <4>@_philpl‬</4>
 starsOnGithub: Estrellas en Github
 currentVersion: Versión actual
 monthlyDownloads: Descargas mensuales
