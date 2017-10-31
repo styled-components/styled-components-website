@@ -1,3 +1,5 @@
+'use babel'
+
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { I18n } from 'react-i18next'
@@ -46,7 +48,7 @@ const HomepageGettingStarted = () => (
     wait={process.browser}
   >
     {
-      (translate) => {
+      (translate, { i18n }) => {
         if (!translate) {
           return null
         }
@@ -82,7 +84,7 @@ const HomepageGettingStarted = () => (
               </a>
             </AlignCenter>
 
-            {md(translate('gettingStarted.first'))}
+            {md(i18n)(translate('gettingStarted.first'))}
             <AlignCenter>
               <ExampleButton
                 onClick={() => { alert(translate('clickedNormal')) }}
@@ -96,15 +98,15 @@ const HomepageGettingStarted = () => (
                 {translate('primaryButton')}
               </ExampleButton>
             </AlignCenter>
-            {md(translate('gettingStarted.second'))}
+            {md(i18n)(translate('gettingStarted.second'))}
             <AlignCenter>
               <button>{translate('imAButton')}</button>
             </AlignCenter>
-            {md(translate('gettingStarted.third'))}
+            {md(i18n)(translate('gettingStarted.third'))}
             <AlignCenter>
               <SecondButton>{translate('imAStyledButton')}</SecondButton>
             </AlignCenter>
-            {md(translate('gettingStarted.fourth'))}
+            {md(i18n)(translate('gettingStarted.fourth'))}
           </Content>
         )
       }
