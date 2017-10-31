@@ -19,7 +19,7 @@ import {
   addLanguageToPath,
 } from '../../utils/translations'
 
-const APIReference = () => (
+export const APIReference = () => (
   <I18n
     ns={[DOCS_TRANSLATION, DEFAULT_TRANSLATION]}
   >

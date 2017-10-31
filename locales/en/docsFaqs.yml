@@ -1,0 +1,176 @@
+nesting: |
+  ## Can I nest rules?
+
+  Yes: nesting is a feature intentionally ported from Sass. Used sparingly it's a
+  great way to lighten your code by reducing the need to create explicit classes for every element.
+
+  It can also be used by parent components to define contextual constraints that aren't properly a
+  concern of the affected children:
+
+  ```react
+  const EqualDivider = styled.div`
+    display: flex;
+    margin: 0.5rem;
+    padding: 1rem;
+    background: papayawhip;
+    ${props => props.vertical && 'flex-direction: column;'}
+
+    > * {
+      flex: 1;
+
+      &:not(:first-child) {
+        ${props => props.vertical ? 'margin-top' : 'margin-left'}: 1rem;
+      }
+    }
+  `;
+
+  const Child = styled.div`
+    padding: 0.25rem 0.5rem;
+    background: palevioletred;
+  `;
+
+  render(
+    <div>
+    <EqualDivider>
+      <Child>First</Child>
+      <Child>Second</Child>
+      <Child>Third</Child>
+    </EqualDivider>
+    <EqualDivider vertical>
+      <Child>First</Child>
+      <Child>Second</Child>
+      <Child>Third</Child>
+    </EqualDivider>
+    </div>
+  );
+  ```
+
+  It's also incredibly convenient to co-locate media queries, since we can see at a glance
+  exactly how the component will respond at any resolution.
+
+  ```react
+  const ColorChanger = styled.section`
+    background: papayawhip;
+    color: palevioletred;
+
+    @media(min-width: 768px) {
+      background: mediumseagreen;
+      color: papayawhip;
+    }
+  `;
+
+  render(
+    <ColorChanger href="#">
+      <h2>Hello world!</h2>
+    </ColorChanger>
+  );
+  ```
+reverseSelectors: |
+  ## Can I refer to other components?
+
+  Yes! This lets you adopt the "Reverse Selector" pattern, which lets components encapsulate the entirety of their styling:
+  as with media queries, it lets components describe how they will behave when affected by external changes,
+  without needing to refer to other parts of your codebase.
+
+  Here, our Icon component defines its response to its parent Link being hovered:
+
+  ```react
+  const Link = styled.a`
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background: papayawhip;
+    color: palevioletred;
+  `;
+
+  const Icon = styled.svg`
+    transition: fill 0.25s;
+    width: 48px;
+    height: 48px;
+
+    ${Link}:hover & {
+      fill: rebeccapurple;
+    }
+  `;
+
+  const Label = styled.span`
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+
+    &::before {
+      content: '◀';
+      margin: 0 10px;
+    }
+  `;
+
+  render(
+    <Link href="#">
+      <Icon viewBox="0 0 20 20">
+        <path d="M10 15h8c1 0 2-1 2-2V3c0-1-1-2-2-2H2C1 1 0 2 0 3v10c0 1 1 2 2 2h4v4l4-4zM5 7h2v2H5V7zm4 0h2v2H9V7zm4 0h2v2h-2V7z"/>
+      </Icon>
+      <Label>Hovering my parent changes myu00A0style!</Label>
+    </Link>
+  );
+  ```
+
+  We could have nested the color-changing rule within our Link component, but then we'd have to
+  consider both sets of rules to understand why Icon behaves as it does.
+extendAndStyled: |
+  ## When should I use `styled()`?
+
+  ### Behind the scenes
+  The `styled()` factory generates new component styles with a new class. The classnames are
+  then passed to the React component via the `className` prop.
+  Calling `extend` creates new component styles by extending the old one, and thus doesn't
+  generate two classes for a single component. (`styled()` factory does that)
+
+  ### Which one should you use
+  We recommend to use `.extend` where possible for internal `StyledComponents`.
+  Try to use the `styled()` factory however for external or cross-file components
+  where it isn't clear what it's going to be when writing the wrapper `StyledComponent`.
+
+  Keep in mind that wrapping your own components with styled() is not recommended.
+  It should always be attempted to only have StyledComponents and not wrap any wrappers
+  and containers at a higher level. Otherwise your styling logic will be scattered across
+  multiple files, and it will become tempting to use child selectors to target elements
+  inside your containers. This of course increases the specificity of rules we generate,
+  which can lead to more code and styled() wrappers which try to compensate for this up
+  in your component hierarchy. Instead, you can keep your UI code clean by bundling
+  your styling at the lowest level, and utilise themes, inheritance, mixins, props,
+  and even "reverse selectors".
+
+  Also if you haven't read the section on [`Styling any components`](/docs/basics#styling-any-components)
+  and [`extend`](/docs/basics#extending-styles) yet, they contain more information and examples.
+cssFrameworks: |
+  ## Can I use CSS frameworks?
+
+  Integrating an existing CSS framework with styled-components is really easy! You can use its
+  existing class names alongside your components.
+
+  Consider you have an existing app with some CSS that have the classes: `.small` and `.big`.
+  Try to swap out the `.small` class with `.big` in the example below:
+
+  ```react
+  const Button = styled.button.attrs({
+    className: 'small',
+  })`
+    background: black;
+    color: white;
+    cursor: pointer;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid black;
+    border-radius: 3px;
+  `;
+
+  render(
+    <div>
+      <Button>Styled Components</Button>
+      <Button>The new way to style components!</Button>
+    </div>
+  );
+  ```
+
+  Please do read about [the attrs method](/docs/api#attrs) to learn how arbitary props can be passed
+  down to a styled component without wrapping it.
