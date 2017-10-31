@@ -7,7 +7,7 @@ import {
 
 const Theming = () => (
   <I18n ns={DOCS_ADVANCED_TRANSLATION}>
-    {translate => md(translate('theming'))}
+    {(translate, { i18n }) => md(i18n)(translate('theming'))}
   </I18n>
 )
 

@@ -17,6 +17,7 @@ export const addLanguageToPath = (i18n, path, {
   if (
     !isValidLanguage(i18n)
     || i18n.languages[0] === defaultLanguage
+    || path.match(/^https?:\/\//)
   ) {
     return path
   }

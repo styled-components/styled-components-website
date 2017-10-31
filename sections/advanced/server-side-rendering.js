@@ -7,7 +7,7 @@ import {
 
 const ServerSideRendering = () => (
   <I18n ns={DOCS_ADVANCED_TRANSLATION}>
-    {translate => md(translate('serverSideRendering'))}
+    {(translate, { i18n }) => md(i18n)(translate('serverSideRendering'))}
   </I18n>
 )
 

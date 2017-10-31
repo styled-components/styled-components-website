@@ -7,7 +7,7 @@ import {
 
 const MediaTemplates = () => (
   <I18n ns={DOCS_ADVANCED_TRANSLATION}>
-    {translate => md(translate('mediaTemplates'))}
+    {(translate, { i18n }) => md(i18n)(translate('mediaTemplates'))}
   </I18n>
 )
 

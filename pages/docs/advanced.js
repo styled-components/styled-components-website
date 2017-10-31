@@ -39,12 +39,8 @@ export const Advanced = () => (
         <ServerSideRendering />
 
         <NextPage
-          href={{
-            pathname: '/docs/api'
-          }}
-          as={{
-            pathname: addLanguageToPath(i18n, '/docs/api')
-          }}
+          href="/docs/api"
+          as={addLanguageToPath(i18n, '/docs/api')}
           title={translate(`${DEFAULT_TRANSLATION}:apiTitle`)}
           description={translate(`${DEFAULT_TRANSLATION}:continueOnNextPage`)}
         />

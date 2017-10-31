@@ -7,7 +7,7 @@ import {
 
 const ExistingCSS = () => (
   <I18n ns={DOCS_ADVANCED_TRANSLATION}>
-    {translate => md(translate('existingCSS'))}
+    {(translate, { i18n }) => md(i18n)(translate('existingCSS'))}
   </I18n>
 )
 

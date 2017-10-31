@@ -7,7 +7,7 @@ import {
 
 const Security = () => (
   <I18n ns={DOCS_ADVANCED_TRANSLATION}>
-    {translate => md(translate('security'))}
+    {(translate, { i18n }) => md(i18n)(translate('security'))}
   </I18n>
 )
 

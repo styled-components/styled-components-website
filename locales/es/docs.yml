@@ -10,3 +10,5 @@ basicsDescription: Comenzando con las bases de styled-components.
 advancedDescription: |
   Uso avanzado de styled-components - Tematización, refs, seguridad, CSS existente, Media Templates,
   Tagged Template Literals, SSR
+apiDescription: Referencia de API para styled-components
+toolingTitle: Herramientas

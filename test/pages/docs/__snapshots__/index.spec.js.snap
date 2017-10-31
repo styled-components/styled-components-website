@@ -1583,44 +1583,20 @@ exports[`Documentation renders correctly 1`] = `
                           className="c32"
                         >
                           <Link
-                            as={
-                              Object {
-                                "pathname": "/docs/basics",
-                              }
-                            }
-                            href={
-                              Object {
-                                "pathname": "/docs/basics",
-                              }
-                            }
+                            as="/docs/basics"
+                            href="/docs/basics"
                           >
                             <Link
-                              as={
-                                Object {
-                                  "pathname": "/docs/basics",
-                                }
-                              }
-                              href={
-                                Object {
-                                  "pathname": "/docs/basics",
-                                }
-                              }
+                              as="/docs/basics"
+                              href="/docs/basics"
                             >
                               <styled.a
-                                href={
-                                  Object {
-                                    "pathname": "/docs/basics",
-                                  }
-                                }
+                                href="/docs/basics"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href={
-                                    Object {
-                                      "pathname": "/docs/basics",
-                                    }
-                                  }
+                                  href="/docs/basics"
                                   onClick={[Function]}
                                 >
                                   Basics
@@ -1901,44 +1877,20 @@ exports[`Documentation renders correctly 1`] = `
                           className="c32"
                         >
                           <Link
-                            as={
-                              Object {
-                                "pathname": "/docs/advanced",
-                              }
-                            }
-                            href={
-                              Object {
-                                "pathname": "/docs/advanced",
-                              }
-                            }
+                            as="/docs/advanced"
+                            href="/docs/advanced"
                           >
                             <Link
-                              as={
-                                Object {
-                                  "pathname": "/docs/advanced",
-                                }
-                              }
-                              href={
-                                Object {
-                                  "pathname": "/docs/advanced",
-                                }
-                              }
+                              as="/docs/advanced"
+                              href="/docs/advanced"
                             >
                               <styled.a
-                                href={
-                                  Object {
-                                    "pathname": "/docs/advanced",
-                                  }
-                                }
+                                href="/docs/advanced"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href={
-                                    Object {
-                                      "pathname": "/docs/advanced",
-                                    }
-                                  }
+                                  href="/docs/advanced"
                                   onClick={[Function]}
                                 >
                                   Advanced
@@ -2141,44 +2093,20 @@ exports[`Documentation renders correctly 1`] = `
                           className="c32"
                         >
                           <Link
-                            as={
-                              Object {
-                                "pathname": "/docs/api",
-                              }
-                            }
-                            href={
-                              Object {
-                                "pathname": "/docs/api",
-                              }
-                            }
+                            as="/docs/api"
+                            href="/docs/api"
                           >
                             <Link
-                              as={
-                                Object {
-                                  "pathname": "/docs/api",
-                                }
-                              }
-                              href={
-                                Object {
-                                  "pathname": "/docs/api",
-                                }
-                              }
+                              as="/docs/api"
+                              href="/docs/api"
                             >
                               <styled.a
-                                href={
-                                  Object {
-                                    "pathname": "/docs/api",
-                                  }
-                                }
+                                href="/docs/api"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href={
-                                    Object {
-                                      "pathname": "/docs/api",
-                                    }
-                                  }
+                                  href="/docs/api"
                                   onClick={[Function]}
                                 >
                                   API Reference
@@ -2329,44 +2257,20 @@ exports[`Documentation renders correctly 1`] = `
                           className="c32"
                         >
                           <Link
-                            as={
-                              Object {
-                                "pathname": "/docs/tooling",
-                              }
-                            }
-                            href={
-                              Object {
-                                "pathname": "/docs/tooling",
-                              }
-                            }
+                            as="/docs/tooling"
+                            href="/docs/tooling"
                           >
                             <Link
-                              as={
-                                Object {
-                                  "pathname": "/docs/tooling",
-                                }
-                              }
-                              href={
-                                Object {
-                                  "pathname": "/docs/tooling",
-                                }
-                              }
+                              as="/docs/tooling"
+                              href="/docs/tooling"
                             >
                               <styled.a
-                                href={
-                                  Object {
-                                    "pathname": "/docs/tooling",
-                                  }
-                                }
+                                href="/docs/tooling"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href={
-                                    Object {
-                                      "pathname": "/docs/tooling",
-                                    }
-                                  }
+                                  href="/docs/tooling"
                                   onClick={[Function]}
                                 >
                                   Tooling
@@ -2491,44 +2395,20 @@ exports[`Documentation renders correctly 1`] = `
                           className="c32"
                         >
                           <Link
-                            as={
-                              Object {
-                                "pathname": "/docs/faqs",
-                              }
-                            }
-                            href={
-                              Object {
-                                "pathname": "/docs/faqs",
-                              }
-                            }
+                            as="/docs/faqs"
+                            href="/docs/faqs"
                           >
                             <Link
-                              as={
-                                Object {
-                                  "pathname": "/docs/faqs",
-                                }
-                              }
-                              href={
-                                Object {
-                                  "pathname": "/docs/faqs",
-                                }
-                              }
+                              as="/docs/faqs"
+                              href="/docs/faqs"
                             >
                               <styled.a
-                                href={
-                                  Object {
-                                    "pathname": "/docs/faqs",
-                                  }
-                                }
+                                href="/docs/faqs"
                                 onClick={[Function]}
                               >
                                 <a
                                   className="c27"
-                                  href={
-                                    Object {
-                                      "pathname": "/docs/faqs",
-                                    }
-                                  }
+                                  href="/docs/faqs"
                                   onClick={[Function]}
                                 >
                                   FAQs

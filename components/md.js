@@ -12,6 +12,10 @@ import stripIndent from '../utils/stripIndent'
 import elementToText from '../utils/elementToText'
 import titleToDash from '../utils/titleToDash'
 
+import {
+  addLanguageToPath,
+} from '../utils/translations'
+
 // Components to be used as renderers
 import Code from './Code'
 import LiveEdit from './LiveEdit'
@@ -50,7 +54,7 @@ const isValid = node => {
   return true
 }
 
-const md = (strings, ...values) => {
+const md = i18n => (strings, ...values) => {
   // Check if it's called as a normal function or as a tagged function
   const input = typeof strings === 'string' ?
     stripIndent(strings) :
@@ -95,7 +99,15 @@ const md = (strings, ...values) => {
       },
 
       Link({ href, children }) {
-        return <Link href={href} inline>{children}</Link>
+        return (
+          <Link
+            href={href}
+            as={addLanguageToPath(i18n, href)}
+            inline
+          >
+            {children}
+          </Link>
+        )
       },
 
       Heading({ level, children }) {

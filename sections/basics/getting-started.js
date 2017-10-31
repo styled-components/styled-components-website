@@ -7,9 +7,7 @@ import {
 
 const GettingStarted = () => (
   <I18n ns={DOCS_BASICS_TRANSLATION}>
-    {translate => (
-      md(translate('gettingStarted'))
-    )}
+    {(translate, { i18n }) => md(i18n)(translate('gettingStarted'))}
   </I18n>
 )
 

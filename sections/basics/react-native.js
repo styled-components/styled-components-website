@@ -7,7 +7,7 @@ import {
 
 const ReactNative = () => (
   <I18n ns={DOCS_BASICS_TRANSLATION}>
-    {translate => md(translate('reactNative'))}
+    {(translate, { i18n }) => md(i18n)(translate('reactNative'))}
   </I18n>
 )
 

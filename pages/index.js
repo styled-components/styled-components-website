@@ -75,12 +75,8 @@ const HomepageLivePreview = ({ className, pathToDocs, translate, ...rest }, { li
       </Button>
 
       <InternalButton
-        href={{
-          pathname: '/docs'
-        }}
-        as={{
-          pathname: pathToDocs
-        }}
+        href="/docs"
+        as={pathToDocs}
         prefetch
       >
         {translate(`${DEFAULT_TRANSLATION}:documentation`)}

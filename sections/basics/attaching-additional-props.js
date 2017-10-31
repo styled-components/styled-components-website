@@ -7,7 +7,7 @@ import {
 
 const AttachingAdditionalProps = () => (
   <I18n ns={DOCS_BASICS_TRANSLATION}>
-    {translate => md(translate('attachingAdditionalProps'))}
+    {(translate, { i18n }) => md(i18n)(translate('attachingAdditionalProps'))}
   </I18n>
 )
 

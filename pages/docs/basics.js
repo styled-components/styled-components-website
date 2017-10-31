@@ -45,12 +45,8 @@ export const Basics = () => (
         <ReactNative />
 
         <NextPage
-          href={{
-            pathname: '/docs/advanced'
-          }}
-          as={{
-            pathname: addLanguageToPath(i18n, '/docs/advanced')
-          }}
+          href="/docs/advanced"
+          as={addLanguageToPath(i18n, '/docs/advanced')}
           title={translate(`${DEFAULT_TRANSLATION}:advancedTitle`)}
           description={translate(`${DEFAULT_TRANSLATION}:continueOnNextPage`)}
         />

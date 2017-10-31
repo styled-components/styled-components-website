@@ -7,7 +7,7 @@ import {
 
 const Refs = () => (
   <I18n ns={DOCS_ADVANCED_TRANSLATION}>
-    {translate => md(translate('refs'))}
+    {(translate, { i18n }) => md(i18n)(translate('refs'))}
   </I18n>
 )
 

@@ -7,7 +7,7 @@ import {
 
 const Animations = () => (
   <I18n ns={DOCS_BASICS_TRANSLATION}>
-    {translate => md(translate('animations'))}
+    {(translate, { i18n }) => md(i18n)(translate('animations'))}
   </I18n>
 )
 

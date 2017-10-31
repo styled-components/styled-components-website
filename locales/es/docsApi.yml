@@ -1,0 +1,574 @@
+---
+primary: |
+  ## Primario
+styled:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Argumentos
+        - Descripción
+      rows: !!seq
+        # First row
+        -
+          columns: !!seq
+            - 1. <0>componente</0> / <2>etiqueta</2>
+            - Cualquier componente válido de react o una etiqueta como <0>'div'</0>.
+    - # Second table
+      head: !!seq
+        - Valores
+        - Descripción
+      rows: !!seq
+        # First row
+        - columns: !!seq
+          - Valor del "prop"
+          - |
+            Estos pueden ser de cualquier tipo, excepto funciones. Tienen que ser estáticos y
+            serán combinados con los "props" existentes del componente.
+        # Second row
+        - columns: !!seq
+          - Fábrica de "prop"
+          - |
+            Una función que recibe los "props" que serán pasados dentro del componente y computa
+            un valor, el cual será combinado dentro de los "props" existentes del componente.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `styled`| web | native
+
+      Este es la exportación por default.
+      Esta es una fábrica de bajo nvel, la usamos para crear los métodos ayudantes `styled.etiqueta`.
+    # Second piece of content
+    - |
+      Retorna una función que acepta un "tagged template literal" y lo convierte a un `Styled Component`.
+
+      ```jsx
+      import styled from 'styled-components';
+
+      const Button = styled.button`
+        background: palevioletred;
+        border-radius: 3px;
+        border: none;
+        color: white;
+      `;
+
+      const TomatoButton = styled(Button)`
+        background: tomato;
+      `;
+      ```
+
+      > Te recomendamos no usar la notación `styled('etiqueta')` directamente.
+      > Mejor, depende en la notación `styled.etiqueta`.
+      > Definimos todos los elementos válidos de HTML5 y SVG.
+
+      Puedes ver este método siendo introducido en la sección de [Comenzando](/es/docs/basics#getting-started).
+
+      #### .attrs
+
+      Este es un método encadenable que adjunta algunos "props" al "styled component".
+      El primer y único argumento es un objeto que será fusionado al resto de los "props" del
+      componente. El objeto `attrs` acepta los siguientes valores:
+    # Third piece of content
+    - |
+      Retorna otro `Styled Component`.
+
+      ```jsx
+      import styled from 'styled-components';
+
+      const Input = styled.input.attrs({
+        type: 'text',
+        size: props => props.small ? 3 : 8
+      })`
+        background: palevioletred;
+        border-radius: 3px;
+        border: none;
+        color: white;
+        padding: ${props => props.padding}
+      `;
+      ```
+
+      Aprende más acerca de este constructor en la sección de
+      [Adjuntando Props adicionales](/docs/basics#attaching-additional-props).
+taggedTemplateLiteral:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Entradas
+        - Descripción
+      rows: !!seq
+        # First row
+        - columns: !!seq
+          - Regla
+          - Cualquier regla de CSS (cadena)
+        # Second row
+        - columns: !!seq
+          - Interpolación
+          - |
+            Esto puede ser una cadena o una función.
+            Las cadenas son combinadas con las reglas así como son.
+            Las funciones recibirán los "props" del "styled component" como el primer y único argumento.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `TaggedTemplateLiteral`| web | native
+
+      Esto es lo que pasas a tus llamadas estilziadas - un "tagged template literal".
+      Esto es una característica de ES6. Puedes aprender más acerca de ellos en la sección
+      de [Tagged Template Literals](/docs/advanced#tagged-template-literals) section
+    # Second piece of code
+    - |
+      Lee más acerca de como adaptar el estilo basándose en los "props" en la sección de
+      [Adaptación basada en "props"](/docs/basics#adapting-based-on-props).
+
+      Las propiedades que son pasadas a una función interpolada son adjuntados a una propiedad
+      especial, `theme`, la cual es inyectada por un componente de más alto nivel `ThemeProvider`.
+      Revisa la sección de [Tematización](/docs/advanced#theming) para tener más información al respecto.
+
+      ```jsx
+      import styled from 'styled-components';
+
+      const padding = '3em';
+
+      const Section = styled.section`
+        color: white;
+
+        /* Pasa las variables como entradas */
+        padding: ${padding};
+
+        /* Ajusta el fondo de las propiedades */
+        background: ${props => props.background};
+      `;
+      ```
+
+      También puedes retornar objetos de las interpolaciones u objetos de entrada directamente. Estos
+      serán tratados como estilos en línea. Sin embargo, esto no es recomendado, ya que la sintáxis
+      de CSS tiene soporte para pseudo selectores, media queries, etc. Los cuales, la sintáxis de
+      objeto no lo tiene.
+styledComponent:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Argumentos
+        - Descripción
+      rows: !!seq
+        # First row
+        - columns: !!seq
+          - 1. <0>TaggedTemplateLiteral</0>
+          - Un "tagged template literal" con su CSS e interpolaciones.
+    - # Second table
+      head: !!seq
+        - Argumentos
+        - Descripción
+      rows: !!seq
+        # First row
+        -
+          columns: !!seq
+            - 1. <0>componente</0> / <2>etiqueta</2>
+            - Un componente válido de react o una etiqueta como `'div'`.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `StyledComponent`| web | native
+
+      Un componente de React estilizado. Esto es retornado cuando
+      llamas a `styled.etiqueta` o `styled(Component)` con estilos.
+
+      Este componente puede recibir cualquier "prop". Lo pasa al nodo de HTML si es un atributo válido,
+      sino, sólo pasa las funciones interpoladas.
+      (ve más información en [Tagged Template Literal](/advanced/#tagged-template-literals))
+
+      Puedes pasar un nombre de clase arbitrario  a un "styled component" sin problema y será aplicado
+      después de los estilos definidos en la llamada de estilo.
+      (por ejemplo, `<MyStyledComp className="bootstrap__btn" />`)
+
+      #### .extend
+
+      Este es un método que crea un nuevo `StyledComponent` y extiende sus reglas.
+    # Second piece of content
+    - |
+      Retorna un nuevo `StyledComponent` con las nuevas reglas fusionadas a las del componente con
+      el que el método fue llamado.
+
+      Puedes ver la sección de [Extendiendo estilos](/docs/basics#extendiendo-estilos).
+
+      #### .withComponent
+
+      Este es un método que crea un nuevo `StyledComponent` con una etiqueta o componente diferente
+      aplicado a éste, pero con las mismas reglas del cual fue llamado.
+    # Third piece of content
+    - |
+      Retorna un nuevo `StyledComponent` con una nueva etiqueta / componente siendo aplicado cuando
+      se usa.
+
+      Puedes verlo en acción en la sección de [Extendiendo estilos]
+      You can see it in action in the [Extendiendo estilos](/docs/basics#extendiendo-estilos).
+themeProvider:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - "Props"
+        - Descripción
+      rows: !!seq
+        # First tow
+        - columns: !!seq
+          - Tema
+          - |
+            Un objeto que será inyectado como un <0>tema</1> a todas las interpolaciones en los
+            "styled components" debajo del provider.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `ThemeProvider`| web | native
+
+      Un componente ayudante para la tematización. Inyecta el tema a todos los "styled components"
+      debajo de éste en el árbol de componentes, a través del API de contexto.
+      Revisa la sección de [Tematización](/docs/advanced#theming).
+    # Second piece of content
+    - |
+      ```jsx
+      import styled, { ThemeProvider } from 'styled-components';
+
+      const Box = styled.div`
+        color: ${props => props.theme.color};
+      `;
+
+      const theme = { color: 'mediumseagreen' };
+
+      <ThemeProvider theme={theme}>
+        <Box>Soy un mediumseagreen!</Box>
+      </ThemeProvider>
+      ```
+helpers: |
+  ## Ayudantes
+css:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Argumentos
+        - Descripción
+      rows: !!seq
+        # First row
+        - columns: !!seq
+          - 1. <0>TaggedTemplateLiteral</0>
+          - Un "tagged template literal" con tu CSS e interpolaciones.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `css`|web | native
+
+      Una función ayudante para generar CSS de un "template literal" con interpolaciones. Necesitas
+      usarlo si retornas un "template literal" con interpolaciones dentro de una interpolación.
+      (Esto es debido a como las etiquetas de "template literals" funcionan)
+
+      Si sólo estás retornando una cadena normal, no necesitas utilizar esto.
+    # Second piece of content
+    - |
+      Retorna un arreglo de interpolaciones, el cual es una estructura de datos plana, la cual puedes
+      pasar a la interpolación.
+
+      ```jsx
+      import styled, { css } from 'styled-components';
+
+      const complexMixin = css`
+        color: ${props => props.whiteColor ? 'white': 'black'}
+      `;
+
+      const StyledComp = styled.div`
+        /* Este es un ejemplo de una interpolación anidada */
+        ${props => props.complex ? complexMixin : 'color: blue;'}
+      `;
+      ```
+
+      Si dejas el css en tu función, será aplicado el método `toString()` y no tendrás los resultados
+      que esperas.
+keyframes:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Argumentos
+        - Descripción
+      rows: !!seq
+        - # First row
+          columns: !!seq
+            - 1. <0>TaggedTemplateLiteral</0>
+            - Un "tagged template literal" con tus keyframes dentro.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `keyframes`| web
+
+      Un método ayudante para crear keyframes de animaciones.
+    # Second piece of content
+    - |
+      Retorna un nombre único para estos keyframes, los cuales se usarán en tus declaraciones de
+      animaciones.
+
+      ```jsx
+      import styled, { keyframes } from 'styled-components';
+
+      const fadeIn = keyframes`
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      `;
+
+      const FadeInButton = styled.button`
+        animation: 1s ${fadeIn} ease-out;
+      `;
+      ```
+
+      Puedes aprender más acerca de styled-components con animaciones en la sección de
+      [Animaciones](/docs/basics#animaciones)
+injectGlobal:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Argumentos
+        - Descripción
+      rows: !!seq
+        # First row
+        - columns: !!seq
+          - 1. <0>TaggedTemplateLiteral</0>
+          - Un "tagged template literal" con tus estilos globales dentro.
+  content: !!seq
+    # First piece of content
+    - |
+        ### `injectGlobal`| web | native
+
+        Un método ayudante para escribir CSS global. No retorna un componente, pero añade estilos a
+        la hoja de estilos directamente.
+    - |
+        ```jsx
+        import { injectGlobal } from 'styled-components';
+
+        injectGlobal`
+          @font-face {
+            font-family: 'Operator Mono';
+            src: url('../fonts/Operator-Mono.ttf');
+          }
+
+          body {
+            margin: 0;
+          }
+        `;
+        ```
+
+        No te recomendamos el uso de esto. Trata de usarlo una sóla vez por app a lo mucho, si puedes,
+        mantén todo en un sólo archivo. Esto es un último recurso, úsalo para el raro caso de
+        la definición de `@font-face` o estilos al body.
+withTheme:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Argumentos
+        - Descripción
+      rows: !!seq
+        # First row
+        - columns: !!seq
+            - 1. <0>Component</0>
+            - Cualquier componente válido de React que puedan manejar el "prop" <0>theme</0>.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `withTheme`| web | native
+
+      Esta es una fábrica de componentes de alto orden que obtiene el tema de un `ThemeProvider` y
+      lo pasa a su componente como un "prop" `theme`.
+    # Second piece of content
+    - |
+      Retorna el componente pasado dentro de una envoltura (componente de alto orden).
+      El componente pasado recibirá el "prop" `theme` con el objeto de tema actual.
+
+      ```jsx
+      import { withTheme } from 'styled-components'
+
+      class MyComponent extends React.Component {
+        render() {
+          console.log('Tema actual:', this.props.theme);
+          // ...
+        }
+      }
+
+      export default withTheme(MyComponent)
+      ```
+
+      Usa esto sólo si necesitas el tema como un "prop".
+      Si sólo necesitas asignar una propiedad válida de la hoja de estilos puedes usar una tematización
+      normal para ello. Revisa la sección de [Tematización]/docs/advanced#tematizacin")
+      para leer más sobre como usar esto.
+supportedCSS: |
+  ## CSS Soportado
+
+  Dentro de un "styled component", soportamos todo el CSS más la anidación. Ya que generamos una
+  hoja de estilos real y no estilos en línea ¡Todo lo que funcione en CSS funciona en styled-components!
+
+  ```react
+  const Example = styled.div`
+    /* todas las declaraciones tendrán prefijo */
+    padding: 2em 1em;
+    background: papayawhip;
+
+    /* pseudo selectores también funcionan */
+    &:hover {
+      background: palevioletred;
+    }
+
+    /* no hay problema con los media queries */
+    @media (max-width: 600px) {
+      background: tomato;
+
+      /* reglas anidadas funcionan justo como se espera */
+      &:hover {
+        background: yellow;
+      }
+    }
+
+    > p {
+      /* selectores descendentes funcionan también, pero son más bien un último recurso */
+      text-decoration: underline;
+    }
+
+    /* selectores contextuales funcionan también */
+    html.test & {
+      display: none;
+    }
+  `;
+
+  render(
+    <Example>
+      <p>¡Hola mundo!</p>
+    </Example>
+  );
+  ```
+
+  Ampersands (`&`) se reemplazan por nuestro nombre de clase único generado para ése "styled component",
+  haciendo que sea fácil tener lógica compleja.
+flow: |
+  ## Flow
+
+  styled-components tiene soporte de primera de [Flow](https://flowtype.org) para ayudar
+  encontrarás error de tipos mientras uses nuestra API pública.
+
+  Para usar Flow con el api público de styled-components, te recomendamos que que uses la libreria
+  de definiciones en `flow-typed`. Para instalarla puedes usar el cli de `flow-typed` o descargarla
+  manualmente del repositorio de git y guardarla en una carpeta `flow-typed/` en el mismo directorio
+  que tu `flowconfig`.
+
+  ### Instalando las definiciones
+
+  ```
+  npm i -g flow-typed # Si aún no tienes flow-typed
+  flow-typed install styled-components@<version>
+  ```
+
+  > Si estás en npm >= 5.2 simplemente puedes usar [npx](https://github.com/zkat/npx)
+
+  ### Ignorar la fuente de styled-components
+
+  Deberías de agregar las siguientes líneas a tu `.flowconfig`, sí te encuentras con errores de
+  Flow viniendo del paquete de styled-components en tu directorio de `node_modules`.
+
+  ```
+  [ignore]
+  .*/node_modules/styled-components/.*
+  ```
+typescript: |
+  ## TypeScript
+
+  styled-components tine definiciones de TypeScript que permiten a la librería ser usada en cualquier
+  proyecto de TypeScript. Un ejemplo básico puede ser encontrado
+  [aquí](https://github.com/patrick91/Styled-Components-Typescript-Example).
+
+  ### Define una interfaz de tema
+
+  Por default, todos los estilos de un componente tendrán el "prop" `theme` puestos como `any`.
+  Cuando se construyen apps complejas, sería mejor si se tiene las verificaciones de autocompletar y
+  errores en todos lados.
+
+  Para tener verificaciones de autocompletar al rededor del "prop" `theme` debemos primero definir la
+  interfaz tema que nos gustaría usar a través de nuestra app:
+
+  ```jsx
+  // theme.ts
+  export default interface ThemeInterface {
+    primaryColor: string;
+    primaryColorInverted: string;
+  }
+  ```
+
+  Después reexportamos la función `styled` con nuestra interfaz propia de tema:
+
+  ```jsx
+  // styled-components.ts
+  import * as styledComponents from 'styled-components';
+  import { ThemedStyledComponentsModule } from 'styled-components';
+
+  import ThemeInterface from './theme';
+
+  const {
+    default: styled,
+    css,
+    injectGlobal,
+    keyframes,
+    ThemeProvider
+  } = styledComponents as ThemedStyledComponentsModule<ThemeInterface>;
+
+  export { css, injectGlobal, keyframes, ThemeProvider };
+  export default styled;
+  ```
+
+  Finalmente, en lugar de importar las funciones "styled" del módulo de styled-components,
+  lo hacemos de nuestro modulo propio que está arriba.
+
+  ### Advertencia con `className`
+
+  Cuando se define un componente, necesitarás poner una marca de `className` como opcional en tu
+  interfaz de "Props":
+
+  ```jsx
+  interface LogoProps {
+    /* Este prop es opcional, ya que TypeScript no sabrá que es enviado por la envoltura */
+    className?: string;
+  }
+
+  class Logo extends React.Component<LogoProps, {}> {
+    render() {
+      return (
+        <div className={this.props.className}>
+          Logo
+        </div>
+      );
+    }
+  }
+
+  const LogoStyled = styled(Logo)`
+    font-family: 'Helvetica';
+    font-weight: bold;
+    font-size: 1.8rem;
+  `;
+  ```
+
+  ### Advertencia con Componentes sin estado
+
+  Para usar componentes sin estado y tener revisiones de tipos para los "props", tendrás que definir
+  el componente junto a su tipo, así:
+
+  ```jsx
+  interface BoxProps {
+    theme?: ThemeInterface;
+    borders?: boolean;
+    className?: string;
+  }
+
+  const Box: React.StatelessComponent<BoxProps> = props => (
+    <div className={props.className}>
+      {props.children}
+    </div>
+  );
+
+  const StyledBox = styled(Box)`
+    padding: ${props => props.theme.lateralPadding};
+  `;
+  ```

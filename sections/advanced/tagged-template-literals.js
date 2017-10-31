@@ -7,7 +7,7 @@ import {
 
 const TaggedTemplateLiterals = () => (
   <I18n ns={DOCS_ADVANCED_TRANSLATION}>
-    {translate => md(translate('taggedTemplateLiterals'))}
+    {(translate, { i18n }) => md(i18n)(translate('taggedTemplateLiterals'))}
   </I18n>
 )
 

@@ -1,41 +1,42 @@
+import { I18n, Trans } from 'react-i18next'
 import React from 'react'
 
 import md from 'components/md'
 import Table, { Row, Column } from 'components/Table'
 import Code from 'components/Code'
 
-const ThemeProvider = () => md`
-  ### \`ThemeProvider\` | web | native
+import {
+  DOCS_API_TRANSLATION,
+} from '../../../constants/i18n'
 
-  A helper component for theming. Injects the theme into all styled components anywhere
-  beneath it in the component tree, via the context API.
-  Check the section on [Theming](/docs/advanced#theming).
-
-  ${
-    <Table head={[ 'Props', 'Description' ]}>
-      <Row>
-        <Column>
-          <Code>theme</Code>
-        </Column>
-        <Column>
-          An object that will be injected as <Code>theme</Code> into all interpolations in styled components
-          beneath the provider.
-        </Column>
-      </Row>
-    </Table>
-  }
-
-  \`\`\`jsx
-  import styled, { ThemeProvider } from 'styled-components';
-
-  const Box = styled.div\`
-    color: \${props => props.theme.color};
-  \`;
-
-  <ThemeProvider theme={{ color: 'mediumseagreen' }}>
-    <Box>I'm mediumseagreen!</Box>
-  </ThemeProvider>
-  \`\`\`
-`
+const ThemeProvider = () => (
+  <I18n ns={DOCS_API_TRANSLATION}>
+    {(translate, { i18n }) => (
+      <div>
+        {md(i18n)(translate('themeProvider.content.0'))}
+        <Table
+          head={[
+            translate('themeProvider.tables.0.head.0'),
+            translate('themeProvider.tables.0.head.1'),
+          ]}
+        >
+          <Row>
+            <Column>
+              <Code>
+                {translate('themeProvider.tables.0.rows.0.columns.0')}
+              </Code>
+            </Column>
+            <Column>
+              <Trans i18nKey="themeProvider.tables.0.rows.0.columns.1">
+                <Code>theme</Code>
+              </Trans>
+            </Column>
+          </Row>
+        </Table>
+        {md(i18n)(translate('themeProvider.content.1'))}
+      </div>
+    )}
+  </I18n>
+)
 
 export default ThemeProvider

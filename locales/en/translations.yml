@@ -5,9 +5,10 @@ esosystem: Ecosystem
 basicsTitle: Basics
 advancedTitle: Advanced
 apiTitle: API Reference
+toolingTitle: Tooling
 continueOnNextPage: Continue on the next page
 
-# Used by routing. Don't
+# Used by routing. Don't translate this
 basics: basics
 advanced: advanced
 api: api

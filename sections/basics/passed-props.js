@@ -7,7 +7,7 @@ import {
 
 const PassedProps = () => (
   <I18n ns={DOCS_BASICS_TRANSLATION}>
-    {translate => md(translate('passedProps'))}
+    {(translate, { i18n }) => md(i18n)(translate('passedProps'))}
   </I18n>
 )
 

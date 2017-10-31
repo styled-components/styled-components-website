@@ -8,9 +8,7 @@ import {
 
 const Installation = () => (
   <I18n ns={DOCS_BASICS_TRANSLATION}>
-    {translate => (
-      md(translate('installation'))
-    )}
+    {(translate, { i18n }) => md(i18n)(translate('installation'))}
   </I18n>
 )
 

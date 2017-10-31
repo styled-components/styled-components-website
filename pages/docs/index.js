@@ -80,12 +80,8 @@ export const Documentation = () => (
                 <Column key={title}>
                   <Header>
                     <Link
-                      href={{
-                        pathname: `/docs/${pathname}`
-                      }}
-                      as={{
-                        pathname: addLanguageToPath(i18n, `/docs/${pathname}`)
-                      }}
+                      href={`/docs/${pathname}`}
+                      as={addLanguageToPath(i18n, `/docs/${pathname}`)}
                     >
                       {translate(`${NAV_TRANSLATION}:${title}`)}
                     </Link>

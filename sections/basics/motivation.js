@@ -44,9 +44,9 @@ const Video = styled.div.attrs({
 
 const Motivation = () => (
   <I18n ns={DOCS_BASICS_TRANSLATION}>
-    {translate => (
+    {(translate, { i18n }) => (
       <div>
-        {md(translate('motivation'))}
+        {md(i18n)(translate('motivation'))}
         <Video />
       </div>
     )}

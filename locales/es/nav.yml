@@ -20,13 +20,13 @@ existingCSS: Extendiendo CSS
 mediaTemplates: Media Templates
 taggedTemplateLiterals: Tagged Template Literals
 serverSideRendering: Renderización del lado del servidor
-api: Referencia del API
+api: Referencia de API
 primary: Primario
 helpers: Ayudantes
 supportedCSS: CSS soportado
 flow: Flow
 typeScript: TypeScript
-tooling: Tooling
+tooling: Herramientas
 babelPlugin: Babel Plugin
 testUtilities: Utilidades de prueba
 stylelint: Stylelint

@@ -7,7 +7,7 @@ import {
 
 const AdaptingBasedOnProps = () => (
   <I18n ns={DOCS_BASICS_TRANSLATION}>
-    {translate => md(translate('adaptingBasedOnProps'))}
+    {(translate, { i18n }) => md(i18n)(translate('adaptingBasedOnProps'))}
   </I18n>
 )
 
