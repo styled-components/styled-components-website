@@ -265,6 +265,10 @@ class Index extends PureComponent {
 
         <Footer>
           <HeroContent>
+            {'Hosted on ▲ ZEIT Now'}
+
+            <br />
+
             {'Made with '}
             <Heart />
             {' by '}
