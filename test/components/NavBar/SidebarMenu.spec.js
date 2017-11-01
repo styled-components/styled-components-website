@@ -1,5 +1,4 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 import { mount } from 'enzyme'
 import 'jest-styled-components'
 import { I18nextProvider } from 'react-i18next'
