@@ -199,7 +199,7 @@ extendingStyles: |
   > Sólo debes usar `Comp.estend` sí sabes que ese `Comp` es un "styled-component".
   > Si estás importando de otro archivo o librería de terceros, es mejor que uses
   > `styled(Comp)` ya que logra el mismo resultado, pero functiona con *cualquier* componente de
-  > React. Lee más acerca de [las diferencias entre `Comp.extend` y `styled(Comp)`](/docs/#)
+  > React. Lee más acerca de [las diferencias entre `Comp.extend` y `styled(Comp)`](/docs/faqs#when-should-i-use-)
 
   En los muy raros casos que quieras cambiar que etiqueta o componente renderiza el "styled-component".
   Tenemos una manera de solucionarlo. Puedes usar el <Code>withComponent</Code> para extender los
