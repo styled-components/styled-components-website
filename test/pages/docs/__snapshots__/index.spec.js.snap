@@ -1637,9 +1637,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/basics#motivation"
                             href="/docs/basics#motivation"
                           >
                             <Link
+                              as="/docs/basics#motivation"
                               href="/docs/basics#motivation"
                             >
                               <styled.a
@@ -1663,9 +1665,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/basics#installation"
                             href="/docs/basics#installation"
                           >
                             <Link
+                              as="/docs/basics#installation"
                               href="/docs/basics#installation"
                             >
                               <styled.a
@@ -1689,9 +1693,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/basics#getting-started"
                             href="/docs/basics#getting-started"
                           >
                             <Link
+                              as="/docs/basics#getting-started"
                               href="/docs/basics#getting-started"
                             >
                               <styled.a
@@ -1715,9 +1721,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/basics#passed-props"
                             href="/docs/basics#passed-props"
                           >
                             <Link
+                              as="/docs/basics#passed-props"
                               href="/docs/basics#passed-props"
                             >
                               <styled.a
@@ -1741,9 +1749,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/basics#adapting-based-on-props"
                             href="/docs/basics#adapting-based-on-props"
                           >
                             <Link
+                              as="/docs/basics#adapting-based-on-props"
                               href="/docs/basics#adapting-based-on-props"
                             >
                               <styled.a
@@ -1767,9 +1777,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/basics#styling-any-components"
                             href="/docs/basics#styling-any-components"
                           >
                             <Link
+                              as="/docs/basics#styling-any-components"
                               href="/docs/basics#styling-any-components"
                             >
                               <styled.a
@@ -1793,9 +1805,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/basics#extending-styles"
                             href="/docs/basics#extending-styles"
                           >
                             <Link
+                              as="/docs/basics#extending-styles"
                               href="/docs/basics#extending-styles"
                             >
                               <styled.a
@@ -1819,9 +1833,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/basics#attaching-additional-props"
                             href="/docs/basics#attaching-additional-props"
                           >
                             <Link
+                              as="/docs/basics#attaching-additional-props"
                               href="/docs/basics#attaching-additional-props"
                             >
                               <styled.a
@@ -1845,9 +1861,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/basics#animations"
                             href="/docs/basics#animations"
                           >
                             <Link
+                              as="/docs/basics#animations"
                               href="/docs/basics#animations"
                             >
                               <styled.a
@@ -1871,9 +1889,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/basics#react-native"
                             href="/docs/basics#react-native"
                           >
                             <Link
+                              as="/docs/basics#react-native"
                               href="/docs/basics#react-native"
                             >
                               <styled.a
@@ -1931,9 +1951,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/advanced#theming"
                             href="/docs/advanced#theming"
                           >
                             <Link
+                              as="/docs/advanced#theming"
                               href="/docs/advanced#theming"
                             >
                               <styled.a
@@ -1957,9 +1979,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/advanced#refs"
                             href="/docs/advanced#refs"
                           >
                             <Link
+                              as="/docs/advanced#refs"
                               href="/docs/advanced#refs"
                             >
                               <styled.a
@@ -1983,9 +2007,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/advanced#security"
                             href="/docs/advanced#security"
                           >
                             <Link
+                              as="/docs/advanced#security"
                               href="/docs/advanced#security"
                             >
                               <styled.a
@@ -2009,9 +2035,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/advanced#existing-css"
                             href="/docs/advanced#existing-css"
                           >
                             <Link
+                              as="/docs/advanced#existing-css"
                               href="/docs/advanced#existing-css"
                             >
                               <styled.a
@@ -2035,9 +2063,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/advanced#media-templates"
                             href="/docs/advanced#media-templates"
                           >
                             <Link
+                              as="/docs/advanced#media-templates"
                               href="/docs/advanced#media-templates"
                             >
                               <styled.a
@@ -2061,9 +2091,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/advanced#tagged-template-literals"
                             href="/docs/advanced#tagged-template-literals"
                           >
                             <Link
+                              as="/docs/advanced#tagged-template-literals"
                               href="/docs/advanced#tagged-template-literals"
                             >
                               <styled.a
@@ -2087,9 +2119,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/advanced#server-side-rendering"
                             href="/docs/advanced#server-side-rendering"
                           >
                             <Link
+                              as="/docs/advanced#server-side-rendering"
                               href="/docs/advanced#server-side-rendering"
                             >
                               <styled.a
@@ -2147,9 +2181,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/api#primary"
                             href="/docs/api#primary"
                           >
                             <Link
+                              as="/docs/api#primary"
                               href="/docs/api#primary"
                             >
                               <styled.a
@@ -2173,9 +2209,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/api#helpers"
                             href="/docs/api#helpers"
                           >
                             <Link
+                              as="/docs/api#helpers"
                               href="/docs/api#helpers"
                             >
                               <styled.a
@@ -2199,9 +2237,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/api#supported-css"
                             href="/docs/api#supported-css"
                           >
                             <Link
+                              as="/docs/api#supported-css"
                               href="/docs/api#supported-css"
                             >
                               <styled.a
@@ -2225,9 +2265,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/api#flow"
                             href="/docs/api#flow"
                           >
                             <Link
+                              as="/docs/api#flow"
                               href="/docs/api#flow"
                             >
                               <styled.a
@@ -2251,9 +2293,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/api#typescript"
                             href="/docs/api#typescript"
                           >
                             <Link
+                              as="/docs/api#typescript"
                               href="/docs/api#typescript"
                             >
                               <styled.a
@@ -2311,9 +2355,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/tooling#babel-plugin"
                             href="/docs/tooling#babel-plugin"
                           >
                             <Link
+                              as="/docs/tooling#babel-plugin"
                               href="/docs/tooling#babel-plugin"
                             >
                               <styled.a
@@ -2337,9 +2383,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/tooling#test-utilities"
                             href="/docs/tooling#test-utilities"
                           >
                             <Link
+                              as="/docs/tooling#test-utilities"
                               href="/docs/tooling#test-utilities"
                             >
                               <styled.a
@@ -2363,9 +2411,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/tooling#stylelint"
                             href="/docs/tooling#stylelint"
                           >
                             <Link
+                              as="/docs/tooling#stylelint"
                               href="/docs/tooling#stylelint"
                             >
                               <styled.a
@@ -2389,9 +2439,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/tooling#styled-theming"
                             href="/docs/tooling#styled-theming"
                           >
                             <Link
+                              as="/docs/tooling#styled-theming"
                               href="/docs/tooling#styled-theming"
                             >
                               <styled.a
@@ -2449,9 +2501,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/faqs#can-i-nest-rules"
                             href="/docs/faqs#can-i-nest-rules"
                           >
                             <Link
+                              as="/docs/faqs#can-i-nest-rules"
                               href="/docs/faqs#can-i-nest-rules"
                             >
                               <styled.a
@@ -2475,9 +2529,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/faqs#can-i-refer-to-other-components"
                             href="/docs/faqs#can-i-refer-to-other-components"
                           >
                             <Link
+                              as="/docs/faqs#can-i-refer-to-other-components"
                               href="/docs/faqs#can-i-refer-to-other-components"
                             >
                               <styled.a
@@ -2501,9 +2557,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/faqs#when-should-i-use-styled"
                             href="/docs/faqs#when-should-i-use-styled"
                           >
                             <Link
+                              as="/docs/faqs#when-should-i-use-styled"
                               href="/docs/faqs#when-should-i-use-styled"
                             >
                               <styled.a
@@ -2527,9 +2585,11 @@ exports[`Documentation renders correctly 1`] = `
                           className="c33"
                         >
                           <Link
+                            as="/docs/faqs#can-i-use-css-frameworks"
                             href="/docs/faqs#can-i-use-css-frameworks"
                           >
                             <Link
+                              as="/docs/faqs#can-i-use-css-frameworks"
                               href="/docs/faqs#can-i-use-css-frameworks"
                             >
                               <styled.a

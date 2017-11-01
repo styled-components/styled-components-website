@@ -86,20 +86,23 @@ export const Documentation = () => (
                       {translate(`${NAV_TRANSLATION}:${title}`)}
                     </Link>
                   </Header>
-
                   {
-                    sections.map(({ title }) => (
-                      <SubHeader key={title}>
-                        <Link
-                          href={addLanguageToPath(
-                            i18n,
-                            `/docs/${pathname}#${titleToDash(translate(`${NAV_TRANSLATION}:${title}`))}`,
-                          )}
-                        >
-                          {translate(`${NAV_TRANSLATION}:${title}`)}
-                        </Link>
-                      </SubHeader>
-                    ))
+                    sections.map(({ title }) => {
+                      const path = `/docs/${pathname}#${titleToDash(translate(`${NAV_TRANSLATION}:${title}`))}`
+
+                      return (
+                        (
+                          <SubHeader key={title}>
+                            <Link
+                              href={path}
+                              as={addLanguageToPath(i18n, path)}
+                            >
+                              {translate(`${NAV_TRANSLATION}:${title}`)}
+                            </Link>
+                          </SubHeader>
+                        )
+                      )
+                    })
                   }
                 </Column>
               ))
