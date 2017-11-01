@@ -1,5 +1,8 @@
 title: Primitivos visuales para la era de los componentes
-subtitle: Usa los mejores bits de ES6 y CSS para estilizar tus aplicaciones sin estrés 💅
+subtitle: Usa lo mejor de ES6 y CSS para estilizar tus aplicaciones sin estrés 💅
+seoDescription: |
+  Primitivos visuales para la era de los componentes. Usa lo mejor de ES6 y CSS para
+  estilizar tus aplicaciones sin estrés 💅
 headerCodeComment: /* Esto renderiza los botones de arriba... ¡Edítame! */
 headerCodeSecondComment: |
   /* El botón de GitHub es un botón primario

@@ -228,7 +228,10 @@ export class Index extends PureComponent {
 
             return (
               <div>
-                <SeoHead title="styled-components">
+                <SeoHead
+                  title="styled-components"
+                  description={translate('seoDescription')}
+                >
                   <meta name="robots" content="noodp" />
                 </SeoHead>
 

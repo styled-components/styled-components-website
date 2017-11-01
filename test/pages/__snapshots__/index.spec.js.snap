@@ -894,6 +894,9 @@ exports[`Index renders correctly 1`] = `
   >
     <div>
       <SeoHead
+        description="Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps
+      without stress 💅
+      "
         title="styled-components"
       >
         <SideEffect(Head)>
