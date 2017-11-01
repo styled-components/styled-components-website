@@ -1,5 +1,5 @@
 title: Documentación
-description: Aprende como usar styled-components y a estilizar tus apps sin estrés
+description: Aprende como usar styled-components y a estilizar tus aplicaciones sin estrés
 about: |
   Usando "tagged template literals" (una nueva característica en JavaScript) y el poder de CSS,
   styled-components permite utilizar código CSS real para estilizar tus componentes.

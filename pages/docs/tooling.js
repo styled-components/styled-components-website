@@ -14,6 +14,10 @@ import {
   DEFAULT_TRANSLATION,
 } from '../../constants/i18n'
 
+import {
+  addLanguageToPath,
+} from '../../utils/translations'
+
 export const Tooling = () => (
   <I18n
     ns={[DOCS_TRANSLATION, DEFAULT_TRANSLATION]}

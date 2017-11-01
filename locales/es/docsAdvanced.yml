@@ -222,7 +222,7 @@ security: |
   Hay un estándar de como limpiar CSS dentro de JavaScript,
   [`CSS.escape`](https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape).
   No está muy bien soportado a través de los exploradores aún, así que recomendamos también utilizar el
-  [polyfill por Mathias Bynens](https://github.com/mathiasbynens/CSS.escape) en tu app.
+  [polyfill por Mathias Bynens](https://github.com/mathiasbynens/CSS.escape) en tu aplicación.
 existingCSS: |
   ## CSS existente
 
@@ -391,7 +391,7 @@ serverSideRendering: |
   ## Renderizado del lado del servidor | v2
 
   styled-components soporta renderizado del lado del servidor de manera concurrente, con rehidratación
-  de hojas de estilo. La idea básica es que cada vez que renderices tu app en el servidor, puedes
+  de hojas de estilo. La idea básica es que cada vez que renderices tu aplicación en el servidor, puedes
   crear un `ServerStyleSheet` y añadirlo a un "provider" en tu árbol de React, esto acepta estilos
   via el API de contexto.
 
@@ -405,7 +405,7 @@ serverSideRendering: |
   import { ServerStyleSheet } from 'styled-components'
 
   const sheet = new ServerStyleSheet()
-  const html = renderToString(sheet.collectStyles(<TuApp />))
+  const html = renderToString(sheet.collectStyles(<TuAplicacion />))
   const styleTags = sheet.getStyleTags() // o sheet.getStyleElement()
   ```
 
@@ -420,7 +420,7 @@ serverSideRendering: |
   const sheet = new ServerStyleSheet()
   const html = renderToString(
     <StyleSheetManager sheet={sheet.instance}>
-      <TuApp />
+      <TuAplicacion />
     </StyleSheetManager>
   )
 

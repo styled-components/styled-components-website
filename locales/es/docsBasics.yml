@@ -277,7 +277,7 @@ animations: |
 
   Las animaciones de CSS con `@keyframes` no tienen alcance sólo para un componente, pero aún así,
   no quieres tenerlos de manera global. Es por eso que exportamos un ayudante `keyframes` el cual
-  genera un nombre único para tus "keyframes". Puedes usar el nombre único en toda tu app.
+  genera un nombre único para tus "keyframes". Puedes usar el nombre único en toda tu aplicación.
 
   De esta manera, tienes todos los beneficios de usar JavaScript, evitando conflicto de nombres y
   tener tus "keyframes" como siempre:

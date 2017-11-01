@@ -28,7 +28,7 @@ flow: Flow
 typeScript: TypeScript
 tooling: Herramientas
 babelPlugin: Babel Plugin
-testUtilities: Utilidades de prueba
+testUtilities: Utilidades para pruebas
 stylelint: Stylelint
 styledTheming: Styled Theming
 faqs: Preguntas frecuentes

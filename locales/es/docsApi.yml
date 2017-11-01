@@ -355,9 +355,9 @@ injectGlobal:
         `;
         ```
 
-        No te recomendamos el uso de esto. Trata de usarlo una sóla vez por app a lo mucho, si puedes,
-        mantén todo en un sólo archivo. Esto es un último recurso, úsalo para el raro caso de
-        la definición de `@font-face` o estilos al body.
+        No te recomendamos el uso de esto. Trata de usarlo una sóla vez por aplicación a lo mucho,
+        si puedes, mantén todo en un sólo archivo. Esto es un último recurso, úsalo para el raro
+        caso de la definición de `@font-face` o estilos al body.
 withTheme:
   tables: !!seq
     - # First table
@@ -484,11 +484,11 @@ typescript: |
   ### Define una interfaz de tema
 
   Por default, todos los estilos de un componente tendrán el "prop" `theme` puestos como `any`.
-  Cuando se construyen apps complejas, sería mejor si se tiene las verificaciones de autocompletar y
-  errores en todos lados.
+  Cuando se construyen aplicacioness complejas, sería mejor si se tiene las verificaciones de
+  autocompletar y errores en todos lados.
 
   Para tener verificaciones de autocompletar al rededor del "prop" `theme` debemos primero definir la
-  interfaz tema que nos gustaría usar a través de nuestra app:
+  interfaz tema que nos gustaría usar a través de nuestra aplicación:
 
   ```jsx
   // theme.ts

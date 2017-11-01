@@ -1,5 +1,5 @@
 title: Primitivos visuales para la era de los componentes
-subtitle: Usa los mejores bits de ES6 y CSS para estilizar tus apps sin estrés 💅
+subtitle: Usa los mejores bits de ES6 y CSS para estilizar tus aplicaciones sin estrés 💅
 headerCodeComment: /* Esto renderiza los botones de arriba... ¡Edítame! */
 headerCodeSecondComment: |
   /* El botón de GitHub es un botón primario
@@ -26,7 +26,8 @@ gettingStarted:
     ## Instalación
 
     Para descargar styled-components ejecuta `npm install --save styled-components`.
-    Eso es todo lo que necesitas hacer, ¡Ahora estás listo para usarlo en tu app! (sip, no es necesario compilarlo 👌)
+    Eso es todo lo que necesitas hacer, ¡Ahora estás listo para usarlo en tu aplicación!
+    (sip, no es necesario compilarlo 👌)
 
     ## Tu primer "styled-component"
 
