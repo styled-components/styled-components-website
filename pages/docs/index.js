@@ -91,16 +91,14 @@ export const Documentation = () => (
                       const path = `/docs/${pathname}#${titleToDash(translate(`${NAV_TRANSLATION}:${title}`))}`
 
                       return (
-                        (
-                          <SubHeader key={title}>
-                            <Link
-                              href={path}
-                              as={addLanguageToPath(i18n, path)}
-                            >
-                              {translate(`${NAV_TRANSLATION}:${title}`)}
-                            </Link>
-                          </SubHeader>
-                        )
+                        <SubHeader key={title}>
+                          <Link
+                            href={path}
+                            as={addLanguageToPath(i18n, path)}
+                          >
+                            {translate(`${NAV_TRANSLATION}:${title}`)}
+                          </Link>
+                        </SubHeader>
                       )
                     })
                   }
