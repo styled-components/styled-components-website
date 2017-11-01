@@ -1,36 +1,72 @@
 import React from 'react'
+import { I18nextProvider, I18n } from 'react-i18next'
 import DocsLayout from '../components/DocsLayout'
 import { getReadme } from '../utils/githubApi'
 import md from '../components/md'
 import Loading from '../components/Loading'
-import Link from '../components/Link'
 
+import {
+  TRANSLATIONS,
+  DEFAULT_TRANSLATION,
+  ECOSYSTEM_TRANSLATION,
+} from '../constants/i18n'
 
+import i18n from '../utils/i18n'
 
-const Ecosystem = ({ readme }) => (
-    <DocsLayout title="Ecosystem" description="Ecosystem of styled-components">
-    <p>
-      This is an incomplete list of awesome things built with styled-components. If you have something to share, please add it to the <Link href="https://github.com/styled-components/awesome-styled-components" inline>awesome-styled-components</Link> repo on GitHub and it will automatically show up here!
-    </p>
-      {typeof readme !== 'string' ? <Loading /> : md(
-          `
-          ${readme}
+export const Ecosystem = ({ readme, ...props }) => {
+  const injectedProps = props.i18n ? props : {
+    ...props,
+    i18n
+  }
 
-### Contribute
+  return (
+    <I18nextProvider {...injectedProps}>
+      <I18n
+        ns={[ECOSYSTEM_TRANSLATION, DEFAULT_TRANSLATION]}
+        wait={process.browser}
+      >
+        {(translate, { i18n }) => {
+          if (!translate) {
+            return null
+          }
 
-If you know any projects build with styled components contributions and suggestions are always welcome !
-Please read the [contribution guidelines](https://github.com/styled-components/awesome-styled-components/blob/master/contributing.md) first and submit a PR.
-          `)}
-    </DocsLayout>
+          return (
+            <DocsLayout
+              title={translate(`${DEFAULT_TRANSLATION}:ecosystemTitle`)}
+              description={translate('description')}
+            >
+              {md(i18n)(translate('content.0'))}
+              {typeof readme !== 'string' ? <Loading /> : (
+                <div>
+                  {md(i18n)(readme)}
+                  {md(i18n)(translate('content.1'))}
+                </div>
+              )}
+            </DocsLayout>
+          )
+        }}
+      </I18n>
+    </I18nextProvider>
   )
+}
 
-Ecosystem.getInitialProps = async () => {
+Ecosystem.getInitialProps = async ({ req }) => {
   const readme = await getReadme('awesome-styled-components')
-  return {
+
+  const props = {
     readme: readme
       .split('### Built with styled-components')[1]
       .split('### Contribute')[0]
   }
+
+  if (req && !process.browser) {
+    return {
+      ...props,
+      ...i18n.getInitialProps(req, TRANSLATIONS),
+    }
+  }
+
+  return props
 }
 
 export default Ecosystem

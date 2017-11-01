@@ -66,7 +66,7 @@ const NavLinks = () => (
             href="/ecosystem"
             as={addLanguageToPath(i18n, '/ecosystem')}
           >
-            {translate('ecosystem')}
+            {translate('ecosystemTitle')}
           </NavLink>
         </Wrapper>
     )}

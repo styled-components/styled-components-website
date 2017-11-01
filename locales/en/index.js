@@ -10,6 +10,7 @@ const docsAdvanced = yaml.load(fs.readFileSync(__dirname + '/docsAdvanced.yml'))
 const docsApi = yaml.load(fs.readFileSync(__dirname + '/docsApi.yml'))
 const docsTooling = yaml.load(fs.readFileSync(__dirname + '/docsTooling.yml'))
 const docsFaqs = yaml.load(fs.readFileSync(__dirname + '/docsFaqs.yml'))
+const ecosystem = yaml.load(fs.readFileSync(__dirname + '/ecosystem.yml'))
 
 export default {
   translations,
@@ -21,4 +22,5 @@ export default {
   docsApi,
   docsTooling,
   docsFaqs,
+  ecosystem,
 }

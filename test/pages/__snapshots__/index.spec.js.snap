@@ -1037,7 +1037,7 @@ exports[`Index renders correctly 1`] = `
                                           href="/ecosystem"
                                           onClick={[Function]}
                                         >
-                                          ecosystem
+                                          Ecosystem
                                         </a>
                                       </Link>
                                     </Link>
@@ -1390,7 +1390,7 @@ exports[`Index renders correctly 1`] = `
                                             href="/ecosystem"
                                             onClick={[Function]}
                                           >
-                                            ecosystem
+                                            Ecosystem
                                           </a>
                                         </Link>
                                       </Link>

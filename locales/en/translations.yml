@@ -1,6 +1,6 @@
 homepage: Homepage
 documentation: Documentation
-esosystem: Ecosystem
+ecosystemTitle: Ecosystem
 # Name collition with routing, unfortunately
 basicsTitle: Basics
 advancedTitle: Advanced
@@ -14,3 +14,4 @@ basics: basics
 advanced: advanced
 api: api
 docs: docs
+esosystem: ecosystem

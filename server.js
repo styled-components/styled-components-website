@@ -100,6 +100,14 @@ i18n
         return cachedRender(req, res, '/')
       })
 
+      i18nextMiddleware.addRoute(i18n, '/:lng/ecosystem', LANGUAGES, router, 'get', (req, res) => {
+        if (isUsingDefaultLanguage(req)) {
+          return redirectTo(res, '/ecosystem')
+        }
+
+        cachedRender(req, res, '/ecosystem')
+      })
+
       i18nextMiddleware.addRoute(i18n, '/:lng/docs', LANGUAGES, router, 'get', (req, res) => {
         if (isUsingDefaultLanguage(req)) {
           return redirectTo(res, '/docs')

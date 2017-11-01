@@ -438,7 +438,7 @@ exports[`Navbar renders correctly 1`] = `
                               href="/ecosystem"
                               onClick={[Function]}
                             >
-                              ecosystem
+                              Ecosystem
                             </a>
                           </Link>
                         </Link>
@@ -824,7 +824,7 @@ exports[`Navbar renders correctly 1`] = `
                                 href="/ecosystem"
                                 onClick={[Function]}
                               >
-                                ecosystem
+                                Ecosystem
                               </a>
                             </Link>
                           </Link>
