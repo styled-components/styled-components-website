@@ -3105,6 +3105,8 @@ exports[`Index renders correctly 1`] = `
           <div
             className="c27"
           >
+            Hosted on ▲ ZEIT Now
+            <br />
             Made with 
             <Styled(HeartIcon)>
               <HeartIcon
