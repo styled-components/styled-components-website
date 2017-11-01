@@ -84,7 +84,7 @@ const HomepageGettingStarted = () => (
               </a>
             </AlignCenter>
 
-            {md(i18n)(translate('gettingStarted.first'))}
+            {md(i18n)(translate('gettingStarted.0'))}
             <AlignCenter>
               <ExampleButton
                 onClick={() => { alert(translate('clickedNormal')) }}
@@ -98,15 +98,15 @@ const HomepageGettingStarted = () => (
                 {translate('primaryButton')}
               </ExampleButton>
             </AlignCenter>
-            {md(i18n)(translate('gettingStarted.second'))}
+            {md(i18n)(translate('gettingStarted.1'))}
             <AlignCenter>
               <button>{translate('imAButton')}</button>
             </AlignCenter>
-            {md(i18n)(translate('gettingStarted.third'))}
+            {md(i18n)(translate('gettingStarted.2'))}
             <AlignCenter>
               <SecondButton>{translate('imAStyledButton')}</SecondButton>
             </AlignCenter>
-            {md(i18n)(translate('gettingStarted.fourth'))}
+            {md(i18n)(translate('gettingStarted.3'))}
           </Content>
         )
       }

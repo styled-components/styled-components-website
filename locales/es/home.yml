@@ -20,8 +20,8 @@ clickedPrimary: ¡Has dado click en un botón primario!
 primaryButton: Botón primario
 imAButton: ¡Soy un <Button />!
 imAStyledButton: Soy un <Button /> estilizado
-gettingStarted:
-  first: |
+gettingStarted: !!seq
+  - |
     # Empezando
     ## Instalación
 
@@ -34,7 +34,7 @@ gettingStarted:
     Digamos que quieres crear un componente `<Button />` simplre y reusable que puedas usar utilizar en toda tu aplicación.
     Debe de haber una versión normal y una grande y una versión `primaria` para los botones importantes.
     Así es como debe de verse una vez renderizado: (Esto es un ejemplo en vivo, ¡Haz click en ellos!)
-  second: |
+  - |
     Primero, hay que importar styled-components y crear un `styled.button`:
 
     ```jsx
@@ -49,7 +49,7 @@ gettingStarted:
     [Aquí hay una explicación](/docs/advanced#tagged-template-literals) de como funciona exactamente.
 
     Si renderizas nuestro encantador componente ahora (Justo como cualquier otro componente: `<Button />`) esto es lo que obtienes:
-  third: |
+  - |
     ¡Eso renderiza un botón! aunque no es muy bonito 😕 podemos hacerlo mejor,
     démosle un poco de estilo y ¡Obtengamos la belleza escondida que lleva dentro!
 
@@ -63,7 +63,7 @@ gettingStarted:
       border: 2px solid palevioletred;
     `;
     ```
-  fourth: |
+  - |
     Como puedes ver, styled-components permite escribir CSS real en tu JavaScript. Esto significa que puedes usar todas
     las características de CSS que usas y amas, incluyendo (pero de lejos no se limita a) media queries, todos
     los pseudo-selectors, anidaciones, etc. También liga estilos a componentes, lo cual tiene propiedades interesantes.
