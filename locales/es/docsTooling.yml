@@ -1,5 +1,5 @@
 babelPlugin: |
-  ## Plugin de Babel| v2
+  ## Babel Plugin| v2
 
   Este plugin añade soporte para renderizado del lado del servidor, para minificación de estilos
   y da una mejor experiencia de debugeo.

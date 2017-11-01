@@ -153,7 +153,7 @@ stylingAnyComponents: |
   > The classnames are then passed to the React component (including third party components)
   > via the `className` prop.
 extendingStyles: |
-  ## Extending Styles | v2
+  ## Extending Styles| v2
 
   Quite frequently you might want to use a component, but change it slightly for
   a single case. Now you could pass in an interpolated function and change them
@@ -233,7 +233,7 @@ extendingStyles: |
   );
   ```
 attachingAdditionalProps: |
-  ## Attaching additional props | v2
+  ## Attaching additional props| v2
 
   To avoid unnecessary wrappers that just pass on some props to the rendered component,
   or element, you can use the `.attrs` constructor. It allows you to attach

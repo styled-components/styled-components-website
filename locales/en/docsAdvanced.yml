@@ -384,7 +384,7 @@ taggedTemplateLiterals: |
   If you want to learn more about tagged template literals, check out Max Stoiber's article:
   [The magic behind 💅 styled-components](https://mxstbr.blog/2016/11/styled-components-magic-explained/)
 serverSideRendering: |
-  ## Server Side Rendering | v2
+  ## Server Side Rendering| v2
 
   styled-components supports concurrent server side rendering, with stylesheet rehydration.
   The basic idea is that everytime you render your app on the server, you can create

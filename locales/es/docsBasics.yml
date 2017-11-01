@@ -153,7 +153,7 @@ stylingAnyComponents: |
   > Los nombres de clase son pasados al componente de React (incluyendo componentes de terceros)
   > A través del "prop" `className`
 extendingStyles: |
-  ## Extendiendo estilos | v2
+  ## Extendiendo estilos| v2
 
   Frecuentemente te gustaría usar un componente, y cambiarlo ligeramente en un sólo caso.
   Puedes pasar una función  interpolada y cambiarlo basado en algunos "props", pero eso
@@ -197,7 +197,7 @@ extendingStyles: |
   > Sólo debes usar `Comp.estend` sí sabes que ese `Comp` es un "styled-component".
   > Si estás importando de otro archivo o librería de terceros, es mejor que uses
   > `styled(Comp)` ya que logra el mismo resultado, pero functiona con *cualquier* componente de
-  > React. Lee más acerca de [las diferencias entre `Comp.extend` y `styled(Comp)`](/es/docs/#)
+  > React. Lee más acerca de [las diferencias entre `Comp.extend` y `styled(Comp)`](/docs/#)
 
   En los muy raros casos que quieras cambiar que etiqueta o componente renderiza el "styled-component".
   Tenemos una manera de solucionarlo. Puedes usar el <Code>withComponent</Code> para extender los
@@ -232,7 +232,7 @@ extendingStyles: |
   );
   ```
 attachingAdditionalProps: |
-  ## Adjuntando "props" adicionales | v2
+  ## Adjuntando "props" adicionales| v2
 
   Para evitar envolturas innecesarias que sólo pasan algunos "props" al componente renderizado,
   o elemento, puedes usar el constructor `.attrs`. Éste te permite adjuntar "props" adicionales

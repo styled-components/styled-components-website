@@ -388,7 +388,7 @@ taggedTemplateLiterals: |
   Si quieres aprender más sobre "tagged template literals", revisa el artículo de Max Stoiber:
   [The magic behind 💅 styled-components](https://mxstbr.blog/2016/11/styled-components-magic-explained/)
 serverSideRendering: |
-  ## Renderizado del lado del servidor | v2
+  ## Renderización del lado del servidor| v2
 
   styled-components soporta renderizado del lado del servidor de manera concurrente, con rehidratación
   de hojas de estilo. La idea básica es que cada vez que renderices tu aplicación en el servidor, puedes

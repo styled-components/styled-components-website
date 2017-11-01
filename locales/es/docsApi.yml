@@ -60,7 +60,7 @@ styled:
       > Mejor, depende en la notación `styled.etiqueta`.
       > Definimos todos los elementos válidos de HTML5 y SVG.
 
-      Puedes ver este método siendo introducido en la sección de [Comenzando](/es/docs/basics#getting-started).
+      Puedes ver este método siendo introducido en la sección de [Comenzando](/docs/basics#getting-started).
 
       #### .attrs
 

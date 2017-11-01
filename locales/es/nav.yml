@@ -2,21 +2,18 @@ basics: Bases
 motivation: Motivación
 installation: Instalación
 gettingStarted: Comenzando
-passedProps: |
-  "Props" enviadas
-adaptingBasedOnProps: |
-  Adaptación basada en "props"
+passedProps: Props enviadas
+adaptingBasedOnProps: Adaptación basada en "props"
 stylingAnyComponents: Estilizando cualquier componente
 extendingStyles: Extendiendo estilos
-attachingAdditionalProps: |
-  Adjuntando "props" adicionales
+attachingAdditionalProps: Adjuntando props adicionales
 animations: Animaciones
 reactNative: React Native
 advanced: Avanzado
 theming: Tematización
 refs: Refs
 security: Seguridad
-existingCSS: Extendiendo CSS
+existingCSS: CSS existente
 mediaTemplates: Media Templates
 taggedTemplateLiterals: Tagged Template Literals
 serverSideRendering: Renderización del lado del servidor
@@ -30,13 +27,9 @@ tooling: Herramientas
 babelPlugin: Babel Plugin
 testUtilities: Utilidades para pruebas
 stylelint: Stylelint
-styledTheming: Styled Theming
+styledTheming: Tematización estilizada
 faqs: Preguntas frecuentes
-canINestRules: |
-  ¿Puedo usar reglas anidadas?
-canIReferToOtherComponents: |
-  ¿Puedo referirme a otros componentes?
-canIUseCssFrameworks: |
-  ¿Puedo usar un framework de css?
-whenShouldIUseStyled: |
-  ¿Cuándo debo de usar styled()?
+canINestRules: ¿Puedo usar reglas anidadas?
+canIReferToOtherComponents: ¿Puedo referirme a otros componentes?
+canIUseCssFrameworks: ¿Puedo usar frameworks de CSS?
+whenShouldIUseStyled: ¿Cuándo debo usar styled()?
