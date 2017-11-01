@@ -17,9 +17,10 @@ exports[`Search renders correctly 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  margin-right: 0.5555555555555556rem;
 }
 
-.c2 {
+.c3 {
   background: none;
   outline: none;
   border: none;
@@ -27,73 +28,72 @@ exports[`Search renders correctly 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 7.222222222222222rem;
+  padding: 0 0.2777777777777778rem;
   line-height: 1.6666666666666667rem;
   font-size: 0.8333333333333334rem;
   color: currentColor;
+  -webkit-transition: background 100ms ease-in;
+  transition: background 100ms ease-in;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: currentColor;
   opacity: 0.5;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: currentColor;
   opacity: 0.5;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: currentColor;
   opacity: 0.5;
+}
+
+.c3:focus {
+  background: rgba(0,0,0,0.07);
+  border-radius: 3px;
 }
 
 .c1 {
-  background: none;
-  outline: none;
-  border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  height: 2.7777777777777777rem;
-  margin-right: 0.2222222222222222rem;
-  cursor: pointer;
+  text-indent: -99999px;
 }
 
-.c1:hover,
-.c1:focus {
-  opacity: 0.7;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+.c1 span {
+  position: absolute;
 }
 
-.c1:active {
-  background: rgba(0,0,0,0.1);
-}
-
-.c1 svg {
+.c2 {
   width: 0.8888888888888888rem;
   height: 0.9444444444444444rem;
+  margin-right: 0.2777777777777778rem;
+  display: block;
 }
 
-.c1 svg path {
+.c2 path {
   fill: currentColor;
 }
 
 <form
   className="c0"
 >
-  <button
+  <label
     className="c1"
+    htmlFor="docs-search-input"
   >
+    <span>
+      Search
+    </span>
     <svg
+      className="c2"
       height="16"
       width="15"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <title>
         search
@@ -109,9 +109,10 @@ exports[`Search renders correctly 1`] = `
         />
       </defs>
     </svg>
-  </button>
+  </label>
   <input
-    className="c2"
+    className="c3"
+    id="docs-search-input"
     placeholder="Search ..."
   />
 </form>

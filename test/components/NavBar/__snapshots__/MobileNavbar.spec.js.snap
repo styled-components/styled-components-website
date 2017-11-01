@@ -211,7 +211,7 @@ exports[`MobileNavbar renders correctly 1`] = `
 }
 
 .c10 {
-  padding-right: 1.1111111111111112rem;
+  display: inline-block;
 }
 
 @media (max-width:62.5em) {
@@ -344,7 +344,7 @@ exports[`MobileNavbar renders correctly 1`] = `
     <div
       className="c10"
     >
-      <nav
+      <div
         className="c11"
       >
         <a
@@ -425,7 +425,7 @@ exports[`MobileNavbar renders correctly 1`] = `
             />
           </svg>
         </a>
-      </nav>
+      </div>
     </div>
   </div>
 </div>

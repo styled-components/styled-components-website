@@ -44,6 +44,7 @@ class DocsLayout extends Component {
           title={`styled-components${title ? `: ${title}` : ''}`}
           description={description}>
             <meta name="robots" content="noodp" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
         </Head>
 
         <Nav

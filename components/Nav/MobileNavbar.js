@@ -70,7 +70,7 @@ const ArrowWrapper = styled.div`
 `
 
 const SecondaryMenuItem = styled.div`
-  padding-right: ${rem(20)};
+  display: inline-block;
 `
 
 const MobileNavbar = props => {

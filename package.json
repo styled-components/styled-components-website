@@ -19,6 +19,7 @@
     "commonmark": "^0.28.1",
     "commonmark-react-renderer": "^4.3.3",
     "debounce": "^1.0.2",
+    "docsearch.js": "^2.4.1",
     "express": "^4.15.2",
     "isomorphic-fetch": "^2.2.1",
     "lru-cache": "^4.0.2",

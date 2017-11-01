@@ -9,6 +9,7 @@ import { mobile } from '../../utils/media'
 import Link from '../Link'
 import NavLinks from './NavLinks'
 import Social from './Social'
+import Search from './Search'
 import Logo from './Logo'
 import MobileNavbar from './MobileNavbar'
 
@@ -84,6 +85,7 @@ class Navbar extends PureComponent {
           </StartWrapper>
 
           <EndWrapper>
+            <Search />
             <Social />
           </EndWrapper>
         </NormalNavbar>

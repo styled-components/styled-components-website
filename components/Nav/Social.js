@@ -5,7 +5,7 @@ import rem from '../../utils/rem'
 import { navbarHeight } from '../../utils/sizes'
 import Link from '../Link'
 
-const Wrapper = styled.nav`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   flex: 1 1 auto;
