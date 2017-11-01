@@ -60,7 +60,7 @@ styled:
       > Mejor, depende en la notación `styled.etiqueta`.
       > Definimos todos los elementos válidos de HTML5 y SVG.
 
-      Puedes ver este método siendo introducido en la sección de [Comenzando](/docs/basics#getting-started).
+      Puedes ver este método siendo introducido en la sección de [Comenzando](/docs/basics#comenzando).
 
       #### .attrs
 
@@ -87,7 +87,7 @@ styled:
       ```
 
       Aprende más acerca de este constructor en la sección de
-      [Adjuntando Props adicionales](/docs/basics#attaching-additional-props).
+      [Adjuntando Props adicionales](/docs/basics#adjuntando-props-adicionales).
 taggedTemplateLiteral:
   tables: !!seq
     - # First table
@@ -117,11 +117,11 @@ taggedTemplateLiteral:
     # Second piece of code
     - |
       Lee más acerca de como adaptar el estilo basándose en los "props" en la sección de
-      [Adaptación basada en "props"](/docs/basics#adapting-based-on-props).
+      [Adaptación basada en "props"](/docs/basics#adaptacin-basada-en-props).
 
       Las propiedades que son pasadas a una función interpolada son adjuntados a una propiedad
       especial, `theme`, la cual es inyectada por un componente de más alto nivel `ThemeProvider`.
-      Revisa la sección de [Tematización](/docs/advanced#theming) para tener más información al respecto.
+      Revisa la sección de [Tematización](/docs/advanced#tematizacin) para tener más información al respecto.
 
       ```jsx
       import styled from 'styled-components';
@@ -221,7 +221,7 @@ themeProvider:
 
       Un componente ayudante para la tematización. Inyecta el tema a todos los "styled components"
       debajo de éste en el árbol de componentes, a través del API de contexto.
-      Revisa la sección de [Tematización](/docs/advanced#theming).
+      Revisa la sección de [Tematización](/docs/advanced#tematizacin).
     # Second piece of content
     - |
       ```jsx

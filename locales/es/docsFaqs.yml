@@ -142,8 +142,8 @@ extendAndStyled: |
   puedes tener tu código de UI limpio, construyendo tus estilos en el más bajo nivel y utilizar
   temas, herencia, mixins, props e incluso "selectores invertidos".
 
-  Si aún no has leído las secciones de [`Estilizando cualquier componente`](/docs/basics#styling-any-components)
-  y [`extend`](/docs/basics#extending-styles), contienen más información y ejemplos al respecto.
+  Si aún no has leído las secciones de [`Estilizando cualquier componente`](/docs/basics#estilizando-cualquier-componente)
+  y [`extend`](/docs/basics#extendiendo-estilos), contienen más información y ejemplos al respecto.
 cssFrameworks: |
   ## ¿Puedo usar Frameworks de CSS?
 

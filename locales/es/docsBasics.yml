@@ -2,7 +2,7 @@ motivation: |
   ## Motivación
 
   Esta charla por Max Stoiber es una introdución muy detallada a styled-components
-  y habla acerca de las motivaciones detrás de su creacón, junto con información de como empezar.
+  y habla acerca de la motivación para crear esta librería, así como la  información de como empezar.
 advanced: Avanzado
 installation: |
   ## Instalación
@@ -18,10 +18,12 @@ gettingStarted: |
   styled-components utiliza "tagged template literals" para estilizar tus componentes.
 
   Remueve el mapeo entre componentes y estilos. Esto significa que cuando defines tus estilos,
-  estás de hecho creando un componente normal de React, el cual tiene tus estilos adjuntados a sí mismo.
+  estás de hecho creando un componente normal de React, el cual tiene tus estilos adjuntados a sí
+  mismo.
 
-  Este ejemplo crea dos componentes simples, una envoltura y un título, con algunos estilos adjuntados.
-  Puedes editar el código y tener una sensación de como es trabajar con styled-components.
+  Este ejemplo crea dos componentes simples, una envoltura y un título, con algunos estilos
+  adjuntados. Puedes editar el código y tener una sensación de como es trabajar con
+  styled-components.
 
   ```react
   // Crea el componente Título, el cual renderiza una etiqueta <h1> con algunos estilos
