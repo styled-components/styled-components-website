@@ -1,7 +1,7 @@
 import { isValidElement } from 'react'
 
 const whitespacesRe = /\s+/g
-const _format = (str = '') => str.replace(whitespacesRe, ' ')
+const _format = (str = '') => str.trim().replace(whitespacesRe, ' ')
 
 const elementToTextRec = x => {
   if (Array.isArray(x)) {
@@ -15,6 +15,6 @@ const elementToTextRec = x => {
   return ''
 }
 
-const elementToText = node => _format(elementToTextRec(node)).trim()
+const elementToText = node => _format(elementToTextRec(node))
 
 export default elementToText
