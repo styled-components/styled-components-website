@@ -7,7 +7,12 @@ import NextPage from '../../components/NextPage'
 mockRouter()
 
 test('NextPage renders correctly', () => {
-  const tree = renderer.create(<NextPage href="" />).toJSON()
+  const tree = renderer.create(
+    <NextPage
+      description="Continue on the next page"
+      href=""
+    />
+  ).toJSON()
 
   expect(tree).toMatchSnapshot()
 })

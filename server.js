@@ -12,8 +12,20 @@ const express = require('express')
 const LRUCache = require('lru-cache')
 const next = require('next')
 
+// i18n translations
+const i18nextMiddleware = require('i18next-express-middleware')
+const Backend = require('i18next-node-fs-backend')
+const i18n = require('./utils/i18n')
+const {
+    LANGUAGES,
+    TRANSLATIONS,
+    DEFAULT_LANGUAGE,
+} = require('./constants/i18n')
+
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
+
+const router = express.Router()
 
 const ssrCache = new LRUCache({
   max: 100,
@@ -41,50 +53,116 @@ const cachedRender = (req, res, pagePath, queryParams) => {
     })
 }
 
-const PORT = process.env.PORT || 3000
+const isUsingDefaultLanguage = (req, defaultLanguage = DEFAULT_LANGUAGE) =>
+  req.route.path.match(new RegExp(`/${defaultLanguage}/?`, 'i'))
 
-app.prepare()
-  .then(() => {
-    const server = express()
+const redirectTo = (res, path) =>
+  res.redirect(301, path)
 
-    server.disable('x-powered-by')
+i18n
+  .use(Backend)
+  .use(i18nextMiddleware.LanguageDetector)
+  .init({
+    preload: LANGUAGES,
+    languages: LANGUAGES,
+    ns: TRANSLATIONS,
+    load: 'languageOnly', // we only provide en, de -> no region specific locals like en-US, de-DE
+    backend: {
+      loadPath: __dirname + '/locales/{{lng}}/{{ns}}.yml',
+      addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.yml'
+    },
+    detection: {
+      order: ['path', 'querystring', 'header'],
+    }
+}, () => {
+  app.prepare()
+    .then(() => {
+      const PORT = process.env.PORT || 3000
 
-    server.get('/docs', (req, res) => {
-      cachedRender(req, res, '/docs')
+      const server = express()
+
+      // enable middleware for i18next
+      server.use(i18nextMiddleware.handle(i18n))
+
+      // serve locales for client
+      server.use('/locales', express.static(__dirname + '/locales'))
+
+      // missing keys
+      server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18n))
+
+      server.disable('x-powered-by')
+
+      i18nextMiddleware.addRoute(i18n, '/:lng', LANGUAGES, router, 'get', (req, res) => {
+        if (isUsingDefaultLanguage(req)) {
+          return redirectTo(res, '/')
+        }
+
+        return cachedRender(req, res, '/')
+      })
+
+      i18nextMiddleware.addRoute(i18n, '/:lng/ecosystem', LANGUAGES, router, 'get', (req, res) => {
+        if (isUsingDefaultLanguage(req)) {
+          return redirectTo(res, '/ecosystem')
+        }
+
+        cachedRender(req, res, '/ecosystem')
+      })
+
+      i18nextMiddleware.addRoute(i18n, '/:lng/docs', LANGUAGES, router, 'get', (req, res) => {
+        if (isUsingDefaultLanguage(req)) {
+          return redirectTo(res, '/docs')
+        }
+
+        return cachedRender(req, res, '/docs')
+      })
+
+      i18nextMiddleware.addRoute(i18n, '/:lng/docs/basics', LANGUAGES, router, 'get', (req, res) => {
+        if (isUsingDefaultLanguage(req)) {
+          return redirectTo(res, '/docs/basics')
+        }
+
+        return cachedRender(req, res, '/docs/basics')
+      })
+
+      i18nextMiddleware.addRoute(i18n, '/:lng/docs/advanced', LANGUAGES, router, 'get', (req, res) => {
+        if (isUsingDefaultLanguage(req)) {
+          return redirectTo(res, '/docs/advanced')
+        }
+
+        return cachedRender(req, res, '/docs/advanced')
+      })
+
+      i18nextMiddleware.addRoute(i18n, '/:lng/docs/api', LANGUAGES, router, 'get', (req, res) => {
+        if (isUsingDefaultLanguage(req)) {
+          return redirectTo(res, '/docs/api')
+        }
+
+        cachedRender(req, res, '/docs/api')
+      })
+
+      server.get('/sw.js', (req, res) => {
+        res.sendFile(path.resolve('./.next/sw.js'))
+      })
+
+      server.use('/static', express.static('./static', {
+        maxage: '48h',
+        index: false,
+        redirect: false
+      }))
+
+      router.get('*', (req, res) => {
+        const parsedUrl = parse(req.url, true)
+        handle(req, res, parsedUrl)
+      })
+
+      server.use('/', router)
+
+      server.listen(PORT, err => {
+        if (err) {
+          throw err
+        }
+
+        console.log(`> Ready on http://localhost:${PORT}`)
+      })
     })
-
-    server.get('/docs/basics', (req, res) => {
-      cachedRender(req, res, '/docs/basics')
-    })
-
-    server.get('/docs/advanced', (req, res) => {
-      cachedRender(req, res, '/docs/advanced')
-    })
-
-    server.get('/docs/api', (req, res) => {
-      cachedRender(req, res, '/docs/api')
-    })
-
-    server.get('/sw.js', (req, res) => {
-      res.sendFile(path.resolve('./.next/sw.js'))
-    })
-
-    server.use('/static', express.static('./static', {
-      maxage: '48h',
-      index: false,
-      redirect: false
-    }))
-
-    server.get('*', (req, res) => {
-      const parsedUrl = parse(req.url, true)
-      handle(req, res, parsedUrl)
-    })
-
-    server.listen(PORT, err => {
-      if (err) {
-        throw err
-      }
-
-      console.log(`> Ready on http://localhost:${PORT}`)
-    })
-  })
+})

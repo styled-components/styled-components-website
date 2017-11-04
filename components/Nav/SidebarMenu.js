@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { I18n } from 'react-i18next'
 
 import rem from '../../utils/rem'
 import Link, { StyledLink } from '../Link'
@@ -8,6 +9,14 @@ import titleToDash from '../../utils/titleToDash'
 // import { mobile } from '../../utils/media'
 
 import { pages } from '../../pages/docs.json'
+
+import {
+  NAV_TRANSLATION,
+} from '../../constants/i18n'
+
+import {
+  addLanguageToPath,
+} from '../../utils/translations'
 
 const MenuInner = styled.div`
   display: block;
@@ -62,43 +71,60 @@ class Folder extends Component {
 }
 
 const SidebarMenu = ({ onRouteChange }) => (
-  <MenuInner>
-    {
-      pages.map(({ title, pathname, sections }) => (
-          <Folder
-            key={title}
-            isOpenDefault={
-              typeof window !== 'undefined' &&
-                (window.location.pathname === `/docs/${pathname}`)
-            }
-          >
-            {({
-              rootProps,
-              toggleSubSections,
-              isOpen,
-            }) => (
-              <Section {...rootProps} onClick={onRouteChange}>
-                <SectionTitle onClick={toggleSubSections}>
-                  <Link href={`/docs/${pathname}`}>
-                    {title}
-                  </Link>
-                </SectionTitle>
-
-                {
-                  isOpen && sections.map(({ title }) => (
-                    <SubSection key={title}>
-                      <StyledLink href={`/docs/${pathname}#${titleToDash(title)}`}>
-                        {title}
-                      </StyledLink>
-                    </SubSection>
-                  ))
+  <I18n
+    ns={NAV_TRANSLATION}
+  >
+    {(translate, { i18n }) => (
+      <MenuInner>
+        {
+          pages.map(({ title, pathname, sections }) => (
+              <Folder
+                key={title}
+                isOpenDefault={
+                  typeof window !== 'undefined' &&
+                    (window.location.pathname === addLanguageToPath(i18n, `/docs/${pathname}`))
                 }
-                </Section>
-            )}
-          </Folder>
-      ))
-    }
-  </MenuInner>
+              >
+                {({
+                  rootProps,
+                  toggleSubSections,
+                  isOpen,
+                }) => (
+                  <Section {...rootProps} onClick={onRouteChange}>
+                    <SectionTitle onClick={toggleSubSections}>
+                      <Link
+                        href={{
+                          pathname: `/docs/${pathname}`
+                        }}
+                        as={{
+                          pathname: addLanguageToPath(i18n, `/docs/${pathname}`)
+                        }}
+                      >
+                        {translate(title)}
+                      </Link>
+                    </SectionTitle>
+
+                    {
+                      isOpen && sections.map(({ title }) => (
+                        <SubSection key={title}>
+                          <StyledLink
+                            href={addLanguageToPath(
+                              i18n, `/docs/${pathname}#${titleToDash(translate(title))}`
+                            )}
+                          >
+                            {translate(title)}
+                          </StyledLink>
+                        </SubSection>
+                      ))
+                    }
+                    </Section>
+                )}
+              </Folder>
+          ))
+        }
+      </MenuInner>
+    )}
+  </I18n>
 )
 
 export default (SidebarMenu)

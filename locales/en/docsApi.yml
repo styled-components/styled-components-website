@@ -1,0 +1,564 @@
+---
+primary: |
+  ## Primary
+styled:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Arguments
+        - Description
+      rows: !!seq
+        # First row
+        -
+          columns: !!seq
+            - 1. <0>component</0> / <2>tagname</2>
+            - Either a valid react component or a tagname like <0>'div'</0>.
+    - # Second table
+      head: !!seq
+        - Values
+        - Description
+      rows: !!seq
+        # First row
+        - columns: !!seq
+          - Prop Value
+          - |
+            These can be of any type, except functions. They'll stay static and will be
+            merged into the existing component props.
+        # Second row
+        - columns: !!seq
+          - Prop Factory
+          - |
+            A function that receives the props that are passed into the component and computes
+            a value, that is then going to be merged into the existing component props.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `styled`| web | native
+
+      This is the default export.
+      This is a low-level factory we use to create the `styled.tagname` helper methods.
+    # Second piece of content
+    - |
+      Returns a function that accepts a tagged template literal and turns it into a `Styled Component`.
+
+      ```jsx
+      import styled from 'styled-components';
+
+      const Button = styled.button`
+        background: palevioletred;
+        border-radius: 3px;
+        border: none;
+        color: white;
+      `;
+
+      const TomatoButton = styled(Button)`
+        background: tomato;
+      `;
+      ```
+
+      > We encourage you to not use the `styled('tagname')` notation directly.
+      > Instead, rely on the `styled.tagname` methods like `styled.button`.
+      > We define all valid HTML5 and SVG elements. (It's an automatic fat finger check too)
+
+      You can see this method being introduced in the [Getting started](/docs/basics#getting-started) section.
+
+      #### .attrs
+
+      This is a chainable method that attaches some props to a styled component.
+      The first and only argument is an object that will be merged into the rest of the
+      component's props. The `attrs` object accepts the following values:
+    # Third piece of content
+    - |
+      Returns another `Styled Component`.
+
+      ```jsx
+      import styled from 'styled-components';
+
+      const Input = styled.input.attrs({
+        type: 'text',
+        size: props => props.small ? 3 : 8
+      })`
+        background: palevioletred;
+        border-radius: 3px;
+        border: none;
+        color: white;
+        padding: ${props => props.padding}
+      `;
+      ```
+
+      Learn more about this constructor in the
+      [Attaching Additional Props](/docs/basics#attaching-additional-props) section.
+taggedTemplateLiteral:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Inputs
+        - Description
+      rows: !!seq
+        # First row
+        - columns: !!seq
+          - Rule
+          - Any CSS rules (string)
+        # Second row
+        - columns: !!seq
+          - Interpolation
+          - |
+            This can either be a string or a function.
+            Strings are combined with the rules as-is.
+            Functions will receive the styled component's props as the first and only argument.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `TaggedTemplateLiteral`| web | native
+
+      This is what you pass into your styled calls – a tagged template literal.
+      This is an ES6 language feature. You can learn more about them in the
+      [Tagged Template Literals](/docs/advanced#tagged-template-literals) section.
+    # Second piece of code
+    - |
+      Read more about how to adapt styling based on props in the
+      [Adapting based on props](/docs/basics#adapting-based-on-props) section.
+
+      The properties that are passed into an interpolated function get attached a special
+      property, `theme`, which is injected by a higher level `ThemeProvider` component.
+      Check the section on [Theming](/docs/advanced#theming) for more information on this.
+
+      ```jsx
+      import styled from 'styled-components';
+
+      const padding = '3em';
+
+      const Section = styled.section`
+        color: white;
+
+        /* Pass variables as inputs */
+        padding: ${padding};
+
+        /* Adjust the background from the properties */
+        background: ${props => props.background};
+      `;
+      ```
+
+      You can also return objects from interpolations or input objects directly, and they'll be
+      treated as inline styles. However this is highly discouraged, as the CSS syntax has support
+      for pseudo selectors, media queries, nesting, etc., which the object syntax doesn't.
+styledComponent:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Arguments
+        - Description
+      rows: !!seq
+        # First row
+        - columns: !!seq
+          - 1. <0>TaggedTemplateLiteral</0>
+          - A tagged template literal with your CSS and interpolations.
+    - # Second table
+      head: !!seq
+        - Arguments
+        - Description
+      rows: !!seq
+        # First row
+        - columns: !!seq
+            - 1. <0>component</0> / <2>tagname</2>
+            - Either a valid react component or a tagname like `'div'`.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `StyledComponent`| web | native
+
+      A styled React component. This is returned when you
+      call `styled.tagname` or `styled(Component)` with styles.
+
+      This component can take any prop. It passes it on to the HTML node if it's a valid attribute,
+      otherwise it only passes it into interpolated functions.
+      (see [Tagged Template Literal](/advanced/#tagged-template-literals))
+
+      You can pass an arbitrary classname to a styled component without problem and it will be applied
+      next to the styles defined by the styled call.
+      (e.g. `<MyStyledComp className="bootstrap__btn" />`)
+
+      #### .extend
+
+      This is a method that creates a new `StyledComponent` and extends its rules.
+    # Second piece of content
+    - |
+      Returns a new `StyledComponent` with the new rules merged into the ones of the component
+      this method was called on.
+
+      You can see it in action in the [Extending Styles](/docs/basics#extending-styles) section.
+
+      #### .withComponent
+
+      This is a method that creates a new `StyledComponent` with a different tag or component
+      applied to it, but all the same rules of the one it's called on.
+    # Third piece of content
+    - |
+      Returns a new `StyledComponent` with the new tag / component being applied when it's used.
+
+      You can see it in action in the [Extending Styles](/docs/basics#extending-styles) section.
+themeProvider:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Props
+        - Description
+      rows: !!seq
+        # First row
+        - columns: !!seq
+          - theme
+          - |
+            An object that will be injected as <0>theme</0> into all interpolations in styled
+            components beneath the provider.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `ThemeProvider` | web | native
+
+      A helper component for theming. Injects the theme into all styled components anywhere
+      beneath it in the component tree, via the context API.
+      Check the section on [Theming](/docs/advanced#theming).
+    # Second piece of content
+    - |
+      ```jsx
+      import styled, { ThemeProvider } from 'styled-components';
+
+      const Box = styled.div`
+        color: ${props => props.theme.color};
+      `;
+
+      const theme = { color: 'mediumseagreen' };
+
+      <ThemeProvider theme={theme}>
+        <Box>I'm mediumseagreen!</Box>
+      </ThemeProvider>
+      ```
+helpers: |
+  ## Helpers
+css:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Arguments
+        - Description
+      rows: !!seq
+        # First row
+        - columns: !!seq
+          - 1. <0>TaggedTemplateLiteral</0>
+          - A tagged template literal with your CSS and interpolations.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `css`| web | native
+
+      A helper function to generate CSS from a template literal with interpolations. You need to use
+      this if you return a template literal with interpolations inside an interpolation.
+      (This is due to how tagged template literals work)
+
+      If you're just returning a normal string you do not need to use this.
+    # Second piece of content
+    - |
+      Returns an array of interpolations, which is a flattened data structure that you can pass as
+      an interpolation itself.
+
+      ```jsx
+      import styled, { css } from 'styled-components';
+
+      const complexMixin = css`
+        color: ${props => props.whiteColor ? 'white': 'black'}
+      `;
+
+      const StyledComp = styled.div`
+        /* This is an example of a nested interpolation */
+        ${props => props.complex ? complexMixin : 'color: blue;'}
+      `;
+      ```
+
+      If you leave off the css your function will be `toString()`ed and you'll not get the results
+      you expected.
+keyframes:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Arguments
+        - Description
+      rows: !!seq
+        - # First row
+          columns: !!seq
+            - 1. <0>TaggedTemplateLiteral</0>
+            - A tagged template literal with your keyframes inside.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `keyframes`| web
+
+      A helper method to create keyframes for animations.
+    # Second piece of content
+    - |
+      Returns a unique name for these keyframes, to be used in your animation declarations.
+
+      ```jsx
+      import styled, { keyframes } from 'styled-components';
+
+      const fadeIn = keyframes`
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      `;
+
+      const FadeInButton = styled.button`
+        animation: 1s ${fadeIn} ease-out;
+      `;
+      ```
+
+      You can learn more about styled-components with Animations in the [Animations](/docs/basics#animations)
+injectGlobal:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Arguments
+        - Description
+      rows: !!seq
+        # First row
+        - columns: !!seq
+          - 1. <0>TaggedTemplateLiteral</0>
+          - A tagged template literal with your global styles inside.
+  content: !!seq
+    # First piece of content
+    - |
+        ### `injectGlobal`| web | native
+
+        A helper method to write global CSS. It does not return a component, but adds the styles to
+        the stylesheet directly.
+    - |
+        ```jsx
+        import { injectGlobal } from 'styled-components';
+
+        injectGlobal`
+          @font-face {
+            font-family: 'Operator Mono';
+            src: url('../fonts/Operator-Mono.ttf');
+          }
+
+          body {
+            margin: 0;
+          }
+        `;
+        ```
+
+        We do not encourage the use of this. Try to use it once per app at most, if you
+        must, contained in a single file. This is an escape hatch. Only use it for the
+        rare `@font-face` definition or body styling.
+withTheme:
+  tables: !!seq
+    - # First table
+      head: !!seq
+        - Arguments
+        - Description
+      rows: !!seq
+        # First row
+        - columns: !!seq
+            - 1. <0>Component</0>
+            - Any valid React component that can handle a <0>theme</0> prop.
+  content: !!seq
+    # First piece of content
+    - |
+      ### `withTheme`| web | native
+
+      This is a higher order component factory to get the current theme from a `ThemeProvider` and
+      pass it to your component as a `theme` prop.
+    # Second piece of content
+    - |
+      Returns the passed component inside a wrapper (higher order component).
+      The passed component will receive a `theme` prop with the current theme object.
+
+      ```jsx
+      import { withTheme } from 'styled-components'
+
+      class MyComponent extends React.Component {
+        render() {
+          console.log('Current theme:', this.props.theme);
+          // ...
+        }
+      }
+
+      export default withTheme(MyComponent)
+      ```
+
+      Only use this if you need to get the theme as a prop.
+      If you just need to set a valid stylesheet property, you can use normal theming for this.
+      Check out the section on [Theming](/docs/advanced#theming") to read more on how to use this.
+supportedCSS: |
+  ## Supported CSS
+
+  Within a styled component, we support all of CSS plus nesting. Since we generate an
+  actual stylesheet and not inline styles, whatever works in CSS works in styled-components!
+
+  ```react
+  const Example = styled.div`
+    /* all declarations will be prefixed */
+    padding: 2em 1em;
+    background: papayawhip;
+
+    /* pseudo selectors work as well */
+    &:hover {
+      background: palevioletred;
+    }
+
+    /* media queries are no problem */
+    @media (max-width: 600px) {
+      background: tomato;
+
+      /* nested rules work as expected */
+      &:hover {
+        background: yellow;
+      }
+    }
+
+    > p {
+      /* descendant-selectors work as well, but are more of an escape hatch */
+      text-decoration: underline;
+    }
+
+    /* Contextual selectors work as well */
+    html.test & {
+      display: none;
+    }
+  `;
+
+  render(
+    <Example>
+      <p>Hello World!</p>
+    </Example>
+  );
+  ```
+
+  Ampersands (`&`) get replaced by our generated, unique classname for that styled
+  component, making it easy to have complex logic.
+flow: |
+  ## Flow
+
+  styled-components has first-class [Flow](https://flowtype.org) support to help
+  you find typing errors while using our public API.
+
+  To use Flow with the public api of styled-components we recommend that you use the library
+  definition in `flow-typed`. To install it you can use the `flow-typed` cli or download it manually
+  from the git repository and store it in a `flow-typed/` folder in the same directory with your `flowconfig`.
+
+  ### Installing the definitions
+
+  ```
+  npm i -g flow-typed # if you do not already have flow-typed
+  flow-typed install styled-components@<version>
+  ```
+
+  > If you are on npm >= 5.2 you could simply use [npx](https://github.com/zkat/npx)
+
+  ### Ignore styled-components source
+
+  You should add the following lines to your `.flowconfig`, if you run into Flow errors, coming from
+  the styled-components package in your `node_modules` directory.
+
+  ```
+  [ignore]
+  .*/node_modules/styled-components/.*
+  ```
+typescript: |
+  ## TypeScript
+
+  styled-components has TypeScript definitions to allow the library to be used in any TypeScript project.
+  A basic example can be found [here](https://github.com/patrick91/Styled-Components-Typescript-Example).
+
+  ### Define a theme interface
+
+  By default every styled component will have the `theme` prop set to `any`.
+  When building complex apps it would be better to have autocomplete and error checks everywhere.
+
+  To have autocomplete and checks around the `theme` prop we should first define the theme
+  interface we would like to use throughout our app:
+
+  ```jsx
+  // theme.ts
+  export default interface ThemeInterface {
+    primaryColor: string;
+    primaryColorInverted: string;
+  }
+  ```
+
+  Then we can re-export the `styled` function with our custom theme interface:
+
+  ```jsx
+  // styled-components.ts
+  import * as styledComponents from 'styled-components';
+  import { ThemedStyledComponentsModule } from 'styled-components';
+
+  import ThemeInterface from './theme';
+
+  const {
+    default: styled,
+    css,
+    injectGlobal,
+    keyframes,
+    ThemeProvider
+  } = styledComponents as ThemedStyledComponentsModule<ThemeInterface>;
+
+  export { css, injectGlobal, keyframes, ThemeProvider };
+  export default styled;
+  ```
+
+  Finally, instead of importing the styled functions from the styled-components module,
+  we import it from our above, custom module.
+
+  ### Caveat with `className`
+
+  When defining a component you will need to mark `className` as optional
+  in your Props interface:
+
+  ```jsx
+  interface LogoProps {
+    /* This prop is optional, since TypeScript won't know that it's passed by the wrapper */
+    className?: string;
+  }
+
+  class Logo extends React.Component<LogoProps, {}> {
+    render() {
+      return (
+        <div className={this.props.className}>
+          Logo
+        </div>
+      );
+    }
+  }
+
+  const LogoStyled = styled(Logo)`
+    font-family: 'Helvetica';
+    font-weight: bold;
+    font-size: 1.8rem;
+  `;
+  ```
+
+  ### Caveat with Stateless Components
+
+  To use stateless components and have typechecking for the props you'll need to define
+  the component alongside with its type, like this:
+
+  ```jsx
+  interface BoxProps {
+    theme?: ThemeInterface;
+    borders?: boolean;
+    className?: string;
+  }
+
+  const Box: React.StatelessComponent<BoxProps> = props => (
+    <div className={props.className}>
+      {props.children}
+    </div>
+  );
+
+  const StyledBox = styled(Box)`
+    padding: ${props => props.theme.lateralPadding};
+  `;
+  ```

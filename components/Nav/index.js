@@ -27,7 +27,7 @@ const Nav = props => {
       {showSideNav !== false && (
         <Sidebar isFolded={isSideFolded}>
           <SidebarMenu onRouteChange={onRouteChange} />
-          </Sidebar>
+        </Sidebar>
       )}
     </div>
   )

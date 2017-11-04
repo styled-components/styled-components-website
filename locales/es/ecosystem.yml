@@ -1,0 +1,15 @@
+description: Ecosistema de styled-components
+content: !!seq
+  - |
+    Esta es una lista incompleta de cosas increíbles construidas con styled-components. Si tienes
+    algo para compartir, por favor agrégalo al repositorio de
+    [awesome-styled-components](https://github.com/styled-components/awesome-styled-components)
+    en GitHub y ¡Automaticamente aparecerá aquí!
+    repo on GitHub and it will automatically show up here!
+  - |
+    ### Contribuye
+
+    Si sabes de cualquier proyecto construido con styled-components, ¡Sugerencias y contribuciones
+    son siempre bienvenidas! Por favor, primero lee
+    [las reglas de contribución](https://github.com/styled-components/awesome-styled-components/blob/master/contributing.md)
+    y luego envía un PR.

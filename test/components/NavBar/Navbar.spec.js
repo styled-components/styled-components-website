@@ -1,10 +1,18 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { mount } from 'enzyme'
 import 'jest-styled-components'
+import { I18nextProvider } from 'react-i18next'
 import Navbar from '../../../components/Nav/Navbar'
 
-test('Navbar renders correctly', () => {
-  const tree = renderer.create(<Navbar />).toJSON()
+import i18n from '../../helpers/i18n'
 
-  expect(tree).toMatchSnapshot()
+const wrapper = (language, props) => mount(
+  <I18nextProvider i18n={i18n} initialLanguage={language}>
+    <Navbar />
+  </I18nextProvider>
+)
+
+test('Navbar renders correctly', () => {
+  const component = wrapper('en')
+  expect(component.find(Navbar)).toMatchSnapshot()
 })

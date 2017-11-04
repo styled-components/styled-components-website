@@ -1,0 +1,178 @@
+nesting: |
+  ## ¿Puedo usar reglas anidadas?
+
+  Si: Las anidaciones son una característica intencional traída de Sass. Usado con moderación
+  es una gran forma de aligerar tu código reduciendo la necesidad de crear clases explícitas para
+  cada elemento.
+
+  También puede ser usado por componentes padre para definir restricciones contextuales, las cuales
+  no son una preocupación de los hijos afectados:
+
+  ```react
+  const EqualDivider = styled.div`
+    display: flex;
+    margin: 0.5rem;
+    padding: 1rem;
+    background: papayawhip;
+    ${props => props.vertical && 'flex-direction: column;'}
+
+    > * {
+      flex: 1;
+
+      &:not(:first-child) {
+        ${props => props.vertical ? 'margin-top' : 'margin-left'}: 1rem;
+      }
+    }
+  `;
+
+  const Child = styled.div`
+    padding: 0.25rem 0.5rem;
+    background: palevioletred;
+  `;
+
+  render(
+    <div>
+    <EqualDivider>
+      <Child>Primero</Child>
+      <Child>Segundo</Child>
+      <Child>Tercero</Child>
+    </EqualDivider>
+    <EqualDivider vertical>
+      <Child>Primero</Child>
+      <Child>Segundo</Child>
+      <Child>Tercero</Child>
+    </EqualDivider>
+    </div>
+  );
+  ```
+
+  También es increíblemente conveniente colocar media queries, ya que podemos ver un vistazo
+  exactamente como el componente responderá en cualquier resolución.
+
+  ```react
+  const ColorChanger = styled.section`
+    background: papayawhip;
+    color: palevioletred;
+
+    @media(min-width: 768px) {
+      background: mediumseagreen;
+      color: papayawhip;
+    }
+  `;
+
+  render(
+    <ColorChanger href="#">
+      <h2>¡Hola mundo!</h2>
+    </ColorChanger>
+  );
+  ```
+reverseSelectors: |
+  ## ¿Puedo referirme a otros componentes?
+
+  ¡Si! Esto te permite adoptar el patrón de "Reversión de selector", el cual permite a los componentes
+  encapsular la totalidad de sus estilos: como con los "media queries", te permite describir como
+  se comportarán cuando se afectan por cualquier cambio externo, sin necesidad de referirse a otras
+  partes de tu código.
+
+  Aquí, nuestro componente Icono define su respuesta a su Link padre al pasar el ratón sobre él:
+
+  ```react
+  const Link = styled.a`
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background: papayawhip;
+    color: palevioletred;
+  `;
+
+  const Icon = styled.svg`
+    transition: fill 0.25s;
+    width: 48px;
+    height: 48px;
+
+    ${Link}:hover & {
+      fill: rebeccapurple;
+    }
+  `;
+
+  const Label = styled.span`
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+
+    &::before {
+      content: '◀';
+      margin: 0 10px;
+    }
+  `;
+
+  render(
+    <Link href="#">
+      <Icon viewBox="0 0 20 20">
+        <path d="M10 15h8c1 0 2-1 2-2V3c0-1-1-2-2-2H2C1 1 0 2 0 3v10c0 1 1 2 2 2h4v4l4-4zM5 7h2v2H5V7zm4 0h2v2H9V7zm4 0h2v2h-2V7z"/>
+      </Icon>
+      <Label>¡Al pasar el ratón, mi padre cambia
+      Hovering my parent changes mi estilo!</Label>
+    </Link>
+  );
+  ```
+
+  Pudimos haber anidado el la regla de cambio de color dentro del componente Link, pero entonces
+  tendríamos que considerar los dos sets de reglas para entender porque el Icono se comporta así.
+extendAndStyled: |
+  ## ¿Cuándo debo usar `styled()`?
+
+  ### Detrás de escenas
+  La fábrica `styled()` genera nuevos estilos de componente con una nueva clase. Los nombres de
+  clase se pasan al componente de React a través del "prop" `className`. Llamando `extend` crea
+  nuevos estilos de componente, extendiendo el viejo, por lo tanto, no genera dos clases para un
+  sólo componente (la fábrica `styled()` hace eso).
+
+  ### Cual deberías de usar
+  Te recomendamos usar `.extend` mientras sea posible para `StyledComponent` internos. Pero trata de
+  usar la fábrica `styled()` para componentes externos o de archivos cruzados cuando no es claro
+  que es lo que pasa cuando se escriba la envoltura `StyledComponent`.
+
+  Ten en cuenta que envolviendo tus propios componentes con styled() no es recomendado. Siempre
+  debe intentarse tener únicamente StyledComponents y no envolver ninguna envoltura y contenedores
+  de alto nivel. De lo contrario, tu lógica de estilo será dispersada por múltiples archivos, y
+  será tentador usar selectores de hijos para apuntar elementos dentro de tus contenedores. Esto
+  por supuesto, incrementa la especificidad de las reglas que generemos, lo que puede llevar a más
+  código y más envolturas styled() que traten de compensar en la jerarquía de tu componente. Mejor,
+  puedes tener tu código de UI limpio, construyendo tus estilos en el más bajo nivel y utilizar
+  temas, herencia, mixins, props e incluso "selectores invertidos".
+
+  Si aún no has leído las secciones de [`Estilizando cualquier componente`](/docs/basics#estilizando-cualquier-componente)
+  y [`extend`](/docs/basics#extendiendo-estilos), contienen más información y ejemplos al respecto.
+cssFrameworks: |
+  ## ¿Puedo usar Frameworks de CSS?
+
+  ¡Integrar un framework de CSS existente con styled-components es muy fácil! Puedes usarlo como
+  nombres de clase existentes junto a tus componentes.
+
+  Considera que tienes una aplicación existente con CSS que tienen las clases: `.small` y `.big`.
+  Trata de intercambiar la clase `.small` con `.big` en el ejemplo de abajo:
+
+  ```react
+  const Button = styled.button.attrs({
+    className: 'small',
+  })`
+    background: black;
+    color: white;
+    cursor: pointer;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid black;
+    border-radius: 3px;
+  `;
+
+  render(
+    <div>
+      <Button>Styled Components</Button>
+      <Button>¡La nueva forma de estilizar componentes!</Button>
+    </div>
+  );
+  ```
+
+  Por favor lee sobre [el método attrs](/docs/api#attrs) para aprender como "props" arbitriarios
+  pueden ser pasados hacía abajo a un "styled component" sin necesidad de envolverlo.

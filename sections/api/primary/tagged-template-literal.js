@@ -1,65 +1,50 @@
+import { I18n } from 'react-i18next'
 import React from 'react'
 
 import md from 'components/md'
 import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
-const TaggedTemplateLiteral = () => md`
-  ### \`TaggedTemplateLiteral\` | web | native
+import {
+  DOCS_API_TRANSLATION,
+} from '../../../constants/i18n'
 
-  This is what you pass into your styled calls – a tagged template literal.
-  This is an ES6 language feature. You can learn more about them in the
-  [Tagged Template Literals](/docs/advanced#tagged-template-literals) section.
-
-  ${
-    <Table head={[ 'Inputs', 'Description' ]}>
-      <Row>
-        <Column>
-          <Code>Rule</Code>
-        </Column>
-        <Column>
-          Any CSS rules (string)
-        </Column>
-      </Row>
-      <Row>
-        <Column>
-          <Code>Interpolation</Code>
-        </Column>
-        <Column>
-          This can either be a string or a function.
-          Strings are combined with the rules as-is.
-          Functions will receive the styled component's props as the first and only argument.
-        </Column>
-      </Row>
-    </Table>
-  }
-
-  Read more about how to adapt styling based on props in the
-  [Adapting based on props](/docs/basics#adapting-based-on-props) section.
-
-  The properties that are passed into an interpolated function get attached a special
-  property, \`theme\`, which is injected by a higher level \`ThemeProvider\` component.
-  Check the section on [Theming](/docs/advanced#theming) for more information on this.
-
-  \`\`\`jsx
-  import styled from 'styled-components';
-
-  const padding = '3em';
-
-  const Section = styled.section\`
-    color: white;
-
-    /* Pass variables as inputs */
-    padding: \${padding};
-
-    /* Adjust the background from the properties */
-    background: \${props => props.background};
-  \`;
-  \`\`\`
-
-  You can also return objects from interpolations or input objects directly, and they'll be
-  treated as inline styles. However this is highly discouraged, as the CSS syntax has support
-  for pseudo selectors, media queries, nesting, etc., which the object syntax doesn't.
-`
+const TaggedTemplateLiteral = () => (
+  <I18n ns={DOCS_API_TRANSLATION}>
+    {(translate, { i18n }) => (
+      <div>
+        {md(i18n)(translate('taggedTemplateLiteral.content.0'))}
+        <Table
+          head={[
+          translate('taggedTemplateLiteral.tables.0.head.0'),
+          translate('taggedTemplateLiteral.tables.0.head.1')
+          ]}
+        >
+          <Row>
+            <Column>
+              <Code>
+                {translate('taggedTemplateLiteral.tables.0.rows.0.columns.0')}
+              </Code>
+            </Column>
+            <Column>
+              {translate('taggedTemplateLiteral.tables.0.rows.0.columns.1')}
+            </Column>
+          </Row>
+          <Row>
+            <Column>
+              <Code>
+                {translate('taggedTemplateLiteral.tables.0.rows.1.columns.0')}
+              </Code>
+            </Column>
+            <Column>
+              {translate('taggedTemplateLiteral.tables.0.rows.1.columns.1')}
+            </Column>
+          </Row>
+        </Table>
+        {md(i18n)(translate('taggedTemplateLiteral.content.1'))}
+      </div>
+    )}
+  </I18n>
+)
 
 export default TaggedTemplateLiteral

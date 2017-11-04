@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
 import { LiveProvider, LiveEditor } from 'react-live'
+import { I18n, Trans } from 'react-i18next'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
@@ -15,6 +16,16 @@ import HomepageGettingStarted from '../sections/homepage-getting-started'
 import WithIsScrolled from '../components/WithIsScrolled'
 import Nav from '../components/Nav'
 
+import withI18n from '../components/withI18n'
+import {
+  DEFAULT_TRANSLATION,
+  HOME_TRANSLATION,
+} from '../constants/i18n'
+
+import {
+  addLanguageToPath,
+} from '../utils/translations'
+
 const Tagline = styled.h1`
   font-weight: 600;
   font-size: 1.3rem;
@@ -25,9 +36,9 @@ const SupportingTagline = styled.h2`
   font-weight: 400;
 `
 
-const headerCode = (`
+const headerCode = (translate) => (`
 const Button = styled.a\`
-  /* This renders the buttons above... Edit me! */
+  ${translate('headerCodeComment')}
   display: inline-block;
   border-radius: 3px;
   padding: 0.5rem 0;
@@ -37,8 +48,7 @@ const Button = styled.a\`
   color: white;
   border: 2px solid white;
 
-  /* The GitHub button is a primary button
-   * edit this to target it specifically! */
+  ${translate('headerCodeSecondComment')}
   \${props => props.primary && css\`
     background: white;
     color: palevioletred;
@@ -48,7 +58,7 @@ const Button = styled.a\`
 
 import { LiveContextTypes } from 'react-live/lib/components/Live/LiveProvider'
 
-const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button } }) => {
+const HomepageLivePreview = ({ className, pathToDocs, translate, ...rest }, { live: { element: Button } }) => {
   const InternalButton = Button.withComponent(Link)
   return (
     <div
@@ -64,8 +74,12 @@ const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button }
         GitHub
       </Button>
 
-      <InternalButton href="/docs" prefetch>
-        Documentation
+      <InternalButton
+        href="/docs"
+        as={pathToDocs}
+        prefetch
+      >
+        {translate(`${DEFAULT_TRANSLATION}:documentation`)}
       </InternalButton>
     </div>
   )
@@ -182,7 +196,7 @@ const Heart = styled(HeartIcon).attrs({
   width: ${rem(17)};
 `
 
-class Index extends PureComponent {
+export class Index extends PureComponent {
   state = {
     isMobileNavFolded: true,
   }
@@ -202,86 +216,103 @@ class Index extends PureComponent {
   render() {
     const { isMobileNavFolded } = this.state
     return (
-      <div>
-        <SeoHead title="styled-components">
-          <meta name="robots" content="noodp" />
-        </SeoHead>
+      <I18n
+        ns={[HOME_TRANSLATION, DEFAULT_TRANSLATION]}
+        wait={process.browser}
+      >
+        {
+          (translate, { i18n }) => {
+            if (!translate) {
+              return null
+            }
 
-        <WithIsScrolled>
-          {({ isScrolled }) => (
-            <Nav
-              showSideNav={false}
-              transparent={!isScrolled}
-              isMobileNavFolded={isMobileNavFolded}
-              onMobileNavToggle={this.toggleMobileNav}
-              onRouteChange={this.onRouteChange}
-            />
-          )}
-        </WithIsScrolled>
+            return (
+              <div>
+                <SeoHead
+                  title="styled-components"
+                  description={translate('seoDescription')}
+                >
+                  <meta name="robots" content="noodp" />
+                </SeoHead>
 
-        <Wrapper>
-          <HeroContent>
-            <LiveProvider
-              code={headerCode}
-              mountStylesheet={false}
-              scope={{ styled, css, rem, Link }}>
+                <WithIsScrolled>
+                  {({ isScrolled }) => (
+                    <Nav
+                      showSideNav={false}
+                      transparent={!isScrolled}
+                      isMobileNavFolded={isMobileNavFolded}
+                      onMobileNavToggle={this.toggleMobileNav}
+                      onRouteChange={this.onRouteChange}
+                    />
+                  )}
+                </WithIsScrolled>
 
-              <Logo />
+                <Wrapper>
+                  <HeroContent>
+                    <LiveProvider
+                      code={headerCode(translate)}
+                      mountStylesheet={false}
+                      scope={{ styled, css, rem, Link }}>
 
-              <Title>
-                <Tagline>Visual primitives for the component age.</Tagline>
-                <SupportingTagline>
-                  Use the best bits of ES6 and CSS to style your apps without stress 💅
-                </SupportingTagline>
-              </Title>
+                      <Logo />
 
-              <Links>
-                <HomepageLivePreview />
-              </Links>
+                      <Title>
+                        <Tagline>{translate('title')}</Tagline>
+                        <SupportingTagline>
+                          {translate('subtitle')}
+                        </SupportingTagline>
+                      </Title>
 
-              <EditorContainer>
-                <Editor />
-                <StyledError />
-              </EditorContainer>
-            </LiveProvider>
+                      <Links>
+                        <HomepageLivePreview
+                          // Calculate path here or tests hang
+                          pathToDocs={addLanguageToPath(i18n, '/docs')}
+                          translate={translate}
+                        />
+                      </Links>
 
-            <UsersHeading>Used by folks at</UsersHeading>
+                      <EditorContainer>
+                        <Editor />
+                        <StyledError />
+                      </EditorContainer>
+                    </LiveProvider>
 
-            <UsersWrapper>
-              <CompanyLogo bottom="-0.2rem" height="1.75rem" src="/static/bloomberg-logo.svg" />
-              <CompanyLogo height="1.75rem" src="/static/atlassian-logo.svg" />
-              <CompanyLogo src="/static/reddit-logo.svg" />
-              <CompanyLogo src="/static/target-logo.svg" />
-              <CompanyLogo bottom="0.625rem" height="3rem" src="/static/eurovision-logo.svg" />
-              <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg" />
-              <CompanyLogo bottom="-0.15rem" height="1.5rem" src="/static/ideo-logo.svg" />
-              <CompanyLogo src="/static/huffpost-logo.svg" />
-              <CompanyLogo bottom="0.25rem" height="2rem" src="/static/coinbase-logo.svg" />
-            </UsersWrapper>
-          </HeroContent>
-        </Wrapper>
+                    <UsersHeading>{translate('usedBy')}</UsersHeading>
 
-        <HomepageGettingStarted />
+                    <UsersWrapper>
+                      <CompanyLogo bottom="-0.2rem" height="1.75rem" src="/static/bloomberg-logo.svg" />
+                      <CompanyLogo height="1.75rem" src="/static/atlassian-logo.svg" />
+                      <CompanyLogo src="/static/reddit-logo.svg" />
+                      <CompanyLogo src="/static/target-logo.svg" />
+                      <CompanyLogo bottom="0.625rem" height="3rem" src="/static/eurovision-logo.svg" />
+                      <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg" />
+                      <CompanyLogo bottom="-0.15rem" height="1.5rem" src="/static/ideo-logo.svg" />
+                      <CompanyLogo src="/static/huffpost-logo.svg" />
+                      <CompanyLogo bottom="0.25rem" height="2rem" src="/static/coinbase-logo.svg" />
+                    </UsersWrapper>
+                  </HeroContent>
+                </Wrapper>
 
-        <Footer>
-          <HeroContent>
-            {'Hosted on ▲ ZEIT Now'}
+                <HomepageGettingStarted />
 
-            <br />
-
-            {'Made with '}
-            <Heart />
-            {' by '}
-            <Link inline white href="https://twitter.com/glenmaddern">@glenmaddern</Link>
-            {', '}
-            <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
-            {' & '}
-            <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
-          </HeroContent>
-        </Footer>
-      </div>
+                <Footer>
+                  <HeroContent>
+                    <Trans i18nKey="madeWithLove">
+                      <br />
+                      <Heart />
+                      <Link inline white href="https://twitter.com/glenmaddern">@glenmaddern</Link>
+                      <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
+                      <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
+                    </Trans>
+                  </HeroContent>
+                </Footer>
+              </div>
+            )
+          }
+        }
+      </I18n>
     )
   }
 }
 
-export default Index
+export default withI18n(Index)

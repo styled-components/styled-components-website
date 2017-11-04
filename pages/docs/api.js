@@ -1,4 +1,5 @@
 import React from 'react'
+import { I18n } from 'react-i18next'
 import DocsLayout from '../../components/DocsLayout'
 import NextPage from '../../components/NextPage'
 
@@ -8,16 +9,40 @@ import SupportedCSS from '../../sections/api/supported-css'
 import Flow from '../../sections/api/flow'
 import TypeScript from '../../sections/api/typescript'
 
-const APIReference = () => (
-  <DocsLayout title="API Reference" description="API Reference of styled-components">
-    <Primary />
-    <Helpers />
-    <SupportedCSS />
-    <Flow />
-    <TypeScript />
+import withI18n from '../../components/withI18n'
+import {
+  DOCS_TRANSLATION,
+  DEFAULT_TRANSLATION,
+} from '../../constants/i18n'
 
-    <NextPage href="/docs/tooling" title="Tooling" />
-  </DocsLayout>
+import {
+  addLanguageToPath,
+} from '../../utils/translations'
+
+export const APIReference = () => (
+  <I18n
+    ns={[DOCS_TRANSLATION, DEFAULT_TRANSLATION]}
+  >
+    {(translate, { i18n }) => (
+      <DocsLayout
+        title={translate(`${DEFAULT_TRANSLATION}:apiTitle`)}
+        description={translate('apiDescription')}
+      >
+        <Primary />
+        <Helpers />
+        <SupportedCSS />
+        <Flow />
+        <TypeScript />
+
+        <NextPage
+          href="/docs/tooling"
+          as={addLanguageToPath(i18n, '/docs/tooling')}
+          title={translate(`${DEFAULT_TRANSLATION}:toolingTitle`)}
+          description={translate(`${DEFAULT_TRANSLATION}:continueOnNextPage`)}
+        />
+      </DocsLayout>
+    )}
+  </I18n>
 )
 
-export default APIReference
+export default withI18n(APIReference)

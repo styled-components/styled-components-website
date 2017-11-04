@@ -1,46 +1,38 @@
+import { I18n, Trans } from 'react-i18next'
 import React from 'react'
+
+import {
+  DOCS_API_TRANSLATION,
+} from '../../../constants/i18n'
 
 import md from 'components/md'
 import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
-const InjectGlobal = () => md`
-  ### \`injectGlobal\` | web | native
-
-  A helper method to write global CSS. It does not return a component, but adds the styles to
-  the stylesheet directly.
-
-  ${
-    <Table head={[ 'Arguments', 'Description' ]}>
-      <Row>
-        <Column>
-          1. <Code>TaggedTemplateLiteral</Code>
-        </Column>
-        <Column>
-          A tagged template literal with your global styles inside.
-        </Column>
-      </Row>
-    </Table>
-  }
-
-  \`\`\`jsx
-  import { injectGlobal } from 'styled-components';
-
-  injectGlobal\`
-    @font-face {
-      font-family: 'Operator Mono';
-      src: url('../fonts/Operator-Mono.ttf');
-    }
-
-    body {
-      margin: 0;
-    }
-  \`;
-  \`\`\`
-
-  We do not encourage the use of this. Try to use it once per app at most, if you
-  must, contained in a single file. This is an escape hatch. Only use it for the
-  rare \`@font-face\` definition or body styling.
-`
+const InjectGlobal = () => (
+  <I18n ns={DOCS_API_TRANSLATION}>
+    {(translate, { i18n }) => (
+      <div>
+        {md(i18n)(translate('injectGlobal.content.0'))}
+        <Table head={[
+          translate('injectGlobal.tables.0.head.0'),
+          translate('injectGlobal.tables.0.head.1'),
+        ]}>
+          <Row>
+            <Column>
+              <Trans i18nKey="injectGlobal.tables.0.rows.0.columns.0">
+                <Code>TaggedTemplateLiteral</Code>
+              </Trans>
+            </Column>
+            <Column>
+              {translate('injectGlobal.tables.0.rows.0.columns.1')}
+            </Column>
+          </Row>
+        </Table>
+        {md(i18n)(translate('injectGlobal.content.1'))}
+      </div>
+    )}
+  </I18n>
+)
 
 export default InjectGlobal

@@ -1,0 +1,134 @@
+title: Primitivos visuales para la era de los componentes
+subtitle: Usa lo mejor de ES6 y CSS para estilizar tus aplicaciones sin estrés 💅
+seoDescription: |
+  Primitivos visuales para la era de los componentes. Usa lo mejor de ES6 y CSS para
+  estilizar tus aplicaciones sin estrés 💅
+headerCodeComment: /* Esto renderiza los botones de arriba... ¡Edítame! */
+headerCodeSecondComment: |
+  /* El botón de GitHub es un botón primario
+    * ¡Edita esto para elegirlo específicamente! */
+usedBy: Usado por gente en
+madeWithLove: |
+  Ahora hospedado en ▲ ZEIT
+  <0/>
+  Hecho con <1 /> por <2>@glenmaddern</2>, <3>@mxstbr</3> & <4>@_philpl‬</4>
+starsOnGithub: Estrellas en Github
+currentVersion: Versión actual
+monthlyDownloads: Descargas mensuales
+gzipSize: Tamaño en gzip
+joinTheCommunity: Únete a la comunidad en Spectrum
+clickedNormal: ¡Has dado click en un botón normal!
+normalButton: Botón normal
+clickedPrimary: ¡Has dado click en un botón primario!
+primaryButton: Botón primario
+imAButton: ¡Soy un <Button />!
+imAStyledButton: Soy un <Button /> estilizado
+gettingStarted: !!seq
+  - |
+    # Empezando
+    ## Instalación
+
+    Para descargar styled-components ejecuta `npm install --save styled-components`.
+    Eso es todo lo que necesitas hacer, ¡Ahora estás listo para usarlo en tu aplicación!
+    (sip, no es necesario compilarlo 👌)
+
+    ## Tu primer "styled-component"
+
+    Digamos que quieres crear un simple y reusable componente `<Button />` que puedas usar utilizar
+    en toda tu aplicación. Debe de haber una versión normal, una grande y una versión `primaria`
+    para los botones importantes.
+    Así es como debe de verse una vez renderizado: (Esto es un ejemplo en vivo, ¡Haz click en ellos!)
+  - |
+    Primero, hay que importar styled-components y crear un `styled.button`:
+
+    ```jsx
+    import styled from 'styled-components';
+
+    const Button = styled.button``;
+    ```
+
+    ¡La variable `Button` ahora es un componente de React que puedes usar como cualquier otro
+    componente de React! Esta inusual sintaxis "backtick" es una característica nueva de JavaScript
+    llamada una "tagged template literal" ¿Sabes como ejecutar funciones con paréntesis?
+    (`miFuncion()`) Bueno, ¡Ahora también puedes ejecutar funciones con "backticks"!
+    [Aquí hay una explicación](/docs/advanced#tagged-template-literals) de como funciona exactamente.
+
+    Si renderizamos nuestro encantador componente ahora (Justo como cualquier otro componente
+    `<Button />`) esto es lo que se obtiene:
+  - |
+    ¡Eso renderiza un botón! aunque no es muy bonito 😕. Podemos hacerlo mejor,
+    démosle un poco de estilo y ¡Obtengamos la belleza escondida que lleva dentro!
+
+    ```jsx
+    const Button = styled.button`
+      border-radius: 3px;
+      padding: 0.25em 1em;
+      margin: 0 1em;
+      background: transparent;
+      color: palevioletred;
+      border: 2px solid palevioletred;
+    `;
+    ```
+  - |
+    Como puedes ver, styled-components permite escribir CSS real en tu JavaScript. Esto significa
+    que puedes usar todas las características de CSS que usas y amas, incluyendo (pero de lejos no
+    se limita a) media queries, todos los pseudo-selectors, anidaciones, etc. También liga estilos a
+    componentes, lo cual tiene propiedades interesantes. (aprende más acerca [de las ideas detrás de
+    styled-components aquí](/docs/basics#motivacin))
+
+    El último paso es definir como se ve un botón primario. Para hacer eso importamos
+    `{ css }` de `styled-components` e interpolamos una función dentro de
+    nuestra plantilla (tagged template literal), la cual pasa los props de nuestro componente:
+
+    ```jsx
+    import styled, { css } from styled-components
+
+    const Button = styled.button`
+      border-radius: 3px;
+      padding: 0.25em 1em;
+      margin: 0 1em;
+      background: transparent;
+      color: palevioletred;
+      border: 2px solid palevioletred;
+
+      ${props => props.primario && css`
+        background: palevioletred;
+        color: white;
+      `}
+    `;
+    ```
+
+    Todo lo que estamos diciendo aquí es que cuando la pripiedad `primario` esté puesta queremos que
+    añada un poco más de `css` a nuestro componente, en este caso, cambiar el color de fondo y el
+    color.
+
+    ¡Eso es todo, hemos acabado! Echa un vistazo al componente terminado
+
+    ```react
+    const Button = styled.button`
+      border-radius: 3px;
+      padding: 0.25em 1em;
+      margin: 0 1em;
+      background: transparent;
+      color: palevioletred;
+      border: 2px solid palevioletred;
+
+      ${props => props.primario && css`
+        background: palevioletred;
+        color: white;
+      `}
+    `;
+
+    render(
+      <div>
+        <Button>Botón normal</Button>
+        <Button primario>Botón primario</Button>
+      </div>
+    );
+    ```
+
+    ¡Genial 😍 ese es un editor en vivo también, así que juega un poco con él para obtener una
+    sensación de lo que es trabajar con styled-components!
+
+    Una vez que acabes, ¡Echa un vistazo a la [documentación](/docs), especialmente la sección de
+    [empezando](/docs/basics#comenzando)! Disfruta ✨

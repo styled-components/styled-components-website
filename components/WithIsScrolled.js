@@ -1,3 +1,5 @@
+'use babel'
+
 import { Component } from 'react'
 import invariant from 'invariant'
 

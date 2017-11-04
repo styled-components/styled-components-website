@@ -1,0 +1,701 @@
+babelPlugin: |
+  ## Babel Plugin| v2
+
+  This plugin adds support for server-side rendering, for minification of
+  styles and gives you a nicer debugging experience.
+
+  ### Usage
+
+  Install the babel-plugin first:
+
+  ```
+  npm install --save-dev babel-plugin-styled-components
+  ```
+
+  Then add it to your babel configuration like so:
+
+  > ⚠️ The plugin call order in your ```.babelrc``` file matters. If you're using the env property
+  > in your babel configuration, then putting this plugin into the plugins array won't suffice.
+  > Instead it needs to be put into each env's plugins array to maintain it being executed first.
+  > See [this](https://github.com/styled-components/babel-plugin-styled-components/issues/78)
+  > for more information.
+
+  ```js
+  {
+    "plugins": ["babel-plugin-styled-components"]
+  }
+  ```
+
+  ### Server-side rendering
+
+  > This option is turned off by default
+
+  By adding a unique identifier to every styled component this plugin
+  avoids checksum mismatches due to different class generation on the
+  client and on the server. If you do not use this plugin and try to
+  server-side render styled-components React will complain.
+
+  You can enable it with the `ssr` option:
+
+  ```js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "ssr": true
+      }]
+    ]
+  }
+  ```
+
+  ### Better debugging
+
+  This options adds the components' name and displayName to the class name
+  attached to the DOM node. In your browser's DevTools you'll see:
+  `<button class="Button-asdf123 asdf123" />`
+  instead of just `<button class="asdf123" />`.
+
+  This also adds support for showing your components' real name in the
+  React DevTools. Consider writing a styled component that renders a
+  `button` element, called `MyButton`. It will
+  normally show up as `<styled.button>` for all of your
+  components, but with this plugin they show
+  `<MyButton />`.
+
+  This makes it easier to find your components and to figure out where
+  they live in your app.
+
+  If you don't need this feature, you can disable it with the
+  `displayName` option:
+
+  ```
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "displayName": false
+      }]
+    ]
+  }
+  ```
+
+  ### Preprocessing
+
+  > This is experimental and we don't yet know of all limitations and bugs!
+  > Consider this non-production ready for now. ⚠️
+
+  This plugin preprocesses your styles with stylis and uses the
+  `no-parser.js` entrypoint on styled-components.
+  This effectively removes stylis from your runtime bundle and should
+  slightly improve runtime performance and shrink your bundle size.
+
+  It automatically disables the `minify` option, since stylis
+  already does some minification on your CSS.
+
+  You can enable preprocessing with the `preprocess` option:
+
+  ```js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "preprocess": true
+      }]
+    ]
+  }
+  ```
+
+  ### Minification
+
+  > This option is turned on by default. If you experience mangled CSS
+  > results, turn it off and open an issue please.
+
+  This plugin minifies your styles in the tagged template literals, giving
+  you big bundle size savings.
+
+  This operation may potentially break your styles in some rare cases, so
+  we recommend to keep this option enabled in development if it's enabled
+  in the production build.
+
+  You can disable minification with the `minify` option:
+
+  ```js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "minify": false
+      }]
+    ]
+  }
+  ```
+
+  ### Template String Transpilation
+
+  We transpile `styled-components` tagged template literals down to a
+  smaller representation than what Babel normally does,
+  because `styled-components` template literals don't need to
+  be 100% spec compliant.
+
+  Read more about [Tagged Template Literals](#tagged-template-literals) in
+  our dedicated section explaining them.
+
+  You can use the `transpileTemplateLiterals` option to turn this feature off.
+
+  ```js
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "transpileTemplateLiterals": false
+      }]
+    ]
+  }
+  ```
+testUtilities: |
+  ## Test Utilities
+
+  [Jest Styled Components](https://github.com/styled-components/jest-styled-components) is a set
+  of utilities for testing Styled Components with [Jest](https://github.com/facebook/jest).
+  This package improves the snapshot testing experience and provides a
+  brand new matcher to make expectations on the style rules.
+
+  ### Installation
+
+  ```
+  yarn add --dev jest-styled-components
+  ```
+
+  ### Snapshot Testing
+
+  When we are building a UI with Styled Components, we want to make sure
+  the output doesn't change unexpectedly.
+  Snapshot testing is an excellent way to test React components, and this
+  package makes the experience even more delightful by adding the style
+  to the snapshots.
+
+  Here's an example of a test:
+
+  ```jsx
+  import React from 'react'
+  import styled from 'styled-components'
+  import renderer from 'react-test-renderer'
+  import 'jest-styled-components'
+
+  const Button = styled.button`
+    color: red;
+  `
+
+  test('it works', () => {
+    const tree = renderer.create(<Button />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+  ```
+
+  And here's an example of the resulting snapshot:
+
+  ```jsx
+  exports[`it works 1`] = `
+  .c0 {
+    color: green;
+  }
+
+  <button
+    className="c0"
+  />
+  `;
+  ```
+
+  For a real world demo, check out
+  [this website's repository](https://github.com/styled-components/styled-components-website/tree/master/test).
+
+  ### `toHaveStyleRule`
+
+  If we only want to check whether a particular style has been appled to
+  an element, we can use the `toHaveStyleRule` matcher.
+  This function takes two required parameters, a property (string) and
+  a value (string or RegExp), and an optional object to search for rules
+  nested within an at-rule or to add modifiers to the class selector.
+
+  ```jsx
+  import React from 'react'
+  import styled from 'styled-components'
+  import renderer from 'react-test-renderer'
+  import 'jest-styled-components'
+
+  const Button = styled.button`
+    color: red;
+    @media (max-width: 640px) {
+      &:hover {
+        color: green;
+      }
+    }
+  `
+
+  test('it works', () => {
+    const tree = renderer.create(<Button />).toJSON()
+    expect(tree).toHaveStyleRule('color', 'red')
+    expect(tree).toHaveStyleRule('color', 'green', {
+      media: '(max-width: 640px)',
+      modifier: ':hover',
+    })
+  })
+  ```
+stylelint: |
+  ## Stylelint
+
+    Lint your [styled components](https://github.com/styled-components/styled-components)
+    with [stylelint](http://stylelint.io/)!
+
+  ### Installation
+
+  You need:
+
+  - `stylelint` (duh)
+  - This processor, to extract styles from `styled-components`
+  - The [`stylelint-config-styled-components`](https://github.com/styled-components/stylelint-config-styled-components) to disable stylelint rules that clash with `styled-components`
+  - Your favorite `stylelint` config! (for example [`stylelint-config-standard`](https://github.com/stylelint/stylelint-config-standard))
+
+  ```
+  (npm install --save-dev
+    stylelint
+    stylelint-processor-styled-components
+    stylelint-config-styled-components
+    stylelint-config-standard)
+  ```
+
+  ### Setup
+
+  Add a `.stylelintrc` file to the root of your project:
+
+  ```JSON
+  {
+    "processors": ["stylelint-processor-styled-components"],
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-styled-components"
+    ],
+    "syntax": "scss"
+  }
+  ```
+
+  > Setting the `syntax` to `scss` is needed for nesting and interpolation support!
+
+  Then you need to run `stylelint`. Add a `lint:css` script to your `package.json` which runs
+  `stylelint` with a glob to all of your styled components:
+
+  ```JSON
+  {
+    "scripts": {
+      "lint:css": "stylelint './src/**/*.js'"
+    }
+  }
+  ```
+
+  > The processor ignores javascript files that don't contain any `styled-components`, so don't
+  > worry about being too broad as long as you restrict it to javascript (or TypeScript).
+
+  Now you can lint your CSS by running the script! 🎉
+
+  ```
+  npm run lint:css
+  ```
+
+  > Beware that due to limitations on what is possible for Stylelint custom processors we cannot
+  > support the `--fix` option
+
+  #### Webpack
+
+  If you want to lint on build, rather than as a separate command, you can use the
+  [`stylelint-custom-processor-loader`](https://github.com/emilgoldsmith/stylelint-custom-processor-loader)
+  for webpack.
+
+  ### `stylelint-config-styled-components`
+
+  When using this processor a couple of stylelint rules throw errors that cannot be prevented, like
+  [`no-empty-source`](https://stylelint.io/user-guide/rules/no-empty-source) or
+  [`no-missing-end-of-source-newline`](https://stylelint.io/user-guide/rules/no-missing-end-of-source-newline).
+  There's also a couple rules which we need to enforce,
+  like [`no-vendor-prefix` rules](https://stylelint.io/user-guide/rules/property-no-vendor-prefix).
+  (`styled-components` automatically vendor prefixes your code, so you don't need to do it manually)
+
+  The [`stylelint-config-styled-components`](https://github.com/styled-components/stylelint-config-styled-components)
+  will automatically disable rules that cause conflicts.
+
+  > You can override rules defined in shared configs in your custom `.stylelintrc`.
+
+  ### Usage with other libraries
+
+  Some other libraries also implement the `styled.x` pattern with tagged template literals.
+  This processor will lint the CSS in those tagged template literals too, as long as they use
+  the `styled` keyword.
+
+  If you want to use the processor with another library but you also want to change the keyword
+  (e.g. to write `cool.div` instead of `styled.div`) use the `moduleName` option:
+
+  ```js
+  import cool from 'other-library';
+
+  const Button = cool.button`
+    color: blue;
+  `
+  ```
+
+  ```json
+  {
+    "processors": [["stylelint-processor-styled-components", {
+        "moduleName": "other-library"
+    }]]
+  }
+  ```
+
+  > That double array is on purpose but only necessary if you set options, see the
+  > [processors configuration docs](https://stylelint.io/user-guide/configuration/#processors).
+
+  > We only officially support `styled-components`, but the hope is that other libraries can
+  > also benefit from the processor.
+
+  ### Interpolation tagging
+
+  Sometimes `stylelint` can throw an error (e.g. `CssSyntaxError`) even though nothing is
+  wrong with your CSS. This is often due to an interpolation, more specifically the fact that
+  the processor doesn't know what you're interpolating.
+
+  A simplified example:
+
+  ```js
+  const something = 'background';
+
+  const Button = styled.div`
+    ${something}: papayawhip;
+  `
+  ```
+
+  When you have interpolations in your styles the processor can't know what they are, so it
+  makes a good guess and replaces them with a syntactically equivalent placeholder value.
+  Since `stylelint` is not a code flow analysis tool this doesn't cover all edge cases and the
+  processor will get it wrong every now and then.
+
+  Interpolation tagging allows you to tell the processor what an interpolation is in case it guesses
+  wrong; it can then replace the interpolation with a syntactically correct value based on your tag.
+
+  For example:
+
+  ```js
+  const something = 'background';
+
+  const Button = styled.div`
+    // Tell the processor that "something" is a property
+    ${/* sc-prop */ something}: papayawhip;
+  `
+  ```
+
+  Now the processor knows that the `something` interpolation is a property, and it can replace the
+  interpolation with a property for linting.
+
+  To tag an interpolation add a comment at either the start or the end of the interpolation.
+  (`${/* sc-tag */ foo}` or `${bar /* sc-tag */}`) Tags start with `sc-` and, if specified, a tag
+  overrides the processors guess about what the interpolation is.
+
+  #### Tags
+
+  The full list of supported tags:
+
+  - `sc-block`
+  - `sc-selector`
+  - `sc-declaration`
+  - `sc-property`
+  - `sc-value`
+
+  > If you are in doubt of the vocabulary you can refer to
+  > [this CSS vocabulary list](http://apps.workflower.fi/vocabs/css/en) with examples.
+
+  For example, when you interpolate another styled component, what you really interpolate is its
+  unique selector. Since the processor doesn't know that, you can tell it to replace it with a
+  selector when linting:
+
+  ```js
+  const Wrapper = styled.div`
+    ${/* sc-selector */ Button} {
+      color: red;
+    }
+  `;
+  ```
+
+  You can also use shorthand tags to avoid cluttering the code. For example:
+
+  ```js
+  const Wrapper = styled.div`
+    ${/* sc-sel */ Button} {
+      color: red;
+    }
+  `;
+  ```
+
+  ##### `sc-custom`
+
+  **`sc-custom` is meant to be used as a last resort escape hatch. Prefer to use the standard tags
+  if possible!**
+
+  On top of the above standard tags the processor also has the `sc-custom` tag to allow you to cover
+  more unique and uncommon edge cases. With the `sc-custom` tag you can decide yourself what the
+  placeholder value will be.
+
+  For example:
+
+  ```js
+  // Switch between left and right based on language settings passed through via the theme
+  const rtlSwitch = props => props.theme.dir === 'rtl' ? 'left' : 'right';
+
+  const Button = styled.button`
+    background: green;
+    // Tell the processor to replace the interpolation with "left"
+    // when linting
+    margin-${/* sc-custom 'left' */ rtlSwitch}: 12.5px;
+  `;
+  ```
+
+  ### Syntax notes
+
+  #### Turning rules off from within your JS/CSS
+
+  Turn off rules with `stylelint-disable` comments (see the
+  [stylelint documentation](https://stylelint.io/user-guide/configuration/#turning-rules-off-from-within-your-css)
+  for all allowed syntax) both inside and outside of the tagged template literals.
+
+  ```js
+  import React from 'react';
+  import styled from 'styled-components';
+
+  // Disable stylelint from within the tagged template literal
+  const Wrapper = styled.div`
+    /* stylelint-disable */
+    background-color: 123;
+  `;
+
+  // Or from the JavaScript around the tagged template literal
+  /* stylelint-disable */
+  const Wrapper = styled.div`
+    background-color: 123;
+  `;
+  ```
+
+  #### Template literal style and indentation
+
+  In order to have stylelint correctly apply indentation rules the processor needs to do a bit of
+  opinionated preprocessing on the styles, which results in us only officially supporting one
+  indentation style. (the supported style is the "default" one as shown in all the documentation)
+
+  The important thing is that you put the closing backtick on the base level of indentation as
+  follows:
+
+  **Right**
+
+  ```js
+  if (condition) {
+    const Button = styled.button`
+      color: red;
+    `
+  }
+  ```
+
+  **Wrong**
+
+  ```js
+  if (condition) {
+    const Button = styled.button`
+      color: red;
+  `
+  }
+  ```
+
+  ```js
+  if (condition) {
+    const Button = styled.button`
+      color: red;`
+  }
+  ```
+
+  It may be that other tagged template literal styles are coincidentally supported, but no issues
+  will be handled regarding indentation unless the above style was used.
+styledTheming:
+  components:
+    toggleMode: Toggle Mode
+    toggleSize: Toggle Size
+  content: !!seq
+    - |
+      ## Styled Theming
+
+      Create themes for your styled components using
+      [styled-theming](https://github.com/styled-components/styled-theming)
+    - |
+      Read the [introductory blog post](http://thejameskyle.com/styled-theming.html)
+
+      ### Install
+
+      Install the babel-plugin first:
+
+      ```
+      npm install --save styled-theming
+      ```
+
+      ### Example
+
+      ```jsx
+      import React from 'react';
+      import styled, {ThemeProvider} from 'styled-components';
+      import theme from 'styled-theming';
+
+      const boxBackgroundColor = theme('mode', {
+        light: '#fff',
+        dark: '#000',
+      });
+
+      const Box = styled.div`
+        background-color: ${boxBackgroundColor};
+      `;
+
+      export default function App() {
+        return (
+          <ThemeProvider theme={{ mode: 'light' }}>
+            <Box>
+              Hello World
+            </Box>
+          </ThemeProvider>
+        );
+      }
+      ```
+
+      ### API
+
+      #### `<ThemeProvider>`
+
+      See [styled-components docs](https://www.styled-components.com/docs/advanced#theming)
+
+      `<ThemeProvider>` is part of styled-components, but is required for
+      styled-theming.
+
+      ```js
+      import {ThemeProvider} from 'styled-components';
+      ```
+
+      `<ThemeProvider>` accepts a single prop `theme` which you should pass an
+      object with either strings or getter functions. For example:
+
+      ```jsx
+      <ThemeProvider theme={{ mode: 'dark', size: 'large' }}>
+      <ThemeProvider theme={{ mode: modes => modes.dark, size: sizes => sizes.large }}>
+      ```
+
+      You should generally set up a `<ThemeProvider>` at the root of your app:
+
+      ```jsx
+      function App() {
+        return (
+          <ThemeProvider theme={...}>
+            {/* rest of your app */}
+          </ThemeProvider>
+        );
+      }
+      ```
+
+      #### `theme(name, values)`
+
+      Most of your theming will be done with this function.
+
+      `name` should match one of the keys in your `<ThemeProvider>` theme.
+
+      ```jsx
+      <ThemeProvider theme={{ whatever: '...' }}/>
+      ```
+
+      ```js
+      theme('whatever', {...});
+      ```
+
+      `values` should be an object where one of the keys will be selected by the
+      value provided to `<ThemeProvider>` theme.
+
+      ```jsx
+      <ThemeProvider theme={{ mode: 'light' }}/>
+      <ThemeProvider theme={{ mode: 'dark' }}/>
+
+      theme('mode', {
+        light: '...',
+        dark: '...',
+      });
+      ```
+
+      The values of this object can be any CSS value.
+
+      ```jsx
+      theme('mode', {
+        light: '#fff',
+        dark: '#000',
+      });
+
+      theme('font', {
+        sansSerif: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+        serif: 'Georgia, Times, "Times New Roman", serif',
+        monoSpaced: 'Consolas, monaco, monospace',
+      });
+      ```
+
+      These values can also be functions that return CSS values.
+
+      ```jsx
+      theme('mode', {
+        light: props => props.theme.userProfileAccentColor.light,
+        dark: props => props.theme.userProfileAccentColor.dark,
+      });
+      ```
+
+      `theme` will create a function that you can use as a value in
+      styled-component's `styled` function.
+
+      ```jsx
+      import styled from 'styled-components';
+      import theme from 'styled-theming';
+
+      const backgroundColor = theme('mode', {
+        light: '#fff',
+        dark: '#000',
+      });
+
+      const Box = styled.div`
+        background-color: ${backgroundColor}
+      `;
+      ```
+
+
+      #### `theme.variants(name, prop, themes)`
+
+      It's often useful to create variants of the same component that are selected
+      via an additional prop.
+
+      To make this easier with theming, styled-theming provides a
+      `theme.variants` function.
+
+      ```jsx
+      import styled from 'styled-components';
+      import theme from 'styled-theming';
+
+      const backgroundColor = theme.variants('variant', 'mode', {
+        default: { light: 'gray', dark: 'darkgray' },
+        primary: { light: 'blue', dark: 'darkblue' },
+        success: { light: 'green', dark: 'darkgreen' },
+        warning: { light: 'orange', dark: 'darkorange' },
+      });
+
+      const Button = styled.button`
+        background-color: ${backgroundColor};
+      `;
+
+      Button.propTypes = {
+        variant: PropTypes.oneOf(['default', 'primary', 'success', 'warning'])
+      };
+
+      Button.defaultProps = {
+        variant: 'default',
+      };
+
+      <Button/>
+      <Button variant="primary"/>
+      <Button variant="success"/>
+      <Button variant="warning"/>
+      ```

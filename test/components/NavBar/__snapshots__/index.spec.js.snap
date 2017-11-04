@@ -414,85 +414,98 @@ exports[`Nav renders correctly 1`] = `
                     </Link>
                   </Styled(Link)>
                   <NavLinks>
-                    <styled.nav>
-                      <nav
-                        className="c5"
-                      >
-                        <Styled(Link)
-                          href="/"
+                    <I18n
+                      ns="translations"
+                    >
+                      <styled.nav>
+                        <nav
+                          className="c5"
                         >
-                          <Link
-                            className="c6"
+                          <Styled(Link)
+                            as="/"
                             href="/"
-                            unstyled={true}
                           >
                             <Link
+                              as="/"
+                              className="c6"
                               href="/"
+                              unstyled={true}
                             >
-                              <a
-                                className="c6"
+                              <Link
+                                as="/"
                                 href="/"
-                                onClick={[Function]}
                               >
-                                Homepage
-                              </a>
+                                <a
+                                  className="c6"
+                                  href="/"
+                                  onClick={[Function]}
+                                >
+                                  Homepage
+                                </a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </Styled(Link)>
-                        <styled.span>
-                          <span
-                            className="c7"
-                          />
-                        </styled.span>
-                        <Styled(Link)
-                          href="/docs"
-                        >
-                          <Link
-                            className="c6"
+                          </Styled(Link)>
+                          <styled.span>
+                            <span
+                              className="c7"
+                            />
+                          </styled.span>
+                          <Styled(Link)
+                            as="/docs"
                             href="/docs"
-                            unstyled={true}
                           >
                             <Link
+                              as="/docs"
+                              className="c6"
                               href="/docs"
+                              unstyled={true}
                             >
-                              <a
-                                className="c6"
+                              <Link
+                                as="/docs"
                                 href="/docs"
-                                onClick={[Function]}
                               >
-                                Documentation
-                              </a>
+                                <a
+                                  className="c6"
+                                  href="/docs"
+                                  onClick={[Function]}
+                                >
+                                  Documentation
+                                </a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </Styled(Link)>
-                        <styled.span>
-                          <span
-                            className="c7"
-                          />
-                        </styled.span>
-                        <Styled(Link)
-                          href="/ecosystem"
-                        >
-                          <Link
-                            className="c6"
+                          </Styled(Link)>
+                          <styled.span>
+                            <span
+                              className="c7"
+                            />
+                          </styled.span>
+                          <Styled(Link)
+                            as="/ecosystem"
                             href="/ecosystem"
-                            unstyled={true}
                           >
                             <Link
+                              as="/ecosystem"
+                              className="c6"
                               href="/ecosystem"
+                              unstyled={true}
                             >
-                              <a
-                                className="c6"
+                              <Link
+                                as="/ecosystem"
                                 href="/ecosystem"
-                                onClick={[Function]}
                               >
-                                Ecosystem
-                              </a>
+                                <a
+                                  className="c6"
+                                  href="/ecosystem"
+                                  onClick={[Function]}
+                                >
+                                  Ecosystem
+                                </a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </Styled(Link)>
-                      </nav>
-                    </styled.nav>
+                          </Styled(Link)>
+                        </nav>
+                      </styled.nav>
+                    </I18n>
                   </NavLinks>
                 </div>
               </styled.div>
@@ -787,85 +800,98 @@ exports[`Nav renders correctly 1`] = `
                     open={true}
                   >
                     <NavLinks>
-                      <styled.nav>
-                        <nav
-                          className="c5"
-                        >
-                          <Styled(Link)
-                            href="/"
+                      <I18n
+                        ns="translations"
+                      >
+                        <styled.nav>
+                          <nav
+                            className="c5"
                           >
-                            <Link
-                              className="c6"
+                            <Styled(Link)
+                              as="/"
                               href="/"
-                              unstyled={true}
                             >
                               <Link
+                                as="/"
+                                className="c6"
                                 href="/"
+                                unstyled={true}
                               >
-                                <a
-                                  className="c6"
+                                <Link
+                                  as="/"
                                   href="/"
-                                  onClick={[Function]}
                                 >
-                                  Homepage
-                                </a>
+                                  <a
+                                    className="c6"
+                                    href="/"
+                                    onClick={[Function]}
+                                  >
+                                    Homepage
+                                  </a>
+                                </Link>
                               </Link>
-                            </Link>
-                          </Styled(Link)>
-                          <styled.span>
-                            <span
-                              className="c7"
-                            />
-                          </styled.span>
-                          <Styled(Link)
-                            href="/docs"
-                          >
-                            <Link
-                              className="c6"
+                            </Styled(Link)>
+                            <styled.span>
+                              <span
+                                className="c7"
+                              />
+                            </styled.span>
+                            <Styled(Link)
+                              as="/docs"
                               href="/docs"
-                              unstyled={true}
                             >
                               <Link
+                                as="/docs"
+                                className="c6"
                                 href="/docs"
+                                unstyled={true}
                               >
-                                <a
-                                  className="c6"
+                                <Link
+                                  as="/docs"
                                   href="/docs"
-                                  onClick={[Function]}
                                 >
-                                  Documentation
-                                </a>
+                                  <a
+                                    className="c6"
+                                    href="/docs"
+                                    onClick={[Function]}
+                                  >
+                                    Documentation
+                                  </a>
+                                </Link>
                               </Link>
-                            </Link>
-                          </Styled(Link)>
-                          <styled.span>
-                            <span
-                              className="c7"
-                            />
-                          </styled.span>
-                          <Styled(Link)
-                            href="/ecosystem"
-                          >
-                            <Link
-                              className="c6"
+                            </Styled(Link)>
+                            <styled.span>
+                              <span
+                                className="c7"
+                              />
+                            </styled.span>
+                            <Styled(Link)
+                              as="/ecosystem"
                               href="/ecosystem"
-                              unstyled={true}
                             >
                               <Link
+                                as="/ecosystem"
+                                className="c6"
                                 href="/ecosystem"
+                                unstyled={true}
                               >
-                                <a
-                                  className="c6"
+                                <Link
+                                  as="/ecosystem"
                                   href="/ecosystem"
-                                  onClick={[Function]}
                                 >
-                                  Ecosystem
-                                </a>
+                                  <a
+                                    className="c6"
+                                    href="/ecosystem"
+                                    onClick={[Function]}
+                                  >
+                                    Ecosystem
+                                  </a>
+                                </Link>
                               </Link>
-                            </Link>
-                          </Styled(Link)>
-                        </nav>
-                      </styled.nav>
+                            </Styled(Link)>
+                          </nav>
+                        </styled.nav>
+                      </I18n>
                     </NavLinks>
                     <styled.span>
                       <span
@@ -1050,207 +1076,341 @@ exports[`Nav renders correctly 1`] = `
           className="c22"
         >
           <SidebarMenu>
-            <styled.div>
-              <div
-                className="c23"
-              >
-                <Folder
-                  isOpenDefault={false}
+            <I18n
+              ns="nav"
+            >
+              <styled.div>
+                <div
+                  className="c23"
                 >
-                  <styled.div>
-                    <div
-                      className="c24"
-                    >
-                      <styled.h4
-                        onClick={[Function]}
+                  <Folder
+                    isOpenDefault={false}
+                  >
+                    <styled.div>
+                      <div
+                        className="c24"
                       >
-                        <h4
-                          className="c25"
+                        <styled.h4
                           onClick={[Function]}
                         >
-                          <Link
-                            href="/docs/basics"
+                          <h4
+                            className="c25"
+                            onClick={[Function]}
                           >
                             <Link
-                              href="/docs/basics"
+                              as={
+                                Object {
+                                  "pathname": "/docs/basics",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/basics",
+                                }
+                              }
                             >
-                              <styled.a
-                                href="/docs/basics"
-                                onClick={[Function]}
+                              <Link
+                                as={
+                                  Object {
+                                    "pathname": "/docs/basics",
+                                  }
+                                }
+                                href={
+                                  Object {
+                                    "pathname": "/docs/basics",
+                                  }
+                                }
                               >
-                                <a
-                                  className="c26"
-                                  href="/docs/basics"
+                                <styled.a
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/basics",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
-                                  Basics
-                                </a>
-                              </styled.a>
+                                  <a
+                                    className="c26"
+                                    href={
+                                      Object {
+                                        "pathname": "/docs/basics",
+                                      }
+                                    }
+                                    onClick={[Function]}
+                                  >
+                                    Basics
+                                  </a>
+                                </styled.a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={false}
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
-                    >
-                      <styled.h4
-                        onClick={[Function]}
+                          </h4>
+                        </styled.h4>
+                      </div>
+                    </styled.div>
+                  </Folder>
+                  <Folder
+                    isOpenDefault={false}
+                  >
+                    <styled.div>
+                      <div
+                        className="c24"
                       >
-                        <h4
-                          className="c25"
+                        <styled.h4
                           onClick={[Function]}
                         >
-                          <Link
-                            href="/docs/advanced"
+                          <h4
+                            className="c25"
+                            onClick={[Function]}
                           >
                             <Link
-                              href="/docs/advanced"
+                              as={
+                                Object {
+                                  "pathname": "/docs/advanced",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/advanced",
+                                }
+                              }
                             >
-                              <styled.a
-                                href="/docs/advanced"
-                                onClick={[Function]}
+                              <Link
+                                as={
+                                  Object {
+                                    "pathname": "/docs/advanced",
+                                  }
+                                }
+                                href={
+                                  Object {
+                                    "pathname": "/docs/advanced",
+                                  }
+                                }
                               >
-                                <a
-                                  className="c26"
-                                  href="/docs/advanced"
+                                <styled.a
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/advanced",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
-                                  Advanced
-                                </a>
-                              </styled.a>
+                                  <a
+                                    className="c26"
+                                    href={
+                                      Object {
+                                        "pathname": "/docs/advanced",
+                                      }
+                                    }
+                                    onClick={[Function]}
+                                  >
+                                    Advanced
+                                  </a>
+                                </styled.a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={false}
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
-                    >
-                      <styled.h4
-                        onClick={[Function]}
+                          </h4>
+                        </styled.h4>
+                      </div>
+                    </styled.div>
+                  </Folder>
+                  <Folder
+                    isOpenDefault={false}
+                  >
+                    <styled.div>
+                      <div
+                        className="c24"
                       >
-                        <h4
-                          className="c25"
+                        <styled.h4
                           onClick={[Function]}
                         >
-                          <Link
-                            href="/docs/api"
+                          <h4
+                            className="c25"
+                            onClick={[Function]}
                           >
                             <Link
-                              href="/docs/api"
+                              as={
+                                Object {
+                                  "pathname": "/docs/api",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/api",
+                                }
+                              }
                             >
-                              <styled.a
-                                href="/docs/api"
-                                onClick={[Function]}
+                              <Link
+                                as={
+                                  Object {
+                                    "pathname": "/docs/api",
+                                  }
+                                }
+                                href={
+                                  Object {
+                                    "pathname": "/docs/api",
+                                  }
+                                }
                               >
-                                <a
-                                  className="c26"
-                                  href="/docs/api"
+                                <styled.a
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/api",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
-                                  API Reference
-                                </a>
-                              </styled.a>
+                                  <a
+                                    className="c26"
+                                    href={
+                                      Object {
+                                        "pathname": "/docs/api",
+                                      }
+                                    }
+                                    onClick={[Function]}
+                                  >
+                                    API Reference
+                                  </a>
+                                </styled.a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={false}
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
-                    >
-                      <styled.h4
-                        onClick={[Function]}
+                          </h4>
+                        </styled.h4>
+                      </div>
+                    </styled.div>
+                  </Folder>
+                  <Folder
+                    isOpenDefault={false}
+                  >
+                    <styled.div>
+                      <div
+                        className="c24"
                       >
-                        <h4
-                          className="c25"
+                        <styled.h4
                           onClick={[Function]}
                         >
-                          <Link
-                            href="/docs/tooling"
+                          <h4
+                            className="c25"
+                            onClick={[Function]}
                           >
                             <Link
-                              href="/docs/tooling"
+                              as={
+                                Object {
+                                  "pathname": "/docs/tooling",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/tooling",
+                                }
+                              }
                             >
-                              <styled.a
-                                href="/docs/tooling"
-                                onClick={[Function]}
+                              <Link
+                                as={
+                                  Object {
+                                    "pathname": "/docs/tooling",
+                                  }
+                                }
+                                href={
+                                  Object {
+                                    "pathname": "/docs/tooling",
+                                  }
+                                }
                               >
-                                <a
-                                  className="c26"
-                                  href="/docs/tooling"
+                                <styled.a
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/tooling",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
-                                  Tooling
-                                </a>
-                              </styled.a>
+                                  <a
+                                    className="c26"
+                                    href={
+                                      Object {
+                                        "pathname": "/docs/tooling",
+                                      }
+                                    }
+                                    onClick={[Function]}
+                                  >
+                                    Tooling
+                                  </a>
+                                </styled.a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={false}
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
-                    >
-                      <styled.h4
-                        onClick={[Function]}
+                          </h4>
+                        </styled.h4>
+                      </div>
+                    </styled.div>
+                  </Folder>
+                  <Folder
+                    isOpenDefault={false}
+                  >
+                    <styled.div>
+                      <div
+                        className="c24"
                       >
-                        <h4
-                          className="c25"
+                        <styled.h4
                           onClick={[Function]}
                         >
-                          <Link
-                            href="/docs/faqs"
+                          <h4
+                            className="c25"
+                            onClick={[Function]}
                           >
                             <Link
-                              href="/docs/faqs"
+                              as={
+                                Object {
+                                  "pathname": "/docs/faqs",
+                                }
+                              }
+                              href={
+                                Object {
+                                  "pathname": "/docs/faqs",
+                                }
+                              }
                             >
-                              <styled.a
-                                href="/docs/faqs"
-                                onClick={[Function]}
+                              <Link
+                                as={
+                                  Object {
+                                    "pathname": "/docs/faqs",
+                                  }
+                                }
+                                href={
+                                  Object {
+                                    "pathname": "/docs/faqs",
+                                  }
+                                }
                               >
-                                <a
-                                  className="c26"
-                                  href="/docs/faqs"
+                                <styled.a
+                                  href={
+                                    Object {
+                                      "pathname": "/docs/faqs",
+                                    }
+                                  }
                                   onClick={[Function]}
                                 >
-                                  FAQs
-                                </a>
-                              </styled.a>
+                                  <a
+                                    className="c26"
+                                    href={
+                                      Object {
+                                        "pathname": "/docs/faqs",
+                                      }
+                                    }
+                                    onClick={[Function]}
+                                  >
+                                    FAQs
+                                  </a>
+                                </styled.a>
+                              </Link>
                             </Link>
-                          </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-              </div>
-            </styled.div>
+                          </h4>
+                        </styled.h4>
+                      </div>
+                    </styled.div>
+                  </Folder>
+                </div>
+              </styled.div>
+            </I18n>
           </SidebarMenu>
         </nav>
       </styled.nav>

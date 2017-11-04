@@ -1,13 +1,15 @@
+import { I18n } from 'react-i18next'
 import md from 'components/md'
 
-const Installation = () => md`
-  ## Installation
+import {
+  DOCS_BASICS_TRANSLATION,
+} from '../../constants/i18n'
 
-  Install styled-components from npm:
 
-  \`\`\`
-  npm install --save styled-components
-  \`\`\`
-`
+const Installation = () => (
+  <I18n ns={DOCS_BASICS_TRANSLATION}>
+    {(translate, { i18n }) => md(i18n)(translate('installation'))}
+  </I18n>
+)
 
 export default Installation

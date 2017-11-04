@@ -1,4 +1,7 @@
+'use babel'
+
 import styled, { css } from 'styled-components'
+import { I18n } from 'react-i18next'
 
 import rem from '../../utils/rem'
 import DocsLayout from '../../components/DocsLayout'
@@ -8,6 +11,17 @@ import titleToDash from '../../utils/titleToDash'
 import { pages } from '../docs.json'
 import { mobile, phone } from '../../utils/media'
 import { headerFont } from '../../utils/fonts'
+
+import withI18n from '../../components/withI18n'
+import {
+  DEFAULT_TRANSLATION,
+  NAV_TRANSLATION,
+  DOCS_TRANSLATION,
+} from '../../constants/i18n'
+
+import {
+  addLanguageToPath,
+} from '../../utils/translations'
 
 const Row = styled.div`
   display: flex;
@@ -41,36 +55,61 @@ const SubHeader = styled.h3`
   font-family: ${headerFont};
 `
 
-const Documentation = () => (
-  <DocsLayout title="Documentation" description="Learn how to use styled-components and to style your apps without stress">
-    <p>
-      Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components. It also removes the mapping between components and styles – using components as a low-level styling construct could not be easier!
-    </p>
+export const Documentation = () => (
+  <I18n
+    ns={[DOCS_TRANSLATION, NAV_TRANSLATION, DEFAULT_TRANSLATION]}
+    wait={process.browser}
+  >
+    {(translate, { i18n }) => {
+      if (!translate) {
+        return null
+      }
 
-    <Row>
-      {
-        pages.map(({ title, pathname, sections }) => (
-          <Column key={title}>
-            <Header>
-              <Link href={`/docs/${pathname}`}>
-                {title}
-              </Link>
-            </Header>
+      return (
+        <DocsLayout
+          title={translate(`${DEFAULT_TRANSLATION}:documentation`)}
+          description={translate('description')}
+        >
+          <p>
+            {translate('about')}
+          </p>
 
+          <Row>
             {
-              sections.map(({ title }) => (
-                <SubHeader key={title}>
-                  <Link href={`/docs/${pathname}#${titleToDash(title)}`}>
-                    {title}
-                  </Link>
-                </SubHeader>
+              pages.map(({ title, pathname, sections }) => (
+                <Column key={title}>
+                  <Header>
+                    <Link
+                      href={`/docs/${pathname}`}
+                      as={addLanguageToPath(i18n, `/docs/${pathname}`)}
+                    >
+                      {translate(`${NAV_TRANSLATION}:${title}`)}
+                    </Link>
+                  </Header>
+                  {
+                    sections.map(({ title }) => {
+                      const path = `/docs/${pathname}#${titleToDash(translate(`${NAV_TRANSLATION}:${title}`))}`
+
+                      return (
+                        <SubHeader key={title}>
+                          <Link
+                            href={path}
+                            as={addLanguageToPath(i18n, path)}
+                          >
+                            {translate(`${NAV_TRANSLATION}:${title}`)}
+                          </Link>
+                        </SubHeader>
+                      )
+                    })
+                  }
+                </Column>
               ))
             }
-          </Column>
-        ))
-      }
-    </Row>
-  </DocsLayout>
+          </Row>
+        </DocsLayout>
+      )
+    }}
+  </I18n>
 )
 
-export default Documentation
+export default withI18n(Documentation)

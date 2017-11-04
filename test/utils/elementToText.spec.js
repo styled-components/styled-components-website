@@ -1,3 +1,5 @@
+'use babel'
+
 import React from 'react'
 import elementToText from '../../utils/elementToText'
 

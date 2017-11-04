@@ -23,12 +23,12 @@ git clone https://github.com/styled-components/styled-components-website
 # Enter the repo
 cd styled-components-website
 # Install the dependencies
-npm install
+yarn
 # Start local development
-npm run dev
+yarn dev
 ```
 
-> Note: This requires Node.js and npm to be set up locally, see [nodejs.org](https://nodejs.org) for more information.
+> Note: This requires Node.js and yarn to be set up locally, see [nodejs.org](https://nodejs.org) and [yarnpkg.org](https://yarnpkg.com) for more information.
 
 ### Folder structure
 
@@ -42,7 +42,8 @@ styled-components-website
 ├── static/      # Assets
 ├── test/        # Tests
 ├── utils/       # Various utilities use across the site
-└── vendor/      # Cached dependencies
+├── vendor/      # Cached dependencies
+└── locales/     # Translations
 ```
 
 ### Got stuck?

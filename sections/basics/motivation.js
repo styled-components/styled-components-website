@@ -1,9 +1,14 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { I18n } from 'react-i18next'
 import { phone } from '../../utils/media'
 
 import rem from '../../utils/rem'
 import md from 'components/md'
+
+import {
+  DOCS_BASICS_TRANSLATION,
+} from '../../constants/i18n'
 
 const videoHtml = (`
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bIK2NwoK9xk?start=89" frameborder="0" allowfullscreen></iframe>
@@ -37,14 +42,15 @@ const Video = styled.div.attrs({
   `)}
 `
 
-const Motivation = () => md`
-  ## Motivation
-
-  This talk by Max Stoiber is a really thorough introduction to styled-components
-  and goes through what the motivations behind its creation were, along with some
-  other information to get started with.
-
-  ${<Video />}
-`
+const Motivation = () => (
+  <I18n ns={DOCS_BASICS_TRANSLATION}>
+    {(translate, { i18n }) => (
+      <div>
+        {md(i18n)(translate('motivation'))}
+        <Video />
+      </div>
+    )}
+  </I18n>
+)
 
 export default Motivation

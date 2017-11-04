@@ -1,3 +1,5 @@
+'use babel'
+
 import { isValidElement } from 'react'
 
 const whitespacesRe = /\s+/g
