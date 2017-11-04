@@ -15,6 +15,6 @@ const elementToTextRec = x => {
   return ''
 }
 
-const elementToText = node => _format(elementToTextRec(node))
+const elementToText = node => _format(elementToTextRec(node)).trim()
 
 export default elementToText
