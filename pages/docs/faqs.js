@@ -10,6 +10,7 @@ const FAQs = () => (
     <Nesting />
     <ReverseSelectors />
     <CSSFrameworks />
+    <TwoDomClasses />
   </DocsLayout>
 )
 

@@ -108,7 +108,8 @@
       "sections": [
         { "title": "Can I nest rules?" },
         { "title": "Can I refer to other components?" },
-        { "title": "Can I use css frameworks?" }
+        { "title": "Can I use css frameworks?" },
+        { "title": "Why do my DOM nodes have two classes?" }
       ]
     }
   ]
