@@ -35,7 +35,7 @@ exports[`Search renders correctly 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  width: 7.222222222222222rem;
+  width: 11.11111111111111rem;
   padding: 0 0.2777777777777778rem;
   line-height: 1.6666666666666667rem;
   font-size: 0.8333333333333334rem;
@@ -121,7 +121,7 @@ exports[`Search renders correctly 1`] = `
   <input
     className="c5"
     id="docs-search-input"
-    placeholder="Search ..."
+    placeholder="Search docs ..."
   />
 </form>
 `;

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Index renders correctly 1`] = `
-.c60 {
+.c65 {
   box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20,20,20,0.27);
   overflow: hidden;
   margin: 1.9444444444444444rem 0;
   text-align: left;
 }
 
-.c61 {
+.c66 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26,7 +26,7 @@ exports[`Index renders correctly 1`] = `
   align-items: stretch;
 }
 
-.c62 {
+.c67 {
   background: #1d1f27;
   font-size: 0.8rem;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
@@ -43,7 +43,7 @@ exports[`Index renders correctly 1`] = `
   max-width: 50%;
 }
 
-.c63 {
+.c68 {
   position: relative;
   padding: 0.5rem;
   background: white;
@@ -57,7 +57,7 @@ exports[`Index renders correctly 1`] = `
   max-width: 50%;
 }
 
-.c34 {
+.c39 {
   display: block;
   width: 100%;
   padding: 0.4444444444444444rem;
@@ -68,7 +68,7 @@ exports[`Index renders correctly 1`] = `
   white-space: pre;
 }
 
-.c31 {
+.c36 {
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -77,21 +77,21 @@ exports[`Index renders correctly 1`] = `
   margin: -0.1111111111111111rem -0.4444444444444444rem;
 }
 
-.c58 {
+.c63 {
   color: rgb(219,112,147);
   text-decoration: underline;
   font-weight: 600;
   cursor: pointer;
 }
 
-.c68 {
+.c73 {
   color: white;
   text-decoration: underline;
   font-weight: 600;
   cursor: pointer;
 }
 
-.c44 {
+.c49 {
   width: 56.888888888888886rem;
   max-width: 100%;
   margin: 0 auto;
@@ -103,7 +103,7 @@ exports[`Index renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c47 {
+.c52 {
   display: block;
   text-align: left;
   width: 100%;
@@ -113,13 +113,13 @@ exports[`Index renders correctly 1`] = `
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c49 {
+.c54 {
   font-size: 1.7777777777777777rem;
   font-weight: 500;
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c54 {
+.c59 {
   display: inline-block;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
   font-size: 90%;
@@ -129,7 +129,7 @@ exports[`Index renders correctly 1`] = `
   line-height: 1.4;
 }
 
-.c57 {
+.c62 {
   background: #1d1f27;
   font-size: 0.8rem;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
@@ -141,7 +141,7 @@ exports[`Index renders correctly 1`] = `
   overflow-x: hidden;
 }
 
-.c50 {
+.c55 {
   position: relative;
   display: block;
   visibility: hidden;
@@ -149,43 +149,43 @@ exports[`Index renders correctly 1`] = `
   top: -3.888888888888889rem;
 }
 
-.c52 {
+.c57 {
   display: none;
   position: absolute;
   left: 0;
   color: inherit;
 }
 
-.c53 {
+.c58 {
   width: 1.1111111111111112rem;
   opacity: 0.7;
   margin-top: -0.2777777777777778rem;
 }
 
-.c53:hover {
+.c58:hover {
   opacity: 0.9;
 }
 
-.c48 {
+.c53 {
   position: relative;
   margin-left: -1.6666666666666667rem;
   padding-left: 1.6666666666666667rem;
 }
 
-.c48:hover .c51 {
+.c53:hover .c56 {
   display: inline-block;
 }
 
-.c45 {
+.c50 {
   text-align: center;
 }
 
-.c46 {
+.c51 {
   margin: 0 0.5em 3em;
   height: 1.5em;
 }
 
-.c55 {
+.c60 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -194,7 +194,7 @@ exports[`Index renders correctly 1`] = `
   border: 2px solid palevioletred;
 }
 
-.c56 {
+.c61 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -205,7 +205,7 @@ exports[`Index renders correctly 1`] = `
   color: white;
 }
 
-.c59 {
+.c64 {
   border-radius: 3px;
   padding: 0.25em 1em;
   background: transparent;
@@ -268,7 +268,7 @@ exports[`Index renders correctly 1`] = `
   opacity: 0.6;
 }
 
-.c9 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -282,7 +282,7 @@ exports[`Index renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c10 {
+.c16 {
   display: inline-block;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
@@ -292,37 +292,37 @@ exports[`Index renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c10:last-child {
+.c16:last-child {
   margin-right: 0;
 }
 
-.c10:hover,
-.c10:focus {
+.c16:hover,
+.c16:focus {
   opacity: 0.8;
 }
 
-.c10:active {
+.c16:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c10 svg path {
+.c16 svg path {
   fill: currentColor;
 }
 
-.c11 {
+.c17 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c12 {
+.c18 {
   width: 0.9444444444444444rem;
   height: 0.9444444444444444rem;
 }
 
-.c13 {
+.c19 {
   width: 0.9444444444444444rem;
   height: 0.7777777777777778rem;
 }
@@ -338,7 +338,7 @@ exports[`Index renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c16 {
+.c22 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -349,15 +349,94 @@ exports[`Index renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c19 svg {
+.c13 svg {
   display: inline-block;
 }
 
-.c19 svg path {
+.c13 svg path {
   fill: currentColor;
 }
 
-.c17 {
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-right: 0.5555555555555556rem;
+}
+
+.c14 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 11.11111111111111rem;
+  padding: 0 0.2777777777777778rem;
+  line-height: 1.6666666666666667rem;
+  font-size: 0.8333333333333334rem;
+  color: currentColor;
+  -webkit-transition: background 100ms ease-in;
+  transition: background 100ms ease-in;
+}
+
+.c14::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14::placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14:focus {
+  background: rgba(0,0,0,0.07);
+  border-radius: 3px;
+}
+
+.c10 {
+  text-indent: -99999px;
+}
+
+.c11 {
+  position: absolute;
+}
+
+.c12 svg {
+  width: 0.8888888888888888rem;
+  height: 0.9444444444444444rem;
+  margin-right: 0.2777777777777778rem;
+  display: block;
+}
+
+.c12 svg path {
+  fill: currentColor;
+}
+
+.c23 {
   background: none;
   outline: none;
   border: none;
@@ -371,16 +450,16 @@ exports[`Index renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c17:focus {
+.c23:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
 }
 
-.c14 {
+.c20 {
   display: none;
 }
 
-.c20 {
+.c25 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -415,18 +494,18 @@ exports[`Index renders correctly 1`] = `
   color: #868686;
 }
 
-.c15 {
+.c21 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c18 {
+.c24 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
 }
 
-.c21 {
+.c26 {
   display: inline-block;
 }
 
@@ -498,31 +577,31 @@ exports[`Index renders correctly 1`] = `
   margin-right: 1.9444444444444444rem;
 }
 
-.c26 {
+.c31 {
   font-weight: 600;
   font-size: 1.3rem;
 }
 
-.c27 {
+.c32 {
   font-size: 1.1rem;
   font-weight: 400;
 }
 
-.c25 {
+.c30 {
   margin: 2rem 0;
 }
 
-.c25 h1,
-.c25 h2 {
+.c30 h1,
+.c30 h2 {
   margin: 0;
 }
 
-.c24 {
+.c29 {
   width: 6.944444444444445rem;
   height: 6.944444444444445rem;
 }
 
-.c36 {
+.c41 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -538,7 +617,7 @@ exports[`Index renders correctly 1`] = `
   margin-bottom: 2rem;
 }
 
-.c35 {
+.c40 {
   text-transform: uppercase;
   color: #fff;
   font-size: 0.8rem;
@@ -547,86 +626,11 @@ exports[`Index renders correctly 1`] = `
   opacity: 0.8;
 }
 
-.c37 {
+.c42 {
   position: relative;
   height: 1.75rem;
   margin: 0.5rem;
   bottom: -0.2rem;
-  opacity: 0.8;
-  filter: brightness(0) invert(1);
-  -webkit-transition: opacity 125ms ease-in-out;
-  transition: opacity 125ms ease-in-out;
-}
-
-.c37:hover {
-  opacity: 1;
-}
-
-.c38 {
-  position: relative;
-  height: 1.75rem;
-  margin: 0.5rem;
-  bottom: 0;
-  opacity: 0.8;
-  filter: brightness(0) invert(1);
-  -webkit-transition: opacity 125ms ease-in-out;
-  transition: opacity 125ms ease-in-out;
-}
-
-.c38:hover {
-  opacity: 1;
-}
-
-.c39 {
-  position: relative;
-  height: 2rem;
-  margin: 0.5rem;
-  bottom: 0;
-  opacity: 0.8;
-  filter: brightness(0) invert(1);
-  -webkit-transition: opacity 125ms ease-in-out;
-  transition: opacity 125ms ease-in-out;
-}
-
-.c39:hover {
-  opacity: 1;
-}
-
-.c40 {
-  position: relative;
-  height: 3rem;
-  margin: 0.5rem;
-  bottom: 0.625rem;
-  opacity: 0.8;
-  filter: brightness(0) invert(1);
-  -webkit-transition: opacity 125ms ease-in-out;
-  transition: opacity 125ms ease-in-out;
-}
-
-.c40:hover {
-  opacity: 1;
-}
-
-.c41 {
-  position: relative;
-  height: 2.25rem;
-  margin: 0.5rem;
-  bottom: 0.16rem;
-  opacity: 0.8;
-  filter: brightness(0) invert(1);
-  -webkit-transition: opacity 125ms ease-in-out;
-  transition: opacity 125ms ease-in-out;
-}
-
-.c41:hover {
-  opacity: 1;
-}
-
-.c42 {
-  position: relative;
-  height: 1.5rem;
-  margin: 0.5rem;
-  bottom: -0.15rem;
   opacity: 0.8;
   filter: brightness(0) invert(1);
   -webkit-transition: opacity 125ms ease-in-out;
@@ -639,9 +643,9 @@ exports[`Index renders correctly 1`] = `
 
 .c43 {
   position: relative;
-  height: 2rem;
+  height: 1.75rem;
   margin: 0.5rem;
-  bottom: 0.25rem;
+  bottom: 0;
   opacity: 0.8;
   filter: brightness(0) invert(1);
   -webkit-transition: opacity 125ms ease-in-out;
@@ -652,7 +656,82 @@ exports[`Index renders correctly 1`] = `
   opacity: 1;
 }
 
-.c22 {
+.c44 {
+  position: relative;
+  height: 2rem;
+  margin: 0.5rem;
+  bottom: 0;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c44:hover {
+  opacity: 1;
+}
+
+.c45 {
+  position: relative;
+  height: 3rem;
+  margin: 0.5rem;
+  bottom: 0.625rem;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c45:hover {
+  opacity: 1;
+}
+
+.c46 {
+  position: relative;
+  height: 2.25rem;
+  margin: 0.5rem;
+  bottom: 0.16rem;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c46:hover {
+  opacity: 1;
+}
+
+.c47 {
+  position: relative;
+  height: 1.5rem;
+  margin: 0.5rem;
+  bottom: -0.15rem;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c47:hover {
+  opacity: 1;
+}
+
+.c48 {
+  position: relative;
+  height: 2rem;
+  margin: 0.5rem;
+  bottom: 0.25rem;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  -webkit-transition: opacity 125ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
+}
+
+.c48:hover {
+  opacity: 1;
+}
+
+.c27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -676,7 +755,7 @@ exports[`Index renders correctly 1`] = `
   min-height: 100vh;
 }
 
-.c23 {
+.c28 {
   width: 56.888888888888886rem;
   max-width: 100%;
   margin: 0 auto;
@@ -690,7 +769,7 @@ exports[`Index renders correctly 1`] = `
   width: 75rem;
 }
 
-.c32 {
+.c37 {
   display: inline-block;
   box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20,20,20,0.27);
   margin: 1.9444444444444444rem 0;
@@ -699,7 +778,7 @@ exports[`Index renders correctly 1`] = `
   max-width: 34rem;
 }
 
-.c33 {
+.c38 {
   background: #1d1f27;
   font-size: 0.8rem;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
@@ -714,11 +793,11 @@ exports[`Index renders correctly 1`] = `
   width: 100%;
 }
 
-.c28 {
+.c33 {
   margin: 2rem 0;
 }
 
-.c66 {
+.c71 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -742,12 +821,12 @@ exports[`Index renders correctly 1`] = `
   margin-top: 2.7777777777777777rem;
 }
 
-.c67 {
+.c72 {
   display: inline-block;
   width: 0.9444444444444444rem;
 }
 
-.c29 {
+.c34 {
   display: inline-block;
   border-radius: 3px;
   padding: 0.5rem 0;
@@ -760,7 +839,7 @@ exports[`Index renders correctly 1`] = `
   color: palevioletred;
 }
 
-.c30 {
+.c35 {
   display: inline-block;
   border-radius: 3px;
   padding: 0.5rem 0;
@@ -771,7 +850,7 @@ exports[`Index renders correctly 1`] = `
   border: 2px solid white;
 }
 
-.c64 {
+.c69 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -780,7 +859,7 @@ exports[`Index renders correctly 1`] = `
   border: 2px solid palevioletred;
 }
 
-.c65 {
+.c70 {
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0 1em;
@@ -792,7 +871,7 @@ exports[`Index renders correctly 1`] = `
 }
 
 @media (max-width:40.625em) {
-  .c61 {
+  .c66 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
@@ -800,7 +879,7 @@ exports[`Index renders correctly 1`] = `
 }
 
 @media (max-width:40.625em) {
-  .c62 {
+  .c67 {
     -webkit-flex-basis: auto;
     -ms-flex-basis: auto;
     flex-basis: auto;
@@ -811,7 +890,7 @@ exports[`Index renders correctly 1`] = `
 }
 
 @media (max-width:40.625em) {
-  .c63 {
+  .c68 {
     -webkit-flex-basis: auto;
     -ms-flex-basis: auto;
     flex-basis: auto;
@@ -822,39 +901,39 @@ exports[`Index renders correctly 1`] = `
 }
 
 @media (min-width:62.5em) {
-  .c31 {
+  .c36 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c31:hover {
+  .c36:hover {
     background: rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
-  .c44 {
+  .c49 {
     padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
   }
 }
 
 @media (max-width:62.5em) {
-  .c50 {
+  .c55 {
     top: -5rem;
   }
 }
 
 @media (max-width:62.5em) {
-  .c48 {
+  .c53 {
     margin-left: 0;
   }
 
-  .c48 .c51 {
+  .c53 .c56 {
     display: inline-block;
   }
 }
 
 @media (max-width:62.5em) {
-  .c14 {
+  .c20 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -878,7 +957,7 @@ exports[`Index renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c23 {
+  .c28 {
     padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
   }
 }
@@ -1031,17 +1110,80 @@ exports[`Index renders correctly 1`] = `
                       <div
                         className="c8"
                       >
-                        <SearchWithAlgolia />
+                        <SearchWithAlgolia>
+                          <Search>
+                            <styled.form>
+                              <form
+                                className="c9"
+                              >
+                                <SearchIconWithLabel>
+                                  <styled.label
+                                    htmlFor="docs-search-input"
+                                  >
+                                    <label
+                                      className="c10"
+                                      htmlFor="docs-search-input"
+                                    >
+                                      <styled.span>
+                                        <span
+                                          className="c11"
+                                        >
+                                          Search
+                                        </span>
+                                      </styled.span>
+                                      <styled.div>
+                                        <div
+                                          className="c12"
+                                        >
+                                          <SearchIcon>
+                                            <styled.svg
+                                              height="16"
+                                              width="15"
+                                            >
+                                              <svg
+                                                className="c13"
+                                                height="16"
+                                                width="15"
+                                              >
+                                                <title>
+                                                  search
+                                                </title>
+                                                <path
+                                                  d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
+                                                  fill="#FFF"
+                                                />
+                                              </svg>
+                                            </styled.svg>
+                                          </SearchIcon>
+                                        </div>
+                                      </styled.div>
+                                    </label>
+                                  </styled.label>
+                                </SearchIconWithLabel>
+                                <styled.input
+                                  id="docs-search-input"
+                                  placeholder="Search docs ..."
+                                >
+                                  <input
+                                    className="c14"
+                                    id="docs-search-input"
+                                    placeholder="Search docs ..."
+                                  />
+                                </styled.input>
+                              </form>
+                            </styled.form>
+                          </Search>
+                        </SearchWithAlgolia>
                         <Social>
                           <styled.div>
                             <div
-                              className="c9"
+                              className="c15"
                             >
                               <Styled(Link)
                                 href="https://spectrum.chat/styled-components/"
                               >
                                 <Link
-                                  className="c10"
+                                  className="c16"
                                   href="https://spectrum.chat/styled-components/"
                                   unstyled={true}
                                 >
@@ -1049,7 +1191,7 @@ exports[`Index renders correctly 1`] = `
                                     href="https://spectrum.chat/styled-components/"
                                   >
                                     <a
-                                      className="c10"
+                                      className="c16"
                                       href="https://spectrum.chat/styled-components/"
                                       onClick={[Function]}
                                     >
@@ -1062,7 +1204,7 @@ exports[`Index renders correctly 1`] = `
                                           xmlnsXlink="http://www.w3.org/1999/xlink"
                                         >
                                           <svg
-                                            className="c11"
+                                            className="c17"
                                             height="14"
                                             viewBox="0 0 15 15"
                                             width="14"
@@ -1093,7 +1235,7 @@ exports[`Index renders correctly 1`] = `
                                 href="https://github.com/styled-components"
                               >
                                 <Link
-                                  className="c10"
+                                  className="c16"
                                   href="https://github.com/styled-components"
                                   unstyled={true}
                                 >
@@ -1101,7 +1243,7 @@ exports[`Index renders correctly 1`] = `
                                     href="https://github.com/styled-components"
                                   >
                                     <a
-                                      className="c10"
+                                      className="c16"
                                       href="https://github.com/styled-components"
                                       onClick={[Function]}
                                     >
@@ -1114,7 +1256,7 @@ exports[`Index renders correctly 1`] = `
                                           xmlnsXlink="http://www.w3.org/1999/xlink"
                                         >
                                           <svg
-                                            className="c12"
+                                            className="c18"
                                             height="17"
                                             viewBox="0 0 17 17"
                                             width="17"
@@ -1145,7 +1287,7 @@ exports[`Index renders correctly 1`] = `
                                 href="https://medium.com/styled-components"
                               >
                                 <Link
-                                  className="c10"
+                                  className="c16"
                                   href="https://medium.com/styled-components"
                                   unstyled={true}
                                 >
@@ -1153,7 +1295,7 @@ exports[`Index renders correctly 1`] = `
                                     href="https://medium.com/styled-components"
                                   >
                                     <a
-                                      className="c10"
+                                      className="c16"
                                       href="https://medium.com/styled-components"
                                       onClick={[Function]}
                                     >
@@ -1166,7 +1308,7 @@ exports[`Index renders correctly 1`] = `
                                           xmlnsXlink="http://www.w3.org/1999/xlink"
                                         >
                                           <svg
-                                            className="c13"
+                                            className="c19"
                                             height="14"
                                             viewBox="0 0 17 14"
                                             width="17"
@@ -1201,11 +1343,11 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.div>
                     <div
-                      className="c14"
+                      className="c20"
                     >
                       <Styled(Link)>
                         <Link
-                          className="c15"
+                          className="c21"
                           href="/"
                           unstyled={true}
                         >
@@ -1213,7 +1355,7 @@ exports[`Index renders correctly 1`] = `
                             href="/"
                           >
                             <a
-                              className="c15"
+                              className="c21"
                               href="/"
                               onClick={[Function]}
                             >
@@ -1221,7 +1363,7 @@ exports[`Index renders correctly 1`] = `
                                 compact={true}
                               >
                                 <div
-                                  className="c16"
+                                  className="c22"
                                 />
                               </styled.div>
                             </a>
@@ -1233,14 +1375,14 @@ exports[`Index renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <button
-                          className="c17"
+                          className="c23"
                           onClick={[Function]}
                         >
                           <styled.div
                             rotate={false}
                           >
                             <div
-                              className="c18"
+                              className="c24"
                               rotate={false}
                             >
                               <ArrowIcon>
@@ -1249,7 +1391,7 @@ exports[`Index renders correctly 1`] = `
                                   width="12"
                                 >
                                   <svg
-                                    className="c19"
+                                    className="c13"
                                     height="8"
                                     width="12"
                                   >
@@ -1278,7 +1420,7 @@ exports[`Index renders correctly 1`] = `
                         open={false}
                       >
                         <div
-                          className="c20"
+                          className="c25"
                           open={false}
                         >
                           <NavLinks>
@@ -1369,9 +1511,72 @@ exports[`Index renders correctly 1`] = `
                           </styled.span>
                           <styled.div>
                             <div
-                              className="c21"
+                              className="c26"
                             >
-                              <SearchWithAlgolia />
+                              <SearchWithAlgolia>
+                                <Search>
+                                  <styled.form>
+                                    <form
+                                      className="c9"
+                                    >
+                                      <SearchIconWithLabel>
+                                        <styled.label
+                                          htmlFor="docs-search-input"
+                                        >
+                                          <label
+                                            className="c10"
+                                            htmlFor="docs-search-input"
+                                          >
+                                            <styled.span>
+                                              <span
+                                                className="c11"
+                                              >
+                                                Search
+                                              </span>
+                                            </styled.span>
+                                            <styled.div>
+                                              <div
+                                                className="c12"
+                                              >
+                                                <SearchIcon>
+                                                  <styled.svg
+                                                    height="16"
+                                                    width="15"
+                                                  >
+                                                    <svg
+                                                      className="c13"
+                                                      height="16"
+                                                      width="15"
+                                                    >
+                                                      <title>
+                                                        search
+                                                      </title>
+                                                      <path
+                                                        d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
+                                                        fill="#FFF"
+                                                      />
+                                                    </svg>
+                                                  </styled.svg>
+                                                </SearchIcon>
+                                              </div>
+                                            </styled.div>
+                                          </label>
+                                        </styled.label>
+                                      </SearchIconWithLabel>
+                                      <styled.input
+                                        id="docs-search-input"
+                                        placeholder="Search docs ..."
+                                      >
+                                        <input
+                                          className="c14"
+                                          id="docs-search-input"
+                                          placeholder="Search docs ..."
+                                        />
+                                      </styled.input>
+                                    </form>
+                                  </styled.form>
+                                </Search>
+                              </SearchWithAlgolia>
                             </div>
                           </styled.div>
                         </div>
@@ -1387,11 +1592,11 @@ exports[`Index renders correctly 1`] = `
     </WithIsScrolled>
     <styled.div>
       <div
-        className="c22"
+        className="c27"
       >
         <styled.div>
           <div
-            className="c23"
+            className="c28"
           >
             <LiveProvider
               code="const Button = styled.a\`
@@ -1437,24 +1642,24 @@ exports[`Index renders correctly 1`] = `
                 <styled.img>
                   <img
                     alt="styled-components Logo"
-                    className="c24"
+                    className="c29"
                     src="/static/logo.png"
                   />
                 </styled.img>
                 <styled.div>
                   <div
-                    className="c25"
+                    className="c30"
                   >
                     <styled.h1>
                       <h1
-                        className="c26"
+                        className="c31"
                       >
                         Visual primitives for the component age.
                       </h1>
                     </styled.h1>
                     <styled.h2>
                       <h2
-                        className="c27"
+                        className="c32"
                       >
                         Use the best bits of ES6 and CSS to style your apps without stress 💅
                       </h2>
@@ -1463,7 +1668,7 @@ exports[`Index renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c28"
+                    className="c33"
                   >
                     <HomepageLivePreview>
                       <div
@@ -1476,7 +1681,7 @@ exports[`Index renders correctly 1`] = `
                           target="_blank"
                         >
                           <a
-                            className="c29"
+                            className="c34"
                             href="https://github.com/styled-components/styled-components"
                             rel="noopener"
                             target="_blank"
@@ -1489,7 +1694,7 @@ exports[`Index renders correctly 1`] = `
                           prefetch={true}
                         >
                           <Link
-                            className="c30"
+                            className="c35"
                             href="/docs"
                             prefetch={true}
                           >
@@ -1498,12 +1703,12 @@ exports[`Index renders correctly 1`] = `
                               prefetch={true}
                             >
                               <styled.a
-                                className="c30"
+                                className="c35"
                                 href="/docs"
                                 onClick={[Function]}
                               >
                                 <a
-                                  className="c30 c31"
+                                  className="c35 c36"
                                   href="/docs"
                                   onClick={[Function]}
                                 >
@@ -1519,15 +1724,15 @@ exports[`Index renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c32"
+                    className="c37"
                   >
                     <Styled(LiveEditor)>
                       <Styled(LiveEditor)>
                         <LiveEditor
-                          className="c33"
+                          className="c38"
                         >
                           <Editor
-                            className="c33"
+                            className="c38"
                             code="const Button = styled.a\`
                             /* This renders the buttons above... Edit me! */
                             display: inline-block;
@@ -1550,7 +1755,7 @@ exports[`Index renders correctly 1`] = `
                             onChange={[Function]}
                           >
                             <pre
-                              className="prism-code c33"
+                              className="prism-code c38"
                               contentEditable={true}
                               dangerouslySetInnerHTML={
                                 Object {
@@ -1585,7 +1790,7 @@ exports[`Index renders correctly 1`] = `
                     </Styled(LiveEditor)>
                     <Styled(LiveError)>
                       <LiveError
-                        className="c34"
+                        className="c39"
                       />
                     </Styled(LiveError)>
                   </div>
@@ -1594,14 +1799,14 @@ exports[`Index renders correctly 1`] = `
             </LiveProvider>
             <styled.p>
               <p
-                className="c35"
+                className="c40"
               >
                 Used by folks at
               </p>
             </styled.p>
             <styled.section>
               <section
-                className="c36"
+                className="c41"
               >
                 <styled.img
                   bottom="-0.2rem"
@@ -1609,7 +1814,7 @@ exports[`Index renders correctly 1`] = `
                   src="/static/bloomberg-logo.svg"
                 >
                   <img
-                    className="c37"
+                    className="c42"
                     height="1.75rem"
                     src="/static/bloomberg-logo.svg"
                   />
@@ -1619,7 +1824,7 @@ exports[`Index renders correctly 1`] = `
                   src="/static/atlassian-logo.svg"
                 >
                   <img
-                    className="c38"
+                    className="c43"
                     height="1.75rem"
                     src="/static/atlassian-logo.svg"
                   />
@@ -1628,7 +1833,7 @@ exports[`Index renders correctly 1`] = `
                   src="/static/reddit-logo.svg"
                 >
                   <img
-                    className="c39"
+                    className="c44"
                     src="/static/reddit-logo.svg"
                   />
                 </styled.img>
@@ -1636,7 +1841,7 @@ exports[`Index renders correctly 1`] = `
                   src="/static/target-logo.svg"
                 >
                   <img
-                    className="c39"
+                    className="c44"
                     src="/static/target-logo.svg"
                   />
                 </styled.img>
@@ -1646,7 +1851,7 @@ exports[`Index renders correctly 1`] = `
                   src="/static/eurovision-logo.svg"
                 >
                   <img
-                    className="c40"
+                    className="c45"
                     height="3rem"
                     src="/static/eurovision-logo.svg"
                   />
@@ -1657,7 +1862,7 @@ exports[`Index renders correctly 1`] = `
                   src="/static/artsy-logo.svg"
                 >
                   <img
-                    className="c41"
+                    className="c46"
                     height="2.25rem"
                     src="/static/artsy-logo.svg"
                   />
@@ -1668,7 +1873,7 @@ exports[`Index renders correctly 1`] = `
                   src="/static/ideo-logo.svg"
                 >
                   <img
-                    className="c42"
+                    className="c47"
                     height="1.5rem"
                     src="/static/ideo-logo.svg"
                   />
@@ -1677,7 +1882,7 @@ exports[`Index renders correctly 1`] = `
                   src="/static/huffpost-logo.svg"
                 >
                   <img
-                    className="c39"
+                    className="c44"
                     src="/static/huffpost-logo.svg"
                   />
                 </styled.img>
@@ -1687,7 +1892,7 @@ exports[`Index renders correctly 1`] = `
                   src="/static/coinbase-logo.svg"
                 >
                   <img
-                    className="c43"
+                    className="c48"
                     height="2rem"
                     src="/static/coinbase-logo.svg"
                   />
@@ -1701,11 +1906,11 @@ exports[`Index renders correctly 1`] = `
     <HomepageGettingStarted>
       <styled.div>
         <div
-          className="c44"
+          className="c49"
         >
           <styled.div>
             <div
-              className="c45"
+              className="c50"
             >
               <a
                 href="https://github.com/styled-components/styled-components"
@@ -1716,7 +1921,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <img
                     alt="Stars on GitHub"
-                    className="c46"
+                    className="c51"
                     src="https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600"
                   />
                 </styled.img>
@@ -1730,7 +1935,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <img
                     alt="Current version"
-                    className="c46"
+                    className="c51"
                     src="https://img.shields.io/npm/v/styled-components.svg"
                   />
                 </styled.img>
@@ -1741,7 +1946,7 @@ exports[`Index renders correctly 1`] = `
               >
                 <img
                   alt="Monthly downloads"
-                  className="c46"
+                  className="c51"
                   src="https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600"
                 />
               </styled.img>
@@ -1751,7 +1956,7 @@ exports[`Index renders correctly 1`] = `
               >
                 <img
                   alt="Gzipped size"
-                  className="c46"
+                  className="c51"
                   src="http://img.badgesize.io/https://unpkg.com/styled-components/dist/styled-components.min.js?compression=gzip&label=gzip%20size"
                 />
               </styled.img>
@@ -1764,7 +1969,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <img
                     alt="Join the community on Spectrum"
-                    className="c46"
+                    className="c51"
                     src="https://withspectrum.github.io/badge/badge.svg"
                   />
                 </styled.img>
@@ -1779,7 +1984,7 @@ exports[`Index renders correctly 1`] = `
             >
               <styled.h1>
                 <h1
-                  className="c47"
+                  className="c52"
                 >
                   Getting started
                 </h1>
@@ -1796,17 +2001,17 @@ exports[`Index renders correctly 1`] = `
               >
                 <Styled(styled.h2)>
                   <styled.h2
-                    className="c48"
+                    className="c53"
                   >
                     <h2
-                      className="c48 c49"
+                      className="c53 c54"
                     >
                       <styled.div
                         id="installation"
                       >
                         <div
                           aria-hidden={true}
-                          className="c50"
+                          className="c55"
                           id="installation"
                         />
                       </styled.div>
@@ -1814,17 +2019,17 @@ exports[`Index renders correctly 1`] = `
                         href="#installation"
                       >
                         <a
-                          className="c51 c52"
+                          className="c56 c57"
                           href="#installation"
                         >
                           <Styled(LinkIcon)>
                             <LinkIcon
-                              className="c53"
+                              className="c58"
                               height={null}
                               width={null}
                             >
                               <svg
-                                className="octicons octicons-link-icon c53"
+                                className="octicons octicons-link-icon c58"
                                 height={null}
                                 viewBox="0 0 16 16"
                                 width={null}
@@ -1858,7 +2063,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.span>
                     <span
-                      className="c54"
+                      className="c59"
                     >
                       npm install --save styled-components
                     </span>
@@ -1879,17 +2084,17 @@ exports[`Index renders correctly 1`] = `
               >
                 <Styled(styled.h2)>
                   <styled.h2
-                    className="c48"
+                    className="c53"
                   >
                     <h2
-                      className="c48 c49"
+                      className="c53 c54"
                     >
                       <styled.div
                         id="your-first-styled-component"
                       >
                         <div
                           aria-hidden={true}
-                          className="c50"
+                          className="c55"
                           id="your-first-styled-component"
                         />
                       </styled.div>
@@ -1897,17 +2102,17 @@ exports[`Index renders correctly 1`] = `
                         href="#your-first-styled-component"
                       >
                         <a
-                          className="c51 c52"
+                          className="c56 c57"
                           href="#your-first-styled-component"
                         >
                           <Styled(LinkIcon)>
                             <LinkIcon
-                              className="c53"
+                              className="c58"
                               height={null}
                               width={null}
                             >
                               <svg
-                                className="octicons octicons-link-icon c53"
+                                className="octicons octicons-link-icon c58"
                                 height={null}
                                 viewBox="0 0 16 16"
                                 width={null}
@@ -1941,7 +2146,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.span>
                     <span
-                      className="c54"
+                      className="c59"
                     >
                       &lt;Button /&gt;
                     </span>
@@ -1956,7 +2161,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.span>
                     <span
-                      className="c54"
+                      className="c59"
                     >
                       primary
                     </span>
@@ -1972,13 +2177,13 @@ exports[`Index renders correctly 1`] = `
             >
               <styled.div>
                 <div
-                  className="c45"
+                  className="c50"
                 >
                   <styled.button
                     onClick={[Function]}
                   >
                     <button
-                      className="c55"
+                      className="c60"
                       onClick={[Function]}
                     >
                       Normal button
@@ -1989,7 +2194,7 @@ exports[`Index renders correctly 1`] = `
                     primary={true}
                   >
                     <button
-                      className="c56"
+                      className="c61"
                       onClick={[Function]}
                     >
                       Primary button
@@ -2011,7 +2216,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.span>
                     <span
-                      className="c54"
+                      className="c59"
                     >
                       styled.button
                     </span>
@@ -2051,7 +2256,7 @@ exports[`Index renders correctly 1`] = `
                   }
                 >
                   <pre
-                    className="prism-code c57"
+                    className="prism-code c62"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "<span class=\\"token keyword\\">import</span> styled <span class=\\"token keyword\\">from</span> <span class=\\"token string\\">'styled-components'</span><span class=\\"token punctuation\\">;</span>
@@ -2077,7 +2282,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.span>
                     <span
-                      className="c54"
+                      className="c59"
                     >
                       Button
                     </span>
@@ -2093,7 +2298,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.span>
                     <span
-                      className="c54"
+                      className="c59"
                     >
                       myFunc()
                     </span>
@@ -2118,7 +2323,7 @@ exports[`Index renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <a
-                          className="c58"
+                          className="c63"
                           href="/docs/advanced#tagged-template-literals"
                           onClick={[Function]}
                           rel="noopener"
@@ -2146,7 +2351,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.span>
                     <span
-                      className="c54"
+                      className="c59"
                     >
                       &lt;Button /&gt;
                     </span>
@@ -2161,7 +2366,7 @@ exports[`Index renders correctly 1`] = `
             >
               <styled.div>
                 <div
-                  className="c45"
+                  className="c50"
                 >
                   <button>
                     I'm a &lt;Button /&gt;!
@@ -2224,7 +2429,7 @@ exports[`Index renders correctly 1`] = `
                   }
                 >
                   <pre
-                    className="prism-code c57"
+                    className="prism-code c62"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
@@ -2248,11 +2453,11 @@ exports[`Index renders correctly 1`] = `
             >
               <styled.div>
                 <div
-                  className="c45"
+                  className="c50"
                 >
                   <styled.button>
                     <button
-                      className="c59"
+                      className="c64"
                     >
                       I'm a styled &lt;Button /&gt;
                     </button>
@@ -2286,7 +2491,7 @@ exports[`Index renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <a
-                          className="c58"
+                          className="c63"
                           href="/docs/basics#motivation"
                           onClick={[Function]}
                           rel="noopener"
@@ -2315,7 +2520,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.span>
                     <span
-                      className="c54"
+                      className="c59"
                     >
                       { css }
                     </span>
@@ -2329,7 +2534,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.span>
                     <span
-                      className="c54"
+                      className="c59"
                     >
                       styled-components
                     </span>
@@ -2405,7 +2610,7 @@ exports[`Index renders correctly 1`] = `
                   }
                 >
                   <pre
-                    className="prism-code c57"
+                    className="prism-code c62"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "<span class=\\"token keyword\\">import</span> styled<span class=\\"token punctuation\\">,</span> <span class=\\"token punctuation\\">{</span> css <span class=\\"token punctuation\\">}</span> <span class=\\"token keyword\\">from</span> styled<span class=\\"token operator\\">-</span>components
@@ -2443,7 +2648,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.span>
                     <span
-                      className="c54"
+                      className="c59"
                     >
                       primary
                     </span>
@@ -2457,7 +2662,7 @@ exports[`Index renders correctly 1`] = `
                 >
                   <styled.span>
                     <span
-                      className="c54"
+                      className="c59"
                     >
                       css
                     </span>
@@ -2564,7 +2769,7 @@ exports[`Index renders correctly 1`] = `
                   }
                 >
                   <LiveProvider
-                    className="c60"
+                    className="c65"
                     code="const Button = styled.button\`
                     border-radius: 3px;
                     padding: 0.25em 1em;
@@ -2599,7 +2804,7 @@ exports[`Index renders correctly 1`] = `
                     }
                   >
                     <div
-                      className="react-live c60"
+                      className="react-live c65"
                       scope={
                         Object {
                           "ThemeProvider": [Function],
@@ -2612,15 +2817,15 @@ exports[`Index renders correctly 1`] = `
                     >
                       <styled.div>
                         <div
-                          className="c61"
+                          className="c66"
                         >
                           <Styled(LiveEditor)>
                             <Styled(LiveEditor)>
                               <LiveEditor
-                                className="c62"
+                                className="c67"
                               >
                                 <Editor
-                                  className="c62"
+                                  className="c67"
                                   code="const Button = styled.button\`
                                   border-radius: 3px;
                                   padding: 0.25em 1em;
@@ -2646,7 +2851,7 @@ exports[`Index renders correctly 1`] = `
                                   onChange={[Function]}
                                 >
                                   <pre
-                                    className="prism-code c62"
+                                    className="prism-code c67"
                                     contentEditable={true}
                                     dangerouslySetInnerHTML={
                                       Object {
@@ -2684,15 +2889,15 @@ exports[`Index renders correctly 1`] = `
                           </Styled(LiveEditor)>
                           <Styled(LivePreview)>
                             <LivePreview
-                              className="c63"
+                              className="c68"
                             >
                               <div
-                                className="react-live-preview c63"
+                                className="react-live-preview c68"
                               >
                                 <div>
                                   <styled.button>
                                     <button
-                                      className="c64"
+                                      className="c69"
                                     >
                                       Normal Button
                                     </button>
@@ -2701,7 +2906,7 @@ exports[`Index renders correctly 1`] = `
                                     primary={true}
                                   >
                                     <button
-                                      className="c65"
+                                      className="c70"
                                     >
                                       Primary Button
                                     </button>
@@ -2714,7 +2919,7 @@ exports[`Index renders correctly 1`] = `
                       </styled.div>
                       <Styled(LiveError)>
                         <LiveError
-                          className="c34"
+                          className="c39"
                         />
                       </Styled(LiveError)>
                     </div>
@@ -2753,7 +2958,7 @@ exports[`Index renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <a
-                          className="c58"
+                          className="c63"
                           href="/docs"
                           onClick={[Function]}
                           rel="noopener"
@@ -2783,7 +2988,7 @@ exports[`Index renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <a
-                          className="c58"
+                          className="c63"
                           href="/docs/basics#getting-started"
                           onClick={[Function]}
                           rel="noopener"
@@ -2804,23 +3009,23 @@ exports[`Index renders correctly 1`] = `
     </HomepageGettingStarted>
     <styled.footer>
       <footer
-        className="c66"
+        className="c71"
       >
         <styled.div>
           <div
-            className="c23"
+            className="c28"
           >
             Hosted on ▲ ZEIT Now
             <br />
             Made with 
             <Styled(HeartIcon)>
               <HeartIcon
-                className="c67"
+                className="c72"
                 height={null}
                 width={null}
               >
                 <svg
-                  className="octicons octicons-heart-icon c67"
+                  className="octicons octicons-heart-icon c72"
                   height={null}
                   viewBox="0 0 12 16"
                   width={null}
@@ -2848,7 +3053,7 @@ exports[`Index renders correctly 1`] = `
                   onClick={[Function]}
                 >
                   <a
-                    className="c68"
+                    className="c73"
                     data-white={true}
                     href="https://twitter.com/glenmaddern"
                     onClick={[Function]}
@@ -2875,7 +3080,7 @@ exports[`Index renders correctly 1`] = `
                   onClick={[Function]}
                 >
                   <a
-                    className="c68"
+                    className="c73"
                     data-white={true}
                     href="https://twitter.com/mxstbr"
                     onClick={[Function]}
@@ -2902,7 +3107,7 @@ exports[`Index renders correctly 1`] = `
                   onClick={[Function]}
                 >
                   <a
-                    className="c68"
+                    className="c73"
                     data-white={true}
                     href="https://twitter.com/_philpl"
                     onClick={[Function]}

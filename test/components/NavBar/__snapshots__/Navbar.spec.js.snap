@@ -56,7 +56,7 @@ exports[`Navbar renders correctly 1`] = `
   opacity: 0.6;
 }
 
-.c9 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -70,7 +70,7 @@ exports[`Navbar renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c10 {
+.c16 {
   display: inline-block;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
@@ -80,37 +80,37 @@ exports[`Navbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c10:last-child {
+.c16:last-child {
   margin-right: 0;
 }
 
-.c10:hover,
-.c10:focus {
+.c16:hover,
+.c16:focus {
   opacity: 0.8;
 }
 
-.c10:active {
+.c16:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c10 svg path {
+.c16 svg path {
   fill: currentColor;
 }
 
-.c11 {
+.c17 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c12 {
+.c18 {
   width: 0.9444444444444444rem;
   height: 0.9444444444444444rem;
 }
 
-.c13 {
+.c19 {
   width: 0.9444444444444444rem;
   height: 0.7777777777777778rem;
 }
@@ -126,7 +126,7 @@ exports[`Navbar renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c18 {
+.c23 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -137,15 +137,94 @@ exports[`Navbar renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c16 svg {
+.c13 svg {
   display: inline-block;
 }
 
-.c16 svg path {
+.c13 svg path {
   fill: currentColor;
 }
 
-.c15 {
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-right: 0.5555555555555556rem;
+}
+
+.c14 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 11.11111111111111rem;
+  padding: 0 0.2777777777777778rem;
+  line-height: 1.6666666666666667rem;
+  font-size: 0.8333333333333334rem;
+  color: currentColor;
+  -webkit-transition: background 100ms ease-in;
+  transition: background 100ms ease-in;
+}
+
+.c14::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14::placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14:focus {
+  background: rgba(0,0,0,0.07);
+  border-radius: 3px;
+}
+
+.c10 {
+  text-indent: -99999px;
+}
+
+.c11 {
+  position: absolute;
+}
+
+.c12 svg {
+  width: 0.8888888888888888rem;
+  height: 0.9444444444444444rem;
+  margin-right: 0.2777777777777778rem;
+  display: block;
+}
+
+.c12 svg path {
+  fill: currentColor;
+}
+
+.c21 {
   background: none;
   outline: none;
   border: none;
@@ -160,16 +239,16 @@ exports[`Navbar renders correctly 1`] = `
   background: rgba(0,0,0,0.07);
 }
 
-.c15:focus {
+.c21:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
 }
 
-.c14 {
+.c20 {
   display: none;
 }
 
-.c20 {
+.c25 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -204,12 +283,12 @@ exports[`Navbar renders correctly 1`] = `
   color: #868686;
 }
 
-.c17 {
+.c22 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c19 {
+.c24 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
@@ -221,7 +300,7 @@ exports[`Navbar renders correctly 1`] = `
   transform: rotate(180deg);
 }
 
-.c21 {
+.c26 {
   display: inline-block;
 }
 
@@ -294,7 +373,7 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c14 {
+  .c20 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -370,16 +449,52 @@ exports[`Navbar renders correctly 1`] = `
     <div
       className="c8"
     >
-      <div
+      <form
         className="c9"
       >
-        <a
+        <label
           className="c10"
+          htmlFor="docs-search-input"
+        >
+          <span
+            className="c11"
+          >
+            Search
+          </span>
+          <div
+            className="c12"
+          >
+            <svg
+              className="c13"
+              height="16"
+              width="15"
+            >
+              <title>
+                search
+              </title>
+              <path
+                d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </label>
+        <input
+          className="c14"
+          id="docs-search-input"
+          placeholder="Search docs ..."
+        />
+      </form>
+      <div
+        className="c15"
+      >
+        <a
+          className="c16"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
         >
           <svg
-            className="c11"
+            className="c17"
             height="14"
             viewBox="0 0 15 15"
             width="14"
@@ -402,12 +517,12 @@ exports[`Navbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="c10"
+          className="c16"
           href="https://github.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c12"
+            className="c18"
             height="17"
             viewBox="0 0 17 17"
             width="17"
@@ -430,12 +545,12 @@ exports[`Navbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="c10"
+          className="c16"
           href="https://medium.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c13"
+            className="c19"
             height="14"
             viewBox="0 0 17 14"
             width="17"
@@ -455,14 +570,14 @@ exports[`Navbar renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="c14"
+    className="c20"
   >
     <button
-      className="c15"
+      className="c21"
       onClick={undefined}
     >
       <svg
-        className="c16"
+        className="c13"
         height="15"
         width="15"
       >
@@ -483,24 +598,24 @@ exports[`Navbar renders correctly 1`] = `
       </svg>
     </button>
     <a
-      className="c17"
+      className="c22"
       href="/"
       onClick={[Function]}
     >
       <div
-        className="c18"
+        className="c23"
       />
     </a>
     <button
-      className="c15"
+      className="c21"
       onClick={undefined}
     >
       <div
-        className="c19"
+        className="c24"
         rotate={true}
       >
         <svg
-          className="c16"
+          className="c13"
           height="8"
           width="12"
         >
@@ -522,7 +637,7 @@ exports[`Navbar renders correctly 1`] = `
       </div>
     </button>
     <div
-      className="c20"
+      className="c25"
       open={true}
     >
       <nav
@@ -560,8 +675,45 @@ exports[`Navbar renders correctly 1`] = `
         className="c7"
       />
       <div
-        className="c21"
-      />
+        className="c26"
+      >
+        <form
+          className="c9"
+        >
+          <label
+            className="c10"
+            htmlFor="docs-search-input"
+          >
+            <span
+              className="c11"
+            >
+              Search
+            </span>
+            <div
+              className="c12"
+            >
+              <svg
+                className="c13"
+                height="16"
+                width="15"
+              >
+                <title>
+                  search
+                </title>
+                <path
+                  d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
+                  fill="#FFF"
+                />
+              </svg>
+            </div>
+          </label>
+          <input
+            className="c14"
+            id="docs-search-input"
+            placeholder="Search docs ..."
+          />
+        </form>
+      </div>
     </div>
   </div>
 </nav>

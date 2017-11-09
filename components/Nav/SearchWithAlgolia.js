@@ -27,11 +27,7 @@ class SearchWithAlgolia extends Component {
   }
 
   render() {
-    if (this.isDocs) {
-      return <Search />
-    }
-
-    return null
+    return <Search isDocs={this.isDocs} />
   }
 }
 

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav renders correctly 1`] = `
-.c26 {
+.c31 {
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -65,7 +65,7 @@ exports[`Nav renders correctly 1`] = `
   opacity: 0.6;
 }
 
-.c9 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -79,7 +79,7 @@ exports[`Nav renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c10 {
+.c16 {
   display: inline-block;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
@@ -89,37 +89,37 @@ exports[`Nav renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c10:last-child {
+.c16:last-child {
   margin-right: 0;
 }
 
-.c10:hover,
-.c10:focus {
+.c16:hover,
+.c16:focus {
   opacity: 0.8;
 }
 
-.c10:active {
+.c16:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c10 svg path {
+.c16 svg path {
   fill: currentColor;
 }
 
-.c11 {
+.c17 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c12 {
+.c18 {
   width: 0.9444444444444444rem;
   height: 0.9444444444444444rem;
 }
 
-.c13 {
+.c19 {
   width: 0.9444444444444444rem;
   height: 0.7777777777777778rem;
 }
@@ -135,7 +135,7 @@ exports[`Nav renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c18 {
+.c23 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -146,15 +146,94 @@ exports[`Nav renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c16 svg {
+.c13 svg {
   display: inline-block;
 }
 
-.c16 svg path {
+.c13 svg path {
   fill: currentColor;
 }
 
-.c15 {
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-right: 0.5555555555555556rem;
+}
+
+.c14 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 11.11111111111111rem;
+  padding: 0 0.2777777777777778rem;
+  line-height: 1.6666666666666667rem;
+  font-size: 0.8333333333333334rem;
+  color: currentColor;
+  -webkit-transition: background 100ms ease-in;
+  transition: background 100ms ease-in;
+}
+
+.c14::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14::placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c14:focus {
+  background: rgba(0,0,0,0.07);
+  border-radius: 3px;
+}
+
+.c10 {
+  text-indent: -99999px;
+}
+
+.c11 {
+  position: absolute;
+}
+
+.c12 svg {
+  width: 0.8888888888888888rem;
+  height: 0.9444444444444444rem;
+  margin-right: 0.2777777777777778rem;
+  display: block;
+}
+
+.c12 svg path {
+  fill: currentColor;
+}
+
+.c21 {
   background: none;
   outline: none;
   border: none;
@@ -169,16 +248,16 @@ exports[`Nav renders correctly 1`] = `
   background: rgba(0,0,0,0.07);
 }
 
-.c15:focus {
+.c21:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
 }
 
-.c14 {
+.c20 {
   display: none;
 }
 
-.c20 {
+.c25 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -213,12 +292,12 @@ exports[`Nav renders correctly 1`] = `
   color: #868686;
 }
 
-.c17 {
+.c22 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c19 {
+.c24 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
@@ -230,7 +309,7 @@ exports[`Nav renders correctly 1`] = `
   transform: rotate(180deg);
 }
 
-.c21 {
+.c26 {
   display: inline-block;
 }
 
@@ -302,7 +381,7 @@ exports[`Nav renders correctly 1`] = `
   margin-right: 1.9444444444444444rem;
 }
 
-.c22 {
+.c27 {
   position: fixed;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -324,35 +403,35 @@ exports[`Nav renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c23 {
+.c28 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 1.3888888888888888rem;
 }
 
-.c24 {
+.c29 {
   margin-bottom: 1.1111111111111112rem;
 }
 
-.c25 {
+.c30 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
 }
 
 @media (min-width:62.5em) {
-  .c26 {
+  .c31 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c26:hover {
+  .c31:hover {
     background: rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
-  .c14 {
+  .c20 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -500,17 +579,80 @@ exports[`Nav renders correctly 1`] = `
                 <div
                   className="c8"
                 >
-                  <SearchWithAlgolia />
+                  <SearchWithAlgolia>
+                    <Search>
+                      <styled.form>
+                        <form
+                          className="c9"
+                        >
+                          <SearchIconWithLabel>
+                            <styled.label
+                              htmlFor="docs-search-input"
+                            >
+                              <label
+                                className="c10"
+                                htmlFor="docs-search-input"
+                              >
+                                <styled.span>
+                                  <span
+                                    className="c11"
+                                  >
+                                    Search
+                                  </span>
+                                </styled.span>
+                                <styled.div>
+                                  <div
+                                    className="c12"
+                                  >
+                                    <SearchIcon>
+                                      <styled.svg
+                                        height="16"
+                                        width="15"
+                                      >
+                                        <svg
+                                          className="c13"
+                                          height="16"
+                                          width="15"
+                                        >
+                                          <title>
+                                            search
+                                          </title>
+                                          <path
+                                            d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
+                                            fill="#FFF"
+                                          />
+                                        </svg>
+                                      </styled.svg>
+                                    </SearchIcon>
+                                  </div>
+                                </styled.div>
+                              </label>
+                            </styled.label>
+                          </SearchIconWithLabel>
+                          <styled.input
+                            id="docs-search-input"
+                            placeholder="Search docs ..."
+                          >
+                            <input
+                              className="c14"
+                              id="docs-search-input"
+                              placeholder="Search docs ..."
+                            />
+                          </styled.input>
+                        </form>
+                      </styled.form>
+                    </Search>
+                  </SearchWithAlgolia>
                   <Social>
                     <styled.div>
                       <div
-                        className="c9"
+                        className="c15"
                       >
                         <Styled(Link)
                           href="https://spectrum.chat/styled-components/"
                         >
                           <Link
-                            className="c10"
+                            className="c16"
                             href="https://spectrum.chat/styled-components/"
                             unstyled={true}
                           >
@@ -518,7 +660,7 @@ exports[`Nav renders correctly 1`] = `
                               href="https://spectrum.chat/styled-components/"
                             >
                               <a
-                                className="c10"
+                                className="c16"
                                 href="https://spectrum.chat/styled-components/"
                                 onClick={[Function]}
                               >
@@ -531,7 +673,7 @@ exports[`Nav renders correctly 1`] = `
                                     xmlnsXlink="http://www.w3.org/1999/xlink"
                                   >
                                     <svg
-                                      className="c11"
+                                      className="c17"
                                       height="14"
                                       viewBox="0 0 15 15"
                                       width="14"
@@ -562,7 +704,7 @@ exports[`Nav renders correctly 1`] = `
                           href="https://github.com/styled-components"
                         >
                           <Link
-                            className="c10"
+                            className="c16"
                             href="https://github.com/styled-components"
                             unstyled={true}
                           >
@@ -570,7 +712,7 @@ exports[`Nav renders correctly 1`] = `
                               href="https://github.com/styled-components"
                             >
                               <a
-                                className="c10"
+                                className="c16"
                                 href="https://github.com/styled-components"
                                 onClick={[Function]}
                               >
@@ -583,7 +725,7 @@ exports[`Nav renders correctly 1`] = `
                                     xmlnsXlink="http://www.w3.org/1999/xlink"
                                   >
                                     <svg
-                                      className="c12"
+                                      className="c18"
                                       height="17"
                                       viewBox="0 0 17 17"
                                       width="17"
@@ -614,7 +756,7 @@ exports[`Nav renders correctly 1`] = `
                           href="https://medium.com/styled-components"
                         >
                           <Link
-                            className="c10"
+                            className="c16"
                             href="https://medium.com/styled-components"
                             unstyled={true}
                           >
@@ -622,7 +764,7 @@ exports[`Nav renders correctly 1`] = `
                               href="https://medium.com/styled-components"
                             >
                               <a
-                                className="c10"
+                                className="c16"
                                 href="https://medium.com/styled-components"
                                 onClick={[Function]}
                               >
@@ -635,7 +777,7 @@ exports[`Nav renders correctly 1`] = `
                                     xmlnsXlink="http://www.w3.org/1999/xlink"
                                   >
                                     <svg
-                                      className="c13"
+                                      className="c19"
                                       height="14"
                                       viewBox="0 0 17 14"
                                       width="17"
@@ -666,13 +808,13 @@ exports[`Nav renders correctly 1`] = `
           <MobileNavbar>
             <styled.div>
               <div
-                className="c14"
+                className="c20"
               >
                 <styled.button
                   active={true}
                 >
                   <button
-                    className="c15"
+                    className="c21"
                   >
                     <CloseIcon>
                       <styled.svg
@@ -680,7 +822,7 @@ exports[`Nav renders correctly 1`] = `
                         width="15"
                       >
                         <svg
-                          className="c16"
+                          className="c13"
                           height="15"
                           width="15"
                         >
@@ -705,7 +847,7 @@ exports[`Nav renders correctly 1`] = `
                 </styled.button>
                 <Styled(Link)>
                   <Link
-                    className="c17"
+                    className="c22"
                     href="/"
                     unstyled={true}
                   >
@@ -713,7 +855,7 @@ exports[`Nav renders correctly 1`] = `
                       href="/"
                     >
                       <a
-                        className="c17"
+                        className="c22"
                         href="/"
                         onClick={[Function]}
                       >
@@ -721,7 +863,7 @@ exports[`Nav renders correctly 1`] = `
                           compact={true}
                         >
                           <div
-                            className="c18"
+                            className="c23"
                           />
                         </styled.div>
                       </a>
@@ -732,13 +874,13 @@ exports[`Nav renders correctly 1`] = `
                   active={true}
                 >
                   <button
-                    className="c15"
+                    className="c21"
                   >
                     <styled.div
                       rotate={true}
                     >
                       <div
-                        className="c19"
+                        className="c24"
                         rotate={true}
                       >
                         <ArrowIcon>
@@ -747,7 +889,7 @@ exports[`Nav renders correctly 1`] = `
                             width="12"
                           >
                             <svg
-                              className="c16"
+                              className="c13"
                               height="8"
                               width="12"
                             >
@@ -776,7 +918,7 @@ exports[`Nav renders correctly 1`] = `
                   open={true}
                 >
                   <div
-                    className="c20"
+                    className="c25"
                     open={true}
                   >
                     <NavLinks>
@@ -867,9 +1009,72 @@ exports[`Nav renders correctly 1`] = `
                     </styled.span>
                     <styled.div>
                       <div
-                        className="c21"
+                        className="c26"
                       >
-                        <SearchWithAlgolia />
+                        <SearchWithAlgolia>
+                          <Search>
+                            <styled.form>
+                              <form
+                                className="c9"
+                              >
+                                <SearchIconWithLabel>
+                                  <styled.label
+                                    htmlFor="docs-search-input"
+                                  >
+                                    <label
+                                      className="c10"
+                                      htmlFor="docs-search-input"
+                                    >
+                                      <styled.span>
+                                        <span
+                                          className="c11"
+                                        >
+                                          Search
+                                        </span>
+                                      </styled.span>
+                                      <styled.div>
+                                        <div
+                                          className="c12"
+                                        >
+                                          <SearchIcon>
+                                            <styled.svg
+                                              height="16"
+                                              width="15"
+                                            >
+                                              <svg
+                                                className="c13"
+                                                height="16"
+                                                width="15"
+                                              >
+                                                <title>
+                                                  search
+                                                </title>
+                                                <path
+                                                  d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
+                                                  fill="#FFF"
+                                                />
+                                              </svg>
+                                            </styled.svg>
+                                          </SearchIcon>
+                                        </div>
+                                      </styled.div>
+                                    </label>
+                                  </styled.label>
+                                </SearchIconWithLabel>
+                                <styled.input
+                                  id="docs-search-input"
+                                  placeholder="Search docs ..."
+                                >
+                                  <input
+                                    className="c14"
+                                    id="docs-search-input"
+                                    placeholder="Search docs ..."
+                                  />
+                                </styled.input>
+                              </form>
+                            </styled.form>
+                          </Search>
+                        </SearchWithAlgolia>
                       </div>
                     </styled.div>
                   </div>
@@ -883,25 +1088,25 @@ exports[`Nav renders correctly 1`] = `
     <styled.nav>
       <styled.nav>
         <nav
-          className="c22"
+          className="c27"
         >
           <SidebarMenu>
             <styled.div>
               <div
-                className="c23"
+                className="c28"
               >
                 <Folder
                   isOpenDefault={false}
                 >
                   <styled.div>
                     <div
-                      className="c24"
+                      className="c29"
                     >
                       <styled.h4
                         onClick={[Function]}
                       >
                         <h4
-                          className="c25"
+                          className="c30"
                           onClick={[Function]}
                         >
                           <Link
@@ -915,7 +1120,7 @@ exports[`Nav renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <a
-                                  className="c26"
+                                  className="c31"
                                   href="/docs/basics"
                                   onClick={[Function]}
                                 >
@@ -934,13 +1139,13 @@ exports[`Nav renders correctly 1`] = `
                 >
                   <styled.div>
                     <div
-                      className="c24"
+                      className="c29"
                     >
                       <styled.h4
                         onClick={[Function]}
                       >
                         <h4
-                          className="c25"
+                          className="c30"
                           onClick={[Function]}
                         >
                           <Link
@@ -954,7 +1159,7 @@ exports[`Nav renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <a
-                                  className="c26"
+                                  className="c31"
                                   href="/docs/advanced"
                                   onClick={[Function]}
                                 >
@@ -973,13 +1178,13 @@ exports[`Nav renders correctly 1`] = `
                 >
                   <styled.div>
                     <div
-                      className="c24"
+                      className="c29"
                     >
                       <styled.h4
                         onClick={[Function]}
                       >
                         <h4
-                          className="c25"
+                          className="c30"
                           onClick={[Function]}
                         >
                           <Link
@@ -993,7 +1198,7 @@ exports[`Nav renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <a
-                                  className="c26"
+                                  className="c31"
                                   href="/docs/api"
                                   onClick={[Function]}
                                 >
@@ -1012,13 +1217,13 @@ exports[`Nav renders correctly 1`] = `
                 >
                   <styled.div>
                     <div
-                      className="c24"
+                      className="c29"
                     >
                       <styled.h4
                         onClick={[Function]}
                       >
                         <h4
-                          className="c25"
+                          className="c30"
                           onClick={[Function]}
                         >
                           <Link
@@ -1032,7 +1237,7 @@ exports[`Nav renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <a
-                                  className="c26"
+                                  className="c31"
                                   href="/docs/tooling"
                                   onClick={[Function]}
                                 >
@@ -1051,13 +1256,13 @@ exports[`Nav renders correctly 1`] = `
                 >
                   <styled.div>
                     <div
-                      className="c24"
+                      className="c29"
                     >
                       <styled.h4
                         onClick={[Function]}
                       >
                         <h4
-                          className="c25"
+                          className="c30"
                           onClick={[Function]}
                         >
                           <Link
@@ -1071,7 +1276,7 @@ exports[`Nav renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <a
-                                  className="c26"
+                                  className="c31"
                                   href="/docs/faqs"
                                   onClick={[Function]}
                                 >

@@ -17,7 +17,7 @@ const Input = styled.input`
   ${resetInput}
 
   flex: 0 0 auto;
-  width: ${rem(130)};
+  width: ${rem(200)};
   padding: 0 ${rem(5)};
   line-height: ${rem(navbarHeight - 20)};
   font-size: ${rem(15)};
@@ -65,11 +65,11 @@ const SearchIconWithLabel = () => (
   </Label>
 )
 
-const Search = () => (
+const Search = ({ isDocs }) => (
   <Wrapper>
     <SearchIconWithLabel />
     <Input
-      placeholder="Search ..."
+      placeholder={isDocs ? `Search ...` : `Search docs ...`}
       id="docs-search-input"
     />
   </Wrapper>
