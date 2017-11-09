@@ -10,6 +10,10 @@ describe('elementToText', () => {
     expect(elementToText('a  b')).toBe('a b')
   })
 
+  it('trims a string', () => {
+    expect(elementToText('a ')).toBe('a')
+  })
+
   it('stringifies an array of strings', () => {
     expect(elementToText(['a ', ' b'])).toBe('a b')
   })
