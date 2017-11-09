@@ -1,14 +1,9 @@
-import React, { Component } from 'react'
 import styled from 'styled-components'
-
-let docsearch
-if (process.browser) {
-  docsearch = require('docsearch.js')
-}
 
 import rem from '../../utils/rem'
 import { navbarHeight } from '../../utils/sizes'
 import { resetInput } from '../../utils/form'
+import { SearchIcon } from './NavIcons'
 
 const Wrapper = styled.form`
   display: flex;
@@ -42,59 +37,42 @@ const Input = styled.input`
 
 const Label = styled.label`
   text-indent: -99999px;
+`
 
-  span {
-    position: absolute;
+const HiddenLabelText = styled.span`
+  position: absolute;
+`
+
+const SearchIconWrapper = styled.div`
+  svg {
+    width: ${rem(16)};
+    height: ${rem(17)};
+    margin-right: ${rem(5)};
+    display: block;
+
+    path {
+      fill: currentColor;
+    }
   }
 `
 
-const SvgIcon = styled.svg`
-  width: ${rem(16)};
-  height: ${rem(17)};
-  margin-right: ${rem(5)};
-  display: block;
-
-  path {
-    fill: currentColor;
-  }
-`
-
-const SearchIcon = () => (
+const SearchIconWithLabel = () => (
   <Label htmlFor="docs-search-input">
-    <span>Search</span>
-    <SvgIcon width="15" height="16">
-      <title>search</title>
-      <use fill="#FFF" xlinkHref="#search-icon"/>
-      <defs>
-        <path id="search-icon" d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"/>
-      </defs>
-    </SvgIcon>
+    <HiddenLabelText>Search</HiddenLabelText>
+    <SearchIconWrapper>
+      <SearchIcon />
+    </SearchIconWrapper>
   </Label>
 )
 
-class Search extends Component {
-  componentDidMount() {
-    if (process.browser && typeof docsearch !== 'undefined') {
-      docsearch({
-        apiKey: '79886fb59ad3ebe2002b481cffbbe7cb',
-        indexName: 'styled-components',
-        inputSelector: '[class^="Search__Input"]',
-        debug: true // Set debug to true if you want to inspect the dropdown
-      })
-    }
-  }
-
-  render() {
-    return (
-      <Wrapper>
-        <SearchIcon />
-        <Input
-          placeholder="Search ..."
-          id="docs-search-input"
-        />
-      </Wrapper>
-    )
-  }
-}
+const Search = () => (
+  <Wrapper>
+    <SearchIconWithLabel />
+    <Input
+      placeholder="Search ..."
+      id="docs-search-input"
+    />
+  </Wrapper>
+)
 
 export default Search

@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import rem from '../../utils/rem'
 import Link, { StyledLink } from '../Link'
 import titleToDash from '../../utils/titleToDash'
-// import { lightGrey } from '../../utils/colors'
-// import { mobile } from '../../utils/media'
 
 import { pages } from '../../pages/docs.json'
 

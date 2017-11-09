@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DocsLayout renders correctly 1`] = `
-.c31 {
+.c27 {
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -65,7 +65,7 @@ exports[`DocsLayout renders correctly 1`] = `
   opacity: 0.6;
 }
 
-.c14 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -79,7 +79,7 @@ exports[`DocsLayout renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c15 {
+.c11 {
   display: inline-block;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
@@ -89,118 +89,39 @@ exports[`DocsLayout renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c15:last-child {
+.c11:last-child {
   margin-right: 0;
 }
 
-.c15:hover,
-.c15:focus {
+.c11:hover,
+.c11:focus {
   opacity: 0.8;
 }
 
-.c15:active {
+.c11:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c15 svg path {
+.c11 svg path {
   fill: currentColor;
 }
 
-.c16 {
+.c12 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c17 {
+.c13 {
   width: 0.9444444444444444rem;
   height: 0.9444444444444444rem;
 }
 
-.c18 {
+.c14 {
   width: 0.9444444444444444rem;
   height: 0.7777777777777778rem;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  margin-right: 0.5555555555555556rem;
-}
-
-.c13 {
-  background: none;
-  outline: none;
-  border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 7.222222222222222rem;
-  padding: 0 0.2777777777777778rem;
-  line-height: 1.6666666666666667rem;
-  font-size: 0.8333333333333334rem;
-  color: currentColor;
-  -webkit-transition: background 100ms ease-in;
-  transition: background 100ms ease-in;
-}
-
-.c13::-webkit-input-placeholder {
-  color: currentColor;
-  opacity: 0.5;
-}
-
-.c13::-moz-placeholder {
-  color: currentColor;
-  opacity: 0.5;
-}
-
-.c13:-ms-input-placeholder {
-  color: currentColor;
-  opacity: 0.5;
-}
-
-.c13::placeholder {
-  color: currentColor;
-  opacity: 0.5;
-}
-
-.c13:focus {
-  background: rgba(0,0,0,0.07);
-  border-radius: 3px;
-}
-
-.c11 {
-  text-indent: -99999px;
-}
-
-.c11 span {
-  position: absolute;
-}
-
-.c12 {
-  width: 0.8888888888888888rem;
-  height: 0.9444444444444444rem;
-  margin-right: 0.2777777777777778rem;
-  display: block;
-}
-
-.c12 path {
-  fill: currentColor;
 }
 
 .c5 {
@@ -214,7 +135,7 @@ exports[`DocsLayout renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c23 {
+.c19 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -225,15 +146,15 @@ exports[`DocsLayout renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c21 svg {
+.c17 svg {
   display: inline-block;
 }
 
-.c21 svg path {
+.c17 svg path {
   fill: currentColor;
 }
 
-.c20 {
+.c16 {
   background: none;
   outline: none;
   border: none;
@@ -247,16 +168,16 @@ exports[`DocsLayout renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c20:focus {
+.c16:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
 }
 
-.c19 {
+.c15 {
   display: none;
 }
 
-.c25 {
+.c21 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -291,18 +212,18 @@ exports[`DocsLayout renders correctly 1`] = `
   color: #868686;
 }
 
-.c22 {
+.c18 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c24 {
+.c20 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
 }
 
-.c26 {
+.c22 {
   display: inline-block;
 }
 
@@ -374,7 +295,7 @@ exports[`DocsLayout renders correctly 1`] = `
   margin-right: 1.9444444444444444rem;
 }
 
-.c27 {
+.c23 {
   position: fixed;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -396,18 +317,18 @@ exports[`DocsLayout renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c28 {
+.c24 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 1.3888888888888888rem;
 }
 
-.c29 {
+.c25 {
   margin-bottom: 1.1111111111111112rem;
 }
 
-.c30 {
+.c26 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
@@ -417,7 +338,7 @@ exports[`DocsLayout renders correctly 1`] = `
   padding-left: 16.666666666666668rem;
 }
 
-.c32 {
+.c28 {
   width: 56.888888888888886rem;
   max-width: 100%;
   margin: 0 auto;
@@ -429,7 +350,7 @@ exports[`DocsLayout renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c33 {
+.c29 {
   display: block;
   text-align: left;
   width: 100%;
@@ -440,17 +361,17 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (min-width:62.5em) {
-  .c31 {
+  .c27 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c31:hover {
+  .c27:hover {
     background: rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
-  .c19 {
+  .c15 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -474,7 +395,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c27 {
+  .c23 {
     -webkit-transform: translateX(-16.666666666666668rem);
     -ms-transform: translateX(-16.666666666666668rem);
     transform: translateX(-16.666666666666668rem);
@@ -488,7 +409,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c32 {
+  .c28 {
     padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
   }
 }
@@ -645,72 +566,17 @@ exports[`DocsLayout renders correctly 1`] = `
                       <div
                         className="c9"
                       >
-                        <Search>
-                          <styled.form>
-                            <form
-                              className="c10"
-                            >
-                              <SearchIcon>
-                                <styled.label
-                                  htmlFor="docs-search-input"
-                                >
-                                  <label
-                                    className="c11"
-                                    htmlFor="docs-search-input"
-                                  >
-                                    <span>
-                                      Search
-                                    </span>
-                                    <styled.svg
-                                      height="16"
-                                      width="15"
-                                    >
-                                      <svg
-                                        className="c12"
-                                        height="16"
-                                        width="15"
-                                      >
-                                        <title>
-                                          search
-                                        </title>
-                                        <use
-                                          fill="#FFF"
-                                          xlinkHref="#search-icon"
-                                        />
-                                        <defs>
-                                          <path
-                                            d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
-                                            id="search-icon"
-                                          />
-                                        </defs>
-                                      </svg>
-                                    </styled.svg>
-                                  </label>
-                                </styled.label>
-                              </SearchIcon>
-                              <styled.input
-                                id="docs-search-input"
-                                placeholder="Search ..."
-                              >
-                                <input
-                                  className="c13"
-                                  id="docs-search-input"
-                                  placeholder="Search ..."
-                                />
-                              </styled.input>
-                            </form>
-                          </styled.form>
-                        </Search>
+                        <SearchWithAlgolia />
                         <Social>
                           <styled.div>
                             <div
-                              className="c14"
+                              className="c10"
                             >
                               <Styled(Link)
                                 href="https://spectrum.chat/styled-components/"
                               >
                                 <Link
-                                  className="c15"
+                                  className="c11"
                                   href="https://spectrum.chat/styled-components/"
                                   unstyled={true}
                                 >
@@ -718,7 +584,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     href="https://spectrum.chat/styled-components/"
                                   >
                                     <a
-                                      className="c15"
+                                      className="c11"
                                       href="https://spectrum.chat/styled-components/"
                                       onClick={[Function]}
                                     >
@@ -731,7 +597,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           xmlnsXlink="http://www.w3.org/1999/xlink"
                                         >
                                           <svg
-                                            className="c16"
+                                            className="c12"
                                             height="14"
                                             viewBox="0 0 15 15"
                                             width="14"
@@ -762,7 +628,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 href="https://github.com/styled-components"
                               >
                                 <Link
-                                  className="c15"
+                                  className="c11"
                                   href="https://github.com/styled-components"
                                   unstyled={true}
                                 >
@@ -770,7 +636,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     href="https://github.com/styled-components"
                                   >
                                     <a
-                                      className="c15"
+                                      className="c11"
                                       href="https://github.com/styled-components"
                                       onClick={[Function]}
                                     >
@@ -783,7 +649,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           xmlnsXlink="http://www.w3.org/1999/xlink"
                                         >
                                           <svg
-                                            className="c17"
+                                            className="c13"
                                             height="17"
                                             viewBox="0 0 17 17"
                                             width="17"
@@ -814,7 +680,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 href="https://medium.com/styled-components"
                               >
                                 <Link
-                                  className="c15"
+                                  className="c11"
                                   href="https://medium.com/styled-components"
                                   unstyled={true}
                                 >
@@ -822,7 +688,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     href="https://medium.com/styled-components"
                                   >
                                     <a
-                                      className="c15"
+                                      className="c11"
                                       href="https://medium.com/styled-components"
                                       onClick={[Function]}
                                     >
@@ -835,7 +701,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           xmlnsXlink="http://www.w3.org/1999/xlink"
                                         >
                                           <svg
-                                            className="c18"
+                                            className="c14"
                                             height="14"
                                             viewBox="0 0 17 14"
                                             width="17"
@@ -871,29 +737,25 @@ exports[`DocsLayout renders correctly 1`] = `
                 >
                   <styled.div>
                     <div
-                      className="c19"
+                      className="c15"
                     >
                       <styled.button
                         active={false}
                         onClick={[Function]}
                       >
                         <button
-                          className="c20"
+                          className="c16"
                           onClick={[Function]}
                         >
                           <FoldIcon>
                             <styled.svg
                               height="14"
                               width="17"
-                              xmlns="http://www.w3.org/2000/svg"
-                              xmlnsXlink="http://www.w3.org/1999/xlink"
                             >
                               <svg
-                                className="c21"
+                                className="c17"
                                 height="14"
                                 width="17"
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlnsXlink="http://www.w3.org/1999/xlink"
                               >
                                 <title>
                                   fold
@@ -916,7 +778,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       </styled.button>
                       <Styled(Link)>
                         <Link
-                          className="c22"
+                          className="c18"
                           href="/"
                           unstyled={true}
                         >
@@ -924,7 +786,7 @@ exports[`DocsLayout renders correctly 1`] = `
                             href="/"
                           >
                             <a
-                              className="c22"
+                              className="c18"
                               href="/"
                               onClick={[Function]}
                             >
@@ -932,7 +794,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 compact={true}
                               >
                                 <div
-                                  className="c23"
+                                  className="c19"
                                 />
                               </styled.div>
                             </a>
@@ -944,29 +806,25 @@ exports[`DocsLayout renders correctly 1`] = `
                         onClick={[Function]}
                       >
                         <button
-                          className="c20"
+                          className="c16"
                           onClick={[Function]}
                         >
                           <styled.div
                             rotate={false}
                           >
                             <div
-                              className="c24"
+                              className="c20"
                               rotate={false}
                             >
                               <ArrowIcon>
                                 <styled.svg
                                   height="8"
                                   width="12"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  xmlnsXlink="http://www.w3.org/1999/xlink"
                                 >
                                   <svg
-                                    className="c21"
+                                    className="c17"
                                     height="8"
                                     width="12"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    xmlnsXlink="http://www.w3.org/1999/xlink"
                                   >
                                     <title>
                                       arrow down
@@ -993,7 +851,7 @@ exports[`DocsLayout renders correctly 1`] = `
                         open={false}
                       >
                         <div
-                          className="c25"
+                          className="c21"
                           open={false}
                         >
                           <NavLinks>
@@ -1084,166 +942,9 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.span>
                           <styled.div>
                             <div
-                              className="c26"
+                              className="c22"
                             >
-                              <Social>
-                                <styled.div>
-                                  <div
-                                    className="c14"
-                                  >
-                                    <Styled(Link)
-                                      href="https://spectrum.chat/styled-components/"
-                                    >
-                                      <Link
-                                        className="c15"
-                                        href="https://spectrum.chat/styled-components/"
-                                        unstyled={true}
-                                      >
-                                        <Link
-                                          href="https://spectrum.chat/styled-components/"
-                                        >
-                                          <a
-                                            className="c15"
-                                            href="https://spectrum.chat/styled-components/"
-                                            onClick={[Function]}
-                                          >
-                                            <Spectrum>
-                                              <styled.svg
-                                                height="14"
-                                                viewBox="0 0 15 15"
-                                                width="14"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlnsXlink="http://www.w3.org/1999/xlink"
-                                              >
-                                                <svg
-                                                  className="c16"
-                                                  height="14"
-                                                  viewBox="0 0 15 15"
-                                                  width="14"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                                                >
-                                                  <title>
-                                                    spectrum-logo
-                                                  </title>
-                                                  <use
-                                                    fill="#FFF"
-                                                    xlinkHref="#spectrum"
-                                                  />
-                                                  <defs>
-                                                    <path
-                                                      d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
-                                                      id="spectrum"
-                                                    />
-                                                  </defs>
-                                                </svg>
-                                              </styled.svg>
-                                            </Spectrum>
-                                          </a>
-                                        </Link>
-                                      </Link>
-                                    </Styled(Link)>
-                                    <Styled(Link)
-                                      href="https://github.com/styled-components"
-                                    >
-                                      <Link
-                                        className="c15"
-                                        href="https://github.com/styled-components"
-                                        unstyled={true}
-                                      >
-                                        <Link
-                                          href="https://github.com/styled-components"
-                                        >
-                                          <a
-                                            className="c15"
-                                            href="https://github.com/styled-components"
-                                            onClick={[Function]}
-                                          >
-                                            <Github>
-                                              <styled.svg
-                                                height="17"
-                                                viewBox="0 0 17 17"
-                                                width="17"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlnsXlink="http://www.w3.org/1999/xlink"
-                                              >
-                                                <svg
-                                                  className="c17"
-                                                  height="17"
-                                                  viewBox="0 0 17 17"
-                                                  width="17"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                                                >
-                                                  <title>
-                                                    github-logo
-                                                  </title>
-                                                  <use
-                                                    fill="#FFF"
-                                                    xlinkHref="#a"
-                                                  />
-                                                  <defs>
-                                                    <path
-                                                      d="M15.86 4.34c-.76-1.335-1.79-2.392-3.093-3.17C11.463.39 10.042 0 8.5 0 6.958 0 5.536.39 4.233 1.17 2.93 1.947 1.9 3.004 1.14 4.34.38 5.674 0 7.132 0 8.713c0 1.898.54 3.606 1.62 5.122 1.082 1.517 2.48 2.566 4.19 3.148.2.038.347.01.443-.08.096-.09.144-.203.144-.34l-.006-.612v-1l-.25.05c-.16.03-.36.05-.61.04-.24 0-.5-.03-.77-.08-.26-.05-.51-.16-.74-.34-.23-.18-.39-.41-.49-.7l-.11-.26c-.07-.17-.19-.36-.35-.58-.16-.21-.32-.35-.48-.43l-.08-.05c-.05-.04-.09-.08-.14-.132-.04-.053-.08-.106-.1-.16-.02-.053 0-.097.06-.13.06-.035.17-.052.32-.052l.22.036c.15.03.33.12.55.27.22.154.4.35.54.59.17.31.375.55.615.71.24.164.484.245.727.245s.456-.02.63-.056c.18-.037.346-.094.5-.17.067-.507.248-.896.54-1.17-.42-.043-.795-.112-1.13-.203-.34-.09-.685-.24-1.04-.44-.36-.2-.657-.455-.894-.76-.234-.3-.43-.7-.58-1.19-.15-.49-.225-1.06-.225-1.7 0-.917.29-1.695.875-2.34-.27-.69-.244-1.46.08-2.313.214-.07.53-.015.95.155.42.17.73.314.926.435.195.12.35.225.47.308.684-.2 1.394-.3 2.124-.3s1.44.1 2.124.297l.42-.27c.288-.184.628-.35 1.02-.5.39-.15.69-.195.895-.126.334.857.364 1.63.09 2.317.584.645.875 1.42.875 2.34 0 .64-.072 1.21-.223 1.707-.15.5-.343.897-.583 1.196-.24.298-.54.55-.896.754-.355.202-.702.35-1.04.44-.334.09-.712.16-1.132.205.38.34.57.875.57 1.61v2.39c0 .136.045.25.137.34.096.09.24.118.44.08 1.71-.582 3.11-1.632 4.19-3.15 1.06-1.525 1.6-3.235 1.6-5.13 0-1.58-.38-3.04-1.14-4.37z"
-                                                      id="a"
-                                                    />
-                                                  </defs>
-                                                </svg>
-                                              </styled.svg>
-                                            </Github>
-                                          </a>
-                                        </Link>
-                                      </Link>
-                                    </Styled(Link)>
-                                    <Styled(Link)
-                                      href="https://medium.com/styled-components"
-                                    >
-                                      <Link
-                                        className="c15"
-                                        href="https://medium.com/styled-components"
-                                        unstyled={true}
-                                      >
-                                        <Link
-                                          href="https://medium.com/styled-components"
-                                        >
-                                          <a
-                                            className="c15"
-                                            href="https://medium.com/styled-components"
-                                            onClick={[Function]}
-                                          >
-                                            <Medium>
-                                              <styled.svg
-                                                height="14"
-                                                viewBox="0 0 17 14"
-                                                width="17"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlnsXlink="http://www.w3.org/1999/xlink"
-                                              >
-                                                <svg
-                                                  className="c18"
-                                                  height="14"
-                                                  viewBox="0 0 17 14"
-                                                  width="17"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                                                >
-                                                  <title>
-                                                    medium
-                                                  </title>
-                                                  <path
-                                                    d="M5.3 0H.5l1.8 2.4v9L0 13.7h5.3l-2-2.3V3.7L7.8 14 12 3.7v8.7l-1.3 1.3H17l-1.5-1.3v-11L17 0h-4.5L9 8.2 5.2 0z"
-                                                    fill="#fff"
-                                                  />
-                                                </svg>
-                                              </styled.svg>
-                                            </Medium>
-                                          </a>
-                                        </Link>
-                                      </Link>
-                                    </Styled(Link)>
-                                  </div>
-                                </styled.div>
-                              </Social>
+                              <SearchWithAlgolia />
                             </div>
                           </styled.div>
                         </div>
@@ -1261,14 +962,14 @@ exports[`DocsLayout renders correctly 1`] = `
               isFolded={true}
             >
               <nav
-                className="c27"
+                className="c23"
               >
                 <SidebarMenu
                   onRouteChange={[Function]}
                 >
                   <styled.div>
                     <div
-                      className="c28"
+                      className="c24"
                     >
                       <Folder
                         isOpenDefault={false}
@@ -1277,14 +978,14 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <div
-                            className="c29"
+                            className="c25"
                             onClick={[Function]}
                           >
                             <styled.h4
                               onClick={[Function]}
                             >
                               <h4
-                                className="c30"
+                                className="c26"
                                 onClick={[Function]}
                               >
                                 <Link
@@ -1298,7 +999,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       onClick={[Function]}
                                     >
                                       <a
-                                        className="c31"
+                                        className="c27"
                                         href="/docs/basics"
                                         onClick={[Function]}
                                       >
@@ -1319,14 +1020,14 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <div
-                            className="c29"
+                            className="c25"
                             onClick={[Function]}
                           >
                             <styled.h4
                               onClick={[Function]}
                             >
                               <h4
-                                className="c30"
+                                className="c26"
                                 onClick={[Function]}
                               >
                                 <Link
@@ -1340,7 +1041,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       onClick={[Function]}
                                     >
                                       <a
-                                        className="c31"
+                                        className="c27"
                                         href="/docs/advanced"
                                         onClick={[Function]}
                                       >
@@ -1361,14 +1062,14 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <div
-                            className="c29"
+                            className="c25"
                             onClick={[Function]}
                           >
                             <styled.h4
                               onClick={[Function]}
                             >
                               <h4
-                                className="c30"
+                                className="c26"
                                 onClick={[Function]}
                               >
                                 <Link
@@ -1382,7 +1083,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       onClick={[Function]}
                                     >
                                       <a
-                                        className="c31"
+                                        className="c27"
                                         href="/docs/api"
                                         onClick={[Function]}
                                       >
@@ -1403,14 +1104,14 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <div
-                            className="c29"
+                            className="c25"
                             onClick={[Function]}
                           >
                             <styled.h4
                               onClick={[Function]}
                             >
                               <h4
-                                className="c30"
+                                className="c26"
                                 onClick={[Function]}
                               >
                                 <Link
@@ -1424,7 +1125,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       onClick={[Function]}
                                     >
                                       <a
-                                        className="c31"
+                                        className="c27"
                                         href="/docs/tooling"
                                         onClick={[Function]}
                                       >
@@ -1445,14 +1146,14 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <div
-                            className="c29"
+                            className="c25"
                             onClick={[Function]}
                           >
                             <styled.h4
                               onClick={[Function]}
                             >
                               <h4
-                                className="c30"
+                                className="c26"
                                 onClick={[Function]}
                               >
                                 <Link
@@ -1466,7 +1167,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       onClick={[Function]}
                                     >
                                       <a
-                                        className="c31"
+                                        className="c27"
                                         href="/docs/faqs"
                                         onClick={[Function]}
                                       >
@@ -1492,11 +1193,11 @@ exports[`DocsLayout renders correctly 1`] = `
         moveRight={false}
       >
         <div
-          className="c32"
+          className="c28"
         >
           <styled.h1>
             <h1
-              className="c33"
+              className="c29"
             />
           </styled.h1>
         </div>
