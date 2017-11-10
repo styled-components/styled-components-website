@@ -4,6 +4,10 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = {
   webpack: function (config, { dev }) {
+    if (dev) {
+      return config
+    }
+
     config.plugins.push(
       new BundleAnalyzerPlugin({
         analyzerMode: 'disabled',
@@ -28,10 +32,6 @@ module.exports = {
       })
 
     config.resolve.alias = config.resolve.alias || {}
-
-    if (dev) {
-      return config
-    }
 
     config.plugins.push(
       new SWPrecacheWebpackPlugin({
