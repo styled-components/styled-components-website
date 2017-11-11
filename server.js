@@ -1,6 +1,5 @@
 const dev = process.env.NODE_ENV !== 'production'
 const moduleAlias = require('module-alias')
-const path = require('path')
 
 if (!dev) {
   moduleAlias.addAlias('react', 'preact-compat')
@@ -11,6 +10,7 @@ const { parse } = require('url')
 const express = require('express')
 const LRUCache = require('lru-cache')
 const next = require('next')
+const axios = require('axios')
 
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
@@ -65,8 +65,41 @@ app.prepare()
       cachedRender(req, res, '/docs/api')
     })
 
-    server.get('/sw.js', (req, res) => {
-      res.sendFile(path.resolve('./.next/sw.js'))
+    server.get('/docs/api', (req, res) => {
+      cachedRender(req, res, '/docs/api')
+    })
+
+    // Proxy imageshield.io images
+    const proxyMap = {
+      'npm-v.svg': 'https://img.shields.io/npm/v/styled-components.svg',
+      'size.svg': 'https://img.shields.io/badge/gzip%20size-14.6%20kB-brightgreen.svg',
+      'downloads.svg': 'https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600',
+      'stars.svg': 'https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600',
+      // Are we sure about `?maxAge=3600`?
+    }
+
+    // Define proxied routes
+    server.get('/r/:imgUrl', async (req, res, next) => {
+      const { imgUrl } = req.params
+      const remoteUrl = proxyMap[imgUrl]
+
+      // Check if we want to proxy this
+      if (typeof remoteUrl === 'undefined') {
+        // Let NextJS handle it (edither a route or 404 error)
+        // (P.S It's funny we call `next()` to pass it to Next 😆)
+        next()
+      }
+
+      try {
+        const { data } = await axios.get(remoteUrl, {
+          responseType: 'arraybuffer'
+        })
+        res.type('image/svg+xml')
+        res.end(data, 'binary')
+      } catch (e) {
+        // Failed to download image
+        next()
+      }
     })
 
     server.use('/static', express.static('./static', {
