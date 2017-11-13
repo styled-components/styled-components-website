@@ -66,7 +66,7 @@ const cachedProxyServer = (req, res, imgUrl, remoteUrl) => {
     res.end(data, 'binary')
   }).catch(() => {
     // Failed to download image
-    next()
+    res.status(500).send('Error')
   })
 }
 
