@@ -3,11 +3,6 @@ import Router from 'next/router'
 
 import Search from './Search'
 
-let docsearch
-if (process.browser) {
-  docsearch = require('docsearch.js')
-}
-
 class SearchWithAlgolia extends Component {
   isDocs = true
 
@@ -16,7 +11,10 @@ class SearchWithAlgolia extends Component {
   }
 
   componentDidMount() {
-    if (process.browser && typeof docsearch !== 'undefined') {
+    const docsearch = require('docsearch.js')
+
+    // for Jest
+    if (process.browser) {
       docsearch({
         apiKey: '79886fb59ad3ebe2002b481cffbbe7cb',
         indexName: 'styled-components',
