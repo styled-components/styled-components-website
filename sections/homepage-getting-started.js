@@ -39,13 +39,13 @@ const HomepageGettingStarted = () => (
   <Content>
     <AlignCenter>
       <a href="https://github.com/styled-components/styled-components">
-        <Badge src="/r/stars.svg" alt="Stars on GitHub" />
+        <Badge src="/proxy/stars.svg" alt="Stars on GitHub" />
       </a>
       <a href="https://www.npmjs.com/package/styled-components">
-        <Badge src="/r/npm-v.svg" alt="Current version" />
+        <Badge src="/proxy/npm-v.svg" alt="Current version" />
       </a>
-      <Badge src="/r/downloads.svg" alt="Monthly downloads" />
-      <Badge src="/r/size.svg" alt="Gzipped size" />
+      <Badge src="/proxy/downloads.svg" alt="Monthly downloads" />
+      <Badge src="/proxy/size.svg" alt="Gzipped size" />
       <a href="https://spectrum.chat/styled-components">
         <Badge alt="Join the community on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
       </a>

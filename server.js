@@ -1,5 +1,6 @@
 const dev = process.env.NODE_ENV !== 'production'
 const moduleAlias = require('module-alias')
+const path = require('path')
 
 if (!dev) {
   moduleAlias.addAlias('react', 'preact-compat')

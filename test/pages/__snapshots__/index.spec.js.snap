@@ -1872,12 +1872,12 @@ exports[`Index renders correctly 1`] = `
               >
                 <styled.img
                   alt="Stars on GitHub"
-                  src="/r/stars.svg"
+                  src="/proxy/stars.svg"
                 >
                   <img
                     alt="Stars on GitHub"
                     className="c46"
-                    src="/r/stars.svg"
+                    src="/proxy/stars.svg"
                   />
                 </styled.img>
               </a>
@@ -1886,33 +1886,33 @@ exports[`Index renders correctly 1`] = `
               >
                 <styled.img
                   alt="Current version"
-                  src="/r/npm-v.svg"
+                  src="/proxy/npm-v.svg"
                 >
                   <img
                     alt="Current version"
                     className="c46"
-                    src="/r/npm-v.svg"
+                    src="/proxy/npm-v.svg"
                   />
                 </styled.img>
               </a>
               <styled.img
                 alt="Monthly downloads"
-                src="/r/downloads.svg"
+                src="/proxy/downloads.svg"
               >
                 <img
                   alt="Monthly downloads"
                   className="c46"
-                  src="/r/downloads.svg"
+                  src="/proxy/downloads.svg"
                 />
               </styled.img>
               <styled.img
                 alt="Gzipped size"
-                src="/r/size.svg"
+                src="/proxy/size.svg"
               >
                 <img
                   alt="Gzipped size"
                   className="c46"
-                  src="/r/size.svg"
+                  src="/proxy/size.svg"
                 />
               </styled.img>
               <a
