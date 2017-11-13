@@ -43,9 +43,10 @@ const ExtendingStyles = () => md`
   We can see that the new \`TomatoButton\` still resembles \`Button\`, while we have only
   added two new rules.
 
-  > This is different from passing your styled component into the \`styled()\` factory.
-  > Calling \`extend\` creates a new stylesheet by extending the old one, and thus doesn't
-  > generate two classes for a single component.
+  > You should only use \`Comp.extend\` if you know that \`Comp\` is a styled component.
+  > If you're importing from another file or a third party library, prefer to use
+  > \`styled(Comp)\` as it accomplishes the same thing but works with *any* React
+  > component. Read more about [what the difference between \`Comp.extend\` and \`styled(Comp)\` is.](/docs/faqs#when-should-i-use-)
 
   In really rare cases you might want to change which tag or component a styled component renders.
   For this case, we have an escape hatch. You can use the <Code>withComponent</Code> to extend

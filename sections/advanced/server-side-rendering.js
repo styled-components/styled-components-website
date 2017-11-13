@@ -48,45 +48,13 @@ const ServerSideRendering = () => md`
 
   ### Next.js
 
-  In Next.js, you will need to structure your \`_document.js\` file differently, than
-  the provided example in their repository for v1.
-
-  \`\`\`jsx
-  import Document, { Head, Main, NextScript } from 'next/document'
-  import { ServerStyleSheet } from 'styled-components'
-
-  export default class MyDocument extends Document {
-    static getInitialProps ({ renderPage }) {
-      const sheet = new ServerStyleSheet()
-      const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
-      const styleTags = sheet.getStyleElement()
-      return {
-        ...page, 
-        styleTags
-      }
-    }
-
-    render() {
-      return (
-        <html>
-          <Head>
-            {/* ... */}
-
-            {this.props.styleTags}
-          </Head>
-          <body>
-            <Main />
-            <NextScript />
-          </body>
-        </html>
-      )
-    }
-  }
-  \`\`\`
- 
-  You will need to use \`babel-plugin-styled-components\` to get this working. More details [here](https://www.npmjs.com/package/babel-plugin-styled-components)
+  Basically you need to add a custom \`pages/_document.js\` (if you don't have one). Then 
+  [copy the logic](https://github.com/zeit/next.js/tree/master/examples/with-styled-components/pages/_document.js)
+  for styled-components to inject the server side rendered styles into the \`<head>\`.
   
-  Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo fro an up-to-date usage example.
+  You'll also need to customize the \`.babelrc\` and use \`babel-plugin-styled-components\`.
+
+  Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo for an up-to-date usage example.
 `
 
 export default ServerSideRendering
