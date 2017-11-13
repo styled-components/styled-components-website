@@ -283,12 +283,12 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           >
             <styled.img
               alt="Stars on GitHub"
-              src="https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600"
+              src="/proxy/stars.svg"
             >
               <img
                 alt="Stars on GitHub"
                 className="c2"
-                src="https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600"
+                src="/proxy/stars.svg"
               />
             </styled.img>
           </a>
@@ -297,33 +297,33 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           >
             <styled.img
               alt="Current version"
-              src="https://img.shields.io/npm/v/styled-components.svg"
+              src="/proxy/npm-v.svg"
             >
               <img
                 alt="Current version"
                 className="c2"
-                src="https://img.shields.io/npm/v/styled-components.svg"
+                src="/proxy/npm-v.svg"
               />
             </styled.img>
           </a>
           <styled.img
             alt="Monthly downloads"
-            src="https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600"
+            src="/proxy/downloads.svg"
           >
             <img
               alt="Monthly downloads"
               className="c2"
-              src="https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600"
+              src="/proxy/downloads.svg"
             />
           </styled.img>
           <styled.img
             alt="Gzipped size"
-            src="http://img.badgesize.io/https://unpkg.com/styled-components/dist/styled-components.min.js?compression=gzip&label=gzip%20size"
+            src="/proxy/size.svg"
           >
             <img
               alt="Gzipped size"
               className="c2"
-              src="http://img.badgesize.io/https://unpkg.com/styled-components/dist/styled-components.min.js?compression=gzip&label=gzip%20size"
+              src="/proxy/size.svg"
             />
           </styled.img>
           <a

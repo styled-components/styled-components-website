@@ -11,6 +11,7 @@ const { parse } = require('url')
 const express = require('express')
 const LRUCache = require('lru-cache')
 const next = require('next')
+const axios = require('axios')
 
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
@@ -41,6 +42,34 @@ const cachedRender = (req, res, pagePath, queryParams) => {
     })
 }
 
+const cachedProxyServer = (req, res, imgUrl, remoteUrl) => {
+  const key = `/proxy/${imgUrl}`
+
+  if (!dev && ssrCache.has(key)) {
+    const cached = ssrCache.get(key)
+    res.append('X-Cache', 'HIT')
+    res.type(cached.contentType)
+    res.end(cached.data)
+    return
+  }
+
+  axios.get(remoteUrl, {
+    responseType: 'arraybuffer'
+  }).then(({ data, headers }) => {
+    const contentType = headers['content-type']
+
+    // Save to cache for future
+    ssrCache.set(key, { data, contentType })
+    res.append('X-Cache', 'MISS')
+
+    res.type(contentType)
+    res.end(data, 'binary')
+  }).catch(() => {
+    // Failed to download image
+    res.status(500).send('Error')
+  })
+}
+
 const PORT = process.env.PORT || 3000
 
 app.prepare()
@@ -63,6 +92,30 @@ app.prepare()
 
     server.get('/docs/api', (req, res) => {
       cachedRender(req, res, '/docs/api')
+    })
+
+    // Proxy imageshield.io images
+    const proxyMap = {
+      'npm-v.svg': 'https://img.shields.io/npm/v/styled-components.svg',
+      'size.svg': 'https://img.shields.io/badge/gzip%20size-14.6%20kB-brightgreen.svg',
+      'downloads.svg': 'https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600',
+      'stars.svg': 'https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600',
+    }
+
+    // Define proxied routes
+    server.get('/proxy/:imgUrl', async (req, res, next) => {
+      const { imgUrl } = req.params
+      const remoteUrl = proxyMap[imgUrl]
+
+
+      // Check if we want to proxy this
+      if (typeof remoteUrl === 'undefined') {
+        // Let NextJS handle it (edither a route or 404 error)
+        next()
+        return
+      }
+
+      cachedProxyServer(req, res, imgUrl, remoteUrl)
     })
 
     server.get('/sw.js', (req, res) => {
