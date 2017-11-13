@@ -14,7 +14,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "axios": "^0.17.0",
+    "axios": "^0.17.1",
     "babel-plugin-polished": "^1.1.0",
     "babel-plugin-styled-components": "^1.1.7",
     "commonmark": "^0.28.1",
