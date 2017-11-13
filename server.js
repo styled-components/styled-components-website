@@ -101,7 +101,6 @@ app.prepare()
       'size.svg': 'https://img.shields.io/badge/gzip%20size-14.6%20kB-brightgreen.svg',
       'downloads.svg': 'https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600',
       'stars.svg': 'https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600',
-      // Are we sure about `?maxAge=3600`?
     }
 
     // Define proxied routes
@@ -113,7 +112,6 @@ app.prepare()
       // Check if we want to proxy this
       if (typeof remoteUrl === 'undefined') {
         // Let NextJS handle it (edither a route or 404 error)
-        // (P.S It's funny we call `next()` to pass it to Next 😆)
         next()
       }
 
