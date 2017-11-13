@@ -50,7 +50,6 @@ const cachedProxyServer = (req, res, imgUrl, remoteUrl) => {
     res.append('X-Cache', 'HIT')
     res.type(cached.contentType)
     res.end(cached.data)
-    console.log('served cached!')
     return
   }
 
