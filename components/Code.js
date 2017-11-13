@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import { monospace } from '../utils/fonts'
 
-import '../utils/prismTemplateString'
-
 const Code = styled.span`
   display: inline-block;
   font-family: ${monospace};

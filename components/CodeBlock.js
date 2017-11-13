@@ -1,21 +1,13 @@
-import React, { Component } from 'react'
 import styled from 'styled-components'
 import rem from '../utils/rem'
 
 import '../utils/prismTemplateString'
+import { Editor } from 'react-live'
 import { darkGrey } from '../utils/colors'
 import { monospace } from '../utils/fonts'
 
-const prism = (code, language) => {
-  if (!language || !Prism.languages[language]) {
-    return undefined
-  }
-
-  return Prism.highlight(code, Prism.languages[language])
-}
-
-const Highlight = styled.pre.attrs({
-  className: 'prism-code'
+const CodeBlock = styled(Editor).attrs({
+  contentEditable: false
 })`
   background: ${darkGrey};
   font-size: 0.8rem;
@@ -29,45 +21,5 @@ const Highlight = styled.pre.attrs({
 
   overflow-x: hidden;
 `
-
-class CodeBlock extends Component {
-  state = {
-    __html: prism(this.props.code, this.props.language)
-  }
-
-  componentWillReceiveProps({ code, language }) {
-    if (code !== this.props.code || language !== this.props.language) {
-      this.setState({
-        __html: prism(code, language)
-      })
-    }
-  }
-
-  render() {
-    const { code } = this.props
-    const { __html } = this.state
-
-    if (!__html) {
-      return (
-        <Highlight
-          {...this.props}
-          code={undefined}
-          language={undefined}
-        >
-          {code}
-        </Highlight>
-      )
-    }
-
-    return (
-      <Highlight
-        dangerouslySetInnerHTML={{ __html }}
-        {...this.props}
-        code={undefined}
-        language={undefined}
-      />
-    )
-  }
-}
 
 export default CodeBlock

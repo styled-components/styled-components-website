@@ -32,6 +32,9 @@ exports[`Content renders correctly 1`] = `
 @media (max-width:62.5em) {
   .c0 {
     padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
   }
 }
 
