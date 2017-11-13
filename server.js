@@ -113,6 +113,7 @@ app.prepare()
       if (typeof remoteUrl === 'undefined') {
         // Let NextJS handle it (edither a route or 404 error)
         next()
+        return
       }
 
       cachedProxyServer(req, res, imgUrl, remoteUrl)
