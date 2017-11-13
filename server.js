@@ -41,6 +41,35 @@ const cachedRender = (req, res, pagePath, queryParams) => {
     })
 }
 
+const cachedProxyServer = (req, res, imgUrl, remoteUrl) => {
+  const key = `/proxy/${imgUrl}`
+
+  if (!dev && ssrCache.has(key)) {
+    const cached = ssrCache.get(key)
+    res.append('X-Cache', 'HIT')
+    res.type(cached.contentType)
+    res.end(cached.data)
+    console.log('served cached!')
+    return
+  }
+
+  axios.get(remoteUrl, {
+    responseType: 'arraybuffer'
+  }).then(({ data, headers }) => {
+    const contentType = headers['content-type']
+
+    // Save to cache for future
+    ssrCache.set(key, { data, contentType })
+    res.append('X-Cache', 'MISS')
+
+    res.type(contentType)
+    res.end(data, 'binary')
+  }).catch(() => {
+    // Failed to download image
+    next()
+  })
+}
+
 const PORT = process.env.PORT || 3000
 
 app.prepare()
@@ -65,10 +94,6 @@ app.prepare()
       cachedRender(req, res, '/docs/api')
     })
 
-    server.get('/docs/api', (req, res) => {
-      cachedRender(req, res, '/docs/api')
-    })
-
     // Proxy imageshield.io images
     const proxyMap = {
       'npm-v.svg': 'https://img.shields.io/npm/v/styled-components.svg',
@@ -79,9 +104,10 @@ app.prepare()
     }
 
     // Define proxied routes
-    server.get('/r/:imgUrl', async (req, res, next) => {
+    server.get('/proxy/:imgUrl', async (req, res, next) => {
       const { imgUrl } = req.params
       const remoteUrl = proxyMap[imgUrl]
+
 
       // Check if we want to proxy this
       if (typeof remoteUrl === 'undefined') {
@@ -90,16 +116,11 @@ app.prepare()
         next()
       }
 
-      try {
-        const { data } = await axios.get(remoteUrl, {
-          responseType: 'arraybuffer'
-        })
-        res.type('image/svg+xml')
-        res.end(data, 'binary')
-      } catch (e) {
-        // Failed to download image
-        next()
-      }
+      cachedProxyServer(req, res, imgUrl, remoteUrl)
+    })
+
+    server.get('/sw.js', (req, res) => {
+      res.sendFile(path.resolve('./.next/sw.js'))
     })
 
     server.use('/static', express.static('./static', {
