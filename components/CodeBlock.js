@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import rem from '../utils/rem'
 
@@ -6,7 +7,10 @@ import { Editor } from 'react-live'
 import { darkGrey } from '../utils/colors'
 import { monospace } from '../utils/fonts'
 
-const CodeBlock = styled(Editor).attrs({
+const CodeBlock = styled(p => {
+  const language = (p.language || 'clike').toLowerCase().trim()
+  return <Editor {...p} language={language} />
+}).attrs({
   contentEditable: false
 })`
   background: ${darkGrey};

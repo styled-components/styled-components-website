@@ -607,14 +607,14 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         "
           nodeKey="18:1-22:31"
         >
-          <Styled(Editor)
+          <Styled(Component)
             code="import styled from 'styled-components';
           
           const Button = styled.button\`\`;
           "
             language="jsx"
           >
-            <Editor
+            <Component
               className="c13"
               code="import styled from 'styled-components';
             
@@ -623,21 +623,31 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
               contentEditable={false}
               language="jsx"
             >
-              <pre
-                className="prism-code c13"
+              <Editor
+                className="c13"
+                code="import styled from 'styled-components';
+              
+              const Button = styled.button\`\`;
+              "
                 contentEditable={false}
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<span class=\\"token keyword\\">import</span> styled <span class=\\"token keyword\\">from</span> <span class=\\"token string\\">'styled-components'</span><span class=\\"token punctuation\\">;</span>
-                  
-                  <span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`\`</span></span><span class=\\"token punctuation\\">;</span>
-                  ",
+                language="jsx"
+              >
+                <pre
+                  className="prism-code c13"
+                  contentEditable={false}
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<span class=\\"token keyword\\">import</span> styled <span class=\\"token keyword\\">from</span> <span class=\\"token string\\">'styled-components'</span><span class=\\"token punctuation\\">;</span>
+                    
+                    <span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`\`</span></span><span class=\\"token punctuation\\">;</span>
+                    ",
+                    }
                   }
-                }
-                spellCheck="false"
-              />
-            </Editor>
-          </Styled(Editor)>
+                  spellCheck="false"
+                />
+              </Editor>
+            </Component>
+          </Styled(Component)>
         </CodeBlock>
         <Paragraph
           literal={null}
@@ -771,7 +781,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         "
           nodeKey="36:1-45:2"
         >
-          <Styled(Editor)
+          <Styled(Component)
             code="const Button = styled.button\`
             border-radius: 3px;
             padding: 0.25em 1em;
@@ -783,7 +793,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           "
             language="jsx"
           >
-            <Editor
+            <Component
               className="c13"
               code="const Button = styled.button\`
               border-radius: 3px;
@@ -797,26 +807,41 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
               contentEditable={false}
               language="jsx"
             >
-              <pre
-                className="prism-code c13"
+              <Editor
+                className="c13"
+                code="const Button = styled.button\`
+                border-radius: 3px;
+                padding: 0.25em 1em;
+                margin: 0 1em;
+                background: transparent;
+                color: palevioletred;
+                border: 2px solid palevioletred;
+              \`;
+              "
                 contentEditable={false}
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
-                    <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
-                    <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
-                    <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
-                    <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
-                    <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
-                    <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
-                  \`</span></span><span class=\\"token punctuation\\">;</span>
-                  ",
+                language="jsx"
+              >
+                <pre
+                  className="prism-code c13"
+                  contentEditable={false}
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
+                      <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
+                    \`</span></span><span class=\\"token punctuation\\">;</span>
+                    ",
+                    }
                   }
-                }
-                spellCheck="false"
-              />
-            </Editor>
-          </Styled(Editor)>
+                  spellCheck="false"
+                />
+              </Editor>
+            </Component>
+          </Styled(Component)>
         </CodeBlock>
         <Paragraph
           literal={null}
@@ -939,7 +964,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
         "
           nodeKey="57:1-73:2"
         >
-          <Styled(Editor)
+          <Styled(Component)
             code="import styled, { css } from styled-components
           
           const Button = styled.button\`
@@ -958,7 +983,7 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
           "
             language="jsx"
           >
-            <Editor
+            <Component
               className="c13"
               code="import styled, { css } from styled-components
             
@@ -979,33 +1004,55 @@ exports[`HomepageGettingStarted renders correctly 1`] = `
               contentEditable={false}
               language="jsx"
             >
-              <pre
-                className="prism-code c13"
+              <Editor
+                className="c13"
+                code="import styled, { css } from styled-components
+              
+              const Button = styled.button\`
+                border-radius: 3px;
+                padding: 0.25em 1em;
+                margin: 0 1em;
+                background: transparent;
+                color: palevioletred;
+                border: 2px solid palevioletred;
+              
+                \${props => props.primary && css\`
+                  background: palevioletred;
+                  color: white;
+                \`}
+              \`;
+              "
                 contentEditable={false}
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<span class=\\"token keyword\\">import</span> styled<span class=\\"token punctuation\\">,</span> <span class=\\"token punctuation\\">{</span> css <span class=\\"token punctuation\\">}</span> <span class=\\"token keyword\\">from</span> styled<span class=\\"token operator\\">-</span>components
-                  
-                  <span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
-                    <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
-                    <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
-                    <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
-                    <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
-                    <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
-                    <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
-                  
-                    </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
-                      background: palevioletred;
-                      color: white;
-                    \`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
-                  \`</span></span><span class=\\"token punctuation\\">;</span>
-                  ",
+                language="jsx"
+              >
+                <pre
+                  className="prism-code c13"
+                  contentEditable={false}
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<span class=\\"token keyword\\">import</span> styled<span class=\\"token punctuation\\">,</span> <span class=\\"token punctuation\\">{</span> css <span class=\\"token punctuation\\">}</span> <span class=\\"token keyword\\">from</span> styled<span class=\\"token operator\\">-</span>components
+                    
+                    <span class=\\"token keyword\\">const</span> Button <span class=\\"token operator\\">=</span> styled<span class=\\"token punctuation\\">.</span>button<span class=\\"token styled-template-string\\"><span class=\\"token string language-css\\">\`
+                      <span class=\\"token property\\">border-radius</span><span class=\\"token punctuation\\">:</span> 3px</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">padding</span><span class=\\"token punctuation\\">:</span> 0.25em 1em</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">margin</span><span class=\\"token punctuation\\">:</span> 0 1em</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> transparent</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> palevioletred</span>;<span class=\\"token string language-css\\">
+                      <span class=\\"token property\\">border</span><span class=\\"token punctuation\\">:</span> 2px solid palevioletred</span>;<span class=\\"token string language-css\\">
+                    
+                      </span><span class=\\"token interpolation\\"><span class=\\"token interpolation-punctuation punctuation\\">\${</span>props <span class=\\"token operator\\">=></span> props<span class=\\"token punctuation\\">.</span>primary <span class=\\"token operator\\">&amp;&amp;</span> css<span class=\\"token template-string\\"><span class=\\"token string\\">\`
+                        background: palevioletred;
+                        color: white;
+                      \`</span></span><span class=\\"token interpolation-punctuation punctuation\\">}</span></span><span class=\\"token string language-css\\">
+                    \`</span></span><span class=\\"token punctuation\\">;</span>
+                    ",
+                    }
                   }
-                }
-                spellCheck="false"
-              />
-            </Editor>
-          </Styled(Editor)>
+                  spellCheck="false"
+                />
+              </Editor>
+            </Component>
+          </Styled(Component)>
         </CodeBlock>
         <Paragraph
           literal={null}

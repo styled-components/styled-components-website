@@ -2,6 +2,7 @@
   "name": "styled-components-docs",
   "version": "1.0.0",
   "license": "MIT",
+  "engines" : { "node" : ">=8.0.0" },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
