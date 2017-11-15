@@ -9,6 +9,6 @@ const TwoDomClasses = () => md`
 
   The other is dynamic, meaning it will be different for every element of your styled component with different props, based on what the interpolations result in.
 
-  For example, the styled component <Button /> would render with the same static class every time. If the styles are changed using interpolations, like <Button secondary />, then the dynamic class will be a different one, while the static class would remain the same.
+  For example, the styled component \`<Button />\` would render with the same static class every time. If the styles are changed using interpolations, like \`<Button secondary />\`, then the dynamic class will be a different one, while the static class would remain the same.
 `
 export default TwoDomClasses
