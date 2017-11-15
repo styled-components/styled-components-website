@@ -1309,10 +1309,12 @@ exports[`DocsLayout renders correctly 1`] = `
         </div>
       </Nav>
       <styled.div
+        data-e2e-id="content"
         moveRight={false}
       >
         <div
           className="c28"
+          data-e2e-id="content"
         >
           <styled.h1>
             <h1
@@ -1321,9 +1323,6 @@ exports[`DocsLayout renders correctly 1`] = `
           </styled.h1>
         </div>
       </styled.div>
-      <div
-        className="end-of-docs"
-      />
     </div>
   </styled.div>
 </DocsLayout>

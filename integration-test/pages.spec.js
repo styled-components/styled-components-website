@@ -19,6 +19,10 @@ const globalCss = `
   pre, pre * {
     font-family: 'Courier' !important;
   }
+
+  .hero-header {
+    min-height: auto !important;
+  }
 `
 
 const PORT = process.env.PORT || 12345
@@ -45,7 +49,8 @@ describe('Pages', () => {
     page = await browser.newPage()
 
     page.on('request', req => {
-      if (!req.url.startsWith(`http://localhost:${PORT}`) && !req.url.endsWith('fonts.css')) {
+      if (!req.url.startsWith(`http://localhost:${PORT}`)) {
+        console.log(req.url)
         req.abort()
       } else {
         req.continue()
@@ -70,22 +75,22 @@ describe('Pages', () => {
     errors = []
   })
 
-  const assertPage = (docPage, isFirst) => {
-    const message = isFirst ? `should match ${docPage.title} snapshot` : `should render ${docPage.title} until the end of the docs page`;
+  const assertPage = (title, endpoint, shouldSnapshot) => {
+    const message = shouldSnapshot ? `should match ${title} snapshot` : `should render ${title} until the end of the docs page`;
 
     it(message, async () => {
-      await page.goto(`http://localhost:${PORT}/docs/${docPage.pathname}`)
+      await page.goto(`http://localhost:${PORT}${endpoint}`)
       await page.addStyleTag({ content: globalCss })
 
-      const element = await page.$('.end-of-docs')
+      const element = await page.$('div[data-e2e-id="content"]')
       expect(element).not.toBe(null)
 
       // We'll only test the first page for a matching screenshot
-      if (isFirst) {
+      if (shouldSnapshot) {
         const screenshot = await page.screenshot({ fullPage: true })
 
         expect(screenshot).toMatchImageSnapshot({
-          customSnapshotIdentifier: docPage.title,
+          customSnapshotIdentifier: title,
           customSnapshotsDir: resolve(__dirname, '__image_snapshots__'),
           failureThreshold: '0.06',
           failureThresholdType: 'percent'
@@ -96,8 +101,10 @@ describe('Pages', () => {
     })
   }
 
+  assertPage('Homepage', '/', true)
+
   for (let i = 0; i < docs.pages.length; i++) {
     const docPage = docs.pages[i]
-    assertPage(docPage, i === 0)
+    assertPage(docPage.title, `/docs/${docPage.pathname}`, i === 0)
   }
 })

@@ -131,7 +131,9 @@ const CompanyLogo = styled.span`
   }
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.attrs({
+  className: 'hero-header' // for integration tests
+})`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -296,8 +298,7 @@ class Index extends PureComponent {
         <HomepageGettingStarted />
 
         <Footer>
-          <Content hero>
-            {'Hosted on ▲ ZEIT Now'}
+          <Content hero> {'Hosted on ▲ ZEIT Now'}
 
             <br />
 
