@@ -32,7 +32,7 @@ const CSS = () => md`
   import styled, { css } from 'styled-components';
 
   const complexMixin = css\`
-    color: \${props => props.whiteColor ? 'white': 'black'}
+    color: \${props => props.whiteColor ? 'white' : 'black'}
   \`;
 
   const StyledComp = styled.div\`
