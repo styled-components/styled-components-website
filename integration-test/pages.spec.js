@@ -50,7 +50,6 @@ describe('Pages', () => {
 
     page.on('request', req => {
       if (!req.url.startsWith(`http://localhost:${PORT}`)) {
-        console.log(req.url)
         req.abort()
       } else {
         req.continue()
