@@ -13,7 +13,7 @@
     "start": "NODE_ENV=production node server.js",
     "test": "jest -c .jest.config.js",
     "preintegration": "next build",
-    "integration": "jest -c .jest-integration.config.js --forceExit --silent --runInBand --bail",
+    "integration": "jest -c .jest-integration.config.js --forceExit --silent --runInBand",
     "precommit": "lint-staged"
   },
   "dependencies": {

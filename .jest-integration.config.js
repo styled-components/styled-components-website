@@ -1,5 +1,7 @@
 module.exports = {
   testPathIgnorePatterns: ['/node_modules/', '/test/'],
   browser: false,
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  verbose: false,
+  bail: true
 };

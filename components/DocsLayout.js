@@ -61,6 +61,9 @@ class DocsLayout extends Component {
 
           {children}
         </Content>
+
+        {/* used for integration tests */}
+        <div className="end-of-docs" />
       </Container>
     )
   }

@@ -24,6 +24,7 @@ const globalCss = `
 const PORT = process.env.PORT || 12345
 
 describe('Pages', () => {
+  let errors = []
   let browser
   let page
   let app
@@ -51,8 +52,12 @@ describe('Pages', () => {
       }
     })
 
+    page.on('pageerror', err => {
+      errors.push(err)
+    })
+
     await page.setRequestInterceptionEnabled(true);
-    await page.setViewport({ width: 600, height: 400, deviceScaleFactor: 1 })
+    await page.setViewport({ width: 1024, height: 768, deviceScaleFactor: 1 })
   })
 
   afterAll(async () => {
@@ -61,23 +66,38 @@ describe('Pages', () => {
     await app.close()
   })
 
-  const assertPage = async (docPage) => {
-    await page.goto(`http://localhost:${PORT}/docs/${docPage.pathname}`)
-    await page.addStyleTag({ content: globalCss })
+  beforeEach(() => {
+    errors = []
+  })
 
-    const screenshot = await page.screenshot({ fullPage: true })
+  const assertPage = (docPage, isFirst) => {
+    const message = isFirst ? `should match ${docPage.title} snapshot` : `should render ${docPage.title} until the end of the docs page`;
 
-    expect(screenshot).toMatchImageSnapshot({
-      customSnapshotIdentifier: docPage.title,
-      customSnapshotsDir: resolve(__dirname, '__image_snapshots__'),
-      failureThreshold: '0.05',
-      failureThresholdType: 'percent'
+    it(message, async () => {
+      await page.goto(`http://localhost:${PORT}/docs/${docPage.pathname}`)
+      await page.addStyleTag({ content: globalCss })
+
+      const element = await page.$('.end-of-docs')
+      expect(element).not.toBe(null)
+
+      // We'll only test the first page for a matching screenshot
+      if (isFirst) {
+        const screenshot = await page.screenshot({ fullPage: true })
+
+        expect(screenshot).toMatchImageSnapshot({
+          customSnapshotIdentifier: docPage.title,
+          customSnapshotsDir: resolve(__dirname, '__image_snapshots__'),
+          failureThreshold: '0.06',
+          failureThresholdType: 'percent'
+        })
+      }
+
+      expect(errors).toEqual([])
     })
   }
 
-  it('renders all pages correctly', async () => {
-    for (const docPage of docs.pages) {
-      await assertPage(docPage)
-    }
-  })
+  for (let i = 0; i < docs.pages.length; i++) {
+    const docPage = docs.pages[i]
+    assertPage(docPage, i === 0)
+  }
 })

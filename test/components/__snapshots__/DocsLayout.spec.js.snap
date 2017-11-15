@@ -1321,6 +1321,9 @@ exports[`DocsLayout renders correctly 1`] = `
           </styled.h1>
         </div>
       </styled.div>
+      <div
+        className="end-of-docs"
+      />
     </div>
   </styled.div>
 </DocsLayout>
