@@ -47,4 +47,4 @@ styled-components-website
 
 ### Got stuck?
 
-Feel free to ping us [on Spectrum](https://spectrum.chat/styled-components/website) if you get stuck somewhere while trying to make this website better, let's resolve it together!
+Feel free to ping us on [Spectrum](https://spectrum.chat/styled-components/website) if you get stuck somewhere while trying to make this website better, let's resolve it together!

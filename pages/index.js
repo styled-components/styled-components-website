@@ -4,7 +4,6 @@ import { LiveProvider, LiveEditor } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
-import { headerFont } from '../utils/fonts'
 import { violetRed, gold } from '../utils/colors'
 import { editorMixin, StyledError } from '../components/LiveEdit'
 import Link from '../components/Link'
@@ -47,6 +46,17 @@ const Button = styled.a\`
 `).trim()
 
 import { LiveContextTypes } from 'react-live/lib/components/Live/LiveProvider'
+import {
+  BloombergLogo,
+  AtlassianLogo,
+  RedditLogo,
+  TargetLogo,
+  EuroVisionLogo,
+  ArtsyLogo,
+  IdeaLogo,
+  HuffpostLogo,
+  CoinbaseLogo,
+} from '../components/CompanyLogos'
 
 const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button } }) => {
   const InternalButton = Button.withComponent(Link)
@@ -107,7 +117,7 @@ const UsersHeading = styled.p`
   opacity: 0.8;
 `
 
-const CompanyLogo = styled.img`
+const CompanyLogo = styled.span`
   position: relative;
   height: ${p => p.height || '2rem'};
   margin: 0.5rem;
@@ -121,7 +131,9 @@ const CompanyLogo = styled.img`
   }
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.attrs({
+  className: 'hero-header' // for integration tests
+})`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,11 +145,6 @@ const Wrapper = styled.div`
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
   min-height: 100vh;
-`
-
-const HeroContent = Content.extend`
-  font-family: ${headerFont};
-  width: 75rem;
 `
 
 const EditorContainer = styled.div`
@@ -220,7 +227,7 @@ class Index extends PureComponent {
         </WithIsScrolled>
 
         <Wrapper>
-          <HeroContent>
+          <Content hero>
             <LiveProvider
               code={headerCode}
               mountStylesheet={false}
@@ -248,22 +255,53 @@ class Index extends PureComponent {
             <UsersHeading>Used by folks at</UsersHeading>
 
             <UsersWrapper>
-              <CompanyLogo bottom="-0.2rem" height="1.75rem" src="/static/bloomberg-logo.svg" />
-              <CompanyLogo height="1.75rem" src="/static/atlassian-logo.svg" />
-              <CompanyLogo src="/static/reddit-logo.svg" />
-              <CompanyLogo src="/static/target-logo.svg" />
-              <CompanyLogo bottom="0.625rem" height="3rem" src="/static/eurovision-logo.svg" />
-              <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg" />
-              <CompanyLogo bottom="-0.15rem" height="1.5rem" src="/static/ideo-logo.svg" />
-              <CompanyLogo src="/static/huffpost-logo.svg" />
+              <CompanyLogo bottom="-0.2rem" height="1.75rem">
+                <BloombergLogo />
+              </CompanyLogo>
+
+              <CompanyLogo height="1.75rem">
+                <AtlassianLogo />
+              </CompanyLogo>
+
+              <CompanyLogo>
+                <RedditLogo />
+              </CompanyLogo>
+
+              <CompanyLogo>
+                <TargetLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="0.625rem" height="3rem">
+                <EuroVisionLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg">
+                <ArtsyLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="-0.15rem" height="1.5rem">
+                <IdeaLogo />
+              </CompanyLogo>
+
+              <CompanyLogo src="/static/huffpost-logo.svg">
+                <HuffpostLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="0.25rem" height="2rem" src="/static/coinbase-logo.svg">
+                <CoinbaseLogo />
+              </CompanyLogo>
+
             </UsersWrapper>
-          </HeroContent>
+          </Content>
         </Wrapper>
 
         <HomepageGettingStarted />
 
         <Footer>
-          <HeroContent>
+          <Content hero> {'Hosted on ▲ ZEIT Now'}
+
+            <br />
+
             {'Made with '}
             <Heart />
             {' by '}
@@ -272,7 +310,7 @@ class Index extends PureComponent {
             <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
             {' & '}
             <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
-          </HeroContent>
+          </Content>
         </Footer>
       </div>
     )

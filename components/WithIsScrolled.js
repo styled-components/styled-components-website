@@ -1,43 +1,35 @@
-import { PureComponent } from 'react'
-import debounce from 'debounce'
+import { Component } from 'react'
+import invariant from 'invariant'
 
-class WithIsScrolled extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.checkScroll = debounce(this.checkScroll, 50)
+class WithIsScrolled extends Component {
+  state = {
+    isScrolled: false
   }
 
-  state = {
-    isScrolled: false,
+  componentWillMount() {
+    invariant(typeof this.props.children === 'function', 'The children prop is expected to be a function')
   }
 
   componentDidMount() {
     // Learn more about how { passive: true } improves scrolling performance
     // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners
-    window.addEventListener('scroll', this.checkScroll, { passive: true })
+    window.addEventListener('scroll', this.onScroll, { passive: true })
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.checkScroll, { passive: true })
-
-    // Clear the debounce timer
-    this.checkScroll.clear()
+    window.removeEventListener('scroll', this.onScroll, { passive: true })
   }
 
-  checkScroll = () => {
-    const scrollPos = window.pageYOffset || document.body.scrollTop
-    this.setState({
-      isScrolled: scrollPos > 0,
-    })
+  onScroll = () => {
+    const isScrolled = (window.pageYOffset || document.body.scrollTop) > 0
+
+    if (isScrolled !== this.state.isScrolled) {
+      this.setState({ isScrolled })
+    }
   }
 
   render() {
-    const { children } = this.props
-    const { isScrolled } = this.state
-    const childrenProps = {
-      isScrolled,
-    }
-    return typeof children === 'function' ? children(childrenProps) : null
+    return this.props.children(this.state)
   }
 }
 

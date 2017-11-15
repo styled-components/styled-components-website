@@ -151,6 +151,7 @@ exports[`LiveEdit renders correctly 1`] = `
                     className="c2"
                     code=""
                     contentEditable={true}
+                    language="jsx"
                     onChange={[Function]}
                   >
                     <pre
@@ -165,6 +166,7 @@ exports[`LiveEdit renders correctly 1`] = `
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
+                      spellCheck="false"
                     />
                   </Editor>
                 </LiveEditor>

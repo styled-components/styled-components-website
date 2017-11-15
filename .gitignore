@@ -7,6 +7,8 @@ es/
 dist/
 npm-debug.log
 _book/
+package-lock.json
+__diff_output__
 
 # Mac
 .DS_Store

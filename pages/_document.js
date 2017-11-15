@@ -156,13 +156,12 @@ export default class MyDocument extends Document {
       sheet.collectStyles(<Component {...props} />
     ))
 
-    const styles = sheet.getStyleElement()
-
-    return { ...page, styles }
+    const styleElements = sheet.getStyleElement()
+    return { ...page, styleElements }
   }
 
   render () {
-    const { styles } = this.props
+    const { styleElements } = this.props
 
     return (
       <html>
@@ -177,14 +176,12 @@ export default class MyDocument extends Document {
           <meta name="author" content="styled-components" />
 
           <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
-
-          {styles}
-
-      <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WDWNSLK');` }}></script>
+          {styleElements}
+          <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WDWNSLK');` }}></script>
        </Head>
 
        <body>
-      <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDWNSLK" height="0" width="0" style="display:none;visibility:hidden"></iframe>` }}></noscript>
+         <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDWNSLK" height="0" width="0" style="display:none;visibility:hidden"></iframe>` }}></noscript>
          <div className="root">
            <Main />
          </div>
