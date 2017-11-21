@@ -53,14 +53,13 @@ const ReverseSelectors = () => md`
   consider both sets of rules to understand why Icon behaves as it does.
 
   ### Caveat
-
+  
   This behaviour is only supported within the context of *Styled* Components: 
-  attempting to mount `B` in the following example will fail (`Cannot call a 
-  class as a function`) because component `A` is an instance of React.Component 
-  not a Styled Component.
+  attempting to mount `B` in the following example will fail because component 
+  `A` is an instance of React.Component not a Styled Component.
 
-  \`\`\`react
-  class A extends React.Component<{}> {
+  ```react
+  class A extends React.Component {
     render() {
       return <div />;
     }
@@ -70,7 +69,10 @@ const ReverseSelectors = () => md`
     ${A} {
     }
   `;
-  \`\`\`
+  ```
+
+  The error thrown - `Cannot call a class as a function` - occurs because the 
+  styled component is attempting to call the component as an interpolation function.
 `;
 
 export default ReverseSelectors;
