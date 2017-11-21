@@ -1,4 +1,4 @@
-import md from "components/md";
+import md from "components/md"
 
 const ReverseSelectors = () => md`
   ## Can I refer to other components?
@@ -58,21 +58,21 @@ const ReverseSelectors = () => md`
   attempting to mount \`B\` in the following example will fail because component 
   \`A\` is an instance of React.Component not a Styled Component.
 
-  ```react
+  \`\`\`jsx
   class A extends React.Component {
     render() {
       return <div />;
     }
   }
   
-  const B = styled.div`
-    ${A} {
+  const B = styled.div\`
+    \${A} {
     }
-  `;
-  ```
+  \`;
+  \`\`\`
 
   The error thrown - \`Cannot call a class as a function\` - occurs because the 
   styled component is attempting to call the component as an interpolation function.
-`;
+`
 
-export default ReverseSelectors;
+export default ReverseSelectors
