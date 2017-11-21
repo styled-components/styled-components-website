@@ -55,8 +55,8 @@ const ReverseSelectors = () => md`
   ### Caveat
 
   This behaviour is only supported within the context of *Styled* Components: attempting to mount 
-  `B` in the following example will fail (`Cannot call a class as a function`) because the component 
-  we're trying to extend is an instance of React.Component not a Styled Component
+  `B` in the following example will fail (`Cannot call a class as a function`) because the referenced
+  component is an instance of React.Component not a Styled Component
 
   \`\`\`react
   class A extends React.Component<{}> {
