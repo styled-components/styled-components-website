@@ -1,4 +1,4 @@
-import md from 'components/md'
+import md from "components/md";
 
 const ReverseSelectors = () => md`
   ## Can I refer to other components?
@@ -51,6 +51,25 @@ const ReverseSelectors = () => md`
 
   We could have nested the color-changing rule within our Link component, but then we'd have to
   consider both sets of rules to understand why Icon behaves as it does.
-`
 
-export default ReverseSelectors
+  ### Caveat
+
+  This behaviour is only supported within the context of *Styled* Components: attempting to mount 
+  `B` in the following example will fail (`Cannot call a class as a function`) because the component 
+  we're trying to extend is an instance of React.Component not a Styled Component
+
+  \`\`\`react
+  class A extends React.Component<{}> {
+    render() {
+      return <div />;
+    }
+  }
+  
+  const B = styled.div`
+    ${A} {
+    }
+  `;
+  \`\`\`
+`;
+
+export default ReverseSelectors;
