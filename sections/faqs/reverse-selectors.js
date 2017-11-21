@@ -55,8 +55,8 @@ const ReverseSelectors = () => md`
   ### Caveat
   
   This behaviour is only supported within the context of *Styled* Components: 
-  attempting to mount `B` in the following example will fail because component 
-  `A` is an instance of React.Component not a Styled Component.
+  attempting to mount \`B\` in the following example will fail because component 
+  \`A\` is an instance of React.Component not a Styled Component.
 
   ```react
   class A extends React.Component {
@@ -71,7 +71,7 @@ const ReverseSelectors = () => md`
   `;
   ```
 
-  The error thrown - `Cannot call a class as a function` - occurs because the 
+  The error thrown - \`Cannot call a class as a function\` - occurs because the 
   styled component is attempting to call the component as an interpolation function.
 `;
 
