@@ -9,6 +9,9 @@ const ExistingCSS = () => md`
   styled-components generates an actual stylesheet with classes, and attaches those classes to
   the DOM nodes of styled components via the \`className\` prop.
   It injects the generated stylesheet at the end of the head of the document during runtime.
+  
+  If, for any reason, you need to inject the generated stylesheet to a different DOM element,
+  please see the [Targeted Styles](/docs/advanced#targeted-styles) section.
 
   ### Styling normal React components
 
