@@ -46,6 +46,21 @@ const AttachingAdditionalProps = () => md`
 
   As you can see, we get access to our newly created props in the interpolations, and
   the \`type\` attribute is passed down to the element.
+
+  You can also attach attributes to an existing styled component using the [Styling any components](docs/basics#styling-any-components) technique:
+
+  \`\`\`react
+  const Input = styled.input\`
+    color: palevioletred;
+  \`
+
+  const PasswordInput = styled(Input).attrs({
+    type: 'password',
+  })`
+    // additional style, or just empty string
+  `
+
+  \`\`\`  
 `
 
 export default AttachingAdditionalProps
