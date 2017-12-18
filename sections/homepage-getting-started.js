@@ -36,7 +36,7 @@ const SecondButton = styled.button`
 `
 
 const HomepageGettingStarted = () => (
-  <Content>
+  <Content data-e2e-id="content">
     <AlignCenter>
       <a href="https://github.com/styled-components/styled-components">
         <Badge src="/proxy/stars.svg" alt="Stars on GitHub" />

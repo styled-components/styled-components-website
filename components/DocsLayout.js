@@ -54,7 +54,7 @@ class DocsLayout extends Component {
           onRouteChange={this.onRouteChange}
         />
 
-        <Content moveRight={!isSideFolded}>
+        <Content moveRight={!isSideFolded} data-e2e-id="content">
           <Title>
             {title}
           </Title>

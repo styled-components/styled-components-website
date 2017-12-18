@@ -23,11 +23,13 @@ export const Content = styled.div`
 
   ${mobile(css`
     padding: ${rem(70)} ${rem(20)} ${rem(30)} ${rem(20)};
-
-    ${p => p.moveRight && css`
-      transform: translateX(${rem(sidebarWidth)});
-    `}
+    transform: translateX(${p => p.moveRight ? rem(sidebarWidth) : 0});
   `)}
+
+  ${p => p.hero && css`
+    font-family: ${headerFont};
+    width: 75rem;
+  `}
 `
 
 export const Title = styled.h1`

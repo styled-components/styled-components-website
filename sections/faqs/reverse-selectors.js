@@ -1,4 +1,4 @@
-import md from 'components/md'
+import md from "components/md"
 
 const ReverseSelectors = () => md`
   ## Can I refer to other components?
@@ -51,6 +51,28 @@ const ReverseSelectors = () => md`
 
   We could have nested the color-changing rule within our Link component, but then we'd have to
   consider both sets of rules to understand why Icon behaves as it does.
+
+  ### Caveat
+  
+  This behaviour is only supported within the context of *Styled* Components: 
+  attempting to mount \`B\` in the following example will fail because component 
+  \`A\` is an instance of React.Component not a Styled Component.
+
+  \`\`\`jsx
+  class A extends React.Component {
+    render() {
+      return <div />;
+    }
+  }
+  
+  const B = styled.div\`
+    \${A} {
+    }
+  \`;
+  \`\`\`
+
+  The error thrown - \`Cannot call a class as a function\` - occurs because the 
+  styled component is attempting to call the component as an interpolation function.
 `
 
 export default ReverseSelectors

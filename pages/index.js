@@ -4,7 +4,6 @@ import { LiveProvider, LiveEditor } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
-import { headerFont } from '../utils/fonts'
 import { violetRed, gold } from '../utils/colors'
 import { editorMixin, StyledError } from '../components/LiveEdit'
 import Link from '../components/Link'
@@ -132,7 +131,9 @@ const CompanyLogo = styled.span`
   }
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.attrs({
+  className: 'hero-header' // for integration tests
+})`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,11 +145,6 @@ const Wrapper = styled.div`
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
   min-height: 100vh;
-`
-
-const HeroContent = Content.extend`
-  font-family: ${headerFont};
-  width: 75rem;
 `
 
 const EditorContainer = styled.div`
@@ -231,7 +227,7 @@ class Index extends PureComponent {
         </WithIsScrolled>
 
         <Wrapper>
-          <HeroContent>
+          <Content hero>
             <LiveProvider
               code={headerCode}
               mountStylesheet={false}
@@ -296,14 +292,13 @@ class Index extends PureComponent {
               </CompanyLogo>
 
             </UsersWrapper>
-          </HeroContent>
+          </Content>
         </Wrapper>
 
         <HomepageGettingStarted />
 
         <Footer>
-          <HeroContent>
-            {'Hosted on ▲ ZEIT Now'}
+          <Content hero> {'Hosted on ▲ ZEIT Now'}
 
             <br />
 
@@ -315,7 +310,7 @@ class Index extends PureComponent {
             <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
             {' & '}
             <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
-          </HeroContent>
+          </Content>
         </Footer>
       </div>
     )
