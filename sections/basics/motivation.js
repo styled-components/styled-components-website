@@ -1,5 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { phone } from '../../utils/media'
 
 import rem from '../../utils/rem'
 import md from 'components/md'
@@ -13,9 +14,27 @@ const Video = styled.div.attrs({
     __html: videoHtml
   }
 })`
-  display: inline-block;
+  display: block;
   box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
   margin: ${rem(35)} 0;
+  position: relative;
+  width: 560px;
+  height: 315px;
+  padding-top: 0;
+
+  ${phone(css`
+    padding-top: calc(1 / (16 / 9) * 100%);
+    height: 0;
+    width: 100%;
+
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  `)}
 `
 
 const Motivation = () => md`

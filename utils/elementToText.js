@@ -1,17 +1,20 @@
 import { isValidElement } from 'react'
 
-const elementToText = node => {
-  if (Array.isArray(node)) {
-    return node
-      .map(elementToText)
-      .join('')
-  } else if (isValidElement(node)) {
-    return elementToText(node.props.children).trim()
-  } else if (typeof node === 'string') {
-    return node.trim()
+const whitespacesRe = /\s+/g
+const _format = (str = '') => str.trim().replace(whitespacesRe, ' ')
+
+const elementToTextRec = x => {
+  if (Array.isArray(x)) {
+    return x.map(elementToTextRec).join('')
+  } else if (isValidElement(x)) {
+    return elementToTextRec(x.props.children)
+  } else if (typeof x === 'string') {
+    return x || ''
   }
 
   return ''
 }
+
+const elementToText = node => _format(elementToTextRec(node))
 
 export default elementToText

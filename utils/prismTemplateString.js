@@ -1,5 +1,10 @@
-import 'react-live'
+import { languages } from 'prismjs/components/prism-core'
+import 'prismjs/components/prism-clike'
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-markup'
+import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-css'
+import 'prismjs/components/prism-json'
 
 // NOTE: This highlights template-strings as strings of CSS
 Prism.languages.insertBefore('jsx', 'template-string', {
@@ -15,14 +20,16 @@ Prism.languages.insertBefore('jsx', 'template-string', {
             pattern: /^\$\{|\}$/,
             alias: 'punctuation'
           },
-          rest: Prism.languages.jsx
+          rest: languages.jsx
         }
       },
       string: {
         pattern: /[^$;]+/,
-        inside: Prism.languages.css,
+        inside: languages.css,
         alias: 'language-css'
       }
     }
   }
 })
+
+export { languages }

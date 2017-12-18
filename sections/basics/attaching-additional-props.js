@@ -7,7 +7,7 @@ const AttachingAdditionalProps = () => md`
   or element, you can use the \`.attrs\` constructor. It allows you to attach
   additional props (or "attributes") to a component.
 
-  This way you can for example attach static props to an element, or pass a prop third-party prop
+  This way you can for example attach static props to an element, or pass a third-party prop
   like \`activeClassName\` to React Router's Link component. Furthermore you can also
   attach more dynamic props to a component. The \`.attrs\` object also takes functions,
   that receive the props that the component receives. The return value will be merged into the

@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import 'jest-styled-components'
-import Sidebar from '../../../components/Navbar/Sidebar'
+import Sidebar from '../../../components/Nav/Sidebar'
 
 test('Sidebar renders correctly', () => {
   const wrapper = mount(<Sidebar />)

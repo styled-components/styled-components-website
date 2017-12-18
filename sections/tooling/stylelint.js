@@ -57,6 +57,8 @@ Now you can lint your CSS by running the script! 🎉
 npm run lint:css
 \`\`\`
 
+> Beware that due to limitations on what is possible for Stylelint custom processors we cannot support the \`--fix\` option
+
 #### Webpack
 
 If you want to lint on build, rather than as a separate command, you can use the [\`stylelint-custom-processor-loader\`](https://github.com/emilgoldsmith/stylelint-custom-processor-loader) for webpack.
@@ -68,6 +70,32 @@ When using this processor a couple of stylelint rules throw errors that cannot b
 The [\`stylelint-config-styled-components\`](https://github.com/styled-components/stylelint-config-styled-components) will automatically disable rules that cause conflicts.
 
 > You can override rules defined in shared configs in your custom \`.stylelintrc\`.
+
+### Usage with other libraries
+
+Some other libraries also implement the \`styled.x\` pattern with tagged template literals. This processor will lint the CSS in those tagged template literals too, as long as they use the \`styled\` keyword.
+
+If you want to use the processor with another library but you also want to change the keyword (e.g. to write \`cool.div\` instead of \`styled.div\`) use the \`moduleName\` option:
+
+\`\`\`js
+import cool from 'other-library';
+
+const Button = cool.button\`
+  color: blue;
+\`
+\`\`\`
+
+\`\`\`json
+{
+  "processors": [["stylelint-processor-styled-components", {
+      "moduleName": "other-library"
+  }]]
+}
+\`\`\`
+
+> That double array is on purpose but only necessary if you set options, see the [processors configuration docs](https://stylelint.io/user-guide/configuration/#processors).
+
+> We only officially support \`styled-components\`, but the hope is that other libraries can also benefit from the processor.
 
 ### Interpolation tagging
 

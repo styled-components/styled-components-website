@@ -2,6 +2,7 @@ import lighten from 'polished/lib/color/lighten'
 import darken from 'polished/lib/color/darken'
 import shade from 'polished/lib/color/shade'
 
+export const paleGrey = '#efefef'
 export const lightGrey = 'rgba(20, 20, 20, 0.1)'
 export const darkGrey = darken(0.05, '#282a36')
 export const grey = '#282a36'
