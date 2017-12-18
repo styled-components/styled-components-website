@@ -8,9 +8,9 @@ import { mobile } from '../../utils/media'
 import { CloseIcon, FoldIcon, ArrowIcon } from './NavIcons'
 import Link from '../Link'
 import NavLinks from './NavLinks'
-import Social from './Social'
 import Logo from './Logo'
 import NavSeparator from './NavSeparator'
+import SearchWithAlgolia from './SearchWithAlgolia'
 import NavButton from './NavButton'
 
 const Wrapper = styled.div`
@@ -70,7 +70,7 @@ const ArrowWrapper = styled.div`
 `
 
 const SecondaryMenuItem = styled.div`
-  padding-right: ${rem(20)};
+  display: inline-block;
 `
 
 const MobileNavbar = props => {
@@ -110,7 +110,7 @@ const MobileNavbar = props => {
         <NavLinks />
         <NavSeparator />
         <SecondaryMenuItem>
-          <Social />
+          <SearchWithAlgolia />
         </SecondaryMenuItem>
       </SecondaryMenu>
     </Wrapper>
