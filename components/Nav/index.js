@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import SidebarMenu from './SidebarMenu'
+import { DocsSidebarMenu, SimpleSidebarMenu } from './SidebarMenus'
 
 const Nav = props => {
   const {
@@ -11,7 +11,9 @@ const Nav = props => {
     onMobileNavToggle,
     onRouteChange,
     showSideNav,
+    useDocsSidebarMenu,
     transparent,
+    pages,
   } = props
 
   return (
@@ -24,11 +26,21 @@ const Nav = props => {
         onSideToggle={onSideToggle}
         onMobileNavToggle={onMobileNavToggle}
       />
+
       {showSideNav !== false && (
         <Sidebar isFolded={isSideFolded}>
-          <SidebarMenu onRouteChange={onRouteChange} />
-          </Sidebar>
+
+          {useDocsSidebarMenu !== false ?
+            <DocsSidebarMenu onRouteChange={onRouteChange} /> :
+            <SimpleSidebarMenu
+              onRouteChange={onRouteChange}
+              pages={pages}
+            />
+          }
+
+        </Sidebar>
       )}
+
     </div>
   )
 }

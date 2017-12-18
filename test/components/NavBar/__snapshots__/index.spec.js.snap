@@ -1001,7 +1001,7 @@ exports[`Nav renders correctly 1`] = `
         <nav
           className="c22"
         >
-          <SidebarMenu>
+          <DocsSidebarMenu>
             <styled.div>
               <div
                 className="c23"
@@ -1203,7 +1203,7 @@ exports[`Nav renders correctly 1`] = `
                 </Folder>
               </div>
             </styled.div>
-          </SidebarMenu>
+          </DocsSidebarMenu>
         </nav>
       </styled.nav>
     </styled.nav>

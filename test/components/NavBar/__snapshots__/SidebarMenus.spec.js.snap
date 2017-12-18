@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SidebarMenu renders correctly 1`] = `
+exports[`DocsSidebarMenu renders correctly 1`] = `
 .c3 {
   display: inline-block;
   text-decoration: none;
@@ -126,4 +126,17 @@ exports[`SidebarMenu renders correctly 1`] = `
     </h4>
   </div>
 </div>
+`;
+
+exports[`SimpleSidebarMenu renders correctly 1`] = `
+.c0 {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 1.3888888888888888rem;
+}
+
+<div
+  className="c0"
+/>
 `;
