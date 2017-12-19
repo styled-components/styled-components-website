@@ -102,6 +102,9 @@
         },
         {
           "title": "Styled Theming"
+        },
+        {
+          "title": "Syntax Highlighting"
         }
       ]
     },
