@@ -87,7 +87,7 @@ export const CoinbaseLogo = () => (
 )
 
 export const PatreonLogo = () => (
-  <Svg viewBox="0 0 292 104">
+  <Svg viewBox="0 14 292 70">
     <path fill="#FFF" fillRule="evenodd" d="M284 104V0h8v104h-8zm-42-69h7v33h-7l-12-22v22h-8V35h8l12 21V35zm-50-1c11 0 17 8 17 17s-6 17-17 17-18-8-18-17 7-17 18-17zm10 17c0-5-4-10-10-10s-10 5-10 10c0 6 4 11 10 11s10-5 10-11zM69 41v-6h22v6h-7v27h-8V41h-7zm81 7h12v6h-12v8h12v6h-20V35h20v6h-12v7zm-33-13c7 0 12 5 12 12 0 4-2 8-7 10l7 11h-9l-6-9h-3v9h-8V35h14zm4 12c0-3-2-6-5-6h-5v11h5c3 0 5-2 5-5zM54 64H42l-1 4h-8l11-33h7l12 33h-8l-1-4zm-6-20l-4 14h8l-4-14zm-34-9c7 0 12 5 12 12 0 6-5 12-12 12H8v9H0V35h14zm4 12c0-3-2-6-5-6H8v11h5c3 0 5-2 5-5z"/>
   </Svg>
 )
