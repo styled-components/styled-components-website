@@ -56,6 +56,7 @@ import {
   IdeaLogo,
   HuffpostLogo,
   CoinbaseLogo,
+  PatreonLogo
 } from '../components/CompanyLogos'
 
 const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button } }) => {
@@ -291,6 +292,9 @@ class Index extends PureComponent {
                 <CoinbaseLogo />
               </CompanyLogo>
 
+              <CompanyLogo>
+                <PatreonLogo />
+              </CompanyLogo>
             </UsersWrapper>
           </Content>
         </Wrapper>
