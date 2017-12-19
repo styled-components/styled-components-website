@@ -60,7 +60,7 @@ describe('Pages', () => {
       errors.push(err)
     })
 
-    await page.setRequestInterceptionEnabled(true);
+    await page.setRequestInterception(true);
     await page.setViewport({ width: 1024, height: 768, deviceScaleFactor: 1 })
   })
 
