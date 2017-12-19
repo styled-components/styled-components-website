@@ -3,7 +3,7 @@ import md from 'components/md'
 const SyntaxHighlighting = () => md`
   ## Syntax Highlighting
 
-  The one thing you lose when writing CSS in template literals is syntax highlighting. We're working hard on making proper syntax highlighting happening in all editors. We currently have support for Atom, Visual Studio Code, WebStorm, and soon Sublime Text.
+  The one thing you used to lose when writing CSS in template literals is syntax highlighting. We're working hard on making proper syntax highlighting happening in all editors. We currently have support for Atom, Visual Studio Code, WebStorm, and soon Sublime Text.
 
 This is what it looks like when properly highlighted:
 
@@ -39,7 +39,7 @@ The [\`webstorm-styled-components\`](https://github.com/styled-components/websto
 
 ### Other Editors
 
-We could use your help to get syntax highlighting support to other editors! If you want to start working on syntax highlighting for your editor, open an issue to let us know.
+We could use your help to get syntax highlighting support to other editors! All these syntax highlighting were built by the Styled Components community so if you want to start working on syntax highlighting for your editor, we would love to see it.
 `
 
 export default SyntaxHighlighting
