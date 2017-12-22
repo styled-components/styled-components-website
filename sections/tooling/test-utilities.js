@@ -59,7 +59,7 @@ const TestUtilities = () => md`
 
   ### \`toHaveStyleRule\`
 
-  If we only want to check whether a particular style has been appled to
+  If we only want to check whether a particular style has been applied to
   an element, we can use the \`toHaveStyleRule\` matcher.
   This function takes two required parameters, a property (string) and
   a value (string or RegExp), and an optional object to search for rules
