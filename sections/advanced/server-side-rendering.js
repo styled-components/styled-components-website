@@ -40,7 +40,7 @@ const ServerSideRendering = () => md`
   const styleTags = sheet.getStyleTags() // or sheet.getStyleElement()
   \`\`\`
 
-  The \`sheet.getStyleTags()\` returns a string of multiple \`&lt;style&gt;\` tags.
+  The \`sheet.getStyleTags()\` returns a string of multiple \`<style>\` tags.
   You need to take this into account when adding the CSS string to your HTML output.
 
   Alternatively the \`ServerStyleSheet\` instance also has a \`getStyleElement()\` method
