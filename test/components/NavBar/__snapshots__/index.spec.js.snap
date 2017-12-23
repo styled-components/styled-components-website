@@ -419,32 +419,6 @@ exports[`Nav renders correctly 1`] = `
                         className="c5"
                       >
                         <Styled(Link)
-                          href="/"
-                        >
-                          <Link
-                            className="c6"
-                            href="/"
-                            unstyled={true}
-                          >
-                            <Link
-                              href="/"
-                            >
-                              <a
-                                className="c6"
-                                href="/"
-                                onClick={[Function]}
-                              >
-                                Homepage
-                              </a>
-                            </Link>
-                          </Link>
-                        </Styled(Link)>
-                        <styled.span>
-                          <span
-                            className="c7"
-                          />
-                        </styled.span>
-                        <Styled(Link)
                           href="/docs"
                         >
                           <Link
@@ -487,6 +461,32 @@ exports[`Nav renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 Ecosystem
+                              </a>
+                            </Link>
+                          </Link>
+                        </Styled(Link)>
+                        <styled.span>
+                          <span
+                            className="c7"
+                          />
+                        </styled.span>
+                        <Styled(Link)
+                          href="/releases"
+                        >
+                          <Link
+                            className="c6"
+                            href="/releases"
+                            unstyled={true}
+                          >
+                            <Link
+                              href="/releases"
+                            >
+                              <a
+                                className="c6"
+                                href="/releases"
+                                onClick={[Function]}
+                              >
+                                Releases
                               </a>
                             </Link>
                           </Link>
@@ -768,32 +768,6 @@ exports[`Nav renders correctly 1`] = `
                           className="c5"
                         >
                           <Styled(Link)
-                            href="/"
-                          >
-                            <Link
-                              className="c6"
-                              href="/"
-                              unstyled={true}
-                            >
-                              <Link
-                                href="/"
-                              >
-                                <a
-                                  className="c6"
-                                  href="/"
-                                  onClick={[Function]}
-                                >
-                                  Homepage
-                                </a>
-                              </Link>
-                            </Link>
-                          </Styled(Link)>
-                          <styled.span>
-                            <span
-                              className="c7"
-                            />
-                          </styled.span>
-                          <Styled(Link)
                             href="/docs"
                           >
                             <Link
@@ -836,6 +810,32 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   Ecosystem
+                                </a>
+                              </Link>
+                            </Link>
+                          </Styled(Link)>
+                          <styled.span>
+                            <span
+                              className="c7"
+                            />
+                          </styled.span>
+                          <Styled(Link)
+                            href="/releases"
+                          >
+                            <Link
+                              className="c6"
+                              href="/releases"
+                              unstyled={true}
+                            >
+                              <Link
+                                href="/releases"
+                              >
+                                <a
+                                  className="c6"
+                                  href="/releases"
+                                  onClick={[Function]}
+                                >
+                                  Releases
                                 </a>
                               </Link>
                             </Link>
