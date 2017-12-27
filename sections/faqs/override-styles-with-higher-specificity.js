@@ -3,9 +3,9 @@ import md from 'components/md'
 const OverrideStyles = () => md`
   ## How can I override styles with higher specificity?
 
-  The way to override styles with a high specificity is to simply increase the specificity of you own styles. This could be done using \`!important\`, but that's error prone and generally not a good idea.
+  The way to override styles with a high specificity is to simply increase the specificity of your own styles. This could be done using \`!important\`, but that's error prone and generally not a good idea.
 
-  We recommend the following technique;
+  We recommend the following technique:
 
   \`\`\`js
   const MyStyledComponent = styled(AlreadyStyledComponent)\`
