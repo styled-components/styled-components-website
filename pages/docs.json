@@ -117,6 +117,7 @@
         { "title": "When should I use styled()?" },
         { "title": "Can I use css frameworks?" },
         { "title": "How can I override styles with higher specificity?" },
+        { "title": "How can I override inline styles?" },
         { "title": "Why do my DOM nodes have two classes?" }
       ]
     }

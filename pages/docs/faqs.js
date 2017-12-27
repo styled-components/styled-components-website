@@ -6,6 +6,7 @@ import ReverseSelectors from '../../sections/faqs/reverse-selectors'
 import ExtendAndStyled from '../../sections/faqs/extend-and-styled-difference'
 import CSSFrameworks from '../../sections/faqs/support-for-css-frameworks'
 import OverrideStyles from '../../sections/faqs/override-styles-with-higher-specificity'
+import OverrideInlineStyles from '../../sections/faqs/override-inline-styles'
 import TwoDomClasses from '../../sections/faqs/dom-two-classes'
 
 const FAQs = () => (
@@ -15,6 +16,7 @@ const FAQs = () => (
     <ExtendAndStyled />
     <CSSFrameworks />
     <OverrideStyles />
+    <OverrideInlineStyles />
     <TwoDomClasses />
   </DocsLayout>
 )
