@@ -27,7 +27,7 @@ const Releases = ({ releases, sidebarPages }) => (
     `}
     {releases ? releases.map(release =>
       <section key={release.id}>
-        <Anchor id={release.name.split('.').join("")}>
+        <Anchor id={release.name}>
           <ReleaseName>{release.name} <i>({getFormattedDate(release.created_at)})</i></ReleaseName>
         </Anchor>
         {md(release.body)}
@@ -38,7 +38,6 @@ const Releases = ({ releases, sidebarPages }) => (
 
 Releases.getInitialProps = async () => {
   const releases = await getReleases()
-
   return {
     releases,
     sidebarPages: releases.map(release => ({ title: release.name, href: release.name }))
