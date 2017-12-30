@@ -312,16 +312,6 @@ exports[`MobileNavbar renders correctly 1`] = `
     >
       <a
         className="c8"
-        href="/"
-        onClick={[Function]}
-      >
-        Homepage
-      </a>
-      <span
-        className="c9"
-      />
-      <a
-        className="c8"
         href="/docs"
         onClick={[Function]}
       >
@@ -336,6 +326,16 @@ exports[`MobileNavbar renders correctly 1`] = `
         onClick={[Function]}
       >
         Ecosystem
+      </a>
+      <span
+        className="c9"
+      />
+      <a
+        className="c8"
+        href="/releases"
+        onClick={[Function]}
+      >
+        Releases
       </a>
     </nav>
     <span

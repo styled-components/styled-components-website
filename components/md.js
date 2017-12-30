@@ -85,6 +85,8 @@ const md = (strings, ...values) => {
           return <LiveEdit code={literal} noInline />
         } else if (language === 'react-inline') {
           return <LiveEdit code={literal} />
+        } else if (language === 'sh') {
+          return <CodeBlock code={literal} language="bash" />
         }
 
         return <CodeBlock code={literal} language={language} />
