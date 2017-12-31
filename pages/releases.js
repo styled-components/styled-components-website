@@ -19,7 +19,7 @@ const Date = styled.span`
   display: block;
   color: rgb(243, 182, 97);
   font-size: 16px;
-  margin-top: ${rem(-10)};
+  margin-top: ${rem(-5)};
 `
 
 const Releases = ({ releases, sidebarPages }) => (
