@@ -15,6 +15,13 @@ const ReleaseName = styled.span`
   display: block;
 `
 
+const Date = styled.span`
+  display: block;
+  color: rgb(243, 182, 97);
+  font-size: 16px;
+  margin-top: ${rem(-5)};
+`
+
 const Releases = ({ releases, sidebarPages }) => (
   <DocsLayout
     useDocsSidebarMenu={false}
@@ -28,7 +35,7 @@ const Releases = ({ releases, sidebarPages }) => (
     {releases ? releases.map(release =>
       <section key={release.id}>
         <Anchor id={release.name}>
-          <ReleaseName>{release.name} <i>({getFormattedDate(release.created_at)})</i></ReleaseName>
+          <ReleaseName>{release.name} <Date>{getFormattedDate(release.created_at)}</Date></ReleaseName>
         </Anchor>
         {md(release.body)}
       </section>
