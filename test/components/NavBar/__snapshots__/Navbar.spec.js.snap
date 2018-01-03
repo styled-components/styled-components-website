@@ -209,6 +209,14 @@ exports[`Navbar renders correctly 1`] = `
   vertical-align: center;
 }
 
+.c17 span {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
 .c19 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
@@ -474,6 +482,9 @@ exports[`Navbar renders correctly 1`] = `
       <div
         className="c18"
       />
+      <span>
+        Home
+      </span>
     </a>
     <button
       className="c15"

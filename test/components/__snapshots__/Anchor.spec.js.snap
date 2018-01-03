@@ -22,6 +22,14 @@ exports[`Anchor renders correctly 1`] = `
   color: inherit;
 }
 
+.c4 span {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
 .c5 {
   width: 1.1111111111111112rem;
   opacity: 0.7;
@@ -82,6 +90,9 @@ exports[`Anchor renders correctly 1`] = `
         fillRule="evenodd"
       />
     </svg>
+    <span>
+      Anchor link:
+    </span>
   </a>
 </h2>
 `;

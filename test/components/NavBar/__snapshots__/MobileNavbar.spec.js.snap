@@ -198,6 +198,14 @@ exports[`MobileNavbar renders correctly 1`] = `
   vertical-align: center;
 }
 
+.c3 span {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
 .c5 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
@@ -270,6 +278,9 @@ exports[`MobileNavbar renders correctly 1`] = `
     <div
       className="c4"
     />
+    <span>
+      Home
+    </span>
   </a>
   <button
     className="c1"

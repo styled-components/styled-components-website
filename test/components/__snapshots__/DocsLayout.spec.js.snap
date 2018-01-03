@@ -217,6 +217,14 @@ exports[`DocsLayout renders correctly 1`] = `
   vertical-align: center;
 }
 
+.c18 span {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
 .c20 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
@@ -780,6 +788,9 @@ exports[`DocsLayout renders correctly 1`] = `
                                   className="c19"
                                 />
                               </styled.div>
+                              <span>
+                                Home
+                              </span>
                             </a>
                           </Link>
                         </Link>
