@@ -8,6 +8,7 @@ import CSSFrameworks from '../../sections/faqs/support-for-css-frameworks'
 import OverrideStyles from '../../sections/faqs/override-styles-with-higher-specificity'
 import OverrideInlineStyles from '../../sections/faqs/override-inline-styles'
 import TwoDomClasses from '../../sections/faqs/dom-two-classes'
+import BrowserSupport from '../../sections/faqs/browser-support'
 
 const FAQs = () => (
   <DocsLayout title="FAQs" description="Commonly asked questions about styled-components">
@@ -18,6 +19,7 @@ const FAQs = () => (
     <OverrideStyles />
     <OverrideInlineStyles />
     <TwoDomClasses />
+    <BrowserSupport />
   </DocsLayout>
 )
 
