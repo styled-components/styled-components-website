@@ -3,7 +3,7 @@ import md from 'components/md'
 const WhenToUseAttrs = () => md`
   ## When to use attrs?
 
-  You can pass in attributes to styled components using \`attrs\`, but
+  You can pass in attributes to styled components using [attrs](/docs/basics#attaching-additional-props), but
   it is not always sensible to do so.
 
   The rule of thumb is to use \`attrs\` when you want every instance of a styled
