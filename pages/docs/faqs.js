@@ -8,6 +8,7 @@ import CSSFrameworks from '../../sections/faqs/support-for-css-frameworks'
 import OverrideStyles from '../../sections/faqs/override-styles-with-higher-specificity'
 import OverrideInlineStyles from '../../sections/faqs/override-inline-styles'
 import TwoDomClasses from '../../sections/faqs/dom-two-classes'
+import LibraryAuthors from '../../sections/faqs/library-authors'
 import DuplicatedStyledComponents from '../../sections/faqs/duplicated-styled-components'
 
 const FAQs = () => (
@@ -19,6 +20,7 @@ const FAQs = () => (
     <OverrideStyles />
     <OverrideInlineStyles />
     <TwoDomClasses />
+    <LibraryAuthors />
     <DuplicatedStyledComponents />
   </DocsLayout>
 )

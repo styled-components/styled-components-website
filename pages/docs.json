@@ -119,7 +119,8 @@
         { "title": "How can I override styles with higher specificity?" },
         { "title": "How can I override inline styles?" },
         { "title": "Why do my DOM nodes have two classes?" },
-        { "title": "Why am I getting a warning about several instances of 'styled-components' on the page?" }
+        { "title": "I am a library author. Should I bundle styled-components with my library?" },
+        { "title": "Why am I getting a warning about several instances of module on the page?" }
       ]
     }
   ]
