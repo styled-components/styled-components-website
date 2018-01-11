@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import rem from '../utils/rem'
 
 import LinkIcon from 'react-octicons-svg/dist/LinkIcon'
-import { Header, SubHeader } from './Layout'
+import { Header, SubHeader, TertiaryHeader } from './Layout'
 import { mobile } from '../utils/media'
 
 const InvisibleAnchor = styled.div.attrs({
@@ -60,9 +60,21 @@ const AnchorHeader = styled(Header)`
 `
 
 const AnchorSubHeader = AnchorHeader.withComponent(SubHeader)
+const AnchorTertiaryHeader = AnchorHeader.withComponent(TertiaryHeader)
 
-const Link = ({ children, id, sub }) => {
-  const Child = sub ? AnchorSubHeader : AnchorHeader
+const Link = ({ children, level, id }) => {
+  let Child = AnchorHeader
+
+  switch(level) {
+    case 3:
+      Child = AnchorSubHeader
+      break
+    case 4:
+      Child = AnchorTertiaryHeader
+      break
+    default:
+      break
+  }
 
   return (
     <Child>
