@@ -118,7 +118,8 @@
         { "title": "Can I use css frameworks?" },
         { "title": "How can I override styles with higher specificity?" },
         { "title": "How can I override inline styles?" },
-        { "title": "Why do my DOM nodes have two classes?" }
+        { "title": "Why do my DOM nodes have two classes?" },
+        { "title": "When to use attrs?" }
       ]
     }
   ]
