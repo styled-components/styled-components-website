@@ -5,7 +5,7 @@ const BrowserSupport = () => md`
 
   All [browsers that React supports](https://reactjs.org/docs/react-dom.html#browser-support) are supported.
 
-  All major browsers including Internet Explorer 9 and above are supported.
+  This means all major browsers including Internet Explorer 9.
 `;
 
 export default BrowserSupport
