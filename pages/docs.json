@@ -63,6 +63,9 @@
         },
         {
           "title": "Server Side Rendering"
+        },
+        {
+          "title": "Referring to other components"
         }
       ]
     },
@@ -113,7 +116,6 @@
       "pathname": "faqs",
       "sections": [
         { "title": "Can I nest rules?" },
-        { "title": "Can I refer to other components?" },
         { "title": "When should I use styled()?" },
         { "title": "Can I use css frameworks?" },
         { "title": "How can I override styles with higher specificity?" },
