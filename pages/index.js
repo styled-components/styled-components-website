@@ -4,7 +4,8 @@ import { LiveProvider, LiveEditor } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
-import { violetRed, gold } from '../utils/colors'
+import { mobile } from '../utils/media'
+import { violetRed, gold, grey, paleGrey, red } from '../utils/colors'
 import { editorMixin, StyledError } from '../components/LiveEdit'
 import Link from '../components/Link'
 import { Content } from '../components/Layout'
@@ -173,10 +174,8 @@ const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
-
-  background: ${violetRed};
-  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.17);
+  color: ${grey};
+  background: ${paleGrey};
   box-sizing: border-box;
   margin-top: ${rem(50)};
 `
@@ -187,6 +186,19 @@ const Heart = styled(HeartIcon).attrs({
 })`
   display: inline-block;
   width: ${rem(17)};
+  color: ${red}
+`
+
+const FooterLink = styled(Link)`
+  color: ${grey};
+`
+
+const FooterContent = styled(Content)`
+  padding: ${rem(30)} ${rem(40)} ${rem(30)} ${rem(40)};
+
+  ${mobile(css`
+  padding: ${rem(30)} ${rem(20)} ${rem(30)} ${rem(20)};
+`)}
 `
 
 class Index extends PureComponent {
@@ -298,19 +310,19 @@ class Index extends PureComponent {
         <HomepageGettingStarted />
 
         <Footer>
-          <Content hero> {'Hosted on ▲ ZEIT Now'}
+          <FooterContent hero> {'Hosted on ▲ ZEIT Now'}
 
             <br />
 
             {'Made with '}
             <Heart />
             {' by '}
-            <Link inline white href="https://twitter.com/glenmaddern">@glenmaddern</Link>
+            <FooterLink inline href="https://twitter.com/glenmaddern">@glenmaddern</FooterLink>
             {', '}
-            <Link inline white href="https://twitter.com/mxstbr">@mxstbr</Link>
+            <FooterLink inline href="https://twitter.com/mxstbr">@mxstbr</FooterLink>
             {' & '}
-            <Link inline white href="https://twitter.com/_philpl">@_philpl‬</Link>
-          </Content>
+            <FooterLink inline href="https://twitter.com/_philpl">@_philpl‬</FooterLink>
+          </FooterContent>
         </Footer>
       </div>
     )

@@ -119,12 +119,11 @@ function isFolderOpen(currentHref, { pathname, title, sections }) {
 export const SimpleSidebarMenu = ({ onRouteChange, pages = [] }) => (
   <MenuInner>
     {
-      pages.map(({ title, pathname, sections }) => {
-
+      pages.map(({ title, pathname, sections, href }) => {
         if (!sections) {
           return (
             <TopLevelLink key={title}>
-              <StyledLink href={pathname || '#' + titleToDash(title)}>
+              <StyledLink href={pathname || '#' + (href || titleToDash(title))}>
                 {title}
               </StyledLink>
             </TopLevelLink>

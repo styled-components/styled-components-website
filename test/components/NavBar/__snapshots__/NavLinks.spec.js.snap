@@ -61,16 +61,6 @@ exports[`NavLinks renders correctly 1`] = `
 >
   <a
     className="c1"
-    href="/"
-    onClick={[Function]}
-  >
-    Homepage
-  </a>
-  <span
-    className="c2"
-  />
-  <a
-    className="c1"
     href="/docs"
     onClick={[Function]}
   >
@@ -85,6 +75,16 @@ exports[`NavLinks renders correctly 1`] = `
     onClick={[Function]}
   >
     Ecosystem
+  </a>
+  <span
+    className="c2"
+  />
+  <a
+    className="c1"
+    href="/releases"
+    onClick={[Function]}
+  >
+    Releases
   </a>
 </nav>
 `;

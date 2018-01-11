@@ -7,7 +7,7 @@ const elementToTextRec = x => {
   if (Array.isArray(x)) {
     return x.map(elementToTextRec).join('')
   } else if (isValidElement(x)) {
-    return elementToTextRec(x.props.children)
+    return elementToTextRec(x.children || x.props.children)
   } else if (typeof x === 'string') {
     return x || ''
   }
