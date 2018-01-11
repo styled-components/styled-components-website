@@ -55,3 +55,11 @@ export const SubHeader = styled.h3`
   font-weight: 500;
   font-family: ${headerFont};
 `
+
+export const TertiaryHeader = styled.h4`
+  display: block;
+  margin: ${rem(35)} 0 ${rem(22)} 0;
+  font-size: ${rem(18)};
+  font-weight: 600;
+  font-family: ${headerFont};
+`

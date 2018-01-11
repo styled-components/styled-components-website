@@ -120,7 +120,7 @@ const md = (strings, ...values) => {
         const hash = titleToDash(title)
 
         return (
-          <Anchor id={hash} sub={level > 2}>
+          <Anchor id={hash} level={level}>
             {title}
             {labels.length > 0 && (
               <LabelGroup>

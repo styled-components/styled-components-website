@@ -7,6 +7,7 @@ import Anchor from '../components/Anchor'
 import Loading from '../components/Loading'
 import rem from '../utils/rem'
 import { getFormattedDate } from '../utils/dates'
+import normalizeMdHeadings from '../utils/normalizeMdHeadings'
 
 
 const ReleaseName = styled.span`
@@ -37,7 +38,7 @@ const Releases = ({ releases, sidebarPages }) => (
         <Anchor id={release.name}>
           <ReleaseName>{release.name} <Date>{getFormattedDate(release.created_at)}</Date></ReleaseName>
         </Anchor>
-        {md(release.body)}
+        {md(normalizeMdHeadings(release.body, 3))}
       </section>
     ) : <Loading />}
   </DocsLayout>
