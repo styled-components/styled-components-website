@@ -56,12 +56,20 @@ const md = (strings, ...values) => {
     stripIndent(strings) :
     stripIndent(strings.join(PLACEHOLDER))
 
+  const idPrefix = typeof strings === 'string' && typeof values[0] === 'string' ?
+    values[0] + '_'  : ''
+
+  const startingLevel = typeof strings === 'string' ?
+    values[1] : null
+
   const parser = new Parser()
   const ast = parser.parse(input)
 
   if (!isValid(ast)) {
     throw new Error('Cannot interpolate React elements non-block positions')
   }
+
+  let topLevelHeading
 
   const renderer = new Renderer({
     renderers: {
@@ -101,6 +109,11 @@ const md = (strings, ...values) => {
       },
 
       Heading({ level, children }) {
+        if (startingLevel) {
+          topLevelHeading = topLevelHeading || Math.max(level, 1)
+          level+= startingLevel - topLevelHeading
+        }
+
         if (level === 1) {
           return <Title>{children}</Title>
         }
@@ -117,7 +130,7 @@ const md = (strings, ...values) => {
           return child
         })
 
-        const hash = titleToDash(title)
+        const hash = `${idPrefix}${titleToDash(title)}`
 
         return (
           <Anchor id={hash} sub={level > 2}>
