@@ -8,10 +8,22 @@ Please use a value greater than 0.
 No changes have been made to your markdown.
 `
 
-const createHeading = (level = 1) =>
-  Array(Math.max(level, 1))
-  .fill('#')
-  .join('')
+// dict of created headings to keep from calling Array().fill().join() more than needed.
+const headingsDict = {}
+
+const getHeading = (level = 1) => {
+  // prevent attempts at getting/making a heading < 1
+  level = Math.max(level, 1)
+
+  // if heading level hasn't been made before, make and add to dict
+  if (!headingsDict[level]) {
+    headingsDict[level] = Array(level)
+    .fill('#')
+    .join('')
+  }
+
+  return headingsDict[level]
+}
 
 const normalizeMdHeadings = (md, startingLevel = 1) => {
   if (startingLevel < 1) {
@@ -28,7 +40,7 @@ const normalizeMdHeadings = (md, startingLevel = 1) => {
   const modifier = startingLevel - firstHeading[2].length
 
   return md.replace(allHeadingsMatch, (match, leadingSpace, level, content) => (
-    `${leadingSpace}${createHeading(level.length + modifier)}${content}`
+    `${leadingSpace}${getHeading(level.length + modifier)}${content}`
   ))
 
 }
