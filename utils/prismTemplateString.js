@@ -5,6 +5,8 @@ import 'prismjs/components/prism-markup'
 import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-css'
 import 'prismjs/components/prism-json'
+import 'prismjs/components/prism-bash'
+import 'prismjs/components/prism-markdown'
 
 // NOTE: This highlights template-strings as strings of CSS
 Prism.languages.insertBefore('jsx', 'template-string', {

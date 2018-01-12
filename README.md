@@ -30,6 +30,14 @@ npm run dev
 
 > Note: This requires Node.js and npm to be set up locally, see [nodejs.org](https://nodejs.org) for more information.
 
+### Updating the visual diffs
+
+If you add a new section or materially change the website, it probably will trigger the image comparison diff snapshot to fail. These can be updated via:
+
+```sh
+yarn integration -u
+```
+
 ### Folder structure
 
 This is what each folder correlates to:

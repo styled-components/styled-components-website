@@ -7,7 +7,7 @@ const Code = styled.span`
   font-size: 90%;
   font-weight: 300;
   padding: 0 0.05em 0.1em;
-  vertical-align: bottom;
+  vertical-align: baseline;
   line-height: 1.4;
 `
 
