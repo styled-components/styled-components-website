@@ -55,6 +55,35 @@ const ServerSideRendering = () => md`
   You'll also need to customize the \`.babelrc\` and use \`babel-plugin-styled-components\`.
 
   Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo for an up-to-date usage example.
+
+  ### Apollo GraphQL
+
+  When using server side rendering with both styled-components and
+  [Apollo Client](https://www.apollographql.com/docs/react/recipes/server-side-rendering.html),
+  make sure that not only calls to React's render method are wrapped by a \`StyleSheetManager\`,
+  but calls to [getDataFromTree](https://www.apollographql.com/docs/react/recipes/server-side-rendering.html#getDataFromTree)
+  as well. Otherwise, styled-components will collect styles internally while \`getDataFromTree\` is executed
+  and styles will leak between different requests to the server.
+
+  \`\`\`jsx
+  import { renderToString } from 'react-dom/server'
+  import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
+  import { ApolloProvider, getDataFromTree } from 'react-apollo'
+
+  const sheet = new ServerStyleSheet()
+  const app = (
+    <ApolloProvider client={...}>
+      <StyleSheetManager sheet={sheet.instance}>
+        <YourApp />
+      </StyleSheetManager>
+    </ApolloProvider>
+  )
+
+  getDataFromTree(app).then(() => {
+    const html = renderToString(app)
+    const styleTags = sheet.getStyleTags() // or sheet.getStyleElement()
+  })
+  \`\`\`
 `
 
 export default ServerSideRendering
