@@ -72,7 +72,7 @@ The [\`stylelint-config-styled-components\`](https://github.com/styled-component
 > You can override rules defined in shared configs in your custom \`.stylelintrc\`.
 
 ### Known Issues
-- Comments are currently not being parsed properly with Typescript due to unexpected behaviour in the [\`typescript-eslint-parser\`](https://github.com/eslint/typescript-eslint-parser), this stops \`stylelint-disable\` type comments and interpolation tags from working with Typescript. It will be fixed when the stable version of [\`babylon@7\`](https://github.com/babel/babel/tree/master/packages/babylon) is released.
+- Comments are currently not being parsed properly with Typescript due to special behaviour by [\`typescript-eslint-parser\`](https://github.com/eslint/typescript-eslint-parser), this stops \`stylelint-disable\` type comments and interpolation tags from working with Typescript. It will be fixed when the stable version of [\`babylon@7\`](https://github.com/babel/babel/tree/master/packages/babylon) is released so we can use Babylon with Typescript.
 
 ### Usage with other libraries
 
