@@ -30,7 +30,7 @@ const Releases = ({ releases, sidebarPages }) => (
     description="Styled Components Releases"
   >
     {md`
-      Updating styled components is usually just an \`npm install\`, only major version might have breaking changes that will be noted in the [CHANGELOG](https://github.com/styled-components/styled-components/blob/master/CHANGELOG.md)
+      Updating styled components is usually as simple as \`npm install\`. Only major versions have the potential to introduce breaking changes (noted in the following release notes).
     `}
     {releases ? releases.map(release =>
       <section key={release.id}>
