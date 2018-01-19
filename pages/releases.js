@@ -37,7 +37,7 @@ const Releases = ({ releases, sidebarPages }) => (
         <Anchor id={release.name}>
           <ReleaseName>{release.name} <Date>{getFormattedDate(release.created_at)}</Date></ReleaseName>
         </Anchor>
-        {md(release.body)}
+        {md(release.body, release.name, 3)}
       </section>
     ) : <Loading />}
   </DocsLayout>
