@@ -9,7 +9,7 @@ const AlternativeInstallation = () => md`
     <script src="https://unpkg.com/styled-components/dist/styled-components.min.js" type="text/javascript"></script>
     \`\`\`
 
-    Alternatlively you can install \`styled-components\` with [bower](https://bower.io):
+    Alternatively you can install \`styled-components\` with [bower](https://bower.io):
 
     \`\`\`
     bower install styled-components=https://unpkg.com/styled-components/dist/styled-components.min.js
