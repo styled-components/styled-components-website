@@ -46,6 +46,8 @@ const ServerSideRendering = () => md`
   Alternatively the \`ServerStyleSheet\` instance also has a \`getStyleElement()\` method
   that returns an array of React elements.
 
+  Note that \`sheet.getStyleTags()\` and \`sheet.getStyleElement()\` can only be called after your element is rendered. As a result, components from \`sheet.getStyleElement()\` cannot be combined with \`<YourApp />\` into a larger component.
+
   ### Next.js
 
   Basically you need to add a custom \`pages/_document.js\` (if you don't have one). Then 
