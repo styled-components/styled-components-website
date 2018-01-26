@@ -32,7 +32,7 @@ const ServerSideRendering = () => md`
 
   const sheet = new ServerStyleSheet()
   const html = renderToString(
-    <StyleSheetManager sheet={sheet.instance}>
+    <StyleSheetManager sheet={sheet}>
       <YourApp />
     </StyleSheetManager>
   )
