@@ -122,7 +122,9 @@
         { "title": "How can I override inline styles?" },
         { "title": "Why do my DOM nodes have two classes?" },
         { "title": "When to use attrs?" },
-        { "title": "Which browsers are supported?" }    
+        { "title": "I am a library author. Should I bundle styled-components with my library?" },
+        { "title": "Why am I getting a warning about several instances of module on the page?" },
+        { "title": "Which browsers are supported?" }
       ]
     }
   ]
