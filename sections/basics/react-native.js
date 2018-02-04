@@ -3,13 +3,16 @@ import md from 'components/md'
 const ReactNative = () => md`
   ## React Native
 
-  styled-components can be used with React Native in the same way, except you
-  import it from \`styled-components/native\` instead. Try this example with
-  [Snack by Expo](https://snack.expo.io/@danielmschmidt/styled-components).
+  styled-components can be used with React Native in the same way and with the
+  same import. Try this example with [Snack by Expo](https://snack.expo.io/@danielmschmidt/styled-components).
+
+  > If you're not yet on v3 or higher, you will need to import styled-components
+  > on React Native from \`styled-components/native\`. This still works in v3
+  > but has been deprecated.
 
   ~~~jsx
   import React from "react";
-  import styled from "styled-components/native";
+  import styled from "styled-components";
 
   const StyledView = styled.View\`
     background-color: papayawhip;
