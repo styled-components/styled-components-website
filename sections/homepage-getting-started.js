@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 
 import md from 'components/md'
 import { Content } from 'components/Layout'
+import HomepageSponsors from './homepage-sponsors'
 
 const AlignCenter = styled.div`
   text-align: center;
@@ -169,6 +170,14 @@ const HomepageGettingStarted = () => (
       Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components!
 
       Once you're done take a look at the [documentation](/docs), specifically the [Getting started](/docs/basics#getting-started) section! Enjoy ✨
+
+      # Sponsors
+      Thanks goes to our sponsors who support our project. [Become a sponsor](https://opencollective.com/styled-components/)
+
+      ${
+        <HomepageSponsors />
+      }
+
     `}
   </Content>
 )
