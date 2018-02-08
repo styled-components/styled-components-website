@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
-import { LiveProvider, LiveEditor } from 'react-live'
+import { LiveProvider, LiveEditor, withLive } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
@@ -25,8 +25,24 @@ const SupportingTagline = styled.h2`
   font-weight: 400;
 `
 
+const FallbackButton = styled.a`
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+
+  ${props => props.primary && css`
+    background: white;
+    color: palevioletred;
+  `}
+`
+
 const headerCode = (`
-const Button = styled.a\`
+styled.a\`
   /* This renders the buttons above... Edit me! */
   display: inline-block;
   border-radius: 3px;
@@ -46,7 +62,6 @@ const Button = styled.a\`
 \`
 `).trim()
 
-import { LiveContextTypes } from 'react-live/lib/components/Live/LiveProvider'
 import {
   BloombergLogo,
   AtlassianLogo,
@@ -59,30 +74,34 @@ import {
   CoinbaseLogo,
 } from '../components/CompanyLogos'
 
-const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button } }) => {
-  const InternalButton = Button.withComponent(Link)
+const HomepageLivePreview = withLive(({
+  live: { element: Button = FallbackButton },
+  className,
+  ...rest
+}) => {
+  const LiveButton = Button.extend.withConfig({ componentId: 'LiveButton' })``
+  const LiveInternalButton = Button.withComponent(Link).extend.withConfig({ componentId: 'LiveInternalButton' })``
+
   return (
     <div
       {...rest}
       className={`react-live-preview ${className}`}
     >
-      <Button
+      <LiveButton
         href="https://github.com/styled-components/styled-components"
         target="_blank"
         rel="noopener"
         primary
       >
         GitHub
-      </Button>
+      </LiveButton>
 
-      <InternalButton href="/docs" prefetch>
+      <LiveInternalButton href="/docs" prefetch>
         Documentation
-      </InternalButton>
+      </LiveInternalButton>
     </div>
   )
-}
-
-HomepageLivePreview.contextTypes = LiveContextTypes
+})
 
 const Title = styled.div`
   margin: 2rem 0;

@@ -19,9 +19,10 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "@zeit/next-preact": "^0.0.5",
     "axios": "^0.17.1",
     "babel-plugin-polished": "^1.1.0",
-    "babel-plugin-styled-components": "^1.1.7",
+    "babel-plugin-styled-components": "^1.5.0",
     "commonmark": "^0.28.1",
     "commonmark-react-renderer": "^4.3.3",
     "express": "^4.15.2",
@@ -29,19 +30,18 @@
     "isomorphic-fetch": "^2.2.1",
     "lru-cache": "^4.0.2",
     "module-alias": "^2.0.0",
-    "next": "https://github.com/styled-components/styled-components-website/blob/master/vendor/next-v2.4.8.tgz?raw=true",
+    "next": "^5.0.0",
     "polished": "^1.3.0",
-    "preact": "^8.2.1",
-    "preact-compat": "^3.16.0",
+    "preact": "^8.2.7",
+    "preact-compat": "^3.18.0",
     "prismjs": "^1.6.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-live": "^1.8.0-2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-live": "^1.9.2",
     "react-octicons-svg": "^1.1.13",
     "styled-components": "^3.0.2",
     "styled-theming": "^2.2.0",
-    "sw-precache-webpack-plugin": "^0.11.4",
-    "webpack-bundle-analyzer": "^2.4.0"
+    "sw-precache-webpack-plugin": "^0.11.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

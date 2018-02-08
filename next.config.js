@@ -1,49 +1,27 @@
-const path = require('path')
+const withPreact = require('@zeit/next-preact')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
-module.exports = {
-  webpack: function (config, { dev }) {
-    if (dev) {
-      return config
+const returnConfig = (config, options, nextConfig = {}) => {
+  if (typeof nextConfig.webpack === 'function') {
+    return nextConfig.webpack(config, options)
+  }
+
+  return config
+}
+
+const config = (nextConfig = {}) => Object.assign({}, nextConfig, {
+  webpack(config, options) {
+    const { dev, isServer } = options
+    if (dev || !isServer) {
+      return returnConfig(config, options, nextConfig)
     }
-
-    config.plugins.push(
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'disabled',
-        // For all options see https://github.com/th0r/webpack-bundle-analyzer#as-plugin
-        generateStatsFile: true,
-        // Will be available at `.next/stats.json`
-        statsFilename: 'stats.json'
-      })
-    )
-
-    const oldEntry = config.entry
-
-    config.entry = () => oldEntry()
-      .then(entry => {
-        entry['main.js'].push(
-          path.resolve('./utils/offline.js'),
-          path.resolve('./utils/track.js')
-        )
-
-        entry.commons = ['./utils/prismTemplateString.js']
-        return entry
-      })
-
-    config.resolve.alias = config.resolve.alias || {}
 
     config.plugins.push(
       new SWPrecacheWebpackPlugin({
         filename: 'sw.js',
         minify: true,
-        staticFileGlobsIgnorePatterns: [
-          /\.next\//,
-          /sc-micro-analytics\.now\.sh/
-        ],
-        staticFileGlobs: [
-          'static/**/*' // Precache all static files by default
-        ],
+        staticFileGlobsIgnorePatterns: [/\.next\//],
+        staticFileGlobs: ['static/**/*'],
         forceDelete: true,
         runtimeCaching: [
           // Example with different handlers
@@ -59,9 +37,8 @@ module.exports = {
       })
     )
 
-    config.resolve.alias['react'] = 'preact-compat/dist/preact-compat'
-    config.resolve.alias['react-dom'] = 'preact-compat/dist/preact-compat'
-
-    return config
+    return returnConfig(config, options, nextConfig)
   }
-}
+})
+
+module.exports = withPreact(config())

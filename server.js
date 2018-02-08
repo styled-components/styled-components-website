@@ -1,10 +1,8 @@
 const dev = process.env.NODE_ENV !== 'production'
-const moduleAlias = require('module-alias')
 const path = require('path')
 
 if (!dev) {
-  moduleAlias.addAlias('react', 'preact-compat')
-  moduleAlias.addAlias('react-dom', 'preact-compat')
+  require('@zeit/next-preact/alias')()
 }
 
 const { parse } = require('url')
@@ -119,7 +117,7 @@ app.prepare()
     })
 
     server.get('/sw.js', (req, res) => {
-      res.sendFile(path.resolve('./.next/sw.js'))
+      res.sendFile(path.resolve('./.next/dist/sw.js'))
     })
 
     server.use('/static', express.static('./static', {
