@@ -98,8 +98,11 @@ exports[`LiveEdit renders correctly 1`] = `
   }
 }
 
-<LiveEdit>
+<LiveEdit
+  code="<h1>Hello World!</h1>"
+>
   <Styled(LiveProvider)
+    code="<h1>Hello World!</h1>"
     mountStylesheet={false}
     scope={
       Object {
@@ -113,7 +116,7 @@ exports[`LiveEdit renders correctly 1`] = `
   >
     <LiveProvider
       className="c0"
-      code=""
+      code="<h1>Hello World!</h1>"
       mountStylesheet={false}
       noInline={false}
       scope={
@@ -149,7 +152,7 @@ exports[`LiveEdit renders correctly 1`] = `
                 >
                   <Editor
                     className="c2"
-                    code=""
+                    code="<h1>Hello World!</h1>"
                     contentEditable={true}
                     language="jsx"
                     onChange={[Function]}
@@ -159,11 +162,13 @@ exports[`LiveEdit renders correctly 1`] = `
                       contentEditable={true}
                       dangerouslySetInnerHTML={
                         Object {
-                          "__html": "",
+                          "__html": "<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>h1</span><span class=\\"token punctuation\\">></span></span>Hello World<span class=\\"token operator\\">!</span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>h1</span><span class=\\"token punctuation\\">></span></span>",
                         }
                       }
                       onChange={[Function]}
                       onClick={[Function]}
+                      onCompositionEnd={[Function]}
+                      onCompositionStart={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
                       spellCheck="false"
@@ -178,7 +183,11 @@ exports[`LiveEdit renders correctly 1`] = `
               >
                 <div
                   className="react-live-preview c3"
-                />
+                >
+                  <h1>
+                    Hello World!
+                  </h1>
+                </div>
               </LivePreview>
             </Styled(LivePreview)>
           </div>
@@ -186,13 +195,7 @@ exports[`LiveEdit renders correctly 1`] = `
         <Styled(LiveError)>
           <LiveError
             className="c4"
-          >
-            <div
-              className="react-live-error c4"
-            >
-              SyntaxError: Unexpected token )
-            </div>
-          </LiveError>
+          />
         </Styled(LiveError)>
       </div>
     </LiveProvider>
