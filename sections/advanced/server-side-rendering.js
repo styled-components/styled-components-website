@@ -48,15 +48,17 @@ const ServerSideRendering = () => md`
 
   > \`sheet.getStyleTags()\` and \`sheet.getStyleElement()\` can only be called after your element is rendered. As a result, components from \`sheet.getStyleElement()\` cannot be combined with \`<YourApp />\` into a larger component.
 
+  You'll also need to customize the \`.babelrc\` and use \`babel-plugin-styled-components\`. Refer to the [tooling documentation](https://www.styled-components.com/docs/tooling#serverside-rendering) for more information.
+
   ### Next.js
 
   Basically you need to add a custom \`pages/_document.js\` (if you don't have one). Then
   [copy the logic](https://github.com/zeit/next.js/tree/master/examples/with-styled-components/pages/_document.js)
   for styled-components to inject the server side rendered styles into the \`<head>\`.
 
-  You'll also need to customize the \`.babelrc\` and use \`babel-plugin-styled-components\`.
-
   Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo for an up-to-date usage example.
+
+  When using Next.js you'll also need to customize the \`.babelrc\` and use \`babel-plugin-styled-components\`. Refer to the [tooling documentation](https://www.styled-components.com/docs/tooling#serverside-rendering) for more information.
 
   ### Streaming Rendering
 
