@@ -36,7 +36,7 @@ const SecondButton = styled.button`
   border: 2px solid palevioletred;
 `
 
-const HomepageGettingStarted = () => (
+const HomepageGettingStarted = ({sponsors}) => (
   <Content data-e2e-id="content">
     <AlignCenter>
       <a href="https://github.com/styled-components/styled-components">
@@ -53,6 +53,13 @@ const HomepageGettingStarted = () => (
     </AlignCenter>
 
     {md`
+      # Sponsors
+      Thanks goes to our sponsors who support our project. [Become a sponsor](https://opencollective.com/styled-components/)
+
+      ${
+        <HomepageSponsors sponsors={sponsors}/>
+      }
+      
       # Getting started
       ## Installation
 
@@ -170,13 +177,6 @@ const HomepageGettingStarted = () => (
       Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components!
 
       Once you're done take a look at the [documentation](/docs), specifically the [Getting started](/docs/basics#getting-started) section! Enjoy ✨
-
-      # Sponsors
-      Thanks goes to our sponsors who support our project. [Become a sponsor](https://opencollective.com/styled-components/)
-
-      ${
-        <HomepageSponsors />
-      }
 
     `}
   </Content>

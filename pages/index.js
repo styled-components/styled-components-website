@@ -11,6 +11,7 @@ import Link from '../components/Link'
 import { Content } from '../components/Layout'
 import captureScroll from '../components/CaptureScroll'
 import SeoHead from '../components/SeoHead'
+import { getSponsors } from '../utils/openCollectiveApi'
 import HomepageGettingStarted from '../sections/homepage-getting-started'
 import WithIsScrolled from '../components/WithIsScrolled'
 import Nav from '../components/Nav'
@@ -100,22 +101,29 @@ const Logo = styled.img.attrs({
   width: ${rem(125)};
   height: ${rem(125)};
 `
-
 const UsersWrapper = styled.section`
+  padding: 2rem;
+  border: 2px solid #b7b7b7;
+  border-radius: 3px;
+  width: 90%;
+  margin: 0 auto 1.6rem;
+`
+
+const UsersLogos = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   padding: 0.5rem;
-  margin-bottom: 2rem;
 `
 
 const UsersHeading = styled.p`
   text-transform: uppercase;
-  color: #fff;
+  color: #a6a6a6;
   font-size: 0.8rem;
   font-weight: 600;
-  margin: 2.5rem 0 0.5rem;
+  margin-bottom: 0.5rem;
   opacity: 0.8;
+  text-align: center;
 `
 
 const CompanyLogo = styled.span`
@@ -123,12 +131,13 @@ const CompanyLogo = styled.span`
   height: ${p => p.height || '2rem'};
   margin: 0.5rem;
   bottom: ${p => p.bottom || 0};
-  opacity: 0.8;
-  filter: brightness(0) invert(1);
-  transition: opacity 125ms ease-in-out;
+  opacity: 0.3;
+  filter: brightness(0);
+  transition: all 125ms ease-in-out;
 
   &:hover {
     opacity: 1;
+    filter: brightness(1);
   }
 `
 
@@ -177,7 +186,6 @@ const Footer = styled.footer`
   color: ${grey};
   background: ${paleGrey};
   box-sizing: border-box;
-  margin-top: ${rem(50)};
 `
 
 const Heart = styled(HeartIcon).attrs({
@@ -220,6 +228,7 @@ class Index extends PureComponent {
 
   render() {
     const { isMobileNavFolded } = this.state
+    const { sponsors } = this.props
     return (
       <div>
         <SeoHead title="styled-components">
@@ -264,50 +273,53 @@ class Index extends PureComponent {
               </EditorContainer>
             </LiveProvider>
 
-            <UsersHeading>Used by folks at</UsersHeading>
 
-            <UsersWrapper>
-              <CompanyLogo bottom="-0.2rem" height="1.75rem">
-                <BloombergLogo />
-              </CompanyLogo>
-
-              <CompanyLogo height="1.75rem">
-                <AtlassianLogo />
-              </CompanyLogo>
-
-              <CompanyLogo>
-                <RedditLogo />
-              </CompanyLogo>
-
-              <CompanyLogo>
-                <TargetLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="0.625rem" height="3rem">
-                <EuroVisionLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg">
-                <ArtsyLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="-0.15rem" height="1.5rem">
-                <IdeaLogo />
-              </CompanyLogo>
-
-              <CompanyLogo src="/static/huffpost-logo.svg">
-                <HuffpostLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="0.25rem" height="2rem" src="/static/coinbase-logo.svg">
-                <CoinbaseLogo />
-              </CompanyLogo>
-
-            </UsersWrapper>
           </Content>
         </Wrapper>
 
-        <HomepageGettingStarted />
+        <HomepageGettingStarted sponsors={sponsors}/>
+
+        <UsersWrapper>
+          <UsersHeading>Used by folks at</UsersHeading>
+          <UsersLogos>
+            <CompanyLogo bottom="-0.2rem" height="1.75rem">
+              <BloombergLogo />
+            </CompanyLogo>
+
+            <CompanyLogo height="1.75rem">
+              <AtlassianLogo />
+            </CompanyLogo>
+
+            <CompanyLogo>
+              <RedditLogo />
+            </CompanyLogo>
+
+            <CompanyLogo>
+              <TargetLogo />
+            </CompanyLogo>
+
+            <CompanyLogo bottom="0.625rem" height="3rem">
+              <EuroVisionLogo />
+            </CompanyLogo>
+
+            <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg">
+              <ArtsyLogo />
+            </CompanyLogo>
+
+            <CompanyLogo bottom="-0.15rem" height="1.5rem">
+              <IdeaLogo />
+            </CompanyLogo>
+
+            <CompanyLogo src="/static/huffpost-logo.svg">
+              <HuffpostLogo />
+            </CompanyLogo>
+
+            <CompanyLogo bottom="0.25rem" height="2rem" src="/static/coinbase-logo.svg">
+              <CoinbaseLogo />
+            </CompanyLogo>
+
+          </UsersLogos>
+        </UsersWrapper>
 
         <Footer>
           <FooterContent hero> {'Hosted on ▲ ZEIT Now'}
@@ -329,4 +341,10 @@ class Index extends PureComponent {
   }
 }
 
+Index.getInitialProps = async () => {
+  const sponsors = await getSponsors()
+  return {
+    sponsors,
+  }
+}
 export default Index

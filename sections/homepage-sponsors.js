@@ -1,6 +1,5 @@
-import { Component } from 'react'
-import axios from 'axios'
 import styled from 'styled-components'
+import Loading from '../components/Loading'
 
 const Wrapper = styled.div`
   display: flex;
@@ -39,39 +38,19 @@ function checkImageLink(imageLink){
   return /^(http|https)/.test(imageLink)
 }
 
-class HomepageSponsors extends Component {
-  state = {
-    sponsors: []
-  }
-
-  componentDidMount() {
-    axios.get('https://opencollective.com/styled-components/members/all.json?tierId=3278')
-      .then(response => {
-        this.setState({ sponsors:response.data })
-      })
-      .catch(error => {
-        console.log('Error fetching and parsing data', error)
-      })
-  }
-
-  render() {
-    const { sponsors } = this.state
-    return (
-      <Wrapper>
-        {sponsors.map(sponsor => 
-          { return sponsor.tier == "Sponsor"?
-            <LogosWrapper key={sponsor.MemberId} href={sponsor.website || sponsor.profile} target="_blank">
-            {
-              sponsor.image && checkImageLink(sponsor.image)?
-                <SponsorLogo key={sponsor.MemberId} src={sponsor.image} /> :
-                <NoProfileImage  key={sponsor.MemberId} />
-            }
-            </LogosWrapper> : null
-          }
-        )}
-      </Wrapper>
-    )
-  }
-}
+const HomepageSponsors = ({ sponsors }) => (
+  <Wrapper>
+    {sponsors.map(sponsor => 
+      sponsor.tier == "Sponsor" ?
+        <LogosWrapper key={sponsor.MemberId} href={sponsor.website || sponsor.profile} target="_blank">
+        {
+          sponsor.image && checkImageLink(sponsor.image)?
+            <SponsorLogo key={sponsor.MemberId} src={sponsor.image} /> :
+            <NoProfileImage  key={sponsor.MemberId} />
+        }
+        </LogosWrapper> : <Loading />
+    )}
+  </Wrapper>
+)
 
 export default HomepageSponsors
