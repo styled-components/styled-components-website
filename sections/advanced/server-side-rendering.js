@@ -59,6 +59,7 @@ const ServerSideRendering = () => md`
   for styled-components to inject the server side rendered styles into the \`<head>\`.
 
   Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo for an up-to-date usage example.
+
   ### Streaming Rendering
 
   styled-components offers a streaming API for use with [ReactDOMServer.renderToNodeStream()](https://reactjs.org/docs/react-dom-server.html#rendertonodestream). There are two parts to a streaming implementation:
