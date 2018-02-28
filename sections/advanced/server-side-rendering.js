@@ -48,7 +48,9 @@ const ServerSideRendering = () => md`
 
   > \`sheet.getStyleTags()\` and \`sheet.getStyleElement()\` can only be called after your element is rendered. As a result, components from \`sheet.getStyleElement()\` cannot be combined with \`<YourApp />\` into a larger component.
 
-  You'll also need to customize the \`.babelrc\` and use \`babel-plugin-styled-components\`. Refer to the [tooling documentation](https://www.styled-components.com/docs/tooling#serverside-rendering) for more information.
+  You might need to install and use our babel plugin with its `ssr` option turned on.
+  This prevents checksum mismatches by adding a deterministic ID to each styled component.
+  Refer to the [tooling documentation](/docs/tooling#serverside-rendering) for more information.
 
   ### Next.js
 
@@ -57,9 +59,6 @@ const ServerSideRendering = () => md`
   for styled-components to inject the server side rendered styles into the \`<head>\`.
 
   Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo for an up-to-date usage example.
-
-  When using Next.js you'll also need to customize the \`.babelrc\` and use \`babel-plugin-styled-components\`. Refer to the [tooling documentation](https://www.styled-components.com/docs/tooling#serverside-rendering) for more information.
-
   ### Streaming Rendering
 
   styled-components offers a streaming API for use with [ReactDOMServer.renderToNodeStream()](https://reactjs.org/docs/react-dom-server.html#rendertonodestream). There are two parts to a streaming implementation:
