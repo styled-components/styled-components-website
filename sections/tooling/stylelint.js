@@ -14,6 +14,8 @@ You need:
 - The [\`stylelint-config-styled-components\`](https://github.com/styled-components/stylelint-config-styled-components) to disable stylelint rules that clash with \`styled-components\`
 - Your favorite \`stylelint\` config! (for example [\`stylelint-config-standard\`](https://github.com/stylelint/stylelint-config-standard))
 
+> We recommend using Stylelint v9+ as this has added features that allow us to report correct line numbers on CSS syntax errors
+
 \`\`\`
 (npm install --save-dev
   stylelint
