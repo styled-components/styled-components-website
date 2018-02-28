@@ -11,7 +11,7 @@ const StyledComponent = () => md`
   call \`styled.tagname\` or \`styled(Component)\` with styles.
 
   This component can take any prop. It passes it on to the HTML node if it's a valid attribute,
-  otherwise it only passes it into interpolated functions. (see [Tagged Template Literal](/advanced/#tagged-template-literals))
+  otherwise it only passes it into interpolated functions. (see [Tagged Template Literal](/docs/advanced/#tagged-template-literals))
 
   You can pass an arbitrary classname to a styled component without problem and it will be applied
   next to the styles defined by the styled call.

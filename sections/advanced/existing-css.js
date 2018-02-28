@@ -57,7 +57,7 @@ const ExistingCSS = () => md`
   <MyComponent className="red-bg" />
   \`\`\`
 
-  In the above example the styled component class takes precendence over the global class, since
+  In the above example the styled component class takes precedence over the global class, since
   styled-components injects its styles during runtime into the DOM at the end of the head.
   Thus its styles win over the other ones.
 
