@@ -75,6 +75,26 @@ const BabelPlugin = () => md`
   }
   \`\`\`
 
+  #### Control the components \`displayName\`
+
+  By default, the \`displayName\` of a component will be prefixed with the filename in order to make the component name as unique as possible.
+
+  You can force the component \`displayName\` to be solely the component name by disabling the \`fileName\` option:
+  
+  \`\`\`
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "fileName": false
+      }]
+    ]
+  }
+  \`\`\`
+
+  One example you might want to do this, is testing components with enzyme.
+  While you can always use \`.find(ComponentName)\` it's definitly possible to search component by it's displayName with \`.find("ComponentName")\`.
+  In the latter case you will need to disable the \`fileName\` option.
+
   ### Preprocessing
 
   > This is experimental and we don't yet know of all limitations and bugs!
