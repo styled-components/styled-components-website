@@ -34,12 +34,9 @@ Add a \`.stylelintrc\` file to the root of your project:
   "extends": [
     "stylelint-config-recommended",
     "stylelint-config-styled-components"
-  ],
-  "syntax": "scss"
+  ]
 }
 \`\`\`
-
-> Setting the \`syntax\` to \`scss\` is needed for nesting and interpolation support!
 
 Then you need to run \`stylelint\`. Add a \`lint:css\` script to your \`package.json\` which runs \`stylelint\` with a glob to all of your styled components:
 
