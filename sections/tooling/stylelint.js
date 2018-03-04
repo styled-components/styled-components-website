@@ -12,7 +12,7 @@ You need:
 - \`stylelint\` (duh)
 - This processor, to extract styles from \`styled-components\`
 - The [\`stylelint-config-styled-components\`](https://github.com/styled-components/stylelint-config-styled-components) to disable stylelint rules that clash with \`styled-components\`
-- Your favorite \`stylelint\` config! (for example [\`stylelint-config-standard\`](https://github.com/stylelint/stylelint-config-standard))
+- Your favorite \`stylelint\` config! (for example [\`stylelint-config-recommended\`](https://github.com/stylelint/stylelint-config-recommended))
 
 > We recommend using Stylelint v9+ as this has added features that allow us to report correct line numbers on CSS syntax errors
 
@@ -21,7 +21,7 @@ You need:
   stylelint
   stylelint-processor-styled-components
   stylelint-config-styled-components
-  stylelint-config-standard)
+  stylelint-config-recommended)
 \`\`\`
 
 ### Setup
@@ -32,7 +32,7 @@ Add a \`.stylelintrc\` file to the root of your project:
 {
   "processors": ["stylelint-processor-styled-components"],
   "extends": [
-    "stylelint-config-standard",
+    "stylelint-config-recommended",
     "stylelint-config-styled-components"
   ],
   "syntax": "scss"
