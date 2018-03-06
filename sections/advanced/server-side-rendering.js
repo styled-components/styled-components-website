@@ -92,13 +92,8 @@ const ServerSideRendering = () => md`
 
   _On the client:_
 
-  Before calling \`ReactDOM.hydrate\` to allow client-side React to take over, the \`consolidateStreamedStyles\` API must be called from styled-components to relocate the style blocks that will be intersperced throughout the rendered HTML. Otherwise, the checksum between server and client will be violated and result in an inconsistent page since \`interleaveWithNodeStream\` injected HTML that React wasn't expecting.
-
   \`\`\`js
   import { hydrate } from 'react-dom'
-  import { consolidateStreamedStyles } from 'styled-components'
-
-  consolidateStreamedStyles()
 
   hydrate(
     // your client-side react implementation
