@@ -7,37 +7,18 @@ const HTMLAttributeWarnings = () => md`
   HTML DOM elements such as \`div\` or \`a\`. If you are seeing this warning message, it is likely that
   you or a library you are using is attaching props as attributes to HTML DOM elements.
 
-  \`\`\`sh
+  \`\`\`jsx
   Warning: Received 'true' for a non-boolean attribute
   \`\`\`
 
-  ### Styling a Standard React Component with \`styled()\`
-  When you style a standard React component with \`styled(Comp)\`, we pass through all the props to
-  the resulting component:
+  If you're seeing this warning you are probably passing \`true\` where \`"true"\` would be appropriate.
+  It's likely that this comes from a \`.attrs({})\` property, or from a completely unrelated prop that you're
+  passing to a \`styled(Component)\` component.
 
-  \`\`\`sh
-  const Comp = (props) => {
-    return <div className={props.className}>{props.text}</div>
-  }
+  We pass all props through, so check that you are not attaching unexpected props to the DOM element. And if
+  you're meaning to pass this prop to the DOM element, make sure to follow the warning and adapt the value.
 
-  const StyledComp = styled(Comp)\`
-    color: red;
-  \`
-
-  <StyledComp text="Hello World" />
-  \`\`\`
-
-  This will render:
-  \`\`\`sh
-  <div class="[generated class]">Hello World</div>
-  \`\`\`
-  The text prop is passed through the wrapper and into the original component.
-
-  ### Styling a React Component that passes props as attributes
-  If the component being wrapped by \`styled()\` happens to pass down the props onto the HTML DOM element
-  as attributes, you may unexpectedly pass non-standard attributes as props after wrapping.
-
-  \`\`\`sh
+  \`\`\`jsx
   const Link = (props) => {
     return (
       <a {...props} className={props.className}>{props.text}</a>
@@ -52,14 +33,11 @@ const HTMLAttributeWarnings = () => md`
   \`\`\`
 
   This will render:
-  \`\`\`sh
+  \`\`\`jsx
   <a text="Click" href="https://www.styled-components.com/" red=true class="[generated class]">Click</a>
   \`\`\`
 
   React will then warn on non-standard attributes being attached such as the boolean for the red attribute in this example.
-
-  > There is nothing we can do from the \`styled-components\` side of things to avoid this error. You'll have to either work around
-  this by introducing a filtering component or by not passing any non-standard attributes to that component.
 `
 
 export default HTMLAttributeWarnings
