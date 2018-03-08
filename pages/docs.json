@@ -124,6 +124,7 @@
         { "title": "When to use attrs?" },
         { "title": "I am a library author. Should I bundle styled-components with my library?" },
         { "title": "Why am I getting a warning about several instances of module on the page?" },
+        { "title": "Why am I getting HTML attribute warnings?" },
         { "title": "Which browsers are supported?" }
       ]
     }
