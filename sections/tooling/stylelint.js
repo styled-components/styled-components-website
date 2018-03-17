@@ -1,6 +1,8 @@
 import md from 'components/md'
 
 const StylelintProcessor = () => md`
+> Beware that due to limitations on what is possible for Stylelint custom processors we cannot support the \`--fix\` option. ⚠️ **If you try to use \`--fix\` you might destroy most of your unsaved work.**
+
 ## Stylelint
 
   Lint your [styled components](https://github.com/styled-components/styled-components) with [stylelint](http://stylelint.io/)!
@@ -55,8 +57,6 @@ Now you can lint your CSS by running the script! 🎉
 \`\`\`
 npm run lint:css
 \`\`\`
-
-> Beware that due to limitations on what is possible for Stylelint custom processors we cannot support the \`--fix\` option
 
 #### Webpack
 
