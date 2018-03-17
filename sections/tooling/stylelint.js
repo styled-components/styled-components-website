@@ -1,7 +1,7 @@
 import md from 'components/md'
 
 const StylelintProcessor = () => md`
-> Beware that due to limitations on what is possible for Stylelint custom processors we cannot support the \`--fix\` option. ⚠️ **If you try to use \`--fix\` you will destroy most of your unsaved work.**
+> Beware that due to limitations on what is possible for Stylelint custom processors we cannot support the \`--fix\` option. ⚠️ **If you try to use \`--fix\` you might destroy most of your unsaved work.**
 
 ## Stylelint
 
