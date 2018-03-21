@@ -11,6 +11,8 @@ const Theming = () => md`
   as a theme.
 
   \`\`\`react
+  import styled, { ThemeProvider } from 'styled-components';
+
   // Define our button, but with the use of props.theme this time
   const Button = styled.button\`
     font-size: 1em;
@@ -55,6 +57,8 @@ const Theming = () => md`
   background and foreground colours. The function \`invertTheme\` receives the upper theme and creates a new one.
 
   \`\`\`react
+  import styled, { ThemeProvider } from 'styled-components';
+
   // Define our button, but with the use of props.theme this time
   const Button = styled.button\`
     color: \${props => props.theme.fg};
@@ -117,6 +121,8 @@ const Theming = () => md`
   This is useful to circumvent a missing \`ThemeProvider\` or to override it.
 
   \`\`\`react
+  import styled, { ThemeProvider } from 'styled-components';
+
   // Define our button
   const Button = styled.button\`
     font-size: 1em;
