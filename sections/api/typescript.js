@@ -6,7 +6,7 @@ const TypeScript = () => md`
   styled-components has TypeScript definitions to allow the library to be used in any TypeScript project.
   A basic example can be found [here](https://github.com/patrick91/Styled-Components-Typescript-Example).
 
-  Before you can effectively star to use TypeScript you will have to do a little bit of configuration.
+  Before you can effectively start to use TypeScript you will have to do a little bit of configuration.
 
   ### Define a theme interface
 
@@ -76,19 +76,18 @@ const TypeScript = () => md`
   import styled from 'app/styled-components'
   import Header from './Header'
   
-  // theme is now fully typed
   const Title = styled<{ isActive: boolean }>(Header)`
     color: props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor
   `
   \`\`\`
 
-  If the **isActive** property is not to be passed into the **Header** component you will have to extract it using the
+  If the **isActive** property should not be passed into the **Header** component you will have to extract it using the
   following convention:
 
   \`\`\`jsx
   import styled from 'app/styled-components'
   import Header, { Props as HeaderProps } from './Header'
-  // theme is now fully typed
+
   const Title = styled<{ isActive: boolean }>(({ isActive, ...rest}) => <Header {...rest} />)`
     color: props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor
   `
@@ -101,7 +100,6 @@ const TypeScript = () => md`
   import styled from 'app/styled-components'
   import Header, { Props as HeaderProps } from './Header'
   
-  // theme is now fully typed
   const Title = styled<{ isActive: boolean } & HeaderProps>(({ isActive, ...rest}) => <Header {...rest} />)`
     color: props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor
   `
