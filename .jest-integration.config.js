@@ -3,8 +3,5 @@ module.exports = {
   browser: false,
   testEnvironment: 'node',
   verbose: false,
-  bail: true,
-  globals: {
-    __DEV__: true
-  }
+  bail: true
 };

@@ -57,6 +57,7 @@ import {
   IdeaLogo,
   HuffpostLogo,
   CoinbaseLogo,
+  PatreonLogo,
 } from '../components/CompanyLogos'
 
 const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button } }) => {
@@ -94,7 +95,8 @@ const Title = styled.div`
 `
 
 const Logo = styled.img.attrs({
-  alt: 'styled-components Logo'
+  alt: 'styled-components Logo',
+  src: '/static/logo.png'
 })`
   width: ${rem(125)};
   height: ${rem(125)};
@@ -205,15 +207,6 @@ class Index extends PureComponent {
     isMobileNavFolded: true,
   }
 
-  static async getInitialProps() {
-    const from = Date.UTC(2018, 3, 1, 0, 0, 0, 0).valueOf()
-    const to = Date.UTC(2018, 3, 2, 23, 59, 59, 999).valueOf()
-    const now = new Date().valueOf()
-    const isAprilFools = now >= from && now <= to && (typeof __DEV__ !== 'boolean' || !__DEV__)
-
-    return { isAprilFools }
-  }
-
   toggleMobileNav = () => {
     this.setState(prevState => ({
       isMobileNavFolded: !prevState.isMobileNavFolded,
@@ -227,9 +220,7 @@ class Index extends PureComponent {
   }
 
   render() {
-    const { isAprilFools } = this.props
     const { isMobileNavFolded } = this.state
-
     return (
       <div>
         <SeoHead title="styled-components">
@@ -255,16 +246,12 @@ class Index extends PureComponent {
               mountStylesheet={false}
               scope={{ styled, css, rem, Link }}>
 
-              <Logo src={isAprilFools ? '/static/april-fools-logo.png' : '/static/logo.png'}/>
+              <Logo />
 
               <Title>
                 <Tagline>Visual primitives for the component age.</Tagline>
                 <SupportingTagline>
-                  {
-                    isAprilFools
-                      ? `Please don’t do anything weird 🙃`
-                      : 'Use the best bits of ES6 and CSS to style your apps without stress 💅'
-                  }
+                  Use the best bits of ES6 and CSS to style your apps without stress 💅
                 </SupportingTagline>
               </Title>
 
@@ -315,6 +302,10 @@ class Index extends PureComponent {
 
               <CompanyLogo bottom="0.25rem" height="2rem" src="/static/coinbase-logo.svg">
                 <CoinbaseLogo />
+              </CompanyLogo>
+
+              <CompanyLogo>
+                <PatreonLogo />
               </CompanyLogo>
 
             </UsersWrapper>
