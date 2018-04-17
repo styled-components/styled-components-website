@@ -10,11 +10,11 @@ const Theming = () => md`
   To illustrate this, let's create our Button component, but this time we'll pass some variables down
   as a theme.
 
-  Firstly, you would need to import the `theme-provider` wrapper component.
+  Firstly, you would need to import the \`theme-provider\` wrapper component.
 
-  ```javascript
+  \`\`\`jsx
      import styled, { ThemeProvider } from 'styled-components';
-  ```
+  \`\`\`
 
   \`\`\`react
   // Define our button, but with the use of props.theme this time
