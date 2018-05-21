@@ -78,7 +78,7 @@ const ExistingCSS = () => md`
 
   \`\`\`html
   <head>
-    <style data-styled-components="true">/* runtime styles will go here */</style>
+    <style data-styled-components="true"></style>
     <link rel="stylesheet" href="my-component.css"/>
   </head>
   \`\`\`
