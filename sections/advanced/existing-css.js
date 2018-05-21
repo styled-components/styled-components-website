@@ -82,6 +82,10 @@ const ExistingCSS = () => md`
     <link rel="stylesheet" href="my-component.css"/>
   </head>
   \`\`\`
+
+  This technique takes advantage of styled-components’ server-side rendering (SSR) support. At
+  runtime, styled-components searches the document for existing tags and recycles them. Any new
+  \`<style>\` tags are inserted immediately after the existing ones.
 `
 
 export default ExistingCSS
