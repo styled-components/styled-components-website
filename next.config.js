@@ -1,9 +1,13 @@
-const path = require('path');
+const path = require('path')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   webpack: function (config, { dev }) {
+    if (dev) {
+      return config
+    }
+
     config.plugins.push(
       new BundleAnalyzerPlugin({
         analyzerMode: 'disabled',
@@ -27,11 +31,7 @@ module.exports = {
         return entry
       })
 
-    config.resolve.alias = config.resolve.alias || []
-
-    if (dev) {
-      return config
-    }
+    config.resolve.alias = config.resolve.alias || {}
 
     config.plugins.push(
       new SWPrecacheWebpackPlugin({
@@ -57,7 +57,7 @@ module.exports = {
           }
         ]
       })
-    );
+    )
 
     config.resolve.alias['react'] = 'preact-compat/dist/preact-compat'
     config.resolve.alias['react-dom'] = 'preact-compat/dist/preact-compat'

@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NextPage renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 2.2222222222222223rem 1.1111111111111112rem;
+  text-align: right;
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.c1 {
+  font-weight: normal;
+  padding-right: 1.1111111111111112rem;
+  margin: 0;
+}
+
+.c2 {
+  font-weight: 600;
+  padding-right: 1.1111111111111112rem;
+  margin: 0;
+}
+
+.c3 {
+  color: rgba(20,20,20,0.1);
+  width: 1.6666666666666667rem;
+}
+
+@media (max-width:62.5em) {
+  .c0 {
+    text-align: left;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 1.6666666666666667rem 1.1111111111111112rem;
+  }
+}
+
+<a
+  className="c0"
+  href=""
+  onClick={[Function]}
+>
+  <div>
+    <h3
+      className="c1"
+    >
+      Continue on the next page
+    </h3>
+    <h2
+      className="c2"
+    />
+  </div>
+  <div>
+    <svg
+      className="octicons octicons-chevron-right-icon c3"
+      height={null}
+      viewBox="0 0 8 16"
+      width={null}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3z"
+        fillRule="evenodd"
+      />
+    </svg>
+  </div>
+</a>
+`;

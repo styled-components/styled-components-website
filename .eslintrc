@@ -1,0 +1,34 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["prettier", "plugin:react/recommended"],
+  "plugins": ["prettier", "react"],
+  "rules": {
+    "semi": [2, "never"],
+    "arrow-parens": 0,
+    "class-methods-use-this": 0,
+    "symbol-description": 0,
+    "no-unused-vars": [2, { "varsIgnorePattern": "^_+$" }],
+    "import/no-extraneous-dependencies": 0,
+    "no-confusing-arrow": 0,
+    "no-else-return": 0,
+    "react/sort-comp": 0,
+    "react/jsx-filename-extension": 0,
+    "no-prototype-builtins": 0,
+    "no-duplicate-imports": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/prop-types": 0,
+    "react/no-unescaped-entities": 0
+  },
+  "env": {
+    "mocha": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "experimentalObjectRestSpread": true
+    }
+  }
+}

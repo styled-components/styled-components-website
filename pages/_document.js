@@ -130,69 +130,66 @@ const resetStyles = `
     position: relative;
     overflow: auto;
   }
+
+  .big {
+    color: white;
+    font-size: 1.4em;
+  }
+
+  .small {
+    color: white;
+    font-size: 0.5em;
+  }
+
+  ul li {
+    margin-bottom: 0.2em;
+    line-height: 1.7;
+  }
 `
 
-const description = 'Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress 💅'
 
 export default class MyDocument extends Document {
-  render () {
+  static getInitialProps ({ renderPage }) {
     const sheet = new ServerStyleSheet()
-    const main = sheet.collectStyles(<Main />)
-    const styleTags = sheet.getStyleElement()
+
+    const page = renderPage(Component => props =>
+      sheet.collectStyles(<Component {...props} />
+    ))
+
+    const styleElements = sheet.getStyleElement()
+    return { ...page, styleElements }
+  }
+
+  render () {
+    const { styleElements } = this.props
 
     return (
       <html>
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" type="image/png" href="/static/favicon.png" />
           <link rel="manifest" href="/static/manifest.json" />
 
-          <title>styled-components</title>
-
-          <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-          <meta name="theme-color" content="#db7093" />
+          <meta name="theme-color" content="#da936a" />
           <meta name="author" content="styled-components" />
-          <meta name="description" content={description} />
-
-          {/* cloud.typography */}
-          <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
-
-          {/* Open Graph */}
-          <link itemprop="url" href="https://styled-components.com/"/>
-          <meta itemprop="name" content="styled-components" />
-          <meta itemprop="description" content={description} />
-          <meta itemprop="image" content="/static/atom.png" />
-
-          {/* Twitter */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:creator" content="@mxstbr" />
-          <meta name="twitter:title" content="styled-components" />
-          <meta name="twitter:description" content={description} />
-          <meta name="twitter:image:src" content="https://styled-components.com/static/meta.png" />
-
-          {/* Facebook */}
-          <meta property="og:url" content="https://styled-components.com" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="styled-components" />
-          <meta property="og:image" content="/static/atom.png" />
-          <meta property="og:image:height" content="652" />
-          <meta property="og:image:width" content="652" />
-          <meta property="og:description" content={description} />
-          <meta property="og:site_name" content="styled-components" />
 
           <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
-          {styleTags}
+          {styleElements}
+          <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WDWNSLK');` }}></script>
        </Head>
 
        <body>
+         <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDWNSLK" height="0" width="0" style="display:none;visibility:hidden"></iframe>` }}></noscript>
          <div className="root">
-           {main}
+           <Main />
          </div>
 
          <NextScript />
+
+         {/* cloud.typography */}
+         <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
        </body>
      </html>
     )

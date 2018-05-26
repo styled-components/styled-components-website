@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text renders correctly 1`] = `
+.c0 {
+  display: none;
+  margin-left: 0.8333333333333334rem;
+  margin-top: 0.2777777777777778rem;
+  font-size: 1rem;
+}
+
+@media (max-width:62.5em) {
+  .c0 {
+    display: block;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;

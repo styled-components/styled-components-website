@@ -1,0 +1,11 @@
+{
+  "reporter": "stylint-stylish",
+  "processors": ["stylelint-processor-styled-components"],
+  "extends": "stylelint-config-standard",
+  "syntax": "scss",
+  "rules": {
+      "declaration-empty-line-before": null,
+      "selector-type-case": null,
+      "selector-type-no-unknown": null
+  }
+}

@@ -7,10 +7,14 @@ import { bodyFont, headerFont } from '../utils/fonts'
 const Note = styled.div`
   font-family: ${bodyFont};
   background: ${lightVioletRed};
-  padding: ${rem(7)} ${rem(10)} ${rem(10)} ${rem(14)};
+  padding: ${rem(7)} ${rem(10)} ${rem(5)} ${rem(14)};
   border-left: ${rem(4)} solid ${violetRed};
   margin: ${rem(45)} 0;
-  border-radius: ${rem(3)}
+  border-radius: ${rem(3)};
+
+  > p {
+    margin: 0 0 ${rem(5)} 0;
+  }
 `
 
 const NoteLabel = styled.strong`
@@ -22,9 +26,11 @@ const NoteLabel = styled.strong`
   margin-bottom: ${rem(7)};
 `
 
-export default ({ label = 'Note', children }) => (
+const NoteWrapper = ({ label = 'Note', children }) => (
   <Note>
     <NoteLabel>{label}</NoteLabel>
     {children}
   </Note>
 )
+
+export default NoteWrapper

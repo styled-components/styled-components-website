@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label renders correctly 1`] = `
+.c0 {
+  display: inline-block;
+  background: rgb(219,112,147);
+  color: white;
+  font-size: 0.75rem;
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  border-radius: 0.16666666666666666rem;
+  padding: 0.05555555555555555rem 0.2777777777777778rem;
+  margin-left: 0.4rem;
+}
+
+<small
+  className="c0"
+/>
+`;
+
+exports[`LabelGroup renders correctly 1`] = `
+.c0 {
+  display: inline-block;
+  margin-left: 0.5rem;
+  position: relative;
+  bottom: 0.16666666666666666rem;
+}
+
+<div
+  className="c0"
+/>
+`;

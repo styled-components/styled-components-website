@@ -1,26 +1,10 @@
-import { isValidElement } from 'react'
-
-// Convert React elements to pure text
-const elementToText = node => {
-  if (Array.isArray(node)) {
-    return node
-      .map(elementToText)
-      .join('')
-  } else if (isValidElement(node)) {
-    return elementToText(node.props.children)
-  } else if (!node) {
-    return ''
-  }
-
-  return node.toString()
-}
+import elementToText from './elementToText'
 
 const titleToDash = title => (
   elementToText(title)
     .toLowerCase()
-    .replace(/[^\w\d\s]/, '')
-    .split(' ')
-    .join('-')
+    .replace(/[^\w\d\s]/g, '')
+    .replace(/\s+/g, '-')
 )
 
 export default titleToDash

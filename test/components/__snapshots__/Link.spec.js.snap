@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InlineLink renders correctly 1`] = `
+.c0 {
+  color: rgb(219,112,147);
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+<a
+  className="c0"
+  rel="noopener"
+  target="_blank"
+/>
+`;
+
+exports[`Link renders correctly 1`] = `
+.c0 {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.1111111111111111rem 0.4444444444444444rem;
+  margin: -0.1111111111111111rem -0.4444444444444444rem;
+}
+
+@media (min-width:62.5em) {
+  .c0 {
+    border-radius: 0.16666666666666666rem;
+  }
+
+  .c0:hover {
+    background: rgba(20,20,20,0.1);
+  }
+}
+
+<a
+  className="c0"
+  href={undefined}
+  onClick={[Function]}
+/>
+`;
+
+exports[`StyledLink renders correctly 1`] = `
+.c0 {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.1111111111111111rem 0.4444444444444444rem;
+  margin: -0.1111111111111111rem -0.4444444444444444rem;
+}
+
+@media (min-width:62.5em) {
+  .c0 {
+    border-radius: 0.16666666666666666rem;
+  }
+
+  .c0:hover {
+    background: rgba(20,20,20,0.1);
+  }
+}
+
+<a
+  className="c0"
+/>
+`;

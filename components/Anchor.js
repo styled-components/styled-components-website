@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import rem from '../utils/rem'
 
 import LinkIcon from 'react-octicons-svg/dist/LinkIcon'
-import { Header, SubHeader } from './Layout'
+import { Header, SubHeader, TertiaryHeader } from './Layout'
 import { mobile } from '../utils/media'
 
 const InvisibleAnchor = styled.div.attrs({
@@ -13,7 +13,7 @@ const InvisibleAnchor = styled.div.attrs({
   visibility: hidden;
   height: 0;
 
-  top: ${rem(-20)};
+  top: ${rem(-70)};
 
   ${mobile(css`
     top: ${rem(-90)};
@@ -48,6 +48,7 @@ const AnchorHeader = styled(Header)`
   ${mobile(css`
     margin-left: 0;
 
+    /* stylelint-disable-next-line */
     ${Anchor} {
       display: inline-block;
     }
@@ -59,9 +60,21 @@ const AnchorHeader = styled(Header)`
 `
 
 const AnchorSubHeader = AnchorHeader.withComponent(SubHeader)
+const AnchorTertiaryHeader = AnchorHeader.withComponent(TertiaryHeader)
 
-export default ({ children, id, sub }) => {
-  const Child = sub ? AnchorSubHeader : AnchorHeader
+const Link = ({ children, level, id }) => {
+  let Child = AnchorHeader
+
+  switch(level) {
+    case 3:
+      Child = AnchorSubHeader
+      break
+    case 4:
+      Child = AnchorTertiaryHeader
+      break
+    default:
+      break
+  }
 
   return (
     <Child>
@@ -75,3 +88,5 @@ export default ({ children, id, sub }) => {
     </Child>
   )
 }
+
+export default Link

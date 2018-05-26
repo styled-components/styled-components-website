@@ -1,14 +1,14 @@
 import styled from 'styled-components'
-import rem from '../utils/rem'
-import { lightGrey } from '../utils/colors'
 import { monospace } from '../utils/fonts'
 
-import '../utils/prismTemplateString'
-import { Editor } from 'react-live'
-
 const Code = styled.span`
+  display: inline-block;
   font-family: ${monospace};
-  font-weight: 500;
+  font-size: 90%;
+  font-weight: 300;
+  padding: 0 0.05em 0.1em;
+  vertical-align: baseline;
+  line-height: 1.4;
 `
 
 export default Code
