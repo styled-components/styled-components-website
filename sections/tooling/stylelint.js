@@ -50,6 +50,8 @@ Then you need to run \`stylelint\`. Add a \`lint:css\` script to your \`package.
 
 > The processor ignores javascript files that don't contain any \`styled-components\`, so don't worry about being too broad as long as you restrict it to javascript (or TypeScript).
 
+> JS style comments are only valid in certain syntax and \`stylelint\` determines the syntax by file extensions. You can specify explicitly by an additional CLI option, i.e. \`--syntax scss\`.
+
 Now you can lint your CSS by running the script! 🎉
 
 \`\`\`
