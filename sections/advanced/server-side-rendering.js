@@ -48,7 +48,7 @@ const ServerSideRendering = () => md`
 
   > \`sheet.getStyleTags()\` and \`sheet.getStyleElement()\` can only be called after your element is rendered. As a result, components from \`sheet.getStyleElement()\` cannot be combined with \`<YourApp />\` into a larger component.
 
-  You might need to install and use our babel plugin with its `ssr` option turned on.
+  You should install and use our babel plugin with its `ssr` option turned on.
   This prevents checksum mismatches by adding a deterministic ID to each styled component.
   Refer to the [tooling documentation](/docs/tooling#serverside-rendering) for more information.
 
