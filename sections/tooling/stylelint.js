@@ -12,14 +12,16 @@ You need:
 - \`stylelint\` (duh)
 - This processor, to extract styles from \`styled-components\`
 - The [\`stylelint-config-styled-components\`](https://github.com/styled-components/stylelint-config-styled-components) to disable stylelint rules that clash with \`styled-components\`
-- Your favorite \`stylelint\` config! (for example [\`stylelint-config-standard\`](https://github.com/stylelint/stylelint-config-standard))
+- Your favorite \`stylelint\` config! (for example [\`stylelint-config-recommended\`](https://github.com/stylelint/stylelint-config-recommended))
+
+> We recommend using Stylelint v9+ as this has added features that allow us to report correct line numbers on CSS syntax errors
 
 \`\`\`
 (npm install --save-dev
   stylelint
   stylelint-processor-styled-components
   stylelint-config-styled-components
-  stylelint-config-standard)
+  stylelint-config-recommended)
 \`\`\`
 
 ### Setup
@@ -30,14 +32,11 @@ Add a \`.stylelintrc\` file to the root of your project:
 {
   "processors": ["stylelint-processor-styled-components"],
   "extends": [
-    "stylelint-config-standard",
+    "stylelint-config-recommended",
     "stylelint-config-styled-components"
-  ],
-  "syntax": "scss"
+  ]
 }
 \`\`\`
-
-> Setting the \`syntax\` to \`scss\` is needed for nesting and interpolation support!
 
 Then you need to run \`stylelint\`. Add a \`lint:css\` script to your \`package.json\` which runs \`stylelint\` with a glob to all of your styled components:
 
@@ -70,9 +69,6 @@ When using this processor a couple of stylelint rules throw errors that cannot b
 The [\`stylelint-config-styled-components\`](https://github.com/styled-components/stylelint-config-styled-components) will automatically disable rules that cause conflicts.
 
 > You can override rules defined in shared configs in your custom \`.stylelintrc\`.
-
-### Known Issues
-- Comments are currently not being parsed properly with Typescript due to special behaviour by [\`typescript-eslint-parser\`](https://github.com/eslint/typescript-eslint-parser), this stops \`stylelint-disable\` type comments and interpolation tags from working with Typescript. It will be fixed when the stable version of [\`babylon@7\`](https://github.com/babel/babel/tree/master/packages/babylon) is released so we can use Babylon with Typescript.
 
 ### Usage with other libraries
 
