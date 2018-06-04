@@ -40,7 +40,7 @@ const ExistingCSS = () => md`
   ### Issues with Specificity
 
   If you apply a global class together with a styled component class, the result might not be
-  what you're expecting. If a property is defined in both classes with the same specificty,
+  what you're expecting. If a property is defined in both classes with the same specificity,
   the last one will win.
 
   \`\`\`jsx
