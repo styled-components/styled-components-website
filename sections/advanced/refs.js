@@ -12,7 +12,7 @@ const Refs = () => md`
 
   > \`innerRef\` supports callback refs (i.e. \`ref={comp => this.xyz = comp}\`) and refs using [\`React.createRef()\`](https://reactjs.org/docs/refs-and-the-dom.html#creating-refs) (available since React 16.3). We don't support string refs (i.e. \`innerRef="node"\`), since they're already deprecated in React.
 
-  The following examples use \`innerRef\` to save a ref to the styled input and focuse it once the user
+  The following examples use \`innerRef\` to save a ref to the styled input and focus it once the user
   hovers over it.
 
   **Example using \`React.createRef()\`**:
