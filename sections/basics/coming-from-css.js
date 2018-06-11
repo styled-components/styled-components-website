@@ -3,7 +3,7 @@ import md from 'components/md'
 const ComingFromCSS =  () => md`
 ## Coming from CSS
 
-### How do Styled Components work within a component?”
+### How do Styled Components work within a component?
 
 If you're familiar with importing CSS into your components (e.g. like CSSModules)
 you'll be used to doing something like this:
