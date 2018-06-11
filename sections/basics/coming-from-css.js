@@ -57,6 +57,9 @@ Note that we added a "Styled" prefix to \`StyledCounter\` so that the React
 component \`Counter\` and the Styled Component \`StyledCounter\` 
 don't clash names but remain easily identifiable in the React Developer 
 Tools and Web Inspector.
-`
+
+**Recommended reading**: [Talia Marcassa](https://twitter.com/talialongname) 
+wrote a great review of real-world usage, featuring lots of solid practical insights 
+and comparisons with alternatives in [Styled Components: To Use or Not to Use?](https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21)`
 
 export default ComingFromCSS
