@@ -1,7 +1,9 @@
 import md from 'components/md'
 
 const ComingFromCSS =  () => md`
-## How do Styled Components work within a component?”
+## Coming from CSS
+
+### How do Styled Components work within a component?”
 
 If you're familiar with importing CSS into your components (e.g. like CSSModules)
 you'll be used to doing something like this:
@@ -60,6 +62,7 @@ Tools and Web Inspector.
 
 **Recommended reading**: [Talia Marcassa](https://twitter.com/talialongname) 
 wrote a great review of real-world usage, featuring lots of solid practical insights 
-and comparisons with alternatives in [Styled Components: To Use or Not to Use?](https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21)`
+and comparisons with alternatives in [Styled Components: To Use or Not to Use?](https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21)
+`
 
 export default ComingFromCSS
