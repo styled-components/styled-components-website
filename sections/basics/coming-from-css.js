@@ -81,6 +81,7 @@ Instead of:
 
 \`\`\`jsx
 const Wrapper = ({message}) => {
+  // WARNING: THIS IS VERY VERY BAD AND SLOW, DO NOT DO THIS!!!
   const StyledWrapper = styled.div\`/* ... */\`
 
   return <StyledWrapper>{message}</StyledWrapper>
