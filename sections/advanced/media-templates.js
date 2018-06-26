@@ -33,7 +33,7 @@ const MediaTemplates = () => md`
   const sizes = {
     desktop: 992,
     tablet: 768,
-    phone: 376
+    phone: 576
   }
 
   // Iterate through the sizes and create a media template
