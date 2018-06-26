@@ -62,12 +62,12 @@ Tools and Web Inspector.
 
 ### Define Styled Components outside of the render method
 
-It is important to define your styled components outside of render method, 
-otherwise the styled component will be recreated on every single render pass.
-Defining a styled component within the render method is bad for performance
-and should be avoided.
+It is important to define your styled components outside of the render method, 
+otherwise it will be recreated on every single render pass.
+Defining a styled component within the render method will thwart caching and 
+drastically slow down rendering speed, and should be avoided.
 
-Write your styled components the recommend way:
+Write your styled components the recommended way:
 
 \`\`\`jsx
 const StyledWrapper = styled.div\`/* ... */\`
