@@ -1,4 +1,5 @@
 {
+    "name": "styled-components",
     "alias": "www.styled-components.com",
     "env": {
         "NODE_ENV": "production"
