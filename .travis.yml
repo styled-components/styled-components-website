@@ -3,6 +3,11 @@ dist: trusty
 sudo: required
 branches:
   only: master
+cache:
+  yarn: true
+  bundler: true
+  directories:
+    - node_modules
 addons:
   apt:
     packages:
@@ -14,21 +19,37 @@ env:
     - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
 node_js:
   - 8
-before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start &
-  - sleep 3
-script:
-  - node --version
-  - yarn --version
-  - yarn run test
-  - yarn run lint
-  - yarn run integration
+jobs:
+  include:
+    - stage: test
+      before_script:
+        - 'export DISPLAY=:99.0'
+        - sh -e /etc/init.d/xvfb start &
+        - sleep 3
+      script:
+        - node --version
+        - yarn --version
+        - yarn run test
+        - yarn run lint
+        - yarn run integration
+    - stage: deploy
+      if: branch = master
+      script:
+        - yarn
+        - yarn build
+        - yarn deploy
+        - >
+          curl -X POST
+          "https://api.cloudflare.com/client/v4/zones/7d2eec0622925d12eafab9cf339e6952/purge_cache"
+          \
+
+          -H "X-Auth-Email: $CLOUDFLARE_USERNAME" \
+
+          -H "X-Auth-Key: $CLOUDFLARE_AUTHORIZATION_KEY" \
+
+          -H "Content-Type: application/json" \
+
+          --data '{"purge_everything":true}'
 notifications:
   email:
     on_failure: change
-cache:
-  yarn: true
-  bundler: true
-  directories:
-    - node_modules

@@ -4389,6 +4389,10 @@ normalize-selector@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/normalize-selector/-/normalize-selector-0.2.0.tgz#d0b145eb691189c63a78d201dc4fdb1293ef0c03"
 
+now@^11.2.5:
+  version "11.2.5"
+  resolved "https://registry.npmjs.org/now/-/now-11.2.5.tgz#e0077186f5a02494e6b4decb3ef32cc44bf1fe76"
+
 npm-path@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/npm-path/-/npm-path-2.0.3.tgz#15cff4e1c89a38da77f56f6055b24f975dfb2bbe"
