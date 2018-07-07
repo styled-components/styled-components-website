@@ -36,11 +36,10 @@ jobs:
       if: branch = master
       script:
         - yarn
-        - yarn build
         - yarn deploy
         - >
           curl -X POST
-          "https://api.cloudflare.com/client/v4/zones/7d2eec0622925d12eafab9cf339e6952/purge_cache"
+          "https://api.cloudflare.com/client/v4/zones/adbb450ef42084d780abfb51de45a6b8/purge_cache"
           \
 
           -H "X-Auth-Email: $CLOUDFLARE_USERNAME" \
