@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "deploy": "now --token $NOW_TOKEN && now alias --token $NOW_TOKEN",
+    "deploy": "now --public --token $NOW_TOKEN && now alias --public --token $NOW_TOKEN",
     "lint:js": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:css": "stylelint './static/**/*.js' './pages/**/*.js' './test/**/*.js' './utils/**/*.js' './components/**/*.js' './sections/**/*.js'",
