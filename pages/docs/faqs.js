@@ -8,6 +8,9 @@ import OverrideStyles from '../../sections/faqs/override-styles-with-higher-spec
 import OverrideInlineStyles from '../../sections/faqs/override-inline-styles'
 import TwoDomClasses from '../../sections/faqs/dom-two-classes'
 import WhenToUseAttrs from '../../sections/faqs/when-to-use-attrs'
+import LibraryAuthors from '../../sections/faqs/library-authors'
+import DuplicatedStyledComponents from '../../sections/faqs/duplicated-styled-components'
+import HTMLAttributeWarnings from '../../sections/faqs/html-attribute-warnings'
 import BrowserSupport from '../../sections/faqs/browser-support'
 
 const FAQs = () => (
@@ -19,6 +22,9 @@ const FAQs = () => (
     <OverrideInlineStyles />
     <TwoDomClasses />
     <WhenToUseAttrs />
+    <LibraryAuthors />
+    <DuplicatedStyledComponents />
+    <HTMLAttributeWarnings />
     <BrowserSupport />
   </DocsLayout>
 )

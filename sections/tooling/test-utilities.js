@@ -11,7 +11,7 @@ const TestUtilities = () => md`
   ### Installation
 
   \`\`\`
-  yarn add --dev jest-styled-components
+  npm install --dev jest-styled-components
   \`\`\`
 
   ### Snapshot Testing

@@ -7,7 +7,7 @@ const SyntaxHighlighting = () => md`
 
 This is what it looks like when properly highlighted:
 
-<img alt="Syntax highlighted styled component" src="http://imgur.com/k7h45c3.jpg" height="250px" />
+<img alt="Syntax highlighted styled component" src="/static/syntax-highlight-example.jpg" height="250px" />
 
 ### Atom
 

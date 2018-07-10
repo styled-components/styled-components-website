@@ -46,15 +46,63 @@ const ServerSideRendering = () => md`
   Alternatively the \`ServerStyleSheet\` instance also has a \`getStyleElement()\` method
   that returns an array of React elements.
 
+  > \`sheet.getStyleTags()\` and \`sheet.getStyleElement()\` can only be called after your element is rendered. As a result, components from \`sheet.getStyleElement()\` cannot be combined with \`<YourApp />\` into a larger component.
+
+  You should install and use our babel plugin with its \`ssr\` option turned on.
+  This prevents checksum mismatches by adding a deterministic ID to each styled component.
+  Refer to the [tooling documentation](/docs/tooling#serverside-rendering) for more information.
+
   ### Next.js
 
-  Basically you need to add a custom \`pages/_document.js\` (if you don't have one). Then 
+  Basically you need to add a custom \`pages/_document.js\` (if you don't have one). Then
   [copy the logic](https://github.com/zeit/next.js/tree/master/examples/with-styled-components/pages/_document.js)
   for styled-components to inject the server side rendered styles into the \`<head>\`.
-  
-  You'll also need to customize the \`.babelrc\` and use \`babel-plugin-styled-components\`.
 
   Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo for an up-to-date usage example.
+
+  ### Streaming Rendering
+
+  styled-components offers a streaming API for use with [ReactDOMServer.renderToNodeStream()](https://reactjs.org/docs/react-dom-server.html#rendertonodestream). There are two parts to a streaming implementation:
+
+  _On the server:_
+
+  \`ReactDOMServer.renderToNodeStream\` emits a "readable" stream that styled-components wraps. As whole chunks of HTML are pushed onto the stream, if any corresponding styles are ready to be rendered, a style block is prepended to React's HTML and forwarded on to the client browser.
+
+  \`\`\`js
+  import { renderToNodeStream } from 'react-dom/server'
+  import styled, { ServerStyleSheet } from 'styled-components'
+
+  // if you're using express.js, you'd have access to the response object "res"
+
+  // typically you'd want to write some preliminary HTML, since React doesn't handle this
+  res.write('<html><head><title>Test</title></head><body>')
+
+  const Heading = styled.h1\`
+    color: red;
+  \`
+
+  const sheet = new ServerStyleSheet()
+  const jsx = sheet.collectStyles(<Heading>Hello SSR!</Heading>)
+  const stream = sheet.interleaveWithNodeStream(renderToNodeStream(jsx))
+
+  // you'd then pipe the stream into the response object until it's done
+  stream.pipe(res, { end: false })
+
+  // and finalize the response with closing HTML
+  stream.on('end', () => res.end('</body></html>'))
+  \`\`\`
+
+  _On the client:_
+
+  \`\`\`js
+  import { hydrate } from 'react-dom'
+
+  hydrate(
+    // your client-side react implementation
+  )
+  \`\`\`
+
+  After client-side rehydration is complete, styled-components will take over as usual and inject any further dynamic styles after the relocated streaming ones.
 `
 
 export default ServerSideRendering

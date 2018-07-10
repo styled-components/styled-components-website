@@ -24,7 +24,7 @@ const IsStyledComponent = () => md`
 
   Returns true if the passed function is a valid styled components-wrapped component class. This is useful for determining if \`innerRef\` or \`ref\` should be passed:
 
-  \`\`\`react
+  \`\`\`jsx
   import React from 'react';
   import { isStyledComponent } from 'styled-components';
   import MaybeStyledComponent from './somewhere-else';
@@ -46,7 +46,7 @@ const IsStyledComponent = () => md`
   }
   \`\`\`
 
-  It also can be useful for deterimining if a component needs to be wrapped such that it can be used as a [component selector]():
+  It also can be useful for determining if a component needs to be wrapped such that it can be used as a component selector:
 
   \`\`\`jsx
   import React from 'react';

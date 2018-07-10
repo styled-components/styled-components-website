@@ -4,6 +4,7 @@ import NextPage from '../../components/NextPage'
 
 import Motivation from '../../sections/basics/motivation'
 import GettingStarted from '../../sections/basics/getting-started'
+import ComingFromCSS from '../../sections/basics/coming-from-css'
 import Installation from '../../sections/basics/installation'
 import AlternativeInstallation from '../../sections/basics/alternative-installation'
 import PassedProps from '../../sections/basics/passed-props'
@@ -20,6 +21,7 @@ const Basics = () => (
     <Installation />
     <AlternativeInstallation />
     <GettingStarted />
+    <ComingFromCSS />
     <PassedProps />
     <AdaptingBasedOnProps />
     <StylingAnyComponents />
