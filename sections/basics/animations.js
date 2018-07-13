@@ -10,7 +10,8 @@ const Animations = () => md`
   This way, you get all the benefits of using JavaScript, are avoiding name clashes and get your keyframes
   like always:
 
-  \`\`\`react
+  \`\`\`jsx
+  import { keyframes } from "styled-components";
   // keyframes returns a unique name based on a hash of the contents of the keyframes
   const rotate360 = keyframes\`
     from {
