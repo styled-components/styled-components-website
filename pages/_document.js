@@ -164,7 +164,7 @@ export default class MyDocument extends Document {
     const { styleElements } = this.props
 
     return (
-      <html>
+      <html lang="en">
         <Head>
           <link rel="icon" type="image/png" href="/static/favicon.png" />
           <link rel="manifest" href="/static/manifest.json" />

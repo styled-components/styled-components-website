@@ -25,6 +25,14 @@ const Anchor = styled.a`
   position: absolute;
   left: 0;
   color: inherit;
+
+  & span {
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+    top: -10px;
+  }
 `
 
 const AnchorIcon = styled(LinkIcon).attrs({
@@ -82,6 +90,7 @@ const Link = ({ children, level, id }) => {
 
       <Anchor href={`#${id}`}>
         <AnchorIcon />
+        <span>Anchor link:{id}</span>
       </Anchor>
 
       {children}

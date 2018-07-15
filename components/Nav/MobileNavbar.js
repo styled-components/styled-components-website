@@ -58,6 +58,14 @@ const LogoLink = styled(Link).attrs({
 })`
   display: inline-block;
   vertical-align: center;
+
+  & span {
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+    top: -10px;
+  }
 `
 
 const ArrowWrapper = styled.div`
@@ -95,6 +103,7 @@ const MobileNavbar = props => {
 
       <LogoLink>
         <Logo compact />
+        <span>Home</span>
       </LogoLink>
 
       <NavButton
