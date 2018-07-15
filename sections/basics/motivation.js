@@ -6,7 +6,7 @@ import rem from '../../utils/rem'
 import md from 'components/md'
 
 const videoHtml = (`
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bIK2NwoK9xk?start=89" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bIK2NwoK9xk?start=89" frameborder="0" title="Styling React/ReactNative Applications - Max Stoiber" allowfullscreen></iframe>
 `).trim()
 
 const Video = styled.div.attrs({
