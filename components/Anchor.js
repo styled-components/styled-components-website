@@ -80,7 +80,7 @@ const Link = ({ children, level, id }) => {
     <Child>
       <InvisibleAnchor id={id} />
 
-      <Anchor href={`#${id}`}>
+      <Anchor href={`#${id}`} aria-label={id}>
         <AnchorIcon />
       </Anchor>
 

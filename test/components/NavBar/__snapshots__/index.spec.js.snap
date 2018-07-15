@@ -684,14 +684,17 @@ exports[`Nav renders correctly 1`] = `
                 </styled.button>
                 <Styled(Link)>
                   <Link
+                    ariaLabel="styled components"
                     className="c17"
                     href="/"
                     unstyled={true}
                   >
                     <Link
+                      ariaLabel="styled components"
                       href="/"
                     >
                       <a
+                        aria-label="styled components"
                         className="c17"
                         href="/"
                         onClick={[Function]}

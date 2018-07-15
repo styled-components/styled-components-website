@@ -43,10 +43,10 @@ const Link = ({ children, className, inline, unstyled, white, ...rest }) => {
   if (white) {
     dataAttrs = { 'data-white': white }
   }
-
+  
   return (
     <UnstyledLink {...rest}>
-      <Child href={rest.href} className={className} {...dataAttrs}>
+      <Child href={rest.href} className={className} aria-label={rest.ariaLabel} {...dataAttrs}>
         {children}
       </Child>
     </UnstyledLink>

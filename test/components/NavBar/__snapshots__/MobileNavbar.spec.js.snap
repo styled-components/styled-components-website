@@ -263,6 +263,7 @@ exports[`MobileNavbar renders correctly 1`] = `
     </svg>
   </button>
   <a
+    aria-label="styled components"
     className="c3"
     href="/"
     onClick={[Function]}
@@ -311,6 +312,7 @@ exports[`MobileNavbar renders correctly 1`] = `
       className="c7"
     >
       <a
+        aria-label={undefined}
         className="c8"
         href="/docs"
         onClick={[Function]}
@@ -321,6 +323,7 @@ exports[`MobileNavbar renders correctly 1`] = `
         className="c9"
       />
       <a
+        aria-label={undefined}
         className="c8"
         href="/ecosystem"
         onClick={[Function]}
@@ -331,6 +334,7 @@ exports[`MobileNavbar renders correctly 1`] = `
         className="c9"
       />
       <a
+        aria-label={undefined}
         className="c8"
         href="/releases"
         onClick={[Function]}
@@ -348,6 +352,7 @@ exports[`MobileNavbar renders correctly 1`] = `
         className="c11"
       >
         <a
+          aria-label={undefined}
           className="c12"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
@@ -368,6 +373,7 @@ exports[`MobileNavbar renders correctly 1`] = `
           </svg>
         </a>
         <a
+          aria-label={undefined}
           className="c12"
           href="https://github.com/styled-components"
           onClick={[Function]}
@@ -388,6 +394,7 @@ exports[`MobileNavbar renders correctly 1`] = `
           </svg>
         </a>
         <a
+          aria-label={undefined}
           className="c12"
           href="https://medium.com/styled-components"
           onClick={[Function]}
