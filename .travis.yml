@@ -33,7 +33,7 @@ jobs:
         - yarn run lint
         - yarn run integration
     - stage: deploy
-      if: branch = master
+      if: (fork = false) AND (branch = master)
       script:
         - yarn
         - yarn deploy
