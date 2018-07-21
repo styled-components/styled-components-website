@@ -55,6 +55,7 @@ const SecondaryMenu = styled.div`
 const LogoLink = styled(Link).attrs({
   unstyled: true,
   href: '/',
+  ariaLabel: 'styled components',
 })`
   display: inline-block;
   vertical-align: center;
