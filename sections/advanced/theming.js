@@ -10,7 +10,7 @@ const Theming = () => md`
   To illustrate this, let's create our Button component, but this time we'll pass some variables down
   as a theme.
 
-  Firstly, you would need to import the \`theme-provider\` wrapper component.
+  To start, you need to import the \`theme-provider\` wrapper component.
 
   \`\`\`jsx
      import styled, { ThemeProvider } from 'styled-components';
