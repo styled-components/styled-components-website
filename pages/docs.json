@@ -124,6 +124,11 @@
       ]
     },
     {
+      "title": "Showcase",
+      "pathname": "showcase",
+      "sections": []
+    },
+    {
       "title": "FAQs",
       "pathname": "faqs",
       "sections": [
