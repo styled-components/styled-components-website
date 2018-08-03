@@ -83,7 +83,7 @@ const Styled = () => md`
 
   const Input = styled.input.attrs({
     type: 'text',
-    size: props => props.small ? 3 : 8
+    padding: props => props.small ? 3 : 8
   })\`
     background: palevioletred;
     border-radius: 3px;
