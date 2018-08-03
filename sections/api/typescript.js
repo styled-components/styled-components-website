@@ -53,9 +53,9 @@ const TypeScript = () => md`
   import styled from 'app/styled-components'
   
   // theme is now fully typed
-  const Title = styled.h1`
+  const Title = styled.h1\`
     color: props => props.theme.primaryColor
-  `
+  \`
   \`\`\`
 
   If you are passing custom properties to your styled component it is a good idea to follow this convention:
@@ -64,9 +64,9 @@ const TypeScript = () => md`
   import styled from 'app/styled-components'
   
   // theme is now fully typed
-  const Title = styled<{ isActive: boolean }, 'h1'>('h1')`
+  const Title = styled<{ isActive: boolean }, 'h1'>('h1')\`
     color: props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor
-  `
+  \`
   \`\`\`
 
   You will need to define both the custom props and the type of tag which will be used. When you pass a custom component,
@@ -76,9 +76,9 @@ const TypeScript = () => md`
   import styled from 'app/styled-components'
   import Header from './Header'
   
-  const Title = styled<{ isActive: boolean }>(Header)`
+  const Title = styled<{ isActive: boolean }>(Header)\`
     color: props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor
-  `
+  \`
   \`\`\`
 
   If the **isActive** property should not be passed into the **Header** component you will have to extract it using the
@@ -88,9 +88,9 @@ const TypeScript = () => md`
   import styled from 'app/styled-components'
   import Header, { Props as HeaderProps } from './Header'
 
-  const Title = styled<{ isActive: boolean }>(({ isActive, ...rest}) => <Header {...rest} />)`
+  const Title = styled<{ isActive: boolean }>(({ isActive, ...rest}) => <Header {...rest} />)\`
     color: props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor
-  `
+  \`
   \`\`\`
 
   But it might be the opposite. Maybe your styled component needs to proxy props required by the **Header**. Then
@@ -100,9 +100,9 @@ const TypeScript = () => md`
   import styled from 'app/styled-components'
   import Header, { Props as HeaderProps } from './Header'
   
-  const Title = styled<{ isActive: boolean } & HeaderProps>(({ isActive, ...rest}) => <Header {...rest} />)`
+  const Title = styled<{ isActive: boolean } & HeaderProps>(({ isActive, ...rest}) => <Header {...rest} />)\`
     color: props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor
-  `
+  \`
   \`\`\`
 
   This is the most complex example where we have specific properties for the styling of the component and pass
