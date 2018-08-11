@@ -6,7 +6,7 @@ import 'jest-styled-components'
 import LiveEdit, { StyledError } from '../../components/LiveEdit'
 
 test('LiveEdit renders correctly', () => {
-  const wrapper = mount(<LiveEdit />)
+  const wrapper = mount(<LiveEdit code="<h1>Hello World!</h1>"/>)
 
   expect(wrapper).toMatchSnapshot()
 })

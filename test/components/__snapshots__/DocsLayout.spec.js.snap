@@ -1096,6 +1096,7 @@ exports[`DocsLayout renders correctly 1`] = `
                     >
                       <Folder
                         isOpenDefault={false}
+                        key="Basics"
                       >
                         <styled.div
                           onClick={[Function]}
@@ -1138,6 +1139,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       </Folder>
                       <Folder
                         isOpenDefault={false}
+                        key="Advanced"
                       >
                         <styled.div
                           onClick={[Function]}
@@ -1180,6 +1182,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       </Folder>
                       <Folder
                         isOpenDefault={false}
+                        key="API Reference"
                       >
                         <styled.div
                           onClick={[Function]}
@@ -1222,6 +1225,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       </Folder>
                       <Folder
                         isOpenDefault={false}
+                        key="Tooling"
                       >
                         <styled.div
                           onClick={[Function]}
@@ -1264,6 +1268,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       </Folder>
                       <Folder
                         isOpenDefault={false}
+                        key="FAQs"
                       >
                         <styled.div
                           onClick={[Function]}
