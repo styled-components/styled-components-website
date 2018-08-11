@@ -48,13 +48,15 @@ const ServerSideRendering = () => md`
 
   > \`sheet.getStyleTags()\` and \`sheet.getStyleElement()\` can only be called after your element is rendered. As a result, components from \`sheet.getStyleElement()\` cannot be combined with \`<YourApp />\` into a larger component.
 
+  You should install and use our babel plugin with its \`ssr\` option turned on.
+  This prevents checksum mismatches by adding a deterministic ID to each styled component.
+  Refer to the [tooling documentation](/docs/tooling#serverside-rendering) for more information.
+
   ### Next.js
 
   Basically you need to add a custom \`pages/_document.js\` (if you don't have one). Then
   [copy the logic](https://github.com/zeit/next.js/tree/master/examples/with-styled-components/pages/_document.js)
   for styled-components to inject the server side rendered styles into the \`<head>\`.
-
-  You'll also need to customize the \`.babelrc\` and use \`babel-plugin-styled-components\`.
 
   Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo for an up-to-date usage example.
 
@@ -92,13 +94,8 @@ const ServerSideRendering = () => md`
 
   _On the client:_
 
-  Before calling \`ReactDOM.hydrate\` to allow client-side React to take over, the \`consolidateStreamedStyles\` API must be called from styled-components to relocate the style blocks that will be intersperced throughout the rendered HTML. Otherwise, the checksum between server and client will be violated and result in an inconsistent page since \`interleaveWithNodeStream\` injected HTML that React wasn't expecting.
-
   \`\`\`js
   import { hydrate } from 'react-dom'
-  import { consolidateStreamedStyles } from 'styled-components'
-
-  consolidateStreamedStyles()
 
   hydrate(
     // your client-side react implementation

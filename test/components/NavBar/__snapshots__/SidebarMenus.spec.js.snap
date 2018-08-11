@@ -49,6 +49,7 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       onClick={[Function]}
     >
       <a
+        aria-label={undefined}
         className="c3"
         href="/docs/basics"
         onClick={[Function]}
@@ -66,6 +67,7 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       onClick={[Function]}
     >
       <a
+        aria-label={undefined}
         className="c3"
         href="/docs/advanced"
         onClick={[Function]}
@@ -83,6 +85,7 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       onClick={[Function]}
     >
       <a
+        aria-label={undefined}
         className="c3"
         href="/docs/api"
         onClick={[Function]}
@@ -100,6 +103,7 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       onClick={[Function]}
     >
       <a
+        aria-label={undefined}
         className="c3"
         href="/docs/tooling"
         onClick={[Function]}
@@ -117,6 +121,7 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       onClick={[Function]}
     >
       <a
+        aria-label={undefined}
         className="c3"
         href="/docs/faqs"
         onClick={[Function]}

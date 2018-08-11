@@ -72,6 +72,7 @@ import {
   IdeaLogo,
   HuffpostLogo,
   CoinbaseLogo,
+  PatreonLogo,
 } from '../components/CompanyLogos'
 
 const HomepageLivePreview = withLive(({
@@ -322,6 +323,10 @@ class Index extends PureComponent {
                 <CoinbaseLogo />
               </CompanyLogo>
 
+              <CompanyLogo>
+                <PatreonLogo />
+              </CompanyLogo>
+
             </UsersWrapper>
           </Content>
         </Wrapper>
@@ -339,8 +344,10 @@ class Index extends PureComponent {
             <FooterLink inline href="https://twitter.com/glenmaddern">@glenmaddern</FooterLink>
             {', '}
             <FooterLink inline href="https://twitter.com/mxstbr">@mxstbr</FooterLink>
-            {' & '}
+            {', '}
             <FooterLink inline href="https://twitter.com/_philpl">@_philpl‬</FooterLink>
+            {' & '}
+            <FooterLink inline href="https://twitter.com/probablyup">@probablyup</FooterLink>
           </FooterContent>
         </Footer>
       </div>

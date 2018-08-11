@@ -17,7 +17,7 @@ const BabelPlugin = () => md`
   Then add it to your babel configuration like so:
 
   > ⚠️ The plugin call order in your \`\`\`.babelrc\`\`\` file matters. If you're using the env property in your babel configuration, then putting this plugin into the plugins array won't suffice. Instead it needs to be put into each env's plugins array to maintain it being executed first. See [this](https://github.com/styled-components/babel-plugin-styled-components/issues/78) for more information.
-  
+
   \`\`\`js
   {
     "plugins": ["babel-plugin-styled-components"]
@@ -75,6 +75,26 @@ const BabelPlugin = () => md`
   }
   \`\`\`
 
+  #### Control the components \`displayName\`
+
+  By default, the \`displayName\` of a component will be prefixed with the filename in order to make the component name as unique as possible.
+
+  You can force the component \`displayName\` to be solely the component name by disabling the \`fileName\` option:
+  
+  \`\`\`
+  {
+    "plugins": [
+      ["babel-plugin-styled-components", {
+        "fileName": false
+      }]
+    ]
+  }
+  \`\`\`
+
+  One example you might want to do this, is testing components with enzyme.
+  While you can always use \`.find(ComponentName)\` it's definitly possible to search component by it's displayName with \`.find("ComponentName")\`.
+  In the latter case you will need to disable the \`fileName\` option. If you do want this for testing only, make sure to add this only under your test environment.
+
   ### Preprocessing
 
   > This is experimental and we don't yet know of all limitations and bugs!
@@ -131,7 +151,7 @@ const BabelPlugin = () => md`
   because \`styled-components\` template literals don't need to
   be 100% spec compliant.
 
-  Read more about [Tagged Template Literals](#tagged-template-literals) in
+  Read more about [Tagged Template Literals](/docs/advanced#tagged-template-literals) in
   our dedicated section explaining them.
 
   You can use the \`transpileTemplateLiterals\` option to turn this feature off.
