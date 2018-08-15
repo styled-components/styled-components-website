@@ -61,7 +61,7 @@ const HomepageGettingStarted = () =>
       To download styled-components run \`npm install --save styled-components\`.
       That's all you need to do, you are now ready to use it in your app! (yep, no build step needed 👌)
 
-      > It's highly recommended to also use the [styled-components babel plugin](https://github.com/styled-components/babel-plugin-styled-components). It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
+      > It's highly recommended (but not required) to also use the [styled-components babel plugin](https://github.com/styled-components/babel-plugin-styled-components). It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
 
       ## Your first styled component
 
