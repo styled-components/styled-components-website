@@ -9,12 +9,6 @@ const AlternativeInstallation = () => md`
     <script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
     \`\`\`
 
-    Alternatively you can install \`styled-components\` with [bower](https://bower.io):
-
-    \`\`\`
-    bower install styled-components=https://unpkg.com/styled-components/dist/styled-components.min.js
-    \`\`\`
-
     Once you've added \`styled-components\` you will have access to the global \`window.styled\` variable.
 `
 

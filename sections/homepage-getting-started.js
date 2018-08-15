@@ -4,9 +4,7 @@ import styled, { css } from 'styled-components'
 import md from 'components/md'
 import { Content } from 'components/Layout'
 
-const AlignCenter = styled.div`
-  text-align: center;
-`
+const AlignCenter = styled.div`text-align: center;`
 
 const Badge = styled.img`
   margin: 0 0.5em 3em;
@@ -21,10 +19,12 @@ const ExampleButton = styled.button`
   color: palevioletred;
   border: 2px solid palevioletred;
 
-  ${p => p.primary && css`
+  ${p =>
+    p.primary &&
+    css`
     background: palevioletred;
     color: white;
-  `}
+  `};
 `
 
 const SecondButton = styled.button`
@@ -35,7 +35,7 @@ const SecondButton = styled.button`
   border: 2px solid palevioletred;
 `
 
-const HomepageGettingStarted = () => (
+const HomepageGettingStarted = () =>
   <Content data-e2e-id="content">
     <AlignCenter>
       <a href="https://github.com/styled-components/styled-components">
@@ -47,7 +47,10 @@ const HomepageGettingStarted = () => (
       <Badge src="/proxy/downloads.svg" alt="Monthly downloads" />
       <Badge src="/proxy/size.svg" alt="Gzipped size" />
       <a href="https://spectrum.chat/styled-components">
-        <Badge alt="Join the community on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
+        <Badge
+          alt="Join the community on Spectrum"
+          src="https://withspectrum.github.io/badge/badge.svg"
+        />
       </a>
     </AlignCenter>
 
@@ -58,18 +61,33 @@ const HomepageGettingStarted = () => (
       To download styled-components run \`npm install --save styled-components\`.
       That's all you need to do, you are now ready to use it in your app! (yep, no build step needed 👌)
 
+      > It's highly recommended to also use the [styled-components babel plugin](https://github.com/styled-components/babel-plugin-styled-components). It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
+
       ## Your first styled component
 
       Let's say you want to create a simple and reusable \`<Button />\` component that you can use throughout your application.
       There should be a normal version and a big and \`primary\` version for the important buttons.
       This is what it should look like when rendered: (this is a live example, click on them!)
 
-      ${
-      <AlignCenter>
-        <ExampleButton onClick={() => { alert('You clicked the normal button!') }}>Normal button</ExampleButton>
-        <ExampleButton primary onClick={() => { alert('You clicked the primary button!') }}>Primary button</ExampleButton>
-      </AlignCenter>
-      }
+      ${(
+        <AlignCenter>
+          <ExampleButton
+            onClick={() => {
+              alert('You clicked the normal button!')
+            }}
+          >
+            Normal button
+          </ExampleButton>
+          <ExampleButton
+            primary
+            onClick={() => {
+              alert('You clicked the primary button!')
+            }}
+          >
+            Primary button
+          </ExampleButton>
+        </AlignCenter>
+      )}
 
       First, let's import styled-components and create a \`styled.button\`:
 
@@ -86,11 +104,11 @@ const HomepageGettingStarted = () => (
 
       If you render our lovely component now (just like any other component: \`<Button />\`) this is what you get:
 
-      ${
-      <AlignCenter>
-        <button>I'm a &lt;Button /&gt;!</button>
-      </AlignCenter>
-      }
+      ${(
+        <AlignCenter>
+          <button>I'm a &lt;Button /&gt;!</button>
+        </AlignCenter>
+      )}
 
       It renders a button! That's not a very nice button though 😕 we can do better than this,
       let's give it a bit of styling and tickle out the hidden beauty within!
@@ -106,11 +124,11 @@ const HomepageGettingStarted = () => (
       \`;
       \`\`\`
 
-      ${
-      <AlignCenter>
-        <SecondButton>I'm a styled &lt;Button /&gt;</SecondButton>
-      </AlignCenter>
-      }
+      ${(
+        <AlignCenter>
+          <SecondButton>I'm a styled &lt;Button /&gt;</SecondButton>
+        </AlignCenter>
+      )}
 
       As you can see, styled-components lets you write actual CSS in your JavaScript. This means you can use all
       the features of CSS you use and love, including (but by far not limited to) media queries, all
@@ -171,6 +189,5 @@ const HomepageGettingStarted = () => (
       Once you're done take a look at the [documentation](/docs), specifically the [Getting started](/docs/basics#getting-started) section! Enjoy ✨
     `}
   </Content>
-)
 
 export default HomepageGettingStarted

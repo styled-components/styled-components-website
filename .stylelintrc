@@ -6,6 +6,8 @@
   "rules": {
       "declaration-empty-line-before": null,
       "selector-type-case": null,
-      "selector-type-no-unknown": null
+      "selector-type-no-unknown": null,
+      "block-opening-brace-space-after": null,
+      "block-closing-brace-space-before": null,
   }
 }
