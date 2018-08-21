@@ -17,12 +17,14 @@ const StyledComponent = () => md`
   next to the styles defined by the styled call.
   (e.g. \`<MyStyledComp className="bootstrap__btn" />\`)
 
-  #### .extend
+  #### .extend (_deprecated_)
+
+  > Note: This API will be removed in styled-components v4. Use \`styled(StyledComponent)\` instead. For more information, see: https://github.com/styled-components/styled-components/issues/1546
 
   This is a method that creates a new \`StyledComponent\` and extends its rules.
 
-  ${
-    <Table head={[ 'Arguments', 'Description' ]}>
+  ${(
+    <Table head={['Arguments', 'Description']}>
       <Row>
         <Column>
           1. <Code>TaggedTemplateLiteral</Code>
@@ -32,7 +34,7 @@ const StyledComponent = () => md`
         </Column>
       </Row>
     </Table>
-  }
+  )}
 
   Returns a new \`StyledComponent\` with the new rules merged into the ones of the component
   this method was called on.
@@ -44,8 +46,8 @@ const StyledComponent = () => md`
   This is a method that creates a new \`StyledComponent\` with a different tag or component
   applied to it, but all the same rules of the one it's called on.
 
-  ${
-    <Table head={[ 'Arguments', 'Description' ]}>
+  ${(
+    <Table head={['Arguments', 'Description']}>
       <Row>
         <Column>
           1. <Code>component</Code> / <Code>tagname</Code>
@@ -55,7 +57,7 @@ const StyledComponent = () => md`
         </Column>
       </Row>
     </Table>
-  }
+  )}
 
   Returns a new \`StyledComponent\` with the new tag / component being applied when it's used.
 
