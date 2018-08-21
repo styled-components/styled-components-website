@@ -19,7 +19,7 @@ const StyledComponent = () => md`
 
   #### .extend (_deprecated_)
 
-  > Note: This API will be removed in styled-components v4. Use \`styled(StyledComponent)\` instead. For more information, see: https://github.com/styled-components/styled-components/issues/1546
+  > Note: This API will be removed in styled-components v4. Use \`styled(StyledComponent)\` instead. For more information, see: <https://github.com/styled-components/styled-components/issues/1546>
 
   This is a method that creates a new \`StyledComponent\` and extends its rules.
 

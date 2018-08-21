@@ -8,7 +8,7 @@ const ExtendingStyles = () => md`
   based on some props, but that's quite a lot of effort for overriding the styles
   once.
 
-  > Note: The \`StyledComponent.extend\` API will be removed in styled-components v4. Use \`styled(StyledComponent)\` instead. For more information, see: https://github.com/styled-components/styled-components/issues/1546
+  > Note: The \`StyledComponent.extend\` API will be removed in styled-components v4. Use \`styled(StyledComponent)\` instead. For more information, see: <https://github.com/styled-components/styled-components/issues/1546>
 
   To do this in an easier way you can call \`extend\` on the component
   to generate another. You style it like any other styled component.
