@@ -37,6 +37,10 @@ const ReactNative = () => md`
   be an array, and shorthands (e.g. for \`margin\`) thanks to
   \`css-to-react-native\`!
 
+  > Note that the \`flex\` property works like CSS shorthand, and not the legacy
+  > \`flex\` property in React Native. Setting \`flex: 1\` sets \`flexShrink\`
+  > to \`1\`.
+
   Imagine how you'd write the property in React Native, guess how you'd transfer
   it to CSS, and you're probably right:
 
