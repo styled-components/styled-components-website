@@ -17,30 +17,6 @@ const StyledComponent = () => md`
   next to the styles defined by the styled call.
   (e.g. \`<MyStyledComp className="bootstrap__btn" />\`)
 
-  #### .extend (_deprecated_)
-
-  > Note: This API will be removed in styled-components v4. Use \`styled(StyledComponent)\` instead. For more information, see: <https://github.com/styled-components/styled-components/issues/1546>
-
-  This is a method that creates a new \`StyledComponent\` and extends its rules.
-
-  ${(
-    <Table head={['Arguments', 'Description']}>
-      <Row>
-        <Column>
-          1. <Code>TaggedTemplateLiteral</Code>
-        </Column>
-        <Column>
-          A tagged template literal with your CSS and interpolations.
-        </Column>
-      </Row>
-    </Table>
-  )}
-
-  Returns a new \`StyledComponent\` with the new rules merged into the ones of the component
-  this method was called on.
-
-  You can see it in action in the [Extending Styles](/docs/basics#extending-styles) section.
-
   #### .withComponent
 
   This is a method that creates a new \`StyledComponent\` with a different tag or component

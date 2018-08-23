@@ -4,18 +4,13 @@ const ExtendingStyles = () => md`
   ## Extending Styles | v2
 
   Quite frequently you might want to use a component, but change it slightly for
-  a single case. Now you could pass in an interpolated function and change them
+  a single case. Now, you could pass in an interpolated function and change them
   based on some props, but that's quite a lot of effort for overriding the styles
   once.
 
-  > Note: The \`StyledComponent.extend\` API will be removed in styled-components v4. Use \`styled(StyledComponent)\` instead. For more information, see: <https://github.com/styled-components/styled-components/issues/1546>
-
-  To do this in an easier way you can call \`extend\` on the component
-  to generate another. You style it like any other styled component.
-  It overrides duplicate styles from the initial component and keeps the others around.
-
-  Here we use the button from the last section and create a special one, extending it
-  with some colour-related styling.
+  To easily make a new component that inherits the styling of another, just wrap it
+  in the \`styled()\` constructor. Here we use the button from the last section
+  and create a special one, extending it with some colour-related styling:
 
   \`\`\`react
   // The Button from the last section without the interpolations
@@ -28,8 +23,8 @@ const ExtendingStyles = () => md`
     border-radius: 3px;
   \`;
 
-  // We're extending Button with some extra styles
-  const TomatoButton = Button.extend\`
+  // A new component based on Button, but with some override styles
+  const TomatoButton = styled(Button)\`
     color: tomato;
     border-color: tomato;
   \`;
@@ -44,11 +39,6 @@ const ExtendingStyles = () => md`
 
   We can see that the new \`TomatoButton\` still resembles \`Button\`, while we have only
   added two new rules.
-
-  > You should only use \`Comp.extend\` if you know that \`Comp\` is a styled component.
-  > If you're importing from another file or a third party library, prefer to use
-  > \`styled(Comp)\` as it accomplishes the same thing but works with *any* React
-  > component. Read more about [what the difference between \`Comp.extend\` and \`styled(Comp)\` is.](/docs/faqs#when-should-i-use-styled)
 
   In really rare cases you might want to change which tag or component a styled component renders.
   For this case, we have an escape hatch. You can use the <Code>withComponent</Code> to extend
@@ -68,8 +58,8 @@ const ExtendingStyles = () => md`
   // We're replacing the <button> tag with an <a> tag, but reuse all the same styles
   const Link = Button.withComponent('a')
 
-  // Use .withComponent together with .extend to both change the tag and use additional styles
-  const TomatoLink = Link.extend\`
+  // Use .withComponent together with a styled() wrapper to both change the tag and use additional styles
+  const TomatoLink = styled(Link)\`
     color: tomato;
     border-color: tomato;
   \`;
