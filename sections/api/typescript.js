@@ -54,7 +54,7 @@ const TypeScript = () => md`
   
   // theme is now fully typed
   const Title = styled.h1\`
-    color: props => props.theme.primaryColor
+    color: \${props => props.theme.primaryColor}
   \`
   \`\`\`
 
@@ -65,7 +65,7 @@ const TypeScript = () => md`
   
   // theme is now fully typed
   const Title = styled<{ isActive: boolean }, 'h1'>('h1')\`
-    color: props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor
+    color: \${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
   \`
   \`\`\`
 
@@ -77,7 +77,7 @@ const TypeScript = () => md`
   import Header from './Header'
   
   const Title = styled<{ isActive: boolean }>(Header)\`
-    color: props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor
+    color: \${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
   \`
   \`\`\`
 
@@ -89,7 +89,7 @@ const TypeScript = () => md`
   import Header, { Props as HeaderProps } from './Header'
 
   const Title = styled<{ isActive: boolean }>(({ isActive, ...rest}) => <Header {...rest} />)\`
-    color: props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor
+    color: \${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
   \`
   \`\`\`
 
@@ -101,7 +101,7 @@ const TypeScript = () => md`
   import Header, { Props as HeaderProps } from './Header'
   
   const Title = styled<{ isActive: boolean } & HeaderProps>(({ isActive, ...rest}) => <Header {...rest} />)\`
-    color: props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor
+    color: \${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
   \`
   \`\`\`
 
