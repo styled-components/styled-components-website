@@ -322,6 +322,16 @@ exports[`MobileNavbar renders correctly 1`] = `
       />
       <a
         className="c8"
+        href="/showcase"
+        onClick={[Function]}
+      >
+        Showcase
+      </a>
+      <span
+        className="c9"
+      />
+      <a
+        className="c8"
         href="/ecosystem"
         onClick={[Function]}
       >

@@ -94,6 +94,12 @@ app.prepare()
       cachedRender(req, res, '/docs/api')
     })
 
+    server.get('/showcase/:route', (req, res) => {
+      const { route } = req.params
+
+      cachedRender(req, res, '/showcase', {item: route})
+    })
+
     // Proxy imageshield.io images
     const proxyMap = {
       'npm-v.svg': 'https://img.shields.io/npm/v/styled-components.svg',

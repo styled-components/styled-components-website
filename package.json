@@ -38,6 +38,7 @@
     "react-dom": "^15.6.1",
     "react-live": "^1.8.0-2",
     "react-octicons-svg": "^1.1.13",
+    "react-transition-group": "^2.4.0",
     "styled-components": "^3.0.2",
     "styled-theming": "^2.2.0",
     "sw-precache-webpack-plugin": "^0.11.4",

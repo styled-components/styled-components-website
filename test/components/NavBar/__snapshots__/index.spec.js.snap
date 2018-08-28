@@ -445,6 +445,32 @@ exports[`Nav renders correctly 1`] = `
                           />
                         </styled.span>
                         <Styled(Link)
+                          href="/showcase"
+                        >
+                          <Link
+                            className="c6"
+                            href="/showcase"
+                            unstyled={true}
+                          >
+                            <Link
+                              href="/showcase"
+                            >
+                              <a
+                                className="c6"
+                                href="/showcase"
+                                onClick={[Function]}
+                              >
+                                Showcase
+                              </a>
+                            </Link>
+                          </Link>
+                        </Styled(Link)>
+                        <styled.span>
+                          <span
+                            className="c7"
+                          />
+                        </styled.span>
+                        <Styled(Link)
                           href="/ecosystem"
                         >
                           <Link
@@ -784,6 +810,32 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   Documentation
+                                </a>
+                              </Link>
+                            </Link>
+                          </Styled(Link)>
+                          <styled.span>
+                            <span
+                              className="c7"
+                            />
+                          </styled.span>
+                          <Styled(Link)
+                            href="/showcase"
+                          >
+                            <Link
+                              className="c6"
+                              href="/showcase"
+                              unstyled={true}
+                            >
+                              <Link
+                                href="/showcase"
+                              >
+                                <a
+                                  className="c6"
+                                  href="/showcase"
+                                  onClick={[Function]}
+                                >
+                                  Showcase
                                 </a>
                               </Link>
                             </Link>
