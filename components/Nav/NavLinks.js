@@ -41,6 +41,8 @@ const NavLinks = () => (
   <Wrapper>
     <NavLink href="/docs">Documentation</NavLink>
     <NavSeparator />
+    <NavLink href="/showcase">Showcase</NavLink>
+    <NavSeparator />
     <NavLink href="/ecosystem">Ecosystem</NavLink>
     <NavSeparator />
     <NavLink href="/releases">Releases</NavLink>

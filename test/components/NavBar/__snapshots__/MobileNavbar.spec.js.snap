@@ -340,6 +340,16 @@ exports[`MobileNavbar renders correctly 1`] = `
       />
       <a
         className="c12"
+        href="/showcase"
+        onClick={[Function]}
+      >
+        Showcase
+      </a>
+      <span
+        className="c13"
+      />
+      <a
+        className="c12"
         href="/ecosystem"
         onClick={[Function]}
         onMouseEnter={[Function]}
