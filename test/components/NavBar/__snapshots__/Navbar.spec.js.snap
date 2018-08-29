@@ -327,7 +327,6 @@ exports[`Navbar renders correctly 1`] = `
       className="c2"
     >
       <a
-        aria-label={undefined}
         className="c3"
         href="/"
         onClick={[Function]}
@@ -340,7 +339,6 @@ exports[`Navbar renders correctly 1`] = `
         className="c5"
       >
         <a
-          aria-label={undefined}
           className="c6"
           href="/docs"
           onClick={[Function]}
@@ -351,7 +349,6 @@ exports[`Navbar renders correctly 1`] = `
           className="c7"
         />
         <a
-          aria-label={undefined}
           className="c6"
           href="/ecosystem"
           onClick={[Function]}
@@ -362,7 +359,6 @@ exports[`Navbar renders correctly 1`] = `
           className="c7"
         />
         <a
-          aria-label={undefined}
           className="c6"
           href="/releases"
           onClick={[Function]}
@@ -378,7 +374,6 @@ exports[`Navbar renders correctly 1`] = `
         className="c9"
       >
         <a
-          aria-label={undefined}
           className="c10"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
@@ -399,7 +394,6 @@ exports[`Navbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          aria-label={undefined}
           className="c10"
           href="https://github.com/styled-components"
           onClick={[Function]}
@@ -420,7 +414,6 @@ exports[`Navbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          aria-label={undefined}
           className="c10"
           href="https://medium.com/styled-components"
           onClick={[Function]}
@@ -448,7 +441,6 @@ exports[`Navbar renders correctly 1`] = `
   >
     <button
       className="c15"
-      onClick={undefined}
     >
       <svg
         className="c16"
@@ -485,7 +477,6 @@ exports[`Navbar renders correctly 1`] = `
     </a>
     <button
       className="c15"
-      onClick={undefined}
     >
       <div
         className="c19"
@@ -523,7 +514,6 @@ exports[`Navbar renders correctly 1`] = `
         className="c5"
       >
         <a
-          aria-label={undefined}
           className="c6"
           href="/docs"
           onClick={[Function]}
@@ -534,7 +524,6 @@ exports[`Navbar renders correctly 1`] = `
           className="c7"
         />
         <a
-          aria-label={undefined}
           className="c6"
           href="/ecosystem"
           onClick={[Function]}
@@ -545,7 +534,6 @@ exports[`Navbar renders correctly 1`] = `
           className="c7"
         />
         <a
-          aria-label={undefined}
           className="c6"
           href="/releases"
           onClick={[Function]}
@@ -563,7 +551,6 @@ exports[`Navbar renders correctly 1`] = `
           className="c9"
         >
           <a
-            aria-label={undefined}
             className="c10"
             href="https://spectrum.chat/styled-components/"
             onClick={[Function]}
@@ -584,7 +571,6 @@ exports[`Navbar renders correctly 1`] = `
             </svg>
           </a>
           <a
-            aria-label={undefined}
             className="c10"
             href="https://github.com/styled-components"
             onClick={[Function]}
@@ -605,7 +591,6 @@ exports[`Navbar renders correctly 1`] = `
             </svg>
           </a>
           <a
-            aria-label={undefined}
             className="c10"
             href="https://medium.com/styled-components"
             onClick={[Function]}

@@ -60,7 +60,6 @@ exports[`NavLinks renders correctly 1`] = `
   className="c0"
 >
   <a
-    aria-label={undefined}
     className="c1"
     href="/docs"
     onClick={[Function]}
@@ -71,7 +70,6 @@ exports[`NavLinks renders correctly 1`] = `
     className="c2"
   />
   <a
-    aria-label={undefined}
     className="c1"
     href="/ecosystem"
     onClick={[Function]}
@@ -82,7 +80,6 @@ exports[`NavLinks renders correctly 1`] = `
     className="c2"
   />
   <a
-    aria-label={undefined}
     className="c1"
     href="/releases"
     onClick={[Function]}

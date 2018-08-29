@@ -3,7 +3,6 @@ import Head from './SeoHead'
 import Nav from './Nav'
 import { Container, Content, Title } from './Layout'
 
-
 class DocsLayout extends Component {
   state = {
     isSideFolded: true,

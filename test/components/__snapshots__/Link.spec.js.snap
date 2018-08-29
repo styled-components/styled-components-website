@@ -3,6 +3,7 @@
 exports[`InlineLink renders correctly 1`] = `
 .c0 {
   color: rgb(219,112,147);
+  -webkit-text-decoration: underline;
   text-decoration: underline;
   font-weight: 600;
   cursor: pointer;
@@ -18,6 +19,7 @@ exports[`InlineLink renders correctly 1`] = `
 exports[`Link renders correctly 1`] = `
 .c0 {
   display: inline-block;
+  -webkit-text-decoration: none;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -36,9 +38,7 @@ exports[`Link renders correctly 1`] = `
 }
 
 <a
-  aria-label={undefined}
   className="c0"
-  href={undefined}
   onClick={[Function]}
 />
 `;
@@ -46,6 +46,7 @@ exports[`Link renders correctly 1`] = `
 exports[`StyledLink renders correctly 1`] = `
 .c0 {
   display: inline-block;
+  -webkit-text-decoration: none;
   text-decoration: none;
   color: inherit;
   cursor: pointer;

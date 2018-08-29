@@ -3,8 +3,12 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
-  webpack: function (config, { dev }) {
-    if (dev) {
+  webpack: function (config, { dev, isServer }) {
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      components: path.join(__dirname, './components')
+    }
+    if (dev || isServer) {
       return config
     }
 

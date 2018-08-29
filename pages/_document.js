@@ -152,9 +152,11 @@ export default class MyDocument extends Document {
   static getInitialProps ({ renderPage }) {
     const sheet = new ServerStyleSheet()
 
-    const page = renderPage(Component => props =>
-      sheet.collectStyles(<Component {...props} />
-    ))
+    const page = renderPage(Component => {
+      return (props) => {
+        return sheet.collectStyles(<Component {...props} />)
+      }
+    })
 
     const styleElements = sheet.getStyleElement()
     return { ...page, styleElements }
