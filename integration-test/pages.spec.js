@@ -38,18 +38,18 @@ describe('Pages', () => {
       dir: '.',
       dev: false,
       quiet: true,
-      conf: {}
+      conf: {},
     })
 
     await app.start(PORT, 'localhost')
     browser = await launch({
       executablePath: process.env.GOOGLE_CHROME_BINARY || undefined,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-lcd-text']
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-lcd-text'],
     })
     page = await browser.newPage()
 
     page.on('request', req => {
-      if (!req.url.startsWith(`http://localhost:${PORT}`)) {
+      if (!req.url().startsWith(`http://localhost:${PORT}`)) {
         req.abort()
       } else {
         req.continue()
@@ -60,7 +60,7 @@ describe('Pages', () => {
       errors.push(err)
     })
 
-    await page.setRequestInterception(true);
+    await page.setRequestInterception(true)
     await page.setViewport({ width: 1024, height: 768, deviceScaleFactor: 1 })
   })
 
@@ -75,7 +75,9 @@ describe('Pages', () => {
   })
 
   const assertPage = (title, endpoint, shouldSnapshot) => {
-    const message = shouldSnapshot ? `should match ${title} snapshot` : `should render ${title} until the end of the docs page`;
+    const message = shouldSnapshot
+      ? `should match ${title} snapshot`
+      : `should render ${title} until the end of the docs page`
 
     it(message, async () => {
       await page.goto(`http://localhost:${PORT}${endpoint}`)
@@ -92,7 +94,7 @@ describe('Pages', () => {
           customSnapshotIdentifier: title,
           customSnapshotsDir: resolve(__dirname, '__image_snapshots__'),
           failureThreshold: '0.06',
-          failureThresholdType: 'percent'
+          failureThresholdType: 'percent',
         })
       }
 
