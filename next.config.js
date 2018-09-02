@@ -1,9 +1,10 @@
+const withPreact = require('@zeit/next-preact')
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin
 
-module.exports = {
-  webpack: function(config, { dev }) {
+module.exports = withPreact({
+  webpack: function(config, { dev, isServer }) {
     if (dev) {
       return config
     }
@@ -18,20 +19,18 @@ module.exports = {
       }),
     )
 
-    const oldEntry = config.entry
+    if (!isServer) {
+      const oldEntry = config.entry
 
-    config.entry = () =>
-      oldEntry().then(entry => {
-        entry['main.js'].push(path.resolve('./utils/track.js'))
+      config.entry = () =>
+        oldEntry().then(entry => {
+          entry['main.js'].push(path.resolve('./utils/track.js'))
+          entry.commons = ['./utils/prismTemplateString.js']
 
-        entry.commons = ['./utils/prismTemplateString.js']
-        return entry
-      })
-
-    config.resolve.alias = config.resolve.alias || {}
-    config.resolve.alias['react'] = 'preact-compat/dist/preact-compat'
-    config.resolve.alias['react-dom'] = 'preact-compat/dist/preact-compat'
+          return entry
+        })
+    }
 
     return config
   },
-}
+})

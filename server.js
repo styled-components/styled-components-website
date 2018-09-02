@@ -1,13 +1,8 @@
 const dev = process.env.NODE_ENV !== 'production'
-const moduleAlias = require('module-alias')
-
-if (!dev) {
-  moduleAlias.addAlias('react', 'preact-compat')
-  moduleAlias.addAlias('react-dom', 'preact-compat')
-}
 
 const { parse } = require('url')
 const express = require('express')
+const compression = require('compression')
 const LRUCache = require('lru-cache')
 const next = require('next')
 const axios = require('axios')
@@ -79,6 +74,8 @@ app.prepare().then(() => {
   const server = express()
 
   server.disable('x-powered-by')
+
+  server.use(compression())
 
   server.get('/docs', (req, res) => {
     cachedRender(req, res, '/docs')
