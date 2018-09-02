@@ -3,6 +3,7 @@
 exports[`DocsSidebarMenu renders correctly 1`] = `
 .c3 {
   display: inline-block;
+  -webkit-text-decoration: none;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -42,14 +43,12 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
 >
   <div
     className="c1"
-    onClick={undefined}
   >
     <h4
       className="c2"
       onClick={[Function]}
     >
       <a
-        aria-label={undefined}
         className="c3"
         href="/docs/basics"
         onClick={[Function]}
@@ -60,14 +59,12 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
   </div>
   <div
     className="c1"
-    onClick={undefined}
   >
     <h4
       className="c2"
       onClick={[Function]}
     >
       <a
-        aria-label={undefined}
         className="c3"
         href="/docs/advanced"
         onClick={[Function]}
@@ -78,14 +75,12 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
   </div>
   <div
     className="c1"
-    onClick={undefined}
   >
     <h4
       className="c2"
       onClick={[Function]}
     >
       <a
-        aria-label={undefined}
         className="c3"
         href="/docs/api"
         onClick={[Function]}
@@ -96,14 +91,12 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
   </div>
   <div
     className="c1"
-    onClick={undefined}
   >
     <h4
       className="c2"
       onClick={[Function]}
     >
       <a
-        aria-label={undefined}
         className="c3"
         href="/docs/tooling"
         onClick={[Function]}
@@ -114,14 +107,12 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
   </div>
   <div
     className="c1"
-    onClick={undefined}
   >
     <h4
       className="c2"
       onClick={[Function]}
     >
       <a
-        aria-label={undefined}
         className="c3"
         href="/docs/faqs"
         onClick={[Function]}

@@ -64,10 +64,8 @@ exports[`Anchor renders correctly 1`] = `
   <div
     aria-hidden={true}
     className="c2"
-    id={undefined}
   />
   <a
-    aria-label={undefined}
     className="c3 c4"
     href="#undefined"
   >

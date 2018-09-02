@@ -14,7 +14,7 @@ exports[`Note renders correctly 1`] = `
   margin: 0 0 0.2777777777777778rem 0;
 }
 
-.sc-ifAKCX + .c0,
+.c2 + .c0,
 .sc-htpNat + .c0 {
   margin-top: 1.9444444444444444rem;
 }

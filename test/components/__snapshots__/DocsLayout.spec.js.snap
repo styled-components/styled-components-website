@@ -3,6 +3,7 @@
 exports[`DocsLayout renders correctly 1`] = `
 .c27 {
   display: inline-block;
+  -webkit-text-decoration: none;
   text-decoration: none;
   color: inherit;
   cursor: pointer;

@@ -52,7 +52,6 @@ exports[`NextPage renders correctly 1`] = `
 }
 
 <a
-  aria-label={undefined}
   className="c0"
   href=""
   onClick={[Function]}
