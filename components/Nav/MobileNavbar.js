@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     height: ${rem(navbarHeight)};
-  `)}
+  `)};
 `
 
 const SecondaryMenu = styled.div`
@@ -30,13 +30,14 @@ const SecondaryMenu = styled.div`
   left: 0;
   right: 0;
 
-  ${p => p.open ? css`
+  ${p =>
+    p.isOpen
+      ? css`
     height: ${rem(navbarHeight)};
-  ` : css`
+  `
+      : css`
     height: 0;
-  `}
-
-  display: flex;
+  `} display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
@@ -55,7 +56,7 @@ const SecondaryMenu = styled.div`
 const LogoLink = styled(Link).attrs({
   unstyled: true,
   href: '/',
-  ariaLabel: 'styled components',
+  'aria-label': 'styled components',
 })`
   display: inline-block;
   vertical-align: center;
@@ -64,15 +65,15 @@ const LogoLink = styled(Link).attrs({
 const ArrowWrapper = styled.div`
   transition: transform 0.1s;
 
-  ${p => p.rotate && css`
+  ${p =>
+    p.shouldRotate &&
+    css`
     transform-origin: 50% 55%;
     transform: rotate(180deg);
-  `}
+  `};
 `
 
-const SecondaryMenuItem = styled.div`
-  padding-right: ${rem(20)};
-`
+const SecondaryMenuItem = styled.div`padding-right: ${rem(20)};`
 
 const MobileNavbar = props => {
   const {
@@ -85,29 +86,22 @@ const MobileNavbar = props => {
 
   return (
     <Wrapper>
-      {showSideNav !== false && (
-        <NavButton
-          active={!isSideFolded}
-          onClick={onSideToggle}
-        >
+      {showSideNav !== false &&
+        <NavButton active={!isSideFolded} onClick={onSideToggle}>
           {isSideFolded ? <FoldIcon /> : <CloseIcon />}
-        </NavButton>
-      )}
+        </NavButton>}
 
       <LogoLink>
         <Logo compact />
       </LogoLink>
 
-      <NavButton
-        onClick={onMobileNavToggle}
-        active={!isMobileNavFolded}
-      >
-        <ArrowWrapper rotate={!isMobileNavFolded}>
+      <NavButton onClick={onMobileNavToggle} active={!isMobileNavFolded}>
+        <ArrowWrapper shouldRotate={!isMobileNavFolded}>
           <ArrowIcon />
         </ArrowWrapper>
       </NavButton>
 
-      <SecondaryMenu open={!isMobileNavFolded}>
+      <SecondaryMenu isOpen={!isMobileNavFolded}>
         <NavLinks />
         <NavSeparator />
         <SecondaryMenuItem>

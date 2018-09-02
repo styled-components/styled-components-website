@@ -480,7 +480,6 @@ exports[`Navbar renders correctly 1`] = `
     >
       <div
         className="c19"
-        rotate={true}
       >
         <svg
           className="c16"
@@ -508,7 +507,6 @@ exports[`Navbar renders correctly 1`] = `
     </button>
     <div
       className="c20"
-      open={true}
     >
       <nav
         className="c5"

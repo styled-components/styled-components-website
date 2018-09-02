@@ -276,7 +276,6 @@ exports[`MobileNavbar renders correctly 1`] = `
   >
     <div
       className="c5"
-      rotate={true}
     >
       <svg
         className="c2"
@@ -304,7 +303,6 @@ exports[`MobileNavbar renders correctly 1`] = `
   </button>
   <div
     className="c6"
-    open={true}
   >
     <nav
       className="c7"

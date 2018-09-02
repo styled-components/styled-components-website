@@ -762,13 +762,13 @@ exports[`DocsLayout renders correctly 1`] = `
                       </styled.button>
                       <Styled(Link)>
                         <Link
-                          ariaLabel="styled components"
+                          aria-label="styled components"
                           className="c18"
                           href="/"
                           unstyled={true}
                         >
                           <Link
-                            ariaLabel="styled components"
+                            aria-label="styled components"
                             href="/"
                           >
                             <a
@@ -797,11 +797,10 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <styled.div
-                            rotate={false}
+                            shouldRotate={false}
                           >
                             <div
                               className="c20"
-                              rotate={false}
                             >
                               <ArrowIcon>
                                 <styled.svg
@@ -839,11 +838,10 @@ exports[`DocsLayout renders correctly 1`] = `
                         </button>
                       </styled.button>
                       <styled.div
-                        open={false}
+                        isOpen={false}
                       >
                         <div
                           className="c21"
-                          open={false}
                         >
                           <NavLinks>
                             <styled.nav>

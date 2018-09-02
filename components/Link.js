@@ -23,9 +23,9 @@ export const StyledLink = styled.a`
 
 export const InlineLink = styled.a.attrs({
   target: '_blank',
-  rel: 'noopener'
+  rel: 'noopener',
 })`
-  color: ${p => p['data-white'] ? 'white' : violetRed};
+  color: ${p => (p['data-white'] ? 'white' : violetRed)};
   text-decoration: underline;
   font-weight: 600;
   cursor: pointer;
@@ -46,7 +46,12 @@ const Link = ({ children, className, inline, unstyled, white, ...rest }) => {
 
   return (
     <UnstyledLink {...rest}>
-      <Child href={rest.href} className={className} aria-label={rest.ariaLabel} {...dataAttrs}>
+      <Child
+        href={rest.href}
+        className={className}
+        aria-label={rest['aria-label']}
+        {...dataAttrs}
+      >
         {children}
       </Child>
     </UnstyledLink>

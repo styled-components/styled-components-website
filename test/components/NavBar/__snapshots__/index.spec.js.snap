@@ -685,13 +685,13 @@ exports[`Nav renders correctly 1`] = `
                 </styled.button>
                 <Styled(Link)>
                   <Link
-                    ariaLabel="styled components"
+                    aria-label="styled components"
                     className="c17"
                     href="/"
                     unstyled={true}
                   >
                     <Link
-                      ariaLabel="styled components"
+                      aria-label="styled components"
                       href="/"
                     >
                       <a
@@ -718,11 +718,10 @@ exports[`Nav renders correctly 1`] = `
                     className="c15"
                   >
                     <styled.div
-                      rotate={true}
+                      shouldRotate={true}
                     >
                       <div
                         className="c19"
-                        rotate={true}
                       >
                         <ArrowIcon>
                           <styled.svg
@@ -760,11 +759,10 @@ exports[`Nav renders correctly 1`] = `
                   </button>
                 </styled.button>
                 <styled.div
-                  open={true}
+                  isOpen={true}
                 >
                   <div
                     className="c20"
-                    open={true}
                   >
                     <NavLinks>
                       <styled.nav>
