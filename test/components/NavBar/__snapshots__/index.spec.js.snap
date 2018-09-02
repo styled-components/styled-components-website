@@ -1012,6 +1012,7 @@ exports[`Nav renders correctly 1`] = `
               >
                 <Folder
                   isOpenDefault={false}
+                  key="Basics"
                 >
                   <styled.div>
                     <div
@@ -1051,6 +1052,7 @@ exports[`Nav renders correctly 1`] = `
                 </Folder>
                 <Folder
                   isOpenDefault={false}
+                  key="Advanced"
                 >
                   <styled.div>
                     <div
@@ -1090,6 +1092,7 @@ exports[`Nav renders correctly 1`] = `
                 </Folder>
                 <Folder
                   isOpenDefault={false}
+                  key="API Reference"
                 >
                   <styled.div>
                     <div
@@ -1129,6 +1132,7 @@ exports[`Nav renders correctly 1`] = `
                 </Folder>
                 <Folder
                   isOpenDefault={false}
+                  key="Tooling"
                 >
                   <styled.div>
                     <div
@@ -1168,6 +1172,7 @@ exports[`Nav renders correctly 1`] = `
                 </Folder>
                 <Folder
                   isOpenDefault={false}
+                  key="FAQs"
                 >
                   <styled.div>
                     <div
