@@ -1,19 +1,12 @@
 import md from 'components/md'
 
 const Refs = () => md`
-  ## Refs
+  ## Refs | v4
 
-  Passing a \`ref\` prop to a styled component will give you an instance of
-  the \`StyledComponent\` wrapper, but not to the underlying DOM node.
-  This is due to how refs work.
-  It's not possible to call DOM methods, like \`focus\`, on our wrappers directly.
+  Passing a \`ref\` prop to a styled component will give you one of two things depending on the styled target:
 
-  To get a ref to the actual, wrapped DOM node, pass the callback to the \`innerRef\` prop instead.
-
-  > We don't support string refs (i.e. \`innerRef="node"\`), since they're already deprecated in React.
-
-  This example uses \`innerRef\` to save a ref to the styled input and focuses it once the user
-  hovers over it.
+  * the underlying DOM node (if targeting a basic element, e.g. \`styled.div\`)
+  * a React component instance (if targeting a custom component e.g. extended from \`React.Component\`)
 
   \`\`\`react
   const Input = styled.input\`
@@ -26,12 +19,14 @@ const Refs = () => md`
   \`;
 
   class Form extends React.Component {
+    inputRef = React.createRef();
+
     render() {
       return (
         <Input
+          ref={this.inputRef}
           placeholder="Hover here..."
-          innerRef={x => { this.input = x }}
-          onMouseEnter={() => this.input.focus()}
+          onMouseEnter={() => this.inputRef.current.focus()}
         />
       );
     }
@@ -41,6 +36,8 @@ const Refs = () => md`
     <Form />
   );
   \`\`\`
+
+  > Using an older version of styled-components? See the [\`innerRef\` prop](/docs/api#innerref-prop) in version 3.x and lower.
 `
 
 export default Refs

@@ -20,7 +20,9 @@ const Keyframes = () => md`
     </Table>
   )}
 
-  Returns a unique name for these keyframes, to be used in your animation declarations.
+  Returns a Keyframes model, to be used in your animation declarations. You can use the \`getName()\` API on the returned model if you wish to obtain the generated animation name.
+
+  > In styled-components v3 and below, the \`keyframes\` helper directly returned the animation name instead of an object with the \`getName\` method.
 
   \`\`\`jsx
   import styled, { keyframes } from "styled-components";

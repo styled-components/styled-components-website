@@ -63,6 +63,10 @@ const HomepageGettingStarted = () =>
 
       > It's highly recommended (but not required) to also use the [styled-components babel plugin](https://github.com/styled-components/babel-plugin-styled-components). It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
 
+      ### Want to try out the styled-components v4 beta?
+
+      Run \`npm install --save styled-components@beta\` instead.
+
       ## Your first styled component
 
       Let's say you want to create a simple and reusable \`<Button />\` component that you can use throughout your application.

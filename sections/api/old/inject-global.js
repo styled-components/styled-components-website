@@ -5,8 +5,9 @@ import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
 const InjectGlobal = () => md`
-  > The \`injectGlobal\` API was removed and replaced by \`createGlobalStyle\` in styled-components v4.
   ### \`injectGlobal\`
+
+  > The \`injectGlobal\` API was removed and replaced by \`createGlobalStyle\` in styled-components v4.
 
   A helper method to write global CSS. It does not return a component, but adds the styles to
   the stylesheet directly.
