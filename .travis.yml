@@ -8,30 +8,16 @@ cache:
   bundler: true
   directories:
     - node_modules
-addons:
-  apt:
-    packages:
-      - libnss3
-      - google-chrome-beta
-env:
-  global:
-    - GOOGLE_CHROME_BINARY="/usr/bin/google-chrome-beta"
-    - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
 node_js:
   - 8
 jobs:
   include:
     - stage: test
-      before_script:
-        - 'export DISPLAY=:99.0'
-        - sh -e /etc/init.d/xvfb start &
-        - sleep 3
       script:
         - node --version
         - yarn --version
-        - yarn run test
-        - yarn run lint
-        - yarn run integration
+        - yarn test
+        - yarn lint
     - stage: deploy
       if: (fork = false) AND (branch = master)
       script:
