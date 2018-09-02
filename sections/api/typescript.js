@@ -3,8 +3,15 @@ import md from 'components/md'
 const TypeScript = () => md`
   ## TypeScript
 
-  styled-components has TypeScript definitions to allow the library to be used in any TypeScript project.
-  A basic example can be found [here](https://github.com/patrick91/Styled-Components-Typescript-Example).
+  styled-components has [TypeScript definitions](https://www.npmjs.com/package/@types/styled-components) to allow the library to be used in any TypeScript project. To install them, run:
+
+  \`\`\`bash
+  npm install @types/styled-components
+  \`\`\`
+
+  A basic example of usage can be found [here](https://github.com/patrick91/Styled-Components-Typescript-Example).
+
+  > Now that Babel 7 is out and the [TypeScript preset](https://babeljs.io/docs/en/babel-preset-typescript) is available, it's now possible to use the [styled-components babel plugin](/docs/tooling#babel-plugin) in conjunction with TypeScript.
 
   Before you can effectively start to use TypeScript you will have to do a little bit of configuration.
 
@@ -28,10 +35,10 @@ const TypeScript = () => md`
 
   \`\`\`jsx
   // styled-components.ts
-  import * as styledComponents from 'styled-components';
-  import { ThemedStyledComponentsModule } from 'styled-components';
+  import * as styledComponents from "styled-components";
+  import { ThemedStyledComponentsModule } from "styled-components";
 
-  import ThemeInterface from './theme';
+  import ThemeInterface from "./theme";
 
   const {
     default: styled,
@@ -47,11 +54,11 @@ const TypeScript = () => md`
 
   ### Styling components
   Finally, instead of importing the styled functions from the styled-components module,
-  we import it from our above, custom module. 
+  we import it from our above, custom module.
 
   \`\`\`jsx
-  import styled from 'app/styled-components'
-  
+  import styled from "app/styled-components"
+
   // theme is now fully typed
   const Title = styled.h1\`
     color: \${props => props.theme.primaryColor}
@@ -61,10 +68,10 @@ const TypeScript = () => md`
   If you are passing custom properties to your styled component it is a good idea to follow this convention:
 
   \`\`\`jsx
-  import styled from 'app/styled-components'
-  
+  import styled from "app/styled-components"
+
   // theme is now fully typed
-  const Title = styled<{ isActive: boolean }, 'h1'>('h1')\`
+  const Title = styled<{ isActive: boolean }, "h1">("h1")\`
     color: \${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
   \`
   \`\`\`
@@ -73,9 +80,9 @@ const TypeScript = () => md`
   the type of tag is not required.
 
   \`\`\`jsx
-  import styled from 'app/styled-components'
-  import Header from './Header'
-  
+  import styled from "app/styled-components"
+  import Header from "./Header"
+
   const Title = styled<{ isActive: boolean }>(Header)\`
     color: \${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
   \`
@@ -85,8 +92,8 @@ const TypeScript = () => md`
   following convention:
 
   \`\`\`jsx
-  import styled from 'app/styled-components'
-  import Header, { Props as HeaderProps } from './Header'
+  import styled from "app/styled-components"
+  import Header, { Props as HeaderProps } from "./Header"
 
   const Title = styled<{ isActive: boolean }>(({ isActive, ...rest}) => <Header {...rest} />)\`
     color: \${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
@@ -97,9 +104,9 @@ const TypeScript = () => md`
   you follow this convention:
 
   \`\`\`jsx
-  import styled from 'app/styled-components'
-  import Header, { Props as HeaderProps } from './Header'
-  
+  import styled from "app/styled-components"
+  import Header, { Props as HeaderProps } from "./Header"
+
   const Title = styled<{ isActive: boolean } & HeaderProps>(({ isActive, ...rest}) => <Header {...rest} />)\`
     color: \${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
   \`
@@ -132,7 +139,7 @@ const TypeScript = () => md`
   }
 
   const LogoStyled = styled(Logo)\`
-    font-family: 'Helvetica';
+    font-family: "Helvetica";
     font-weight: bold;
     font-size: 1.8rem;
   \`;

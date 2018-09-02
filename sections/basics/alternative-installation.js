@@ -10,6 +10,8 @@ const AlternativeInstallation = () => md`
     \`\`\`
 
     Once you've added \`styled-components\` you will have access to the global \`window.styled\` variable.
+
+    > This style of usage requires the [react CDN bundles](https://reactjs.org/docs/cdn-links.html) to be on the page as well.
 `
 
 export default AlternativeInstallation

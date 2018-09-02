@@ -5,27 +5,25 @@ import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
 const Keyframes = () => md`
-  ### \`keyframes\` | web
+  ### \`keyframes\` | web-only
 
   A helper method to create keyframes for animations.
 
-  ${
-    <Table head={[ 'Arguments', 'Description' ]}>
+  ${(
+    <Table head={['Arguments', 'Description']}>
       <Row>
         <Column>
           1. <Code>TaggedTemplateLiteral</Code>
         </Column>
-        <Column>
-          A tagged template literal with your keyframes inside.
-        </Column>
+        <Column>A tagged template literal with your keyframes inside.</Column>
       </Row>
     </Table>
-  }
+  )}
 
   Returns a unique name for these keyframes, to be used in your animation declarations.
 
   \`\`\`jsx
-  import styled, { keyframes } from 'styled-components';
+  import styled, { keyframes } from "styled-components";
 
   const fadeIn = keyframes\`
     0% {

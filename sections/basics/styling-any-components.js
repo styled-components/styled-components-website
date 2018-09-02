@@ -3,7 +3,7 @@ import md from 'components/md'
 const StylingAnyComponents = () => md`
   ## Styling any components
 
-  The \`styled\` method works perfectly on all of your own or any third-party 
+  The \`styled\` method works perfectly on all of your own or any third-party
   components as well, as long as they pass the \`className\` prop to their rendered sub-components,
   which should pass it too, and so on.
   Ultimately, the \`className\` must be passed down the line to an actual DOM node for the styling to take any effect.
@@ -15,12 +15,12 @@ const StylingAnyComponents = () => md`
   need some components to stay unstyled on their own.
 
   \`\`\`react
-  // This could be react-router's Link for example
+  // This could be react-router-dom's Link for example
   const Link = ({ className, children }) => (
     <a className={className}>
       {children}
     </a>
-  )
+  );
 
   const StyledLink = styled(Link)\`
     color: palevioletred;
@@ -40,7 +40,7 @@ const StylingAnyComponents = () => md`
   You will disable the automatic whitelisting of props, and reverse the recommended order of styled
   components and structural components.
 
-  You can also pass tag names into the \`styled()\` factory call, like so: \`styled('div')\`.
+  You can also pass tag names into the \`styled()\` factory call, like so: \`styled("div")\`.
   In fact, the \`styled.tagname\` helpers are just aliases that do the same.
 
   > styled-components always generates a real stylesheet with classes.

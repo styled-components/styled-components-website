@@ -13,7 +13,7 @@ const WhenToUseAttrs = () => md`
   \`\`\`js
   const PasswordInput = styled.input.attrs({
     // Every <PasswordInput /> should be type="password"
-    type: 'password'
+    type: "password"
   })\`\`
 
   // This specific one is hidden, so let's set aria-hidden

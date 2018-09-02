@@ -5,13 +5,13 @@ import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
 const WithTheme = () => md`
-  ### \`withTheme\` | web | native
+  ### \`withTheme\`
 
   This is a higher order component factory to get the current theme from a \`ThemeProvider\` and
   pass it to your component as a \`theme\` prop.
 
-  ${
-    <Table head={[ 'Arguments', 'Description' ]}>
+  ${(
+    <Table head={['Arguments', 'Description']}>
       <Row>
         <Column>
           1. <Code>Component</Code>
@@ -21,17 +21,17 @@ const WithTheme = () => md`
         </Column>
       </Row>
     </Table>
-  }
+  )}
 
   Returns the passed component inside a wrapper (higher order component).
   The passed component will receive a \`theme\` prop with the current theme object.
 
   \`\`\`jsx
-  import { withTheme } from 'styled-components'
+  import { withTheme } from "styled-components"
 
   class MyComponent extends React.Component {
     render() {
-      console.log('Current theme: ', this.props.theme);
+      console.log("Current theme: ", this.props.theme);
       // ...
     }
   }

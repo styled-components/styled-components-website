@@ -15,7 +15,7 @@ const OverrideStyles = () => md`
     }
   \`;
   \`\`\`
-  
+
   Each \`&\` gets replaced with the generated class, so the injected CSS then looks like this:
 
   \`\`\`css
@@ -24,7 +24,7 @@ const OverrideStyles = () => md`
     font-weight: bold;
   }
   \`\`\`
-  
+
   The repeated class bumps the specificity high enough to override the source order without being very tedious to write!
 `
 

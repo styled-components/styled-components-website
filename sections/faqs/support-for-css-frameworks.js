@@ -10,7 +10,7 @@ const CSSFrameworks = () => md`
 
   \`\`\`react
   const Button = styled.button.attrs({
-    className: 'small',
+    className: "small",
   })\`
     background: black;
     color: white;

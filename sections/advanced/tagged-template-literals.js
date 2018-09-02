@@ -11,7 +11,7 @@ const TaggedTemplateLiterals = () => md`
   \`\`\`jsx
   // These are equivalent:
   fn\`some string here\`;
-  fn([ 'some string here' ]);
+  fn([ "some string here" ]);
   \`\`\`
 
   Once you pass interpolations, the array contains the passed string, split at the positions of the interpolations.
@@ -22,7 +22,7 @@ const TaggedTemplateLiterals = () => md`
 
   // These are equivalent:
   fn\`this is a \${aVar} day\`;
-  fn([ 'this is a ', ' day' ], aVar);
+  fn([ "this is a ", " day" ], aVar);
   \`\`\`
 
   This is a bit cumbersome to work with, but it means that we can receive variables, functions, or mixins

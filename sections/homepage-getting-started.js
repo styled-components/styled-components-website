@@ -92,7 +92,7 @@ const HomepageGettingStarted = () =>
       First, let's import styled-components and create a \`styled.button\`:
 
       \`\`\`jsx
-      import styled from 'styled-components';
+      import styled from "styled-components";
 
       const Button = styled.button\`\`;
       \`\`\`
@@ -139,7 +139,7 @@ const HomepageGettingStarted = () =>
       To do that we also import \`{ css }\` from \`styled-components\` and interpolate a function into our template literal, which gets passed the props of our component:
 
       \`\`\`jsx
-      import styled, { css } from 'styled-components'
+      import styled, { css } from "styled-components"
 
       const Button = styled.button\`
         border-radius: 3px;

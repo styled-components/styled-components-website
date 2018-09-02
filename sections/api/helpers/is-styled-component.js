@@ -5,12 +5,12 @@ import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
 const IsStyledComponent = () => md`
-  ### \`isStyledComponent\` | web | native
+  ### \`isStyledComponent\`
 
   A utility to help identify styled components.
 
-  ${
-    <Table head={[ 'Arguments', 'Description' ]}>
+  ${(
+    <Table head={['Arguments', 'Description']}>
       <Row>
         <Column>
           1. <Code>Function</Code>
@@ -20,14 +20,14 @@ const IsStyledComponent = () => md`
         </Column>
       </Row>
     </Table>
-  }
+  )}
 
   Returns true if the passed function is a valid styled components-wrapped component class. This is useful for determining if \`innerRef\` or \`ref\` should be passed:
 
   \`\`\`jsx
-  import React from 'react';
-  import { isStyledComponent } from 'styled-components';
-  import MaybeStyledComponent from './somewhere-else';
+  import React from "react";
+  import { isStyledComponent } from "styled-components";
+  import MaybeStyledComponent from "./somewhere-else";
 
   const shouldUseInnerRef = isStyledComponent(MaybeStyledComponent);
 
@@ -39,7 +39,7 @@ const IsStyledComponent = () => md`
     render() {
       return React.createElement(
         MaybeStyledComponent, {
-          [shouldUseInnerRef ? 'innerRef' : 'ref']: node => { this.el = node; }
+          [shouldUseInnerRef ? "innerRef" : "ref"]: node => { this.el = node; }
         }
       )
     }
@@ -49,9 +49,9 @@ const IsStyledComponent = () => md`
   It also can be useful for determining if a component needs to be wrapped such that it can be used as a component selector:
 
   \`\`\`jsx
-  import React from 'react';
-  import styled, { isStyledComponent } from 'styled-components';
-  import MaybeStyledComponent from './somewhere-else';
+  import React from "react";
+  import styled, { isStyledComponent } from "styled-components";
+  import MaybeStyledComponent from "./somewhere-else";
 
   let TargetedComponent =
     isStyledComponent(MaybeStyledComponent)

@@ -26,13 +26,13 @@ const Theming = () => md`
   // We're passing a default theme for Buttons that aren't wrapped in the ThemeProvider
   Button.defaultProps = {
     theme: {
-      main: 'palevioletred'
+      main: "palevioletred"
     }
   }
 
   // Define what props.theme will look like
   const theme = {
-    main: 'mediumseagreen'
+    main: "mediumseagreen"
   };
 
   render(
@@ -69,8 +69,8 @@ const Theming = () => md`
 
   // Define our \`fg\` and \`bg\` on the theme
   const theme = {
-    fg: 'palevioletred',
-    bg: 'white'
+    fg: "palevioletred",
+    bg: "white"
   };
 
   // This theme swaps \`fg\` and \`bg\`
@@ -98,11 +98,11 @@ const Theming = () => md`
   the \`withTheme\` higher order component.
 
   \`\`\`jsx
-  import { withTheme } from 'styled-components'
+  import { withTheme } from "styled-components"
 
   class MyComponent extends React.Component {
     render() {
-      console.log('Current theme: ', this.props.theme);
+      console.log("Current theme: ", this.props.theme);
       // ...
     }
   }
@@ -131,23 +131,23 @@ const Theming = () => md`
 
   // Define what main theme will look like
   const theme = {
-    main: 'mediumseagreen'
+    main: "mediumseagreen"
   };
 
   render(
     <div>
-      <Button theme={{ main: 'royalblue' }}>Ad hoc theme</Button>
+      <Button theme={{ main: "royalblue" }}>Ad hoc theme</Button>
       <ThemeProvider theme={theme}>
         <div>
           <Button>Themed</Button>
-          <Button theme={{ main: 'darkorange' }}>Overidden</Button>
+          <Button theme={{ main: "darkorange" }}>Overidden</Button>
         </div>
-      </ThemeProvider>      
+      </ThemeProvider>
     </div>
   );
   \`\`\`
 
-  
+
 `
 
 export default Theming

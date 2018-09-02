@@ -28,18 +28,16 @@ const isValid = node => {
   const walker = node.walker()
   let event
 
-  while (event = walker.next()) {
+  while ((event = walker.next())) {
     const { node, entering } = event
 
     if (
       !entering ||
       !node.literal ||
       node.literal.indexOf(PLACEHOLDER) === -1 ||
-      (
-        node.type === 'text' &&
+      (node.type === 'text' &&
         node.parent.type === 'paragraph' &&
-        node.literal === PLACEHOLDER
-      )
+        node.literal === PLACEHOLDER)
     ) {
       continue
     }
@@ -52,15 +50,17 @@ const isValid = node => {
 
 const md = (strings, ...values) => {
   // Check if it's called as a normal function or as a tagged function
-  const input = typeof strings === 'string' ?
-    stripIndent(strings) :
-    stripIndent(strings.join(PLACEHOLDER))
+  const input =
+    typeof strings === 'string'
+      ? stripIndent(strings)
+      : stripIndent(strings.join(PLACEHOLDER))
 
-  const idPrefix = typeof strings === 'string' && typeof values[0] === 'string' ?
-    values[0] + '_'  : ''
+  const idPrefix =
+    typeof strings === 'string' && typeof values[0] === 'string'
+      ? values[0] + '_'
+      : ''
 
-  const startingLevel = typeof strings === 'string' ?
-    values[1] : null
+  const startingLevel = typeof strings === 'string' ? values[1] : null
 
   const parser = new Parser()
   const ast = parser.parse(input)
@@ -75,17 +75,27 @@ const md = (strings, ...values) => {
     renderers: {
       Paragraph({ children }) {
         if (
-          (Array.isArray(children) && children.length === 1 && children[0] === PLACEHOLDER) ||
+          (Array.isArray(children) &&
+            children.length === 1 &&
+            children[0] === PLACEHOLDER) ||
           children === PLACEHOLDER
         ) {
           return values.shift()
         }
 
-        return <p>{children}</p>
+        return (
+          <p>
+            {children}
+          </p>
+        )
       },
 
       Code({ literal }) {
-        return <Code>{literal}</Code>
+        return (
+          <Code>
+            {literal}
+          </Code>
+        )
       },
 
       CodeBlock({ language, literal }) {
@@ -101,21 +111,33 @@ const md = (strings, ...values) => {
       },
 
       BlockQuote({ children }) {
-        return <Note>{children}</Note>
+        return (
+          <Note>
+            {children}
+          </Note>
+        )
       },
 
       Link({ href, children }) {
-        return <Link href={href} inline>{children}</Link>
+        return (
+          <Link href={href} inline>
+            {children}
+          </Link>
+        )
       },
 
       Heading({ level, children }) {
         if (startingLevel) {
           topLevelHeading = topLevelHeading || Math.max(level, 1)
-          level+= startingLevel - topLevelHeading
+          level += startingLevel - topLevelHeading
         }
 
         if (level === 1) {
-          return <Title>{children}</Title>
+          return (
+            <Title>
+              {children}
+            </Title>
+          )
         }
 
         // The pipe indicates labels after the initial title
@@ -135,21 +157,18 @@ const md = (strings, ...values) => {
         return (
           <Anchor id={hash} level={level}>
             {title}
-            {labels.length > 0 && (
+            {labels.length > 0 &&
               <LabelGroup>
-                {
-                  labels.map((label, index) =>
-                    <Label key={index}>
-                      {label.trim()}
-                    </Label>
-                  )
-                }
-              </LabelGroup>
-            )}
+                {labels.map((label, index) =>
+                  <Label key={index} isVersion={label.trim().startsWith('v')}>
+                    {label.trim()}
+                  </Label>,
+                )}
+              </LabelGroup>}
           </Anchor>
         )
-      }
-    }
+      },
+    },
   })
 
   return (

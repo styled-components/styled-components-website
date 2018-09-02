@@ -80,7 +80,7 @@ const BabelPlugin = () => md`
   By default, the \`displayName\` of a component will be prefixed with the filename in order to make the component name as unique as possible.
 
   You can force the component \`displayName\` to be solely the component name by disabling the \`fileName\` option:
-  
+
   \`\`\`
   {
     "plugins": [

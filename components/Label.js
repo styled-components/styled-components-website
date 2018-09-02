@@ -13,7 +13,7 @@ export const LabelGroup = styled.div`
 
 const Label = styled.small`
   display: inline-block;
-  background: ${violetRed};
+  background: ${p => (p.isVersion ? 'cornflowerblue' : violetRed)};
   color: white;
   font-size: 0.75rem;
   font-family: ${headerFont};
