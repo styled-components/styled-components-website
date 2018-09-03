@@ -19,14 +19,20 @@ const Refs = () => md`
   \`;
 
   class Form extends React.Component {
-    inputRef = React.createRef();
+    constructor(props) {
+      super(props);
+
+      this.setInputRef = (element) => {
+        this.input = element;
+      }
+    }
 
     render() {
       return (
         <Input
-          ref={this.inputRef}
-          placeholder="Hover here..."
-          onMouseEnter={() => this.inputRef.current.focus()}
+          ref={this.setInputRef}
+          placeholder="Hover to focus!"
+          onMouseEnter={() => this.input.base.focus()}
         />
       );
     }
@@ -37,7 +43,7 @@ const Refs = () => md`
   );
   \`\`\`
 
-  > Using an older version of styled-components? See the [\`innerRef\` prop](/docs/api#innerref-prop) in version 3.x and lower.
+  > Using an older version of styled-components (v3 and lower) or of React? Use the [\`innerRef\` prop](/docs/api#innerref-prop) instead.
 `
 
 export default Refs
