@@ -95,6 +95,12 @@ const BabelPlugin = () => md`
   While you can always use \`.find(ComponentName)\` it's definitly possible to search component by it's displayName with \`.find("ComponentName")\`.
   In the latter case you will need to disable the \`fileName\` option. If you do want this for testing only, make sure to add this only under your test environment.
 
+  ### Usage with TypeScript
+
+  The babel plugin can be used alongside \`@babel/preset-typescript\`. Using the TypeScript plugin allows you to make use of TypeScript in your application without having additional compilation steps.
+
+  [Read more about @babel/preset-typescript](https://babeljs.io/docs/en/next/babel-preset-typescript.html)
+
   ### Preprocessing
 
   > This is experimental and we don't yet know of all limitations and bugs!
