@@ -1,4 +1,4 @@
-import React, { Component } from 'react' // eslint-disable-line
+import React from 'react' // eslint-disable-line
 import { findDOMNode } from 'react-dom'
 
 let isMobile
@@ -19,7 +19,7 @@ const captureScroll = Component => {
     return Component
   }
 
-  class CaptureScroll extends Component {
+  class CaptureScroll extends React.Component {
     onScroll = evt => {
       // Don't access window wheel listener
       evt.stopImmediatePropagation()
@@ -63,7 +63,7 @@ const captureScroll = Component => {
 
     onResize = () => {
       isMobile = window.matchMedia(`(max-width: ${1000 / 16}em)`).matches
-      if(isMobile) {
+      if (isMobile) {
         this.node.removeEventListener('wheel', this.onScroll)
       } else {
         this.node.addEventListener('wheel', this.onScroll)
@@ -84,12 +84,7 @@ const captureScroll = Component => {
     }
 
     render() {
-      return (
-        <Component
-          {...this.props}
-          ref={x => this.ref = x}
-        />
-      )
+      return <Component {...this.props} ref={x => (this.ref = x)} />
     }
   }
 

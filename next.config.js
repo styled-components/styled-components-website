@@ -1,9 +1,8 @@
-const withPreact = require('@zeit/next-preact')
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin
 
-module.exports = withPreact({
+module.exports = {
   webpack: function(config, { dev, isServer }) {
     if (dev) {
       return config
@@ -33,4 +32,4 @@ module.exports = withPreact({
 
     return config
   },
-})
+}
