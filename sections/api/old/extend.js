@@ -1,0 +1,44 @@
+import React from 'react'
+
+import md from 'components/md'
+import Code from 'components/Code'
+import Table, { Row, Column } from 'components/Table'
+
+const Extend = () => md`
+  ### \`.extend\`
+
+  > The \`.extend\` API was removed in styled-components v4. Use \`styled(StyledComponent)\` instead. For more information, see: <https://github.com/styled-components/styled-components/issues/1546>
+
+  This is a method that creates a new \`StyledComponent\` and extends its rules.
+
+  ${(
+    <Table head={['Arguments', 'Description']}>
+      <Row>
+        <Column>
+          1. <Code>TaggedTemplateLiteral</Code>
+        </Column>
+        <Column>
+          A tagged template literal with your CSS and interpolations.
+        </Column>
+      </Row>
+    </Table>
+  )}
+
+  \`\`\`jsx
+  import styled from "styled-components"
+
+  const Component = styled.div\`
+    color: red;
+  \`
+
+  const Component2 = Component.extend\`
+    background: white;
+    color: blue;
+  \`
+  \`\`\`
+
+  Returns a new \`StyledComponent\` with the new rules merged into the ones of the component
+  this method was called on.
+`
+
+export default Extend

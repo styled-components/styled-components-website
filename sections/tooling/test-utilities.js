@@ -25,16 +25,16 @@ const TestUtilities = () => md`
   Here's an example of a test:
 
   \`\`\`jsx
-  import React from 'react'
-  import styled from 'styled-components'
-  import renderer from 'react-test-renderer'
-  import 'jest-styled-components'
+  import React from "react"
+  import styled from "styled-components"
+  import renderer from "react-test-renderer"
+  import "jest-styled-components"
 
   const Button = styled.button\`
     color: red;
   \`
 
-  test('it works', () => {
+  test("it works", () => {
     const tree = renderer.create(<Button />).toJSON()
     expect(tree).toMatchSnapshot()
   })
@@ -66,10 +66,10 @@ const TestUtilities = () => md`
   nested within an at-rule or to add modifiers to the class selector.
 
   \`\`\`jsx
-  import React from 'react'
-  import styled from 'styled-components'
-  import renderer from 'react-test-renderer'
-  import 'jest-styled-components'
+  import React from "react"
+  import styled from "styled-components"
+  import renderer from "react-test-renderer"
+  import "jest-styled-components"
 
   const Button = styled.button\`
     color: red;
@@ -80,12 +80,12 @@ const TestUtilities = () => md`
     }
   \`
 
-  test('it works', () => {
+  test("it works", () => {
     const tree = renderer.create(<Button />).toJSON()
-    expect(tree).toHaveStyleRule('color', 'red')
-    expect(tree).toHaveStyleRule('color', 'green', {
-      media: '(max-width: 640px)',
-      modifier: ':hover',
+    expect(tree).toHaveStyleRule("color", "red")
+    expect(tree).toHaveStyleRule("color", "green", {
+      media: "(max-width: 640px)",
+      modifier: ":hover",
     })
   })
   \`\`\`

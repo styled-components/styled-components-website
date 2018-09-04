@@ -8,7 +8,7 @@ const HTMLAttributeWarnings = () => md`
   you or a library you are using is attaching props as attributes to HTML DOM elements.
 
   \`\`\`jsx
-  Warning: Received 'true' for a non-boolean attribute
+  Warning: Received "true" for a non-boolean attribute
   \`\`\`
 
   If you're seeing this warning you are probably passing \`true\` where \`"true"\` would be appropriate.
@@ -26,7 +26,7 @@ const HTMLAttributeWarnings = () => md`
   }
 
   const StyledComp = styled(Link)\`
-    color: \${props.red ? 'red' : 'blue'};
+    color: \${props.red ? "red" : "blue"};
   \`
 
   <StyledComp text="Click" href="https://www.styled-components.com/" red />

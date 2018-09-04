@@ -1,4 +1,4 @@
-import md from "components/md"
+import md from 'components/md'
 
 const ReverseSelectors = () => md`
   ## Can I refer to other components?
@@ -34,7 +34,7 @@ const ReverseSelectors = () => md`
     line-height: 1.2;
 
     &::before {
-      content: '◀';
+      content: "◀";
       margin: 0 10px;
     }
   \`;
@@ -53,9 +53,9 @@ const ReverseSelectors = () => md`
   consider both sets of rules to understand why Icon behaves as it does.
 
   ### Caveat
-  
-  This behaviour is only supported within the context of *Styled* Components: 
-  attempting to mount \`B\` in the following example will fail because component 
+
+  This behaviour is only supported within the context of *Styled* Components:
+  attempting to mount \`B\` in the following example will fail because component
   \`A\` is an instance of React.Component not a Styled Component.
 
   \`\`\`jsx
@@ -64,14 +64,14 @@ const ReverseSelectors = () => md`
       return <div />;
     }
   }
-  
+
   const B = styled.div\`
     \${A} {
     }
   \`;
   \`\`\`
 
-  The error thrown - \`Cannot call a class as a function\` - occurs because the 
+  The error thrown - \`Cannot call a class as a function\` - occurs because the
   styled component is attempting to call the component as an interpolation function.
 `
 

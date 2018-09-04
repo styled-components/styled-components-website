@@ -11,12 +11,14 @@ import LibraryAuthors from '../../sections/faqs/library-authors'
 import DuplicatedStyledComponents from '../../sections/faqs/duplicated-styled-components'
 import HTMLAttributeWarnings from '../../sections/faqs/html-attribute-warnings'
 import BrowserSupport from '../../sections/faqs/browser-support'
+import MigrationV4 from '../../sections/faqs/migration-v4'
 
 const FAQs = () =>
   <DocsLayout
     title="FAQs"
     description="Commonly asked questions about styled-components"
   >
+    <MigrationV4 />
     <Nesting />
     <CSSFrameworks />
     <OverrideStyles />

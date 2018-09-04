@@ -61,7 +61,9 @@ const HomepageGettingStarted = () =>
       To download styled-components run \`npm install --save styled-components\`.
       That's all you need to do, you are now ready to use it in your app! (yep, no build step needed 👌)
 
-      > It's highly recommended (but not required) to also use the [styled-components babel plugin](https://github.com/styled-components/babel-plugin-styled-components). It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
+      > Try out the v4 beta!  Run \`npm install --save styled-components@beta\` instead. You can find [migration instructions in the FAQ](/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4) if you're not a new user.
+
+      > It's recommended (but not required) to also use the [styled-components Babel plugin](https://github.com/styled-components/babel-plugin-styled-components) if you can. It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
 
       ## Your first styled component
 
@@ -92,7 +94,7 @@ const HomepageGettingStarted = () =>
       First, let's import styled-components and create a \`styled.button\`:
 
       \`\`\`jsx
-      import styled from 'styled-components';
+      import styled from "styled-components";
 
       const Button = styled.button\`\`;
       \`\`\`
@@ -100,7 +102,7 @@ const HomepageGettingStarted = () =>
       This \`Button\` variable here is now a React component that you can use like any other React component!
       This unusual backtick syntax is a new JavaScript feature called a tagged template literal.
       You know how you can call functions with parenthesis? (\`myFunc()\`) Well, now you can also call functions with backticks!
-      [here is an explanation](/docs/advanced#tagged-template-literals) of how that works exactly.
+      ([learn more about tagged template literals](/docs/advanced#tagged-template-literals))
 
       If you render our lovely component now (just like any other component: \`<Button />\`) this is what you get:
 
@@ -132,14 +134,13 @@ const HomepageGettingStarted = () =>
 
       As you can see, styled-components lets you write actual CSS in your JavaScript. This means you can use all
       the features of CSS you use and love, including (but by far not limited to) media queries, all
-      pseudo-selectors, nesting, etc. It also binds styles to components, which has some interesting properties.
-      (learn more about [the ideas behind styled-components here](/docs/basics#motivation))
+      pseudo-selectors, nesting, etc.
 
       The last step is that we need to define what a primary button looks like.
       To do that we also import \`{ css }\` from \`styled-components\` and interpolate a function into our template literal, which gets passed the props of our component:
 
       \`\`\`jsx
-      import styled, { css } from 'styled-components'
+      import styled, { css } from "styled-components"
 
       const Button = styled.button\`
         border-radius: 3px;
@@ -156,7 +157,7 @@ const HomepageGettingStarted = () =>
       \`;
       \`\`\`
 
-      All we're saying here is that when the \`primary\` property is set we want to add some more \`css\` to our component,
+      Here we're saying  that when the \`primary\` property is set we want to add some more \`css\` to our component,
       in this case change the background and color.
 
       That's all, we're done! Take a look at our finished component:

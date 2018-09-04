@@ -7,11 +7,13 @@ import { Editor } from 'react-live'
 import { darkGrey } from '../utils/colors'
 import { monospace } from '../utils/fonts'
 
+import { Note } from './Note'
+
 const CodeBlock = styled(p => {
   const language = (p.language || 'clike').toLowerCase().trim()
   return <Editor {...p} language={language} />
 }).attrs({
-  contentEditable: false
+  contentEditable: false,
 })`
   background: ${darkGrey};
   font-size: 0.8rem;
@@ -24,6 +26,10 @@ const CodeBlock = styled(p => {
   margin: ${rem(35)} 0;
 
   overflow-x: hidden;
+
+  ${Note} & {
+    margin: ${rem(20)} 0;
+  }
 `
 
 export default CodeBlock

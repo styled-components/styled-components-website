@@ -9,6 +9,11 @@ const Installation = () => md`
   npm install --save styled-components
   \`\`\`
 
+  > Want to try out the new styled-components v4 beta? It's available now via:
+  > \`\`\`bash
+  > npm install --save styled-components@beta
+  > \`\`\`
+
   It's highly recommended (but not required) to also use the [styled-components babel plugin](https://github.com/styled-components/babel-plugin-styled-components). It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
 
   \`\`\`bash

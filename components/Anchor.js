@@ -6,7 +6,7 @@ import { Header, SubHeader, TertiaryHeader } from './Layout'
 import { mobile } from '../utils/media'
 
 const InvisibleAnchor = styled.div.attrs({
-  'aria-hidden': true
+  'aria-hidden': true,
 })`
   position: relative;
   display: block;
@@ -29,7 +29,7 @@ const Anchor = styled.a`
 
 const AnchorIcon = styled(LinkIcon).attrs({
   width: null,
-  height: null
+  height: null,
 })`
   width: ${rem(20)};
   opacity: 0.7;
@@ -65,7 +65,7 @@ const AnchorTertiaryHeader = AnchorHeader.withComponent(TertiaryHeader)
 const Link = ({ children, level, id }) => {
   let Child = AnchorHeader
 
-  switch(level) {
+  switch (level) {
     case 3:
       Child = AnchorSubHeader
       break

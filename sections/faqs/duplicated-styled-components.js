@@ -7,12 +7,12 @@ const DuplicatedStyledComponents = () => md`
   have several instances of \`styled-components\` module initialized on the page.
 
   \`\`\`sh
-  It looks like there are several instances of 'styled-components' initialized in this application.
+  It looks like there are several instances of "styled-components" initialized in this application.
   This may cause dynamic styles not rendering properly, errors happening during rehydration process
   and makes you application bigger without a good reason.
 
   If you are using a building tool like Webpack, consider checking your bundle for duplication
-  of 'styled-components' module.
+  of "styled-components" module.
   \`\`\`
 
   This may cause dynamic styles not working properly or even errors during rehydration if
@@ -38,9 +38,9 @@ const DuplicatedStyledComponents = () => md`
   \`\`\`diff
     module.exports = {
       entry: {
-  +     vendor: ['styled-components'],
-        app1: './src/app.1.js',
-        app2: './src/app.2.js',
+  +     vendor: ["styled-components"],
+        app1: "./src/app.1.js",
+        app2: "./src/app.2.js",
       },
       plugins: [
   +     new webpack.optimize.CommonsChunkPlugin({
@@ -75,7 +75,7 @@ const DuplicatedStyledComponents = () => md`
 
   \`\`\`diff
     resolve: {
-  +   modules: [path.resolve(appFolder, 'node_modules'), 'node_modules'],
+  +   modules: [path.resolve(appFolder, "node_modules"), "node_modules"],
     }
   \`\`\`
 
@@ -85,7 +85,7 @@ const DuplicatedStyledComponents = () => md`
   \`\`\`diff
     resolve: {
   +   alias: {
-  +     'styled-components': path.resolve(appFolder, 'node_modules', 'styled-components'),
+  +     "styled-components": path.resolve(appFolder, "node_modules", "styled-components"),
   +   }
     }
   \`\`\`

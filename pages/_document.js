@@ -141,26 +141,33 @@ const resetStyles = `
     font-size: 0.5em;
   }
 
-  ul li {
+  ul, ol {
+    padding-left: 0;
+  }
+
+  ul ul, ul ol, ol ol, ol ul {
+    padding-left: 1.5em;
+  }
+
+  ul li, ol li {
     margin-bottom: 0.2em;
     line-height: 1.7;
   }
 `
 
-
 export default class MyDocument extends Document {
-  static getInitialProps ({ renderPage }) {
+  static getInitialProps({ renderPage }) {
     const sheet = new ServerStyleSheet()
 
     const page = renderPage(Component => props =>
-      sheet.collectStyles(<Component {...props} />
-    ))
+      sheet.collectStyles(<Component {...props} />),
+    )
 
     const styleElements = sheet.getStyleElement()
     return { ...page, styleElements }
   }
 
-  render () {
+  render() {
     const { styleElements } = this.props
 
     return (
@@ -170,28 +177,43 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/static/manifest.json" />
 
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+          />
 
           <meta name="theme-color" content="#da936a" />
           <meta name="author" content="styled-components" />
 
           <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
           {styleElements}
-          <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WDWNSLK');` }}></script>
-       </Head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WDWNSLK');`,
+            }}
+          />
+        </Head>
 
-       <body>
-         <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDWNSLK" height="0" width="0" style="display:none;visibility:hidden"></iframe>` }}></noscript>
-         <div className="root">
-           <Main />
-         </div>
+        <body>
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDWNSLK" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+            }}
+          />
+          <div className="root">
+            <Main />
+          </div>
 
-         <NextScript />
+          <NextScript />
 
-         {/* cloud.typography */}
-         <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
-       </body>
-     </html>
+          {/* cloud.typography */}
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cloud.typography.com/7039052/7606172/css/fonts.css"
+          />
+        </body>
+      </html>
     )
   }
 }

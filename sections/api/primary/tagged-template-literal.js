@@ -5,34 +5,32 @@ import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
 const TaggedTemplateLiteral = () => md`
-  ### \`TaggedTemplateLiteral\` | web | native
+  ### \`TaggedTemplateLiteral\`
 
   This is what you pass into your styled calls – a tagged template literal.
   This is an ES6 language feature. You can learn more about them in the
   [Tagged Template Literals](/docs/advanced#tagged-template-literals) section.
 
-  ${
-    <Table head={[ 'Inputs', 'Description' ]}>
+  ${(
+    <Table head={['Inputs', 'Description']}>
       <Row>
         <Column>
           <Code>Rule</Code>
         </Column>
-        <Column>
-          Any CSS rules (string)
-        </Column>
+        <Column>Any CSS rules (string)</Column>
       </Row>
       <Row>
         <Column>
           <Code>Interpolation</Code>
         </Column>
         <Column>
-          This can either be a string or a function.
-          Strings are combined with the rules as-is.
-          Functions will receive the styled component's props as the first and only argument.
+          This can either be a string or a function. Strings are combined with
+          the rules as-is. Functions will receive the styled component's props
+          as the first and only argument.
         </Column>
       </Row>
     </Table>
-  }
+  )}
 
   Read more about how to adapt styling based on props in the
   [Adapting based on props](/docs/basics#adapting-based-on-props) section.
@@ -42,9 +40,9 @@ const TaggedTemplateLiteral = () => md`
   Check the section on [Theming](/docs/advanced#theming) for more information on this.
 
   \`\`\`jsx
-  import styled from 'styled-components';
+  import styled from "styled-components";
 
-  const padding = '3em';
+  const padding = "3em";
 
   const Section = styled.section\`
     color: white;

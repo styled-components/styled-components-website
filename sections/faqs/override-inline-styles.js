@@ -4,7 +4,7 @@ const OverrideStyles = () => md`
   ## How can I override inline styles?
 
   Inline styles will always take precedence over external CSS, so you cannot override it by simply increasing specificity.
-  
+
   There is a neat trick however, which is to use the style \`element-attr\` CSS Selector in conjunction with \`!important\`:
 
   \`\`\`js

@@ -77,7 +77,7 @@ Some other libraries also implement the \`styled.x\` pattern with tagged templat
 If you want to use the processor with another library but you also want to change the keyword (e.g. to write \`cool.div\` instead of \`styled.div\`) use the \`moduleName\` option:
 
 \`\`\`js
-import cool from 'other-library';
+import cool from "other-library";
 
 const Button = cool.button\`
   color: blue;
@@ -103,7 +103,7 @@ Sometimes \`stylelint\` can throw an error (e.g. \`CssSyntaxError\`) even though
 A simplified example:
 
 \`\`\`js
-const something = 'background';
+const something = "background";
 
 const Button = styled.div\`
   \${something}: papayawhip;
@@ -117,7 +117,7 @@ Interpolation tagging allows you to tell the processor what an interpolation is 
 For example:
 
 \`\`\`js
-const something = 'background';
+const something = "background";
 
 const Button = styled.div\`
   // Tell the processor that "something" is a property
@@ -171,13 +171,13 @@ For example:
 
 \`\`\`js
 // Switch between left and right based on language settings passed through via the theme
-const rtlSwitch = props => props.theme.dir === 'rtl' ? 'left' : 'right';
+const rtlSwitch = props => props.theme.dir === "rtl" ? "left" : "right";
 
 const Button = styled.button\`
   background: green;
   // Tell the processor to replace the interpolation with "left"
   // when linting
-  margin-\${/* sc-custom 'left' */ rtlSwitch}: 12.5px;
+  margin-\${/* sc-custom "left" */ rtlSwitch}: 12.5px;
 \`;
 \`\`\`
 
@@ -188,8 +188,8 @@ const Button = styled.button\`
 Turn off rules with \`stylelint-disable\` comments (see the [stylelint documentation](https://stylelint.io/user-guide/configuration/#turning-rules-off-from-within-your-css) for all allowed syntax) both inside and outside of the tagged template literals.
 
 \`\`\`js
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 // Disable stylelint from within the tagged template literal
 const Wrapper = styled.div\`

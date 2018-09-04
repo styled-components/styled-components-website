@@ -1,369 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navbar renders correctly 1`] = `
-.c7 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 0.2777777777777778rem;
-  height: 0.2777777777777778rem;
-  margin: 0 0.8333333333333334rem;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.35;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c6 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  display: inline-block;
-  line-height: 2.7777777777777777rem;
-  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
-  -webkit-transition: opacity 0.2s,transform 0.2s;
-  transition: opacity 0.2s,transform 0.2s;
-  cursor: pointer;
-  -webkit-letter-spacing: 0.022222222222222223rem;
-  -moz-letter-spacing: 0.022222222222222223rem;
-  -ms-letter-spacing: 0.022222222222222223rem;
-  letter-spacing: 0.022222222222222223rem;
-  color: currentColor;
-}
-
-.c6:hover,
-.c6:focus {
-  opacity: 0.8;
-}
-
-.c6:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-}
-
-.c10 {
-  display: inline-block;
-  margin-right: 1.1111111111111112rem;
-  line-height: 2.7777777777777777rem;
-  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
-  -webkit-transition: opacity 0.2s,transform 0.2s;
-  transition: opacity 0.2s,transform 0.2s;
-  cursor: pointer;
-}
-
-.c10:last-child {
-  margin-right: 0;
-}
-
-.c10:hover,
-.c10:focus {
-  opacity: 0.8;
-}
-
-.c10:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
-.c10 svg path {
-  fill: currentColor;
-}
-
-.c11 {
-  width: 0.7777777777777778rem;
-  height: 0.7777777777777778rem;
-}
-
-.c12 {
-  width: 0.9444444444444444rem;
-  height: 0.9444444444444444rem;
-}
-
-.c13 {
-  width: 0.9444444444444444rem;
-  height: 0.7777777777777778rem;
-}
-
-.c4 {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
-  background-position: center;
-  background-size: contain;
-  background-image: url(/static/nav-logo.png);
-  width: 9.11111111111111rem;
-  height: 2.2222222222222223rem;
-}
-
-.c18 {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
-  background-position: center;
-  background-size: contain;
-  background-image: url(/static/icon.png);
-  width: 5.555555555555555rem;
-  height: 1.6666666666666667rem;
-}
-
-.c16 svg {
-  display: inline-block;
-}
-
-.c16 svg path {
-  fill: currentColor;
-}
-
-.c15 {
-  background: none;
-  outline: none;
-  border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  min-width: 2.7777777777777777rem;
-  height: 2.7777777777777777rem;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background: rgba(0,0,0,0.07);
-}
-
-.c15:focus {
-  border: 0.1111111111111111rem solid currentColor;
-  border-radius: 0.1111111111111111rem;
-}
-
-.c14 {
-  display: none;
-}
-
-.c20 {
-  position: absolute;
-  top: 2.7777777777777777rem;
-  left: 0;
-  right: 0;
-  height: 2.7777777777777777rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0 1.1111111111111112rem;
-  -webkit-transition: height 0.1s;
-  transition: height 0.1s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-overflow-scrolling: touch;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  background: #efefef;
-  color: #868686;
-}
-
-.c17 {
-  display: inline-block;
-  vertical-align: center;
-}
-
-.c19 {
-  -webkit-transition: -webkit-transform 0.1s;
-  -webkit-transition: transform 0.1s;
-  transition: transform 0.1s;
-  -webkit-transform-origin: 50% 55%;
-  -ms-transform-origin: 50% 55%;
-  transform-origin: 50% 55%;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
-.c21 {
-  padding-right: 1.1111111111111112rem;
-}
-
-.c0 {
-  position: fixed;
-  left: 0;
-  box-sizing: border-box;
-  z-index: 3;
-  width: 100%;
-  height: 2.7777777777777777rem;
-  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 0.8333333333333334rem;
-  font-weight: 500;
-  background: rgb(219,112,147);
-  -webkit-transition: background 300ms ease-out;
-  transition: background 300ms ease-out;
-  color: white;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0 1.1111111111111112rem;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.c3 {
-  display: inline-block;
-  vertical-align: center;
-  margin-right: 1.9444444444444444rem;
-}
-
-@media (max-width:62.5em) {
-  .c14 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    height: 2.7777777777777777rem;
-  }
-}
-
-@media (max-width:62.5em) {
-  .c1 {
-    display: none;
-  }
-}
-
 <nav
-  className="c0"
+  className="ihgQwU"
 >
   <div
-    className="c1"
+    className="fIzcWS"
   >
     <div
-      className="c2"
+      className="kWHtZp"
     >
       <a
-        aria-label={undefined}
-        className="c3"
+        className="ffEHFQ"
         href="/"
         onClick={[Function]}
       >
         <div
-          className="c4"
+          className="iSbHZP"
         />
       </a>
       <nav
-        className="c5"
+        className="eWokkx"
       >
         <a
-          aria-label={undefined}
-          className="c6"
+          className="fAKxmD"
           href="/docs"
           onClick={[Function]}
         >
           Documentation
         </a>
         <span
-          className="c7"
+          className="jGjUIy"
         />
         <a
-          aria-label={undefined}
-          className="c6"
+          className="fAKxmD"
           href="/ecosystem"
           onClick={[Function]}
         >
           Ecosystem
         </a>
         <span
-          className="c7"
+          className="jGjUIy"
         />
         <a
-          aria-label={undefined}
-          className="c6"
+          className="fAKxmD"
           href="/releases"
           onClick={[Function]}
         >
@@ -372,19 +52,18 @@ exports[`Navbar renders correctly 1`] = `
       </nav>
     </div>
     <div
-      className="c8"
+      className="hbBwFX"
     >
       <nav
-        className="c9"
+        className="fjGhui"
       >
         <a
-          aria-label={undefined}
-          className="c10"
+          className="hGMLkS"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
         >
           <svg
-            className="c11"
+            className="hPnFBz"
             height="14"
             viewBox="0 0 15 15"
             width="14"
@@ -399,13 +78,12 @@ exports[`Navbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          aria-label={undefined}
-          className="c10"
+          className="hGMLkS"
           href="https://github.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c12"
+            className="fZylxJ"
             height="17"
             viewBox="0 0 17 17"
             width="17"
@@ -420,13 +98,12 @@ exports[`Navbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          aria-label={undefined}
-          className="c10"
+          className="hGMLkS"
           href="https://medium.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c13"
+            className="eKCTnK"
             height="14"
             viewBox="0 0 17 14"
             width="17"
@@ -444,14 +121,13 @@ exports[`Navbar renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="c14"
+    className="bKEueB"
   >
     <button
-      className="c15"
-      onClick={undefined}
+      className="hvtXqd"
     >
       <svg
-        className="c16"
+        className="YyuYi"
         height="15"
         width="15"
         xmlns="http://www.w3.org/2000/svg"
@@ -475,24 +151,22 @@ exports[`Navbar renders correctly 1`] = `
     </button>
     <a
       aria-label="styled components"
-      className="c17"
+      className="gViPaM"
       href="/"
       onClick={[Function]}
     >
       <div
-        className="c18"
+        className="craaVv"
       />
     </a>
     <button
-      className="c15"
-      onClick={undefined}
+      className="hvtXqd"
     >
       <div
-        className="c19"
-        rotate={true}
+        className="gQExVJ"
       >
         <svg
-          className="c16"
+          className="YyuYi"
           height="8"
           width="12"
           xmlns="http://www.w3.org/2000/svg"
@@ -516,37 +190,33 @@ exports[`Navbar renders correctly 1`] = `
       </div>
     </button>
     <div
-      className="c20"
-      open={true}
+      className="jtcatA"
     >
       <nav
-        className="c5"
+        className="eWokkx"
       >
         <a
-          aria-label={undefined}
-          className="c6"
+          className="fAKxmD"
           href="/docs"
           onClick={[Function]}
         >
           Documentation
         </a>
         <span
-          className="c7"
+          className="jGjUIy"
         />
         <a
-          aria-label={undefined}
-          className="c6"
+          className="fAKxmD"
           href="/ecosystem"
           onClick={[Function]}
         >
           Ecosystem
         </a>
         <span
-          className="c7"
+          className="jGjUIy"
         />
         <a
-          aria-label={undefined}
-          className="c6"
+          className="fAKxmD"
           href="/releases"
           onClick={[Function]}
         >
@@ -554,22 +224,21 @@ exports[`Navbar renders correctly 1`] = `
         </a>
       </nav>
       <span
-        className="c7"
+        className="jGjUIy"
       />
       <div
-        className="c21"
+        className="eVtpYT"
       >
         <nav
-          className="c9"
+          className="fjGhui"
         >
           <a
-            aria-label={undefined}
-            className="c10"
+            className="hGMLkS"
             href="https://spectrum.chat/styled-components/"
             onClick={[Function]}
           >
             <svg
-              className="c11"
+              className="hPnFBz"
               height="14"
               viewBox="0 0 15 15"
               width="14"
@@ -584,13 +253,12 @@ exports[`Navbar renders correctly 1`] = `
             </svg>
           </a>
           <a
-            aria-label={undefined}
-            className="c10"
+            className="hGMLkS"
             href="https://github.com/styled-components"
             onClick={[Function]}
           >
             <svg
-              className="c12"
+              className="fZylxJ"
               height="17"
               viewBox="0 0 17 17"
               width="17"
@@ -605,13 +273,12 @@ exports[`Navbar renders correctly 1`] = `
             </svg>
           </a>
           <a
-            aria-label={undefined}
-            className="c10"
+            className="hGMLkS"
             href="https://medium.com/styled-components"
             onClick={[Function]}
           >
             <svg
-              className="c13"
+              className="eKCTnK"
               height="14"
               viewBox="0 0 17 14"
               width="17"

@@ -29,9 +29,9 @@ const Box = styled.div`
 const buttonBackgroundColor = theme.variants('mode', 'kind', {
   default: { light: 'slategray', dark: 'slategray' },
   primary: { light: 'palevioletred', dark: 'hotpink' },
-  success: { light: 'mediumseagreen', dark: 'seagreen', },
-  warning: { light: 'sandybrown', dark: 'peru', },
-  danger: { light: 'tomato', dark: 'brown', },
+  success: { light: 'mediumseagreen', dark: 'seagreen' },
+  warning: { light: 'sandybrown', dark: 'peru' },
+  danger: { light: 'tomato', dark: 'brown' },
 })
 
 const buttonPadding = theme('size', {
@@ -56,7 +56,7 @@ const Button = styled.button`
 `
 
 Button.defaultProps = {
-  kind: 'default'
+  kind: 'default',
 }
 
 class StyledThemingExample extends React.Component {
@@ -78,10 +78,18 @@ class StyledThemingExample extends React.Component {
       <ThemeProvider theme={{ mode: this.state.mode, size: this.state.size }}>
         <Box>
           <Button onClick={this.handleToggleMode}>Toggle Mode</Button>
-          <Button kind="primary" onClick={this.handleToggleSize}>Toggle Size</Button>
-          <Button kind="success" onClick={this.handleToggleMode}>Toggle Mode</Button>
-          <Button kind="warning" onClick={this.handleToggleSize}>Toggle Size</Button>
-          <Button kind="danger" onClick={this.handleToggleMode}>Toggle Mode</Button>
+          <Button kind="primary" onClick={this.handleToggleSize}>
+            Toggle Size
+          </Button>
+          <Button kind="success" onClick={this.handleToggleMode}>
+            Toggle Mode
+          </Button>
+          <Button kind="warning" onClick={this.handleToggleSize}>
+            Toggle Size
+          </Button>
+          <Button kind="danger" onClick={this.handleToggleMode}>
+            Toggle Mode
+          </Button>
         </Box>
       </ThemeProvider>
     )
@@ -94,7 +102,7 @@ const StyledTheming = () => md`
   Create themes for your styled components using
   [styled-theming](https://github.com/styled-components/styled-theming)
 
-  ${<StyledThemingExample/>}
+  ${<StyledThemingExample />}
 
   Read the [introductory blog post](http://thejameskyle.com/styled-theming.html)
 
@@ -109,13 +117,13 @@ const StyledTheming = () => md`
   ### Example
 
   \`\`\`jsx
-  import React from 'react';
-  import styled, {ThemeProvider} from 'styled-components';
-  import theme from 'styled-theming';
+  import React from "react";
+  import styled, { ThemeProvider } from "styled-components";
+  import theme from "styled-theming";
 
-  const boxBackgroundColor = theme('mode', {
-    light: '#fff',
-    dark: '#000',
+  const boxBackgroundColor = theme("mode", {
+    light: "#fff",
+    dark: "#000",
   });
 
   const Box = styled.div\`
@@ -124,7 +132,7 @@ const StyledTheming = () => md`
 
   export default function App() {
     return (
-      <ThemeProvider theme={{ mode: 'light' }}>
+      <ThemeProvider theme={{ mode: "light" }}>
         <Box>
           Hello World
         </Box>
@@ -143,14 +151,14 @@ const StyledTheming = () => md`
   styled-theming.
 
   \`\`\`js
-  import {ThemeProvider} from 'styled-components';
+  import { ThemeProvider } from "styled-components";
   \`\`\`
 
   \`<ThemeProvider>\` accepts a single prop \`theme\` which you should pass an
   object with either strings or getter functions. For example:
 
   \`\`\`jsx
-  <ThemeProvider theme={{ mode: 'dark', size: 'large' }}>
+  <ThemeProvider theme={{ mode: "dark", size: "large" }}>
   <ThemeProvider theme={{ mode: modes => modes.dark, size: sizes => sizes.large }}>
   \`\`\`
 
@@ -173,45 +181,45 @@ const StyledTheming = () => md`
   \`name\` should match one of the keys in your \`<ThemeProvider>\` theme.
 
   \`\`\`jsx
-  <ThemeProvider theme={{ whatever: '...' }}/>
+  <ThemeProvider theme={{ whatever: "..." }}/>
   \`\`\`
 
   \`\`\`js
-  theme('whatever', {...});
+  theme("whatever", {...});
   \`\`\`
 
   \`values\` should be an object where one of the keys will be selected by the
   value provided to \`<ThemeProvider>\` theme.
 
   \`\`\`jsx
-  <ThemeProvider theme={{ mode: 'light' }}/>
-  <ThemeProvider theme={{ mode: 'dark' }}/>
+  <ThemeProvider theme={{ mode: "light" }}/>
+  <ThemeProvider theme={{ mode: "dark" }}/>
 
-  theme('mode', {
-    light: '...',
-    dark: '...',
+  theme("mode", {
+    light: "...",
+    dark: "...",
   });
   \`\`\`
 
   The values of this object can be any CSS value.
 
   \`\`\`jsx
-  theme('mode', {
-    light: '#fff',
-    dark: '#000',
+  theme("mode", {
+    light: "#fff",
+    dark: "#000",
   });
 
-  theme('font', {
-    sansSerif: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-    serif: 'Georgia, Times, "Times New Roman", serif',
-    monoSpaced: 'Consolas, monaco, monospace',
+  theme("font", {
+    sansSerif: ""Helvetica Neue", Helvetica, Arial, sans-serif",
+    serif: "Georgia, Times, "Times New Roman", serif",
+    monoSpaced: "Consolas, monaco, monospace",
   });
   \`\`\`
 
   These values can also be functions that return CSS values.
 
   \`\`\`jsx
-  theme('mode', {
+  theme("mode", {
     light: props => props.theme.userProfileAccentColor.light,
     dark: props => props.theme.userProfileAccentColor.dark,
   });
@@ -221,12 +229,12 @@ const StyledTheming = () => md`
   styled-component's \`styled\` function.
 
   \`\`\`jsx
-  import styled from 'styled-components';
-  import theme from 'styled-theming';
+  import styled from "styled-components";
+  import theme from "styled-theming";
 
-  const backgroundColor = theme('mode', {
-    light: '#fff',
-    dark: '#000',
+  const backgroundColor = theme("mode", {
+    light: "#fff",
+    dark: "#000",
   });
 
   const Box = styled.div\`
@@ -244,14 +252,14 @@ const StyledTheming = () => md`
   \`theme.variants\` function.
 
   \`\`\`jsx
-  import styled from 'styled-components';
-  import theme from 'styled-theming';
+  import styled from "styled-components";
+  import theme from "styled-theming";
 
-  const backgroundColor = theme.variants('mode', 'variant', {
-    default: { light: 'gray', dark: 'darkgray' },
-    primary: { light: 'blue', dark: 'darkblue' },
-    success: { light: 'green', dark: 'darkgreen' },
-    warning: { light: 'orange', dark: 'darkorange' },
+  const backgroundColor = theme.variants("mode", "variant", {
+    default: { light: "gray", dark: "darkgray" },
+    primary: { light: "blue", dark: "darkblue" },
+    success: { light: "green", dark: "darkgreen" },
+    warning: { light: "orange", dark: "darkorange" },
   });
 
   const Button = styled.button\`
@@ -259,11 +267,11 @@ const StyledTheming = () => md`
   \`;
 
   Button.propTypes = {
-    variant: PropTypes.oneOf(['default', 'primary', 'success', 'warning'])
+    variant: PropTypes.oneOf(["default", "primary", "success", "warning"])
   };
 
   Button.defaultProps = {
-    variant: 'default',
+    variant: "default",
   };
 
   <Button/>
