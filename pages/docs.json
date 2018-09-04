@@ -122,6 +122,9 @@
       "pathname": "faqs",
       "sections": [
         {
+          "title": "What do I need to do to migrate to v4?"
+        },
+        {
           "title": "Can I nest rules?"
         },
         {
