@@ -19,10 +19,11 @@
   },
   "dependencies": {
     "@types/react": "^16.4.13",
+    "@zeit/next-source-maps": "^0.0.2",
     "axios": "^0.18.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-polished": "^1.1.0",
-    "babel-plugin-styled-components": "^1.6.1",
+    "babel-plugin-styled-components": "^1.6.2",
     "commonmark": "^0.28.1",
     "commonmark-react-renderer": "^4.3.4",
     "compression": "^1.7.3",

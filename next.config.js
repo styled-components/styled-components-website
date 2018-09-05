@@ -1,8 +1,9 @@
 const path = require('path')
+const withSourceMaps = require('@zeit/next-source-maps')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin
 
-module.exports = {
+module.exports = withSourceMaps({
   webpack: function(config, { dev, isServer }) {
     if (dev) {
       return config
@@ -32,4 +33,4 @@ module.exports = {
 
     return config
   },
-}
+})

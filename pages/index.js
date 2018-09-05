@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
-import { LiveProvider, LiveEditor } from 'react-live'
+import { LiveProvider, LiveEditor, withLive } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
@@ -9,7 +9,6 @@ import { violetRed, gold, grey, paleGrey, red } from '../utils/colors'
 import { editorMixin, StyledError } from '../components/LiveEdit'
 import Link from '../components/Link'
 import { Content } from '../components/Layout'
-import captureScroll from '../components/CaptureScroll'
 import SeoHead from '../components/SeoHead'
 import HomepageGettingStarted from '../sections/homepage-getting-started'
 import WithIsScrolled from '../components/WithIsScrolled'
@@ -59,30 +58,33 @@ import {
   PatreonLogo,
 } from '../components/CompanyLogos'
 
-const HomepageLivePreview = (
-  { className, ...rest },
-  { live: { element: Button } },
-) => {
-  const InternalButton = Button.withComponent(Link)
-  return (
-    <div {...rest} className={`react-live-preview ${className}`}>
-      <Button
-        href="https://github.com/styled-components/styled-components"
-        target="_blank"
-        rel="noopener"
-        primary
-      >
-        GitHub
-      </Button>
+const HomepageLivePreview = withLive(
+  ({ className, live: { element: Button, error }, ...rest }) => {
+    if (error)
+      return (
+        <div {...rest} className={`react-live-preview ${className}`}>
+          🚨 Unable to render preview: <pre>{error}</pre>
+        </div>
+      )
 
-      <InternalButton href="/docs" prefetch>
-        Documentation
-      </InternalButton>
-    </div>
-  )
-}
+    return (
+      <div {...rest} className={`react-live-preview ${className}`}>
+        <Button
+          href="https://github.com/styled-components/styled-components"
+          target="_blank"
+          rel="noopener"
+          primary
+        >
+          GitHub
+        </Button>
 
-HomepageLivePreview.contextTypes = LiveProvider.childContextTypes
+        <Button as={Link} href="/docs" prefetch>
+          Documentation
+        </Button>
+      </div>
+    )
+  },
+)
 
 const Title = styled.div`
   margin: 2rem 0;
@@ -157,12 +159,12 @@ const EditorContainer = styled.div`
   max-width: 34rem;
 `
 
-const Editor = captureScroll(styled(LiveEditor)`
+const Editor = styled(LiveEditor)`
   ${editorMixin}
   height: 24rem;
   white-space: pre;
   width: 100%;
-`)
+`
 
 const Links = styled.div`margin: ${rem(36)} 0;`
 

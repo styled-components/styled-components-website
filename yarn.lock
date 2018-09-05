@@ -1213,6 +1213,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@zeit/next-source-maps@^0.0.2":
+  version "0.0.2"
+  resolved "http://registry.npmjs.org/@zeit/next-source-maps/-/next-source-maps-0.0.2.tgz#3c220de9b6b7eb993eb030876916b1c05bf0ffb0"
+
 abab@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/abab/-/abab-2.0.0.tgz#aba0ab4c5eee2d4c79d3487d85450fb2376ebb0f"
@@ -1661,9 +1665,9 @@ babel-plugin-react-require@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-react-require/-/babel-plugin-react-require-3.0.0.tgz#2e4e7b4496b93a654a1c80042276de4e4eeb20e3"
 
-babel-plugin-styled-components@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.npmjs.org/babel-plugin-styled-components/-/babel-plugin-styled-components-1.6.1.tgz#ab8d486813cbef956cfc71e5819a1a2c3282e144"
+babel-plugin-styled-components@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.npmjs.org/babel-plugin-styled-components/-/babel-plugin-styled-components-1.6.2.tgz#f8e188079c3aa6751cc7066ed537e97a008427f2"
   dependencies:
     lodash "^4.17.10"
     semver "^5.5.1"
