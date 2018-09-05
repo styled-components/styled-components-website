@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Code renders correctly 1`] = `
+.c0 {
+  display: inline-block;
+  font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
+  font-size: 90%;
+  font-weight: 300;
+  padding: 0 0.05em 0.1em;
+  vertical-align: baseline;
+  line-height: 1.4;
+}
+
 <span
-  className="kSDCZh"
+  className="c0"
 />
 `;

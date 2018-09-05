@@ -1,76 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sidebar renders correctly 1`] = `
-<CaptureScroll>
-  <ForwardRef>
-    <BaseStyledComponent
-      forwardedClass={
-        Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "attrs": undefined,
-          "componentStyle": ComponentStyle {
-            "componentId": "sc-bdVaJa",
-            "isStatic": false,
-            "lastClassName": "bXJrQr",
-            "rules": Array [
-              "
+.c0 {
   position: fixed;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
   transform: translateZ(0);
   display: block;
   z-index: 1;
-  font-family: ",
-              "\\"Avenir Next\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
-              ";
-
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   left: 0;
-  top: ",
-              "2.7777777777777777rem",
-              ";
+  top: 2.7777777777777777rem;
   bottom: 0;
   right: auto;
-  width: ",
-              "16.666666666666668rem",
-              ";
-  background: ",
-              "#efefef",
-              ";
+  width: 16.666666666666668rem;
+  background: #efefef;
   box-sizing: border-box;
   color: inherit;
   overflow-y: auto;
+  -webkit-transition: -webkit-transform 150ms ease-out;
+  -webkit-transition: transform 150ms ease-out;
   transition: transform 150ms ease-out;
+}
 
-  ",
-              "
-  @media (max-width: ",
-              "62.5",
-              "em) {
-    ",
-              "
-    ",
-              [Function],
-              "
-  ",
-              "
-  }
-",
-              "
-",
-            ],
-          },
-          "displayName": "styled.nav",
-          "render": [Function],
-          "styledComponentId": "sc-bdVaJa",
-          "target": "nav",
-          "warnTooManyClasses": [Function],
-          "withComponent": [Function],
-        }
-      }
-      forwardedRef={[Function]}
-    >
-      <nav
-        className="bXJrQr"
-      />
-    </BaseStyledComponent>
-  </ForwardRef>
-</CaptureScroll>
+<styled.nav>
+  <styled.nav>
+    <nav
+      className="c0"
+    />
+  </styled.nav>
+</styled.nav>
 `;

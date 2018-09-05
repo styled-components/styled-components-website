@@ -1,5 +1,6 @@
 const dev = process.env.NODE_ENV !== 'production'
 
+require('@zeit/next-preact/alias')()
 const { parse } = require('url')
 const express = require('express')
 const compression = require('compression')
