@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
-import { LiveProvider, LiveEditor, withLive } from 'react-live'
+import { LiveProvider, LiveEditor, LivePreview } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
@@ -43,6 +43,23 @@ const Button = styled.a\`
     color: palevioletred;
   \`}
 \`
+
+render(
+  <div>
+    <Button
+      href="https://github.com/styled-components/styled-components"
+      target="_blank"
+      rel="noopener"
+      primary
+    >
+      GitHub
+    </Button>
+
+    <Button as={Link} href="/docs" prefetch>
+      Documentation
+    </Button>
+  </div>
+)
 `.trim()
 
 import {
@@ -57,34 +74,6 @@ import {
   CoinbaseLogo,
   PatreonLogo,
 } from '../components/CompanyLogos'
-
-const HomepageLivePreview = withLive(
-  ({ className, live: { element: Button, error }, ...rest }) => {
-    if (error)
-      return (
-        <div {...rest} className={`react-live-preview ${className}`}>
-          🚨 Unable to render preview: <pre>{error}</pre>
-        </div>
-      )
-
-    return (
-      <div {...rest} className={`react-live-preview ${className}`}>
-        <Button
-          href="https://github.com/styled-components/styled-components"
-          target="_blank"
-          rel="noopener"
-          primary
-        >
-          GitHub
-        </Button>
-
-        <Button as={Link} href="/docs" prefetch>
-          Documentation
-        </Button>
-      </div>
-    )
-  },
-)
 
 const Title = styled.div`
   margin: 2rem 0;
@@ -241,8 +230,9 @@ class Index extends PureComponent {
           <Content hero>
             <LiveProvider
               code={headerCode}
+              noInline
               mountStylesheet={false}
-              scope={{ styled, css, rem, Link }}
+              scope={{ React, styled, css, rem, Link }}
             >
               <Logo />
 
@@ -255,7 +245,7 @@ class Index extends PureComponent {
               </Title>
 
               <Links>
-                <HomepageLivePreview />
+                <LivePreview />
               </Links>
 
               <EditorContainer>
