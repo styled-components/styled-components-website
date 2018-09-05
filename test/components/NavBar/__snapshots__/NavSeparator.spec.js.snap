@@ -1,7 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NavSeparator renders correctly 1`] = `
+.c0 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 0.2777777777777778rem;
+  height: 0.2777777777777778rem;
+  margin: 0 0.8333333333333334rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+}
+
 <span
-  className="lnegGh"
+  className="c0"
 />
 `;
