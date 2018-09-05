@@ -12,7 +12,7 @@ import 'prismjs/components/prism-diff'
 // NOTE: This highlights template-strings as strings of CSS
 Prism.languages.insertBefore('jsx', 'template-string', {
   'styled-template-string': {
-    pattern: /(styled(\.\w+|\([^\)]*\))(\.\w+(\([^\)]*\))*)*|css|injectGlobal|keyframes|\.extend)`(?:\$\{[^}]+\}|\\\\|\\?[^\\])*?`/,
+    pattern: /(styled(\.\w+|\([^\)]*\))(\.\w+(\([^\)]*\))*)*|css|injectGlobal|createGlobalStyle|keyframes|\.extend|\.withComponent)`(?:\$\{[^}]+\}|\\\\|\\?[^\\])*?`/,
     lookbehind: true,
     greedy: true,
     inside: {
@@ -21,18 +21,18 @@ Prism.languages.insertBefore('jsx', 'template-string', {
         inside: {
           'interpolation-punctuation': {
             pattern: /^\$\{|\}$/,
-            alias: 'punctuation'
+            alias: 'punctuation',
           },
-          rest: languages.jsx
-        }
+          rest: languages.jsx,
+        },
       },
       string: {
         pattern: /[^$;]+/,
         inside: languages.css,
-        alias: 'language-css'
-      }
-    }
-  }
+        alias: 'language-css',
+      },
+    },
+  },
 })
 
 export { languages }

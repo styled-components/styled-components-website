@@ -1,86 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NavLinks renders correctly 1`] = `
-.c2 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 0.2777777777777778rem;
-  height: 0.2777777777777778rem;
-  margin: 0 0.8333333333333334rem;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.35;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c1 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  display: inline-block;
-  line-height: 2.7777777777777777rem;
-  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
-  -webkit-transition: opacity 0.2s,transform 0.2s;
-  transition: opacity 0.2s,transform 0.2s;
-  cursor: pointer;
-  -webkit-letter-spacing: 0.022222222222222223rem;
-  -moz-letter-spacing: 0.022222222222222223rem;
-  -ms-letter-spacing: 0.022222222222222223rem;
-  letter-spacing: 0.022222222222222223rem;
-  color: currentColor;
-}
-
-.c1:hover,
-.c1:focus {
-  opacity: 0.8;
-}
-
-.c1:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
 <nav
-  className="c0"
+  className="eWokkx"
 >
   <a
-    className="c1"
+    className="fAKxmD"
     href="/docs"
     onClick={[Function]}
   >
     Documentation
   </a>
   <span
-    className="c2"
+    className="lnegGh"
   />
   <a
-    className="c1"
+    className="fAKxmD"
     href="/ecosystem"
     onClick={[Function]}
   >
     Ecosystem
   </a>
   <span
-    className="c2"
+    className="lnegGh"
   />
   <a
-    className="c1"
+    className="fAKxmD"
     href="/releases"
     onClick={[Function]}
   >

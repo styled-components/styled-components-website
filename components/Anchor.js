@@ -59,25 +59,22 @@ const AnchorHeader = styled(Header)`
   }
 `
 
-const AnchorSubHeader = AnchorHeader.withComponent(SubHeader)
-const AnchorTertiaryHeader = AnchorHeader.withComponent(TertiaryHeader)
-
 const Link = ({ children, level, id }) => {
-  let Child = AnchorHeader
+  let override = undefined
 
   switch (level) {
     case 3:
-      Child = AnchorSubHeader
+      override = SubHeader
       break
     case 4:
-      Child = AnchorTertiaryHeader
+      override = TertiaryHeader
       break
     default:
       break
   }
 
   return (
-    <Child>
+    <AnchorHeader as={override}>
       <InvisibleAnchor id={id} />
 
       <Anchor href={`#${id}`} aria-label={id}>
@@ -85,7 +82,7 @@ const Link = ({ children, level, id }) => {
       </Anchor>
 
       {children}
-    </Child>
+    </AnchorHeader>
   )
 }
 

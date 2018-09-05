@@ -1,19 +1,18 @@
 import React from 'react'
-import styled, { css, keyframes, withTheme, ThemeProvider } from 'styled-components'
+import styled, {
+  css,
+  keyframes,
+  withTheme,
+  ThemeProvider,
+} from 'styled-components'
 import rem from '../utils/rem'
 import { darkGrey, red } from '../utils/colors'
 import { phone } from '../utils/media'
 import { headerFont, monospace } from '../utils/fonts'
-import captureScroll from './CaptureScroll'
 
 import '../utils/prismTemplateString'
 
-import {
-  LiveProvider,
-  LiveEditor,
-  LiveError,
-  LivePreview
-} from 'react-live'
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
 const StyledProvider = styled(LiveProvider)`
   box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
@@ -30,7 +29,7 @@ const Row = styled.div`
 
   ${phone(css`
     flex-direction: column;
-  `)}
+  `)};
 `
 
 const columnMixin = css`
@@ -63,8 +62,6 @@ const StyledEditor = styled(LiveEditor)`
   ${columnMixin}
 `
 
-const StyledEditorScrollCaptured = captureScroll(StyledEditor)
-
 const StyledPreview = styled(LivePreview)`
   position: relative;
   padding: 0.5rem;
@@ -87,7 +84,7 @@ export const StyledError = styled(LiveError)`
   white-space: pre;
 `
 
-const LiveEdit = ({ noInline, code, scope = {} }) => (
+const LiveEdit = ({ noInline, code, scope = {} }) =>
   <StyledProvider
     code={code}
     noInline={noInline}
@@ -98,16 +95,15 @@ const LiveEdit = ({ noInline, code, scope = {} }) => (
       css,
       keyframes,
       withTheme,
-      ThemeProvider
+      ThemeProvider,
     }}
   >
     <Row>
-      <StyledEditorScrollCaptured />
+      <StyledEditor />
       <StyledPreview />
     </Row>
 
     <StyledError />
   </StyledProvider>
-)
 
 export default LiveEdit

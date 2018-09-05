@@ -1,9 +1,9 @@
-const withPreact = require('@zeit/next-preact')
 const path = require('path')
+const withSourceMaps = require('@zeit/next-source-maps')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin
 
-module.exports = withPreact({
+module.exports = withSourceMaps({
   webpack: function(config, { dev, isServer }) {
     if (dev) {
       return config

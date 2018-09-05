@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
-import { LiveProvider, LiveEditor } from 'react-live'
+import { LiveProvider, LiveEditor, LivePreview } from 'react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'
@@ -9,7 +9,6 @@ import { violetRed, gold, grey, paleGrey, red } from '../utils/colors'
 import { editorMixin, StyledError } from '../components/LiveEdit'
 import Link from '../components/Link'
 import { Content } from '../components/Layout'
-import captureScroll from '../components/CaptureScroll'
 import SeoHead from '../components/SeoHead'
 import HomepageGettingStarted from '../sections/homepage-getting-started'
 import WithIsScrolled from '../components/WithIsScrolled'
@@ -25,7 +24,7 @@ const SupportingTagline = styled.h2`
   font-weight: 400;
 `
 
-const headerCode = (`
+const headerCode = `
 const Button = styled.a\`
   /* This renders the buttons above... Edit me! */
   display: inline-block;
@@ -44,9 +43,25 @@ const Button = styled.a\`
     color: palevioletred;
   \`}
 \`
-`).trim()
 
-import { LiveContextTypes } from 'react-live/lib/components/Live/LiveProvider'
+render(
+  <div>
+    <Button
+      href="https://github.com/styled-components/styled-components"
+      target="_blank"
+      rel="noopener"
+      primary
+    >
+      GitHub
+    </Button>
+
+    <Button as={Link} href="/docs" prefetch>
+      Documentation
+    </Button>
+  </div>
+)
+`.trim()
+
 import {
   BloombergLogo,
   AtlassianLogo,
@@ -60,31 +75,6 @@ import {
   PatreonLogo,
 } from '../components/CompanyLogos'
 
-const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button } }) => {
-  const InternalButton = Button.withComponent(Link)
-  return (
-    <div
-      {...rest}
-      className={`react-live-preview ${className}`}
-    >
-      <Button
-        href="https://github.com/styled-components/styled-components"
-        target="_blank"
-        rel="noopener"
-        primary
-      >
-        GitHub
-      </Button>
-
-      <InternalButton href="/docs" prefetch>
-        Documentation
-      </InternalButton>
-    </div>
-  )
-}
-
-HomepageLivePreview.contextTypes = LiveContextTypes
-
 const Title = styled.div`
   margin: 2rem 0;
 
@@ -96,7 +86,7 @@ const Title = styled.div`
 
 const Logo = styled.img.attrs({
   alt: 'styled-components Logo',
-  src: '/static/logo.png'
+  src: '/static/logo.png',
 })`
   width: ${rem(125)};
   height: ${rem(125)};
@@ -134,7 +124,7 @@ const CompanyLogo = styled.span`
 `
 
 const Wrapper = styled.div.attrs({
-  className: 'hero-header' // for integration tests
+  className: 'hero-header', // for integration tests
 })`
   display: flex;
   flex-direction: column;
@@ -158,16 +148,14 @@ const EditorContainer = styled.div`
   max-width: 34rem;
 `
 
-const Editor = captureScroll(styled(LiveEditor)`
+const Editor = styled(LiveEditor)`
   ${editorMixin}
   height: 24rem;
   white-space: pre;
   width: 100%;
-`)
-
-const Links = styled.div`
-  margin: ${rem(36)} 0;
 `
+
+const Links = styled.div`margin: ${rem(36)} 0;`
 
 const Footer = styled.footer`
   display: flex;
@@ -183,7 +171,7 @@ const Footer = styled.footer`
 
 const Heart = styled(HeartIcon).attrs({
   width: null,
-  height: null
+  height: null,
 })`
   display: inline-block;
   width: ${rem(17)};
@@ -228,35 +216,36 @@ class Index extends PureComponent {
         </SeoHead>
 
         <WithIsScrolled>
-          {({ isScrolled }) => (
+          {({ isScrolled }) =>
             <Nav
               showSideNav={false}
               transparent={!isScrolled}
               isMobileNavFolded={isMobileNavFolded}
               onMobileNavToggle={this.toggleMobileNav}
               onRouteChange={this.onRouteChange}
-            />
-          )}
+            />}
         </WithIsScrolled>
 
         <Wrapper>
           <Content hero>
             <LiveProvider
               code={headerCode}
+              noInline
               mountStylesheet={false}
-              scope={{ styled, css, rem, Link }}>
-
+              scope={{ React, styled, css, rem, Link }}
+            >
               <Logo />
 
               <Title>
                 <Tagline>Visual primitives for the component age.</Tagline>
                 <SupportingTagline>
-                  Use the best bits of ES6 and CSS to style your apps without stress 💅
+                  Use the best bits of ES6 and CSS to style your apps without
+                  stress 💅
                 </SupportingTagline>
               </Title>
 
               <Links>
-                <HomepageLivePreview />
+                <LivePreview />
               </Links>
 
               <EditorContainer>
@@ -288,7 +277,11 @@ class Index extends PureComponent {
                 <EuroVisionLogo />
               </CompanyLogo>
 
-              <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg">
+              <CompanyLogo
+                bottom="0.16rem"
+                height="2.25rem"
+                src="/static/artsy-logo.svg"
+              >
                 <ArtsyLogo />
               </CompanyLogo>
 
@@ -300,14 +293,17 @@ class Index extends PureComponent {
                 <HuffpostLogo />
               </CompanyLogo>
 
-              <CompanyLogo bottom="0.25rem" height="2rem" src="/static/coinbase-logo.svg">
+              <CompanyLogo
+                bottom="0.25rem"
+                height="2rem"
+                src="/static/coinbase-logo.svg"
+              >
                 <CoinbaseLogo />
               </CompanyLogo>
 
               <CompanyLogo>
                 <PatreonLogo />
               </CompanyLogo>
-
             </UsersWrapper>
           </Content>
         </Wrapper>
@@ -315,20 +311,27 @@ class Index extends PureComponent {
         <HomepageGettingStarted />
 
         <Footer>
-          <FooterContent hero> {'Hosted on ▲ ZEIT Now'}
-
+          <FooterContent hero>
+            {' '}{'Hosted on ▲ ZEIT Now'}
             <br />
-
             {'Made with '}
             <Heart />
             {' by '}
-            <FooterLink inline href="https://twitter.com/glenmaddern">@glenmaddern</FooterLink>
+            <FooterLink inline href="https://twitter.com/glenmaddern">
+              @glenmaddern
+            </FooterLink>
             {', '}
-            <FooterLink inline href="https://twitter.com/mxstbr">@mxstbr</FooterLink>
+            <FooterLink inline href="https://twitter.com/mxstbr">
+              @mxstbr
+            </FooterLink>
             {', '}
-            <FooterLink inline href="https://twitter.com/_philpl">@_philpl‬</FooterLink>
+            <FooterLink inline href="https://twitter.com/_philpl">
+              @_philpl‬
+            </FooterLink>
             {' & '}
-            <FooterLink inline href="https://twitter.com/probablyup">@probablyup</FooterLink>
+            <FooterLink inline href="https://twitter.com/probablyup">
+              @probablyup
+            </FooterLink>
           </FooterContent>
         </Footer>
       </div>
