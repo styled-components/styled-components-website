@@ -19,7 +19,7 @@ jobs:
         - yarn test
         - yarn lint
     - stage: deploy
-      if: fork = false AND branch = master
+      if: fork = false AND branch = master AND type = push
       script:
         - yarn
         - yarn deploy
