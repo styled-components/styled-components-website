@@ -1,105 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LiveEdit renders correctly 1`] = `
-.c0 {
-  box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20,20,20,0.27);
-  overflow: hidden;
-  margin: 1.9444444444444444rem 0;
-  text-align: left;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: stretch;
-  -webkit-justify-content: stretch;
-  -ms-flex-pack: stretch;
-  justify-content: stretch;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.c2 {
-  background: #1d1f27;
-  font-size: 0.8rem;
-  font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
-  font-weight: 300;
-  height: 22.22222222222222rem;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  cursor: text;
-  white-space: pre-wrap;
-  -webkit-flex-basis: 50%;
-  -ms-flex-preferred-size: 50%;
-  flex-basis: 50%;
-  width: 50%;
-  max-width: 50%;
-}
-
-.c3 {
-  position: relative;
-  padding: 0.5rem;
-  background: white;
-  color: black;
-  height: auto;
-  overflow: hidden;
-  -webkit-flex-basis: 50%;
-  -ms-flex-preferred-size: 50%;
-  flex-basis: 50%;
-  width: 50%;
-  max-width: 50%;
-}
-
-.c4 {
-  display: block;
-  width: 100%;
-  padding: 0.4444444444444444rem;
-  background: #ff5555;
-  color: white;
-  font-size: 0.8rem;
-  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  white-space: pre;
-}
-
-@media (max-width:40.625em) {
-  .c1 {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-}
-
-@media (max-width:40.625em) {
-  .c2 {
-    -webkit-flex-basis: auto;
-    -ms-flex-preferred-size: auto;
-    flex-basis: auto;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-@media (max-width:40.625em) {
-  .c3 {
-    -webkit-flex-basis: auto;
-    -ms-flex-preferred-size: auto;
-    flex-basis: auto;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-}
-
 <LiveEdit>
-  <Styled(LiveProvider)
+  <ForwardRef
     mountStylesheet={false}
     scope={
       Object {
@@ -111,11 +14,43 @@ exports[`LiveEdit renders correctly 1`] = `
       }
     }
   >
-    <LiveProvider
-      className="c0"
-      code=""
+    <BaseStyledComponent
+      forwardedClass={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": undefined,
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "ckXCPz",
+            "rules": Array [
+              "
+  box-shadow: ",
+              "0.05555555555555555rem",
+              " ",
+              "0.05555555555555555rem",
+              " ",
+              "1.1111111111111112rem",
+              " rgba(20, 20, 20, 0.27);
+  overflow: hidden;
+  margin: ",
+              "1.9444444444444444rem",
+              " 0;
+  text-align: left;
+",
+            ],
+          },
+          "displayName": "Styled(LiveProvider)",
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+          Symbol(Symbol.hasInstance): [Function],
+        }
+      }
+      forwardedRef={null}
       mountStylesheet={false}
-      noInline={false}
       scope={
         Object {
           "ThemeProvider": [Function],
@@ -126,8 +61,11 @@ exports[`LiveEdit renders correctly 1`] = `
         }
       }
     >
-      <div
-        className="react-live c0"
+      <LiveProvider
+        className="ckXCPz"
+        code=""
+        mountStylesheet={false}
+        noInline={false}
         scope={
           Object {
             "ThemeProvider": [Function],
@@ -138,83 +76,321 @@ exports[`LiveEdit renders correctly 1`] = `
           }
         }
       >
-        <styled.div>
-          <div
-            className="c1"
-          >
-            <Styled(LiveEditor)>
-              <Styled(LiveEditor)>
-                <LiveEditor
-                  className="c2"
-                >
-                  <Editor
-                    className="c2"
-                    code=""
-                    contentEditable={true}
-                    language="jsx"
-                    onChange={[Function]}
-                  >
-                    <pre
-                      className="prism-code c2"
-                      contentEditable={true}
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "",
-                        }
+        <div
+          className="react-live ckXCPz"
+        >
+          <ForwardRef>
+            <BaseStyledComponent
+              forwardedClass={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": undefined,
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bwzfXH",
+                    "isStatic": true,
+                    "lastClassName": "gxuGhy",
+                    "rules": Array [
+                      "
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+
+  ",
+                      "
+  @media (max-width: ",
+                      "40.625",
+                      "em) {
+    ",
+                      "
+    flex-direction: column;
+  ",
+                      "
+  }
+",
+                      ";
+",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "render": [Function],
+                  "styledComponentId": "sc-bwzfXH",
+                  "target": "div",
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="gxuGhy"
+              >
+                <ForwardRef>
+                  <BaseStyledComponent
+                    forwardedClass={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": undefined,
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-htpNat",
+                          "isStatic": true,
+                          "lastClassName": "fflWUE",
+                          "rules": Array [
+                            "
+  ",
+                            "
+  background: #1d1f27;
+  font-size: 0.8rem;
+  font-family: \\"Operator Mono SSm A\\", \\"Operator Mono SSm B\\", monospace;
+  font-weight: 300;
+  height: 22.22222222222222rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: text;
+  white-space: pre-wrap;
+",
+                            "
+  ",
+                            "
+  flex-basis: 50%;
+  width: 50%;
+  max-width: 50%;
+
+  ",
+                            "
+  @media (max-width: ",
+                            "40.625",
+                            "em) {
+    ",
+                            "
+    flex-basis: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  ",
+                            "
+  }
+",
+                            "
+",
+                            "
+",
+                          ],
+                        },
+                        "displayName": "Styled(LiveEditor)",
+                        "render": [Function],
+                        "styledComponentId": "sc-htpNat",
+                        "target": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                        Symbol(Symbol.hasInstance): [Function],
                       }
-                      onChange={[Function]}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      onKeyUp={[Function]}
-                      spellCheck="false"
-                    />
-                  </Editor>
-                </LiveEditor>
-              </Styled(LiveEditor)>
-            </Styled(LiveEditor)>
-            <Styled(LivePreview)>
-              <LivePreview
-                className="c3"
+                    }
+                    forwardedRef={null}
+                  >
+                    <LiveEditor
+                      className="fflWUE"
+                    >
+                      <Editor
+                        className="fflWUE"
+                        code=""
+                        contentEditable={true}
+                        language="jsx"
+                        onChange={[Function]}
+                      >
+                        <pre
+                          className="prism-code fflWUE"
+                          contentEditable={true}
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "",
+                            }
+                          }
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          onCompositionEnd={[Function]}
+                          onCompositionStart={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          spellCheck="false"
+                        />
+                      </Editor>
+                    </LiveEditor>
+                  </BaseStyledComponent>
+                </ForwardRef>
+                <ForwardRef>
+                  <BaseStyledComponent
+                    forwardedClass={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": undefined,
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bxivhb",
+                          "isStatic": true,
+                          "lastClassName": "jMiyOb",
+                          "rules": Array [
+                            "
+  position: relative;
+  padding: 0.5rem;
+  background: white;
+  color: black;
+  height: auto;
+  overflow: hidden;
+
+  ",
+                            "
+  flex-basis: 50%;
+  width: 50%;
+  max-width: 50%;
+
+  ",
+                            "
+  @media (max-width: ",
+                            "40.625",
+                            "em) {
+    ",
+                            "
+    flex-basis: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  ",
+                            "
+  }
+",
+                            "
+",
+                            "
+",
+                          ],
+                        },
+                        "displayName": "Styled(LivePreview)",
+                        "render": [Function],
+                        "styledComponentId": "sc-bxivhb",
+                        "target": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                        Symbol(Symbol.hasInstance): [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <LivePreview
+                      className="jMiyOb"
+                    >
+                      <div
+                        className="react-live-preview jMiyOb"
+                      />
+                    </LivePreview>
+                  </BaseStyledComponent>
+                </ForwardRef>
+              </div>
+            </BaseStyledComponent>
+          </ForwardRef>
+          <ForwardRef>
+            <BaseStyledComponent
+              forwardedClass={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": undefined,
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-ifAKCX",
+                    "isStatic": true,
+                    "lastClassName": "jChQXl",
+                    "rules": Array [
+                      "
+  display: block;
+  width: 100%;
+  padding: ",
+                      "0.4444444444444444rem",
+                      ";
+  background: ",
+                      "#ff5555",
+                      ";
+  color: white;
+  font-size: 0.8rem;
+  font-family: ",
+                      "\\"Avenir Next\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+                      ";
+  white-space: pre;
+",
+                    ],
+                  },
+                  "displayName": "Styled(LiveError)",
+                  "render": [Function],
+                  "styledComponentId": "sc-ifAKCX",
+                  "target": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                  Symbol(Symbol.hasInstance): [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <LiveError
+                className="jChQXl"
               >
                 <div
-                  className="react-live-preview c3"
-                />
-              </LivePreview>
-            </Styled(LivePreview)>
-          </div>
-        </styled.div>
-        <Styled(LiveError)>
-          <LiveError
-            className="c4"
-          >
-            <div
-              className="react-live-error c4"
-            >
-              SyntaxError: Unexpected token )
-            </div>
-          </LiveError>
-        </Styled(LiveError)>
-      </div>
-    </LiveProvider>
-  </Styled(LiveProvider)>
+                  className="react-live-error jChQXl"
+                >
+                  SyntaxError: Unexpected token (1:1)
+1 : ()
+     ^
+                </div>
+              </LiveError>
+            </BaseStyledComponent>
+          </ForwardRef>
+        </div>
+      </LiveProvider>
+    </BaseStyledComponent>
+  </ForwardRef>
 </LiveEdit>
 `;
 
 exports[`StyledError renders correctly 1`] = `
-.c0 {
+<ForwardRef>
+  <BaseStyledComponent
+    forwardedClass={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": undefined,
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-ifAKCX",
+          "isStatic": true,
+          "lastClassName": "jChQXl",
+          "rules": Array [
+            "
   display: block;
   width: 100%;
-  padding: 0.4444444444444444rem;
-  background: #ff5555;
+  padding: ",
+            "0.4444444444444444rem",
+            ";
+  background: ",
+            "#ff5555",
+            ";
   color: white;
   font-size: 0.8rem;
-  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: ",
+            "\\"Avenir Next\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+            ";
   white-space: pre;
-}
-
-<Styled(LiveError)>
-  <LiveError
-    className="c0"
-  />
-</Styled(LiveError)>
+",
+          ],
+        },
+        "displayName": "Styled(LiveError)",
+        "render": [Function],
+        "styledComponentId": "sc-ifAKCX",
+        "target": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+        Symbol(Symbol.hasInstance): [Function],
+      }
+    }
+    forwardedRef={null}
+  >
+    <LiveError
+      className="jChQXl"
+    />
+  </BaseStyledComponent>
+</ForwardRef>
 `;
