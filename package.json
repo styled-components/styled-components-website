@@ -35,7 +35,7 @@
     "prismjs": "^1.6.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-live": "^1.11.0",
+    "react-live": "1.8.0-2",
     "react-octicons-svg": "^1.1.13",
     "styled-components": "^4.0.0-beta.0",
     "styled-theming": "^2.2.0",
