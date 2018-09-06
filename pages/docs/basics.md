@@ -1,4 +1,3 @@
-import React from 'react'
 import DocsLayout from '../../components/DocsLayout'
 import NextPage from '../../components/NextPage'
 
@@ -15,26 +14,26 @@ import AttachingAdditionalProps from '../../sections/basics/attaching-additional
 import Animations from '../../sections/basics/animations.md'
 import ReactNative from '../../sections/basics/react-native.md'
 
-const Basics = () => (
+export default ({ children }) => (
   <DocsLayout title="Basics" description="Get Started with styled-components basics.">
-    <Motivation />
-    <Installation />
-    <AlternativeInstallation />
-    <GettingStarted />
-    <ComingFromCSS />
-    <PassedProps />
-    <AdaptingBasedOnProps />
-    <StylingAnyComponents />
-    <ExtendingStyles />
-    <AttachingAdditionalProps />
-    <Animations />
-    <ReactNative />
-
-    <NextPage
-      href="/docs/advanced"
-      title="Advanced"
-    />
+    {children}
   </DocsLayout>
 )
 
-export default Basics
+<Motivation />
+<Installation />
+<AlternativeInstallation />
+<GettingStarted />
+<ComingFromCSS />
+<PassedProps />
+<AdaptingBasedOnProps />
+<StylingAnyComponents />
+<ExtendingStyles />
+<AttachingAdditionalProps />
+<Animations />
+<ReactNative />
+
+<NextPage
+  href="/docs/advanced"
+  title="Advanced"
+/>
