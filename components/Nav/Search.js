@@ -13,7 +13,8 @@ const Wrapper = styled.form`
 `
 
 const Input = styled.input`
-  ${resetInput} flex: 0 0 auto;
+  ${resetInput};
+  flex: 0 0 auto;
   width: ${rem(130)};
   line-height: ${rem(navbarHeight - 20)};
   font-size: ${rem(15)};
@@ -26,7 +27,8 @@ const Input = styled.input`
 `
 
 const Button = styled.button`
-  ${resetInput} flex: 0 0 auto;
+  ${resetInput};
+  flex: 0 0 auto;
   height: ${rem(navbarHeight)};
   margin-right: ${rem(4)};
   cursor: pointer;

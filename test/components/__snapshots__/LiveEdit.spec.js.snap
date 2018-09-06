@@ -134,7 +134,7 @@ exports[`LiveEdit renders correctly 1`] = `
                         "componentStyle": ComponentStyle {
                           "componentId": "sc-htpNat",
                           "isStatic": true,
-                          "lastClassName": "iTizFY",
+                          "lastClassName": "iApZVL",
                           "rules": Array [
                             "
   ",
@@ -149,7 +149,8 @@ exports[`LiveEdit renders correctly 1`] = `
   cursor: text;
   white-space: pre-wrap;
 ",
-                            " ",
+                            ";
+  ",
                             "
   flex-basis: 50%;
   width: 50%;
@@ -188,17 +189,17 @@ exports[`LiveEdit renders correctly 1`] = `
                     forwardedRef={null}
                   >
                     <LiveEditor
-                      className="iTizFY"
+                      className="iApZVL"
                     >
                       <Editor
-                        className="iTizFY"
+                        className="iApZVL"
                         code=""
                         contentEditable={true}
                         language="jsx"
                         onChange={[Function]}
                       >
                         <pre
-                          className="prism-code iTizFY"
+                          className="prism-code iApZVL"
                           contentEditable={true}
                           dangerouslySetInnerHTML={
                             Object {

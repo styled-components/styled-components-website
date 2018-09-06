@@ -58,7 +58,8 @@ export const editorMixin = `
 `
 
 const StyledEditor = styled(LiveEditor)`
-  ${editorMixin} ${columnMixin};
+  ${editorMixin};
+  ${columnMixin};
 `
 
 const StyledPreview = styled(LivePreview)`

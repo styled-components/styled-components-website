@@ -1179,7 +1179,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-iwsKbI",
                                       "isStatic": false,
-                                      "lastClassName": "dzGUfj",
+                                      "lastClassName": "fkdkJa",
                                       "rules": Array [
                                         "
   ",
@@ -1188,7 +1188,8 @@ exports[`DocsLayout renders correctly 1`] = `
   outline: none;
   border: none;
 ",
-                                        " flex: 0 0 auto;
+                                        ";
+  flex: 0 0 auto;
   min-width: ",
                                         "2.7777777777777777rem",
                                         ";
@@ -1224,7 +1225,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <button
-                                  className="dzGUfj"
+                                  className="fkdkJa"
                                   onClick={[Function]}
                                 >
                                   <FoldIcon>
@@ -1406,7 +1407,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-iwsKbI",
                                       "isStatic": false,
-                                      "lastClassName": "dzGUfj",
+                                      "lastClassName": "fkdkJa",
                                       "rules": Array [
                                         "
   ",
@@ -1415,7 +1416,8 @@ exports[`DocsLayout renders correctly 1`] = `
   outline: none;
   border: none;
 ",
-                                        " flex: 0 0 auto;
+                                        ";
+  flex: 0 0 auto;
   min-width: ",
                                         "2.7777777777777777rem",
                                         ";
@@ -1451,7 +1453,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <button
-                                  className="dzGUfj"
+                                  className="fkdkJa"
                                   onClick={[Function]}
                                 >
                                   <ForwardRef

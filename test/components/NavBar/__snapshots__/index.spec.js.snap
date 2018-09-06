@@ -1104,7 +1104,7 @@ exports[`Nav renders correctly 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-iwsKbI",
                               "isStatic": false,
-                              "lastClassName": "kheGqJ",
+                              "lastClassName": "jhyiZD",
                               "rules": Array [
                                 "
   ",
@@ -1113,7 +1113,8 @@ exports[`Nav renders correctly 1`] = `
   outline: none;
   border: none;
 ",
-                                " flex: 0 0 auto;
+                                ";
+  flex: 0 0 auto;
   min-width: ",
                                 "2.7777777777777777rem",
                                 ";
@@ -1148,7 +1149,7 @@ exports[`Nav renders correctly 1`] = `
                         forwardedRef={null}
                       >
                         <button
-                          className="kheGqJ"
+                          className="jhyiZD"
                         >
                           <CloseIcon>
                             <ForwardRef
@@ -1328,7 +1329,7 @@ exports[`Nav renders correctly 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-iwsKbI",
                               "isStatic": false,
-                              "lastClassName": "kheGqJ",
+                              "lastClassName": "jhyiZD",
                               "rules": Array [
                                 "
   ",
@@ -1337,7 +1338,8 @@ exports[`Nav renders correctly 1`] = `
   outline: none;
   border: none;
 ",
-                                " flex: 0 0 auto;
+                                ";
+  flex: 0 0 auto;
   min-width: ",
                                 "2.7777777777777777rem",
                                 ";
@@ -1372,7 +1374,7 @@ exports[`Nav renders correctly 1`] = `
                         forwardedRef={null}
                       >
                         <button
-                          className="kheGqJ"
+                          className="jhyiZD"
                         >
                           <ForwardRef
                             shouldRotate={true}

@@ -5,7 +5,8 @@ import { navbarHeight } from '../../utils/sizes'
 import { resetInput } from '../../utils/form'
 
 const NavButton = styled.button`
-  ${resetInput} flex: 0 0 auto;
+  ${resetInput};
+  flex: 0 0 auto;
   min-width: ${rem(navbarHeight)};
   height: ${rem(navbarHeight)};
   text-align: center;
