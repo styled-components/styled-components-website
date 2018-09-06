@@ -19,8 +19,9 @@
   },
   "dependencies": {
     "@mdx-js/mdx": "^0.15.0",
+    "@mdx-js/tag": "^0.15.0",
     "@types/react": "^16.4.13",
-    "@zeit/next-mdx": "^1.1.0",
+    "@zeit/next-mdx": "^1.1.1-canary.2",
     "@zeit/next-source-maps": "^0.0.2",
     "axios": "^0.18.0",
     "babel-plugin-module-resolver": "^3.1.1",

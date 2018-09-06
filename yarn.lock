@@ -1190,11 +1190,11 @@
   version "0.6.5"
   resolved "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.6.5.tgz#f868c314b889e7c3d84868a1d1cc323fbb40ca86"
 
-"@mdx-js/loader@^0.7.0":
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-0.7.4.tgz#d673e628b4d9ffcafaa8f8079468d6fc87ac1a7b"
+"@mdx-js/loader@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-0.15.0.tgz#05a36267d5a491ae1981508a3e662eaf848f6ad3"
   dependencies:
-    "@mdx-js/tag" "^0.7.2"
+    "@mdx-js/tag" "^0.15.0"
 
 "@mdx-js/mdx@^0.15.0":
   version "0.15.0"
@@ -1206,10 +1206,12 @@
     unified "^6.1.6"
     unist-util-visit "^1.3.0"
 
-"@mdx-js/tag@^0.7.2":
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/@mdx-js/tag/-/tag-0.7.2.tgz#a18d76644089b4a9bb6d489d205cb065051b7c9a"
+"@mdx-js/tag@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@mdx-js/tag/-/tag-0.15.0.tgz#a98949206cc21b27a56a11550b41229631eb8b1c"
   dependencies:
+    create-react-context "^0.2.2"
+    hoist-non-react-statics "^2.5.5"
     prop-types "^15.6.1"
 
 "@samverschueren/stream-to-observable@^0.3.0":
@@ -1235,11 +1237,11 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@zeit/next-mdx@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@zeit/next-mdx/-/next-mdx-1.1.0.tgz#32753243504e475b110e1ad07ff92c9b31366b04"
+"@zeit/next-mdx@^1.1.1-canary.2":
+  version "1.1.1-canary.2"
+  resolved "https://registry.yarnpkg.com/@zeit/next-mdx/-/next-mdx-1.1.1-canary.2.tgz#c529e26b40b10d46fae24b7ceec7df87c8fa8a9e"
   dependencies:
-    "@mdx-js/loader" "^0.7.0"
+    "@mdx-js/loader" "^0.15.0"
 
 "@zeit/next-source-maps@^0.0.2":
   version "0.0.2"
@@ -2504,6 +2506,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+create-react-context@^0.2.2:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.3.tgz#9ec140a6914a22ef04b8b09b7771de89567cb6f3"
+  dependencies:
+    fbjs "^0.8.0"
+    gud "^1.0.0"
+
 cross-spawn@5.1.0, cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -3468,6 +3477,18 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
+fbjs@^0.8.0, fbjs@^0.8.9:
+  version "0.8.17"
+  resolved "https://registry.npmjs.org/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
+  dependencies:
+    core-js "^1.0.0"
+    isomorphic-fetch "^2.1.1"
+    loose-envify "^1.0.0"
+    object-assign "^4.1.0"
+    promise "^7.1.1"
+    setimmediate "^1.0.5"
+    ua-parser-js "^0.7.18"
+
 fbjs@^0.8.16, fbjs@^0.8.5:
   version "0.8.16"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
@@ -3479,18 +3500,6 @@ fbjs@^0.8.16, fbjs@^0.8.5:
     promise "^7.1.1"
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
-
-fbjs@^0.8.9:
-  version "0.8.17"
-  resolved "https://registry.npmjs.org/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
-  dependencies:
-    core-js "^1.0.0"
-    isomorphic-fetch "^2.1.1"
-    loose-envify "^1.0.0"
-    object-assign "^4.1.0"
-    promise "^7.1.1"
-    setimmediate "^1.0.5"
-    ua-parser-js "^0.7.18"
 
 figures@^1.7.0:
   version "1.7.0"
@@ -3854,6 +3863,10 @@ growly@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
 
+gud@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
+
 gzip-size@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/gzip-size/-/gzip-size-4.1.0.tgz#8ae096257eabe7d69c45be2b67c448124ffb517c"
@@ -3971,6 +3984,10 @@ hmac-drbg@^1.0.0:
 hoist-non-react-statics@2.5.0:
   version "2.5.0"
   resolved "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-2.5.0.tgz#d2ca2dfc19c5a91c5a6615ce8e564ef0347e2a40"
+
+hoist-non-react-statics@^2.5.5:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
 
 hoist-non-react-statics@^3.0.0:
   version "3.0.1"
