@@ -3,7 +3,7 @@ import NextPage from '../../components/NextPage'
 
 import Theming from '../../sections/advanced/theming.md'
 import Refs from '../../sections/advanced/refs.md'
-import Security from '../../sections/advanced/security'
+import Security from '../../sections/advanced/security.md'
 import ExistingCSS from '../../sections/advanced/existing-css'
 import MediaTemplates from '../../sections/advanced/media-templates'
 import TaggedTemplateLiterals from '../../sections/advanced/tagged-template-literals'
