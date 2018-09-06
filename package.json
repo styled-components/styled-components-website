@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@mdx-js/mdx": "^0.15.0",
+    "@mdx-js/runtime": "^0.15.0",
     "@mdx-js/tag": "^0.15.0",
     "@types/react": "^16.4.13",
     "@zeit/next-mdx": "^1.1.1-canary.2",
