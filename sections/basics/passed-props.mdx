@@ -1,23 +1,20 @@
-import md from 'components/md'
+## Passed props
 
-const PassedProps = () => md`
-  ## Passed props
+styled-components pass on all their props.
 
-  styled-components pass on all their props.
+This example shows how all props of the Input component are passed on to the
+DOM node that is mounted, as with React elements.
 
-  This example shows how all props of the Input component are passed on to the
-  DOM node that is mounted, as with React elements.
-
-  \`\`\`react
+```react
   // Create an Input component that'll render an <input> tag with some styles
-  const Input = styled.input\`
+  const Input = styled.input`
     padding: 0.5em;
     margin: 0.5em;
     color: palevioletred;
     background: papayawhip;
     border: none;
     border-radius: 3px;
-  \`;
+  `;
 
   // Render a styled text input with a placeholder of "@mxstbr", and one with a value of "@geelen"
   render(
@@ -26,7 +23,4 @@ const PassedProps = () => md`
       <Input value="@geelen" type="text" />
     </div>
   );
-  \`\`\`
-`
-
-export default PassedProps
+```
