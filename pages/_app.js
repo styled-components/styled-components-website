@@ -72,7 +72,7 @@ const components = {
     )
   },
 
-  code({ children, className }) {
+  code({ children, className = '' }) {
     const language = className.replace(/language-/, '')
     if (language === 'react') {
       return <LiveEdit code={children} noInline />
