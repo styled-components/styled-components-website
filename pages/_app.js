@@ -64,10 +64,10 @@ const components = {
     )
   },
 
-  inlineCode({ literal }) {
+  inlineCode({ children }) {
     return (
       <Code>
-        {literal}
+        {children}
       </Code>
     )
   },
