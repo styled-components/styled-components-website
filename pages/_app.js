@@ -94,6 +94,10 @@ const components = {
   },
 
   a({ href, children }) {
+    if (href.indexOf('/') !== 0) {
+      return (<a href={href}>{children}</a>)
+    }
+
     return (
       <Link href={href} inline>
         {children}
