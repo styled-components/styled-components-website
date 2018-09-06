@@ -2,7 +2,7 @@ import DocsLayout from '../../components/DocsLayout'
 import NextPage from '../../components/NextPage'
 
 import Theming from '../../sections/advanced/theming.md'
-import Refs from '../../sections/advanced/refs'
+import Refs from '../../sections/advanced/refs.md'
 import Security from '../../sections/advanced/security'
 import ExistingCSS from '../../sections/advanced/existing-css'
 import MediaTemplates from '../../sections/advanced/media-templates'
