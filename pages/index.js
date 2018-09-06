@@ -149,13 +149,14 @@ const EditorContainer = styled.div`
 `
 
 const Editor = styled(LiveEditor)`
-  ${editorMixin}
-  height: 24rem;
+  ${editorMixin} height: 24rem;
   white-space: pre;
   width: 100%;
 `
 
-const Links = styled.div`margin: ${rem(36)} 0;`
+const Links = styled.div`
+  margin: ${rem(36)} 0;
+`
 
 const Footer = styled.footer`
   display: flex;
@@ -175,7 +176,7 @@ const Heart = styled(HeartIcon).attrs({
 })`
   display: inline-block;
   width: ${rem(17)};
-  color: ${red}
+  color: ${red};
 `
 
 const FooterLink = styled(Link)`
@@ -186,8 +187,8 @@ const FooterContent = styled(Content)`
   padding: ${rem(30)} ${rem(40)} ${rem(30)} ${rem(40)};
 
   ${mobile(css`
-  padding: ${rem(30)} ${rem(20)} ${rem(30)} ${rem(20)};
-`)}
+    padding: ${rem(30)} ${rem(20)} ${rem(30)} ${rem(20)};
+  `)};
 `
 
 class Index extends PureComponent {
@@ -216,14 +217,15 @@ class Index extends PureComponent {
         </SeoHead>
 
         <WithIsScrolled>
-          {({ isScrolled }) =>
+          {({ isScrolled }) => (
             <Nav
               showSideNav={false}
               transparent={!isScrolled}
               isMobileNavFolded={isMobileNavFolded}
               onMobileNavToggle={this.toggleMobileNav}
               onRouteChange={this.onRouteChange}
-            />}
+            />
+          )}
         </WithIsScrolled>
 
         <Wrapper>
@@ -312,7 +314,8 @@ class Index extends PureComponent {
 
         <Footer>
           <FooterContent hero>
-            {' '}{'Hosted on ▲ ZEIT Now'}
+            {' '}
+            {'Hosted on ▲ ZEIT Now'}
             <br />
             {'Made with '}
             <Heart />

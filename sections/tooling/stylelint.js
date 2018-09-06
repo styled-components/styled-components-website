@@ -3,7 +3,7 @@ import md from 'components/md'
 const StylelintProcessor = () => md`
 ## Stylelint
 
-  Lint your [styled components](https://github.com/styled-components/styled-components) with [stylelint](http://stylelint.io/)!
+Lint your [styled components](https://github.com/styled-components/styled-components) with [stylelint](http://stylelint.io/)!
 
 ### Installation
 
@@ -16,19 +16,19 @@ You need:
 
 > We recommend using Stylelint v9+ as this has added features that allow us to report correct line numbers on CSS syntax errors
 
-\`\`\`
+~~~
 (npm install --save-dev
   stylelint
   stylelint-processor-styled-components
   stylelint-config-styled-components
   stylelint-config-recommended)
-\`\`\`
+~~~
 
 ### Setup
 
 Add a \`.stylelintrc\` file to the root of your project:
 
-\`\`\`JSON
+~~~JSON
 {
   "processors": ["stylelint-processor-styled-components"],
   "extends": [
@@ -36,25 +36,25 @@ Add a \`.stylelintrc\` file to the root of your project:
     "stylelint-config-styled-components"
   ]
 }
-\`\`\`
+~~~
 
 Then you need to run \`stylelint\`. Add a \`lint:css\` script to your \`package.json\` which runs \`stylelint\` with a glob to all of your styled components:
 
-\`\`\`JSON
+~~~JSON
 {
   "scripts": {
     "lint:css": "stylelint './src/**/*.js'"
   }
 }
-\`\`\`
+~~~
 
 > The processor ignores javascript files that don't contain any \`styled-components\`, so don't worry about being too broad as long as you restrict it to javascript (or TypeScript).
 
 Now you can lint your CSS by running the script! 🎉
 
-\`\`\`
+~~~
 npm run lint:css
-\`\`\`
+~~~
 
 > Beware that due to limitations on what is possible for Stylelint custom processors we cannot support the \`--fix\` option
 
@@ -76,21 +76,26 @@ Some other libraries also implement the \`styled.x\` pattern with tagged templat
 
 If you want to use the processor with another library but you also want to change the keyword (e.g. to write \`cool.div\` instead of \`styled.div\`) use the \`moduleName\` option:
 
-\`\`\`js
-import cool from "other-library";
+~~~js
+import cool from 'other-library'
 
 const Button = cool.button\`
   color: blue;
 \`
-\`\`\`
+~~~
 
-\`\`\`json
+~~~json
 {
-  "processors": [["stylelint-processor-styled-components", {
-      "moduleName": "other-library"
-  }]]
+  "processors": [
+    [
+      "stylelint-processor-styled-components",
+      {
+        "moduleName": "other-library"
+      }
+    ]
+  ]
 }
-\`\`\`
+~~~
 
 > That double array is on purpose but only necessary if you set options, see the [processors configuration docs](https://stylelint.io/user-guide/configuration/#processors).
 
@@ -102,13 +107,13 @@ Sometimes \`stylelint\` can throw an error (e.g. \`CssSyntaxError\`) even though
 
 A simplified example:
 
-\`\`\`js
-const something = "background";
+~~~js
+const something = 'background'
 
 const Button = styled.div\`
   \${something}: papayawhip;
 \`
-\`\`\`
+~~~
 
 When you have interpolations in your styles the processor can't know what they are, so it makes a good guess and replaces them with a syntactically equivalent placeholder value. Since \`stylelint\` is not a code flow analysis tool this doesn't cover all edge cases and the processor will get it wrong every now and then.
 
@@ -116,14 +121,14 @@ Interpolation tagging allows you to tell the processor what an interpolation is 
 
 For example:
 
-\`\`\`js
-const something = "background";
+~~~js
+const something = 'background'
 
 const Button = styled.div\`
   // Tell the processor that "something" is a property
   \${/* sc-prop */ something}: papayawhip;
 \`
-\`\`\`
+~~~
 
 Now the processor knows that the \`something\` interpolation is a property, and it can replace the interpolation with a property for linting.
 
@@ -143,23 +148,23 @@ The full list of supported tags:
 
 For example, when you interpolate another styled component, what you really interpolate is its unique selector. Since the processor doesn't know that, you can tell it to replace it with a selector when linting:
 
-\`\`\`js
+~~~js
 const Wrapper = styled.div\`
   \${/* sc-selector */ Button} {
     color: red;
   }
-\`;
-\`\`\`
+\`
+~~~
 
 You can also use shorthand tags to avoid cluttering the code. For example:
 
-\`\`\`js
+~~~js
 const Wrapper = styled.div\`
   \${/* sc-sel */ Button} {
     color: red;
   }
-\`;
-\`\`\`
+\`
+~~~
 
 ##### \`sc-custom\`
 
@@ -169,17 +174,17 @@ On top of the above standard tags the processor also has the \`sc-custom\` tag t
 
 For example:
 
-\`\`\`js
+~~~js
 // Switch between left and right based on language settings passed through via the theme
-const rtlSwitch = props => props.theme.dir === "rtl" ? "left" : "right";
+const rtlSwitch = props => (props.theme.dir === 'rtl' ? 'left' : 'right')
 
 const Button = styled.button\`
   background: green;
   // Tell the processor to replace the interpolation with "left"
   // when linting
   margin-\${/* sc-custom "left" */ rtlSwitch}: 12.5px;
-\`;
-\`\`\`
+\`
+~~~
 
 ### Syntax notes
 
@@ -187,22 +192,22 @@ const Button = styled.button\`
 
 Turn off rules with \`stylelint-disable\` comments (see the [stylelint documentation](https://stylelint.io/user-guide/configuration/#turning-rules-off-from-within-your-css) for all allowed syntax) both inside and outside of the tagged template literals.
 
-\`\`\`js
-import React from "react";
-import styled from "styled-components";
+~~~js
+import React from 'react'
+import styled from 'styled-components'
 
 // Disable stylelint from within the tagged template literal
 const Wrapper = styled.div\`
   /* stylelint-disable */
   background-color: 123;
-\`;
+\`
 
 // Or from the JavaScript around the tagged template literal
 /* stylelint-disable */
 const Wrapper = styled.div\`
   background-color: 123;
-\`;
-\`\`\`
+\`
+~~~
 
 #### Template literal style and indentation
 
@@ -212,30 +217,31 @@ The important thing is that you put the closing backtick on the base level of in
 
 **Right**
 
-\`\`\`js
+~~~js
 if (condition) {
   const Button = styled.button\`
     color: red;
   \`
 }
-\`\`\`
+~~~
 
 **Wrong**
 
-\`\`\`js
+~~~js
 if (condition) {
   const Button = styled.button\`
     color: red;
-\`
+  \`
 }
-\`\`\`
+~~~
 
-\`\`\`js
+~~~js
 if (condition) {
   const Button = styled.button\`
-    color: red;\`
+    color: red;
+  \`
 }
-\`\`\`
+~~~
 
 It may be that other tagged template literal styles are coincidentally supported, but no issues will be handled regarding indentation unless the above style was used.
 `

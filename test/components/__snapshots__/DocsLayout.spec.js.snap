@@ -14,7 +14,7 @@ exports[`DocsLayout renders correctly 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-hMqMXs",
             "isStatic": true,
-            "lastClassName": "fEzWfe",
+            "lastClassName": "eFPxql",
             "rules": Array [
               "
   padding-left: ",
@@ -30,10 +30,10 @@ exports[`DocsLayout renders correctly 1`] = `
               "
     padding-left: 0;
   ",
-              "
+              ";
   }
 ",
-              "
+              ";
 ",
             ],
           },
@@ -48,7 +48,7 @@ exports[`DocsLayout renders correctly 1`] = `
       forwardedRef={null}
     >
       <div
-        className="fEzWfe"
+        className="eFPxql"
       >
         <SeoHead
           description=""
@@ -132,7 +132,7 @@ exports[`DocsLayout renders correctly 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-cSHVUG",
                               "isStatic": true,
-                              "lastClassName": "fIzcWS",
+                              "lastClassName": "diQzty",
                               "rules": Array [
                                 "
   display: flex;
@@ -151,10 +151,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                 "
     display: none;
   ",
-                                "
+                                ";
   }
 ",
-                                "
+                                ";
 ",
                               ],
                             },
@@ -169,7 +169,7 @@ exports[`DocsLayout renders correctly 1`] = `
                         forwardedRef={null}
                       >
                         <div
-                          className="fIzcWS"
+                          className="diQzty"
                         >
                           <ForwardRef>
                             <BaseStyledComponent
@@ -258,7 +258,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "sc-htoDjs",
                                                     "isStatic": false,
-                                                    "lastClassName": "craaVv",
+                                                    "lastClassName": "gQUZOv",
                                                     "rules": Array [
                                                       "
   display: inline-block;
@@ -270,7 +270,7 @@ exports[`DocsLayout renders correctly 1`] = `
 
   ",
                                                       [Function],
-                                                      "
+                                                      ";
 ",
                                                     ],
                                                   },
@@ -285,7 +285,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                               forwardedRef={null}
                                             >
                                               <div
-                                                className="iSbHZP"
+                                                className="cCWweu"
                                               />
                                             </BaseStyledComponent>
                                           </ForwardRef>
@@ -1127,7 +1127,7 @@ exports[`DocsLayout renders correctly 1`] = `
                               "componentStyle": ComponentStyle {
                                 "componentId": "sc-gZMcBi",
                                 "isStatic": true,
-                                "lastClassName": "bKEueB",
+                                "lastClassName": "ckIDon",
                                 "rules": Array [
                                   "
   display: none;
@@ -1146,7 +1146,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                   "2.7777777777777777rem",
                                   ";
   ",
-                                  "
+                                  ";
   }
 ",
                                   ";
@@ -1164,7 +1164,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           forwardedRef={null}
                         >
                           <div
-                            className="bKEueB"
+                            className="ckIDon"
                           >
                             <ForwardRef
                               active={false}
@@ -1179,7 +1179,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-iwsKbI",
                                       "isStatic": false,
-                                      "lastClassName": "ebcZig",
+                                      "lastClassName": "dzGUfj",
                                       "rules": Array [
                                         "
   ",
@@ -1188,9 +1188,7 @@ exports[`DocsLayout renders correctly 1`] = `
   outline: none;
   border: none;
 ",
-                                        "
-
-  flex: 0 0 auto;
+                                        " flex: 0 0 auto;
   min-width: ",
                                         "2.7777777777777777rem",
                                         ";
@@ -1203,9 +1201,7 @@ exports[`DocsLayout renders correctly 1`] = `
 
   ",
                                         [Function],
-                                        "
-
-  &:focus {
+                                        " &:focus {
     border: ",
                                         "0.1111111111111111rem",
                                         " solid currentColor;
@@ -1228,7 +1224,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <button
-                                  className="ebcZig"
+                                  className="dzGUfj"
                                   onClick={[Function]}
                                 >
                                   <FoldIcon>
@@ -1361,7 +1357,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                               "componentStyle": ComponentStyle {
                                                 "componentId": "sc-htoDjs",
                                                 "isStatic": false,
-                                                "lastClassName": "craaVv",
+                                                "lastClassName": "gQUZOv",
                                                 "rules": Array [
                                                   "
   display: inline-block;
@@ -1373,7 +1369,7 @@ exports[`DocsLayout renders correctly 1`] = `
 
   ",
                                                   [Function],
-                                                  "
+                                                  ";
 ",
                                                 ],
                                               },
@@ -1388,7 +1384,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           forwardedRef={null}
                                         >
                                           <div
-                                            className="craaVv"
+                                            className="gQUZOv"
                                           />
                                         </BaseStyledComponent>
                                       </ForwardRef>
@@ -1410,7 +1406,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-iwsKbI",
                                       "isStatic": false,
-                                      "lastClassName": "ebcZig",
+                                      "lastClassName": "dzGUfj",
                                       "rules": Array [
                                         "
   ",
@@ -1419,9 +1415,7 @@ exports[`DocsLayout renders correctly 1`] = `
   outline: none;
   border: none;
 ",
-                                        "
-
-  flex: 0 0 auto;
+                                        " flex: 0 0 auto;
   min-width: ",
                                         "2.7777777777777777rem",
                                         ";
@@ -1434,9 +1428,7 @@ exports[`DocsLayout renders correctly 1`] = `
 
   ",
                                         [Function],
-                                        "
-
-  &:focus {
+                                        " &:focus {
     border: ",
                                         "0.1111111111111111rem",
                                         " solid currentColor;
@@ -1459,7 +1451,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <button
-                                  className="ebcZig"
+                                  className="dzGUfj"
                                   onClick={[Function]}
                                 >
                                   <ForwardRef
@@ -1582,7 +1574,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-gqjmRU",
                                       "isStatic": false,
-                                      "lastClassName": "bwvuDN",
+                                      "lastClassName": "ikcYWX",
                                       "rules": Array [
                                         "
   position: absolute;
@@ -1627,7 +1619,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 isOpen={false}
                               >
                                 <div
-                                  className="bwvuDN"
+                                  className="ikcYWX"
                                 >
                                   <NavLinks>
                                     <ForwardRef>
@@ -2022,11 +2014,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-fjdhpX",
                                             "isStatic": true,
-                                            "lastClassName": "eVtpYT",
+                                            "lastClassName": "hwDJAG",
                                             "rules": Array [
-                                              "padding-right: ",
+                                              "
+  padding-right: ",
                                               "1.1111111111111112rem",
-                                              ";",
+                                              ";
+",
                                             ],
                                           },
                                           "displayName": "styled.div",
@@ -2040,7 +2034,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       forwardedRef={null}
                                     >
                                       <div
-                                        className="eVtpYT"
+                                        className="hwDJAG"
                                       >
                                         <Social>
                                           <ForwardRef>
@@ -2508,7 +2502,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "sc-kGXeez",
                         "isStatic": false,
-                        "lastClassName": "cAttCw",
+                        "lastClassName": "kiWeAg",
                         "rules": Array [
                           "
   position: fixed;
@@ -2545,12 +2539,12 @@ exports[`DocsLayout renders correctly 1`] = `
                           "
     ",
                           [Function],
-                          "
+                          ";
   ",
-                          "
+                          ";
   }
 ",
-                          "
+                          ";
 ",
                         ],
                       },
@@ -2566,7 +2560,7 @@ exports[`DocsLayout renders correctly 1`] = `
                   isFolded={true}
                 >
                   <nav
-                    className="cAttCw"
+                    className="kiWeAg"
                   >
                     <DocsSidebarMenu
                       onRouteChange={[Function]}
@@ -3428,7 +3422,7 @@ exports[`DocsLayout renders correctly 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-kEYyzF",
                   "isStatic": false,
-                  "lastClassName": "jOMSpa",
+                  "lastClassName": "gGgQzk",
                   "rules": Array [
                     "
   width: ",
@@ -3471,14 +3465,12 @@ exports[`DocsLayout renders correctly 1`] = `
                     [Function],
                     ");
   ",
-                    "
+                    ";
   }
 ",
-                    "
-
-  ",
+                    " ",
                     [Function],
-                    "
+                    ";
 ",
                   ],
                 },
@@ -3494,7 +3486,7 @@ exports[`DocsLayout renders correctly 1`] = `
             moveRight={false}
           >
             <div
-              className="jOMSpa"
+              className="gGgQzk"
               data-e2e-id="content"
             >
               <ForwardRef>

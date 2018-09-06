@@ -83,19 +83,11 @@ const md = (strings, ...values) => {
           return values.shift()
         }
 
-        return (
-          <p>
-            {children}
-          </p>
-        )
+        return <p>{children}</p>
       },
 
       Code({ literal }) {
-        return (
-          <Code>
-            {literal}
-          </Code>
-        )
+        return <Code>{literal}</Code>
       },
 
       CodeBlock({ language, literal }) {
@@ -111,11 +103,7 @@ const md = (strings, ...values) => {
       },
 
       BlockQuote({ children }) {
-        return (
-          <Note>
-            {children}
-          </Note>
-        )
+        return <Note>{children}</Note>
       },
 
       Link({ href, children }) {
@@ -133,11 +121,7 @@ const md = (strings, ...values) => {
         }
 
         if (level === 1) {
-          return (
-            <Title>
-              {children}
-            </Title>
-          )
+          return <Title>{children}</Title>
         }
 
         // The pipe indicates labels after the initial title
@@ -157,25 +141,22 @@ const md = (strings, ...values) => {
         return (
           <Anchor id={hash} level={level}>
             {title}
-            {labels.length > 0 &&
+            {labels.length > 0 && (
               <LabelGroup>
-                {labels.map((label, index) =>
+                {labels.map((label, index) => (
                   <Label key={index} isVersion={label.trim().startsWith('v')}>
                     {label.trim()}
-                  </Label>,
-                )}
-              </LabelGroup>}
+                  </Label>
+                ))}
+              </LabelGroup>
+            )}
           </Anchor>
         )
       },
     },
   })
 
-  return (
-    <div>
-      {renderer.render(ast)}
-    </div>
-  )
+  return <div>{renderer.render(ast)}</div>
 }
 
 export default md

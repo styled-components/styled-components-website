@@ -11,7 +11,7 @@ const Text = styled.div`
 
   ${mobile(css`
     display: block;
-  `)}
+  `)};
 `
 
 export default Text

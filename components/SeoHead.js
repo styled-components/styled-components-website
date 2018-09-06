@@ -16,9 +16,7 @@ export default class SeoHead extends Component {
     const properCanonical = canonical || url
     return (
       <NextHead>
-        <title>
-          {title}
-        </title>
+        <title>{title}</title>
 
         <meta name="description" content={description} />
 

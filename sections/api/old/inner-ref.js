@@ -17,7 +17,7 @@ const InnerRef = () => md`
   This example uses \`innerRef\` to save a ref to the styled input and focuses it once the user
   hovers over it.
 
-  \`\`\`react
+  ~~~react
   const Input = styled.input\`
     padding: 0.5em;
     margin: 0.5em;
@@ -42,7 +42,7 @@ const InnerRef = () => md`
   render(
     <Form />
   );
-  \`\`\`
+  ~~~
 `
 
 export default InnerRef

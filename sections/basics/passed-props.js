@@ -8,7 +8,7 @@ const PassedProps = () => md`
   This example shows how all props of the Input component are passed on to the
   DOM node that is mounted, as with React elements.
 
-  \`\`\`react
+  ~~~react
   // Create an Input component that'll render an <input> tag with some styles
   const Input = styled.input\`
     padding: 0.5em;
@@ -26,7 +26,7 @@ const PassedProps = () => md`
       <Input value="@geelen" type="text" />
     </div>
   );
-  \`\`\`
+  ~~~
 `
 
 export default PassedProps

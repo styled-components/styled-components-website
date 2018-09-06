@@ -10,7 +10,7 @@ const Theming = () => md`
   To illustrate this, let's create our Button component, but this time we'll pass some variables down
   as a theme.
 
-  \`\`\`react
+  ~~~react
   // Define our button, but with the use of props.theme this time
   const Button = styled.button\`
     font-size: 1em;
@@ -44,7 +44,7 @@ const Theming = () => md`
       </ThemeProvider>
     </div>
   );
-  \`\`\`
+  ~~~
 
   ### Function themes
 
@@ -54,7 +54,7 @@ const Theming = () => md`
   This example renders our above themed Button and a second one that uses a second ThemeProvider to invert the
   background and foreground colours. The function \`invertTheme\` receives the upper theme and creates a new one.
 
-  \`\`\`react
+  ~~~react
   // Define our button, but with the use of props.theme this time
   const Button = styled.button\`
     color: \${props => props.theme.fg};
@@ -90,25 +90,25 @@ const Theming = () => md`
       </div>
     </ThemeProvider>
   );
-  \`\`\`
+  ~~~
 
   ### Getting the theme without styled components
 
   If you ever need to use the current theme outside styled components (e.g. inside big components), you can use
   the \`withTheme\` higher order component.
 
-  \`\`\`jsx
-  import { withTheme } from "styled-components"
+  ~~~jsx
+  import { withTheme } from 'styled-components'
 
   class MyComponent extends React.Component {
     render() {
-      console.log("Current theme: ", this.props.theme);
+      console.log('Current theme: ', this.props.theme)
       // ...
     }
   }
 
   export default withTheme(MyComponent)
-  \`\`\`
+  ~~~
 
   ### The \`theme\` prop
 
@@ -116,7 +116,7 @@ const Theming = () => md`
 
   This is useful to circumvent a missing \`ThemeProvider\` or to override it.
 
-  \`\`\`react
+  ~~~react
   // Define our button
   const Button = styled.button\`
     font-size: 1em;
@@ -145,9 +145,7 @@ const Theming = () => md`
       </ThemeProvider>
     </div>
   );
-  \`\`\`
-
-
+  ~~~
 `
 
 export default Theming

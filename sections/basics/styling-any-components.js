@@ -14,7 +14,7 @@ const StylingAnyComponents = () => md`
   into styled components. The same pattern works for your own components as well, if you
   need some components to stay unstyled on their own.
 
-  \`\`\`react
+  ~~~react
   // This could be react-router-dom's Link for example
   const Link = ({ className, children }) => (
     <a className={className}>
@@ -34,7 +34,7 @@ const StylingAnyComponents = () => md`
       <StyledLink>Styled, exciting Link</StyledLink>
     </div>
   );
-  \`\`\`
+  ~~~
 
   Consider carefully whether to wrap your own components in a styled component, when it isn't necessary.
   You will disable the automatic whitelisting of props, and reverse the recommended order of styled

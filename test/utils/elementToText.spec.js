@@ -24,7 +24,14 @@ describe('elementToText', () => {
   })
 
   it('stringifies an array of elements', () => {
-    expect(elementToText([ <span>test</span>, <div>test</div> ])).toBe('testtest')
-    expect(elementToText(<ul><li>a</li><li>b</li></ul>)).toBe('ab')
+    expect(elementToText([<span>test</span>, <div>test</div>])).toBe('testtest')
+    expect(
+      elementToText(
+        <ul>
+          <li>a</li>
+          <li>b</li>
+        </ul>,
+      ),
+    ).toBe('ab')
   })
 })

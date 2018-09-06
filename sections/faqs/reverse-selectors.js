@@ -9,7 +9,7 @@ const ReverseSelectors = () => md`
 
   Here, our Icon component defines its response to its parent Link being hovered:
 
-  \`\`\`react
+  ~~~react
   const Link = styled.a\`
     display: flex;
     align-items: center;
@@ -47,29 +47,29 @@ const ReverseSelectors = () => md`
       <Label>Hovering my parent changes my\u00A0style!</Label>
     </Link>
   );
-  \`\`\`
+  ~~~
 
   We could have nested the color-changing rule within our Link component, but then we'd have to
   consider both sets of rules to understand why Icon behaves as it does.
 
   ### Caveat
 
-  This behaviour is only supported within the context of *Styled* Components:
+  This behaviour is only supported within the context of _Styled_ Components:
   attempting to mount \`B\` in the following example will fail because component
   \`A\` is an instance of React.Component not a Styled Component.
 
-  \`\`\`jsx
+  ~~~jsx
   class A extends React.Component {
     render() {
-      return <div />;
+      return <div />
     }
   }
 
   const B = styled.div\`
     \${A} {
     }
-  \`;
-  \`\`\`
+  \`
+  ~~~
 
   The error thrown - \`Cannot call a class as a function\` - occurs because the
   styled component is attempting to call the component as an interpolation function.

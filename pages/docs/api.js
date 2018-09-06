@@ -9,7 +9,7 @@ import Flow from '../../sections/api/flow'
 import TypeScript from '../../sections/api/typescript'
 import OldAPIs from '../../sections/api/old'
 
-const APIReference = () =>
+const APIReference = () => (
   <DocsLayout
     title="API Reference"
     description="API Reference of styled-components"
@@ -23,5 +23,6 @@ const APIReference = () =>
 
     <NextPage href="/docs/tooling" title="Tooling" />
   </DocsLayout>
+)
 
 export default APIReference

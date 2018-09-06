@@ -7,14 +7,14 @@ const OverrideStyles = () => md`
 
   There is a neat trick however, which is to use the style \`element-attr\` CSS Selector in conjunction with \`!important\`:
 
-  \`\`\`js
+  ~~~js
   const MyStyledComponent = styled(InlineStyledComponent)\`
     &[style] {
       font-size: 12px !important;
       color: blue !important;
     }
-  \`;
-  \`\`\`
+  \`
+  ~~~
 `
 
 export default OverrideStyles

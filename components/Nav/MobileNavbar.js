@@ -33,11 +33,11 @@ const SecondaryMenu = styled.div`
   ${p =>
     p.isOpen
       ? css`
-    height: ${rem(navbarHeight)};
-  `
+          height: ${rem(navbarHeight)};
+        `
       : css`
-    height: 0;
-  `} display: flex;
+          height: 0;
+        `} display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
@@ -68,12 +68,14 @@ const ArrowWrapper = styled.div`
   ${p =>
     p.shouldRotate &&
     css`
-    transform-origin: 50% 55%;
-    transform: rotate(180deg);
-  `};
+      transform-origin: 50% 55%;
+      transform: rotate(180deg);
+    `};
 `
 
-const SecondaryMenuItem = styled.div`padding-right: ${rem(20)};`
+const SecondaryMenuItem = styled.div`
+  padding-right: ${rem(20)};
+`
 
 const MobileNavbar = props => {
   const {
@@ -86,10 +88,11 @@ const MobileNavbar = props => {
 
   return (
     <Wrapper>
-      {showSideNav !== false &&
+      {showSideNav !== false && (
         <NavButton active={!isSideFolded} onClick={onSideToggle}>
           {isSideFolded ? <FoldIcon /> : <CloseIcon />}
-        </NavButton>}
+        </NavButton>
+      )}
 
       <LogoLink>
         <Logo compact />

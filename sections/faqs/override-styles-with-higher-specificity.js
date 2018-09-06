@@ -7,23 +7,23 @@ const OverrideStyles = () => md`
 
   We recommend the following technique:
 
-  \`\`\`js
+  ~~~js
   const MyStyledComponent = styled(AlreadyStyledComponent)\`
     &&& {
       color: palevioletred;
       font-weight: bold;
     }
-  \`;
-  \`\`\`
+  \`
+  ~~~
 
   Each \`&\` gets replaced with the generated class, so the injected CSS then looks like this:
 
-  \`\`\`css
+  ~~~css
   .MyStyledComponent-asdf123.MyStyledComponent-asdf123.MyStyledComponent-asdf123 {
     color: palevioletred;
     font-weight: bold;
   }
-  \`\`\`
+  ~~~
 
   The repeated class bumps the specificity high enough to override the source order without being very tedious to write!
 `

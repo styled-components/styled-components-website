@@ -8,7 +8,7 @@ const Nesting = () => md`
 
   It can also be used by parent components to define contextual constraints that aren't properly a concern of the affected children:
 
-  \`\`\`react
+  ~~~react
   const EqualDivider = styled.div\`
     display: flex;
     margin: 0.5rem;
@@ -44,12 +44,12 @@ const Nesting = () => md`
     </EqualDivider>
     </div>
   );
-  \`\`\`
+  ~~~
 
   It's also incredibly convenient to co-locate media queries, since we can see at a glance
   exactly how the component will respond at any resolution.
 
-  \`\`\`react
+  ~~~react
   const ColorChanger = styled.section\`
     background: papayawhip;
     color: palevioletred;
@@ -65,7 +65,7 @@ const Nesting = () => md`
       <h2>Hello world!</h2>
     </ColorChanger>
   );
-  \`\`\`
+  ~~~
 `
 
 export default Nesting
