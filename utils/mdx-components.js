@@ -13,11 +13,7 @@ import Label, { LabelGroup } from '../components/Label'
 
 const Heading = ({ level, children }) => {
   if (level === 1) {
-    return (
-      <Title>
-        {children}
-      </Title>
-    )
+    return <Title>{children}</Title>
   }
 
   // The pipe indicates labels after the initial title
@@ -37,14 +33,15 @@ const Heading = ({ level, children }) => {
   return (
     <Anchor id={hash} level={level}>
       {title}
-      {labels.length > 0 &&
+      {labels.length > 0 && (
         <LabelGroup>
-          {labels.map((label, index) =>
+          {labels.map((label, index) => (
             <Label key={index} isVersion={label.trim().startsWith('v')}>
               {label.trim()}
-            </Label>,
-          )}
-        </LabelGroup>}
+            </Label>
+          ))}
+        </LabelGroup>
+      )}
     </Anchor>
   )
 }
@@ -53,19 +50,11 @@ Heading.displayName = 'Heading'
 
 const components = {
   p({ children }) {
-    return (
-      <p>
-        {children}
-      </p>
-    )
+    return <p>{children}</p>
   },
 
   inlineCode({ children }) {
-    return (
-      <Code>
-        {children}
-      </Code>
-    )
+    return <Code>{children}</Code>
   },
 
   code({ children, className = '' }) {
@@ -82,11 +71,7 @@ const components = {
   },
 
   blockquote({ children }) {
-    return (
-      <Note>
-        {children}
-      </Note>
-    )
+    return <Note>{children}</Note>
   },
 
   a({ href, children }) {

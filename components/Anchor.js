@@ -17,7 +17,7 @@ const InvisibleAnchor = styled.div.attrs({
 
   ${mobile(css`
     top: ${rem(-90)};
-  `)}
+  `)};
 `
 
 const Anchor = styled.a`

@@ -24,13 +24,11 @@ const Column = styled.div`
     width: 50%;
     max-width: 50%;
     flex-basis: 50%;
-  `)}
-
-  ${phone(css`
+  `)} ${phone(css`
     width: 100%;
     max-width: 100%;
     flex-basis: 100%;
-  `)}
+  `)};
 `
 
 const SubHeader = styled.h3`
@@ -42,33 +40,34 @@ const SubHeader = styled.h3`
 `
 
 const Documentation = () => (
-  <DocsLayout title="Documentation" description="Learn how to use styled-components and to style your apps without stress">
+  <DocsLayout
+    title="Documentation"
+    description="Learn how to use styled-components and to style your apps without stress"
+  >
     <p>
-      Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components. It also removes the mapping between components and styles – using components as a low-level styling construct could not be easier!
+      Utilising tagged template literals (a recent addition to JavaScript) and
+      the power of CSS, styled-components allows you to write actual CSS code to
+      style your components. It also removes the mapping between components and
+      styles – using components as a low-level styling construct could not be
+      easier!
     </p>
 
     <Row>
-      {
-        pages.map(({ title, pathname, sections }) => (
-          <Column key={title}>
-            <Header>
-              <Link href={`/docs/${pathname}`}>
+      {pages.map(({ title, pathname, sections }) => (
+        <Column key={title}>
+          <Header>
+            <Link href={`/docs/${pathname}`}>{title}</Link>
+          </Header>
+
+          {sections.map(({ title }) => (
+            <SubHeader key={title}>
+              <Link href={`/docs/${pathname}#${titleToDash(title)}`}>
                 {title}
               </Link>
-            </Header>
-
-            {
-              sections.map(({ title }) => (
-                <SubHeader key={title}>
-                  <Link href={`/docs/${pathname}#${titleToDash(title)}`}>
-                    {title}
-                  </Link>
-                </SubHeader>
-              ))
-            }
-          </Column>
-        ))
-      }
+            </SubHeader>
+          ))}
+        </Column>
+      ))}
     </Row>
   </DocsLayout>
 )
