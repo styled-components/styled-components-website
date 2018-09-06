@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Anchor renders correctly 1`] = `
-.cVdUel:hover .c0 {
+.gnwyLv:hover .c0 {
   display: inline-block;
 }
 
 @media (max-width:62.5em) {
-  .cVdUel .c0 {
+  .gnwyLv .c0 {
     display: inline-block;
   }
 }
 
 <h2
-  className="cVdUel"
+  className="gnwyLv"
 >
   <div
     aria-hidden={true}
-    className="eROHpa"
+    className="jcQXUo"
   />
   <a
     className="c0 bUAubD"

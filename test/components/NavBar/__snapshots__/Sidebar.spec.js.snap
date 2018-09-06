@@ -11,7 +11,7 @@ exports[`Sidebar renders correctly 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
             "isStatic": false,
-            "lastClassName": "bXJrQr",
+            "lastClassName": "iHEkyr",
             "rules": Array [
               "
   position: fixed;
@@ -48,12 +48,12 @@ exports[`Sidebar renders correctly 1`] = `
               "
     ",
               [Function],
-              "
+              ";
   ",
-              "
+              ";
   }
 ",
-              "
+              ";
 ",
             ],
           },
@@ -68,7 +68,7 @@ exports[`Sidebar renders correctly 1`] = `
       forwardedRef={[Function]}
     >
       <nav
-        className="bXJrQr"
+        className="iHEkyr"
       />
     </BaseStyledComponent>
   </ForwardRef>

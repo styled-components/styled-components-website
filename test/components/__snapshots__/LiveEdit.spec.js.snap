@@ -88,7 +88,7 @@ exports[`LiveEdit renders correctly 1`] = `
                   "componentStyle": ComponentStyle {
                     "componentId": "sc-bwzfXH",
                     "isStatic": true,
-                    "lastClassName": "gxuGhy",
+                    "lastClassName": "yIRzu",
                     "rules": Array [
                       "
   display: flex;
@@ -105,7 +105,7 @@ exports[`LiveEdit renders correctly 1`] = `
                       "
     flex-direction: column;
   ",
-                      "
+                      ";
   }
 ",
                       ";
@@ -123,7 +123,7 @@ exports[`LiveEdit renders correctly 1`] = `
               forwardedRef={null}
             >
               <div
-                className="gxuGhy"
+                className="yIRzu"
               >
                 <ForwardRef>
                   <BaseStyledComponent
@@ -134,7 +134,7 @@ exports[`LiveEdit renders correctly 1`] = `
                         "componentStyle": ComponentStyle {
                           "componentId": "sc-htpNat",
                           "isStatic": true,
-                          "lastClassName": "fflWUE",
+                          "lastClassName": "iTizFY",
                           "rules": Array [
                             "
   ",
@@ -149,8 +149,7 @@ exports[`LiveEdit renders correctly 1`] = `
   cursor: text;
   white-space: pre-wrap;
 ",
-                            "
-  ",
+                            " ",
                             "
   flex-basis: 50%;
   width: 50%;
@@ -168,12 +167,12 @@ exports[`LiveEdit renders correctly 1`] = `
     max-width: 100%;
     height: auto;
   ",
-                            "
+                            ";
   }
 ",
-                            "
+                            ";
 ",
-                            "
+                            ";
 ",
                           ],
                         },
@@ -189,17 +188,17 @@ exports[`LiveEdit renders correctly 1`] = `
                     forwardedRef={null}
                   >
                     <LiveEditor
-                      className="fflWUE"
+                      className="iTizFY"
                     >
                       <Editor
-                        className="fflWUE"
+                        className="iTizFY"
                         code=""
                         contentEditable={true}
                         language="jsx"
                         onChange={[Function]}
                       >
                         <pre
-                          className="prism-code fflWUE"
+                          className="prism-code iTizFY"
                           contentEditable={true}
                           dangerouslySetInnerHTML={
                             Object {
@@ -227,7 +226,7 @@ exports[`LiveEdit renders correctly 1`] = `
                         "componentStyle": ComponentStyle {
                           "componentId": "sc-bxivhb",
                           "isStatic": true,
-                          "lastClassName": "jMiyOb",
+                          "lastClassName": "hEcMdv",
                           "rules": Array [
                             "
   position: relative;
@@ -255,12 +254,12 @@ exports[`LiveEdit renders correctly 1`] = `
     max-width: 100%;
     height: auto;
   ",
-                            "
+                            ";
   }
 ",
-                            "
+                            ";
 ",
-                            "
+                            ";
 ",
                           ],
                         },
@@ -276,10 +275,10 @@ exports[`LiveEdit renders correctly 1`] = `
                     forwardedRef={null}
                   >
                     <LivePreview
-                      className="jMiyOb"
+                      className="hEcMdv"
                     >
                       <div
-                        className="react-live-preview jMiyOb"
+                        className="react-live-preview hEcMdv"
                       />
                     </LivePreview>
                   </BaseStyledComponent>

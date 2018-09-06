@@ -5,7 +5,7 @@ exports[`Search renders correctly 1`] = `
   className="cuiSQS"
 >
   <button
-    className="loZjyn"
+    className="kFISaI"
   >
     <svg
       height="16"
@@ -29,7 +29,7 @@ exports[`Search renders correctly 1`] = `
     </svg>
   </button>
   <input
-    className="bQsxTH"
+    className="blWLfe"
     placeholder="Search ..."
   />
 </form>
