@@ -1,6 +1,3 @@
-import CodeBlock from '../../components/CodeBlock';
-import LiveEdit from '../../components/LiveEdit';
-
 ## Theming
 
 styled-components has full theming support by exporting a `<ThemeProvider>` wrapper component.
@@ -10,9 +7,41 @@ tree all styled-components will have access to the provided theme, even when the
 To illustrate this, let's create our Button component, but this time we'll pass some variables down
 as a theme.
 
-<LiveEdit
-  code={'// Define our button, but with the use of props.theme this time\nconst Button = styled.button\`\n  font-size: 1em;\n  margin: 1em;\n  padding: 0.25em 1em;\n  border-radius: 3px;\n\n  /* Color the border and text with theme.main */\n  color: ${props => props.theme.main};\n  border: 2px solid ${props => props.theme.main};\n\`;\n\n// We are passing a default theme for Buttons that arent wrapped in the ThemeProvider\nButton.defaultProps = {\n  theme: {\n    main: "palevioletred"\n  }\n}\n\n// Define what props.theme will look like\nconst theme = {\n  main: "mediumseagreen"\n};\n\nrender(\n  <div>\n    <Button>Normal</Button>\n\n    <ThemeProvider theme={theme}>\n      <Button>Themed</Button>\n    </ThemeProvider>\n  </div>\n);\n  '}  noInline
-/>
+```react
+// Define our button, but with the use of props.theme this time
+const Button = styled.button`
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+
+  /* Color the border and text with theme.main */
+  color: ${props => props.theme.main};
+  border: 2px solid ${props => props.theme.main};
+`;
+
+// We are passing a default theme for Buttons that arent wrapped in the ThemeProvider
+Button.defaultProps = {
+  theme: {
+    main: "palevioletred"
+  }
+}
+
+// Define what props.theme will look like
+const theme = {
+  main: "mediumseagreen"
+};
+
+render(
+  <div>
+    <Button>Normal</Button>
+
+    <ThemeProvider theme={theme}>
+      <Button>Themed</Button>
+    </ThemeProvider>
+  </div>
+);
+```
 
 ### Function themes
 
@@ -25,9 +54,9 @@ background and foreground colours. The function `invertTheme` receives the upper
 ```react
 // Define our button, but with the use of props.theme this time
 const Button = styled.button`
-  color: \${props => props.theme.fg};
-  border: 2px solid \${props => props.theme.fg};
-  background: \${props => props.theme.bg};
+  color: ${props => props.theme.fg};
+  border: 2px solid ${props => props.theme.fg};
+  background: ${props => props.theme.bg};
 
   font-size: 1em;
   margin: 1em;
@@ -93,8 +122,8 @@ const Button = styled.button`
   border-radius: 3px;
 
   /* Color the border and text with theme.main */
-  color: \${props => props.theme.main};
-  border: 2px solid \${props => props.theme.main};
+  color: ${props => props.theme.main};
+  border: 2px solid ${props => props.theme.main};
 `;
 
 // Define what main theme will look like
