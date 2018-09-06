@@ -1,7 +1,7 @@
-import Styled from './styled'
-import TaggedTemplateLiteral from './tagged-template-literal'
-import StyledComponent from './styled-component'
-import ThemeProvider from './theme-provider'
+import Styled from './styled.md'
+import TaggedTemplateLiteral from './tagged-template-literal.md'
+import StyledComponent from './styled-component.md'
+import ThemeProvider from './theme-provider.md'
 
 ## Primary
 
