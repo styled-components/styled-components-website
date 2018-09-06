@@ -4,7 +4,10 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin
 const withMDX = require('@zeit/next-mdx')
 
-module.exports = withMDX()(withSourceMaps({
+module.exports = withMDX({
+  // Use .md extension
+  extension: /\.md$/,
+})(withSourceMaps({
   pageExtensions: ['js', 'jsx', 'mdx'],
   webpack: function(config, { dev, isServer }) {
     if (dev) {

@@ -2,7 +2,7 @@ import React from 'react'
 import DocsLayout from '../../components/DocsLayout'
 import NextPage from '../../components/NextPage'
 
-import Theming from '../../sections/advanced/theming.mdx'
+import Theming from '../../sections/advanced/theming.md'
 import Refs from '../../sections/advanced/refs'
 import Security from '../../sections/advanced/security'
 import ExistingCSS from '../../sections/advanced/existing-css'
