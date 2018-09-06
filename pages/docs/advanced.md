@@ -8,7 +8,7 @@ import ExistingCSS from '../../sections/advanced/existing-css.md'
 import MediaTemplates from '../../sections/advanced/media-templates.md'
 import TaggedTemplateLiterals from '../../sections/advanced/tagged-template-literals.md'
 import ServerSideRendering from '../../sections/advanced/server-side-rendering.md'
-import ComponentsAsSelectors from '../../sections/advanced/components-as-selectors'
+import ComponentsAsSelectors from '../../sections/advanced/components-as-selectors.md'
 
 <Theming />
 <Refs />
