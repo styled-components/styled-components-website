@@ -1,4 +1,3 @@
-import React from 'react'
 import DocsLayout from '../../components/DocsLayout'
 import NextPage from '../../components/NextPage'
 
@@ -11,18 +10,20 @@ import TaggedTemplateLiterals from '../../sections/advanced/tagged-template-lite
 import ServerSideRendering from '../../sections/advanced/server-side-rendering'
 import ComponentsAsSelectors from '../../sections/advanced/components-as-selectors'
 
-const Advanced = () =>
+<Theming />
+<Refs />
+<Security />
+<ExistingCSS />
+<MediaTemplates />
+<TaggedTemplateLiterals />
+<ServerSideRendering />
+<ComponentsAsSelectors />
+
+<NextPage href="/docs/api" title="API Reference" />
+
+export default ({ children }) => (
   <DocsLayout title="Advanced" description="Advanced usage of styled-components - Theming, refs, Security, Existing CSS, Media Templates, Tagged Template Literals, SSR">
-    <Theming />
-    <Refs />
-    <Security />
-    <ExistingCSS />
-    <MediaTemplates />
-    <TaggedTemplateLiterals />
-    <ServerSideRendering />
-    <ComponentsAsSelectors />
-
-    <NextPage href="/docs/api" title="API Reference" />
+    {children}
   </DocsLayout>
+)
 
-export default Advanced

@@ -116,7 +116,7 @@ const components = {
 }
 
 export default class MyApp extends App {
-  static async getInitialProps ({ Component }) {
+  static async getInitialProps ({ Component, ctx }) {
     let pageProps = {}
 
     if (Component.getInitialProps) {

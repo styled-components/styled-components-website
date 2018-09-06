@@ -8,7 +8,7 @@ module.exports = withMDX({
   // Use .md extension
   extension: /\.md$/,
 })(withSourceMaps({
-  pageExtensions: ['js', 'jsx', 'mdx'],
+  pageExtensions: ['js', 'jsx', 'md'],
   webpack: function(config, { dev, isServer }) {
     if (dev) {
       return config
