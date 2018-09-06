@@ -8,8 +8,11 @@ import Stylelint from '../../sections/tooling/stylelint'
 import StyledTheming from '../../sections/tooling/styled-theming'
 import SyntaxHighlighting from '../../sections/tooling/syntax-highlighting'
 
-const Tooling = () =>
-  <DocsLayout title="Tooling" description="Additional Tools for styled-components, babel plugin, testing">
+const Tooling = () => (
+  <DocsLayout
+    title="Tooling"
+    description="Additional Tools for styled-components, babel plugin, testing"
+  >
     <BabelPlugin />
     <TestUtilities />
     <Stylelint />
@@ -18,5 +21,6 @@ const Tooling = () =>
 
     <NextPage href="/docs/faqs" title="FAQs" />
   </DocsLayout>
+)
 
 export default Tooling

@@ -8,7 +8,7 @@ const CSSFrameworks = () => md`
   Consider you have an existing app with some CSS that have the classes: \`.small\` and \`.big\`.
   Try to swap out the \`.small\` class with \`.big\` in the example below:
 
-  \`\`\`react
+  ~~~react
   const Button = styled.button.attrs({
     className: "small",
   })\`
@@ -27,7 +27,7 @@ const CSSFrameworks = () => md`
       <Button>The new way to style components!</Button>
     </div>
   );
-  \`\`\`
+  ~~~
 
   Please do read about [the attrs method](/docs/api#attrs) to learn how arbitary props can be passed
   down to a styled component without wrapping it.

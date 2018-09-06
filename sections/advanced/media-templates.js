@@ -2,12 +2,13 @@ import md from 'components/md'
 
 const MediaTemplates = () => md`
   ## Media Templates
+
   Media queries are an indispensable tool when developing responsive web apps.
 
   This is a very simple example. It shows a basic component changing its background colour,
   once the screen's width drops below a threshold of \`700px\`.
 
-  \`\`\`react
+  ~~~react
   const Content = styled.div\`
     background: papayawhip;
     height: 3em;
@@ -21,7 +22,7 @@ const MediaTemplates = () => md`
   render(
     <Content />
   );
-  \`\`\`
+  ~~~
 
   Since media queries are long and are often repeated throughout an application, it can be
   useful to create a template for them.
@@ -29,7 +30,7 @@ const MediaTemplates = () => md`
   Due to the functional nature of JavaScript, you can easily define your own tagged template
   literal to wrap styles in media queries. Let's rewrite the last example to try just that out.
 
-  \`\`\`react
+  ~~~react
   const sizes = {
     desktop: 992,
     tablet: 768,
@@ -61,7 +62,7 @@ const MediaTemplates = () => md`
   render(
     <Content />
   );
-  \`\`\`
+  ~~~
 `
 
 export default MediaTemplates

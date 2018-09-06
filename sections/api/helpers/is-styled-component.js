@@ -16,7 +16,9 @@ const IsStyledComponent = () => md`
           1. <Code>Function</Code>
         </Column>
         <Column>
-          {md`Any function expected to possibly be a styled component or React component wrapped in a styled component, via the \`styled()\` factory.`}
+          {md`
+Any function expected to possibly be a styled component or React component wrapped in a styled component, via the \`styled()\` factory.
+          `}
         </Column>
       </Row>
     </Table>

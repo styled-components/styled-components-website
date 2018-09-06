@@ -16,7 +16,7 @@ const AttachingAdditionalProps = () => md`
   Here we render an \`Input\` component and attach some dynamic and static attributes
   to it:
 
-  \`\`\`react
+  ~~~react
   const Input = styled.input.attrs({
     // we can define static props
     type: "password",
@@ -42,7 +42,7 @@ const AttachingAdditionalProps = () => md`
       <Input placeholder="A bigger text input" size="2em" />
     </div>
   );
-  \`\`\`
+  ~~~
 
   As you can see, we get access to our newly created props in the interpolations, and
   the \`type\` attribute is passed down to the element.

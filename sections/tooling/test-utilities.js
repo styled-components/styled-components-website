@@ -10,9 +10,9 @@ const TestUtilities = () => md`
 
   ### Installation
 
-  \`\`\`
+  ~~~
   npm install --dev jest-styled-components
-  \`\`\`
+  ~~~
 
   ### Snapshot Testing
 
@@ -24,35 +24,35 @@ const TestUtilities = () => md`
 
   Here's an example of a test:
 
-  \`\`\`jsx
-  import React from "react"
-  import styled from "styled-components"
-  import renderer from "react-test-renderer"
-  import "jest-styled-components"
+  ~~~jsx
+  import React from 'react'
+  import styled from 'styled-components'
+  import renderer from 'react-test-renderer'
+  import 'jest-styled-components'
 
   const Button = styled.button\`
     color: red;
   \`
 
-  test("it works", () => {
+  test('it works', () => {
     const tree = renderer.create(<Button />).toJSON()
     expect(tree).toMatchSnapshot()
   })
-  \`\`\`
+  ~~~
 
   And here's an example of the resulting snapshot:
 
-  \`\`\`jsx
+  ~~~jsx
   exports[\`it works 1\`] = \`
   .c0 {
     color: green;
   }
-
+  
   <button
     className="c0"
   />
-  \`;
-  \`\`\`
+  \`
+  ~~~
 
   For a real world demo, check out
   [this website's repository](https://github.com/styled-components/styled-components-website/tree/master/test).
@@ -65,11 +65,11 @@ const TestUtilities = () => md`
   a value (string or RegExp), and an optional object to search for rules
   nested within an at-rule or to add modifiers to the class selector.
 
-  \`\`\`jsx
-  import React from "react"
-  import styled from "styled-components"
-  import renderer from "react-test-renderer"
-  import "jest-styled-components"
+  ~~~jsx
+  import React from 'react'
+  import styled from 'styled-components'
+  import renderer from 'react-test-renderer'
+  import 'jest-styled-components'
 
   const Button = styled.button\`
     color: red;
@@ -80,15 +80,15 @@ const TestUtilities = () => md`
     }
   \`
 
-  test("it works", () => {
+  test('it works', () => {
     const tree = renderer.create(<Button />).toJSON()
-    expect(tree).toHaveStyleRule("color", "red")
-    expect(tree).toHaveStyleRule("color", "green", {
-      media: "(max-width: 640px)",
-      modifier: ":hover",
+    expect(tree).toHaveStyleRule('color', 'red')
+    expect(tree).toHaveStyleRule('color', 'green', {
+      media: '(max-width: 640px)',
+      modifier: ':hover',
     })
   })
-  \`\`\`
+  ~~~
 `
 
 export default TestUtilities

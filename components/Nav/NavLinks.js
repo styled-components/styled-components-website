@@ -13,7 +13,7 @@ const Wrapper = styled.nav`
 `
 
 const NavLink = styled(Link).attrs({
-  unstyled: true
+  unstyled: true,
 })`
   flex: 0 0 auto;
   display: inline-block;
@@ -35,7 +35,7 @@ const NavLink = styled(Link).attrs({
   }
 `
 
-const NavLinks = () =>
+const NavLinks = () => (
   <Wrapper>
     <NavLink href="/docs">Documentation</NavLink>
     <NavSeparator />
@@ -43,5 +43,6 @@ const NavLinks = () =>
     <NavSeparator />
     <NavLink href="/releases">Releases</NavLink>
   </Wrapper>
+)
 
 export default NavLinks

@@ -10,7 +10,7 @@ const WhenToUseAttrs = () => md`
   component to have that prop, and pass props directly when every instance needs a
   different one:
 
-  \`\`\`js
+  ~~~js
   const PasswordInput = styled.input.attrs({
     // Every <PasswordInput /> should be type="password"
     type: "password"
@@ -18,7 +18,7 @@ const WhenToUseAttrs = () => md`
 
   // This specific one is hidden, so let's set aria-hidden
   <PasswordInput aria-hidden="true" />
-  \`\`\`
+  ~~~
 
   The same goes for props that can be inferred based on the "mode" of another prop.
   In this case you can set a property on \`attrs\` to a function that computes

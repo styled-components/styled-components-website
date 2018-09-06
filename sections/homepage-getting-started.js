@@ -4,7 +4,9 @@ import styled, { css } from 'styled-components'
 import md from 'components/md'
 import { Content } from 'components/Layout'
 
-const AlignCenter = styled.div`text-align: center;`
+const AlignCenter = styled.div`
+  text-align: center;
+`
 
 const Badge = styled.img`
   margin: 0 0.5em 3em;
@@ -22,9 +24,9 @@ const ExampleButton = styled.button`
   ${p =>
     p.primary &&
     css`
-    background: palevioletred;
-    color: white;
-  `};
+      background: palevioletred;
+      color: white;
+    `};
 `
 
 const SecondButton = styled.button`
@@ -35,7 +37,7 @@ const SecondButton = styled.button`
   border: 2px solid palevioletred;
 `
 
-const HomepageGettingStarted = () =>
+const HomepageGettingStarted = () => (
   <Content data-e2e-id="content">
     <AlignCenter>
       <a href="https://github.com/styled-components/styled-components">
@@ -190,5 +192,6 @@ const HomepageGettingStarted = () =>
       Once you're done take a look at the [documentation](/docs), specifically the [Getting started](/docs/basics#getting-started) section! Enjoy ✨
     `}
   </Content>
+)
 
 export default HomepageGettingStarted

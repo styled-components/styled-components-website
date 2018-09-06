@@ -8,22 +8,22 @@ const TaggedTemplateLiterals = () => md`
 
   If you pass no interpolations, the first argument your function receives is an array with a string in it.
 
-  \`\`\`jsx
+  ~~~jsx
   // These are equivalent:
-  fn\`some string here\`;
-  fn([ "some string here" ]);
-  \`\`\`
+  fn\`some string here\`
+  fn(['some string here'])
+  ~~~
 
   Once you pass interpolations, the array contains the passed string, split at the positions of the interpolations.
   The rest of the arguments will be the interpolations, in order.
 
-  \`\`\`jsx
-  const aVar = 'good';
+  ~~~jsx
+  const aVar = 'good'
 
   // These are equivalent:
-  fn\`this is a \${aVar} day\`;
-  fn([ "this is a ", " day" ], aVar);
-  \`\`\`
+  fn\`this is a \${aVar} day\`
+  fn(['this is a ', ' day'], aVar)
+  ~~~
 
   This is a bit cumbersome to work with, but it means that we can receive variables, functions, or mixins
   (\`css\` helper) in styled components and can flatten that into pure CSS.

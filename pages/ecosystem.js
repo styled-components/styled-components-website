@@ -15,9 +15,20 @@ const Ecosystem = ({ readme, sidebarPages }) => (
     description="Ecosystem of styled-components"
   >
     <p>
-      This is an incomplete list of awesome things built with styled-components. If you have something to share, please add it to the <Link href="https://github.com/styled-components/awesome-styled-components" inline>awesome-styled-components</Link> repo on GitHub and it will automatically show up here!
+      This is an incomplete list of awesome things built with styled-components.
+      If you have something to share, please add it to the{' '}
+      <Link
+        href="https://github.com/styled-components/awesome-styled-components"
+        inline
+      >
+        awesome-styled-components
+      </Link>{' '}
+      repo on GitHub and it will automatically show up here!
     </p>
-    {typeof readme !== 'string' ? <Loading /> : md(
+    {typeof readme !== 'string' ? (
+      <Loading />
+    ) : (
+      md(
         `
         ${readme}
 
@@ -25,7 +36,9 @@ const Ecosystem = ({ readme, sidebarPages }) => (
 
 If you know any projects build with styled components contributions and suggestions are always welcome !
 Please read the [contribution guidelines](https://github.com/styled-components/awesome-styled-components/blob/master/contributing.md) first and submit a PR.
-        `)}
+        `,
+      )
+    )}
   </DocsLayout>
 )
 
@@ -62,7 +75,7 @@ function collectPagesFromMd(md) {
     if (line.startsWith(headingIdentifier)) {
       const { title } = parseMarkdownLink(line)
       // Add heading to the sidePages array
-      sidePages.push({ title, /* pathname */ })
+      sidePages.push({ title /* pathname */ })
       // Due a bug in our strigifier these Github
       // generated links does not work here :(
 
@@ -76,7 +89,7 @@ function collectPagesFromMd(md) {
       if (lastHeading) {
         lastHeading.sections = [
           ...(lastHeading.sections || []),
-          { title, href }
+          { title, href },
         ]
       }
     }
@@ -86,6 +99,6 @@ function collectPagesFromMd(md) {
 }
 
 function parseMarkdownLink(mdString) {
-  const [, title, href ] = /\[([^\]]+)\]\(([^)]+)\)/.exec(mdString)
+  const [, title, href] = /\[([^\]]+)\]\(([^)]+)\)/.exec(mdString)
   return { title: escape(title), href: escape(href) }
 }

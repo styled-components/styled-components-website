@@ -6,14 +6,14 @@ const DuplicatedStyledComponents = () => md`
   If you are seeing a warning message in the console as the one below, you probably
   have several instances of \`styled-components\` module initialized on the page.
 
-  \`\`\`sh
+  ~~~sh
   It looks like there are several instances of "styled-components" initialized in this application.
   This may cause dynamic styles not rendering properly, errors happening during rehydration process
   and makes you application bigger without a good reason.
 
   If you are using a building tool like Webpack, consider checking your bundle for duplication
   of "styled-components" module.
-  \`\`\`
+  ~~~
 
   This may cause dynamic styles not working properly or even errors during rehydration if
   you are using server-side rendering.
@@ -35,7 +35,7 @@ const DuplicatedStyledComponents = () => md`
   to create an [explicit vendor chunk](https://webpack.js.org/plugins/commons-chunk-plugin/#explicit-vendor-chunk),
   that will contain \`styled-components\` module:
 
-  \`\`\`diff
+  ~~~diff
     module.exports = {
       entry: {
   +     vendor: ["styled-components"],
@@ -49,7 +49,7 @@ const DuplicatedStyledComponents = () => md`
   +     }),
       ]
     }
-  \`\`\`
+  ~~~
 
   ### Duplicated module in \`node_modules\`
 
@@ -73,22 +73,22 @@ const DuplicatedStyledComponents = () => md`
   \`styled-components\` module. You can overwrite the default order in which Webpack will look for your dependencies
   and make your application \`node_modules\` more prioritized than default node module resolution order:
 
-  \`\`\`diff
+  ~~~diff
     resolve: {
   +   modules: [path.resolve(appFolder, "node_modules"), "node_modules"],
     }
-  \`\`\`
+  ~~~
 
   Or you can [alias](https://webpack.js.org/configuration/resolve/#resolve-alias) \`styled-components\` specifically
   to make Webpack always resolve \`styled-components\` in one place:
 
-  \`\`\`diff
+  ~~~diff
     resolve: {
   +   alias: {
   +     "styled-components": path.resolve(appFolder, "node_modules", "styled-components"),
   +   }
     }
-  \`\`\`
+  ~~~
 `
 
 export default DuplicatedStyledComponents

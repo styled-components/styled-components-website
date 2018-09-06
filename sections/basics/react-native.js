@@ -11,16 +11,16 @@ const ReactNative = () => md`
   > but has been deprecated.
 
   ~~~jsx
-  import React from "react";
-  import styled from "styled-components";
+  import React from 'react'
+  import styled from 'styled-components'
 
   const StyledView = styled.View\`
     background-color: papayawhip;
-  \`;
+  \`
 
   const StyledText = styled.Text\`
     color: palevioletred;
-  \`;
+  \`
 
   class MyReactNativeComponent extends React.Component {
     render() {
@@ -28,7 +28,7 @@ const ReactNative = () => md`
         <StyledView>
           <StyledText>Hello World!</StyledText>
         </StyledView>
-      );
+      )
     }
   }
   ~~~
@@ -50,7 +50,7 @@ const ReactNative = () => md`
     text-shadow-offset: 10px 5px;
     font-variant: small-caps;
     margin: 5px 7px 2px;
-  \`;
+  \`
   ~~~
 
   Some of the differences to the web-version are, that you cannot use the
@@ -61,7 +61,6 @@ const ReactNative = () => md`
   > In v2 we support percentages. To make this possible we need to enforce units
   > for all shorthands. If you're migrating to v2,
   > [a codemod is available](https://github.com/styled-components/styled-components-native-code-mod).
-
 `
 
 export default ReactNative

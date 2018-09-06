@@ -15,7 +15,7 @@ const LibraryAuthors = () => md`
   and include it in the [\`peerDependencies\`](https://docs.npmjs.com/files/package.json#peerdependencies)
   list in your \`package.json\` file:
 
-  \`\`\`diff
+  ~~~diff
     {
   -   "dependencies" : {
   +   "devDependencies" : {
@@ -25,7 +25,7 @@ const LibraryAuthors = () => md`
   +     "styled-components": "^2.4.0"
   +   }
     }
-  \`\`\`
+  ~~~
 
   Moving \`styled-components\` to \`devDependencies\` will guarantee that it wouldn't be installed along with your
   library (\`npm install\` or \`yarn add\` will ignore \`devDependencies\` when a library is installed).
@@ -48,21 +48,21 @@ const LibraryAuthors = () => md`
   If you are using [Rollup.js](https://rollupjs.org), you should provide an [\`external\`](https://rollupjs.org/guide/en#big-list-of-options)
   option in your config:
 
-  \`\`\`diff
+  ~~~diff
     export default {
       entry: "my-awesome-library.js",
   +   external: [
   +     "styled-components"
   +   ]
     }
-  \`\`\`
+  ~~~
 
   #### With Webpack
 
   If you are using [Webpack](https://webpack.js.org), you should provide an [\`externals\`](https://webpack.js.org/configuration/externals/)
   option in your config:
 
-  \`\`\`diff
+  ~~~diff
     modules.export = {
       entry: "my-awesome-library.js",
   +   externals: {
@@ -73,7 +73,7 @@ const LibraryAuthors = () => md`
   +     },
   +   },
     }
-  \`\`\`
+  ~~~
 
   > You can find more useful information on how to bundle a library with Webpack at
   > ["Authoring Libraries"](https://webpack.js.org/guides/author-libraries/) section of Webpack documentation.

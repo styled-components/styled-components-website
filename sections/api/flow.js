@@ -12,10 +12,10 @@ const Flow = () => md`
 
   ### Installing the definitions
 
-  \`\`\`
+  ~~~
   npm i -g flow-typed # if you do not already have flow-typed
   flow-typed install styled-components@<version>
-  \`\`\`
+  ~~~
 
   > If you are on npm >= 5.2 you could simply use [npx](https://github.com/zkat/npx)
 
@@ -24,10 +24,10 @@ const Flow = () => md`
   You should add the following lines to your \`.flowconfig\`, if you run into Flow errors, coming from the styled-components
   package in your \`node_modules\` directory.
 
-  \`\`\`
+  ~~~
   [ignore]
   .*/node_modules/styled-components/.*
-  \`\`\`
+  ~~~
 `
 
 export default Flow

@@ -13,7 +13,7 @@ import HTMLAttributeWarnings from '../../sections/faqs/html-attribute-warnings'
 import BrowserSupport from '../../sections/faqs/browser-support'
 import MigrationV4 from '../../sections/faqs/migration-v4'
 
-const FAQs = () =>
+const FAQs = () => (
   <DocsLayout
     title="FAQs"
     description="Commonly asked questions about styled-components"
@@ -30,5 +30,6 @@ const FAQs = () =>
     <HTMLAttributeWarnings />
     <BrowserSupport />
   </DocsLayout>
+)
 
 export default FAQs

@@ -12,7 +12,7 @@ const ExtendingStyles = () => md`
   in the \`styled()\` constructor. Here we use the button from the last section
   and create a special one, extending it with some colour-related styling:
 
-  \`\`\`react
+  ~~~react
   // The Button from the last section without the interpolations
   const Button = styled.button\`
     color: palevioletred;
@@ -35,7 +35,7 @@ const ExtendingStyles = () => md`
       <TomatoButton>Tomato Button</TomatoButton>
     </div>
   );
-  \`\`\`
+  ~~~
 
   We can see that the new \`TomatoButton\` still resembles \`Button\`, while we have only
   added two new rules.
@@ -44,7 +44,7 @@ const ExtendingStyles = () => md`
 
   For this situation, we have an escape hatch. You can use the [\`"as" polymorphic prop\`](/docs/api#as-polymorphic-prop) to dynamically swap out the element that receives the styles you wrote:
 
-  \`\`\`react
+  ~~~react
   const Button = styled.button\`
     display: inline-block;
     color: palevioletred;
@@ -67,11 +67,11 @@ const ExtendingStyles = () => md`
       <TomatoButton as="a" href="/">Link with Tomato Button styles</TomatoButton>
     </div>
   );
-  \`\`\`
+  ~~~
 
   This works perfectly fine with custom components too!
 
-  \`\`\`react
+  ~~~react
   const Button = styled.button\`
     display: inline-block;
     color: palevioletred;
@@ -90,7 +90,7 @@ const ExtendingStyles = () => md`
       <Button as={ReversedButton}>Custom Button with Normal Button styles</Button>
     </div>
   );
-  \`\`\`
+  ~~~
 `
 
 export default ExtendingStyles

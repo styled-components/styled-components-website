@@ -1,19 +1,18 @@
 import { pages } from '../pages/docs.json'
 
-const pathnameDict = pages
-  .reduce((acc, { pathname, sections }) => ({
+const pathnameDict = pages.reduce(
+  (acc, { pathname, sections }) => ({
     ...acc,
-    ...sections
-      .reduce((subAcc, { pathname: subPathname, title }) => {
-        subAcc[`${pathname}/${subPathname}`] = title
-        return subAcc
-      }, {})
-  }), {})
+    ...sections.reduce((subAcc, { pathname: subPathname, title }) => {
+      subAcc[`${pathname}/${subPathname}`] = title
+      return subAcc
+    }, {}),
+  }),
+  {},
+)
 
 const pathnameToTitle = pathname => {
-  let routeArr = pathname
-    .split('/')
-    .filter(Boolean)
+  let routeArr = pathname.split('/').filter(Boolean)
 
   if (routeArr[0] === 'docs') {
     if (routeArr.length === 1) {

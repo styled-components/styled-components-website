@@ -10,15 +10,15 @@ const Security = () => md`
   This example shows how bad user input can even lead to API endpoints being called on a user's
   behalf.
 
-  \`\`\`jsx
+  ~~~jsx
   // Oh no! The user has given us a bad URL!
-  const userInput = '/api/withdraw-funds';
+  const userInput = '/api/withdraw-funds'
 
   const ArbitraryComponent = styled.div\`
     background: url(\${userInput});
     /* More styles here... */
-  \`;
-  \`\`\`
+  \`
+  ~~~
 
   Be very careful! This is obviously a made-up example, but CSS injection can be unobvious and
   have bad repercussions. Some IE versions even execute arbitrary JavaScript within url declarations.

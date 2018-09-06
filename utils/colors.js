@@ -12,4 +12,3 @@ export const violetRed = 'rgb(219, 112, 147)'
 export const lightVioletRed = lighten(0.27, 'rgb(219, 112, 147)')
 
 export const gold = shade(0.9, 'rgb(243, 182, 97)')
-
