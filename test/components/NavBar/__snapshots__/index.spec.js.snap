@@ -1104,7 +1104,7 @@ exports[`Nav renders correctly 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-iwsKbI",
                               "isStatic": false,
-                              "lastClassName": "jhyiZD",
+                              "lastClassName": "eVGVdI",
                               "rules": Array [
                                 "
   ",
@@ -1127,7 +1127,8 @@ exports[`Nav renders correctly 1`] = `
 
   ",
                                 [Function],
-                                " &:focus {
+                                ";
+  &:focus {
     border: ",
                                 "0.1111111111111111rem",
                                 " solid currentColor;
@@ -1149,7 +1150,7 @@ exports[`Nav renders correctly 1`] = `
                         forwardedRef={null}
                       >
                         <button
-                          className="jhyiZD"
+                          className="eVGVdI"
                         >
                           <CloseIcon>
                             <ForwardRef
@@ -1329,7 +1330,7 @@ exports[`Nav renders correctly 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-iwsKbI",
                               "isStatic": false,
-                              "lastClassName": "jhyiZD",
+                              "lastClassName": "eVGVdI",
                               "rules": Array [
                                 "
   ",
@@ -1352,7 +1353,8 @@ exports[`Nav renders correctly 1`] = `
 
   ",
                                 [Function],
-                                " &:focus {
+                                ";
+  &:focus {
     border: ",
                                 "0.1111111111111111rem",
                                 " solid currentColor;
@@ -1374,7 +1376,7 @@ exports[`Nav renders correctly 1`] = `
                         forwardedRef={null}
                       >
                         <button
-                          className="jhyiZD"
+                          className="eVGVdI"
                         >
                           <ForwardRef
                             shouldRotate={true}

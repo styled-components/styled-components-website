@@ -149,7 +149,8 @@ const EditorContainer = styled.div`
 `
 
 const Editor = styled(LiveEditor)`
-  ${editorMixin} height: 24rem;
+  ${editorMixin};
+  height: 24rem;
   white-space: pre;
   width: 100%;
 `

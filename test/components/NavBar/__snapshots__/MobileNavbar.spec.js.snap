@@ -5,7 +5,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   className="ckIDon"
 >
   <button
-    className="jhyiZD"
+    className="eVGVdI"
   >
     <svg
       className="vnfTY"
@@ -41,7 +41,7 @@ exports[`MobileNavbar renders correctly 1`] = `
     />
   </a>
   <button
-    className="jhyiZD"
+    className="eVGVdI"
   >
     <div
       className="bGElFi"

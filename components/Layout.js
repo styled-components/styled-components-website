@@ -24,7 +24,8 @@ export const Content = styled.div`
   ${mobile(css`
     padding: ${rem(70)} ${rem(20)} ${rem(30)} ${rem(20)};
     transform: translateX(${p => (p.moveRight ? rem(sidebarWidth) : 0)});
-  `)} ${p =>
+  `)};
+  ${p =>
     p.hero &&
     css`
       font-family: ${headerFont};
