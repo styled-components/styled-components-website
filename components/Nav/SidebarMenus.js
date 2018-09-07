@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { withRouter } from 'next/router'
 
 import rem from '../../utils/rem'
 import titleToDash from '../../utils/titleToDash'
@@ -63,15 +64,14 @@ class Folder extends Component {
   }
 }
 
-export const DocsSidebarMenu = ({ onRouteChange }) => (
+export const DocsSidebarMenu = withRouter(({ onRouteChange, router }) => (
   <MenuInner>
     {
       pages.map(({ title, pathname, sections }) => (
           <Folder
             key={title}
             isOpenDefault={
-              typeof window !== 'undefined' &&
-                (window.location.pathname === `/docs/${pathname}`)
+              router && router.pathname === `/docs/${pathname}`
             }
           >
             {({
@@ -101,7 +101,7 @@ export const DocsSidebarMenu = ({ onRouteChange }) => (
       ))
     }
   </MenuInner>
-)
+))
 
 function getSectionPath(parentPathname, title) {
   return `${parentPathname || ''}#${titleToDash(title)}`
