@@ -1083,6 +1083,9 @@ exports[`DocsLayout renders correctly 1`] = `
                               <div
                                 className="c9"
                               >
+                                <input
+                                  id="docsearch"
+                                />
                                 <Social>
                                   <ForwardRef>
                                     <StyledComponent

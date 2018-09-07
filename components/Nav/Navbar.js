@@ -84,6 +84,7 @@ class Navbar extends PureComponent {
           </StartWrapper>
 
           <EndWrapper>
+            <input id="docsearch" />
             <Social />
           </EndWrapper>
         </NormalNavbar>

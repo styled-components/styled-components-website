@@ -972,6 +972,9 @@ exports[`Nav renders correctly 1`] = `
                       <div
                         className="c8"
                       >
+                        <input
+                          id="docsearch"
+                        />
                         <Social>
                           <ForwardRef>
                             <StyledComponent
