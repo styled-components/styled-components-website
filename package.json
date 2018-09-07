@@ -85,7 +85,7 @@
       "prettier --write",
       "git add"
     ],
-    "*.md,*.mdx": [
+    "*.md": [
         "prettier --parser mdx --write",
         "git add"
     ]
