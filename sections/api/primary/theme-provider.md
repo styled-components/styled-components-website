@@ -30,5 +30,4 @@ const Box = styled.div`
   <Box>I'm mediumseagreen!</Box>
 </ThemeProvider>
 ```
-`
 
