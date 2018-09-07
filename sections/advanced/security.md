@@ -9,12 +9,12 @@ behalf.
 
 ```jsx
 // Oh no! The user has given us a bad URL!
-const userInput = '/api/withdraw-funds';
+const userInput = '/api/withdraw-funds'
 
 const ArbitraryComponent = styled.div`
   background: url(${userInput});
   /* More styles here... */
-`;
+`
 ```
 
 Be very careful! This is obviously a made-up example, but CSS injection can be unobvious and

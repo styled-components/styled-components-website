@@ -28,4 +28,3 @@ render(
 
 Please do read about [the attrs method](/docs/api#attrs) to learn how arbitary props can be passed
 down to a styled component without wrapping it.
-

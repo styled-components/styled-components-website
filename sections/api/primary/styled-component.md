@@ -45,18 +45,18 @@ component's props. The `attrs` object accepts the following values:
 Returns another `StyledComponent`.
 
 ```jsx
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const Input = styled.input.attrs({
-  type: "text",
-  size: props => props.small ? 3 : 8
+  type: 'text',
+  size: props => (props.small ? 3 : 8),
 })`
   background: palevioletred;
   border-radius: 3px;
   border: none;
   color: white;
-  padding: ${props => props.padding}
-`;
+  padding: ${props => props.padding};
+`
 ```
 
 Learn more about this constructor in the [Attaching Additional Props](/docs/basics#attaching-additional-props) section.
@@ -71,9 +71,7 @@ applied to it, but all the same rules of the one it's called on.
     <Column>
       1. <Code>component</Code> / <Code>tagname</Code>
     </Column>
-    <Column>
-      Either a valid react component or a tagname like `'div'`.
-    </Column>
+    <Column>Either a valid react component or a tagname like `'div'`.</Column>
   </Row>
 </Table>
 

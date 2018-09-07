@@ -12,14 +12,12 @@ This is a method that creates a new `StyledComponent` and extends its rules.
     <Column>
       1. <Code>TaggedTemplateLiteral</Code>
     </Column>
-    <Column>
-      A tagged template literal with your CSS and interpolations.
-    </Column>
+    <Column>A tagged template literal with your CSS and interpolations.</Column>
   </Row>
 </Table>
 
 ```jsx
-import styled from "styled-components"
+import styled from 'styled-components'
 
 const Component = styled.div`
   color: red;

@@ -2,8 +2,8 @@
 
 Passing a `ref` prop to a styled component will give you one of two things depending on the styled target:
 
-* the underlying DOM node (if targeting a basic element, e.g. `styled.div`)
-* a React component instance (if targeting a custom component e.g. extended from `React.Component`)
+- the underlying DOM node (if targeting a basic element, e.g. `styled.div`)
+- a React component instance (if targeting a custom component e.g. extended from `React.Component`)
 
 ```react
 const Input = styled.input`

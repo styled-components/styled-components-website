@@ -20,14 +20,13 @@ Check the section on [Theming](/docs/advanced#theming).
 </Table>
 
 ```jsx
-import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from 'styled-components'
 
 const Box = styled.div`
   color: ${props => props.theme.color};
-`;
+`
 
-<ThemeProvider theme={{ color: "mediumseagreen" }}>
+;<ThemeProvider theme={{ color: 'mediumseagreen' }}>
   <Box>I'm mediumseagreen!</Box>
 </ThemeProvider>
 ```
-

@@ -1,4 +1,4 @@
-import Code from "../../components/Code.js"
+import Code from '../../components/Code.js'
 
 ## Adapting based on props
 
@@ -6,8 +6,7 @@ You can pass a function ("interpolations") to a styled component's template lite
 to adapt it based on its props.
 
 This button component has a primary state that changes its colour.
-When setting the <Code>primary</Code>  prop to true, we are swapping out its background and text colour.
-
+When setting the <Code>primary</Code> prop to true, we are swapping out its background and text colour.
 
 ```react
 const Button = styled.button`
