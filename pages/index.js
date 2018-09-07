@@ -10,7 +10,7 @@ import { editorMixin, StyledError } from '../components/LiveEdit'
 import Link from '../components/Link'
 import { Content } from '../components/Layout'
 import SeoHead from '../components/SeoHead'
-import HomepageGettingStarted from '../sections/homepage-getting-started'
+import HomepageGettingStarted from '../sections/homepage/getting-started.md'
 import WithIsScrolled from '../components/WithIsScrolled'
 import Nav from '../components/Nav'
 

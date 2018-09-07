@@ -2,8 +2,13 @@ const path = require('path')
 const withSourceMaps = require('@zeit/next-source-maps')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin
+const withMDX = require('@zeit/next-mdx')
 
-module.exports = withSourceMaps({
+module.exports = withMDX({
+  // Use .md extension
+  extension: /\.md$/,
+})(withSourceMaps({
+  pageExtensions: ['js', 'jsx', 'md'],
   webpack: function(config, { dev, isServer }) {
     if (dev) {
       return config
@@ -33,4 +38,4 @@ module.exports = withSourceMaps({
 
     return config
   },
-})
+}))
