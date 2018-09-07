@@ -81,7 +81,7 @@ This works perfectly fine with custom components too!
     border-radius: 3px;
   `;
 
-  const ReversedButton = props => <button {...props} children={props.children.reverse()} />
+  const ReversedButton = props => <button {...props} children={props.children.split('').reverse()} />
 
   render(
     <div>

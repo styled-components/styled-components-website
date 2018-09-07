@@ -23,7 +23,7 @@ const Link = (props) => {
 }
 
 const StyledComp = styled(Link)`
-  color: ${props.red ? "red" : "blue"};
+  color: ${props => props.red ? "red" : "blue"};
 `
 
 <StyledComp text="Click" href="https://www.styled-components.com/" red />
