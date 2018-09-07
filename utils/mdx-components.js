@@ -90,6 +90,12 @@ const components = {
   h3(props) {
     return <Heading {...props} level={3} />
   },
+  h4(props) {
+    return <Heading {...props} level={4} />
+  },
+  h5(props) {
+    return <Heading {...props} level={5} />
+  },
 }
 
 export default components

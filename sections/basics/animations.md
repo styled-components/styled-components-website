@@ -8,27 +8,27 @@ This way, you get all the benefits of using JavaScript, are avoiding name clashe
 like always:
 
 ```react
-  // keyframes returns a unique name based on a hash of the contents of the keyframes
-  const rotate360 = keyframes`
-    from {
-      transform: rotate(0deg);
-    }
+// keyframes returns a unique name based on a hash of the contents of the keyframes
+const rotate360 = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-      transform: rotate(360deg);
-    }
-  `;
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
-  // Here we create a component that will rotate everything we pass in over two seconds
-  const Rotate = styled.div`
-    display: inline-block;
-    animation: ${rotate360} 2s linear infinite;
-    padding: 2rem 1rem;
-    font-size: 1.2rem;
-  `;
+// Here we create a component that will rotate everything we pass in over two seconds
+const Rotate = styled.div`
+  display: inline-block;
+  animation: ${rotate360} 2s linear infinite;
+  padding: 2rem 1rem;
+  font-size: 1.2rem;
+`;
 
-  render(
-    <Rotate>&lt; 💅 &gt;</Rotate>
-  );
+render(
+  <Rotate>&lt; 💅 &gt;</Rotate>
+);
 ```
 
