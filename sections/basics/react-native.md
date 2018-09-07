@@ -7,29 +7,28 @@ same import. Try this example with [Snack by Expo](https://snack.expo.io/@daniel
 > on React Native from `styled-components/native`. This still works in v3
 > but has been deprecated.
 
-~~~jsx
-  import React from "react";
-  import styled from "styled-components";
+```jsx
+import React from "react";
+import styled from "styled-components";
 
-  const StyledView = styled.View`
-    background-color: papayawhip;
-  `;
+const StyledView = styled.View`
+  background-color: papayawhip;
+`;
 
-  const StyledText = styled.Text`
-    color: palevioletred;
-  `;
+const StyledText = styled.Text`
+  color: palevioletred;
+`;
 
-  class MyReactNativeComponent extends React.Component {
-    render() {
-      return (
-        <StyledView>
-          <StyledText>Hello World!</StyledText>
-        </StyledView>
-      );
-    }
+class MyReactNativeComponent extends React.Component {
+  render() {
+    return (
+      <StyledView>
+        <StyledText>Hello World!</StyledText>
+      </StyledView>
+    );
   }
-
-~~~
+}
+```
 
 We also support more complex styles (like `transform`), which would normally
 be an array, and shorthands (e.g. for `margin`) thanks to
@@ -42,14 +41,14 @@ be an array, and shorthands (e.g. for `margin`) thanks to
 Imagine how you'd write the property in React Native, guess how you'd transfer
 it to CSS, and you're probably right:
 
-~~~jsx
-  const RotatedBox = styled.View`
-    transform: rotate(90deg);
-    text-shadow-offset: 10px 5px;
-    font-variant: small-caps;
-    margin: 5px 7px 2px;
-  `;
-~~~
+```jsx
+const RotatedBox = styled.View`
+  transform: rotate(90deg);
+  text-shadow-offset: 10px 5px;
+  font-variant: small-caps;
+  margin: 5px 7px 2px;
+`;
+```
 
 Some of the differences to the web-version are, that you cannot use the
 `keyframes` and `injectGlobal` helpers since React Native doesn't support

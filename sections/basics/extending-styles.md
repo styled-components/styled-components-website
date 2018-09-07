@@ -9,86 +9,84 @@ To easily make a new component that inherits the styling of another, just wrap i
 in the `styled()` constructor. Here we use the button from the last section
 and create a special one, extending it with some colour-related styling:
 
-  
-
 ```react
 // The Button from the last section without the interpolations
 const Button = styled.button`
-color: palevioletred;
-font-size: 1em;
-margin: 1em;
-padding: 0.25em 1em;
-border: 2px solid palevioletred;
-border-radius: 3px;
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
 `;
 
 // A new component based on Button, but with some override styles
 const TomatoButton = styled(Button)`
-color: tomato;
-border-color: tomato;
+  color: tomato;
+  border-color: tomato;
 `;
 
 render(
-<div>
+  <div>
     <Button>Normal Button</Button>
     <TomatoButton>Tomato Button</TomatoButton>
-</div>
+  </div>
 );
 ```
 
-  We can see that the new `TomatoButton` still resembles `Button`, while we have only
-  added two new rules.
+We can see that the new `TomatoButton` still resembles `Button`, while we have only
+added two new rules.
 
-  In some cases you might want to change which tag or component a styled component renders. This is common when building a navigation bar for example, where there are a mix of anchor links and buttons but they should be styled identically.
+In some cases you might want to change which tag or component a styled component renders. This is common when building a navigation bar for example, where there are a mix of anchor links and buttons but they should be styled identically.
 
-  For this situation, we have an escape hatch. You can use the [`"as" polymorphic prop`](/docs/api#as-polymorphic-prop) to dynamically swap out the element that receives the styles you wrote:
+For this situation, we have an escape hatch. You can use the [`"as" polymorphic prop`](/docs/api#as-polymorphic-prop) to dynamically swap out the element that receives the styles you wrote:
 
 ```react
-  const Button = styled.button`
-    display: inline-block;
-    color: palevioletred;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid palevioletred;
-    border-radius: 3px;
-  `;
+const Button = styled.button`
+  display: inline-block;
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
 
-  const TomatoButton = styled(Button)`
-    color: tomato;
-    border-color: tomato;
-  `;
+const TomatoButton = styled(Button)`
+  color: tomato;
+  border-color: tomato;
+`;
 
-  render(
-    <div>
-      <Button>Normal Button</Button>
-      <Button as="a" href="/">Link with Button styles</Button>
-      <TomatoButton as="a" href="/">Link with Tomato Button styles</TomatoButton>
-    </div>
-  );
+render(
+  <div>
+    <Button>Normal Button</Button>
+    <Button as="a" href="/">Link with Button styles</Button>
+    <TomatoButton as="a" href="/">Link with Tomato Button styles</TomatoButton>
+  </div>
+);
 ```
 
 This works perfectly fine with custom components too!
 
 ```react
-  const Button = styled.button`
-    display: inline-block;
-    color: palevioletred;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid palevioletred;
-    border-radius: 3px;
-  `;
+const Button = styled.button`
+  display: inline-block;
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
 
-  const ReversedButton = props => <button {...props} children={props.children.split('').reverse()} />
+const ReversedButton = props => <button {...props} children={props.children.split('').reverse()} />
 
-  render(
-    <div>
-      <Button>Normal Button</Button>
-      <Button as={ReversedButton}>Custom Button with Normal Button styles</Button>
-    </div>
-  );
+render(
+  <div>
+    <Button>Normal Button</Button>
+    <Button as={ReversedButton}>Custom Button with Normal Button styles</Button>
+  </div>
+);
 ```
 
 

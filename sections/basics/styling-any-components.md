@@ -12,25 +12,25 @@ into styled components. The same pattern works for your own components as well, 
 need some components to stay unstyled on their own.
 
 ```react
-  // This could be react-router-dom's Link for example
-  const Link = ({ className, children }) => (
-    <a className={className}>
-      {children}
-    </a>
-  );
+// This could be react-router-dom's Link for example
+const Link = ({ className, children }) => (
+  <a className={className}>
+    {children}
+  </a>
+);
 
-  const StyledLink = styled(Link)`
-    color: palevioletred;
-    font-weight: bold;
-  `;
+const StyledLink = styled(Link)`
+  color: palevioletred;
+  font-weight: bold;
+`;
 
-  render(
-    <div>
-      <Link>Unstyled, boring Link</Link>
-      <br />
-      <StyledLink>Styled, exciting Link</StyledLink>
-    </div>
-  );
+render(
+  <div>
+    <Link>Unstyled, boring Link</Link>
+    <br />
+    <StyledLink>Styled, exciting Link</StyledLink>
+  </div>
+);
 ```
 
 Consider carefully whether to wrap your own components in a styled component, when it isn't necessary.
