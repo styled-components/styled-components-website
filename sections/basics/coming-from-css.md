@@ -64,8 +64,8 @@ class Counter extends React.Component {
     return (
       <StyledCounter>
         <Paragraph>{this.state.count}</Paragraph>
-        <Button>+</Button>
-        <Button>-</Button>
+        <Button onClick={this.increment}>+</Button>
+        <Button onClick={this.decrement}>-</Button>
       </StyledCounter>
     )
   }

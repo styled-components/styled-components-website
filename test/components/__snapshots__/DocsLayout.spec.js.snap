@@ -2566,847 +2566,846 @@ exports[`DocsLayout renders correctly 1`] = `
                   <nav
                     className="kiWeAg"
                   >
-                    <DocsSidebarMenu
+                    <withRouter(Unknown)
                       onRouteChange={[Function]}
                     >
-                      <ForwardRef>
-                        <BaseStyledComponent
-                          forwardedClass={
-                            Object {
-                              "$$typeof": Symbol(react.forward_ref),
-                              "attrs": undefined,
-                              "componentStyle": ComponentStyle {
-                                "componentId": "sc-kpOJdX",
-                                "isStatic": true,
-                                "lastClassName": "gHqoqa",
-                                "rules": Array [
-                                  "
+                      <Component
+                        onRouteChange={[Function]}
+                      >
+                        <ForwardRef>
+                          <BaseStyledComponent
+                            forwardedClass={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": undefined,
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "sc-kpOJdX",
+                                  "isStatic": true,
+                                  "lastClassName": "gHqoqa",
+                                  "rules": Array [
+                                    "
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: ",
-                                  "1.3888888888888888rem",
-                                  ";
+                                    "1.3888888888888888rem",
+                                    ";
 ",
-                                ],
-                              },
-                              "displayName": "styled.div",
-                              "render": [Function],
-                              "styledComponentId": "sc-kpOJdX",
-                              "target": "div",
-                              "warnTooManyClasses": [Function],
-                              "withComponent": [Function],
+                                  ],
+                                },
+                                "displayName": "styled.div",
+                                "render": [Function],
+                                "styledComponentId": "sc-kpOJdX",
+                                "target": "div",
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                              }
                             }
-                          }
-                          forwardedRef={null}
-                        >
-                          <div
-                            className="gHqoqa"
+                            forwardedRef={null}
                           >
-                            <Folder
-                              isOpenDefault={false}
-                              key="Basics"
+                            <div
+                              className="gHqoqa"
                             >
-                              <ForwardRef
-                                onClick={[Function]}
+                              <Folder
+                                key="Basics"
                               >
-                                <BaseStyledComponent
-                                  forwardedClass={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "sc-ckVGcZ",
-                                        "isStatic": true,
-                                        "lastClassName": "bmfxTR",
-                                        "rules": Array [
-                                          "
-  margin-bottom: ",
-                                          "1.1111111111111112rem",
-                                          ";
-",
-                                        ],
-                                      },
-                                      "displayName": "styled.div",
-                                      "render": [Function],
-                                      "styledComponentId": "sc-ckVGcZ",
-                                      "target": "div",
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={null}
+                                <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <div
-                                    className="bmfxTR"
+                                  <BaseStyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": undefined,
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-ckVGcZ",
+                                          "isStatic": true,
+                                          "lastClassName": "bmfxTR",
+                                          "rules": Array [
+                                            "
+  margin-bottom: ",
+                                            "1.1111111111111112rem",
+                                            ";
+",
+                                          ],
+                                        },
+                                        "displayName": "styled.div",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-ckVGcZ",
+                                        "target": "div",
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
                                     onClick={[Function]}
                                   >
-                                    <ForwardRef
+                                    <div
+                                      className="bmfxTR"
                                       onClick={[Function]}
                                     >
-                                      <BaseStyledComponent
-                                        forwardedClass={
-                                          Object {
-                                            "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
-                                            "componentStyle": ComponentStyle {
-                                              "componentId": "sc-jKJlTe",
-                                              "isStatic": true,
-                                              "lastClassName": "iIjDed",
-                                              "rules": Array [
-                                                "
-  display: block;
-  margin: ",
-                                                "0.5555555555555556rem",
-                                                " ",
-                                                "2.2222222222222223rem",
-                                                ";
-  font-weight: normal;
-",
-                                              ],
-                                            },
-                                            "displayName": "styled.h4",
-                                            "render": [Function],
-                                            "styledComponentId": "sc-jKJlTe",
-                                            "target": "h4",
-                                            "warnTooManyClasses": [Function],
-                                            "withComponent": [Function],
-                                          }
-                                        }
-                                        forwardedRef={null}
+                                      <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <h4
-                                          className="iIjDed"
+                                        <BaseStyledComponent
+                                          forwardedClass={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": undefined,
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-jKJlTe",
+                                                "isStatic": true,
+                                                "lastClassName": "iIjDed",
+                                                "rules": Array [
+                                                  "
+  display: block;
+  margin: ",
+                                                  "0.5555555555555556rem",
+                                                  " ",
+                                                  "2.2222222222222223rem",
+                                                  ";
+  font-weight: normal;
+",
+                                                ],
+                                              },
+                                              "displayName": "styled.h4",
+                                              "render": [Function],
+                                              "styledComponentId": "sc-jKJlTe",
+                                              "target": "h4",
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
+                                            }
+                                          }
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                         >
-                                          <Link
-                                            href="/docs/basics"
+                                          <h4
+                                            className="iIjDed"
+                                            onClick={[Function]}
                                           >
                                             <Link
                                               href="/docs/basics"
                                             >
-                                              <ForwardRef
+                                              <Link
                                                 href="/docs/basics"
-                                                onClick={[Function]}
                                               >
-                                                <BaseStyledComponent
-                                                  forwardedClass={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "sc-bdVaJa",
-                                                        "isStatic": true,
-                                                        "lastClassName": "tCIOJ",
-                                                        "rules": Array [
-                                                          "
+                                                <ForwardRef
+                                                  href="/docs/basics"
+                                                  onClick={[Function]}
+                                                >
+                                                  <BaseStyledComponent
+                                                    forwardedClass={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": undefined,
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "sc-bdVaJa",
+                                                          "isStatic": true,
+                                                          "lastClassName": "tCIOJ",
+                                                          "rules": Array [
+                                                            "
   display: inline-block;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
-                                                          "0.1111111111111111rem",
-                                                          " ",
-                                                          "0.4444444444444444rem",
-                                                          ";
+                                                            "0.1111111111111111rem",
+                                                            " ",
+                                                            "0.4444444444444444rem",
+                                                            ";
   margin: ",
-                                                          "-0.1111111111111111rem",
-                                                          " ",
-                                                          "-0.4444444444444444rem",
-                                                          ";
+                                                            "-0.1111111111111111rem",
+                                                            " ",
+                                                            "-0.4444444444444444rem",
+                                                            ";
 
   @media (min-width: ",
-                                                          "62.5",
-                                                          "em) {
+                                                            "62.5",
+                                                            "em) {
     border-radius: ",
-                                                          "0.16666666666666666rem",
-                                                          ";
+                                                            "0.16666666666666666rem",
+                                                            ";
 
     &:hover {
       background: ",
-                                                          "rgba(20, 20, 20, 0.1)",
-                                                          ";
+                                                            "rgba(20, 20, 20, 0.1)",
+                                                            ";
     }
   }
 ",
-                                                        ],
-                                                      },
-                                                      "displayName": "styled.a",
-                                                      "render": [Function],
-                                                      "styledComponentId": "sc-bdVaJa",
-                                                      "target": "a",
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
+                                                          ],
+                                                        },
+                                                        "displayName": "styled.a",
+                                                        "render": [Function],
+                                                        "styledComponentId": "sc-bdVaJa",
+                                                        "target": "a",
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
                                                     }
-                                                  }
-                                                  forwardedRef={null}
-                                                  href="/docs/basics"
-                                                  onClick={[Function]}
-                                                >
-                                                  <a
-                                                    className="tCIOJ"
+                                                    forwardedRef={null}
                                                     href="/docs/basics"
                                                     onClick={[Function]}
                                                   >
-                                                    Basics
-                                                  </a>
-                                                </BaseStyledComponent>
-                                              </ForwardRef>
+                                                    <a
+                                                      className="tCIOJ"
+                                                      href="/docs/basics"
+                                                      onClick={[Function]}
+                                                    >
+                                                      Basics
+                                                    </a>
+                                                  </BaseStyledComponent>
+                                                </ForwardRef>
+                                              </Link>
                                             </Link>
-                                          </Link>
-                                        </h4>
-                                      </BaseStyledComponent>
-                                    </ForwardRef>
-                                  </div>
-                                </BaseStyledComponent>
-                              </ForwardRef>
-                            </Folder>
-                            <Folder
-                              isOpenDefault={false}
-                              key="Advanced"
-                            >
-                              <ForwardRef
-                                onClick={[Function]}
+                                          </h4>
+                                        </BaseStyledComponent>
+                                      </ForwardRef>
+                                    </div>
+                                  </BaseStyledComponent>
+                                </ForwardRef>
+                              </Folder>
+                              <Folder
+                                key="Advanced"
                               >
-                                <BaseStyledComponent
-                                  forwardedClass={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "sc-ckVGcZ",
-                                        "isStatic": true,
-                                        "lastClassName": "bmfxTR",
-                                        "rules": Array [
-                                          "
-  margin-bottom: ",
-                                          "1.1111111111111112rem",
-                                          ";
-",
-                                        ],
-                                      },
-                                      "displayName": "styled.div",
-                                      "render": [Function],
-                                      "styledComponentId": "sc-ckVGcZ",
-                                      "target": "div",
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={null}
+                                <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <div
-                                    className="bmfxTR"
+                                  <BaseStyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": undefined,
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-ckVGcZ",
+                                          "isStatic": true,
+                                          "lastClassName": "bmfxTR",
+                                          "rules": Array [
+                                            "
+  margin-bottom: ",
+                                            "1.1111111111111112rem",
+                                            ";
+",
+                                          ],
+                                        },
+                                        "displayName": "styled.div",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-ckVGcZ",
+                                        "target": "div",
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
                                     onClick={[Function]}
                                   >
-                                    <ForwardRef
+                                    <div
+                                      className="bmfxTR"
                                       onClick={[Function]}
                                     >
-                                      <BaseStyledComponent
-                                        forwardedClass={
-                                          Object {
-                                            "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
-                                            "componentStyle": ComponentStyle {
-                                              "componentId": "sc-jKJlTe",
-                                              "isStatic": true,
-                                              "lastClassName": "iIjDed",
-                                              "rules": Array [
-                                                "
-  display: block;
-  margin: ",
-                                                "0.5555555555555556rem",
-                                                " ",
-                                                "2.2222222222222223rem",
-                                                ";
-  font-weight: normal;
-",
-                                              ],
-                                            },
-                                            "displayName": "styled.h4",
-                                            "render": [Function],
-                                            "styledComponentId": "sc-jKJlTe",
-                                            "target": "h4",
-                                            "warnTooManyClasses": [Function],
-                                            "withComponent": [Function],
-                                          }
-                                        }
-                                        forwardedRef={null}
+                                      <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <h4
-                                          className="iIjDed"
+                                        <BaseStyledComponent
+                                          forwardedClass={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": undefined,
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-jKJlTe",
+                                                "isStatic": true,
+                                                "lastClassName": "iIjDed",
+                                                "rules": Array [
+                                                  "
+  display: block;
+  margin: ",
+                                                  "0.5555555555555556rem",
+                                                  " ",
+                                                  "2.2222222222222223rem",
+                                                  ";
+  font-weight: normal;
+",
+                                                ],
+                                              },
+                                              "displayName": "styled.h4",
+                                              "render": [Function],
+                                              "styledComponentId": "sc-jKJlTe",
+                                              "target": "h4",
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
+                                            }
+                                          }
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                         >
-                                          <Link
-                                            href="/docs/advanced"
+                                          <h4
+                                            className="iIjDed"
+                                            onClick={[Function]}
                                           >
                                             <Link
                                               href="/docs/advanced"
                                             >
-                                              <ForwardRef
+                                              <Link
                                                 href="/docs/advanced"
-                                                onClick={[Function]}
                                               >
-                                                <BaseStyledComponent
-                                                  forwardedClass={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "sc-bdVaJa",
-                                                        "isStatic": true,
-                                                        "lastClassName": "tCIOJ",
-                                                        "rules": Array [
-                                                          "
+                                                <ForwardRef
+                                                  href="/docs/advanced"
+                                                  onClick={[Function]}
+                                                >
+                                                  <BaseStyledComponent
+                                                    forwardedClass={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": undefined,
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "sc-bdVaJa",
+                                                          "isStatic": true,
+                                                          "lastClassName": "tCIOJ",
+                                                          "rules": Array [
+                                                            "
   display: inline-block;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
-                                                          "0.1111111111111111rem",
-                                                          " ",
-                                                          "0.4444444444444444rem",
-                                                          ";
+                                                            "0.1111111111111111rem",
+                                                            " ",
+                                                            "0.4444444444444444rem",
+                                                            ";
   margin: ",
-                                                          "-0.1111111111111111rem",
-                                                          " ",
-                                                          "-0.4444444444444444rem",
-                                                          ";
+                                                            "-0.1111111111111111rem",
+                                                            " ",
+                                                            "-0.4444444444444444rem",
+                                                            ";
 
   @media (min-width: ",
-                                                          "62.5",
-                                                          "em) {
+                                                            "62.5",
+                                                            "em) {
     border-radius: ",
-                                                          "0.16666666666666666rem",
-                                                          ";
+                                                            "0.16666666666666666rem",
+                                                            ";
 
     &:hover {
       background: ",
-                                                          "rgba(20, 20, 20, 0.1)",
-                                                          ";
+                                                            "rgba(20, 20, 20, 0.1)",
+                                                            ";
     }
   }
 ",
-                                                        ],
-                                                      },
-                                                      "displayName": "styled.a",
-                                                      "render": [Function],
-                                                      "styledComponentId": "sc-bdVaJa",
-                                                      "target": "a",
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
+                                                          ],
+                                                        },
+                                                        "displayName": "styled.a",
+                                                        "render": [Function],
+                                                        "styledComponentId": "sc-bdVaJa",
+                                                        "target": "a",
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
                                                     }
-                                                  }
-                                                  forwardedRef={null}
-                                                  href="/docs/advanced"
-                                                  onClick={[Function]}
-                                                >
-                                                  <a
-                                                    className="tCIOJ"
+                                                    forwardedRef={null}
                                                     href="/docs/advanced"
                                                     onClick={[Function]}
                                                   >
-                                                    Advanced
-                                                  </a>
-                                                </BaseStyledComponent>
-                                              </ForwardRef>
+                                                    <a
+                                                      className="tCIOJ"
+                                                      href="/docs/advanced"
+                                                      onClick={[Function]}
+                                                    >
+                                                      Advanced
+                                                    </a>
+                                                  </BaseStyledComponent>
+                                                </ForwardRef>
+                                              </Link>
                                             </Link>
-                                          </Link>
-                                        </h4>
-                                      </BaseStyledComponent>
-                                    </ForwardRef>
-                                  </div>
-                                </BaseStyledComponent>
-                              </ForwardRef>
-                            </Folder>
-                            <Folder
-                              isOpenDefault={false}
-                              key="API Reference"
-                            >
-                              <ForwardRef
-                                onClick={[Function]}
+                                          </h4>
+                                        </BaseStyledComponent>
+                                      </ForwardRef>
+                                    </div>
+                                  </BaseStyledComponent>
+                                </ForwardRef>
+                              </Folder>
+                              <Folder
+                                key="API Reference"
                               >
-                                <BaseStyledComponent
-                                  forwardedClass={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "sc-ckVGcZ",
-                                        "isStatic": true,
-                                        "lastClassName": "bmfxTR",
-                                        "rules": Array [
-                                          "
-  margin-bottom: ",
-                                          "1.1111111111111112rem",
-                                          ";
-",
-                                        ],
-                                      },
-                                      "displayName": "styled.div",
-                                      "render": [Function],
-                                      "styledComponentId": "sc-ckVGcZ",
-                                      "target": "div",
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={null}
+                                <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <div
-                                    className="bmfxTR"
+                                  <BaseStyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": undefined,
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-ckVGcZ",
+                                          "isStatic": true,
+                                          "lastClassName": "bmfxTR",
+                                          "rules": Array [
+                                            "
+  margin-bottom: ",
+                                            "1.1111111111111112rem",
+                                            ";
+",
+                                          ],
+                                        },
+                                        "displayName": "styled.div",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-ckVGcZ",
+                                        "target": "div",
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
                                     onClick={[Function]}
                                   >
-                                    <ForwardRef
+                                    <div
+                                      className="bmfxTR"
                                       onClick={[Function]}
                                     >
-                                      <BaseStyledComponent
-                                        forwardedClass={
-                                          Object {
-                                            "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
-                                            "componentStyle": ComponentStyle {
-                                              "componentId": "sc-jKJlTe",
-                                              "isStatic": true,
-                                              "lastClassName": "iIjDed",
-                                              "rules": Array [
-                                                "
-  display: block;
-  margin: ",
-                                                "0.5555555555555556rem",
-                                                " ",
-                                                "2.2222222222222223rem",
-                                                ";
-  font-weight: normal;
-",
-                                              ],
-                                            },
-                                            "displayName": "styled.h4",
-                                            "render": [Function],
-                                            "styledComponentId": "sc-jKJlTe",
-                                            "target": "h4",
-                                            "warnTooManyClasses": [Function],
-                                            "withComponent": [Function],
-                                          }
-                                        }
-                                        forwardedRef={null}
+                                      <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <h4
-                                          className="iIjDed"
+                                        <BaseStyledComponent
+                                          forwardedClass={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": undefined,
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-jKJlTe",
+                                                "isStatic": true,
+                                                "lastClassName": "iIjDed",
+                                                "rules": Array [
+                                                  "
+  display: block;
+  margin: ",
+                                                  "0.5555555555555556rem",
+                                                  " ",
+                                                  "2.2222222222222223rem",
+                                                  ";
+  font-weight: normal;
+",
+                                                ],
+                                              },
+                                              "displayName": "styled.h4",
+                                              "render": [Function],
+                                              "styledComponentId": "sc-jKJlTe",
+                                              "target": "h4",
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
+                                            }
+                                          }
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                         >
-                                          <Link
-                                            href="/docs/api"
+                                          <h4
+                                            className="iIjDed"
+                                            onClick={[Function]}
                                           >
                                             <Link
                                               href="/docs/api"
                                             >
-                                              <ForwardRef
+                                              <Link
                                                 href="/docs/api"
-                                                onClick={[Function]}
                                               >
-                                                <BaseStyledComponent
-                                                  forwardedClass={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "sc-bdVaJa",
-                                                        "isStatic": true,
-                                                        "lastClassName": "tCIOJ",
-                                                        "rules": Array [
-                                                          "
+                                                <ForwardRef
+                                                  href="/docs/api"
+                                                  onClick={[Function]}
+                                                >
+                                                  <BaseStyledComponent
+                                                    forwardedClass={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": undefined,
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "sc-bdVaJa",
+                                                          "isStatic": true,
+                                                          "lastClassName": "tCIOJ",
+                                                          "rules": Array [
+                                                            "
   display: inline-block;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
-                                                          "0.1111111111111111rem",
-                                                          " ",
-                                                          "0.4444444444444444rem",
-                                                          ";
+                                                            "0.1111111111111111rem",
+                                                            " ",
+                                                            "0.4444444444444444rem",
+                                                            ";
   margin: ",
-                                                          "-0.1111111111111111rem",
-                                                          " ",
-                                                          "-0.4444444444444444rem",
-                                                          ";
+                                                            "-0.1111111111111111rem",
+                                                            " ",
+                                                            "-0.4444444444444444rem",
+                                                            ";
 
   @media (min-width: ",
-                                                          "62.5",
-                                                          "em) {
+                                                            "62.5",
+                                                            "em) {
     border-radius: ",
-                                                          "0.16666666666666666rem",
-                                                          ";
+                                                            "0.16666666666666666rem",
+                                                            ";
 
     &:hover {
       background: ",
-                                                          "rgba(20, 20, 20, 0.1)",
-                                                          ";
+                                                            "rgba(20, 20, 20, 0.1)",
+                                                            ";
     }
   }
 ",
-                                                        ],
-                                                      },
-                                                      "displayName": "styled.a",
-                                                      "render": [Function],
-                                                      "styledComponentId": "sc-bdVaJa",
-                                                      "target": "a",
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
+                                                          ],
+                                                        },
+                                                        "displayName": "styled.a",
+                                                        "render": [Function],
+                                                        "styledComponentId": "sc-bdVaJa",
+                                                        "target": "a",
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
                                                     }
-                                                  }
-                                                  forwardedRef={null}
-                                                  href="/docs/api"
-                                                  onClick={[Function]}
-                                                >
-                                                  <a
-                                                    className="tCIOJ"
+                                                    forwardedRef={null}
                                                     href="/docs/api"
                                                     onClick={[Function]}
                                                   >
-                                                    API Reference
-                                                  </a>
-                                                </BaseStyledComponent>
-                                              </ForwardRef>
+                                                    <a
+                                                      className="tCIOJ"
+                                                      href="/docs/api"
+                                                      onClick={[Function]}
+                                                    >
+                                                      API Reference
+                                                    </a>
+                                                  </BaseStyledComponent>
+                                                </ForwardRef>
+                                              </Link>
                                             </Link>
-                                          </Link>
-                                        </h4>
-                                      </BaseStyledComponent>
-                                    </ForwardRef>
-                                  </div>
-                                </BaseStyledComponent>
-                              </ForwardRef>
-                            </Folder>
-                            <Folder
-                              isOpenDefault={false}
-                              key="Tooling"
-                            >
-                              <ForwardRef
-                                onClick={[Function]}
+                                          </h4>
+                                        </BaseStyledComponent>
+                                      </ForwardRef>
+                                    </div>
+                                  </BaseStyledComponent>
+                                </ForwardRef>
+                              </Folder>
+                              <Folder
+                                key="Tooling"
                               >
-                                <BaseStyledComponent
-                                  forwardedClass={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "sc-ckVGcZ",
-                                        "isStatic": true,
-                                        "lastClassName": "bmfxTR",
-                                        "rules": Array [
-                                          "
-  margin-bottom: ",
-                                          "1.1111111111111112rem",
-                                          ";
-",
-                                        ],
-                                      },
-                                      "displayName": "styled.div",
-                                      "render": [Function],
-                                      "styledComponentId": "sc-ckVGcZ",
-                                      "target": "div",
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={null}
+                                <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <div
-                                    className="bmfxTR"
+                                  <BaseStyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": undefined,
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-ckVGcZ",
+                                          "isStatic": true,
+                                          "lastClassName": "bmfxTR",
+                                          "rules": Array [
+                                            "
+  margin-bottom: ",
+                                            "1.1111111111111112rem",
+                                            ";
+",
+                                          ],
+                                        },
+                                        "displayName": "styled.div",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-ckVGcZ",
+                                        "target": "div",
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
                                     onClick={[Function]}
                                   >
-                                    <ForwardRef
+                                    <div
+                                      className="bmfxTR"
                                       onClick={[Function]}
                                     >
-                                      <BaseStyledComponent
-                                        forwardedClass={
-                                          Object {
-                                            "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
-                                            "componentStyle": ComponentStyle {
-                                              "componentId": "sc-jKJlTe",
-                                              "isStatic": true,
-                                              "lastClassName": "iIjDed",
-                                              "rules": Array [
-                                                "
-  display: block;
-  margin: ",
-                                                "0.5555555555555556rem",
-                                                " ",
-                                                "2.2222222222222223rem",
-                                                ";
-  font-weight: normal;
-",
-                                              ],
-                                            },
-                                            "displayName": "styled.h4",
-                                            "render": [Function],
-                                            "styledComponentId": "sc-jKJlTe",
-                                            "target": "h4",
-                                            "warnTooManyClasses": [Function],
-                                            "withComponent": [Function],
-                                          }
-                                        }
-                                        forwardedRef={null}
+                                      <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <h4
-                                          className="iIjDed"
+                                        <BaseStyledComponent
+                                          forwardedClass={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": undefined,
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-jKJlTe",
+                                                "isStatic": true,
+                                                "lastClassName": "iIjDed",
+                                                "rules": Array [
+                                                  "
+  display: block;
+  margin: ",
+                                                  "0.5555555555555556rem",
+                                                  " ",
+                                                  "2.2222222222222223rem",
+                                                  ";
+  font-weight: normal;
+",
+                                                ],
+                                              },
+                                              "displayName": "styled.h4",
+                                              "render": [Function],
+                                              "styledComponentId": "sc-jKJlTe",
+                                              "target": "h4",
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
+                                            }
+                                          }
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                         >
-                                          <Link
-                                            href="/docs/tooling"
+                                          <h4
+                                            className="iIjDed"
+                                            onClick={[Function]}
                                           >
                                             <Link
                                               href="/docs/tooling"
                                             >
-                                              <ForwardRef
+                                              <Link
                                                 href="/docs/tooling"
-                                                onClick={[Function]}
                                               >
-                                                <BaseStyledComponent
-                                                  forwardedClass={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "sc-bdVaJa",
-                                                        "isStatic": true,
-                                                        "lastClassName": "tCIOJ",
-                                                        "rules": Array [
-                                                          "
+                                                <ForwardRef
+                                                  href="/docs/tooling"
+                                                  onClick={[Function]}
+                                                >
+                                                  <BaseStyledComponent
+                                                    forwardedClass={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": undefined,
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "sc-bdVaJa",
+                                                          "isStatic": true,
+                                                          "lastClassName": "tCIOJ",
+                                                          "rules": Array [
+                                                            "
   display: inline-block;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
-                                                          "0.1111111111111111rem",
-                                                          " ",
-                                                          "0.4444444444444444rem",
-                                                          ";
+                                                            "0.1111111111111111rem",
+                                                            " ",
+                                                            "0.4444444444444444rem",
+                                                            ";
   margin: ",
-                                                          "-0.1111111111111111rem",
-                                                          " ",
-                                                          "-0.4444444444444444rem",
-                                                          ";
+                                                            "-0.1111111111111111rem",
+                                                            " ",
+                                                            "-0.4444444444444444rem",
+                                                            ";
 
   @media (min-width: ",
-                                                          "62.5",
-                                                          "em) {
+                                                            "62.5",
+                                                            "em) {
     border-radius: ",
-                                                          "0.16666666666666666rem",
-                                                          ";
+                                                            "0.16666666666666666rem",
+                                                            ";
 
     &:hover {
       background: ",
-                                                          "rgba(20, 20, 20, 0.1)",
-                                                          ";
+                                                            "rgba(20, 20, 20, 0.1)",
+                                                            ";
     }
   }
 ",
-                                                        ],
-                                                      },
-                                                      "displayName": "styled.a",
-                                                      "render": [Function],
-                                                      "styledComponentId": "sc-bdVaJa",
-                                                      "target": "a",
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
+                                                          ],
+                                                        },
+                                                        "displayName": "styled.a",
+                                                        "render": [Function],
+                                                        "styledComponentId": "sc-bdVaJa",
+                                                        "target": "a",
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
                                                     }
-                                                  }
-                                                  forwardedRef={null}
-                                                  href="/docs/tooling"
-                                                  onClick={[Function]}
-                                                >
-                                                  <a
-                                                    className="tCIOJ"
+                                                    forwardedRef={null}
                                                     href="/docs/tooling"
                                                     onClick={[Function]}
                                                   >
-                                                    Tooling
-                                                  </a>
-                                                </BaseStyledComponent>
-                                              </ForwardRef>
+                                                    <a
+                                                      className="tCIOJ"
+                                                      href="/docs/tooling"
+                                                      onClick={[Function]}
+                                                    >
+                                                      Tooling
+                                                    </a>
+                                                  </BaseStyledComponent>
+                                                </ForwardRef>
+                                              </Link>
                                             </Link>
-                                          </Link>
-                                        </h4>
-                                      </BaseStyledComponent>
-                                    </ForwardRef>
-                                  </div>
-                                </BaseStyledComponent>
-                              </ForwardRef>
-                            </Folder>
-                            <Folder
-                              isOpenDefault={false}
-                              key="FAQs"
-                            >
-                              <ForwardRef
-                                onClick={[Function]}
+                                          </h4>
+                                        </BaseStyledComponent>
+                                      </ForwardRef>
+                                    </div>
+                                  </BaseStyledComponent>
+                                </ForwardRef>
+                              </Folder>
+                              <Folder
+                                key="FAQs"
                               >
-                                <BaseStyledComponent
-                                  forwardedClass={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "sc-ckVGcZ",
-                                        "isStatic": true,
-                                        "lastClassName": "bmfxTR",
-                                        "rules": Array [
-                                          "
-  margin-bottom: ",
-                                          "1.1111111111111112rem",
-                                          ";
-",
-                                        ],
-                                      },
-                                      "displayName": "styled.div",
-                                      "render": [Function],
-                                      "styledComponentId": "sc-ckVGcZ",
-                                      "target": "div",
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={null}
+                                <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <div
-                                    className="bmfxTR"
+                                  <BaseStyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": undefined,
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-ckVGcZ",
+                                          "isStatic": true,
+                                          "lastClassName": "bmfxTR",
+                                          "rules": Array [
+                                            "
+  margin-bottom: ",
+                                            "1.1111111111111112rem",
+                                            ";
+",
+                                          ],
+                                        },
+                                        "displayName": "styled.div",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-ckVGcZ",
+                                        "target": "div",
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
                                     onClick={[Function]}
                                   >
-                                    <ForwardRef
+                                    <div
+                                      className="bmfxTR"
                                       onClick={[Function]}
                                     >
-                                      <BaseStyledComponent
-                                        forwardedClass={
-                                          Object {
-                                            "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
-                                            "componentStyle": ComponentStyle {
-                                              "componentId": "sc-jKJlTe",
-                                              "isStatic": true,
-                                              "lastClassName": "iIjDed",
-                                              "rules": Array [
-                                                "
-  display: block;
-  margin: ",
-                                                "0.5555555555555556rem",
-                                                " ",
-                                                "2.2222222222222223rem",
-                                                ";
-  font-weight: normal;
-",
-                                              ],
-                                            },
-                                            "displayName": "styled.h4",
-                                            "render": [Function],
-                                            "styledComponentId": "sc-jKJlTe",
-                                            "target": "h4",
-                                            "warnTooManyClasses": [Function],
-                                            "withComponent": [Function],
-                                          }
-                                        }
-                                        forwardedRef={null}
+                                      <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <h4
-                                          className="iIjDed"
+                                        <BaseStyledComponent
+                                          forwardedClass={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": undefined,
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-jKJlTe",
+                                                "isStatic": true,
+                                                "lastClassName": "iIjDed",
+                                                "rules": Array [
+                                                  "
+  display: block;
+  margin: ",
+                                                  "0.5555555555555556rem",
+                                                  " ",
+                                                  "2.2222222222222223rem",
+                                                  ";
+  font-weight: normal;
+",
+                                                ],
+                                              },
+                                              "displayName": "styled.h4",
+                                              "render": [Function],
+                                              "styledComponentId": "sc-jKJlTe",
+                                              "target": "h4",
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
+                                            }
+                                          }
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                         >
-                                          <Link
-                                            href="/docs/faqs"
+                                          <h4
+                                            className="iIjDed"
+                                            onClick={[Function]}
                                           >
                                             <Link
                                               href="/docs/faqs"
                                             >
-                                              <ForwardRef
+                                              <Link
                                                 href="/docs/faqs"
-                                                onClick={[Function]}
                                               >
-                                                <BaseStyledComponent
-                                                  forwardedClass={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "sc-bdVaJa",
-                                                        "isStatic": true,
-                                                        "lastClassName": "tCIOJ",
-                                                        "rules": Array [
-                                                          "
+                                                <ForwardRef
+                                                  href="/docs/faqs"
+                                                  onClick={[Function]}
+                                                >
+                                                  <BaseStyledComponent
+                                                    forwardedClass={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": undefined,
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "sc-bdVaJa",
+                                                          "isStatic": true,
+                                                          "lastClassName": "tCIOJ",
+                                                          "rules": Array [
+                                                            "
   display: inline-block;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
-                                                          "0.1111111111111111rem",
-                                                          " ",
-                                                          "0.4444444444444444rem",
-                                                          ";
+                                                            "0.1111111111111111rem",
+                                                            " ",
+                                                            "0.4444444444444444rem",
+                                                            ";
   margin: ",
-                                                          "-0.1111111111111111rem",
-                                                          " ",
-                                                          "-0.4444444444444444rem",
-                                                          ";
+                                                            "-0.1111111111111111rem",
+                                                            " ",
+                                                            "-0.4444444444444444rem",
+                                                            ";
 
   @media (min-width: ",
-                                                          "62.5",
-                                                          "em) {
+                                                            "62.5",
+                                                            "em) {
     border-radius: ",
-                                                          "0.16666666666666666rem",
-                                                          ";
+                                                            "0.16666666666666666rem",
+                                                            ";
 
     &:hover {
       background: ",
-                                                          "rgba(20, 20, 20, 0.1)",
-                                                          ";
+                                                            "rgba(20, 20, 20, 0.1)",
+                                                            ";
     }
   }
 ",
-                                                        ],
-                                                      },
-                                                      "displayName": "styled.a",
-                                                      "render": [Function],
-                                                      "styledComponentId": "sc-bdVaJa",
-                                                      "target": "a",
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
+                                                          ],
+                                                        },
+                                                        "displayName": "styled.a",
+                                                        "render": [Function],
+                                                        "styledComponentId": "sc-bdVaJa",
+                                                        "target": "a",
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
                                                     }
-                                                  }
-                                                  forwardedRef={null}
-                                                  href="/docs/faqs"
-                                                  onClick={[Function]}
-                                                >
-                                                  <a
-                                                    className="tCIOJ"
+                                                    forwardedRef={null}
                                                     href="/docs/faqs"
                                                     onClick={[Function]}
                                                   >
-                                                    FAQs
-                                                  </a>
-                                                </BaseStyledComponent>
-                                              </ForwardRef>
+                                                    <a
+                                                      className="tCIOJ"
+                                                      href="/docs/faqs"
+                                                      onClick={[Function]}
+                                                    >
+                                                      FAQs
+                                                    </a>
+                                                  </BaseStyledComponent>
+                                                </ForwardRef>
+                                              </Link>
                                             </Link>
-                                          </Link>
-                                        </h4>
-                                      </BaseStyledComponent>
-                                    </ForwardRef>
-                                  </div>
-                                </BaseStyledComponent>
-                              </ForwardRef>
-                            </Folder>
-                          </div>
-                        </BaseStyledComponent>
-                      </ForwardRef>
-                    </DocsSidebarMenu>
+                                          </h4>
+                                        </BaseStyledComponent>
+                                      </ForwardRef>
+                                    </div>
+                                  </BaseStyledComponent>
+                                </ForwardRef>
+                              </Folder>
+                            </div>
+                          </BaseStyledComponent>
+                        </ForwardRef>
+                      </Component>
+                    </withRouter(Unknown)>
                   </nav>
                 </BaseStyledComponent>
               </ForwardRef>
