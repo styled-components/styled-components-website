@@ -20,4 +20,3 @@ const PasswordInput = styled.input.attrs({
 The same goes for props that can be inferred based on the "mode" of another prop.
 In this case you can set a property on `attrs` to a function that computes
 that prop based on other props.
-

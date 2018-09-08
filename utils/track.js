@@ -6,9 +6,13 @@ if (
   window.doNotTrack ||
   navigator.msDoNotTrack
 ) {
-  console.log('Tracking is disabled due to the Do Not Track policy of this browser.')
+  console.log(
+    'Tracking is disabled due to the Do Not Track policy of this browser.',
+  )
 } else {
-  console.log('Tracking is enabled. If you do not want your page view to be tracked enable the "Do Not Track" policy in your browser settings.')
+  console.log(
+    'Tracking is enabled. If you do not want your page view to be tracked enable the "Do Not Track" policy in your browser settings.',
+  )
 
   const reportView = () => {
     const { pathname } = window.location

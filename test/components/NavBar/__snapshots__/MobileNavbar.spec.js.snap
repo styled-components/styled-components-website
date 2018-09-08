@@ -2,10 +2,10 @@
 
 exports[`MobileNavbar renders correctly 1`] = `
 <div
-  className="bKEueB"
+  className="ckIDon"
 >
   <button
-    className="hvtXqd"
+    className="eVGVdI"
   >
     <svg
       className="vnfTY"
@@ -37,14 +37,14 @@ exports[`MobileNavbar renders correctly 1`] = `
     onClick={[Function]}
   >
     <div
-      className="jpKWNe"
+      className="kxtuXX"
     />
   </a>
   <button
-    className="hvtXqd"
+    className="eVGVdI"
   >
     <div
-      className="gQExVJ"
+      className="bGElFi"
     >
       <svg
         className="vnfTY"
@@ -71,7 +71,7 @@ exports[`MobileNavbar renders correctly 1`] = `
     </div>
   </button>
   <div
-    className="jtcatA"
+    className="iPHbKF"
   >
     <nav
       className="bLzvOe"
@@ -108,7 +108,7 @@ exports[`MobileNavbar renders correctly 1`] = `
       className="dGciJH"
     />
     <div
-      className="eVtpYT"
+      className="hwDJAG"
     >
       <nav
         className="eegKxx"

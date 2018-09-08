@@ -4,7 +4,11 @@ The one thing you used to lose when writing CSS in template literals is syntax h
 
 This is what it looks like when properly highlighted:
 
-<img alt="Syntax highlighted styled component" src="/static/syntax-highlight-example.jpg" height="250px" />
+<img
+  alt="Syntax highlighted styled component"
+  src="/static/syntax-highlight-example.jpg"
+  height="250px"
+/>
 
 ### Atom
 
@@ -37,4 +41,3 @@ The [`webstorm-styled-components`](https://github.com/styled-components/webstorm
 ### Other Editors
 
 We could use your help to get syntax highlighting support to other editors! All these syntax highlighting were built by the Styled Components community so if you want to start working on syntax highlighting for your editor, we would love to see it.
-

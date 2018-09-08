@@ -63,4 +63,3 @@ render(
   </ColorChanger>
 );
 ```
-

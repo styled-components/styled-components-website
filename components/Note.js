@@ -32,12 +32,11 @@ const NoteLabel = styled.strong`
   margin-bottom: ${rem(7)};
 `
 
-const NoteWrapper = ({ label = 'Note', children }) =>
+const NoteWrapper = ({ label = 'Note', children }) => (
   <Note>
-    <NoteLabel>
-      {label}
-    </NoteLabel>
+    <NoteLabel>{label}</NoteLabel>
     {children}
   </Note>
+)
 
 export default NoteWrapper

@@ -95,11 +95,11 @@ If you ever need to use the current theme outside styled components (e.g. inside
 the `withTheme` higher order component.
 
 ```jsx
-import { withTheme } from "styled-components"
+import { withTheme } from 'styled-components'
 
 class MyComponent extends React.Component {
   render() {
-    console.log("Current theme: ", this.props.theme);
+    console.log('Current theme: ', this.props.theme)
     // ...
   }
 }
@@ -143,4 +143,3 @@ render(
   </div>
 );
 ```
-

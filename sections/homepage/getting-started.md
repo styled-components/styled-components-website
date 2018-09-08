@@ -1,5 +1,5 @@
-import { Content } from 'components/Layout';
-import { AlignCenter, Badge, ExampleButton, SecondButton } from './components';
+import { Content } from 'components/Layout'
+import { AlignCenter, Badge, ExampleButton, SecondButton } from './components'
 
 export default ({ children }) => (
   <Content data-e2e-id="content">
@@ -23,14 +23,14 @@ export default ({ children }) => (
   </Content>
 )
 
-
 # Getting started
+
 ## Installation
 
 To download styled-components run `npm install --save styled-components`.
 That's all you need to do, you are now ready to use it in your app! (yep, no build step needed 👌)
 
-> Try out the v4 beta!  Run `npm install --save styled-components@beta` instead. You can find [migration instructions in the FAQ](/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4) if you're not a new user.
+> Try out the v4 beta! Run `npm install --save styled-components@beta` instead. You can find [migration instructions in the FAQ](/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4) if you're not a new user.
 
 > It's recommended (but not required) to also use the [styled-components Babel plugin](https://github.com/styled-components/babel-plugin-styled-components) if you can. It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
 
@@ -61,9 +61,9 @@ This is what it should look like when rendered: (this is a live example, click o
 First, let's import styled-components and create a `styled.button`:
 
 ```jsx
-import styled from "styled-components";
+import styled from 'styled-components'
 
-const Button = styled.button``;
+const Button = styled.button``
 ```
 
 This `Button` variable here is now a React component that you can use like any other React component!
@@ -88,7 +88,7 @@ const Button = styled.button`
   background: transparent;
   color: palevioletred;
   border: 2px solid palevioletred;
-`;
+`
 ```
 
 <AlignCenter>
@@ -103,7 +103,7 @@ The last step is that we need to define what a primary button looks like.
 To do that we also import `{ css }` from `styled-components` and interpolate a function into our template literal, which gets passed the props of our component:
 
 ```jsx
-import styled, { css } from "styled-components"
+import styled, { css } from 'styled-components'
 
 const Button = styled.button`
   border-radius: 3px;
@@ -113,14 +113,16 @@ const Button = styled.button`
   color: palevioletred;
   border: 2px solid palevioletred;
 
-  ${props => props.primary && css`
-    background: palevioletred;
-    color: white;
-  `}
-`;
+  ${props =>
+    props.primary &&
+    css`
+      background: palevioletred;
+      color: white;
+    `};
+`
 ```
 
-Here we're saying  that when the `primary` property is set we want to add some more `css` to our component,
+Here we're saying that when the `primary` property is set we want to add some more `css` to our component,
 in this case change the background and color.
 
 That's all, we're done! Take a look at our finished component:
@@ -149,4 +151,3 @@ render(
 ```
 
 Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components! Once you're ready you can start [diving into the documentation](/docs).
-

@@ -30,6 +30,7 @@ const StyledComp = styled(Link)`
 ```
 
 This will render:
+
 ```jsx
 <a text="Click" href="https://www.styled-components.com/" red=true class="[generated class]">Click</a>
 ```

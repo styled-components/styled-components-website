@@ -5,7 +5,7 @@ exports[`Navbar renders correctly 1`] = `
   className="ihgQwU"
 >
   <div
-    className="fIzcWS"
+    className="diQzty"
   >
     <div
       className="kWHtZp"
@@ -16,7 +16,7 @@ exports[`Navbar renders correctly 1`] = `
         onClick={[Function]}
       >
         <div
-          className="iSbHZP"
+          className="cCWweu"
         />
       </a>
       <nav
@@ -121,10 +121,10 @@ exports[`Navbar renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="bKEueB"
+    className="ckIDon"
   >
     <button
-      className="hvtXqd"
+      className="eVGVdI"
     >
       <svg
         className="YyuYi"
@@ -156,14 +156,14 @@ exports[`Navbar renders correctly 1`] = `
       onClick={[Function]}
     >
       <div
-        className="craaVv"
+        className="gQUZOv"
       />
     </a>
     <button
-      className="hvtXqd"
+      className="eVGVdI"
     >
       <div
-        className="gQExVJ"
+        className="bGElFi"
       >
         <svg
           className="YyuYi"
@@ -190,7 +190,7 @@ exports[`Navbar renders correctly 1`] = `
       </div>
     </button>
     <div
-      className="jtcatA"
+      className="iPHbKF"
     >
       <nav
         className="eWokkx"
@@ -227,7 +227,7 @@ exports[`Navbar renders correctly 1`] = `
         className="jGjUIy"
       />
       <div
-        className="eVtpYT"
+        className="hwDJAG"
       >
         <nav
           className="fjGhui"

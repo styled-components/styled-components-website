@@ -13,14 +13,12 @@ the stylesheet directly.
     <Column>
       1. <Code>TaggedTemplateLiteral</Code>
     </Column>
-    <Column>
-      A tagged template literal with your global styles inside.
-    </Column>
+    <Column>A tagged template literal with your global styles inside.</Column>
   </Row>
 </Table>
 
 ```jsx
-import { injectGlobal } from "styled-components";
+import { injectGlobal } from 'styled-components'
 
 injectGlobal`
   @font-face {
@@ -31,7 +29,7 @@ injectGlobal`
   body {
     margin: 0;
   }
-`;
+`
 ```
 
 We do not encourage the use of this. Try to use it once per app at most, if you

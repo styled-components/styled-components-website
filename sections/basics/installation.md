@@ -7,6 +7,7 @@ npm install --save styled-components
 ```
 
 > Want to try out the new styled-components v4 beta? It's available now via:
+>
 > ```bash
 > npm install --save styled-components@beta
 > ```
@@ -27,4 +28,3 @@ Then make sure the "styled-components" plugin is added to your `.babelrc`.
 ```
 
 > If you don't already have babel set up in your project, their website has an [installation instructions tool](https://babeljs.io/en/setup).
-

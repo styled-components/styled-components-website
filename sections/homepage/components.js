@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components'
 
-export const AlignCenter = styled.div`text-align: center;`
+export const AlignCenter = styled.div`
+  text-align: center;
+`
 
 export const Badge = styled.img`
   margin: 0 0.5em 3em;
@@ -18,9 +20,9 @@ export const ExampleButton = styled.button`
   ${p =>
     p.primary &&
     css`
-    background: palevioletred;
-    color: white;
-  `};
+      background: palevioletred;
+      color: white;
+    `};
 `
 
 export const SecondButton = styled.button`

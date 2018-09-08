@@ -32,4 +32,3 @@ export default ({ children }) => (
 <DuplicatedStyledComponents />
 <HTMLAttributeWarnings />
 <BrowserSupport />
-

@@ -42,7 +42,7 @@ const columnMixin = css`
     width: 100%;
     max-width: 100%;
     height: auto;
-  `)}
+  `)};
 `
 
 export const editorMixin = `
@@ -58,8 +58,8 @@ export const editorMixin = `
 `
 
 const StyledEditor = styled(LiveEditor)`
-  ${editorMixin}
-  ${columnMixin}
+  ${editorMixin};
+  ${columnMixin};
 `
 
 const StyledPreview = styled(LivePreview)`
@@ -70,7 +70,7 @@ const StyledPreview = styled(LivePreview)`
   height: auto;
   overflow: hidden;
 
-  ${columnMixin}
+  ${columnMixin};
 `
 
 export const StyledError = styled(LiveError)`
@@ -84,7 +84,7 @@ export const StyledError = styled(LiveError)`
   white-space: pre;
 `
 
-const LiveEdit = ({ noInline, code, scope = {} }) =>
+const LiveEdit = ({ noInline, code, scope = {} }) => (
   <StyledProvider
     code={code}
     noInline={noInline}
@@ -105,5 +105,6 @@ const LiveEdit = ({ noInline, code, scope = {} }) =>
 
     <StyledError />
   </StyledProvider>
+)
 
 export default LiveEdit

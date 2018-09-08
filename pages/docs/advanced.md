@@ -22,8 +22,10 @@ import ComponentsAsSelectors from '../../sections/advanced/components-as-selecto
 <NextPage href="/docs/api" title="API Reference" />
 
 export default ({ children }) => (
-  <DocsLayout title="Advanced" description="Advanced usage of styled-components - Theming, refs, Security, Existing CSS, Media Templates, Tagged Template Literals, SSR">
+  <DocsLayout
+    title="Advanced"
+    description="Advanced usage of styled-components - Theming, refs, Security, Existing CSS, Media Templates, Tagged Template Literals, SSR"
+  >
     {children}
   </DocsLayout>
 )
-

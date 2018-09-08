@@ -74,7 +74,7 @@ Some other libraries also implement the `styled.x` pattern with tagged template 
 If you want to use the processor with another library but you also want to change the keyword (e.g. to write `cool.div` instead of `styled.div`) use the `moduleName` option:
 
 ```js
-import cool from "other-library";
+import cool from 'other-library'
 
 const Button = cool.button`
 color: blue;
@@ -83,9 +83,14 @@ color: blue;
 
 ```json
 {
-"processors": [["stylelint-processor-styled-components", {
-    "moduleName": "other-library"
-}]]
+  "processors": [
+    [
+      "stylelint-processor-styled-components",
+      {
+        "moduleName": "other-library"
+      }
+    ]
+  ]
 }
 ```
 
@@ -100,10 +105,10 @@ Sometimes `stylelint` can throw an error (e.g. `CssSyntaxError`) even though not
 A simplified example:
 
 ```js
-const something = "background";
+const something = 'background'
 
 const Button = styled.div`
-${something}: papayawhip;
+  ${something}: papayawhip;
 `
 ```
 
@@ -114,11 +119,11 @@ Interpolation tagging allows you to tell the processor what an interpolation is 
 For example:
 
 ```js
-const something = "background";
+const something = 'background'
 
 const Button = styled.div`
-// Tell the processor that "something" is a property
-${/* sc-prop */ something}: papayawhip;
+  // Tell the processor that "something" is a property
+  ${/* sc-prop */ something}: papayawhip;
 `
 ```
 
@@ -142,20 +147,20 @@ For example, when you interpolate another styled component, what you really inte
 
 ```js
 const Wrapper = styled.div`
-${/* sc-selector */ Button} {
-  color: red;
-}
-`;
+  ${/* sc-selector */ Button} {
+    color: red;
+  }
+`
 ```
 
 You can also use shorthand tags to avoid cluttering the code. For example:
 
 ```js
 const Wrapper = styled.div`
-${/* sc-sel */ Button} {
-  color: red;
-}
-`;
+  ${/* sc-sel */ Button} {
+    color: red;
+  }
+`
 ```
 
 ##### `sc-custom`
@@ -168,14 +173,14 @@ For example:
 
 ```js
 // Switch between left and right based on language settings passed through via the theme
-const rtlSwitch = props => props.theme.dir === "rtl" ? "left" : "right";
+const rtlSwitch = props => (props.theme.dir === 'rtl' ? 'left' : 'right')
 
 const Button = styled.button`
 background: green;
 // Tell the processor to replace the interpolation with "left"
 // when linting
 margin-${/* sc-custom "left" */ rtlSwitch}: 12.5px;
-`;
+`
 ```
 
 ### Syntax notes
@@ -185,20 +190,20 @@ margin-${/* sc-custom "left" */ rtlSwitch}: 12.5px;
 Turn off rules with `stylelint-disable` comments (see the [stylelint documentation](https://stylelint.io/user-guide/configuration/#turning-rules-off-from-within-your-css) for all allowed syntax) both inside and outside of the tagged template literals.
 
 ```js
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 // Disable stylelint from within the tagged template literal
 const Wrapper = styled.div`
-/* stylelint-disable */
-background-color: 123;
-`;
+  /* stylelint-disable */
+  background-color: 123;
+`
 
 // Or from the JavaScript around the tagged template literal
 /* stylelint-disable */
 const Wrapper = styled.div`
-background-color: 123;
-`;
+  background-color: 123;
+`
 ```
 
 #### Template literal style and indentation
@@ -211,9 +216,9 @@ The important thing is that you put the closing backtick on the base level of in
 
 ```js
 if (condition) {
-const Button = styled.button`
-  color: red;
-`
+  const Button = styled.button`
+    color: red;
+  `
 }
 ```
 
@@ -221,18 +226,18 @@ const Button = styled.button`
 
 ```js
 if (condition) {
-const Button = styled.button`
-  color: red;
-`
+  const Button = styled.button`
+    color: red;
+  `
 }
 ```
 
 ```js
 if (condition) {
-const Button = styled.button`
-  color: red;`
+  const Button = styled.button`
+    color: red;
+  `
 }
 ```
 
 It may be that other tagged template literal styles are coincidentally supported, but no issues will be handled regarding indentation unless the above style was used.
-

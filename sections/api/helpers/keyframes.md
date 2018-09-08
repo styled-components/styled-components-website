@@ -19,7 +19,7 @@ Returns a Keyframes model, to be used in your animation declarations. You can us
 > In styled-components v3 and below, the `keyframes` helper directly returned the animation name instead of an object with the `getName` method.
 
 ```jsx
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components'
 
 const fadeIn = keyframes`
   0% {
@@ -28,11 +28,11 @@ const fadeIn = keyframes`
   100% {
     opacity: 1;
   }
-`;
+`
 
 const FadeInButton = styled.button`
   animation: 1s ${fadeIn} ease-out;
-`;
+`
 ```
 
 You can learn more about styled-components with Animations in the [Animations](/docs/basics#animations)

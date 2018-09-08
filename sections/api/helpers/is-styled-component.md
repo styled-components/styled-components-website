@@ -11,7 +11,8 @@ A utility to help identify styled components.
       1. <Code>Function</Code>
     </Column>
     <Column>
-      Any function expected to possibly be a styled component or React component wrapped in a styled component
+      Any function expected to possibly be a styled component or React component
+      wrapped in a styled component
     </Column>
   </Row>
 </Table>
@@ -19,14 +20,13 @@ A utility to help identify styled components.
 Returns true if the passed function is a valid styled components-wrapped component class. It can be useful for determining if a component needs to be wrapped such that it can be used as a component selector:
 
 ```jsx
-import React from "react";
-import styled, { isStyledComponent } from "styled-components";
-import MaybeStyledComponent from "./somewhere-else";
+import React from 'react'
+import styled, { isStyledComponent } from 'styled-components'
+import MaybeStyledComponent from './somewhere-else'
 
-let TargetedComponent =
-  isStyledComponent(MaybeStyledComponent)
-    ? MaybeStyledComponent
-    : styled(MaybeStyledComponent)``;
+let TargetedComponent = isStyledComponent(MaybeStyledComponent)
+  ? MaybeStyledComponent
+  : styled(MaybeStyledComponent)``
 
 const ParentComponent = styled.div`
   color: cornflowerblue;

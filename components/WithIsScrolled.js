@@ -3,11 +3,14 @@ import invariant from 'invariant'
 
 class WithIsScrolled extends Component {
   state = {
-    isScrolled: false
+    isScrolled: false,
   }
 
   componentWillMount() {
-    invariant(typeof this.props.children === 'function', 'The children prop is expected to be a function')
+    invariant(
+      typeof this.props.children === 'function',
+      'The children prop is expected to be a function',
+    )
   }
 
   componentDidMount() {
