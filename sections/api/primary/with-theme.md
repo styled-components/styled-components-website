@@ -33,4 +33,6 @@ class MyComponent extends React.Component {
 export default withTheme(MyComponent)
 ```
 
-> All styled components [automatically receive the theme as a prop](/docs/advanced#theming), so this is only necessary if you wish to access the theme for other reasons.
+Only use this if you need to get the theme as a prop.
+If you just need to set a valid stylesheet property, you can use normal theming for this.
+Check out the section on [Theming](/docs/advanced#theming") to read more on how to use this.
