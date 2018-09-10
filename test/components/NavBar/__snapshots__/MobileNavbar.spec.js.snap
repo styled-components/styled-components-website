@@ -1,14 +1,245 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MobileNavbar renders correctly 1`] = `
+.c2 svg {
+  display: inline-block;
+}
+
+.c2 svg path {
+  fill: currentColor;
+}
+
+.c9 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 0.2777777777777778rem;
+  height: 0.2777777777777778rem;
+  margin: 0 0.8333333333333334rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: 2.7777777777777777rem;
+  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
+  -webkit-transition: opacity 0.2s,transform 0.2s;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+  -webkit-letter-spacing: 0.022222222222222223rem;
+  -moz-letter-spacing: 0.022222222222222223rem;
+  -ms-letter-spacing: 0.022222222222222223rem;
+  letter-spacing: 0.022222222222222223rem;
+  color: currentColor;
+}
+
+.c8:hover,
+.c8:focus {
+  opacity: 0.8;
+}
+
+.c8:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c12 {
+  display: inline-block;
+  margin-right: 1.1111111111111112rem;
+  line-height: 2.7777777777777777rem;
+  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
+  -webkit-transition: opacity 0.2s,transform 0.2s;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+}
+
+.c12:last-child {
+  margin-right: 0;
+}
+
+.c12:hover,
+.c12:focus {
+  opacity: 0.8;
+}
+
+.c12:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c12 svg path {
+  fill: currentColor;
+}
+
+.c13 {
+  width: 0.7777777777777778rem;
+  height: 0.7777777777777778rem;
+}
+
+.c14 {
+  width: 0.9444444444444444rem;
+  height: 0.9444444444444444rem;
+}
+
+.c15 {
+  width: 0.9444444444444444rem;
+  height: 0.7777777777777778rem;
+}
+
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: contain;
+  background-image: url(/static/icon.png);
+  width: 5.555555555555555rem;
+  height: 1.6666666666666667rem;
+}
+
+.c1 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  min-width: 2.7777777777777777rem;
+  height: 2.7777777777777777rem;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background: rgba(0,0,0,0.07);
+}
+
+.c1:focus {
+  border: 0.1111111111111111rem solid currentColor;
+  border-radius: 0.1111111111111111rem;
+}
+
+.c0 {
+  display: none;
+}
+
+.c6 {
+  position: absolute;
+  top: 2.7777777777777777rem;
+  left: 0;
+  right: 0;
+  height: 2.7777777777777777rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 1.1111111111111112rem;
+  -webkit-transition: height 0.1s;
+  transition: height 0.1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background: #efefef;
+  color: #868686;
+}
+
+.c3 {
+  display: inline-block;
+  vertical-align: center;
+}
+
+.c5 {
+  -webkit-transition: -webkit-transform 0.1s;
+  -webkit-transition: transform 0.1s;
+  transition: transform 0.1s;
+  -webkit-transform-origin: 50% 55%;
+  -ms-transform-origin: 50% 55%;
+  transform-origin: 50% 55%;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.c10 {
+  padding-right: 1.1111111111111112rem;
+}
+
+@media (max-width:62.5em) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 2.7777777777777777rem;
+  }
+}
+
 <div
-  className="ckIDon"
+  className="c0"
 >
   <button
-    className="eVGVdI"
+    className="c1"
   >
     <svg
-      className="vnfTY"
+      className="c2"
       height="15"
       width="15"
       xmlns="http://www.w3.org/2000/svg"
@@ -32,22 +263,22 @@ exports[`MobileNavbar renders correctly 1`] = `
   </button>
   <a
     aria-label="styled components"
-    className="gViPaM"
+    className="c3"
     href="/"
     onClick={[Function]}
   >
     <div
-      className="kxtuXX"
+      className="c4"
     />
   </a>
   <button
-    className="eVGVdI"
+    className="c1"
   >
     <div
-      className="bGElFi"
+      className="c5"
     >
       <svg
-        className="vnfTY"
+        className="c2"
         height="8"
         width="12"
         xmlns="http://www.w3.org/2000/svg"
@@ -71,33 +302,33 @@ exports[`MobileNavbar renders correctly 1`] = `
     </div>
   </button>
   <div
-    className="iPHbKF"
+    className="c6"
   >
     <nav
-      className="bLzvOe"
+      className="c7"
     >
       <a
-        className="keHQlY"
+        className="c8"
         href="/docs"
         onClick={[Function]}
       >
         Documentation
       </a>
       <span
-        className="dGciJH"
+        className="c9"
       />
       <a
-        className="keHQlY"
+        className="c8"
         href="/ecosystem"
         onClick={[Function]}
       >
         Ecosystem
       </a>
       <span
-        className="dGciJH"
+        className="c9"
       />
       <a
-        className="keHQlY"
+        className="c8"
         href="/releases"
         onClick={[Function]}
       >
@@ -105,21 +336,21 @@ exports[`MobileNavbar renders correctly 1`] = `
       </a>
     </nav>
     <span
-      className="dGciJH"
+      className="c9"
     />
     <div
-      className="hwDJAG"
+      className="c10"
     >
       <nav
-        className="eegKxx"
+        className="c11"
       >
         <a
-          className="hvDRgH"
+          className="c12"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
         >
           <svg
-            className="jvZNMc"
+            className="c13"
             height="14"
             viewBox="0 0 15 15"
             width="14"
@@ -134,12 +365,12 @@ exports[`MobileNavbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="hvDRgH"
+          className="c12"
           href="https://github.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="hykfmK"
+            className="c14"
             height="17"
             viewBox="0 0 17 17"
             width="17"
@@ -154,12 +385,12 @@ exports[`MobileNavbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="hvDRgH"
+          className="c12"
           href="https://medium.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="gMQSSV"
+            className="c15"
             height="14"
             viewBox="0 0 17 14"
             width="17"

@@ -40,7 +40,7 @@ const AnchorIcon = styled(LinkIcon).attrs({
   }
 `
 
-const AnchorHeader = styled(Header)`
+const AnchorHeader = styled.div`
   position: relative;
   margin-left: ${rem(-30)};
   padding-left: ${rem(30)};
@@ -70,6 +70,7 @@ const Link = ({ children, level, id }) => {
       override = TertiaryHeader
       break
     default:
+      override = Header
       break
   }
 
