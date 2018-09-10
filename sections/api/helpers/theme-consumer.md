@@ -1,0 +1,21 @@
+### `ThemeConsumer` | v4
+
+This is the ["consumer" component](https://reactjs.org/docs/context.html#consumer) created by `React.createContext` as the companion component to `ThemeProvider`. It uses the [render prop pattern](https://reactjs.org/docs/render-props.html) to allow for dynamic access to the theme during rendering.
+
+It passes the current theme (based on a [`ThemeProvider`](/docs/api#themeprovider) higher in your component tree) as an argument to the child function. From this function, you may return further JSX or nothing.
+
+```jsx
+import { ThemeConsumer } from 'styled-components'
+
+export default class MyComponent extends React.Component {
+  render() {
+    return (
+      <ThemeConsumer>
+        {theme => <div>The theme color is {theme.color}.</div>}
+      </ThemeConsumer>
+    )
+  }
+}
+```
+
+> All styled components [automatically receive the theme as a prop](/docs/advanced#theming), so this is only necessary if you wish to access the theme for other reasons.

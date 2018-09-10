@@ -109,7 +109,57 @@ const Component = styled.div`
 <Component ref={element => { this.myElement = element }}>Something something</Component>
 ```
 
-6. If you're using TypeScript, the typings are now located in DefinitelyTyped:
+6. If you're using the `keyframes` component in a partial without the `css` helper, you'll need to use the helper now. In general, always use the css helper when composing styling partials to be interpolated into a styled component.
+
+🚫
+
+```jsx
+import styled, { keyframes } from 'styled-components'
+
+const animation = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100 {
+    opacity: 1;
+  }
+`
+
+const animationRule = `
+  ${animation} 1s infinite alternate
+`
+
+const Component = styled.div`
+  animation: ${animationRule};
+`
+```
+
+✅
+
+```js
+import styled, { css, keyframes } from 'styled-components'
+
+const animation = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100 {
+    opacity: 1;
+  }
+`
+
+const animationRule = css`
+  ${animation} 1s infinite alternate;
+`
+
+const Component = styled.div`
+  animation: ${animationRule};
+`
+```
+
+7. If you're using TypeScript, the typings are now located in DefinitelyTyped:
 
 ```
 npm install @types/styled-components

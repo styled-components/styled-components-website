@@ -1,6 +1,381 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav renders correctly 1`] = `
+.c26 {
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.1111111111111111rem 0.4444444444444444rem;
+  margin: -0.1111111111111111rem -0.4444444444444444rem;
+}
+
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 0.2777777777777778rem;
+  height: 0.2777777777777778rem;
+  margin: 0 0.8333333333333334rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c6 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: 2.7777777777777777rem;
+  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
+  -webkit-transition: opacity 0.2s,transform 0.2s;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+  -webkit-letter-spacing: 0.022222222222222223rem;
+  -moz-letter-spacing: 0.022222222222222223rem;
+  -ms-letter-spacing: 0.022222222222222223rem;
+  letter-spacing: 0.022222222222222223rem;
+  color: currentColor;
+}
+
+.c6:hover,
+.c6:focus {
+  opacity: 0.8;
+}
+
+.c6:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c10 {
+  display: inline-block;
+  margin-right: 1.1111111111111112rem;
+  line-height: 2.7777777777777777rem;
+  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
+  -webkit-transition: opacity 0.2s,transform 0.2s;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+}
+
+.c10:last-child {
+  margin-right: 0;
+}
+
+.c10:hover,
+.c10:focus {
+  opacity: 0.8;
+}
+
+.c10:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c10 svg path {
+  fill: currentColor;
+}
+
+.c11 {
+  width: 0.7777777777777778rem;
+  height: 0.7777777777777778rem;
+}
+
+.c12 {
+  width: 0.9444444444444444rem;
+  height: 0.9444444444444444rem;
+}
+
+.c13 {
+  width: 0.9444444444444444rem;
+  height: 0.7777777777777778rem;
+}
+
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: contain;
+  background-image: url(/static/nav-logo.png);
+  width: 9.11111111111111rem;
+  height: 2.2222222222222223rem;
+}
+
+.c18 {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: contain;
+  background-image: url(/static/icon.png);
+  width: 5.555555555555555rem;
+  height: 1.6666666666666667rem;
+}
+
+.c16 svg {
+  display: inline-block;
+}
+
+.c16 svg path {
+  fill: currentColor;
+}
+
+.c15 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  min-width: 2.7777777777777777rem;
+  height: 2.7777777777777777rem;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background: rgba(0,0,0,0.07);
+}
+
+.c15:focus {
+  border: 0.1111111111111111rem solid currentColor;
+  border-radius: 0.1111111111111111rem;
+}
+
+.c14 {
+  display: none;
+}
+
+.c20 {
+  position: absolute;
+  top: 2.7777777777777777rem;
+  left: 0;
+  right: 0;
+  height: 2.7777777777777777rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 1.1111111111111112rem;
+  -webkit-transition: height 0.1s;
+  transition: height 0.1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background: #efefef;
+  color: #868686;
+}
+
+.c17 {
+  display: inline-block;
+  vertical-align: center;
+}
+
+.c19 {
+  -webkit-transition: -webkit-transform 0.1s;
+  -webkit-transition: transform 0.1s;
+  transition: transform 0.1s;
+  -webkit-transform-origin: 50% 55%;
+  -ms-transform-origin: 50% 55%;
+  transform-origin: 50% 55%;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.c21 {
+  padding-right: 1.1111111111111112rem;
+}
+
+.c0 {
+  position: fixed;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 3;
+  width: 100%;
+  height: 2.7777777777777777rem;
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 0.8333333333333334rem;
+  font-weight: 500;
+  background: rgb(219,112,147);
+  -webkit-transition: background 300ms ease-out;
+  transition: background 300ms ease-out;
+  color: white;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 1.1111111111111112rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c3 {
+  display: inline-block;
+  vertical-align: center;
+  margin-right: 1.9444444444444444rem;
+}
+
+.c22 {
+  position: fixed;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  display: block;
+  z-index: 1;
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  left: 0;
+  top: 2.7777777777777777rem;
+  bottom: 0;
+  right: auto;
+  width: 16.666666666666668rem;
+  background: #efefef;
+  box-sizing: border-box;
+  color: inherit;
+  overflow-y: auto;
+  -webkit-transition: -webkit-transform 150ms ease-out;
+  -webkit-transition: transform 150ms ease-out;
+  transition: transform 150ms ease-out;
+}
+
+.c23 {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 1.3888888888888888rem;
+}
+
+.c24 {
+  margin-bottom: 1.1111111111111112rem;
+}
+
+.c25 {
+  display: block;
+  margin: 0.5555555555555556rem 2.2222222222222223rem;
+  font-weight: normal;
+}
+
+@media (min-width:62.5em) {
+  .c26 {
+    border-radius: 0.16666666666666666rem;
+  }
+
+  .c26:hover {
+    background: rgba(20,20,20,0.1);
+  }
+}
+
+@media (max-width:62.5em) {
+  .c14 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 2.7777777777777777rem;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c1 {
+    display: none;
+  }
+}
+
 <Nav>
   <div>
     <Navbar>
@@ -13,7 +388,7 @@ exports[`Nav renders correctly 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "sc-jzJRlG",
                 "isStatic": false,
-                "lastClassName": "ihgQwU",
+                "lastClassName": "c0",
                 "rules": Array [
                   "
   position: fixed;
@@ -52,7 +427,7 @@ exports[`Nav renders correctly 1`] = `
           forwardedRef={null}
         >
           <nav
-            className="ihgQwU"
+            className="c0"
           >
             <ForwardRef>
               <BaseStyledComponent
@@ -63,7 +438,7 @@ exports[`Nav renders correctly 1`] = `
                     "componentStyle": ComponentStyle {
                       "componentId": "sc-cSHVUG",
                       "isStatic": true,
-                      "lastClassName": "diQzty",
+                      "lastClassName": "c1",
                       "rules": Array [
                         "
   display: flex;
@@ -100,7 +475,7 @@ exports[`Nav renders correctly 1`] = `
                 forwardedRef={null}
               >
                 <div
-                  className="diQzty"
+                  className="c1"
                 >
                   <ForwardRef>
                     <BaseStyledComponent
@@ -111,7 +486,7 @@ exports[`Nav renders correctly 1`] = `
                           "componentStyle": ComponentStyle {
                             "componentId": "sc-kAzzGY",
                             "isStatic": true,
-                            "lastClassName": "kWHtZp",
+                            "lastClassName": "c2",
                             "rules": Array [
                               "
   display: flex;
@@ -131,7 +506,7 @@ exports[`Nav renders correctly 1`] = `
                       forwardedRef={null}
                     >
                       <div
-                        className="kWHtZp"
+                        className="c2"
                       >
                         <ForwardRef>
                           <BaseStyledComponent
@@ -145,7 +520,7 @@ exports[`Nav renders correctly 1`] = `
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-kgoBCf",
                                   "isStatic": true,
-                                  "lastClassName": "ffEHFQ",
+                                  "lastClassName": "c3",
                                   "rules": Array [
                                     "
   display: inline-block;
@@ -168,7 +543,7 @@ exports[`Nav renders correctly 1`] = `
                             forwardedRef={null}
                           >
                             <Link
-                              className="ffEHFQ"
+                              className="c3"
                               href="/"
                               unstyled={true}
                             >
@@ -176,7 +551,7 @@ exports[`Nav renders correctly 1`] = `
                                 href="/"
                               >
                                 <a
-                                  className="ffEHFQ"
+                                  className="c3"
                                   href="/"
                                   onClick={[Function]}
                                 >
@@ -189,7 +564,7 @@ exports[`Nav renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-htoDjs",
                                             "isStatic": false,
-                                            "lastClassName": "gQUZOv",
+                                            "lastClassName": "c18",
                                             "rules": Array [
                                               "
   display: inline-block;
@@ -216,7 +591,7 @@ exports[`Nav renders correctly 1`] = `
                                       forwardedRef={null}
                                     >
                                       <div
-                                        className="cCWweu"
+                                        className="c4"
                                       />
                                     </BaseStyledComponent>
                                   </ForwardRef>
@@ -235,7 +610,7 @@ exports[`Nav renders correctly 1`] = `
                                   "componentStyle": ComponentStyle {
                                     "componentId": "sc-bxivhb",
                                     "isStatic": true,
-                                    "lastClassName": "eWokkx",
+                                    "lastClassName": "c5",
                                     "rules": Array [
                                       "
   display: flex;
@@ -255,7 +630,7 @@ exports[`Nav renders correctly 1`] = `
                               forwardedRef={null}
                             >
                               <nav
-                                className="eWokkx"
+                                className="c5"
                               >
                                 <ForwardRef
                                   href="/docs"
@@ -270,7 +645,7 @@ exports[`Nav renders correctly 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-ifAKCX",
                                           "isStatic": true,
-                                          "lastClassName": "fAKxmD",
+                                          "lastClassName": "c6",
                                           "rules": Array [
                                             "
   flex: 0 0 auto;
@@ -311,7 +686,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="/docs"
                                   >
                                     <Link
-                                      className="fAKxmD"
+                                      className="c6"
                                       href="/docs"
                                       unstyled={true}
                                     >
@@ -319,7 +694,7 @@ exports[`Nav renders correctly 1`] = `
                                         href="/docs"
                                       >
                                         <a
-                                          className="fAKxmD"
+                                          className="c6"
                                           href="/docs"
                                           onClick={[Function]}
                                         >
@@ -338,7 +713,7 @@ exports[`Nav renders correctly 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-htpNat",
                                           "isStatic": true,
-                                          "lastClassName": "jGjUIy",
+                                          "lastClassName": "c7",
                                           "rules": Array [
                                             "
   flex: 0 0 auto;
@@ -369,7 +744,7 @@ exports[`Nav renders correctly 1`] = `
                                     forwardedRef={null}
                                   >
                                     <span
-                                      className="jGjUIy"
+                                      className="c7"
                                     />
                                   </BaseStyledComponent>
                                 </ForwardRef>
@@ -386,7 +761,7 @@ exports[`Nav renders correctly 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-ifAKCX",
                                           "isStatic": true,
-                                          "lastClassName": "fAKxmD",
+                                          "lastClassName": "c6",
                                           "rules": Array [
                                             "
   flex: 0 0 auto;
@@ -427,7 +802,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="/ecosystem"
                                   >
                                     <Link
-                                      className="fAKxmD"
+                                      className="c6"
                                       href="/ecosystem"
                                       unstyled={true}
                                     >
@@ -435,7 +810,7 @@ exports[`Nav renders correctly 1`] = `
                                         href="/ecosystem"
                                       >
                                         <a
-                                          className="fAKxmD"
+                                          className="c6"
                                           href="/ecosystem"
                                           onClick={[Function]}
                                         >
@@ -454,7 +829,7 @@ exports[`Nav renders correctly 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-htpNat",
                                           "isStatic": true,
-                                          "lastClassName": "jGjUIy",
+                                          "lastClassName": "c7",
                                           "rules": Array [
                                             "
   flex: 0 0 auto;
@@ -485,7 +860,7 @@ exports[`Nav renders correctly 1`] = `
                                     forwardedRef={null}
                                   >
                                     <span
-                                      className="jGjUIy"
+                                      className="c7"
                                     />
                                   </BaseStyledComponent>
                                 </ForwardRef>
@@ -502,7 +877,7 @@ exports[`Nav renders correctly 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-ifAKCX",
                                           "isStatic": true,
-                                          "lastClassName": "fAKxmD",
+                                          "lastClassName": "c6",
                                           "rules": Array [
                                             "
   flex: 0 0 auto;
@@ -543,7 +918,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="/releases"
                                   >
                                     <Link
-                                      className="fAKxmD"
+                                      className="c6"
                                       href="/releases"
                                       unstyled={true}
                                     >
@@ -551,7 +926,7 @@ exports[`Nav renders correctly 1`] = `
                                         href="/releases"
                                       >
                                         <a
-                                          className="fAKxmD"
+                                          className="c6"
                                           href="/releases"
                                           onClick={[Function]}
                                         >
@@ -577,7 +952,7 @@ exports[`Nav renders correctly 1`] = `
                           "componentStyle": ComponentStyle {
                             "componentId": "sc-chPdSV",
                             "isStatic": true,
-                            "lastClassName": "hbBwFX",
+                            "lastClassName": "c8",
                             "rules": Array [
                               "
   display: flex;
@@ -597,7 +972,7 @@ exports[`Nav renders correctly 1`] = `
                       forwardedRef={null}
                     >
                       <div
-                        className="hbBwFX"
+                        className="c8"
                       >
                         <Social>
                           <ForwardRef>
@@ -609,7 +984,7 @@ exports[`Nav renders correctly 1`] = `
                                   "componentStyle": ComponentStyle {
                                     "componentId": "sc-EHOje",
                                     "isStatic": true,
-                                    "lastClassName": "fjGhui",
+                                    "lastClassName": "c9",
                                     "rules": Array [
                                       "
   display: flex;
@@ -629,7 +1004,7 @@ exports[`Nav renders correctly 1`] = `
                               forwardedRef={null}
                             >
                               <nav
-                                className="fjGhui"
+                                className="c9"
                               >
                                 <ForwardRef
                                   href="https://spectrum.chat/styled-components/"
@@ -644,7 +1019,7 @@ exports[`Nav renders correctly 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-bZQynM",
                                           "isStatic": true,
-                                          "lastClassName": "hGMLkS",
+                                          "lastClassName": "c10",
                                           "rules": Array [
                                             "
   display: inline-block;
@@ -692,7 +1067,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="https://spectrum.chat/styled-components/"
                                   >
                                     <Link
-                                      className="hGMLkS"
+                                      className="c10"
                                       href="https://spectrum.chat/styled-components/"
                                       unstyled={true}
                                     >
@@ -700,7 +1075,7 @@ exports[`Nav renders correctly 1`] = `
                                         href="https://spectrum.chat/styled-components/"
                                       >
                                         <a
-                                          className="hGMLkS"
+                                          className="c10"
                                           href="https://spectrum.chat/styled-components/"
                                           onClick={[Function]}
                                         >
@@ -718,7 +1093,7 @@ exports[`Nav renders correctly 1`] = `
                                                     "componentStyle": ComponentStyle {
                                                       "componentId": "sc-gzVnrw",
                                                       "isStatic": false,
-                                                      "lastClassName": "eKCTnK",
+                                                      "lastClassName": "c13",
                                                       "rules": Array [
                                                         "
   width: ",
@@ -744,7 +1119,7 @@ exports[`Nav renders correctly 1`] = `
                                                 width="14"
                                               >
                                                 <svg
-                                                  className="hPnFBz"
+                                                  className="c11"
                                                   height="14"
                                                   viewBox="0 0 15 15"
                                                   width="14"
@@ -778,7 +1153,7 @@ exports[`Nav renders correctly 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-bZQynM",
                                           "isStatic": true,
-                                          "lastClassName": "hGMLkS",
+                                          "lastClassName": "c10",
                                           "rules": Array [
                                             "
   display: inline-block;
@@ -826,7 +1201,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="https://github.com/styled-components"
                                   >
                                     <Link
-                                      className="hGMLkS"
+                                      className="c10"
                                       href="https://github.com/styled-components"
                                       unstyled={true}
                                     >
@@ -834,7 +1209,7 @@ exports[`Nav renders correctly 1`] = `
                                         href="https://github.com/styled-components"
                                       >
                                         <a
-                                          className="hGMLkS"
+                                          className="c10"
                                           href="https://github.com/styled-components"
                                           onClick={[Function]}
                                         >
@@ -852,7 +1227,7 @@ exports[`Nav renders correctly 1`] = `
                                                     "componentStyle": ComponentStyle {
                                                       "componentId": "sc-gzVnrw",
                                                       "isStatic": false,
-                                                      "lastClassName": "eKCTnK",
+                                                      "lastClassName": "c13",
                                                       "rules": Array [
                                                         "
   width: ",
@@ -878,7 +1253,7 @@ exports[`Nav renders correctly 1`] = `
                                                 width="17"
                                               >
                                                 <svg
-                                                  className="fZylxJ"
+                                                  className="c12"
                                                   height="17"
                                                   viewBox="0 0 17 17"
                                                   width="17"
@@ -912,7 +1287,7 @@ exports[`Nav renders correctly 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-bZQynM",
                                           "isStatic": true,
-                                          "lastClassName": "hGMLkS",
+                                          "lastClassName": "c10",
                                           "rules": Array [
                                             "
   display: inline-block;
@@ -960,7 +1335,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="https://medium.com/styled-components"
                                   >
                                     <Link
-                                      className="hGMLkS"
+                                      className="c10"
                                       href="https://medium.com/styled-components"
                                       unstyled={true}
                                     >
@@ -968,7 +1343,7 @@ exports[`Nav renders correctly 1`] = `
                                         href="https://medium.com/styled-components"
                                       >
                                         <a
-                                          className="hGMLkS"
+                                          className="c10"
                                           href="https://medium.com/styled-components"
                                           onClick={[Function]}
                                         >
@@ -986,7 +1361,7 @@ exports[`Nav renders correctly 1`] = `
                                                     "componentStyle": ComponentStyle {
                                                       "componentId": "sc-gzVnrw",
                                                       "isStatic": false,
-                                                      "lastClassName": "eKCTnK",
+                                                      "lastClassName": "c13",
                                                       "rules": Array [
                                                         "
   width: ",
@@ -1012,7 +1387,7 @@ exports[`Nav renders correctly 1`] = `
                                                 width="17"
                                               >
                                                 <svg
-                                                  className="eKCTnK"
+                                                  className="c13"
                                                   height="14"
                                                   viewBox="0 0 17 14"
                                                   width="17"
@@ -1053,7 +1428,7 @@ exports[`Nav renders correctly 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "sc-gZMcBi",
                         "isStatic": true,
-                        "lastClassName": "ckIDon",
+                        "lastClassName": "c14",
                         "rules": Array [
                           "
   display: none;
@@ -1090,7 +1465,7 @@ exports[`Nav renders correctly 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="ckIDon"
+                    className="c14"
                   >
                     <ForwardRef
                       active={true}
@@ -1104,7 +1479,7 @@ exports[`Nav renders correctly 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-iwsKbI",
                               "isStatic": false,
-                              "lastClassName": "eVGVdI",
+                              "lastClassName": "c15",
                               "rules": Array [
                                 "
   ",
@@ -1150,7 +1525,7 @@ exports[`Nav renders correctly 1`] = `
                         forwardedRef={null}
                       >
                         <button
-                          className="eVGVdI"
+                          className="c15"
                         >
                           <CloseIcon>
                             <ForwardRef
@@ -1167,7 +1542,7 @@ exports[`Nav renders correctly 1`] = `
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-dnqmqq",
                                       "isStatic": true,
-                                      "lastClassName": "YyuYi",
+                                      "lastClassName": "c16",
                                       "rules": Array [
                                         "
   svg {
@@ -1195,7 +1570,7 @@ exports[`Nav renders correctly 1`] = `
                                 xmlnsXlink="http://www.w3.org/1999/xlink"
                               >
                                 <svg
-                                  className="YyuYi"
+                                  className="c16"
                                   height="15"
                                   width="15"
                                   xmlns="http://www.w3.org/2000/svg"
@@ -1235,7 +1610,7 @@ exports[`Nav renders correctly 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-VigVT",
                               "isStatic": true,
-                              "lastClassName": "gViPaM",
+                              "lastClassName": "c17",
                               "rules": Array [
                                 "
   display: inline-block;
@@ -1256,7 +1631,7 @@ exports[`Nav renders correctly 1`] = `
                       >
                         <Link
                           aria-label="styled components"
-                          className="gViPaM"
+                          className="c17"
                           href="/"
                           unstyled={true}
                         >
@@ -1266,7 +1641,7 @@ exports[`Nav renders correctly 1`] = `
                           >
                             <a
                               aria-label="styled components"
-                              className="gViPaM"
+                              className="c17"
                               href="/"
                               onClick={[Function]}
                             >
@@ -1282,7 +1657,7 @@ exports[`Nav renders correctly 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-htoDjs",
                                         "isStatic": false,
-                                        "lastClassName": "gQUZOv",
+                                        "lastClassName": "c18",
                                         "rules": Array [
                                           "
   display: inline-block;
@@ -1309,7 +1684,7 @@ exports[`Nav renders correctly 1`] = `
                                   forwardedRef={null}
                                 >
                                   <div
-                                    className="gQUZOv"
+                                    className="c18"
                                   />
                                 </BaseStyledComponent>
                               </ForwardRef>
@@ -1330,7 +1705,7 @@ exports[`Nav renders correctly 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-iwsKbI",
                               "isStatic": false,
-                              "lastClassName": "eVGVdI",
+                              "lastClassName": "c15",
                               "rules": Array [
                                 "
   ",
@@ -1376,7 +1751,7 @@ exports[`Nav renders correctly 1`] = `
                         forwardedRef={null}
                       >
                         <button
-                          className="eVGVdI"
+                          className="c15"
                         >
                           <ForwardRef
                             shouldRotate={true}
@@ -1389,7 +1764,7 @@ exports[`Nav renders correctly 1`] = `
                                   "componentStyle": ComponentStyle {
                                     "componentId": "sc-jTzLTM",
                                     "isStatic": false,
-                                    "lastClassName": "bGElFi",
+                                    "lastClassName": "c19",
                                     "rules": Array [
                                       "
   transition: transform 0.1s;
@@ -1412,7 +1787,7 @@ exports[`Nav renders correctly 1`] = `
                               shouldRotate={true}
                             >
                               <div
-                                className="bGElFi"
+                                className="c19"
                               >
                                 <ArrowIcon>
                                   <ForwardRef
@@ -1429,7 +1804,7 @@ exports[`Nav renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-dnqmqq",
                                             "isStatic": true,
-                                            "lastClassName": "YyuYi",
+                                            "lastClassName": "c16",
                                             "rules": Array [
                                               "
   svg {
@@ -1457,7 +1832,7 @@ exports[`Nav renders correctly 1`] = `
                                       xmlnsXlink="http://www.w3.org/1999/xlink"
                                     >
                                       <svg
-                                        className="YyuYi"
+                                        className="c16"
                                         height="8"
                                         width="12"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -1498,7 +1873,7 @@ exports[`Nav renders correctly 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-gqjmRU",
                               "isStatic": false,
-                              "lastClassName": "iPHbKF",
+                              "lastClassName": "c20",
                               "rules": Array [
                                 "
   position: absolute;
@@ -1543,7 +1918,7 @@ exports[`Nav renders correctly 1`] = `
                         isOpen={true}
                       >
                         <div
-                          className="iPHbKF"
+                          className="c20"
                         >
                           <NavLinks>
                             <ForwardRef>
@@ -1555,7 +1930,7 @@ exports[`Nav renders correctly 1`] = `
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-bxivhb",
                                       "isStatic": true,
-                                      "lastClassName": "eWokkx",
+                                      "lastClassName": "c5",
                                       "rules": Array [
                                         "
   display: flex;
@@ -1575,7 +1950,7 @@ exports[`Nav renders correctly 1`] = `
                                 forwardedRef={null}
                               >
                                 <nav
-                                  className="eWokkx"
+                                  className="c5"
                                 >
                                   <ForwardRef
                                     href="/docs"
@@ -1590,7 +1965,7 @@ exports[`Nav renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-ifAKCX",
                                             "isStatic": true,
-                                            "lastClassName": "fAKxmD",
+                                            "lastClassName": "c6",
                                             "rules": Array [
                                               "
   flex: 0 0 auto;
@@ -1631,7 +2006,7 @@ exports[`Nav renders correctly 1`] = `
                                       href="/docs"
                                     >
                                       <Link
-                                        className="fAKxmD"
+                                        className="c6"
                                         href="/docs"
                                         unstyled={true}
                                       >
@@ -1639,7 +2014,7 @@ exports[`Nav renders correctly 1`] = `
                                           href="/docs"
                                         >
                                           <a
-                                            className="fAKxmD"
+                                            className="c6"
                                             href="/docs"
                                             onClick={[Function]}
                                           >
@@ -1658,7 +2033,7 @@ exports[`Nav renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-htpNat",
                                             "isStatic": true,
-                                            "lastClassName": "jGjUIy",
+                                            "lastClassName": "c7",
                                             "rules": Array [
                                               "
   flex: 0 0 auto;
@@ -1689,7 +2064,7 @@ exports[`Nav renders correctly 1`] = `
                                       forwardedRef={null}
                                     >
                                       <span
-                                        className="jGjUIy"
+                                        className="c7"
                                       />
                                     </BaseStyledComponent>
                                   </ForwardRef>
@@ -1706,7 +2081,7 @@ exports[`Nav renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-ifAKCX",
                                             "isStatic": true,
-                                            "lastClassName": "fAKxmD",
+                                            "lastClassName": "c6",
                                             "rules": Array [
                                               "
   flex: 0 0 auto;
@@ -1747,7 +2122,7 @@ exports[`Nav renders correctly 1`] = `
                                       href="/ecosystem"
                                     >
                                       <Link
-                                        className="fAKxmD"
+                                        className="c6"
                                         href="/ecosystem"
                                         unstyled={true}
                                       >
@@ -1755,7 +2130,7 @@ exports[`Nav renders correctly 1`] = `
                                           href="/ecosystem"
                                         >
                                           <a
-                                            className="fAKxmD"
+                                            className="c6"
                                             href="/ecosystem"
                                             onClick={[Function]}
                                           >
@@ -1774,7 +2149,7 @@ exports[`Nav renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-htpNat",
                                             "isStatic": true,
-                                            "lastClassName": "jGjUIy",
+                                            "lastClassName": "c7",
                                             "rules": Array [
                                               "
   flex: 0 0 auto;
@@ -1805,7 +2180,7 @@ exports[`Nav renders correctly 1`] = `
                                       forwardedRef={null}
                                     >
                                       <span
-                                        className="jGjUIy"
+                                        className="c7"
                                       />
                                     </BaseStyledComponent>
                                   </ForwardRef>
@@ -1822,7 +2197,7 @@ exports[`Nav renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-ifAKCX",
                                             "isStatic": true,
-                                            "lastClassName": "fAKxmD",
+                                            "lastClassName": "c6",
                                             "rules": Array [
                                               "
   flex: 0 0 auto;
@@ -1863,7 +2238,7 @@ exports[`Nav renders correctly 1`] = `
                                       href="/releases"
                                     >
                                       <Link
-                                        className="fAKxmD"
+                                        className="c6"
                                         href="/releases"
                                         unstyled={true}
                                       >
@@ -1871,7 +2246,7 @@ exports[`Nav renders correctly 1`] = `
                                           href="/releases"
                                         >
                                           <a
-                                            className="fAKxmD"
+                                            className="c6"
                                             href="/releases"
                                             onClick={[Function]}
                                           >
@@ -1894,7 +2269,7 @@ exports[`Nav renders correctly 1`] = `
                                   "componentStyle": ComponentStyle {
                                     "componentId": "sc-htpNat",
                                     "isStatic": true,
-                                    "lastClassName": "jGjUIy",
+                                    "lastClassName": "c7",
                                     "rules": Array [
                                       "
   flex: 0 0 auto;
@@ -1925,7 +2300,7 @@ exports[`Nav renders correctly 1`] = `
                               forwardedRef={null}
                             >
                               <span
-                                className="jGjUIy"
+                                className="c7"
                               />
                             </BaseStyledComponent>
                           </ForwardRef>
@@ -1938,7 +2313,7 @@ exports[`Nav renders correctly 1`] = `
                                   "componentStyle": ComponentStyle {
                                     "componentId": "sc-fjdhpX",
                                     "isStatic": true,
-                                    "lastClassName": "hwDJAG",
+                                    "lastClassName": "c21",
                                     "rules": Array [
                                       "
   padding-right: ",
@@ -1958,7 +2333,7 @@ exports[`Nav renders correctly 1`] = `
                               forwardedRef={null}
                             >
                               <div
-                                className="hwDJAG"
+                                className="c21"
                               >
                                 <Social>
                                   <ForwardRef>
@@ -1970,7 +2345,7 @@ exports[`Nav renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-EHOje",
                                             "isStatic": true,
-                                            "lastClassName": "fjGhui",
+                                            "lastClassName": "c9",
                                             "rules": Array [
                                               "
   display: flex;
@@ -1990,7 +2365,7 @@ exports[`Nav renders correctly 1`] = `
                                       forwardedRef={null}
                                     >
                                       <nav
-                                        className="fjGhui"
+                                        className="c9"
                                       >
                                         <ForwardRef
                                           href="https://spectrum.chat/styled-components/"
@@ -2005,7 +2380,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bZQynM",
                                                   "isStatic": true,
-                                                  "lastClassName": "hGMLkS",
+                                                  "lastClassName": "c10",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -2053,7 +2428,7 @@ exports[`Nav renders correctly 1`] = `
                                             href="https://spectrum.chat/styled-components/"
                                           >
                                             <Link
-                                              className="hGMLkS"
+                                              className="c10"
                                               href="https://spectrum.chat/styled-components/"
                                               unstyled={true}
                                             >
@@ -2061,7 +2436,7 @@ exports[`Nav renders correctly 1`] = `
                                                 href="https://spectrum.chat/styled-components/"
                                               >
                                                 <a
-                                                  className="hGMLkS"
+                                                  className="c10"
                                                   href="https://spectrum.chat/styled-components/"
                                                   onClick={[Function]}
                                                 >
@@ -2079,7 +2454,7 @@ exports[`Nav renders correctly 1`] = `
                                                             "componentStyle": ComponentStyle {
                                                               "componentId": "sc-gzVnrw",
                                                               "isStatic": false,
-                                                              "lastClassName": "eKCTnK",
+                                                              "lastClassName": "c13",
                                                               "rules": Array [
                                                                 "
   width: ",
@@ -2105,7 +2480,7 @@ exports[`Nav renders correctly 1`] = `
                                                         width="14"
                                                       >
                                                         <svg
-                                                          className="hPnFBz"
+                                                          className="c11"
                                                           height="14"
                                                           viewBox="0 0 15 15"
                                                           width="14"
@@ -2139,7 +2514,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bZQynM",
                                                   "isStatic": true,
-                                                  "lastClassName": "hGMLkS",
+                                                  "lastClassName": "c10",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -2187,7 +2562,7 @@ exports[`Nav renders correctly 1`] = `
                                             href="https://github.com/styled-components"
                                           >
                                             <Link
-                                              className="hGMLkS"
+                                              className="c10"
                                               href="https://github.com/styled-components"
                                               unstyled={true}
                                             >
@@ -2195,7 +2570,7 @@ exports[`Nav renders correctly 1`] = `
                                                 href="https://github.com/styled-components"
                                               >
                                                 <a
-                                                  className="hGMLkS"
+                                                  className="c10"
                                                   href="https://github.com/styled-components"
                                                   onClick={[Function]}
                                                 >
@@ -2213,7 +2588,7 @@ exports[`Nav renders correctly 1`] = `
                                                             "componentStyle": ComponentStyle {
                                                               "componentId": "sc-gzVnrw",
                                                               "isStatic": false,
-                                                              "lastClassName": "eKCTnK",
+                                                              "lastClassName": "c13",
                                                               "rules": Array [
                                                                 "
   width: ",
@@ -2239,7 +2614,7 @@ exports[`Nav renders correctly 1`] = `
                                                         width="17"
                                                       >
                                                         <svg
-                                                          className="fZylxJ"
+                                                          className="c12"
                                                           height="17"
                                                           viewBox="0 0 17 17"
                                                           width="17"
@@ -2273,7 +2648,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bZQynM",
                                                   "isStatic": true,
-                                                  "lastClassName": "hGMLkS",
+                                                  "lastClassName": "c10",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -2321,7 +2696,7 @@ exports[`Nav renders correctly 1`] = `
                                             href="https://medium.com/styled-components"
                                           >
                                             <Link
-                                              className="hGMLkS"
+                                              className="c10"
                                               href="https://medium.com/styled-components"
                                               unstyled={true}
                                             >
@@ -2329,7 +2704,7 @@ exports[`Nav renders correctly 1`] = `
                                                 href="https://medium.com/styled-components"
                                               >
                                                 <a
-                                                  className="hGMLkS"
+                                                  className="c10"
                                                   href="https://medium.com/styled-components"
                                                   onClick={[Function]}
                                                 >
@@ -2347,7 +2722,7 @@ exports[`Nav renders correctly 1`] = `
                                                             "componentStyle": ComponentStyle {
                                                               "componentId": "sc-gzVnrw",
                                                               "isStatic": false,
-                                                              "lastClassName": "eKCTnK",
+                                                              "lastClassName": "c13",
                                                               "rules": Array [
                                                                 "
   width: ",
@@ -2373,7 +2748,7 @@ exports[`Nav renders correctly 1`] = `
                                                         width="17"
                                                       >
                                                         <svg
-                                                          className="eKCTnK"
+                                                          className="c13"
                                                           height="14"
                                                           viewBox="0 0 17 14"
                                                           width="17"
@@ -2422,7 +2797,7 @@ exports[`Nav renders correctly 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "sc-kGXeez",
                 "isStatic": false,
-                "lastClassName": "bpKxLf",
+                "lastClassName": "c22",
                 "rules": Array [
                   "
   position: fixed;
@@ -2479,7 +2854,7 @@ exports[`Nav renders correctly 1`] = `
           forwardedRef={[Function]}
         >
           <nav
-            className="bpKxLf"
+            className="c22"
           >
             <withRouter(Unknown)>
               <Component>
@@ -2492,7 +2867,7 @@ exports[`Nav renders correctly 1`] = `
                         "componentStyle": ComponentStyle {
                           "componentId": "sc-kpOJdX",
                           "isStatic": true,
-                          "lastClassName": "gHqoqa",
+                          "lastClassName": "c23",
                           "rules": Array [
                             "
   display: block;
@@ -2515,7 +2890,7 @@ exports[`Nav renders correctly 1`] = `
                     forwardedRef={null}
                   >
                     <div
-                      className="gHqoqa"
+                      className="c23"
                     >
                       <Folder
                         key="Basics"
@@ -2529,7 +2904,7 @@ exports[`Nav renders correctly 1`] = `
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-ckVGcZ",
                                   "isStatic": true,
-                                  "lastClassName": "bmfxTR",
+                                  "lastClassName": "c24",
                                   "rules": Array [
                                     "
   margin-bottom: ",
@@ -2549,7 +2924,7 @@ exports[`Nav renders correctly 1`] = `
                             forwardedRef={null}
                           >
                             <div
-                              className="bmfxTR"
+                              className="c24"
                             >
                               <ForwardRef
                                 onClick={[Function]}
@@ -2562,7 +2937,7 @@ exports[`Nav renders correctly 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-jKJlTe",
                                         "isStatic": true,
-                                        "lastClassName": "iIjDed",
+                                        "lastClassName": "c25",
                                         "rules": Array [
                                           "
   display: block;
@@ -2587,7 +2962,7 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <h4
-                                    className="iIjDed"
+                                    className="c25"
                                     onClick={[Function]}
                                   >
                                     <Link
@@ -2608,7 +2983,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
-                                                  "lastClassName": "tCIOJ",
+                                                  "lastClassName": "c26",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -2655,7 +3030,7 @@ exports[`Nav renders correctly 1`] = `
                                             onClick={[Function]}
                                           >
                                             <a
-                                              className="tCIOJ"
+                                              className="c26"
                                               href="/docs/basics"
                                               onClick={[Function]}
                                             >
@@ -2684,7 +3059,7 @@ exports[`Nav renders correctly 1`] = `
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-ckVGcZ",
                                   "isStatic": true,
-                                  "lastClassName": "bmfxTR",
+                                  "lastClassName": "c24",
                                   "rules": Array [
                                     "
   margin-bottom: ",
@@ -2704,7 +3079,7 @@ exports[`Nav renders correctly 1`] = `
                             forwardedRef={null}
                           >
                             <div
-                              className="bmfxTR"
+                              className="c24"
                             >
                               <ForwardRef
                                 onClick={[Function]}
@@ -2717,7 +3092,7 @@ exports[`Nav renders correctly 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-jKJlTe",
                                         "isStatic": true,
-                                        "lastClassName": "iIjDed",
+                                        "lastClassName": "c25",
                                         "rules": Array [
                                           "
   display: block;
@@ -2742,7 +3117,7 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <h4
-                                    className="iIjDed"
+                                    className="c25"
                                     onClick={[Function]}
                                   >
                                     <Link
@@ -2763,7 +3138,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
-                                                  "lastClassName": "tCIOJ",
+                                                  "lastClassName": "c26",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -2810,7 +3185,7 @@ exports[`Nav renders correctly 1`] = `
                                             onClick={[Function]}
                                           >
                                             <a
-                                              className="tCIOJ"
+                                              className="c26"
                                               href="/docs/advanced"
                                               onClick={[Function]}
                                             >
@@ -2839,7 +3214,7 @@ exports[`Nav renders correctly 1`] = `
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-ckVGcZ",
                                   "isStatic": true,
-                                  "lastClassName": "bmfxTR",
+                                  "lastClassName": "c24",
                                   "rules": Array [
                                     "
   margin-bottom: ",
@@ -2859,7 +3234,7 @@ exports[`Nav renders correctly 1`] = `
                             forwardedRef={null}
                           >
                             <div
-                              className="bmfxTR"
+                              className="c24"
                             >
                               <ForwardRef
                                 onClick={[Function]}
@@ -2872,7 +3247,7 @@ exports[`Nav renders correctly 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-jKJlTe",
                                         "isStatic": true,
-                                        "lastClassName": "iIjDed",
+                                        "lastClassName": "c25",
                                         "rules": Array [
                                           "
   display: block;
@@ -2897,7 +3272,7 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <h4
-                                    className="iIjDed"
+                                    className="c25"
                                     onClick={[Function]}
                                   >
                                     <Link
@@ -2918,7 +3293,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
-                                                  "lastClassName": "tCIOJ",
+                                                  "lastClassName": "c26",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -2965,7 +3340,7 @@ exports[`Nav renders correctly 1`] = `
                                             onClick={[Function]}
                                           >
                                             <a
-                                              className="tCIOJ"
+                                              className="c26"
                                               href="/docs/api"
                                               onClick={[Function]}
                                             >
@@ -2994,7 +3369,7 @@ exports[`Nav renders correctly 1`] = `
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-ckVGcZ",
                                   "isStatic": true,
-                                  "lastClassName": "bmfxTR",
+                                  "lastClassName": "c24",
                                   "rules": Array [
                                     "
   margin-bottom: ",
@@ -3014,7 +3389,7 @@ exports[`Nav renders correctly 1`] = `
                             forwardedRef={null}
                           >
                             <div
-                              className="bmfxTR"
+                              className="c24"
                             >
                               <ForwardRef
                                 onClick={[Function]}
@@ -3027,7 +3402,7 @@ exports[`Nav renders correctly 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-jKJlTe",
                                         "isStatic": true,
-                                        "lastClassName": "iIjDed",
+                                        "lastClassName": "c25",
                                         "rules": Array [
                                           "
   display: block;
@@ -3052,7 +3427,7 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <h4
-                                    className="iIjDed"
+                                    className="c25"
                                     onClick={[Function]}
                                   >
                                     <Link
@@ -3073,7 +3448,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
-                                                  "lastClassName": "tCIOJ",
+                                                  "lastClassName": "c26",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -3120,7 +3495,7 @@ exports[`Nav renders correctly 1`] = `
                                             onClick={[Function]}
                                           >
                                             <a
-                                              className="tCIOJ"
+                                              className="c26"
                                               href="/docs/tooling"
                                               onClick={[Function]}
                                             >
@@ -3149,7 +3524,7 @@ exports[`Nav renders correctly 1`] = `
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-ckVGcZ",
                                   "isStatic": true,
-                                  "lastClassName": "bmfxTR",
+                                  "lastClassName": "c24",
                                   "rules": Array [
                                     "
   margin-bottom: ",
@@ -3169,7 +3544,7 @@ exports[`Nav renders correctly 1`] = `
                             forwardedRef={null}
                           >
                             <div
-                              className="bmfxTR"
+                              className="c24"
                             >
                               <ForwardRef
                                 onClick={[Function]}
@@ -3182,7 +3557,7 @@ exports[`Nav renders correctly 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-jKJlTe",
                                         "isStatic": true,
-                                        "lastClassName": "iIjDed",
+                                        "lastClassName": "c25",
                                         "rules": Array [
                                           "
   display: block;
@@ -3207,7 +3582,7 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <h4
-                                    className="iIjDed"
+                                    className="c25"
                                     onClick={[Function]}
                                   >
                                     <Link
@@ -3228,7 +3603,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
-                                                  "lastClassName": "tCIOJ",
+                                                  "lastClassName": "c26",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -3275,7 +3650,7 @@ exports[`Nav renders correctly 1`] = `
                                             onClick={[Function]}
                                           >
                                             <a
-                                              className="tCIOJ"
+                                              className="c26"
                                               href="/docs/faqs"
                                               onClick={[Function]}
                                             >
