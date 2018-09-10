@@ -175,7 +175,10 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="icon" type="image/png" href="/static/favicon.png" />
           <link rel="manifest" href="/static/manifest.json" />
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+          />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta
             name="viewport"
@@ -212,18 +215,6 @@ export default class MyDocument extends Document {
             type="text/css"
             href="https://cloud.typography.com/7039052/7606172/css/fonts.css"
           />
-          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-          <script type="text/javascript" dangerouslySetInnerHTML={{
-            __html: `
-            docsearch({
-              apiKey: '79886fb59ad3ebe2002b481cffbbe7cb',
-              indexName: 'styled-components',
-              inputSelector: '#docsearch',
-              debug: false // Set debug to true if you want to inspect the dropdown
-            });          
-          `}}>
-
-          </script>
         </body>
       </html>
     )

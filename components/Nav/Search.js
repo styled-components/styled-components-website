@@ -15,20 +15,24 @@ const Wrapper = styled.form`
 const Input = styled.input`
   ${resetInput};
   flex: 0 0 auto;
+  ${resetInput} flex: 0 0 auto;
   width: ${rem(130)};
   line-height: ${rem(navbarHeight - 20)};
   font-size: ${rem(15)};
   color: currentColor;
-
   ::placeholder {
     color: currentColor;
     opacity: 0.5;
+  }
+  &:focus {
+    border-bottom: 1px solid currentColor;
   }
 `
 
 const Button = styled.button`
   ${resetInput};
   flex: 0 0 auto;
+  ${resetInput} flex: 0 0 auto;
   height: ${rem(navbarHeight)};
   margin-right: ${rem(4)};
   cursor: pointer;
@@ -53,7 +57,7 @@ const Button = styled.button`
   }
 `
 
-const SearchButton = () => (
+const SearchButton = () =>
   <Button>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -71,13 +75,14 @@ const SearchButton = () => (
       </defs>
     </svg>
   </Button>
-)
 
-const Search = () => (
+const Search = ({ isDocs }) =>
   <Wrapper>
     <SearchButton />
-    <Input placeholder="Search ..." />
+    <Input
+      id="docs-search-input"
+      placeholder={isDocs ? `Search ...` : `Search docs ...`}
+    />
   </Wrapper>
-)
 
 export default Search

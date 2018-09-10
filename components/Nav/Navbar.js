@@ -11,6 +11,7 @@ import NavLinks from './NavLinks'
 import Social from './Social'
 import Logo from './Logo'
 import MobileNavbar from './MobileNavbar'
+import SearchWithAlgolia from './SearchWithAlgolia'
 
 const Wrapper = styled.nav`
   position: fixed;
@@ -84,7 +85,7 @@ class Navbar extends PureComponent {
           </StartWrapper>
 
           <EndWrapper>
-            <input id="docsearch" />
+            <SearchWithAlgolia />
             <Social />
           </EndWrapper>
         </NormalNavbar>

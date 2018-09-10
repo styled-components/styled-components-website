@@ -27,7 +27,7 @@ const Nav = props => {
         onMobileNavToggle={onMobileNavToggle}
       />
 
-      {showSideNav !== false && (
+      {showSideNav !== false &&
         <Sidebar isFolded={isSideFolded}>
           {useDocsSidebarMenu !== false ? (
             <DocsSidebarMenu onRouteChange={onRouteChange} />
