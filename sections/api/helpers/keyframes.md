@@ -35,4 +35,28 @@ const FadeInButton = styled.button`
 `
 ```
 
+If you are composing your style rule as a partial, make sure to use the `css` helper.
+
+```jsx
+import styled, { css, keyframes } from 'styled-components'
+
+const pulse = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+
+const animation = props =>
+  css`
+    ${pulse} ${props.animationLength} infinite alternate;
+  `
+
+const PulseButton = styled.button`
+  animation: ${animation};
+`
+```
+
 You can learn more about styled-components with Animations in the [Animations](/docs/basics#animations)
