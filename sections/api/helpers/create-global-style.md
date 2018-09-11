@@ -20,12 +20,14 @@ Returns a `StyledComponent` that does not accept children. Place it at the top o
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  color: ${props => (props.whiteColor ? 'white' : 'black')};
+  body {
+    color: ${props => (props.whiteColor ? 'white' : 'black')};
+  }
 `
 
 // later in your app
 
-;<React.Fragment>
+<React.Fragment>
   <Navigation /> {/* example of other top-level stuff */}
   <GlobalStyle whiteColor />
 </React.Fragment>
@@ -37,13 +39,15 @@ Since the `GlobalStyle` component is a `StyledComponent`, that means it also has
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  color: ${props => (props.whiteColor ? 'white' : 'black')};
-  font-family: ${props => props.theme.fontFamily};
+  body {
+    color: ${props => (props.whiteColor ? 'white' : 'black')};
+    font-family: ${props => props.theme.fontFamily};
+  }
 `
 
 // later in your app
 
-;<ThemeProvider theme={{ fontFamily: 'Helvetica Neue' }}>
+<ThemeProvider theme={{ fontFamily: 'Helvetica Neue' }}>
   <React.Fragment>
     <Navigation /> {/* example of other top-level stuff */}
     <GlobalStyle whiteColor />
