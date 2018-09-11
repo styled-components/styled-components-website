@@ -60,7 +60,9 @@ See the ["extending styles" documentation](/docs/basics#extending-styles) for mo
 import { injectGlobal } from 'styled-components'
 
 injectGlobal`
-  color: red;
+  body {
+    color: red;
+  }
 `
 ```
 
@@ -70,7 +72,9 @@ injectGlobal`
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
-  color: red;
+  body {
+    color: red;
+  }
 `
 
 // later in your app's render method
