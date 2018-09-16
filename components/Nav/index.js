@@ -29,13 +29,10 @@ const Nav = props => {
 
       {showSideNav !== false &&
         <Sidebar isFolded={isSideFolded}>
-          {useDocsSidebarMenu !== false ? (
-            <DocsSidebarMenu onRouteChange={onRouteChange} />
-          ) : (
-            <SimpleSidebarMenu onRouteChange={onRouteChange} pages={pages} />
-          )}
-        </Sidebar>
-      )}
+          {useDocsSidebarMenu !== false
+            ? <DocsSidebarMenu onRouteChange={onRouteChange} />
+            : <SimpleSidebarMenu onRouteChange={onRouteChange} pages={pages} />}
+        </Sidebar>}
     </div>
   )
 }

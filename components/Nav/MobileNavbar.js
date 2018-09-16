@@ -77,6 +77,31 @@ const SecondaryMenuItem = styled.div`
   padding-right: ${rem(20)};
 `
 
+const SearchModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  padding: ${rem(15)};
+`
+
+const SearchModalContent = styled.div`
+  background: black;
+`
+
+const SearchModal = props => {
+  const { onRequestClose } = props
+  return (
+    <SearchModalOverlay>
+      <SearchModalContent>
+        <SearchWithAlgolia />
+      </SearchModalContent>
+    </SearchModalOverlay>
+  )
+}
+
 const MobileNavbar = props => {
   const {
     isSideFolded,
@@ -84,6 +109,7 @@ const MobileNavbar = props => {
     onSideToggle,
     onMobileNavToggle,
     showSideNav,
+    onSearchButtonClick,
   } = props
 
   return (
@@ -106,12 +132,13 @@ const MobileNavbar = props => {
 
       <SecondaryMenu isOpen={!isMobileNavFolded}>
         <NavLinks />
+        <button onClick={onSearchButtonClick}>Search Button</button>
         <NavSeparator />
         <SecondaryMenuItem>
-          <SearchWithAlgolia />
           <Social />
         </SecondaryMenuItem>
       </SecondaryMenu>
+      {/* <SearchModal /> */}
     </Wrapper>
   )
 }

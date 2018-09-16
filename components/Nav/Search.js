@@ -1,15 +1,20 @@
 import React from 'react'
-import styled from 'styled-components'
-
+import styled, { css } from 'styled-components'
+import PropTypes from 'prop-types'
 import rem from '../../utils/rem'
 import { navbarHeight } from '../../utils/sizes'
 import { resetInput } from '../../utils/form'
+import { mobile } from '../../utils/media'
 
 const Wrapper = styled.form`
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex: 0 0 auto;
+  ${mobile(css`
+    display: block;
+    padding: ${rem(20)};
+  `)};
 `
 
 const Input = styled.input`
@@ -27,16 +32,19 @@ const Input = styled.input`
   &:focus {
     border-bottom: 1px solid currentColor;
   }
+  ${mobile(css`
+    margin-left: ${rem(20)};
+  `)};
 `
 
-const Button = styled.button`
+const Button = styled.label.attrs({
+  for: 'docs-search-input',
+})`
   ${resetInput};
   flex: 0 0 auto;
   ${resetInput} flex: 0 0 auto;
-  height: ${rem(navbarHeight)};
   margin-right: ${rem(4)};
   cursor: pointer;
-
   &:hover,
   &:focus {
     opacity: 0.7;
@@ -55,9 +63,12 @@ const Button = styled.button`
       fill: currentColor;
     }
   }
+  ${mobile(css`
+    position: absolute;
+  `)};
 `
 
-const SearchButton = () =>
+const SearchButton = () => (
   <Button>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -75,14 +86,20 @@ const SearchButton = () =>
       </defs>
     </svg>
   </Button>
+)
 
-const Search = ({ isDocs }) =>
-  <Wrapper>
+const Search = ({ isDocs, className }) => (
+  <Wrapper className={className}>
     <SearchButton />
     <Input
       id="docs-search-input"
       placeholder={isDocs ? `Search ...` : `Search docs ...`}
     />
   </Wrapper>
+)
+
+Search.propTypes = {
+  className: PropTypes.string,
+}
 
 export default Search
