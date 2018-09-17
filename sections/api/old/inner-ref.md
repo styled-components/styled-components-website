@@ -14,7 +14,7 @@ To get a ref to the actual, wrapped DOM node, pass the callback to the `innerRef
 This example uses `innerRef` to save a ref to the styled input and focuses it once the user
 hovers over it.
 
-```react
+```jsx
 const Input = styled.input`
   padding: 0.5em;
   margin: 0.5em;
@@ -22,21 +22,19 @@ const Input = styled.input`
   background: papayawhip;
   border: none;
   border-radius: 3px;
-`;
+`
 
 class Form extends React.Component {
   render() {
     return (
       <Input
         placeholder="Hover here..."
-        innerRef={x => { this.input = x }}
+        innerRef={x => {
+          this.input = x
+        }}
         onMouseEnter={() => this.input.focus()}
       />
-    );
+    )
   }
 }
-
-render(
-  <Form />
-);
 ```
