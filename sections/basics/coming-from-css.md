@@ -114,3 +114,94 @@ const Wrapper = ({ message }) => {
 **Recommended reading**: [Talia Marcassa](https://twitter.com/talialongname)
 wrote a great review of real-world usage, featuring lots of solid practical insights
 and comparisons with alternatives, in [Styled Components: To Use or Not to Use?](https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21)
+
+### Psuedoelements, psuedoselectors, and nesting
+
+The preprocessor we use, [stylis](https://github.com/thysultan/stylis.js), supports scss-like syntax for automatically nesting styles. Using an example component:
+
+```jsx
+const Thing = styled.div`
+  color: blue;
+`
+```
+
+Psuedoselectors and psuedoelements without further refinement automatically are attached to the component:
+
+```react
+const Thing = styled.button`
+  color: blue;
+
+  ::before {
+    content: '🚀';
+  }
+
+  :hover {
+    color: red;
+  }
+`
+
+render(
+  <Thing>Hello world!</Thing>
+)
+```
+
+For more complex selector patterns, the amperstand (`&`) can be used to refer back to the main component. Here are some more examples of its potential usage:
+
+```react
+const Thing = styled.div.attrs({ tabIndex: 0 })`
+  color: blue;
+
+  &:hover {
+    color: red; // <Thing> when hovered
+  }
+
+  & ~ & {
+    background: tomato; // <Thing> as a sibling of <Thing>, but maybe not directly next to it
+  }
+
+  & + & {
+    background: lime; // <Thing> next to <Thing>
+  }
+
+  &.something {
+    background: orange; // <Thing> tagged with an additional CSS class ".something"
+  }
+
+  .something-else & {
+    border: 1px solid; // <Thing> inside another element labeled ".something-else"
+  }
+`
+
+render(
+  <React.Fragment>
+    <Thing>Hello world!</Thing>
+    <Thing>How ya doing?</Thing>
+    <Thing className="something">The sun is shining...</Thing>
+    <div>Pretty nice day today.</div>
+    <Thing>Don't you think?</Thing>
+    <div className="something-else">
+      <Thing>Splendid.</Thing>
+    </div>
+  </React.Fragment>
+)
+```
+
+If you put selectors in without the amperstand, they will refer to children of the component.
+
+```react
+const Thing = styled.div`
+  color: blue;
+
+  .something {
+    border: 1px solid; // an element labeled ".something" inside <Thing>
+    display: block;
+  }
+`
+
+render(
+  <Thing>
+    <label for="foo-button" className="something">Mystery button</label>
+    <button id="foo-button">What do I do?</button>
+  </Thing>
+)
+```
