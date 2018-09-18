@@ -205,3 +205,28 @@ render(
   </Thing>
 )
 ```
+
+Finally, the amperstand can be used to increase the specificity of rules on the component; this can be useful if you are dealing with a mixed styled-components and vanilla CSS environment where there might be conflicting styles:
+
+```react
+const Thing = styled.div`
+  && {
+    color: blue;
+  }
+`
+
+const GlobalStyle = createGlobalStyle`
+  div${Thing} {
+    color: red;
+  }
+`
+
+render(
+  <React.Fragment>
+    <GlobalStyle />
+    <Thing>
+      I'm blue, da ba dee da ba daa
+    </Thing>
+  </React.Fragment>
+)
+```

@@ -104,6 +104,7 @@ exports[`LiveEdit renders correctly 1`] = `
     scope={
       Object {
         "ThemeProvider": [Function],
+        "createGlobalStyle": [Function],
         "css": [Function],
         "keyframes": [Function],
         "styled": [Function],
@@ -151,6 +152,7 @@ exports[`LiveEdit renders correctly 1`] = `
       scope={
         Object {
           "ThemeProvider": [Function],
+          "createGlobalStyle": [Function],
           "css": [Function],
           "keyframes": [Function],
           "styled": [Function],
@@ -166,6 +168,7 @@ exports[`LiveEdit renders correctly 1`] = `
         scope={
           Object {
             "ThemeProvider": [Function],
+            "createGlobalStyle": [Function],
             "css": [Function],
             "keyframes": [Function],
             "styled": [Function],

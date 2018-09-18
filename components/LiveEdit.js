@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, {
+  createGlobalStyle,
   css,
   keyframes,
   withTheme,
@@ -91,11 +92,12 @@ const LiveEdit = ({ noInline, code, scope = {} }) => (
     mountStylesheet={false}
     scope={{
       ...scope,
-      styled,
+      createGlobalStyle,
       css,
       keyframes,
-      withTheme,
+      styled,
       ThemeProvider,
+      withTheme,
     }}
   >
     <Row>
