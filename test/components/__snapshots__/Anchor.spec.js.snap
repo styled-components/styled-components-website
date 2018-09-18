@@ -34,8 +34,11 @@ exports[`Anchor renders correctly 1`] = `
 
 .c0 {
   position: relative;
-  margin-left: -1.6666666666666667rem;
   padding-left: 1.6666666666666667rem;
+}
+
+.c0.c0 {
+  margin-left: -1.6666666666666667rem;
 }
 
 .c0:hover .c3 {
