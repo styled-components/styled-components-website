@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dev": "node server.js",
+    "prebuild": "rimraf .next",
     "build": "NODE_ENV=production next build",
     "deploy": "now -t $NOW_TOKEN -T styledcomponents && now alias -t $NOW_TOKEN -T styledcomponents",
     "lint:js": "eslint .",
@@ -69,6 +70,7 @@
     "prettier": "prettier/prettier",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.4.2",
+    "rimraf": "^2.6.2",
     "stylelint": "^8.0.0",
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-standard": "^17.0.0",
@@ -96,7 +98,8 @@
     {
       "path": ".next/bundles/pages/**/*.js",
       "maxSize": "50kB"
-    }, {
+    },
+    {
       "path": ".next/static/**/*.js",
       "maxSize": "200kB"
     }

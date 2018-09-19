@@ -25,7 +25,7 @@ exports[`Sidebar renders correctly 1`] = `
 
 <CaptureScroll>
   <ForwardRef>
-    <BaseStyledComponent
+    <StyledComponent
       forwardedClass={
         Object {
           "$$typeof": Symbol(react.forward_ref),
@@ -92,7 +92,7 @@ exports[`Sidebar renders correctly 1`] = `
       <nav
         className="c0"
       />
-    </BaseStyledComponent>
+    </StyledComponent>
   </ForwardRef>
 </CaptureScroll>
 `;

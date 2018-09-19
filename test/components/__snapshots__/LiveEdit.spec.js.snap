@@ -112,7 +112,7 @@ exports[`LiveEdit renders correctly 1`] = `
       }
     }
   >
-    <BaseStyledComponent
+    <StyledComponent
       forwardedClass={
         Object {
           "$$typeof": Symbol(react.forward_ref),
@@ -180,7 +180,7 @@ exports[`LiveEdit renders correctly 1`] = `
           className="react-live c0"
         >
           <ForwardRef>
-            <BaseStyledComponent
+            <StyledComponent
               forwardedClass={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
@@ -226,7 +226,7 @@ exports[`LiveEdit renders correctly 1`] = `
                 className="c1"
               >
                 <ForwardRef>
-                  <BaseStyledComponent
+                  <StyledComponent
                     forwardedClass={
                       Object {
                         "$$typeof": Symbol(react.forward_ref),
@@ -316,10 +316,10 @@ exports[`LiveEdit renders correctly 1`] = `
                         />
                       </Editor>
                     </LiveEditor>
-                  </BaseStyledComponent>
+                  </StyledComponent>
                 </ForwardRef>
                 <ForwardRef>
-                  <BaseStyledComponent
+                  <StyledComponent
                     forwardedClass={
                       Object {
                         "$$typeof": Symbol(react.forward_ref),
@@ -382,13 +382,13 @@ exports[`LiveEdit renders correctly 1`] = `
                         className="react-live-preview c3"
                       />
                     </LivePreview>
-                  </BaseStyledComponent>
+                  </StyledComponent>
                 </ForwardRef>
               </div>
-            </BaseStyledComponent>
+            </StyledComponent>
           </ForwardRef>
           <ForwardRef>
-            <BaseStyledComponent
+            <StyledComponent
               forwardedClass={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
@@ -438,11 +438,11 @@ exports[`LiveEdit renders correctly 1`] = `
      ^
                 </div>
               </LiveError>
-            </BaseStyledComponent>
+            </StyledComponent>
           </ForwardRef>
         </div>
       </LiveProvider>
-    </BaseStyledComponent>
+    </StyledComponent>
   </ForwardRef>
 </LiveEdit>
 `;
@@ -460,7 +460,7 @@ exports[`StyledError renders correctly 1`] = `
 }
 
 <ForwardRef>
-  <BaseStyledComponent
+  <StyledComponent
     forwardedClass={
       Object {
         "$$typeof": Symbol(react.forward_ref),
@@ -502,6 +502,6 @@ exports[`StyledError renders correctly 1`] = `
     <LiveError
       className="c0"
     />
-  </BaseStyledComponent>
+  </StyledComponent>
 </ForwardRef>
 `;
