@@ -423,7 +423,7 @@ exports[`DocsLayout renders correctly 1`] = `
   title=""
 >
   <ForwardRef>
-    <BaseStyledComponent
+    <StyledComponent
       forwardedClass={
         Object {
           "$$typeof": Symbol(react.forward_ref),
@@ -491,7 +491,7 @@ exports[`DocsLayout renders correctly 1`] = `
               onSideToggle={[Function]}
             >
               <ForwardRef>
-                <BaseStyledComponent
+                <StyledComponent
                   forwardedClass={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -541,7 +541,7 @@ exports[`DocsLayout renders correctly 1`] = `
                     className="c1"
                   >
                     <ForwardRef>
-                      <BaseStyledComponent
+                      <StyledComponent
                         forwardedClass={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
@@ -589,7 +589,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           className="c2"
                         >
                           <ForwardRef>
-                            <BaseStyledComponent
+                            <StyledComponent
                               forwardedClass={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
@@ -620,7 +620,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 className="c3"
                               >
                                 <ForwardRef>
-                                  <BaseStyledComponent
+                                  <StyledComponent
                                     forwardedClass={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
@@ -667,7 +667,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           onClick={[Function]}
                                         >
                                           <ForwardRef>
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -704,16 +704,16 @@ exports[`DocsLayout renders correctly 1`] = `
                                               <div
                                                 className="c5"
                                               />
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                         </a>
                                       </Link>
                                     </Link>
-                                  </BaseStyledComponent>
+                                  </StyledComponent>
                                 </ForwardRef>
                                 <NavLinks>
                                   <ForwardRef>
-                                    <BaseStyledComponent
+                                    <StyledComponent
                                       forwardedClass={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
@@ -746,7 +746,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         <ForwardRef
                                           href="/docs"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -813,10 +813,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef>
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -857,12 +857,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                             <span
                                               className="c8"
                                             />
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef
                                           href="/ecosystem"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -929,10 +929,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef>
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -973,12 +973,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                             <span
                                               className="c8"
                                             />
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef
                                           href="/releases"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -1045,17 +1045,17 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                       </nav>
-                                    </BaseStyledComponent>
+                                    </StyledComponent>
                                   </ForwardRef>
                                 </NavLinks>
                               </div>
-                            </BaseStyledComponent>
+                            </StyledComponent>
                           </ForwardRef>
                           <ForwardRef>
-                            <BaseStyledComponent
+                            <StyledComponent
                               forwardedClass={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
@@ -1087,7 +1087,7 @@ exports[`DocsLayout renders correctly 1`] = `
                               >
                                 <Social>
                                   <ForwardRef>
-                                    <BaseStyledComponent
+                                    <StyledComponent
                                       forwardedClass={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
@@ -1120,7 +1120,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         <ForwardRef
                                           href="https://spectrum.chat/styled-components/"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -1196,7 +1196,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                       viewBox="0 0 15 15"
                                                       width="14"
                                                     >
-                                                      <BaseStyledComponent
+                                                      <StyledComponent
                                                         forwardedClass={
                                                           Object {
                                                             "$$typeof": Symbol(react.forward_ref),
@@ -1243,18 +1243,18 @@ exports[`DocsLayout renders correctly 1`] = `
                                                             fill="#FFF"
                                                           />
                                                         </svg>
-                                                      </BaseStyledComponent>
+                                                      </StyledComponent>
                                                     </ForwardRef>
                                                   </Spectrum>
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef
                                           href="https://github.com/styled-components"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -1330,7 +1330,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                       viewBox="0 0 17 17"
                                                       width="17"
                                                     >
-                                                      <BaseStyledComponent
+                                                      <StyledComponent
                                                         forwardedClass={
                                                           Object {
                                                             "$$typeof": Symbol(react.forward_ref),
@@ -1377,18 +1377,18 @@ exports[`DocsLayout renders correctly 1`] = `
                                                             fill="#FFF"
                                                           />
                                                         </svg>
-                                                      </BaseStyledComponent>
+                                                      </StyledComponent>
                                                     </ForwardRef>
                                                   </Github>
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef
                                           href="https://medium.com/styled-components"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -1464,7 +1464,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                       viewBox="0 0 17 14"
                                                       width="17"
                                                     >
-                                                      <BaseStyledComponent
+                                                      <StyledComponent
                                                         forwardedClass={
                                                           Object {
                                                             "$$typeof": Symbol(react.forward_ref),
@@ -1511,23 +1511,23 @@ exports[`DocsLayout renders correctly 1`] = `
                                                             fill="#fff"
                                                           />
                                                         </svg>
-                                                      </BaseStyledComponent>
+                                                      </StyledComponent>
                                                     </ForwardRef>
                                                   </Medium>
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                       </nav>
-                                    </BaseStyledComponent>
+                                    </StyledComponent>
                                   </ForwardRef>
                                 </Social>
                               </div>
-                            </BaseStyledComponent>
+                            </StyledComponent>
                           </ForwardRef>
                         </div>
-                      </BaseStyledComponent>
+                      </StyledComponent>
                     </ForwardRef>
                     <MobileNavbar
                       isMobileNavFolded={true}
@@ -1536,7 +1536,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       onSideToggle={[Function]}
                     >
                       <ForwardRef>
-                        <BaseStyledComponent
+                        <StyledComponent
                           forwardedClass={
                             Object {
                               "$$typeof": Symbol(react.forward_ref),
@@ -1587,7 +1587,7 @@ exports[`DocsLayout renders correctly 1`] = `
                               active={false}
                               onClick={[Function]}
                             >
-                              <BaseStyledComponent
+                              <StyledComponent
                                 active={false}
                                 forwardedClass={
                                   Object {
@@ -1653,7 +1653,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       xmlns="http://www.w3.org/2000/svg"
                                       xmlnsXlink="http://www.w3.org/1999/xlink"
                                     >
-                                      <BaseStyledComponent
+                                      <StyledComponent
                                         forwardedClass={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
@@ -1710,14 +1710,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                             />
                                           </defs>
                                         </svg>
-                                      </BaseStyledComponent>
+                                      </StyledComponent>
                                     </ForwardRef>
                                   </FoldIcon>
                                 </button>
-                              </BaseStyledComponent>
+                              </StyledComponent>
                             </ForwardRef>
                             <ForwardRef>
-                              <BaseStyledComponent
+                              <StyledComponent
                                 forwardedClass={
                                   Object {
                                     "$$typeof": Symbol(react.forward_ref),
@@ -1767,7 +1767,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <ForwardRef
                                         compact={true}
                                       >
-                                        <BaseStyledComponent
+                                        <StyledComponent
                                           compact={true}
                                           forwardedClass={
                                             Object {
@@ -1805,18 +1805,18 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <div
                                             className="c19"
                                           />
-                                        </BaseStyledComponent>
+                                        </StyledComponent>
                                       </ForwardRef>
                                     </a>
                                   </Link>
                                 </Link>
-                              </BaseStyledComponent>
+                              </StyledComponent>
                             </ForwardRef>
                             <ForwardRef
                               active={false}
                               onClick={[Function]}
                             >
-                              <BaseStyledComponent
+                              <StyledComponent
                                 active={false}
                                 forwardedClass={
                                   Object {
@@ -1878,7 +1878,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                   <ForwardRef
                                     shouldRotate={false}
                                   >
-                                    <BaseStyledComponent
+                                    <StyledComponent
                                       forwardedClass={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
@@ -1918,7 +1918,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             xmlns="http://www.w3.org/2000/svg"
                                             xmlnsXlink="http://www.w3.org/1999/xlink"
                                           >
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -1975,19 +1975,19 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   />
                                                 </defs>
                                               </svg>
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                         </ArrowIcon>
                                       </div>
-                                    </BaseStyledComponent>
+                                    </StyledComponent>
                                   </ForwardRef>
                                 </button>
-                              </BaseStyledComponent>
+                              </StyledComponent>
                             </ForwardRef>
                             <ForwardRef
                               isOpen={false}
                             >
-                              <BaseStyledComponent
+                              <StyledComponent
                                 forwardedClass={
                                   Object {
                                     "$$typeof": Symbol(react.forward_ref),
@@ -2044,7 +2044,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 >
                                   <NavLinks>
                                     <ForwardRef>
-                                      <BaseStyledComponent
+                                      <StyledComponent
                                         forwardedClass={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
@@ -2077,7 +2077,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <ForwardRef
                                             href="/docs"
                                           >
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -2144,10 +2144,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   </a>
                                                 </Link>
                                               </Link>
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                           <ForwardRef>
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -2188,12 +2188,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                               <span
                                                 className="c8"
                                               />
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                           <ForwardRef
                                             href="/ecosystem"
                                           >
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -2260,10 +2260,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   </a>
                                                 </Link>
                                               </Link>
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                           <ForwardRef>
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -2304,12 +2304,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                               <span
                                                 className="c8"
                                               />
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                           <ForwardRef
                                             href="/releases"
                                           >
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -2376,14 +2376,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   </a>
                                                 </Link>
                                               </Link>
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                         </nav>
-                                      </BaseStyledComponent>
+                                      </StyledComponent>
                                     </ForwardRef>
                                   </NavLinks>
                                   <ForwardRef>
-                                    <BaseStyledComponent
+                                    <StyledComponent
                                       forwardedClass={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
@@ -2424,10 +2424,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <span
                                         className="c8"
                                       />
-                                    </BaseStyledComponent>
+                                    </StyledComponent>
                                   </ForwardRef>
                                   <ForwardRef>
-                                    <BaseStyledComponent
+                                    <StyledComponent
                                       forwardedClass={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
@@ -2459,7 +2459,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       >
                                         <Social>
                                           <ForwardRef>
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -2492,7 +2492,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 <ForwardRef
                                                   href="https://spectrum.chat/styled-components/"
                                                 >
-                                                  <BaseStyledComponent
+                                                  <StyledComponent
                                                     forwardedClass={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
@@ -2568,7 +2568,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                               viewBox="0 0 15 15"
                                                               width="14"
                                                             >
-                                                              <BaseStyledComponent
+                                                              <StyledComponent
                                                                 forwardedClass={
                                                                   Object {
                                                                     "$$typeof": Symbol(react.forward_ref),
@@ -2615,18 +2615,18 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                     fill="#FFF"
                                                                   />
                                                                 </svg>
-                                                              </BaseStyledComponent>
+                                                              </StyledComponent>
                                                             </ForwardRef>
                                                           </Spectrum>
                                                         </a>
                                                       </Link>
                                                     </Link>
-                                                  </BaseStyledComponent>
+                                                  </StyledComponent>
                                                 </ForwardRef>
                                                 <ForwardRef
                                                   href="https://github.com/styled-components"
                                                 >
-                                                  <BaseStyledComponent
+                                                  <StyledComponent
                                                     forwardedClass={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
@@ -2702,7 +2702,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                               viewBox="0 0 17 17"
                                                               width="17"
                                                             >
-                                                              <BaseStyledComponent
+                                                              <StyledComponent
                                                                 forwardedClass={
                                                                   Object {
                                                                     "$$typeof": Symbol(react.forward_ref),
@@ -2749,18 +2749,18 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                     fill="#FFF"
                                                                   />
                                                                 </svg>
-                                                              </BaseStyledComponent>
+                                                              </StyledComponent>
                                                             </ForwardRef>
                                                           </Github>
                                                         </a>
                                                       </Link>
                                                     </Link>
-                                                  </BaseStyledComponent>
+                                                  </StyledComponent>
                                                 </ForwardRef>
                                                 <ForwardRef
                                                   href="https://medium.com/styled-components"
                                                 >
-                                                  <BaseStyledComponent
+                                                  <StyledComponent
                                                     forwardedClass={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
@@ -2836,7 +2836,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                               viewBox="0 0 17 14"
                                                               width="17"
                                                             >
-                                                              <BaseStyledComponent
+                                                              <StyledComponent
                                                                 forwardedClass={
                                                                   Object {
                                                                     "$$typeof": Symbol(react.forward_ref),
@@ -2883,30 +2883,30 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                     fill="#fff"
                                                                   />
                                                                 </svg>
-                                                              </BaseStyledComponent>
+                                                              </StyledComponent>
                                                             </ForwardRef>
                                                           </Medium>
                                                         </a>
                                                       </Link>
                                                     </Link>
-                                                  </BaseStyledComponent>
+                                                  </StyledComponent>
                                                 </ForwardRef>
                                               </nav>
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                         </Social>
                                       </div>
-                                    </BaseStyledComponent>
+                                    </StyledComponent>
                                   </ForwardRef>
                                 </div>
-                              </BaseStyledComponent>
+                              </StyledComponent>
                             </ForwardRef>
                           </div>
-                        </BaseStyledComponent>
+                        </StyledComponent>
                       </ForwardRef>
                     </MobileNavbar>
                   </nav>
-                </BaseStyledComponent>
+                </StyledComponent>
               </ForwardRef>
             </Navbar>
             <CaptureScroll
@@ -2915,7 +2915,7 @@ exports[`DocsLayout renders correctly 1`] = `
               <ForwardRef
                 isFolded={true}
               >
-                <BaseStyledComponent
+                <StyledComponent
                   forwardedClass={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -2990,7 +2990,7 @@ exports[`DocsLayout renders correctly 1`] = `
                         onRouteChange={[Function]}
                       >
                         <ForwardRef>
-                          <BaseStyledComponent
+                          <StyledComponent
                             forwardedClass={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
@@ -3029,7 +3029,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <BaseStyledComponent
+                                  <StyledComponent
                                     forwardedClass={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
@@ -3064,7 +3064,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <BaseStyledComponent
+                                        <StyledComponent
                                           forwardedClass={
                                             Object {
                                               "$$typeof": Symbol(react.forward_ref),
@@ -3110,7 +3110,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   href="/docs/basics"
                                                   onClick={[Function]}
                                                 >
-                                                  <BaseStyledComponent
+                                                  <StyledComponent
                                                     forwardedClass={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
@@ -3171,15 +3171,15 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     >
                                                       Basics
                                                     </a>
-                                                  </BaseStyledComponent>
+                                                  </StyledComponent>
                                                 </ForwardRef>
                                               </Link>
                                             </Link>
                                           </h4>
-                                        </BaseStyledComponent>
+                                        </StyledComponent>
                                       </ForwardRef>
                                     </div>
-                                  </BaseStyledComponent>
+                                  </StyledComponent>
                                 </ForwardRef>
                               </Folder>
                               <Folder
@@ -3188,7 +3188,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <BaseStyledComponent
+                                  <StyledComponent
                                     forwardedClass={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
@@ -3223,7 +3223,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <BaseStyledComponent
+                                        <StyledComponent
                                           forwardedClass={
                                             Object {
                                               "$$typeof": Symbol(react.forward_ref),
@@ -3269,7 +3269,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   href="/docs/advanced"
                                                   onClick={[Function]}
                                                 >
-                                                  <BaseStyledComponent
+                                                  <StyledComponent
                                                     forwardedClass={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
@@ -3330,15 +3330,15 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     >
                                                       Advanced
                                                     </a>
-                                                  </BaseStyledComponent>
+                                                  </StyledComponent>
                                                 </ForwardRef>
                                               </Link>
                                             </Link>
                                           </h4>
-                                        </BaseStyledComponent>
+                                        </StyledComponent>
                                       </ForwardRef>
                                     </div>
-                                  </BaseStyledComponent>
+                                  </StyledComponent>
                                 </ForwardRef>
                               </Folder>
                               <Folder
@@ -3347,7 +3347,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <BaseStyledComponent
+                                  <StyledComponent
                                     forwardedClass={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
@@ -3382,7 +3382,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <BaseStyledComponent
+                                        <StyledComponent
                                           forwardedClass={
                                             Object {
                                               "$$typeof": Symbol(react.forward_ref),
@@ -3428,7 +3428,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   href="/docs/api"
                                                   onClick={[Function]}
                                                 >
-                                                  <BaseStyledComponent
+                                                  <StyledComponent
                                                     forwardedClass={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
@@ -3489,15 +3489,15 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     >
                                                       API Reference
                                                     </a>
-                                                  </BaseStyledComponent>
+                                                  </StyledComponent>
                                                 </ForwardRef>
                                               </Link>
                                             </Link>
                                           </h4>
-                                        </BaseStyledComponent>
+                                        </StyledComponent>
                                       </ForwardRef>
                                     </div>
-                                  </BaseStyledComponent>
+                                  </StyledComponent>
                                 </ForwardRef>
                               </Folder>
                               <Folder
@@ -3506,7 +3506,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <BaseStyledComponent
+                                  <StyledComponent
                                     forwardedClass={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
@@ -3541,7 +3541,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <BaseStyledComponent
+                                        <StyledComponent
                                           forwardedClass={
                                             Object {
                                               "$$typeof": Symbol(react.forward_ref),
@@ -3587,7 +3587,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   href="/docs/tooling"
                                                   onClick={[Function]}
                                                 >
-                                                  <BaseStyledComponent
+                                                  <StyledComponent
                                                     forwardedClass={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
@@ -3648,15 +3648,15 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     >
                                                       Tooling
                                                     </a>
-                                                  </BaseStyledComponent>
+                                                  </StyledComponent>
                                                 </ForwardRef>
                                               </Link>
                                             </Link>
                                           </h4>
-                                        </BaseStyledComponent>
+                                        </StyledComponent>
                                       </ForwardRef>
                                     </div>
-                                  </BaseStyledComponent>
+                                  </StyledComponent>
                                 </ForwardRef>
                               </Folder>
                               <Folder
@@ -3665,7 +3665,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <BaseStyledComponent
+                                  <StyledComponent
                                     forwardedClass={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
@@ -3700,7 +3700,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <BaseStyledComponent
+                                        <StyledComponent
                                           forwardedClass={
                                             Object {
                                               "$$typeof": Symbol(react.forward_ref),
@@ -3746,7 +3746,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   href="/docs/faqs"
                                                   onClick={[Function]}
                                                 >
-                                                  <BaseStyledComponent
+                                                  <StyledComponent
                                                     forwardedClass={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
@@ -3807,24 +3807,24 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     >
                                                       FAQs
                                                     </a>
-                                                  </BaseStyledComponent>
+                                                  </StyledComponent>
                                                 </ForwardRef>
                                               </Link>
                                             </Link>
                                           </h4>
-                                        </BaseStyledComponent>
+                                        </StyledComponent>
                                       </ForwardRef>
                                     </div>
-                                  </BaseStyledComponent>
+                                  </StyledComponent>
                                 </ForwardRef>
                               </Folder>
                             </div>
-                          </BaseStyledComponent>
+                          </StyledComponent>
                         </ForwardRef>
                       </Component>
                     </withRouter(Unknown)>
                   </nav>
-                </BaseStyledComponent>
+                </StyledComponent>
               </ForwardRef>
             </CaptureScroll>
           </div>
@@ -3833,7 +3833,7 @@ exports[`DocsLayout renders correctly 1`] = `
           data-e2e-id="content"
           moveRight={false}
         >
-          <BaseStyledComponent
+          <StyledComponent
             data-e2e-id="content"
             forwardedClass={
               Object {
@@ -3911,7 +3911,7 @@ exports[`DocsLayout renders correctly 1`] = `
               data-e2e-id="content"
             >
               <ForwardRef>
-                <BaseStyledComponent
+                <StyledComponent
                   forwardedClass={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -3949,13 +3949,13 @@ exports[`DocsLayout renders correctly 1`] = `
                   <h1
                     className="c29"
                   />
-                </BaseStyledComponent>
+                </StyledComponent>
               </ForwardRef>
             </div>
-          </BaseStyledComponent>
+          </StyledComponent>
         </ForwardRef>
       </div>
-    </BaseStyledComponent>
+    </StyledComponent>
   </ForwardRef>
 </DocsLayout>
 `;

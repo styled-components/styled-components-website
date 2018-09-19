@@ -2,14 +2,15 @@ language: node_js
 dist: trusty
 sudo: required
 branches:
-  only: master
+  only:
+    - master
 cache:
   yarn: true
   bundler: true
   directories:
     - node_modules
 node_js:
-  - 8
+  - '8'
 jobs:
   include:
     - stage: test
@@ -18,6 +19,8 @@ jobs:
         - yarn --version
         - yarn test
         - yarn lint
+        - yarn build
+        - yarn size
     - stage: deploy
       if: fork = false AND branch = master AND type = push
       script:

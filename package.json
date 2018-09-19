@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dev": "node server.js",
+    "prebuild": "rimraf .next",
     "build": "NODE_ENV=production next build",
     "deploy": "now -t $NOW_TOKEN -T styledcomponents && now alias -t $NOW_TOKEN -T styledcomponents",
     "lint:js": "eslint .",
@@ -16,7 +17,8 @@
     "start": "NODE_ENV=production node server.js",
     "test": "jest -c .jest.config.js",
     "precommit": "lint-staged",
-    "prettier": "prettier"
+    "prettier": "prettier",
+    "size": "bundlesize"
   },
   "dependencies": {
     "@mdx-js/mdx": "^0.15.0",
@@ -41,7 +43,7 @@
     "react-dom": "^16.4.2",
     "react-live": "^1.11.0",
     "react-octicons-svg": "^1.1.13",
-    "styled-components": "^4.0.0-beta.2",
+    "styled-components": "beta",
     "styled-theming": "^2.2.0",
     "webpack-bundle-analyzer": "^2.13.1"
   },
@@ -51,6 +53,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.4.2",
+    "bundlesize": "^0.17.0",
     "enzyme": "^3.5.1",
     "enzyme-adapter-react-16": "^1.4.0",
     "enzyme-to-json": "^3.3.4",
@@ -67,6 +70,7 @@
     "prettier": "prettier/prettier",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.4.2",
+    "rimraf": "^2.6.2",
     "stylelint": "^8.0.0",
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-standard": "^17.0.0",
@@ -89,5 +93,15 @@
       "prettier --parser mdx --write",
       "git add"
     ]
-  }
+  },
+  "bundlesize": [
+    {
+      "path": ".next/bundles/pages/**/*.js",
+      "maxSize": "50kB"
+    },
+    {
+      "path": ".next/static/**/*.js",
+      "maxSize": "200kB"
+    }
+  ]
 }
