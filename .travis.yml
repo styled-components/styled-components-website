@@ -19,6 +19,7 @@ jobs:
         - yarn --version
         - yarn test
         - yarn lint
+        - yarn build
         - yarn size
     - stage: deploy
       if: fork = false AND branch = master AND type = push
