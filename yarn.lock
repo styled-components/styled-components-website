@@ -7968,9 +7968,9 @@ style-search@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
 
-styled-components@^4.0.0-beta.2:
-  version "4.0.0-beta.2"
-  resolved "https://registry.npmjs.org/styled-components/-/styled-components-4.0.0-beta.2.tgz#fe1077df285bf0fb18b294cd2c47ff1379cb9375"
+styled-components@beta:
+  version "4.0.0-beta.7"
+  resolved "https://registry.npmjs.org/styled-components/-/styled-components-4.0.0-beta.7.tgz#8eae21c2d546b41d863fc915973ef6243d33e485"
   dependencies:
     "@emotion/is-prop-valid" "^0.6.5"
     css-to-react-native "^2.0.3"
