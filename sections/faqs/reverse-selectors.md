@@ -51,21 +51,21 @@ consider both sets of rules to understand why Icon behaves as it does.
 
 ### Caveat
 
-This behaviour is only supported within the context of *Styled* Components:
+This behaviour is only supported within the context of _Styled_ Components:
 attempting to mount `B` in the following example will fail because component
 `A` is an instance of React.Component not a Styled Component.
 
 ```jsx
 class A extends React.Component {
   render() {
-    return <div />;
+    return <div />
   }
 }
 
 const B = styled.div`
   ${A} {
   }
-`;
+`
 ```
 
 The error thrown - `Cannot call a class as a function` - occurs because the

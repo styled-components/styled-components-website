@@ -10,6 +10,5 @@ const MyStyledComponent = styled(InlineStyledComponent)`
     font-size: 12px !important;
     color: blue !important;
   }
-`;
+`
 ```
-

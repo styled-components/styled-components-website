@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   ${mobile(css`
     padding-left: 0;
-  `)}
+  `)};
 `
 
 export const Content = styled.div`
@@ -23,13 +23,14 @@ export const Content = styled.div`
 
   ${mobile(css`
     padding: ${rem(70)} ${rem(20)} ${rem(30)} ${rem(20)};
-    transform: translateX(${p => p.moveRight ? rem(sidebarWidth) : 0});
-  `)}
-
-  ${p => p.hero && css`
-    font-family: ${headerFont};
-    width: 75rem;
-  `}
+    transform: translateX(${p => (p.moveRight ? rem(sidebarWidth) : 0)});
+  `)};
+  ${p =>
+    p.hero &&
+    css`
+      font-family: ${headerFont};
+      width: 75rem;
+    `};
 `
 
 export const Title = styled.h1`

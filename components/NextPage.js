@@ -9,7 +9,7 @@ import { headerFont } from '../utils/fonts'
 
 const Wrapper = styled(Link).attrs({
   unstyled: true,
-  prefetch: true
+  prefetch: true,
 })`
   display: flex;
   flex-direction: row;
@@ -25,7 +25,7 @@ const Wrapper = styled(Link).attrs({
     text-align: left;
     justify-content: center;
     padding: ${rem(30)} ${rem(20)};
-  `)}
+  `)};
 `
 
 const Text = styled.h3`
@@ -42,7 +42,7 @@ const PageName = styled.h2`
 
 const Icon = styled(ChevronRightIcon).attrs({
   width: null,
-  height: null
+  height: null,
 })`
   color: ${lightGrey};
   width: ${rem(30)};

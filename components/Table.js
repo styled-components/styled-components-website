@@ -40,19 +40,15 @@ const Table = ({ head, children }) => (
   <TableWrapper>
     <TableHead>
       <tr>
-        {
-          head.map((text, i) => (
-            <TableHeadColumn key={i} title={text}>
-              {text}
-            </TableHeadColumn>
-          ))
-        }
+        {head.map((text, i) => (
+          <TableHeadColumn key={i} title={text}>
+            {text}
+          </TableHeadColumn>
+        ))}
       </tr>
     </TableHead>
 
-    <tbody>
-      {children}
-    </tbody>
+    <tbody>{children}</tbody>
   </TableWrapper>
 )
 

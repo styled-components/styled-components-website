@@ -54,6 +54,20 @@ option in your config:
   }
 ```
 
+Another approach is to use the [rollup-plugin-peer-deps-external](https://www.npmjs.com/package/rollup-plugin-peer-deps-external) plugin which will automatically add the `peerDependencies` in the `external` option array for you.
+
+```diff
++ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+
+  export default {
+    entry: "my-awesome-library.js",
++   plugins: [
++    // Preferably set as first plugin.
++    peerDepsExternal(),
++   ]
+  }
+```
+
 #### With Webpack
 
 If you are using [Webpack](https://webpack.js.org), you should provide an [`externals`](https://webpack.js.org/configuration/externals/)

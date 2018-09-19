@@ -5,8 +5,7 @@ import { navbarHeight } from '../../utils/sizes'
 import { resetInput } from '../../utils/form'
 
 const NavButton = styled.button`
-  ${resetInput}
-
+  ${resetInput};
   flex: 0 0 auto;
   min-width: ${rem(navbarHeight)};
   height: ${rem(navbarHeight)};
@@ -14,10 +13,11 @@ const NavButton = styled.button`
   vertical-align: middle;
   cursor: pointer;
 
-  ${p => p.active && css`
-    background: rgba(0, 0, 0, 0.07);
-  `}
-
+  ${p =>
+    p.active &&
+    css`
+      background: rgba(0, 0, 0, 0.07);
+    `};
   &:focus {
     border: ${rem(2)} solid currentColor;
     border-radius: ${rem(2)};

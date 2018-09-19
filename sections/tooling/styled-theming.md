@@ -1,4 +1,4 @@
-import StyledThemingExample from './styled-theming-example';
+import StyledThemingExample from './styled-theming-example'
 
 ## Styled Theming
 
@@ -20,27 +20,25 @@ npm install --save styled-theming
 ### Example
 
 ```jsx
-import React from "react";
-import styled, { ThemeProvider } from "styled-components";
-import theme from "styled-theming";
+import React from 'react'
+import styled, { ThemeProvider } from 'styled-components'
+import theme from 'styled-theming'
 
-const boxBackgroundColor = theme("mode", {
-  light: "#fff",
-  dark: "#000",
-});
+const boxBackgroundColor = theme('mode', {
+  light: '#fff',
+  dark: '#000',
+})
 
 const Box = styled.div`
   background-color: ${boxBackgroundColor};
-`;
+`
 
 export default function App() {
   return (
-    <ThemeProvider theme={{ mode: "light" }}>
-      <Box>
-        Hello World
-      </Box>
+    <ThemeProvider theme={{ mode: 'light' }}>
+      <Box>Hello World</Box>
     </ThemeProvider>
-  );
+  )
 }
 ```
 
@@ -54,7 +52,7 @@ See [styled-components docs](https://www.styled-components.com/docs/advanced#the
 styled-theming.
 
 ```js
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from 'styled-components'
 ```
 
 `<ThemeProvider>` accepts a single prop `theme` which you should pass an
@@ -84,7 +82,7 @@ Most of your theming will be done with this function.
 `name` should match one of the keys in your `<ThemeProvider>` theme.
 
 ```jsx
-<ThemeProvider theme={{ whatever: "..." }}/>
+;<ThemeProvider theme={{ whatever: '...' }} />
 ```
 
 ```js
@@ -122,29 +120,28 @@ theme("font", {
 These values can also be functions that return CSS values.
 
 ```jsx
-theme("mode", {
+theme('mode', {
   light: props => props.theme.userProfileAccentColor.light,
   dark: props => props.theme.userProfileAccentColor.dark,
-});
+})
 ```
 
 `theme` will create a function that you can use as a value in
 styled-component's `styled` function.
 
 ```jsx
-import styled from "styled-components";
-import theme from "styled-theming";
+import styled from 'styled-components'
+import theme from 'styled-theming'
 
-const backgroundColor = theme("mode", {
-  light: "#fff",
-  dark: "#000",
-});
+const backgroundColor = theme('mode', {
+  light: '#fff',
+  dark: '#000',
+})
 
 const Box = styled.div`
-  background-color: ${backgroundColor}
-`;
+  background-color: ${backgroundColor};
+`
 ```
-
 
 #### `theme.variants(name, prop, themes)`
 
@@ -182,4 +179,3 @@ Button.defaultProps = {
 <Button variant="success"/>
 <Button variant="warning"/>
 ```
-

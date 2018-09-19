@@ -86,4 +86,3 @@ to make Webpack always resolve `styled-components` in one place:
 +   }
   }
 ```
-

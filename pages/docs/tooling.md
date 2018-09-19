@@ -8,7 +8,10 @@ import StyledTheming from '../../sections/tooling/styled-theming.md'
 import SyntaxHighlighting from '../../sections/tooling/syntax-highlighting.md'
 
 export default ({ children }) => (
-  <DocsLayout title="Tooling" description="Additional Tools for styled-components, babel plugin, testing">
+  <DocsLayout
+    title="Tooling"
+    description="Additional Tools for styled-components, babel plugin, testing"
+  >
     {children}
   </DocsLayout>
 )
@@ -20,4 +23,3 @@ export default ({ children }) => (
 <SyntaxHighlighting />
 
 <NextPage href="/docs/faqs" title="FAQs" />
-

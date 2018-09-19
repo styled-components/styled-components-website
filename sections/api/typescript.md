@@ -50,15 +50,16 @@ export default styled;
 ```
 
 ### Styling components
+
 Finally, instead of importing the styled functions from the styled-components module,
 we import it from our above, custom module.
 
 ```jsx
-import styled from "app/styled-components"
+import styled from 'app/styled-components'
 
 // theme is now fully typed
 const Title = styled.h1`
-  color: ${props => props.theme.primaryColor}
+  color: ${props => props.theme.primaryColor};
 `
 ```
 
@@ -77,11 +78,15 @@ You will need to define both the custom props and the type of tag which will be 
 the type of tag is not required.
 
 ```jsx
-import styled from "app/styled-components"
-import Header from "./Header"
+import styled from 'app/styled-components'
+import Header from './Header'
 
-const Title = styled<{ isActive: boolean }>(Header)`
-  color: ${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
+const Title =
+  styled <
+  { isActive: boolean } >
+  Header`
+  color: ${props =>
+    props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
 `
 ```
 
@@ -89,11 +94,15 @@ If the **isActive** property should not be passed into the **Header** component 
 following convention:
 
 ```jsx
-import styled from "app/styled-components"
-import Header, { Props as HeaderProps } from "./Header"
+import styled from 'app/styled-components'
+import Header, { Props as HeaderProps } from './Header'
 
-const Title = styled<{ isActive: boolean }>(({ isActive, ...rest}) => <Header {...rest} />)`
-  color: ${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
+const Title =
+  styled <
+  { isActive: boolean } >
+  (({ isActive, ...rest }) => <Header {...rest} />)`
+  color: ${props =>
+    props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
 `
 ```
 
@@ -101,18 +110,21 @@ But it might be the opposite. Maybe your styled component needs to proxy props r
 you follow this convention:
 
 ```jsx
-import styled from "app/styled-components"
-import Header, { Props as HeaderProps } from "./Header"
+import styled from 'app/styled-components'
+import Header, { Props as HeaderProps } from './Header'
 
-const Title = styled<{ isActive: boolean } & HeaderProps>(({ isActive, ...rest}) => <Header {...rest} />)`
-  color: ${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
-`
+const Title =
+  (styled < { isActive: boolean }) &
+  (HeaderProps >
+    (({ isActive, ...rest }) => <Header {...rest} />)`
+  color: ${props =>
+    props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
+`)
 ```
 
 This is the most complex example where we have specific properties for the styling of the component and pass
 the rest of the required properties by the **Header** through. That means when you use **Title** it will have
 the combined typing of both the styled requirements and the actual component requirements.
-
 
 ### Caveat with `className`
 
@@ -127,19 +139,15 @@ interface LogoProps {
 
 class Logo extends React.Component<LogoProps, {}> {
   render() {
-    return (
-      <div className={this.props.className}>
-        Logo
-      </div>
-    );
+    return <div className={this.props.className}>Logo</div>
   }
 }
 
 const LogoStyled = styled(Logo)`
-  font-family: "Helvetica";
+  font-family: 'Helvetica';
   font-weight: bold;
   font-size: 1.8rem;
-`;
+`
 ```
 
 ### Caveat with Stateless Components
@@ -156,12 +164,10 @@ interface BoxProps {
 }
 
 const Box: React.SFC<BoxProps> = props => (
-  <div className={props.className}>
-    {props.children}
-  </div>
-);
+  <div className={props.className}>{props.children}</div>
+)
 
 const StyledBox = styled(Box)`
   padding: ${props => props.theme.lateralPadding};
-`;
+`
 ```

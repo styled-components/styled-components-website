@@ -1,12 +1,429 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DocsLayout renders correctly 1`] = `
+.c27 {
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.1111111111111111rem 0.4444444444444444rem;
+  margin: -0.1111111111111111rem -0.4444444444444444rem;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 0.2777777777777778rem;
+  height: 0.2777777777777778rem;
+  margin: 0 0.8333333333333334rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c7 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: 2.7777777777777777rem;
+  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
+  -webkit-transition: opacity 0.2s,transform 0.2s;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+  -webkit-letter-spacing: 0.022222222222222223rem;
+  -moz-letter-spacing: 0.022222222222222223rem;
+  -ms-letter-spacing: 0.022222222222222223rem;
+  letter-spacing: 0.022222222222222223rem;
+  color: currentColor;
+}
+
+.c7:hover,
+.c7:focus {
+  opacity: 0.8;
+}
+
+.c7:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c11 {
+  display: inline-block;
+  margin-right: 1.1111111111111112rem;
+  line-height: 2.7777777777777777rem;
+  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
+  -webkit-transition: opacity 0.2s,transform 0.2s;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+}
+
+.c11:last-child {
+  margin-right: 0;
+}
+
+.c11:hover,
+.c11:focus {
+  opacity: 0.8;
+}
+
+.c11:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c11 svg path {
+  fill: currentColor;
+}
+
+.c12 {
+  width: 0.7777777777777778rem;
+  height: 0.7777777777777778rem;
+}
+
+.c13 {
+  width: 0.9444444444444444rem;
+  height: 0.9444444444444444rem;
+}
+
+.c14 {
+  width: 0.9444444444444444rem;
+  height: 0.7777777777777778rem;
+}
+
+.c5 {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: contain;
+  background-image: url(/static/nav-logo.png);
+  width: 9.11111111111111rem;
+  height: 2.2222222222222223rem;
+}
+
+.c19 {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: contain;
+  background-image: url(/static/icon.png);
+  width: 5.555555555555555rem;
+  height: 1.6666666666666667rem;
+}
+
+.c17 svg {
+  display: inline-block;
+}
+
+.c17 svg path {
+  fill: currentColor;
+}
+
+.c16 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  min-width: 2.7777777777777777rem;
+  height: 2.7777777777777777rem;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.c16:focus {
+  border: 0.1111111111111111rem solid currentColor;
+  border-radius: 0.1111111111111111rem;
+}
+
+.c15 {
+  display: none;
+}
+
+.c21 {
+  position: absolute;
+  top: 2.7777777777777777rem;
+  left: 0;
+  right: 0;
+  height: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 1.1111111111111112rem;
+  -webkit-transition: height 0.1s;
+  transition: height 0.1s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background: #efefef;
+  color: #868686;
+}
+
+.c18 {
+  display: inline-block;
+  vertical-align: center;
+}
+
+.c20 {
+  -webkit-transition: -webkit-transform 0.1s;
+  -webkit-transition: transform 0.1s;
+  transition: transform 0.1s;
+}
+
+.c22 {
+  padding-right: 1.1111111111111112rem;
+}
+
+.c1 {
+  position: fixed;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 3;
+  width: 100%;
+  height: 2.7777777777777777rem;
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 0.8333333333333334rem;
+  font-weight: 500;
+  background: rgb(219,112,147);
+  -webkit-transition: background 300ms ease-out;
+  transition: background 300ms ease-out;
+  color: white;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 1.1111111111111112rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c4 {
+  display: inline-block;
+  vertical-align: center;
+  margin-right: 1.9444444444444444rem;
+}
+
+.c23 {
+  position: fixed;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  display: block;
+  z-index: 1;
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  left: 0;
+  top: 2.7777777777777777rem;
+  bottom: 0;
+  right: auto;
+  width: 16.666666666666668rem;
+  background: #efefef;
+  box-sizing: border-box;
+  color: inherit;
+  overflow-y: auto;
+  -webkit-transition: -webkit-transform 150ms ease-out;
+  -webkit-transition: transform 150ms ease-out;
+  transition: transform 150ms ease-out;
+}
+
+.c24 {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 1.3888888888888888rem;
+}
+
+.c25 {
+  margin-bottom: 1.1111111111111112rem;
+}
+
+.c26 {
+  display: block;
+  margin: 0.5555555555555556rem 2.2222222222222223rem;
+  font-weight: normal;
+}
+
+.c0 {
+  padding-left: 16.666666666666668rem;
+}
+
+.c28 {
+  width: 56.888888888888886rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2.2222222222222223rem 1.6666666666666667rem 2.2222222222222223rem;
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  -webkit-transition: -webkit-transform 150ms ease-out;
+  -webkit-transition: transform 150ms ease-out;
+  transition: transform 150ms ease-out;
+}
+
+.c29 {
+  display: block;
+  text-align: left;
+  width: 100%;
+  color: rgb(243,182,97);
+  font-size: 2.3333333333333335rem;
+  font-weight: bold;
+  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+@media (min-width:62.5em) {
+  .c27 {
+    border-radius: 0.16666666666666666rem;
+  }
+
+  .c27:hover {
+    background: rgba(20,20,20,0.1);
+  }
+}
+
+@media (max-width:62.5em) {
+  .c15 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 2.7777777777777777rem;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c2 {
+    display: none;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c23 {
+    -webkit-transform: translateX(-16.666666666666668rem);
+    -ms-transform: translateX(-16.666666666666668rem);
+    transform: translateX(-16.666666666666668rem);
+  }
+}
+
+@media (max-width:62.5em) {
+  .c0 {
+    padding-left: 0;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c28 {
+    padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
 <DocsLayout
   description=""
   title=""
 >
   <ForwardRef>
-    <BaseStyledComponent
+    <StyledComponent
       forwardedClass={
         Object {
           "$$typeof": Symbol(react.forward_ref),
@@ -14,7 +431,7 @@ exports[`DocsLayout renders correctly 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-hMqMXs",
             "isStatic": true,
-            "lastClassName": "fEzWfe",
+            "lastClassName": "c0",
             "rules": Array [
               "
   padding-left: ",
@@ -30,10 +447,10 @@ exports[`DocsLayout renders correctly 1`] = `
               "
     padding-left: 0;
   ",
-              "
+              ";
   }
 ",
-              "
+              ";
 ",
             ],
           },
@@ -48,7 +465,7 @@ exports[`DocsLayout renders correctly 1`] = `
       forwardedRef={null}
     >
       <div
-        className="fEzWfe"
+        className="c0"
       >
         <SeoHead
           description=""
@@ -74,7 +491,7 @@ exports[`DocsLayout renders correctly 1`] = `
               onSideToggle={[Function]}
             >
               <ForwardRef>
-                <BaseStyledComponent
+                <StyledComponent
                   forwardedClass={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -82,7 +499,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "sc-jzJRlG",
                         "isStatic": false,
-                        "lastClassName": "ihgQwU",
+                        "lastClassName": "c1",
                         "rules": Array [
                           "
   position: fixed;
@@ -121,10 +538,10 @@ exports[`DocsLayout renders correctly 1`] = `
                   forwardedRef={null}
                 >
                   <nav
-                    className="ihgQwU"
+                    className="c1"
                   >
                     <ForwardRef>
-                      <BaseStyledComponent
+                      <StyledComponent
                         forwardedClass={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
@@ -132,7 +549,7 @@ exports[`DocsLayout renders correctly 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-cSHVUG",
                               "isStatic": true,
-                              "lastClassName": "fIzcWS",
+                              "lastClassName": "c2",
                               "rules": Array [
                                 "
   display: flex;
@@ -151,10 +568,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                 "
     display: none;
   ",
-                                "
+                                ";
   }
 ",
-                                "
+                                ";
 ",
                               ],
                             },
@@ -169,10 +586,10 @@ exports[`DocsLayout renders correctly 1`] = `
                         forwardedRef={null}
                       >
                         <div
-                          className="fIzcWS"
+                          className="c2"
                         >
                           <ForwardRef>
-                            <BaseStyledComponent
+                            <StyledComponent
                               forwardedClass={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
@@ -180,7 +597,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                   "componentStyle": ComponentStyle {
                                     "componentId": "sc-kAzzGY",
                                     "isStatic": true,
-                                    "lastClassName": "kWHtZp",
+                                    "lastClassName": "c3",
                                     "rules": Array [
                                       "
   display: flex;
@@ -200,10 +617,10 @@ exports[`DocsLayout renders correctly 1`] = `
                               forwardedRef={null}
                             >
                               <div
-                                className="kWHtZp"
+                                className="c3"
                               >
                                 <ForwardRef>
-                                  <BaseStyledComponent
+                                  <StyledComponent
                                     forwardedClass={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
@@ -214,7 +631,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-kgoBCf",
                                           "isStatic": true,
-                                          "lastClassName": "ffEHFQ",
+                                          "lastClassName": "c4",
                                           "rules": Array [
                                             "
   display: inline-block;
@@ -237,7 +654,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     forwardedRef={null}
                                   >
                                     <Link
-                                      className="ffEHFQ"
+                                      className="c4"
                                       href="/"
                                       unstyled={true}
                                     >
@@ -245,12 +662,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                         href="/"
                                       >
                                         <a
-                                          className="ffEHFQ"
+                                          className="c4"
                                           href="/"
                                           onClick={[Function]}
                                         >
                                           <ForwardRef>
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -258,7 +675,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "sc-htoDjs",
                                                     "isStatic": false,
-                                                    "lastClassName": "craaVv",
+                                                    "lastClassName": "c19",
                                                     "rules": Array [
                                                       "
   display: inline-block;
@@ -270,7 +687,7 @@ exports[`DocsLayout renders correctly 1`] = `
 
   ",
                                                       [Function],
-                                                      "
+                                                      ";
 ",
                                                     ],
                                                   },
@@ -285,18 +702,18 @@ exports[`DocsLayout renders correctly 1`] = `
                                               forwardedRef={null}
                                             >
                                               <div
-                                                className="iSbHZP"
+                                                className="c5"
                                               />
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                         </a>
                                       </Link>
                                     </Link>
-                                  </BaseStyledComponent>
+                                  </StyledComponent>
                                 </ForwardRef>
                                 <NavLinks>
                                   <ForwardRef>
-                                    <BaseStyledComponent
+                                    <StyledComponent
                                       forwardedClass={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
@@ -304,7 +721,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-bxivhb",
                                             "isStatic": true,
-                                            "lastClassName": "eWokkx",
+                                            "lastClassName": "c6",
                                             "rules": Array [
                                               "
   display: flex;
@@ -324,12 +741,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                       forwardedRef={null}
                                     >
                                       <nav
-                                        className="eWokkx"
+                                        className="c6"
                                       >
                                         <ForwardRef
                                           href="/docs"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -339,7 +756,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-ifAKCX",
                                                   "isStatic": true,
-                                                  "lastClassName": "fAKxmD",
+                                                  "lastClassName": "c7",
                                                   "rules": Array [
                                                     "
   flex: 0 0 auto;
@@ -380,7 +797,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             href="/docs"
                                           >
                                             <Link
-                                              className="fAKxmD"
+                                              className="c7"
                                               href="/docs"
                                               unstyled={true}
                                             >
@@ -388,7 +805,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 href="/docs"
                                               >
                                                 <a
-                                                  className="fAKxmD"
+                                                  className="c7"
                                                   href="/docs"
                                                   onClick={[Function]}
                                                 >
@@ -396,10 +813,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef>
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -407,7 +824,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-htpNat",
                                                   "isStatic": true,
-                                                  "lastClassName": "jGjUIy",
+                                                  "lastClassName": "c8",
                                                   "rules": Array [
                                                     "
   flex: 0 0 auto;
@@ -438,14 +855,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                             forwardedRef={null}
                                           >
                                             <span
-                                              className="jGjUIy"
+                                              className="c8"
                                             />
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef
                                           href="/ecosystem"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -455,7 +872,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-ifAKCX",
                                                   "isStatic": true,
-                                                  "lastClassName": "fAKxmD",
+                                                  "lastClassName": "c7",
                                                   "rules": Array [
                                                     "
   flex: 0 0 auto;
@@ -496,7 +913,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             href="/ecosystem"
                                           >
                                             <Link
-                                              className="fAKxmD"
+                                              className="c7"
                                               href="/ecosystem"
                                               unstyled={true}
                                             >
@@ -504,7 +921,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 href="/ecosystem"
                                               >
                                                 <a
-                                                  className="fAKxmD"
+                                                  className="c7"
                                                   href="/ecosystem"
                                                   onClick={[Function]}
                                                 >
@@ -512,10 +929,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef>
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -523,7 +940,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-htpNat",
                                                   "isStatic": true,
-                                                  "lastClassName": "jGjUIy",
+                                                  "lastClassName": "c8",
                                                   "rules": Array [
                                                     "
   flex: 0 0 auto;
@@ -554,14 +971,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                             forwardedRef={null}
                                           >
                                             <span
-                                              className="jGjUIy"
+                                              className="c8"
                                             />
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef
                                           href="/releases"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -571,7 +988,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-ifAKCX",
                                                   "isStatic": true,
-                                                  "lastClassName": "fAKxmD",
+                                                  "lastClassName": "c7",
                                                   "rules": Array [
                                                     "
   flex: 0 0 auto;
@@ -612,7 +1029,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             href="/releases"
                                           >
                                             <Link
-                                              className="fAKxmD"
+                                              className="c7"
                                               href="/releases"
                                               unstyled={true}
                                             >
@@ -620,7 +1037,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 href="/releases"
                                               >
                                                 <a
-                                                  className="fAKxmD"
+                                                  className="c7"
                                                   href="/releases"
                                                   onClick={[Function]}
                                                 >
@@ -628,17 +1045,17 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                       </nav>
-                                    </BaseStyledComponent>
+                                    </StyledComponent>
                                   </ForwardRef>
                                 </NavLinks>
                               </div>
-                            </BaseStyledComponent>
+                            </StyledComponent>
                           </ForwardRef>
                           <ForwardRef>
-                            <BaseStyledComponent
+                            <StyledComponent
                               forwardedClass={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
@@ -646,7 +1063,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                   "componentStyle": ComponentStyle {
                                     "componentId": "sc-chPdSV",
                                     "isStatic": true,
-                                    "lastClassName": "hbBwFX",
+                                    "lastClassName": "c9",
                                     "rules": Array [
                                       "
   display: flex;
@@ -666,11 +1083,11 @@ exports[`DocsLayout renders correctly 1`] = `
                               forwardedRef={null}
                             >
                               <div
-                                className="hbBwFX"
+                                className="c9"
                               >
                                 <Social>
                                   <ForwardRef>
-                                    <BaseStyledComponent
+                                    <StyledComponent
                                       forwardedClass={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
@@ -678,7 +1095,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-EHOje",
                                             "isStatic": true,
-                                            "lastClassName": "fjGhui",
+                                            "lastClassName": "c10",
                                             "rules": Array [
                                               "
   display: flex;
@@ -698,12 +1115,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                       forwardedRef={null}
                                     >
                                       <nav
-                                        className="fjGhui"
+                                        className="c10"
                                       >
                                         <ForwardRef
                                           href="https://spectrum.chat/styled-components/"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -713,7 +1130,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bZQynM",
                                                   "isStatic": true,
-                                                  "lastClassName": "hGMLkS",
+                                                  "lastClassName": "c11",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -761,7 +1178,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             href="https://spectrum.chat/styled-components/"
                                           >
                                             <Link
-                                              className="hGMLkS"
+                                              className="c11"
                                               href="https://spectrum.chat/styled-components/"
                                               unstyled={true}
                                             >
@@ -769,7 +1186,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 href="https://spectrum.chat/styled-components/"
                                               >
                                                 <a
-                                                  className="hGMLkS"
+                                                  className="c11"
                                                   href="https://spectrum.chat/styled-components/"
                                                   onClick={[Function]}
                                                 >
@@ -779,7 +1196,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                       viewBox="0 0 15 15"
                                                       width="14"
                                                     >
-                                                      <BaseStyledComponent
+                                                      <StyledComponent
                                                         forwardedClass={
                                                           Object {
                                                             "$$typeof": Symbol(react.forward_ref),
@@ -787,7 +1204,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                             "componentStyle": ComponentStyle {
                                                               "componentId": "sc-gzVnrw",
                                                               "isStatic": false,
-                                                              "lastClassName": "eKCTnK",
+                                                              "lastClassName": "c14",
                                                               "rules": Array [
                                                                 "
   width: ",
@@ -813,7 +1230,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         width="14"
                                                       >
                                                         <svg
-                                                          className="hPnFBz"
+                                                          className="c12"
                                                           height="14"
                                                           viewBox="0 0 15 15"
                                                           width="14"
@@ -826,18 +1243,18 @@ exports[`DocsLayout renders correctly 1`] = `
                                                             fill="#FFF"
                                                           />
                                                         </svg>
-                                                      </BaseStyledComponent>
+                                                      </StyledComponent>
                                                     </ForwardRef>
                                                   </Spectrum>
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef
                                           href="https://github.com/styled-components"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -847,7 +1264,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bZQynM",
                                                   "isStatic": true,
-                                                  "lastClassName": "hGMLkS",
+                                                  "lastClassName": "c11",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -895,7 +1312,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             href="https://github.com/styled-components"
                                           >
                                             <Link
-                                              className="hGMLkS"
+                                              className="c11"
                                               href="https://github.com/styled-components"
                                               unstyled={true}
                                             >
@@ -903,7 +1320,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 href="https://github.com/styled-components"
                                               >
                                                 <a
-                                                  className="hGMLkS"
+                                                  className="c11"
                                                   href="https://github.com/styled-components"
                                                   onClick={[Function]}
                                                 >
@@ -913,7 +1330,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                       viewBox="0 0 17 17"
                                                       width="17"
                                                     >
-                                                      <BaseStyledComponent
+                                                      <StyledComponent
                                                         forwardedClass={
                                                           Object {
                                                             "$$typeof": Symbol(react.forward_ref),
@@ -921,7 +1338,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                             "componentStyle": ComponentStyle {
                                                               "componentId": "sc-gzVnrw",
                                                               "isStatic": false,
-                                                              "lastClassName": "eKCTnK",
+                                                              "lastClassName": "c14",
                                                               "rules": Array [
                                                                 "
   width: ",
@@ -947,7 +1364,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         width="17"
                                                       >
                                                         <svg
-                                                          className="fZylxJ"
+                                                          className="c13"
                                                           height="17"
                                                           viewBox="0 0 17 17"
                                                           width="17"
@@ -960,18 +1377,18 @@ exports[`DocsLayout renders correctly 1`] = `
                                                             fill="#FFF"
                                                           />
                                                         </svg>
-                                                      </BaseStyledComponent>
+                                                      </StyledComponent>
                                                     </ForwardRef>
                                                   </Github>
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                         <ForwardRef
                                           href="https://medium.com/styled-components"
                                         >
-                                          <BaseStyledComponent
+                                          <StyledComponent
                                             forwardedClass={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
@@ -981,7 +1398,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bZQynM",
                                                   "isStatic": true,
-                                                  "lastClassName": "hGMLkS",
+                                                  "lastClassName": "c11",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -1029,7 +1446,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             href="https://medium.com/styled-components"
                                           >
                                             <Link
-                                              className="hGMLkS"
+                                              className="c11"
                                               href="https://medium.com/styled-components"
                                               unstyled={true}
                                             >
@@ -1037,7 +1454,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 href="https://medium.com/styled-components"
                                               >
                                                 <a
-                                                  className="hGMLkS"
+                                                  className="c11"
                                                   href="https://medium.com/styled-components"
                                                   onClick={[Function]}
                                                 >
@@ -1047,7 +1464,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                       viewBox="0 0 17 14"
                                                       width="17"
                                                     >
-                                                      <BaseStyledComponent
+                                                      <StyledComponent
                                                         forwardedClass={
                                                           Object {
                                                             "$$typeof": Symbol(react.forward_ref),
@@ -1055,7 +1472,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                             "componentStyle": ComponentStyle {
                                                               "componentId": "sc-gzVnrw",
                                                               "isStatic": false,
-                                                              "lastClassName": "eKCTnK",
+                                                              "lastClassName": "c14",
                                                               "rules": Array [
                                                                 "
   width: ",
@@ -1081,7 +1498,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         width="17"
                                                       >
                                                         <svg
-                                                          className="eKCTnK"
+                                                          className="c14"
                                                           height="14"
                                                           viewBox="0 0 17 14"
                                                           width="17"
@@ -1094,23 +1511,23 @@ exports[`DocsLayout renders correctly 1`] = `
                                                             fill="#fff"
                                                           />
                                                         </svg>
-                                                      </BaseStyledComponent>
+                                                      </StyledComponent>
                                                     </ForwardRef>
                                                   </Medium>
                                                 </a>
                                               </Link>
                                             </Link>
-                                          </BaseStyledComponent>
+                                          </StyledComponent>
                                         </ForwardRef>
                                       </nav>
-                                    </BaseStyledComponent>
+                                    </StyledComponent>
                                   </ForwardRef>
                                 </Social>
                               </div>
-                            </BaseStyledComponent>
+                            </StyledComponent>
                           </ForwardRef>
                         </div>
-                      </BaseStyledComponent>
+                      </StyledComponent>
                     </ForwardRef>
                     <MobileNavbar
                       isMobileNavFolded={true}
@@ -1119,7 +1536,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       onSideToggle={[Function]}
                     >
                       <ForwardRef>
-                        <BaseStyledComponent
+                        <StyledComponent
                           forwardedClass={
                             Object {
                               "$$typeof": Symbol(react.forward_ref),
@@ -1127,7 +1544,7 @@ exports[`DocsLayout renders correctly 1`] = `
                               "componentStyle": ComponentStyle {
                                 "componentId": "sc-gZMcBi",
                                 "isStatic": true,
-                                "lastClassName": "bKEueB",
+                                "lastClassName": "c15",
                                 "rules": Array [
                                   "
   display: none;
@@ -1146,7 +1563,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                   "2.7777777777777777rem",
                                   ";
   ",
-                                  "
+                                  ";
   }
 ",
                                   ";
@@ -1164,13 +1581,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           forwardedRef={null}
                         >
                           <div
-                            className="bKEueB"
+                            className="c15"
                           >
                             <ForwardRef
                               active={false}
                               onClick={[Function]}
                             >
-                              <BaseStyledComponent
+                              <StyledComponent
                                 active={false}
                                 forwardedClass={
                                   Object {
@@ -1179,7 +1596,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-iwsKbI",
                                       "isStatic": false,
-                                      "lastClassName": "ebcZig",
+                                      "lastClassName": "c16",
                                       "rules": Array [
                                         "
   ",
@@ -1188,8 +1605,7 @@ exports[`DocsLayout renders correctly 1`] = `
   outline: none;
   border: none;
 ",
-                                        "
-
+                                        ";
   flex: 0 0 auto;
   min-width: ",
                                         "2.7777777777777777rem",
@@ -1203,8 +1619,7 @@ exports[`DocsLayout renders correctly 1`] = `
 
   ",
                                         [Function],
-                                        "
-
+                                        ";
   &:focus {
     border: ",
                                         "0.1111111111111111rem",
@@ -1228,7 +1643,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <button
-                                  className="ebcZig"
+                                  className="c16"
                                   onClick={[Function]}
                                 >
                                   <FoldIcon>
@@ -1238,7 +1653,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       xmlns="http://www.w3.org/2000/svg"
                                       xmlnsXlink="http://www.w3.org/1999/xlink"
                                     >
-                                      <BaseStyledComponent
+                                      <StyledComponent
                                         forwardedClass={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
@@ -1246,7 +1661,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             "componentStyle": ComponentStyle {
                                               "componentId": "sc-dnqmqq",
                                               "isStatic": true,
-                                              "lastClassName": "YyuYi",
+                                              "lastClassName": "c17",
                                               "rules": Array [
                                                 "
   svg {
@@ -1274,7 +1689,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         xmlnsXlink="http://www.w3.org/1999/xlink"
                                       >
                                         <svg
-                                          className="YyuYi"
+                                          className="c17"
                                           height="14"
                                           width="17"
                                           xmlns="http://www.w3.org/2000/svg"
@@ -1295,14 +1710,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                             />
                                           </defs>
                                         </svg>
-                                      </BaseStyledComponent>
+                                      </StyledComponent>
                                     </ForwardRef>
                                   </FoldIcon>
                                 </button>
-                              </BaseStyledComponent>
+                              </StyledComponent>
                             </ForwardRef>
                             <ForwardRef>
-                              <BaseStyledComponent
+                              <StyledComponent
                                 forwardedClass={
                                   Object {
                                     "$$typeof": Symbol(react.forward_ref),
@@ -1314,7 +1729,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-VigVT",
                                       "isStatic": true,
-                                      "lastClassName": "gViPaM",
+                                      "lastClassName": "c18",
                                       "rules": Array [
                                         "
   display: inline-block;
@@ -1335,7 +1750,7 @@ exports[`DocsLayout renders correctly 1`] = `
                               >
                                 <Link
                                   aria-label="styled components"
-                                  className="gViPaM"
+                                  className="c18"
                                   href="/"
                                   unstyled={true}
                                 >
@@ -1345,14 +1760,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                   >
                                     <a
                                       aria-label="styled components"
-                                      className="gViPaM"
+                                      className="c18"
                                       href="/"
                                       onClick={[Function]}
                                     >
                                       <ForwardRef
                                         compact={true}
                                       >
-                                        <BaseStyledComponent
+                                        <StyledComponent
                                           compact={true}
                                           forwardedClass={
                                             Object {
@@ -1361,7 +1776,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                               "componentStyle": ComponentStyle {
                                                 "componentId": "sc-htoDjs",
                                                 "isStatic": false,
-                                                "lastClassName": "craaVv",
+                                                "lastClassName": "c19",
                                                 "rules": Array [
                                                   "
   display: inline-block;
@@ -1373,7 +1788,7 @@ exports[`DocsLayout renders correctly 1`] = `
 
   ",
                                                   [Function],
-                                                  "
+                                                  ";
 ",
                                                 ],
                                               },
@@ -1388,20 +1803,20 @@ exports[`DocsLayout renders correctly 1`] = `
                                           forwardedRef={null}
                                         >
                                           <div
-                                            className="craaVv"
+                                            className="c19"
                                           />
-                                        </BaseStyledComponent>
+                                        </StyledComponent>
                                       </ForwardRef>
                                     </a>
                                   </Link>
                                 </Link>
-                              </BaseStyledComponent>
+                              </StyledComponent>
                             </ForwardRef>
                             <ForwardRef
                               active={false}
                               onClick={[Function]}
                             >
-                              <BaseStyledComponent
+                              <StyledComponent
                                 active={false}
                                 forwardedClass={
                                   Object {
@@ -1410,7 +1825,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-iwsKbI",
                                       "isStatic": false,
-                                      "lastClassName": "ebcZig",
+                                      "lastClassName": "c16",
                                       "rules": Array [
                                         "
   ",
@@ -1419,8 +1834,7 @@ exports[`DocsLayout renders correctly 1`] = `
   outline: none;
   border: none;
 ",
-                                        "
-
+                                        ";
   flex: 0 0 auto;
   min-width: ",
                                         "2.7777777777777777rem",
@@ -1434,8 +1848,7 @@ exports[`DocsLayout renders correctly 1`] = `
 
   ",
                                         [Function],
-                                        "
-
+                                        ";
   &:focus {
     border: ",
                                         "0.1111111111111111rem",
@@ -1459,13 +1872,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                 onClick={[Function]}
                               >
                                 <button
-                                  className="ebcZig"
+                                  className="c16"
                                   onClick={[Function]}
                                 >
                                   <ForwardRef
                                     shouldRotate={false}
                                   >
-                                    <BaseStyledComponent
+                                    <StyledComponent
                                       forwardedClass={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
@@ -1473,7 +1886,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-jTzLTM",
                                             "isStatic": false,
-                                            "lastClassName": "fEEGxg",
+                                            "lastClassName": "c20",
                                             "rules": Array [
                                               "
   transition: transform 0.1s;
@@ -1496,7 +1909,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       shouldRotate={false}
                                     >
                                       <div
-                                        className="fEEGxg"
+                                        className="c20"
                                       >
                                         <ArrowIcon>
                                           <ForwardRef
@@ -1505,7 +1918,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             xmlns="http://www.w3.org/2000/svg"
                                             xmlnsXlink="http://www.w3.org/1999/xlink"
                                           >
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -1513,7 +1926,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "sc-dnqmqq",
                                                     "isStatic": true,
-                                                    "lastClassName": "YyuYi",
+                                                    "lastClassName": "c17",
                                                     "rules": Array [
                                                       "
   svg {
@@ -1541,7 +1954,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                               xmlnsXlink="http://www.w3.org/1999/xlink"
                                             >
                                               <svg
-                                                className="YyuYi"
+                                                className="c17"
                                                 height="8"
                                                 width="12"
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1562,19 +1975,19 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   />
                                                 </defs>
                                               </svg>
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                         </ArrowIcon>
                                       </div>
-                                    </BaseStyledComponent>
+                                    </StyledComponent>
                                   </ForwardRef>
                                 </button>
-                              </BaseStyledComponent>
+                              </StyledComponent>
                             </ForwardRef>
                             <ForwardRef
                               isOpen={false}
                             >
-                              <BaseStyledComponent
+                              <StyledComponent
                                 forwardedClass={
                                   Object {
                                     "$$typeof": Symbol(react.forward_ref),
@@ -1582,7 +1995,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-gqjmRU",
                                       "isStatic": false,
-                                      "lastClassName": "bwvuDN",
+                                      "lastClassName": "c21",
                                       "rules": Array [
                                         "
   position: absolute;
@@ -1627,11 +2040,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                 isOpen={false}
                               >
                                 <div
-                                  className="bwvuDN"
+                                  className="c21"
                                 >
                                   <NavLinks>
                                     <ForwardRef>
-                                      <BaseStyledComponent
+                                      <StyledComponent
                                         forwardedClass={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
@@ -1639,7 +2052,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             "componentStyle": ComponentStyle {
                                               "componentId": "sc-bxivhb",
                                               "isStatic": true,
-                                              "lastClassName": "eWokkx",
+                                              "lastClassName": "c6",
                                               "rules": Array [
                                                 "
   display: flex;
@@ -1659,12 +2072,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                         forwardedRef={null}
                                       >
                                         <nav
-                                          className="eWokkx"
+                                          className="c6"
                                         >
                                           <ForwardRef
                                             href="/docs"
                                           >
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -1674,7 +2087,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "sc-ifAKCX",
                                                     "isStatic": true,
-                                                    "lastClassName": "fAKxmD",
+                                                    "lastClassName": "c7",
                                                     "rules": Array [
                                                       "
   flex: 0 0 auto;
@@ -1715,7 +2128,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                               href="/docs"
                                             >
                                               <Link
-                                                className="fAKxmD"
+                                                className="c7"
                                                 href="/docs"
                                                 unstyled={true}
                                               >
@@ -1723,7 +2136,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   href="/docs"
                                                 >
                                                   <a
-                                                    className="fAKxmD"
+                                                    className="c7"
                                                     href="/docs"
                                                     onClick={[Function]}
                                                   >
@@ -1731,10 +2144,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   </a>
                                                 </Link>
                                               </Link>
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                           <ForwardRef>
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -1742,7 +2155,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "sc-htpNat",
                                                     "isStatic": true,
-                                                    "lastClassName": "jGjUIy",
+                                                    "lastClassName": "c8",
                                                     "rules": Array [
                                                       "
   flex: 0 0 auto;
@@ -1773,14 +2186,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                               forwardedRef={null}
                                             >
                                               <span
-                                                className="jGjUIy"
+                                                className="c8"
                                               />
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                           <ForwardRef
                                             href="/ecosystem"
                                           >
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -1790,7 +2203,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "sc-ifAKCX",
                                                     "isStatic": true,
-                                                    "lastClassName": "fAKxmD",
+                                                    "lastClassName": "c7",
                                                     "rules": Array [
                                                       "
   flex: 0 0 auto;
@@ -1831,7 +2244,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                               href="/ecosystem"
                                             >
                                               <Link
-                                                className="fAKxmD"
+                                                className="c7"
                                                 href="/ecosystem"
                                                 unstyled={true}
                                               >
@@ -1839,7 +2252,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   href="/ecosystem"
                                                 >
                                                   <a
-                                                    className="fAKxmD"
+                                                    className="c7"
                                                     href="/ecosystem"
                                                     onClick={[Function]}
                                                   >
@@ -1847,10 +2260,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   </a>
                                                 </Link>
                                               </Link>
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                           <ForwardRef>
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -1858,7 +2271,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "sc-htpNat",
                                                     "isStatic": true,
-                                                    "lastClassName": "jGjUIy",
+                                                    "lastClassName": "c8",
                                                     "rules": Array [
                                                       "
   flex: 0 0 auto;
@@ -1889,14 +2302,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                               forwardedRef={null}
                                             >
                                               <span
-                                                className="jGjUIy"
+                                                className="c8"
                                               />
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                           <ForwardRef
                                             href="/releases"
                                           >
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -1906,7 +2319,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "sc-ifAKCX",
                                                     "isStatic": true,
-                                                    "lastClassName": "fAKxmD",
+                                                    "lastClassName": "c7",
                                                     "rules": Array [
                                                       "
   flex: 0 0 auto;
@@ -1947,7 +2360,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                               href="/releases"
                                             >
                                               <Link
-                                                className="fAKxmD"
+                                                className="c7"
                                                 href="/releases"
                                                 unstyled={true}
                                               >
@@ -1955,7 +2368,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   href="/releases"
                                                 >
                                                   <a
-                                                    className="fAKxmD"
+                                                    className="c7"
                                                     href="/releases"
                                                     onClick={[Function]}
                                                   >
@@ -1963,14 +2376,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   </a>
                                                 </Link>
                                               </Link>
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                         </nav>
-                                      </BaseStyledComponent>
+                                      </StyledComponent>
                                     </ForwardRef>
                                   </NavLinks>
                                   <ForwardRef>
-                                    <BaseStyledComponent
+                                    <StyledComponent
                                       forwardedClass={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
@@ -1978,7 +2391,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-htpNat",
                                             "isStatic": true,
-                                            "lastClassName": "jGjUIy",
+                                            "lastClassName": "c8",
                                             "rules": Array [
                                               "
   flex: 0 0 auto;
@@ -2009,12 +2422,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                       forwardedRef={null}
                                     >
                                       <span
-                                        className="jGjUIy"
+                                        className="c8"
                                       />
-                                    </BaseStyledComponent>
+                                    </StyledComponent>
                                   </ForwardRef>
                                   <ForwardRef>
-                                    <BaseStyledComponent
+                                    <StyledComponent
                                       forwardedClass={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
@@ -2022,11 +2435,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-fjdhpX",
                                             "isStatic": true,
-                                            "lastClassName": "eVtpYT",
+                                            "lastClassName": "c22",
                                             "rules": Array [
-                                              "padding-right: ",
+                                              "
+  padding-right: ",
                                               "1.1111111111111112rem",
-                                              ";",
+                                              ";
+",
                                             ],
                                           },
                                           "displayName": "styled.div",
@@ -2040,11 +2455,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                       forwardedRef={null}
                                     >
                                       <div
-                                        className="eVtpYT"
+                                        className="c22"
                                       >
                                         <Social>
                                           <ForwardRef>
-                                            <BaseStyledComponent
+                                            <StyledComponent
                                               forwardedClass={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -2052,7 +2467,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "sc-EHOje",
                                                     "isStatic": true,
-                                                    "lastClassName": "fjGhui",
+                                                    "lastClassName": "c10",
                                                     "rules": Array [
                                                       "
   display: flex;
@@ -2072,12 +2487,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                               forwardedRef={null}
                                             >
                                               <nav
-                                                className="fjGhui"
+                                                className="c10"
                                               >
                                                 <ForwardRef
                                                   href="https://spectrum.chat/styled-components/"
                                                 >
-                                                  <BaseStyledComponent
+                                                  <StyledComponent
                                                     forwardedClass={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
@@ -2087,7 +2502,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         "componentStyle": ComponentStyle {
                                                           "componentId": "sc-bZQynM",
                                                           "isStatic": true,
-                                                          "lastClassName": "hGMLkS",
+                                                          "lastClassName": "c11",
                                                           "rules": Array [
                                                             "
   display: inline-block;
@@ -2135,7 +2550,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     href="https://spectrum.chat/styled-components/"
                                                   >
                                                     <Link
-                                                      className="hGMLkS"
+                                                      className="c11"
                                                       href="https://spectrum.chat/styled-components/"
                                                       unstyled={true}
                                                     >
@@ -2143,7 +2558,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         href="https://spectrum.chat/styled-components/"
                                                       >
                                                         <a
-                                                          className="hGMLkS"
+                                                          className="c11"
                                                           href="https://spectrum.chat/styled-components/"
                                                           onClick={[Function]}
                                                         >
@@ -2153,7 +2568,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                               viewBox="0 0 15 15"
                                                               width="14"
                                                             >
-                                                              <BaseStyledComponent
+                                                              <StyledComponent
                                                                 forwardedClass={
                                                                   Object {
                                                                     "$$typeof": Symbol(react.forward_ref),
@@ -2161,7 +2576,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                     "componentStyle": ComponentStyle {
                                                                       "componentId": "sc-gzVnrw",
                                                                       "isStatic": false,
-                                                                      "lastClassName": "eKCTnK",
+                                                                      "lastClassName": "c14",
                                                                       "rules": Array [
                                                                         "
   width: ",
@@ -2187,7 +2602,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                 width="14"
                                                               >
                                                                 <svg
-                                                                  className="hPnFBz"
+                                                                  className="c12"
                                                                   height="14"
                                                                   viewBox="0 0 15 15"
                                                                   width="14"
@@ -2200,18 +2615,18 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                     fill="#FFF"
                                                                   />
                                                                 </svg>
-                                                              </BaseStyledComponent>
+                                                              </StyledComponent>
                                                             </ForwardRef>
                                                           </Spectrum>
                                                         </a>
                                                       </Link>
                                                     </Link>
-                                                  </BaseStyledComponent>
+                                                  </StyledComponent>
                                                 </ForwardRef>
                                                 <ForwardRef
                                                   href="https://github.com/styled-components"
                                                 >
-                                                  <BaseStyledComponent
+                                                  <StyledComponent
                                                     forwardedClass={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
@@ -2221,7 +2636,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         "componentStyle": ComponentStyle {
                                                           "componentId": "sc-bZQynM",
                                                           "isStatic": true,
-                                                          "lastClassName": "hGMLkS",
+                                                          "lastClassName": "c11",
                                                           "rules": Array [
                                                             "
   display: inline-block;
@@ -2269,7 +2684,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     href="https://github.com/styled-components"
                                                   >
                                                     <Link
-                                                      className="hGMLkS"
+                                                      className="c11"
                                                       href="https://github.com/styled-components"
                                                       unstyled={true}
                                                     >
@@ -2277,7 +2692,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         href="https://github.com/styled-components"
                                                       >
                                                         <a
-                                                          className="hGMLkS"
+                                                          className="c11"
                                                           href="https://github.com/styled-components"
                                                           onClick={[Function]}
                                                         >
@@ -2287,7 +2702,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                               viewBox="0 0 17 17"
                                                               width="17"
                                                             >
-                                                              <BaseStyledComponent
+                                                              <StyledComponent
                                                                 forwardedClass={
                                                                   Object {
                                                                     "$$typeof": Symbol(react.forward_ref),
@@ -2295,7 +2710,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                     "componentStyle": ComponentStyle {
                                                                       "componentId": "sc-gzVnrw",
                                                                       "isStatic": false,
-                                                                      "lastClassName": "eKCTnK",
+                                                                      "lastClassName": "c14",
                                                                       "rules": Array [
                                                                         "
   width: ",
@@ -2321,7 +2736,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                 width="17"
                                                               >
                                                                 <svg
-                                                                  className="fZylxJ"
+                                                                  className="c13"
                                                                   height="17"
                                                                   viewBox="0 0 17 17"
                                                                   width="17"
@@ -2334,18 +2749,18 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                     fill="#FFF"
                                                                   />
                                                                 </svg>
-                                                              </BaseStyledComponent>
+                                                              </StyledComponent>
                                                             </ForwardRef>
                                                           </Github>
                                                         </a>
                                                       </Link>
                                                     </Link>
-                                                  </BaseStyledComponent>
+                                                  </StyledComponent>
                                                 </ForwardRef>
                                                 <ForwardRef
                                                   href="https://medium.com/styled-components"
                                                 >
-                                                  <BaseStyledComponent
+                                                  <StyledComponent
                                                     forwardedClass={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
@@ -2355,7 +2770,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         "componentStyle": ComponentStyle {
                                                           "componentId": "sc-bZQynM",
                                                           "isStatic": true,
-                                                          "lastClassName": "hGMLkS",
+                                                          "lastClassName": "c11",
                                                           "rules": Array [
                                                             "
   display: inline-block;
@@ -2403,7 +2818,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     href="https://medium.com/styled-components"
                                                   >
                                                     <Link
-                                                      className="hGMLkS"
+                                                      className="c11"
                                                       href="https://medium.com/styled-components"
                                                       unstyled={true}
                                                     >
@@ -2411,7 +2826,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         href="https://medium.com/styled-components"
                                                       >
                                                         <a
-                                                          className="hGMLkS"
+                                                          className="c11"
                                                           href="https://medium.com/styled-components"
                                                           onClick={[Function]}
                                                         >
@@ -2421,7 +2836,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                               viewBox="0 0 17 14"
                                                               width="17"
                                                             >
-                                                              <BaseStyledComponent
+                                                              <StyledComponent
                                                                 forwardedClass={
                                                                   Object {
                                                                     "$$typeof": Symbol(react.forward_ref),
@@ -2429,7 +2844,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                     "componentStyle": ComponentStyle {
                                                                       "componentId": "sc-gzVnrw",
                                                                       "isStatic": false,
-                                                                      "lastClassName": "eKCTnK",
+                                                                      "lastClassName": "c14",
                                                                       "rules": Array [
                                                                         "
   width: ",
@@ -2455,7 +2870,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                 width="17"
                                                               >
                                                                 <svg
-                                                                  className="eKCTnK"
+                                                                  className="c14"
                                                                   height="14"
                                                                   viewBox="0 0 17 14"
                                                                   width="17"
@@ -2468,30 +2883,30 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                     fill="#fff"
                                                                   />
                                                                 </svg>
-                                                              </BaseStyledComponent>
+                                                              </StyledComponent>
                                                             </ForwardRef>
                                                           </Medium>
                                                         </a>
                                                       </Link>
                                                     </Link>
-                                                  </BaseStyledComponent>
+                                                  </StyledComponent>
                                                 </ForwardRef>
                                               </nav>
-                                            </BaseStyledComponent>
+                                            </StyledComponent>
                                           </ForwardRef>
                                         </Social>
                                       </div>
-                                    </BaseStyledComponent>
+                                    </StyledComponent>
                                   </ForwardRef>
                                 </div>
-                              </BaseStyledComponent>
+                              </StyledComponent>
                             </ForwardRef>
                           </div>
-                        </BaseStyledComponent>
+                        </StyledComponent>
                       </ForwardRef>
                     </MobileNavbar>
                   </nav>
-                </BaseStyledComponent>
+                </StyledComponent>
               </ForwardRef>
             </Navbar>
             <CaptureScroll
@@ -2500,7 +2915,7 @@ exports[`DocsLayout renders correctly 1`] = `
               <ForwardRef
                 isFolded={true}
               >
-                <BaseStyledComponent
+                <StyledComponent
                   forwardedClass={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -2508,7 +2923,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "sc-kGXeez",
                         "isStatic": false,
-                        "lastClassName": "cAttCw",
+                        "lastClassName": "c23",
                         "rules": Array [
                           "
   position: fixed;
@@ -2545,12 +2960,12 @@ exports[`DocsLayout renders correctly 1`] = `
                           "
     ",
                           [Function],
-                          "
+                          ";
   ",
-                          "
+                          ";
   }
 ",
-                          "
+                          ";
 ",
                         ],
                       },
@@ -2566,851 +2981,850 @@ exports[`DocsLayout renders correctly 1`] = `
                   isFolded={true}
                 >
                   <nav
-                    className="cAttCw"
+                    className="c23"
                   >
-                    <DocsSidebarMenu
+                    <withRouter(Unknown)
                       onRouteChange={[Function]}
                     >
-                      <ForwardRef>
-                        <BaseStyledComponent
-                          forwardedClass={
-                            Object {
-                              "$$typeof": Symbol(react.forward_ref),
-                              "attrs": undefined,
-                              "componentStyle": ComponentStyle {
-                                "componentId": "sc-kpOJdX",
-                                "isStatic": true,
-                                "lastClassName": "gHqoqa",
-                                "rules": Array [
-                                  "
+                      <Component
+                        onRouteChange={[Function]}
+                      >
+                        <ForwardRef>
+                          <StyledComponent
+                            forwardedClass={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": undefined,
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "sc-kpOJdX",
+                                  "isStatic": true,
+                                  "lastClassName": "c24",
+                                  "rules": Array [
+                                    "
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: ",
-                                  "1.3888888888888888rem",
-                                  ";
+                                    "1.3888888888888888rem",
+                                    ";
 ",
-                                ],
-                              },
-                              "displayName": "styled.div",
-                              "render": [Function],
-                              "styledComponentId": "sc-kpOJdX",
-                              "target": "div",
-                              "warnTooManyClasses": [Function],
-                              "withComponent": [Function],
+                                  ],
+                                },
+                                "displayName": "styled.div",
+                                "render": [Function],
+                                "styledComponentId": "sc-kpOJdX",
+                                "target": "div",
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                              }
                             }
-                          }
-                          forwardedRef={null}
-                        >
-                          <div
-                            className="gHqoqa"
+                            forwardedRef={null}
                           >
-                            <Folder
-                              isOpenDefault={false}
-                              key="Basics"
+                            <div
+                              className="c24"
                             >
-                              <ForwardRef
-                                onClick={[Function]}
+                              <Folder
+                                key="Basics"
                               >
-                                <BaseStyledComponent
-                                  forwardedClass={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "sc-ckVGcZ",
-                                        "isStatic": true,
-                                        "lastClassName": "bmfxTR",
-                                        "rules": Array [
-                                          "
-  margin-bottom: ",
-                                          "1.1111111111111112rem",
-                                          ";
-",
-                                        ],
-                                      },
-                                      "displayName": "styled.div",
-                                      "render": [Function],
-                                      "styledComponentId": "sc-ckVGcZ",
-                                      "target": "div",
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={null}
+                                <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <div
-                                    className="bmfxTR"
+                                  <StyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": undefined,
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-ckVGcZ",
+                                          "isStatic": true,
+                                          "lastClassName": "c25",
+                                          "rules": Array [
+                                            "
+  margin-bottom: ",
+                                            "1.1111111111111112rem",
+                                            ";
+",
+                                          ],
+                                        },
+                                        "displayName": "styled.div",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-ckVGcZ",
+                                        "target": "div",
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
                                     onClick={[Function]}
                                   >
-                                    <ForwardRef
+                                    <div
+                                      className="c25"
                                       onClick={[Function]}
                                     >
-                                      <BaseStyledComponent
-                                        forwardedClass={
-                                          Object {
-                                            "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
-                                            "componentStyle": ComponentStyle {
-                                              "componentId": "sc-jKJlTe",
-                                              "isStatic": true,
-                                              "lastClassName": "iIjDed",
-                                              "rules": Array [
-                                                "
-  display: block;
-  margin: ",
-                                                "0.5555555555555556rem",
-                                                " ",
-                                                "2.2222222222222223rem",
-                                                ";
-  font-weight: normal;
-",
-                                              ],
-                                            },
-                                            "displayName": "styled.h4",
-                                            "render": [Function],
-                                            "styledComponentId": "sc-jKJlTe",
-                                            "target": "h4",
-                                            "warnTooManyClasses": [Function],
-                                            "withComponent": [Function],
-                                          }
-                                        }
-                                        forwardedRef={null}
+                                      <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <h4
-                                          className="iIjDed"
+                                        <StyledComponent
+                                          forwardedClass={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": undefined,
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-jKJlTe",
+                                                "isStatic": true,
+                                                "lastClassName": "c26",
+                                                "rules": Array [
+                                                  "
+  display: block;
+  margin: ",
+                                                  "0.5555555555555556rem",
+                                                  " ",
+                                                  "2.2222222222222223rem",
+                                                  ";
+  font-weight: normal;
+",
+                                                ],
+                                              },
+                                              "displayName": "styled.h4",
+                                              "render": [Function],
+                                              "styledComponentId": "sc-jKJlTe",
+                                              "target": "h4",
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
+                                            }
+                                          }
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                         >
-                                          <Link
-                                            href="/docs/basics"
+                                          <h4
+                                            className="c26"
+                                            onClick={[Function]}
                                           >
                                             <Link
                                               href="/docs/basics"
                                             >
-                                              <ForwardRef
+                                              <Link
                                                 href="/docs/basics"
-                                                onClick={[Function]}
                                               >
-                                                <BaseStyledComponent
-                                                  forwardedClass={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "sc-bdVaJa",
-                                                        "isStatic": true,
-                                                        "lastClassName": "tCIOJ",
-                                                        "rules": Array [
-                                                          "
+                                                <ForwardRef
+                                                  href="/docs/basics"
+                                                  onClick={[Function]}
+                                                >
+                                                  <StyledComponent
+                                                    forwardedClass={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": undefined,
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "sc-bdVaJa",
+                                                          "isStatic": true,
+                                                          "lastClassName": "c27",
+                                                          "rules": Array [
+                                                            "
   display: inline-block;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
-                                                          "0.1111111111111111rem",
-                                                          " ",
-                                                          "0.4444444444444444rem",
-                                                          ";
+                                                            "0.1111111111111111rem",
+                                                            " ",
+                                                            "0.4444444444444444rem",
+                                                            ";
   margin: ",
-                                                          "-0.1111111111111111rem",
-                                                          " ",
-                                                          "-0.4444444444444444rem",
-                                                          ";
+                                                            "-0.1111111111111111rem",
+                                                            " ",
+                                                            "-0.4444444444444444rem",
+                                                            ";
 
   @media (min-width: ",
-                                                          "62.5",
-                                                          "em) {
+                                                            "62.5",
+                                                            "em) {
     border-radius: ",
-                                                          "0.16666666666666666rem",
-                                                          ";
+                                                            "0.16666666666666666rem",
+                                                            ";
 
     &:hover {
       background: ",
-                                                          "rgba(20, 20, 20, 0.1)",
-                                                          ";
+                                                            "rgba(20, 20, 20, 0.1)",
+                                                            ";
     }
   }
 ",
-                                                        ],
-                                                      },
-                                                      "displayName": "styled.a",
-                                                      "render": [Function],
-                                                      "styledComponentId": "sc-bdVaJa",
-                                                      "target": "a",
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
+                                                          ],
+                                                        },
+                                                        "displayName": "styled.a",
+                                                        "render": [Function],
+                                                        "styledComponentId": "sc-bdVaJa",
+                                                        "target": "a",
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
                                                     }
-                                                  }
-                                                  forwardedRef={null}
-                                                  href="/docs/basics"
-                                                  onClick={[Function]}
-                                                >
-                                                  <a
-                                                    className="tCIOJ"
+                                                    forwardedRef={null}
                                                     href="/docs/basics"
                                                     onClick={[Function]}
                                                   >
-                                                    Basics
-                                                  </a>
-                                                </BaseStyledComponent>
-                                              </ForwardRef>
+                                                    <a
+                                                      className="c27"
+                                                      href="/docs/basics"
+                                                      onClick={[Function]}
+                                                    >
+                                                      Basics
+                                                    </a>
+                                                  </StyledComponent>
+                                                </ForwardRef>
+                                              </Link>
                                             </Link>
-                                          </Link>
-                                        </h4>
-                                      </BaseStyledComponent>
-                                    </ForwardRef>
-                                  </div>
-                                </BaseStyledComponent>
-                              </ForwardRef>
-                            </Folder>
-                            <Folder
-                              isOpenDefault={false}
-                              key="Advanced"
-                            >
-                              <ForwardRef
-                                onClick={[Function]}
+                                          </h4>
+                                        </StyledComponent>
+                                      </ForwardRef>
+                                    </div>
+                                  </StyledComponent>
+                                </ForwardRef>
+                              </Folder>
+                              <Folder
+                                key="Advanced"
                               >
-                                <BaseStyledComponent
-                                  forwardedClass={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "sc-ckVGcZ",
-                                        "isStatic": true,
-                                        "lastClassName": "bmfxTR",
-                                        "rules": Array [
-                                          "
-  margin-bottom: ",
-                                          "1.1111111111111112rem",
-                                          ";
-",
-                                        ],
-                                      },
-                                      "displayName": "styled.div",
-                                      "render": [Function],
-                                      "styledComponentId": "sc-ckVGcZ",
-                                      "target": "div",
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={null}
+                                <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <div
-                                    className="bmfxTR"
+                                  <StyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": undefined,
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-ckVGcZ",
+                                          "isStatic": true,
+                                          "lastClassName": "c25",
+                                          "rules": Array [
+                                            "
+  margin-bottom: ",
+                                            "1.1111111111111112rem",
+                                            ";
+",
+                                          ],
+                                        },
+                                        "displayName": "styled.div",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-ckVGcZ",
+                                        "target": "div",
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
                                     onClick={[Function]}
                                   >
-                                    <ForwardRef
+                                    <div
+                                      className="c25"
                                       onClick={[Function]}
                                     >
-                                      <BaseStyledComponent
-                                        forwardedClass={
-                                          Object {
-                                            "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
-                                            "componentStyle": ComponentStyle {
-                                              "componentId": "sc-jKJlTe",
-                                              "isStatic": true,
-                                              "lastClassName": "iIjDed",
-                                              "rules": Array [
-                                                "
-  display: block;
-  margin: ",
-                                                "0.5555555555555556rem",
-                                                " ",
-                                                "2.2222222222222223rem",
-                                                ";
-  font-weight: normal;
-",
-                                              ],
-                                            },
-                                            "displayName": "styled.h4",
-                                            "render": [Function],
-                                            "styledComponentId": "sc-jKJlTe",
-                                            "target": "h4",
-                                            "warnTooManyClasses": [Function],
-                                            "withComponent": [Function],
-                                          }
-                                        }
-                                        forwardedRef={null}
+                                      <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <h4
-                                          className="iIjDed"
+                                        <StyledComponent
+                                          forwardedClass={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": undefined,
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-jKJlTe",
+                                                "isStatic": true,
+                                                "lastClassName": "c26",
+                                                "rules": Array [
+                                                  "
+  display: block;
+  margin: ",
+                                                  "0.5555555555555556rem",
+                                                  " ",
+                                                  "2.2222222222222223rem",
+                                                  ";
+  font-weight: normal;
+",
+                                                ],
+                                              },
+                                              "displayName": "styled.h4",
+                                              "render": [Function],
+                                              "styledComponentId": "sc-jKJlTe",
+                                              "target": "h4",
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
+                                            }
+                                          }
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                         >
-                                          <Link
-                                            href="/docs/advanced"
+                                          <h4
+                                            className="c26"
+                                            onClick={[Function]}
                                           >
                                             <Link
                                               href="/docs/advanced"
                                             >
-                                              <ForwardRef
+                                              <Link
                                                 href="/docs/advanced"
-                                                onClick={[Function]}
                                               >
-                                                <BaseStyledComponent
-                                                  forwardedClass={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "sc-bdVaJa",
-                                                        "isStatic": true,
-                                                        "lastClassName": "tCIOJ",
-                                                        "rules": Array [
-                                                          "
+                                                <ForwardRef
+                                                  href="/docs/advanced"
+                                                  onClick={[Function]}
+                                                >
+                                                  <StyledComponent
+                                                    forwardedClass={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": undefined,
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "sc-bdVaJa",
+                                                          "isStatic": true,
+                                                          "lastClassName": "c27",
+                                                          "rules": Array [
+                                                            "
   display: inline-block;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
-                                                          "0.1111111111111111rem",
-                                                          " ",
-                                                          "0.4444444444444444rem",
-                                                          ";
+                                                            "0.1111111111111111rem",
+                                                            " ",
+                                                            "0.4444444444444444rem",
+                                                            ";
   margin: ",
-                                                          "-0.1111111111111111rem",
-                                                          " ",
-                                                          "-0.4444444444444444rem",
-                                                          ";
+                                                            "-0.1111111111111111rem",
+                                                            " ",
+                                                            "-0.4444444444444444rem",
+                                                            ";
 
   @media (min-width: ",
-                                                          "62.5",
-                                                          "em) {
+                                                            "62.5",
+                                                            "em) {
     border-radius: ",
-                                                          "0.16666666666666666rem",
-                                                          ";
+                                                            "0.16666666666666666rem",
+                                                            ";
 
     &:hover {
       background: ",
-                                                          "rgba(20, 20, 20, 0.1)",
-                                                          ";
+                                                            "rgba(20, 20, 20, 0.1)",
+                                                            ";
     }
   }
 ",
-                                                        ],
-                                                      },
-                                                      "displayName": "styled.a",
-                                                      "render": [Function],
-                                                      "styledComponentId": "sc-bdVaJa",
-                                                      "target": "a",
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
+                                                          ],
+                                                        },
+                                                        "displayName": "styled.a",
+                                                        "render": [Function],
+                                                        "styledComponentId": "sc-bdVaJa",
+                                                        "target": "a",
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
                                                     }
-                                                  }
-                                                  forwardedRef={null}
-                                                  href="/docs/advanced"
-                                                  onClick={[Function]}
-                                                >
-                                                  <a
-                                                    className="tCIOJ"
+                                                    forwardedRef={null}
                                                     href="/docs/advanced"
                                                     onClick={[Function]}
                                                   >
-                                                    Advanced
-                                                  </a>
-                                                </BaseStyledComponent>
-                                              </ForwardRef>
+                                                    <a
+                                                      className="c27"
+                                                      href="/docs/advanced"
+                                                      onClick={[Function]}
+                                                    >
+                                                      Advanced
+                                                    </a>
+                                                  </StyledComponent>
+                                                </ForwardRef>
+                                              </Link>
                                             </Link>
-                                          </Link>
-                                        </h4>
-                                      </BaseStyledComponent>
-                                    </ForwardRef>
-                                  </div>
-                                </BaseStyledComponent>
-                              </ForwardRef>
-                            </Folder>
-                            <Folder
-                              isOpenDefault={false}
-                              key="API Reference"
-                            >
-                              <ForwardRef
-                                onClick={[Function]}
+                                          </h4>
+                                        </StyledComponent>
+                                      </ForwardRef>
+                                    </div>
+                                  </StyledComponent>
+                                </ForwardRef>
+                              </Folder>
+                              <Folder
+                                key="API Reference"
                               >
-                                <BaseStyledComponent
-                                  forwardedClass={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "sc-ckVGcZ",
-                                        "isStatic": true,
-                                        "lastClassName": "bmfxTR",
-                                        "rules": Array [
-                                          "
-  margin-bottom: ",
-                                          "1.1111111111111112rem",
-                                          ";
-",
-                                        ],
-                                      },
-                                      "displayName": "styled.div",
-                                      "render": [Function],
-                                      "styledComponentId": "sc-ckVGcZ",
-                                      "target": "div",
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={null}
+                                <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <div
-                                    className="bmfxTR"
+                                  <StyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": undefined,
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-ckVGcZ",
+                                          "isStatic": true,
+                                          "lastClassName": "c25",
+                                          "rules": Array [
+                                            "
+  margin-bottom: ",
+                                            "1.1111111111111112rem",
+                                            ";
+",
+                                          ],
+                                        },
+                                        "displayName": "styled.div",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-ckVGcZ",
+                                        "target": "div",
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
                                     onClick={[Function]}
                                   >
-                                    <ForwardRef
+                                    <div
+                                      className="c25"
                                       onClick={[Function]}
                                     >
-                                      <BaseStyledComponent
-                                        forwardedClass={
-                                          Object {
-                                            "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
-                                            "componentStyle": ComponentStyle {
-                                              "componentId": "sc-jKJlTe",
-                                              "isStatic": true,
-                                              "lastClassName": "iIjDed",
-                                              "rules": Array [
-                                                "
-  display: block;
-  margin: ",
-                                                "0.5555555555555556rem",
-                                                " ",
-                                                "2.2222222222222223rem",
-                                                ";
-  font-weight: normal;
-",
-                                              ],
-                                            },
-                                            "displayName": "styled.h4",
-                                            "render": [Function],
-                                            "styledComponentId": "sc-jKJlTe",
-                                            "target": "h4",
-                                            "warnTooManyClasses": [Function],
-                                            "withComponent": [Function],
-                                          }
-                                        }
-                                        forwardedRef={null}
+                                      <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <h4
-                                          className="iIjDed"
+                                        <StyledComponent
+                                          forwardedClass={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": undefined,
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-jKJlTe",
+                                                "isStatic": true,
+                                                "lastClassName": "c26",
+                                                "rules": Array [
+                                                  "
+  display: block;
+  margin: ",
+                                                  "0.5555555555555556rem",
+                                                  " ",
+                                                  "2.2222222222222223rem",
+                                                  ";
+  font-weight: normal;
+",
+                                                ],
+                                              },
+                                              "displayName": "styled.h4",
+                                              "render": [Function],
+                                              "styledComponentId": "sc-jKJlTe",
+                                              "target": "h4",
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
+                                            }
+                                          }
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                         >
-                                          <Link
-                                            href="/docs/api"
+                                          <h4
+                                            className="c26"
+                                            onClick={[Function]}
                                           >
                                             <Link
                                               href="/docs/api"
                                             >
-                                              <ForwardRef
+                                              <Link
                                                 href="/docs/api"
-                                                onClick={[Function]}
                                               >
-                                                <BaseStyledComponent
-                                                  forwardedClass={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "sc-bdVaJa",
-                                                        "isStatic": true,
-                                                        "lastClassName": "tCIOJ",
-                                                        "rules": Array [
-                                                          "
+                                                <ForwardRef
+                                                  href="/docs/api"
+                                                  onClick={[Function]}
+                                                >
+                                                  <StyledComponent
+                                                    forwardedClass={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": undefined,
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "sc-bdVaJa",
+                                                          "isStatic": true,
+                                                          "lastClassName": "c27",
+                                                          "rules": Array [
+                                                            "
   display: inline-block;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
-                                                          "0.1111111111111111rem",
-                                                          " ",
-                                                          "0.4444444444444444rem",
-                                                          ";
+                                                            "0.1111111111111111rem",
+                                                            " ",
+                                                            "0.4444444444444444rem",
+                                                            ";
   margin: ",
-                                                          "-0.1111111111111111rem",
-                                                          " ",
-                                                          "-0.4444444444444444rem",
-                                                          ";
+                                                            "-0.1111111111111111rem",
+                                                            " ",
+                                                            "-0.4444444444444444rem",
+                                                            ";
 
   @media (min-width: ",
-                                                          "62.5",
-                                                          "em) {
+                                                            "62.5",
+                                                            "em) {
     border-radius: ",
-                                                          "0.16666666666666666rem",
-                                                          ";
+                                                            "0.16666666666666666rem",
+                                                            ";
 
     &:hover {
       background: ",
-                                                          "rgba(20, 20, 20, 0.1)",
-                                                          ";
+                                                            "rgba(20, 20, 20, 0.1)",
+                                                            ";
     }
   }
 ",
-                                                        ],
-                                                      },
-                                                      "displayName": "styled.a",
-                                                      "render": [Function],
-                                                      "styledComponentId": "sc-bdVaJa",
-                                                      "target": "a",
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
+                                                          ],
+                                                        },
+                                                        "displayName": "styled.a",
+                                                        "render": [Function],
+                                                        "styledComponentId": "sc-bdVaJa",
+                                                        "target": "a",
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
                                                     }
-                                                  }
-                                                  forwardedRef={null}
-                                                  href="/docs/api"
-                                                  onClick={[Function]}
-                                                >
-                                                  <a
-                                                    className="tCIOJ"
+                                                    forwardedRef={null}
                                                     href="/docs/api"
                                                     onClick={[Function]}
                                                   >
-                                                    API Reference
-                                                  </a>
-                                                </BaseStyledComponent>
-                                              </ForwardRef>
+                                                    <a
+                                                      className="c27"
+                                                      href="/docs/api"
+                                                      onClick={[Function]}
+                                                    >
+                                                      API Reference
+                                                    </a>
+                                                  </StyledComponent>
+                                                </ForwardRef>
+                                              </Link>
                                             </Link>
-                                          </Link>
-                                        </h4>
-                                      </BaseStyledComponent>
-                                    </ForwardRef>
-                                  </div>
-                                </BaseStyledComponent>
-                              </ForwardRef>
-                            </Folder>
-                            <Folder
-                              isOpenDefault={false}
-                              key="Tooling"
-                            >
-                              <ForwardRef
-                                onClick={[Function]}
+                                          </h4>
+                                        </StyledComponent>
+                                      </ForwardRef>
+                                    </div>
+                                  </StyledComponent>
+                                </ForwardRef>
+                              </Folder>
+                              <Folder
+                                key="Tooling"
                               >
-                                <BaseStyledComponent
-                                  forwardedClass={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "sc-ckVGcZ",
-                                        "isStatic": true,
-                                        "lastClassName": "bmfxTR",
-                                        "rules": Array [
-                                          "
-  margin-bottom: ",
-                                          "1.1111111111111112rem",
-                                          ";
-",
-                                        ],
-                                      },
-                                      "displayName": "styled.div",
-                                      "render": [Function],
-                                      "styledComponentId": "sc-ckVGcZ",
-                                      "target": "div",
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={null}
+                                <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <div
-                                    className="bmfxTR"
+                                  <StyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": undefined,
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-ckVGcZ",
+                                          "isStatic": true,
+                                          "lastClassName": "c25",
+                                          "rules": Array [
+                                            "
+  margin-bottom: ",
+                                            "1.1111111111111112rem",
+                                            ";
+",
+                                          ],
+                                        },
+                                        "displayName": "styled.div",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-ckVGcZ",
+                                        "target": "div",
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
                                     onClick={[Function]}
                                   >
-                                    <ForwardRef
+                                    <div
+                                      className="c25"
                                       onClick={[Function]}
                                     >
-                                      <BaseStyledComponent
-                                        forwardedClass={
-                                          Object {
-                                            "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
-                                            "componentStyle": ComponentStyle {
-                                              "componentId": "sc-jKJlTe",
-                                              "isStatic": true,
-                                              "lastClassName": "iIjDed",
-                                              "rules": Array [
-                                                "
-  display: block;
-  margin: ",
-                                                "0.5555555555555556rem",
-                                                " ",
-                                                "2.2222222222222223rem",
-                                                ";
-  font-weight: normal;
-",
-                                              ],
-                                            },
-                                            "displayName": "styled.h4",
-                                            "render": [Function],
-                                            "styledComponentId": "sc-jKJlTe",
-                                            "target": "h4",
-                                            "warnTooManyClasses": [Function],
-                                            "withComponent": [Function],
-                                          }
-                                        }
-                                        forwardedRef={null}
+                                      <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <h4
-                                          className="iIjDed"
+                                        <StyledComponent
+                                          forwardedClass={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": undefined,
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-jKJlTe",
+                                                "isStatic": true,
+                                                "lastClassName": "c26",
+                                                "rules": Array [
+                                                  "
+  display: block;
+  margin: ",
+                                                  "0.5555555555555556rem",
+                                                  " ",
+                                                  "2.2222222222222223rem",
+                                                  ";
+  font-weight: normal;
+",
+                                                ],
+                                              },
+                                              "displayName": "styled.h4",
+                                              "render": [Function],
+                                              "styledComponentId": "sc-jKJlTe",
+                                              "target": "h4",
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
+                                            }
+                                          }
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                         >
-                                          <Link
-                                            href="/docs/tooling"
+                                          <h4
+                                            className="c26"
+                                            onClick={[Function]}
                                           >
                                             <Link
                                               href="/docs/tooling"
                                             >
-                                              <ForwardRef
+                                              <Link
                                                 href="/docs/tooling"
-                                                onClick={[Function]}
                                               >
-                                                <BaseStyledComponent
-                                                  forwardedClass={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "sc-bdVaJa",
-                                                        "isStatic": true,
-                                                        "lastClassName": "tCIOJ",
-                                                        "rules": Array [
-                                                          "
+                                                <ForwardRef
+                                                  href="/docs/tooling"
+                                                  onClick={[Function]}
+                                                >
+                                                  <StyledComponent
+                                                    forwardedClass={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": undefined,
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "sc-bdVaJa",
+                                                          "isStatic": true,
+                                                          "lastClassName": "c27",
+                                                          "rules": Array [
+                                                            "
   display: inline-block;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
-                                                          "0.1111111111111111rem",
-                                                          " ",
-                                                          "0.4444444444444444rem",
-                                                          ";
+                                                            "0.1111111111111111rem",
+                                                            " ",
+                                                            "0.4444444444444444rem",
+                                                            ";
   margin: ",
-                                                          "-0.1111111111111111rem",
-                                                          " ",
-                                                          "-0.4444444444444444rem",
-                                                          ";
+                                                            "-0.1111111111111111rem",
+                                                            " ",
+                                                            "-0.4444444444444444rem",
+                                                            ";
 
   @media (min-width: ",
-                                                          "62.5",
-                                                          "em) {
+                                                            "62.5",
+                                                            "em) {
     border-radius: ",
-                                                          "0.16666666666666666rem",
-                                                          ";
+                                                            "0.16666666666666666rem",
+                                                            ";
 
     &:hover {
       background: ",
-                                                          "rgba(20, 20, 20, 0.1)",
-                                                          ";
+                                                            "rgba(20, 20, 20, 0.1)",
+                                                            ";
     }
   }
 ",
-                                                        ],
-                                                      },
-                                                      "displayName": "styled.a",
-                                                      "render": [Function],
-                                                      "styledComponentId": "sc-bdVaJa",
-                                                      "target": "a",
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
+                                                          ],
+                                                        },
+                                                        "displayName": "styled.a",
+                                                        "render": [Function],
+                                                        "styledComponentId": "sc-bdVaJa",
+                                                        "target": "a",
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
                                                     }
-                                                  }
-                                                  forwardedRef={null}
-                                                  href="/docs/tooling"
-                                                  onClick={[Function]}
-                                                >
-                                                  <a
-                                                    className="tCIOJ"
+                                                    forwardedRef={null}
                                                     href="/docs/tooling"
                                                     onClick={[Function]}
                                                   >
-                                                    Tooling
-                                                  </a>
-                                                </BaseStyledComponent>
-                                              </ForwardRef>
+                                                    <a
+                                                      className="c27"
+                                                      href="/docs/tooling"
+                                                      onClick={[Function]}
+                                                    >
+                                                      Tooling
+                                                    </a>
+                                                  </StyledComponent>
+                                                </ForwardRef>
+                                              </Link>
                                             </Link>
-                                          </Link>
-                                        </h4>
-                                      </BaseStyledComponent>
-                                    </ForwardRef>
-                                  </div>
-                                </BaseStyledComponent>
-                              </ForwardRef>
-                            </Folder>
-                            <Folder
-                              isOpenDefault={false}
-                              key="FAQs"
-                            >
-                              <ForwardRef
-                                onClick={[Function]}
+                                          </h4>
+                                        </StyledComponent>
+                                      </ForwardRef>
+                                    </div>
+                                  </StyledComponent>
+                                </ForwardRef>
+                              </Folder>
+                              <Folder
+                                key="FAQs"
                               >
-                                <BaseStyledComponent
-                                  forwardedClass={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "sc-ckVGcZ",
-                                        "isStatic": true,
-                                        "lastClassName": "bmfxTR",
-                                        "rules": Array [
-                                          "
-  margin-bottom: ",
-                                          "1.1111111111111112rem",
-                                          ";
-",
-                                        ],
-                                      },
-                                      "displayName": "styled.div",
-                                      "render": [Function],
-                                      "styledComponentId": "sc-ckVGcZ",
-                                      "target": "div",
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={null}
+                                <ForwardRef
                                   onClick={[Function]}
                                 >
-                                  <div
-                                    className="bmfxTR"
+                                  <StyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": undefined,
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-ckVGcZ",
+                                          "isStatic": true,
+                                          "lastClassName": "c25",
+                                          "rules": Array [
+                                            "
+  margin-bottom: ",
+                                            "1.1111111111111112rem",
+                                            ";
+",
+                                          ],
+                                        },
+                                        "displayName": "styled.div",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-ckVGcZ",
+                                        "target": "div",
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
                                     onClick={[Function]}
                                   >
-                                    <ForwardRef
+                                    <div
+                                      className="c25"
                                       onClick={[Function]}
                                     >
-                                      <BaseStyledComponent
-                                        forwardedClass={
-                                          Object {
-                                            "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": undefined,
-                                            "componentStyle": ComponentStyle {
-                                              "componentId": "sc-jKJlTe",
-                                              "isStatic": true,
-                                              "lastClassName": "iIjDed",
-                                              "rules": Array [
-                                                "
-  display: block;
-  margin: ",
-                                                "0.5555555555555556rem",
-                                                " ",
-                                                "2.2222222222222223rem",
-                                                ";
-  font-weight: normal;
-",
-                                              ],
-                                            },
-                                            "displayName": "styled.h4",
-                                            "render": [Function],
-                                            "styledComponentId": "sc-jKJlTe",
-                                            "target": "h4",
-                                            "warnTooManyClasses": [Function],
-                                            "withComponent": [Function],
-                                          }
-                                        }
-                                        forwardedRef={null}
+                                      <ForwardRef
                                         onClick={[Function]}
                                       >
-                                        <h4
-                                          className="iIjDed"
+                                        <StyledComponent
+                                          forwardedClass={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": undefined,
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "sc-jKJlTe",
+                                                "isStatic": true,
+                                                "lastClassName": "c26",
+                                                "rules": Array [
+                                                  "
+  display: block;
+  margin: ",
+                                                  "0.5555555555555556rem",
+                                                  " ",
+                                                  "2.2222222222222223rem",
+                                                  ";
+  font-weight: normal;
+",
+                                                ],
+                                              },
+                                              "displayName": "styled.h4",
+                                              "render": [Function],
+                                              "styledComponentId": "sc-jKJlTe",
+                                              "target": "h4",
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
+                                            }
+                                          }
+                                          forwardedRef={null}
                                           onClick={[Function]}
                                         >
-                                          <Link
-                                            href="/docs/faqs"
+                                          <h4
+                                            className="c26"
+                                            onClick={[Function]}
                                           >
                                             <Link
                                               href="/docs/faqs"
                                             >
-                                              <ForwardRef
+                                              <Link
                                                 href="/docs/faqs"
-                                                onClick={[Function]}
                                               >
-                                                <BaseStyledComponent
-                                                  forwardedClass={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "sc-bdVaJa",
-                                                        "isStatic": true,
-                                                        "lastClassName": "tCIOJ",
-                                                        "rules": Array [
-                                                          "
+                                                <ForwardRef
+                                                  href="/docs/faqs"
+                                                  onClick={[Function]}
+                                                >
+                                                  <StyledComponent
+                                                    forwardedClass={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": undefined,
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "sc-bdVaJa",
+                                                          "isStatic": true,
+                                                          "lastClassName": "c27",
+                                                          "rules": Array [
+                                                            "
   display: inline-block;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
-                                                          "0.1111111111111111rem",
-                                                          " ",
-                                                          "0.4444444444444444rem",
-                                                          ";
+                                                            "0.1111111111111111rem",
+                                                            " ",
+                                                            "0.4444444444444444rem",
+                                                            ";
   margin: ",
-                                                          "-0.1111111111111111rem",
-                                                          " ",
-                                                          "-0.4444444444444444rem",
-                                                          ";
+                                                            "-0.1111111111111111rem",
+                                                            " ",
+                                                            "-0.4444444444444444rem",
+                                                            ";
 
   @media (min-width: ",
-                                                          "62.5",
-                                                          "em) {
+                                                            "62.5",
+                                                            "em) {
     border-radius: ",
-                                                          "0.16666666666666666rem",
-                                                          ";
+                                                            "0.16666666666666666rem",
+                                                            ";
 
     &:hover {
       background: ",
-                                                          "rgba(20, 20, 20, 0.1)",
-                                                          ";
+                                                            "rgba(20, 20, 20, 0.1)",
+                                                            ";
     }
   }
 ",
-                                                        ],
-                                                      },
-                                                      "displayName": "styled.a",
-                                                      "render": [Function],
-                                                      "styledComponentId": "sc-bdVaJa",
-                                                      "target": "a",
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
+                                                          ],
+                                                        },
+                                                        "displayName": "styled.a",
+                                                        "render": [Function],
+                                                        "styledComponentId": "sc-bdVaJa",
+                                                        "target": "a",
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
                                                     }
-                                                  }
-                                                  forwardedRef={null}
-                                                  href="/docs/faqs"
-                                                  onClick={[Function]}
-                                                >
-                                                  <a
-                                                    className="tCIOJ"
+                                                    forwardedRef={null}
                                                     href="/docs/faqs"
                                                     onClick={[Function]}
                                                   >
-                                                    FAQs
-                                                  </a>
-                                                </BaseStyledComponent>
-                                              </ForwardRef>
+                                                    <a
+                                                      className="c27"
+                                                      href="/docs/faqs"
+                                                      onClick={[Function]}
+                                                    >
+                                                      FAQs
+                                                    </a>
+                                                  </StyledComponent>
+                                                </ForwardRef>
+                                              </Link>
                                             </Link>
-                                          </Link>
-                                        </h4>
-                                      </BaseStyledComponent>
-                                    </ForwardRef>
-                                  </div>
-                                </BaseStyledComponent>
-                              </ForwardRef>
-                            </Folder>
-                          </div>
-                        </BaseStyledComponent>
-                      </ForwardRef>
-                    </DocsSidebarMenu>
+                                          </h4>
+                                        </StyledComponent>
+                                      </ForwardRef>
+                                    </div>
+                                  </StyledComponent>
+                                </ForwardRef>
+                              </Folder>
+                            </div>
+                          </StyledComponent>
+                        </ForwardRef>
+                      </Component>
+                    </withRouter(Unknown)>
                   </nav>
-                </BaseStyledComponent>
+                </StyledComponent>
               </ForwardRef>
             </CaptureScroll>
           </div>
@@ -3419,7 +3833,7 @@ exports[`DocsLayout renders correctly 1`] = `
           data-e2e-id="content"
           moveRight={false}
         >
-          <BaseStyledComponent
+          <StyledComponent
             data-e2e-id="content"
             forwardedClass={
               Object {
@@ -3428,7 +3842,7 @@ exports[`DocsLayout renders correctly 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-kEYyzF",
                   "isStatic": false,
-                  "lastClassName": "jOMSpa",
+                  "lastClassName": "c28",
                   "rules": Array [
                     "
   width: ",
@@ -3471,14 +3885,13 @@ exports[`DocsLayout renders correctly 1`] = `
                     [Function],
                     ");
   ",
-                    "
+                    ";
   }
 ",
-                    "
-
+                    ";
   ",
                     [Function],
-                    "
+                    ";
 ",
                   ],
                 },
@@ -3494,11 +3907,11 @@ exports[`DocsLayout renders correctly 1`] = `
             moveRight={false}
           >
             <div
-              className="jOMSpa"
+              className="c28"
               data-e2e-id="content"
             >
               <ForwardRef>
-                <BaseStyledComponent
+                <StyledComponent
                   forwardedClass={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -3506,7 +3919,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "sc-kkGfuU",
                         "isStatic": true,
-                        "lastClassName": "jMFDDF",
+                        "lastClassName": "c29",
                         "rules": Array [
                           "
   display: block;
@@ -3534,15 +3947,15 @@ exports[`DocsLayout renders correctly 1`] = `
                   forwardedRef={null}
                 >
                   <h1
-                    className="jMFDDF"
+                    className="c29"
                   />
-                </BaseStyledComponent>
+                </StyledComponent>
               </ForwardRef>
             </div>
-          </BaseStyledComponent>
+          </StyledComponent>
         </ForwardRef>
       </div>
-    </BaseStyledComponent>
+    </StyledComponent>
   </ForwardRef>
 </DocsLayout>
 `;

@@ -31,4 +31,3 @@ render(
   <Rotate>&lt; 💅 &gt;</Rotate>
 );
 ```
-

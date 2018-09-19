@@ -62,15 +62,15 @@ class StyledThemingExample extends React.Component {
   state = {
     mode: 'light',
     size: 'normal',
-  };
+  }
 
   handleToggleMode = () => {
     this.setState({ mode: this.state.mode === 'light' ? 'dark' : 'light' })
-  };
+  }
 
   handleToggleSize = () => {
     this.setState({ size: this.state.size === 'normal' ? 'large' : 'normal' })
-  };
+  }
 
   render() {
     return (

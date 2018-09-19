@@ -1,4 +1,3 @@
-
 import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
@@ -20,9 +19,9 @@ This is an ES6 language feature. You can learn more about them in the
       <Code>Interpolation</Code>
     </Column>
     <Column>
-      This can either be a string or a function. Strings are combined with
-      the rules as-is. Functions will receive the styled component's props
-      as the first and only argument.
+      This can either be a string or a function. Strings are combined with the
+      rules as-is. Functions will receive the styled component's props as the
+      first and only argument.
     </Column>
   </Row>
 </Table>
@@ -35,9 +34,9 @@ property, `theme`, which is injected by a higher level `ThemeProvider` component
 Check the section on [Theming](/docs/advanced#theming) for more information on this.
 
 ```jsx
-import styled from "styled-components";
+import styled from 'styled-components'
 
-const padding = "3em";
+const padding = '3em'
 
 const Section = styled.section`
   color: white;
@@ -47,7 +46,7 @@ const Section = styled.section`
 
   /* Adjust the background from the properties */
   background: ${props => props.background};
-`;
+`
 ```
 
 You can also return objects from interpolations or input objects directly, and they'll be

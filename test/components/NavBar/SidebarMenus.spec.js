@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import 'jest-styled-components'
 import {
   DocsSidebarMenu,
-  SimpleSidebarMenu
+  SimpleSidebarMenu,
 } from '../../../components/Nav/SidebarMenus'
 
 test('DocsSidebarMenu renders correctly', () => {

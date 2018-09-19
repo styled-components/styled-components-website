@@ -1,11 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 7.222222222222222rem;
+  line-height: 1.6666666666666667rem;
+  font-size: 0.8333333333333334rem;
+  color: currentColor;
+}
+
+.c2::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c2::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c2:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c2::placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c1 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 2.7777777777777777rem;
+  margin-right: 0.2222222222222222rem;
+  cursor: pointer;
+}
+
+.c1:hover,
+.c1:focus {
+  opacity: 0.7;
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+.c1:active {
+  background: rgba(0,0,0,0.1);
+}
+
+.c1 svg {
+  width: 0.8888888888888888rem;
+  height: 0.9444444444444444rem;
+}
+
+.c1 svg path {
+  fill: currentColor;
+}
+
 <form
-  className="cuiSQS"
+  className="c0"
 >
   <button
-    className="loZjyn"
+    className="c1"
   >
     <svg
       height="16"
@@ -29,7 +112,7 @@ exports[`Search renders correctly 1`] = `
     </svg>
   </button>
   <input
-    className="bQsxTH"
+    className="c2"
     placeholder="Search ..."
   />
 </form>

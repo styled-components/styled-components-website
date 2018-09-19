@@ -10,7 +10,7 @@ const MyStyledComponent = styled(AlreadyStyledComponent)`
     color: palevioletred;
     font-weight: bold;
   }
-`;
+`
 ```
 
 Each `&` gets replaced with the generated class, so the injected CSS then looks like this:

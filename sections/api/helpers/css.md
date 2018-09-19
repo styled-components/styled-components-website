@@ -13,9 +13,7 @@ If you're just returning a normal string you do not need to use this.
     <Column>
       1. <Code>TaggedTemplateLiteral</Code>
     </Column>
-    <Column>
-      A tagged template literal with your CSS and interpolations.
-    </Column>
+    <Column>A tagged template literal with your CSS and interpolations.</Column>
   </Row>
 </Table>
 
@@ -23,16 +21,16 @@ Returns an array of interpolations, which is a flattened data structure that you
 itself.
 
 ```jsx
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 
 const complexMixin = css`
-  color: ${props => props.whiteColor ? "white" : "black"}
-`;
+  color: ${props => (props.whiteColor ? 'white' : 'black')};
+`
 
 const StyledComp = styled.div`
   /* This is an example of a nested interpolation */
-  ${props => props.complex ? complexMixin : "color: blue;"}
-`;
+  ${props => (props.complex ? complexMixin : 'color: blue;')};
+`
 ```
 
 If you leave off the css your function will be `toString()`ed and you'll not get the results

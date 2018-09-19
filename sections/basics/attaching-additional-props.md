@@ -43,4 +43,3 @@ render(
 
 As you can see, we get access to our newly created props in the interpolations, and
 the `type` attribute is passed down to the element.
-

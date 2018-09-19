@@ -17,7 +17,7 @@ const InvisibleAnchor = styled.div.attrs({
 
   ${mobile(css`
     top: ${rem(-90)};
-  `)}
+  `)};
 `
 
 const Anchor = styled.a`
@@ -40,9 +40,12 @@ const AnchorIcon = styled(LinkIcon).attrs({
   }
 `
 
-const AnchorHeader = styled(Header)`
+const AnchorHeader = styled.div`
+  && {
+    margin-left: ${rem(-30)};
+  }
+
   position: relative;
-  margin-left: ${rem(-30)};
   padding-left: ${rem(30)};
 
   ${mobile(css`
@@ -70,6 +73,7 @@ const Link = ({ children, level, id }) => {
       override = TertiaryHeader
       break
     default:
+      override = Header
       break
   }
 
