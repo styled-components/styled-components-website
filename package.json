@@ -96,10 +96,6 @@
   },
   "bundlesize": [
     {
-      "path": ".next/bundles/pages/**/*.js",
-      "maxSize": "50kB"
-    },
-    {
       "path": ".next/static/**/*.js",
       "maxSize": "200kB"
     }
