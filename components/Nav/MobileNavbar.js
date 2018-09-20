@@ -5,7 +5,7 @@ import rem from '../../utils/rem'
 import { navbarHeight } from '../../utils/sizes'
 import { paleGrey } from '../../utils/colors'
 import { mobile } from '../../utils/media'
-import { CloseIcon, FoldIcon, ArrowIcon } from './NavIcons'
+import { CloseIcon, FoldIcon, ArrowIcon, SearchIcon } from './NavIcons'
 import Link from '../Link'
 import NavLinks from './NavLinks'
 import Social from './Social'
@@ -123,16 +123,20 @@ const MobileNavbar = props => {
       <LogoLink>
         <Logo compact />
       </LogoLink>
+      <div>
+        <NavButton onClick={onSearchButtonClick}>
+          <SearchIcon />
+        </NavButton>
 
-      <NavButton onClick={onMobileNavToggle} active={!isMobileNavFolded}>
-        <ArrowWrapper shouldRotate={!isMobileNavFolded}>
-          <ArrowIcon />
-        </ArrowWrapper>
-      </NavButton>
+        <NavButton onClick={onMobileNavToggle} active={!isMobileNavFolded}>
+          <ArrowWrapper shouldRotate={!isMobileNavFolded}>
+            <ArrowIcon />
+          </ArrowWrapper>
+        </NavButton>
+      </div>
 
       <SecondaryMenu isOpen={!isMobileNavFolded}>
         <NavLinks />
-        <button onClick={onSearchButtonClick}>Search Button</button>
         <NavSeparator />
         <SecondaryMenuItem>
           <Social />
