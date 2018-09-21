@@ -104,6 +104,9 @@
           "title": "Babel Plugin"
         },
         {
+          "title": "TypeScript Plugin"
+        },
+        {
           "title": "Test Utilities"
         },
         {
