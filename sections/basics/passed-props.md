@@ -25,8 +25,8 @@ DOM node that is mounted, as with React elements.
   // Render a styled text input with a placeholder of "@mxstbr", and one with a value of "@geelen"
   render(
     <div>
-      <Input placeholder="@mxstbr" value="@probablyup" type="text" />
-      <Input value="@geelen" type="text" inputColor="rebeccapurple" />
+      <Input placeholder="@mxstbr" defaultValue="@probablyup" type="text" />
+      <Input defaultValue="@geelen" type="text" inputColor="rebeccapurple" />
     </div>
   );
 ```

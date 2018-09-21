@@ -13,7 +13,12 @@ import { headerFont, monospace } from '../utils/fonts'
 
 import '../utils/prismTemplateString'
 
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
+import {
+  LiveProvider,
+  LiveEditor,
+  LiveError,
+  LivePreview,
+} from '@probablyup/react-live'
 
 const StyledProvider = styled(LiveProvider)`
   box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
