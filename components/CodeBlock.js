@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import rem from '../utils/rem'
 
 import '../utils/prismTemplateString'
-import { Editor } from 'react-live'
+import { Editor } from '@probablyup/react-live'
 import { darkGrey } from '../utils/colors'
 import { monospace } from '../utils/fonts'
 

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled, { css } from 'styled-components'
-import { LiveProvider, LiveEditor, LivePreview } from 'react-live'
+import { LiveProvider, LiveEditor, LivePreview } from '@probablyup/react-live'
 import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
 
 import rem from '../utils/rem'

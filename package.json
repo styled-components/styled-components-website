@@ -24,6 +24,7 @@
     "@mdx-js/mdx": "^0.15.0",
     "@mdx-js/runtime": "^0.15.0",
     "@mdx-js/tag": "^0.15.0",
+    "@probablyup/react-live": "^1.11.0",
     "@types/react": "^16.4.13",
     "@zeit/next-mdx": "^1.1.1-canary.2",
     "@zeit/next-source-maps": "^0.0.2",
@@ -41,9 +42,8 @@
     "prismjs": "^1.6.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-live": "^1.11.0",
     "react-octicons-svg": "^1.1.13",
-    "styled-components": "4.0.0-beta.8-unpure",
+    "styled-components": "4.0.0-beta.8",
     "styled-theming": "^2.2.0",
     "webpack-bundle-analyzer": "^2.13.1"
   },
