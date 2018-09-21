@@ -200,7 +200,7 @@ const Thing = styled.div`
 
 render(
   <Thing>
-    <label for="foo-button" className="something">Mystery button</label>
+    <label htmlFor="foo-button" className="something">Mystery button</label>
     <button id="foo-button">What do I do?</button>
   </Thing>
 )
