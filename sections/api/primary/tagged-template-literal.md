@@ -33,8 +33,8 @@ The properties that are passed into an interpolated function get attached a spec
 property, `theme`, which is injected by a higher level `ThemeProvider` component.
 Check the section on [Theming](/docs/advanced#theming) for more information on this.
 
-```jsx
-import styled from 'styled-components'
+```react
+// import styled from 'styled-components'
 
 const padding = '3em'
 
@@ -47,6 +47,12 @@ const Section = styled.section`
   /* Adjust the background from the properties */
   background: ${props => props.background};
 `
+
+render(
+  <Section background="cornflowerblue">
+    ✨ Magic
+  </Section>
+)
 ```
 
 You can also return objects from interpolations or input objects directly, and they'll be
