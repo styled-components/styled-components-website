@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav renders correctly 1`] = `
-.c26 {
+.c25 {
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -81,7 +81,10 @@ exports[`Nav renders correctly 1`] = `
 }
 
 .c10 {
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
   -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
@@ -115,14 +118,9 @@ exports[`Nav renders correctly 1`] = `
   height: 0.7777777777777778rem;
 }
 
-.c12 {
-  width: 0.9444444444444444rem;
-  height: 0.9444444444444444rem;
-}
-
-.c13 {
-  width: 0.9444444444444444rem;
-  height: 0.7777777777777778rem;
+.c12.c12 {
+  width: 1rem;
+  height: 1rem;
 }
 
 .c4 {
@@ -136,7 +134,7 @@ exports[`Nav renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c18 {
+.c17 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -147,15 +145,15 @@ exports[`Nav renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c16 svg {
+.c15 svg {
   display: inline-block;
 }
 
-.c16 svg path {
+.c15 svg path {
   fill: currentColor;
 }
 
-.c15 {
+.c14 {
   background: none;
   outline: none;
   border: none;
@@ -170,16 +168,16 @@ exports[`Nav renders correctly 1`] = `
   background: rgba(0,0,0,0.07);
 }
 
-.c15:focus {
+.c14:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
 }
 
-.c14 {
+.c13 {
   display: none;
 }
 
-.c20 {
+.c19 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -214,12 +212,12 @@ exports[`Nav renders correctly 1`] = `
   color: #868686;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c19 {
+.c18 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
@@ -231,7 +229,7 @@ exports[`Nav renders correctly 1`] = `
   transform: rotate(180deg);
 }
 
-.c21 {
+.c20 {
   padding-right: 1.1111111111111112rem;
 }
 
@@ -303,7 +301,7 @@ exports[`Nav renders correctly 1`] = `
   margin-right: 1.9444444444444444rem;
 }
 
-.c22 {
+.c21 {
   position: fixed;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -325,35 +323,35 @@ exports[`Nav renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c23 {
+.c22 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 1.3888888888888888rem;
 }
 
-.c24 {
+.c23 {
   margin-bottom: 1.1111111111111112rem;
 }
 
-.c25 {
+.c24 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
 }
 
 @media (min-width:62.5em) {
-  .c26 {
+  .c25 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c26:hover {
+  .c25:hover {
     background: rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
-  .c14 {
+  .c13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -386,7 +384,7 @@ exports[`Nav renders correctly 1`] = `
               "$$typeof": Symbol(react.forward_ref),
               "attrs": undefined,
               "componentStyle": ComponentStyle {
-                "componentId": "sc-jzJRlG",
+                "componentId": "sc-cSHVUG",
                 "isStatic": false,
                 "lastClassName": "c0",
                 "rules": Array [
@@ -418,7 +416,7 @@ exports[`Nav renders correctly 1`] = `
               },
               "displayName": "styled.nav",
               "render": [Function],
-              "styledComponentId": "sc-jzJRlG",
+              "styledComponentId": "sc-cSHVUG",
               "target": "nav",
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
@@ -436,7 +434,7 @@ exports[`Nav renders correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "attrs": undefined,
                     "componentStyle": ComponentStyle {
-                      "componentId": "sc-cSHVUG",
+                      "componentId": "sc-kAzzGY",
                       "isStatic": true,
                       "lastClassName": "c1",
                       "rules": Array [
@@ -466,7 +464,7 @@ exports[`Nav renders correctly 1`] = `
                     },
                     "displayName": "styled.div",
                     "render": [Function],
-                    "styledComponentId": "sc-cSHVUG",
+                    "styledComponentId": "sc-kAzzGY",
                     "target": "div",
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
@@ -484,7 +482,7 @@ exports[`Nav renders correctly 1`] = `
                           "$$typeof": Symbol(react.forward_ref),
                           "attrs": undefined,
                           "componentStyle": ComponentStyle {
-                            "componentId": "sc-kAzzGY",
+                            "componentId": "sc-chPdSV",
                             "isStatic": true,
                             "lastClassName": "c2",
                             "rules": Array [
@@ -497,7 +495,7 @@ exports[`Nav renders correctly 1`] = `
                           },
                           "displayName": "styled.div",
                           "render": [Function],
-                          "styledComponentId": "sc-kAzzGY",
+                          "styledComponentId": "sc-chPdSV",
                           "target": "div",
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
@@ -518,7 +516,7 @@ exports[`Nav renders correctly 1`] = `
                                   "unstyled": true,
                                 },
                                 "componentStyle": ComponentStyle {
-                                  "componentId": "sc-kgoBCf",
+                                  "componentId": "sc-kGXeez",
                                   "isStatic": true,
                                   "lastClassName": "c3",
                                   "rules": Array [
@@ -533,7 +531,7 @@ exports[`Nav renders correctly 1`] = `
                                 },
                                 "displayName": "Styled(Link)",
                                 "render": [Function],
-                                "styledComponentId": "sc-kgoBCf",
+                                "styledComponentId": "sc-kGXeez",
                                 "target": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
@@ -562,9 +560,9 @@ exports[`Nav renders correctly 1`] = `
                                           "$$typeof": Symbol(react.forward_ref),
                                           "attrs": undefined,
                                           "componentStyle": ComponentStyle {
-                                            "componentId": "sc-htoDjs",
+                                            "componentId": "sc-dnqmqq",
                                             "isStatic": false,
-                                            "lastClassName": "c18",
+                                            "lastClassName": "c17",
                                             "rules": Array [
                                               "
   display: inline-block;
@@ -582,7 +580,7 @@ exports[`Nav renders correctly 1`] = `
                                           },
                                           "displayName": "styled.div",
                                           "render": [Function],
-                                          "styledComponentId": "sc-htoDjs",
+                                          "styledComponentId": "sc-dnqmqq",
                                           "target": "div",
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
@@ -950,7 +948,7 @@ exports[`Nav renders correctly 1`] = `
                           "$$typeof": Symbol(react.forward_ref),
                           "attrs": undefined,
                           "componentStyle": ComponentStyle {
-                            "componentId": "sc-chPdSV",
+                            "componentId": "sc-kgoBCf",
                             "isStatic": true,
                             "lastClassName": "c8",
                             "rules": Array [
@@ -963,7 +961,7 @@ exports[`Nav renders correctly 1`] = `
                           },
                           "displayName": "styled.div",
                           "render": [Function],
-                          "styledComponentId": "sc-chPdSV",
+                          "styledComponentId": "sc-kgoBCf",
                           "target": "div",
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
@@ -1022,7 +1020,7 @@ exports[`Nav renders correctly 1`] = `
                                           "lastClassName": "c10",
                                           "rules": Array [
                                             "
-  display: inline-block;
+  display: flex;
   margin-right: ",
                                             "1.1111111111111112rem",
                                             ";
@@ -1093,7 +1091,7 @@ exports[`Nav renders correctly 1`] = `
                                                     "componentStyle": ComponentStyle {
                                                       "componentId": "sc-gzVnrw",
                                                       "isStatic": false,
-                                                      "lastClassName": "c13",
+                                                      "lastClassName": "c11",
                                                       "rules": Array [
                                                         "
   width: ",
@@ -1156,7 +1154,7 @@ exports[`Nav renders correctly 1`] = `
                                           "lastClassName": "c10",
                                           "rules": Array [
                                             "
-  display: inline-block;
+  display: flex;
   margin-right: ",
                                             "1.1111111111111112rem",
                                             ";
@@ -1213,62 +1211,124 @@ exports[`Nav renders correctly 1`] = `
                                           href="https://github.com/styled-components"
                                           onClick={[Function]}
                                         >
-                                          <Github>
-                                            <ForwardRef
-                                              height="17"
-                                              viewBox="0 0 17 17"
-                                              width="17"
-                                            >
-                                              <StyledComponent
-                                                forwardedClass={
-                                                  Object {
-                                                    "$$typeof": Symbol(react.forward_ref),
-                                                    "attrs": undefined,
-                                                    "componentStyle": ComponentStyle {
-                                                      "componentId": "sc-gzVnrw",
-                                                      "isStatic": false,
-                                                      "lastClassName": "c13",
-                                                      "rules": Array [
-                                                        "
-  width: ",
-                                                        [Function],
-                                                        ";
-  height: ",
-                                                        [Function],
-                                                        ";
+                                          <ForwardRef
+                                            height="18"
+                                            icon={
+                                              Object {
+                                                "icon": Array [
+                                                  496,
+                                                  512,
+                                                  Array [],
+                                                  "f09b",
+                                                  "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
+                                                ],
+                                                "iconName": "github",
+                                                "prefix": "fab",
+                                              }
+                                            }
+                                            width="18"
+                                          >
+                                            <StyledComponent
+                                              forwardedClass={
+                                                Object {
+                                                  "$$typeof": Symbol(react.forward_ref),
+                                                  "attrs": undefined,
+                                                  "componentStyle": ComponentStyle {
+                                                    "componentId": "sc-htoDjs",
+                                                    "isStatic": false,
+                                                    "lastClassName": "c12",
+                                                    "rules": Array [
+                                                      "
+  && {
+    width: ",
+                                                      [Function],
+                                                      ";
+    height: ",
+                                                      [Function],
+                                                      ";
+  }
 ",
-                                                      ],
-                                                    },
-                                                    "displayName": "styled.svg",
-                                                    "render": [Function],
-                                                    "styledComponentId": "sc-gzVnrw",
-                                                    "target": "svg",
-                                                    "warnTooManyClasses": [Function],
-                                                    "withComponent": [Function],
+                                                    ],
+                                                  },
+                                                  "displayName": "Styled(FontAwesomeIcon)",
+                                                  "render": [Function],
+                                                  "styledComponentId": "sc-htoDjs",
+                                                  "target": [Function],
+                                                  "warnTooManyClasses": [Function],
+                                                  "withComponent": [Function],
+                                                  Symbol(Symbol.hasInstance): [Function],
+                                                }
+                                              }
+                                              forwardedRef={null}
+                                              height="18"
+                                              icon={
+                                                Object {
+                                                  "icon": Array [
+                                                    496,
+                                                    512,
+                                                    Array [],
+                                                    "f09b",
+                                                    "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
+                                                  ],
+                                                  "iconName": "github",
+                                                  "prefix": "fab",
+                                                }
+                                              }
+                                              width="18"
+                                            >
+                                              <FontAwesomeIcon
+                                                border={false}
+                                                className="c12"
+                                                fixedWidth={false}
+                                                flip={null}
+                                                height="18"
+                                                icon={
+                                                  Object {
+                                                    "icon": Array [
+                                                      496,
+                                                      512,
+                                                      Array [],
+                                                      "f09b",
+                                                      "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
+                                                    ],
+                                                    "iconName": "github",
+                                                    "prefix": "fab",
                                                   }
                                                 }
-                                                forwardedRef={null}
-                                                height="17"
-                                                viewBox="0 0 17 17"
-                                                width="17"
+                                                inverse={false}
+                                                listItem={false}
+                                                mask={null}
+                                                pull={null}
+                                                pulse={false}
+                                                rotation={null}
+                                                size={null}
+                                                spin={false}
+                                                symbol={false}
+                                                title=""
+                                                transform={null}
+                                                width="18"
                                               >
                                                 <svg
-                                                  className="c12"
-                                                  height="17"
-                                                  viewBox="0 0 17 17"
-                                                  width="17"
+                                                  aria-hidden="true"
+                                                  className="svg-inline--fa fa-github fa-w-16 c12"
+                                                  data-icon="github"
+                                                  data-prefix="fab"
+                                                  height="18"
+                                                  role="img"
+                                                  style={Object {}}
+                                                  viewBox="0 0 496 512"
+                                                  width="18"
+                                                  xmlns="http://www.w3.org/2000/svg"
                                                 >
-                                                  <title>
-                                                    github
-                                                  </title>
                                                   <path
-                                                    d="M15.86 4.34c-.76-1.335-1.79-2.392-3.093-3.17C11.463.39 10.042 0 8.5 0 6.958 0 5.536.39 4.233 1.17 2.93 1.947 1.9 3.004 1.14 4.34.38 5.674 0 7.132 0 8.713c0 1.898.54 3.606 1.62 5.122 1.082 1.517 2.48 2.566 4.19 3.148.2.038.347.01.443-.08.096-.09.144-.203.144-.34l-.006-.612v-1l-.25.05c-.16.03-.36.05-.61.04-.24 0-.5-.03-.77-.08-.26-.05-.51-.16-.74-.34-.23-.18-.39-.41-.49-.7l-.11-.26c-.07-.17-.19-.36-.35-.58-.16-.21-.32-.35-.48-.43l-.08-.05c-.05-.04-.09-.08-.14-.132-.04-.053-.08-.106-.1-.16-.02-.053 0-.097.06-.13.06-.035.17-.052.32-.052l.22.036c.15.03.33.12.55.27.22.154.4.35.54.59.17.31.375.55.615.71.24.164.484.245.727.245s.456-.02.63-.056c.18-.037.346-.094.5-.17.067-.507.248-.896.54-1.17-.42-.043-.795-.112-1.13-.203-.34-.09-.685-.24-1.04-.44-.36-.2-.657-.455-.894-.76-.234-.3-.43-.7-.58-1.19-.15-.49-.225-1.06-.225-1.7 0-.917.29-1.695.875-2.34-.27-.69-.244-1.46.08-2.313.214-.07.53-.015.95.155.42.17.73.314.926.435.195.12.35.225.47.308.684-.2 1.394-.3 2.124-.3s1.44.1 2.124.297l.42-.27c.288-.184.628-.35 1.02-.5.39-.15.69-.195.895-.126.334.857.364 1.63.09 2.317.584.645.875 1.42.875 2.34 0 .64-.072 1.21-.223 1.707-.15.5-.343.897-.583 1.196-.24.298-.54.55-.896.754-.355.202-.702.35-1.04.44-.334.09-.712.16-1.132.205.38.34.57.875.57 1.61v2.39c0 .136.045.25.137.34.096.09.24.118.44.08 1.71-.582 3.11-1.632 4.19-3.15 1.06-1.525 1.6-3.235 1.6-5.13 0-1.58-.38-3.04-1.14-4.37z"
-                                                    fill="#FFF"
+                                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                                                    fill="currentColor"
+                                                    style={Object {}}
                                                   />
                                                 </svg>
-                                              </StyledComponent>
-                                            </ForwardRef>
-                                          </Github>
+                                              </FontAwesomeIcon>
+                                            </StyledComponent>
+                                          </ForwardRef>
                                         </a>
                                       </Link>
                                     </Link>
@@ -1290,7 +1350,7 @@ exports[`Nav renders correctly 1`] = `
                                           "lastClassName": "c10",
                                           "rules": Array [
                                             "
-  display: inline-block;
+  display: flex;
   margin-right: ",
                                             "1.1111111111111112rem",
                                             ";
@@ -1347,62 +1407,124 @@ exports[`Nav renders correctly 1`] = `
                                           href="https://medium.com/styled-components"
                                           onClick={[Function]}
                                         >
-                                          <Medium>
-                                            <ForwardRef
-                                              height="14"
-                                              viewBox="0 0 17 14"
-                                              width="17"
-                                            >
-                                              <StyledComponent
-                                                forwardedClass={
-                                                  Object {
-                                                    "$$typeof": Symbol(react.forward_ref),
-                                                    "attrs": undefined,
-                                                    "componentStyle": ComponentStyle {
-                                                      "componentId": "sc-gzVnrw",
-                                                      "isStatic": false,
-                                                      "lastClassName": "c13",
-                                                      "rules": Array [
-                                                        "
-  width: ",
-                                                        [Function],
-                                                        ";
-  height: ",
-                                                        [Function],
-                                                        ";
+                                          <ForwardRef
+                                            height="18"
+                                            icon={
+                                              Object {
+                                                "icon": Array [
+                                                  512,
+                                                  512,
+                                                  Array [],
+                                                  "f3c7",
+                                                  "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
+                                                ],
+                                                "iconName": "medium-m",
+                                                "prefix": "fab",
+                                              }
+                                            }
+                                            width="18"
+                                          >
+                                            <StyledComponent
+                                              forwardedClass={
+                                                Object {
+                                                  "$$typeof": Symbol(react.forward_ref),
+                                                  "attrs": undefined,
+                                                  "componentStyle": ComponentStyle {
+                                                    "componentId": "sc-htoDjs",
+                                                    "isStatic": false,
+                                                    "lastClassName": "c12",
+                                                    "rules": Array [
+                                                      "
+  && {
+    width: ",
+                                                      [Function],
+                                                      ";
+    height: ",
+                                                      [Function],
+                                                      ";
+  }
 ",
-                                                      ],
-                                                    },
-                                                    "displayName": "styled.svg",
-                                                    "render": [Function],
-                                                    "styledComponentId": "sc-gzVnrw",
-                                                    "target": "svg",
-                                                    "warnTooManyClasses": [Function],
-                                                    "withComponent": [Function],
+                                                    ],
+                                                  },
+                                                  "displayName": "Styled(FontAwesomeIcon)",
+                                                  "render": [Function],
+                                                  "styledComponentId": "sc-htoDjs",
+                                                  "target": [Function],
+                                                  "warnTooManyClasses": [Function],
+                                                  "withComponent": [Function],
+                                                  Symbol(Symbol.hasInstance): [Function],
+                                                }
+                                              }
+                                              forwardedRef={null}
+                                              height="18"
+                                              icon={
+                                                Object {
+                                                  "icon": Array [
+                                                    512,
+                                                    512,
+                                                    Array [],
+                                                    "f3c7",
+                                                    "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
+                                                  ],
+                                                  "iconName": "medium-m",
+                                                  "prefix": "fab",
+                                                }
+                                              }
+                                              width="18"
+                                            >
+                                              <FontAwesomeIcon
+                                                border={false}
+                                                className="c12"
+                                                fixedWidth={false}
+                                                flip={null}
+                                                height="18"
+                                                icon={
+                                                  Object {
+                                                    "icon": Array [
+                                                      512,
+                                                      512,
+                                                      Array [],
+                                                      "f3c7",
+                                                      "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
+                                                    ],
+                                                    "iconName": "medium-m",
+                                                    "prefix": "fab",
                                                   }
                                                 }
-                                                forwardedRef={null}
-                                                height="14"
-                                                viewBox="0 0 17 14"
-                                                width="17"
+                                                inverse={false}
+                                                listItem={false}
+                                                mask={null}
+                                                pull={null}
+                                                pulse={false}
+                                                rotation={null}
+                                                size={null}
+                                                spin={false}
+                                                symbol={false}
+                                                title=""
+                                                transform={null}
+                                                width="18"
                                               >
                                                 <svg
-                                                  className="c13"
-                                                  height="14"
-                                                  viewBox="0 0 17 14"
-                                                  width="17"
+                                                  aria-hidden="true"
+                                                  className="svg-inline--fa fa-medium-m fa-w-16 c12"
+                                                  data-icon="medium-m"
+                                                  data-prefix="fab"
+                                                  height="18"
+                                                  role="img"
+                                                  style={Object {}}
+                                                  viewBox="0 0 512 512"
+                                                  width="18"
+                                                  xmlns="http://www.w3.org/2000/svg"
                                                 >
-                                                  <title>
-                                                    medium
-                                                  </title>
                                                   <path
-                                                    d="M5.3 0H.5l1.8 2.4v9L0 13.7h5.3l-2-2.3V3.7L7.8 14 12 3.7v8.7l-1.3 1.3H17l-1.5-1.3v-11L17 0h-4.5L9 8.2 5.2 0z"
-                                                    fill="#fff"
+                                                    d="M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z"
+                                                    fill="currentColor"
+                                                    style={Object {}}
                                                   />
                                                 </svg>
-                                              </StyledComponent>
-                                            </ForwardRef>
-                                          </Medium>
+                                              </FontAwesomeIcon>
+                                            </StyledComponent>
+                                          </ForwardRef>
                                         </a>
                                       </Link>
                                     </Link>
@@ -1426,9 +1548,9 @@ exports[`Nav renders correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": undefined,
                       "componentStyle": ComponentStyle {
-                        "componentId": "sc-gZMcBi",
+                        "componentId": "sc-gqjmRU",
                         "isStatic": true,
-                        "lastClassName": "c14",
+                        "lastClassName": "c13",
                         "rules": Array [
                           "
   display: none;
@@ -1456,7 +1578,7 @@ exports[`Nav renders correctly 1`] = `
                       },
                       "displayName": "styled.div",
                       "render": [Function],
-                      "styledComponentId": "sc-gZMcBi",
+                      "styledComponentId": "sc-gqjmRU",
                       "target": "div",
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
@@ -1465,7 +1587,7 @@ exports[`Nav renders correctly 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="c14"
+                    className="c13"
                   >
                     <ForwardRef
                       active={true}
@@ -1477,9 +1599,9 @@ exports[`Nav renders correctly 1`] = `
                             "$$typeof": Symbol(react.forward_ref),
                             "attrs": undefined,
                             "componentStyle": ComponentStyle {
-                              "componentId": "sc-iwsKbI",
+                              "componentId": "sc-gZMcBi",
                               "isStatic": false,
-                              "lastClassName": "c15",
+                              "lastClassName": "c14",
                               "rules": Array [
                                 "
   ",
@@ -1516,7 +1638,7 @@ exports[`Nav renders correctly 1`] = `
                             },
                             "displayName": "styled.button",
                             "render": [Function],
-                            "styledComponentId": "sc-iwsKbI",
+                            "styledComponentId": "sc-gZMcBi",
                             "target": "button",
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
@@ -1525,7 +1647,7 @@ exports[`Nav renders correctly 1`] = `
                         forwardedRef={null}
                       >
                         <button
-                          className="c15"
+                          className="c14"
                         >
                           <CloseIcon>
                             <ForwardRef
@@ -1540,9 +1662,9 @@ exports[`Nav renders correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "attrs": undefined,
                                     "componentStyle": ComponentStyle {
-                                      "componentId": "sc-dnqmqq",
+                                      "componentId": "sc-iwsKbI",
                                       "isStatic": true,
-                                      "lastClassName": "c16",
+                                      "lastClassName": "c15",
                                       "rules": Array [
                                         "
   svg {
@@ -1557,7 +1679,7 @@ exports[`Nav renders correctly 1`] = `
                                     },
                                     "displayName": "styled.svg",
                                     "render": [Function],
-                                    "styledComponentId": "sc-dnqmqq",
+                                    "styledComponentId": "sc-iwsKbI",
                                     "target": "svg",
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
@@ -1570,7 +1692,7 @@ exports[`Nav renders correctly 1`] = `
                                 xmlnsXlink="http://www.w3.org/1999/xlink"
                               >
                                 <svg
-                                  className="c16"
+                                  className="c15"
                                   height="15"
                                   width="15"
                                   xmlns="http://www.w3.org/2000/svg"
@@ -1608,9 +1730,9 @@ exports[`Nav renders correctly 1`] = `
                               "unstyled": true,
                             },
                             "componentStyle": ComponentStyle {
-                              "componentId": "sc-VigVT",
+                              "componentId": "sc-jTzLTM",
                               "isStatic": true,
-                              "lastClassName": "c17",
+                              "lastClassName": "c16",
                               "rules": Array [
                                 "
   display: inline-block;
@@ -1620,7 +1742,7 @@ exports[`Nav renders correctly 1`] = `
                             },
                             "displayName": "Styled(Link)",
                             "render": [Function],
-                            "styledComponentId": "sc-VigVT",
+                            "styledComponentId": "sc-jTzLTM",
                             "target": [Function],
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
@@ -1631,7 +1753,7 @@ exports[`Nav renders correctly 1`] = `
                       >
                         <Link
                           aria-label="styled components"
-                          className="c17"
+                          className="c16"
                           href="/"
                           unstyled={true}
                         >
@@ -1641,7 +1763,7 @@ exports[`Nav renders correctly 1`] = `
                           >
                             <a
                               aria-label="styled components"
-                              className="c17"
+                              className="c16"
                               href="/"
                               onClick={[Function]}
                             >
@@ -1655,9 +1777,9 @@ exports[`Nav renders correctly 1`] = `
                                       "$$typeof": Symbol(react.forward_ref),
                                       "attrs": undefined,
                                       "componentStyle": ComponentStyle {
-                                        "componentId": "sc-htoDjs",
+                                        "componentId": "sc-dnqmqq",
                                         "isStatic": false,
-                                        "lastClassName": "c18",
+                                        "lastClassName": "c17",
                                         "rules": Array [
                                           "
   display: inline-block;
@@ -1675,7 +1797,7 @@ exports[`Nav renders correctly 1`] = `
                                       },
                                       "displayName": "styled.div",
                                       "render": [Function],
-                                      "styledComponentId": "sc-htoDjs",
+                                      "styledComponentId": "sc-dnqmqq",
                                       "target": "div",
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
@@ -1684,7 +1806,7 @@ exports[`Nav renders correctly 1`] = `
                                   forwardedRef={null}
                                 >
                                   <div
-                                    className="c18"
+                                    className="c17"
                                   />
                                 </StyledComponent>
                               </ForwardRef>
@@ -1703,9 +1825,9 @@ exports[`Nav renders correctly 1`] = `
                             "$$typeof": Symbol(react.forward_ref),
                             "attrs": undefined,
                             "componentStyle": ComponentStyle {
-                              "componentId": "sc-iwsKbI",
+                              "componentId": "sc-gZMcBi",
                               "isStatic": false,
-                              "lastClassName": "c15",
+                              "lastClassName": "c14",
                               "rules": Array [
                                 "
   ",
@@ -1742,7 +1864,7 @@ exports[`Nav renders correctly 1`] = `
                             },
                             "displayName": "styled.button",
                             "render": [Function],
-                            "styledComponentId": "sc-iwsKbI",
+                            "styledComponentId": "sc-gZMcBi",
                             "target": "button",
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
@@ -1751,7 +1873,7 @@ exports[`Nav renders correctly 1`] = `
                         forwardedRef={null}
                       >
                         <button
-                          className="c15"
+                          className="c14"
                         >
                           <ForwardRef
                             shouldRotate={true}
@@ -1762,9 +1884,9 @@ exports[`Nav renders correctly 1`] = `
                                   "$$typeof": Symbol(react.forward_ref),
                                   "attrs": undefined,
                                   "componentStyle": ComponentStyle {
-                                    "componentId": "sc-jTzLTM",
+                                    "componentId": "sc-fjdhpX",
                                     "isStatic": false,
-                                    "lastClassName": "c19",
+                                    "lastClassName": "c18",
                                     "rules": Array [
                                       "
   transition: transform 0.1s;
@@ -1777,7 +1899,7 @@ exports[`Nav renders correctly 1`] = `
                                   },
                                   "displayName": "styled.div",
                                   "render": [Function],
-                                  "styledComponentId": "sc-jTzLTM",
+                                  "styledComponentId": "sc-fjdhpX",
                                   "target": "div",
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
@@ -1787,7 +1909,7 @@ exports[`Nav renders correctly 1`] = `
                               shouldRotate={true}
                             >
                               <div
-                                className="c19"
+                                className="c18"
                               >
                                 <ArrowIcon>
                                   <ForwardRef
@@ -1802,9 +1924,9 @@ exports[`Nav renders correctly 1`] = `
                                           "$$typeof": Symbol(react.forward_ref),
                                           "attrs": undefined,
                                           "componentStyle": ComponentStyle {
-                                            "componentId": "sc-dnqmqq",
+                                            "componentId": "sc-iwsKbI",
                                             "isStatic": true,
-                                            "lastClassName": "c16",
+                                            "lastClassName": "c15",
                                             "rules": Array [
                                               "
   svg {
@@ -1819,7 +1941,7 @@ exports[`Nav renders correctly 1`] = `
                                           },
                                           "displayName": "styled.svg",
                                           "render": [Function],
-                                          "styledComponentId": "sc-dnqmqq",
+                                          "styledComponentId": "sc-iwsKbI",
                                           "target": "svg",
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
@@ -1832,7 +1954,7 @@ exports[`Nav renders correctly 1`] = `
                                       xmlnsXlink="http://www.w3.org/1999/xlink"
                                     >
                                       <svg
-                                        className="c16"
+                                        className="c15"
                                         height="8"
                                         width="12"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -1871,9 +1993,9 @@ exports[`Nav renders correctly 1`] = `
                             "$$typeof": Symbol(react.forward_ref),
                             "attrs": undefined,
                             "componentStyle": ComponentStyle {
-                              "componentId": "sc-gqjmRU",
+                              "componentId": "sc-VigVT",
                               "isStatic": false,
-                              "lastClassName": "c20",
+                              "lastClassName": "c19",
                               "rules": Array [
                                 "
   position: absolute;
@@ -1908,7 +2030,7 @@ exports[`Nav renders correctly 1`] = `
                             },
                             "displayName": "styled.div",
                             "render": [Function],
-                            "styledComponentId": "sc-gqjmRU",
+                            "styledComponentId": "sc-VigVT",
                             "target": "div",
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
@@ -1918,7 +2040,7 @@ exports[`Nav renders correctly 1`] = `
                         isOpen={true}
                       >
                         <div
-                          className="c20"
+                          className="c19"
                         >
                           <NavLinks>
                             <ForwardRef>
@@ -2311,9 +2433,9 @@ exports[`Nav renders correctly 1`] = `
                                   "$$typeof": Symbol(react.forward_ref),
                                   "attrs": undefined,
                                   "componentStyle": ComponentStyle {
-                                    "componentId": "sc-fjdhpX",
+                                    "componentId": "sc-jzJRlG",
                                     "isStatic": true,
-                                    "lastClassName": "c21",
+                                    "lastClassName": "c20",
                                     "rules": Array [
                                       "
   padding-right: ",
@@ -2324,7 +2446,7 @@ exports[`Nav renders correctly 1`] = `
                                   },
                                   "displayName": "styled.div",
                                   "render": [Function],
-                                  "styledComponentId": "sc-fjdhpX",
+                                  "styledComponentId": "sc-jzJRlG",
                                   "target": "div",
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
@@ -2333,7 +2455,7 @@ exports[`Nav renders correctly 1`] = `
                               forwardedRef={null}
                             >
                               <div
-                                className="c21"
+                                className="c20"
                               >
                                 <Social>
                                   <ForwardRef>
@@ -2383,7 +2505,7 @@ exports[`Nav renders correctly 1`] = `
                                                   "lastClassName": "c10",
                                                   "rules": Array [
                                                     "
-  display: inline-block;
+  display: flex;
   margin-right: ",
                                                     "1.1111111111111112rem",
                                                     ";
@@ -2454,7 +2576,7 @@ exports[`Nav renders correctly 1`] = `
                                                             "componentStyle": ComponentStyle {
                                                               "componentId": "sc-gzVnrw",
                                                               "isStatic": false,
-                                                              "lastClassName": "c13",
+                                                              "lastClassName": "c11",
                                                               "rules": Array [
                                                                 "
   width: ",
@@ -2517,7 +2639,7 @@ exports[`Nav renders correctly 1`] = `
                                                   "lastClassName": "c10",
                                                   "rules": Array [
                                                     "
-  display: inline-block;
+  display: flex;
   margin-right: ",
                                                     "1.1111111111111112rem",
                                                     ";
@@ -2574,62 +2696,124 @@ exports[`Nav renders correctly 1`] = `
                                                   href="https://github.com/styled-components"
                                                   onClick={[Function]}
                                                 >
-                                                  <Github>
-                                                    <ForwardRef
-                                                      height="17"
-                                                      viewBox="0 0 17 17"
-                                                      width="17"
-                                                    >
-                                                      <StyledComponent
-                                                        forwardedClass={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": undefined,
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "sc-gzVnrw",
-                                                              "isStatic": false,
-                                                              "lastClassName": "c13",
-                                                              "rules": Array [
-                                                                "
-  width: ",
-                                                                [Function],
-                                                                ";
-  height: ",
-                                                                [Function],
-                                                                ";
+                                                  <ForwardRef
+                                                    height="18"
+                                                    icon={
+                                                      Object {
+                                                        "icon": Array [
+                                                          496,
+                                                          512,
+                                                          Array [],
+                                                          "f09b",
+                                                          "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
+                                                        ],
+                                                        "iconName": "github",
+                                                        "prefix": "fab",
+                                                      }
+                                                    }
+                                                    width="18"
+                                                  >
+                                                    <StyledComponent
+                                                      forwardedClass={
+                                                        Object {
+                                                          "$$typeof": Symbol(react.forward_ref),
+                                                          "attrs": undefined,
+                                                          "componentStyle": ComponentStyle {
+                                                            "componentId": "sc-htoDjs",
+                                                            "isStatic": false,
+                                                            "lastClassName": "c12",
+                                                            "rules": Array [
+                                                              "
+  && {
+    width: ",
+                                                              [Function],
+                                                              ";
+    height: ",
+                                                              [Function],
+                                                              ";
+  }
 ",
-                                                              ],
-                                                            },
-                                                            "displayName": "styled.svg",
-                                                            "render": [Function],
-                                                            "styledComponentId": "sc-gzVnrw",
-                                                            "target": "svg",
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
+                                                            ],
+                                                          },
+                                                          "displayName": "Styled(FontAwesomeIcon)",
+                                                          "render": [Function],
+                                                          "styledComponentId": "sc-htoDjs",
+                                                          "target": [Function],
+                                                          "warnTooManyClasses": [Function],
+                                                          "withComponent": [Function],
+                                                          Symbol(Symbol.hasInstance): [Function],
+                                                        }
+                                                      }
+                                                      forwardedRef={null}
+                                                      height="18"
+                                                      icon={
+                                                        Object {
+                                                          "icon": Array [
+                                                            496,
+                                                            512,
+                                                            Array [],
+                                                            "f09b",
+                                                            "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
+                                                          ],
+                                                          "iconName": "github",
+                                                          "prefix": "fab",
+                                                        }
+                                                      }
+                                                      width="18"
+                                                    >
+                                                      <FontAwesomeIcon
+                                                        border={false}
+                                                        className="c12"
+                                                        fixedWidth={false}
+                                                        flip={null}
+                                                        height="18"
+                                                        icon={
+                                                          Object {
+                                                            "icon": Array [
+                                                              496,
+                                                              512,
+                                                              Array [],
+                                                              "f09b",
+                                                              "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
+                                                            ],
+                                                            "iconName": "github",
+                                                            "prefix": "fab",
                                                           }
                                                         }
-                                                        forwardedRef={null}
-                                                        height="17"
-                                                        viewBox="0 0 17 17"
-                                                        width="17"
+                                                        inverse={false}
+                                                        listItem={false}
+                                                        mask={null}
+                                                        pull={null}
+                                                        pulse={false}
+                                                        rotation={null}
+                                                        size={null}
+                                                        spin={false}
+                                                        symbol={false}
+                                                        title=""
+                                                        transform={null}
+                                                        width="18"
                                                       >
                                                         <svg
-                                                          className="c12"
-                                                          height="17"
-                                                          viewBox="0 0 17 17"
-                                                          width="17"
+                                                          aria-hidden="true"
+                                                          className="svg-inline--fa fa-github fa-w-16 c12"
+                                                          data-icon="github"
+                                                          data-prefix="fab"
+                                                          height="18"
+                                                          role="img"
+                                                          style={Object {}}
+                                                          viewBox="0 0 496 512"
+                                                          width="18"
+                                                          xmlns="http://www.w3.org/2000/svg"
                                                         >
-                                                          <title>
-                                                            github
-                                                          </title>
                                                           <path
-                                                            d="M15.86 4.34c-.76-1.335-1.79-2.392-3.093-3.17C11.463.39 10.042 0 8.5 0 6.958 0 5.536.39 4.233 1.17 2.93 1.947 1.9 3.004 1.14 4.34.38 5.674 0 7.132 0 8.713c0 1.898.54 3.606 1.62 5.122 1.082 1.517 2.48 2.566 4.19 3.148.2.038.347.01.443-.08.096-.09.144-.203.144-.34l-.006-.612v-1l-.25.05c-.16.03-.36.05-.61.04-.24 0-.5-.03-.77-.08-.26-.05-.51-.16-.74-.34-.23-.18-.39-.41-.49-.7l-.11-.26c-.07-.17-.19-.36-.35-.58-.16-.21-.32-.35-.48-.43l-.08-.05c-.05-.04-.09-.08-.14-.132-.04-.053-.08-.106-.1-.16-.02-.053 0-.097.06-.13.06-.035.17-.052.32-.052l.22.036c.15.03.33.12.55.27.22.154.4.35.54.59.17.31.375.55.615.71.24.164.484.245.727.245s.456-.02.63-.056c.18-.037.346-.094.5-.17.067-.507.248-.896.54-1.17-.42-.043-.795-.112-1.13-.203-.34-.09-.685-.24-1.04-.44-.36-.2-.657-.455-.894-.76-.234-.3-.43-.7-.58-1.19-.15-.49-.225-1.06-.225-1.7 0-.917.29-1.695.875-2.34-.27-.69-.244-1.46.08-2.313.214-.07.53-.015.95.155.42.17.73.314.926.435.195.12.35.225.47.308.684-.2 1.394-.3 2.124-.3s1.44.1 2.124.297l.42-.27c.288-.184.628-.35 1.02-.5.39-.15.69-.195.895-.126.334.857.364 1.63.09 2.317.584.645.875 1.42.875 2.34 0 .64-.072 1.21-.223 1.707-.15.5-.343.897-.583 1.196-.24.298-.54.55-.896.754-.355.202-.702.35-1.04.44-.334.09-.712.16-1.132.205.38.34.57.875.57 1.61v2.39c0 .136.045.25.137.34.096.09.24.118.44.08 1.71-.582 3.11-1.632 4.19-3.15 1.06-1.525 1.6-3.235 1.6-5.13 0-1.58-.38-3.04-1.14-4.37z"
-                                                            fill="#FFF"
+                                                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                                                            fill="currentColor"
+                                                            style={Object {}}
                                                           />
                                                         </svg>
-                                                      </StyledComponent>
-                                                    </ForwardRef>
-                                                  </Github>
+                                                      </FontAwesomeIcon>
+                                                    </StyledComponent>
+                                                  </ForwardRef>
                                                 </a>
                                               </Link>
                                             </Link>
@@ -2651,7 +2835,7 @@ exports[`Nav renders correctly 1`] = `
                                                   "lastClassName": "c10",
                                                   "rules": Array [
                                                     "
-  display: inline-block;
+  display: flex;
   margin-right: ",
                                                     "1.1111111111111112rem",
                                                     ";
@@ -2708,62 +2892,124 @@ exports[`Nav renders correctly 1`] = `
                                                   href="https://medium.com/styled-components"
                                                   onClick={[Function]}
                                                 >
-                                                  <Medium>
-                                                    <ForwardRef
-                                                      height="14"
-                                                      viewBox="0 0 17 14"
-                                                      width="17"
-                                                    >
-                                                      <StyledComponent
-                                                        forwardedClass={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": undefined,
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "sc-gzVnrw",
-                                                              "isStatic": false,
-                                                              "lastClassName": "c13",
-                                                              "rules": Array [
-                                                                "
-  width: ",
-                                                                [Function],
-                                                                ";
-  height: ",
-                                                                [Function],
-                                                                ";
+                                                  <ForwardRef
+                                                    height="18"
+                                                    icon={
+                                                      Object {
+                                                        "icon": Array [
+                                                          512,
+                                                          512,
+                                                          Array [],
+                                                          "f3c7",
+                                                          "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
+                                                        ],
+                                                        "iconName": "medium-m",
+                                                        "prefix": "fab",
+                                                      }
+                                                    }
+                                                    width="18"
+                                                  >
+                                                    <StyledComponent
+                                                      forwardedClass={
+                                                        Object {
+                                                          "$$typeof": Symbol(react.forward_ref),
+                                                          "attrs": undefined,
+                                                          "componentStyle": ComponentStyle {
+                                                            "componentId": "sc-htoDjs",
+                                                            "isStatic": false,
+                                                            "lastClassName": "c12",
+                                                            "rules": Array [
+                                                              "
+  && {
+    width: ",
+                                                              [Function],
+                                                              ";
+    height: ",
+                                                              [Function],
+                                                              ";
+  }
 ",
-                                                              ],
-                                                            },
-                                                            "displayName": "styled.svg",
-                                                            "render": [Function],
-                                                            "styledComponentId": "sc-gzVnrw",
-                                                            "target": "svg",
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
+                                                            ],
+                                                          },
+                                                          "displayName": "Styled(FontAwesomeIcon)",
+                                                          "render": [Function],
+                                                          "styledComponentId": "sc-htoDjs",
+                                                          "target": [Function],
+                                                          "warnTooManyClasses": [Function],
+                                                          "withComponent": [Function],
+                                                          Symbol(Symbol.hasInstance): [Function],
+                                                        }
+                                                      }
+                                                      forwardedRef={null}
+                                                      height="18"
+                                                      icon={
+                                                        Object {
+                                                          "icon": Array [
+                                                            512,
+                                                            512,
+                                                            Array [],
+                                                            "f3c7",
+                                                            "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
+                                                          ],
+                                                          "iconName": "medium-m",
+                                                          "prefix": "fab",
+                                                        }
+                                                      }
+                                                      width="18"
+                                                    >
+                                                      <FontAwesomeIcon
+                                                        border={false}
+                                                        className="c12"
+                                                        fixedWidth={false}
+                                                        flip={null}
+                                                        height="18"
+                                                        icon={
+                                                          Object {
+                                                            "icon": Array [
+                                                              512,
+                                                              512,
+                                                              Array [],
+                                                              "f3c7",
+                                                              "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
+                                                            ],
+                                                            "iconName": "medium-m",
+                                                            "prefix": "fab",
                                                           }
                                                         }
-                                                        forwardedRef={null}
-                                                        height="14"
-                                                        viewBox="0 0 17 14"
-                                                        width="17"
+                                                        inverse={false}
+                                                        listItem={false}
+                                                        mask={null}
+                                                        pull={null}
+                                                        pulse={false}
+                                                        rotation={null}
+                                                        size={null}
+                                                        spin={false}
+                                                        symbol={false}
+                                                        title=""
+                                                        transform={null}
+                                                        width="18"
                                                       >
                                                         <svg
-                                                          className="c13"
-                                                          height="14"
-                                                          viewBox="0 0 17 14"
-                                                          width="17"
+                                                          aria-hidden="true"
+                                                          className="svg-inline--fa fa-medium-m fa-w-16 c12"
+                                                          data-icon="medium-m"
+                                                          data-prefix="fab"
+                                                          height="18"
+                                                          role="img"
+                                                          style={Object {}}
+                                                          viewBox="0 0 512 512"
+                                                          width="18"
+                                                          xmlns="http://www.w3.org/2000/svg"
                                                         >
-                                                          <title>
-                                                            medium
-                                                          </title>
                                                           <path
-                                                            d="M5.3 0H.5l1.8 2.4v9L0 13.7h5.3l-2-2.3V3.7L7.8 14 12 3.7v8.7l-1.3 1.3H17l-1.5-1.3v-11L17 0h-4.5L9 8.2 5.2 0z"
-                                                            fill="#fff"
+                                                            d="M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z"
+                                                            fill="currentColor"
+                                                            style={Object {}}
                                                           />
                                                         </svg>
-                                                      </StyledComponent>
-                                                    </ForwardRef>
-                                                  </Medium>
+                                                      </FontAwesomeIcon>
+                                                    </StyledComponent>
+                                                  </ForwardRef>
                                                 </a>
                                               </Link>
                                             </Link>
@@ -2795,9 +3041,9 @@ exports[`Nav renders correctly 1`] = `
               "$$typeof": Symbol(react.forward_ref),
               "attrs": undefined,
               "componentStyle": ComponentStyle {
-                "componentId": "sc-kGXeez",
+                "componentId": "sc-kpOJdX",
                 "isStatic": false,
-                "lastClassName": "c22",
+                "lastClassName": "c21",
                 "rules": Array [
                   "
   position: fixed;
@@ -2845,7 +3091,7 @@ exports[`Nav renders correctly 1`] = `
               },
               "displayName": "styled.nav",
               "render": [Function],
-              "styledComponentId": "sc-kGXeez",
+              "styledComponentId": "sc-kpOJdX",
               "target": "nav",
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
@@ -2854,7 +3100,7 @@ exports[`Nav renders correctly 1`] = `
           forwardedRef={[Function]}
         >
           <nav
-            className="c22"
+            className="c21"
           >
             <withRouter(Unknown)>
               <Component>
@@ -2865,9 +3111,9 @@ exports[`Nav renders correctly 1`] = `
                         "$$typeof": Symbol(react.forward_ref),
                         "attrs": undefined,
                         "componentStyle": ComponentStyle {
-                          "componentId": "sc-kpOJdX",
+                          "componentId": "sc-dxgOiQ",
                           "isStatic": true,
-                          "lastClassName": "c23",
+                          "lastClassName": "c22",
                           "rules": Array [
                             "
   display: block;
@@ -2881,7 +3127,7 @@ exports[`Nav renders correctly 1`] = `
                         },
                         "displayName": "styled.div",
                         "render": [Function],
-                        "styledComponentId": "sc-kpOJdX",
+                        "styledComponentId": "sc-dxgOiQ",
                         "target": "div",
                         "warnTooManyClasses": [Function],
                         "withComponent": [Function],
@@ -2890,7 +3136,7 @@ exports[`Nav renders correctly 1`] = `
                     forwardedRef={null}
                   >
                     <div
-                      className="c23"
+                      className="c22"
                     >
                       <Folder
                         key="Basics"
@@ -2902,9 +3148,9 @@ exports[`Nav renders correctly 1`] = `
                                 "$$typeof": Symbol(react.forward_ref),
                                 "attrs": undefined,
                                 "componentStyle": ComponentStyle {
-                                  "componentId": "sc-ckVGcZ",
+                                  "componentId": "sc-jKJlTe",
                                   "isStatic": true,
-                                  "lastClassName": "c24",
+                                  "lastClassName": "c23",
                                   "rules": Array [
                                     "
   margin-bottom: ",
@@ -2915,7 +3161,7 @@ exports[`Nav renders correctly 1`] = `
                                 },
                                 "displayName": "styled.div",
                                 "render": [Function],
-                                "styledComponentId": "sc-ckVGcZ",
+                                "styledComponentId": "sc-jKJlTe",
                                 "target": "div",
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
@@ -2924,7 +3170,7 @@ exports[`Nav renders correctly 1`] = `
                             forwardedRef={null}
                           >
                             <div
-                              className="c24"
+                              className="c23"
                             >
                               <ForwardRef
                                 onClick={[Function]}
@@ -2935,9 +3181,9 @@ exports[`Nav renders correctly 1`] = `
                                       "$$typeof": Symbol(react.forward_ref),
                                       "attrs": undefined,
                                       "componentStyle": ComponentStyle {
-                                        "componentId": "sc-jKJlTe",
+                                        "componentId": "sc-eNQAEJ",
                                         "isStatic": true,
-                                        "lastClassName": "c25",
+                                        "lastClassName": "c24",
                                         "rules": Array [
                                           "
   display: block;
@@ -2952,7 +3198,7 @@ exports[`Nav renders correctly 1`] = `
                                       },
                                       "displayName": "styled.h4",
                                       "render": [Function],
-                                      "styledComponentId": "sc-jKJlTe",
+                                      "styledComponentId": "sc-eNQAEJ",
                                       "target": "h4",
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
@@ -2962,7 +3208,7 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <h4
-                                    className="c25"
+                                    className="c24"
                                     onClick={[Function]}
                                   >
                                     <Link
@@ -2983,7 +3229,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
-                                                  "lastClassName": "c26",
+                                                  "lastClassName": "c25",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -3030,7 +3276,7 @@ exports[`Nav renders correctly 1`] = `
                                             onClick={[Function]}
                                           >
                                             <a
-                                              className="c26"
+                                              className="c25"
                                               href="/docs/basics"
                                               onClick={[Function]}
                                             >
@@ -3057,9 +3303,9 @@ exports[`Nav renders correctly 1`] = `
                                 "$$typeof": Symbol(react.forward_ref),
                                 "attrs": undefined,
                                 "componentStyle": ComponentStyle {
-                                  "componentId": "sc-ckVGcZ",
+                                  "componentId": "sc-jKJlTe",
                                   "isStatic": true,
-                                  "lastClassName": "c24",
+                                  "lastClassName": "c23",
                                   "rules": Array [
                                     "
   margin-bottom: ",
@@ -3070,7 +3316,7 @@ exports[`Nav renders correctly 1`] = `
                                 },
                                 "displayName": "styled.div",
                                 "render": [Function],
-                                "styledComponentId": "sc-ckVGcZ",
+                                "styledComponentId": "sc-jKJlTe",
                                 "target": "div",
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
@@ -3079,7 +3325,7 @@ exports[`Nav renders correctly 1`] = `
                             forwardedRef={null}
                           >
                             <div
-                              className="c24"
+                              className="c23"
                             >
                               <ForwardRef
                                 onClick={[Function]}
@@ -3090,9 +3336,9 @@ exports[`Nav renders correctly 1`] = `
                                       "$$typeof": Symbol(react.forward_ref),
                                       "attrs": undefined,
                                       "componentStyle": ComponentStyle {
-                                        "componentId": "sc-jKJlTe",
+                                        "componentId": "sc-eNQAEJ",
                                         "isStatic": true,
-                                        "lastClassName": "c25",
+                                        "lastClassName": "c24",
                                         "rules": Array [
                                           "
   display: block;
@@ -3107,7 +3353,7 @@ exports[`Nav renders correctly 1`] = `
                                       },
                                       "displayName": "styled.h4",
                                       "render": [Function],
-                                      "styledComponentId": "sc-jKJlTe",
+                                      "styledComponentId": "sc-eNQAEJ",
                                       "target": "h4",
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
@@ -3117,7 +3363,7 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <h4
-                                    className="c25"
+                                    className="c24"
                                     onClick={[Function]}
                                   >
                                     <Link
@@ -3138,7 +3384,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
-                                                  "lastClassName": "c26",
+                                                  "lastClassName": "c25",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -3185,7 +3431,7 @@ exports[`Nav renders correctly 1`] = `
                                             onClick={[Function]}
                                           >
                                             <a
-                                              className="c26"
+                                              className="c25"
                                               href="/docs/advanced"
                                               onClick={[Function]}
                                             >
@@ -3212,9 +3458,9 @@ exports[`Nav renders correctly 1`] = `
                                 "$$typeof": Symbol(react.forward_ref),
                                 "attrs": undefined,
                                 "componentStyle": ComponentStyle {
-                                  "componentId": "sc-ckVGcZ",
+                                  "componentId": "sc-jKJlTe",
                                   "isStatic": true,
-                                  "lastClassName": "c24",
+                                  "lastClassName": "c23",
                                   "rules": Array [
                                     "
   margin-bottom: ",
@@ -3225,7 +3471,7 @@ exports[`Nav renders correctly 1`] = `
                                 },
                                 "displayName": "styled.div",
                                 "render": [Function],
-                                "styledComponentId": "sc-ckVGcZ",
+                                "styledComponentId": "sc-jKJlTe",
                                 "target": "div",
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
@@ -3234,7 +3480,7 @@ exports[`Nav renders correctly 1`] = `
                             forwardedRef={null}
                           >
                             <div
-                              className="c24"
+                              className="c23"
                             >
                               <ForwardRef
                                 onClick={[Function]}
@@ -3245,9 +3491,9 @@ exports[`Nav renders correctly 1`] = `
                                       "$$typeof": Symbol(react.forward_ref),
                                       "attrs": undefined,
                                       "componentStyle": ComponentStyle {
-                                        "componentId": "sc-jKJlTe",
+                                        "componentId": "sc-eNQAEJ",
                                         "isStatic": true,
-                                        "lastClassName": "c25",
+                                        "lastClassName": "c24",
                                         "rules": Array [
                                           "
   display: block;
@@ -3262,7 +3508,7 @@ exports[`Nav renders correctly 1`] = `
                                       },
                                       "displayName": "styled.h4",
                                       "render": [Function],
-                                      "styledComponentId": "sc-jKJlTe",
+                                      "styledComponentId": "sc-eNQAEJ",
                                       "target": "h4",
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
@@ -3272,7 +3518,7 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <h4
-                                    className="c25"
+                                    className="c24"
                                     onClick={[Function]}
                                   >
                                     <Link
@@ -3293,7 +3539,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
-                                                  "lastClassName": "c26",
+                                                  "lastClassName": "c25",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -3340,7 +3586,7 @@ exports[`Nav renders correctly 1`] = `
                                             onClick={[Function]}
                                           >
                                             <a
-                                              className="c26"
+                                              className="c25"
                                               href="/docs/api"
                                               onClick={[Function]}
                                             >
@@ -3367,9 +3613,9 @@ exports[`Nav renders correctly 1`] = `
                                 "$$typeof": Symbol(react.forward_ref),
                                 "attrs": undefined,
                                 "componentStyle": ComponentStyle {
-                                  "componentId": "sc-ckVGcZ",
+                                  "componentId": "sc-jKJlTe",
                                   "isStatic": true,
-                                  "lastClassName": "c24",
+                                  "lastClassName": "c23",
                                   "rules": Array [
                                     "
   margin-bottom: ",
@@ -3380,7 +3626,7 @@ exports[`Nav renders correctly 1`] = `
                                 },
                                 "displayName": "styled.div",
                                 "render": [Function],
-                                "styledComponentId": "sc-ckVGcZ",
+                                "styledComponentId": "sc-jKJlTe",
                                 "target": "div",
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
@@ -3389,7 +3635,7 @@ exports[`Nav renders correctly 1`] = `
                             forwardedRef={null}
                           >
                             <div
-                              className="c24"
+                              className="c23"
                             >
                               <ForwardRef
                                 onClick={[Function]}
@@ -3400,9 +3646,9 @@ exports[`Nav renders correctly 1`] = `
                                       "$$typeof": Symbol(react.forward_ref),
                                       "attrs": undefined,
                                       "componentStyle": ComponentStyle {
-                                        "componentId": "sc-jKJlTe",
+                                        "componentId": "sc-eNQAEJ",
                                         "isStatic": true,
-                                        "lastClassName": "c25",
+                                        "lastClassName": "c24",
                                         "rules": Array [
                                           "
   display: block;
@@ -3417,7 +3663,7 @@ exports[`Nav renders correctly 1`] = `
                                       },
                                       "displayName": "styled.h4",
                                       "render": [Function],
-                                      "styledComponentId": "sc-jKJlTe",
+                                      "styledComponentId": "sc-eNQAEJ",
                                       "target": "h4",
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
@@ -3427,7 +3673,7 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <h4
-                                    className="c25"
+                                    className="c24"
                                     onClick={[Function]}
                                   >
                                     <Link
@@ -3448,7 +3694,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
-                                                  "lastClassName": "c26",
+                                                  "lastClassName": "c25",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -3495,7 +3741,7 @@ exports[`Nav renders correctly 1`] = `
                                             onClick={[Function]}
                                           >
                                             <a
-                                              className="c26"
+                                              className="c25"
                                               href="/docs/tooling"
                                               onClick={[Function]}
                                             >
@@ -3522,9 +3768,9 @@ exports[`Nav renders correctly 1`] = `
                                 "$$typeof": Symbol(react.forward_ref),
                                 "attrs": undefined,
                                 "componentStyle": ComponentStyle {
-                                  "componentId": "sc-ckVGcZ",
+                                  "componentId": "sc-jKJlTe",
                                   "isStatic": true,
-                                  "lastClassName": "c24",
+                                  "lastClassName": "c23",
                                   "rules": Array [
                                     "
   margin-bottom: ",
@@ -3535,7 +3781,7 @@ exports[`Nav renders correctly 1`] = `
                                 },
                                 "displayName": "styled.div",
                                 "render": [Function],
-                                "styledComponentId": "sc-ckVGcZ",
+                                "styledComponentId": "sc-jKJlTe",
                                 "target": "div",
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
@@ -3544,7 +3790,7 @@ exports[`Nav renders correctly 1`] = `
                             forwardedRef={null}
                           >
                             <div
-                              className="c24"
+                              className="c23"
                             >
                               <ForwardRef
                                 onClick={[Function]}
@@ -3555,9 +3801,9 @@ exports[`Nav renders correctly 1`] = `
                                       "$$typeof": Symbol(react.forward_ref),
                                       "attrs": undefined,
                                       "componentStyle": ComponentStyle {
-                                        "componentId": "sc-jKJlTe",
+                                        "componentId": "sc-eNQAEJ",
                                         "isStatic": true,
-                                        "lastClassName": "c25",
+                                        "lastClassName": "c24",
                                         "rules": Array [
                                           "
   display: block;
@@ -3572,7 +3818,7 @@ exports[`Nav renders correctly 1`] = `
                                       },
                                       "displayName": "styled.h4",
                                       "render": [Function],
-                                      "styledComponentId": "sc-jKJlTe",
+                                      "styledComponentId": "sc-eNQAEJ",
                                       "target": "h4",
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
@@ -3582,7 +3828,7 @@ exports[`Nav renders correctly 1`] = `
                                   onClick={[Function]}
                                 >
                                   <h4
-                                    className="c25"
+                                    className="c24"
                                     onClick={[Function]}
                                   >
                                     <Link
@@ -3603,7 +3849,7 @@ exports[`Nav renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
-                                                  "lastClassName": "c26",
+                                                  "lastClassName": "c25",
                                                   "rules": Array [
                                                     "
   display: inline-block;
@@ -3650,7 +3896,7 @@ exports[`Nav renders correctly 1`] = `
                                             onClick={[Function]}
                                           >
                                             <a
-                                              className="c26"
+                                              className="c25"
                                               href="/docs/faqs"
                                               onClick={[Function]}
                                             >
