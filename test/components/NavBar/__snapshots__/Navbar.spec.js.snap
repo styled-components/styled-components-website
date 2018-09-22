@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navbar renders correctly 1`] = `
-.c7 {
+.c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -13,7 +13,7 @@ exports[`Navbar renders correctly 1`] = `
   opacity: 0.35;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -27,7 +27,7 @@ exports[`Navbar renders correctly 1`] = `
   flex: 0 0 auto;
 }
 
-.c6 {
+.c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -44,19 +44,19 @@ exports[`Navbar renders correctly 1`] = `
   color: currentColor;
 }
 
-.c6:hover,
-.c6:focus {
+.c7:hover,
+.c7:focus {
   opacity: 0.8;
 }
 
-.c6:active {
+.c7:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c9 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -70,7 +70,7 @@ exports[`Navbar renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c10 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -83,37 +83,37 @@ exports[`Navbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c10:last-child {
+.c21:last-child {
   margin-right: 0;
 }
 
-.c10:hover,
-.c10:focus {
+.c21:hover,
+.c21:focus {
   opacity: 0.8;
 }
 
-.c10:active {
+.c21:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c10 svg path {
+.c21 svg path {
   fill: currentColor;
 }
 
-.c11 {
+.c22 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c12.c12 {
+.c23.c23 {
   width: 1rem;
   height: 1rem;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -124,7 +124,7 @@ exports[`Navbar renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c17 {
+.c28 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -135,15 +135,15 @@ exports[`Navbar renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c15 svg {
+.c26 svg {
   display: inline-block;
 }
 
-.c15 svg path {
+.c26 svg path {
   fill: currentColor;
 }
 
-.c14 {
+.c25 {
   background: none;
   outline: none;
   border: none;
@@ -158,16 +158,35 @@ exports[`Navbar renders correctly 1`] = `
   background: rgba(0,0,0,0.07);
 }
 
-.c14:focus {
+.c25:focus {
   border: 0.1111111111111111rem solid currentColor;
   border-radius: 0.1111111111111111rem;
 }
 
-.c13 {
+.c29 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  min-width: 2.7777777777777777rem;
+  height: 2.7777777777777777rem;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.c29:focus {
+  border: 0.1111111111111111rem solid currentColor;
+  border-radius: 0.1111111111111111rem;
+}
+
+.c24 {
   display: none;
 }
 
-.c19 {
+.c33 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -202,12 +221,12 @@ exports[`Navbar renders correctly 1`] = `
   color: #868686;
 }
 
-.c16 {
+.c27 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c18 {
+.c31 {
   -webkit-transition: -webkit-transform 0.1s;
   -webkit-transition: transform 0.1s;
   transition: transform 0.1s;
@@ -219,8 +238,114 @@ exports[`Navbar renders correctly 1`] = `
   transform: rotate(180deg);
 }
 
-.c20 {
+.c34 {
   padding-right: 1.1111111111111112rem;
+}
+
+.c30.c30 {
+  width: 1.1111111111111112rem;
+  height: 1.1111111111111112rem;
+}
+
+.c32.c32 {
+  width: 1.6666666666666667rem;
+  height: 1.6666666666666667rem;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c18 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 7.222222222222222rem;
+  line-height: 1.6666666666666667rem;
+  font-size: 0.8333333333333334rem;
+  color: currentColor;
+}
+
+.c18::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c18::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c18:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c18::placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.c18:focus {
+  border-bottom: 1px solid currentColor;
+}
+
+.c16 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-right: 0.2222222222222222rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c16:hover,
+.c16:focus {
+  opacity: 0.7;
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+.c16:active {
+  background: rgba(0,0,0,0.1);
+}
+
+.c16 .c17 {
+  width: 1.1111111111111112rem;
+  height: 1.1111111111111112rem;
+}
+
+.c16 .c17 path {
+  fill: currentColor;
 }
 
 .c0 {
@@ -239,23 +364,7 @@ exports[`Navbar renders correctly 1`] = `
   color: white;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0 1.1111111111111112rem;
-}
-
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -270,7 +379,7 @@ exports[`Navbar renders correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -285,14 +394,41 @@ exports[`Navbar renders correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c3 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 1.1111111111111112rem;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c14 {
+  width: 1.1111111111111112rem;
+  height: 1.1111111111111112rem;
+  color: rgb(219,112,147);
+}
+
+.c13 {
+  display: none;
+  color: currentColor;
+}
+
+.c4 {
   display: inline-block;
   vertical-align: center;
   margin-right: 1.9444444444444444rem;
 }
 
 @media (max-width:62.5em) {
-  .c13 {
+  .c24 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -310,8 +446,124 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c1 {
+  .c15 {
+    display: block;
+    padding: 0.5555555555555556rem;
+  }
+
+  .c15 span.algolia-autocomplete {
+    display: block !important;
+  }
+
+  .c15 span.ds-dropdown-menu::before {
     display: none;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c18 {
+    padding-left: 2.2222222222222223rem;
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(20,20,20,0.1);
+    border-radius: 0.16666666666666666rem;
+    background: #282a36;
+    color: white;
+  }
+
+  .c18:focus {
+    border-bottom: 1px solid rgba(20,20,20,0.1);
+  }
+}
+
+@media (max-width:62.5em) {
+  .c16 {
+    position: absolute;
+    height: 1.8888888888888888rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 1.8888888888888888rem;
+    z-index: 1;
+    background: #282a36;
+    color: white;
+    border-radius: 0.16666666666666666rem;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c1 .c2,
+  .c1 .c9 .c19 {
+    display: none;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c12 {
+    background: currentColor;
+    box-shadow: 0 1px 6px -2px black;
+    position: absolute;
+    top: 1.1111111111111112rem;
+    left: 50%;
+    border-radius: 0.16666666666666666rem;
+    -webkit-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    width: 22.22222222222222rem;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c13 {
+    display: block;
+  }
+
+  .c13 button {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 1px 6px -2px black;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    color: #daa357;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background: #fff;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c11 {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    left: 0;
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: #efefef;
+  }
+
+  .c11 .algolia-autocomplete .ds-dropdown-menu {
+    position: static !important;
+    display: block;
+    max-width: 100%;
+    min-width: 0;
   }
 }
 
@@ -322,42 +574,42 @@ exports[`Navbar renders correctly 1`] = `
     className="c1"
   >
     <div
-      className="c2"
+      className="c2 c3"
     >
       <a
-        className="c3"
+        className="c4"
         href="/"
         onClick={[Function]}
       >
         <div
-          className="c4"
+          className="c5"
         />
       </a>
       <nav
-        className="c5"
+        className="c6"
       >
         <a
-          className="c6"
+          className="c7"
           href="/docs"
           onClick={[Function]}
         >
           Documentation
         </a>
         <span
-          className="c7"
+          className="c8"
         />
         <a
-          className="c6"
+          className="c7"
           href="/ecosystem"
           onClick={[Function]}
         >
           Ecosystem
         </a>
         <span
-          className="c7"
+          className="c8"
         />
         <a
-          className="c6"
+          className="c7"
           href="/releases"
           onClick={[Function]}
         >
@@ -366,51 +618,83 @@ exports[`Navbar renders correctly 1`] = `
       </nav>
     </div>
     <div
-      className="c8"
+      className="c9 c10"
     >
-      <form
-        className="llQBJL"
+      <div
+        className="c11"
+        onClick={[Function]}
       >
-        <button
-          className="dPjGUE"
+        <div
+          className="c12"
         >
-          <svg
-            height="16"
-            width="15"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
+          <div
+            className="c13"
           >
-            <title>
-              search
-            </title>
-            <use
-              fill="#FFF"
-              xlinkHref="#search-icon"
-            />
-            <defs>
-              <path
-                d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
-                id="search-icon"
+            <button
+              onClick={[Function]}
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-times fa-w-11 c14"
+                data-icon="times"
+                data-prefix="fas"
+                role="img"
+                style={Object {}}
+                viewBox="0 0 352 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </button>
+          </div>
+          <div>
+            <form
+              className="c15"
+            >
+              <label
+                className="c16"
+                for="docs-search-input"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-search fa-w-16 c17 "
+                  data-icon="search"
+                  data-prefix="fas"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </label>
+              <input
+                className="c18"
+                id="docs-search-input"
+                placeholder="Search docs ..."
               />
-            </defs>
-          </svg>
-        </button>
-        <input
-          className="hOBHhj"
-          id="docs-search-input"
-          placeholder="Search docs ..."
-        />
-      </form>
+            </form>
+          </div>
+        </div>
+      </div>
       <nav
-        className="c9"
+        className="c19 c20"
       >
         <a
-          className="c10"
+          className="c21"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
         >
           <svg
-            className="c11"
+            className="c22"
             height="14"
             viewBox="0 0 15 15"
             width="14"
@@ -425,13 +709,13 @@ exports[`Navbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="c10"
+          className="c21"
           href="https://github.com/styled-components"
           onClick={[Function]}
         >
           <svg
             aria-hidden="true"
-            className="svg-inline--fa fa-github fa-w-16 c12"
+            className="svg-inline--fa fa-github fa-w-16 c23"
             data-icon="github"
             data-prefix="fab"
             height="18"
@@ -449,13 +733,13 @@ exports[`Navbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="c10"
+          className="c21"
           href="https://medium.com/styled-components"
           onClick={[Function]}
         >
           <svg
             aria-hidden="true"
-            className="svg-inline--fa fa-medium-m fa-w-16 c12"
+            className="svg-inline--fa fa-medium-m fa-w-16 c23"
             data-icon="medium-m"
             data-prefix="fab"
             height="18"
@@ -476,13 +760,13 @@ exports[`Navbar renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="c13"
+    className="c24"
   >
     <button
-      className="c14"
+      className="c25"
     >
       <svg
-        className="c15"
+        className="c26"
         height="15"
         width="15"
         xmlns="http://www.w3.org/2000/svg"
@@ -506,72 +790,89 @@ exports[`Navbar renders correctly 1`] = `
     </button>
     <a
       aria-label="styled components"
-      className="c16"
+      className="c27"
       href="/"
       onClick={[Function]}
     >
       <div
-        className="c17"
+        className="c28"
       />
     </a>
-    <button
-      className="c14"
-    >
-      <div
-        className="c18"
+    <div>
+      <button
+        className="c29"
+        onClick={[Function]}
       >
         <svg
-          className="c15"
-          height="8"
-          width="12"
+          aria-hidden="true"
+          className="svg-inline--fa fa-search fa-w-16 c30"
+          data-icon="search"
+          data-prefix="fas"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-          <title>
-            arrow down
-          </title>
-          <use
-            fill="#FFF"
-            transform="translate(1 1)"
-            xlinkHref="#menuArrow"
+          <path
+            d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+            fill="currentColor"
+            style={Object {}}
           />
-          <defs>
-            <path
-              d="M5 5l-.7.7.7.7.7-.7L5 5zM9.3-.7l-5 5 1.4 1.4 5-5L9.3-.7zm-3.6 5l-5-5L-.7.7l5 5 1.4-1.4z"
-              id="menuArrow"
-            />
-          </defs>
         </svg>
-      </div>
-    </button>
+      </button>
+      <button
+        className="c25"
+      >
+        <div
+          className="c31"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-angle-down fa-w-10 fa-30 c32"
+            data-icon="angle-down"
+            data-prefix="fas"
+            role="img"
+            style={Object {}}
+            viewBox="0 0 320 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
     <div
-      className="c19"
+      className="c33"
     >
       <nav
-        className="c5"
+        className="c6"
       >
         <a
-          className="c6"
+          className="c7"
           href="/docs"
           onClick={[Function]}
         >
           Documentation
         </a>
         <span
-          className="c7"
+          className="c8"
         />
         <a
-          className="c6"
+          className="c7"
           href="/ecosystem"
           onClick={[Function]}
         >
           Ecosystem
         </a>
         <span
-          className="c7"
+          className="c8"
         />
         <a
-          className="c6"
+          className="c7"
           href="/releases"
           onClick={[Function]}
         >
@@ -579,54 +880,21 @@ exports[`Navbar renders correctly 1`] = `
         </a>
       </nav>
       <span
-        className="c7"
+        className="c8"
       />
       <div
-        className="c20"
+        className="c34"
       >
-        <form
-          className="llQBJL"
-        >
-          <button
-            className="dPjGUE"
-          >
-            <svg
-              height="16"
-              width="15"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-            >
-              <title>
-                search
-              </title>
-              <use
-                fill="#FFF"
-                xlinkHref="#search-icon"
-              />
-              <defs>
-                <path
-                  d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
-                  id="search-icon"
-                />
-              </defs>
-            </svg>
-          </button>
-          <input
-            className="hOBHhj"
-            id="docs-search-input"
-            placeholder="Search docs ..."
-          />
-        </form>
         <nav
-          className="c9"
+          className="c20"
         >
           <a
-            className="c10"
+            className="c21"
             href="https://spectrum.chat/styled-components/"
             onClick={[Function]}
           >
             <svg
-              className="c11"
+              className="c22"
               height="14"
               viewBox="0 0 15 15"
               width="14"
@@ -641,13 +909,13 @@ exports[`Navbar renders correctly 1`] = `
             </svg>
           </a>
           <a
-            className="c10"
+            className="c21"
             href="https://github.com/styled-components"
             onClick={[Function]}
           >
             <svg
               aria-hidden="true"
-              className="svg-inline--fa fa-github fa-w-16 c12"
+              className="svg-inline--fa fa-github fa-w-16 c23"
               data-icon="github"
               data-prefix="fab"
               height="18"
@@ -665,13 +933,13 @@ exports[`Navbar renders correctly 1`] = `
             </svg>
           </a>
           <a
-            className="c10"
+            className="c21"
             href="https://medium.com/styled-components"
             onClick={[Function]}
           >
             <svg
               aria-hidden="true"
-              className="svg-inline--fa fa-medium-m fa-w-16 c12"
+              className="svg-inline--fa fa-medium-m fa-w-16 c23"
               data-icon="medium-m"
               data-prefix="fab"
               height="18"

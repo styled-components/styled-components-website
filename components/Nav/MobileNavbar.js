@@ -1,11 +1,12 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import SearchWithAlgolia from './SearchWithAlgolia'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import rem from '../../utils/rem'
 import { navbarHeight } from '../../utils/sizes'
 import { paleGrey } from '../../utils/colors'
 import { mobile } from '../../utils/media'
-import { CloseIcon, FoldIcon, ArrowIcon, SearchIcon } from './NavIcons'
+import { CloseIcon, FoldIcon } from './NavIcons'
 import Link from '../Link'
 import NavLinks from './NavLinks'
 import Social from './Social'
@@ -77,30 +78,12 @@ const SecondaryMenuItem = styled.div`
   padding-right: ${rem(20)};
 `
 
-const SearchModalOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  padding: ${rem(15)};
+const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  && {
+    width: ${p => rem(p.size || 20)};
+    height: ${p => rem(p.size || 20)};
+  }
 `
-
-const SearchModalContent = styled.div`
-  background: black;
-`
-
-const SearchModal = props => {
-  const { onRequestClose } = props
-  return (
-    <SearchModalOverlay>
-      <SearchModalContent>
-        <SearchWithAlgolia />
-      </SearchModalContent>
-    </SearchModalOverlay>
-  )
-}
 
 const MobileNavbar = props => {
   const {
@@ -125,12 +108,12 @@ const MobileNavbar = props => {
       </LogoLink>
       <div>
         <NavButton onClick={onSearchButtonClick}>
-          <SearchIcon />
+          <StyledFontAwesomeIcon icon={faSearch} />
         </NavButton>
 
         <NavButton onClick={onMobileNavToggle} active={!isMobileNavFolded}>
           <ArrowWrapper shouldRotate={!isMobileNavFolded}>
-            <ArrowIcon />
+            <StyledFontAwesomeIcon icon={faAngleDown} size={30} />
           </ArrowWrapper>
         </NavButton>
       </div>
@@ -142,7 +125,6 @@ const MobileNavbar = props => {
           <Social />
         </SecondaryMenuItem>
       </SecondaryMenu>
-      {/* <SearchModal /> */}
     </Wrapper>
   )
 }

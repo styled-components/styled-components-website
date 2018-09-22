@@ -1,8 +1,9 @@
 import React, { PureComponent, createRef } from 'react'
 import styled, { css } from 'styled-components'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import rem from '../../utils/rem'
-import { violetRed, paleGrey } from '../../utils/colors'
+import { violetRed, paleGrey, gold } from '../../utils/colors'
 import { navbarHeight, searchModalWidth } from '../../utils/sizes'
 import { headerFont } from '../../utils/fonts'
 import { mobile } from '../../utils/media'
@@ -41,8 +42,9 @@ const EndWrapper = styled.div`
   align-items: center;
   justify-content: flex-end;
 `
-
+/* stylelint-disable */
 const StyledSocial = styled(Social)``
+/* stylelint-enable */
 
 const NormalNavbar = styled.div`
   display: flex;
@@ -56,12 +58,22 @@ const NormalNavbar = styled.div`
   }
 `
 
+const StyledModalCloseIcon = styled(FontAwesomeIcon).attrs({
+  icon: faTimes,
+})`
+  width: ${rem(20)};
+  height: ${rem(20)};
+  color: ${violetRed};
+`
+
 const AlgoliaModal = styled.div`
   ${mobile(css`
-    background: ${violetRed};
+    background: currentColor;
+    box-shadow: 0 1px 6px -2px black;
     position: absolute;
     top: ${rem(20)};
     left: 50%;
+    border-radius: ${rem(3)};
     transform: translate(-50%, 0);
     width: ${rem(searchModalWidth)};
   `)};
@@ -72,9 +84,21 @@ const AlgoliaModalHeader = styled.div`
   color: currentColor;
   ${mobile(css`
     display: block;
+    button {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 1px 6px -2px black;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      color: ${gold};
+      display: flex;
+      background: #fff;
+    }
   `)};
 `
-const AlgoliaModalBody = styled.div``
 
 const AlgoliaModalOverlay = styled.div`
   ${mobile(css`
@@ -89,7 +113,7 @@ const AlgoliaModalOverlay = styled.div`
 
     .algolia-autocomplete .ds-dropdown-menu {
       position: static !important;
-      dislpay: block;
+      display: block;
       max-width: 100%;
       min-width: 0;
     }
@@ -115,16 +139,16 @@ class ModalContainer extends PureComponent {
       >
         <AlgoliaModal ref={this.modalElement}>
           <AlgoliaModalHeader>
-            <button onClick={this.onCloseButtonClick}>Close</button>
+            <button onClick={this.onCloseButtonClick}>
+              <StyledModalCloseIcon />
+            </button>
           </AlgoliaModalHeader>
-          <AlgoliaModalBody>{this.props.children}</AlgoliaModalBody>
+          <div>{this.props.children}</div>
         </AlgoliaModal>
       </AlgoliaModalOverlay>
     )
   }
 }
-
-const StyledSearchWithAlgolia = styled(SearchWithAlgolia)``
 
 const LogoLink = styled(Link).attrs({
   unstyled: true,
@@ -166,7 +190,7 @@ class Navbar extends PureComponent {
               isOpen={this.state.isOpen}
               requestModalClose={this.closeModal}
             >
-              <StyledSearchWithAlgolia requestModalClose={this.closeModal} />
+              <SearchWithAlgolia requestModalClose={this.closeModal} />
             </ModalContainer>
             <StyledSocial />
           </EndWrapper>

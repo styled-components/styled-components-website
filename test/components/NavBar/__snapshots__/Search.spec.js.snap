@@ -19,7 +19,7 @@ exports[`Search renders correctly 1`] = `
   flex: 0 0 auto;
 }
 
-.c2 {
+.c3 {
   background: none;
   outline: none;
   border: none;
@@ -32,24 +32,28 @@ exports[`Search renders correctly 1`] = `
   color: currentColor;
 }
 
-.c2::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
 }
 
-.c2::-moz-placeholder {
+.c3::-moz-placeholder {
   color: currentColor;
   opacity: 0.5;
 }
 
-.c2:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: currentColor;
   opacity: 0.5;
 }
 
-.c2::placeholder {
+.c3::placeholder {
   color: currentColor;
   opacity: 0.5;
+}
+
+.c3:focus {
+  border-bottom: 1px solid currentColor;
 }
 
 .c1 {
@@ -59,9 +63,18 @@ exports[`Search renders correctly 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  height: 2.7777777777777777rem;
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   margin-right: 0.2222222222222222rem;
   cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c1:hover,
@@ -75,45 +88,98 @@ exports[`Search renders correctly 1`] = `
   background: rgba(0,0,0,0.1);
 }
 
-.c1 svg {
-  width: 0.8888888888888888rem;
-  height: 0.9444444444444444rem;
+.c1 .c2 {
+  width: 1.1111111111111112rem;
+  height: 1.1111111111111112rem;
 }
 
-.c1 svg path {
+.c1 .c2 path {
   fill: currentColor;
+}
+
+@media (max-width:62.5em) {
+  .c0 {
+    display: block;
+    padding: 0.5555555555555556rem;
+  }
+
+  .c0 span.algolia-autocomplete {
+    display: block !important;
+  }
+
+  .c0 span.ds-dropdown-menu::before {
+    display: none;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c3 {
+    padding-left: 2.2222222222222223rem;
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(20,20,20,0.1);
+    border-radius: 0.16666666666666666rem;
+    background: #282a36;
+    color: white;
+  }
+
+  .c3:focus {
+    border-bottom: 1px solid rgba(20,20,20,0.1);
+  }
+}
+
+@media (max-width:62.5em) {
+  .c1 {
+    position: absolute;
+    height: 1.8888888888888888rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 1.8888888888888888rem;
+    z-index: 1;
+    background: #282a36;
+    color: white;
+    border-radius: 0.16666666666666666rem;
+  }
 }
 
 <form
   className="c0"
 >
-  <button
+  <label
     className="c1"
+    for="docs-search-input"
   >
     <svg
-      height="16"
-      width="15"
+      aria-hidden="true"
+      className="svg-inline--fa fa-search fa-w-16 c2 "
+      data-icon="search"
+      data-prefix="fas"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <title>
-        search
-      </title>
-      <use
-        fill="#FFF"
-        xlinkHref="#search-icon"
+      <path
+        d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+        fill="currentColor"
+        style={Object {}}
       />
-      <defs>
-        <path
-          d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
-          id="search-icon"
-        />
-      </defs>
     </svg>
-  </button>
+  </label>
   <input
-    className="c2"
-    placeholder="Search ..."
+    className="c3"
+    id="docs-search-input"
+    placeholder="Search docs ..."
   />
 </form>
 `;

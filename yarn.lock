@@ -4420,6 +4420,10 @@ iltorb@^1.0.9:
     node-gyp "^3.6.2"
     prebuild-install "^2.3.0"
 
+immediate@^3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.2.3.tgz#d140fa8f614659bd6541233097ddaac25cdd991c"
+
 import-local@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/import-local/-/import-local-1.0.0.tgz#5e4ffdc03f4fe6c009c6729beb29631c2f8227bc"
@@ -5864,6 +5868,12 @@ mimic-response@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/mimic-response/-/mimic-response-1.0.1.tgz#4923538878eef42063cb8a3e3b0798781487ab1b"
 
+min-document@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
+  dependencies:
+    dom-walk "^0.1.0"
+
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
@@ -5931,6 +5941,10 @@ mkdirp-then@1.2.0:
   dependencies:
     any-promise "^1.1.0"
     mkdirp "^0.5.0"
+
+mkdirp@0.3.0:
+  version "0.3.0"
+  resolved "http://registry.npmjs.org/mkdirp/-/mkdirp-0.3.0.tgz#1bbf5ab1ba827af23575143490426455f481fe1e"
 
 "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   version "0.5.1"
@@ -6183,6 +6197,12 @@ nomnom@~1.6.2:
 noop-logger@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npmjs.org/noop-logger/-/noop-logger-0.1.1.tgz#94a2b1633c4f1317553007d8966fd0e841b6a4c2"
+
+nopt@1.0.10, nopt@~1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/nopt/-/nopt-1.0.10.tgz#6ddd21bd2a31417b92727dd585f8a6f37608ebee"
+  dependencies:
+    abbrev "1"
 
 "nopt@2 || 3":
   version "3.0.6"
@@ -8074,7 +8094,7 @@ style-search@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
 
-styled-components@^4.0.0-beta.8:
+styled-components@4.0.0-beta.8:
   version "4.0.0-beta.8"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-4.0.0-beta.8.tgz#90430b172ca96915481c0009db1dd76f024cf02a"
   dependencies:
@@ -8358,6 +8378,10 @@ to-arraybuffer@^1.0.0:
 to-buffer@^1.1.0:
   version "1.1.1"
   resolved "https://registry.npmjs.org/to-buffer/-/to-buffer-1.1.1.tgz#493bd48f62d7c43fcded313a03dcadb2e1213a80"
+
+to-factory@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/to-factory/-/to-factory-1.0.0.tgz#8738af8bd97120ad1d4047972ada5563bf9479b1"
 
 to-fast-properties@^1.0.3:
   version "1.0.3"
