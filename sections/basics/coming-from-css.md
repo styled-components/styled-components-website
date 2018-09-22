@@ -145,7 +145,7 @@ render(
 )
 ```
 
-For more complex selector patterns, the amperstand (`&`) can be used to refer back to the main component. Here are some more examples of its potential usage:
+For more complex selector patterns, the ampersand (`&`) can be used to refer back to the main component. Here are some more examples of its potential usage:
 
 ```react
 const Thing = styled.div.attrs({ tabIndex: 0 })`
@@ -186,7 +186,7 @@ render(
 )
 ```
 
-If you put selectors in without the amperstand, they will refer to children of the component.
+If you put selectors in without the ampersand, they will refer to children of the component.
 
 ```react
 const Thing = styled.div`
@@ -206,7 +206,7 @@ render(
 )
 ```
 
-Finally, the amperstand can be used to increase the specificity of rules on the component; this can be useful if you are dealing with a mixed styled-components and vanilla CSS environment where there might be conflicting styles:
+Finally, the ampersand can be used to increase the specificity of rules on the component; this can be useful if you are dealing with a mixed styled-components and vanilla CSS environment where there might be conflicting styles:
 
 ```react
 const Thing = styled.div`
