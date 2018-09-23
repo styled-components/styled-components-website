@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import ChevronRightIcon from 'react-octicons-svg/dist/ChevronRightIcon';
+import { KeyboardArrowRight } from 'styled-icons/material';
 
 import rem from '../utils/rem';
 import Link from './Link';
-import { lightGrey } from '../utils/colors';
+import { grey } from '../utils/colors';
 import { mobile } from '../utils/media';
 import { headerFont } from '../utils/fonts';
 
@@ -40,11 +40,8 @@ const PageName = styled.h2`
   margin: 0;
 `;
 
-const Icon = styled(ChevronRightIcon).attrs({
-  width: null,
-  height: null,
-})`
-  color: ${lightGrey};
+const Icon = styled(KeyboardArrowRight)`
+  color: ${grey};
   width: ${rem(30)};
 `;
 

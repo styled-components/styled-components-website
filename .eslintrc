@@ -9,11 +9,6 @@
     "react"
   ],
   "rules": {
-    "semi": [
-      2,
-      "never"
-    ],
-    "arrow-parens": 0,
     "class-methods-use-this": 0,
     "symbol-description": 0,
     "no-unused-vars": [

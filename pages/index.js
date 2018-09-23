@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import styled, { css } from 'styled-components';
 import { LiveProvider, LiveEditor, LivePreview } from '@probablyup/react-live';
-import HeartIcon from 'react-octicons-svg/dist/HeartIcon';
+import { Favorite } from 'styled-icons/material';
 
 import rem from '../utils/rem';
 import { mobile } from '../utils/media';
@@ -171,13 +171,11 @@ const Footer = styled.footer`
   margin-top: ${rem(50)};
 `;
 
-const Heart = styled(HeartIcon).attrs({
-  width: null,
-  height: null,
-})`
+const Heart = styled(Favorite)`
   display: inline-block;
   width: ${rem(17)};
   color: ${red};
+  transform: translateY(-10%);
 `;
 
 const FooterLink = styled(Link)`
