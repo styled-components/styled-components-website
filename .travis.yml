@@ -1,12 +1,10 @@
 language: node_js
 dist: trusty
-sudo: required
 branches:
   only:
     - master
 cache:
   yarn: true
-  bundler: true
   directories:
     - node_modules
 node_js:
