@@ -1,28 +1,28 @@
-import React, { PureComponent } from 'react'
-import styled, { css } from 'styled-components'
-import { LiveProvider, LiveEditor, LivePreview } from '@probablyup/react-live'
-import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
+import React, { PureComponent } from 'react';
+import styled, { css } from 'styled-components';
+import { LiveProvider, LiveEditor, LivePreview } from '@probablyup/react-live';
+import HeartIcon from 'react-octicons-svg/dist/HeartIcon';
 
-import rem from '../utils/rem'
-import { mobile } from '../utils/media'
-import { violetRed, gold, grey, paleGrey, red } from '../utils/colors'
-import { editorMixin, StyledError } from '../components/LiveEdit'
-import Link from '../components/Link'
-import { Content } from '../components/Layout'
-import SeoHead from '../components/SeoHead'
-import HomepageGettingStarted from '../sections/homepage/getting-started.md'
-import WithIsScrolled from '../components/WithIsScrolled'
-import Nav from '../components/Nav'
+import rem from '../utils/rem';
+import { mobile } from '../utils/media';
+import { violetRed, gold, grey, paleGrey, red } from '../utils/colors';
+import { editorMixin, StyledError } from '../components/LiveEdit';
+import Link from '../components/Link';
+import { Content } from '../components/Layout';
+import SeoHead from '../components/SeoHead';
+import HomepageGettingStarted from '../sections/homepage/getting-started.md';
+import WithIsScrolled from '../components/WithIsScrolled';
+import Nav from '../components/Nav';
 
 const Tagline = styled.h1`
   font-weight: 600;
   font-size: 1.3rem;
-`
+`;
 
 const SupportingTagline = styled.h2`
   font-size: 1.1rem;
   font-weight: 400;
-`
+`;
 
 const headerCode = `
 const Button = styled.a\`
@@ -60,7 +60,7 @@ render(
     </Button>
   </div>
 )
-`.trim()
+`.trim();
 
 import {
   BloombergLogo,
@@ -73,7 +73,7 @@ import {
   HuffpostLogo,
   CoinbaseLogo,
   PatreonLogo,
-} from '../components/CompanyLogos'
+} from '../components/CompanyLogos';
 
 const Title = styled.div`
   margin: 2rem 0;
@@ -82,7 +82,7 @@ const Title = styled.div`
   h2 {
     margin: 0;
   }
-`
+`;
 
 const Logo = styled.img.attrs({
   alt: 'styled-components Logo',
@@ -90,7 +90,7 @@ const Logo = styled.img.attrs({
 })`
   width: ${rem(125)};
   height: ${rem(125)};
-`
+`;
 
 const UsersWrapper = styled.section`
   display: flex;
@@ -98,7 +98,7 @@ const UsersWrapper = styled.section`
   justify-content: center;
   padding: 0.5rem;
   margin-bottom: 2rem;
-`
+`;
 
 const UsersHeading = styled.p`
   text-transform: uppercase;
@@ -107,7 +107,7 @@ const UsersHeading = styled.p`
   font-weight: 600;
   margin: 2.5rem 0 0.5rem;
   opacity: 0.8;
-`
+`;
 
 const CompanyLogo = styled.span`
   position: relative;
@@ -121,7 +121,7 @@ const CompanyLogo = styled.span`
   &:hover {
     opacity: 1;
   }
-`
+`;
 
 const Wrapper = styled.div.attrs({
   className: 'hero-header', // for integration tests
@@ -137,7 +137,7 @@ const Wrapper = styled.div.attrs({
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
   min-height: 100vh;
-`
+`;
 
 const EditorContainer = styled.div`
   display: inline-block;
@@ -146,18 +146,18 @@ const EditorContainer = styled.div`
   text-align: left;
   width: 100%;
   max-width: 34rem;
-`
+`;
 
 const Editor = styled(LiveEditor)`
   ${editorMixin};
   height: 24rem;
   white-space: pre;
   width: 100%;
-`
+`;
 
 const Links = styled.div`
   margin: ${rem(36)} 0;
-`
+`;
 
 const Footer = styled.footer`
   display: flex;
@@ -169,7 +169,7 @@ const Footer = styled.footer`
   background: ${paleGrey};
   box-sizing: border-box;
   margin-top: ${rem(50)};
-`
+`;
 
 const Heart = styled(HeartIcon).attrs({
   width: null,
@@ -178,11 +178,11 @@ const Heart = styled(HeartIcon).attrs({
   display: inline-block;
   width: ${rem(17)};
   color: ${red};
-`
+`;
 
 const FooterLink = styled(Link)`
   color: ${grey};
-`
+`;
 
 const FooterContent = styled(Content)`
   padding: ${rem(30)} ${rem(40)} ${rem(30)} ${rem(40)};
@@ -190,27 +190,27 @@ const FooterContent = styled(Content)`
   ${mobile(css`
     padding: ${rem(30)} ${rem(20)} ${rem(30)} ${rem(20)};
   `)};
-`
+`;
 
 class Index extends PureComponent {
   state = {
     isMobileNavFolded: true,
-  }
+  };
 
   toggleMobileNav = () => {
     this.setState(prevState => ({
       isMobileNavFolded: !prevState.isMobileNavFolded,
-    }))
-  }
+    }));
+  };
 
   onRouteChange = () => {
     this.setState({
       isMobileNavFolded: true,
-    })
-  }
+    });
+  };
 
   render() {
-    const { isMobileNavFolded } = this.state
+    const { isMobileNavFolded } = this.state;
     return (
       <div>
         <SeoHead title="styled-components">
@@ -231,19 +231,13 @@ class Index extends PureComponent {
 
         <Wrapper>
           <Content hero>
-            <LiveProvider
-              code={headerCode}
-              noInline
-              mountStylesheet={false}
-              scope={{ React, styled, css, rem, Link }}
-            >
+            <LiveProvider code={headerCode} noInline mountStylesheet={false} scope={{ React, styled, css, rem, Link }}>
               <Logo />
 
               <Title>
                 <Tagline>Visual primitives for the component age.</Tagline>
                 <SupportingTagline>
-                  Use the best bits of ES6 and CSS to style your apps without
-                  stress 💅
+                  Use the best bits of ES6 and CSS to style your apps without stress 💅
                 </SupportingTagline>
               </Title>
 
@@ -280,11 +274,7 @@ class Index extends PureComponent {
                 <EuroVisionLogo />
               </CompanyLogo>
 
-              <CompanyLogo
-                bottom="0.16rem"
-                height="2.25rem"
-                src="/static/artsy-logo.svg"
-              >
+              <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg">
                 <ArtsyLogo />
               </CompanyLogo>
 
@@ -296,11 +286,7 @@ class Index extends PureComponent {
                 <HuffpostLogo />
               </CompanyLogo>
 
-              <CompanyLogo
-                bottom="0.25rem"
-                height="2rem"
-                src="/static/coinbase-logo.svg"
-              >
+              <CompanyLogo bottom="0.25rem" height="2rem" src="/static/coinbase-logo.svg">
                 <CoinbaseLogo />
               </CompanyLogo>
 
@@ -343,8 +329,8 @@ class Index extends PureComponent {
           </FooterContent>
         </Footer>
       </div>
-    )
+    );
   }
 }
 
-export default Index
+export default Index;

@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import rem from '../utils/rem'
-import { violetRed } from '../utils/colors'
-import { headerFont } from '../utils/fonts'
+import styled from 'styled-components';
+import rem from '../utils/rem';
+import { violetRed } from '../utils/colors';
+import { headerFont } from '../utils/fonts';
 
 export const LabelGroup = styled.div`
   display: inline-block;
@@ -9,7 +9,7 @@ export const LabelGroup = styled.div`
 
   position: relative;
   bottom: ${rem(3)};
-`
+`;
 
 const Label = styled.small`
   display: inline-block;
@@ -20,6 +20,6 @@ const Label = styled.small`
   border-radius: ${rem(3)};
   padding: ${rem(1)} ${rem(5)};
   margin-left: 0.4rem;
-`
+`;
 
-export default Label
+export default Label;

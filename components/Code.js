@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { monospace } from '../utils/fonts'
+import styled from 'styled-components';
+import { monospace } from '../utils/fonts';
 
 const Code = styled.span`
   display: inline-block;
@@ -9,6 +9,6 @@ const Code = styled.span`
   padding: 0 0.05em 0.1em;
   vertical-align: baseline;
   line-height: 1.4;
-`
+`;
 
-export default Code
+export default Code;

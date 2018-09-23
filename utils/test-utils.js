@@ -1,5 +1,5 @@
-import Router from 'next/router'
+import Router from 'next/router';
 
 export const mockRouter = () => {
-  Router.router = { prefetch: () => {} }
-}
+  Router.router = { prefetch: () => {} };
+};

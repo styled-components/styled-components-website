@@ -1,17 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import rem from '../utils/rem'
+import React from 'react';
+import styled from 'styled-components';
+import rem from '../utils/rem';
 
-import '../utils/prismTemplateString'
-import { Editor } from '@probablyup/react-live'
-import { darkGrey } from '../utils/colors'
-import { monospace } from '../utils/fonts'
+import '../utils/prismTemplateString';
+import { Editor } from '@probablyup/react-live';
+import { darkGrey } from '../utils/colors';
+import { monospace } from '../utils/fonts';
 
-import { Note } from './Note'
+import { Note } from './Note';
 
 const CodeBlock = styled(p => {
-  const language = (p.language || 'clike').toLowerCase().trim()
-  return <Editor {...p} language={language} />
+  const language = (p.language || 'clike').toLowerCase().trim();
+  return <Editor {...p} language={language} />;
 }).attrs({
   contentEditable: false,
 })`
@@ -30,6 +30,6 @@ const CodeBlock = styled(p => {
   ${Note} & {
     margin: ${rem(20)} 0;
   }
-`
+`;
 
-export default CodeBlock
+export default CodeBlock;

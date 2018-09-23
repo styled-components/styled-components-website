@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import rem from '../utils/rem'
-import { lightVioletRed, violetRed } from '../utils/colors'
-import { bodyFont, headerFont } from '../utils/fonts'
+import rem from '../utils/rem';
+import { lightVioletRed, violetRed } from '../utils/colors';
+import { bodyFont, headerFont } from '../utils/fonts';
 
-import { SubHeader, Title } from './Layout'
+import { SubHeader, Title } from './Layout';
 
 export const Note = styled.div`
   font-family: ${bodyFont};
@@ -21,7 +21,7 @@ export const Note = styled.div`
   ${SubHeader} + &, ${Title} + & {
     margin-top: ${rem(35)};
   }
-`
+`;
 
 const NoteLabel = styled.strong`
   display: block;
@@ -30,13 +30,13 @@ const NoteLabel = styled.strong`
   text-transform: uppercase;
   font-size: 90%;
   margin-bottom: ${rem(7)};
-`
+`;
 
 const NoteWrapper = ({ label = 'Note', children }) => (
   <Note>
     <NoteLabel>{label}</NoteLabel>
     {children}
   </Note>
-)
+);
 
-export default NoteWrapper
+export default NoteWrapper;
