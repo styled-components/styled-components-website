@@ -59,7 +59,7 @@ const Input = styled.input`
 `
 
 const Button = styled.label.attrs({
-  for: INPUT_ID,
+  htmlFor: INPUT_ID,
 })`
   ${resetInput};
   flex: 0 0 auto;
@@ -96,12 +96,6 @@ const Button = styled.label.attrs({
     color: white;
   `)};
 `
-
-const SearchButton = () => (
-  <Button>
-    <StyledSearchIcon />
-  </Button>
-)
 
 const GlobalStyles = createGlobalStyle`
   .algolia-autocomplete
@@ -162,7 +156,9 @@ const GlobalStyles = createGlobalStyle`
 const Search = ({ isDocs, className }) => (
   <Wrapper className={className}>
     <GlobalStyles />
-    <SearchButton />
+    <Button>
+      <StyledSearchIcon />
+    </Button>
     <Input
       id={INPUT_ID}
       placeholder={isDocs ? `Search ...` : `Search docs ...`}

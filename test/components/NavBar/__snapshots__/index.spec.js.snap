@@ -1737,39 +1737,38 @@ exports[`Nav renders correctly 1`] = `
                                                   className="c15"
                                                 >
                                                   <GlobalStyleComponent />
-                                                  <SearchButton>
-                                                    <ForwardRef>
-                                                      <StyledComponent
-                                                        forwardedClass={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Object {
-                                                              "for": "docs-search-input",
-                                                            },
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "sc-kGXeez",
-                                                              "isStatic": true,
-                                                              "lastClassName": "c16",
-                                                              "rules": Array [
-                                                                "
+                                                  <ForwardRef>
+                                                    <StyledComponent
+                                                      forwardedClass={
+                                                        Object {
+                                                          "$$typeof": Symbol(react.forward_ref),
+                                                          "attrs": Object {
+                                                            "htmlFor": "docs-search-input",
+                                                          },
+                                                          "componentStyle": ComponentStyle {
+                                                            "componentId": "sc-kGXeez",
+                                                            "isStatic": true,
+                                                            "lastClassName": "c16",
+                                                            "rules": Array [
+                                                              "
   ",
-                                                                "
+                                                              "
   background: none;
   outline: none;
   border: none;
 ",
-                                                                ";
+                                                              ";
   flex: 0 0 auto;
   ",
-                                                                "
+                                                              "
   background: none;
   outline: none;
   border: none;
 ",
-                                                                " flex: 0 0 auto;
+                                                              " flex: 0 0 auto;
   margin-right: ",
-                                                                "0.2222222222222222rem",
-                                                                ";
+                                                              "0.2222222222222222rem",
+                                                              ";
   cursor: pointer;
   display: flex;
   &:hover,
@@ -1783,100 +1782,99 @@ exports[`Nav renders correctly 1`] = `
   }
 
   ",
-                                                                ".c17",
-                                                                " {
+                                                              ".c17",
+                                                              " {
     width: ",
-                                                                "1.4444444444444444rem",
-                                                                ";
+                                                              "1.4444444444444444rem",
+                                                              ";
     height: ",
-                                                                "1.4444444444444444rem",
-                                                                ";
+                                                              "1.4444444444444444rem",
+                                                              ";
   }
 
   ",
-                                                                "
+                                                              "
   @media (max-width: ",
-                                                                "62.5",
-                                                                "em) {
+                                                              "62.5",
+                                                              "em) {
     ",
-                                                                "
+                                                              "
     position: absolute;
     top: ",
-                                                                "0.5rem",
-                                                                ";
+                                                              "0.5rem",
+                                                              ";
     left: ",
-                                                                "0.5555555555555556rem",
-                                                                ";
+                                                              "0.5555555555555556rem",
+                                                              ";
     height: ",
-                                                                "1.7777777777777777rem",
-                                                                ";
+                                                              "1.7777777777777777rem",
+                                                              ";
     display: flex;
     align-items: center;
     justify-content: center;
     width: ",
-                                                                "1.7777777777777777rem",
-                                                                ";
+                                                              "1.7777777777777777rem",
+                                                              ";
     z-index: 1;
     background: none;
     color: white;
   ",
-                                                                ";
+                                                              ";
   }
 ",
-                                                                ";
+                                                              ";
 ",
-                                                              ],
-                                                            },
-                                                            "displayName": "styled.label",
-                                                            "render": [Function],
-                                                            "styledComponentId": "sc-kGXeez",
-                                                            "target": "label",
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
-                                                          }
+                                                            ],
+                                                          },
+                                                          "displayName": "styled.label",
+                                                          "render": [Function],
+                                                          "styledComponentId": "sc-kGXeez",
+                                                          "target": "label",
+                                                          "warnTooManyClasses": [Function],
+                                                          "withComponent": [Function],
                                                         }
-                                                        forwardedRef={null}
+                                                      }
+                                                      forwardedRef={null}
+                                                    >
+                                                      <label
+                                                        className="c16"
+                                                        htmlFor="docs-search-input"
                                                       >
-                                                        <label
-                                                          className="c16"
-                                                          for="docs-search-input"
-                                                        >
-                                                          <ForwardRef>
-                                                            <StyledComponent
-                                                              forwardedClass={
-                                                                Object {
-                                                                  "$$typeof": Symbol(react.forward_ref),
-                                                                  "attrs": undefined,
-                                                                  "componentStyle": ComponentStyle {
-                                                                    "componentId": "c17",
-                                                                    "isStatic": true,
-                                                                    "lastClassName": "jHprQs",
-                                                                    "rules": Array [],
-                                                                  },
-                                                                  "displayName": "Styled(DummyIcon)",
-                                                                  "render": [Function],
-                                                                  "styledComponentId": "c17",
-                                                                  "target": [Function],
-                                                                  "warnTooManyClasses": [Function],
-                                                                  "withComponent": [Function],
-                                                                  Symbol(Symbol.hasInstance): [Function],
-                                                                }
+                                                        <ForwardRef>
+                                                          <StyledComponent
+                                                            forwardedClass={
+                                                              Object {
+                                                                "$$typeof": Symbol(react.forward_ref),
+                                                                "attrs": undefined,
+                                                                "componentStyle": ComponentStyle {
+                                                                  "componentId": "c17",
+                                                                  "isStatic": true,
+                                                                  "lastClassName": "jHprQs",
+                                                                  "rules": Array [],
+                                                                },
+                                                                "displayName": "Styled(DummyIcon)",
+                                                                "render": [Function],
+                                                                "styledComponentId": "c17",
+                                                                "target": [Function],
+                                                                "warnTooManyClasses": [Function],
+                                                                "withComponent": [Function],
+                                                                Symbol(Symbol.hasInstance): [Function],
                                                               }
-                                                              forwardedRef={null}
+                                                            }
+                                                            forwardedRef={null}
+                                                          >
+                                                            <DummyIcon
+                                                              className="c17 "
                                                             >
-                                                              <DummyIcon
+                                                              <svg
                                                                 className="c17 "
-                                                              >
-                                                                <svg
-                                                                  className="c17 "
-                                                                />
-                                                              </DummyIcon>
-                                                            </StyledComponent>
-                                                          </ForwardRef>
-                                                        </label>
-                                                      </StyledComponent>
-                                                    </ForwardRef>
-                                                  </SearchButton>
+                                                              />
+                                                            </DummyIcon>
+                                                          </StyledComponent>
+                                                        </ForwardRef>
+                                                      </label>
+                                                    </StyledComponent>
+                                                  </ForwardRef>
                                                   <ForwardRef
                                                     id="docs-search-input"
                                                     placeholder="Search docs ..."

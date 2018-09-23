@@ -168,7 +168,7 @@ exports[`Search renders correctly 1`] = `
 >
   <label
     className="c1"
-    for="docs-search-input"
+    htmlFor="docs-search-input"
   >
     <svg
       className="c2 "

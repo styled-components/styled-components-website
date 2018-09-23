@@ -650,7 +650,7 @@ exports[`Navbar renders correctly 1`] = `
             >
               <label
                 className="c16"
-                for="docs-search-input"
+                htmlFor="docs-search-input"
               >
                 <svg
                   className="c17 "
