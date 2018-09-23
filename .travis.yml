@@ -30,13 +30,9 @@ jobs:
           curl -X POST
           "https://api.cloudflare.com/client/v4/zones/adbb450ef42084d780abfb51de45a6b8/purge_cache"
           \
-
           -H "X-Auth-Email: $CLOUDFLARE_USERNAME" \
-
           -H "X-Auth-Key: $CLOUDFLARE_AUTHORIZATION_KEY" \
-
           -H "Content-Type: application/json" \
-
           --data '{"purge_everything":true}'
 notifications:
   email:
