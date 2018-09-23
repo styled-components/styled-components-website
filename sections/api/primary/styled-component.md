@@ -44,19 +44,31 @@ component's props. The `attrs` object accepts the following values:
 
 Returns another `StyledComponent`.
 
-```jsx
-import styled from 'styled-components'
+```react
+// import styled from 'styled-components'
 
 const Input = styled.input.attrs({
   type: 'text',
-  size: props => (props.small ? 3 : 8),
+  size: props => (props.small ? 5 : undefined),
 })`
-  background: palevioletred;
   border-radius: 3px;
-  border: none;
-  color: white;
+  border: 1px solid palevioletred;
+  display: block;
+  margin: 0 0 1em;
   padding: ${props => props.padding};
+
+  ::placeholder {
+    color: palevioletred;
+  }
 `
+
+render(
+  <>
+    <Input small placeholder="Small" />
+    <Input placeholder="Normal" />
+    <Input padding="2em" placeholder="Padded" />
+  </>
+)
 ```
 
 Learn more about this constructor in the [Attaching Additional Props](/docs/basics#attaching-additional-props) section.
@@ -85,19 +97,21 @@ You can see it in action in the [Extending Styles](/docs/basics#extending-styles
 
 If you want to keep all the styling you've applied to a component but just switch out what's being ultimately rendered (be it a different HTML tag or a different custom component), you can use the `"as"` prop to do this at runtime.
 
-```jsx
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+```react
+// import styled from "styled-components";
 
 const Component = styled.div`
   color: red;
 `;
 
-<Component as="span">Hello World!</Component>
-// renders: <span class="sc-hash">Hello World!</span>
-
-<Component as={Link} to="/">Hello World!</Component>
-// renders: <a class="sc-hash">Hello World!</a>
+render(
+  <Component
+    as="button"
+    onClick={() => alert('It works!')}
+  >
+    Hello World!
+  </Component>
+)
 ```
 
 This sort of thing is very useful in use cases like a navigation bar where some of the items should be links and some just buttons, but all be styled the same way.
