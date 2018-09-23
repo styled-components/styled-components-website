@@ -73,9 +73,7 @@ export const DocsSidebarMenu = withRouter(({ onRouteChange, router }) => (
     {pages.map(({ title, pathname, sections }) => (
       <Folder
         key={title}
-        isOpenDefault={
-          router && router.pathname === `/docs/${pathname}`
-        }
+        isOpenDefault={router && router.pathname === `/docs/${pathname}`}
       >
         {({ rootProps, toggleSubSections, isOpen }) => (
           <Section {...rootProps} onClick={onRouteChange}>
