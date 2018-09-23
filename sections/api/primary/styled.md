@@ -19,8 +19,8 @@ This is a low-level factory we use to create the `styled.tagname` helper methods
 
 Returns a function that accepts a tagged template literal and turns it into a `StyledComponent`.
 
-```jsx
-import styled from 'styled-components'
+```react
+// import styled from 'styled-components'
 
 const Button = styled.button`
   background: palevioletred;
@@ -32,6 +32,14 @@ const Button = styled.button`
 const TomatoButton = styled(Button)`
   background: tomato;
 `
+
+render(
+  <>
+    <Button>I'm purple.</Button>
+    <br />
+    <TomatoButton>I'm red.</TomatoButton>
+  </>
+)
 ```
 
 You can see this method being introduced in the [Getting started](/docs/basics#getting-started) section.

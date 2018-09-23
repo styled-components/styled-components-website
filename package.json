@@ -29,9 +29,9 @@
     "@mdx-js/runtime": "^0.15.0",
     "@mdx-js/tag": "^0.15.0",
     "@probablyup/react-live": "^1.11.0",
-    "@types/react": "^16.4.13",
-    "@zeit/next-mdx": "^1.1.1-canary.2",
-    "@zeit/next-source-maps": "^0.0.2",
+    "@types/react": "^16.4.14",
+    "@zeit/next-mdx": "^1.2.0",
+    "@zeit/next-source-maps": "^0.0.3",
     "axios": "^0.18.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-polished": "^1.1.0",
@@ -42,25 +42,25 @@
     "invariant": "^2.2.4",
     "isomorphic-fetch": "^2.2.1",
     "lru-cache": "^4.1.3",
-    "next": "^6.0.0",
+    "next": "^7.0.0",
     "polished": "^2.0.3",
     "prismjs": "^1.6.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-octicons-svg": "^1.1.13",
     "styled-components": "4.0.0-beta.8",
     "styled-theming": "^2.2.0",
     "webpack-bundle-analyzer": "^2.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
-    "babel-jest": "^23.4.2",
+    "babel-jest": "^23.6.0",
     "bundlesize": "^0.17.0",
-    "enzyme": "^3.5.1",
-    "enzyme-adapter-react-16": "^1.4.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "enzyme-to-json": "^3.3.4",
     "eslint": "^5.5.0",
     "eslint-config-prettier": "^3.0.1",
@@ -74,7 +74,7 @@
     "npm-run-all": "^4.1.3",
     "prettier": "prettier/prettier",
     "react-addons-test-utils": "^15.6.2",
-    "react-test-renderer": "^16.4.2",
+    "react-test-renderer": "^16.5.2",
     "rimraf": "^2.6.2",
     "stylelint": "^8.0.0",
     "stylelint-config-prettier": "^4.0.0",
@@ -101,12 +101,8 @@
   },
   "bundlesize": [
     {
-      "path": ".next/bundles/pages/**/*.js",
-      "maxSize": "50kB"
-    },
-    {
-      "path": ".next/static/**/*.js",
-      "maxSize": "200kB"
+      "path": ".next/static/*/pages/**/*.js",
+      "maxSize": "150kB"
     }
   ]
 }
