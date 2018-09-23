@@ -25,6 +25,7 @@ exports[`Navbar renders correctly 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  margin-right: 1.6666666666666667rem;
 }
 
 .c7 {
@@ -109,7 +110,7 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 .c23.c23 {
-  width: 1rem;
+  width: NaNrem;
   height: 1rem;
 }
 
@@ -147,39 +148,38 @@ exports[`Navbar renders correctly 1`] = `
   background: none;
   outline: none;
   border: none;
+  background: rgba(0,0,0,0.07);
+  cursor: pointer;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  min-width: 2.7777777777777777rem;
   height: 2.7777777777777777rem;
+  padding: 0 0.5555555555555556rem;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
-  background: rgba(0,0,0,0.07);
 }
 
-.c25:focus {
-  border: 0.1111111111111111rem solid currentColor;
-  border-radius: 0.1111111111111111rem;
+.c25 + {
+  padding-left: 0;
 }
 
 .c29 {
   background: none;
   outline: none;
   border: none;
+  background: none;
+  cursor: pointer;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  min-width: 2.7777777777777777rem;
   height: 2.7777777777777777rem;
+  padding: 0 0.5555555555555556rem;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
 }
 
-.c29:focus {
-  border: 0.1111111111111111rem solid currentColor;
-  border-radius: 0.1111111111111111rem;
+.c29 + {
+  padding-left: 0;
 }
 
 .c24 {
@@ -227,12 +227,12 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 .c31 {
-  -webkit-transition: -webkit-transform 0.1s;
-  -webkit-transition: transform 0.1s;
-  transition: transform 0.1s;
-  -webkit-transform-origin: 50% 55%;
-  -ms-transform-origin: 50% 55%;
-  transform-origin: 50% 55%;
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -243,13 +243,13 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 .c30.c30 {
-  width: 1.1111111111111112rem;
-  height: 1.1111111111111112rem;
+  width: 1.5555555555555556rem;
+  height: 1.5555555555555556rem;
 }
 
 .c32.c32 {
-  width: 1.6666666666666667rem;
-  height: 1.6666666666666667rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .c15 {
@@ -286,25 +286,45 @@ exports[`Navbar renders correctly 1`] = `
 .c18::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .c18::-moz-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .c18:-ms-input-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .c18::placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.c18:focus {
-  border-bottom: 1px solid currentColor;
+.c18:focus::-webkit-input-placeholder {
+  opacity: 0.8;
+}
+
+.c18:focus::-moz-placeholder {
+  opacity: 0.8;
+}
+
+.c18:focus:-ms-input-placeholder {
+  opacity: 0.8;
+}
+
+.c18:focus::placeholder {
+  opacity: 0.8;
 }
 
 .c16 {
@@ -340,12 +360,8 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 .c16 .c17 {
-  width: 1.1111111111111112rem;
-  height: 1.1111111111111112rem;
-}
-
-.c16 .c17 path {
-  fill: currentColor;
+  width: 1.4444444444444444rem;
+  height: 1.4444444444444444rem;
 }
 
 .c0 {
@@ -362,6 +378,7 @@ exports[`Navbar renders correctly 1`] = `
   -webkit-transition: background 300ms ease-out;
   transition: background 300ms ease-out;
   color: white;
+  padding: 0;
 }
 
 .c3 {
@@ -410,15 +427,19 @@ exports[`Navbar renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c14 {
-  width: 1.1111111111111112rem;
-  height: 1.1111111111111112rem;
-  color: rgb(219,112,147);
+.c12 {
+  width: 1.4444444444444444rem;
+  height: 1.4444444444444444rem;
+  color: white;
+}
+
+.c11 {
+  display: none;
+  color: currentColor;
 }
 
 .c13 {
-  display: none;
-  color: currentColor;
+  margin-right: 0.5555555555555556rem;
 }
 
 .c4 {
@@ -448,7 +469,7 @@ exports[`Navbar renders correctly 1`] = `
 @media (max-width:62.5em) {
   .c15 {
     display: block;
-    padding: 0.5555555555555556rem;
+    padding: 0;
   }
 
   .c15 span.algolia-autocomplete {
@@ -462,24 +483,20 @@ exports[`Navbar renders correctly 1`] = `
 
 @media (max-width:62.5em) {
   .c18 {
-    padding-left: 2.2222222222222223rem;
+    padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
-    border: 1px solid rgba(20,20,20,0.1);
-    border-radius: 0.16666666666666666rem;
-    background: #282a36;
+    background: rgb(219,112,147);
     color: white;
-  }
-
-  .c18:focus {
-    border-bottom: 1px solid rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
   .c16 {
     position: absolute;
-    height: 1.8888888888888888rem;
+    top: 0.5rem;
+    left: 0.5555555555555556rem;
+    height: 1.7777777777777777rem;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -492,11 +509,10 @@ exports[`Navbar renders correctly 1`] = `
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 1.8888888888888888rem;
+    width: 1.7777777777777777rem;
     z-index: 1;
-    background: #282a36;
+    background: none;
     color: white;
-    border-radius: 0.16666666666666666rem;
   }
 }
 
@@ -508,58 +524,48 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c12 {
+  .c14 {
     background: currentColor;
-    box-shadow: 0 1px 6px -2px black;
+    overflow: auto;
     position: absolute;
-    top: 1.1111111111111112rem;
-    left: 50%;
-    border-radius: 0.16666666666666666rem;
-    -webkit-transform: translate(-50%,0);
-    -ms-transform: translate(-50%,0);
-    transform: translate(-50%,0);
-    width: 22.22222222222222rem;
-  }
-}
-
-@media (max-width:62.5em) {
-  .c13 {
-    display: block;
-  }
-
-  .c13 button {
-    position: absolute;
-    left: 100%;
     top: 0;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 1px 6px -2px black;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    border-radius: 50%;
-    color: #daa357;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    background: #fff;
+    left: 0;
+    right: 0;
   }
 }
 
 @media (max-width:62.5em) {
   .c11 {
+    display: none;
+  }
+
+  .c11 button {
+    cursor: pointer;
+    padding: 0;
+    position: fixed;
+    right: 0.5555555555555556rem;
+    top: 0.6111111111111112rem;
+    border: none;
+    z-index: 2;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c13 {
     position: fixed;
     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 1;
     left: 0;
     display: none;
-    height: 100%;
-    width: 100%;
     background: #efefef;
+    overflow-y: auto;
+    margin: 0;
   }
 
-  .c11 .algolia-autocomplete .ds-dropdown-menu {
+  .c13 .algolia-autocomplete .ds-dropdown-menu {
     position: static !important;
     display: block;
     max-width: 100%;
@@ -622,35 +628,22 @@ exports[`Navbar renders correctly 1`] = `
     >
       <div
         className="c11"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <svg
+            className="c12"
+          />
+        </button>
+      </div>
+      <div
+        className="c13"
         onClick={[Function]}
       >
         <div
-          className="c12"
+          className="c14"
         >
-          <div
-            className="c13"
-          >
-            <button
-              onClick={[Function]}
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-times fa-w-11 c14"
-                data-icon="times"
-                data-prefix="fas"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 352 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
-            </button>
-          </div>
           <div>
             <form
               className="c15"
@@ -660,26 +653,14 @@ exports[`Navbar renders correctly 1`] = `
                 for="docs-search-input"
               >
                 <svg
-                  aria-hidden="true"
-                  className="svg-inline--fa fa-search fa-w-16 c17 "
-                  data-icon="search"
-                  data-prefix="fas"
-                  role="img"
-                  style={Object {}}
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                    fill="currentColor"
-                    style={Object {}}
-                  />
-                </svg>
+                  className="c17 "
+                />
               </label>
               <input
                 className="c18"
                 id="docs-search-input"
                 placeholder="Search docs ..."
+                type="search"
               />
             </form>
           </div>
@@ -714,23 +695,9 @@ exports[`Navbar renders correctly 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-github fa-w-16 c23"
-            data-icon="github"
-            data-prefix="fab"
+            className="c23"
             height="18"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 496 512"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
+          />
         </a>
         <a
           className="c21"
@@ -738,23 +705,9 @@ exports[`Navbar renders correctly 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-medium-m fa-w-16 c23"
-            data-icon="medium-m"
-            data-prefix="fab"
+            className="c23"
             height="18"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 512 512"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
+          />
         </a>
       </nav>
     </div>
@@ -804,21 +757,9 @@ exports[`Navbar renders correctly 1`] = `
         onClick={[Function]}
       >
         <svg
-          aria-hidden="true"
-          className="svg-inline--fa fa-search fa-w-16 c30"
-          data-icon="search"
-          data-prefix="fas"
-          role="img"
-          style={Object {}}
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-            fill="currentColor"
-            style={Object {}}
-          />
-        </svg>
+          className="c30"
+          size={28}
+        />
       </button>
       <button
         className="c25"
@@ -826,22 +767,10 @@ exports[`Navbar renders correctly 1`] = `
         <div
           className="c31"
         >
-          <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-angle-down fa-w-10 fa-30 c32"
-            data-icon="angle-down"
-            data-prefix="fas"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 320 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
+          <div
+            className="c32"
+            size={36}
+          />
         </div>
       </button>
     </div>
@@ -879,9 +808,6 @@ exports[`Navbar renders correctly 1`] = `
           Releases
         </a>
       </nav>
-      <span
-        className="c8"
-      />
       <div
         className="c34"
       >
@@ -914,23 +840,9 @@ exports[`Navbar renders correctly 1`] = `
             onClick={[Function]}
           >
             <svg
-              aria-hidden="true"
-              className="svg-inline--fa fa-github fa-w-16 c23"
-              data-icon="github"
-              data-prefix="fab"
+              className="c23"
               height="18"
-              role="img"
-              style={Object {}}
-              viewBox="0 0 496 512"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                fill="currentColor"
-                style={Object {}}
-              />
-            </svg>
+            />
           </a>
           <a
             className="c21"
@@ -938,23 +850,9 @@ exports[`Navbar renders correctly 1`] = `
             onClick={[Function]}
           >
             <svg
-              aria-hidden="true"
-              className="svg-inline--fa fa-medium-m fa-w-16 c23"
-              data-icon="medium-m"
-              data-prefix="fab"
+              className="c23"
               height="18"
-              role="img"
-              style={Object {}}
-              viewBox="0 0 512 512"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z"
-                fill="currentColor"
-                style={Object {}}
-              />
-            </svg>
+            />
           </a>
         </nav>
       </div>

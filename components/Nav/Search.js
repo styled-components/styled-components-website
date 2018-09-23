@@ -1,19 +1,14 @@
 import React from 'react'
 import styled, { css, createGlobalStyle } from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { Search as SearchIcon } from 'styled-icons/material'
 import PropTypes from 'prop-types'
-import {
-  lightGrey,
-  grey,
-  lightVioletRed,
-  gold,
-  darkGrey,
-} from '../../utils/colors'
+import { grey, lightVioletRed, violetRed, darkGrey } from '../../utils/colors'
 import rem from '../../utils/rem'
 import { navbarHeight } from '../../utils/sizes'
 import { resetInput } from '../../utils/form'
 import { mobile } from '../../utils/media'
+
+const StyledSearchIcon = styled(SearchIcon)``
 
 const INPUT_ID = 'docs-search-input'
 
@@ -24,7 +19,7 @@ const Wrapper = styled.form`
   flex: 0 0 auto;
   ${mobile(css`
     display: block;
-    padding: ${rem(10)};
+    padding: 0;
     span.algolia-autocomplete {
       display: block !important;
     }
@@ -41,30 +36,27 @@ const Input = styled.input`
   line-height: ${rem(navbarHeight - 20)};
   font-size: ${rem(15)};
   color: currentColor;
+
   ::placeholder {
     color: currentColor;
     opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
   }
-  &:focus {
-    border-bottom: 1px solid currentColor;
+
+  :focus {
+    ::placeholder {
+      opacity: 0.8;
+    }
   }
+
   ${mobile(css`
-    padding-left: ${rem(40)};
+    padding: ${rem(10)} ${rem(48)};
     display: block;
     width: 100%;
-    border: 1px solid ${lightGrey};
-    border-radius: ${rem(3)};
-    background: ${grey};
+    background: ${violetRed};
     color: white;
-    &:focus {
-      border-bottom: 1px solid ${lightGrey};
-    }
   `)};
 `
-
-const StyledSearchIcon = styled(FontAwesomeIcon).attrs({
-  icon: faSearch,
-})``
 
 const Button = styled.label.attrs({
   for: INPUT_ID,
@@ -86,24 +78,22 @@ const Button = styled.label.attrs({
   }
 
   ${StyledSearchIcon} {
-    width: ${rem(20)};
-    height: ${rem(20)};
-
-    path {
-      fill: currentColor;
-    }
+    width: ${rem(26)};
+    height: ${rem(26)};
   }
+
   ${mobile(css`
     position: absolute;
-    height: ${rem(34)};
+    top: ${rem(9)};
+    left: ${rem(10)};
+    height: ${rem(32)};
     display: flex;
     align-items: center;
     justify-content: center;
-    width: ${rem(34)};
+    width: ${rem(32)};
     z-index: 1;
-    background: ${grey};
+    background: none;
     color: white;
-    border-radius: ${rem(3)};
   `)};
 `
 
@@ -114,44 +104,59 @@ const SearchButton = () => (
 )
 
 const GlobalStyles = createGlobalStyle`
-    .algolia-autocomplete
-      .ds-dropdown-menu
-      .ds-suggestion.ds-cursor
-      .algolia-docsearch-suggestion.suggestion-layout-simple,
-    .algolia-autocomplete
-      .ds-dropdown-menu
-      .ds-suggestion.ds-cursor
-      .algolia-docsearch-suggestion:not(.suggestion-layout-simple)
-      .algolia-docsearch-suggestion--content {
-      background: ${lightVioletRed};
-    }
+  .algolia-autocomplete
+  .ds-dropdown-menu
+  .ds-suggestion
+  .algolia-docsearch-suggestion--content {
+    width: 100% !important;
 
-    /* Main category (eg. Getting Started) */
-    .algolia-autocomplete .algolia-docsearch-suggestion--category-header {
-      color: ${darkGrey};
+    &::before {
+      content: none;
     }
+  }
 
-    /* Category (eg. Downloads) */
-    .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
-      color: ${grey};
-    }
+  .algolia-autocomplete
+    .ds-dropdown-menu
+    .ds-suggestion.ds-cursor
+    .algolia-docsearch-suggestion--content {
+    background: ${lightVioletRed} !important;
+  }
 
-    /* Title (eg. Bootstrap CDN) */
-    .algolia-autocomplete .algolia-docsearch-suggestion--title {
-      font-weight: bold;
-      color: black;
-    }
+  /* Main category (eg. Getting Started) */
+  .algolia-autocomplete .algolia-docsearch-suggestion--category-header {
+    color: ${darkGrey};
+  }
 
-    /* Description description (eg. Bootstrap currently works...) */
-    .algolia-autocomplete .algolia-docsearch-suggestion--text {
-      color: ${grey};
-    }
+  /* Category (eg. Downloads) */
+  .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
+    display: none !important;
+  }
 
-    /* Highlighted text */
-    .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
-      color: ${gold};
-      background: transparent;
+  /* Title (eg. Bootstrap CDN) */
+  .algolia-autocomplete .algolia-docsearch-suggestion--title {
+    font-weight: bold;
+    color: black;
+  }
+
+  /* Description description (eg. Bootstrap currently works...) */
+  .algolia-autocomplete .algolia-docsearch-suggestion--text {
+    color: ${grey};
+  }
+
+  /* Highlighted text */
+  .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
+    box-shadow: none !important;
+    color: ${violetRed} !important;
+    background: transparent !important;
+  }
+
+  .algolia-autocomplete .ds-dropdown-menu {
+    margin-top: 0;
+
+    > *:first-child {
+      border: 0;
     }
+  }
 `
 
 const Search = ({ isDocs, className }) => (
@@ -161,6 +166,7 @@ const Search = ({ isDocs, className }) => (
     <Input
       id={INPUT_ID}
       placeholder={isDocs ? `Search ...` : `Search docs ...`}
+      type="search"
     />
   </Wrapper>
 )

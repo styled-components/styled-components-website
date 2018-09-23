@@ -10,6 +10,7 @@ const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   flex: 0 0 auto;
+  margin-right: ${rem(30)};
 `
 
 const NavLink = styled(Link).attrs({

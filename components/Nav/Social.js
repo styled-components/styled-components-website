@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faMediumM } from '@fortawesome/free-brands-svg-icons'
+import { Github, MediumM } from 'styled-icons/fa-brands'
 import rem from '../../utils/rem'
 import { navbarHeight } from '../../utils/sizes'
 import Link from '../Link'
@@ -47,7 +46,7 @@ const Svg = styled.svg`
   height: ${p => rem(Number(p.height))};
 `
 
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+const StyledIcon = styled.div`
   && {
     width: ${p => rem(Number(p.width))};
     height: ${p => rem(Number(p.height))};
@@ -83,10 +82,10 @@ const Social = props => (
       <Twitter />
     </SocialLink> */}
     <SocialLink href="https://github.com/styled-components">
-      <StyledFontAwesomeIcon icon={faGithub} width="18" height="18" />
+      <StyledIcon as={Github} height="18" />
     </SocialLink>
     <SocialLink href="https://medium.com/styled-components">
-      <StyledFontAwesomeIcon icon={faMediumM} width="18" height="18" />
+      <StyledIcon as={MediumM} height="18" />
     </SocialLink>
   </Wrapper>
 )

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { Search, KeyboardArrowDown } from 'styled-icons/material'
 import rem from '../../utils/rem'
 import { navbarHeight } from '../../utils/sizes'
 import { paleGrey } from '../../utils/colors'
@@ -11,7 +10,6 @@ import Link from '../Link'
 import NavLinks from './NavLinks'
 import Social from './Social'
 import Logo from './Logo'
-import NavSeparator from './NavSeparator'
 import NavButton from './NavButton'
 
 const Wrapper = styled.div`
@@ -64,12 +62,12 @@ const LogoLink = styled(Link).attrs({
 `
 
 const ArrowWrapper = styled.div`
-  transition: transform 0.1s;
+  transition: transform 0.2s;
 
   ${p =>
     p.shouldRotate &&
     css`
-      transform-origin: 50% 55%;
+      transform-origin: center center;
       transform: rotate(180deg);
     `};
 `
@@ -78,7 +76,7 @@ const SecondaryMenuItem = styled.div`
   padding-right: ${rem(20)};
 `
 
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+const StyledIcon = styled.div`
   && {
     width: ${p => rem(p.size || 20)};
     height: ${p => rem(p.size || 20)};
@@ -108,19 +106,18 @@ const MobileNavbar = props => {
       </LogoLink>
       <div>
         <NavButton onClick={onSearchButtonClick}>
-          <StyledFontAwesomeIcon icon={faSearch} />
+          <StyledIcon as={Search} size={28} />
         </NavButton>
 
         <NavButton onClick={onMobileNavToggle} active={!isMobileNavFolded}>
           <ArrowWrapper shouldRotate={!isMobileNavFolded}>
-            <StyledFontAwesomeIcon icon={faAngleDown} size={30} />
+            <StyledIcon as={KeyboardArrowDown} size={36} />
           </ArrowWrapper>
         </NavButton>
       </div>
 
       <SecondaryMenu isOpen={!isMobileNavFolded}>
         <NavLinks />
-        <NavSeparator />
         <SecondaryMenuItem>
           <Social />
         </SecondaryMenuItem>

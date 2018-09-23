@@ -1,10 +1,9 @@
 import React, { PureComponent, createRef } from 'react'
 import styled, { css } from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { Close } from 'styled-icons/material'
 import rem from '../../utils/rem'
-import { violetRed, paleGrey, gold } from '../../utils/colors'
-import { navbarHeight, searchModalWidth } from '../../utils/sizes'
+import { violetRed, paleGrey } from '../../utils/colors'
+import { navbarHeight } from '../../utils/sizes'
 import { headerFont } from '../../utils/fonts'
 import { mobile } from '../../utils/media'
 import Link from '../Link'
@@ -29,6 +28,7 @@ const Wrapper = styled.nav`
   background: ${props => (props.transparent ? 'transparent' : violetRed)};
   transition: background 300ms ease-out;
   color: white;
+  padding: 0;
 `
 
 const StartWrapper = styled.div`
@@ -58,58 +58,59 @@ const NormalNavbar = styled.div`
   }
 `
 
-const StyledModalCloseIcon = styled(FontAwesomeIcon).attrs({
-  icon: faTimes,
-})`
-  width: ${rem(20)};
-  height: ${rem(20)};
-  color: ${violetRed};
+const StyledModalCloseIcon = styled(Close)`
+  width: ${rem(26)};
+  height: ${rem(26)};
+  color: white;
 `
 
 const AlgoliaModal = styled.div`
   ${mobile(css`
     background: currentColor;
-    box-shadow: 0 1px 6px -2px black;
+    overflow: auto;
     position: absolute;
-    top: ${rem(20)};
-    left: 50%;
-    border-radius: ${rem(3)};
-    transform: translate(-50%, 0);
-    width: ${rem(searchModalWidth)};
+    top: 0;
+    left: 0;
+    right: 0;
   `)};
 `
+
+const baseZ = 1
 
 const AlgoliaModalHeader = styled.div`
   display: none;
   color: currentColor;
+
   ${mobile(css`
-    display: block;
+    display: ${props => (props.isOpen ? 'block' : 'none')};
+
     button {
-      position: absolute;
-      left: 100%;
-      top: 0;
-      border: none;
       cursor: pointer;
-      box-shadow: 0 1px 6px -2px black;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      color: ${gold};
-      display: flex;
-      background: #fff;
+      padding: 0;
+      position: fixed;
+      right: ${rem(10)};
+      top: ${rem(11)};
+      border: none;
+      z-index: ${baseZ + 1};
     }
   `)};
 `
 
 const AlgoliaModalOverlay = styled.div`
+  margin-right: ${rem(10)};
+
   ${mobile(css`
     position: fixed;
     top: 0;
-    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: ${baseZ};
     left: 0;
     display: ${props => (props.isOpen ? 'block' : 'none')};
-    height: 100%;
-    width: 100%;
     background: ${paleGrey};
+    overflow-y: auto;
+    margin: 0;
 
     .algolia-autocomplete .ds-dropdown-menu {
       position: static !important;
@@ -133,19 +134,21 @@ class ModalContainer extends PureComponent {
   }
   render() {
     return (
-      <AlgoliaModalOverlay
-        onClick={this.onModalOverlayClick}
-        isOpen={this.props.isOpen}
-      >
-        <AlgoliaModal ref={this.modalElement}>
-          <AlgoliaModalHeader>
-            <button onClick={this.onCloseButtonClick}>
-              <StyledModalCloseIcon />
-            </button>
-          </AlgoliaModalHeader>
-          <div>{this.props.children}</div>
-        </AlgoliaModal>
-      </AlgoliaModalOverlay>
+      <>
+        <AlgoliaModalHeader isOpen={this.props.isOpen}>
+          <button onClick={this.onCloseButtonClick}>
+            <StyledModalCloseIcon />
+          </button>
+        </AlgoliaModalHeader>
+        <AlgoliaModalOverlay
+          onClick={this.onModalOverlayClick}
+          isOpen={this.props.isOpen}
+        >
+          <AlgoliaModal ref={this.modalElement}>
+            <div>{this.props.children}</div>
+          </AlgoliaModal>
+        </AlgoliaModalOverlay>
+      </>
     )
   }
 }

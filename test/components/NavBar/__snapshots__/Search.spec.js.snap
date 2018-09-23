@@ -35,25 +35,45 @@ exports[`Search renders correctly 1`] = `
 .c3::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .c3::-moz-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .c3:-ms-input-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .c3::placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.c3:focus {
-  border-bottom: 1px solid currentColor;
+.c3:focus::-webkit-input-placeholder {
+  opacity: 0.8;
+}
+
+.c3:focus::-moz-placeholder {
+  opacity: 0.8;
+}
+
+.c3:focus:-ms-input-placeholder {
+  opacity: 0.8;
+}
+
+.c3:focus::placeholder {
+  opacity: 0.8;
 }
 
 .c1 {
@@ -89,18 +109,14 @@ exports[`Search renders correctly 1`] = `
 }
 
 .c1 .c2 {
-  width: 1.1111111111111112rem;
-  height: 1.1111111111111112rem;
-}
-
-.c1 .c2 path {
-  fill: currentColor;
+  width: 1.4444444444444444rem;
+  height: 1.4444444444444444rem;
 }
 
 @media (max-width:62.5em) {
   .c0 {
     display: block;
-    padding: 0.5555555555555556rem;
+    padding: 0;
   }
 
   .c0 span.algolia-autocomplete {
@@ -114,24 +130,20 @@ exports[`Search renders correctly 1`] = `
 
 @media (max-width:62.5em) {
   .c3 {
-    padding-left: 2.2222222222222223rem;
+    padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
-    border: 1px solid rgba(20,20,20,0.1);
-    border-radius: 0.16666666666666666rem;
-    background: #282a36;
+    background: rgb(219,112,147);
     color: white;
-  }
-
-  .c3:focus {
-    border-bottom: 1px solid rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
   .c1 {
     position: absolute;
-    height: 1.8888888888888888rem;
+    top: 0.5rem;
+    left: 0.5555555555555556rem;
+    height: 1.7777777777777777rem;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -144,11 +156,10 @@ exports[`Search renders correctly 1`] = `
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 1.8888888888888888rem;
+    width: 1.7777777777777777rem;
     z-index: 1;
-    background: #282a36;
+    background: none;
     color: white;
-    border-radius: 0.16666666666666666rem;
   }
 }
 
@@ -160,26 +171,14 @@ exports[`Search renders correctly 1`] = `
     for="docs-search-input"
   >
     <svg
-      aria-hidden="true"
-      className="svg-inline--fa fa-search fa-w-16 c2 "
-      data-icon="search"
-      data-prefix="fas"
-      role="img"
-      style={Object {}}
-      viewBox="0 0 512 512"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-        fill="currentColor"
-        style={Object {}}
-      />
-    </svg>
+      className="c2 "
+    />
   </label>
   <input
     className="c3"
     id="docs-search-input"
     placeholder="Search docs ..."
+    type="search"
   />
 </form>
 `;

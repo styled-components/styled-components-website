@@ -35,6 +35,7 @@ exports[`DocsLayout renders correctly 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  margin-right: 1.6666666666666667rem;
 }
 
 .c8 {
@@ -119,7 +120,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c24.c24 {
-  width: 1rem;
+  width: NaNrem;
   height: 1rem;
 }
 
@@ -157,19 +158,19 @@ exports[`DocsLayout renders correctly 1`] = `
   background: none;
   outline: none;
   border: none;
+  background: none;
+  cursor: pointer;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  min-width: 2.7777777777777777rem;
   height: 2.7777777777777777rem;
+  padding: 0 0.5555555555555556rem;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
 }
 
-.c26:focus {
-  border: 0.1111111111111111rem solid currentColor;
-  border-radius: 0.1111111111111111rem;
+.c26 + {
+  padding-left: 0;
 }
 
 .c25 {
@@ -217,9 +218,9 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c31 {
-  -webkit-transition: -webkit-transform 0.1s;
-  -webkit-transition: transform 0.1s;
-  transition: transform 0.1s;
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
 }
 
 .c34 {
@@ -227,13 +228,13 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c30.c30 {
-  width: 1.1111111111111112rem;
-  height: 1.1111111111111112rem;
+  width: 1.5555555555555556rem;
+  height: 1.5555555555555556rem;
 }
 
 .c32.c32 {
-  width: 1.6666666666666667rem;
-  height: 1.6666666666666667rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .c16 {
@@ -270,25 +271,45 @@ exports[`DocsLayout renders correctly 1`] = `
 .c19::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .c19::-moz-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .c19:-ms-input-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .c19::placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.c19:focus {
-  border-bottom: 1px solid currentColor;
+.c19:focus::-webkit-input-placeholder {
+  opacity: 0.8;
+}
+
+.c19:focus::-moz-placeholder {
+  opacity: 0.8;
+}
+
+.c19:focus:-ms-input-placeholder {
+  opacity: 0.8;
+}
+
+.c19:focus::placeholder {
+  opacity: 0.8;
 }
 
 .c17 {
@@ -324,12 +345,8 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c17 .c18 {
-  width: 1.1111111111111112rem;
-  height: 1.1111111111111112rem;
-}
-
-.c17 .c18 path {
-  fill: currentColor;
+  width: 1.4444444444444444rem;
+  height: 1.4444444444444444rem;
 }
 
 .c1 {
@@ -346,6 +363,7 @@ exports[`DocsLayout renders correctly 1`] = `
   -webkit-transition: background 300ms ease-out;
   transition: background 300ms ease-out;
   color: white;
+  padding: 0;
 }
 
 .c4 {
@@ -394,15 +412,19 @@ exports[`DocsLayout renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c15 {
-  width: 1.1111111111111112rem;
-  height: 1.1111111111111112rem;
-  color: rgb(219,112,147);
+.c13 {
+  width: 1.4444444444444444rem;
+  height: 1.4444444444444444rem;
+  color: white;
+}
+
+.c12 {
+  display: none;
+  color: currentColor;
 }
 
 .c14 {
-  display: none;
-  color: currentColor;
+  margin-right: 0.5555555555555556rem;
 }
 
 .c5 {
@@ -507,7 +529,7 @@ exports[`DocsLayout renders correctly 1`] = `
 @media (max-width:62.5em) {
   .c16 {
     display: block;
-    padding: 0.5555555555555556rem;
+    padding: 0;
   }
 
   .c16 span.algolia-autocomplete {
@@ -521,24 +543,20 @@ exports[`DocsLayout renders correctly 1`] = `
 
 @media (max-width:62.5em) {
   .c19 {
-    padding-left: 2.2222222222222223rem;
+    padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
-    border: 1px solid rgba(20,20,20,0.1);
-    border-radius: 0.16666666666666666rem;
-    background: #282a36;
+    background: rgb(219,112,147);
     color: white;
-  }
-
-  .c19:focus {
-    border-bottom: 1px solid rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
   .c17 {
     position: absolute;
-    height: 1.8888888888888888rem;
+    top: 0.5rem;
+    left: 0.5555555555555556rem;
+    height: 1.7777777777777777rem;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -551,11 +569,10 @@ exports[`DocsLayout renders correctly 1`] = `
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 1.8888888888888888rem;
+    width: 1.7777777777777777rem;
     z-index: 1;
-    background: #282a36;
+    background: none;
     color: white;
-    border-radius: 0.16666666666666666rem;
   }
 }
 
@@ -567,58 +584,48 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c13 {
+  .c15 {
     background: currentColor;
-    box-shadow: 0 1px 6px -2px black;
+    overflow: auto;
     position: absolute;
-    top: 1.1111111111111112rem;
-    left: 50%;
-    border-radius: 0.16666666666666666rem;
-    -webkit-transform: translate(-50%,0);
-    -ms-transform: translate(-50%,0);
-    transform: translate(-50%,0);
-    width: 22.22222222222222rem;
-  }
-}
-
-@media (max-width:62.5em) {
-  .c14 {
-    display: block;
-  }
-
-  .c14 button {
-    position: absolute;
-    left: 100%;
     top: 0;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 1px 6px -2px black;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    border-radius: 50%;
-    color: #daa357;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    background: #fff;
+    left: 0;
+    right: 0;
   }
 }
 
 @media (max-width:62.5em) {
   .c12 {
+    display: none;
+  }
+
+  .c12 button {
+    cursor: pointer;
+    padding: 0;
+    position: fixed;
+    right: 0.5555555555555556rem;
+    top: 0.6111111111111112rem;
+    border: none;
+    z-index: 2;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c14 {
     position: fixed;
     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 1;
     left: 0;
     display: none;
-    height: 100%;
-    width: 100%;
     background: #efefef;
+    overflow-y: auto;
+    margin: 0;
   }
 
-  .c12 .algolia-autocomplete .ds-dropdown-menu {
+  .c14 .algolia-autocomplete .ds-dropdown-menu {
     position: static !important;
     display: block;
     max-width: 100%;
@@ -755,6 +762,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           ";
   transition: background 300ms ease-out;
   color: white;
+  padding: 0;
 ",
                         ],
                       },
@@ -965,6 +973,9 @@ exports[`DocsLayout renders correctly 1`] = `
   display: flex;
   align-items: center;
   flex: 0 0 auto;
+  margin-right: ",
+                                              "1.6666666666666667rem",
+                                              ";
 ",
                                             ],
                                           },
@@ -1329,6 +1340,120 @@ exports[`DocsLayout renders correctly 1`] = `
                                 >
                                   <ForwardRef
                                     isOpen={false}
+                                  >
+                                    <StyledComponent
+                                      forwardedClass={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "attrs": undefined,
+                                          "componentStyle": ComponentStyle {
+                                            "componentId": "sc-kkGfuU",
+                                            "isStatic": false,
+                                            "lastClassName": "c12",
+                                            "rules": Array [
+                                              "
+  display: none;
+  color: currentColor;
+
+  ",
+                                              "
+  @media (max-width: ",
+                                              "62.5",
+                                              "em) {
+    ",
+                                              "
+    display: ",
+                                              [Function],
+                                              ";
+
+    button {
+      cursor: pointer;
+      padding: 0;
+      position: fixed;
+      right: ",
+                                              "0.5555555555555556rem",
+                                              ";
+      top: ",
+                                              "0.6111111111111112rem",
+                                              ";
+      border: none;
+      z-index: ",
+                                              "2",
+                                              ";
+    }
+  ",
+                                              ";
+  }
+",
+                                              ";
+",
+                                            ],
+                                          },
+                                          "displayName": "styled.div",
+                                          "render": [Function],
+                                          "styledComponentId": "sc-kkGfuU",
+                                          "target": "div",
+                                          "warnTooManyClasses": [Function],
+                                          "withComponent": [Function],
+                                        }
+                                      }
+                                      forwardedRef={null}
+                                      isOpen={false}
+                                    >
+                                      <div
+                                        className="c12"
+                                      >
+                                        <button
+                                          onClick={[Function]}
+                                        >
+                                          <ForwardRef>
+                                            <StyledComponent
+                                              forwardedClass={
+                                                Object {
+                                                  "$$typeof": Symbol(react.forward_ref),
+                                                  "attrs": undefined,
+                                                  "componentStyle": ComponentStyle {
+                                                    "componentId": "sc-hMqMXs",
+                                                    "isStatic": true,
+                                                    "lastClassName": "c13",
+                                                    "rules": Array [
+                                                      "
+  width: ",
+                                                      "1.4444444444444444rem",
+                                                      ";
+  height: ",
+                                                      "1.4444444444444444rem",
+                                                      ";
+  color: white;
+",
+                                                    ],
+                                                  },
+                                                  "displayName": "Styled(DummyIcon)",
+                                                  "render": [Function],
+                                                  "styledComponentId": "sc-hMqMXs",
+                                                  "target": [Function],
+                                                  "warnTooManyClasses": [Function],
+                                                  "withComponent": [Function],
+                                                  Symbol(Symbol.hasInstance): [Function],
+                                                }
+                                              }
+                                              forwardedRef={null}
+                                            >
+                                              <DummyIcon
+                                                className="c13"
+                                              >
+                                                <svg
+                                                  className="c13"
+                                                />
+                                              </DummyIcon>
+                                            </StyledComponent>
+                                          </ForwardRef>
+                                        </button>
+                                      </div>
+                                    </StyledComponent>
+                                  </ForwardRef>
+                                  <ForwardRef
+                                    isOpen={false}
                                     onClick={[Function]}
                                   >
                                     <StyledComponent
@@ -1339,9 +1464,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-iAyFgw",
                                             "isStatic": false,
-                                            "lastClassName": "c12",
+                                            "lastClassName": "c14",
                                             "rules": Array [
                                               "
+  margin-right: ",
+                                              "0.5555555555555556rem",
+                                              ";
+
   ",
                                               "
   @media (max-width: ",
@@ -1351,16 +1480,21 @@ exports[`DocsLayout renders correctly 1`] = `
                                               "
     position: fixed;
     top: 0;
-    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: ",
+                                              "1",
+                                              ";
     left: 0;
     display: ",
                                               [Function],
                                               ";
-    height: 100%;
-    width: 100%;
     background: ",
                                               "#efefef",
                                               ";
+    overflow-y: auto;
+    margin: 0;
 
     .algolia-autocomplete .ds-dropdown-menu {
       position: static !important;
@@ -1389,7 +1523,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       onClick={[Function]}
                                     >
                                       <div
-                                        className="c12"
+                                        className="c14"
                                         onClick={[Function]}
                                       >
                                         <ForwardRef>
@@ -1401,7 +1535,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-kEYyzF",
                                                   "isStatic": true,
-                                                  "lastClassName": "c13",
+                                                  "lastClassName": "c15",
                                                   "rules": Array [
                                                     "
   ",
@@ -1412,19 +1546,11 @@ exports[`DocsLayout renders correctly 1`] = `
     ",
                                                     "
     background: currentColor;
-    box-shadow: 0 1px 6px -2px black;
+    overflow: auto;
     position: absolute;
-    top: ",
-                                                    "1.1111111111111112rem",
-                                                    ";
-    left: 50%;
-    border-radius: ",
-                                                    "0.16666666666666666rem",
-                                                    ";
-    transform: translate(-50%, 0);
-    width: ",
-                                                    "22.22222222222222rem",
-                                                    ";
+    top: 0;
+    left: 0;
+    right: 0;
   ",
                                                     ";
   }
@@ -1443,7 +1569,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             }
                                             forwardedRef={
                                               Object {
-                                                "current": .c3 {
+                                                "current": .c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1461,7 +1587,7 @@ exports[`DocsLayout renders correctly 1`] = `
   flex: 0 0 auto;
 }
 
-.c6 {
+.c4 {
   background: none;
   outline: none;
   border: none;
@@ -1474,31 +1600,51 @@ exports[`DocsLayout renders correctly 1`] = `
   color: currentColor;
 }
 
-.c6::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.c6::-moz-placeholder {
+.c4::-moz-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.c6:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.c6::placeholder {
+.c4::placeholder {
   color: currentColor;
   opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.c6:focus {
-  border-bottom: 1px solid currentColor;
+.c4:focus::-webkit-input-placeholder {
+  opacity: 0.8;
 }
 
-.c4 {
+.c4:focus::-moz-placeholder {
+  opacity: 0.8;
+}
+
+.c4:focus:-ms-input-placeholder {
+  opacity: 0.8;
+}
+
+.c4:focus::placeholder {
+  opacity: 0.8;
+}
+
+.c2 {
   background: none;
   outline: none;
   border: none;
@@ -1519,72 +1665,53 @@ exports[`DocsLayout renders correctly 1`] = `
   display: flex;
 }
 
-.c4:hover,
-.c4:focus {
+.c2:hover,
+.c2:focus {
   opacity: 0.7;
   -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
 }
 
-.c4:active {
+.c2:active {
   background: rgba(0,0,0,0.1);
 }
 
-.c4 .c5 {
-  width: 1.1111111111111112rem;
-  height: 1.1111111111111112rem;
-}
-
-.c4 .c5 path {
-  fill: currentColor;
-}
-
-.c2 {
-  width: 1.1111111111111112rem;
-  height: 1.1111111111111112rem;
-  color: rgb(219,112,147);
-}
-
-.c1 {
-  display: none;
-  color: currentColor;
+.c2 .c3 {
+  width: 1.4444444444444444rem;
+  height: 1.4444444444444444rem;
 }
 
 @media (max-width:62.5em) {
-  .c3 {
+  .c1 {
     display: block;
-    padding: 0.5555555555555556rem;
+    padding: 0;
   }
 
-  .c3 span.algolia-autocomplete {
+  .c1 span.algolia-autocomplete {
     display: block !important;
   }
 
-  .c3 span.ds-dropdown-menu::before {
+  .c1 span.ds-dropdown-menu::before {
     display: none;
   }
 }
 
 @media (max-width:62.5em) {
-  .c6 {
-    padding-left: 2.2222222222222223rem;
+  .c4 {
+    padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
-    border: 1px solid rgba(20,20,20,0.1);
-    border-radius: 0.16666666666666666rem;
-    background: #282a36;
+    background: rgb(219,112,147);
     color: white;
-  }
-
-  .c6:focus {
-    border-bottom: 1px solid rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
-  .c4 {
+  .c2 {
     position: absolute;
-    height: 1.8888888888888888rem;
+    top: 0.5rem;
+    left: 0.5555555555555556rem;
+    height: 1.7777777777777777rem;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1597,104 +1724,44 @@ exports[`DocsLayout renders correctly 1`] = `
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 1.8888888888888888rem;
+    width: 1.7777777777777777rem;
     z-index: 1;
-    background: #282a36;
+    background: none;
     color: white;
-    border-radius: 0.16666666666666666rem;
   }
 }
 
 @media (max-width:62.5em) {
   .c0 {
     background: currentColor;
-    box-shadow: 0 1px 6px -2px black;
+    overflow: auto;
     position: absolute;
-    top: 1.1111111111111112rem;
-    left: 50%;
-    border-radius: 0.16666666666666666rem;
-    -webkit-transform: translate(-50%,0);
-    -ms-transform: translate(-50%,0);
-    transform: translate(-50%,0);
-    width: 22.22222222222222rem;
-  }
-}
-
-@media (max-width:62.5em) {
-  .c1 {
-    display: block;
-  }
-
-  .c1 button {
-    position: absolute;
-    left: 100%;
     top: 0;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 1px 6px -2px black;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    border-radius: 50%;
-    color: #daa357;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    background: #fff;
+    left: 0;
+    right: 0;
   }
 }
 
 <div
                                                   class="c0"
                                                 >
-                                                  <div
-                                                    class="c1"
-                                                  >
-                                                    <button>
-                                                      <svg
-                                                        aria-hidden="true"
-                                                        class="svg-inline--fa fa-times fa-w-11 c2"
-                                                        data-icon="times"
-                                                        data-prefix="fas"
-                                                        role="img"
-                                                        viewBox="0 0 352 512"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                      >
-                                                        <path
-                                                          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                                                          fill="currentColor"
-                                                        />
-                                                      </svg>
-                                                    </button>
-                                                  </div>
                                                   <div>
                                                     <form
-                                                      class="c3"
+                                                      class="c1"
                                                     >
                                                       <label
-                                                        class="c4"
+                                                        class="c2"
                                                         for="docs-search-input"
                                                       >
                                                         <svg
-                                                          aria-hidden="true"
-                                                          class="svg-inline--fa fa-search fa-w-16 c5 "
-                                                          data-icon="search"
-                                                          data-prefix="fas"
-                                                          role="img"
-                                                          viewBox="0 0 512 512"
-                                                          xmlns="http://www.w3.org/2000/svg"
-                                                        >
-                                                          <path
-                                                            d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                                                            fill="currentColor"
-                                                          />
-                                                        </svg>
+                                                          class="c3 "
+                                                        />
                                                       </label>
                                                       <input
-                                                        class="c6"
+                                                        class="c4"
                                                         id="docs-search-input"
                                                         placeholder="Search docs ..."
+                                                        type="search"
                                                       />
                                                     </form>
                                                   </div>
@@ -1703,169 +1770,8 @@ exports[`DocsLayout renders correctly 1`] = `
                                             }
                                           >
                                             <div
-                                              className="c13"
+                                              className="c15"
                                             >
-                                              <ForwardRef>
-                                                <StyledComponent
-                                                  forwardedClass={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "sc-kkGfuU",
-                                                        "isStatic": true,
-                                                        "lastClassName": "c14",
-                                                        "rules": Array [
-                                                          "
-  display: none;
-  color: currentColor;
-  ",
-                                                          "
-  @media (max-width: ",
-                                                          "62.5",
-                                                          "em) {
-    ",
-                                                          "
-    display: block;
-    button {
-      position: absolute;
-      left: 100%;
-      top: 0;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 1px 6px -2px black;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      color: ",
-                                                          "#daa357",
-                                                          ";
-      display: flex;
-      background: #fff;
-    }
-  ",
-                                                          ";
-  }
-",
-                                                          ";
-",
-                                                        ],
-                                                      },
-                                                      "displayName": "styled.div",
-                                                      "render": [Function],
-                                                      "styledComponentId": "sc-kkGfuU",
-                                                      "target": "div",
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
-                                                    }
-                                                  }
-                                                  forwardedRef={null}
-                                                >
-                                                  <div
-                                                    className="c14"
-                                                  >
-                                                    <button
-                                                      onClick={[Function]}
-                                                    >
-                                                      <ForwardRef>
-                                                        <StyledComponent
-                                                          forwardedClass={
-                                                            Object {
-                                                              "$$typeof": Symbol(react.forward_ref),
-                                                              "attrs": Object {
-                                                                "icon": Object {
-                                                                  "icon": Array [
-                                                                    352,
-                                                                    512,
-                                                                    Array [],
-                                                                    "f00d",
-                                                                    "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z",
-                                                                  ],
-                                                                  "iconName": "times",
-                                                                  "prefix": "fas",
-                                                                },
-                                                              },
-                                                              "componentStyle": ComponentStyle {
-                                                                "componentId": "sc-hMqMXs",
-                                                                "isStatic": true,
-                                                                "lastClassName": "c15",
-                                                                "rules": Array [
-                                                                  "
-  width: ",
-                                                                  "1.1111111111111112rem",
-                                                                  ";
-  height: ",
-                                                                  "1.1111111111111112rem",
-                                                                  ";
-  color: ",
-                                                                  "rgb(219, 112, 147)",
-                                                                  ";
-",
-                                                                ],
-                                                              },
-                                                              "displayName": "Styled(FontAwesomeIcon)",
-                                                              "render": [Function],
-                                                              "styledComponentId": "sc-hMqMXs",
-                                                              "target": [Function],
-                                                              "warnTooManyClasses": [Function],
-                                                              "withComponent": [Function],
-                                                              Symbol(Symbol.hasInstance): [Function],
-                                                            }
-                                                          }
-                                                          forwardedRef={null}
-                                                        >
-                                                          <FontAwesomeIcon
-                                                            border={false}
-                                                            className="c15"
-                                                            fixedWidth={false}
-                                                            flip={null}
-                                                            icon={
-                                                              Object {
-                                                                "icon": Array [
-                                                                  352,
-                                                                  512,
-                                                                  Array [],
-                                                                  "f00d",
-                                                                  "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z",
-                                                                ],
-                                                                "iconName": "times",
-                                                                "prefix": "fas",
-                                                              }
-                                                            }
-                                                            inverse={false}
-                                                            listItem={false}
-                                                            mask={null}
-                                                            pull={null}
-                                                            pulse={false}
-                                                            rotation={null}
-                                                            size={null}
-                                                            spin={false}
-                                                            symbol={false}
-                                                            title=""
-                                                            transform={null}
-                                                          >
-                                                            <svg
-                                                              aria-hidden="true"
-                                                              className="svg-inline--fa fa-times fa-w-11 c15"
-                                                              data-icon="times"
-                                                              data-prefix="fas"
-                                                              role="img"
-                                                              style={Object {}}
-                                                              viewBox="0 0 352 512"
-                                                              xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                              <path
-                                                                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                                                                fill="currentColor"
-                                                                style={Object {}}
-                                                              />
-                                                            </svg>
-                                                          </FontAwesomeIcon>
-                                                        </StyledComponent>
-                                                      </ForwardRef>
-                                                    </button>
-                                                  </div>
-                                                </StyledComponent>
-                                              </ForwardRef>
                                               <div>
                                                 <SearchWithAlgolia
                                                   requestModalClose={[Function]}
@@ -1878,7 +1784,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                             "$$typeof": Symbol(react.forward_ref),
                                                             "attrs": undefined,
                                                             "componentStyle": ComponentStyle {
-                                                              "componentId": "sc-kAzzGY",
+                                                              "componentId": "sc-chPdSV",
                                                               "isStatic": true,
                                                               "lastClassName": "c16",
                                                               "rules": Array [
@@ -1895,9 +1801,7 @@ exports[`DocsLayout renders correctly 1`] = `
     ",
                                                                 "
     display: block;
-    padding: ",
-                                                                "0.5555555555555556rem",
-                                                                ";
+    padding: 0;
     span.algolia-autocomplete {
       display: block !important;
     }
@@ -1914,7 +1818,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                             },
                                                             "displayName": "styled.form",
                                                             "render": [Function],
-                                                            "styledComponentId": "sc-kAzzGY",
+                                                            "styledComponentId": "sc-chPdSV",
                                                             "target": "form",
                                                             "warnTooManyClasses": [Function],
                                                             "withComponent": [Function],
@@ -1975,16 +1879,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                         ".c18",
                                                                         " {
     width: ",
-                                                                        "1.1111111111111112rem",
+                                                                        "1.4444444444444444rem",
                                                                         ";
     height: ",
-                                                                        "1.1111111111111112rem",
+                                                                        "1.4444444444444444rem",
                                                                         ";
-
-    path {
-      fill: currentColor;
-    }
   }
+
   ",
                                                                         "
   @media (max-width: ",
@@ -1993,23 +1894,24 @@ exports[`DocsLayout renders correctly 1`] = `
     ",
                                                                         "
     position: absolute;
+    top: ",
+                                                                        "0.5rem",
+                                                                        ";
+    left: ",
+                                                                        "0.5555555555555556rem",
+                                                                        ";
     height: ",
-                                                                        "1.8888888888888888rem",
+                                                                        "1.7777777777777777rem",
                                                                         ";
     display: flex;
     align-items: center;
     justify-content: center;
     width: ",
-                                                                        "1.8888888888888888rem",
+                                                                        "1.7777777777777777rem",
                                                                         ";
     z-index: 1;
-    background: ",
-                                                                        "#282a36",
-                                                                        ";
+    background: none;
     color: white;
-    border-radius: ",
-                                                                        "0.16666666666666666rem",
-                                                                        ";
   ",
                                                                         ";
   }
@@ -2037,26 +1939,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                       forwardedClass={
                                                                         Object {
                                                                           "$$typeof": Symbol(react.forward_ref),
-                                                                          "attrs": Object {
-                                                                            "icon": Object {
-                                                                              "icon": Array [
-                                                                                512,
-                                                                                512,
-                                                                                Array [],
-                                                                                "f002",
-                                                                                "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z",
-                                                                              ],
-                                                                              "iconName": "search",
-                                                                              "prefix": "fas",
-                                                                            },
-                                                                          },
+                                                                          "attrs": undefined,
                                                                           "componentStyle": ComponentStyle {
                                                                             "componentId": "c18",
                                                                             "isStatic": true,
-                                                                            "lastClassName": "kVSTZj",
+                                                                            "lastClassName": "jHprQs",
                                                                             "rules": Array [],
                                                                           },
-                                                                          "displayName": "Styled(FontAwesomeIcon)",
+                                                                          "displayName": "Styled(DummyIcon)",
                                                                           "render": [Function],
                                                                           "styledComponentId": "c18",
                                                                           "target": [Function],
@@ -2067,53 +1957,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                       }
                                                                       forwardedRef={null}
                                                                     >
-                                                                      <FontAwesomeIcon
-                                                                        border={false}
+                                                                      <DummyIcon
                                                                         className="c18 "
-                                                                        fixedWidth={false}
-                                                                        flip={null}
-                                                                        icon={
-                                                                          Object {
-                                                                            "icon": Array [
-                                                                              512,
-                                                                              512,
-                                                                              Array [],
-                                                                              "f002",
-                                                                              "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z",
-                                                                            ],
-                                                                            "iconName": "search",
-                                                                            "prefix": "fas",
-                                                                          }
-                                                                        }
-                                                                        inverse={false}
-                                                                        listItem={false}
-                                                                        mask={null}
-                                                                        pull={null}
-                                                                        pulse={false}
-                                                                        rotation={null}
-                                                                        size={null}
-                                                                        spin={false}
-                                                                        symbol={false}
-                                                                        title=""
-                                                                        transform={null}
                                                                       >
                                                                         <svg
-                                                                          aria-hidden="true"
-                                                                          className="svg-inline--fa fa-search fa-w-16 c18 "
-                                                                          data-icon="search"
-                                                                          data-prefix="fas"
-                                                                          role="img"
-                                                                          style={Object {}}
-                                                                          viewBox="0 0 512 512"
-                                                                          xmlns="http://www.w3.org/2000/svg"
-                                                                        >
-                                                                          <path
-                                                                            d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                                                                            fill="currentColor"
-                                                                            style={Object {}}
-                                                                          />
-                                                                        </svg>
-                                                                      </FontAwesomeIcon>
+                                                                          className="c18 "
+                                                                        />
+                                                                      </DummyIcon>
                                                                     </StyledComponent>
                                                                   </ForwardRef>
                                                                 </label>
@@ -2123,6 +1973,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                           <ForwardRef
                                                             id="docs-search-input"
                                                             placeholder="Search docs ..."
+                                                            type="search"
                                                           >
                                                             <StyledComponent
                                                               forwardedClass={
@@ -2130,7 +1981,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                   "$$typeof": Symbol(react.forward_ref),
                                                                   "attrs": undefined,
                                                                   "componentStyle": ComponentStyle {
-                                                                    "componentId": "sc-chPdSV",
+                                                                    "componentId": "sc-kgoBCf",
                                                                     "isStatic": true,
                                                                     "lastClassName": "c19",
                                                                     "rules": Array [
@@ -2153,13 +2004,19 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                       "0.8333333333333334rem",
                                                                       ";
   color: currentColor;
+
   ::placeholder {
     color: currentColor;
     opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
   }
-  &:focus {
-    border-bottom: 1px solid currentColor;
+
+  :focus {
+    ::placeholder {
+      opacity: 0.8;
+    }
   }
+
   ",
                                                                       "
   @media (max-width: ",
@@ -2167,26 +2024,17 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                       "em) {
     ",
                                                                       "
-    padding-left: ",
-                                                                      "2.2222222222222223rem",
+    padding: ",
+                                                                      "0.5555555555555556rem",
+                                                                      " ",
+                                                                      "2.6666666666666665rem",
                                                                       ";
     display: block;
     width: 100%;
-    border: 1px solid ",
-                                                                      "rgba(20, 20, 20, 0.1)",
-                                                                      ";
-    border-radius: ",
-                                                                      "0.16666666666666666rem",
-                                                                      ";
     background: ",
-                                                                      "#282a36",
+                                                                      "rgb(219, 112, 147)",
                                                                       ";
     color: white;
-    &:focus {
-      border-bottom: 1px solid ",
-                                                                      "rgba(20, 20, 20, 0.1)",
-                                                                      ";
-    }
   ",
                                                                       ";
   }
@@ -2197,7 +2045,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                   },
                                                                   "displayName": "styled.input",
                                                                   "render": [Function],
-                                                                  "styledComponentId": "sc-chPdSV",
+                                                                  "styledComponentId": "sc-kgoBCf",
                                                                   "target": "input",
                                                                   "warnTooManyClasses": [Function],
                                                                   "withComponent": [Function],
@@ -2206,11 +2054,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                                               forwardedRef={null}
                                                               id="docs-search-input"
                                                               placeholder="Search docs ..."
+                                                              type="search"
                                                             >
                                                               <input
                                                                 className="c19"
                                                                 id="docs-search-input"
                                                                 placeholder="Search docs ..."
+                                                                type="search"
                                                               />
                                                             </StyledComponent>
                                                           </ForwardRef>
@@ -2495,23 +2345,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                                       onClick={[Function]}
                                                     >
                                                       <ForwardRef
+                                                        as={[Function]}
                                                         height="18"
-                                                        icon={
-                                                          Object {
-                                                            "icon": Array [
-                                                              496,
-                                                              512,
-                                                              Array [],
-                                                              "f09b",
-                                                              "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
-                                                            ],
-                                                            "iconName": "github",
-                                                            "prefix": "fab",
-                                                          }
-                                                        }
-                                                        width="18"
                                                       >
                                                         <StyledComponent
+                                                          as={[Function]}
                                                           forwardedClass={
                                                             Object {
                                                               "$$typeof": Symbol(react.forward_ref),
@@ -2533,83 +2371,26 @@ exports[`DocsLayout renders correctly 1`] = `
 ",
                                                                 ],
                                                               },
-                                                              "displayName": "Styled(FontAwesomeIcon)",
+                                                              "displayName": "styled.div",
                                                               "render": [Function],
                                                               "styledComponentId": "sc-htoDjs",
-                                                              "target": [Function],
+                                                              "target": "div",
                                                               "warnTooManyClasses": [Function],
                                                               "withComponent": [Function],
-                                                              Symbol(Symbol.hasInstance): [Function],
                                                             }
                                                           }
                                                           forwardedRef={null}
                                                           height="18"
-                                                          icon={
-                                                            Object {
-                                                              "icon": Array [
-                                                                496,
-                                                                512,
-                                                                Array [],
-                                                                "f09b",
-                                                                "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
-                                                              ],
-                                                              "iconName": "github",
-                                                              "prefix": "fab",
-                                                            }
-                                                          }
-                                                          width="18"
                                                         >
-                                                          <FontAwesomeIcon
-                                                            border={false}
+                                                          <DummyIcon
                                                             className="c24"
-                                                            fixedWidth={false}
-                                                            flip={null}
                                                             height="18"
-                                                            icon={
-                                                              Object {
-                                                                "icon": Array [
-                                                                  496,
-                                                                  512,
-                                                                  Array [],
-                                                                  "f09b",
-                                                                  "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
-                                                                ],
-                                                                "iconName": "github",
-                                                                "prefix": "fab",
-                                                              }
-                                                            }
-                                                            inverse={false}
-                                                            listItem={false}
-                                                            mask={null}
-                                                            pull={null}
-                                                            pulse={false}
-                                                            rotation={null}
-                                                            size={null}
-                                                            spin={false}
-                                                            symbol={false}
-                                                            title=""
-                                                            transform={null}
-                                                            width="18"
                                                           >
                                                             <svg
-                                                              aria-hidden="true"
-                                                              className="svg-inline--fa fa-github fa-w-16 c24"
-                                                              data-icon="github"
-                                                              data-prefix="fab"
+                                                              className="c24"
                                                               height="18"
-                                                              role="img"
-                                                              style={Object {}}
-                                                              viewBox="0 0 496 512"
-                                                              width="18"
-                                                              xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                              <path
-                                                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                                                                fill="currentColor"
-                                                                style={Object {}}
-                                                              />
-                                                            </svg>
-                                                          </FontAwesomeIcon>
+                                                            />
+                                                          </DummyIcon>
                                                         </StyledComponent>
                                                       </ForwardRef>
                                                     </a>
@@ -2691,23 +2472,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                                       onClick={[Function]}
                                                     >
                                                       <ForwardRef
+                                                        as={[Function]}
                                                         height="18"
-                                                        icon={
-                                                          Object {
-                                                            "icon": Array [
-                                                              512,
-                                                              512,
-                                                              Array [],
-                                                              "f3c7",
-                                                              "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
-                                                            ],
-                                                            "iconName": "medium-m",
-                                                            "prefix": "fab",
-                                                          }
-                                                        }
-                                                        width="18"
                                                       >
                                                         <StyledComponent
+                                                          as={[Function]}
                                                           forwardedClass={
                                                             Object {
                                                               "$$typeof": Symbol(react.forward_ref),
@@ -2729,83 +2498,26 @@ exports[`DocsLayout renders correctly 1`] = `
 ",
                                                                 ],
                                                               },
-                                                              "displayName": "Styled(FontAwesomeIcon)",
+                                                              "displayName": "styled.div",
                                                               "render": [Function],
                                                               "styledComponentId": "sc-htoDjs",
-                                                              "target": [Function],
+                                                              "target": "div",
                                                               "warnTooManyClasses": [Function],
                                                               "withComponent": [Function],
-                                                              Symbol(Symbol.hasInstance): [Function],
                                                             }
                                                           }
                                                           forwardedRef={null}
                                                           height="18"
-                                                          icon={
-                                                            Object {
-                                                              "icon": Array [
-                                                                512,
-                                                                512,
-                                                                Array [],
-                                                                "f3c7",
-                                                                "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
-                                                              ],
-                                                              "iconName": "medium-m",
-                                                              "prefix": "fab",
-                                                            }
-                                                          }
-                                                          width="18"
                                                         >
-                                                          <FontAwesomeIcon
-                                                            border={false}
+                                                          <DummyIcon
                                                             className="c24"
-                                                            fixedWidth={false}
-                                                            flip={null}
                                                             height="18"
-                                                            icon={
-                                                              Object {
-                                                                "icon": Array [
-                                                                  512,
-                                                                  512,
-                                                                  Array [],
-                                                                  "f3c7",
-                                                                  "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
-                                                                ],
-                                                                "iconName": "medium-m",
-                                                                "prefix": "fab",
-                                                              }
-                                                            }
-                                                            inverse={false}
-                                                            listItem={false}
-                                                            mask={null}
-                                                            pull={null}
-                                                            pulse={false}
-                                                            rotation={null}
-                                                            size={null}
-                                                            spin={false}
-                                                            symbol={false}
-                                                            title=""
-                                                            transform={null}
-                                                            width="18"
                                                           >
                                                             <svg
-                                                              aria-hidden="true"
-                                                              className="svg-inline--fa fa-medium-m fa-w-16 c24"
-                                                              data-icon="medium-m"
-                                                              data-prefix="fab"
+                                                              className="c24"
                                                               height="18"
-                                                              role="img"
-                                                              style={Object {}}
-                                                              viewBox="0 0 512 512"
-                                                              width="18"
-                                                              xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                              <path
-                                                                d="M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z"
-                                                                fill="currentColor"
-                                                                style={Object {}}
-                                                              />
-                                                            </svg>
-                                                          </FontAwesomeIcon>
+                                                            />
+                                                          </DummyIcon>
                                                         </StyledComponent>
                                                       </ForwardRef>
                                                     </a>
@@ -2903,27 +2615,23 @@ exports[`DocsLayout renders correctly 1`] = `
   border: none;
 ",
                                         ";
-  flex: 0 0 auto;
-  min-width: ",
-                                        "2.7777777777777777rem",
+  background: ",
+                                        [Function],
                                         ";
+  cursor: pointer;
+  flex: 0 0 auto;
   height: ",
                                         "2.7777777777777777rem",
                                         ";
+  padding: 0 ",
+                                        "0.5555555555555556rem",
+                                        ";
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
 
-  ",
-                                        [Function],
-                                        ";
-  &:focus {
-    border: ",
-                                        "0.1111111111111111rem",
-                                        " solid currentColor;
-    border-radius: ",
-                                        "0.1111111111111111rem",
-                                        ";
+  & + ",
+                                        " {
+    padding-left: 0;
   }
 ",
                                       ],
@@ -3131,27 +2839,23 @@ exports[`DocsLayout renders correctly 1`] = `
   border: none;
 ",
                                           ";
-  flex: 0 0 auto;
-  min-width: ",
-                                          "2.7777777777777777rem",
+  background: ",
+                                          [Function],
                                           ";
+  cursor: pointer;
+  flex: 0 0 auto;
   height: ",
                                           "2.7777777777777777rem",
                                           ";
+  padding: 0 ",
+                                          "0.5555555555555556rem",
+                                          ";
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
 
-  ",
-                                          [Function],
-                                          ";
-  &:focus {
-    border: ",
-                                          "0.1111111111111111rem",
-                                          " solid currentColor;
-    border-radius: ",
-                                          "0.1111111111111111rem",
-                                          ";
+  & + ",
+                                          " {
+    padding-left: 0;
   }
 ",
                                         ],
@@ -3172,21 +2876,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                     onClick={[Function]}
                                   >
                                     <ForwardRef
-                                      icon={
-                                        Object {
-                                          "icon": Array [
-                                            512,
-                                            512,
-                                            Array [],
-                                            "f002",
-                                            "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z",
-                                          ],
-                                          "iconName": "search",
-                                          "prefix": "fas",
-                                        }
-                                      }
+                                      as={[Function]}
+                                      size={28}
                                     >
                                       <StyledComponent
+                                        as={[Function]}
                                         forwardedClass={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
@@ -3208,77 +2902,26 @@ exports[`DocsLayout renders correctly 1`] = `
 ",
                                               ],
                                             },
-                                            "displayName": "Styled(FontAwesomeIcon)",
+                                            "displayName": "styled.div",
                                             "render": [Function],
                                             "styledComponentId": "sc-cSHVUG",
-                                            "target": [Function],
+                                            "target": "div",
                                             "warnTooManyClasses": [Function],
                                             "withComponent": [Function],
-                                            Symbol(Symbol.hasInstance): [Function],
                                           }
                                         }
                                         forwardedRef={null}
-                                        icon={
-                                          Object {
-                                            "icon": Array [
-                                              512,
-                                              512,
-                                              Array [],
-                                              "f002",
-                                              "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z",
-                                            ],
-                                            "iconName": "search",
-                                            "prefix": "fas",
-                                          }
-                                        }
+                                        size={28}
                                       >
-                                        <FontAwesomeIcon
-                                          border={false}
+                                        <DummyIcon
                                           className="c30"
-                                          fixedWidth={false}
-                                          flip={null}
-                                          icon={
-                                            Object {
-                                              "icon": Array [
-                                                512,
-                                                512,
-                                                Array [],
-                                                "f002",
-                                                "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z",
-                                              ],
-                                              "iconName": "search",
-                                              "prefix": "fas",
-                                            }
-                                          }
-                                          inverse={false}
-                                          listItem={false}
-                                          mask={null}
-                                          pull={null}
-                                          pulse={false}
-                                          rotation={null}
-                                          size={null}
-                                          spin={false}
-                                          symbol={false}
-                                          title=""
-                                          transform={null}
+                                          size={28}
                                         >
                                           <svg
-                                            aria-hidden="true"
-                                            className="svg-inline--fa fa-search fa-w-16 c30"
-                                            data-icon="search"
-                                            data-prefix="fas"
-                                            role="img"
-                                            style={Object {}}
-                                            viewBox="0 0 512 512"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                          >
-                                            <path
-                                              d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                                              fill="currentColor"
-                                              style={Object {}}
-                                            />
-                                          </svg>
-                                        </FontAwesomeIcon>
+                                            className="c30"
+                                            size={28}
+                                          />
+                                        </DummyIcon>
                                       </StyledComponent>
                                     </ForwardRef>
                                   </button>
@@ -3307,27 +2950,23 @@ exports[`DocsLayout renders correctly 1`] = `
   border: none;
 ",
                                           ";
-  flex: 0 0 auto;
-  min-width: ",
-                                          "2.7777777777777777rem",
+  background: ",
+                                          [Function],
                                           ";
+  cursor: pointer;
+  flex: 0 0 auto;
   height: ",
                                           "2.7777777777777777rem",
                                           ";
+  padding: 0 ",
+                                          "0.5555555555555556rem",
+                                          ";
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
 
-  ",
-                                          [Function],
-                                          ";
-  &:focus {
-    border: ",
-                                          "0.1111111111111111rem",
-                                          " solid currentColor;
-    border-radius: ",
-                                          "0.1111111111111111rem",
-                                          ";
+  & + ",
+                                          " {
+    padding-left: 0;
   }
 ",
                                         ],
@@ -3361,7 +3000,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                               "lastClassName": "c31",
                                               "rules": Array [
                                                 "
-  transition: transform 0.1s;
+  transition: transform 0.2s;
 
   ",
                                                 [Function],
@@ -3384,20 +3023,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           className="c31"
                                         >
                                           <ForwardRef
-                                            icon={
-                                              Object {
-                                                "icon": Array [
-                                                  320,
-                                                  512,
-                                                  Array [],
-                                                  "f107",
-                                                  "M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z",
-                                                ],
-                                                "iconName": "angle-down",
-                                                "prefix": "fas",
-                                              }
-                                            }
-                                            size={30}
+                                            size={36}
                                           >
                                             <StyledComponent
                                               forwardedClass={
@@ -3421,78 +3047,21 @@ exports[`DocsLayout renders correctly 1`] = `
 ",
                                                     ],
                                                   },
-                                                  "displayName": "Styled(FontAwesomeIcon)",
+                                                  "displayName": "styled.div",
                                                   "render": [Function],
                                                   "styledComponentId": "sc-cSHVUG",
-                                                  "target": [Function],
+                                                  "target": "div",
                                                   "warnTooManyClasses": [Function],
                                                   "withComponent": [Function],
-                                                  Symbol(Symbol.hasInstance): [Function],
                                                 }
                                               }
                                               forwardedRef={null}
-                                              icon={
-                                                Object {
-                                                  "icon": Array [
-                                                    320,
-                                                    512,
-                                                    Array [],
-                                                    "f107",
-                                                    "M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z",
-                                                  ],
-                                                  "iconName": "angle-down",
-                                                  "prefix": "fas",
-                                                }
-                                              }
-                                              size={30}
+                                              size={36}
                                             >
-                                              <FontAwesomeIcon
-                                                border={false}
+                                              <div
                                                 className="c32"
-                                                fixedWidth={false}
-                                                flip={null}
-                                                icon={
-                                                  Object {
-                                                    "icon": Array [
-                                                      320,
-                                                      512,
-                                                      Array [],
-                                                      "f107",
-                                                      "M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z",
-                                                    ],
-                                                    "iconName": "angle-down",
-                                                    "prefix": "fas",
-                                                  }
-                                                }
-                                                inverse={false}
-                                                listItem={false}
-                                                mask={null}
-                                                pull={null}
-                                                pulse={false}
-                                                rotation={null}
-                                                size={30}
-                                                spin={false}
-                                                symbol={false}
-                                                title=""
-                                                transform={null}
-                                              >
-                                                <svg
-                                                  aria-hidden="true"
-                                                  className="svg-inline--fa fa-angle-down fa-w-10 fa-30 c32"
-                                                  data-icon="angle-down"
-                                                  data-prefix="fas"
-                                                  role="img"
-                                                  style={Object {}}
-                                                  viewBox="0 0 320 512"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                  <path
-                                                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
-                                                    fill="currentColor"
-                                                    style={Object {}}
-                                                  />
-                                                </svg>
-                                              </FontAwesomeIcon>
+                                                size={36}
+                                              />
                                             </StyledComponent>
                                           </ForwardRef>
                                         </div>
@@ -3576,6 +3145,9 @@ exports[`DocsLayout renders correctly 1`] = `
   display: flex;
   align-items: center;
   flex: 0 0 auto;
+  margin-right: ",
+                                                "1.6666666666666667rem",
+                                                ";
 ",
                                               ],
                                             },
@@ -3907,50 +3479,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                           "$$typeof": Symbol(react.forward_ref),
                                           "attrs": undefined,
                                           "componentStyle": ComponentStyle {
-                                            "componentId": "sc-htpNat",
-                                            "isStatic": true,
-                                            "lastClassName": "c9",
-                                            "rules": Array [
-                                              "
-  flex: 0 0 auto;
-  width: ",
-                                              "0.2777777777777778rem",
-                                              ";
-  height: ",
-                                              "0.2777777777777778rem",
-                                              ";
-  margin: 0 ",
-                                              "0.8333333333333334rem",
-                                              ";
-
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.35;
-",
-                                            ],
-                                          },
-                                          "displayName": "styled.span",
-                                          "render": [Function],
-                                          "styledComponentId": "sc-htpNat",
-                                          "target": "span",
-                                          "warnTooManyClasses": [Function],
-                                          "withComponent": [Function],
-                                        }
-                                      }
-                                      forwardedRef={null}
-                                    >
-                                      <span
-                                        className="c9"
-                                      />
-                                    </StyledComponent>
-                                  </ForwardRef>
-                                  <ForwardRef>
-                                    <StyledComponent
-                                      forwardedClass={
-                                        Object {
-                                          "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": undefined,
-                                          "componentStyle": ComponentStyle {
                                             "componentId": "sc-jzJRlG",
                                             "isStatic": true,
                                             "lastClassName": "c34",
@@ -4215,23 +3743,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                                           onClick={[Function]}
                                                         >
                                                           <ForwardRef
+                                                            as={[Function]}
                                                             height="18"
-                                                            icon={
-                                                              Object {
-                                                                "icon": Array [
-                                                                  496,
-                                                                  512,
-                                                                  Array [],
-                                                                  "f09b",
-                                                                  "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
-                                                                ],
-                                                                "iconName": "github",
-                                                                "prefix": "fab",
-                                                              }
-                                                            }
-                                                            width="18"
                                                           >
                                                             <StyledComponent
+                                                              as={[Function]}
                                                               forwardedClass={
                                                                 Object {
                                                                   "$$typeof": Symbol(react.forward_ref),
@@ -4253,83 +3769,26 @@ exports[`DocsLayout renders correctly 1`] = `
 ",
                                                                     ],
                                                                   },
-                                                                  "displayName": "Styled(FontAwesomeIcon)",
+                                                                  "displayName": "styled.div",
                                                                   "render": [Function],
                                                                   "styledComponentId": "sc-htoDjs",
-                                                                  "target": [Function],
+                                                                  "target": "div",
                                                                   "warnTooManyClasses": [Function],
                                                                   "withComponent": [Function],
-                                                                  Symbol(Symbol.hasInstance): [Function],
                                                                 }
                                                               }
                                                               forwardedRef={null}
                                                               height="18"
-                                                              icon={
-                                                                Object {
-                                                                  "icon": Array [
-                                                                    496,
-                                                                    512,
-                                                                    Array [],
-                                                                    "f09b",
-                                                                    "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
-                                                                  ],
-                                                                  "iconName": "github",
-                                                                  "prefix": "fab",
-                                                                }
-                                                              }
-                                                              width="18"
                                                             >
-                                                              <FontAwesomeIcon
-                                                                border={false}
+                                                              <DummyIcon
                                                                 className="c24"
-                                                                fixedWidth={false}
-                                                                flip={null}
                                                                 height="18"
-                                                                icon={
-                                                                  Object {
-                                                                    "icon": Array [
-                                                                      496,
-                                                                      512,
-                                                                      Array [],
-                                                                      "f09b",
-                                                                      "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
-                                                                    ],
-                                                                    "iconName": "github",
-                                                                    "prefix": "fab",
-                                                                  }
-                                                                }
-                                                                inverse={false}
-                                                                listItem={false}
-                                                                mask={null}
-                                                                pull={null}
-                                                                pulse={false}
-                                                                rotation={null}
-                                                                size={null}
-                                                                spin={false}
-                                                                symbol={false}
-                                                                title=""
-                                                                transform={null}
-                                                                width="18"
                                                               >
                                                                 <svg
-                                                                  aria-hidden="true"
-                                                                  className="svg-inline--fa fa-github fa-w-16 c24"
-                                                                  data-icon="github"
-                                                                  data-prefix="fab"
+                                                                  className="c24"
                                                                   height="18"
-                                                                  role="img"
-                                                                  style={Object {}}
-                                                                  viewBox="0 0 496 512"
-                                                                  width="18"
-                                                                  xmlns="http://www.w3.org/2000/svg"
-                                                                >
-                                                                  <path
-                                                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                                                                    fill="currentColor"
-                                                                    style={Object {}}
-                                                                  />
-                                                                </svg>
-                                                              </FontAwesomeIcon>
+                                                                />
+                                                              </DummyIcon>
                                                             </StyledComponent>
                                                           </ForwardRef>
                                                         </a>
@@ -4411,23 +3870,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                                           onClick={[Function]}
                                                         >
                                                           <ForwardRef
+                                                            as={[Function]}
                                                             height="18"
-                                                            icon={
-                                                              Object {
-                                                                "icon": Array [
-                                                                  512,
-                                                                  512,
-                                                                  Array [],
-                                                                  "f3c7",
-                                                                  "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
-                                                                ],
-                                                                "iconName": "medium-m",
-                                                                "prefix": "fab",
-                                                              }
-                                                            }
-                                                            width="18"
                                                           >
                                                             <StyledComponent
+                                                              as={[Function]}
                                                               forwardedClass={
                                                                 Object {
                                                                   "$$typeof": Symbol(react.forward_ref),
@@ -4449,83 +3896,26 @@ exports[`DocsLayout renders correctly 1`] = `
 ",
                                                                     ],
                                                                   },
-                                                                  "displayName": "Styled(FontAwesomeIcon)",
+                                                                  "displayName": "styled.div",
                                                                   "render": [Function],
                                                                   "styledComponentId": "sc-htoDjs",
-                                                                  "target": [Function],
+                                                                  "target": "div",
                                                                   "warnTooManyClasses": [Function],
                                                                   "withComponent": [Function],
-                                                                  Symbol(Symbol.hasInstance): [Function],
                                                                 }
                                                               }
                                                               forwardedRef={null}
                                                               height="18"
-                                                              icon={
-                                                                Object {
-                                                                  "icon": Array [
-                                                                    512,
-                                                                    512,
-                                                                    Array [],
-                                                                    "f3c7",
-                                                                    "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
-                                                                  ],
-                                                                  "iconName": "medium-m",
-                                                                  "prefix": "fab",
-                                                                }
-                                                              }
-                                                              width="18"
                                                             >
-                                                              <FontAwesomeIcon
-                                                                border={false}
+                                                              <DummyIcon
                                                                 className="c24"
-                                                                fixedWidth={false}
-                                                                flip={null}
                                                                 height="18"
-                                                                icon={
-                                                                  Object {
-                                                                    "icon": Array [
-                                                                      512,
-                                                                      512,
-                                                                      Array [],
-                                                                      "f3c7",
-                                                                      "M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z",
-                                                                    ],
-                                                                    "iconName": "medium-m",
-                                                                    "prefix": "fab",
-                                                                  }
-                                                                }
-                                                                inverse={false}
-                                                                listItem={false}
-                                                                mask={null}
-                                                                pull={null}
-                                                                pulse={false}
-                                                                rotation={null}
-                                                                size={null}
-                                                                spin={false}
-                                                                symbol={false}
-                                                                title=""
-                                                                transform={null}
-                                                                width="18"
                                                               >
                                                                 <svg
-                                                                  aria-hidden="true"
-                                                                  className="svg-inline--fa fa-medium-m fa-w-16 c24"
-                                                                  data-icon="medium-m"
-                                                                  data-prefix="fab"
+                                                                  className="c24"
                                                                   height="18"
-                                                                  role="img"
-                                                                  style={Object {}}
-                                                                  viewBox="0 0 512 512"
-                                                                  width="18"
-                                                                  xmlns="http://www.w3.org/2000/svg"
-                                                                >
-                                                                  <path
-                                                                    d="M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z"
-                                                                    fill="currentColor"
-                                                                    style={Object {}}
-                                                                  />
-                                                                </svg>
-                                                              </FontAwesomeIcon>
+                                                                />
+                                                              </DummyIcon>
                                                             </StyledComponent>
                                                           </ForwardRef>
                                                         </a>
