@@ -9,7 +9,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   fill: currentColor;
 }
 
-.c9 {
+.c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -21,7 +21,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   opacity: 0.35;
 }
 
-.c7 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -33,9 +33,10 @@ exports[`MobileNavbar renders correctly 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  margin-right: 1.6666666666666667rem;
 }
 
-.c8 {
+.c11 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -52,19 +53,19 @@ exports[`MobileNavbar renders correctly 1`] = `
   color: currentColor;
 }
 
-.c8:hover,
-.c8:focus {
+.c11:hover,
+.c11:focus {
   opacity: 0.8;
 }
 
-.c8:active {
+.c11:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c11 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -78,7 +79,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c12 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -91,33 +92,33 @@ exports[`MobileNavbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c12:last-child {
+.c15:last-child {
   margin-right: 0;
 }
 
-.c12:hover,
-.c12:focus {
+.c15:hover,
+.c15:focus {
   opacity: 0.8;
 }
 
-.c12:active {
+.c15:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c12 svg path {
+.c15 svg path {
   fill: currentColor;
 }
 
-.c13 {
+.c16 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c14.c14 {
-  width: 1rem;
+.c17.c17 {
+  width: NaNrem;
   height: 1rem;
 }
 
@@ -136,27 +137,45 @@ exports[`MobileNavbar renders correctly 1`] = `
   background: none;
   outline: none;
   border: none;
+  background: rgba(0,0,0,0.07);
+  cursor: pointer;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  min-width: 2.7777777777777777rem;
   height: 2.7777777777777777rem;
+  padding: 0 0.5555555555555556rem;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
-  background: rgba(0,0,0,0.07);
 }
 
-.c1:focus {
-  border: 0.1111111111111111rem solid currentColor;
-  border-radius: 0.1111111111111111rem;
+.c1 + {
+  padding-left: 0;
+}
+
+.c5 {
+  background: none;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 2.7777777777777777rem;
+  padding: 0 0.5555555555555556rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.c5 + {
+  padding-left: 0;
 }
 
 .c0 {
   display: none;
 }
 
-.c6 {
+.c9 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -196,20 +215,30 @@ exports[`MobileNavbar renders correctly 1`] = `
   vertical-align: center;
 }
 
-.c5 {
-  -webkit-transition: -webkit-transform 0.1s;
-  -webkit-transition: transform 0.1s;
-  transition: transform 0.1s;
-  -webkit-transform-origin: 50% 55%;
-  -ms-transform-origin: 50% 55%;
-  transform-origin: 50% 55%;
+.c7 {
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-.c10 {
+.c13 {
   padding-right: 1.1111111111111112rem;
+}
+
+.c6.c6 {
+  width: 1.5555555555555556rem;
+  height: 1.5555555555555556rem;
+}
+
+.c8.c8 {
+  width: 2rem;
+  height: 2rem;
 }
 
 @media (max-width:62.5em) {
@@ -269,86 +298,75 @@ exports[`MobileNavbar renders correctly 1`] = `
       className="c4"
     />
   </a>
-  <button
-    className="c1"
-  >
-    <div
+  <div>
+    <button
       className="c5"
     >
       <svg
-        className="c2"
-        height="8"
-        width="12"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
+        className="c6"
+        size={28}
+      />
+    </button>
+    <button
+      className="c1"
+    >
+      <div
+        className="c7"
       >
-        <title>
-          arrow down
-        </title>
-        <use
-          fill="#FFF"
-          transform="translate(1 1)"
-          xlinkHref="#menuArrow"
+        <div
+          className="c8"
+          size={36}
         />
-        <defs>
-          <path
-            d="M5 5l-.7.7.7.7.7-.7L5 5zM9.3-.7l-5 5 1.4 1.4 5-5L9.3-.7zm-3.6 5l-5-5L-.7.7l5 5 1.4-1.4z"
-            id="menuArrow"
-          />
-        </defs>
-      </svg>
-    </div>
-  </button>
+      </div>
+    </button>
+  </div>
   <div
-    className="c6"
+    className="c9"
   >
     <nav
-      className="c7"
+      className="c10"
     >
       <a
-        className="c8"
+        className="c11"
         href="/docs"
         onClick={[Function]}
       >
         Documentation
       </a>
       <span
-        className="c9"
+        className="c12"
       />
       <a
-        className="c8"
+        className="c11"
         href="/ecosystem"
         onClick={[Function]}
       >
         Ecosystem
       </a>
       <span
-        className="c9"
+        className="c12"
       />
       <a
-        className="c8"
+        className="c11"
         href="/releases"
         onClick={[Function]}
       >
         Releases
       </a>
     </nav>
-    <span
-      className="c9"
-    />
     <div
-      className="c10"
+      className="c13"
     >
       <nav
-        className="c11"
+        className="c14"
       >
         <a
-          className="c12"
+          className="c15"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
         >
           <svg
-            className="c13"
+            className="c16"
             height="14"
             viewBox="0 0 15 15"
             width="14"
@@ -363,52 +381,24 @@ exports[`MobileNavbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="c12"
+          className="c15"
           href="https://github.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-github fa-w-16 c14"
-            data-icon="github"
-            data-prefix="fab"
+            className="c17"
             height="18"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 496 512"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
+          />
         </a>
         <a
-          className="c12"
+          className="c15"
           href="https://medium.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
-            className="svg-inline--fa fa-medium-m fa-w-16 c14"
-            data-icon="medium-m"
-            data-prefix="fab"
+            className="c17"
             height="18"
-            role="img"
-            style={Object {}}
-            viewBox="0 0 512 512"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z"
-              fill="currentColor"
-              style={Object {}}
-            />
-          </svg>
+          />
         </a>
       </nav>
     </div>

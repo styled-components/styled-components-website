@@ -1,5 +1,5 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 
 const rotate360 = keyframes`
   from {
@@ -9,7 +9,7 @@ const rotate360 = keyframes`
   to {
     transform: rotate(360deg);
   }
-`
+`;
 
 const StyledLoading = styled.div`
   display: inline-block;
@@ -20,8 +20,8 @@ const StyledLoading = styled.div`
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
   left: 50%;
-`
+`;
 
-const Loading = () => <StyledLoading>&lt; 💅 &gt;</StyledLoading>
+const Loading = () => <StyledLoading>&lt; 💅 &gt;</StyledLoading>;
 
-export default Loading
+export default Loading;

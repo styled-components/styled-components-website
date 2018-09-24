@@ -1,9 +1,9 @@
-import styled, { css } from 'styled-components'
-import rem from '../utils/rem'
+import styled, { css } from 'styled-components';
+import rem from '../utils/rem';
 
-import LinkIcon from 'react-octicons-svg/dist/LinkIcon'
-import { Header, SubHeader, TertiaryHeader } from './Layout'
-import { mobile } from '../utils/media'
+import { Link as LinkIcon } from 'styled-icons/material';
+import { Header, SubHeader, TertiaryHeader } from './Layout';
+import { mobile } from '../utils/media';
 
 const InvisibleAnchor = styled.div.attrs({
   'aria-hidden': true,
@@ -18,14 +18,14 @@ const InvisibleAnchor = styled.div.attrs({
   ${mobile(css`
     top: ${rem(-90)};
   `)};
-`
+`;
 
 const Anchor = styled.a`
   display: none;
   position: absolute;
   left: 0;
   color: inherit;
-`
+`;
 
 const AnchorIcon = styled(LinkIcon).attrs({
   width: null,
@@ -38,7 +38,7 @@ const AnchorIcon = styled(LinkIcon).attrs({
   &:hover {
     opacity: 0.9;
   }
-`
+`;
 
 const AnchorHeader = styled.div`
   && {
@@ -60,21 +60,21 @@ const AnchorHeader = styled.div`
   &:hover ${Anchor} {
     display: inline-block;
   }
-`
+`;
 
 const Link = ({ children, level, id }) => {
-  let override = undefined
+  let override = undefined;
 
   switch (level) {
     case 3:
-      override = SubHeader
-      break
+      override = SubHeader;
+      break;
     case 4:
-      override = TertiaryHeader
-      break
+      override = TertiaryHeader;
+      break;
     default:
-      override = Header
-      break
+      override = Header;
+      break;
   }
 
   return (
@@ -87,7 +87,7 @@ const Link = ({ children, level, id }) => {
 
       {children}
     </AnchorHeader>
-  )
-}
+  );
+};
 
-export default Link
+export default Link;

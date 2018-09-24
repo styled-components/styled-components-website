@@ -36,7 +36,7 @@ exports[`NextPage renders correctly 1`] = `
 }
 
 .c3 {
-  color: rgba(20,20,20,0.1);
+  color: #282a36;
   width: 1.6666666666666667rem;
 }
 
@@ -68,17 +68,8 @@ exports[`NextPage renders correctly 1`] = `
   </div>
   <div>
     <svg
-      className="octicons octicons-chevron-right-icon c3"
-      height={null}
-      viewBox="0 0 8 16"
-      width={null}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3z"
-        fillRule="evenodd"
-      />
-    </svg>
+      className="c3"
+    />
   </div>
 </a>
 `;

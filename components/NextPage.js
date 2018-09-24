@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components'
-import ChevronRightIcon from 'react-octicons-svg/dist/ChevronRightIcon'
+import styled, { css } from 'styled-components';
+import { KeyboardArrowRight } from 'styled-icons/material';
 
-import rem from '../utils/rem'
-import Link from './Link'
-import { lightGrey } from '../utils/colors'
-import { mobile } from '../utils/media'
-import { headerFont } from '../utils/fonts'
+import rem from '../utils/rem';
+import Link from './Link';
+import { grey } from '../utils/colors';
+import { mobile } from '../utils/media';
+import { headerFont } from '../utils/fonts';
 
 const Wrapper = styled(Link).attrs({
   unstyled: true,
@@ -26,27 +26,24 @@ const Wrapper = styled(Link).attrs({
     justify-content: center;
     padding: ${rem(30)} ${rem(20)};
   `)};
-`
+`;
 
 const Text = styled.h3`
   font-weight: normal;
   padding-right: ${rem(20)};
   margin: 0;
-`
+`;
 
 const PageName = styled.h2`
   font-weight: 600;
   padding-right: ${rem(20)};
   margin: 0;
-`
+`;
 
-const Icon = styled(ChevronRightIcon).attrs({
-  width: null,
-  height: null,
-})`
-  color: ${lightGrey};
+const Icon = styled(KeyboardArrowRight)`
+  color: ${grey};
   width: ${rem(30)};
-`
+`;
 
 const NextPage = ({ title, href }) => (
   <Wrapper unstyled prefetch href={href}>
@@ -59,6 +56,6 @@ const NextPage = ({ title, href }) => (
       <Icon />
     </div>
   </Wrapper>
-)
+);
 
-export default NextPage
+export default NextPage;

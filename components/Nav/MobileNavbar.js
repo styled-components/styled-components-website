@@ -1,15 +1,15 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { Search, KeyboardArrowDown } from 'styled-icons/material'
 import rem from '../../utils/rem'
 import { navbarHeight } from '../../utils/sizes'
 import { paleGrey } from '../../utils/colors'
 import { mobile } from '../../utils/media'
-import { CloseIcon, FoldIcon, ArrowIcon } from './NavIcons'
+import { CloseIcon, FoldIcon } from './NavIcons'
 import Link from '../Link'
 import NavLinks from './NavLinks'
 import Social from './Social'
 import Logo from './Logo'
-import NavSeparator from './NavSeparator'
 import NavButton from './NavButton'
 
 const Wrapper = styled.div`
@@ -62,18 +62,25 @@ const LogoLink = styled(Link).attrs({
 `
 
 const ArrowWrapper = styled.div`
-  transition: transform 0.1s;
+  transition: transform 0.2s;
 
   ${p =>
     p.shouldRotate &&
     css`
-      transform-origin: 50% 55%;
+      transform-origin: center center;
       transform: rotate(180deg);
     `};
 `
 
 const SecondaryMenuItem = styled.div`
   padding-right: ${rem(20)};
+`
+
+const StyledIcon = styled.div`
+  && {
+    width: ${p => rem(p.size || 20)};
+    height: ${p => rem(p.size || 20)};
+  }
 `
 
 const MobileNavbar = props => {
@@ -83,6 +90,7 @@ const MobileNavbar = props => {
     onSideToggle,
     onMobileNavToggle,
     showSideNav,
+    onSearchButtonClick,
   } = props
 
   return (
@@ -96,16 +104,20 @@ const MobileNavbar = props => {
       <LogoLink>
         <Logo compact />
       </LogoLink>
+      <div>
+        <NavButton onClick={onSearchButtonClick}>
+          <StyledIcon as={Search} size={28} />
+        </NavButton>
 
-      <NavButton onClick={onMobileNavToggle} active={!isMobileNavFolded}>
-        <ArrowWrapper shouldRotate={!isMobileNavFolded}>
-          <ArrowIcon />
-        </ArrowWrapper>
-      </NavButton>
+        <NavButton onClick={onMobileNavToggle} active={!isMobileNavFolded}>
+          <ArrowWrapper shouldRotate={!isMobileNavFolded}>
+            <StyledIcon as={KeyboardArrowDown} size={36} />
+          </ArrowWrapper>
+        </NavButton>
+      </div>
 
       <SecondaryMenu isOpen={!isMobileNavFolded}>
         <NavLinks />
-        <NavSeparator />
         <SecondaryMenuItem>
           <Social />
         </SecondaryMenuItem>

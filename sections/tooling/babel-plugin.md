@@ -7,7 +7,7 @@ styles and gives you a nicer debugging experience.
 
 Install the babel-plugin first:
 
-```bash
+```
 npm install --save-dev babel-plugin-styled-components
 ```
 

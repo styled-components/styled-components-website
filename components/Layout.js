@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components'
-import rem from '../utils/rem'
-import { mobile } from '../utils/media'
-import { sidebarWidth } from '../utils/sizes'
-import { bodyFont, headerFont } from '../utils/fonts'
+import styled, { css } from 'styled-components';
+import rem from '../utils/rem';
+import { mobile } from '../utils/media';
+import { sidebarWidth } from '../utils/sizes';
+import { bodyFont, headerFont } from '../utils/fonts';
 
 export const Container = styled.div`
   padding-left: ${rem(sidebarWidth)};
@@ -10,7 +10,7 @@ export const Container = styled.div`
   ${mobile(css`
     padding-left: 0;
   `)};
-`
+`;
 
 export const Content = styled.div`
   width: ${rem(1024)};
@@ -31,7 +31,7 @@ export const Content = styled.div`
       font-family: ${headerFont};
       width: 75rem;
     `};
-`
+`;
 
 export const Title = styled.h1`
   display: block;
@@ -41,13 +41,13 @@ export const Title = styled.h1`
   font-size: ${rem(42)};
   font-weight: bold;
   font-family: ${headerFont};
-`
+`;
 
 export const Header = styled.h2`
   font-size: ${rem(32)};
   font-weight: 500;
   font-family: ${headerFont};
-`
+`;
 
 export const SubHeader = styled.h3`
   display: block;
@@ -55,7 +55,7 @@ export const SubHeader = styled.h3`
   font-size: ${rem(24)};
   font-weight: 500;
   font-family: ${headerFont};
-`
+`;
 
 export const TertiaryHeader = styled.h4`
   display: block;
@@ -63,4 +63,4 @@ export const TertiaryHeader = styled.h4`
   font-size: ${rem(18)};
   font-weight: 600;
   font-family: ${headerFont};
-`
+`;

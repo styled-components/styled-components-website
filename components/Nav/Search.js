@@ -1,15 +1,32 @@
 import React from 'react'
-import styled from 'styled-components'
-
+import styled, { css, createGlobalStyle } from 'styled-components'
+import { Search as SearchIcon } from 'styled-icons/material'
+import PropTypes from 'prop-types'
+import { grey, lightVioletRed, violetRed, darkGrey } from '../../utils/colors'
 import rem from '../../utils/rem'
 import { navbarHeight } from '../../utils/sizes'
 import { resetInput } from '../../utils/form'
+import { mobile } from '../../utils/media'
+
+const StyledSearchIcon = styled(SearchIcon)``
+
+const INPUT_ID = 'docs-search-input'
 
 const Wrapper = styled.form`
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex: 0 0 auto;
+  ${mobile(css`
+    display: block;
+    padding: 0;
+    span.algolia-autocomplete {
+      display: block !important;
+    }
+    span.ds-dropdown-menu::before {
+      display: none;
+    }
+  `)};
 `
 
 const Input = styled.input`
@@ -23,16 +40,33 @@ const Input = styled.input`
   ::placeholder {
     color: currentColor;
     opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
   }
+
+  :focus {
+    ::placeholder {
+      opacity: 0.8;
+    }
+  }
+
+  ${mobile(css`
+    padding: ${rem(10)} ${rem(48)};
+    display: block;
+    width: 100%;
+    background: ${violetRed};
+    color: white;
+  `)};
 `
 
-const Button = styled.button`
+const Button = styled.label.attrs({
+  htmlFor: INPUT_ID,
+})`
   ${resetInput};
   flex: 0 0 auto;
-  height: ${rem(navbarHeight)};
+  ${resetInput} flex: 0 0 auto;
   margin-right: ${rem(4)};
   cursor: pointer;
-
+  display: flex;
   &:hover,
   &:focus {
     opacity: 0.7;
@@ -43,41 +77,98 @@ const Button = styled.button`
     background: rgba(0, 0, 0, 0.1);
   }
 
-  svg {
-    width: ${rem(16)};
-    height: ${rem(17)};
+  ${StyledSearchIcon} {
+    width: ${rem(26)};
+    height: ${rem(26)};
+  }
 
-    path {
-      fill: currentColor;
+  ${mobile(css`
+    position: absolute;
+    top: ${rem(9)};
+    left: ${rem(10)};
+    height: ${rem(32)};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: ${rem(32)};
+    z-index: 1;
+    background: none;
+    color: white;
+  `)};
+`
+
+const GlobalStyles = createGlobalStyle`
+  .algolia-autocomplete
+  .ds-dropdown-menu
+  .ds-suggestion
+  .algolia-docsearch-suggestion--content {
+    width: 100% !important;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  .algolia-autocomplete
+    .ds-dropdown-menu
+    .ds-suggestion.ds-cursor
+    .algolia-docsearch-suggestion--content {
+    background: ${lightVioletRed} !important;
+  }
+
+  /* Main category (eg. Getting Started) */
+  .algolia-autocomplete .algolia-docsearch-suggestion--category-header {
+    color: ${darkGrey};
+  }
+
+  /* Category (eg. Downloads) */
+  .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
+    display: none !important;
+  }
+
+  /* Title (eg. Bootstrap CDN) */
+  .algolia-autocomplete .algolia-docsearch-suggestion--title {
+    font-weight: bold;
+    color: black;
+  }
+
+  /* Description description (eg. Bootstrap currently works...) */
+  .algolia-autocomplete .algolia-docsearch-suggestion--text {
+    color: ${grey};
+  }
+
+  /* Highlighted text */
+  .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
+    box-shadow: none !important;
+    color: ${violetRed} !important;
+    background: transparent !important;
+  }
+
+  .algolia-autocomplete .ds-dropdown-menu {
+    margin-top: 0;
+
+    > *:first-child {
+      border: 0;
     }
   }
 `
 
-const SearchButton = () => (
-  <Button>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="15"
-      height="16"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-    >
-      <title>search</title>
-      <use fill="#FFF" xlinkHref="#search-icon" />
-      <defs>
-        <path
-          id="search-icon"
-          d="M14.772 14.573l-3.698-3.96c.95-1.164 1.472-2.628 1.472-4.153C12.546 2.898 9.732 0 6.273 0 2.813 0 0 2.898 0 6.46s2.814 6.46 6.273 6.46c1.298 0 2.536-.403 3.594-1.17l3.726 3.992c.155.166.365.258.59.258.212 0 .413-.083.566-.235.32-.322.33-.857.02-1.192zm-8.5-12.888c2.558 0 4.637 2.142 4.637 4.775 0 2.633-2.08 4.775-4.64 4.775-2.56 0-4.64-2.142-4.64-4.775 0-2.633 2.08-4.775 4.637-4.775z"
-        />
-      </defs>
-    </svg>
-  </Button>
-)
-
-const Search = () => (
-  <Wrapper>
-    <SearchButton />
-    <Input placeholder="Search ..." />
+const Search = ({ isDocs, className }) => (
+  <Wrapper className={className}>
+    <GlobalStyles />
+    <Button>
+      <StyledSearchIcon />
+    </Button>
+    <Input
+      id={INPUT_ID}
+      placeholder={isDocs ? `Search ...` : `Search docs ...`}
+      type="search"
+    />
   </Wrapper>
 )
+
+Search.propTypes = {
+  className: PropTypes.string,
+}
 
 export default Search
