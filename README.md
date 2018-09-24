@@ -10,7 +10,6 @@ If you've never worked with the technologies used in this repo, here are some li
 
 - [**Learn Next.js**](https://learnnextjs.com/)
 - [Next.js documentation](https://github.com/zeit/next.js)
-- [react-markings documentation](https://github.com/Thinkmill/react-markings)
 - [styled-components documentation](https://styled-components.com) (this very website!)
 
 ### Running locally
