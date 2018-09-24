@@ -966,14 +966,14 @@
     prop-types "^15.6.1"
 
 "@probablyup/react-live@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.npmjs.org/@probablyup/react-live/-/react-live-1.11.0.tgz#d30996fb1893b4348bc0b68a49a8f646e78695e4"
+  version "1.11.1"
+  resolved "https://registry.npmjs.org/@probablyup/react-live/-/react-live-1.11.1.tgz#83811555b893d4ad904759b35341096859810fb5"
   dependencies:
     buble "^0.19.3"
     core-js "^2.4.1"
     create-react-context "^0.2.3"
     dom-iterator "^1.0.0"
-    prismjs "1.6"
+    prismjs "^1.6"
     prop-types "^15.5.8"
     unescape "^0.2.0"
 
@@ -1210,11 +1210,11 @@ acorn-walk@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npmjs.org/acorn-walk/-/acorn-walk-6.0.1.tgz#c7827bdbb8e21aa97b609adfa225400d9ae348ba"
 
-acorn@^5.0.0, acorn@^5.5.3:
+acorn@^5.0.0, acorn@^5.0.3, acorn@^5.4.1, acorn@^5.5.3:
   version "5.7.3"
   resolved "https://registry.npmjs.org/acorn/-/acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279"
 
-acorn@^5.0.3, acorn@^5.3.0, acorn@^5.4.1, acorn@^5.6.0, acorn@^5.6.2:
+acorn@^5.3.0, acorn@^5.6.0, acorn@^5.6.2:
   version "5.7.2"
   resolved "https://registry.npmjs.org/acorn/-/acorn-5.7.2.tgz#91fa871883485d06708800318404e72bfb26dcc5"
 
@@ -3840,7 +3840,7 @@ growly@^1.3.0:
 
 gud@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
+  resolved "https://registry.npmjs.org/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
 
 gzip-size@^4.0.0, gzip-size@^4.1.0:
   version "4.1.0"
@@ -5279,7 +5279,7 @@ lru-cache@^4.0.1, lru-cache@^4.1.1, lru-cache@^4.1.3:
 
 magic-string@^0.22.4:
   version "0.22.5"
-  resolved "https://registry.npmjs.org/magic-string/-/magic-string-0.22.5.tgz#8e9cf5afddf44385c1da5bc2a6a0dbd10b03657e"
+  resolved "http://registry.npmjs.org/magic-string/-/magic-string-0.22.5.tgz#8e9cf5afddf44385c1da5bc2a6a0dbd10b03657e"
   dependencies:
     vlq "^0.2.2"
 
@@ -6079,7 +6079,7 @@ os-browserify@^0.3.0:
 
 os-homedir@^1.0.0, os-homedir@^1.0.1:
   version "1.0.2"
-  resolved "https://registry.yarnpkg.com/os-homedir/-/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
+  resolved "https://registry.npmjs.org/os-homedir/-/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
 
 os-locale@^2.0.0:
   version "2.1.0"
@@ -6508,7 +6508,7 @@ prettycli@^1.4.3:
   dependencies:
     chalk "2.1.0"
 
-prismjs@1.15.0, prismjs@1.6, prismjs@^1.6.0:
+prismjs@1.15.0, prismjs@^1.6, prismjs@^1.6.0:
   version "1.15.0"
   resolved "https://registry.npmjs.org/prismjs/-/prismjs-1.15.0.tgz#8801d332e472091ba8def94976c8877ad60398d9"
   optionalDependencies:
@@ -8453,8 +8453,8 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
     iconv-lite "0.4.23"
 
 whatwg-fetch@>=0.10.0:
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.0.0.tgz#fc804e458cc460009b1a2b966bc8817d2578aefb"
 
 whatwg-mimetype@^2.1.0:
   version "2.2.0"

@@ -11,6 +11,7 @@ import { Note } from './Note';
 
 const CodeBlock = styled(p => {
   const language = (p.language || 'clike').toLowerCase().trim();
+
   return <Editor {...p} language={language} />;
 }).attrs({
   contentEditable: false,
