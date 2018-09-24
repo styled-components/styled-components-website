@@ -284,6 +284,9 @@ exports[`Nav renders correctly 1`] = `
   background: none;
   outline: none;
   border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1498,6 +1501,9 @@ exports[`Nav renders correctly 1`] = `
   background: none;
   outline: none;
   border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1898,6 +1904,7 @@ exports[`Nav renders correctly 1`] = `
   border: none;
 ",
                                                               ";
+  appearance: none;
   flex: 0 0 auto;
   width: ",
                                                               "7.222222222222222rem",

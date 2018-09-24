@@ -1,16 +1,16 @@
-import React from 'react'
-import styled, { css, createGlobalStyle } from 'styled-components'
-import { Search as SearchIcon } from 'styled-icons/material'
-import PropTypes from 'prop-types'
-import { grey, lightVioletRed, violetRed, darkGrey } from '../../utils/colors'
-import rem from '../../utils/rem'
-import { navbarHeight } from '../../utils/sizes'
-import { resetInput } from '../../utils/form'
-import { mobile } from '../../utils/media'
+import React from 'react';
+import styled, { css, createGlobalStyle } from 'styled-components';
+import { Search as SearchIcon } from 'styled-icons/material';
+import PropTypes from 'prop-types';
+import { grey, lightVioletRed, violetRed, darkGrey } from '../../utils/colors';
+import rem from '../../utils/rem';
+import { navbarHeight } from '../../utils/sizes';
+import { resetInput } from '../../utils/form';
+import { mobile } from '../../utils/media';
 
-const StyledSearchIcon = styled(SearchIcon)``
+const StyledSearchIcon = styled(SearchIcon)``;
 
-const INPUT_ID = 'docs-search-input'
+const INPUT_ID = 'docs-search-input';
 
 const Wrapper = styled.form`
   display: flex;
@@ -27,10 +27,11 @@ const Wrapper = styled.form`
       display: none;
     }
   `)};
-`
+`;
 
 const Input = styled.input`
   ${resetInput};
+  appearance: none;
   flex: 0 0 auto;
   width: ${rem(130)};
   line-height: ${rem(navbarHeight - 20)};
@@ -56,7 +57,7 @@ const Input = styled.input`
     background: ${violetRed};
     color: white;
   `)};
-`
+`;
 
 const Button = styled.label.attrs({
   htmlFor: INPUT_ID,
@@ -95,7 +96,7 @@ const Button = styled.label.attrs({
     background: none;
     color: white;
   `)};
-`
+`;
 
 const GlobalStyles = createGlobalStyle`
   .algolia-autocomplete
@@ -151,7 +152,7 @@ const GlobalStyles = createGlobalStyle`
       border: 0;
     }
   }
-`
+`;
 
 const Search = ({ isDocs, className }) => (
   <Wrapper className={className}>
@@ -159,16 +160,12 @@ const Search = ({ isDocs, className }) => (
     <Button>
       <StyledSearchIcon />
     </Button>
-    <Input
-      id={INPUT_ID}
-      placeholder={isDocs ? `Search ...` : `Search docs ...`}
-      type="search"
-    />
+    <Input id={INPUT_ID} placeholder={isDocs ? `Search ...` : `Search docs ...`} type="search" />
   </Wrapper>
-)
+);
 
 Search.propTypes = {
   className: PropTypes.string,
-}
+};
 
-export default Search
+export default Search;
