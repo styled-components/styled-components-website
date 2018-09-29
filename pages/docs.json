@@ -162,6 +162,9 @@
         },
         {
           "title": "How do I use styled-components with create-react-app?"
+        },
+        {
+          "title": "How can I fix issues when using npm link or yarn link?"
         }
       ]
     }
