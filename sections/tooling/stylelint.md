@@ -216,9 +216,9 @@ The important thing is that you put the closing backtick on the base level of in
 
 ```js
 if (condition) {
-  const Button = styled.button`
-    color: red;
-  `
+const Button = styled.button`
+  color: red;
+`
 }
 ```
 
@@ -226,17 +226,16 @@ if (condition) {
 
 ```js
 if (condition) {
-  const Button = styled.button`
-    color: red;
-  `
+const Button = styled.button`
+  color: red;
+`
 }
 ```
 
 ```js
 if (condition) {
-  const Button = styled.button`
-    color: red;
-  `
+const Button = styled.button`
+  color: red;`
 }
 ```
 
