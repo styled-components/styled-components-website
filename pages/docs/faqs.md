@@ -13,11 +13,13 @@ import MigrationV4 from '../../sections/faqs/migration-v4.md';
 import CRA from '../../sections/faqs/create-react-app.md';
 import NPMLink from '../../sections/faqs/npm-link.md';
 
-export default ({ children }) => (
-  <DocsLayout title="FAQs" description="Commonly asked questions about styled-components">
-    {children}
-  </DocsLayout>
-);
+export default ({ children }) => {
+  return (
+    <DocsLayout title="FAQs" description="Commonly asked questions about styled-components">
+      {children}
+    </DocsLayout>
+  );
+};
 
 <MigrationV4 />
 <Nesting />
