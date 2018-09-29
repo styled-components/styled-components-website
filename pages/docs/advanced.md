@@ -4,8 +4,8 @@ import NextPage from '../../components/NextPage';
 export default function({ children }) {
   return (
     <DocsLayout
-      title="Advanced"
-      description="Advanced usage of styled-components - Theming, refs, Security, Existing CSS, Media Templates, Tagged Template Literals, SSR"
+      title="Advanced Usage"
+      description="Theming, refs, Security, Existing CSS, Media Templates, Tagged Template Literals, Server-Side Rendering and Style Objects"
     >
       {children}
     </DocsLayout>
