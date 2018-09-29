@@ -19,7 +19,7 @@
     "start": "NODE_ENV=production node server.js",
     "test": "jest -c .jest.config.js",
     "precommit": "lint-staged",
-    "prettier": "prettier",
+    "prettier": "prettier **/*.js --write",
     "size": "bundlesize"
   },
   "dependencies": {

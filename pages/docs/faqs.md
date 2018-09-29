@@ -19,7 +19,7 @@ export default ({ children }) => {
       {children}
     </DocsLayout>
   );
-};
+}
 
 <MigrationV4 />
 <Nesting />
