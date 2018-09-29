@@ -1,5 +1,4 @@
 import DocsLayout from '../../components/DocsLayout'
-
 import Nesting from '../../sections/faqs/nesting.md'
 import CSSFrameworks from '../../sections/faqs/support-for-css-frameworks.md'
 import OverrideStyles from '../../sections/faqs/override-styles-with-higher-specificity.md'
@@ -12,12 +11,10 @@ import HTMLAttributeWarnings from '../../sections/faqs/html-attribute-warnings.m
 import BrowserSupport from '../../sections/faqs/browser-support.md'
 import MigrationV4 from '../../sections/faqs/migration-v4.md'
 import CRA from '../../sections/faqs/create-react-app.md'
+import NPMLink from '../../sections/faqs/npm-link.md'
 
 export default ({ children }) => (
-  <DocsLayout
-    title="FAQs"
-    description="Commonly asked questions about styled-components"
-  >
+  <DocsLayout title="FAQs" description="Commonly asked questions about styled-components">
     {children}
   </DocsLayout>
 )
@@ -34,3 +31,4 @@ export default ({ children }) => (
 <HTMLAttributeWarnings />
 <BrowserSupport />
 <CRA />
+<NPMLink />
