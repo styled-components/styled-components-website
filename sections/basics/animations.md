@@ -31,3 +31,5 @@ render(
   <Rotate>&lt; 💅 &gt;</Rotate>
 );
 ```
+
+> Keyframes are not supported by `react-native`. Instead, use the `React.Animated` API, as demonstrated [here](https://stackoverflow.com/questions/50891046/rotate-an-svg-in-react-native/50891225#50891225)
