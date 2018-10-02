@@ -21,6 +21,7 @@ const Link = styled.a`
 `;
 
 const Icon = styled.svg`
+  flex: none;
   transition: fill 0.25s;
   width: 48px;
   height: 48px;
