@@ -27,11 +27,13 @@ Add a `.stylelintrc` file to the root of your project:
 
 ```JSON
 {
-"processors": ["stylelint-processor-styled-components"],
-"extends": [
-  "stylelint-config-recommended",
-  "stylelint-config-styled-components"
-]
+  "processors":[
+    "stylelint-processor-styled-components"
+  ],
+  "extends":[
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components"
+  ]
 }
 ```
 
@@ -39,9 +41,9 @@ Then you need to run `stylelint`. Add a `lint:css` script to your `package.json`
 
 ```JSON
 {
-"scripts": {
-  "lint:css": "stylelint './src/**/*.js'"
-}
+  "scripts":{
+    "lint:css":"stylelint './src/**/*.js'"
+  }
 }
 ```
 
