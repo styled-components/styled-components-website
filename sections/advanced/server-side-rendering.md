@@ -5,8 +5,18 @@ The basic idea is that everytime you render your app on the server, you can crea
 a `ServerStyleSheet` and add a provider to your React tree, that accepts styles
 via a context API.
 
-This doesn't interfere with global styles, such as `keyframes` or `injectGlobal` and
-allows you to use styled-components with React DOM's SSR, or even Rapscallion.
+This doesn't interfere with global styles, such as `keyframes` or `createGlobalStyle` and
+allows you to use styled-components with React DOM's various SSR APIs.
+
+### Tooling setup
+
+In order to reliably perform server side rendering and have the client side bundle pick up without issues, you'll need to use our [babel plugin](/docs/tooling#babel-plugin). It prevents checksum mismatches by adding a deterministic ID to each styled component. Refer to the [tooling documentation](/docs/tooling#serverside-rendering) for more information.
+
+For TypeScript users, our resident TS guru Igor Oleinikov put together a [TypeScript plugin](/docs/tooling#typescript-plugin) for the webpack ts-loader / awesome-typescript-loader toolchain that accomplishes some similar tasks.
+
+If possible, we definitely recommend using the babel plugin though because it is updated the most frequently. It's now possible to [compile TypeScript using Babel](https://babeljs.io/docs/en/babel-preset-typescript), so it may be worth switching off TS loader and onto a pure Babel implementation to reap the ecosystem benefits.
+
+### Example
 
 The basic API goes as follows:
 
@@ -31,7 +41,7 @@ const sheet = new ServerStyleSheet()
 const html = renderToString(
   <StyleSheetManager sheet={sheet.instance}>
     <YourApp />
-  </StyleSheetManager>,
+  </StyleSheetManager>
 )
 
 const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
@@ -44,10 +54,6 @@ Alternatively the `ServerStyleSheet` instance also has a `getStyleElement()` met
 that returns an array of React elements.
 
 > `sheet.getStyleTags()` and `sheet.getStyleElement()` can only be called after your element is rendered. As a result, components from `sheet.getStyleElement()` cannot be combined with `<YourApp />` into a larger component.
-
-You should install and use our babel plugin with its `ssr` option turned on.
-This prevents checksum mismatches by adding a deterministic ID to each styled component.
-Refer to the [tooling documentation](/docs/tooling#serverside-rendering) for more information.
 
 ### Next.js
 
@@ -85,7 +91,7 @@ const stream = sheet.interleaveWithNodeStream(renderToNodeStream(jsx))
 // you'd then pipe the stream into the response object until it's done
 stream.pipe(
   res,
-  { end: false },
+  { end: false }
 )
 
 // and finalize the response with closing HTML
