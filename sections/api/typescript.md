@@ -82,9 +82,7 @@ import styled from 'app/styled-components';
 import Header from './Header';
 
 const Title =
-  styled <
-  { isActive: boolean } >
-  Header`
+  styled <{ isActive: boolean }>Header`
   color: ${props => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
 `;
 ```
@@ -97,9 +95,7 @@ import styled from 'app/styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
 const Title =
-  styled <
-  { isActive: boolean } >
-  (({ isActive, ...rest }) => <Header {...rest} />)`
+  styled<{ isActive: boolean }>(({ isActive, ...rest }) => <Header {...rest} />)`
   color: ${props => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
 `;
 ```
@@ -112,11 +108,9 @@ import styled from 'app/styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
 const Title =
-  (styled < { isActive: boolean }) &
-  (HeaderProps >
-    (({ isActive, ...rest }) => <Header {...rest} />)`
+  styled <{ isActive: boolean } & HeaderProps>(({ isActive, ...rest }) => <Header {...rest} />)`
   color: ${props => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
-`);
+`
 ```
 
 This is the most complex example where we have specific properties for the styling of the component and pass
