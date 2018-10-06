@@ -115,7 +115,7 @@ const Wrapper = ({ message }) => {
 wrote a great review of real-world usage, featuring lots of solid practical insights
 and comparisons with alternatives, in [Styled Components: To Use or Not to Use?](https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21)
 
-### Psuedoelements, psuedoselectors, and nesting
+### Pseudoelements, pseudoselectors, and nesting
 
 The preprocessor we use, [stylis](https://github.com/thysultan/stylis.js), supports scss-like syntax for automatically nesting styles. Using an example component:
 
@@ -125,7 +125,7 @@ const Thing = styled.div`
 `
 ```
 
-Psuedoselectors and psuedoelements without further refinement automatically are attached to the component:
+Pseudoselectors and pseudoelements without further refinement automatically are attached to the component:
 
 ```react
 const Thing = styled.button`
