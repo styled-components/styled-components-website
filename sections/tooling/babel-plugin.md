@@ -1,7 +1,6 @@
 ## Babel Plugin
 
-This plugin adds support for server-side rendering, for minification of
-styles and gives you a nicer debugging experience.
+This plugin adds support for server-side rendering, for minification of styles and gives you a nicer debugging experience.
 
 ### Usage
 
@@ -25,18 +24,16 @@ Then add it to your babel configuration like so:
 
 > This option is turned on by default as of v1.6.
 
-By adding a unique identifier to every styled component this plugin
-avoids checksum mismatches due to different class generation on the
-client and on the server. If you do not use this plugin and try to
-server-side render styled-components React will complain.
+By adding a unique identifier to every styled component this plugin avoids checksum mismatches due to different class generation on the client and on the server. If you do not use this plugin and try to server-side render styled-components React will complain.
 
 You can disable it if necessary with the `ssr` option:
 
-```js
+```json
 {
   "plugins": [
     [
-      "babel-plugin-styled-components", {
+      "babel-plugin-styled-components",
+      {
         "ssr": false
       }
     ]
@@ -46,29 +43,20 @@ You can disable it if necessary with the `ssr` option:
 
 ### Better debugging
 
-This options adds the components' name and displayName to the class name
-attached to the DOM node. In your browser's DevTools you'll see:
-`<button class="Button-asdf123 asdf123" />`
-instead of just `<button class="asdf123" />`.
+This options adds the components' name and displayName to the class name attached to the DOM node. In your browser's DevTools you'll see: `<button class="Button-asdf123 asdf123" />` instead of just `<button class="asdf123" />`.
 
-This also adds support for showing your components' real name in the
-React DevTools. Consider writing a styled component that renders a
-`button` element, called `MyButton`. It will
-normally show up as `<styled.button>` for all of your
-components, but with this plugin they show
-`<MyButton />`.
+This also adds support for showing your components' real name in the React DevTools. Consider writing a styled component that renders a `button` element, called `MyButton`. It will normally show up as `<styled.button>` for all of your components, but with this plugin they show `<MyButton />`.
 
-This makes it easier to find your components and to figure out where
-they live in your app.
+This makes it easier to find your components and to figure out where they live in your app.
 
-If you don't need this feature, you can disable it with the
-`displayName` option:
+If you don't need this feature, you can disable it with the `displayName` option:
 
-```js
+```json
 {
   "plugins": [
     [
-      "babel-plugin-styled-components", {
+      "babel-plugin-styled-components",
+      {
         "displayName": false
       }
     ]
@@ -82,11 +70,12 @@ By default, the `displayName` of a component will be prefixed with the filename 
 
 You can force the component `displayName` to be solely the component name by disabling the `fileName` option:
 
-```js
+```json
 {
   "plugins": [
     [
-      "babel-plugin-styled-components", {
+      "babel-plugin-styled-components",
+      {
         "fileName": false
       }
     ]
@@ -94,21 +83,16 @@ You can force the component `displayName` to be solely the component name by dis
 }
 ```
 
-One example you might want to do this, is testing components with enzyme.
-While you can always use `.find(ComponentName)` it's definitly possible to search component by it's displayName with `.find("ComponentName")`.
-In the latter case you will need to disable the `fileName` option. If you do want this for testing only, make sure to add this only under your test environment.
+One example you might want to do this, is testing components with enzyme. While you can always use `.find(ComponentName)` it's definitly possible to search component by it's displayName with `.find("ComponentName")`. In the latter case you will need to disable the `fileName` option. If you do want this for testing only, make sure to add this only under your test environment.
 
 ### Minification
 
 > This option is turned on by default. If you experience mangled CSS
 > results, turn it off and open an issue please.
 
-This plugin minifies your styles in the tagged template literals, giving
-you big bundle size savings.
+This plugin minifies your styles in the tagged template literals, giving you big bundle size savings.
 
-This operation may potentially break your styles in some rare cases, so
-we recommend to keep this option enabled in development if it's enabled
-in the production build.
+This operation may potentially break your styles in some rare cases, so we recommend to keep this option enabled in development if it's enabled in the production build.
 
 You can disable minification with the `minify` option:
 
@@ -140,21 +124,19 @@ It utilizes a babel helper to tag each styled component and library helper with 
 
 ### Template String Transpilation
 
-We transpile `styled-components` tagged template literals down to a
-smaller representation than what Babel normally does,
-because `styled-components` template literals don't need to
-be 100% spec compliant.
+We transpile `styled-components` tagged template literals down to a smaller representation than what Babel normally does, because `styled-components` template literals don't need to be 100% spec compliant.
 
 Read more about [Tagged Template Literals](/docs/advanced#tagged-template-literals) in
 our dedicated section explaining them.
 
 You can use the `transpileTemplateLiterals` option to turn this feature off.
 
-```js
+```json
 {
   "plugins": [
     [
-      "babel-plugin-styled-components", {
+      "babel-plugin-styled-components",
+      {
         "transpileTemplateLiterals": false
       }
     ]
