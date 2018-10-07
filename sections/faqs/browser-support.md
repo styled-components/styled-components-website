@@ -1,5 +1,9 @@
 ## Which browsers are supported?
 
-All [browsers that React supports](https://reactjs.org/docs/react-dom.html#browser-support) are supported.
+styled-components supports the same set of browsers as the current React version.
 
-This means all major browsers including Internet Explorer 9.
+- v2.x (React v0.14+): IE9+, all evergreen browsers
+- v3.x (React v0.14+): IE9+, all evergreen browsers
+- v4.x (React v16.3+): IE11 (IE 9+ with Map + Set polyfills), all evergreen browsers
+
+Evergreen browsers include Chrome and Firefox (and derviatives) as they can be updated regardless of operating system version. Edge and Safari should both also work fine since all versions for the last several years support the relevant APIs.
