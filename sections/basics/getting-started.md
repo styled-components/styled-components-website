@@ -1,11 +1,10 @@
 ## Getting Started
 
-styled-components utilises tagged template literals to style your components.
+`styled-components` utilises tagged template literals to style your components.
 
 It removes the mapping between components and styles. This means that when you're defining your styles, you're actually creating a normal React component, that has your styles attached to it.
 
-This example creates two simple components, a wrapper and a title, with some styles attached to it.
-You can edit the code and get a feel for how you'd work with styled-components.
+This example creates two simple components, a wrapper and a title, with some styles attached to it. You can edit the code and get a feel for how you'd work with styled-components.
 
 ```react
 // Create a Title component that'll render an <h1> tag with some styles

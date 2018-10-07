@@ -1,17 +1,10 @@
 ## Attaching additional props | v2
 
-To avoid unnecessary wrappers that just pass on some props to the rendered component,
-or element, you can use the `.attrs` constructor. It allows you to attach
-additional props (or "attributes") to a component.
+To avoid unnecessary wrappers that just pass on some props to the rendered component, or element, you can use the [`.attrs` constructor](/docs/api#attrs). It allows you to attach additional props (or "attributes") to a component.
 
-This way you can for example attach static props to an element, or pass a third-party prop
-like `activeClassName` to React Router's Link component. Furthermore you can also
-attach more dynamic props to a component. The `.attrs` object also takes functions,
-that receive the props that the component receives. The return value will be merged into the
-resulting props as well.
+This way you can for example attach static props to an element, or pass a third-party prop like `activeClassName` to React Router's Link component. Furthermore you can also attach more dynamic props to a component. The `.attrs` object also takes functions, that receive the props that the component receives. The return value will be merged into the resulting props as well.
 
-Here we render an `Input` component and attach some dynamic and static attributes
-to it:
+Here we render an `Input` component and attach some dynamic and static attributes to it:
 
 ```react
 const Input = styled.input.attrs({
@@ -41,5 +34,4 @@ render(
 );
 ```
 
-As you can see, we get access to our newly created props in the interpolations, and
-the `type` attribute is passed down to the element.
+As you can see, we get access to our newly created props in the interpolations, and the `type` attribute is passed down to the element.
