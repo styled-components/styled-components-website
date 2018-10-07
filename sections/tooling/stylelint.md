@@ -27,10 +27,10 @@ Add a `.stylelintrc` file to the root of your project:
 
 ```JSON
 {
-  "processors":[
+  "processors": [
     "stylelint-processor-styled-components"
   ],
-  "extends":[
+  "extends": [
     "stylelint-config-recommended",
     "stylelint-config-styled-components"
   ]
@@ -41,7 +41,7 @@ Then you need to run `stylelint`. Add a `lint:css` script to your `package.json`
 
 ```JSON
 {
-  "scripts":{
+  "scripts": {
     "lint:css":"stylelint './src/**/*.js'"
   }
 }
@@ -79,7 +79,7 @@ If you want to use the processor with another library but you also want to chang
 import cool from 'other-library'
 
 const Button = cool.button`
-color: blue;
+  color: blue;
 `
 ```
 
@@ -178,10 +178,10 @@ For example:
 const rtlSwitch = props => (props.theme.dir === 'rtl' ? 'left' : 'right')
 
 const Button = styled.button`
-background: green;
-// Tell the processor to replace the interpolation with "left"
-// when linting
-margin-${/* sc-custom "left" */ rtlSwitch}: 12.5px;
+  background: green;
+  // Tell the processor to replace the interpolation with "left"
+  // when linting
+  margin-${/* sc-custom "left" */ rtlSwitch}: 12.5px;
 `
 ```
 
