@@ -2,7 +2,7 @@
 
 Media queries are an indispensable tool when developing responsive web apps.
 
-This is a very simple example. It shows a basic component changing its background colour,
+This is a very simple example. It shows a basic component changing its background color,
 once the screen's width drops below a threshold of `700px`.
 
 ```react

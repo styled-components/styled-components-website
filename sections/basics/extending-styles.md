@@ -7,7 +7,7 @@ once.
 
 To easily make a new component that inherits the styling of another, just wrap it
 in the `styled()` constructor. Here we use the button from the last section
-and create a special one, extending it with some colour-related styling:
+and create a special one, extending it with some color-related styling:
 
 ```react
 // The Button from the last section without the interpolations
