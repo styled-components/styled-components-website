@@ -2,15 +2,13 @@ import Code from '../../components/Code.js'
 
 ## Adapting based on props
 
-You can pass a function ("interpolations") to a styled component's template literal
-to adapt it based on its props.
+You can pass a function ("interpolations") to a styled component's template literal to adapt it based on its props.
 
-This button component has a primary state that changes its colour.
-When setting the <Code>primary</Code> prop to true, we are swapping out its background and text colour.
+This button component has a primary state that changes its color. When setting the <Code>primary</Code> prop to true, we are swapping out its background and text color.
 
 ```react
 const Button = styled.button`
-  /* Adapt the colours based on primary prop */
+  /* Adapt the colors based on primary prop */
   background: ${props => props.primary ? "palevioletred" : "white"};
   color: ${props => props.primary ? "white" : "palevioletred"};
 
