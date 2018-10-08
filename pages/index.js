@@ -320,10 +320,15 @@ class Index extends PureComponent {
             <FooterLink inline href="https://twitter.com/probablyup">
               @probablyup
             </FooterLink>
-            {' & '}
+            {', '}
             <FooterLink inline href="https://twitter.com/imbhargav5">
               @imbhargav5
             </FooterLink>
+            {' and '}
+            <FooterLink inline href="https://github.com/orgs/styled-components/people">
+              contributors
+            </FooterLink>
+            {'.'}
           </FooterContent>
         </Footer>
       </div>
