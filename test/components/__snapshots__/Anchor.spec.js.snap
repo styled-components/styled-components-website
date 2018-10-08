@@ -17,9 +17,8 @@ exports[`Anchor renders correctly 1`] = `
 
 .c4 {
   display: none;
-  position: absolute;
-  left: 0;
   color: inherit;
+  margin-left: 0.5555555555555556rem;
 }
 
 .c5 {
@@ -34,11 +33,6 @@ exports[`Anchor renders correctly 1`] = `
 
 .c0 {
   position: relative;
-  padding-left: 1.6666666666666667rem;
-}
-
-.c0.c0 {
-  margin-left: -1.6666666666666667rem;
 }
 
 .c0:hover .c3 {
@@ -52,10 +46,6 @@ exports[`Anchor renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c0 {
-    margin-left: 0;
-  }
-
   .c0 .c3 {
     display: inline-block;
   }
