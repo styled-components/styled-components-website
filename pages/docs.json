@@ -11,25 +11,22 @@
           "title": "Installation"
         },
         {
-          "title": "Alternative Installation"
-        },
-        {
           "title": "Getting Started"
-        },
-        {
-          "title": "Coming from CSS"
-        },
-        {
-          "title": "Passed props"
         },
         {
           "title": "Adapting based on props"
         },
         {
+          "title": "Extending styles"
+        },
+        {
           "title": "Styling any components"
         },
         {
-          "title": "Extending styles"
+          "title": "Passed props"
+        },
+        {
+          "title": "Coming from CSS"
         },
         {
           "title": "Attaching additional props"
