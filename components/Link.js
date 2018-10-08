@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import UnstyledLink from 'next/link';
 
 import rem from '../utils/rem';
-import { violetRed, lightGrey } from '../utils/colors';
+import { red, violetRed, lightGrey } from '../utils/colors';
 
 export const StyledLink = styled.a`
   display: inline-block;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ${rem(2)} ${rem(8)};
@@ -26,9 +25,12 @@ export const InlineLink = styled.a.attrs({
   rel: 'noopener',
 })`
   color: ${p => (p['data-white'] ? 'white' : violetRed)};
-  text-decoration: underline;
-  font-weight: 600;
   cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: ${p => (p['data-white'] ? 'white' : red)};
+  }
 `;
 
 const Link = ({ children, className, inline, unstyled, white, ...rest }) => {
