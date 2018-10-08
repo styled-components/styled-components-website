@@ -1,5 +1,6 @@
 import { Content } from 'components/Layout'
 import { AlignCenter, Badge, ExampleButton, SecondButton } from './components'
+import NextPage from '../../components/NextPage'
 
 export default ({ children }) => (
   <Content data-e2e-id="content">
@@ -145,4 +146,6 @@ render(
 );
 ```
 
-Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components! Once you're ready you can start [diving into the documentation](/docs).
+Nice 😍 That's a live updating editor too, so play around with it a bit to get a feel for what it's like to work with styled-components! Once you're ready, dive into the documentation to learn about all the cool things styled-components can do for you:
+
+<NextPage title="Documentation" href="/docs" />
