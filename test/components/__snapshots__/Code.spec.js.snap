@@ -5,10 +5,10 @@ exports[`Code renders correctly 1`] = `
   display: inline-block;
   font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
   font-size: 90%;
-  font-weight: 300;
-  padding: 0 0.05em 0.1em;
-  vertical-align: baseline;
   line-height: 1.4;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+  vertical-align: baseline;
 }
 
 <span

@@ -3,10 +3,13 @@
 exports[`InlineLink renders correctly 1`] = `
 .c0 {
   color: rgb(219,112,147);
+  cursor: pointer;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  font-weight: 600;
-  cursor: pointer;
+}
+
+.c0:hover {
+  color: #ff5555;
 }
 
 <a
@@ -20,8 +23,6 @@ exports[`InlineLink renders correctly 1`] = `
 exports[`Link renders correctly 1`] = `
 .c0 {
   display: inline-block;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: 0.1111111111111111rem 0.4444444444444444rem;
@@ -48,8 +49,6 @@ exports[`Link renders correctly 1`] = `
 exports[`StyledLink renders correctly 1`] = `
 .c0 {
   display: inline-block;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: 0.1111111111111111rem 0.4444444444444444rem;

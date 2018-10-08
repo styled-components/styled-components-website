@@ -153,7 +153,7 @@ const resetStyles = `
 
   ul li, ol li {
     margin-bottom: 0.2em;
-    line-height: 1.7;
+    line-height: 1.6;
   }
 `;
 
