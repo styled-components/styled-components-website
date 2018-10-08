@@ -51,7 +51,7 @@ const RotatedBox = styled.View`
 ```
 
 Some of the differences to the web-version are, that you cannot use the
-`keyframes` and `injectGlobal` helpers since React Native doesn't support
+`keyframes` and `createGlobalStyle` helpers since React Native doesn't support
 keyframes or global styles. We will also warn you if you use media queries or
 nest your CSS.
 
