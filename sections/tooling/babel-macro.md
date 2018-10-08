@@ -12,4 +12,4 @@ const Thing = styled.div`
 `
 ```
 
-The macro incorporates all the functionality of [our babel plugin](/docs/tooling#babel-plugin) while allowing the unejected tooling to handle the Babel part of the build process.
+The macro incorporates all the functionality of [our babel plugin](/docs/tooling#babel-plugin) while allowing the unejected tooling to handle the Babel part of the build process. Special thanks to [Luc Leray (@lucleray)](https://github.com/lucleray) for making this happen!
