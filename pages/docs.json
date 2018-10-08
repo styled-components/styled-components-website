@@ -110,6 +110,9 @@
           "title": "Babel Plugin"
         },
         {
+          "title": "Babel Macro"
+        },
+        {
           "title": "TypeScript Plugin"
         },
         {
