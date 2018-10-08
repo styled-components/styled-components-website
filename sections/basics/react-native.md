@@ -32,7 +32,7 @@ class MyReactNativeComponent extends React.Component {
 
 We also support more complex styles (like `transform`), which would normally
 be an array, and shorthands (e.g. for `margin`) thanks to
-`css-to-react-native`!
+[`css-to-react-native`](https://github.com/styled-components/css-to-react-native)!
 
 > Note that the `flex` property works like CSS shorthand, and not the legacy
 > `flex` property in React Native. Setting `flex: 1` sets `flexShrink`
