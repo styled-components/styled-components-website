@@ -54,7 +54,7 @@ const AnchorHeader = styled.div`
   }
 `;
 
-const Link = ({ children, level, id }) => {
+const Link = ({ children, level, id, ...props }) => {
   let override = undefined;
 
   switch (level) {
@@ -70,7 +70,7 @@ const Link = ({ children, level, id }) => {
   }
 
   return (
-    <AnchorHeader as={override}>
+    <AnchorHeader {...props} as={override}>
       <InvisibleAnchor id={id} />
 
       {children}
