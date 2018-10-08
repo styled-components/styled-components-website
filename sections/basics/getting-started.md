@@ -24,7 +24,7 @@ const Wrapper = styled.section`
 render(
   <Wrapper>
     <Title>
-      Hello World, this is my first styled component!
+      Hello World!
     </Title>
   </Wrapper>
 );
