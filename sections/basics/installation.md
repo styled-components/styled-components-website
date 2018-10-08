@@ -18,12 +18,12 @@ It's highly recommended (but not required) to also use the [styled-components ba
 npm install --save-dev babel-plugin-styled-components
 ```
 
-Then make sure the "styled-components" plugin is added to your `.babelrc`.
+Then make sure the "babel-plugin-styled-components" plugin is added to your `.babelrc`.
 
 ```json
 {
-  "presets": ["env", "react"],
-  "plugins": ["styled-components"]
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": ["babel-plugin-styled-components"]
 }
 ```
 

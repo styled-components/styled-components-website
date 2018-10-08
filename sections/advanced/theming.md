@@ -49,7 +49,7 @@ You can also pass a function for the theme prop. This function will receive the 
 another `<ThemeProvider>` higher up the tree. This way themes themselves can be made contextual.
 
 This example renders our above themed Button and a second one that uses a second ThemeProvider to invert the
-background and foreground colours. The function `invertTheme` receives the upper theme and creates a new one.
+background and foreground colors. The function `invertTheme` receives the upper theme and creates a new one.
 
 ```react
 // Define our button, but with the use of props.theme this time

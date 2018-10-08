@@ -86,6 +86,9 @@
           "title": "Helpers"
         },
         {
+          "title": "Test Utilities"
+        },
+        {
           "title": "Supported CSS"
         },
         {
@@ -110,7 +113,7 @@
           "title": "TypeScript Plugin"
         },
         {
-          "title": "Test Utilities"
+          "title": "Jest Integration"
         },
         {
           "title": "Stylelint"

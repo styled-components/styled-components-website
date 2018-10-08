@@ -3,7 +3,7 @@ import NextPage from '../../components/NextPage'
 
 import BabelPlugin from '../../sections/tooling/babel-plugin.md'
 import TypeScriptPlugin from '../../sections/tooling/typescript-plugin.md'
-import TestUtilities from '../../sections/tooling/test-utilities.md'
+import Jest from '../../sections/tooling/jest.md'
 import Stylelint from '../../sections/tooling/stylelint.md'
 import StyledTheming from '../../sections/tooling/styled-theming.md'
 import SyntaxHighlighting from '../../sections/tooling/syntax-highlighting.md'
@@ -19,7 +19,7 @@ export default ({ children }) => (
 
 <BabelPlugin />
 <TypeScriptPlugin />
-<TestUtilities />
+<Jest />
 <Stylelint />
 <StyledTheming />
 <SyntaxHighlighting />
