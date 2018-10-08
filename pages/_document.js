@@ -146,7 +146,7 @@ const resetStyles = `
   }
 
   ul li, ol li {
-    margin-bottom: 0.2em;
+    margin-bottom: 0.75em;
     line-height: 1.6;
   }
 
