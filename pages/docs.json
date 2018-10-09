@@ -171,6 +171,9 @@
         },
         {
           "title": "How can I fix issues when using npm link or yarn link?"
+        },
+        {
+          "title": "How do I fix flickering text after server side rendering?"
         }
       ]
     }
