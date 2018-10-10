@@ -20,6 +20,8 @@ npm install react@^16.3 react-dom@^16.3
 
 3. If you are using the `.extend` API, switch your components to use `styled(StyledComponent)` instead.
 
+A [codemod is available](https://github.com/styled-components/styled-components-codemods) to expedite this.
+
 🚫
 
 ```js
@@ -53,6 +55,8 @@ const ExtendedComponent = styled(Component)`
 See the ["extending styles" documentation](/docs/basics#extending-styles) for more examples.
 
 4. If you were using the `injectGlobal` API to add global styles to your page, use the new [`createGlobalStyle` helper component](/docs/api#createglobalstyle) instead.
+
+A [codemod is available](https://github.com/styled-components/styled-components-codemods) to expedite this.
 
 🚫
 
