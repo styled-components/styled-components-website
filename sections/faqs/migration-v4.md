@@ -20,6 +20,8 @@ npm install react@^16.3 react-dom@^16.3
 
 3. If you are using the `.extend` API, switch your components to use `styled(StyledComponent)` instead.
 
+A [codemod is available](https://github.com/styled-components/styled-components-codemods) to expedite this.
+
 🚫
 
 ```js
@@ -53,6 +55,8 @@ const ExtendedComponent = styled(Component)`
 See the ["extending styles" documentation](/docs/basics#extending-styles) for more examples.
 
 4. If you were using the `injectGlobal` API to add global styles to your page, use the new [`createGlobalStyle` helper component](/docs/api#createglobalstyle) instead.
+
+A [codemod is available](https://github.com/styled-components/styled-components-codemods) to expedite this.
 
 🚫
 
@@ -166,19 +170,7 @@ const Component = styled.div`
 7. If you're using TypeScript, the typings are now located in DefinitelyTyped:
 
 ```
-npm install @types/styled-components
+npm install @types/styled-components@^4
 ```
-
-They have not been updated yet for v4, so help on that front is extremely welcome! We won't release a formal v4 version until they're in place.
 
 That's it! Aside from migrating, we also highly recommend reading up on the new [`"as" prop`](/docs/api#as-polymorphic-prop) which is intended to replace the [`withComponent API`](/docs/api#withcomponent) in the future.
-
-8. If you are using react-router v4:
-
-```
-npm install react-router@next react-router-dom@next
-```
-
-They have not formally released a version of the library yet using the new React v16 context implementation, so certain things will not work inside the styled-components PureComponent wrapper. The "next" tag has a working version though.
-
-This goes for any other library that is not using `React.createContext` or the `create-react-context` polyfill as well. In general, all libraries should migrate as soon as possible.

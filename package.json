@@ -34,7 +34,6 @@
     "axios": "^0.18.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-polished": "^1.1.0",
-    "babel-plugin-styled-components": "^1.8.0",
     "compression": "^1.7.3",
     "docsearch.js": "2.5.2",
     "express": "^4.16.3",
@@ -46,7 +45,7 @@
     "prismjs": "^1.6.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "styled-components": "4.0.0-beta.8",
+    "styled-components": "^4.0.0-beta.11",
     "styled-icons": "^3.0.0",
     "styled-theming": "^2.2.0",
     "webpack-bundle-analyzer": "^2.13.1"

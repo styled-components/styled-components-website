@@ -1,18 +1,18 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
-import rem from '../../utils/rem'
-import DocsLayout from '../../components/DocsLayout'
-import { Header } from '../../components/Layout'
-import Link from '../../components/Link'
-import titleToDash from '../../utils/titleToDash'
-import { pages } from '../docs.json'
-import { mobile, phone } from '../../utils/media'
-import { headerFont } from '../../utils/fonts'
+import rem from '../../utils/rem';
+import DocsLayout from '../../components/DocsLayout';
+import { Header } from '../../components/Layout';
+import Link from '../../components/Link';
+import titleToDash from '../../utils/titleToDash';
+import { pages } from '../docs.json';
+import { mobile, phone } from '../../utils/media';
+import { headerFont } from '../../utils/fonts';
 
 const Row = styled.div`
   display: flex;
   flex-flow: row wrap;
-`
+`;
 
 const Column = styled.div`
   width: 33%;
@@ -29,7 +29,7 @@ const Column = styled.div`
     max-width: 100%;
     flex-basis: 100%;
   `)};
-`
+`;
 
 const SubHeader = styled.h3`
   display: block;
@@ -37,7 +37,7 @@ const SubHeader = styled.h3`
   font-size: ${rem(18)};
   font-weight: normal;
   font-family: ${headerFont};
-`
+`;
 
 const Documentation = () => (
   <DocsLayout
@@ -45,11 +45,9 @@ const Documentation = () => (
     description="Learn how to use styled-components and to style your apps without stress"
   >
     <p>
-      Utilising tagged template literals (a recent addition to JavaScript) and
-      the power of CSS, styled-components allows you to write actual CSS code to
-      style your components. It also removes the mapping between components and
-      styles – using components as a low-level styling construct could not be
-      easier!
+      Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components
+      allows you to write actual CSS code to style your components. It also removes the mapping between components and
+      styles – using components as a low-level styling construct could not be easier!
     </p>
 
     <Row>
@@ -61,7 +59,7 @@ const Documentation = () => (
 
           {sections.map(({ title }) => (
             <SubHeader key={title}>
-              <Link href={`/docs/${pathname}#${titleToDash(title)}`}>
+              <Link prefetch href={`/docs/${pathname}#${titleToDash(title)}`}>
                 {title}
               </Link>
             </SubHeader>
@@ -70,6 +68,6 @@ const Documentation = () => (
       ))}
     </Row>
   </DocsLayout>
-)
+);
 
-export default Documentation
+export default Documentation;

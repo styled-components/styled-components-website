@@ -9,17 +9,14 @@ import rem from '../utils/rem';
 import { getFormattedDate } from '../utils/dates';
 import components from '../utils/mdx-components';
 
-const ReleaseName = styled.span`
-  margin-top: ${rem(40)};
-  margin-bottom: ${rem(-20)};
-  display: block;
-`;
-
-const Date = styled.span`
-  display: block;
-  color: rgb(243, 182, 97);
-  font-size: 16px;
-  margin-top: ${rem(-5)};
+const ReleaseAnchor = styled(Anchor)`
+  &::after {
+    color: rgb(243, 182, 97);
+    content: attr(data-created-at);
+    display: block;
+    font-size: 16px;
+    margin-top: ${rem(-5)};
+  }
 `;
 
 const Releases = ({ releases, sidebarPages }) => (
@@ -31,11 +28,9 @@ const Releases = ({ releases, sidebarPages }) => (
     {releases ? (
       releases.map(release => (
         <section key={release.id}>
-          <Anchor id={release.name}>
-            <ReleaseName>
-              {release.name} <Date>{getFormattedDate(release.created_at)}</Date>
-            </ReleaseName>
-          </Anchor>
+          <ReleaseAnchor id={release.name} data-created-at={getFormattedDate(release.created_at)}>
+            {release.name}
+          </ReleaseAnchor>
           <MDX components={components}>{release.body}</MDX>
         </section>
       ))
