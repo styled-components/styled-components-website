@@ -1,4 +1,4 @@
-### `"innerRef"` prop
+### _[Deprecated]_ `"innerRef"` prop
 
 > The `"innerRef"` prop was removed in styled-components v4 in favor of the [React 16 `forwardRef` API](https://reactjs.org/docs/forwarding-refs.html). Just use the normal `ref` prop instead.
 
