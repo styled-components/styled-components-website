@@ -5,7 +5,6 @@ import Motivation from '../../sections/basics/motivation.md'
 import GettingStarted from '../../sections/basics/getting-started.md'
 import ComingFromCSS from '../../sections/basics/coming-from-css.md'
 import Installation from '../../sections/basics/installation.md'
-import AlternativeInstallation from '../../sections/basics/alternative-installation.md'
 import PassedProps from '../../sections/basics/passed-props.md'
 import AdaptingBasedOnProps from '../../sections/basics/adapting-based-on-props.md'
 import StylingAnyComponents from '../../sections/basics/styling-any-components.md'
@@ -15,23 +14,19 @@ import Animations from '../../sections/basics/animations.md'
 import ReactNative from '../../sections/basics/react-native.md'
 
 export default ({ children }) => (
-  <DocsLayout
-    title="Basics"
-    description="Get Started with styled-components basics."
-  >
+  <DocsLayout title="Basics" description="Get Started with styled-components basics.">
     {children}
   </DocsLayout>
 )
 
 <Motivation />
 <Installation />
-<AlternativeInstallation />
 <GettingStarted />
-<ComingFromCSS />
-<PassedProps />
 <AdaptingBasedOnProps />
-<StylingAnyComponents />
 <ExtendingStyles />
+<StylingAnyComponents />
+<PassedProps />
+<ComingFromCSS />
 <AttachingAdditionalProps />
 <Animations />
 <ReactNative />

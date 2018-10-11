@@ -11,25 +11,22 @@
           "title": "Installation"
         },
         {
-          "title": "Alternative Installation"
-        },
-        {
           "title": "Getting Started"
-        },
-        {
-          "title": "Coming from CSS"
-        },
-        {
-          "title": "Passed props"
         },
         {
           "title": "Adapting based on props"
         },
         {
+          "title": "Extending styles"
+        },
+        {
           "title": "Styling any components"
         },
         {
-          "title": "Extending styles"
+          "title": "Passed props"
+        },
+        {
+          "title": "Coming from CSS"
         },
         {
           "title": "Attaching additional props"
@@ -110,6 +107,9 @@
           "title": "Babel Plugin"
         },
         {
+          "title": "Babel Macro"
+        },
+        {
           "title": "TypeScript Plugin"
         },
         {
@@ -168,6 +168,9 @@
         },
         {
           "title": "How can I fix issues when using npm link or yarn link?"
+        },
+        {
+          "title": "How do I fix flickering text after server side rendering?"
         }
       ]
     }

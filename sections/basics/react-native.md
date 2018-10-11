@@ -32,7 +32,7 @@ class MyReactNativeComponent extends React.Component {
 
 We also support more complex styles (like `transform`), which would normally
 be an array, and shorthands (e.g. for `margin`) thanks to
-`css-to-react-native`!
+[`css-to-react-native`](https://github.com/styled-components/css-to-react-native)!
 
 > Note that the `flex` property works like CSS shorthand, and not the legacy
 > `flex` property in React Native. Setting `flex: 1` sets `flexShrink`
@@ -51,7 +51,7 @@ const RotatedBox = styled.View`
 ```
 
 Some of the differences to the web-version are, that you cannot use the
-`keyframes` and `injectGlobal` helpers since React Native doesn't support
+`keyframes` and `createGlobalStyle` helpers since React Native doesn't support
 keyframes or global styles. We will also warn you if you use media queries or
 nest your CSS.
 

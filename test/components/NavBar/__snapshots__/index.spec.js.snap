@@ -3,8 +3,6 @@
 exports[`Nav renders correctly 1`] = `
 .c39 {
   display: inline-block;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: 0.1111111111111111rem 0.4444444444444444rem;
@@ -910,6 +908,7 @@ exports[`Nav renders correctly 1`] = `
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
                                         "attrs": Object {
+                                          "prefetch": true,
                                           "unstyled": true,
                                         },
                                         "componentStyle": ComponentStyle {
@@ -958,10 +957,12 @@ exports[`Nav renders correctly 1`] = `
                                     <Link
                                       className="c7"
                                       href="/docs"
+                                      prefetch={true}
                                       unstyled={true}
                                     >
                                       <Link
                                         href="/docs"
+                                        prefetch={true}
                                       >
                                         <a
                                           className="c7"
@@ -1026,6 +1027,7 @@ exports[`Nav renders correctly 1`] = `
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
                                         "attrs": Object {
+                                          "prefetch": true,
                                           "unstyled": true,
                                         },
                                         "componentStyle": ComponentStyle {
@@ -1074,10 +1076,12 @@ exports[`Nav renders correctly 1`] = `
                                     <Link
                                       className="c7"
                                       href="/ecosystem"
+                                      prefetch={true}
                                       unstyled={true}
                                     >
                                       <Link
                                         href="/ecosystem"
+                                        prefetch={true}
                                       >
                                         <a
                                           className="c7"
@@ -1142,6 +1146,7 @@ exports[`Nav renders correctly 1`] = `
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
                                         "attrs": Object {
+                                          "prefetch": true,
                                           "unstyled": true,
                                         },
                                         "componentStyle": ComponentStyle {
@@ -1190,10 +1195,12 @@ exports[`Nav renders correctly 1`] = `
                                     <Link
                                       className="c7"
                                       href="/releases"
+                                      prefetch={true}
                                       unstyled={true}
                                     >
                                       <Link
                                         href="/releases"
+                                        prefetch={true}
                                       >
                                         <a
                                           className="c7"
@@ -3074,6 +3081,7 @@ exports[`Nav renders correctly 1`] = `
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
                                           "attrs": Object {
+                                            "prefetch": true,
                                             "unstyled": true,
                                           },
                                           "componentStyle": ComponentStyle {
@@ -3122,10 +3130,12 @@ exports[`Nav renders correctly 1`] = `
                                       <Link
                                         className="c7"
                                         href="/docs"
+                                        prefetch={true}
                                         unstyled={true}
                                       >
                                         <Link
                                           href="/docs"
+                                          prefetch={true}
                                         >
                                           <a
                                             className="c7"
@@ -3190,6 +3200,7 @@ exports[`Nav renders correctly 1`] = `
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
                                           "attrs": Object {
+                                            "prefetch": true,
                                             "unstyled": true,
                                           },
                                           "componentStyle": ComponentStyle {
@@ -3238,10 +3249,12 @@ exports[`Nav renders correctly 1`] = `
                                       <Link
                                         className="c7"
                                         href="/ecosystem"
+                                        prefetch={true}
                                         unstyled={true}
                                       >
                                         <Link
                                           href="/ecosystem"
+                                          prefetch={true}
                                         >
                                           <a
                                             className="c7"
@@ -3306,6 +3319,7 @@ exports[`Nav renders correctly 1`] = `
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
                                           "attrs": Object {
+                                            "prefetch": true,
                                             "unstyled": true,
                                           },
                                           "componentStyle": ComponentStyle {
@@ -3354,10 +3368,12 @@ exports[`Nav renders correctly 1`] = `
                                       <Link
                                         className="c7"
                                         href="/releases"
+                                        prefetch={true}
                                         unstyled={true}
                                       >
                                         <Link
                                           href="/releases"
+                                          prefetch={true}
                                         >
                                           <a
                                             className="c7"
@@ -4043,7 +4059,6 @@ exports[`Nav renders correctly 1`] = `
                                                   "rules": Array [
                                                     "
   display: inline-block;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
@@ -4198,7 +4213,6 @@ exports[`Nav renders correctly 1`] = `
                                                   "rules": Array [
                                                     "
   display: inline-block;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
@@ -4353,7 +4367,6 @@ exports[`Nav renders correctly 1`] = `
                                                   "rules": Array [
                                                     "
   display: inline-block;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
@@ -4508,7 +4521,6 @@ exports[`Nav renders correctly 1`] = `
                                                   "rules": Array [
                                                     "
   display: inline-block;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",
@@ -4663,7 +4675,6 @@ exports[`Nav renders correctly 1`] = `
                                                   "rules": Array [
                                                     "
   display: inline-block;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: ",

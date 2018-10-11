@@ -45,21 +45,22 @@ export const Title = styled.h1`
 
 export const Header = styled.h2`
   font-size: ${rem(32)};
-  font-weight: 500;
+  font-weight: 600;
   font-family: ${headerFont};
+  margin: 2em 0 0.75em;
 `;
 
 export const SubHeader = styled.h3`
   display: block;
-  margin: ${rem(35)} 0 ${rem(22)} 0;
+  margin: 2em 0 0.75em;
   font-size: ${rem(24)};
-  font-weight: 500;
+  font-weight: 600;
   font-family: ${headerFont};
 `;
 
 export const TertiaryHeader = styled.h4`
   display: block;
-  margin: ${rem(35)} 0 ${rem(22)} 0;
+  margin: 2em 0 0.75em;
   font-size: ${rem(18)};
   font-weight: 600;
   font-family: ${headerFont};

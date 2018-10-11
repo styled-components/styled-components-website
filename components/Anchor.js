@@ -22,9 +22,8 @@ const InvisibleAnchor = styled.div.attrs({
 
 const Anchor = styled.a`
   display: none;
-  position: absolute;
-  left: 0;
   color: inherit;
+  margin-left: ${rem(10)};
 `;
 
 const AnchorIcon = styled(LinkIcon).attrs({
@@ -41,16 +40,9 @@ const AnchorIcon = styled(LinkIcon).attrs({
 `;
 
 const AnchorHeader = styled.div`
-  && {
-    margin-left: ${rem(-30)};
-  }
-
   position: relative;
-  padding-left: ${rem(30)};
 
   ${mobile(css`
-    margin-left: 0;
-
     /* stylelint-disable-next-line */
     ${Anchor} {
       display: inline-block;
@@ -62,7 +54,7 @@ const AnchorHeader = styled.div`
   }
 `;
 
-const Link = ({ children, level, id }) => {
+const Link = ({ children, level, id, ...props }) => {
   let override = undefined;
 
   switch (level) {
@@ -78,14 +70,14 @@ const Link = ({ children, level, id }) => {
   }
 
   return (
-    <AnchorHeader as={override}>
+    <AnchorHeader {...props} as={override}>
       <InvisibleAnchor id={id} />
+
+      {children}
 
       <Anchor href={`#${id}`} aria-label={id}>
         <AnchorIcon />
       </Anchor>
-
-      {children}
     </AnchorHeader>
   );
 };
