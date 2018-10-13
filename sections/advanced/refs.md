@@ -18,18 +18,17 @@ const Input = styled.input`
 class Form extends React.Component {
   constructor(props) {
     super(props);
-
-    this.setInputRef = (element) => {
-      this.input = element;
-    }
+    this.inputRef = React.createRef();
   }
 
   render() {
     return (
       <Input
-        ref={this.setInputRef}
+        ref={this.inputRef}
         placeholder="Hover to focus!"
-        onMouseEnter={() => this.input.base.focus()}
+        onMouseEnter={() => {
+          this.inputRef.current.focus()
+        }}
       />
     );
   }
