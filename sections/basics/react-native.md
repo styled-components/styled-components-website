@@ -3,13 +3,9 @@
 styled-components can be used with React Native in the same way and with the
 same import. Try this example with [Snack by Expo](https://snack.expo.io/@danielmschmidt/styled-components).
 
-> If you're not yet on v3 or higher, you will need to import styled-components
-> on React Native from `styled-components/native`. This still works in v3
-> but has been deprecated.
-
 ```jsx
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 
 const StyledView = styled.View`
   background-color: papayawhip;
@@ -58,3 +54,7 @@ nest your CSS.
 > In v2 we support percentages. To make this possible we need to enforce units
 > for all shorthands. If you're migrating to v2,
 > [a codemod is available](https://github.com/styled-components/styled-components-native-code-mod).
+
+### Simpler usage with the metro bundler
+
+If you'd prefer to just import `styled-components` instead of `styled-components/native`, you can add a [`resolverMainFields` configuration](https://facebook.github.io/metro/docs/en/configuration.html#resolver-options) that includes `"react-native"`. This used to be supported in metro by default (and currently does work in haul) but appears to have been removed at some point.
