@@ -2,9 +2,10 @@
 
 Integrating an existing CSS framework with styled-components is really easy! You can use its existing class names alongside your components.
 
-Consider you have an existing app with some CSS that have the classes: `.small` and `.big`. Try to swap out the `.small` class with `.big` in the example below:
+For example, imagine you have an existing app with two classes you want to use again: `.small` and `.big`. If you want the class to always be attached to the component, you should use [the `attrs` method](/docs/api#attrs) to attach it. If you want to attach it only in some cases you can use the `className` props like you always have!
 
 ```react
+// Using .attrs, we attach the .small class to every <Button />
 const Button = styled.button.attrs({
   className: "small",
 })`
@@ -20,12 +21,11 @@ const Button = styled.button.attrs({
 render(
   <div>
     <Button>Styled Components</Button>
-    <Button>The new way to style components!</Button>
+    {/* Here we attach the class .big to this specific instance of the Button */}
+    <Button className="big">The new way to style components!</Button>
   </div>
 );
 ```
-
-Please do read about [the attrs method](/docs/api#attrs) to learn how arbitary props can be passed down to a styled component without wrapping it.
 
 If the framework has a bunch of raw global CSS that needs to be included on the page, you can add it using the [`createGlobalStyle` API](/docs/api#createglobalstyle). This is also useful for things like CSS resets.
 
