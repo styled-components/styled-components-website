@@ -2,12 +2,10 @@
 
 This is a pretty big release with lots of changes both under the hood and at the API level. As the beta progresses, we will try to release codemods to make the items below simpler. Also, if you find any issues with the steps below, please [leave constructive feedback](https://github.com/styled-components/styled-components-website/issues/296)!
 
-We've also got an issue ready for beta feedback here: <https://github.com/styled-components/styled-components/issues/1969>
-
-1. Upgrade to the styled-components beta:
+1. Upgrade to the latest styled-components:
 
 ```
-npm install styled-components@beta
+npm install styled-components
 ```
 
 2. Make sure your application is using `react` >= 16.3; internally we are using the new `React.forwardRef` API and new context APIs if you wish to try and polyfill for older React version support
@@ -170,7 +168,7 @@ const Component = styled.div`
 7. If you're using TypeScript, the typings are now located in DefinitelyTyped:
 
 ```
-npm install @types/styled-components@^4
+npm install @types/styled-components
 ```
 
 That's it! Aside from migrating, we also highly recommend reading up on the new [`"as" prop`](/docs/api#as-polymorphic-prop) which is intended to replace the [`withComponent API`](/docs/api#withcomponent) in the future.
