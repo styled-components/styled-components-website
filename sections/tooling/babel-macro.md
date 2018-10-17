@@ -16,7 +16,7 @@ The macro incorporates all the functionality of [our babel plugin](/docs/tooling
 
 ### EXPERIMENTAL Config
 
-[`babel-plugin-macros`](https://github.com/kentcdodds/babel-plugin-macros) uses [`cosmiconfig`][cosmiconfig] to read a `babel-plugin-macros` configuration which
+[`babel-plugin-macros`](https://github.com/kentcdodds/babel-plugin-macros) uses [`cosmiconfig`](https://www.npmjs.com/package/cosmiconfig) to read a `babel-plugin-macros` configuration which
 can be located in any of the following files up the directories from the
 importing file:
 
