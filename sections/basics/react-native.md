@@ -5,7 +5,7 @@ same import. Try this example with [Snack by Expo](https://snack.expo.io/@daniel
 
 ```jsx
 import React from 'react'
-import styled from 'styled-components/native'
+import styled from 'styled-components'
 
 const StyledView = styled.View`
   background-color: papayawhip;
