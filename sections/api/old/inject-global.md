@@ -1,7 +1,7 @@
 import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
-### `injectGlobal`
+### _[Deprecated]_ `injectGlobal`
 
 > The `injectGlobal` API was removed and replaced by `createGlobalStyle` in styled-components v4.
 

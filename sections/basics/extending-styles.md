@@ -1,13 +1,8 @@
 ## Extending Styles
 
-Quite frequently you might want to use a component, but change it slightly for
-a single case. Now, you could pass in an interpolated function and change them
-based on some props, but that's quite a lot of effort for overriding the styles
-once.
+Quite frequently you might want to use a component, but change it slightly for a single case. Now, you could pass in an interpolated function and change them based on some props, but that's quite a lot of effort for overriding the styles once.
 
-To easily make a new component that inherits the styling of another, just wrap it
-in the `styled()` constructor. Here we use the button from the last section
-and create a special one, extending it with some colour-related styling:
+To easily make a new component that inherits the styling of another, just wrap it in the `styled()` constructor. Here we use the button from the last section and create a special one, extending it with some color-related styling:
 
 ```react
 // The Button from the last section without the interpolations
@@ -34,8 +29,7 @@ render(
 );
 ```
 
-We can see that the new `TomatoButton` still resembles `Button`, while we have only
-added two new rules.
+We can see that the new `TomatoButton` still resembles `Button`, while we have only added two new rules.
 
 In some cases you might want to change which tag or component a styled component renders. This is common when building a navigation bar for example, where there are a mix of anchor links and buttons but they should be styled identically.
 

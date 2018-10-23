@@ -1,7 +1,7 @@
 import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
-### `.extend`
+### _[Deprecated]_ `.extend`
 
 > The `.extend` API was removed in styled-components v4. Use `styled(StyledComponent)` instead. For more information, see: <https://github.com/styled-components/styled-components/issues/1546>
 

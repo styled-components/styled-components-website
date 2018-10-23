@@ -118,12 +118,6 @@ const resetStyles = `
     -webkit-font-smoothing: subpixel-antialiased;
   }
 
-  @media all and (max-width: 1000px) {
-    html, body {
-      font-size: 16px;
-    }
-  }
-
   body.sticky {
     overflow: hidden;
   }
@@ -133,14 +127,14 @@ const resetStyles = `
     overflow: auto;
   }
 
-  .big {
-    color: white;
-    font-size: 1.4em;
-  }
-
   .small {
     color: white;
     font-size: 0.5em;
+  }
+
+  .big {
+    color: white;
+    font-size: 1.4em;
   }
 
   ul, ol {
@@ -152,8 +146,19 @@ const resetStyles = `
   }
 
   ul li, ol li {
-    margin-bottom: 0.2em;
-    line-height: 1.7;
+    margin-bottom: 0.75em;
+    line-height: 1.6;
+  }
+
+  @media all and (max-width: 1000px) {
+    html, body {
+      font-size: 16px;
+    }
+
+    li {
+      list-style-position: outside;
+      margin-left: 1em;
+    }
   }
 `;
 

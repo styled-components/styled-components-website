@@ -7,18 +7,17 @@ import SupportedCSS from '../../sections/api/supported-css.md'
 import Flow from '../../sections/api/flow.md'
 import TypeScript from '../../sections/api/typescript.md'
 import OldAPIs from '../../sections/api/old/index.md'
+import TestUtilities from '../../sections/api/test-utils/index.md'
 
 export default ({ children }) => (
-  <DocsLayout
-    title="API Reference"
-    description="API Reference of styled-components"
-  >
+  <DocsLayout title="API Reference" description="API Reference of styled-components">
     {children}
   </DocsLayout>
 )
 
 <Primary />
 <Helpers />
+<TestUtilities />
 <SupportedCSS />
 <Flow />
 <TypeScript />

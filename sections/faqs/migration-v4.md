@@ -2,12 +2,10 @@
 
 This is a pretty big release with lots of changes both under the hood and at the API level. As the beta progresses, we will try to release codemods to make the items below simpler. Also, if you find any issues with the steps below, please [leave constructive feedback](https://github.com/styled-components/styled-components-website/issues/296)!
 
-We've also got an issue ready for beta feedback here: <https://github.com/styled-components/styled-components/issues/1969>
-
-1. Upgrade to the styled-components beta:
+1. Upgrade to the latest styled-components:
 
 ```
-npm install styled-components@beta
+npm install styled-components
 ```
 
 2. Make sure your application is using `react` >= 16.3; internally we are using the new `React.forwardRef` API and new context APIs if you wish to try and polyfill for older React version support
@@ -19,6 +17,8 @@ npm install react@^16.3 react-dom@^16.3
 > If you are using `enzyme` or other dependencies like `react-test-renderer`, there may be more related upgrades to complete if you are coming from an old version of `react`.
 
 3. If you are using the `.extend` API, switch your components to use `styled(StyledComponent)` instead.
+
+A [codemod is available](https://github.com/styled-components/styled-components-codemods) to expedite this.
 
 🚫
 
@@ -53,6 +53,8 @@ const ExtendedComponent = styled(Component)`
 See the ["extending styles" documentation](/docs/basics#extending-styles) for more examples.
 
 4. If you were using the `injectGlobal` API to add global styles to your page, use the new [`createGlobalStyle` helper component](/docs/api#createglobalstyle) instead.
+
+A [codemod is available](https://github.com/styled-components/styled-components-codemods) to expedite this.
 
 🚫
 
@@ -169,16 +171,4 @@ const Component = styled.div`
 npm install @types/styled-components
 ```
 
-They have not been updated yet for v4, so help on that front is extremely welcome! We won't release a formal v4 version until they're in place.
-
 That's it! Aside from migrating, we also highly recommend reading up on the new [`"as" prop`](/docs/api#as-polymorphic-prop) which is intended to replace the [`withComponent API`](/docs/api#withcomponent) in the future.
-
-8. If you are using react-router v4:
-
-```
-npm install react-router@next react-router-dom@next
-```
-
-They have not formally released a version of the library yet using the new React v16 context implementation, so certain things will not work inside the styled-components PureComponent wrapper. The "next" tag has a working version though.
-
-This goes for any other library that is not using `React.createContext` or the `create-react-context` polyfill as well. In general, all libraries should migrate as soon as possible.

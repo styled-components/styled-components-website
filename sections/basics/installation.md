@@ -1,30 +1,30 @@
 ## Installation
 
-Install styled-components from npm:
+Installing styled-components only takes a single command and you're ready to roll:
 
 ```
 npm install --save styled-components
 ```
 
-> Want to try out the new styled-components v4 beta? It's available now via:
->
-> ```
-> npm install --save styled-components@beta
-> ```
+> It's highly recommended (but not required) to also use the [Babel plugin](/docs/tooling#babel-plugin). It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
 
-It's highly recommended (but not required) to also use the [styled-components babel plugin](https://github.com/styled-components/babel-plugin-styled-components). It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
+<details>
+  <summary>Click here to see alternative CDN installation instructions</summary>
 
-```
-npm install --save-dev babel-plugin-styled-components
-```
+If you're not using a module bundler or package manager we also have a global ("UMD") build hosted on the [unpkg](http://unpkg.com) CDN. Simply add the following `<script>` tag to the bottom of your HTML file:
 
-Then make sure the "styled-components" plugin is added to your `.babelrc`.
-
-```json
-{
-  "presets": ["env", "react"],
-  "plugins": ["styled-components"]
-}
+```html
+<script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
 ```
 
-> If you don't already have babel set up in your project, their website has an [installation instructions tool](https://babeljs.io/en/setup).
+Once you've added `styled-components` you will have access to the global `window.styled` variable.
+
+```js
+const Component = window.styled.div`
+  color: red;
+`
+```
+
+> This style of usage requires the [react CDN bundles](https://reactjs.org/docs/cdn-links.html) to be on the page as well (before the styled-components script.)
+
+</details>

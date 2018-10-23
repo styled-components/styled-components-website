@@ -1652,7 +1652,7 @@ babel-plugin-react-require@3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/babel-plugin-react-require/-/babel-plugin-react-require-3.0.0.tgz#2e4e7b4496b93a654a1c80042276de4e4eeb20e3"
 
-babel-plugin-styled-components@^1.8.0:
+"babel-plugin-styled-components@>= 1":
   version "1.8.0"
   resolved "https://registry.npmjs.org/babel-plugin-styled-components/-/babel-plugin-styled-components-1.8.0.tgz#9dd054c8e86825203449a852a5746f29f2dab857"
   dependencies:
@@ -2563,9 +2563,9 @@ css-select@~1.2.0:
     domutils "1.5.1"
     nth-check "~1.0.1"
 
-css-to-react-native@^2.0.3:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/css-to-react-native/-/css-to-react-native-2.0.4.tgz#cf4cc407558b3474d4ba8be1a2cd3b6ce713101b"
+css-to-react-native@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.npmjs.org/css-to-react-native/-/css-to-react-native-2.2.2.tgz#c077d0f7bf3e6c915a539e7325821c9dd01f9965"
   dependencies:
     css-color-keywords "^1.0.0"
     fbjs "^0.8.5"
@@ -7738,12 +7738,13 @@ strip-json-comments@^2.0.1, strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-styled-components@4.0.0-beta.8:
-  version "4.0.0-beta.8"
-  resolved "https://registry.npmjs.org/styled-components/-/styled-components-4.0.0-beta.8.tgz#90430b172ca96915481c0009db1dd76f024cf02a"
+styled-components@^4.0.0-beta.11:
+  version "4.0.0-beta.11"
+  resolved "https://registry.npmjs.org/styled-components/-/styled-components-4.0.0-beta.11.tgz#98aeb4c5eaeb94052540f6f28b54fbe5d668f905"
   dependencies:
     "@emotion/is-prop-valid" "^0.6.8"
-    css-to-react-native "^2.0.3"
+    babel-plugin-styled-components ">= 1"
+    css-to-react-native "^2.2.2"
     memoize-one "^4.0.0"
     prop-types "^15.5.4"
     react-is "^16.3.1"

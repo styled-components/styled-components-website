@@ -1,9 +1,6 @@
-## Test Utilities
+## Jest Integration
 
-[Jest Styled Components](https://github.com/styled-components/jest-styled-components) is a set
-of utilities for testing Styled Components with [Jest](https://github.com/facebook/jest).
-This package improves the snapshot testing experience and provides a
-brand new matcher to make expectations on the style rules.
+[Jest Styled Components](https://github.com/styled-components/jest-styled-components) is a set of utilities for testing Styled Components with [Jest](https://github.com/facebook/jest). This package improves the snapshot testing experience and provides a brand new matcher to make expectations on the style rules.
 
 ### Installation
 
@@ -13,11 +10,7 @@ npm install --dev jest-styled-components
 
 ### Snapshot Testing
 
-When we are building a UI with Styled Components, we want to make sure
-the output doesn't change unexpectedly.
-Snapshot testing is an excellent way to test React components, and this
-package makes the experience even more delightful by adding the style
-to the snapshots.
+When we are building a UI with Styled Components, we want to make sure the output doesn't change unexpectedly. Snapshot testing is an excellent way to test React components, and this package makes the experience even more delightful by adding the style to the snapshots.
 
 Here's an example of a test:
 
@@ -56,11 +49,7 @@ For a real world demo, check out
 
 ### `toHaveStyleRule`
 
-If we only want to check whether a particular style has been applied to
-an element, we can use the `toHaveStyleRule` matcher.
-This function takes two required parameters, a property (string) and
-a value (string or RegExp), and an optional object to search for rules
-nested within an at-rule or to add modifiers to the class selector.
+If we only want to check whether a particular style has been applied to an element, we can use the `toHaveStyleRule` matcher. This function takes two required parameters, a property (string) and a value (string or RegExp), and an optional object to search for rules nested within an at-rule or to add modifiers to the class selector.
 
 ```jsx
 import React from 'react'

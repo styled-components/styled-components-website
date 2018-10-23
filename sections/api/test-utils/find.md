@@ -1,0 +1,24 @@
+### `find` | v3
+
+A convenience method to find a single instance of a styled component's rendered DOM node within a given DOM root.
+
+```js
+import styled, { find } from 'styled-components/test-utils'
+
+const Foo = styled.div`
+  color: red;
+`
+
+/**
+ * Somewhere in your app:
+ *
+ * ReactDOM.render(
+ *   <main>
+ *     <Foo />
+ *   </main>, document.body
+ * );
+ */
+
+// retrieves the first instance of "Foo" in the body (querySelector under the hood)
+find(document.body, Foo) // HTMLDivElement | null
+```

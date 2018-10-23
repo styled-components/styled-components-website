@@ -2,22 +2,18 @@
 
 ### How do Styled Components work within a component?
 
-If you're familiar with importing CSS into your components (e.g. like CSSModules)
-you'll be used to doing something like this:
+If you're familiar with importing CSS into your components (e.g. like CSSModules) you'll be used to doing something like this:
 
 ```jsx
+import React from 'react'
 import styles from './styles.css'
 
-class Counter extends React.Component {
-  state = {
-    /* ... */
-  }
-  increment = () => {
-    /* ... */
-  }
-  decrement = () => {
-    /* ... */
-  }
+export default class Counter extends React.Component {
+  state = { count: 0 }
+
+  increment = () => this.setState({ count: this.state.count + 1 })
+  decrement = () => this.setState({ count: this.state.count - 1 })
+
   render() {
     return (
       <div className={styles.counter}>
@@ -32,14 +28,14 @@ class Counter extends React.Component {
     )
   }
 }
-
-export default Counter
 ```
 
-Because a Styled Component is the _combination_ of the element and the rules
-that style it, we'd write `Counter` like this:
+Because a Styled Component is the _combination_ of the element and the rules that style it, we'd write `Counter` like this:
 
 ```jsx
+import React from 'react'
+import styled from 'styled-components'
+
 const StyledCounter = styled.div`
   /* ... */
 `
@@ -50,16 +46,12 @@ const Button = styled.button`
   /* ... */
 `
 
-class Counter extends React.Component {
-  state = {
-    /* ... */
-  }
-  increment = () => {
-    /* ... */
-  }
-  decrement = () => {
-    /* ... */
-  }
+export default class Counter extends React.Component {
+  state = { count: 0 }
+
+  increment = () => this.setState({ count: this.state.count + 1 })
+  decrement = () => this.setState({ count: this.state.count - 1 })
+
   render() {
     return (
       <StyledCounter>
@@ -70,21 +62,13 @@ class Counter extends React.Component {
     )
   }
 }
-
-export default Counter
 ```
 
-Note that we added a "Styled" prefix to `StyledCounter` so that the React
-component `Counter` and the Styled Component `StyledCounter`
-don't clash names but remain easily identifiable in the React Developer
-Tools and Web Inspector.
+Note that we added a "Styled" prefix to `StyledCounter` so that the React component `Counter` and the Styled Component `StyledCounter` don't clash names but remain easily identifiable in the React Developer Tools and Web Inspector.
 
 ### Define Styled Components outside of the render method
 
-It is important to define your styled components outside of the render method,
-otherwise it will be recreated on every single render pass.
-Defining a styled component within the render method will thwart caching and
-drastically slow down rendering speed, and should be avoided.
+It is important to define your styled components outside of the render method, otherwise it will be recreated on every single render pass. Defining a styled component within the render method will thwart caching and drastically slow down rendering speed, and should be avoided.
 
 Write your styled components the recommended way:
 
@@ -115,7 +99,7 @@ const Wrapper = ({ message }) => {
 wrote a great review of real-world usage, featuring lots of solid practical insights
 and comparisons with alternatives, in [Styled Components: To Use or Not to Use?](https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21)
 
-### Psuedoelements, psuedoselectors, and nesting
+### Pseudoelements, pseudoselectors, and nesting
 
 The preprocessor we use, [stylis](https://github.com/thysultan/stylis.js), supports scss-like syntax for automatically nesting styles. Using an example component:
 
@@ -125,7 +109,7 @@ const Thing = styled.div`
 `
 ```
 
-Psuedoselectors and psuedoelements without further refinement automatically are attached to the component:
+Pseudoselectors and pseudoelements without further refinement automatically are attached to the component:
 
 ```react
 const Thing = styled.button`
