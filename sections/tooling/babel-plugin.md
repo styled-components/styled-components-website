@@ -154,7 +154,9 @@ Take a note that it will keep other template literals not related to styled-comp
 // Following will be converted:
 styled.div``
 keyframe``
-css``// But this will not be converted:
+css``
+
+// But this will not be converted:
 `some text`
 
 // Here the outer template literal will be converted
