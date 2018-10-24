@@ -90,11 +90,11 @@ One example you might want to do this, is testing components with enzyme. While 
 > This option is turned on by default. If you experience mangled CSS
 > results, turn it off and open an issue please.
 
-This plugin minifies your styles in the tagged template literals, giving you big bundle size savings.
+This plugin does two _minifications_, one is taking all the whitespace & comments out of your CSS, and the other is [transpiling tagged template literals](#template-string-transpilation) - giving you big bundle size savings.
 
 This operation may potentially break your styles in some rare cases, so we recommend to keep this option enabled in development if it's enabled in the production build.
 
-You can disable minification with the `minify` option:
+You can disable the CSS minification with the `minify` option:
 
 ```js
 {
@@ -124,12 +124,48 @@ It utilizes a babel helper to tag each styled component and library helper with 
 
 ### Template String Transpilation
 
-We transpile `styled-components` tagged template literals down to a smaller representation than what Babel normally does, because `styled-components` template literals don't need to be 100% spec compliant.
+This plugin transpiles `styled-components` tagged template literals down to a smaller representation than what Babel normally does.
 
-Read more about [Tagged Template Literals](/docs/advanced#tagged-template-literals) in
-our dedicated section explaining them.
+Wait, transpiling tagged template literals? Doesn't Babel do this natively? 🤔
 
-You can use the `transpileTemplateLiterals` option to turn this feature off.
+You're currently using Babel to transpile your ES2015 JavaScript to ES5-compliant code. One of your presets (`es2015`/`env`/`latest`) includes the `babel-plugin-transform-es2015-template-literals` transform to make tagged template literals work in older browsers, but there is a caveat. Output of that plugin is quite wordy. It's done this way to meet specification requirements.
+
+Here's an example of the transpiled code processed with `babel-preset-latest`:
+
+```js
+var _templateObject = _taggedTemplateLiteral(['width: 100%;'], ['width: 100%;'])
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }))
+}
+var Simple = _styledComponents2.default.div(_templateObject)
+```
+
+`styled-components` styling code does not require full spec compatibility. This plugin will transpile template literals attached to styled-component to a slightly different form which still works in older browsers but has a much smaller footprint.
+
+Now here's an example of the code including `babel-plugin-styled-components` with the `{ transpileTemplateLiterals: true }` option:
+
+```js
+var Simple = _styledComponents2.default.div(['width: 100%;'])
+```
+
+Take a note that it will keep other template literals not related to styled-components as is:
+
+```js
+// Following will be converted:
+styled.div``
+keyframe``
+css``// But this will not be converted:
+`some text`
+
+// Here the outer template literal will be converted
+// because it's attached to the component factory,
+// but the inner template literals will not be touched:
+styled.div`
+  color: ${light ? `white` : `black`};
+`
+```
+
+You can disable this feature with the `transpileTemplateLiterals` option:
 
 ```json
 {
@@ -143,3 +179,6 @@ You can use the `transpileTemplateLiterals` option to turn this feature off.
   ]
 }
 ```
+
+Read more about [Tagged Template Literals](/docs/advanced#tagged-template-literals) in
+our dedicated section explaining them.
