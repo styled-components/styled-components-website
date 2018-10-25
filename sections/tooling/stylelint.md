@@ -226,6 +226,7 @@ if (condition) {
 
 **Wrong**
 
+<!-- prettier-ignore-start -->
 ```js
 if (condition) {
   const Button = styled.button`
@@ -240,5 +241,6 @@ if (condition) {
     color: red;`
 }
 ```
+<!-- prettier-ignore-end -->
 
 It may be that other tagged template literal styles are coincidentally supported, but no issues will be handled regarding indentation unless the above style was used.
