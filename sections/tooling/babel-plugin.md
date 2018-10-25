@@ -1,6 +1,6 @@
 ## Babel Plugin
 
-This plugin adds support for server-side rendering, for minification of styles and gives you a nicer debugging experience.
+This plugin adds support for server-side rendering, minification of styles, and a nicer debugging experience.
 
 ### Usage
 
@@ -24,7 +24,7 @@ Then add it to your babel configuration like so:
 
 > This option is turned on by default as of v1.6.
 
-By adding a unique identifier to every styled component this plugin avoids checksum mismatches due to different class generation on the client and on the server. If you do not use this plugin and try to server-side render styled-components React will complain.
+By adding a unique identifier to every styled component, this plugin avoids checksum mismatches due to different class generation on the client and on the server. If you do not use this plugin and try to server-side render styled-components React will complain with an HTML attribute mismatch warning during rehydration.
 
 You can disable it if necessary with the `ssr` option:
 
@@ -43,9 +43,9 @@ You can disable it if necessary with the `ssr` option:
 
 ### Better debugging
 
-This options adds the components' name and displayName to the class name attached to the DOM node. In your browser's DevTools you'll see: `<button class="Button-asdf123 asdf123" />` instead of just `<button class="asdf123" />`.
+This option enhances the attached CSS class name on each component with richer output to help identify your components in the DOM without React DevTools. In your page source you'll see: `<button class="Button-asdf123 asdf123" />` instead of just `<button class="asdf123" />`.
 
-This also adds support for showing your components' real name in the React DevTools. Consider writing a styled component that renders a `button` element, called `MyButton`. It will normally show up as `<styled.button>` for all of your components, but with this plugin they show `<MyButton />`.
+It also adds allows you to see the component's `displayName` in React DevTools. For example, consider writing a styled component that renders a `button` element, called `MyButton`. It will normally show up in DevTools as `styled.button`, but with the `displayName` option enabled, it has the name you gave it: `MyButton`.
 
 This makes it easier to find your components and to figure out where they live in your app.
 
@@ -90,11 +90,11 @@ One example you might want to do this, is testing components with enzyme. While 
 > This option is turned on by default. If you experience mangled CSS
 > results, turn it off and open an issue please.
 
-This plugin minifies your styles in the tagged template literals, giving you big bundle size savings.
+Two types of minifications are performed by this plugin: one removes all whitespace & comments from your CSS and the other [transpiles tagged template literals](#template-string-transpilation), keeping valuable bytes out of your bundles.
 
 This operation may potentially break your styles in some rare cases, so we recommend to keep this option enabled in development if it's enabled in the production build.
 
-You can disable minification with the `minify` option:
+You can disable the CSS minification with the `minify` option:
 
 ```js
 {
@@ -108,7 +108,7 @@ You can disable minification with the `minify` option:
 
 ### Dead Code Elimination | v1.7
 
-Due to how styled components are transpiled and constructed, by default minifiers cannot properly perform dead code elimination on them. However, there is a feature that can be enabled to aid this process called "pure annotation".
+Due to how styled components are transpiled and constructed, by default minifiers cannot properly perform dead code elimination on them because they are assumed to have side effects. However, there is a feature that can be enabled to aid this process called "pure annotation".
 
 ```js
 {
@@ -124,12 +124,49 @@ It utilizes a babel helper to tag each styled component and library helper with 
 
 ### Template String Transpilation
 
-We transpile `styled-components` tagged template literals down to a smaller representation than what Babel normally does, because `styled-components` template literals don't need to be 100% spec compliant.
+This plugin transpiles `styled-components` tagged template literals down to a smaller representation than what Babel normally creates.
 
-Read more about [Tagged Template Literals](/docs/advanced#tagged-template-literals) in
-our dedicated section explaining them.
+_Wait, transpiling tagged template literals? Doesn't Babel do this natively?_ 🤔
+With Babel, you're likely transpiling ES2015+ JavaScript to ES5-compliant code for older browser support. The most popularly recommended base Babel presets (`es2015` / `env` / `latest`) include the `babel-plugin-transform-es2015-template-literals` transform to make tagged template literals work in older browsers, but there is a caveat: output of that transform is quite verbose. It's done this way to meet specification requirements.
 
-You can use the `transpileTemplateLiterals` option to turn this feature off.
+Here's an example of the transpiled code processed with `babel-preset-latest`:
+
+```js
+var _templateObject = _taggedTemplateLiteral(['width: 100%;'], ['width: 100%;'])
+function _taggedTemplateLiteral(strings, raw) {
+  return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }))
+}
+var Simple = _styledComponents2.default.div(_templateObject)
+```
+
+`styled-components` does not require full spec compatibility. Our Babel plugin will transpile template literals attached to styled components to a slightly different, smaller form which still works in older browsers but has a much smaller footprint.
+
+Here's the previous example with the styled-components babel plugin on and the `{ transpileTemplateLiterals: true }` option:
+
+```js
+var Simple = _styledComponents2.default.div(['width: 100%;'])
+```
+
+The plugin is also smart enough to not modify tagged template literals belonging to other libraries and use cases:
+
+```js
+// Following will be converted:
+styled.div``
+keyframe``
+css``
+
+// But this will not be converted:
+`some text`
+
+// Here the outer template literal will be converted
+// because it's attached to the component factory,
+// but the inner template literals will not be touched:
+styled.div`
+  color: ${light ? `white` : `black`};
+`
+```
+
+You can disable this feature with the `transpileTemplateLiterals` option:
 
 ```json
 {
@@ -143,3 +180,6 @@ You can use the `transpileTemplateLiterals` option to turn this feature off.
   ]
 }
 ```
+
+Read more about [Tagged Template Literals](/docs/advanced#tagged-template-literals) in
+our dedicated section explaining them.
