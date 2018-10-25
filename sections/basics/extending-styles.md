@@ -82,3 +82,35 @@ render(
   </div>
 );
 ```
+
+If you are still on v3, you can use [`.withComponent`](/docs/api#withcomponent) and [`.extend`](/docs/api#deprecated-extend) to achieve the same:
+
+```react
+const Button = styled.button`
+  display: inline-block;
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+
+// We're replacing the <button> tag with an <a> tag, but reuse all the same styles
+const Link = Button.withComponent('a')
+
+// Use .withComponent together with .extend to both change the tag and use additional styles
+const TomatoLink = Link.extend`
+  color: tomato;
+  border-color: tomato;
+`;
+
+render(
+  <div>
+    <Button>Normal Button</Button>
+    <Link>Normal Link</Link>
+    <TomatoLink>Tomato Link</TomatoLink>
+  </div>
+);
+```
+But note that this won't work on v4 as [`.extend` was removed in that release](/releases#breaking-changes).
