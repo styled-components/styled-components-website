@@ -1,0 +1,26 @@
+## Style Objects
+
+styled-components optionally supports writing CSS as JavaScript objects instead of strings. This is particularly useful when you have existing style objects and want to gradually move to styled-components.
+
+```react
+// Static object
+const Box = styled.div({
+  background: 'palevioletred',
+  height: '50px',
+  width: '50px'
+});
+
+// Adapting based on props
+const PropsBox = styled.div(props => ({
+  background: props.background,
+  height: '50px',
+  width: '50px'
+}));
+
+render(
+  <div>
+    <Box />
+    <PropsBox background="blue" />
+  </div>
+);
+```

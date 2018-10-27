@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navbar renders correctly 1`] = `
-.c7 {
+.c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -13,7 +13,7 @@ exports[`Navbar renders correctly 1`] = `
   opacity: 0.35;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25,9 +25,10 @@ exports[`Navbar renders correctly 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  margin-right: 1.6666666666666667rem;
 }
 
-.c6 {
+.c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -44,19 +45,19 @@ exports[`Navbar renders correctly 1`] = `
   color: currentColor;
 }
 
-.c6:hover,
-.c6:focus {
+.c7:hover,
+.c7:focus {
   opacity: 0.8;
 }
 
-.c6:active {
+.c7:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c9 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -70,8 +71,11 @@ exports[`Navbar renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c10 {
-  display: inline-block;
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
   -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
@@ -80,42 +84,37 @@ exports[`Navbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c10:last-child {
+.c21:last-child {
   margin-right: 0;
 }
 
-.c10:hover,
-.c10:focus {
+.c21:hover,
+.c21:focus {
   opacity: 0.8;
 }
 
-.c10:active {
+.c21:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c10 svg path {
+.c21 svg path {
   fill: currentColor;
 }
 
-.c11 {
+.c22 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c12 {
-  width: 0.9444444444444444rem;
-  height: 0.9444444444444444rem;
+.c23.c23 {
+  width: NaNrem;
+  height: 1rem;
 }
 
-.c13 {
-  width: 0.9444444444444444rem;
-  height: 0.7777777777777778rem;
-}
-
-.c4 {
+.c5 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -126,7 +125,7 @@ exports[`Navbar renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c18 {
+.c28 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -137,39 +136,57 @@ exports[`Navbar renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c16 svg {
+.c26 svg {
   display: inline-block;
 }
 
-.c16 svg path {
+.c26 svg path {
   fill: currentColor;
 }
 
-.c15 {
+.c25 {
   background: none;
   outline: none;
   border: none;
+  background: rgba(0,0,0,0.07);
+  cursor: pointer;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  min-width: 2.7777777777777777rem;
   height: 2.7777777777777777rem;
+  padding: 0 0.5555555555555556rem;
   text-align: center;
   vertical-align: middle;
+}
+
+.c25 + {
+  padding-left: 0;
+}
+
+.c29 {
+  background: none;
+  outline: none;
+  border: none;
+  background: none;
   cursor: pointer;
-  background: rgba(0,0,0,0.07);
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 2.7777777777777777rem;
+  padding: 0 0.5555555555555556rem;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.c15:focus {
-  border: 0.1111111111111111rem solid currentColor;
-  border-radius: 0.1111111111111111rem;
+.c29 + {
+  padding-left: 0;
 }
 
-.c14 {
+.c24 {
   display: none;
 }
 
-.c20 {
+.c33 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -204,25 +221,150 @@ exports[`Navbar renders correctly 1`] = `
   color: #868686;
 }
 
-.c17 {
+.c27 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c19 {
-  -webkit-transition: -webkit-transform 0.1s;
-  -webkit-transition: transform 0.1s;
-  transition: transform 0.1s;
-  -webkit-transform-origin: 50% 55%;
-  -ms-transform-origin: 50% 55%;
-  transform-origin: 50% 55%;
+.c31 {
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-.c21 {
+.c34 {
   padding-right: 1.1111111111111112rem;
+}
+
+.c30.c30 {
+  width: 1.5555555555555556rem;
+  height: 1.5555555555555556rem;
+}
+
+.c32.c32 {
+  width: 2rem;
+  height: 2rem;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c18 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 7.222222222222222rem;
+  line-height: 1.6666666666666667rem;
+  font-size: 0.8333333333333334rem;
+  color: currentColor;
+}
+
+.c18::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.c18::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.c18:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.c18::placeholder {
+  color: currentColor;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.c18:focus::-webkit-input-placeholder {
+  opacity: 0.8;
+}
+
+.c18:focus::-moz-placeholder {
+  opacity: 0.8;
+}
+
+.c18:focus:-ms-input-placeholder {
+  opacity: 0.8;
+}
+
+.c18:focus::placeholder {
+  opacity: 0.8;
+}
+
+.c16 {
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  background: none;
+  outline: none;
+  border: none;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-right: 0.2222222222222222rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c16:hover,
+.c16:focus {
+  opacity: 0.7;
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+.c16:active {
+  background: rgba(0,0,0,0.1);
+}
+
+.c16 .c17 {
+  width: 1.4444444444444444rem;
+  height: 1.4444444444444444rem;
 }
 
 .c0 {
@@ -239,25 +381,10 @@ exports[`Navbar renders correctly 1`] = `
   -webkit-transition: background 300ms ease-out;
   transition: background 300ms ease-out;
   color: white;
+  padding: 0;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0 1.1111111111111112rem;
-}
-
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -272,7 +399,7 @@ exports[`Navbar renders correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -287,14 +414,45 @@ exports[`Navbar renders correctly 1`] = `
   justify-content: flex-end;
 }
 
-.c3 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 1.1111111111111112rem;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c12 {
+  width: 1.4444444444444444rem;
+  height: 1.4444444444444444rem;
+  color: white;
+}
+
+.c11 {
+  display: none;
+  color: currentColor;
+}
+
+.c13 {
+  margin-right: 0.5555555555555556rem;
+}
+
+.c4 {
   display: inline-block;
   vertical-align: center;
   margin-right: 1.9444444444444444rem;
 }
 
 @media (max-width:62.5em) {
-  .c14 {
+  .c24 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -312,8 +470,109 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c1 {
+  .c15 {
+    display: block;
+    padding: 0;
+  }
+
+  .c15 span.algolia-autocomplete {
+    display: block !important;
+  }
+
+  .c15 span.ds-dropdown-menu::before {
     display: none;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c18 {
+    padding: 0.5555555555555556rem 2.6666666666666665rem;
+    display: block;
+    width: 100%;
+    background: rgb(219,112,147);
+    color: white;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c16 {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5555555555555556rem;
+    height: 1.7777777777777777rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 1.7777777777777777rem;
+    z-index: 1;
+    background: none;
+    color: white;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c1 .c2,
+  .c1 .c9 .c19 {
+    display: none;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c14 {
+    background: currentColor;
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c11 {
+    display: none;
+  }
+
+  .c11 button {
+    cursor: pointer;
+    padding: 0;
+    position: fixed;
+    right: 0.5555555555555556rem;
+    top: 0.6111111111111112rem;
+    border: none;
+    z-index: 2;
+  }
+}
+
+@media (max-width:62.5em) {
+  .c13 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    left: 0;
+    display: none;
+    background: #efefef;
+    overflow-y: auto;
+    margin: 0;
+  }
+
+  .c13 .algolia-autocomplete .ds-dropdown-menu {
+    position: static !important;
+    display: block;
+    max-width: 100%;
+    min-width: 0;
   }
 }
 
@@ -324,29 +583,29 @@ exports[`Navbar renders correctly 1`] = `
     className="c1"
   >
     <div
-      className="c2"
+      className="c2 c3"
     >
       <a
-        className="c3"
+        className="c4"
         href="/"
         onClick={[Function]}
       >
         <div
-          className="c4"
+          className="c5"
         />
       </a>
       <nav
-        className="c5"
+        className="c6"
       >
         <a
-          className="c6"
+          className="c7"
           href="/docs"
           onClick={[Function]}
         >
           Documentation
         </a>
         <span
-          className="c7"
+          className="c8"
         />
         <a
           className="c6"
@@ -359,17 +618,17 @@ exports[`Navbar renders correctly 1`] = `
           className="c7"
         />
         <a
-          className="c6"
+          className="c7"
           href="/ecosystem"
           onClick={[Function]}
         >
           Ecosystem
         </a>
         <span
-          className="c7"
+          className="c8"
         />
         <a
-          className="c6"
+          className="c7"
           href="/releases"
           onClick={[Function]}
         >
@@ -378,18 +637,58 @@ exports[`Navbar renders correctly 1`] = `
       </nav>
     </div>
     <div
-      className="c8"
+      className="c9 c10"
     >
+      <div
+        className="c11"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <svg
+            className="c12"
+          />
+        </button>
+      </div>
+      <div
+        className="c13"
+        onClick={[Function]}
+      >
+        <div
+          className="c14"
+        >
+          <div>
+            <form
+              className="c15"
+            >
+              <label
+                className="c16"
+                htmlFor="docs-search-input"
+              >
+                <svg
+                  className="c17 "
+                />
+              </label>
+              <input
+                className="c18"
+                id="docs-search-input"
+                placeholder="Search docs ..."
+                type="search"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
       <nav
-        className="c9"
+        className="c19 c20"
       >
         <a
-          className="c10"
+          className="c21"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
         >
           <svg
-            className="c11"
+            className="c22"
             height="14"
             viewBox="0 0 15 15"
             width="14"
@@ -404,57 +703,36 @@ exports[`Navbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="c10"
+          className="c21"
           href="https://github.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c12"
-            height="17"
-            viewBox="0 0 17 17"
-            width="17"
-          >
-            <title>
-              github
-            </title>
-            <path
-              d="M15.86 4.34c-.76-1.335-1.79-2.392-3.093-3.17C11.463.39 10.042 0 8.5 0 6.958 0 5.536.39 4.233 1.17 2.93 1.947 1.9 3.004 1.14 4.34.38 5.674 0 7.132 0 8.713c0 1.898.54 3.606 1.62 5.122 1.082 1.517 2.48 2.566 4.19 3.148.2.038.347.01.443-.08.096-.09.144-.203.144-.34l-.006-.612v-1l-.25.05c-.16.03-.36.05-.61.04-.24 0-.5-.03-.77-.08-.26-.05-.51-.16-.74-.34-.23-.18-.39-.41-.49-.7l-.11-.26c-.07-.17-.19-.36-.35-.58-.16-.21-.32-.35-.48-.43l-.08-.05c-.05-.04-.09-.08-.14-.132-.04-.053-.08-.106-.1-.16-.02-.053 0-.097.06-.13.06-.035.17-.052.32-.052l.22.036c.15.03.33.12.55.27.22.154.4.35.54.59.17.31.375.55.615.71.24.164.484.245.727.245s.456-.02.63-.056c.18-.037.346-.094.5-.17.067-.507.248-.896.54-1.17-.42-.043-.795-.112-1.13-.203-.34-.09-.685-.24-1.04-.44-.36-.2-.657-.455-.894-.76-.234-.3-.43-.7-.58-1.19-.15-.49-.225-1.06-.225-1.7 0-.917.29-1.695.875-2.34-.27-.69-.244-1.46.08-2.313.214-.07.53-.015.95.155.42.17.73.314.926.435.195.12.35.225.47.308.684-.2 1.394-.3 2.124-.3s1.44.1 2.124.297l.42-.27c.288-.184.628-.35 1.02-.5.39-.15.69-.195.895-.126.334.857.364 1.63.09 2.317.584.645.875 1.42.875 2.34 0 .64-.072 1.21-.223 1.707-.15.5-.343.897-.583 1.196-.24.298-.54.55-.896.754-.355.202-.702.35-1.04.44-.334.09-.712.16-1.132.205.38.34.57.875.57 1.61v2.39c0 .136.045.25.137.34.096.09.24.118.44.08 1.71-.582 3.11-1.632 4.19-3.15 1.06-1.525 1.6-3.235 1.6-5.13 0-1.58-.38-3.04-1.14-4.37z"
-              fill="#FFF"
-            />
-          </svg>
+            className="c23"
+            height="18"
+          />
         </a>
         <a
-          className="c10"
+          className="c21"
           href="https://medium.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c13"
-            height="14"
-            viewBox="0 0 17 14"
-            width="17"
-          >
-            <title>
-              medium
-            </title>
-            <path
-              d="M5.3 0H.5l1.8 2.4v9L0 13.7h5.3l-2-2.3V3.7L7.8 14 12 3.7v8.7l-1.3 1.3H17l-1.5-1.3v-11L17 0h-4.5L9 8.2 5.2 0z"
-              fill="#fff"
-            />
-          </svg>
+            className="c23"
+            height="18"
+          />
         </a>
       </nav>
     </div>
   </div>
   <div
-    className="c14"
+    className="c24"
   >
     <button
-      className="c15"
-      onClick={undefined}
+      className="c25"
     >
       <svg
-        className="c16"
+        className="c26"
         height="15"
         width="15"
         xmlns="http://www.w3.org/2000/svg"
@@ -477,62 +755,53 @@ exports[`Navbar renders correctly 1`] = `
       </svg>
     </button>
     <a
-      className="c17"
+      aria-label="styled components"
+      className="c27"
       href="/"
       onClick={[Function]}
     >
       <div
-        className="c18"
+        className="c28"
       />
     </a>
-    <button
-      className="c15"
-      onClick={undefined}
-    >
-      <div
-        className="c19"
-        rotate={true}
+    <div>
+      <button
+        className="c29"
+        onClick={[Function]}
       >
         <svg
-          className="c16"
-          height="8"
-          width="12"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
+          className="c30"
+          size={28}
+        />
+      </button>
+      <button
+        className="c25"
+      >
+        <div
+          className="c31"
         >
-          <title>
-            arrow down
-          </title>
-          <use
-            fill="#FFF"
-            transform="translate(1 1)"
-            xlinkHref="#menuArrow"
+          <div
+            className="c32"
+            size={36}
           />
-          <defs>
-            <path
-              d="M5 5l-.7.7.7.7.7-.7L5 5zM9.3-.7l-5 5 1.4 1.4 5-5L9.3-.7zm-3.6 5l-5-5L-.7.7l5 5 1.4-1.4z"
-              id="menuArrow"
-            />
-          </defs>
-        </svg>
-      </div>
-    </button>
+        </div>
+      </button>
+    </div>
     <div
-      className="c20"
-      open={true}
+      className="c33"
     >
       <nav
-        className="c5"
+        className="c6"
       >
         <a
-          className="c6"
+          className="c7"
           href="/docs"
           onClick={[Function]}
         >
           Documentation
         </a>
         <span
-          className="c7"
+          className="c8"
         />
         <a
           className="c6"
@@ -545,39 +814,36 @@ exports[`Navbar renders correctly 1`] = `
           className="c7"
         />
         <a
-          className="c6"
+          className="c7"
           href="/ecosystem"
           onClick={[Function]}
         >
           Ecosystem
         </a>
         <span
-          className="c7"
+          className="c8"
         />
         <a
-          className="c6"
+          className="c7"
           href="/releases"
           onClick={[Function]}
         >
           Releases
         </a>
       </nav>
-      <span
-        className="c7"
-      />
       <div
-        className="c21"
+        className="c34"
       >
         <nav
-          className="c9"
+          className="c20"
         >
           <a
-            className="c10"
+            className="c21"
             href="https://spectrum.chat/styled-components/"
             onClick={[Function]}
           >
             <svg
-              className="c11"
+              className="c22"
               height="14"
               viewBox="0 0 15 15"
               width="14"
@@ -592,44 +858,24 @@ exports[`Navbar renders correctly 1`] = `
             </svg>
           </a>
           <a
-            className="c10"
+            className="c21"
             href="https://github.com/styled-components"
             onClick={[Function]}
           >
             <svg
-              className="c12"
-              height="17"
-              viewBox="0 0 17 17"
-              width="17"
-            >
-              <title>
-                github
-              </title>
-              <path
-                d="M15.86 4.34c-.76-1.335-1.79-2.392-3.093-3.17C11.463.39 10.042 0 8.5 0 6.958 0 5.536.39 4.233 1.17 2.93 1.947 1.9 3.004 1.14 4.34.38 5.674 0 7.132 0 8.713c0 1.898.54 3.606 1.62 5.122 1.082 1.517 2.48 2.566 4.19 3.148.2.038.347.01.443-.08.096-.09.144-.203.144-.34l-.006-.612v-1l-.25.05c-.16.03-.36.05-.61.04-.24 0-.5-.03-.77-.08-.26-.05-.51-.16-.74-.34-.23-.18-.39-.41-.49-.7l-.11-.26c-.07-.17-.19-.36-.35-.58-.16-.21-.32-.35-.48-.43l-.08-.05c-.05-.04-.09-.08-.14-.132-.04-.053-.08-.106-.1-.16-.02-.053 0-.097.06-.13.06-.035.17-.052.32-.052l.22.036c.15.03.33.12.55.27.22.154.4.35.54.59.17.31.375.55.615.71.24.164.484.245.727.245s.456-.02.63-.056c.18-.037.346-.094.5-.17.067-.507.248-.896.54-1.17-.42-.043-.795-.112-1.13-.203-.34-.09-.685-.24-1.04-.44-.36-.2-.657-.455-.894-.76-.234-.3-.43-.7-.58-1.19-.15-.49-.225-1.06-.225-1.7 0-.917.29-1.695.875-2.34-.27-.69-.244-1.46.08-2.313.214-.07.53-.015.95.155.42.17.73.314.926.435.195.12.35.225.47.308.684-.2 1.394-.3 2.124-.3s1.44.1 2.124.297l.42-.27c.288-.184.628-.35 1.02-.5.39-.15.69-.195.895-.126.334.857.364 1.63.09 2.317.584.645.875 1.42.875 2.34 0 .64-.072 1.21-.223 1.707-.15.5-.343.897-.583 1.196-.24.298-.54.55-.896.754-.355.202-.702.35-1.04.44-.334.09-.712.16-1.132.205.38.34.57.875.57 1.61v2.39c0 .136.045.25.137.34.096.09.24.118.44.08 1.71-.582 3.11-1.632 4.19-3.15 1.06-1.525 1.6-3.235 1.6-5.13 0-1.58-.38-3.04-1.14-4.37z"
-                fill="#FFF"
-              />
-            </svg>
+              className="c23"
+              height="18"
+            />
           </a>
           <a
-            className="c10"
+            className="c21"
             href="https://medium.com/styled-components"
             onClick={[Function]}
           >
             <svg
-              className="c13"
-              height="14"
-              viewBox="0 0 17 14"
-              width="17"
-            >
-              <title>
-                medium
-              </title>
-              <path
-                d="M5.3 0H.5l1.8 2.4v9L0 13.7h5.3l-2-2.3V3.7L7.8 14 12 3.7v8.7l-1.3 1.3H17l-1.5-1.3v-11L17 0h-4.5L9 8.2 5.2 0z"
-                fill="#fff"
-              />
-            </svg>
+              className="c23"
+              height="18"
+            />
           </a>
         </nav>
       </div>

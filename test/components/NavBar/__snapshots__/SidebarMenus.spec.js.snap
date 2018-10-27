@@ -3,7 +3,6 @@
 exports[`DocsSidebarMenu renders correctly 1`] = `
 .c3 {
   display: inline-block;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: 0.1111111111111111rem 0.4444444444444444rem;
@@ -42,7 +41,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
 >
   <div
     className="c1"
-    onClick={undefined}
   >
     <h4
       className="c2"
@@ -59,7 +57,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
   </div>
   <div
     className="c1"
-    onClick={undefined}
   >
     <h4
       className="c2"
@@ -76,7 +73,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
   </div>
   <div
     className="c1"
-    onClick={undefined}
   >
     <h4
       className="c2"
@@ -93,7 +89,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
   </div>
   <div
     className="c1"
-    onClick={undefined}
   >
     <h4
       className="c2"
@@ -110,7 +105,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
   </div>
   <div
     className="c1"
-    onClick={undefined}
   >
     <h4
       className="c2"

@@ -1,20 +1,20 @@
-import { isValidElement } from 'react'
+import { isValidElement } from 'react';
 
-const whitespacesRe = /\s+/g
-const _format = (str = '') => str.trim().replace(whitespacesRe, ' ')
+const whitespacesRe = /\s+/g;
+const _format = (str = '') => str.trim().replace(whitespacesRe, ' ');
 
 const elementToTextRec = x => {
   if (Array.isArray(x)) {
-    return x.map(elementToTextRec).join('')
+    return x.map(elementToTextRec).join('');
   } else if (isValidElement(x)) {
-    return elementToTextRec(x.children || x.props.children)
+    return elementToTextRec(x.children || x.props.children);
   } else if (typeof x === 'string') {
-    return x || ''
+    return x || '';
   }
 
-  return ''
-}
+  return '';
+};
 
-const elementToText = node => _format(elementToTextRec(node))
+const elementToText = node => _format(elementToTextRec(node));
 
-export default elementToText
+export default elementToText;

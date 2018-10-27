@@ -1,0 +1,28 @@
+## Passed props
+
+If the styled target is a simple element (e.g. `styled.div`), styled-components passes through any known HTML attribute to the DOM. If it is a custom React component (e.g. `styled(MyComponent)`), styled-components passes through all props.
+
+This example shows how all props of the Input component are passed on to the
+DOM node that is mounted, as with React elements.
+
+```react
+// Create an Input component that'll render an <input> tag with some styles
+const Input = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  color: ${props => props.inputColor || "palevioletred"};
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+`;
+
+// Render a styled text input with the standard input color, and one with a custom input color
+render(
+  <div>
+    <Input defaultValue="@probablyup" type="text" />
+    <Input defaultValue="@geelen" type="text" inputColor="rebeccapurple" />
+  </div>
+);
+```
+
+Note how the `inputColor` prop is not passed to the DOM, but `type` and `defaultValue` are. That is styled-components being smart enough to filter non-standard attributes automatically for you.

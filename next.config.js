@@ -1,67 +1,48 @@
-const path = require('path')
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const path = require('path');
+const withSourceMaps = require('@zeit/next-source-maps');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const withMDX = require('@zeit/next-mdx');
+const withTM = require('@weco/next-plugin-transpile-modules');
 
-module.exports = {
-  webpack: function (config, { dev }) {
-    if (dev) {
-      return config
-    }
+module.exports = withTM({
+  transpileModules: ['styled-icons'],
+  ...withMDX({
+    // Use .md extension
+    extension: /\.md$/,
+  })(
+    withSourceMaps({
+      pageExtensions: ['js', 'jsx', 'md'],
+      webpack: function(config, { dev, isServer }) {
+        if (dev) {
+          return config;
+        }
 
-    config.plugins.push(
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'disabled',
-        // For all options see https://github.com/th0r/webpack-bundle-analyzer#as-plugin
-        generateStatsFile: true,
-        // Will be available at `.next/stats.json`
-        statsFilename: 'stats.json'
-      })
-    )
+        if (!!process.env.ANALYZE) {
+          config.plugins.push(
+            new BundleAnalyzerPlugin({
+              analyzerMode: 'disabled',
+              // For all options see https://github.com/th0r/webpack-bundle-analyzer#as-plugin
+              generateStatsFile: true,
+              // Will be available at `.next/stats.json`
+              statsFilename: 'stats.json',
+            })
+          );
+        }
 
-    const oldEntry = config.entry
+        if (!isServer) {
+          const oldEntry = config.entry;
 
-    config.entry = () => oldEntry()
-      .then(entry => {
-        entry['main.js'].push(
-          path.resolve('./utils/offline.js'),
-          path.resolve('./utils/track.js')
-        )
+          config.entry = () =>
+            oldEntry().then(entry => {
+              entry['main.js'].push(path.resolve('./utils/track.js'));
+              entry.commons = ['./utils/prismTemplateString.js'];
 
-        entry.commons = ['./utils/prismTemplateString.js']
-        return entry
-      })
+              return entry;
+            });
+        }
 
-    config.resolve.alias = config.resolve.alias || {}
-
-    config.plugins.push(
-      new SWPrecacheWebpackPlugin({
-        filename: 'sw.js',
-        minify: true,
-        staticFileGlobsIgnorePatterns: [
-          /\.next\//,
-          /sc-micro-analytics\.now\.sh/
-        ],
-        staticFileGlobs: [
-          'static/**/*' // Precache all static files by default
-        ],
-        forceDelete: true,
-        runtimeCaching: [
-          // Example with different handlers
-          {
-            handler: 'fastest',
-            urlPattern: /[.](png|jpg|css)/
-          },
-          {
-            handler: 'networkFirst',
-            urlPattern: /^http.*/ //cache all files
-          }
-        ]
-      })
-    )
-
-    config.resolve.alias['react'] = 'preact-compat/dist/preact-compat'
-    config.resolve.alias['react-dom'] = 'preact-compat/dist/preact-compat'
-
-    return config
-  }
-}
+        return config;
+      },
+    })
+  ),
+});

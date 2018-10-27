@@ -38,4 +38,3 @@ test('SubHeader renders correctly', () => {
 
   expect(tree).toMatchSnapshot()
 })
-

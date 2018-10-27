@@ -1,26 +1,20 @@
-import React from 'react'
-import styled, { css, keyframes, withTheme, ThemeProvider } from 'styled-components'
-import rem from '../utils/rem'
-import { darkGrey, red } from '../utils/colors'
-import { phone } from '../utils/media'
-import { headerFont, monospace } from '../utils/fonts'
-import captureScroll from './CaptureScroll'
+import React from 'react';
+import styled, { createGlobalStyle, css, keyframes, withTheme, ThemeProvider } from 'styled-components';
+import rem from '../utils/rem';
+import { darkGrey, red } from '../utils/colors';
+import { phone } from '../utils/media';
+import { headerFont, monospace } from '../utils/fonts';
 
-import '../utils/prismTemplateString'
+import '../utils/prismTemplateString';
 
-import {
-  LiveProvider,
-  LiveEditor,
-  LiveError,
-  LivePreview
-} from 'react-live'
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from '@probablyup/react-live';
 
 const StyledProvider = styled(LiveProvider)`
   box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
   overflow: hidden;
   margin: ${rem(35)} 0;
   text-align: left;
-`
+`;
 
 const Row = styled.div`
   display: flex;
@@ -30,8 +24,8 @@ const Row = styled.div`
 
   ${phone(css`
     flex-direction: column;
-  `)}
-`
+  `)};
+`;
 
 const columnMixin = css`
   flex-basis: 50%;
@@ -43,8 +37,8 @@ const columnMixin = css`
     width: 100%;
     max-width: 100%;
     height: auto;
-  `)}
-`
+  `)};
+`;
 
 export const editorMixin = `
   background: ${darkGrey};
@@ -56,14 +50,12 @@ export const editorMixin = `
   overflow-x: hidden;
   cursor: text;
   white-space: pre-wrap;
-`
+`;
 
 const StyledEditor = styled(LiveEditor)`
-  ${editorMixin}
-  ${columnMixin}
-`
-
-const StyledEditorScrollCaptured = captureScroll(StyledEditor)
+  ${editorMixin};
+  ${columnMixin};
+`;
 
 const StyledPreview = styled(LivePreview)`
   position: relative;
@@ -73,8 +65,8 @@ const StyledPreview = styled(LivePreview)`
   height: auto;
   overflow: hidden;
 
-  ${columnMixin}
-`
+  ${columnMixin};
+`;
 
 export const StyledError = styled(LiveError)`
   display: block;
@@ -85,7 +77,7 @@ export const StyledError = styled(LiveError)`
   font-size: 0.8rem;
   font-family: ${headerFont};
   white-space: pre;
-`
+`;
 
 const LiveEdit = ({ noInline, code, scope = {} }) => (
   <StyledProvider
@@ -94,20 +86,21 @@ const LiveEdit = ({ noInline, code, scope = {} }) => (
     mountStylesheet={false}
     scope={{
       ...scope,
-      styled,
+      createGlobalStyle,
       css,
       keyframes,
+      styled,
+      ThemeProvider,
       withTheme,
-      ThemeProvider
     }}
   >
     <Row>
-      <StyledEditorScrollCaptured />
+      <StyledEditor />
       <StyledPreview />
     </Row>
 
     <StyledError />
   </StyledProvider>
-)
+);
 
-export default LiveEdit
+export default LiveEdit;

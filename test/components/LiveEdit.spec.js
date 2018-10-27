@@ -14,7 +14,7 @@ test('LiveEdit renders correctly', () => {
 test('StyledError renders correctly', () => {
   const tree = mount(<StyledError />, {
     context: { live: {} },
-    childContextTypes: { live: PropTypes.object }
+    childContextTypes: { live: PropTypes.object },
   })
 
   expect(tree).toMatchSnapshot()

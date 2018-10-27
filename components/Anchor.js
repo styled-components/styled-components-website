@@ -1,12 +1,12 @@
-import styled, { css } from 'styled-components'
-import rem from '../utils/rem'
+import styled, { css } from 'styled-components';
+import rem from '../utils/rem';
 
-import LinkIcon from 'react-octicons-svg/dist/LinkIcon'
-import { Header, SubHeader, TertiaryHeader } from './Layout'
-import { mobile } from '../utils/media'
+import { Link as LinkIcon } from 'styled-icons/material';
+import { Header, SubHeader, TertiaryHeader } from './Layout';
+import { mobile } from '../utils/media';
 
 const InvisibleAnchor = styled.div.attrs({
-  'aria-hidden': true
+  'aria-hidden': true,
 })`
   position: relative;
   display: block;
@@ -17,19 +17,18 @@ const InvisibleAnchor = styled.div.attrs({
 
   ${mobile(css`
     top: ${rem(-90)};
-  `)}
-`
+  `)};
+`;
 
 const Anchor = styled.a`
   display: none;
-  position: absolute;
-  left: 0;
   color: inherit;
-`
+  margin-left: ${rem(10)};
+`;
 
 const AnchorIcon = styled(LinkIcon).attrs({
   width: null,
-  height: null
+  height: null,
 })`
   width: ${rem(20)};
   opacity: 0.7;
@@ -38,16 +37,12 @@ const AnchorIcon = styled(LinkIcon).attrs({
   &:hover {
     opacity: 0.9;
   }
-`
+`;
 
-const AnchorHeader = styled(Header)`
+const AnchorHeader = styled.div`
   position: relative;
-  margin-left: ${rem(-30)};
-  padding-left: ${rem(30)};
 
   ${mobile(css`
-    margin-left: 0;
-
     /* stylelint-disable-next-line */
     ${Anchor} {
       display: inline-block;
@@ -57,36 +52,34 @@ const AnchorHeader = styled(Header)`
   &:hover ${Anchor} {
     display: inline-block;
   }
-`
+`;
 
-const AnchorSubHeader = AnchorHeader.withComponent(SubHeader)
-const AnchorTertiaryHeader = AnchorHeader.withComponent(TertiaryHeader)
+const Link = ({ children, level, id, ...props }) => {
+  let override = undefined;
 
-const Link = ({ children, level, id }) => {
-  let Child = AnchorHeader
-
-  switch(level) {
+  switch (level) {
     case 3:
-      Child = AnchorSubHeader
-      break
+      override = SubHeader;
+      break;
     case 4:
-      Child = AnchorTertiaryHeader
-      break
+      override = TertiaryHeader;
+      break;
     default:
-      break
+      override = Header;
+      break;
   }
 
   return (
-    <Child>
+    <AnchorHeader {...props} as={override}>
       <InvisibleAnchor id={id} />
 
-      <Anchor href={`#${id}`}>
+      {children}
+
+      <Anchor href={`#${id}`} aria-label={id}>
         <AnchorIcon />
       </Anchor>
+    </AnchorHeader>
+  );
+};
 
-      {children}
-    </Child>
-  )
-}
-
-export default Link
+export default Link;

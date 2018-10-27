@@ -11,25 +11,22 @@
           "title": "Installation"
         },
         {
-          "title": "Alternative Installation"
-        },
-        {
           "title": "Getting Started"
-        },
-        {
-          "title": "Coming from CSS"
-        },
-        {
-          "title": "Passed props"
         },
         {
           "title": "Adapting based on props"
         },
         {
+          "title": "Extending styles"
+        },
+        {
           "title": "Styling any components"
         },
         {
-          "title": "Extending styles"
+          "title": "Passed props"
+        },
+        {
+          "title": "Coming from CSS"
         },
         {
           "title": "Attaching additional props"
@@ -69,6 +66,9 @@
         },
         {
           "title": "Referring to other components"
+        },
+        {
+          "title": "Style Objects"
         }
       ]
     },
@@ -83,6 +83,9 @@
           "title": "Helpers"
         },
         {
+          "title": "Test Utilities"
+        },
+        {
           "title": "Supported CSS"
         },
         {
@@ -90,6 +93,9 @@
         },
         {
           "title": "TypeScript"
+        },
+        {
+          "title": "Previous APIs"
         }
       ]
     },
@@ -101,7 +107,13 @@
           "title": "Babel Plugin"
         },
         {
-          "title": "Test Utilities"
+          "title": "Babel Macro"
+        },
+        {
+          "title": "TypeScript Plugin"
+        },
+        {
+          "title": "Jest Integration"
         },
         {
           "title": "Stylelint"
@@ -118,17 +130,48 @@
       "title": "FAQs",
       "pathname": "faqs",
       "sections": [
-        { "title": "Can I nest rules?" },
-        { "title": "When should I use styled()?" },
-        { "title": "Can I use css frameworks?" },
-        { "title": "How can I override styles with higher specificity?" },
-        { "title": "How can I override inline styles?" },
-        { "title": "Why do my DOM nodes have two classes?" },
-        { "title": "When to use attrs?" },
-        { "title": "I am a library author. Should I bundle styled-components with my library?" },
-        { "title": "Why am I getting a warning about several instances of module on the page?" },
-        { "title": "Why am I getting HTML attribute warnings?" },
-        { "title": "Which browsers are supported?" }
+        {
+          "title": "What do I need to do to migrate to v4?"
+        },
+        {
+          "title": "Can I nest rules?"
+        },
+        {
+          "title": "Can I use css frameworks?"
+        },
+        {
+          "title": "How can I override styles with higher specificity?"
+        },
+        {
+          "title": "How can I override inline styles?"
+        },
+        {
+          "title": "Why do my DOM nodes have two classes?"
+        },
+        {
+          "title": "When to use attrs?"
+        },
+        {
+          "title": "I am a library author. Should I bundle styled-components with my library?"
+        },
+        {
+          "title": "Why am I getting a warning about several instances of module on the page?"
+        },
+        {
+          "title": "Why am I getting HTML attribute warnings?"
+        },
+        {
+          "title": "Which browsers are supported?"
+        },
+        {
+          "title": "How do I use styled-components with create-react-app?"
+        },
+        {
+          "title": "How can I fix issues when using npm link or yarn link?"
+        },
+        {
+          "title": "How do I fix flickering text after server side rendering?"
+        }
       ]
     }
   ]

@@ -1,35 +1,51 @@
 {
   "plugins": [
     "babel-plugin-polished",
-    ["module-resolver", {
-      "alias": {
-        "components": "./components"
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "components": "./components"
+        }
       }
-    }]
+    ]
   ],
   "env": {
     "development": {
-      "presets": "next/babel",
+      "presets": [
+        "next/babel"
+      ],
       "plugins": [
-        ["babel-plugin-styled-components", {
-          "displayName": true,
-          "ssr": true
-        }]
+        [
+          "babel-plugin-styled-components"
+        ]
       ]
     },
     "production": {
-      "presets": "next/babel",
+      "presets": [
+        "next/babel"
+      ],
       "plugins": [
-        ["babel-plugin-styled-components", {
-          "displayName": true,
-          "ssr": true
-        }]
+        [
+          "babel-plugin-styled-components",
+          {
+            "pure": true
+          }
+        ]
       ]
     },
     "test": {
       "presets": [
-        ["env", { "modules": "commonjs" }],
+        [
+          "@babel/preset-env",
+          {
+            "modules": "commonjs"
+          }
+        ],
         "next/babel"
+      ],
+      "plugins": [
+        "babel-plugin-dynamic-import-node"
       ]
     }
   }

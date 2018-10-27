@@ -1,31 +1,30 @@
-import React, { PureComponent } from 'react'
-import styled, { css } from 'styled-components'
-import { LiveProvider, LiveEditor } from 'react-live'
-import HeartIcon from 'react-octicons-svg/dist/HeartIcon'
+import React, { PureComponent } from 'react';
+import styled, { css } from 'styled-components';
+import { LiveProvider, LiveEditor, LivePreview } from '@probablyup/react-live';
+import { Favorite } from 'styled-icons/material';
 
-import rem from '../utils/rem'
-import { mobile } from '../utils/media'
-import { violetRed, gold, grey, paleGrey, red } from '../utils/colors'
-import { editorMixin, StyledError } from '../components/LiveEdit'
-import Link from '../components/Link'
-import { Content } from '../components/Layout'
-import captureScroll from '../components/CaptureScroll'
-import SeoHead from '../components/SeoHead'
-import HomepageGettingStarted from '../sections/homepage-getting-started'
-import WithIsScrolled from '../components/WithIsScrolled'
-import Nav from '../components/Nav'
+import rem from '../utils/rem';
+import { mobile } from '../utils/media';
+import { violetRed, gold, grey, paleGrey, red } from '../utils/colors';
+import { editorMixin, StyledError } from '../components/LiveEdit';
+import Link from '../components/Link';
+import { Content } from '../components/Layout';
+import SeoHead from '../components/SeoHead';
+import HomepageGettingStarted from '../sections/homepage/getting-started.md';
+import WithIsScrolled from '../components/WithIsScrolled';
+import Nav from '../components/Nav';
 
 const Tagline = styled.h1`
   font-weight: 600;
   font-size: 1.3rem;
-`
+`;
 
 const SupportingTagline = styled.h2`
   font-size: 1.1rem;
   font-weight: 400;
-`
+`;
 
-const headerCode = (`
+const headerCode = `
 const Button = styled.a\`
   /* This renders the buttons above... Edit me! */
   display: inline-block;
@@ -44,9 +43,25 @@ const Button = styled.a\`
     color: palevioletred;
   \`}
 \`
-`).trim()
 
-import { LiveContextTypes } from 'react-live/lib/components/Live/LiveProvider'
+render(
+  <div>
+    <Button
+      href="https://github.com/styled-components/styled-components"
+      target="_blank"
+      rel="noopener"
+      primary
+    >
+      GitHub
+    </Button>
+
+    <Button as={Link} href="/docs" prefetch>
+      Documentation
+    </Button>
+  </div>
+)
+`.trim();
+
 import {
   BloombergLogo,
   AtlassianLogo,
@@ -58,32 +73,7 @@ import {
   HuffpostLogo,
   CoinbaseLogo,
   PatreonLogo,
-} from '../components/CompanyLogos'
-
-const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button } }) => {
-  const InternalButton = Button.withComponent(Link)
-  return (
-    <div
-      {...rest}
-      className={`react-live-preview ${className}`}
-    >
-      <Button
-        href="https://github.com/styled-components/styled-components"
-        target="_blank"
-        rel="noopener"
-        primary
-      >
-        GitHub
-      </Button>
-
-      <InternalButton href="/docs" prefetch>
-        Documentation
-      </InternalButton>
-    </div>
-  )
-}
-
-HomepageLivePreview.contextTypes = LiveContextTypes
+} from '../components/CompanyLogos';
 
 const Title = styled.div`
   margin: 2rem 0;
@@ -92,15 +82,15 @@ const Title = styled.div`
   h2 {
     margin: 0;
   }
-`
+`;
 
 const Logo = styled.img.attrs({
   alt: 'styled-components Logo',
-  src: '/static/logo.png'
+  src: '/static/logo.png',
 })`
   width: ${rem(125)};
   height: ${rem(125)};
-`
+`;
 
 const UsersWrapper = styled.section`
   display: flex;
@@ -108,7 +98,7 @@ const UsersWrapper = styled.section`
   justify-content: center;
   padding: 0.5rem;
   margin-bottom: 2rem;
-`
+`;
 
 const UsersHeading = styled.p`
   text-transform: uppercase;
@@ -117,7 +107,7 @@ const UsersHeading = styled.p`
   font-weight: 600;
   margin: 2.5rem 0 0.5rem;
   opacity: 0.8;
-`
+`;
 
 const CompanyLogo = styled.span`
   position: relative;
@@ -131,10 +121,10 @@ const CompanyLogo = styled.span`
   &:hover {
     opacity: 1;
   }
-`
+`;
 
 const Wrapper = styled.div.attrs({
-  className: 'hero-header' // for integration tests
+  className: 'hero-header', // for integration tests
 })`
   display: flex;
   flex-direction: column;
@@ -147,7 +137,7 @@ const Wrapper = styled.div.attrs({
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
   min-height: 100vh;
-`
+`;
 
 const EditorContainer = styled.div`
   display: inline-block;
@@ -156,18 +146,18 @@ const EditorContainer = styled.div`
   text-align: left;
   width: 100%;
   max-width: 34rem;
-`
+`;
 
-const Editor = captureScroll(styled(LiveEditor)`
-  ${editorMixin}
+const Editor = styled(LiveEditor)`
+  ${editorMixin};
   height: 24rem;
   white-space: pre;
   width: 100%;
-`)
+`;
 
 const Links = styled.div`
   margin: ${rem(36)} 0;
-`
+`;
 
 const Footer = styled.footer`
   display: flex;
@@ -179,48 +169,46 @@ const Footer = styled.footer`
   background: ${paleGrey};
   box-sizing: border-box;
   margin-top: ${rem(50)};
-`
+`;
 
-const Heart = styled(HeartIcon).attrs({
-  width: null,
-  height: null
-})`
+const Heart = styled(Favorite)`
   display: inline-block;
   width: ${rem(17)};
-  color: ${red}
-`
+  color: ${red};
+  transform: translateY(-10%);
+`;
 
 const FooterLink = styled(Link)`
   color: ${grey};
-`
+`;
 
 const FooterContent = styled(Content)`
   padding: ${rem(30)} ${rem(40)} ${rem(30)} ${rem(40)};
 
   ${mobile(css`
-  padding: ${rem(30)} ${rem(20)} ${rem(30)} ${rem(20)};
-`)}
-`
+    padding: ${rem(30)} ${rem(20)} ${rem(30)} ${rem(20)};
+  `)};
+`;
 
 class Index extends PureComponent {
   state = {
     isMobileNavFolded: true,
-  }
+  };
 
   toggleMobileNav = () => {
     this.setState(prevState => ({
       isMobileNavFolded: !prevState.isMobileNavFolded,
-    }))
-  }
+    }));
+  };
 
   onRouteChange = () => {
     this.setState({
       isMobileNavFolded: true,
-    })
-  }
+    });
+  };
 
   render() {
-    const { isMobileNavFolded } = this.state
+    const { isMobileNavFolded } = this.state;
     return (
       <div>
         <SeoHead title="styled-components">
@@ -241,11 +229,7 @@ class Index extends PureComponent {
 
         <Wrapper>
           <Content hero>
-            <LiveProvider
-              code={headerCode}
-              mountStylesheet={false}
-              scope={{ styled, css, rem, Link }}>
-
+            <LiveProvider code={headerCode} noInline mountStylesheet={false} scope={{ React, styled, css, rem, Link }}>
               <Logo />
 
               <Title>
@@ -256,7 +240,7 @@ class Index extends PureComponent {
               </Title>
 
               <Links>
-                <HomepageLivePreview />
+                <LivePreview />
               </Links>
 
               <EditorContainer>
@@ -307,7 +291,6 @@ class Index extends PureComponent {
               <CompanyLogo>
                 <PatreonLogo />
               </CompanyLogo>
-
             </UsersWrapper>
           </Content>
         </Wrapper>
@@ -315,23 +298,42 @@ class Index extends PureComponent {
         <HomepageGettingStarted />
 
         <Footer>
-          <FooterContent hero> {'Hosted on ▲ ZEIT Now'}
-
+          <FooterContent hero>
+            {' '}
+            {'Hosted on ▲ ZEIT Now'}
             <br />
-
             {'Made with '}
             <Heart />
             {' by '}
-            <FooterLink inline href="https://twitter.com/glenmaddern">@glenmaddern</FooterLink>
+            <FooterLink inline href="https://twitter.com/glenmaddern">
+              @glenmaddern
+            </FooterLink>
             {', '}
-            <FooterLink inline href="https://twitter.com/mxstbr">@mxstbr</FooterLink>
-            {' & '}
-            <FooterLink inline href="https://twitter.com/_philpl">@_philpl‬</FooterLink>
+            <FooterLink inline href="https://twitter.com/mxstbr">
+              @mxstbr
+            </FooterLink>
+            {', '}
+            <FooterLink inline href="https://twitter.com/_philpl">
+              @_philpl‬
+            </FooterLink>
+            {', '}
+            <FooterLink inline href="https://twitter.com/probablyup">
+              @probablyup
+            </FooterLink>
+            {', '}
+            <FooterLink inline href="https://twitter.com/imbhargav5">
+              @imbhargav5
+            </FooterLink>
+            {' and '}
+            <FooterLink inline href="https://github.com/orgs/styled-components/people">
+              contributors
+            </FooterLink>
+            {'.'}
           </FooterContent>
         </Footer>
       </div>
-    )
+    );
   }
 }
 
-export default Index
+export default Index;

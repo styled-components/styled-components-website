@@ -3,13 +3,18 @@
 exports[`InlineLink renders correctly 1`] = `
 .c0 {
   color: rgb(219,112,147);
-  text-decoration: underline;
-  font-weight: 600;
   cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0:hover {
+  color: #ff5555;
 }
 
 <a
   className="c0"
+  href="/"
   rel="noopener"
   target="_blank"
 />
@@ -18,7 +23,6 @@ exports[`InlineLink renders correctly 1`] = `
 exports[`Link renders correctly 1`] = `
 .c0 {
   display: inline-block;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: 0.1111111111111111rem 0.4444444444444444rem;
@@ -37,7 +41,7 @@ exports[`Link renders correctly 1`] = `
 
 <a
   className="c0"
-  href={undefined}
+  href="/"
   onClick={[Function]}
 />
 `;
@@ -45,7 +49,6 @@ exports[`Link renders correctly 1`] = `
 exports[`StyledLink renders correctly 1`] = `
 .c0 {
   display: inline-block;
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
   padding: 0.1111111111111111rem 0.4444444444444444rem;
@@ -64,5 +67,6 @@ exports[`StyledLink renders correctly 1`] = `
 
 <a
   className="c0"
+  href="/"
 />
 `;
