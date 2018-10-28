@@ -1,18 +1,19 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export function generateShowcaseUrl(item) {
   return {
     href: `/showcase?item=${item.internalUrl}`,
-    as: `/showcase/${item.internalUrl}`
-  }
+    as: `/showcase/${item.internalUrl}`,
+  };
 }
 
-function ShowcaseLink({item, children}) {
-  const {href, as} = generateShowcaseUrl(item)
-  console.log(children)
-  return <Link href={href} as={as} replace>
-    {children}
-  </Link>
+function ShowcaseLink({ item, children }) {
+  const { href, as } = generateShowcaseUrl(item);
+  return (
+    <Link href={href} as={as} replace>
+      {children}
+    </Link>
+  );
 }
 
-export default ShowcaseLink
+export default ShowcaseLink;
