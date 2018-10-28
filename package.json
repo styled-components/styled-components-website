@@ -45,6 +45,7 @@
     "prismjs": "^1.6.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-transition-group": "^2.5.0",
     "styled-components": "^4.0.0-beta.11",
     "styled-icons": "^3.0.0",
     "styled-theming": "^2.2.0",
