@@ -1,7 +1,6 @@
 import ShowcaseLink from './ShowcaseLink';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Image from '../Image';
-import ImageLoader from './ImageLoader';
 
 function Navigation({ previous, item }) {
   return (
@@ -17,7 +16,7 @@ function Navigation({ previous, item }) {
               return (
                 <TransitionGroup>
                   <CSSTransition key={props.src} timeout={100} classNames="fade">
-                    <ImageLoader item={item} />
+                    <img src={item.src} />
                   </CSSTransition>
                 </TransitionGroup>
               );
