@@ -337,14 +337,14 @@ exports[`MobileNavbar renders correctly 1`] = `
         className="c12"
       />
       <a
-        className="c8"
+        className="c11"
         href="/showcase"
         onClick={[Function]}
       >
         Showcase
       </a>
       <span
-        className="c9"
+        className="c12"
       />
       <a
         className="c11"

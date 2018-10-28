@@ -812,62 +812,8 @@ exports[`Nav renders correctly 1`] = `
                               href="/"
                               unstyled={true}
                             >
-                              <a
-                                className="c6"
-                                href="/docs"
-                                onClick={[Function]}
-                              >
-                                Documentation
-                              </a>
-                            </Link>
-                          </Link>
-                        </Styled(Link)>
-                        <styled.span>
-                          <span
-                            className="c7"
-                          />
-                        </styled.span>
-                        <Styled(Link)
-                          href="/showcase"
-                        >
-                          <Link
-                            className="c6"
-                            href="/showcase"
-                            unstyled={true}
-                          >
-                            <Link
-                              href="/showcase"
-                            >
-                              <a
-                                className="c6"
-                                href="/showcase"
-                                onClick={[Function]}
-                              >
-                                Showcase
-                              </a>
-                            </Link>
-                          </Link>
-                        </Styled(Link)>
-                        <styled.span>
-                          <span
-                            className="c7"
-                          />
-                        </styled.span>
-                        <Styled(Link)
-                          href="/ecosystem"
-                        >
-                          <Link
-                            className="c6"
-                            href="/ecosystem"
-                            unstyled={true}
-                          >
-                            <Link
-                              href="/ecosystem"
-                            >
-                              <a
-                                className="c6"
-                                href="/ecosystem"
-                                onClick={[Function]}
+                              <Link
+                                href="/"
                               >
                                 <a
                                   className="c4"
@@ -1024,6 +970,125 @@ exports[`Nav renders correctly 1`] = `
                                           onClick={[Function]}
                                         >
                                           Documentation
+                                        </a>
+                                      </Link>
+                                    </Link>
+                                  </StyledComponent>
+                                </ForwardRef>
+                                <ForwardRef>
+                                  <StyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": undefined,
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-htpNat",
+                                          "isStatic": true,
+                                          "lastClassName": "c8",
+                                          "rules": Array [
+                                            "
+  flex: 0 0 auto;
+  width: ",
+                                            "0.2777777777777778rem",
+                                            ";
+  height: ",
+                                            "0.2777777777777778rem",
+                                            ";
+  margin: 0 ",
+                                            "0.8333333333333334rem",
+                                            ";
+
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+",
+                                          ],
+                                        },
+                                        "displayName": "styled.span",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-htpNat",
+                                        "target": "span",
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
+                                  >
+                                    <span
+                                      className="c8"
+                                    />
+                                  </StyledComponent>
+                                </ForwardRef>
+                                <ForwardRef
+                                  href="/showcase"
+                                >
+                                  <StyledComponent
+                                    forwardedClass={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": Object {
+                                          "prefetch": true,
+                                          "unstyled": true,
+                                        },
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "sc-ifAKCX",
+                                          "isStatic": true,
+                                          "lastClassName": "c7",
+                                          "rules": Array [
+                                            "
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: ",
+                                            "2.7777777777777777rem",
+                                            ";
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+
+  letter-spacing: ",
+                                            "0.022222222222222223rem",
+                                            ";
+  color: currentColor;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+",
+                                          ],
+                                        },
+                                        "displayName": "Styled(Link)",
+                                        "render": [Function],
+                                        "styledComponentId": "sc-ifAKCX",
+                                        "target": [Function],
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                        Symbol(Symbol.hasInstance): [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
+                                    href="/showcase"
+                                  >
+                                    <Link
+                                      className="c7"
+                                      href="/showcase"
+                                      prefetch={true}
+                                      unstyled={true}
+                                    >
+                                      <Link
+                                        href="/showcase"
+                                        prefetch={true}
+                                      >
+                                        <a
+                                          className="c7"
+                                          href="/showcase"
+                                          onClick={[Function]}
+                                        >
+                                          Showcase
                                         </a>
                                       </Link>
                                     </Link>
@@ -2773,44 +2838,73 @@ exports[`Nav renders correctly 1`] = `
                                   }
                                   forwardedRef={null}
                                 >
-                                  Documentation
-                                </a>
-                              </Link>
-                            </Link>
-                          </Styled(Link)>
-                          <styled.span>
-                            <span
-                              className="c7"
-                            />
-                          </styled.span>
-                          <Styled(Link)
-                            href="/showcase"
-                          >
-                            <Link
-                              className="c6"
-                              href="/showcase"
-                              unstyled={true}
-                            >
-                              <Link
-                                href="/showcase"
-                              >
-                                <a
-                                  className="c6"
-                                  href="/showcase"
-                                  onClick={[Function]}
-                                >
-                                  Showcase
-                                </a>
-                              </Link>
-                            </Link>
-                          </Styled(Link)>
-                          <styled.span>
-                            <span
-                              className="c7"
-                            />
-                          </styled.span>
-                          <Styled(Link)
-                            href="/ecosystem"
+                                  <div
+                                    className="c28"
+                                  />
+                                </StyledComponent>
+                              </ForwardRef>
+                            </a>
+                          </Link>
+                        </Link>
+                      </StyledComponent>
+                    </ForwardRef>
+                    <div>
+                      <ForwardRef
+                        onClick={[Function]}
+                      >
+                        <StyledComponent
+                          forwardedClass={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": undefined,
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-gZMcBi",
+                                "isStatic": false,
+                                "lastClassName": "c25",
+                                "rules": Array [
+                                  "
+  ",
+                                  "
+  background: none;
+  outline: none;
+  border: none;
+",
+                                  ";
+  background: ",
+                                  [Function],
+                                  ";
+  cursor: pointer;
+  flex: 0 0 auto;
+  height: ",
+                                  "2.7777777777777777rem",
+                                  ";
+  padding: 0 ",
+                                  "0.5555555555555556rem",
+                                  ";
+  text-align: center;
+  vertical-align: middle;
+
+  & + ",
+                                  " {
+    padding-left: 0;
+  }
+",
+                                ],
+                              },
+                              "displayName": "styled.button",
+                              "render": [Function],
+                              "styledComponentId": "sc-gZMcBi",
+                              "target": "button",
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          onClick={[Function]}
+                        >
+                          <button
+                            className="c29"
+                            onClick={[Function]}
                           >
                             <ForwardRef
                               as={[Function]}
@@ -3168,6 +3262,125 @@ exports[`Nav renders correctly 1`] = `
                                             onClick={[Function]}
                                           >
                                             Documentation
+                                          </a>
+                                        </Link>
+                                      </Link>
+                                    </StyledComponent>
+                                  </ForwardRef>
+                                  <ForwardRef>
+                                    <StyledComponent
+                                      forwardedClass={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "attrs": undefined,
+                                          "componentStyle": ComponentStyle {
+                                            "componentId": "sc-htpNat",
+                                            "isStatic": true,
+                                            "lastClassName": "c8",
+                                            "rules": Array [
+                                              "
+  flex: 0 0 auto;
+  width: ",
+                                              "0.2777777777777778rem",
+                                              ";
+  height: ",
+                                              "0.2777777777777778rem",
+                                              ";
+  margin: 0 ",
+                                              "0.8333333333333334rem",
+                                              ";
+
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+",
+                                            ],
+                                          },
+                                          "displayName": "styled.span",
+                                          "render": [Function],
+                                          "styledComponentId": "sc-htpNat",
+                                          "target": "span",
+                                          "warnTooManyClasses": [Function],
+                                          "withComponent": [Function],
+                                        }
+                                      }
+                                      forwardedRef={null}
+                                    >
+                                      <span
+                                        className="c8"
+                                      />
+                                    </StyledComponent>
+                                  </ForwardRef>
+                                  <ForwardRef
+                                    href="/showcase"
+                                  >
+                                    <StyledComponent
+                                      forwardedClass={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "attrs": Object {
+                                            "prefetch": true,
+                                            "unstyled": true,
+                                          },
+                                          "componentStyle": ComponentStyle {
+                                            "componentId": "sc-ifAKCX",
+                                            "isStatic": true,
+                                            "lastClassName": "c7",
+                                            "rules": Array [
+                                              "
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: ",
+                                              "2.7777777777777777rem",
+                                              ";
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+
+  letter-spacing: ",
+                                              "0.022222222222222223rem",
+                                              ";
+  color: currentColor;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+",
+                                            ],
+                                          },
+                                          "displayName": "Styled(Link)",
+                                          "render": [Function],
+                                          "styledComponentId": "sc-ifAKCX",
+                                          "target": [Function],
+                                          "warnTooManyClasses": [Function],
+                                          "withComponent": [Function],
+                                          Symbol(Symbol.hasInstance): [Function],
+                                        }
+                                      }
+                                      forwardedRef={null}
+                                      href="/showcase"
+                                    >
+                                      <Link
+                                        className="c7"
+                                        href="/showcase"
+                                        prefetch={true}
+                                        unstyled={true}
+                                      >
+                                        <Link
+                                          href="/showcase"
+                                          prefetch={true}
+                                        >
+                                          <a
+                                            className="c7"
+                                            href="/showcase"
+                                            onClick={[Function]}
+                                          >
+                                            Showcase
                                           </a>
                                         </Link>
                                       </Link>
