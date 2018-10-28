@@ -610,14 +610,14 @@ exports[`Navbar renders correctly 1`] = `
           className="c7"
         />
         <a
-          className="c6"
+          className="c7"
           href="/showcase"
           onClick={[Function]}
         >
           Showcase
         </a>
         <span
-          className="c7"
+          className="c8"
         />
         <a
           className="c6"
@@ -813,14 +813,14 @@ exports[`Navbar renders correctly 1`] = `
           className="c7"
         />
         <a
-          className="c6"
+          className="c7"
           href="/showcase"
           onClick={[Function]}
         >
           Showcase
         </a>
         <span
-          className="c7"
+          className="c8"
         />
         <a
           className="c6"
