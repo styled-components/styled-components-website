@@ -905,45 +905,563 @@ exports[`DocsLayout renders correctly 1`] = `
                                       href="/"
                                       unstyled={true}
                                     >
-                                      Documentation
-                                    </a>
-                                  </Link>
-                                </Link>
-                              </Styled(Link)>
-                              <styled.span>
-                                <span
-                                  className="c8"
-                                />
-                              </styled.span>
-                              <Styled(Link)
-                                href="/showcase"
-                              >
-                                <Link
-                                  className="c7"
-                                  href="/showcase"
-                                  unstyled={true}
-                                >
-                                  <Link
-                                    href="/showcase"
-                                  >
-                                    <a
-                                      className="c7"
-                                      href="/showcase"
-                                      onClick={[Function]}
-                                    >
-                                      Showcase
-                                    </a>
-                                  </Link>
-                                </Link>
-                              </Styled(Link)>
-                              <styled.span>
-                                <span
-                                  className="c8"
-                                />
-                              </styled.span>
-                              <Styled(Link)
-                                href="/ecosystem"
+                                      <Link
+                                        href="/"
+                                      >
+                                        <a
+                                          className="c5"
+                                          href="/"
+                                          onClick={[Function]}
+                                        >
+                                          <ForwardRef>
+                                            <StyledComponent
+                                              forwardedClass={
+                                                Object {
+                                                  "$$typeof": Symbol(react.forward_ref),
+                                                  "attrs": undefined,
+                                                  "componentStyle": ComponentStyle {
+                                                    "componentId": "sc-dnqmqq",
+                                                    "isStatic": false,
+                                                    "lastClassName": "c29",
+                                                    "rules": Array [
+                                                      "
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
 
+  background-position: center;
+  background-size: contain;
+
+  ",
+                                                      [Function],
+                                                      ";
+",
+                                                    ],
+                                                  },
+                                                  "displayName": "styled.div",
+                                                  "render": [Function],
+                                                  "styledComponentId": "sc-dnqmqq",
+                                                  "target": "div",
+                                                  "warnTooManyClasses": [Function],
+                                                  "withComponent": [Function],
+                                                }
+                                              }
+                                              forwardedRef={null}
+                                            >
+                                              <div
+                                                className="c6"
+                                              />
+                                            </StyledComponent>
+                                          </ForwardRef>
+                                        </a>
+                                      </Link>
+                                    </Link>
+                                  </StyledComponent>
+                                </ForwardRef>
+                                <NavLinks>
+                                  <ForwardRef>
+                                    <StyledComponent
+                                      forwardedClass={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "attrs": undefined,
+                                          "componentStyle": ComponentStyle {
+                                            "componentId": "sc-bxivhb",
+                                            "isStatic": true,
+                                            "lastClassName": "c7",
+                                            "rules": Array [
+                                              "
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-right: ",
+                                              "1.6666666666666667rem",
+                                              ";
+",
+                                            ],
+                                          },
+                                          "displayName": "styled.nav",
+                                          "render": [Function],
+                                          "styledComponentId": "sc-bxivhb",
+                                          "target": "nav",
+                                          "warnTooManyClasses": [Function],
+                                          "withComponent": [Function],
+                                        }
+                                      }
+                                      forwardedRef={null}
+                                    >
+                                      <nav
+                                        className="c7"
+                                      >
+                                        <ForwardRef
+                                          href="/docs"
+                                        >
+                                          <StyledComponent
+                                            forwardedClass={
+                                              Object {
+                                                "$$typeof": Symbol(react.forward_ref),
+                                                "attrs": Object {
+                                                  "prefetch": true,
+                                                  "unstyled": true,
+                                                },
+                                                "componentStyle": ComponentStyle {
+                                                  "componentId": "sc-ifAKCX",
+                                                  "isStatic": true,
+                                                  "lastClassName": "c8",
+                                                  "rules": Array [
+                                                    "
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: ",
+                                                    "2.7777777777777777rem",
+                                                    ";
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+
+  letter-spacing: ",
+                                                    "0.022222222222222223rem",
+                                                    ";
+  color: currentColor;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+",
+                                                  ],
+                                                },
+                                                "displayName": "Styled(Link)",
+                                                "render": [Function],
+                                                "styledComponentId": "sc-ifAKCX",
+                                                "target": [Function],
+                                                "warnTooManyClasses": [Function],
+                                                "withComponent": [Function],
+                                                Symbol(Symbol.hasInstance): [Function],
+                                              }
+                                            }
+                                            forwardedRef={null}
+                                            href="/docs"
+                                          >
+                                            <Link
+                                              className="c8"
+                                              href="/docs"
+                                              prefetch={true}
+                                              unstyled={true}
+                                            >
+                                              <Link
+                                                href="/docs"
+                                                prefetch={true}
+                                              >
+                                                <a
+                                                  className="c8"
+                                                  href="/docs"
+                                                  onClick={[Function]}
+                                                >
+                                                  Documentation
+                                                </a>
+                                              </Link>
+                                            </Link>
+                                          </StyledComponent>
+                                        </ForwardRef>
+                                        <ForwardRef>
+                                          <StyledComponent
+                                            forwardedClass={
+                                              Object {
+                                                "$$typeof": Symbol(react.forward_ref),
+                                                "attrs": undefined,
+                                                "componentStyle": ComponentStyle {
+                                                  "componentId": "sc-htpNat",
+                                                  "isStatic": true,
+                                                  "lastClassName": "c9",
+                                                  "rules": Array [
+                                                    "
+  flex: 0 0 auto;
+  width: ",
+                                                    "0.2777777777777778rem",
+                                                    ";
+  height: ",
+                                                    "0.2777777777777778rem",
+                                                    ";
+  margin: 0 ",
+                                                    "0.8333333333333334rem",
+                                                    ";
+
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+",
+                                                  ],
+                                                },
+                                                "displayName": "styled.span",
+                                                "render": [Function],
+                                                "styledComponentId": "sc-htpNat",
+                                                "target": "span",
+                                                "warnTooManyClasses": [Function],
+                                                "withComponent": [Function],
+                                              }
+                                            }
+                                            forwardedRef={null}
+                                          >
+                                            <span
+                                              className="c9"
+                                            />
+                                          </StyledComponent>
+                                        </ForwardRef>
+                                        <ForwardRef
+                                          href="/showcase"
+                                        >
+                                          <StyledComponent
+                                            forwardedClass={
+                                              Object {
+                                                "$$typeof": Symbol(react.forward_ref),
+                                                "attrs": Object {
+                                                  "prefetch": true,
+                                                  "unstyled": true,
+                                                },
+                                                "componentStyle": ComponentStyle {
+                                                  "componentId": "sc-ifAKCX",
+                                                  "isStatic": true,
+                                                  "lastClassName": "c8",
+                                                  "rules": Array [
+                                                    "
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: ",
+                                                    "2.7777777777777777rem",
+                                                    ";
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+
+  letter-spacing: ",
+                                                    "0.022222222222222223rem",
+                                                    ";
+  color: currentColor;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+",
+                                                  ],
+                                                },
+                                                "displayName": "Styled(Link)",
+                                                "render": [Function],
+                                                "styledComponentId": "sc-ifAKCX",
+                                                "target": [Function],
+                                                "warnTooManyClasses": [Function],
+                                                "withComponent": [Function],
+                                                Symbol(Symbol.hasInstance): [Function],
+                                              }
+                                            }
+                                            forwardedRef={null}
+                                            href="/showcase"
+                                          >
+                                            <Link
+                                              className="c8"
+                                              href="/showcase"
+                                              prefetch={true}
+                                              unstyled={true}
+                                            >
+                                              <Link
+                                                href="/showcase"
+                                                prefetch={true}
+                                              >
+                                                <a
+                                                  className="c8"
+                                                  href="/showcase"
+                                                  onClick={[Function]}
+                                                >
+                                                  Showcase
+                                                </a>
+                                              </Link>
+                                            </Link>
+                                          </StyledComponent>
+                                        </ForwardRef>
+                                        <ForwardRef>
+                                          <StyledComponent
+                                            forwardedClass={
+                                              Object {
+                                                "$$typeof": Symbol(react.forward_ref),
+                                                "attrs": undefined,
+                                                "componentStyle": ComponentStyle {
+                                                  "componentId": "sc-htpNat",
+                                                  "isStatic": true,
+                                                  "lastClassName": "c9",
+                                                  "rules": Array [
+                                                    "
+  flex: 0 0 auto;
+  width: ",
+                                                    "0.2777777777777778rem",
+                                                    ";
+  height: ",
+                                                    "0.2777777777777778rem",
+                                                    ";
+  margin: 0 ",
+                                                    "0.8333333333333334rem",
+                                                    ";
+
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+",
+                                                  ],
+                                                },
+                                                "displayName": "styled.span",
+                                                "render": [Function],
+                                                "styledComponentId": "sc-htpNat",
+                                                "target": "span",
+                                                "warnTooManyClasses": [Function],
+                                                "withComponent": [Function],
+                                              }
+                                            }
+                                            forwardedRef={null}
+                                          >
+                                            <span
+                                              className="c9"
+                                            />
+                                          </StyledComponent>
+                                        </ForwardRef>
+                                        <ForwardRef
+                                          href="/ecosystem"
+                                        >
+                                          <StyledComponent
+                                            forwardedClass={
+                                              Object {
+                                                "$$typeof": Symbol(react.forward_ref),
+                                                "attrs": Object {
+                                                  "prefetch": true,
+                                                  "unstyled": true,
+                                                },
+                                                "componentStyle": ComponentStyle {
+                                                  "componentId": "sc-ifAKCX",
+                                                  "isStatic": true,
+                                                  "lastClassName": "c8",
+                                                  "rules": Array [
+                                                    "
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: ",
+                                                    "2.7777777777777777rem",
+                                                    ";
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+
+  letter-spacing: ",
+                                                    "0.022222222222222223rem",
+                                                    ";
+  color: currentColor;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+",
+                                                  ],
+                                                },
+                                                "displayName": "Styled(Link)",
+                                                "render": [Function],
+                                                "styledComponentId": "sc-ifAKCX",
+                                                "target": [Function],
+                                                "warnTooManyClasses": [Function],
+                                                "withComponent": [Function],
+                                                Symbol(Symbol.hasInstance): [Function],
+                                              }
+                                            }
+                                            forwardedRef={null}
+                                            href="/ecosystem"
+                                          >
+                                            <Link
+                                              className="c8"
+                                              href="/ecosystem"
+                                              prefetch={true}
+                                              unstyled={true}
+                                            >
+                                              <Link
+                                                href="/ecosystem"
+                                                prefetch={true}
+                                              >
+                                                <a
+                                                  className="c8"
+                                                  href="/ecosystem"
+                                                  onClick={[Function]}
+                                                >
+                                                  Ecosystem
+                                                </a>
+                                              </Link>
+                                            </Link>
+                                          </StyledComponent>
+                                        </ForwardRef>
+                                        <ForwardRef>
+                                          <StyledComponent
+                                            forwardedClass={
+                                              Object {
+                                                "$$typeof": Symbol(react.forward_ref),
+                                                "attrs": undefined,
+                                                "componentStyle": ComponentStyle {
+                                                  "componentId": "sc-htpNat",
+                                                  "isStatic": true,
+                                                  "lastClassName": "c9",
+                                                  "rules": Array [
+                                                    "
+  flex: 0 0 auto;
+  width: ",
+                                                    "0.2777777777777778rem",
+                                                    ";
+  height: ",
+                                                    "0.2777777777777778rem",
+                                                    ";
+  margin: 0 ",
+                                                    "0.8333333333333334rem",
+                                                    ";
+
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+",
+                                                  ],
+                                                },
+                                                "displayName": "styled.span",
+                                                "render": [Function],
+                                                "styledComponentId": "sc-htpNat",
+                                                "target": "span",
+                                                "warnTooManyClasses": [Function],
+                                                "withComponent": [Function],
+                                              }
+                                            }
+                                            forwardedRef={null}
+                                          >
+                                            <span
+                                              className="c9"
+                                            />
+                                          </StyledComponent>
+                                        </ForwardRef>
+                                        <ForwardRef
+                                          href="/releases"
+                                        >
+                                          <StyledComponent
+                                            forwardedClass={
+                                              Object {
+                                                "$$typeof": Symbol(react.forward_ref),
+                                                "attrs": Object {
+                                                  "prefetch": true,
+                                                  "unstyled": true,
+                                                },
+                                                "componentStyle": ComponentStyle {
+                                                  "componentId": "sc-ifAKCX",
+                                                  "isStatic": true,
+                                                  "lastClassName": "c8",
+                                                  "rules": Array [
+                                                    "
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: ",
+                                                    "2.7777777777777777rem",
+                                                    ";
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+
+  letter-spacing: ",
+                                                    "0.022222222222222223rem",
+                                                    ";
+  color: currentColor;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+",
+                                                  ],
+                                                },
+                                                "displayName": "Styled(Link)",
+                                                "render": [Function],
+                                                "styledComponentId": "sc-ifAKCX",
+                                                "target": [Function],
+                                                "warnTooManyClasses": [Function],
+                                                "withComponent": [Function],
+                                                Symbol(Symbol.hasInstance): [Function],
+                                              }
+                                            }
+                                            forwardedRef={null}
+                                            href="/releases"
+                                          >
+                                            <Link
+                                              className="c8"
+                                              href="/releases"
+                                              prefetch={true}
+                                              unstyled={true}
+                                            >
+                                              <Link
+                                                href="/releases"
+                                                prefetch={true}
+                                              >
+                                                <a
+                                                  className="c8"
+                                                  href="/releases"
+                                                  onClick={[Function]}
+                                                >
+                                                  Releases
+                                                </a>
+                                              </Link>
+                                            </Link>
+                                          </StyledComponent>
+                                        </ForwardRef>
+                                      </nav>
+                                    </StyledComponent>
+                                  </ForwardRef>
+                                </NavLinks>
+                              </div>
+                            </StyledComponent>
+                          </ForwardRef>
+                          <ForwardRef>
+                            <StyledComponent
+                              forwardedClass={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": undefined,
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "c10",
+                                    "isStatic": true,
+                                    "lastClassName": "c11",
+                                    "rules": Array [
+                                      "
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+",
+                                    ],
+                                  },
+                                  "displayName": "styled.div",
+                                  "render": [Function],
+                                  "styledComponentId": "c10",
+                                  "target": "div",
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                            >
+                              <div
+                                className="c10 c11"
                               >
                                 <ModalContainer
                                   isOpen={false}
@@ -2434,61 +2952,55 @@ exports[`DocsLayout renders correctly 1`] = `
                               <ForwardRef
                                 onClick={[Function]}
                               >
-                              <Styled(Link)
-                                  href="/docs"
-                                >
-                                  <Link
-                                    className="c7"
-                                    href="/docs"
-                                    unstyled={true}
-                                  >
-                                    <Link
-                                      href="/docs"
-                                    >
-                                      <a
-                                        className="c7"
-                                        href="/docs"
-                                        onClick={[Function]}
-                                      >
-                                        Documentation
-                                      </a>
-                                    </Link>
-                                  </Link>
-                                </Styled(Link)>
-                                <styled.span>
-                                  <span
-                                    className="c8"
-                                  />
-                                </styled.span>
-                                <Styled(Link)
-                                  href="/showcase"
-                                >
-                                  <Link
-                                    className="c7"
-                                    href="/showcase"
-                                    unstyled={true}
-                                  >
-                                    <Link
-                                      href="/showcase"
-                                    >
-                                      <a
-                                        className="c7"
-                                        href="/showcase"
-                                        onClick={[Function]}
-                                      >
-                                        Showcase
-                                      </a>
-                                    </Link>
-                                  </Link>
-                                </Styled(Link)>
-                                <styled.span>
-                                  <span
-                                    className="c8"
-                                  />
-                                </styled.span>
-                                <Styled(Link)
-                                  href="/ecosystem"
+                                <StyledComponent
+                                  forwardedClass={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": undefined,
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "sc-gZMcBi",
+                                        "isStatic": false,
+                                        "lastClassName": "c26",
+                                        "rules": Array [
+                                          "
+  ",
+                                          "
+  background: none;
+  outline: none;
+  border: none;
+",
+                                          ";
+  background: ",
+                                          [Function],
+                                          ";
+  cursor: pointer;
+  flex: 0 0 auto;
+  height: ",
+                                          "2.7777777777777777rem",
+                                          ";
+  padding: 0 ",
+                                          "0.5555555555555556rem",
+                                          ";
+  text-align: center;
+  vertical-align: middle;
 
+  & + ",
+                                          " {
+    padding-left: 0;
+  }
+",
+                                        ],
+                                      },
+                                      "displayName": "styled.button",
+                                      "render": [Function],
+                                      "styledComponentId": "sc-gZMcBi",
+                                      "target": "button",
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
+                                    }
+                                  }
+                                  forwardedRef={null}
+                                  onClick={[Function]}
                                 >
                                   <button
                                     className="c26"
@@ -2853,6 +3365,125 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     onClick={[Function]}
                                                   >
                                                     Documentation
+                                                  </a>
+                                                </Link>
+                                              </Link>
+                                            </StyledComponent>
+                                          </ForwardRef>
+                                          <ForwardRef>
+                                            <StyledComponent
+                                              forwardedClass={
+                                                Object {
+                                                  "$$typeof": Symbol(react.forward_ref),
+                                                  "attrs": undefined,
+                                                  "componentStyle": ComponentStyle {
+                                                    "componentId": "sc-htpNat",
+                                                    "isStatic": true,
+                                                    "lastClassName": "c9",
+                                                    "rules": Array [
+                                                      "
+  flex: 0 0 auto;
+  width: ",
+                                                      "0.2777777777777778rem",
+                                                      ";
+  height: ",
+                                                      "0.2777777777777778rem",
+                                                      ";
+  margin: 0 ",
+                                                      "0.8333333333333334rem",
+                                                      ";
+
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+",
+                                                    ],
+                                                  },
+                                                  "displayName": "styled.span",
+                                                  "render": [Function],
+                                                  "styledComponentId": "sc-htpNat",
+                                                  "target": "span",
+                                                  "warnTooManyClasses": [Function],
+                                                  "withComponent": [Function],
+                                                }
+                                              }
+                                              forwardedRef={null}
+                                            >
+                                              <span
+                                                className="c9"
+                                              />
+                                            </StyledComponent>
+                                          </ForwardRef>
+                                          <ForwardRef
+                                            href="/showcase"
+                                          >
+                                            <StyledComponent
+                                              forwardedClass={
+                                                Object {
+                                                  "$$typeof": Symbol(react.forward_ref),
+                                                  "attrs": Object {
+                                                    "prefetch": true,
+                                                    "unstyled": true,
+                                                  },
+                                                  "componentStyle": ComponentStyle {
+                                                    "componentId": "sc-ifAKCX",
+                                                    "isStatic": true,
+                                                    "lastClassName": "c8",
+                                                    "rules": Array [
+                                                      "
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: ",
+                                                      "2.7777777777777777rem",
+                                                      ";
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+
+  letter-spacing: ",
+                                                      "0.022222222222222223rem",
+                                                      ";
+  color: currentColor;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+",
+                                                    ],
+                                                  },
+                                                  "displayName": "Styled(Link)",
+                                                  "render": [Function],
+                                                  "styledComponentId": "sc-ifAKCX",
+                                                  "target": [Function],
+                                                  "warnTooManyClasses": [Function],
+                                                  "withComponent": [Function],
+                                                  Symbol(Symbol.hasInstance): [Function],
+                                                }
+                                              }
+                                              forwardedRef={null}
+                                              href="/showcase"
+                                            >
+                                              <Link
+                                                className="c8"
+                                                href="/showcase"
+                                                prefetch={true}
+                                                unstyled={true}
+                                              >
+                                                <Link
+                                                  href="/showcase"
+                                                  prefetch={true}
+                                                >
+                                                  <a
+                                                    className="c8"
+                                                    href="/showcase"
+                                                    onClick={[Function]}
+                                                  >
+                                                    Showcase
                                                   </a>
                                                 </Link>
                                               </Link>
