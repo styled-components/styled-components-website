@@ -29,7 +29,7 @@ exports[`LiveEdit renders correctly 1`] = `
 .c2 {
   background: #1d1f27;
   font-size: 0.8rem;
-  font-family: "Dank Mono",dm,monospace;
+  font-family: dm,monospace;
   font-weight: 300;
   height: 22.22222222222222rem;
   overflow-y: scroll;
@@ -241,7 +241,7 @@ exports[`LiveEdit renders correctly 1`] = `
                             "
   background: #1d1f27;
   font-size: 0.8rem;
-  font-family: \\"Dank Mono\\", dm, monospace;
+  font-family: dm, monospace;
   font-weight: 300;
   height: 22.22222222222222rem;
   overflow-y: scroll;
