@@ -85,7 +85,7 @@ render(
 
 If you are still on v3, you can use [`.withComponent`](/docs/api#withcomponent) and [`.extend`](/docs/api#deprecated-extend) to achieve the same:
 
-```react
+```jsx
 const Button = styled.button`
   display: inline-block;
   color: palevioletred;
