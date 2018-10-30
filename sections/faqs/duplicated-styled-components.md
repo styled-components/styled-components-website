@@ -44,6 +44,28 @@ that will contain the `styled-components` module:
   }
 ```
 
+#### Webpack 4
+Please notice that `CommonsChunkPlugin` includes a common module cache, whereas Webpack 4 includes a module cache in each entry point. Therefore, besides `optimization.splitChunks` you will also need to add `optimization.runtimeChunk`. For example, to add the runtime chunk (i.e. the shared module cache) to the vendors bundle:
+
+```
+  optimization: {
+    runtimeChunk: {
+       name: "vendors"
+    },
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all"
+        }
+      }
+    }
+  }
+```
+
+Also be aware that adding an entry point for common modules is [a discouraged practice in Webpack 4](https://webpack.js.org/concepts/entry-points/#separate-app-and-vendor-entries).
+
 ### Duplicated module in `node_modules`
 
 If you think that the issue is in duplicated `styled-components` module somewhere in your dependencies, there are several ways to check this. You can use `npm ls styled-components`, `yarn list styled-components` or `find -L ./node_modules | grep /styled-components/package.json` commands in your application folder.
