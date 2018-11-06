@@ -90,22 +90,6 @@ const resetStyles = `
     color: red;
   }
 
-  @font-face {
-    font-family: 'Merriweather';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Merriweather'), local('Merriweather-Regular'), url(https://fonts.gstatic.com/s/merriweather/v15/RFda8w1V0eDZheqfcyQ4EIjoYw3YTyktCCer_ilOlhE.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-  }
-
-  @font-face {
-    font-family: 'Merriweather';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Merriweather'), local('Merriweather-Regular'), url(https://fonts.gstatic.com/s/merriweather/v15/RFda8w1V0eDZheqfcyQ4EBampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-  }
-
   html, body {
     font-size: 18px;
     line-height: 1.6;
@@ -180,7 +164,6 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="icon" type="image/png" href="/static/favicon.png" />
           <link rel="manifest" href="/static/manifest.json" />
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
@@ -188,7 +171,9 @@ export default class MyDocument extends Document {
           <meta name="author" content="styled-components" />
 
           <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
+
           {styleElements}
+
           <script
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WDWNSLK');`,
@@ -208,8 +193,8 @@ export default class MyDocument extends Document {
 
           <NextScript />
 
-          {/* cloud.typography */}
-          <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7039052/7606172/css/fonts.css" />
+          <link rel="stylesheet" type="text/css" href="/static/dmvendor.css" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
         </body>
       </html>
     );

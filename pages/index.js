@@ -4,6 +4,7 @@ import { LiveProvider, LiveEditor, LivePreview } from '@probablyup/react-live';
 import { Favorite } from 'styled-icons/material';
 
 import rem from '../utils/rem';
+import { monospace } from '../utils/fonts';
 import { mobile } from '../utils/media';
 import { violetRed, gold, grey, paleGrey, red } from '../utils/colors';
 import { editorMixin, StyledError } from '../components/LiveEdit';
@@ -180,6 +181,12 @@ const Heart = styled(Favorite)`
 
 const FooterLink = styled(Link)`
   color: ${grey};
+
+  ${p =>
+    p.monospaced &&
+    css`
+      font-family: ${monospace};
+    `};
 `;
 
 const FooterContent = styled(Content)`
@@ -327,6 +334,12 @@ class Index extends PureComponent {
             {' and '}
             <FooterLink inline href="https://github.com/orgs/styled-components/people">
               contributors
+            </FooterLink>
+            {'.'}
+            <br />
+            {'All code examples use '}
+            <FooterLink monospaced inline href="https://dank.sh">
+              Dank Mono
             </FooterLink>
             {'.'}
           </FooterContent>
