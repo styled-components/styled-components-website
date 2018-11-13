@@ -15,60 +15,37 @@ next to the styles defined by the styled call.
 
 #### .attrs
 
-This is a chainable method that attaches some props to a styled component.
-The first and only argument is an object that will be merged into the rest of the
-component's props. The `attrs` object accepts the following values:
+This is a chainable method that attaches some props to a styled component. Two usage styles are available:
 
-<Table head={['Values', 'Description']}>
-  <Row>
-    <Column>
-      <Code>Prop Value</Code>
-    </Column>
-    <Column>
-      These can be of any type, except functions. They'll stay static and
-      will be merged into the existing component props.
-    </Column>
-  </Row>
+- _Function Form_: `attrs(props => ({ yourProps }))`
 
-  <Row>
-    <Column>
-      <Code>Prop Factory</Code>
-    </Column>
-    <Column>
-      A function that receives the props that are passed into the component
-      and computes a value, that is then going to be merged into the
-      existing component props.
-    </Column>
-  </Row>
-</Table>
+  The function-form of attrs receives the current props and accepts a prop object in return.
 
-Returns another `StyledComponent`.
+  ```jsx
+  styled(Button).attrs(props => ({ role: props.as !== 'button' ? 'button' : undefined }))`
+    color: red;
+  `
+  ```
 
-```react
-// import styled from 'styled-components'
+- _Object Form_: `attrs({ yourProps })`
 
-const Input = styled.input.attrs({
-  type: 'text',
-  size: props => (props.small ? 5 : undefined),
-})`
-  border-radius: 3px;
-  border: 1px solid palevioletred;
-  display: block;
-  margin: 0 0 1em;
-  padding: ${props => props.padding};
+  The object-form of attrs is appropriate when you wish to add some static props that will always be applied and does not share concerns with other props. An example of this could be defaulting a `styled.button` to be of type "submit":
 
-  ::placeholder {
-    color: palevioletred;
-  }
+  ```jsx
+  styled.button.attrs({ type: 'submit' })`
+    color: red;
+  `
+  ```
+
+Note that the implementation of `attrs` is quite similar in concept to `defaultProps`. Whatever props are returned from the function or given as an object are layered over the component's `defaultProps` and still can be further overriden by props set on the JSX itself:
+
+```jsx
+const FormButton = styled.button.attrs({ type: 'submit' })`
+  color: red;
 `
 
-render(
-  <>
-    <Input small placeholder="Small" />
-    <Input placeholder="Normal" />
-    <Input padding="2em" placeholder="Padded" />
-  </>
-)
+<FormButton type="reset">Reset</FormButton> // a JSX prop overrides attrs and renders type="reset"
+<FormButton>Submit</FormButton>             // no JSX prop means type="submit" is used
 ```
 
 Learn more about this constructor in the [Attaching Additional Props](/docs/basics#attaching-additional-props) section.
