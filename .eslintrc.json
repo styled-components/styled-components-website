@@ -1,13 +1,7 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "prettier",
-    "plugin:react/recommended"
-  ],
-  "plugins": [
-    "prettier",
-    "react"
-  ],
+  "extends": ["prettier", "plugin:react/recommended"],
+  "plugins": ["prettier", "react"],
   "rules": {
     "class-methods-use-this": 0,
     "symbol-description": 0,
@@ -30,7 +24,7 @@
   },
   "settings": {
     "react": {
-      "version": "15.0"
+      "version": "16.0"
     }
   },
   "env": {
