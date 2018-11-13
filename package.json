@@ -23,9 +23,9 @@
     "size": "bundlesize"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^0.15.4",
-    "@mdx-js/runtime": "^0.15.4",
-    "@mdx-js/tag": "^0.15.0",
+    "@mdx-js/mdx": "^0.16.0",
+    "@mdx-js/runtime": "^0.16.0",
+    "@mdx-js/tag": "^0.16.0",
     "@probablyup/react-live": "^1.11.0",
     "@types/react": "^16.7.3",
     "@weco/next-plugin-transpile-modules": "^0.0.2",
