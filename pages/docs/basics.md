@@ -3,6 +3,7 @@ import NextPage from '../../components/NextPage'
 
 import Motivation from '../../sections/basics/motivation.md'
 import GettingStarted from '../../sections/basics/getting-started.md'
+import ObjectStyles from '../../sections/basics/object-styles.md'
 import ComingFromCSS from '../../sections/basics/coming-from-css.md'
 import Installation from '../../sections/basics/installation.md'
 import PassedProps from '../../sections/basics/passed-props.md'
@@ -22,6 +23,7 @@ export default ({ children }) => (
 <Motivation />
 <Installation />
 <GettingStarted />
+<ObjectStyles />
 <AdaptingBasedOnProps />
 <ExtendingStyles />
 <StylingAnyComponents />
