@@ -33,3 +33,25 @@ const StyledButton = styled(Button)`
 <StyledDiv />
 <StyledButton />
 ```
+
+Note that you don't even have to add the import, the Babel plugin does that automatically! (unless you're using the Babel macro, see below)
+
+#### Usage with the Babel macro
+
+You can use the [Babel macro](/docs/tooling#babel-macro) to make this work in `create-react-app`. Unfortunately, Babel macros only run when imported so **the import can not be added automatically.** The above code works perfectly if you add the import to the macro manually:
+
+```jsx
+import styled from 'styled-components/macro'
+
+<div
+  css={`
+    background: papayawhip;
+    color: ${props => props.theme.colors.text};
+  `}
+/>
+<Button
+  css="padding: 0.5em 1em;"
+/>
+```
+
+
