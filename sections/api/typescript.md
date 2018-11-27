@@ -82,7 +82,7 @@ import styled from 'app/styled-components';
 import Header from './Header';
 
 const Title =
-  styled <{ isActive: boolean }>Header`
+  styled <{ isActive: boolean }>(Header)`
   color: ${props => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
 `;
 ```
