@@ -58,7 +58,7 @@ A [codemod is available](https://github.com/styled-components/styled-components-
 
 🚫
 
-```jsx
+```js
 import { injectGlobal } from 'styled-components'
 
 injectGlobal`
@@ -70,7 +70,7 @@ injectGlobal`
 
 ✅
 
-```js
+```jsx
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
@@ -105,7 +105,7 @@ const Component = styled.div`
 
 ✅
 
-```js
+```jsx
 const Component = styled.div`
   background: blue;
   color: red;
@@ -119,7 +119,7 @@ const Component = styled.div`
 
 🚫
 
-```jsx
+```js
 import styled, { keyframes } from 'styled-components'
 
 const animation = keyframes`
@@ -170,7 +170,7 @@ const Component = styled.div`
 
 🚫
 
-```jsx
+```js
 import styled from 'styled-components'
 
 const Input = styled.input.attrs({
