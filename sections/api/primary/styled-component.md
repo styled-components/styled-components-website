@@ -89,8 +89,6 @@ applied to it, but all the same rules of the one it's called on.
 
 Returns a new `StyledComponent` with the new tag / component being applied when it's used.
 
-You can see it in action in the [Extending Styles](/docs/basics#extending-styles) section.
-
 > As of styled-components v4 the `withComponent` API is now a candidate for deprecation. In all likelihood, you probably want to use the new [`"as"` prop](#as-polymorphic-prop) to simply switch what element/component being rendered since the `withComponent` API is destructive toward styles if the lowest-wrapped component is a `StyledComponent`.
 
 #### `"as"` polymorphic prop | v4
