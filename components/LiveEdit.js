@@ -50,6 +50,7 @@ export const editorMixin = `
   overflow-x: hidden;
   cursor: text;
   white-space: pre-wrap;
+  position: relative;
 `;
 
 const StyledEditor = styled(LiveEditor)`
