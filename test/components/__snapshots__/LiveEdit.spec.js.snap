@@ -36,6 +36,7 @@ exports[`LiveEdit renders correctly 1`] = `
   overflow-x: hidden;
   cursor: text;
   white-space: pre-wrap;
+  position: relative;
   -webkit-flex-basis: 50%;
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
@@ -248,6 +249,7 @@ exports[`LiveEdit renders correctly 1`] = `
   overflow-x: hidden;
   cursor: text;
   white-space: pre-wrap;
+  position: relative;
 ",
                             ";
   ",
