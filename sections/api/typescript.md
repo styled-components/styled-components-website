@@ -69,7 +69,7 @@ If you are passing custom properties to your styled component it is a good idea 
 import styled from "app/styled-components"
 
 // theme is now fully typed
-const Title = styled<{ isActive: boolean }, "h1">("h1")`
+const Title = styled("h1")<{ isActive: boolean }>`
   color: ${props => props.isActive ? props.theme.primaryColor : props.theme.secondaryColor}
 `
 ```
