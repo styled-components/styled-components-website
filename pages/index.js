@@ -70,10 +70,21 @@ import {
   TargetLogo,
   EuroVisionLogo,
   ArtsyLogo,
-  IdeaLogo,
+  IdeoLogo,
   HuffpostLogo,
   CoinbaseLogo,
   PatreonLogo,
+  Auth0Logo,
+  BBCLogo,
+  CasperLogo,
+  MoleskineLogo,
+  AirBnBLogo,
+  TinderLogo,
+  LegoLogo,
+  TicketmasterLogo,
+  TypeformLogo,
+  VogueLogo,
+  InVisionLogo,
 } from '../components/CompanyLogos';
 
 const Title = styled.div`
@@ -259,8 +270,12 @@ class Index extends PureComponent {
             <UsersHeading>Used by folks at</UsersHeading>
 
             <UsersWrapper>
-              <CompanyLogo bottom="-0.2rem" height="1.75rem">
-                <BloombergLogo />
+              <CompanyLogo height="2.5rem">
+                <AirBnBLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg">
+                <ArtsyLogo />
               </CompanyLogo>
 
               <CompanyLogo height="1.75rem">
@@ -268,6 +283,54 @@ class Index extends PureComponent {
               </CompanyLogo>
 
               <CompanyLogo>
+                <Auth0Logo />
+              </CompanyLogo>
+
+              <CompanyLogo>
+                <BBCLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="-0.2rem" height="1.75rem">
+                <BloombergLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="-0.2rem">
+                <CasperLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="0.3rem" height="2rem" src="/static/coinbase-logo.svg">
+                <CoinbaseLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="0.1rem" height="2.5rem">
+                <EuroVisionLogo />
+              </CompanyLogo>
+
+              <CompanyLogo src="/static/huffpost-logo.svg">
+                <HuffpostLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="-0.15rem" height="1.5rem">
+                <IdeoLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="0.1rem" height="2.25rem">
+                <InVisionLogo />
+              </CompanyLogo>
+
+              <CompanyLogo>
+                <LegoLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="-0.15rem" height="1.3rem">
+                <MoleskineLogo />
+              </CompanyLogo>
+
+              <CompanyLogo>
+                <PatreonLogo />
+              </CompanyLogo>
+
+              <CompanyLogo bottom="0.15rem">
                 <RedditLogo />
               </CompanyLogo>
 
@@ -275,28 +338,20 @@ class Index extends PureComponent {
                 <TargetLogo />
               </CompanyLogo>
 
-              <CompanyLogo bottom="0.625rem" height="3rem">
-                <EuroVisionLogo />
+              <CompanyLogo height="1.7rem">
+                <TicketmasterLogo />
               </CompanyLogo>
 
-              <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg">
-                <ArtsyLogo />
+              <CompanyLogo bottom="0.2rem">
+                <TinderLogo />
               </CompanyLogo>
 
-              <CompanyLogo bottom="-0.15rem" height="1.5rem">
-                <IdeaLogo />
+              <CompanyLogo bottom="0.15rem" height="2.35rem">
+                <TypeformLogo />
               </CompanyLogo>
 
-              <CompanyLogo src="/static/huffpost-logo.svg">
-                <HuffpostLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="0.25rem" height="2rem" src="/static/coinbase-logo.svg">
-                <CoinbaseLogo />
-              </CompanyLogo>
-
-              <CompanyLogo>
-                <PatreonLogo />
+              <CompanyLogo height="1.8rem">
+                <VogueLogo />
               </CompanyLogo>
             </UsersWrapper>
           </Content>
