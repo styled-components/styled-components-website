@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { LiveProvider, LiveEditor, LivePreview } from '@probablyup/react-live';
 import { Favorite } from 'styled-icons/material';
 
@@ -104,10 +104,29 @@ const Logo = styled.img.attrs({
   height: ${rem(125)};
 `;
 
+const slideAnimation = keyframes`
+    from{
+        transform:translate3d(0,0,0);
+    }
+    to{
+        transform:translate3d(-50%,0,0);
+    }
+`;
+
+const UsersSliderContainer = styled.div`
+  width: 100%;
+`;
+
+const UsersSlider = styled.div`
+  display: inline-block;
+  animation: ${slideAnimation} 60s linear infinite;
+  white-space: nowrap;
+  overflow: hidden;
+`;
+
 const UsersWrapper = styled.section`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
   padding: 0.5rem;
   margin-bottom: 2rem;
 `;
@@ -122,6 +141,8 @@ const UsersHeading = styled.p`
 `;
 
 const CompanyLogo = styled.span`
+  display: inline-block;
+  vertical-align: middle;
   position: relative;
   height: ${p => p.height || '2rem'};
   margin: 0.5rem;
@@ -208,6 +229,96 @@ const FooterContent = styled(Content)`
   `)};
 `;
 
+const Logos = () => {
+  return (
+    <>
+      <CompanyLogo height="2.5rem">
+        <AirBnBLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg">
+        <ArtsyLogo />
+      </CompanyLogo>
+
+      <CompanyLogo height="1.75rem">
+        <AtlassianLogo />
+      </CompanyLogo>
+
+      <CompanyLogo>
+        <Auth0Logo />
+      </CompanyLogo>
+
+      <CompanyLogo>
+        <BBCLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="-0.2rem" height="1.75rem">
+        <BloombergLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="-0.2rem">
+        <CasperLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="0.3rem" height="2rem" src="/static/coinbase-logo.svg">
+        <CoinbaseLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="0.1rem" height="2.5rem">
+        <EuroVisionLogo />
+      </CompanyLogo>
+
+      <CompanyLogo src="/static/huffpost-logo.svg">
+        <HuffpostLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="-0.15rem" height="1.5rem">
+        <IdeoLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="0.1rem" height="2.25rem">
+        <InVisionLogo />
+      </CompanyLogo>
+
+      <CompanyLogo>
+        <LegoLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="-0.15rem" height="1.3rem">
+        <MoleskineLogo />
+      </CompanyLogo>
+
+      <CompanyLogo>
+        <PatreonLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="0.15rem">
+        <RedditLogo />
+      </CompanyLogo>
+
+      <CompanyLogo>
+        <TargetLogo />
+      </CompanyLogo>
+
+      <CompanyLogo height="1.7rem">
+        <TicketmasterLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="0.2rem">
+        <TinderLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="0.15rem" height="2.35rem">
+        <TypeformLogo />
+      </CompanyLogo>
+
+      <CompanyLogo height="1.8rem">
+        <VogueLogo />
+      </CompanyLogo>
+    </>
+  );
+};
+
 class Index extends PureComponent {
   state = {
     isMobileNavFolded: true,
@@ -268,93 +379,15 @@ class Index extends PureComponent {
             </LiveProvider>
 
             <UsersHeading>Used by folks at</UsersHeading>
-
-            <UsersWrapper>
-              <CompanyLogo height="2.5rem">
-                <AirBnBLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg">
-                <ArtsyLogo />
-              </CompanyLogo>
-
-              <CompanyLogo height="1.75rem">
-                <AtlassianLogo />
-              </CompanyLogo>
-
-              <CompanyLogo>
-                <Auth0Logo />
-              </CompanyLogo>
-
-              <CompanyLogo>
-                <BBCLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="-0.2rem" height="1.75rem">
-                <BloombergLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="-0.2rem">
-                <CasperLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="0.3rem" height="2rem" src="/static/coinbase-logo.svg">
-                <CoinbaseLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="0.1rem" height="2.5rem">
-                <EuroVisionLogo />
-              </CompanyLogo>
-
-              <CompanyLogo src="/static/huffpost-logo.svg">
-                <HuffpostLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="-0.15rem" height="1.5rem">
-                <IdeoLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="0.1rem" height="2.25rem">
-                <InVisionLogo />
-              </CompanyLogo>
-
-              <CompanyLogo>
-                <LegoLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="-0.15rem" height="1.3rem">
-                <MoleskineLogo />
-              </CompanyLogo>
-
-              <CompanyLogo>
-                <PatreonLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="0.15rem">
-                <RedditLogo />
-              </CompanyLogo>
-
-              <CompanyLogo>
-                <TargetLogo />
-              </CompanyLogo>
-
-              <CompanyLogo height="1.7rem">
-                <TicketmasterLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="0.2rem">
-                <TinderLogo />
-              </CompanyLogo>
-
-              <CompanyLogo bottom="0.15rem" height="2.35rem">
-                <TypeformLogo />
-              </CompanyLogo>
-
-              <CompanyLogo height="1.8rem">
-                <VogueLogo />
-              </CompanyLogo>
-            </UsersWrapper>
           </Content>
+          <UsersSliderContainer>
+            <UsersSlider>
+              <UsersWrapper>
+                <Logos />
+                <Logos />
+              </UsersWrapper>
+            </UsersSlider>
+          </UsersSliderContainer>
         </Wrapper>
 
         <HomepageGettingStarted />
