@@ -115,11 +115,12 @@ const slideAnimation = keyframes`
 
 const UsersSliderContainer = styled.div`
   width: 100%;
+  overflow: hidden;
 `;
 
 const UsersSlider = styled.div`
   display: inline-block;
-  animation: ${slideAnimation} 60s linear infinite;
+  animation: ${slideAnimation} 6s linear infinite;
   white-space: nowrap;
   overflow: hidden;
 `;
@@ -128,6 +129,7 @@ const UsersWrapper = styled.section`
   white-space: nowrap;
   overflow: hidden;
   padding: 0.5rem;
+  display: flex;
   margin-bottom: 2rem;
 `;
 
@@ -141,8 +143,6 @@ const UsersHeading = styled.p`
 `;
 
 const CompanyLogo = styled.span`
-  display: inline-block;
-  vertical-align: middle;
   position: relative;
   height: ${p => p.height || '2rem'};
   margin: 0.5rem;
