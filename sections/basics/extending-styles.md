@@ -44,6 +44,7 @@ const Button = styled.button`
   padding: 0.25em 1em;
   border: 2px solid palevioletred;
   border-radius: 3px;
+  display: block;
 `;
 
 const TomatoButton = styled(Button)`
@@ -54,9 +55,7 @@ const TomatoButton = styled(Button)`
 render(
   <div>
     <Button>Normal Button</Button>
-    <br />
     <Button as="a" href="/">Link with Button styles</Button>
-    <br />
     <TomatoButton as="a" href="/">Link with Tomato Button styles</TomatoButton>
   </div>
 );
@@ -73,6 +72,7 @@ const Button = styled.button`
   padding: 0.25em 1em;
   border: 2px solid palevioletred;
   border-radius: 3px;
+  display: block;
 `;
 
 const ReversedButton = props => <button {...props} children={props.children.split('').reverse()} />
@@ -80,7 +80,6 @@ const ReversedButton = props => <button {...props} children={props.children.spli
 render(
   <div>
     <Button>Normal Button</Button>
-    <br />
     <Button as={ReversedButton}>Custom Button with Normal Button styles</Button>
   </div>
 );
