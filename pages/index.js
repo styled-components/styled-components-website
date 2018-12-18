@@ -120,7 +120,7 @@ const UsersSliderContainer = styled.div`
 
 const UsersSlider = styled.div`
   display: inline-block;
-  animation: ${slideAnimation} 6s linear infinite;
+  animation: ${slideAnimation} 60s linear infinite;
   white-space: nowrap;
   overflow: hidden;
 `;
@@ -145,7 +145,7 @@ const UsersHeading = styled.p`
 const CompanyLogo = styled.span`
   position: relative;
   height: ${p => p.height || '2rem'};
-  margin: 0.5rem;
+  margin: 0.5rem 1rem;
   bottom: ${p => p.bottom || 0};
   opacity: 0.8;
   filter: brightness(0) invert(1);
