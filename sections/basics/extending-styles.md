@@ -54,7 +54,9 @@ const TomatoButton = styled(Button)`
 render(
   <div>
     <Button>Normal Button</Button>
+    <br />
     <Button as="a" href="/">Link with Button styles</Button>
+    <br />
     <TomatoButton as="a" href="/">Link with Tomato Button styles</TomatoButton>
   </div>
 );
@@ -78,6 +80,7 @@ const ReversedButton = props => <button {...props} children={props.children.spli
 render(
   <div>
     <Button>Normal Button</Button>
+    <br />
     <Button as={ReversedButton}>Custom Button with Normal Button styles</Button>
   </div>
 );
