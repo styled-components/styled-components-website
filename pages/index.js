@@ -85,6 +85,8 @@ import {
   TypeformLogo,
   VogueLogo,
   InVisionLogo,
+  XingLogo,
+  MagicLeapLogo,
 } from '../components/CompanyLogos';
 
 const Title = styled.div`
@@ -232,7 +234,7 @@ const FooterContent = styled(Content)`
 const Logos = () => {
   return (
     <>
-      <CompanyLogo height="2.5rem">
+      <CompanyLogo bottom="0.3rem" height="2.5rem">
         <AirBnBLogo />
       </CompanyLogo>
 
@@ -284,6 +286,10 @@ const Logos = () => {
         <LegoLogo />
       </CompanyLogo>
 
+      <CompanyLogo bottom="1rem" height="4rem">
+        <MagicLeapLogo />
+      </CompanyLogo>
+
       <CompanyLogo bottom="-0.15rem" height="1.3rem">
         <MoleskineLogo />
       </CompanyLogo>
@@ -314,6 +320,10 @@ const Logos = () => {
 
       <CompanyLogo height="1.8rem">
         <VogueLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="0.7rem" height="2.5rem">
+        <XingLogo />
       </CompanyLogo>
     </>
   );
