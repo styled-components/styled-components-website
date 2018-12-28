@@ -64,6 +64,7 @@ render(
 `.trim();
 
 import {
+  DoorDashLogo,
   BloombergLogo,
   AtlassianLogo,
   RedditLogo,
@@ -264,6 +265,10 @@ const Logos = () => {
 
       <CompanyLogo bottom="0.3rem" height="2rem" src="/static/coinbase-logo.svg">
         <CoinbaseLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="-0.2rem">
+        <DoorDashLogo />
       </CompanyLogo>
 
       <CompanyLogo bottom="0.1rem" height="2.5rem">
