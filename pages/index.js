@@ -88,6 +88,7 @@ import {
   InVisionLogo,
   XingLogo,
   MagicLeapLogo,
+  BlueTomatoLogo,
 } from '../components/CompanyLogos';
 
 const Title = styled.div`
@@ -257,6 +258,10 @@ const Logos = () => {
 
       <CompanyLogo bottom="-0.2rem" height="1.75rem">
         <BloombergLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="0.75rem" height="3rem">
+        <BlueTomatoLogo />
       </CompanyLogo>
 
       <CompanyLogo bottom="-0.2rem">
