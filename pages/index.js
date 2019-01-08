@@ -260,6 +260,10 @@ const Logos = () => {
         <BloombergLogo />
       </CompanyLogo>
 
+      <CompanyLogo bottom="0.75rem" height="3rem">
+        <BlueTomatoLogo />
+      </CompanyLogo>
+
       <CompanyLogo bottom="-0.2rem">
         <CasperLogo />
       </CompanyLogo>
@@ -330,10 +334,6 @@ const Logos = () => {
 
       <CompanyLogo bottom="0.7rem" height="2.5rem">
         <XingLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.75rem" height="3rem">
-        <BlueTomatoLogo />
       </CompanyLogo>
     </>
   );
