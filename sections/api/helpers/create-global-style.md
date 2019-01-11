@@ -28,8 +28,8 @@ const GlobalStyle = createGlobalStyle`
 // later in your app
 
 <React.Fragment>
-  <Navigation /> {/* example of other top-level stuff */}
   <GlobalStyle whiteColor />
+  <Navigation /> {/* example of other top-level stuff */}
 </React.Fragment>
 ```
 
