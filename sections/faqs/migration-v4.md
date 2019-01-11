@@ -58,7 +58,7 @@ A [codemod is available](https://github.com/styled-components/styled-components-
 
 🚫
 
-```jsx
+```js
 import { injectGlobal } from 'styled-components'
 
 injectGlobal`
@@ -70,7 +70,7 @@ injectGlobal`
 
 ✅
 
-```js
+```jsx
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
@@ -105,7 +105,7 @@ const Component = styled.div`
 
 ✅
 
-```js
+```jsx
 const Component = styled.div`
   background: blue;
   color: red;
@@ -119,7 +119,7 @@ const Component = styled.div`
 
 🚫
 
-```jsx
+```js
 import styled, { keyframes } from 'styled-components'
 
 const animation = keyframes`
@@ -165,7 +165,36 @@ const Component = styled.div`
 `
 ```
 
-7. If you're using TypeScript, the typings are now located in DefinitelyTyped:
+7. If you're ussing `attrs({})` and some of the attributes you pass to it is a Function, it's recommended to switch to the new `attrs(props => ({}))` syntax instead for easier and more powerful composition.
+
+
+🚫
+
+```js
+import styled from 'styled-components'
+
+const Input = styled.input.attrs({
+  type: ({ inputType }) => inputType
+})`
+  background: blue;
+  color: red;
+`
+```
+
+✅
+
+```js
+import styled from 'styled-components'
+
+const Input = styled.input.attrs(({ inputType }) => ({
+  type: inputType
+}))`
+  background: blue;
+  color: red;
+`
+```
+
+8. If you're using TypeScript, the typings are now located in DefinitelyTyped:
 
 ```
 npm install @types/styled-components

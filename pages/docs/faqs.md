@@ -13,6 +13,7 @@ import MigrationV4 from '../../sections/faqs/migration-v4.md'
 import CRA from '../../sections/faqs/create-react-app.md'
 import NPMLink from '../../sections/faqs/npm-link.md'
 import FlickeringText from '../../sections/faqs/flickering-text.md'
+import DeclareComponentsInRenderMethod from '../../sections/faqs/declare-components-in-render-method.md'
 
 export default ({ children }) => (
   <DocsLayout title="FAQs" description="Commonly asked questions about styled-components">
@@ -29,6 +30,7 @@ export default ({ children }) => (
 <WhenToUseAttrs />
 <LibraryAuthors />
 <DuplicatedStyledComponents />
+<DeclareComponentsInRenderMethod />
 <HTMLAttributeWarnings />
 <BrowserSupport />
 <CRA />

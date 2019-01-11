@@ -4,9 +4,9 @@ import Table, { Row, Column } from 'components/Table'
 ### `css`
 
 A helper function to generate CSS from a template literal with interpolations. You need to use this if you return a
-template literal with interpolations inside an interpolation. (This is due to how tagged template literals work)
+template literal with functions inside an interpolation due to how tagged template literals work in JavaScript.
 
-If you're just returning a normal string you do not need to use this.
+If you're interpolating a string you do not need to use this, only if you're interpolating a function.
 
 <Table head={['Arguments', 'Description']}>
   <Row>

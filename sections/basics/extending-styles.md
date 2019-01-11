@@ -82,3 +82,5 @@ render(
   </div>
 );
 ```
+
+> If you are still on an older version than v4, you can use the [`.withComponent`](/docs/api#withcomponent) or [`.extend`](/docs/api#deprecated-extend) API's to achieve the same result as with the [`"as" prop`](/docs/api#as-polymorphic-prop), but note that this is discouraged as with v4 [`.extend` was removed](/releases#breaking-changes) and `.withComponent` was marked as a candidate for future deprecation.
