@@ -67,3 +67,33 @@ the `styled-components` module. You can overwrite the default order in which web
 +   }
   }
 ```
+
+### Usage with Lerna
+
+One possible fix to get styled-components to run in a Lerna monorepo across packages, is to [hoist](https://github.com/lerna/lerna/blob/master/doc/hoist.md#disadvantages-with-hoisting) shared dependencies to the root of your monorepo file. Try running the bootstrap option with the --hoist flag.
+
+```sh
+lerna bootstrap --hoist
+```
+
+Alternatively, you can remove `styled-components` from your `package.json` file and hoist it manually to your top-level package.json file.
+
+Example of a package.json file in a Lerna root folder
+
+```json
+{
+  "name": "my-styled-monorepo",
+  "devDependencies": {
+    "lerna": "3.6.0"
+  },
+  "dependencies": {
+    "styled-components": "3.4.5"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "start": "lerna run start",
+    "build": "lerna run build"
+  }
+}
+```

@@ -1,6 +1,6 @@
 ## TypeScript
 
-styled-components has [TypeScript definitions](https://www.npmjs.com/package/@types/styled-components) to allow the library to be used in any TypeScript project. To install them, run:
+styled-components has community-organized [TypeScript definitions](https://www.npmjs.com/package/@types/styled-components) from [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) to allow the library to be used in any TypeScript project. To install them, run:
 
 ```
 npm install @types/styled-components
@@ -14,8 +14,7 @@ Before you can effectively start to use TypeScript you will have to do a little 
 
 ### Define a theme interface
 
-By default every styled component will have the `theme` prop set to `any`.
-When building complex apps it would be better to have autocomplete and error checks everywhere.
+By default every styled component will have the `theme` prop set to `any`. When building complex apps it would be better to have autocomplete and error checks everywhere.
 
 To have autocomplete and checks around the `theme` prop we should first define the theme
 interface we would like to use throughout our app:
