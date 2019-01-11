@@ -39,4 +39,4 @@ render(
 );
 ```
 
-> Using an older version of styled-components (v3 and lower) or of React? Use the [`innerRef` prop](/docs/api#innerref-prop) instead.
+> Using an older version of styled-components (below 4.0.0) or of React? Use the [`innerRef` prop](/docs/api#innerref-prop) instead.
