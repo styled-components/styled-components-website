@@ -18,9 +18,9 @@ To get proper syntax highlighting, all you have to do is install and use the `la
 
 ### Sublime Text
 
-There is an [open PR](https://github.com/babel/babel-sublime/pull/289) by [@garetmckinley](https://github.com/garetmckinley) to add support for `styled-components` to `babel-sublime`! (if you want the PR to land, feel free to 👍 the initial comment to let the maintainers know there's a need for this!)
+A [PR](https://github.com/babel/babel-sublime/pull/289) by [@garetmckinley](https://github.com/garetmckinley) has been merged into `babel-sublime` but has not been released to Package Control. It is, however, available to install directly from GitHub as described in [this issue](https://github.com/babel/babel-sublime/issues/333).
 
-As soon as that PR is merged and a new version released, all you'll have to do is install and use `babel-sublime` to highlight your JavaScript files!
+Another option is [Naomi](https://github.com/borela/naomi) by [Alexandre Borela](https://github.com/borela), a collection of syntax highlighting definitions for Sublime Text 3 which supports `styled-components` out-of-the-box.
 
 ### Visual Studio Code
 
