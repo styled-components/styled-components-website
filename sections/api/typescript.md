@@ -32,7 +32,6 @@ Then we can re-export the `styled` function with our custom theme interface:
 ```jsx
 // styled-components.ts
 import * as styledComponents from "styled-components";
-import { ThemedStyledComponentsModule } from "styled-components";
 
 import ThemeInterface from "./theme";
 
@@ -42,7 +41,7 @@ const {
   createGlobalStyle,
   keyframes,
   ThemeProvider
-} = styledComponents as ThemedStyledComponentsModule<ThemeInterface>;
+} = styledComponents as styledComponents.ThemedStyledComponentsModule<ThemeInterface>;
 
 export { css, createGlobalStyle, keyframes, ThemeProvider };
 export default styled;
