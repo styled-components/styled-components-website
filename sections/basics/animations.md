@@ -3,6 +3,9 @@
 CSS animations with `@keyframes` aren't scoped to a single component but you still don't want them to be global to avoid name collisions. This is why we export a `keyframes` helper which will generate a unique instance that you can use throughout your app:
 
 ```react
+// Import keyframes helper
+import styled, { keyframes } from 'styled-components';
+
 // Create the keyframes
 const rotate = keyframes`
   from {
