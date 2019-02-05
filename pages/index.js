@@ -90,6 +90,8 @@ import {
   MagicLeapLogo,
   BlueTomatoLogo,
   SesameLogo,
+  VimeoLogo,
+  ShpockLogo,
 } from '../components/CompanyLogos';
 
 const Title = styled.div`
@@ -317,6 +319,10 @@ const Logos = () => {
         <SesameLogo />
       </CompanyLogo>
 
+      <CompanyLogo bottom="0.4rem" height="3rem">
+        <ShpockLogo />
+      </CompanyLogo>
+
       <CompanyLogo>
         <TargetLogo />
       </CompanyLogo>
@@ -331,6 +337,10 @@ const Logos = () => {
 
       <CompanyLogo bottom="0.15rem" height="2.35rem">
         <TypeformLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="0.3rem" height="2.1rem">
+        <VimeoLogo />
       </CompanyLogo>
 
       <CompanyLogo height="1.8rem">
