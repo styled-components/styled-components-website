@@ -139,9 +139,9 @@ const LogoStyled = styled(Logo)`
 `;
 ```
 
-### Caveat with Stateless Components
+### Caveat with Function Components
 
-To use stateless components and have typechecking for the props you'll need to define
+To use function components and have typechecking for the props you'll need to define
 the component alongside with its type. This is not special to styled-components, this is just
 how React works:
 
@@ -152,7 +152,7 @@ interface BoxProps {
   className?: string;
 }
 
-const Box: React.SFC<BoxProps> = props => <div className={props.className}>{props.children}</div>;
+const Box: React.FunctionComponent<BoxProps> = props => <div className={props.className}>{props.children}</div>;
 
 const StyledBox = styled(Box)`
   padding: ${props => props.theme.lateralPadding};
