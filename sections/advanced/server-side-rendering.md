@@ -25,8 +25,12 @@ import { renderToString } from 'react-dom/server'
 import { ServerStyleSheet } from 'styled-components'
 
 const sheet = new ServerStyleSheet()
-const html = renderToString(sheet.collectStyles(<YourApp />))
-const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
+try {
+  const html = renderToString(sheet.collectStyles(<YourApp />))
+  const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
+} finally {
+  sheet.seal()
+}
 ```
 
 The `collectStyles` method wraps your element in a provider. Optionally you can use
@@ -38,13 +42,17 @@ import { renderToString } from 'react-dom/server'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
 const sheet = new ServerStyleSheet()
-const html = renderToString(
-  <StyleSheetManager sheet={sheet.instance}>
-    <YourApp />
-  </StyleSheetManager>
-)
+try {
+  const html = renderToString(
+    <StyleSheetManager sheet={sheet.instance}>
+      <YourApp />
+    </StyleSheetManager>
+  )
 
-const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
+  const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
+} finally {
+  sheet.seal()
+}
 ```
 
 The `sheet.getStyleTags()` returns a string of multiple `<style>` tags.
