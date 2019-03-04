@@ -28,6 +28,9 @@ const sheet = new ServerStyleSheet()
 try {
   const html = renderToString(sheet.collectStyles(<YourApp />))
   const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
+} catch (error) {
+  // handle error
+  console.error(error)
 } finally {
   sheet.seal()
 }
@@ -49,6 +52,9 @@ try {
     </StyleSheetManager>
   )
   const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
+} catch (error) {
+  // handle error
+  console.error(error)
 } finally {
   sheet.seal()
 }
@@ -60,7 +66,7 @@ You need to take this into account when adding the CSS string to your HTML outpu
 Alternatively the `ServerStyleSheet` instance also has a `getStyleElement()` method
 that returns an array of React elements.
 
-If rendering fails for any reason it's a good idea to use `try...finally` to ensure that the `sheet` object will always be available for garbage collection.
+If rendering fails for any reason it's a good idea to use `try...catch...finally` to ensure that the `sheet` object will always be available for garbage collection. Make sure `sheet.seal()` is only called after `sheet.getStyleTags()` or `sheet.getStyleElement()` have been called otherwise a different error will be thrown.
 
 > `sheet.getStyleTags()` and `sheet.getStyleElement()` can only be called after your element is rendered. As a result, components from `sheet.getStyleElement()` cannot be combined with `<YourApp />` into a larger component.
 
