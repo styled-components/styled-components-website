@@ -92,6 +92,7 @@ import {
   SesameLogo,
   VimeoLogo,
   ShpockLogo,
+  KiwiComLogo,
 } from '../components/CompanyLogos';
 
 const Title = styled.div`
@@ -293,6 +294,10 @@ const Logos = () => {
 
       <CompanyLogo bottom="0.1rem" height="2.25rem">
         <InVisionLogo />
+      </CompanyLogo>
+
+      <CompanyLogo bottom="0.3rem" height="2.75rem">
+        <KiwiComLogo />
       </CompanyLogo>
 
       <CompanyLogo>
