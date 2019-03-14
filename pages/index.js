@@ -286,7 +286,7 @@ const Logos = [
     <BlueTomatoLogo />
   </CompanyLogo>,
 
-  <CompanyLogo bottom="-0.2rem" key="http://casperjs.org/" similarWebGlobalRank={1287463}>
+  <CompanyLogo bottom="-0.2rem" key="http://casper.com/" similarWebGlobalRank={33785}>
     <CasperLogo />
   </CompanyLogo>,
 
