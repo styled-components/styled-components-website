@@ -237,127 +237,149 @@ const FooterContent = styled(Content)`
   `)};
 `;
 
-const Logos = () => {
+const SortedLogos = ({ children }) => {
+  // sorting logic: the more popular a website, the higher it gets listed
+  const similarWebGlobalRankSortedLogos = React.Children.toArray(children).sort(
+    (a, b) => a.props.similarWebGlobalRank - b.props.similarWebGlobalRank
+  );
+
   return (
-    <>
-      <CompanyLogo bottom="0.3rem" height="2.5rem">
-        <AirBnBLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.16rem" height="2.25rem" src="/static/artsy-logo.svg">
-        <ArtsyLogo />
-      </CompanyLogo>
-
-      <CompanyLogo height="1.75rem">
-        <AtlassianLogo />
-      </CompanyLogo>
-
-      <CompanyLogo>
-        <Auth0Logo />
-      </CompanyLogo>
-
-      <CompanyLogo>
-        <BBCLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="-0.2rem" height="1.75rem">
-        <BloombergLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.75rem" height="3rem">
-        <BlueTomatoLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="-0.2rem">
-        <CasperLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.3rem" height="2rem" src="/static/coinbase-logo.svg">
-        <CoinbaseLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="-0.2rem">
-        <DoorDashLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.1rem" height="2.5rem">
-        <EuroVisionLogo />
-      </CompanyLogo>
-
-      <CompanyLogo src="/static/huffpost-logo.svg">
-        <HuffpostLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="-0.15rem" height="1.5rem">
-        <IdeoLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.1rem" height="2.25rem">
-        <InVisionLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.3rem" height="2.75rem">
-        <KiwiComLogo />
-      </CompanyLogo>
-
-      <CompanyLogo>
-        <LegoLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="1rem" height="4rem">
-        <MagicLeapLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="-0.15rem" height="1.3rem">
-        <MoleskineLogo />
-      </CompanyLogo>
-
-      <CompanyLogo>
-        <PatreonLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.15rem">
-        <RedditLogo />
-      </CompanyLogo>
-
-      <CompanyLogo>
-        <SesameLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.4rem" height="3rem">
-        <ShpockLogo />
-      </CompanyLogo>
-
-      <CompanyLogo>
-        <TargetLogo />
-      </CompanyLogo>
-
-      <CompanyLogo height="1.7rem">
-        <TicketmasterLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.2rem">
-        <TinderLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.15rem" height="2.35rem">
-        <TypeformLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.3rem" height="2.1rem">
-        <VimeoLogo />
-      </CompanyLogo>
-
-      <CompanyLogo height="1.8rem">
-        <VogueLogo />
-      </CompanyLogo>
-
-      <CompanyLogo bottom="0.7rem" height="2.5rem">
-        <XingLogo />
-      </CompanyLogo>
-    </>
+    <UsersWrapper>
+      {similarWebGlobalRankSortedLogos}
+      {similarWebGlobalRankSortedLogos}
+    </UsersWrapper>
   );
 };
+
+const Logos = [
+  <CompanyLogo bottom="0.3rem" height="2.5rem" key="https://www.airbnb.com" similarWebGlobalRank={20}>
+    <AirBnBLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo
+    bottom="0.16rem"
+    height="2.25rem"
+    src="/static/artsy-logo.svg"
+    key="https://www.artsy.net"
+    similarWebGlobalRank={17576}
+  >
+    <ArtsyLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="1.75rem" key="https://www.atlassian.com/" similarWebGlobalRank={2505}>
+    <AtlassianLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo key="https://auth0.com" similarWebGlobalRank={5628}>
+    <Auth0Logo />
+  </CompanyLogo>,
+
+  <CompanyLogo key="https://www.bbc.com/" similarWebGlobalRank={114}>
+    <BBCLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="-0.2rem" height="1.75rem" key="https://www.bloomberg.com" similarWebGlobalRank={507}>
+    <BloombergLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.75rem" height="3rem" key="https://www.blue-tomato.com" similarWebGlobalRank={21322}>
+    <BlueTomatoLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="-0.2rem" key="http://casperjs.org/" similarWebGlobalRank={1287463}>
+    <CasperLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo
+    bottom="0.3rem"
+    height="2rem"
+    src="/static/coinbase-logo.svg"
+    key="https://www.coinbase.com"
+    similarWebGlobalRank={2001}
+  >
+    <CoinbaseLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="-0.2rem" key="https://www.doordash.com/" similarWebGlobalRank={2831}>
+    <DoorDashLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.1rem" height="2.5rem" key="https://eurovision.tv/" similarWebGlobalRank={38132}>
+    <EuroVisionLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo src="/static/huffpost-logo.svg" key="https://www.huffpost.com" similarWebGlobalRank={950}>
+    <HuffpostLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="-0.15rem" height="1.5rem" key="https://www.ideo.com" similarWebGlobalRank={117384}>
+    <IdeoLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.1rem" height="2.25rem" key="https://www.invisionapp.com" similarWebGlobalRank={2368}>
+    <InVisionLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.3rem" height="2.75rem" key="https://www.kiwi.com" similarWebGlobalRank={4612}>
+    <KiwiComLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo key="https://www.lego.com" similarWebGlobalRank={2008}>
+    <LegoLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="1rem" height="4rem" key="https://www.magicleap.com/" similarWebGlobalRank={119765}>
+    <MagicLeapLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="-0.15rem" height="1.3rem" key="https://www.moleskine.com" similarWebGlobalRank={70404}>
+    <MoleskineLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo key="https://www.patreon.com/" similarWebGlobalRank={533}>
+    <PatreonLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.15rem" key="https://www.reddit.com/" similarWebGlobalRank={20}>
+    <RedditLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo key="https://www.sesamegifts.com/" similarWebGlobalRank={500301}>
+    <SesameLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.4rem" height="3rem" key="https://www.shpock.com" similarWebGlobalRank={11112}>
+    <ShpockLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo key="https://www.target.com" similarWebGlobalRank={300}>
+    <TargetLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="1.7rem" key="https://www.ticketmaster.com/" similarWebGlobalRank={1079}>
+    <TicketmasterLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.2rem" key="https://tinder.com/" similarWebGlobalRank={561}>
+    <TinderLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.15rem" height="2.35rem" key="https://www.typeform.com" similarWebGlobalRank={3279}>
+    <TypeformLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.3rem" height="2.1rem" key="https://www.vimeo.com" similarWebGlobalRank={239}>
+    <VimeoLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="1.8rem" key="https://www.vogue.com" similarWebGlobalRank={3075}>
+    <VogueLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.7rem" height="2.5rem" key="https://www.xing.com" similarWebGlobalRank={2203}>
+    <XingLogo />
+  </CompanyLogo>,
+];
 
 class Index extends PureComponent {
   state = {
@@ -422,10 +444,7 @@ class Index extends PureComponent {
           </Content>
           <UsersSliderContainer>
             <UsersSlider>
-              <UsersWrapper>
-                <Logos />
-                <Logos />
-              </UsersWrapper>
+              <SortedLogos>{Logos}</SortedLogos>
             </UsersSlider>
           </UsersSliderContainer>
         </Wrapper>
