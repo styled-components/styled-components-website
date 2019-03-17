@@ -12,6 +12,8 @@ A basic example of usage can be found [here](https://github.com/patrick91/Styled
 
 Before you can effectively start to use TypeScript you will have to do a little bit of configuration.
 
+> If you're using `react-native`, make sure all your imports are imported from `styled-components/native` rather than `styled-components`. This is because the typescript definition files for react-native are only under `/native`.
+
 ### Define a theme interface
 
 By default every styled component will have the `theme` prop set to `any`. When building complex apps it would be better to have autocomplete and error checks everywhere.
@@ -46,6 +48,8 @@ const {
 export { css, createGlobalStyle, keyframes, ThemeProvider };
 export default styled;
 ```
+
+If we're using react-native, we can still do the above but we must use `ReactNativeThemedStyledComponentsModule` imported from `styled-components/native` rather than `ThemedStyledComponentsModule`. Additionally, we'll need to remove `keyframes` since that is not supported in react-native.
 
 ### Styling components
 
