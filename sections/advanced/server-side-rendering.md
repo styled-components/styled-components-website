@@ -78,6 +78,12 @@ for styled-components to inject the server side rendered styles into the `<head>
 
 Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo for an up-to-date usage example.
 
+### Gatsby
+
+[Gatsby](https://www.gatsbyjs.org/) has an official plugin that enables server-side rendering for styled-components.
+
+Refer to [the plugin's page](https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/) for setup and usage instructions.
+
 ### Streaming Rendering
 
 styled-components offers a streaming API for use with [ReactDOMServer.renderToNodeStream()](https://reactjs.org/docs/react-dom-server.html#rendertonodestream). There are two parts to a streaming implementation:
