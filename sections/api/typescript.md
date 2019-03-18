@@ -29,6 +29,8 @@ export default interface ThemeInterface {
 
 Then we can re-export the `styled` function with our custom theme interface:
 
+Web:
+
 ```jsx
 // styled-components.ts
 import * as styledComponents from "styled-components";
@@ -44,6 +46,24 @@ const {
 } = styledComponents as styledComponents.ThemedStyledComponentsModule<ThemeInterface>;
 
 export { css, createGlobalStyle, keyframes, ThemeProvider };
+export default styled;
+```
+
+React-Native:
+
+```jsx
+// styled-components.ts
+import * as styledComponents from "styled-components/native";
+
+import ThemeInterface from "./theme";
+
+const {
+  default: styled,
+  css,
+  ThemeProvider
+} = styledComponents as styledComponents.ReactNativeThemedStyledComponentsModule<ThemeInterface>;
+
+export { css, ThemeProvider };
 export default styled;
 ```
 
