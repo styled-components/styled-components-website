@@ -25,8 +25,15 @@ import { renderToString } from 'react-dom/server'
 import { ServerStyleSheet } from 'styled-components'
 
 const sheet = new ServerStyleSheet()
-const html = renderToString(sheet.collectStyles(<YourApp />))
-const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
+try {
+  const html = renderToString(sheet.collectStyles(<YourApp />))
+  const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
+} catch (error) {
+  // handle error
+  console.error(error)
+} finally {
+  sheet.seal()
+}
 ```
 
 The `collectStyles` method wraps your element in a provider. Optionally you can use
@@ -38,13 +45,19 @@ import { renderToString } from 'react-dom/server'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
 const sheet = new ServerStyleSheet()
-const html = renderToString(
-  <StyleSheetManager sheet={sheet.instance}>
-    <YourApp />
-  </StyleSheetManager>
-)
-
-const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
+try {
+  const html = renderToString(
+    <StyleSheetManager sheet={sheet.instance}>
+      <YourApp />
+    </StyleSheetManager>
+  )
+  const styleTags = sheet.getStyleTags() // or sheet.getStyleElement();
+} catch (error) {
+  // handle error
+  console.error(error)
+} finally {
+  sheet.seal()
+}
 ```
 
 The `sheet.getStyleTags()` returns a string of multiple `<style>` tags.
@@ -52,6 +65,8 @@ You need to take this into account when adding the CSS string to your HTML outpu
 
 Alternatively the `ServerStyleSheet` instance also has a `getStyleElement()` method
 that returns an array of React elements.
+
+If rendering fails for any reason it's a good idea to use `try...catch...finally` to ensure that the `sheet` object will always be available for garbage collection. Make sure `sheet.seal()` is only called after `sheet.getStyleTags()` or `sheet.getStyleElement()` have been called otherwise a different error will be thrown.
 
 > `sheet.getStyleTags()` and `sheet.getStyleElement()` can only be called after your element is rendered. As a result, components from `sheet.getStyleElement()` cannot be combined with `<YourApp />` into a larger component.
 
