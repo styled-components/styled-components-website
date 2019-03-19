@@ -8,6 +8,7 @@ import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-markdown';
 import 'prismjs/components/prism-diff';
+import 'prismjs/components/prism-typescript';
 
 // NOTE: This highlights template-strings as strings of CSS
 Prism.languages.insertBefore('jsx', 'template-string', {
