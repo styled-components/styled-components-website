@@ -93,6 +93,7 @@ import {
   VimeoLogo,
   ShpockLogo,
   KiwiComLogo,
+  JaneLogo,
 } from '../components/CompanyLogos';
 
 const Title = styled.div`
@@ -378,6 +379,10 @@ const Logos = [
 
   <CompanyLogo bottom="0.7rem" height="2.5rem" key="https://www.xing.com" similarWebGlobalRank={2203}>
     <XingLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="2.0rem" key="https://jane.com" similarWebGlobalRank={21426}>
+    <JaneLogo />
   </CompanyLogo>,
 ];
 
