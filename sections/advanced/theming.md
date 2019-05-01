@@ -93,7 +93,7 @@ render(
 
 ### Getting the theme without styled components
 
-#### Using `withTheme` for Higher Order Components
+#### via `withTheme` higher-order component
 
 If you ever need to use the current theme outside styled components (e.g. inside big components), you can use
 the `withTheme` higher order component.
@@ -111,7 +111,7 @@ class MyComponent extends React.Component {
 export default withTheme(MyComponent);
 ```
 
-#### Using React Hooks `useContext` | v4
+#### via `useContext` React hook | v4
 
 You can also use `useContext` to access the current theme outside of styled components when working with React Hooks. | v4
 
