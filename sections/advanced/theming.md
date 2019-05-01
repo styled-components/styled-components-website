@@ -113,7 +113,7 @@ export default withTheme(MyComponent);
 
 #### via `useContext` React hook | v4
 
-You can also use `useContext` to access the current theme outside of styled components when working with React Hooks. | v4
+You can also use `useContext` to access the current theme outside of styled components when working with React Hooks.
 
 ```jsx
 import { useContext } from 'react';
