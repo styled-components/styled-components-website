@@ -34,7 +34,7 @@ npm run dev
 If you add a new section or materially change the website, it probably will trigger the image comparison diff snapshot to fail. These can be updated via:
 
 ```sh
-yarn integration -u
+yarn test -u
 ```
 
 ### Folder structure
