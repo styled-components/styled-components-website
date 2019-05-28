@@ -83,7 +83,7 @@ You can force the component `displayName` to be solely the component name by dis
 }
 ```
 
-One example you might want to do this, is testing components with enzyme. While you can always use `.find(ComponentName)` it's definitely possible to search component by it's displayName with `.find("ComponentName")`. In the latter case you will need to disable the `fileName` option. If you do want this for testing only, make sure to add this only under your test environment.
+One example you might want to do this, is testing components with enzyme. While you can always use `.find(ComponentName)` it's definitely possible to search component by its displayName with `.find("ComponentName")`. In the latter case you will need to disable the `fileName` option. If you do want this for testing only, make sure to add this only under your test environment.
 
 ### Minification
 
