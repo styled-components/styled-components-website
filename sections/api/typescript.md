@@ -33,7 +33,7 @@ declare module 'styled-components' {
 }
 ```
 
-`DefaultTheme` is being used as an interface of `props.theme` out of the box. By default the interface `DefaultTheme` is empty so that’s why we need to extend it.
+`DefaultTheme` is being used as an interface of `props.theme` out of the box. By default the interface `DefaultTheme` is empty so that's why we need to extend it.
 
 ### Create a theme
 
