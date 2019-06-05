@@ -113,3 +113,7 @@ render(
 ```
 
 This sort of thing is very useful in use cases like a navigation bar where some of the items should be links and some just buttons, but all be styled the same way.
+
+#### "forwardedAs" prop | v4.3
+
+If you choose to wrap another component with the `styled()` HOC that also accepts an `"as"` prop, use `"forwardedAs"` to pass along the desired prop to the wrapped component.
