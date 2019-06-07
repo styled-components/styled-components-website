@@ -21,8 +21,8 @@ const Input = styled.input.attrs({
   border-radius: 3px;
 
   /* here we use the dynamically computed props */
-  margin: ${props => props.margin};
-  padding: ${props => props.padding};
+  margin: ${props => props.size};
+  padding: ${props => props.size};
 `;
 
 render(
