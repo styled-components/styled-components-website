@@ -12,22 +12,21 @@ const Input = styled.input.attrs({
   type: "password",
 
   // or we can define dynamic ones
-  margin: ({ size }) => size || "1em",
-  padding: ({ size }) => size || "1em",
+  size: ({ size }) => size || "1em",
 })`
   color: palevioletred;
   font-size: 1em;
   border: 2px solid palevioletred;
   border-radius: 3px;
 
-  /* here we use the dynamically computed props */
+  /* here we use the dynamically computed prop */
   margin: ${props => props.size};
   padding: ${props => props.size};
 `;
 
 render(
   <div>
-    <Input placeholder="A small text input" size="1em" />
+    <Input placeholder="A small text input" />
     <br />
     <Input placeholder="A bigger text input" size="2em" />
   </div>
