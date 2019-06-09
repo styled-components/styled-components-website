@@ -1,6 +1,6 @@
-## Styling any components
+## Styling any component
 
-The `styled` method works perfectly on all of your own or any third-party components, as long as they attach the passed `className` prop to a DOM element.
+The `styled` method works perfectly on all of your own or any third-party component, as long as they attach the passed `className` prop to a DOM element.
 
 > If you are using `react-native` keep in mind to use `style` instead of `className`.
 
