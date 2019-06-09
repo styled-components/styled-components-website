@@ -122,7 +122,7 @@ import { ThemeContext } from 'styled-components';
 const MyComponent = () => {
   const themeContext = useContext(ThemeContext);
 
-  console.log('Current theme: ', this.props.theme);
+  console.log('Current theme: ', themeContext);
   // ...
 }
 ```
