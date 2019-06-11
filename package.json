@@ -68,7 +68,7 @@
     "jest": "^24.8.0",
     "jest-styled-components": "^6.2.0",
     "lint-staged": "^8.2.0",
-    "now": "^11.4.6",
+    "now": "^15.4.0",
     "prettier": "prettier/prettier",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.5.2",
