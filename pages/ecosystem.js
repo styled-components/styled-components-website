@@ -1,7 +1,5 @@
+import Markdown from 'markdown-to-jsx';
 import React from 'react';
-import MDX from '@mdx-js/runtime';
-import components from '../utils/mdx-components';
-
 import DocsLayout from '../components/DocsLayout';
 import { getReadme } from '../utils/githubApi';
 import escape from '../utils/escape';
@@ -26,14 +24,14 @@ const Ecosystem = ({ readme, sidebarPages }) => (
     {typeof readme !== 'string' ? (
       <Loading />
     ) : (
-      <MDX components={components}>{`
-        ${readme}
+      <Markdown>{`
+          ${readme}
 
-### Contribute
+  ### Contribute
 
-If you know any projects build with styled components contributions and suggestions are always welcome!
-Please read the [contribution guidelines](https://github.com/styled-components/awesome-styled-components/blob/master/contributing.md) first and submit a PR.
-      `}</MDX>
+  If you know any projects build with styled components contributions and suggestions are always welcome!
+  Please read the [contribution guidelines](https://github.com/styled-components/awesome-styled-components/blob/master/contributing.md) first and submit a PR.
+        `}</Markdown>
     )}
   </DocsLayout>
 );
@@ -41,6 +39,7 @@ Please read the [contribution guidelines](https://github.com/styled-components/a
 Ecosystem.getInitialProps = async () => {
   const readme = await getReadme('awesome-styled-components');
   const editedReadme = readme
+    .replace(/\n---\n/g, '\n\n---\n\n')
     .slice(readme.indexOf('\n---\n### Built with styled-components'))
     .split('### Contribute')[0];
 
