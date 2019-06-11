@@ -132,7 +132,7 @@ render(
 For more complex selector patterns, the ampersand (`&`) can be used to refer back to the main component. Here are some more examples of its potential usage:
 
 ```react
-const Thing = styled.div.attrs({ tabIndex: 0 })`
+const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
   color: blue;
 
   &:hover {

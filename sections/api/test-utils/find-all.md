@@ -6,7 +6,7 @@ A convenience method to find all instances of a styled component's rendered DOM 
 import styled, { findAll } from 'styled-components/test-utils'
 
 const Foo = styled.div`
-  color: ${p => p.color};
+  color: ${props => props.color};
 `
 
 /**

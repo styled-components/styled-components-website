@@ -1,16 +1,16 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import { Search, KeyboardArrowDown } from 'styled-icons/material'
-import rem from '../../utils/rem'
-import { navbarHeight } from '../../utils/sizes'
-import { paleGrey } from '../../utils/colors'
-import { mobile } from '../../utils/media'
-import { CloseIcon, FoldIcon } from './NavIcons'
-import Link from '../Link'
-import NavLinks from './NavLinks'
-import Social from './Social'
-import Logo from './Logo'
-import NavButton from './NavButton'
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { Search, KeyboardArrowDown } from 'styled-icons/material';
+import rem from '../../utils/rem';
+import { navbarHeight } from '../../utils/sizes';
+import { paleGrey } from '../../utils/colors';
+import { mobile } from '../../utils/media';
+import { CloseIcon, FoldIcon } from './NavIcons';
+import Link from '../Link';
+import NavLinks from './NavLinks';
+import Social from './Social';
+import Logo from './Logo';
+import NavButton from './NavButton';
 
 const Wrapper = styled.div`
   display: none;
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     justify-content: space-between;
     height: ${rem(navbarHeight)};
   `)};
-`
+`;
 
 const SecondaryMenu = styled.div`
   position: absolute;
@@ -50,16 +50,16 @@ const SecondaryMenu = styled.div`
 
   background: ${paleGrey};
   color: #868686;
-`
+`;
 
-const LogoLink = styled(Link).attrs({
+const LogoLink = styled(Link).attrs((/* props */) => ({
   unstyled: true,
   href: '/',
   'aria-label': 'styled components',
-})`
+}))`
   display: inline-block;
   vertical-align: center;
-`
+`;
 
 const ArrowWrapper = styled.div`
   transition: transform 0.2s;
@@ -70,28 +70,21 @@ const ArrowWrapper = styled.div`
       transform-origin: center center;
       transform: rotate(180deg);
     `};
-`
+`;
 
 const SecondaryMenuItem = styled.div`
   padding-right: ${rem(20)};
-`
+`;
 
 const StyledIcon = styled.div`
   && {
     width: ${p => rem(p.size || 20)};
     height: ${p => rem(p.size || 20)};
   }
-`
+`;
 
 const MobileNavbar = props => {
-  const {
-    isSideFolded,
-    isMobileNavFolded,
-    onSideToggle,
-    onMobileNavToggle,
-    showSideNav,
-    onSearchButtonClick,
-  } = props
+  const { isSideFolded, isMobileNavFolded, onSideToggle, onMobileNavToggle, showSideNav, onSearchButtonClick } = props;
 
   return (
     <Wrapper>
@@ -123,7 +116,7 @@ const MobileNavbar = props => {
         </SecondaryMenuItem>
       </SecondaryMenu>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default MobileNavbar
+export default MobileNavbar;
