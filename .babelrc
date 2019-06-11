@@ -12,19 +12,11 @@
   ],
   "env": {
     "development": {
-      "presets": [
-        "next/babel"
-      ],
-      "plugins": [
-        [
-          "babel-plugin-styled-components"
-        ]
-      ]
+      "presets": ["next/babel"],
+      "plugins": ["babel-plugin-styled-components"]
     },
     "production": {
-      "presets": [
-        "next/babel"
-      ],
+      "presets": ["next/babel"],
       "plugins": [
         [
           "babel-plugin-styled-components",
@@ -44,9 +36,7 @@
         ],
         "next/babel"
       ],
-      "plugins": [
-        "babel-plugin-dynamic-import-node"
-      ]
+      "plugins": ["babel-plugin-dynamic-import-node"]
     }
   }
 }
