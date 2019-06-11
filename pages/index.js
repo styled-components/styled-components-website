@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { LiveProvider, LiveEditor, LivePreview } from '@probablyup/react-live';
+import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
 import { Favorite } from 'styled-icons/material';
 
 import rem from '../utils/rem';

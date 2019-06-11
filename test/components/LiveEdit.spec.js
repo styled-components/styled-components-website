@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import LiveEdit, { StyledError } from '../../components/LiveEdit';
 
