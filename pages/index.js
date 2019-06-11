@@ -26,7 +26,7 @@ const SupportingTagline = styled.h2`
 `;
 
 const headerCode = `
-const Button = styled.a\\\`
+const Button = styled.a\`
   /* This renders the buttons above... Edit me! */
   display: inline-block;
   border-radius: 3px;
@@ -43,7 +43,7 @@ const Button = styled.a\\\`
     background: white;
     color: palevioletred;
   \`}
-\`/
+\`
 
 render(
   <div>
