@@ -5,9 +5,9 @@ import { Link as LinkIcon } from 'styled-icons/material';
 import { Header, SubHeader, TertiaryHeader } from './Layout';
 import { mobile } from '../utils/media';
 
-const InvisibleAnchor = styled.div.attrs({
+const InvisibleAnchor = styled.div.attrs((/* props */) => ({
   'aria-hidden': true,
-})`
+}))`
   position: relative;
   display: block;
   visibility: hidden;
@@ -26,10 +26,10 @@ const Anchor = styled.a`
   margin-left: ${rem(10)};
 `;
 
-const AnchorIcon = styled(LinkIcon).attrs({
+const AnchorIcon = styled(LinkIcon).attrs((/* props */) => ({
   width: null,
   height: null,
-})`
+}))`
   width: ${rem(20)};
   opacity: 0.7;
   margin-top: ${rem(-5)};

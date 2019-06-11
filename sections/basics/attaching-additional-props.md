@@ -7,13 +7,13 @@ This way you can for example attach static props to an element, or pass a third-
 Here we render an `Input` component and attach some dynamic and static attributes to it:
 
 ```react
-const Input = styled.input.attrs({
+const Input = styled.input.attrs(props => ({
   // we can define static props
   type: "password",
 
   // or we can define dynamic ones
-  size: ({ size }) => size || "1em",
-})`
+  size: props.size || "1em",
+}))`
   color: palevioletred;
   font-size: 1em;
   border: 2px solid palevioletred;

@@ -9,13 +9,13 @@ import { monospace } from '../utils/fonts';
 
 import { Note } from './Note';
 
-const CodeBlock = styled(p => {
-  const language = (p.language || 'clike').toLowerCase().trim();
+const CodeBlock = styled(props => {
+  const language = (props.language || 'clike').toLowerCase().trim();
 
-  return <Editor {...p} language={language} />;
-}).attrs({
+  return <Editor {...props} language={language} />;
+}).attrs((/* props */) => ({
   contentEditable: false,
-})`
+}))`
   background: ${darkGrey};
   font-size: 0.8rem;
   font-family: ${monospace};

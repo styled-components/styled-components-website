@@ -167,15 +167,14 @@ const Component = styled.div`
 
 7. If you're ussing `attrs({})` and some of the attributes you pass to it is a Function, it's recommended to switch to the new `attrs(props => ({}))` syntax instead for easier and more powerful composition.
 
-
 🚫
 
 ```js
 import styled from 'styled-components'
 
-const Input = styled.input.attrs({
-  type: ({ inputType }) => inputType
-})`
+const Input = styled.input.attrs(props => ({
+  type: props.inputType,
+}))`
   background: blue;
   color: red;
 `
@@ -187,7 +186,7 @@ const Input = styled.input.attrs({
 import styled from 'styled-components'
 
 const Input = styled.input.attrs(({ inputType }) => ({
-  type: inputType
+  type: inputType,
 }))`
   background: blue;
   color: red;

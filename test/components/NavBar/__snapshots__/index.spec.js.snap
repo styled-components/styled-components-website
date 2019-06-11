@@ -636,12 +636,12 @@ exports[`Nav renders correctly 1`] = `
 <Nav>
   <div>
     <Navbar>
-      <ForwardRef>
+      <styled.nav>
         <StyledComponent
-          forwardedClass={
+          forwardedComponent={
             Object {
               "$$typeof": Symbol(react.forward_ref),
-              "attrs": undefined,
+              "attrs": Array [],
               "componentStyle": ComponentStyle {
                 "componentId": "sc-kpOJdX",
                 "isStatic": false,
@@ -675,9 +675,11 @@ exports[`Nav renders correctly 1`] = `
                 ],
               },
               "displayName": "styled.nav",
+              "foldedComponentIds": Array [],
               "render": [Function],
               "styledComponentId": "sc-kpOJdX",
               "target": "nav",
+              "toString": [Function],
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -687,12 +689,12 @@ exports[`Nav renders correctly 1`] = `
           <nav
             className="c0"
           >
-            <ForwardRef>
+            <styled.div>
               <StyledComponent
-                forwardedClass={
+                forwardedComponent={
                   Object {
                     "$$typeof": Symbol(react.forward_ref),
-                    "attrs": undefined,
+                    "attrs": Array [],
                     "componentStyle": ComponentStyle {
                       "componentId": "sc-eNQAEJ",
                       "isStatic": true,
@@ -730,9 +732,11 @@ exports[`Nav renders correctly 1`] = `
                       ],
                     },
                     "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
                     "render": [Function],
                     "styledComponentId": "sc-eNQAEJ",
                     "target": "div",
+                    "toString": [Function],
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -742,12 +746,12 @@ exports[`Nav renders correctly 1`] = `
                 <div
                   className="c1"
                 >
-                  <ForwardRef>
+                  <styled.div>
                     <StyledComponent
-                      forwardedClass={
+                      forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "attrs": undefined,
+                          "attrs": Array [],
                           "componentStyle": ComponentStyle {
                             "componentId": "c2",
                             "isStatic": true,
@@ -761,9 +765,11 @@ exports[`Nav renders correctly 1`] = `
                             ],
                           },
                           "displayName": "styled.div",
+                          "foldedComponentIds": Array [],
                           "render": [Function],
                           "styledComponentId": "c2",
                           "target": "div",
+                          "toString": [Function],
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
                         }
@@ -773,18 +779,17 @@ exports[`Nav renders correctly 1`] = `
                       <div
                         className="c2 c3"
                       >
-                        <ForwardRef>
+                        <Styled(Link)>
                           <StyledComponent
-                            forwardedClass={
+                            forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "attrs": Object {
-                                  "href": "/",
-                                  "unstyled": true,
-                                },
+                                "attrs": Array [
+                                  [Function],
+                                ],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-hSdWYo",
-                                  "isStatic": true,
+                                  "isStatic": false,
                                   "lastClassName": "c4",
                                   "rules": Array [
                                     "
@@ -797,9 +802,11 @@ exports[`Nav renders correctly 1`] = `
                                   ],
                                 },
                                 "displayName": "Styled(Link)",
+                                "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "sc-hSdWYo",
                                 "target": [Function],
+                                "toString": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                                 Symbol(Symbol.hasInstance): [Function],
@@ -820,12 +827,12 @@ exports[`Nav renders correctly 1`] = `
                                   href="/"
                                   onClick={[Function]}
                                 >
-                                  <ForwardRef>
+                                  <styled.div>
                                     <StyledComponent
-                                      forwardedClass={
+                                      forwardedComponent={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": undefined,
+                                          "attrs": Array [],
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-dnqmqq",
                                             "isStatic": false,
@@ -846,9 +853,11 @@ exports[`Nav renders correctly 1`] = `
                                             ],
                                           },
                                           "displayName": "styled.div",
+                                          "foldedComponentIds": Array [],
                                           "render": [Function],
                                           "styledComponentId": "sc-dnqmqq",
                                           "target": "div",
+                                          "toString": [Function],
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -859,19 +868,19 @@ exports[`Nav renders correctly 1`] = `
                                         className="c5"
                                       />
                                     </StyledComponent>
-                                  </ForwardRef>
+                                  </styled.div>
                                 </a>
                               </Link>
                             </Link>
                           </StyledComponent>
-                        </ForwardRef>
+                        </Styled(Link)>
                         <NavLinks>
-                          <ForwardRef>
+                          <styled.nav>
                             <StyledComponent
-                              forwardedClass={
+                              forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": undefined,
+                                  "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "sc-bxivhb",
                                     "isStatic": true,
@@ -888,9 +897,11 @@ exports[`Nav renders correctly 1`] = `
                                     ],
                                   },
                                   "displayName": "styled.nav",
+                                  "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "sc-bxivhb",
                                   "target": "nav",
+                                  "toString": [Function],
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -900,20 +911,19 @@ exports[`Nav renders correctly 1`] = `
                               <nav
                                 className="c6"
                               >
-                                <ForwardRef
+                                <Styled(Link)
                                   href="/docs"
                                 >
                                   <StyledComponent
-                                    forwardedClass={
+                                    forwardedComponent={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": Object {
-                                          "prefetch": true,
-                                          "unstyled": true,
-                                        },
+                                        "attrs": Array [
+                                          [Function],
+                                        ],
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-ifAKCX",
-                                          "isStatic": true,
+                                          "isStatic": false,
                                           "lastClassName": "c7",
                                           "rules": Array [
                                             "
@@ -943,9 +953,11 @@ exports[`Nav renders correctly 1`] = `
                                           ],
                                         },
                                         "displayName": "Styled(Link)",
+                                        "foldedComponentIds": Array [],
                                         "render": [Function],
                                         "styledComponentId": "sc-ifAKCX",
                                         "target": [Function],
+                                        "toString": [Function],
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                         Symbol(Symbol.hasInstance): [Function],
@@ -974,13 +986,13 @@ exports[`Nav renders correctly 1`] = `
                                       </Link>
                                     </Link>
                                   </StyledComponent>
-                                </ForwardRef>
-                                <ForwardRef>
+                                </Styled(Link)>
+                                <styled.span>
                                   <StyledComponent
-                                    forwardedClass={
+                                    forwardedComponent={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": undefined,
+                                        "attrs": Array [],
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-htpNat",
                                           "isStatic": true,
@@ -1005,9 +1017,11 @@ exports[`Nav renders correctly 1`] = `
                                           ],
                                         },
                                         "displayName": "styled.span",
+                                        "foldedComponentIds": Array [],
                                         "render": [Function],
                                         "styledComponentId": "sc-htpNat",
                                         "target": "span",
+                                        "toString": [Function],
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                       }
@@ -1018,21 +1032,20 @@ exports[`Nav renders correctly 1`] = `
                                       className="c8"
                                     />
                                   </StyledComponent>
-                                </ForwardRef>
-                                <ForwardRef
+                                </styled.span>
+                                <Styled(Link)
                                   href="/ecosystem"
                                 >
                                   <StyledComponent
-                                    forwardedClass={
+                                    forwardedComponent={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": Object {
-                                          "prefetch": true,
-                                          "unstyled": true,
-                                        },
+                                        "attrs": Array [
+                                          [Function],
+                                        ],
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-ifAKCX",
-                                          "isStatic": true,
+                                          "isStatic": false,
                                           "lastClassName": "c7",
                                           "rules": Array [
                                             "
@@ -1062,9 +1075,11 @@ exports[`Nav renders correctly 1`] = `
                                           ],
                                         },
                                         "displayName": "Styled(Link)",
+                                        "foldedComponentIds": Array [],
                                         "render": [Function],
                                         "styledComponentId": "sc-ifAKCX",
                                         "target": [Function],
+                                        "toString": [Function],
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                         Symbol(Symbol.hasInstance): [Function],
@@ -1093,13 +1108,13 @@ exports[`Nav renders correctly 1`] = `
                                       </Link>
                                     </Link>
                                   </StyledComponent>
-                                </ForwardRef>
-                                <ForwardRef>
+                                </Styled(Link)>
+                                <styled.span>
                                   <StyledComponent
-                                    forwardedClass={
+                                    forwardedComponent={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": undefined,
+                                        "attrs": Array [],
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-htpNat",
                                           "isStatic": true,
@@ -1124,9 +1139,11 @@ exports[`Nav renders correctly 1`] = `
                                           ],
                                         },
                                         "displayName": "styled.span",
+                                        "foldedComponentIds": Array [],
                                         "render": [Function],
                                         "styledComponentId": "sc-htpNat",
                                         "target": "span",
+                                        "toString": [Function],
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                       }
@@ -1137,21 +1154,20 @@ exports[`Nav renders correctly 1`] = `
                                       className="c8"
                                     />
                                   </StyledComponent>
-                                </ForwardRef>
-                                <ForwardRef
+                                </styled.span>
+                                <Styled(Link)
                                   href="/releases"
                                 >
                                   <StyledComponent
-                                    forwardedClass={
+                                    forwardedComponent={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": Object {
-                                          "prefetch": true,
-                                          "unstyled": true,
-                                        },
+                                        "attrs": Array [
+                                          [Function],
+                                        ],
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-ifAKCX",
-                                          "isStatic": true,
+                                          "isStatic": false,
                                           "lastClassName": "c7",
                                           "rules": Array [
                                             "
@@ -1181,9 +1197,11 @@ exports[`Nav renders correctly 1`] = `
                                           ],
                                         },
                                         "displayName": "Styled(Link)",
+                                        "foldedComponentIds": Array [],
                                         "render": [Function],
                                         "styledComponentId": "sc-ifAKCX",
                                         "target": [Function],
+                                        "toString": [Function],
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                         Symbol(Symbol.hasInstance): [Function],
@@ -1212,20 +1230,20 @@ exports[`Nav renders correctly 1`] = `
                                       </Link>
                                     </Link>
                                   </StyledComponent>
-                                </ForwardRef>
+                                </Styled(Link)>
                               </nav>
                             </StyledComponent>
-                          </ForwardRef>
+                          </styled.nav>
                         </NavLinks>
                       </div>
                     </StyledComponent>
-                  </ForwardRef>
-                  <ForwardRef>
+                  </styled.div>
+                  <styled.div>
                     <StyledComponent
-                      forwardedClass={
+                      forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
-                          "attrs": undefined,
+                          "attrs": Array [],
                           "componentStyle": ComponentStyle {
                             "componentId": "c9",
                             "isStatic": true,
@@ -1239,9 +1257,11 @@ exports[`Nav renders correctly 1`] = `
                             ],
                           },
                           "displayName": "styled.div",
+                          "foldedComponentIds": Array [],
                           "render": [Function],
                           "styledComponentId": "c9",
                           "target": "div",
+                          "toString": [Function],
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
                         }
@@ -1255,14 +1275,14 @@ exports[`Nav renders correctly 1`] = `
                           isOpen={false}
                           requestModalClose={[Function]}
                         >
-                          <ForwardRef
+                          <styled.div
                             isOpen={false}
                           >
                             <StyledComponent
-                              forwardedClass={
+                              forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": undefined,
+                                  "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "sc-kkGfuU",
                                     "isStatic": false,
@@ -1307,9 +1327,11 @@ exports[`Nav renders correctly 1`] = `
                                     ],
                                   },
                                   "displayName": "styled.div",
+                                  "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "sc-kkGfuU",
                                   "target": "div",
+                                  "toString": [Function],
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -1323,12 +1345,12 @@ exports[`Nav renders correctly 1`] = `
                                 <button
                                   onClick={[Function]}
                                 >
-                                  <ForwardRef>
+                                  <Styled(DummyIcon)>
                                     <StyledComponent
-                                      forwardedClass={
+                                      forwardedComponent={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": undefined,
+                                          "attrs": Array [],
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-hMqMXs",
                                             "isStatic": true,
@@ -1346,9 +1368,11 @@ exports[`Nav renders correctly 1`] = `
                                             ],
                                           },
                                           "displayName": "Styled(DummyIcon)",
+                                          "foldedComponentIds": Array [],
                                           "render": [Function],
                                           "styledComponentId": "sc-hMqMXs",
                                           "target": [Function],
+                                          "toString": [Function],
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                           Symbol(Symbol.hasInstance): [Function],
@@ -1364,20 +1388,20 @@ exports[`Nav renders correctly 1`] = `
                                         />
                                       </DummyIcon>
                                     </StyledComponent>
-                                  </ForwardRef>
+                                  </Styled(DummyIcon)>
                                 </button>
                               </div>
                             </StyledComponent>
-                          </ForwardRef>
-                          <ForwardRef
+                          </styled.div>
+                          <styled.div
                             isOpen={false}
                             onClick={[Function]}
                           >
                             <StyledComponent
-                              forwardedClass={
+                              forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": undefined,
+                                  "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "sc-iAyFgw",
                                     "isStatic": false,
@@ -1428,9 +1452,11 @@ exports[`Nav renders correctly 1`] = `
                                     ],
                                   },
                                   "displayName": "styled.div",
+                                  "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "sc-iAyFgw",
                                   "target": "div",
+                                  "toString": [Function],
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -1443,12 +1469,12 @@ exports[`Nav renders correctly 1`] = `
                                 className="c13"
                                 onClick={[Function]}
                               >
-                                <ForwardRef>
+                                <styled.div>
                                   <StyledComponent
-                                    forwardedClass={
+                                    forwardedComponent={
                                       Object {
                                         "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": undefined,
+                                        "attrs": Array [],
                                         "componentStyle": ComponentStyle {
                                           "componentId": "sc-kEYyzF",
                                           "isStatic": true,
@@ -1477,9 +1503,11 @@ exports[`Nav renders correctly 1`] = `
                                           ],
                                         },
                                         "displayName": "styled.div",
+                                        "foldedComponentIds": Array [],
                                         "render": [Function],
                                         "styledComponentId": "sc-kEYyzF",
                                         "target": "div",
+                                        "toString": [Function],
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                       }
@@ -1697,12 +1725,12 @@ exports[`Nav renders correctly 1`] = `
                                           requestModalClose={[Function]}
                                         >
                                           <Search>
-                                            <ForwardRef>
+                                            <styled.form>
                                               <StyledComponent
-                                                forwardedClass={
+                                                forwardedComponent={
                                                   Object {
                                                     "$$typeof": Symbol(react.forward_ref),
-                                                    "attrs": undefined,
+                                                    "attrs": Array [],
                                                     "componentStyle": ComponentStyle {
                                                       "componentId": "sc-chPdSV",
                                                       "isStatic": true,
@@ -1737,9 +1765,11 @@ exports[`Nav renders correctly 1`] = `
                                                       ],
                                                     },
                                                     "displayName": "styled.form",
+                                                    "foldedComponentIds": Array [],
                                                     "render": [Function],
                                                     "styledComponentId": "sc-chPdSV",
                                                     "target": "form",
+                                                    "toString": [Function],
                                                     "warnTooManyClasses": [Function],
                                                     "withComponent": [Function],
                                                   }
@@ -1750,17 +1780,17 @@ exports[`Nav renders correctly 1`] = `
                                                   className="c15"
                                                 >
                                                   <GlobalStyleComponent />
-                                                  <ForwardRef>
+                                                  <styled.label>
                                                     <StyledComponent
-                                                      forwardedClass={
+                                                      forwardedComponent={
                                                         Object {
                                                           "$$typeof": Symbol(react.forward_ref),
-                                                          "attrs": Object {
-                                                            "htmlFor": "docs-search-input",
-                                                          },
+                                                          "attrs": Array [
+                                                            [Function],
+                                                          ],
                                                           "componentStyle": ComponentStyle {
                                                             "componentId": "sc-kGXeez",
-                                                            "isStatic": true,
+                                                            "isStatic": false,
                                                             "lastClassName": "c16",
                                                             "rules": Array [
                                                               "
@@ -1840,9 +1870,11 @@ exports[`Nav renders correctly 1`] = `
                                                             ],
                                                           },
                                                           "displayName": "styled.label",
+                                                          "foldedComponentIds": Array [],
                                                           "render": [Function],
                                                           "styledComponentId": "sc-kGXeez",
                                                           "target": "label",
+                                                          "toString": [Function],
                                                           "warnTooManyClasses": [Function],
                                                           "withComponent": [Function],
                                                         }
@@ -1853,12 +1885,12 @@ exports[`Nav renders correctly 1`] = `
                                                         className="c16"
                                                         htmlFor="docs-search-input"
                                                       >
-                                                        <ForwardRef>
+                                                        <Styled(DummyIcon)>
                                                           <StyledComponent
-                                                            forwardedClass={
+                                                            forwardedComponent={
                                                               Object {
                                                                 "$$typeof": Symbol(react.forward_ref),
-                                                                "attrs": undefined,
+                                                                "attrs": Array [],
                                                                 "componentStyle": ComponentStyle {
                                                                   "componentId": "c17",
                                                                   "isStatic": true,
@@ -1866,9 +1898,11 @@ exports[`Nav renders correctly 1`] = `
                                                                   "rules": Array [],
                                                                 },
                                                                 "displayName": "Styled(DummyIcon)",
+                                                                "foldedComponentIds": Array [],
                                                                 "render": [Function],
                                                                 "styledComponentId": "c17",
                                                                 "target": [Function],
+                                                                "toString": [Function],
                                                                 "warnTooManyClasses": [Function],
                                                                 "withComponent": [Function],
                                                                 Symbol(Symbol.hasInstance): [Function],
@@ -1884,20 +1918,20 @@ exports[`Nav renders correctly 1`] = `
                                                               />
                                                             </DummyIcon>
                                                           </StyledComponent>
-                                                        </ForwardRef>
+                                                        </Styled(DummyIcon)>
                                                       </label>
                                                     </StyledComponent>
-                                                  </ForwardRef>
-                                                  <ForwardRef
+                                                  </styled.label>
+                                                  <styled.input
                                                     id="docs-search-input"
                                                     placeholder="Search docs ..."
                                                     type="search"
                                                   >
                                                     <StyledComponent
-                                                      forwardedClass={
+                                                      forwardedComponent={
                                                         Object {
                                                           "$$typeof": Symbol(react.forward_ref),
-                                                          "attrs": undefined,
+                                                          "attrs": Array [],
                                                           "componentStyle": ComponentStyle {
                                                             "componentId": "sc-kgoBCf",
                                                             "isStatic": true,
@@ -1963,9 +1997,11 @@ exports[`Nav renders correctly 1`] = `
                                                             ],
                                                           },
                                                           "displayName": "styled.input",
+                                                          "foldedComponentIds": Array [],
                                                           "render": [Function],
                                                           "styledComponentId": "sc-kgoBCf",
                                                           "target": "input",
+                                                          "toString": [Function],
                                                           "warnTooManyClasses": [Function],
                                                           "withComponent": [Function],
                                                         }
@@ -1982,26 +2018,26 @@ exports[`Nav renders correctly 1`] = `
                                                         type="search"
                                                       />
                                                     </StyledComponent>
-                                                  </ForwardRef>
+                                                  </styled.input>
                                                 </form>
                                               </StyledComponent>
-                                            </ForwardRef>
+                                            </styled.form>
                                           </Search>
                                         </SearchWithAlgolia>
                                       </div>
                                     </div>
                                   </StyledComponent>
-                                </ForwardRef>
+                                </styled.div>
                               </div>
                             </StyledComponent>
-                          </ForwardRef>
+                          </styled.div>
                         </ModalContainer>
-                        <ForwardRef>
+                        <Styled(Social)>
                           <StyledComponent
-                            forwardedClass={
+                            forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "attrs": undefined,
+                                "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "c19",
                                   "isStatic": true,
@@ -2009,9 +2045,11 @@ exports[`Nav renders correctly 1`] = `
                                   "rules": Array [],
                                 },
                                 "displayName": "Styled(Social)",
+                                "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "c19",
                                 "target": [Function],
+                                "toString": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                                 Symbol(Symbol.hasInstance): [Function],
@@ -2022,15 +2060,15 @@ exports[`Nav renders correctly 1`] = `
                             <Social
                               className="c19 "
                             >
-                              <ForwardRef
+                              <styled.nav
                                 className="c19 "
                               >
                                 <StyledComponent
                                   className="c19 "
-                                  forwardedClass={
+                                  forwardedComponent={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
+                                      "attrs": Array [],
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-EHOje",
                                         "isStatic": true,
@@ -2044,9 +2082,11 @@ exports[`Nav renders correctly 1`] = `
                                         ],
                                       },
                                       "displayName": "styled.nav",
+                                      "foldedComponentIds": Array [],
                                       "render": [Function],
                                       "styledComponentId": "sc-EHOje",
                                       "target": "nav",
+                                      "toString": [Function],
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
                                     }
@@ -2056,19 +2096,19 @@ exports[`Nav renders correctly 1`] = `
                                   <nav
                                     className="c19 c20"
                                   >
-                                    <ForwardRef
+                                    <Styled(Link)
                                       href="https://spectrum.chat/styled-components/"
                                     >
                                       <StyledComponent
-                                        forwardedClass={
+                                        forwardedComponent={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": Object {
-                                              "unstyled": true,
-                                            },
+                                            "attrs": Array [
+                                              [Function],
+                                            ],
                                             "componentStyle": ComponentStyle {
                                               "componentId": "sc-bZQynM",
-                                              "isStatic": true,
+                                              "isStatic": false,
                                               "lastClassName": "c21",
                                               "rules": Array [
                                                 "
@@ -2105,9 +2145,11 @@ exports[`Nav renders correctly 1`] = `
                                               ],
                                             },
                                             "displayName": "Styled(Link)",
+                                            "foldedComponentIds": Array [],
                                             "render": [Function],
                                             "styledComponentId": "sc-bZQynM",
                                             "target": [Function],
+                                            "toString": [Function],
                                             "warnTooManyClasses": [Function],
                                             "withComponent": [Function],
                                             Symbol(Symbol.hasInstance): [Function],
@@ -2130,16 +2172,16 @@ exports[`Nav renders correctly 1`] = `
                                               onClick={[Function]}
                                             >
                                               <Spectrum>
-                                                <ForwardRef
+                                                <styled.svg
                                                   height="14"
                                                   viewBox="0 0 15 15"
                                                   width="14"
                                                 >
                                                   <StyledComponent
-                                                    forwardedClass={
+                                                    forwardedComponent={
                                                       Object {
                                                         "$$typeof": Symbol(react.forward_ref),
-                                                        "attrs": undefined,
+                                                        "attrs": Array [],
                                                         "componentStyle": ComponentStyle {
                                                           "componentId": "sc-gzVnrw",
                                                           "isStatic": false,
@@ -2156,9 +2198,11 @@ exports[`Nav renders correctly 1`] = `
                                                           ],
                                                         },
                                                         "displayName": "styled.svg",
+                                                        "foldedComponentIds": Array [],
                                                         "render": [Function],
                                                         "styledComponentId": "sc-gzVnrw",
                                                         "target": "svg",
+                                                        "toString": [Function],
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
                                                       }
@@ -2183,26 +2227,26 @@ exports[`Nav renders correctly 1`] = `
                                                       />
                                                     </svg>
                                                   </StyledComponent>
-                                                </ForwardRef>
+                                                </styled.svg>
                                               </Spectrum>
                                             </a>
                                           </Link>
                                         </Link>
                                       </StyledComponent>
-                                    </ForwardRef>
-                                    <ForwardRef
+                                    </Styled(Link)>
+                                    <Styled(Link)
                                       href="https://github.com/styled-components"
                                     >
                                       <StyledComponent
-                                        forwardedClass={
+                                        forwardedComponent={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": Object {
-                                              "unstyled": true,
-                                            },
+                                            "attrs": Array [
+                                              [Function],
+                                            ],
                                             "componentStyle": ComponentStyle {
                                               "componentId": "sc-bZQynM",
-                                              "isStatic": true,
+                                              "isStatic": false,
                                               "lastClassName": "c21",
                                               "rules": Array [
                                                 "
@@ -2239,9 +2283,11 @@ exports[`Nav renders correctly 1`] = `
                                               ],
                                             },
                                             "displayName": "Styled(Link)",
+                                            "foldedComponentIds": Array [],
                                             "render": [Function],
                                             "styledComponentId": "sc-bZQynM",
                                             "target": [Function],
+                                            "toString": [Function],
                                             "warnTooManyClasses": [Function],
                                             "withComponent": [Function],
                                             Symbol(Symbol.hasInstance): [Function],
@@ -2263,16 +2309,16 @@ exports[`Nav renders correctly 1`] = `
                                               href="https://github.com/styled-components"
                                               onClick={[Function]}
                                             >
-                                              <ForwardRef
+                                              <styled.div
                                                 as={[Function]}
                                                 height="18"
                                               >
                                                 <StyledComponent
                                                   as={[Function]}
-                                                  forwardedClass={
+                                                  forwardedComponent={
                                                     Object {
                                                       "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
+                                                      "attrs": Array [],
                                                       "componentStyle": ComponentStyle {
                                                         "componentId": "sc-htoDjs",
                                                         "isStatic": false,
@@ -2291,9 +2337,11 @@ exports[`Nav renders correctly 1`] = `
                                                         ],
                                                       },
                                                       "displayName": "styled.div",
+                                                      "foldedComponentIds": Array [],
                                                       "render": [Function],
                                                       "styledComponentId": "sc-htoDjs",
                                                       "target": "div",
+                                                      "toString": [Function],
                                                       "warnTooManyClasses": [Function],
                                                       "withComponent": [Function],
                                                     }
@@ -2311,25 +2359,25 @@ exports[`Nav renders correctly 1`] = `
                                                     />
                                                   </DummyIcon>
                                                 </StyledComponent>
-                                              </ForwardRef>
+                                              </styled.div>
                                             </a>
                                           </Link>
                                         </Link>
                                       </StyledComponent>
-                                    </ForwardRef>
-                                    <ForwardRef
+                                    </Styled(Link)>
+                                    <Styled(Link)
                                       href="https://medium.com/styled-components"
                                     >
                                       <StyledComponent
-                                        forwardedClass={
+                                        forwardedComponent={
                                           Object {
                                             "$$typeof": Symbol(react.forward_ref),
-                                            "attrs": Object {
-                                              "unstyled": true,
-                                            },
+                                            "attrs": Array [
+                                              [Function],
+                                            ],
                                             "componentStyle": ComponentStyle {
                                               "componentId": "sc-bZQynM",
-                                              "isStatic": true,
+                                              "isStatic": false,
                                               "lastClassName": "c21",
                                               "rules": Array [
                                                 "
@@ -2366,9 +2414,11 @@ exports[`Nav renders correctly 1`] = `
                                               ],
                                             },
                                             "displayName": "Styled(Link)",
+                                            "foldedComponentIds": Array [],
                                             "render": [Function],
                                             "styledComponentId": "sc-bZQynM",
                                             "target": [Function],
+                                            "toString": [Function],
                                             "warnTooManyClasses": [Function],
                                             "withComponent": [Function],
                                             Symbol(Symbol.hasInstance): [Function],
@@ -2390,16 +2440,16 @@ exports[`Nav renders correctly 1`] = `
                                               href="https://medium.com/styled-components"
                                               onClick={[Function]}
                                             >
-                                              <ForwardRef
+                                              <styled.div
                                                 as={[Function]}
                                                 height="18"
                                               >
                                                 <StyledComponent
                                                   as={[Function]}
-                                                  forwardedClass={
+                                                  forwardedComponent={
                                                     Object {
                                                       "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": undefined,
+                                                      "attrs": Array [],
                                                       "componentStyle": ComponentStyle {
                                                         "componentId": "sc-htoDjs",
                                                         "isStatic": false,
@@ -2418,9 +2468,11 @@ exports[`Nav renders correctly 1`] = `
                                                         ],
                                                       },
                                                       "displayName": "styled.div",
+                                                      "foldedComponentIds": Array [],
                                                       "render": [Function],
                                                       "styledComponentId": "sc-htoDjs",
                                                       "target": "div",
+                                                      "toString": [Function],
                                                       "warnTooManyClasses": [Function],
                                                       "withComponent": [Function],
                                                     }
@@ -2438,33 +2490,33 @@ exports[`Nav renders correctly 1`] = `
                                                     />
                                                   </DummyIcon>
                                                 </StyledComponent>
-                                              </ForwardRef>
+                                              </styled.div>
                                             </a>
                                           </Link>
                                         </Link>
                                       </StyledComponent>
-                                    </ForwardRef>
+                                    </Styled(Link)>
                                   </nav>
                                 </StyledComponent>
-                              </ForwardRef>
+                              </styled.nav>
                             </Social>
                           </StyledComponent>
-                        </ForwardRef>
+                        </Styled(Social)>
                       </div>
                     </StyledComponent>
-                  </ForwardRef>
+                  </styled.div>
                 </div>
               </StyledComponent>
-            </ForwardRef>
+            </styled.div>
             <MobileNavbar
               onSearchButtonClick={[Function]}
             >
-              <ForwardRef>
+              <styled.div>
                 <StyledComponent
-                  forwardedClass={
+                  forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
-                      "attrs": undefined,
+                      "attrs": Array [],
                       "componentStyle": ComponentStyle {
                         "componentId": "sc-gqjmRU",
                         "isStatic": true,
@@ -2495,9 +2547,11 @@ exports[`Nav renders correctly 1`] = `
                         ],
                       },
                       "displayName": "styled.div",
+                      "foldedComponentIds": Array [],
                       "render": [Function],
                       "styledComponentId": "sc-gqjmRU",
                       "target": "div",
+                      "toString": [Function],
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -2507,15 +2561,15 @@ exports[`Nav renders correctly 1`] = `
                   <div
                     className="c24"
                   >
-                    <ForwardRef
+                    <styled.button
                       active={true}
                     >
                       <StyledComponent
                         active={true}
-                        forwardedClass={
+                        forwardedComponent={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
-                            "attrs": undefined,
+                            "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-gZMcBi",
                               "isStatic": false,
@@ -2551,9 +2605,11 @@ exports[`Nav renders correctly 1`] = `
                               ],
                             },
                             "displayName": "styled.button",
+                            "foldedComponentIds": Array [],
                             "render": [Function],
                             "styledComponentId": "sc-gZMcBi",
                             "target": "button",
+                            "toString": [Function],
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -2564,17 +2620,17 @@ exports[`Nav renders correctly 1`] = `
                           className="c25"
                         >
                           <CloseIcon>
-                            <ForwardRef
+                            <styled.svg
                               height="15"
                               width="15"
                               xmlns="http://www.w3.org/2000/svg"
                               xmlnsXlink="http://www.w3.org/1999/xlink"
                             >
                               <StyledComponent
-                                forwardedClass={
+                                forwardedComponent={
                                   Object {
                                     "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": undefined,
+                                    "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-iwsKbI",
                                       "isStatic": true,
@@ -2592,9 +2648,11 @@ exports[`Nav renders correctly 1`] = `
                                       ],
                                     },
                                     "displayName": "styled.svg",
+                                    "foldedComponentIds": Array [],
                                     "render": [Function],
                                     "styledComponentId": "sc-iwsKbI",
                                     "target": "svg",
+                                    "toString": [Function],
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -2628,24 +2686,22 @@ exports[`Nav renders correctly 1`] = `
                                   </defs>
                                 </svg>
                               </StyledComponent>
-                            </ForwardRef>
+                            </styled.svg>
                           </CloseIcon>
                         </button>
                       </StyledComponent>
-                    </ForwardRef>
-                    <ForwardRef>
+                    </styled.button>
+                    <Styled(Link)>
                       <StyledComponent
-                        forwardedClass={
+                        forwardedComponent={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Object {
-                              "aria-label": "styled components",
-                              "href": "/",
-                              "unstyled": true,
-                            },
+                            "attrs": Array [
+                              [Function],
+                            ],
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-jTzLTM",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "c27",
                               "rules": Array [
                                 "
@@ -2655,9 +2711,11 @@ exports[`Nav renders correctly 1`] = `
                               ],
                             },
                             "displayName": "Styled(Link)",
+                            "foldedComponentIds": Array [],
                             "render": [Function],
                             "styledComponentId": "sc-jTzLTM",
                             "target": [Function],
+                            "toString": [Function],
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                             Symbol(Symbol.hasInstance): [Function],
@@ -2672,7 +2730,6 @@ exports[`Nav renders correctly 1`] = `
                           unstyled={true}
                         >
                           <Link
-                            aria-label="styled components"
                             href="/"
                           >
                             <a
@@ -2681,15 +2738,15 @@ exports[`Nav renders correctly 1`] = `
                               href="/"
                               onClick={[Function]}
                             >
-                              <ForwardRef
+                              <styled.div
                                 compact={true}
                               >
                                 <StyledComponent
                                   compact={true}
-                                  forwardedClass={
+                                  forwardedComponent={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
+                                      "attrs": Array [],
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-dnqmqq",
                                         "isStatic": false,
@@ -2710,9 +2767,11 @@ exports[`Nav renders correctly 1`] = `
                                         ],
                                       },
                                       "displayName": "styled.div",
+                                      "foldedComponentIds": Array [],
                                       "render": [Function],
                                       "styledComponentId": "sc-dnqmqq",
                                       "target": "div",
+                                      "toString": [Function],
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
                                     }
@@ -2723,21 +2782,21 @@ exports[`Nav renders correctly 1`] = `
                                     className="c28"
                                   />
                                 </StyledComponent>
-                              </ForwardRef>
+                              </styled.div>
                             </a>
                           </Link>
                         </Link>
                       </StyledComponent>
-                    </ForwardRef>
+                    </Styled(Link)>
                     <div>
-                      <ForwardRef
+                      <styled.button
                         onClick={[Function]}
                       >
                         <StyledComponent
-                          forwardedClass={
+                          forwardedComponent={
                             Object {
                               "$$typeof": Symbol(react.forward_ref),
-                              "attrs": undefined,
+                              "attrs": Array [],
                               "componentStyle": ComponentStyle {
                                 "componentId": "sc-gZMcBi",
                                 "isStatic": false,
@@ -2773,9 +2832,11 @@ exports[`Nav renders correctly 1`] = `
                                 ],
                               },
                               "displayName": "styled.button",
+                              "foldedComponentIds": Array [],
                               "render": [Function],
                               "styledComponentId": "sc-gZMcBi",
                               "target": "button",
+                              "toString": [Function],
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
                             }
@@ -2787,16 +2848,16 @@ exports[`Nav renders correctly 1`] = `
                             className="c29"
                             onClick={[Function]}
                           >
-                            <ForwardRef
+                            <styled.div
                               as={[Function]}
                               size={28}
                             >
                               <StyledComponent
                                 as={[Function]}
-                                forwardedClass={
+                                forwardedComponent={
                                   Object {
                                     "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": undefined,
+                                    "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-cSHVUG",
                                       "isStatic": false,
@@ -2815,9 +2876,11 @@ exports[`Nav renders correctly 1`] = `
                                       ],
                                     },
                                     "displayName": "styled.div",
+                                    "foldedComponentIds": Array [],
                                     "render": [Function],
                                     "styledComponentId": "sc-cSHVUG",
                                     "target": "div",
+                                    "toString": [Function],
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -2835,19 +2898,19 @@ exports[`Nav renders correctly 1`] = `
                                   />
                                 </DummyIcon>
                               </StyledComponent>
-                            </ForwardRef>
+                            </styled.div>
                           </button>
                         </StyledComponent>
-                      </ForwardRef>
-                      <ForwardRef
+                      </styled.button>
+                      <styled.button
                         active={true}
                       >
                         <StyledComponent
                           active={true}
-                          forwardedClass={
+                          forwardedComponent={
                             Object {
                               "$$typeof": Symbol(react.forward_ref),
-                              "attrs": undefined,
+                              "attrs": Array [],
                               "componentStyle": ComponentStyle {
                                 "componentId": "sc-gZMcBi",
                                 "isStatic": false,
@@ -2883,9 +2946,11 @@ exports[`Nav renders correctly 1`] = `
                                 ],
                               },
                               "displayName": "styled.button",
+                              "foldedComponentIds": Array [],
                               "render": [Function],
                               "styledComponentId": "sc-gZMcBi",
                               "target": "button",
+                              "toString": [Function],
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
                             }
@@ -2895,14 +2960,14 @@ exports[`Nav renders correctly 1`] = `
                           <button
                             className="c25"
                           >
-                            <ForwardRef
+                            <styled.div
                               shouldRotate={true}
                             >
                               <StyledComponent
-                                forwardedClass={
+                                forwardedComponent={
                                   Object {
                                     "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": undefined,
+                                    "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-fjdhpX",
                                       "isStatic": false,
@@ -2918,9 +2983,11 @@ exports[`Nav renders correctly 1`] = `
                                       ],
                                     },
                                     "displayName": "styled.div",
+                                    "foldedComponentIds": Array [],
                                     "render": [Function],
                                     "styledComponentId": "sc-fjdhpX",
                                     "target": "div",
+                                    "toString": [Function],
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -2931,14 +2998,14 @@ exports[`Nav renders correctly 1`] = `
                                 <div
                                   className="c31"
                                 >
-                                  <ForwardRef
+                                  <styled.div
                                     size={36}
                                   >
                                     <StyledComponent
-                                      forwardedClass={
+                                      forwardedComponent={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": undefined,
+                                          "attrs": Array [],
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-cSHVUG",
                                             "isStatic": false,
@@ -2957,9 +3024,11 @@ exports[`Nav renders correctly 1`] = `
                                             ],
                                           },
                                           "displayName": "styled.div",
+                                          "foldedComponentIds": Array [],
                                           "render": [Function],
                                           "styledComponentId": "sc-cSHVUG",
                                           "target": "div",
+                                          "toString": [Function],
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -2972,22 +3041,22 @@ exports[`Nav renders correctly 1`] = `
                                         size={36}
                                       />
                                     </StyledComponent>
-                                  </ForwardRef>
+                                  </styled.div>
                                 </div>
                               </StyledComponent>
-                            </ForwardRef>
+                            </styled.div>
                           </button>
                         </StyledComponent>
-                      </ForwardRef>
+                      </styled.button>
                     </div>
-                    <ForwardRef
+                    <styled.div
                       isOpen={true}
                     >
                       <StyledComponent
-                        forwardedClass={
+                        forwardedComponent={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
-                            "attrs": undefined,
+                            "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-VigVT",
                               "isStatic": false,
@@ -3025,9 +3094,11 @@ exports[`Nav renders correctly 1`] = `
                               ],
                             },
                             "displayName": "styled.div",
+                            "foldedComponentIds": Array [],
                             "render": [Function],
                             "styledComponentId": "sc-VigVT",
                             "target": "div",
+                            "toString": [Function],
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -3039,12 +3110,12 @@ exports[`Nav renders correctly 1`] = `
                           className="c33"
                         >
                           <NavLinks>
-                            <ForwardRef>
+                            <styled.nav>
                               <StyledComponent
-                                forwardedClass={
+                                forwardedComponent={
                                   Object {
                                     "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": undefined,
+                                    "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "sc-bxivhb",
                                       "isStatic": true,
@@ -3061,9 +3132,11 @@ exports[`Nav renders correctly 1`] = `
                                       ],
                                     },
                                     "displayName": "styled.nav",
+                                    "foldedComponentIds": Array [],
                                     "render": [Function],
                                     "styledComponentId": "sc-bxivhb",
                                     "target": "nav",
+                                    "toString": [Function],
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -3073,20 +3146,19 @@ exports[`Nav renders correctly 1`] = `
                                 <nav
                                   className="c6"
                                 >
-                                  <ForwardRef
+                                  <Styled(Link)
                                     href="/docs"
                                   >
                                     <StyledComponent
-                                      forwardedClass={
+                                      forwardedComponent={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": Object {
-                                            "prefetch": true,
-                                            "unstyled": true,
-                                          },
+                                          "attrs": Array [
+                                            [Function],
+                                          ],
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-ifAKCX",
-                                            "isStatic": true,
+                                            "isStatic": false,
                                             "lastClassName": "c7",
                                             "rules": Array [
                                               "
@@ -3116,9 +3188,11 @@ exports[`Nav renders correctly 1`] = `
                                             ],
                                           },
                                           "displayName": "Styled(Link)",
+                                          "foldedComponentIds": Array [],
                                           "render": [Function],
                                           "styledComponentId": "sc-ifAKCX",
                                           "target": [Function],
+                                          "toString": [Function],
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                           Symbol(Symbol.hasInstance): [Function],
@@ -3147,13 +3221,13 @@ exports[`Nav renders correctly 1`] = `
                                         </Link>
                                       </Link>
                                     </StyledComponent>
-                                  </ForwardRef>
-                                  <ForwardRef>
+                                  </Styled(Link)>
+                                  <styled.span>
                                     <StyledComponent
-                                      forwardedClass={
+                                      forwardedComponent={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": undefined,
+                                          "attrs": Array [],
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-htpNat",
                                             "isStatic": true,
@@ -3178,9 +3252,11 @@ exports[`Nav renders correctly 1`] = `
                                             ],
                                           },
                                           "displayName": "styled.span",
+                                          "foldedComponentIds": Array [],
                                           "render": [Function],
                                           "styledComponentId": "sc-htpNat",
                                           "target": "span",
+                                          "toString": [Function],
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -3191,21 +3267,20 @@ exports[`Nav renders correctly 1`] = `
                                         className="c8"
                                       />
                                     </StyledComponent>
-                                  </ForwardRef>
-                                  <ForwardRef
+                                  </styled.span>
+                                  <Styled(Link)
                                     href="/ecosystem"
                                   >
                                     <StyledComponent
-                                      forwardedClass={
+                                      forwardedComponent={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": Object {
-                                            "prefetch": true,
-                                            "unstyled": true,
-                                          },
+                                          "attrs": Array [
+                                            [Function],
+                                          ],
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-ifAKCX",
-                                            "isStatic": true,
+                                            "isStatic": false,
                                             "lastClassName": "c7",
                                             "rules": Array [
                                               "
@@ -3235,9 +3310,11 @@ exports[`Nav renders correctly 1`] = `
                                             ],
                                           },
                                           "displayName": "Styled(Link)",
+                                          "foldedComponentIds": Array [],
                                           "render": [Function],
                                           "styledComponentId": "sc-ifAKCX",
                                           "target": [Function],
+                                          "toString": [Function],
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                           Symbol(Symbol.hasInstance): [Function],
@@ -3266,13 +3343,13 @@ exports[`Nav renders correctly 1`] = `
                                         </Link>
                                       </Link>
                                     </StyledComponent>
-                                  </ForwardRef>
-                                  <ForwardRef>
+                                  </Styled(Link)>
+                                  <styled.span>
                                     <StyledComponent
-                                      forwardedClass={
+                                      forwardedComponent={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": undefined,
+                                          "attrs": Array [],
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-htpNat",
                                             "isStatic": true,
@@ -3297,9 +3374,11 @@ exports[`Nav renders correctly 1`] = `
                                             ],
                                           },
                                           "displayName": "styled.span",
+                                          "foldedComponentIds": Array [],
                                           "render": [Function],
                                           "styledComponentId": "sc-htpNat",
                                           "target": "span",
+                                          "toString": [Function],
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -3310,21 +3389,20 @@ exports[`Nav renders correctly 1`] = `
                                         className="c8"
                                       />
                                     </StyledComponent>
-                                  </ForwardRef>
-                                  <ForwardRef
+                                  </styled.span>
+                                  <Styled(Link)
                                     href="/releases"
                                   >
                                     <StyledComponent
-                                      forwardedClass={
+                                      forwardedComponent={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": Object {
-                                            "prefetch": true,
-                                            "unstyled": true,
-                                          },
+                                          "attrs": Array [
+                                            [Function],
+                                          ],
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-ifAKCX",
-                                            "isStatic": true,
+                                            "isStatic": false,
                                             "lastClassName": "c7",
                                             "rules": Array [
                                               "
@@ -3354,9 +3432,11 @@ exports[`Nav renders correctly 1`] = `
                                             ],
                                           },
                                           "displayName": "Styled(Link)",
+                                          "foldedComponentIds": Array [],
                                           "render": [Function],
                                           "styledComponentId": "sc-ifAKCX",
                                           "target": [Function],
+                                          "toString": [Function],
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                           Symbol(Symbol.hasInstance): [Function],
@@ -3385,17 +3465,17 @@ exports[`Nav renders correctly 1`] = `
                                         </Link>
                                       </Link>
                                     </StyledComponent>
-                                  </ForwardRef>
+                                  </Styled(Link)>
                                 </nav>
                               </StyledComponent>
-                            </ForwardRef>
+                            </styled.nav>
                           </NavLinks>
-                          <ForwardRef>
+                          <styled.div>
                             <StyledComponent
-                              forwardedClass={
+                              forwardedComponent={
                                 Object {
                                   "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": undefined,
+                                  "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "sc-jzJRlG",
                                     "isStatic": true,
@@ -3409,9 +3489,11 @@ exports[`Nav renders correctly 1`] = `
                                     ],
                                   },
                                   "displayName": "styled.div",
+                                  "foldedComponentIds": Array [],
                                   "render": [Function],
                                   "styledComponentId": "sc-jzJRlG",
                                   "target": "div",
+                                  "toString": [Function],
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -3422,12 +3504,12 @@ exports[`Nav renders correctly 1`] = `
                                 className="c34"
                               >
                                 <Social>
-                                  <ForwardRef>
+                                  <styled.nav>
                                     <StyledComponent
-                                      forwardedClass={
+                                      forwardedComponent={
                                         Object {
                                           "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": undefined,
+                                          "attrs": Array [],
                                           "componentStyle": ComponentStyle {
                                             "componentId": "sc-EHOje",
                                             "isStatic": true,
@@ -3441,9 +3523,11 @@ exports[`Nav renders correctly 1`] = `
                                             ],
                                           },
                                           "displayName": "styled.nav",
+                                          "foldedComponentIds": Array [],
                                           "render": [Function],
                                           "styledComponentId": "sc-EHOje",
                                           "target": "nav",
+                                          "toString": [Function],
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -3453,19 +3537,19 @@ exports[`Nav renders correctly 1`] = `
                                       <nav
                                         className="c20"
                                       >
-                                        <ForwardRef
+                                        <Styled(Link)
                                           href="https://spectrum.chat/styled-components/"
                                         >
                                           <StyledComponent
-                                            forwardedClass={
+                                            forwardedComponent={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
-                                                "attrs": Object {
-                                                  "unstyled": true,
-                                                },
+                                                "attrs": Array [
+                                                  [Function],
+                                                ],
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bZQynM",
-                                                  "isStatic": true,
+                                                  "isStatic": false,
                                                   "lastClassName": "c21",
                                                   "rules": Array [
                                                     "
@@ -3502,9 +3586,11 @@ exports[`Nav renders correctly 1`] = `
                                                   ],
                                                 },
                                                 "displayName": "Styled(Link)",
+                                                "foldedComponentIds": Array [],
                                                 "render": [Function],
                                                 "styledComponentId": "sc-bZQynM",
                                                 "target": [Function],
+                                                "toString": [Function],
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
                                                 Symbol(Symbol.hasInstance): [Function],
@@ -3527,16 +3613,16 @@ exports[`Nav renders correctly 1`] = `
                                                   onClick={[Function]}
                                                 >
                                                   <Spectrum>
-                                                    <ForwardRef
+                                                    <styled.svg
                                                       height="14"
                                                       viewBox="0 0 15 15"
                                                       width="14"
                                                     >
                                                       <StyledComponent
-                                                        forwardedClass={
+                                                        forwardedComponent={
                                                           Object {
                                                             "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": undefined,
+                                                            "attrs": Array [],
                                                             "componentStyle": ComponentStyle {
                                                               "componentId": "sc-gzVnrw",
                                                               "isStatic": false,
@@ -3553,9 +3639,11 @@ exports[`Nav renders correctly 1`] = `
                                                               ],
                                                             },
                                                             "displayName": "styled.svg",
+                                                            "foldedComponentIds": Array [],
                                                             "render": [Function],
                                                             "styledComponentId": "sc-gzVnrw",
                                                             "target": "svg",
+                                                            "toString": [Function],
                                                             "warnTooManyClasses": [Function],
                                                             "withComponent": [Function],
                                                           }
@@ -3580,26 +3668,26 @@ exports[`Nav renders correctly 1`] = `
                                                           />
                                                         </svg>
                                                       </StyledComponent>
-                                                    </ForwardRef>
+                                                    </styled.svg>
                                                   </Spectrum>
                                                 </a>
                                               </Link>
                                             </Link>
                                           </StyledComponent>
-                                        </ForwardRef>
-                                        <ForwardRef
+                                        </Styled(Link)>
+                                        <Styled(Link)
                                           href="https://github.com/styled-components"
                                         >
                                           <StyledComponent
-                                            forwardedClass={
+                                            forwardedComponent={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
-                                                "attrs": Object {
-                                                  "unstyled": true,
-                                                },
+                                                "attrs": Array [
+                                                  [Function],
+                                                ],
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bZQynM",
-                                                  "isStatic": true,
+                                                  "isStatic": false,
                                                   "lastClassName": "c21",
                                                   "rules": Array [
                                                     "
@@ -3636,9 +3724,11 @@ exports[`Nav renders correctly 1`] = `
                                                   ],
                                                 },
                                                 "displayName": "Styled(Link)",
+                                                "foldedComponentIds": Array [],
                                                 "render": [Function],
                                                 "styledComponentId": "sc-bZQynM",
                                                 "target": [Function],
+                                                "toString": [Function],
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
                                                 Symbol(Symbol.hasInstance): [Function],
@@ -3660,16 +3750,16 @@ exports[`Nav renders correctly 1`] = `
                                                   href="https://github.com/styled-components"
                                                   onClick={[Function]}
                                                 >
-                                                  <ForwardRef
+                                                  <styled.div
                                                     as={[Function]}
                                                     height="18"
                                                   >
                                                     <StyledComponent
                                                       as={[Function]}
-                                                      forwardedClass={
+                                                      forwardedComponent={
                                                         Object {
                                                           "$$typeof": Symbol(react.forward_ref),
-                                                          "attrs": undefined,
+                                                          "attrs": Array [],
                                                           "componentStyle": ComponentStyle {
                                                             "componentId": "sc-htoDjs",
                                                             "isStatic": false,
@@ -3688,9 +3778,11 @@ exports[`Nav renders correctly 1`] = `
                                                             ],
                                                           },
                                                           "displayName": "styled.div",
+                                                          "foldedComponentIds": Array [],
                                                           "render": [Function],
                                                           "styledComponentId": "sc-htoDjs",
                                                           "target": "div",
+                                                          "toString": [Function],
                                                           "warnTooManyClasses": [Function],
                                                           "withComponent": [Function],
                                                         }
@@ -3708,25 +3800,25 @@ exports[`Nav renders correctly 1`] = `
                                                         />
                                                       </DummyIcon>
                                                     </StyledComponent>
-                                                  </ForwardRef>
+                                                  </styled.div>
                                                 </a>
                                               </Link>
                                             </Link>
                                           </StyledComponent>
-                                        </ForwardRef>
-                                        <ForwardRef
+                                        </Styled(Link)>
+                                        <Styled(Link)
                                           href="https://medium.com/styled-components"
                                         >
                                           <StyledComponent
-                                            forwardedClass={
+                                            forwardedComponent={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
-                                                "attrs": Object {
-                                                  "unstyled": true,
-                                                },
+                                                "attrs": Array [
+                                                  [Function],
+                                                ],
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bZQynM",
-                                                  "isStatic": true,
+                                                  "isStatic": false,
                                                   "lastClassName": "c21",
                                                   "rules": Array [
                                                     "
@@ -3763,9 +3855,11 @@ exports[`Nav renders correctly 1`] = `
                                                   ],
                                                 },
                                                 "displayName": "Styled(Link)",
+                                                "foldedComponentIds": Array [],
                                                 "render": [Function],
                                                 "styledComponentId": "sc-bZQynM",
                                                 "target": [Function],
+                                                "toString": [Function],
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
                                                 Symbol(Symbol.hasInstance): [Function],
@@ -3787,16 +3881,16 @@ exports[`Nav renders correctly 1`] = `
                                                   href="https://medium.com/styled-components"
                                                   onClick={[Function]}
                                                 >
-                                                  <ForwardRef
+                                                  <styled.div
                                                     as={[Function]}
                                                     height="18"
                                                   >
                                                     <StyledComponent
                                                       as={[Function]}
-                                                      forwardedClass={
+                                                      forwardedComponent={
                                                         Object {
                                                           "$$typeof": Symbol(react.forward_ref),
-                                                          "attrs": undefined,
+                                                          "attrs": Array [],
                                                           "componentStyle": ComponentStyle {
                                                             "componentId": "sc-htoDjs",
                                                             "isStatic": false,
@@ -3815,9 +3909,11 @@ exports[`Nav renders correctly 1`] = `
                                                             ],
                                                           },
                                                           "displayName": "styled.div",
+                                                          "foldedComponentIds": Array [],
                                                           "render": [Function],
                                                           "styledComponentId": "sc-htoDjs",
                                                           "target": "div",
+                                                          "toString": [Function],
                                                           "warnTooManyClasses": [Function],
                                                           "withComponent": [Function],
                                                         }
@@ -3835,37 +3931,37 @@ exports[`Nav renders correctly 1`] = `
                                                         />
                                                       </DummyIcon>
                                                     </StyledComponent>
-                                                  </ForwardRef>
+                                                  </styled.div>
                                                 </a>
                                               </Link>
                                             </Link>
                                           </StyledComponent>
-                                        </ForwardRef>
+                                        </Styled(Link)>
                                       </nav>
                                     </StyledComponent>
-                                  </ForwardRef>
+                                  </styled.nav>
                                 </Social>
                               </div>
                             </StyledComponent>
-                          </ForwardRef>
+                          </styled.div>
                         </div>
                       </StyledComponent>
-                    </ForwardRef>
+                    </styled.div>
                   </div>
                 </StyledComponent>
-              </ForwardRef>
+              </styled.div>
             </MobileNavbar>
           </nav>
         </StyledComponent>
-      </ForwardRef>
+      </styled.nav>
     </Navbar>
     <CaptureScroll>
-      <ForwardRef>
+      <styled.nav>
         <StyledComponent
-          forwardedClass={
+          forwardedComponent={
             Object {
               "$$typeof": Symbol(react.forward_ref),
-              "attrs": undefined,
+              "attrs": Array [],
               "componentStyle": ComponentStyle {
                 "componentId": "sc-eHgmQL",
                 "isStatic": false,
@@ -3916,9 +4012,11 @@ exports[`Nav renders correctly 1`] = `
                 ],
               },
               "displayName": "styled.nav",
+              "foldedComponentIds": Array [],
               "render": [Function],
               "styledComponentId": "sc-eHgmQL",
               "target": "nav",
+              "toString": [Function],
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -3930,12 +4028,12 @@ exports[`Nav renders correctly 1`] = `
           >
             <withRouter(Unknown)>
               <Component>
-                <ForwardRef>
+                <styled.div>
                   <StyledComponent
-                    forwardedClass={
+                    forwardedComponent={
                       Object {
                         "$$typeof": Symbol(react.forward_ref),
-                        "attrs": undefined,
+                        "attrs": Array [],
                         "componentStyle": ComponentStyle {
                           "componentId": "sc-cvbbAY",
                           "isStatic": true,
@@ -3952,9 +4050,11 @@ exports[`Nav renders correctly 1`] = `
                           ],
                         },
                         "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
                         "render": [Function],
                         "styledComponentId": "sc-cvbbAY",
                         "target": "div",
+                        "toString": [Function],
                         "warnTooManyClasses": [Function],
                         "withComponent": [Function],
                       }
@@ -3967,12 +4067,12 @@ exports[`Nav renders correctly 1`] = `
                       <Folder
                         key="Basics"
                       >
-                        <ForwardRef>
+                        <styled.div>
                           <StyledComponent
-                            forwardedClass={
+                            forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "attrs": undefined,
+                                "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-brqgnP",
                                   "isStatic": true,
@@ -3986,9 +4086,11 @@ exports[`Nav renders correctly 1`] = `
                                   ],
                                 },
                                 "displayName": "styled.div",
+                                "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "sc-brqgnP",
                                 "target": "div",
+                                "toString": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                               }
@@ -3998,14 +4100,14 @@ exports[`Nav renders correctly 1`] = `
                             <div
                               className="c37"
                             >
-                              <ForwardRef
+                              <styled.h4
                                 onClick={[Function]}
                               >
                                 <StyledComponent
-                                  forwardedClass={
+                                  forwardedComponent={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
+                                      "attrs": Array [],
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-cMljjf",
                                         "isStatic": true,
@@ -4023,9 +4125,11 @@ exports[`Nav renders correctly 1`] = `
                                         ],
                                       },
                                       "displayName": "styled.h4",
+                                      "foldedComponentIds": Array [],
                                       "render": [Function],
                                       "styledComponentId": "sc-cMljjf",
                                       "target": "h4",
+                                      "toString": [Function],
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
                                     }
@@ -4043,15 +4147,15 @@ exports[`Nav renders correctly 1`] = `
                                       <Link
                                         href="/docs/basics"
                                       >
-                                        <ForwardRef
+                                        <styled.a
                                           href="/docs/basics"
                                           onClick={[Function]}
                                         >
                                           <StyledComponent
-                                            forwardedClass={
+                                            forwardedComponent={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
-                                                "attrs": undefined,
+                                                "attrs": Array [],
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
@@ -4089,9 +4193,11 @@ exports[`Nav renders correctly 1`] = `
                                                   ],
                                                 },
                                                 "displayName": "styled.a",
+                                                "foldedComponentIds": Array [],
                                                 "render": [Function],
                                                 "styledComponentId": "sc-bdVaJa",
                                                 "target": "a",
+                                                "toString": [Function],
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
                                               }
@@ -4108,25 +4214,25 @@ exports[`Nav renders correctly 1`] = `
                                               Basics
                                             </a>
                                           </StyledComponent>
-                                        </ForwardRef>
+                                        </styled.a>
                                       </Link>
                                     </Link>
                                   </h4>
                                 </StyledComponent>
-                              </ForwardRef>
+                              </styled.h4>
                             </div>
                           </StyledComponent>
-                        </ForwardRef>
+                        </styled.div>
                       </Folder>
                       <Folder
                         key="Advanced"
                       >
-                        <ForwardRef>
+                        <styled.div>
                           <StyledComponent
-                            forwardedClass={
+                            forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "attrs": undefined,
+                                "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-brqgnP",
                                   "isStatic": true,
@@ -4140,9 +4246,11 @@ exports[`Nav renders correctly 1`] = `
                                   ],
                                 },
                                 "displayName": "styled.div",
+                                "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "sc-brqgnP",
                                 "target": "div",
+                                "toString": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                               }
@@ -4152,14 +4260,14 @@ exports[`Nav renders correctly 1`] = `
                             <div
                               className="c37"
                             >
-                              <ForwardRef
+                              <styled.h4
                                 onClick={[Function]}
                               >
                                 <StyledComponent
-                                  forwardedClass={
+                                  forwardedComponent={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
+                                      "attrs": Array [],
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-cMljjf",
                                         "isStatic": true,
@@ -4177,9 +4285,11 @@ exports[`Nav renders correctly 1`] = `
                                         ],
                                       },
                                       "displayName": "styled.h4",
+                                      "foldedComponentIds": Array [],
                                       "render": [Function],
                                       "styledComponentId": "sc-cMljjf",
                                       "target": "h4",
+                                      "toString": [Function],
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
                                     }
@@ -4197,15 +4307,15 @@ exports[`Nav renders correctly 1`] = `
                                       <Link
                                         href="/docs/advanced"
                                       >
-                                        <ForwardRef
+                                        <styled.a
                                           href="/docs/advanced"
                                           onClick={[Function]}
                                         >
                                           <StyledComponent
-                                            forwardedClass={
+                                            forwardedComponent={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
-                                                "attrs": undefined,
+                                                "attrs": Array [],
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
@@ -4243,9 +4353,11 @@ exports[`Nav renders correctly 1`] = `
                                                   ],
                                                 },
                                                 "displayName": "styled.a",
+                                                "foldedComponentIds": Array [],
                                                 "render": [Function],
                                                 "styledComponentId": "sc-bdVaJa",
                                                 "target": "a",
+                                                "toString": [Function],
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
                                               }
@@ -4262,25 +4374,25 @@ exports[`Nav renders correctly 1`] = `
                                               Advanced
                                             </a>
                                           </StyledComponent>
-                                        </ForwardRef>
+                                        </styled.a>
                                       </Link>
                                     </Link>
                                   </h4>
                                 </StyledComponent>
-                              </ForwardRef>
+                              </styled.h4>
                             </div>
                           </StyledComponent>
-                        </ForwardRef>
+                        </styled.div>
                       </Folder>
                       <Folder
                         key="API Reference"
                       >
-                        <ForwardRef>
+                        <styled.div>
                           <StyledComponent
-                            forwardedClass={
+                            forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "attrs": undefined,
+                                "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-brqgnP",
                                   "isStatic": true,
@@ -4294,9 +4406,11 @@ exports[`Nav renders correctly 1`] = `
                                   ],
                                 },
                                 "displayName": "styled.div",
+                                "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "sc-brqgnP",
                                 "target": "div",
+                                "toString": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                               }
@@ -4306,14 +4420,14 @@ exports[`Nav renders correctly 1`] = `
                             <div
                               className="c37"
                             >
-                              <ForwardRef
+                              <styled.h4
                                 onClick={[Function]}
                               >
                                 <StyledComponent
-                                  forwardedClass={
+                                  forwardedComponent={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
+                                      "attrs": Array [],
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-cMljjf",
                                         "isStatic": true,
@@ -4331,9 +4445,11 @@ exports[`Nav renders correctly 1`] = `
                                         ],
                                       },
                                       "displayName": "styled.h4",
+                                      "foldedComponentIds": Array [],
                                       "render": [Function],
                                       "styledComponentId": "sc-cMljjf",
                                       "target": "h4",
+                                      "toString": [Function],
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
                                     }
@@ -4351,15 +4467,15 @@ exports[`Nav renders correctly 1`] = `
                                       <Link
                                         href="/docs/api"
                                       >
-                                        <ForwardRef
+                                        <styled.a
                                           href="/docs/api"
                                           onClick={[Function]}
                                         >
                                           <StyledComponent
-                                            forwardedClass={
+                                            forwardedComponent={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
-                                                "attrs": undefined,
+                                                "attrs": Array [],
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
@@ -4397,9 +4513,11 @@ exports[`Nav renders correctly 1`] = `
                                                   ],
                                                 },
                                                 "displayName": "styled.a",
+                                                "foldedComponentIds": Array [],
                                                 "render": [Function],
                                                 "styledComponentId": "sc-bdVaJa",
                                                 "target": "a",
+                                                "toString": [Function],
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
                                               }
@@ -4416,25 +4534,25 @@ exports[`Nav renders correctly 1`] = `
                                               API Reference
                                             </a>
                                           </StyledComponent>
-                                        </ForwardRef>
+                                        </styled.a>
                                       </Link>
                                     </Link>
                                   </h4>
                                 </StyledComponent>
-                              </ForwardRef>
+                              </styled.h4>
                             </div>
                           </StyledComponent>
-                        </ForwardRef>
+                        </styled.div>
                       </Folder>
                       <Folder
                         key="Tooling"
                       >
-                        <ForwardRef>
+                        <styled.div>
                           <StyledComponent
-                            forwardedClass={
+                            forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "attrs": undefined,
+                                "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-brqgnP",
                                   "isStatic": true,
@@ -4448,9 +4566,11 @@ exports[`Nav renders correctly 1`] = `
                                   ],
                                 },
                                 "displayName": "styled.div",
+                                "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "sc-brqgnP",
                                 "target": "div",
+                                "toString": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                               }
@@ -4460,14 +4580,14 @@ exports[`Nav renders correctly 1`] = `
                             <div
                               className="c37"
                             >
-                              <ForwardRef
+                              <styled.h4
                                 onClick={[Function]}
                               >
                                 <StyledComponent
-                                  forwardedClass={
+                                  forwardedComponent={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
+                                      "attrs": Array [],
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-cMljjf",
                                         "isStatic": true,
@@ -4485,9 +4605,11 @@ exports[`Nav renders correctly 1`] = `
                                         ],
                                       },
                                       "displayName": "styled.h4",
+                                      "foldedComponentIds": Array [],
                                       "render": [Function],
                                       "styledComponentId": "sc-cMljjf",
                                       "target": "h4",
+                                      "toString": [Function],
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
                                     }
@@ -4505,15 +4627,15 @@ exports[`Nav renders correctly 1`] = `
                                       <Link
                                         href="/docs/tooling"
                                       >
-                                        <ForwardRef
+                                        <styled.a
                                           href="/docs/tooling"
                                           onClick={[Function]}
                                         >
                                           <StyledComponent
-                                            forwardedClass={
+                                            forwardedComponent={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
-                                                "attrs": undefined,
+                                                "attrs": Array [],
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
@@ -4551,9 +4673,11 @@ exports[`Nav renders correctly 1`] = `
                                                   ],
                                                 },
                                                 "displayName": "styled.a",
+                                                "foldedComponentIds": Array [],
                                                 "render": [Function],
                                                 "styledComponentId": "sc-bdVaJa",
                                                 "target": "a",
+                                                "toString": [Function],
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
                                               }
@@ -4570,25 +4694,25 @@ exports[`Nav renders correctly 1`] = `
                                               Tooling
                                             </a>
                                           </StyledComponent>
-                                        </ForwardRef>
+                                        </styled.a>
                                       </Link>
                                     </Link>
                                   </h4>
                                 </StyledComponent>
-                              </ForwardRef>
+                              </styled.h4>
                             </div>
                           </StyledComponent>
-                        </ForwardRef>
+                        </styled.div>
                       </Folder>
                       <Folder
                         key="FAQs"
                       >
-                        <ForwardRef>
+                        <styled.div>
                           <StyledComponent
-                            forwardedClass={
+                            forwardedComponent={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
-                                "attrs": undefined,
+                                "attrs": Array [],
                                 "componentStyle": ComponentStyle {
                                   "componentId": "sc-brqgnP",
                                   "isStatic": true,
@@ -4602,9 +4726,11 @@ exports[`Nav renders correctly 1`] = `
                                   ],
                                 },
                                 "displayName": "styled.div",
+                                "foldedComponentIds": Array [],
                                 "render": [Function],
                                 "styledComponentId": "sc-brqgnP",
                                 "target": "div",
+                                "toString": [Function],
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                               }
@@ -4614,14 +4740,14 @@ exports[`Nav renders correctly 1`] = `
                             <div
                               className="c37"
                             >
-                              <ForwardRef
+                              <styled.h4
                                 onClick={[Function]}
                               >
                                 <StyledComponent
-                                  forwardedClass={
+                                  forwardedComponent={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": undefined,
+                                      "attrs": Array [],
                                       "componentStyle": ComponentStyle {
                                         "componentId": "sc-cMljjf",
                                         "isStatic": true,
@@ -4639,9 +4765,11 @@ exports[`Nav renders correctly 1`] = `
                                         ],
                                       },
                                       "displayName": "styled.h4",
+                                      "foldedComponentIds": Array [],
                                       "render": [Function],
                                       "styledComponentId": "sc-cMljjf",
                                       "target": "h4",
+                                      "toString": [Function],
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
                                     }
@@ -4659,15 +4787,15 @@ exports[`Nav renders correctly 1`] = `
                                       <Link
                                         href="/docs/faqs"
                                       >
-                                        <ForwardRef
+                                        <styled.a
                                           href="/docs/faqs"
                                           onClick={[Function]}
                                         >
                                           <StyledComponent
-                                            forwardedClass={
+                                            forwardedComponent={
                                               Object {
                                                 "$$typeof": Symbol(react.forward_ref),
-                                                "attrs": undefined,
+                                                "attrs": Array [],
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "sc-bdVaJa",
                                                   "isStatic": true,
@@ -4705,9 +4833,11 @@ exports[`Nav renders correctly 1`] = `
                                                   ],
                                                 },
                                                 "displayName": "styled.a",
+                                                "foldedComponentIds": Array [],
                                                 "render": [Function],
                                                 "styledComponentId": "sc-bdVaJa",
                                                 "target": "a",
+                                                "toString": [Function],
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
                                               }
@@ -4724,24 +4854,24 @@ exports[`Nav renders correctly 1`] = `
                                               FAQs
                                             </a>
                                           </StyledComponent>
-                                        </ForwardRef>
+                                        </styled.a>
                                       </Link>
                                     </Link>
                                   </h4>
                                 </StyledComponent>
-                              </ForwardRef>
+                              </styled.h4>
                             </div>
                           </StyledComponent>
-                        </ForwardRef>
+                        </styled.div>
                       </Folder>
                     </div>
                   </StyledComponent>
-                </ForwardRef>
+                </styled.div>
               </Component>
             </withRouter(Unknown)>
           </nav>
         </StyledComponent>
-      </ForwardRef>
+      </styled.nav>
     </CaptureScroll>
   </div>
 </Nav>
