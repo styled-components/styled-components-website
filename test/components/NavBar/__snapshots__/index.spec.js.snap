@@ -1721,10 +1721,12 @@ exports[`Nav renders correctly 1`] = `
                                       className="c14"
                                     >
                                       <div>
-                                        <SearchWithAlgolia
+                                        <AlgoliaSearch
                                           requestModalClose={[Function]}
                                         >
-                                          <Search>
+                                          <Search
+                                            isDocs={false}
+                                          >
                                             <styled.form>
                                               <StyledComponent
                                                 forwardedComponent={
@@ -2023,7 +2025,7 @@ exports[`Nav renders correctly 1`] = `
                                               </StyledComponent>
                                             </styled.form>
                                           </Search>
-                                        </SearchWithAlgolia>
+                                        </AlgoliaSearch>
                                       </div>
                                     </div>
                                   </StyledComponent>

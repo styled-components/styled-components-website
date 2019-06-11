@@ -712,9 +712,13 @@ exports[`DocsLayout renders correctly 1`] = `
           description=""
           title="styled-components"
         >
-          <SideEffect(Head)>
-            <Head />
-          </SideEffect(Head)>
+          <Head>
+            <SideEffect
+              handleStateChange={null}
+              isAmp={false}
+              reduceComponentsToState={[Function]}
+            />
+          </Head>
         </SeoHead>
         <Nav
           isMobileNavFolded={true}
@@ -1816,10 +1820,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                               className="c15"
                                             >
                                               <div>
-                                                <SearchWithAlgolia
+                                                <AlgoliaSearch
                                                   requestModalClose={[Function]}
                                                 >
-                                                  <Search>
+                                                  <Search
+                                                    isDocs={false}
+                                                  >
                                                     <styled.form>
                                                       <StyledComponent
                                                         forwardedComponent={
@@ -2118,7 +2124,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                       </StyledComponent>
                                                     </styled.form>
                                                   </Search>
-                                                </SearchWithAlgolia>
+                                                </AlgoliaSearch>
                                               </div>
                                             </div>
                                           </StyledComponent>
