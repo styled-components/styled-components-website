@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import rem from '../../utils/rem'
+import rem from '../../utils/rem';
 
 const NavSeparator = styled.span`
   flex: 0 0 auto;
@@ -11,6 +11,6 @@ const NavSeparator = styled.span`
   border-radius: 50%;
   background: currentColor;
   opacity: 0.35;
-`
+`;
 
-export default NavSeparator
+export default NavSeparator;
