@@ -790,7 +790,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.2.0":
+"@babel/runtime@^7.4.4":
   version "7.4.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.5.tgz#582bb531f5f9dc67d2fcb682979894f75e253f12"
   integrity sha512-TuI4qpWZP6lGOGIuGWtp9sPluqYICmbk8T/1vpSysqJxRPkudh/ofFWyqdcMsDf2s7KvDL4/YHgKyvcS3g9CJQ==
@@ -1126,11 +1126,6 @@
     "@webassemblyjs/ast" "1.7.11"
     "@webassemblyjs/wast-parser" "1.7.11"
     "@xtuc/long" "4.2.1"
-
-"@weco/next-plugin-transpile-modules@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@weco/next-plugin-transpile-modules/-/next-plugin-transpile-modules-2.2.1.tgz#7ca35e6ee1589f58fc1dd5320df73ae2bc9a6fd5"
-  integrity sha512-UM5jimB3QBHH50bcWr6DENDF+uUCf7lD2IeG36S6w6/Dn0LnPulF7wIeSBdN5vHnbnjDRd784DCEIoeu94ZopA==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -1583,10 +1578,10 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-autocomplete.js@^0.29.0:
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/autocomplete.js/-/autocomplete.js-0.29.0.tgz#0185f7375ee9daf068f7d52d794bc90dcd739fd7"
-  integrity sha512-pvR95T2OVglWEmh+MiIF4kDzBS8EfxsyDTJo0G7DR3BcFXTYUsJ5EyXnEMfUMjTgv7ytnwH9mdEYNCJ+p2ZlHQ==
+autocomplete.js@0.36.0:
+  version "0.36.0"
+  resolved "https://registry.yarnpkg.com/autocomplete.js/-/autocomplete.js-0.36.0.tgz#94fe775fe64b6cd42e622d076dc7fd26bedd837b"
+  integrity sha512-jEwUXnVMeCHHutUt10i/8ZiRaCb0Wo+ZyKxeGsYwBDtw6EJHqEeDrq4UwZRD8YBSvp3g6klP678il2eeiVXN2Q==
   dependencies:
     immediate "^3.2.3"
 
@@ -3044,15 +3039,18 @@ discontinuous-range@1.0.0:
   resolved "https://registry.yarnpkg.com/discontinuous-range/-/discontinuous-range-1.0.0.tgz#e38331f0844bba49b9a9cb71c771585aab1bc65a"
   integrity sha1-44Mx8IRLukm5qctxx3FYWqsbxlo=
 
-docsearch.js@2.5.2:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/docsearch.js/-/docsearch.js-2.5.2.tgz#1a3521c92e5f252cc522c57357ef1c47b945b381"
-  integrity sha512-bf84/poKgLgeNg45SqabZ9lHdK55QcMtUHvpVj8NLMCpAE6IPaxzeNAg5UfHRPVMwFRKMU0NNZt9yFyNYmVGrg==
+docsearch.js@2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/docsearch.js/-/docsearch.js-2.6.3.tgz#57cb4600d3b6553c677e7cbbe6a734593e38625d"
+  integrity sha512-GN+MBozuyz664ycpZY0ecdQE0ND/LSgJKhTLA0/v3arIS3S1Rpf2OJz6A35ReMsm91V5apcmzr5/kM84cvUg+A==
   dependencies:
     algoliasearch "^3.24.5"
-    autocomplete.js "^0.29.0"
+    autocomplete.js "0.36.0"
     hogan.js "^3.0.2"
+    request "^2.87.0"
+    stack-utils "^1.0.1"
     to-factory "^1.0.0"
+    zepto "^1.2.0"
 
 doctrine@^2.1.0:
   version "2.1.0"
@@ -7168,12 +7166,12 @@ polished@^1.0.0:
   resolved "https://registry.yarnpkg.com/polished/-/polished-1.9.3.tgz#d61b8a0c4624efe31e2583ff24a358932b6b75e1"
   integrity sha512-4NmSD7fMFlM8roNxs7YXPv7UFRbYzb0gufR5zBxJLRzY54+zFsavxBo6zsQzP9ep6Hh3pC2pTyrpSTBEaB6IkQ==
 
-polished@^2.2.0:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/polished/-/polished-2.3.3.tgz#bdbaba962ba8271b0e11aa287f2befd4c87be99a"
-  integrity sha512-59V4fDbdxtH4I1m9TWxFsoGJbC8nnOpUYo5uFmvMfKp9Qh+6suo4VMUle1TGIIUZIGxfkW+Rs485zPk0wcwR2Q==
+polished@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-3.4.0.tgz#29b2a028ee0408df5dded55a2a25e913bc6749a9"
+  integrity sha512-GiuavmunMIKMOEoSPkXoqBYM2ZcI4YIwCaiwmTOQ55Zq4HG2kD0YZt3WlLZ2l3U9XhJ1LM/fgjCFHHffiZP0YQ==
   dependencies:
-    "@babel/runtime" "^7.2.0"
+    "@babel/runtime" "^7.4.4"
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
@@ -8745,10 +8743,13 @@ styled-components@^4.0.0-beta.11:
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
 
-styled-icons@^3.0.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/styled-icons/-/styled-icons-3.7.0.tgz#3b765790ecd1aaa9a0044fb19c11af5e59d0278c"
-  integrity sha512-7f5s77OvNBQmsIZFG1lZlToPut+76GrBE3ieFKdIlYD+0PBWgCXTi2Yb2TOvQ368f9yqJw1SAnpoVXVshUt+DA==
+styled-icons@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/styled-icons/-/styled-icons-8.1.0.tgz#d3b2c2c563a24d4f186190c9f89baff02c394b79"
+  integrity sha512-/DgEIJRcIiyG6hCX8yl+xXucEc4wWhwY3BuT4H+8ZymuGYsvNjGIIOZ7+hXZI3owJK736LNHV9hTg1fG7CDkJg==
+  dependencies:
+    "@emotion/is-prop-valid" "^0.7.3"
+    tslib "^1.9.3"
 
 styled-jsx@3.2.1:
   version "3.2.1"
@@ -9810,3 +9811,8 @@ yargs@^11.0.0:
     which-module "^2.0.0"
     y18n "^3.2.1"
     yargs-parser "^9.0.2"
+
+zepto@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/zepto/-/zepto-1.2.0.tgz#e127bd9e66fd846be5eab48c1394882f7c0e4f98"
+  integrity sha1-4Se9nmb9hGvl6rSME5SIL3wOT5g=
