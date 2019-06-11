@@ -1,62 +1,62 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import { withRouter } from 'next/router'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { withRouter } from 'next/router';
 
-import rem from '../../utils/rem'
-import titleToDash from '../../utils/titleToDash'
-import { pages } from '../../pages/docs.json'
-import Link, { StyledLink } from '../Link'
+import rem from '../../utils/rem';
+import titleToDash from '../../utils/titleToDash';
+import { pages } from '../../pages/docs.json';
+import Link, { StyledLink } from '../Link';
 
 const MenuInner = styled.div`
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: ${rem(25)};
-`
+`;
 
 const TopLevelLink = styled.div`
   display: block;
   margin: ${rem(10)} ${rem(40)};
-`
+`;
 
 const Section = styled.div`
   margin-bottom: ${rem(20)};
-`
+`;
 
 const SectionTitle = styled.h4`
   display: block;
   margin: ${rem(10)} ${rem(40)};
   font-weight: normal;
-`
+`;
 
 const SubSection = styled.h5`
   display: block;
   margin: ${rem(10)} ${rem(40)} ${rem(10)} ${rem(55)};
   font-size: 0.9rem;
   font-weight: normal;
-`
+`;
 
 class Folder extends Component {
   state = {
     isOpen: false,
-  }
+  };
 
   toggleSubSections = () => {
-    this.setState({ isOpen: !this.state.isOpen })
-  }
+    this.setState({ isOpen: !this.state.isOpen });
+  };
 
   componentWillMount() {
-    this.setState({ isOpen: this.props.isOpenDefault })
+    this.setState({ isOpen: this.props.isOpenDefault });
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ isOpen: nextProps.isOpenDefault })
+    this.setState({ isOpen: nextProps.isOpenDefault });
   }
 
   render() {
     // eslint-disable-next-line
-    const { children, isOpenDefault, ...props } = this.props
-    const { isOpen } = this.state
+    const { children, isOpenDefault, ...props } = this.props;
+    const { isOpen } = this.state;
 
     return typeof children === 'function'
       ? children({
@@ -64,17 +64,14 @@ class Folder extends Component {
           toggleSubSections: this.toggleSubSections,
           isOpen,
         })
-      : null
+      : null;
   }
 }
 
 export const DocsSidebarMenu = withRouter(({ onRouteChange, router }) => (
   <MenuInner>
     {pages.map(({ title, pathname, sections }) => (
-      <Folder
-        key={title}
-        isOpenDefault={router && router.pathname === `/docs/${pathname}`}
-      >
+      <Folder key={title} isOpenDefault={router && router.pathname === `/docs/${pathname}`}>
         {({ rootProps, toggleSubSections, isOpen }) => (
           <Section {...rootProps} onClick={onRouteChange}>
             <SectionTitle onClick={toggleSubSections}>
@@ -84,9 +81,7 @@ export const DocsSidebarMenu = withRouter(({ onRouteChange, router }) => (
             {isOpen &&
               sections.map(({ title }) => (
                 <SubSection key={title}>
-                  <StyledLink href={`/docs/${pathname}#${titleToDash(title)}`}>
-                    {title}
-                  </StyledLink>
+                  <StyledLink href={`/docs/${pathname}#${titleToDash(title)}`}>{title}</StyledLink>
                 </SubSection>
               ))}
           </Section>
@@ -94,20 +89,17 @@ export const DocsSidebarMenu = withRouter(({ onRouteChange, router }) => (
       </Folder>
     ))}
   </MenuInner>
-))
+));
 
 function getSectionPath(parentPathname, title) {
-  return `${parentPathname || ''}#${titleToDash(title)}`
+  return `${parentPathname || ''}#${titleToDash(title)}`;
 }
 
 function isFolderOpen(currentHref, { pathname, title, sections }) {
   return (
-    sections.reduce(
-      (sum, v) =>
-        sum || window.location.href.endsWith(getSectionPath(pathname, v.title)),
-      false,
-    ) || window.location.href.endsWith(pathname || '#' + titleToDash(title))
-  )
+    sections.reduce((sum, v) => sum || window.location.href.endsWith(getSectionPath(pathname, v.title)), false) ||
+    window.location.href.endsWith(pathname || '#' + titleToDash(title))
+  );
 }
 
 export const SimpleSidebarMenu = ({ onRouteChange, pages = [] }) => (
@@ -116,19 +108,16 @@ export const SimpleSidebarMenu = ({ onRouteChange, pages = [] }) => (
       if (!sections) {
         return (
           <TopLevelLink key={title}>
-            <StyledLink href={pathname || '#' + (href || titleToDash(title))}>
-              {title}
-            </StyledLink>
+            <StyledLink href={pathname || '#' + (href || titleToDash(title))}>{title}</StyledLink>
           </TopLevelLink>
-        )
+        );
       }
 
       return (
         <Folder
           key={title}
           isOpenDefault={
-            typeof window !== 'undefined' &&
-            isFolderOpen(window.location.href, { title, pathname, sections })
+            typeof window !== 'undefined' && isFolderOpen(window.location.href, { title, pathname, sections })
           }
         >
           {({ rootProps, toggleSubSections, isOpen }) => (
@@ -148,7 +137,7 @@ export const SimpleSidebarMenu = ({ onRouteChange, pages = [] }) => (
             </Section>
           )}
         </Folder>
-      )
+      );
     })}
   </MenuInner>
-)
+);

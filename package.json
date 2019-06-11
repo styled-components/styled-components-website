@@ -69,7 +69,7 @@
     "jest-styled-components": "^6.2.0",
     "lint-staged": "^8.2.0",
     "now": "^15.4.0",
-    "prettier": "prettier/prettier",
+    "prettier": "^1.18.2",
     "react-test-renderer": "^16.5.2",
     "rimraf": "^2.6.2"
   },
