@@ -147,7 +147,6 @@ exports[`LiveEdit renders correctly 1`] = `
           "toString": [Function],
           "warnTooManyClasses": [Function],
           "withComponent": [Function],
-          Symbol(Symbol.hasInstance): [Function],
         }
       }
       forwardedRef={null}
@@ -291,7 +290,6 @@ exports[`LiveEdit renders correctly 1`] = `
                         "toString": [Function],
                         "warnTooManyClasses": [Function],
                         "withComponent": [Function],
-                        Symbol(Symbol.hasInstance): [Function],
                       }
                     }
                     forwardedRef={null}
@@ -380,7 +378,6 @@ exports[`LiveEdit renders correctly 1`] = `
                         "toString": [Function],
                         "warnTooManyClasses": [Function],
                         "withComponent": [Function],
-                        Symbol(Symbol.hasInstance): [Function],
                       }
                     }
                     forwardedRef={null}
@@ -434,7 +431,6 @@ exports[`LiveEdit renders correctly 1`] = `
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
                   "withComponent": [Function],
-                  Symbol(Symbol.hasInstance): [Function],
                 }
               }
               forwardedRef={null}
@@ -508,7 +504,6 @@ exports[`StyledError renders correctly 1`] = `
         "toString": [Function],
         "warnTooManyClasses": [Function],
         "withComponent": [Function],
-        Symbol(Symbol.hasInstance): [Function],
       }
     }
     forwardedRef={null}

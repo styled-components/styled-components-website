@@ -908,7 +908,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                         "toString": [Function],
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
-                                        Symbol(Symbol.hasInstance): [Function],
                                       }
                                     }
                                     forwardedRef={null}
@@ -1059,7 +1058,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "toString": [Function],
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
-                                                Symbol(Symbol.hasInstance): [Function],
                                               }
                                             }
                                             forwardedRef={null}
@@ -1181,7 +1179,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "toString": [Function],
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
-                                                Symbol(Symbol.hasInstance): [Function],
                                               }
                                             }
                                             forwardedRef={null}
@@ -1303,7 +1300,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 "toString": [Function],
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
-                                                Symbol(Symbol.hasInstance): [Function],
                                               }
                                             }
                                             forwardedRef={null}
@@ -1474,7 +1470,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "toString": [Function],
                                                   "warnTooManyClasses": [Function],
                                                   "withComponent": [Function],
-                                                  Symbol(Symbol.hasInstance): [Function],
                                                 }
                                               }
                                               forwardedRef={null}
@@ -2006,7 +2001,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                                         "toString": [Function],
                                                                         "warnTooManyClasses": [Function],
                                                                         "withComponent": [Function],
-                                                                        Symbol(Symbol.hasInstance): [Function],
                                                                       }
                                                                     }
                                                                     forwardedRef={null}
@@ -2153,7 +2147,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                         "toString": [Function],
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
-                                        Symbol(Symbol.hasInstance): [Function],
                                       }
                                     }
                                     forwardedRef={null}
@@ -2253,7 +2246,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     "toString": [Function],
                                                     "warnTooManyClasses": [Function],
                                                     "withComponent": [Function],
-                                                    Symbol(Symbol.hasInstance): [Function],
                                                   }
                                                 }
                                                 forwardedRef={null}
@@ -2391,7 +2383,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     "toString": [Function],
                                                     "warnTooManyClasses": [Function],
                                                     "withComponent": [Function],
-                                                    Symbol(Symbol.hasInstance): [Function],
                                                   }
                                                 }
                                                 forwardedRef={null}
@@ -2522,7 +2513,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     "toString": [Function],
                                                     "warnTooManyClasses": [Function],
                                                     "withComponent": [Function],
-                                                    Symbol(Symbol.hasInstance): [Function],
                                                   }
                                                 }
                                                 forwardedRef={null}
@@ -2826,7 +2816,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                     "toString": [Function],
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
-                                    Symbol(Symbol.hasInstance): [Function],
                                   }
                                 }
                                 forwardedRef={null}
@@ -3306,7 +3295,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "toString": [Function],
                                                   "warnTooManyClasses": [Function],
                                                   "withComponent": [Function],
-                                                  Symbol(Symbol.hasInstance): [Function],
                                                 }
                                               }
                                               forwardedRef={null}
@@ -3428,7 +3416,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "toString": [Function],
                                                   "warnTooManyClasses": [Function],
                                                   "withComponent": [Function],
-                                                  Symbol(Symbol.hasInstance): [Function],
                                                 }
                                               }
                                               forwardedRef={null}
@@ -3550,7 +3537,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   "toString": [Function],
                                                   "warnTooManyClasses": [Function],
                                                   "withComponent": [Function],
-                                                  Symbol(Symbol.hasInstance): [Function],
                                                 }
                                               }
                                               forwardedRef={null}
@@ -3704,7 +3690,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         "toString": [Function],
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
-                                                        Symbol(Symbol.hasInstance): [Function],
                                                       }
                                                     }
                                                     forwardedRef={null}
@@ -3842,7 +3827,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         "toString": [Function],
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
-                                                        Symbol(Symbol.hasInstance): [Function],
                                                       }
                                                     }
                                                     forwardedRef={null}
@@ -3973,7 +3957,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                                         "toString": [Function],
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
-                                                        Symbol(Symbol.hasInstance): [Function],
                                                       }
                                                     }
                                                     forwardedRef={null}
