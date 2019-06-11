@@ -1,10 +1,9 @@
-import React from 'react'
-import { mount } from 'enzyme'
-import 'jest-styled-components'
-import Sidebar from '../../../components/Nav/Sidebar'
+import React from 'react';
+import { mount } from 'enzyme';
+import Sidebar from '../../../components/Nav/Sidebar';
 
 test('Sidebar renders correctly', () => {
-  const wrapper = mount(<Sidebar />)
+  const wrapper = mount(<Sidebar />);
 
-  expect(wrapper).toMatchSnapshot()
-})
+  expect(wrapper).toMatchSnapshot();
+});
