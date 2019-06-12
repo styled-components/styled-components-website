@@ -5,10 +5,10 @@ You can pass in attributes to styled components using [attrs](/docs/basics#attac
 The rule of thumb is to use `attrs` when you want every instance of a styled component to have that prop, and [pass props](/docs/basics#passed-props) directly when every instance needs a different one:
 
 ```jsx
-const PasswordInput = styled.input.attrs({
+const PasswordInput = styled.input.attrs(props => ({
   // Every <PasswordInput /> should be type="password"
   type: "password"
-})``
+}))``
 
 // This specific one is hidden, so let's set aria-hidden
 <PasswordInput aria-hidden="true" />

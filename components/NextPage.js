@@ -7,10 +7,10 @@ import { grey } from '../utils/colors';
 import { mobile } from '../utils/media';
 import { headerFont } from '../utils/fonts';
 
-const Wrapper = styled(Link).attrs({
+const Wrapper = styled(Link).attrs((/* props */) => ({
   unstyled: true,
   prefetch: true,
-})`
+}))`
   display: flex;
   flex-direction: row;
   align-items: stretch;

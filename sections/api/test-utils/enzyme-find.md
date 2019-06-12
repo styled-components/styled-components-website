@@ -1,6 +1,6 @@
 ### `enzymeFind` | v4
 
-A convenience method for finding instances of a particular styled component within an enyzme wrapper.
+A convenience method for finding instances of a particular styled component within an enzyme wrapper.
 
 ```jsx
 import { mount } from 'enzyme'

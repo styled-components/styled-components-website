@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { LiveProvider, LiveEditor, LivePreview } from '@probablyup/react-live';
+import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
 import { Favorite } from 'styled-icons/material';
 
 import rem from '../utils/rem';
@@ -64,36 +64,36 @@ render(
 `.trim();
 
 import {
-  DoorDashLogo,
-  BloombergLogo,
-  AtlassianLogo,
-  RedditLogo,
-  TargetLogo,
-  EuroVisionLogo,
+  AirBnBLogo,
   ArtsyLogo,
-  IdeoLogo,
-  HuffpostLogo,
-  CoinbaseLogo,
-  PatreonLogo,
+  AtlassianLogo,
   Auth0Logo,
   BBCLogo,
-  CasperLogo,
-  MoleskineLogo,
-  AirBnBLogo,
-  TinderLogo,
-  LegoLogo,
-  TicketmasterLogo,
-  TypeformLogo,
-  VogueLogo,
-  InVisionLogo,
-  XingLogo,
-  MagicLeapLogo,
+  BloombergLogo,
   BlueTomatoLogo,
-  SesameLogo,
-  VimeoLogo,
-  ShpockLogo,
-  KiwiComLogo,
+  CasperLogo,
+  CoinbaseLogo,
+  DoorDashLogo,
+  EuroVisionLogo,
+  HuffpostLogo,
+  IdeoLogo,
+  InVisionLogo,
   JaneLogo,
+  KiwiComLogo,
+  LegoLogo,
+  MagicLeapLogo,
+  MoleskineLogo,
+  PatreonLogo,
+  RedditLogo,
+  SesameLogo,
+  ShpockLogo,
+  TargetLogo,
+  TicketmasterLogo,
+  TinderLogo,
+  TypeformLogo,
+  VimeoLogo,
+  VogueLogo,
+  XingLogo,
 } from '../components/CompanyLogos';
 
 const Title = styled.div`
@@ -105,21 +105,22 @@ const Title = styled.div`
   }
 `;
 
-const Logo = styled.img.attrs({
+const Logo = styled.img.attrs((/* props */) => ({
   alt: 'styled-components Logo',
   src: '/static/logo.png',
-})`
+}))`
   width: ${rem(125)};
   height: ${rem(125)};
 `;
 
 const slideAnimation = keyframes`
-    from{
-        transform:translate3d(0,0,0);
-    }
-    to{
-        transform:translate3d(-50%,0,0);
-    }
+  from{
+    transform:translate3d(0,0,0);
+  }
+
+  to{
+    transform:translate3d(-50%,0,0);
+  }
 `;
 
 const UsersSliderContainer = styled.div`
@@ -165,9 +166,9 @@ const CompanyLogo = styled.span`
   }
 `;
 
-const Wrapper = styled.div.attrs({
+const Wrapper = styled.div.attrs((/* props */) => ({
   className: 'hero-header', // for integration tests
-})`
+}))`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -222,12 +223,6 @@ const Heart = styled(Favorite)`
 
 const FooterLink = styled(Link)`
   color: ${grey};
-
-  ${p =>
-    p.monospaced &&
-    css`
-      font-family: ${monospace};
-    `};
 `;
 
 const FooterContent = styled(Content)`
@@ -490,7 +485,13 @@ class Index extends PureComponent {
             {'.'}
             <br />
             {'All code examples use '}
-            <FooterLink monospaced inline href="https://dank.sh">
+            <FooterLink
+              css={`
+                font-face: ${monospace};
+              `}
+              inline
+              href="https://dank.sh"
+            >
               Dank Mono
             </FooterLink>
             {'.'}

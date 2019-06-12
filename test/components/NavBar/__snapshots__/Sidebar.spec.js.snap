@@ -24,12 +24,12 @@ exports[`Sidebar renders correctly 1`] = `
 }
 
 <CaptureScroll>
-  <ForwardRef>
+  <styled.nav>
     <StyledComponent
-      forwardedClass={
+      forwardedComponent={
         Object {
           "$$typeof": Symbol(react.forward_ref),
-          "attrs": undefined,
+          "attrs": Array [],
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
             "isStatic": false,
@@ -80,9 +80,11 @@ exports[`Sidebar renders correctly 1`] = `
             ],
           },
           "displayName": "styled.nav",
+          "foldedComponentIds": Array [],
           "render": [Function],
           "styledComponentId": "sc-bdVaJa",
           "target": "nav",
+          "toString": [Function],
           "warnTooManyClasses": [Function],
           "withComponent": [Function],
         }
@@ -93,6 +95,6 @@ exports[`Sidebar renders correctly 1`] = `
         className="c0"
       />
     </StyledComponent>
-  </ForwardRef>
+  </styled.nav>
 </CaptureScroll>
 `;

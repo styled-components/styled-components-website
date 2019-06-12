@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import rem from '../../utils/rem'
-import { navbarHeight } from '../../utils/sizes'
-import { resetInput } from '../../utils/form'
+import rem from '../../utils/rem';
+import { navbarHeight } from '../../utils/sizes';
+import { resetInput } from '../../utils/form';
 
 const NavButton = styled.button`
   ${resetInput};
@@ -17,6 +17,6 @@ const NavButton = styled.button`
   & + ${NavButton} {
     padding-left: 0;
   }
-`
+`;
 
-export default NavButton
+export default NavButton;

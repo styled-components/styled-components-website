@@ -1,19 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Github, MediumM } from 'styled-icons/fa-brands'
-import rem from '../../utils/rem'
-import { navbarHeight } from '../../utils/sizes'
-import Link from '../Link'
+import React from 'react';
+import styled from 'styled-components';
+import { Github, MediumM } from 'styled-icons/fa-brands';
+import rem from '../../utils/rem';
+import { navbarHeight } from '../../utils/sizes';
+import Link from '../Link';
 
 const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   flex: 1 1 auto;
-`
+`;
 
-const SocialLink = styled(Link).attrs({
+const SocialLink = styled(Link).attrs((/* props */) => ({
   unstyled: true,
-})`
+}))`
   display: flex;
   margin-right: ${rem(20)};
   line-height: ${rem(navbarHeight)};
@@ -39,19 +39,19 @@ const SocialLink = styled(Link).attrs({
       fill: currentColor;
     }
   }
-`
+`;
 
 const Svg = styled.svg`
   width: ${p => rem(Number(p.width))};
   height: ${p => rem(Number(p.height))};
-`
+`;
 
 const StyledIcon = styled.div`
   && {
     width: ${p => rem(Number(p.width))};
     height: ${p => rem(Number(p.height))};
   }
-`
+`;
 
 // const Twitter = () => (
 //   <Svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 19 15" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -71,7 +71,7 @@ const Spectrum = () => (
       d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
     />
   </Svg>
-)
+);
 
 const Social = props => (
   <Wrapper {...props}>
@@ -88,6 +88,6 @@ const Social = props => (
       <StyledIcon as={MediumM} height="18" />
     </SocialLink>
   </Wrapper>
-)
+);
 
-export default Social
+export default Social;

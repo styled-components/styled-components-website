@@ -7,7 +7,7 @@ import { headerFont, monospace } from '../utils/fonts';
 
 import '../utils/prismTemplateString';
 
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from '@probablyup/react-live';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
 const StyledProvider = styled(LiveProvider)`
   box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
@@ -46,7 +46,7 @@ export const editorMixin = `
   font-family: ${monospace};
   font-weight: 300;
   height: ${rem(400)};
-  overflow-y: scroll;
+  overflow-y: auto !important;
   overflow-x: hidden;
   cursor: text;
   white-space: pre-wrap;

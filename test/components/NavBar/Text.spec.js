@@ -1,10 +1,9 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
-import 'jest-styled-components'
-import Text from '../../../components/Nav/Text'
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Text from '../../../components/Nav/Text';
 
 test('Text renders correctly', () => {
-  const tree = renderer.create(<Text />).toJSON()
+  const tree = renderer.create(<Text />).toJSON();
 
-  expect(tree).toMatchSnapshot()
-})
+  expect(tree).toMatchSnapshot();
+});
