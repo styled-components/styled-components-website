@@ -24,9 +24,9 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^1.0.20",
-    "@next/mdx": "^8.1.0",
     "@mdx-js/mdx": "^0.15.4",
     "@mdx-js/react": "^1.0.20",
+    "@next/mdx": "^8.1.0",
     "@types/react": "^16.4.14",
     "@zeit/next-mdx": "^1.2.0",
     "@zeit/next-source-maps": "^0.0.3",
@@ -45,10 +45,12 @@
     "prismjs": "^1.6.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-is": "^16.8.6",
     "react-live": "^2.1.2",
-    "styled-components": "^4.0.0-beta.11",
+    "styled-components": "^5.0.0-alpha.2",
     "styled-icons": "^8.1.0",
     "styled-theming": "^2.2.0",
+    "stylis-rtl": "^1.0.1",
     "webpack-bundle-analyzer": "^3.3.2"
   },
   "devDependencies": {
@@ -68,7 +70,7 @@
     "eslint-plugin-react": "^7.11.1",
     "husky": "^2.4.0",
     "jest": "^24.8.0",
-    "jest-styled-components": "^6.2.0",
+    "jest-styled-components": "git://github.com/styled-components/jest-styled-components#support-v5",
     "lint-staged": "^8.2.0",
     "now": "^15.4.0",
     "prettier": "^1.18.2",
