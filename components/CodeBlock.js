@@ -12,10 +12,8 @@ import { Note } from './Note';
 const CodeBlock = styled(props => {
   const language = (props.language || 'clike').toLowerCase().trim();
 
-  return <Editor {...props} language={language} />;
-}).attrs((/* props */) => ({
-  contentEditable: false,
-}))`
+  return <Editor {...props} disabled language={language} />;
+})`
   background: ${darkGrey};
   font-size: 0.8rem;
   font-family: ${monospace};
