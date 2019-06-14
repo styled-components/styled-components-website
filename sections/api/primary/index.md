@@ -15,6 +15,4 @@ import CssProp from './css-prop.md'
 
 <ThemeProvider />
 
-<StyleSheetManager />
-
 <CssProp />

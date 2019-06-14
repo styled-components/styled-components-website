@@ -20,3 +20,5 @@ styled-components v5 does not introduce any breaking public API changes, and add
   - `stylisPlugins`
 
 > Note: The object-form `.attrs({})` syntax that was deprecated in v4 is removed in v5. Use function-form attrs instead `.attrs(props => ({}))` (you should have been seeing console warnings to make this update ahead of time.)
+
+Check out the [official announcement post](https://medium.com/styled-components/389747abd987) for more information and to learn about what went into v5!
