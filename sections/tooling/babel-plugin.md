@@ -22,8 +22,6 @@ Then add it to your babel configuration like so:
 
 ### Server-side rendering
 
-> This option is turned on by default as of v1.6.
-
 By adding a unique identifier to every styled component, this plugin avoids checksum mismatches due to different class generation on the client and on the server. If you do not use this plugin and try to server-side render styled-components React will complain with an HTML attribute mismatch warning during rehydration.
 
 You can disable it if necessary with the `ssr` option:
@@ -87,26 +85,22 @@ One example you might want to do this, is testing components with enzyme. While 
 
 ### Minification
 
-> This option is turned on by default. If you experience mangled CSS
-> results, turn it off and open an issue please.
-
 Two types of minifications are performed by this plugin: one removes all whitespace & comments from your CSS and the other [transpiles tagged template literals](#template-string-transpilation), keeping valuable bytes out of your bundles.
 
-This operation may potentially break your styles in some rare cases, so we recommend to keep this option enabled in development if it's enabled in the production build.
-
-You can disable the CSS minification with the `minify` option:
+If desired, you can disable this behavior via babel configuration:
 
 ```js
 {
   "plugins": [
     ["babel-plugin-styled-components", {
-      "minify": false
+      "minify": false,
+      "transpileTemplateLiterals": false
     }]
   ]
 }
 ```
 
-### Dead Code Elimination | v1.7
+### Dead Code Elimination
 
 Due to how styled components are transpiled and constructed, by default minifiers cannot properly perform dead code elimination on them because they are assumed to have side effects. However, there is a feature that can be enabled to aid this process called "pure annotation".
 
@@ -149,14 +143,11 @@ var Simple = _styledComponents2.default.div(['width: 100%;'])
 
 The plugin is also smart enough to not modify tagged template literals belonging to other libraries and use cases:
 
-```js
+````js
 // Following will be converted:
 styled.div``
 keyframe``
-css``
-
-// But this will not be converted:
-`some text`
+css```some text` // But this will not be converted:
 
 // Here the outer template literal will be converted
 // because it's attached to the component factory,
@@ -164,7 +155,7 @@ css``
 styled.div`
   color: ${light ? `white` : `black`};
 `
-```
+````
 
 You can disable this feature with the `transpileTemplateLiterals` option:
 
