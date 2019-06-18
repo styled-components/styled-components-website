@@ -1,5 +1,13 @@
-import React from 'react';
-import styled, { createGlobalStyle, css, keyframes, withTheme, ThemeProvider } from 'styled-components';
+import React, { useEffect, useState } from 'react';
+import styled, {
+  createGlobalStyle,
+  css,
+  keyframes,
+  withTheme,
+  StyleSheetManager,
+  ThemeProvider,
+} from 'styled-components';
+import stylisRTLPlugin from 'stylis-rtl';
 import rem from '../utils/rem';
 import { darkGrey, red } from '../utils/colors';
 import { phone } from '../utils/media';
@@ -65,6 +73,7 @@ const StyledPreview = styled(LivePreview)`
   color: black;
   height: auto;
   overflow: hidden;
+  white-space: normal;
 
   ${columnMixin};
 `;
@@ -80,28 +89,38 @@ export const StyledError = styled(LiveError)`
   white-space: pre;
 `;
 
-const LiveEdit = ({ noInline, code, scope = {} }) => (
-  <StyledProvider
-    code={code}
-    noInline={noInline}
-    mountStylesheet={false}
-    scope={{
-      ...scope,
-      createGlobalStyle,
-      css,
-      keyframes,
-      styled,
-      ThemeProvider,
-      withTheme,
-    }}
-  >
-    <Row>
-      <StyledEditor />
-      <StyledPreview />
-    </Row>
+const LiveEdit = ({ noInline, code, scope = {} }) => {
+  const [mounted, setMounted] = useState(false);
 
-    <StyledError />
-  </StyledProvider>
-);
+  useEffect(() => setMounted(true), []);
+
+  return (
+    <StyledProvider
+      code={code}
+      noInline={noInline}
+      mountStylesheet={false}
+      scope={{
+        ...scope,
+        createGlobalStyle,
+        css,
+        keyframes,
+        styled,
+        ThemeProvider,
+        StyleSheetManager,
+        withTheme,
+        stylisRTLPlugin,
+      }}
+    >
+      <Row>
+        <StyledEditor />
+
+        {/* because react-live uses a different babel compiler, the classnames it generates aren't stable and a remount is needed after SSR */}
+        <StyledPreview key={mounted ? 'preview-client' : 'preview-ssr'} />
+      </Row>
+
+      <StyledError />
+    </StyledProvider>
+  );
+};
 
 export default LiveEdit;
