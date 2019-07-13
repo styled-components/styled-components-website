@@ -165,7 +165,7 @@ const Component = styled.div`
 `
 ```
 
-7. If you're ussing `attrs({})` and some of the attributes you pass to it is a Function, it's recommended to switch to the new `attrs(props => ({}))` syntax instead for easier and more powerful composition.
+7. If you're using `attrs({})` and some of the attributes you pass to it is a Function, it's recommended to switch to the new `attrs(props => ({}))` syntax instead for easier and more powerful composition.
 
 🚫
 
