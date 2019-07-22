@@ -67,6 +67,7 @@ import {
   AirBnBLogo,
   ArtsyLogo,
   AtlassianLogo,
+  AutodeskLogo,
   Auth0Logo,
   BBCLogo,
   BloombergLogo,
@@ -248,6 +249,10 @@ const SortedLogos = ({ children }) => {
 };
 
 const Logos = [
+  <CompanyLogo bottom="-0.1rem" height="2rem" key="https://www.autodesk.com" similarWebGlobalRank={1425}>
+    <AutodeskLogo />
+  </CompanyLogo>,
+
   <CompanyLogo bottom="0.3rem" height="2.5rem" key="https://www.airbnb.com" similarWebGlobalRank={20}>
     <AirBnBLogo />
   </CompanyLogo>,
