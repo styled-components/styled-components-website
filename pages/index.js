@@ -66,6 +66,7 @@ render(
 import {
   AirBnBLogo,
   ArtsyLogo,
+  CthrooLogo,
   AtlassianLogo,
   AutodeskLogo,
   Auth0Logo,
@@ -266,6 +267,10 @@ const Logos = [
     similarWebGlobalRank={17576}
   >
     <ArtsyLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="1.75rem" key="https://www.cthroo.com/">
+    <CthrooLogo />
   </CompanyLogo>,
 
   <CompanyLogo height="1.75rem" key="https://www.atlassian.com/" similarWebGlobalRank={2505}>
