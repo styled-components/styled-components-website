@@ -64,6 +64,7 @@ render(
 
 import {
   BloombergLogo,
+  CthrooLogo,
   AtlassianLogo,
   RedditLogo,
   TargetLogo,
@@ -254,6 +255,10 @@ class Index extends PureComponent {
             <UsersWrapper>
               <CompanyLogo bottom="-0.2rem" height="1.75rem">
                 <BloombergLogo />
+              </CompanyLogo>
+
+              <CompanyLogo height="1.75rem">
+                <CthrooLogo />
               </CompanyLogo>
 
               <CompanyLogo height="1.75rem">
