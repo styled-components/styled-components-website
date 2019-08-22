@@ -27,7 +27,7 @@ render(
 
 ### Destructuring props
 
-styled-components supports destructuring of props.
+a style object supports destructuring of props.
 
 ```react
 
@@ -50,14 +50,14 @@ render(
 );
 ```
 
-### Decendant/Sibling selectors
+### Decendent/Sibling selectors
 
-a styled-component can reference it's decendant by a `className`
+a style object can reference its decendent by component
 
 ```react
 
-// Decendant selector by class
-const DecendantBox = styled.div({
+// Decendent selector by component
+const DecendentBox = styled.div({
   backgroundColor: 'blue',
   height: '50px',
   width: '50px',
@@ -70,7 +70,7 @@ const Box = styled.div({
     display: 'inline-block',
     padding: '10px',
     background: 'palevioletred',
-    '> .decendant-box' : {
+    [`> ${DecendentBox}`] : {
       borderColor: 'darkblue'
     }
   }
@@ -79,18 +79,18 @@ const Box = styled.div({
 render(
   <div>
     <Box>
-      <DecendantBox className='decendant-box'/>
+      <DecendentBox/>
     </Box>
   </div>
 );
 ```
 
-a styled-component can reference it's decendant by component
+a style object can reference its decendent by a `className`
 
 ```react
 
-// Decendant selector by component
-const DecendantBox = styled.div({
+// Decendent selector by class
+const DecendentBox = styled.div({
   backgroundColor: 'blue',
   height: '50px',
   width: '50px',
@@ -103,7 +103,7 @@ const Box = styled.div({
     display: 'inline-block',
     padding: '10px',
     background: 'palevioletred',
-    [`> ${DecendantBox}`] : {
+    '> .decendent-box' : {
       borderColor: 'darkblue'
     }
   }
@@ -112,13 +112,13 @@ const Box = styled.div({
 render(
   <div>
     <Box>
-      <DecendantBox/>
+      <DecendentBox className='decendent-box'/>
     </Box>
   </div>
 );
 ```
 
-a styled-component can reference it's sibling(s) by a `className`.
+a styled object can reference its sibling(s) by a `className`.
 
 _child selector (>), adjacent sibling selector (+) and general sibling selector (~) work in the same way_
 
@@ -154,7 +154,7 @@ render(
 );
 ```
 
-a styled-component can reference it's sibling(s) by component.
+a style object can reference its sibling(s) by component.
 
 _child selector (>), adjacent sibling selector (+) and general sibling selector (~) work in the same way_
 
@@ -190,9 +190,9 @@ render(
 );
 ```
 
-### Pseudo classes
+### Pseudo-classes
 
-styled-components can reference pseudo classes and decendants with pseudo selectors
+a style object can reference pseudo-classes and decendents with pseudo selectors
 
 ```react
 const Label = styled.label({
@@ -272,9 +272,9 @@ render(
 );
 ```
 
-### Unit-less css values
+### Unitless CSS values
 
-styled-components object styles work with both numbers and string values
+Style objects work with both numbers and string values. Just like styled tagged template literals, number values are assumed as px unless used where unitless values are typically accepted such as lineHeight and flexGrow.
 
 ```react
 // height and width as number
@@ -299,9 +299,9 @@ render(
 );
 ```
 
-### with TypeScript
+### With TypeScript
 
-styled-components can work with TypeScript interfaces.
+Style objects can work with TypeScript interfaces.
 
 <!-- prettier-ignore-start -->
 ```jsx
