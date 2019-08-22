@@ -92,6 +92,7 @@ import {
   TicketmasterLogo,
   TinderLogo,
   TypeformLogo,
+  UnderArmourLogo,
   VimeoLogo,
   VogueLogo,
   XingLogo,
@@ -367,6 +368,10 @@ const Logos = [
 
   <CompanyLogo bottom="0.15rem" height="2.35rem" key="https://www.typeform.com" similarWebGlobalRank={3279}>
     <TypeformLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="2.3rem" key="https://www.underarmour.com" similarWebGlobalRank={6221}>
+    <UnderArmourLogo />
   </CompanyLogo>,
 
   <CompanyLogo bottom="0.3rem" height="2.1rem" key="https://www.vimeo.com" similarWebGlobalRank={239}>
