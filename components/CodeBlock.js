@@ -3,18 +3,16 @@ import styled from 'styled-components';
 import rem from '../utils/rem';
 
 import '../utils/prismTemplateString';
-import { Editor } from '@probablyup/react-live';
+import { Editor } from 'react-live';
 import { darkGrey } from '../utils/colors';
 import { monospace } from '../utils/fonts';
 
 import { Note } from './Note';
 
-const CodeBlock = styled(p => {
-  const language = (p.language || 'clike').toLowerCase().trim();
+const CodeBlock = styled(props => {
+  const language = (props.language || 'clike').toLowerCase().trim();
 
-  return <Editor {...p} language={language} />;
-}).attrs({
-  contentEditable: false,
+  return <Editor {...props} disabled language={language} />;
 })`
   background: ${darkGrey};
   font-size: 0.8rem;

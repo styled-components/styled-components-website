@@ -1,7 +1,6 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
-import 'jest-styled-components'
-import Table, { Row, Column } from '../../components/Table'
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Table, { Row, Column } from '../../components/Table';
 
 test('Table renders correctly', () => {
   const tree = renderer
@@ -10,9 +9,9 @@ test('Table renders correctly', () => {
         <Row>
           <Column />
         </Row>
-      </Table>,
+      </Table>
     )
-    .toJSON()
+    .toJSON();
 
-  expect(tree).toMatchSnapshot()
-})
+  expect(tree).toMatchSnapshot();
+});

@@ -6,9 +6,9 @@ For example, imagine you have an existing app with two classes you want to use a
 
 ```react
 // Using .attrs, we attach the .small class to every <Button />
-const Button = styled.button.attrs({
+const Button = styled.button.attrs(props => ({
   className: "small",
-})`
+}))`
   background: black;
   color: white;
   cursor: pointer;

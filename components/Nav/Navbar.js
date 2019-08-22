@@ -1,17 +1,17 @@
-import React, { PureComponent, createRef } from 'react'
-import styled, { css } from 'styled-components'
-import { Close } from 'styled-icons/material'
-import rem from '../../utils/rem'
-import { violetRed, paleGrey } from '../../utils/colors'
-import { navbarHeight } from '../../utils/sizes'
-import { headerFont } from '../../utils/fonts'
-import { mobile } from '../../utils/media'
-import Link from '../Link'
-import NavLinks from './NavLinks'
-import Social from './Social'
-import Logo from './Logo'
-import MobileNavbar from './MobileNavbar'
-import SearchWithAlgolia from './SearchWithAlgolia'
+import React, { PureComponent, createRef } from 'react';
+import styled, { css } from 'styled-components';
+import { Close } from 'styled-icons/material';
+import rem from '../../utils/rem';
+import { violetRed, paleGrey } from '../../utils/colors';
+import { navbarHeight } from '../../utils/sizes';
+import { headerFont } from '../../utils/fonts';
+import { mobile } from '../../utils/media';
+import Link from '../Link';
+import NavLinks from './NavLinks';
+import Social from './Social';
+import Logo from './Logo';
+import MobileNavbar from './MobileNavbar';
+import SearchWithAlgolia from './SearchWithAlgolia';
 
 const Wrapper = styled.nav`
   position: fixed;
@@ -29,21 +29,21 @@ const Wrapper = styled.nav`
   transition: background 300ms ease-out;
   color: white;
   padding: 0;
-`
+`;
 
 const StartWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-`
+`;
 
 const EndWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-`
+`;
 /* stylelint-disable */
-const StyledSocial = styled(Social)``
+const StyledSocial = styled(Social)``;
 /* stylelint-enable */
 
 const NormalNavbar = styled.div`
@@ -56,13 +56,13 @@ const NormalNavbar = styled.div`
       display: none;
     `)};
   }
-`
+`;
 
 const StyledModalCloseIcon = styled(Close)`
   width: ${rem(26)};
   height: ${rem(26)};
   color: white;
-`
+`;
 
 const AlgoliaModal = styled.div`
   ${mobile(css`
@@ -73,9 +73,9 @@ const AlgoliaModal = styled.div`
     left: 0;
     right: 0;
   `)};
-`
+`;
 
-const baseZ = 1
+const baseZ = 1;
 
 const AlgoliaModalHeader = styled.div`
   display: none;
@@ -94,7 +94,7 @@ const AlgoliaModalHeader = styled.div`
       z-index: ${baseZ + 1};
     }
   `)};
-`
+`;
 
 const AlgoliaModalOverlay = styled.div`
   margin-right: ${rem(10)};
@@ -119,19 +119,19 @@ const AlgoliaModalOverlay = styled.div`
       min-width: 0;
     }
   `)};
-`
+`;
 
 class ModalContainer extends PureComponent {
-  modalElement = createRef()
+  modalElement = createRef();
   onModalOverlayClick = e => {
     if (!this.modalElement.current.contains(e.target)) {
-      this.props.requestModalClose()
+      this.props.requestModalClose();
     }
-  }
+  };
   onCloseButtonClick = e => {
-    e.stopPropagation()
-    this.props.requestModalClose()
-  }
+    e.stopPropagation();
+    this.props.requestModalClose();
+  };
   render() {
     return (
       <>
@@ -140,44 +140,33 @@ class ModalContainer extends PureComponent {
             <StyledModalCloseIcon />
           </button>
         </AlgoliaModalHeader>
-        <AlgoliaModalOverlay
-          onClick={this.onModalOverlayClick}
-          isOpen={this.props.isOpen}
-        >
+        <AlgoliaModalOverlay onClick={this.onModalOverlayClick} isOpen={this.props.isOpen}>
           <AlgoliaModal ref={this.modalElement}>
             <div>{this.props.children}</div>
           </AlgoliaModal>
         </AlgoliaModalOverlay>
       </>
-    )
+    );
   }
 }
 
-const LogoLink = styled(Link).attrs({
+const LogoLink = styled(Link).attrs((/* props */) => ({
   unstyled: true,
   href: '/',
-})`
+}))`
   display: inline-block;
   vertical-align: center;
   margin-right: ${rem(35)};
-`
+`;
 
 class Navbar extends PureComponent {
   state = {
     isOpen: false,
-  }
-  openModal = () => this.setState(() => ({ isOpen: true }))
-  closeModal = () =>
-    this.setState(({ isOpen }) => (isOpen ? { isOpen: false } : null))
+  };
+  openModal = () => this.setState(() => ({ isOpen: true }));
+  closeModal = () => this.setState(({ isOpen }) => (isOpen ? { isOpen: false } : null));
   render() {
-    const {
-      onSideToggle,
-      onMobileNavToggle,
-      isSideFolded,
-      isMobileNavFolded,
-      showSideNav,
-      transparent,
-    } = this.props
+    const { onSideToggle, onMobileNavToggle, isSideFolded, isMobileNavFolded, showSideNav, transparent } = this.props;
 
     return (
       <Wrapper transparent={transparent}>
@@ -189,10 +178,7 @@ class Navbar extends PureComponent {
             <NavLinks />
           </StartWrapper>
           <EndWrapper>
-            <ModalContainer
-              isOpen={this.state.isOpen}
-              requestModalClose={this.closeModal}
-            >
+            <ModalContainer isOpen={this.state.isOpen} requestModalClose={this.closeModal}>
               <SearchWithAlgolia requestModalClose={this.closeModal} />
             </ModalContainer>
             <StyledSocial />
@@ -207,8 +193,8 @@ class Navbar extends PureComponent {
           showSideNav={showSideNav}
         />
       </Wrapper>
-    )
+    );
   }
 }
 
-export default Navbar
+export default Navbar;

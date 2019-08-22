@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Anchor renders correctly 1`] = `
-.c1 {
+.c0 {
   font-size: 1.7777777777777777rem;
   font-weight: 600;
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -16,27 +16,27 @@ exports[`Anchor renders correctly 1`] = `
   top: -3.888888888888889rem;
 }
 
-.c4 {
+.c3 {
   display: none;
   color: inherit;
   margin-left: 0.5555555555555556rem;
 }
 
-.c5 {
+.c4 {
   width: 1.1111111111111112rem;
   opacity: 0.7;
   margin-top: -0.2777777777777778rem;
 }
 
-.c5:hover {
+.c4:hover {
   opacity: 0.9;
 }
 
-.c0 {
+.c1 {
   position: relative;
 }
 
-.c0:hover .c3 {
+.c1:hover .c3 {
   display: inline-block;
 }
 
@@ -47,7 +47,7 @@ exports[`Anchor renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c0 .c3 {
+  .c1 .c3 {
     display: inline-block;
   }
 }
@@ -60,11 +60,11 @@ exports[`Anchor renders correctly 1`] = `
     className="c2"
   />
   <a
-    className="c3 c4"
+    className="c3"
     href="#undefined"
   >
     <svg
-      className="c5"
+      className="c4"
       height={null}
       width={null}
     />

@@ -1,17 +1,13 @@
-import React, { Component } from 'react'
-import Router from 'next/router'
-import PropTypes from 'prop-types'
-import Search from './Search'
+import React, { useEffect, useState } from 'react';
+import Router from 'next/router';
+import Search from './Search';
 
-class SearchWithAlgolia extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-    requestModalClose: PropTypes.func.isRequired,
-  }
+export default function AlgoliaSearch({ className, requestModalClose }) {
+  const [isDocs, setIsDocs] = useState(false);
 
-  isDocs = process.browser && Router.pathname.startsWith('/docs')
+  useEffect(() => {
+    if (process.browser && Router.pathname.startsWith('/docs')) setIsDocs(true);
 
-  componentDidMount() {
     if (process.env.NODE_ENV !== 'test') {
       import('docsearch.js').then(mdl => {
         mdl.default({
@@ -21,18 +17,14 @@ class SearchWithAlgolia extends Component {
           debug: true, // Set debug to true if you want to inspect the dropdown
           handleSelected: (input, event, suggestion) => {
             // original handleselect
-            this.props.requestModalClose()
-            input.setVal('')
-            window.location.assign(suggestion.url)
+            requestModalClose();
+            input.setVal('');
+            window.location.assign(suggestion.url);
           },
-        })
-      })
+        });
+      });
     }
-  }
+  }, [requestModalClose]);
 
-  render() {
-    return <Search isDocs={this.isDocs} className={this.props.className} />
-  }
+  return <Search isDocs={isDocs} className={className} />;
 }
-
-export default SearchWithAlgolia

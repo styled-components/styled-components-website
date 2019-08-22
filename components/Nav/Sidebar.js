@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
-import rem from '../../utils/rem'
-import { mobile } from '../../utils/media'
-import { paleGrey } from '../../utils/colors'
-import { sidebarWidth, navbarHeight } from '../../utils/sizes'
-import { headerFont } from '../../utils/fonts'
-import captureScroll from '../CaptureScroll'
+import rem from '../../utils/rem';
+import { mobile } from '../../utils/media';
+import { paleGrey } from '../../utils/colors';
+import { sidebarWidth, navbarHeight } from '../../utils/sizes';
+import { headerFont } from '../../utils/fonts';
+import captureScroll from '../CaptureScroll';
 
 const Sidebar = styled.nav`
   position: fixed;
@@ -33,6 +33,6 @@ const Sidebar = styled.nav`
           `
         : ``};
   `)};
-`
+`;
 
-export default captureScroll(Sidebar)
+export default captureScroll(Sidebar);

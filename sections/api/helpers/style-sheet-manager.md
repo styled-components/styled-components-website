@@ -1,0 +1,96 @@
+import Table, { Row, Column } from 'components/Table'
+import Code from 'components/Code'
+
+### `StyleSheetManager`
+
+A helper component for modifying how your styles are processed. For a given subtree involving styled-components, you can customize various behaviors like how the CSS runtime processor (stylis) handles styles via userland plugins and option overrides.
+
+<Table head={['Props', 'Description']}>
+  <Row>
+    <Column>
+      <Code>disableCSSOMInjection (v5+)</Code>
+    </Column>
+    <Column>
+      Switches to the slower text node-based CSS injection system for adding styles to the DOM. Useful for integrating with third party tools that haven't been upgraded to consume styles from the CSSOM APIs.
+    </Column>
+  </Row>
+
+<Row>
+  <Column>
+    <Code>sheet</Code>
+  </Column>
+  <Column>
+    <em>Thar be dragons ahead.</em> Create and provide your own StyleSheet if necessary for advanced SSR scenarios.
+  </Column>
+</Row>
+
+<Row>
+  <Column>
+    <Code>stylisOptions (v5+)</Code>
+  </Column>
+  <Column>
+    An object of overrides to our default stylis settings. See{' '}
+    <a href="https://github.com/thysultan/stylis.js#set" target="_blank">
+      available settings here
+    </a>
+    .
+  </Column>
+</Row>
+
+<Row>
+  <Column>
+    <Code>stylisPlugins (v5+)</Code>
+  </Column>
+  <Column>
+    An array of plugins to be run by stylis during compilation. Check out{' '}
+    <a href="https://www.npmjs.com/search?q=keywords%3Astylis" target="_blank">
+      what's available on npm
+    </a>
+    .
+  </Column>
+</Row>
+
+  <Row>
+    <Column>
+      <Code>target</Code>
+    </Column>
+    <Column>
+      <em>Thar be dragons ahead.</em> Provide an alternate DOM node to inject styles info.
+    </Column>
+  </Row>
+</Table>
+
+For example if your app runs only in modern browsers, you may want to disable vendor prefixing for your styles:
+
+```react
+// import styled, { StyleSheetManager } from 'styled-components'
+
+const Box = styled.div`
+  color: ${props => props.theme.color};
+  display: flex;
+`
+
+render(
+  <StyleSheetManager stylisOptions={{ prefix: false }}>
+    <Box>If you inspect me, there are no vendor prefixes for the flexbox style.</Box>
+  </StyleSheetManager>
+)
+```
+
+Another example would be enabling right-to-left translation for your styles via the userland `stylis-rtl` plugin:
+
+```react
+// import styled, { StyleSheetManager } from 'styled-components'
+// import stylisRTLPlugin from 'stylis-rtl';
+
+const Box = styled.div`
+  background: mediumseagreen;
+  border-left: 10px solid red;
+`
+
+render(
+  <StyleSheetManager stylisPlugins={[stylisRTLPlugin]}>
+    <Box>My border is now on the right!</Box>
+  </StyleSheetManager>
+)
+```

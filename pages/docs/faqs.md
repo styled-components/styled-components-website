@@ -10,6 +10,7 @@ import DuplicatedStyledComponents from '../../sections/faqs/duplicated-styled-co
 import HTMLAttributeWarnings from '../../sections/faqs/html-attribute-warnings.md'
 import BrowserSupport from '../../sections/faqs/browser-support.md'
 import MigrationV4 from '../../sections/faqs/migration-v4.md'
+import MigrationV5 from '../../sections/faqs/migration-v5.md'
 import CRA from '../../sections/faqs/create-react-app.md'
 import NPMLink from '../../sections/faqs/npm-link.md'
 import FlickeringText from '../../sections/faqs/flickering-text.md'
@@ -21,6 +22,7 @@ export default ({ children }) => (
   </DocsLayout>
 )
 
+<MigrationV5 />
 <MigrationV4 />
 <Nesting />
 <CSSFrameworks />

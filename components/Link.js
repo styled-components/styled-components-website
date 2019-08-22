@@ -20,10 +20,10 @@ export const StyledLink = styled.a`
   }
 `;
 
-export const InlineLink = styled.a.attrs({
+export const InlineLink = styled.a.attrs((/* props */) => ({
   target: '_blank',
   rel: 'noopener',
-})`
+}))`
   color: ${p => (p['data-white'] ? 'white' : violetRed)};
   cursor: pointer;
   text-decoration: underline;
@@ -33,7 +33,7 @@ export const InlineLink = styled.a.attrs({
   }
 `;
 
-const Link = ({ children, className, inline, unstyled, white, ...rest }) => {
+const Link = ({ ['aria-label']: ariaLabel, children, className, inline, unstyled, white, ...rest }) => {
   let Child = StyledLink;
   if (inline) {
     Child = InlineLink;
@@ -48,7 +48,7 @@ const Link = ({ children, className, inline, unstyled, white, ...rest }) => {
 
   return (
     <UnstyledLink {...rest}>
-      <Child href={rest.href} className={className} aria-label={rest['aria-label']} {...dataAttrs}>
+      <Child aria-label={ariaLabel} href={rest.href} className={className} {...dataAttrs}>
         {children}
       </Child>
     </UnstyledLink>

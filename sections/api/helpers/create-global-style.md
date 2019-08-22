@@ -1,7 +1,7 @@
 import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
-### `createGlobalStyle` | v4
+### `createGlobalStyle` | v4 | web-only
 
 A helper function to generate a special `StyledComponent` that handles global styles. Normally, styled components are automatically scoped to a local CSS class and therefore isolated from other components. In the case of `createGlobalStyle`, this limitation is removed and things like CSS resets or base stylesheets can be applied.
 

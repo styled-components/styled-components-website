@@ -59,9 +59,9 @@ const Input = styled.input`
   `)};
 `;
 
-const Button = styled.label.attrs({
+const Button = styled.label.attrs((/* props */) => ({
   htmlFor: INPUT_ID,
-})`
+}))`
   ${resetInput};
   flex: 0 0 auto;
   ${resetInput} flex: 0 0 auto;

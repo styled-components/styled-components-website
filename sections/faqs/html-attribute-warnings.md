@@ -7,7 +7,7 @@ HTML DOM elements such as `<div>` or `<a>`. If you are seeing this warning messa
 Warning: Received "true" for a non-boolean attribute
 ```
 
-If you're seeing this warning you are probably passing `true` where `"true"` would be appropriate. It's likely that this comes from a `.attrs({})` property, or from a completely unrelated prop that you're passing to a `styled(Component)` component.
+If you're seeing this warning you are probably passing `true` where `"true"` would be appropriate. It's likely that this comes from a `.attrs` property, or from a completely unrelated prop that you're passing to a `styled(Component)` component.
 
 To learn more about how props are passed, see [this section](/docs/basics#passed-props 'Passing Props to styled-components').
 
@@ -30,7 +30,7 @@ const StyledComp = styled(Link)`
 This will render:
 
 ```html
-<a text="Click" href="https://www.styled-components.com/" red=true class="[generated class]">Click</a>
+<a text="Click" href="https://www.styled-components.com/" red="true" class="[generated class]">Click</a>
 ```
 
 React will warn on non-standard attributes being attached such as "red" and "text", which are not valid HTML attributes for the `<a>` element. To fix this, you can use argument destructuring to pull out those known styling props:

@@ -47,10 +47,10 @@ Returns another `StyledComponent`.
 ```react
 // import styled from 'styled-components'
 
-const Input = styled.input.attrs({
+const Input = styled.input.attrs(props => ({
   type: 'text',
-  size: props => (props.small ? 5 : undefined),
-})`
+  size: props.small ? 5 : undefined,
+}))`
   border-radius: 3px;
   border: 1px solid palevioletred;
   display: block;
@@ -113,3 +113,7 @@ render(
 ```
 
 This sort of thing is very useful in use cases like a navigation bar where some of the items should be links and some just buttons, but all be styled the same way.
+
+#### "forwardedAs" prop | v4.3
+
+If you choose to wrap another component with the `styled()` HOC that also accepts an `"as"` prop, use `"forwardedAs"` to pass along the desired prop to the wrapped component.

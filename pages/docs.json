@@ -20,7 +20,7 @@
           "title": "Extending styles"
         },
         {
-          "title": "Styling any components"
+          "title": "Styling any component"
         },
         {
           "title": "Passed props"
@@ -54,9 +54,6 @@
         },
         {
           "title": "Existing CSS"
-        },
-        {
-          "title": "Media Templates"
         },
         {
           "title": "Tagged Template Literals"
@@ -130,6 +127,9 @@
       "title": "FAQs",
       "pathname": "faqs",
       "sections": [
+        {
+          "title": "What do I need to do to migrate to v5?"
+        },
         {
           "title": "What do I need to do to migrate to v4?"
         },
