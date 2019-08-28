@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect,useRef } from 'react';
 import styled, { css, createGlobalStyle } from 'styled-components';
 import { Search as SearchIcon } from 'styled-icons/material';
 import PropTypes from 'prop-types';
@@ -155,8 +155,9 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const Search = ({ isDocs, className }) => {
+  const searchInput= useRef(null);
   useEffect(()=>{ 
-    this.searchInput.focus();
+    searchInput.current.focus();
   });
   return (
   <Wrapper className={className}>
@@ -164,7 +165,7 @@ const Search = ({ isDocs, className }) => {
     <Button>
       <StyledSearchIcon />
     </Button>
-    <Input id={INPUT_ID} placeholder={isDocs ? `Search ...` : `Search docs ...`} ref={(input) => this.searchinput=input} type="search" />
+    <Input id={INPUT_ID} placeholder={isDocs ? `Search ...` : `Search docs ...`} ref={searchInput} type="search" />
   </Wrapper>
 );
 }                                      
