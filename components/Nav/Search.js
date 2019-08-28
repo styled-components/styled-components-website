@@ -154,15 +154,20 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const Search = ({ isDocs, className }) => (
+const Search = ({ isDocs, className }) => {
+  useEffect(()=>{ 
+    this.searchInput.focus();
+  });
+  return (
   <Wrapper className={className}>
     <GlobalStyles />
     <Button>
       <StyledSearchIcon />
     </Button>
-    <Input id={INPUT_ID} placeholder={isDocs ? `Search ...` : `Search docs ...`} type="search" />
+    <Input id={INPUT_ID} placeholder={isDocs ? `Search ...` : `Search docs ...`} ref={(input) => this.searchinput=input} type="search" />
   </Wrapper>
 );
+}                                      
 
 Search.propTypes = {
   className: PropTypes.string,
