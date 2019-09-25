@@ -40,8 +40,14 @@ const Releases = ({ releases, sidebarPages }) => (
   </DocsLayout>
 );
 
-Releases.getInitialProps = async () => {
+Releases.getInitialProps = async ({ res }) => {
   const releases = await getReleases();
+
+  if (res) {
+    // Revalidate this data every 30 seconds
+    res.setHeader('cache-control', 's-maxage=30,stale-while-revalidate,stale-if-error');
+  }
+
   return {
     releases,
     sidebarPages: releases.map(release => ({
