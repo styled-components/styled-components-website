@@ -76,6 +76,7 @@ import {
   CoinbaseLogo,
   DoorDashLogo,
   EuroVisionLogo,
+  GoogleLogo,
   HuffpostLogo,
   IdeoLogo,
   InVisionLogo,
@@ -388,6 +389,10 @@ const Logos = [
 
   <CompanyLogo height="2.0rem" key="https://jane.com" similarWebGlobalRank={21426}>
     <JaneLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="2.3rem" key="https://google.com" similarWebGlobalRank={1}>
+    <GoogleLogo />
   </CompanyLogo>,
 ];
 
