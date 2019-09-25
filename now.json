@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "name": "styled-components",
   "alias": "www.styled-components.com",
   "env": {
