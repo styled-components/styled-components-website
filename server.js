@@ -14,28 +14,6 @@ const ssrCache = new LRUCache({
   maxAge: 1000 * 60 * 60 * 24, // 24h
 });
 
-const cachedRender = (req, res, pagePath, queryParams) => {
-  const key = `${req.url}`;
-
-  if (!dev && ssrCache.has(key)) {
-    res.append('X-Cache', 'HIT');
-    res.send(ssrCache.get(key));
-    return;
-  }
-
-  app
-    .renderToHTML(req, res, pagePath, queryParams)
-    .then(html => {
-      ssrCache.set(key, html);
-
-      res.append('X-Cache', 'MISS');
-      res.send(html);
-    })
-    .catch(err => {
-      app.renderError(err, req, res, pagePath, queryParams);
-    });
-};
-
 const cachedProxyServer = (req, res, imgUrl, remoteUrl) => {
   const key = `/proxy/${imgUrl}`;
 
@@ -71,22 +49,6 @@ const PORT = process.env.PORT || 3000;
 
 app.prepare().then(() => {
   const server = express();
-
-  server.get('/docs', (req, res) => {
-    cachedRender(req, res, '/docs');
-  });
-
-  server.get('/docs/basics', (req, res) => {
-    cachedRender(req, res, '/docs/basics');
-  });
-
-  server.get('/docs/advanced', (req, res) => {
-    cachedRender(req, res, '/docs/advanced');
-  });
-
-  server.get('/docs/api', (req, res) => {
-    cachedRender(req, res, '/docs/api');
-  });
 
   // Proxy imageshield.io images
   const proxyMap = {
