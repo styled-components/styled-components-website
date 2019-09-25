@@ -3,5 +3,6 @@
   "alias": "www.styled-components.com",
   "env": {
     "NODE_ENV": "production"
-  }
+  },
+  "routes": [{ "src": "/proxy/(.+)", "dest": "/api/proxy/$1", "continue": true }]
 }
