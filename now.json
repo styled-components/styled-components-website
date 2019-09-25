@@ -5,5 +5,13 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "routes": [{ "src": "/proxy/(.+)", "dest": "/api/proxy/$1", "continue": true }]
+  "routes": [
+    {
+      "src": "/proxy/(.+)",
+      "status": 301,
+      "headers": {
+        "Location": "/api/proxy/$1"
+      }
+    }
+  ]
 }
