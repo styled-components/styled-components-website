@@ -24,7 +24,7 @@ export default function(req, res) {
     })
     .then(({ data, headers }) => {
       // Cache the response for one hour
-      res.setHeader('cache-control', 's-maxage=3600,stale-while-revalidate,stale-if-error');
+      res.setHeader('cache-control', 's-maxage=3600,stale-while-revalidate');
 
       const contentType = headers['content-type'];
       res.setHeader('content-type', contentType);

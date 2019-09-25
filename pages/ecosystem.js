@@ -47,7 +47,7 @@ Ecosystem.getInitialProps = async ({ res }) => {
 
   if (res) {
     // Revalidate this data once an hour
-    res.setHeader('cache-control', 's-maxage=3600,stale-while-revalidate,stale-if-error');
+    res.setHeader('cache-control', 's-maxage=3600,stale-while-revalidate');
   }
 
   return {

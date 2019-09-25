@@ -45,7 +45,7 @@ Releases.getInitialProps = async ({ res }) => {
 
   if (res) {
     // Revalidate this data every 30 seconds
-    res.setHeader('cache-control', 's-maxage=30,stale-while-revalidate,stale-if-error');
+    res.setHeader('cache-control', 's-maxage=30,stale-while-revalidate');
   }
 
   return {
