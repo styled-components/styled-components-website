@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MobileNavbar renders correctly 1`] = `
-.c2 svg {
+.c3 svg {
   display: inline-block;
 }
 
-.c2 svg path {
+.c3 svg path {
   fill: currentColor;
 }
 
-.c12 {
+.c13 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -21,7 +21,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   opacity: 0.35;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -36,7 +36,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   margin-right: 1.6666666666666667rem;
 }
 
-.c11 {
+.c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -53,19 +53,19 @@ exports[`MobileNavbar renders correctly 1`] = `
   color: currentColor;
 }
 
-.c11:hover,
-.c11:focus {
+.c12:hover,
+.c12:focus {
   opacity: 0.8;
 }
 
-.c11:active {
+.c12:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -79,7 +79,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c15 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -92,37 +92,37 @@ exports[`MobileNavbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c15:last-child {
+.c16:last-child {
   margin-right: 0;
 }
 
-.c15:hover,
-.c15:focus {
+.c16:hover,
+.c16:focus {
   opacity: 0.8;
 }
 
-.c15:active {
+.c16:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c15 svg path {
+.c16 svg path {
   fill: currentColor;
 }
 
-.c16 {
+.c17 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c17.c17 {
+.c18.c18 {
   width: NaNrem;
   height: 1rem;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -133,7 +133,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c1 {
+.c2 {
   background: none;
   outline: none;
   border: none;
@@ -148,11 +148,11 @@ exports[`MobileNavbar renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c1 + {
+.c2 + .c1 {
   padding-left: 0;
 }
 
-.c5 {
+.c6 {
   background: none;
   outline: none;
   border: none;
@@ -167,7 +167,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c5 + {
+.c6 + .c1 {
   padding-left: 0;
 }
 
@@ -175,7 +175,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   display: none;
 }
 
-.c9 {
+.c10 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -210,12 +210,12 @@ exports[`MobileNavbar renders correctly 1`] = `
   color: #868686;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c7 {
+.c8 {
   -webkit-transition: -webkit-transform 0.2s;
   -webkit-transition: transform 0.2s;
   transition: transform 0.2s;
@@ -227,16 +227,16 @@ exports[`MobileNavbar renders correctly 1`] = `
   transform: rotate(180deg);
 }
 
-.c13 {
+.c14 {
   padding-right: 1.1111111111111112rem;
 }
 
-.c6.c6 {
+.c7.c7 {
   width: 1.5555555555555556rem;
   height: 1.5555555555555556rem;
 }
 
-.c8.c8 {
+.c9.c9 {
   width: 2rem;
   height: 2rem;
 }
@@ -263,10 +263,10 @@ exports[`MobileNavbar renders correctly 1`] = `
   className="c0"
 >
   <button
-    className="c1"
+    className="c1 c2"
   >
     <svg
-      className="c2"
+      className="c3"
       height="15"
       width="15"
       xmlns="http://www.w3.org/2000/svg"
@@ -290,64 +290,64 @@ exports[`MobileNavbar renders correctly 1`] = `
   </button>
   <a
     aria-label="styled components"
-    className="c3"
+    className="c4"
     href="/"
     onClick={[Function]}
   >
     <div
-      className="c4"
+      className="c5"
     />
   </a>
   <div>
     <button
-      className="c5"
+      className="c1 c6"
     >
       <svg
-        className="c6"
+        className="c7"
         size={28}
       />
     </button>
     <button
-      className="c1"
+      className="c1 c2"
     >
       <div
-        className="c7"
+        className="c8"
       >
         <div
-          className="c8"
+          className="c9"
           size={36}
         />
       </div>
     </button>
   </div>
   <div
-    className="c9"
+    className="c10"
   >
     <nav
-      className="c10"
+      className="c11"
     >
       <a
-        className="c11"
+        className="c12"
         href="/docs"
         onClick={[Function]}
       >
         Documentation
       </a>
       <span
-        className="c12"
+        className="c13"
       />
       <a
-        className="c11"
+        className="c12"
         href="/ecosystem"
         onClick={[Function]}
       >
         Ecosystem
       </a>
       <span
-        className="c12"
+        className="c13"
       />
       <a
-        className="c11"
+        className="c12"
         href="/releases"
         onClick={[Function]}
       >
@@ -355,18 +355,18 @@ exports[`MobileNavbar renders correctly 1`] = `
       </a>
     </nav>
     <div
-      className="c13"
+      className="c14"
     >
       <nav
-        className="c14"
+        className="c15"
       >
         <a
-          className="c15"
+          className="c16"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
         >
           <svg
-            className="c16"
+            className="c17"
             height="14"
             viewBox="0 0 15 15"
             width="14"
@@ -381,22 +381,22 @@ exports[`MobileNavbar renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="c15"
+          className="c16"
           href="https://github.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c17"
+            className="c18"
             height="18"
           />
         </a>
         <a
-          className="c15"
+          className="c16"
           href="https://medium.com/styled-components"
           onClick={[Function]}
         >
           <svg
-            className="c17"
+            className="c18"
             height="18"
           />
         </a>
