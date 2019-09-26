@@ -73,6 +73,7 @@ import {
   BloombergLogo,
   BlueTomatoLogo,
   CasperLogo,
+  ChangeOrgLogo,
   CoinbaseLogo,
   DoorDashLogo,
   EuroVisionLogo,
@@ -393,6 +394,10 @@ const Logos = [
 
   <CompanyLogo height="2.3rem" key="https://google.com" similarWebGlobalRank={1}>
     <GoogleLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
+    <ChangeOrgLogo />
   </CompanyLogo>,
 ];
 
