@@ -74,6 +74,7 @@ import {
   BlueTomatoLogo,
   CasperLogo,
   CoinbaseLogo,
+  CultureTripLogo,
   DoorDashLogo,
   EuroVisionLogo,
   GoogleLogo,
@@ -393,6 +394,10 @@ const Logos = [
 
   <CompanyLogo height="2.3rem" key="https://google.com" similarWebGlobalRank={1}>
     <GoogleLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="2rem" key="https://culturetrip.com" similarWebGlobalRank={1487275}>
+    <CultureTripLogo />
   </CompanyLogo>,
 ];
 
