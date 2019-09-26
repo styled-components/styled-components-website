@@ -73,6 +73,7 @@ import {
   BloombergLogo,
   BlueTomatoLogo,
   CasperLogo,
+  ChangeOrgLogo,
   CoinbaseLogo,
   DoorDashLogo,
   EurostarLogo,
@@ -404,6 +405,12 @@ const Logos = [
   <CompanyLogo height="2.3rem" key="https://www.eurostar.com" similarWebGlobalRank={11380}>
     <EurostarLogo />
   </CompanyLogo>,
+
+  
+    <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
+    <ChangeOrgLogo />
+  </CompanyLogo>
+
 ];
 
 class Index extends PureComponent {
