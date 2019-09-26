@@ -589,6 +589,7 @@ exports[`Navbar renders correctly 1`] = `
         className="c3"
         href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         <div
           className="c4"
@@ -601,6 +602,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/docs"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Documentation
         </a>
@@ -611,6 +613,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/ecosystem"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Ecosystem
         </a>
@@ -621,6 +624,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/releases"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Releases
         </a>
@@ -676,6 +680,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c19"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           <svg
             className="c20"
@@ -696,6 +701,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c19"
           href="https://github.com/styled-components"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           <svg
             className="c21"
@@ -706,6 +712,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c19"
           href="https://medium.com/styled-components"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           <svg
             className="c21"
@@ -749,6 +756,7 @@ exports[`Navbar renders correctly 1`] = `
       className="c26"
       href="/"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       <div
         className="c27"
@@ -787,6 +795,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/docs"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Documentation
         </a>
@@ -797,6 +806,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/ecosystem"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Ecosystem
         </a>
@@ -807,6 +817,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/releases"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Releases
         </a>
@@ -821,6 +832,7 @@ exports[`Navbar renders correctly 1`] = `
             className="c19"
             href="https://spectrum.chat/styled-components/"
             onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             <svg
               className="c20"
@@ -841,6 +853,7 @@ exports[`Navbar renders correctly 1`] = `
             className="c19"
             href="https://github.com/styled-components"
             onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             <svg
               className="c21"
@@ -851,6 +864,7 @@ exports[`Navbar renders correctly 1`] = `
             className="c19"
             href="https://medium.com/styled-components"
             onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             <svg
               className="c21"
