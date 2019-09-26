@@ -77,6 +77,7 @@ import {
   CoinbaseLogo,
   DoorDashLogo,
   EuroVisionLogo,
+  GeniusLogo,
   GoogleLogo,
   HuffpostLogo,
   IdeoLogo,
@@ -396,9 +397,13 @@ const Logos = [
     <GoogleLogo />
   </CompanyLogo>,
 
-  <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
-    <ChangeOrgLogo />
+  <CompanyLogo height="1.5rem" key="https://genius.com" similarWebGlobalRank={366}>
+    <GeniusLogo />
   </CompanyLogo>,
+  
+    <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
+    <ChangeOrgLogo />
+  </CompanyLogo>
 ];
 
 class Index extends PureComponent {
