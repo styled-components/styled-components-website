@@ -76,6 +76,7 @@ import {
   CoinbaseLogo,
   DoorDashLogo,
   EuroVisionLogo,
+  GeniusLogo,
   GoogleLogo,
   HuffpostLogo,
   IdeoLogo,
@@ -393,6 +394,10 @@ const Logos = [
 
   <CompanyLogo height="2.3rem" key="https://google.com" similarWebGlobalRank={1}>
     <GoogleLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="1.5rem" key="https://genius.com" similarWebGlobalRank={366}>
+    <GeniusLogo />
   </CompanyLogo>,
 ];
 
