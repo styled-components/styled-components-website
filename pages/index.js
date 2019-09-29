@@ -79,6 +79,7 @@ import {
   EurostarLogo,
   EuroVisionLogo,
   GeniusLogo,
+  GitHubLogo,
   GoogleLogo,
   HuffpostLogo,
   IdeoLogo,
@@ -314,6 +315,10 @@ const Logos = [
     <EuroVisionLogo />
   </CompanyLogo>,
 
+  <CompanyLogo key="https://github.com/" similarWebGlobalRank={76}>
+    <GitHubLogo />
+  </CompanyLogo>,
+
   <CompanyLogo src="/static/huffpost-logo.svg" key="https://www.huffpost.com" similarWebGlobalRank={950}>
     <HuffpostLogo />
   </CompanyLogo>,
@@ -406,11 +411,9 @@ const Logos = [
     <EurostarLogo />
   </CompanyLogo>,
 
-  
-    <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
+  <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
     <ChangeOrgLogo />
-  </CompanyLogo>
-
+  </CompanyLogo>,
 ];
 
 class Index extends PureComponent {
