@@ -90,6 +90,7 @@ import {
   MoleskineLogo,
   PatreonLogo,
   RedditLogo,
+  SeatGeekLogo,
   SesameLogo,
   ShpockLogo,
   TargetLogo,
@@ -350,6 +351,10 @@ const Logos = [
     <RedditLogo />
   </CompanyLogo>,
 
+  <CompanyLogo key="https://seatgeek.com" similarWebGlobalRank={7292}>
+    <SeatGeekLogo />
+  </CompanyLogo>,
+
   <CompanyLogo key="https://www.sesamegifts.com/" similarWebGlobalRank={500301}>
     <SesameLogo />
   </CompanyLogo>,
@@ -406,11 +411,9 @@ const Logos = [
     <EurostarLogo />
   </CompanyLogo>,
 
-  
-    <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
+  <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
     <ChangeOrgLogo />
-  </CompanyLogo>
-
+  </CompanyLogo>,
 ];
 
 class Index extends PureComponent {
