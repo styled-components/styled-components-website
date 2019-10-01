@@ -70,6 +70,7 @@ import {
   AutodeskLogo,
   Auth0Logo,
   BBCLogo,
+  BirchboxLogo,
   BloombergLogo,
   BlueTomatoLogo,
   CasperLogo,
@@ -418,6 +419,10 @@ const Logos = [
 
   <CompanyLogo bottom="0.1rem" key="https://www.trulia.com/" similarWebGlobalRank={257}>
     <TruliaLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="1.3rem" bottom="-0.2rem" key="https://birchbox.com/" similarWebGlobalRank={38199}>
+    <BirchboxLogo />
   </CompanyLogo>,
 ];
 
