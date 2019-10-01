@@ -415,10 +415,13 @@ const Logos = [
   <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
     <ChangeOrgLogo />
   </CompanyLogo>,
+<<<<<<< Updated upstream
+=======
 
   <CompanyLogo bottom="0.1rem" key="https://www.trulia.com/" similarWebGlobalRank={257}>
     <TruliaLogo />
   </CompanyLogo>,
+>>>>>>> Stashed changes
 ];
 
 class Index extends PureComponent {
