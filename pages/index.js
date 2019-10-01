@@ -70,13 +70,17 @@ import {
   AutodeskLogo,
   Auth0Logo,
   BBCLogo,
+  BirchboxLogo,
   BloombergLogo,
   BlueTomatoLogo,
   CasperLogo,
+  ChangeOrgLogo,
   CoinbaseLogo,
   CultureTripLogo,
   DoorDashLogo,
+  EurostarLogo,
   EuroVisionLogo,
+  GeniusLogo,
   GoogleLogo,
   HuffpostLogo,
   IdeoLogo,
@@ -88,12 +92,14 @@ import {
   MoleskineLogo,
   PatreonLogo,
   RedditLogo,
+  SeatGeekLogo,
   SesameLogo,
   ShpockLogo,
   TargetLogo,
   TicketmasterLogo,
   TinderLogo,
   TypeformLogo,
+  TruliaLogo,
   UnderArmourLogo,
   VimeoLogo,
   VogueLogo,
@@ -348,6 +354,10 @@ const Logos = [
     <RedditLogo />
   </CompanyLogo>,
 
+  <CompanyLogo key="https://seatgeek.com" similarWebGlobalRank={7292}>
+    <SeatGeekLogo />
+  </CompanyLogo>,
+
   <CompanyLogo key="https://www.sesamegifts.com/" similarWebGlobalRank={500301}>
     <SesameLogo />
   </CompanyLogo>,
@@ -395,10 +405,31 @@ const Logos = [
   <CompanyLogo height="2.3rem" key="https://google.com" similarWebGlobalRank={1}>
     <GoogleLogo />
   </CompanyLogo>,
-
+  
   <CompanyLogo height="2rem" key="https://culturetrip.com" similarWebGlobalRank={1487275}>
     <CultureTripLogo />
   </CompanyLogo>,
+  
+  <CompanyLogo height="1.5rem" key="https://genius.com" similarWebGlobalRank={366}>
+    <GeniusLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="2.3rem" key="https://www.eurostar.com" similarWebGlobalRank={11380}>
+    <EurostarLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
+    <ChangeOrgLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.1rem" key="https://www.trulia.com/" similarWebGlobalRank={257}>
+    <TruliaLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="1.3rem" bottom="-0.2rem" key="https://birchbox.com/" similarWebGlobalRank={38199}>
+    <BirchboxLogo />
+
+
 ];
 
 class Index extends PureComponent {
