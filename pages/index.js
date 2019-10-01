@@ -97,6 +97,7 @@ import {
   TicketmasterLogo,
   TinderLogo,
   TypeformLogo,
+  TruliaLogo,
   UnderArmourLogo,
   VimeoLogo,
   VogueLogo,
@@ -413,6 +414,10 @@ const Logos = [
 
   <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
     <ChangeOrgLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.1rem" key="https://www.trulia.com/" similarWebGlobalRank={257}>
+    <TruliaLogo />
   </CompanyLogo>,
 ];
 
