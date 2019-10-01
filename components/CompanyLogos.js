@@ -669,3 +669,4 @@ export const CultureTripLogo = () => (
       />
     </g>
   </Svg>
+);
