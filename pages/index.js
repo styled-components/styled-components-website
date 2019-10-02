@@ -36,7 +36,6 @@ const Button = styled.a\`
   background: transparent;
   color: white;
   border: 2px solid white;
-
   /* The GitHub button is a primary button
    * edit this to target it specifically! */
   \${props => props.primary && css\`
@@ -44,7 +43,6 @@ const Button = styled.a\`
     color: palevioletred;
   \`}
 \`
-
 render(
   <div>
     <Button
@@ -55,7 +53,6 @@ render(
     >
       GitHub
     </Button>
-
     <Button as={Link} href="/docs" prefetch>
       Documentation
     </Button>
@@ -76,6 +73,7 @@ import {
   CasperLogo,
   ChangeOrgLogo,
   CoinbaseLogo,
+  CultureTripLogo,
   DoorDashLogo,
   EurostarLogo,
   EuroVisionLogo,
@@ -107,7 +105,6 @@ import {
 
 const Title = styled.div`
   margin: 2rem 0;
-
   h1,
   h2 {
     margin: 0;
@@ -126,7 +123,6 @@ const slideAnimation = keyframes`
   from{
     transform:translate3d(0,0,0);
   }
-
   to{
     transform:translate3d(-50%,0,0);
   }
@@ -169,7 +165,6 @@ const CompanyLogo = styled.span`
   opacity: 0.8;
   filter: brightness(0) invert(1);
   transition: opacity 125ms ease-in-out;
-
   &:hover {
     opacity: 1;
   }
@@ -184,7 +179,6 @@ const Wrapper = styled.div.attrs((/* props */) => ({
   align-items: center;
   text-align: center;
   color: white;
-
   background: linear-gradient(20deg, ${violetRed}, ${gold});
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
@@ -236,7 +230,6 @@ const FooterLink = styled(Link)`
 
 const FooterContent = styled(Content)`
   padding: ${rem(30)} ${rem(40)} ${rem(30)} ${rem(40)};
-
   ${mobile(css`
     padding: ${rem(30)} ${rem(20)} ${rem(30)} ${rem(20)};
   `)};
@@ -307,6 +300,10 @@ const Logos = [
     similarWebGlobalRank={2001}
   >
     <CoinbaseLogo />
+  </CompanyLogo>,
+  
+  <CompanyLogo height="2rem" key="https://culturetrip.com" similarWebGlobalRank={1487275}>
+    <CultureTripLogo />
   </CompanyLogo>,
 
   <CompanyLogo bottom="-0.2rem" key="https://www.doordash.com/" similarWebGlobalRank={2831}>
