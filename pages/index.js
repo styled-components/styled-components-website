@@ -78,7 +78,6 @@ import {
   CoinbaseLogo,
   CultureTripLogo,
   DoorDashLogo,
-  EddieBauerLogo,
   EurostarLogo,
   EuroVisionLogo,
   GeniusLogo,
@@ -311,7 +310,7 @@ const Logos = [
   >
     <CoinbaseLogo />
   </CompanyLogo>,
-
+  
   <CompanyLogo height="2rem" key="https://theculturetrip.com" similarWebGlobalRank={4945}>
     <CultureTripLogo />
   </CompanyLogo>,
@@ -322,10 +321,6 @@ const Logos = [
 
   <CompanyLogo bottom="0.1rem" height="2.5rem" key="https://eurovision.tv/" similarWebGlobalRank={38132}>
     <EuroVisionLogo />
-  </CompanyLogo>,
-
-  <CompanyLogo bottom="0.1rem" height="2rem" key="https://eddiebauer.com" similarWebGlobalRank={11625}>
-    <EddieBauerLogo />
   </CompanyLogo>,
 
   <CompanyLogo key="https://github.com/" similarWebGlobalRank={76}>

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav renders correctly 1`] = `
-.c40 {
+.c38 {
   display: inline-block;
   color: inherit;
   cursor: pointer;
@@ -9,7 +9,7 @@ exports[`Nav renders correctly 1`] = `
   margin: -0.1111111111111111rem -0.4444444444444444rem;
 }
 
-.c8 {
+.c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -21,7 +21,7 @@ exports[`Nav renders correctly 1`] = `
   opacity: 0.35;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -36,7 +36,7 @@ exports[`Nav renders correctly 1`] = `
   margin-right: 1.6666666666666667rem;
 }
 
-.c7 {
+.c6 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -53,19 +53,19 @@ exports[`Nav renders correctly 1`] = `
   color: currentColor;
 }
 
-.c7:hover,
-.c7:focus {
+.c6:hover,
+.c6:focus {
   opacity: 0.8;
 }
 
-.c7:active {
+.c6:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c20 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -79,7 +79,7 @@ exports[`Nav renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c21 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -92,37 +92,37 @@ exports[`Nav renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c21:last-child {
+.c19:last-child {
   margin-right: 0;
 }
 
-.c21:hover,
-.c21:focus {
+.c19:hover,
+.c19:focus {
   opacity: 0.8;
 }
 
-.c21:active {
+.c19:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c21 svg path {
+.c19 svg path {
   fill: currentColor;
 }
 
-.c22 {
+.c20 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c23.c23 {
+.c21.c21 {
   width: NaNrem;
   height: 1rem;
 }
 
-.c5 {
+.c4 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -133,7 +133,7 @@ exports[`Nav renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c29 {
+.c27 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -144,15 +144,15 @@ exports[`Nav renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c27 svg {
+.c25 svg {
   display: inline-block;
 }
 
-.c27 svg path {
+.c25 svg path {
   fill: currentColor;
 }
 
-.c26 {
+.c24 {
   background: none;
   outline: none;
   border: none;
@@ -167,11 +167,11 @@ exports[`Nav renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c26 + .c25 {
+.c24 + .c23 {
   padding-left: 0;
 }
 
-.c30 {
+.c28 {
   background: none;
   outline: none;
   border: none;
@@ -186,15 +186,15 @@ exports[`Nav renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c30 + .c25 {
+.c28 + .c23 {
   padding-left: 0;
 }
 
-.c24 {
+.c22 {
   display: none;
 }
 
-.c34 {
+.c32 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -229,12 +229,12 @@ exports[`Nav renders correctly 1`] = `
   color: #868686;
 }
 
-.c28 {
+.c26 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c32 {
+.c30 {
   -webkit-transition: -webkit-transform 0.2s;
   -webkit-transition: transform 0.2s;
   transition: transform 0.2s;
@@ -246,21 +246,21 @@ exports[`Nav renders correctly 1`] = `
   transform: rotate(180deg);
 }
 
-.c35 {
+.c33 {
   padding-right: 1.1111111111111112rem;
 }
 
-.c31.c31 {
+.c29.c29 {
   width: 1.5555555555555556rem;
   height: 1.5555555555555556rem;
 }
 
-.c33.c33 {
+.c31.c31 {
   width: 2rem;
   height: 2rem;
 }
 
-.c15 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -278,7 +278,7 @@ exports[`Nav renders correctly 1`] = `
   flex: 0 0 auto;
 }
 
-.c18 {
+.c16 {
   background: none;
   outline: none;
   border: none;
@@ -294,51 +294,51 @@ exports[`Nav renders correctly 1`] = `
   color: currentColor;
 }
 
-.c18::-webkit-input-placeholder {
+.c16::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c18::-moz-placeholder {
+.c16::-moz-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c18:-ms-input-placeholder {
+.c16:-ms-input-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c18::placeholder {
+.c16::placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c18:focus::-webkit-input-placeholder {
+.c16:focus::-webkit-input-placeholder {
   opacity: 0.8;
 }
 
-.c18:focus::-moz-placeholder {
+.c16:focus::-moz-placeholder {
   opacity: 0.8;
 }
 
-.c18:focus:-ms-input-placeholder {
+.c16:focus:-ms-input-placeholder {
   opacity: 0.8;
 }
 
-.c18:focus::placeholder {
+.c16:focus::placeholder {
   opacity: 0.8;
 }
 
-.c16 {
+.c14 {
   background: none;
   outline: none;
   border: none;
@@ -359,18 +359,18 @@ exports[`Nav renders correctly 1`] = `
   display: flex;
 }
 
-.c16:hover,
-.c16:focus {
+.c14:hover,
+.c14:focus {
   opacity: 0.7;
   -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
 }
 
-.c16:active {
+.c14:active {
   background: rgba(0,0,0,0.1);
 }
 
-.c16 .c17 {
+.c14 .c15 {
   width: 1.4444444444444444rem;
   height: 1.4444444444444444rem;
 }
@@ -392,7 +392,7 @@ exports[`Nav renders correctly 1`] = `
   padding: 0;
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -407,7 +407,7 @@ exports[`Nav renders correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -438,28 +438,28 @@ exports[`Nav renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c12 {
+.c10 {
   width: 1.4444444444444444rem;
   height: 1.4444444444444444rem;
   color: white;
 }
 
-.c11 {
+.c9 {
   display: none;
   color: currentColor;
 }
 
-.c13 {
+.c11 {
   margin-right: 0.5555555555555556rem;
 }
 
-.c4 {
+.c3 {
   display: inline-block;
   vertical-align: center;
   margin-right: 1.9444444444444444rem;
 }
 
-.c36 {
+.c34 {
   position: fixed;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -481,35 +481,35 @@ exports[`Nav renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c37 {
+.c35 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 1.3888888888888888rem;
 }
 
-.c38 {
+.c36 {
   margin-bottom: 1.1111111111111112rem;
 }
 
-.c39 {
+.c37 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
 }
 
 @media (min-width:62.5em) {
-  .c40 {
+  .c38 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c40:hover {
+  .c38:hover {
     background: rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
-  .c24 {
+  .c22 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -527,22 +527,22 @@ exports[`Nav renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c15 {
+  .c13 {
     display: block;
     padding: 0;
   }
 
-  .c15 span.algolia-autocomplete {
+  .c13 span.algolia-autocomplete {
     display: block !important;
   }
 
-  .c15 span.ds-dropdown-menu::before {
+  .c13 span.ds-dropdown-menu::before {
     display: none;
   }
 }
 
 @media (max-width:62.5em) {
-  .c18 {
+  .c16 {
     padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
@@ -552,7 +552,7 @@ exports[`Nav renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c16 {
+  .c14 {
     position: absolute;
     top: 0.5rem;
     left: 0.5555555555555556rem;
@@ -578,13 +578,13 @@ exports[`Nav renders correctly 1`] = `
 
 @media (max-width:62.5em) {
   .c1 .c2,
-  .c1 .c9 .c19 {
+  .c1 .c8 .c17 {
     display: none;
   }
 }
 
 @media (max-width:62.5em) {
-  .c14 {
+  .c12 {
     background: currentColor;
     overflow: auto;
     position: absolute;
@@ -595,11 +595,11 @@ exports[`Nav renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c11 {
+  .c9 {
     display: none;
   }
 
-  .c11 button {
+  .c9 button {
     cursor: pointer;
     padding: 0;
     position: fixed;
@@ -611,7 +611,7 @@ exports[`Nav renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c13 {
+  .c11 {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -625,7 +625,7 @@ exports[`Nav renders correctly 1`] = `
     margin: 0;
   }
 
-  .c13 .algolia-autocomplete .ds-dropdown-menu {
+  .c11 .algolia-autocomplete .ds-dropdown-menu {
     position: static !important;
     display: block;
     max-width: 100%;
@@ -650,11 +650,11 @@ exports[`Nav renders correctly 1`] = `
             >
               <styled.div>
                 <div
-                  className="c2 c3"
+                  className="c2"
                 >
                   <Styled(Link)>
                     <Link
-                      className="c4"
+                      className="c3"
                       href="/"
                       unstyled={true}
                     >
@@ -662,14 +662,14 @@ exports[`Nav renders correctly 1`] = `
                         href="/"
                       >
                         <a
-                          className="c4"
+                          className="c3"
                           href="/"
                           onClick={[Function]}
                           onMouseEnter={[Function]}
                         >
                           <styled.div>
                             <div
-                              className="c5"
+                              className="c4"
                             />
                           </styled.div>
                         </a>
@@ -679,13 +679,13 @@ exports[`Nav renders correctly 1`] = `
                   <NavLinks>
                     <styled.nav>
                       <nav
-                        className="c6"
+                        className="c5"
                       >
                         <Styled(Link)
                           href="/docs"
                         >
                           <Link
-                            className="c7"
+                            className="c6"
                             href="/docs"
                             prefetch={true}
                             unstyled={true}
@@ -695,7 +695,7 @@ exports[`Nav renders correctly 1`] = `
                               prefetch={true}
                             >
                               <a
-                                className="c7"
+                                className="c6"
                                 href="/docs"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
@@ -707,14 +707,14 @@ exports[`Nav renders correctly 1`] = `
                         </Styled(Link)>
                         <styled.span>
                           <span
-                            className="c8"
+                            className="c7"
                           />
                         </styled.span>
                         <Styled(Link)
                           href="/ecosystem"
                         >
                           <Link
-                            className="c7"
+                            className="c6"
                             href="/ecosystem"
                             prefetch={true}
                             unstyled={true}
@@ -724,7 +724,7 @@ exports[`Nav renders correctly 1`] = `
                               prefetch={true}
                             >
                               <a
-                                className="c7"
+                                className="c6"
                                 href="/ecosystem"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
@@ -736,14 +736,14 @@ exports[`Nav renders correctly 1`] = `
                         </Styled(Link)>
                         <styled.span>
                           <span
-                            className="c8"
+                            className="c7"
                           />
                         </styled.span>
                         <Styled(Link)
                           href="/releases"
                         >
                           <Link
-                            className="c7"
+                            className="c6"
                             href="/releases"
                             prefetch={true}
                             unstyled={true}
@@ -753,7 +753,7 @@ exports[`Nav renders correctly 1`] = `
                               prefetch={true}
                             >
                               <a
-                                className="c7"
+                                className="c6"
                                 href="/releases"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
@@ -770,7 +770,7 @@ exports[`Nav renders correctly 1`] = `
               </styled.div>
               <styled.div>
                 <div
-                  className="c9 c10"
+                  className="c8"
                 >
                   <ModalContainer
                     isOpen={false}
@@ -780,17 +780,17 @@ exports[`Nav renders correctly 1`] = `
                       isOpen={false}
                     >
                       <div
-                        className="c11"
+                        className="c9"
                       >
                         <button
                           onClick={[Function]}
                         >
                           <Styled(DummyIcon)>
                             <DummyIcon
-                              className="c12"
+                              className="c10"
                             >
                               <svg
-                                className="c12"
+                                className="c10"
                               />
                             </DummyIcon>
                           </Styled(DummyIcon)>
@@ -802,12 +802,12 @@ exports[`Nav renders correctly 1`] = `
                       onClick={[Function]}
                     >
                       <div
-                        className="c13"
+                        className="c11"
                         onClick={[Function]}
                       >
                         <styled.div>
                           <div
-                            className="c14"
+                            className="c12"
                           >
                             <div>
                               <AlgoliaSearch
@@ -818,20 +818,20 @@ exports[`Nav renders correctly 1`] = `
                                 >
                                   <styled.form>
                                     <form
-                                      className="c15"
+                                      className="c13"
                                     >
-                                      <Memo(GlobalStyleComponent) />
+                                      <GlobalStyleComponent />
                                       <styled.label>
                                         <label
-                                          className="c16"
+                                          className="c14"
                                           htmlFor="docs-search-input"
                                         >
                                           <Styled(DummyIcon)>
                                             <DummyIcon
-                                              className="c17 "
+                                              className="c15"
                                             >
                                               <svg
-                                                className="c17 "
+                                                className="c15"
                                               />
                                             </DummyIcon>
                                           </Styled(DummyIcon)>
@@ -843,7 +843,7 @@ exports[`Nav renders correctly 1`] = `
                                         type="search"
                                       >
                                         <input
-                                          className="c18"
+                                          className="c16"
                                           id="docs-search-input"
                                           placeholder="Search docs ..."
                                           type="search"
@@ -861,19 +861,19 @@ exports[`Nav renders correctly 1`] = `
                   </ModalContainer>
                   <Styled(Social)>
                     <Social
-                      className="c19 "
+                      className="c17"
                     >
                       <styled.nav
-                        className="c19 "
+                        className="c17"
                       >
                         <nav
-                          className="c20 c19 "
+                          className="c18 c17"
                         >
                           <Styled(Link)
                             href="https://spectrum.chat/styled-components/"
                           >
                             <Link
-                              className="c21"
+                              className="c19"
                               href="https://spectrum.chat/styled-components/"
                               unstyled={true}
                             >
@@ -881,7 +881,7 @@ exports[`Nav renders correctly 1`] = `
                                 href="https://spectrum.chat/styled-components/"
                               >
                                 <a
-                                  className="c21"
+                                  className="c19"
                                   href="https://spectrum.chat/styled-components/"
                                   onClick={[Function]}
                                   onMouseEnter={[Function]}
@@ -893,7 +893,7 @@ exports[`Nav renders correctly 1`] = `
                                       width="14"
                                     >
                                       <svg
-                                        className="c22"
+                                        className="c20"
                                         height="14"
                                         viewBox="0 0 15 15"
                                         width="14"
@@ -916,7 +916,7 @@ exports[`Nav renders correctly 1`] = `
                             href="https://github.com/styled-components"
                           >
                             <Link
-                              className="c21"
+                              className="c19"
                               href="https://github.com/styled-components"
                               unstyled={true}
                             >
@@ -924,7 +924,7 @@ exports[`Nav renders correctly 1`] = `
                                 href="https://github.com/styled-components"
                               >
                                 <a
-                                  className="c21"
+                                  className="c19"
                                   href="https://github.com/styled-components"
                                   onClick={[Function]}
                                   onMouseEnter={[Function]}
@@ -934,11 +934,11 @@ exports[`Nav renders correctly 1`] = `
                                     height="18"
                                   >
                                     <DummyIcon
-                                      className="c23"
+                                      className="c21"
                                       height="18"
                                     >
                                       <svg
-                                        className="c23"
+                                        className="c21"
                                         height="18"
                                       />
                                     </DummyIcon>
@@ -951,7 +951,7 @@ exports[`Nav renders correctly 1`] = `
                             href="https://medium.com/styled-components"
                           >
                             <Link
-                              className="c21"
+                              className="c19"
                               href="https://medium.com/styled-components"
                               unstyled={true}
                             >
@@ -959,7 +959,7 @@ exports[`Nav renders correctly 1`] = `
                                 href="https://medium.com/styled-components"
                               >
                                 <a
-                                  className="c21"
+                                  className="c19"
                                   href="https://medium.com/styled-components"
                                   onClick={[Function]}
                                   onMouseEnter={[Function]}
@@ -969,11 +969,11 @@ exports[`Nav renders correctly 1`] = `
                                     height="18"
                                   >
                                     <DummyIcon
-                                      className="c23"
+                                      className="c21"
                                       height="18"
                                     >
                                       <svg
-                                        className="c23"
+                                        className="c21"
                                         height="18"
                                       />
                                     </DummyIcon>
@@ -995,13 +995,13 @@ exports[`Nav renders correctly 1`] = `
           >
             <styled.div>
               <div
-                className="c24"
+                className="c22"
               >
                 <styled.button
                   active={true}
                 >
                   <button
-                    className="c25 c26"
+                    className="c23 c24"
                   >
                     <CloseIcon>
                       <styled.svg
@@ -1011,7 +1011,7 @@ exports[`Nav renders correctly 1`] = `
                         xmlnsXlink="http://www.w3.org/1999/xlink"
                       >
                         <svg
-                          className="c27"
+                          className="c25"
                           height="15"
                           width="15"
                           xmlns="http://www.w3.org/2000/svg"
@@ -1039,7 +1039,7 @@ exports[`Nav renders correctly 1`] = `
                 <Styled(Link)>
                   <Link
                     aria-label="styled components"
-                    className="c28"
+                    className="c26"
                     href="/"
                     unstyled={true}
                   >
@@ -1048,7 +1048,7 @@ exports[`Nav renders correctly 1`] = `
                     >
                       <a
                         aria-label="styled components"
-                        className="c28"
+                        className="c26"
                         href="/"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
@@ -1057,7 +1057,7 @@ exports[`Nav renders correctly 1`] = `
                           compact={true}
                         >
                           <div
-                            className="c29"
+                            className="c27"
                           />
                         </styled.div>
                       </a>
@@ -1069,7 +1069,7 @@ exports[`Nav renders correctly 1`] = `
                     onClick={[Function]}
                   >
                     <button
-                      className="c25 c30"
+                      className="c23 c28"
                       onClick={[Function]}
                     >
                       <styled.div
@@ -1077,11 +1077,11 @@ exports[`Nav renders correctly 1`] = `
                         size={28}
                       >
                         <DummyIcon
-                          className="c31"
+                          className="c29"
                           size={28}
                         >
                           <svg
-                            className="c31"
+                            className="c29"
                             size={28}
                           />
                         </DummyIcon>
@@ -1092,19 +1092,19 @@ exports[`Nav renders correctly 1`] = `
                     active={true}
                   >
                     <button
-                      className="c25 c26"
+                      className="c23 c24"
                     >
                       <styled.div
                         shouldRotate={true}
                       >
                         <div
-                          className="c32"
+                          className="c30"
                         >
                           <styled.div
                             size={36}
                           >
                             <div
-                              className="c33"
+                              className="c31"
                               size={36}
                             />
                           </styled.div>
@@ -1117,18 +1117,18 @@ exports[`Nav renders correctly 1`] = `
                   isOpen={true}
                 >
                   <div
-                    className="c34"
+                    className="c32"
                   >
                     <NavLinks>
                       <styled.nav>
                         <nav
-                          className="c6"
+                          className="c5"
                         >
                           <Styled(Link)
                             href="/docs"
                           >
                             <Link
-                              className="c7"
+                              className="c6"
                               href="/docs"
                               prefetch={true}
                               unstyled={true}
@@ -1138,7 +1138,7 @@ exports[`Nav renders correctly 1`] = `
                                 prefetch={true}
                               >
                                 <a
-                                  className="c7"
+                                  className="c6"
                                   href="/docs"
                                   onClick={[Function]}
                                   onMouseEnter={[Function]}
@@ -1150,14 +1150,14 @@ exports[`Nav renders correctly 1`] = `
                           </Styled(Link)>
                           <styled.span>
                             <span
-                              className="c8"
+                              className="c7"
                             />
                           </styled.span>
                           <Styled(Link)
                             href="/ecosystem"
                           >
                             <Link
-                              className="c7"
+                              className="c6"
                               href="/ecosystem"
                               prefetch={true}
                               unstyled={true}
@@ -1167,7 +1167,7 @@ exports[`Nav renders correctly 1`] = `
                                 prefetch={true}
                               >
                                 <a
-                                  className="c7"
+                                  className="c6"
                                   href="/ecosystem"
                                   onClick={[Function]}
                                   onMouseEnter={[Function]}
@@ -1179,14 +1179,14 @@ exports[`Nav renders correctly 1`] = `
                           </Styled(Link)>
                           <styled.span>
                             <span
-                              className="c8"
+                              className="c7"
                             />
                           </styled.span>
                           <Styled(Link)
                             href="/releases"
                           >
                             <Link
-                              className="c7"
+                              className="c6"
                               href="/releases"
                               prefetch={true}
                               unstyled={true}
@@ -1196,7 +1196,7 @@ exports[`Nav renders correctly 1`] = `
                                 prefetch={true}
                               >
                                 <a
-                                  className="c7"
+                                  className="c6"
                                   href="/releases"
                                   onClick={[Function]}
                                   onMouseEnter={[Function]}
@@ -1211,18 +1211,18 @@ exports[`Nav renders correctly 1`] = `
                     </NavLinks>
                     <styled.div>
                       <div
-                        className="c35"
+                        className="c33"
                       >
                         <Social>
                           <styled.nav>
                             <nav
-                              className="c20"
+                              className="c18"
                             >
                               <Styled(Link)
                                 href="https://spectrum.chat/styled-components/"
                               >
                                 <Link
-                                  className="c21"
+                                  className="c19"
                                   href="https://spectrum.chat/styled-components/"
                                   unstyled={true}
                                 >
@@ -1230,7 +1230,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="https://spectrum.chat/styled-components/"
                                   >
                                     <a
-                                      className="c21"
+                                      className="c19"
                                       href="https://spectrum.chat/styled-components/"
                                       onClick={[Function]}
                                       onMouseEnter={[Function]}
@@ -1242,7 +1242,7 @@ exports[`Nav renders correctly 1`] = `
                                           width="14"
                                         >
                                           <svg
-                                            className="c22"
+                                            className="c20"
                                             height="14"
                                             viewBox="0 0 15 15"
                                             width="14"
@@ -1265,7 +1265,7 @@ exports[`Nav renders correctly 1`] = `
                                 href="https://github.com/styled-components"
                               >
                                 <Link
-                                  className="c21"
+                                  className="c19"
                                   href="https://github.com/styled-components"
                                   unstyled={true}
                                 >
@@ -1273,7 +1273,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="https://github.com/styled-components"
                                   >
                                     <a
-                                      className="c21"
+                                      className="c19"
                                       href="https://github.com/styled-components"
                                       onClick={[Function]}
                                       onMouseEnter={[Function]}
@@ -1283,11 +1283,11 @@ exports[`Nav renders correctly 1`] = `
                                         height="18"
                                       >
                                         <DummyIcon
-                                          className="c23"
+                                          className="c21"
                                           height="18"
                                         >
                                           <svg
-                                            className="c23"
+                                            className="c21"
                                             height="18"
                                           />
                                         </DummyIcon>
@@ -1300,7 +1300,7 @@ exports[`Nav renders correctly 1`] = `
                                 href="https://medium.com/styled-components"
                               >
                                 <Link
-                                  className="c21"
+                                  className="c19"
                                   href="https://medium.com/styled-components"
                                   unstyled={true}
                                 >
@@ -1308,7 +1308,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="https://medium.com/styled-components"
                                   >
                                     <a
-                                      className="c21"
+                                      className="c19"
                                       href="https://medium.com/styled-components"
                                       onClick={[Function]}
                                       onMouseEnter={[Function]}
@@ -1318,11 +1318,11 @@ exports[`Nav renders correctly 1`] = `
                                         height="18"
                                       >
                                         <DummyIcon
-                                          className="c23"
+                                          className="c21"
                                           height="18"
                                         >
                                           <svg
-                                            className="c23"
+                                            className="c21"
                                             height="18"
                                           />
                                         </DummyIcon>
@@ -1347,26 +1347,26 @@ exports[`Nav renders correctly 1`] = `
     <CaptureScroll>
       <styled.nav>
         <nav
-          className="c36"
+          className="c34"
         >
           <withRouter(Unknown)>
             <Component>
               <styled.div>
                 <div
-                  className="c37"
+                  className="c35"
                 >
                   <Folder
                     key="Basics"
                   >
                     <styled.div>
                       <div
-                        className="c38"
+                        className="c36"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c39"
+                            className="c37"
                             onClick={[Function]}
                           >
                             <Link
@@ -1381,7 +1381,7 @@ exports[`Nav renders correctly 1`] = `
                                   onMouseEnter={[Function]}
                                 >
                                   <a
-                                    className="c40"
+                                    className="c38"
                                     href="/docs/basics"
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
@@ -1401,13 +1401,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c38"
+                        className="c36"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c39"
+                            className="c37"
                             onClick={[Function]}
                           >
                             <Link
@@ -1422,7 +1422,7 @@ exports[`Nav renders correctly 1`] = `
                                   onMouseEnter={[Function]}
                                 >
                                   <a
-                                    className="c40"
+                                    className="c38"
                                     href="/docs/advanced"
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
@@ -1442,13 +1442,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c38"
+                        className="c36"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c39"
+                            className="c37"
                             onClick={[Function]}
                           >
                             <Link
@@ -1463,7 +1463,7 @@ exports[`Nav renders correctly 1`] = `
                                   onMouseEnter={[Function]}
                                 >
                                   <a
-                                    className="c40"
+                                    className="c38"
                                     href="/docs/api"
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
@@ -1483,13 +1483,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c38"
+                        className="c36"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c39"
+                            className="c37"
                             onClick={[Function]}
                           >
                             <Link
@@ -1504,7 +1504,7 @@ exports[`Nav renders correctly 1`] = `
                                   onMouseEnter={[Function]}
                                 >
                                   <a
-                                    className="c40"
+                                    className="c38"
                                     href="/docs/tooling"
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
@@ -1524,13 +1524,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c38"
+                        className="c36"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c39"
+                            className="c37"
                             onClick={[Function]}
                           >
                             <Link
@@ -1545,7 +1545,7 @@ exports[`Nav renders correctly 1`] = `
                                   onMouseEnter={[Function]}
                                 >
                                   <a
-                                    className="c40"
+                                    className="c38"
                                     href="/docs/faqs"
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
