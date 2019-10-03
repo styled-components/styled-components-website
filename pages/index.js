@@ -76,6 +76,7 @@ import {
   CasperLogo,
   ChangeOrgLogo,
   CoinbaseLogo,
+  CultureTripLogo,
   DoorDashLogo,
   EurostarLogo,
   EuroVisionLogo,
@@ -307,6 +308,10 @@ const Logos = [
     similarWebGlobalRank={2001}
   >
     <CoinbaseLogo />
+  </CompanyLogo>,
+  
+  <CompanyLogo height="2rem" key="https://theculturetrip.com" similarWebGlobalRank={4945}>
+    <CultureTripLogo />
   </CompanyLogo>,
 
   <CompanyLogo bottom="-0.2rem" key="https://www.doordash.com/" similarWebGlobalRank={2831}>
