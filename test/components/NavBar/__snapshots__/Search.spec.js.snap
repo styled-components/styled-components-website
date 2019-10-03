@@ -174,7 +174,7 @@ exports[`Search renders correctly 1`] = `
     htmlFor="docs-search-input"
   >
     <svg
-      className="c2"
+      className="c2 "
     />
   </label>
   <input

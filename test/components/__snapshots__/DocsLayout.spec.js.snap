@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DocsLayout renders correctly 1`] = `
-.c38 {
+.c40 {
   display: inline-block;
   color: inherit;
   cursor: pointer;
@@ -9,7 +9,7 @@ exports[`DocsLayout renders correctly 1`] = `
   margin: -0.1111111111111111rem -0.4444444444444444rem;
 }
 
-.c8 {
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -21,7 +21,7 @@ exports[`DocsLayout renders correctly 1`] = `
   opacity: 0.35;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -36,7 +36,7 @@ exports[`DocsLayout renders correctly 1`] = `
   margin-right: 1.6666666666666667rem;
 }
 
-.c7 {
+.c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -53,19 +53,19 @@ exports[`DocsLayout renders correctly 1`] = `
   color: currentColor;
 }
 
-.c7:hover,
-.c7:focus {
+.c8:hover,
+.c8:focus {
   opacity: 0.8;
 }
 
-.c7:active {
+.c8:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c19 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -79,7 +79,7 @@ exports[`DocsLayout renders correctly 1`] = `
   flex: 1 1 auto;
 }
 
-.c20 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -92,37 +92,37 @@ exports[`DocsLayout renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c20:last-child {
+.c22:last-child {
   margin-right: 0;
 }
 
-.c20:hover,
-.c20:focus {
+.c22:hover,
+.c22:focus {
   opacity: 0.8;
 }
 
-.c20:active {
+.c22:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c20 svg path {
+.c22 svg path {
   fill: currentColor;
 }
 
-.c21 {
+.c23 {
   width: 0.7777777777777778rem;
   height: 0.7777777777777778rem;
 }
 
-.c22.c22 {
+.c24.c24 {
   width: NaNrem;
   height: 1rem;
 }
 
-.c5 {
+.c6 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -133,7 +133,7 @@ exports[`DocsLayout renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c28 {
+.c30 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -144,15 +144,15 @@ exports[`DocsLayout renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c26 svg {
+.c28 svg {
   display: inline-block;
 }
 
-.c26 svg path {
+.c28 svg path {
   fill: currentColor;
 }
 
-.c25 {
+.c27 {
   background: none;
   outline: none;
   border: none;
@@ -167,15 +167,15 @@ exports[`DocsLayout renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c25 + .c24 {
+.c27 + .c26 {
   padding-left: 0;
 }
 
-.c23 {
+.c25 {
   display: none;
 }
 
-.c32 {
+.c34 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -210,32 +210,32 @@ exports[`DocsLayout renders correctly 1`] = `
   color: #868686;
 }
 
-.c27 {
+.c29 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c30 {
+.c32 {
   -webkit-transition: -webkit-transform 0.2s;
   -webkit-transition: transform 0.2s;
   transition: transform 0.2s;
 }
 
-.c33 {
+.c35 {
   padding-right: 1.1111111111111112rem;
 }
 
-.c29.c29 {
+.c31.c31 {
   width: 1.5555555555555556rem;
   height: 1.5555555555555556rem;
 }
 
-.c31.c31 {
+.c33.c33 {
   width: 2rem;
   height: 2rem;
 }
 
-.c14 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -253,7 +253,7 @@ exports[`DocsLayout renders correctly 1`] = `
   flex: 0 0 auto;
 }
 
-.c17 {
+.c19 {
   background: none;
   outline: none;
   border: none;
@@ -269,51 +269,51 @@ exports[`DocsLayout renders correctly 1`] = `
   color: currentColor;
 }
 
-.c17::-webkit-input-placeholder {
+.c19::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c17::-moz-placeholder {
+.c19::-moz-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c17:-ms-input-placeholder {
+.c19:-ms-input-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c17::placeholder {
+.c19::placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c17:focus::-webkit-input-placeholder {
+.c19:focus::-webkit-input-placeholder {
   opacity: 0.8;
 }
 
-.c17:focus::-moz-placeholder {
+.c19:focus::-moz-placeholder {
   opacity: 0.8;
 }
 
-.c17:focus:-ms-input-placeholder {
+.c19:focus:-ms-input-placeholder {
   opacity: 0.8;
 }
 
-.c17:focus::placeholder {
+.c19:focus::placeholder {
   opacity: 0.8;
 }
 
-.c15 {
+.c17 {
   background: none;
   outline: none;
   border: none;
@@ -334,18 +334,18 @@ exports[`DocsLayout renders correctly 1`] = `
   display: flex;
 }
 
-.c15:hover,
-.c15:focus {
+.c17:hover,
+.c17:focus {
   opacity: 0.7;
   -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
 }
 
-.c15:active {
+.c17:active {
   background: rgba(0,0,0,0.1);
 }
 
-.c15 .c16 {
+.c17 .c18 {
   width: 1.4444444444444444rem;
   height: 1.4444444444444444rem;
 }
@@ -367,7 +367,7 @@ exports[`DocsLayout renders correctly 1`] = `
   padding: 0;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -382,7 +382,7 @@ exports[`DocsLayout renders correctly 1`] = `
   justify-content: flex-start;
 }
 
-.c9 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -413,28 +413,28 @@ exports[`DocsLayout renders correctly 1`] = `
   justify-content: space-between;
 }
 
-.c11 {
+.c13 {
   width: 1.4444444444444444rem;
   height: 1.4444444444444444rem;
   color: white;
 }
 
-.c10 {
+.c12 {
   display: none;
   color: currentColor;
 }
 
-.c12 {
+.c14 {
   margin-right: 0.5555555555555556rem;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   vertical-align: center;
   margin-right: 1.9444444444444444rem;
 }
 
-.c34 {
+.c36 {
   position: fixed;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -456,18 +456,18 @@ exports[`DocsLayout renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c35 {
+.c37 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 1.3888888888888888rem;
 }
 
-.c36 {
+.c38 {
   margin-bottom: 1.1111111111111112rem;
 }
 
-.c37 {
+.c39 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
@@ -477,7 +477,7 @@ exports[`DocsLayout renders correctly 1`] = `
   padding-left: 16.666666666666668rem;
 }
 
-.c39 {
+.c41 {
   width: 56.888888888888886rem;
   max-width: 100%;
   margin: 0 auto;
@@ -489,7 +489,7 @@ exports[`DocsLayout renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c40 {
+.c42 {
   display: block;
   text-align: left;
   width: 100%;
@@ -500,17 +500,17 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (min-width:62.5em) {
-  .c38 {
+  .c40 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c38:hover {
+  .c40:hover {
     background: rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
-  .c23 {
+  .c25 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -528,22 +528,22 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c14 {
+  .c16 {
     display: block;
     padding: 0;
   }
 
-  .c14 span.algolia-autocomplete {
+  .c16 span.algolia-autocomplete {
     display: block !important;
   }
 
-  .c14 span.ds-dropdown-menu::before {
+  .c16 span.ds-dropdown-menu::before {
     display: none;
   }
 }
 
 @media (max-width:62.5em) {
-  .c17 {
+  .c19 {
     padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
@@ -553,7 +553,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c15 {
+  .c17 {
     position: absolute;
     top: 0.5rem;
     left: 0.5555555555555556rem;
@@ -579,13 +579,13 @@ exports[`DocsLayout renders correctly 1`] = `
 
 @media (max-width:62.5em) {
   .c2 .c3,
-  .c2 .c9 .c18 {
+  .c2 .c10 .c20 {
     display: none;
   }
 }
 
 @media (max-width:62.5em) {
-  .c13 {
+  .c15 {
     background: currentColor;
     overflow: auto;
     position: absolute;
@@ -596,11 +596,11 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c10 {
+  .c12 {
     display: none;
   }
 
-  .c10 button {
+  .c12 button {
     cursor: pointer;
     padding: 0;
     position: fixed;
@@ -612,7 +612,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c12 {
+  .c14 {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -626,7 +626,7 @@ exports[`DocsLayout renders correctly 1`] = `
     margin: 0;
   }
 
-  .c12 .algolia-autocomplete .ds-dropdown-menu {
+  .c14 .algolia-autocomplete .ds-dropdown-menu {
     position: static !important;
     display: block;
     max-width: 100%;
@@ -635,7 +635,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c34 {
+  .c36 {
     -webkit-transform: translateX(-16.666666666666668rem);
     -ms-transform: translateX(-16.666666666666668rem);
     transform: translateX(-16.666666666666668rem);
@@ -649,7 +649,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c39 {
+  .c41 {
     padding: 3.888888888888889rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -702,11 +702,11 @@ exports[`DocsLayout renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c3"
+                        className="c3 c4"
                       >
                         <Styled(Link)>
                           <Link
-                            className="c4"
+                            className="c5"
                             href="/"
                             unstyled={true}
                           >
@@ -714,14 +714,14 @@ exports[`DocsLayout renders correctly 1`] = `
                               href="/"
                             >
                               <a
-                                className="c4"
+                                className="c5"
                                 href="/"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
                               >
                                 <styled.div>
                                   <div
-                                    className="c5"
+                                    className="c6"
                                   />
                                 </styled.div>
                               </a>
@@ -731,13 +731,13 @@ exports[`DocsLayout renders correctly 1`] = `
                         <NavLinks>
                           <styled.nav>
                             <nav
-                              className="c6"
+                              className="c7"
                             >
                               <Styled(Link)
                                 href="/docs"
                               >
                                 <Link
-                                  className="c7"
+                                  className="c8"
                                   href="/docs"
                                   prefetch={true}
                                   unstyled={true}
@@ -747,7 +747,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     prefetch={true}
                                   >
                                     <a
-                                      className="c7"
+                                      className="c8"
                                       href="/docs"
                                       onClick={[Function]}
                                       onMouseEnter={[Function]}
@@ -759,14 +759,14 @@ exports[`DocsLayout renders correctly 1`] = `
                               </Styled(Link)>
                               <styled.span>
                                 <span
-                                  className="c8"
+                                  className="c9"
                                 />
                               </styled.span>
                               <Styled(Link)
                                 href="/ecosystem"
                               >
                                 <Link
-                                  className="c7"
+                                  className="c8"
                                   href="/ecosystem"
                                   prefetch={true}
                                   unstyled={true}
@@ -776,7 +776,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     prefetch={true}
                                   >
                                     <a
-                                      className="c7"
+                                      className="c8"
                                       href="/ecosystem"
                                       onClick={[Function]}
                                       onMouseEnter={[Function]}
@@ -788,14 +788,14 @@ exports[`DocsLayout renders correctly 1`] = `
                               </Styled(Link)>
                               <styled.span>
                                 <span
-                                  className="c8"
+                                  className="c9"
                                 />
                               </styled.span>
                               <Styled(Link)
                                 href="/releases"
                               >
                                 <Link
-                                  className="c7"
+                                  className="c8"
                                   href="/releases"
                                   prefetch={true}
                                   unstyled={true}
@@ -805,7 +805,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     prefetch={true}
                                   >
                                     <a
-                                      className="c7"
+                                      className="c8"
                                       href="/releases"
                                       onClick={[Function]}
                                       onMouseEnter={[Function]}
@@ -822,7 +822,7 @@ exports[`DocsLayout renders correctly 1`] = `
                     </styled.div>
                     <styled.div>
                       <div
-                        className="c9"
+                        className="c10 c11"
                       >
                         <ModalContainer
                           isOpen={false}
@@ -832,17 +832,17 @@ exports[`DocsLayout renders correctly 1`] = `
                             isOpen={false}
                           >
                             <div
-                              className="c10"
+                              className="c12"
                             >
                               <button
                                 onClick={[Function]}
                               >
                                 <Styled(DummyIcon)>
                                   <DummyIcon
-                                    className="c11"
+                                    className="c13"
                                   >
                                     <svg
-                                      className="c11"
+                                      className="c13"
                                     />
                                   </DummyIcon>
                                 </Styled(DummyIcon)>
@@ -854,12 +854,12 @@ exports[`DocsLayout renders correctly 1`] = `
                             onClick={[Function]}
                           >
                             <div
-                              className="c12"
+                              className="c14"
                               onClick={[Function]}
                             >
                               <styled.div>
                                 <div
-                                  className="c13"
+                                  className="c15"
                                 >
                                   <div>
                                     <AlgoliaSearch
@@ -870,20 +870,20 @@ exports[`DocsLayout renders correctly 1`] = `
                                       >
                                         <styled.form>
                                           <form
-                                            className="c14"
+                                            className="c16"
                                           >
-                                            <GlobalStyleComponent />
+                                            <Memo(GlobalStyleComponent) />
                                             <styled.label>
                                               <label
-                                                className="c15"
+                                                className="c17"
                                                 htmlFor="docs-search-input"
                                               >
                                                 <Styled(DummyIcon)>
                                                   <DummyIcon
-                                                    className="c16"
+                                                    className="c18 "
                                                   >
                                                     <svg
-                                                      className="c16"
+                                                      className="c18 "
                                                     />
                                                   </DummyIcon>
                                                 </Styled(DummyIcon)>
@@ -895,7 +895,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                               type="search"
                                             >
                                               <input
-                                                className="c17"
+                                                className="c19"
                                                 id="docs-search-input"
                                                 placeholder="Search docs ..."
                                                 type="search"
@@ -913,19 +913,19 @@ exports[`DocsLayout renders correctly 1`] = `
                         </ModalContainer>
                         <Styled(Social)>
                           <Social
-                            className="c18"
+                            className="c20 "
                           >
                             <styled.nav
-                              className="c18"
+                              className="c20 "
                             >
                               <nav
-                                className="c19 c18"
+                                className="c21 c20 "
                               >
                                 <Styled(Link)
                                   href="https://spectrum.chat/styled-components/"
                                 >
                                   <Link
-                                    className="c20"
+                                    className="c22"
                                     href="https://spectrum.chat/styled-components/"
                                     unstyled={true}
                                   >
@@ -933,7 +933,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       href="https://spectrum.chat/styled-components/"
                                     >
                                       <a
-                                        className="c20"
+                                        className="c22"
                                         href="https://spectrum.chat/styled-components/"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
@@ -945,7 +945,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             width="14"
                                           >
                                             <svg
-                                              className="c21"
+                                              className="c23"
                                               height="14"
                                               viewBox="0 0 15 15"
                                               width="14"
@@ -968,7 +968,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                   href="https://github.com/styled-components"
                                 >
                                   <Link
-                                    className="c20"
+                                    className="c22"
                                     href="https://github.com/styled-components"
                                     unstyled={true}
                                   >
@@ -976,7 +976,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       href="https://github.com/styled-components"
                                     >
                                       <a
-                                        className="c20"
+                                        className="c22"
                                         href="https://github.com/styled-components"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
@@ -986,11 +986,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                           height="18"
                                         >
                                           <DummyIcon
-                                            className="c22"
+                                            className="c24"
                                             height="18"
                                           >
                                             <svg
-                                              className="c22"
+                                              className="c24"
                                               height="18"
                                             />
                                           </DummyIcon>
@@ -1003,7 +1003,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                   href="https://medium.com/styled-components"
                                 >
                                   <Link
-                                    className="c20"
+                                    className="c22"
                                     href="https://medium.com/styled-components"
                                     unstyled={true}
                                   >
@@ -1011,7 +1011,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       href="https://medium.com/styled-components"
                                     >
                                       <a
-                                        className="c20"
+                                        className="c22"
                                         href="https://medium.com/styled-components"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
@@ -1021,11 +1021,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                           height="18"
                                         >
                                           <DummyIcon
-                                            className="c22"
+                                            className="c24"
                                             height="18"
                                           >
                                             <svg
-                                              className="c22"
+                                              className="c24"
                                               height="18"
                                             />
                                           </DummyIcon>
@@ -1051,14 +1051,14 @@ exports[`DocsLayout renders correctly 1`] = `
                 >
                   <styled.div>
                     <div
-                      className="c23"
+                      className="c25"
                     >
                       <styled.button
                         active={false}
                         onClick={[Function]}
                       >
                         <button
-                          className="c24 c25"
+                          className="c26 c27"
                           onClick={[Function]}
                         >
                           <FoldIcon>
@@ -1069,7 +1069,7 @@ exports[`DocsLayout renders correctly 1`] = `
                               xmlnsXlink="http://www.w3.org/1999/xlink"
                             >
                               <svg
-                                className="c26"
+                                className="c28"
                                 height="14"
                                 width="17"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -1097,7 +1097,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       <Styled(Link)>
                         <Link
                           aria-label="styled components"
-                          className="c27"
+                          className="c29"
                           href="/"
                           unstyled={true}
                         >
@@ -1106,7 +1106,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           >
                             <a
                               aria-label="styled components"
-                              className="c27"
+                              className="c29"
                               href="/"
                               onClick={[Function]}
                               onMouseEnter={[Function]}
@@ -1115,7 +1115,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 compact={true}
                               >
                                 <div
-                                  className="c28"
+                                  className="c30"
                                 />
                               </styled.div>
                             </a>
@@ -1127,7 +1127,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <button
-                            className="c24 c25"
+                            className="c26 c27"
                             onClick={[Function]}
                           >
                             <styled.div
@@ -1135,11 +1135,11 @@ exports[`DocsLayout renders correctly 1`] = `
                               size={28}
                             >
                               <DummyIcon
-                                className="c29"
+                                className="c31"
                                 size={28}
                               >
                                 <svg
-                                  className="c29"
+                                  className="c31"
                                   size={28}
                                 />
                               </DummyIcon>
@@ -1151,20 +1151,20 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <button
-                            className="c24 c25"
+                            className="c26 c27"
                             onClick={[Function]}
                           >
                             <styled.div
                               shouldRotate={false}
                             >
                               <div
-                                className="c30"
+                                className="c32"
                               >
                                 <styled.div
                                   size={36}
                                 >
                                   <div
-                                    className="c31"
+                                    className="c33"
                                     size={36}
                                   />
                                 </styled.div>
@@ -1177,18 +1177,18 @@ exports[`DocsLayout renders correctly 1`] = `
                         isOpen={false}
                       >
                         <div
-                          className="c32"
+                          className="c34"
                         >
                           <NavLinks>
                             <styled.nav>
                               <nav
-                                className="c6"
+                                className="c7"
                               >
                                 <Styled(Link)
                                   href="/docs"
                                 >
                                   <Link
-                                    className="c7"
+                                    className="c8"
                                     href="/docs"
                                     prefetch={true}
                                     unstyled={true}
@@ -1198,7 +1198,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       prefetch={true}
                                     >
                                       <a
-                                        className="c7"
+                                        className="c8"
                                         href="/docs"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
@@ -1210,14 +1210,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                 </Styled(Link)>
                                 <styled.span>
                                   <span
-                                    className="c8"
+                                    className="c9"
                                   />
                                 </styled.span>
                                 <Styled(Link)
                                   href="/ecosystem"
                                 >
                                   <Link
-                                    className="c7"
+                                    className="c8"
                                     href="/ecosystem"
                                     prefetch={true}
                                     unstyled={true}
@@ -1227,7 +1227,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       prefetch={true}
                                     >
                                       <a
-                                        className="c7"
+                                        className="c8"
                                         href="/ecosystem"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
@@ -1239,14 +1239,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                 </Styled(Link)>
                                 <styled.span>
                                   <span
-                                    className="c8"
+                                    className="c9"
                                   />
                                 </styled.span>
                                 <Styled(Link)
                                   href="/releases"
                                 >
                                   <Link
-                                    className="c7"
+                                    className="c8"
                                     href="/releases"
                                     prefetch={true}
                                     unstyled={true}
@@ -1256,7 +1256,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       prefetch={true}
                                     >
                                       <a
-                                        className="c7"
+                                        className="c8"
                                         href="/releases"
                                         onClick={[Function]}
                                         onMouseEnter={[Function]}
@@ -1271,18 +1271,18 @@ exports[`DocsLayout renders correctly 1`] = `
                           </NavLinks>
                           <styled.div>
                             <div
-                              className="c33"
+                              className="c35"
                             >
                               <Social>
                                 <styled.nav>
                                   <nav
-                                    className="c19"
+                                    className="c21"
                                   >
                                     <Styled(Link)
                                       href="https://spectrum.chat/styled-components/"
                                     >
                                       <Link
-                                        className="c20"
+                                        className="c22"
                                         href="https://spectrum.chat/styled-components/"
                                         unstyled={true}
                                       >
@@ -1290,7 +1290,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           href="https://spectrum.chat/styled-components/"
                                         >
                                           <a
-                                            className="c20"
+                                            className="c22"
                                             href="https://spectrum.chat/styled-components/"
                                             onClick={[Function]}
                                             onMouseEnter={[Function]}
@@ -1302,7 +1302,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 width="14"
                                               >
                                                 <svg
-                                                  className="c21"
+                                                  className="c23"
                                                   height="14"
                                                   viewBox="0 0 15 15"
                                                   width="14"
@@ -1325,7 +1325,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       href="https://github.com/styled-components"
                                     >
                                       <Link
-                                        className="c20"
+                                        className="c22"
                                         href="https://github.com/styled-components"
                                         unstyled={true}
                                       >
@@ -1333,7 +1333,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           href="https://github.com/styled-components"
                                         >
                                           <a
-                                            className="c20"
+                                            className="c22"
                                             href="https://github.com/styled-components"
                                             onClick={[Function]}
                                             onMouseEnter={[Function]}
@@ -1343,11 +1343,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                               height="18"
                                             >
                                               <DummyIcon
-                                                className="c22"
+                                                className="c24"
                                                 height="18"
                                               >
                                                 <svg
-                                                  className="c22"
+                                                  className="c24"
                                                   height="18"
                                                 />
                                               </DummyIcon>
@@ -1360,7 +1360,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       href="https://medium.com/styled-components"
                                     >
                                       <Link
-                                        className="c20"
+                                        className="c22"
                                         href="https://medium.com/styled-components"
                                         unstyled={true}
                                       >
@@ -1368,7 +1368,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           href="https://medium.com/styled-components"
                                         >
                                           <a
-                                            className="c20"
+                                            className="c22"
                                             href="https://medium.com/styled-components"
                                             onClick={[Function]}
                                             onMouseEnter={[Function]}
@@ -1378,11 +1378,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                               height="18"
                                             >
                                               <DummyIcon
-                                                className="c22"
+                                                className="c24"
                                                 height="18"
                                               >
                                                 <svg
-                                                  className="c22"
+                                                  className="c24"
                                                   height="18"
                                                 />
                                               </DummyIcon>
@@ -1411,7 +1411,7 @@ exports[`DocsLayout renders correctly 1`] = `
               isFolded={true}
             >
               <nav
-                className="c34"
+                className="c36"
               >
                 <withRouter(Unknown)
                   onRouteChange={[Function]}
@@ -1421,7 +1421,7 @@ exports[`DocsLayout renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c35"
+                        className="c37"
                       >
                         <Folder
                           key="Basics"
@@ -1430,14 +1430,14 @@ exports[`DocsLayout renders correctly 1`] = `
                             onClick={[Function]}
                           >
                             <div
-                              className="c36"
+                              className="c38"
                               onClick={[Function]}
                             >
                               <styled.h4
                                 onClick={[Function]}
                               >
                                 <h4
-                                  className="c37"
+                                  className="c39"
                                   onClick={[Function]}
                                 >
                                   <Link
@@ -1452,7 +1452,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         onMouseEnter={[Function]}
                                       >
                                         <a
-                                          className="c38"
+                                          className="c40"
                                           href="/docs/basics"
                                           onClick={[Function]}
                                           onMouseEnter={[Function]}
@@ -1474,14 +1474,14 @@ exports[`DocsLayout renders correctly 1`] = `
                             onClick={[Function]}
                           >
                             <div
-                              className="c36"
+                              className="c38"
                               onClick={[Function]}
                             >
                               <styled.h4
                                 onClick={[Function]}
                               >
                                 <h4
-                                  className="c37"
+                                  className="c39"
                                   onClick={[Function]}
                                 >
                                   <Link
@@ -1496,7 +1496,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         onMouseEnter={[Function]}
                                       >
                                         <a
-                                          className="c38"
+                                          className="c40"
                                           href="/docs/advanced"
                                           onClick={[Function]}
                                           onMouseEnter={[Function]}
@@ -1518,14 +1518,14 @@ exports[`DocsLayout renders correctly 1`] = `
                             onClick={[Function]}
                           >
                             <div
-                              className="c36"
+                              className="c38"
                               onClick={[Function]}
                             >
                               <styled.h4
                                 onClick={[Function]}
                               >
                                 <h4
-                                  className="c37"
+                                  className="c39"
                                   onClick={[Function]}
                                 >
                                   <Link
@@ -1540,7 +1540,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         onMouseEnter={[Function]}
                                       >
                                         <a
-                                          className="c38"
+                                          className="c40"
                                           href="/docs/api"
                                           onClick={[Function]}
                                           onMouseEnter={[Function]}
@@ -1562,14 +1562,14 @@ exports[`DocsLayout renders correctly 1`] = `
                             onClick={[Function]}
                           >
                             <div
-                              className="c36"
+                              className="c38"
                               onClick={[Function]}
                             >
                               <styled.h4
                                 onClick={[Function]}
                               >
                                 <h4
-                                  className="c37"
+                                  className="c39"
                                   onClick={[Function]}
                                 >
                                   <Link
@@ -1584,7 +1584,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         onMouseEnter={[Function]}
                                       >
                                         <a
-                                          className="c38"
+                                          className="c40"
                                           href="/docs/tooling"
                                           onClick={[Function]}
                                           onMouseEnter={[Function]}
@@ -1606,14 +1606,14 @@ exports[`DocsLayout renders correctly 1`] = `
                             onClick={[Function]}
                           >
                             <div
-                              className="c36"
+                              className="c38"
                               onClick={[Function]}
                             >
                               <styled.h4
                                 onClick={[Function]}
                               >
                                 <h4
-                                  className="c37"
+                                  className="c39"
                                   onClick={[Function]}
                                 >
                                   <Link
@@ -1628,7 +1628,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         onMouseEnter={[Function]}
                                       >
                                         <a
-                                          className="c38"
+                                          className="c40"
                                           href="/docs/faqs"
                                           onClick={[Function]}
                                           onMouseEnter={[Function]}
@@ -1657,12 +1657,12 @@ exports[`DocsLayout renders correctly 1`] = `
         moveRight={false}
       >
         <div
-          className="c39"
+          className="c41"
           data-e2e-id="content"
         >
           <styled.h1>
             <h1
-              className="c40"
+              className="c42"
             />
           </styled.h1>
         </div>
