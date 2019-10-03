@@ -310,7 +310,7 @@ const Logos = [
     <CoinbaseLogo />
   </CompanyLogo>,
   
-  <CompanyLogo height="2rem" key="https://culturetrip.com" similarWebGlobalRank={1487275}>
+  <CompanyLogo height="2rem" key="https://theculturetrip.com" similarWebGlobalRank={4945}>
     <CultureTripLogo />
   </CompanyLogo>,
 
