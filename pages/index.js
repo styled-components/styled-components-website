@@ -80,6 +80,7 @@ import {
   EurostarLogo,
   EuroVisionLogo,
   GeniusLogo,
+  GitHubLogo,
   GoogleLogo,
   HuffpostLogo,
   IdeoLogo,
@@ -315,6 +316,10 @@ const Logos = [
 
   <CompanyLogo bottom="0.1rem" height="2.5rem" key="https://eurovision.tv/" similarWebGlobalRank={38132}>
     <EuroVisionLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo key="https://github.com/" similarWebGlobalRank={76}>
+    <GitHubLogo />
   </CompanyLogo>,
 
   <CompanyLogo src="/static/huffpost-logo.svg" key="https://www.huffpost.com" similarWebGlobalRank={950}>
