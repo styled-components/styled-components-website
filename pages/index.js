@@ -294,7 +294,7 @@ const Logos = [
     <BloombergLogo />
   </CompanyLogo>,
 
-  <CompanyLogo bottom="0.75rem" height="3rem" key="https://www.blue-tomato.com" similarWebGlobalRank={21322}>
+  <CompanyLogo bottom="0.75rem" height="3.3rem" key="https://www.blue-tomato.com" similarWebGlobalRank={21322}>
     <BlueTomatoLogo />
   </CompanyLogo>,
 
