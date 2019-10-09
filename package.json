@@ -97,7 +97,7 @@
   "bundlesize": [
     {
       "path": ".next/static/*/pages/**/*.js",
-      "maxSize": "250kB"
+      "maxSize": "300kB"
     }
   ]
 }
