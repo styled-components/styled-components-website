@@ -125,7 +125,7 @@ exports[`Navbar renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c26 {
+.c27 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -136,15 +136,15 @@ exports[`Navbar renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c24 svg {
+.c25 svg {
   display: inline-block;
 }
 
-.c24 svg path {
+.c25 svg path {
   fill: currentColor;
 }
 
-.c23 {
+.c24 {
   background: none;
   outline: none;
   border: none;
@@ -159,11 +159,11 @@ exports[`Navbar renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c23 + {
+.c24 + .c23 {
   padding-left: 0;
 }
 
-.c27 {
+.c28 {
   background: none;
   outline: none;
   border: none;
@@ -178,7 +178,7 @@ exports[`Navbar renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c27 + {
+.c28 + .c23 {
   padding-left: 0;
 }
 
@@ -186,7 +186,7 @@ exports[`Navbar renders correctly 1`] = `
   display: none;
 }
 
-.c31 {
+.c32 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -221,12 +221,12 @@ exports[`Navbar renders correctly 1`] = `
   color: #868686;
 }
 
-.c25 {
+.c26 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c29 {
+.c30 {
   -webkit-transition: -webkit-transform 0.2s;
   -webkit-transition: transform 0.2s;
   transition: transform 0.2s;
@@ -238,16 +238,16 @@ exports[`Navbar renders correctly 1`] = `
   transform: rotate(180deg);
 }
 
-.c32 {
+.c33 {
   padding-right: 1.1111111111111112rem;
 }
 
-.c28.c28 {
+.c29.c29 {
   width: 1.5555555555555556rem;
   height: 1.5555555555555556rem;
 }
 
-.c30.c30 {
+.c31.c31 {
   width: 2rem;
   height: 2rem;
 }
@@ -589,6 +589,7 @@ exports[`Navbar renders correctly 1`] = `
         className="c3"
         href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         <div
           className="c4"
@@ -601,6 +602,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/docs"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Documentation
         </a>
@@ -611,6 +613,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/ecosystem"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Ecosystem
         </a>
@@ -621,6 +624,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/releases"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Releases
         </a>
@@ -676,6 +680,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c19"
           href="https://spectrum.chat/styled-components/"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           <svg
             className="c20"
@@ -696,6 +701,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c19"
           href="https://github.com/styled-components"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           <svg
             className="c21"
@@ -706,6 +712,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c19"
           href="https://medium.com/styled-components"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           <svg
             className="c21"
@@ -719,10 +726,10 @@ exports[`Navbar renders correctly 1`] = `
     className="c22"
   >
     <button
-      className="c23"
+      className="c23 c24"
     >
       <svg
-        className="c24"
+        className="c25"
         height="15"
         width="15"
         xmlns="http://www.w3.org/2000/svg"
@@ -746,39 +753,40 @@ exports[`Navbar renders correctly 1`] = `
     </button>
     <a
       aria-label="styled components"
-      className="c25"
+      className="c26"
       href="/"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       <div
-        className="c26"
+        className="c27"
       />
     </a>
     <div>
       <button
-        className="c27"
+        className="c23 c28"
         onClick={[Function]}
       >
         <svg
-          className="c28"
+          className="c29"
           size={28}
         />
       </button>
       <button
-        className="c23"
+        className="c23 c24"
       >
         <div
-          className="c29"
+          className="c30"
         >
           <div
-            className="c30"
+            className="c31"
             size={36}
           />
         </div>
       </button>
     </div>
     <div
-      className="c31"
+      className="c32"
     >
       <nav
         className="c5"
@@ -787,6 +795,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/docs"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Documentation
         </a>
@@ -797,6 +806,7 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/ecosystem"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Ecosystem
         </a>
@@ -807,12 +817,13 @@ exports[`Navbar renders correctly 1`] = `
           className="c6"
           href="/releases"
           onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Releases
         </a>
       </nav>
       <div
-        className="c32"
+        className="c33"
       >
         <nav
           className="c17"
@@ -821,6 +832,7 @@ exports[`Navbar renders correctly 1`] = `
             className="c19"
             href="https://spectrum.chat/styled-components/"
             onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             <svg
               className="c20"
@@ -841,6 +853,7 @@ exports[`Navbar renders correctly 1`] = `
             className="c19"
             href="https://github.com/styled-components"
             onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             <svg
               className="c21"
@@ -851,6 +864,7 @@ exports[`Navbar renders correctly 1`] = `
             className="c19"
             href="https://medium.com/styled-components"
             onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             <svg
               className="c21"

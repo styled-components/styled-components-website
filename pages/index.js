@@ -70,12 +70,20 @@ import {
   AutodeskLogo,
   Auth0Logo,
   BBCLogo,
+  BirchboxLogo,
   BloombergLogo,
   BlueTomatoLogo,
   CasperLogo,
+  ChangeOrgLogo,
   CoinbaseLogo,
+  CultureTripLogo,
   DoorDashLogo,
+  EddieBauerLogo,
+  EurostarLogo,
   EuroVisionLogo,
+  GeniusLogo,
+  GitHubLogo,
+  GoogleLogo,
   HuffpostLogo,
   IdeoLogo,
   InVisionLogo,
@@ -86,12 +94,14 @@ import {
   MoleskineLogo,
   PatreonLogo,
   RedditLogo,
+  SeatGeekLogo,
   SesameLogo,
   ShpockLogo,
   TargetLogo,
   TicketmasterLogo,
   TinderLogo,
   TypeformLogo,
+  TruliaLogo,
   UnderArmourLogo,
   VimeoLogo,
   VogueLogo,
@@ -284,7 +294,7 @@ const Logos = [
     <BloombergLogo />
   </CompanyLogo>,
 
-  <CompanyLogo bottom="0.75rem" height="3rem" key="https://www.blue-tomato.com" similarWebGlobalRank={21322}>
+  <CompanyLogo bottom="0.75rem" height="3.3rem" key="https://www.blue-tomato.com" similarWebGlobalRank={21322}>
     <BlueTomatoLogo />
   </CompanyLogo>,
 
@@ -302,12 +312,24 @@ const Logos = [
     <CoinbaseLogo />
   </CompanyLogo>,
 
+  <CompanyLogo height="2rem" key="https://theculturetrip.com" similarWebGlobalRank={4945}>
+    <CultureTripLogo />
+  </CompanyLogo>,
+
   <CompanyLogo bottom="-0.2rem" key="https://www.doordash.com/" similarWebGlobalRank={2831}>
     <DoorDashLogo />
   </CompanyLogo>,
 
   <CompanyLogo bottom="0.1rem" height="2.5rem" key="https://eurovision.tv/" similarWebGlobalRank={38132}>
     <EuroVisionLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.1rem" height="2rem" key="https://eddiebauer.com" similarWebGlobalRank={11625}>
+    <EddieBauerLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo key="https://github.com/" similarWebGlobalRank={76}>
+    <GitHubLogo />
   </CompanyLogo>,
 
   <CompanyLogo src="/static/huffpost-logo.svg" key="https://www.huffpost.com" similarWebGlobalRank={950}>
@@ -344,6 +366,10 @@ const Logos = [
 
   <CompanyLogo bottom="0.15rem" key="https://www.reddit.com/" similarWebGlobalRank={20}>
     <RedditLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo key="https://seatgeek.com" similarWebGlobalRank={7292}>
+    <SeatGeekLogo />
   </CompanyLogo>,
 
   <CompanyLogo key="https://www.sesamegifts.com/" similarWebGlobalRank={500301}>
@@ -388,6 +414,30 @@ const Logos = [
 
   <CompanyLogo height="2.0rem" key="https://jane.com" similarWebGlobalRank={21426}>
     <JaneLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="2.3rem" key="https://google.com" similarWebGlobalRank={1}>
+    <GoogleLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="1.5rem" key="https://genius.com" similarWebGlobalRank={366}>
+    <GeniusLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="2.3rem" key="https://www.eurostar.com" similarWebGlobalRank={11380}>
+    <EurostarLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="-0.2rem" key="http://change.org/" similarWebGlobalRank={551}>
+    <ChangeOrgLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo bottom="0.1rem" key="https://www.trulia.com/" similarWebGlobalRank={257}>
+    <TruliaLogo />
+  </CompanyLogo>,
+
+  <CompanyLogo height="1.3rem" bottom="-0.2rem" key="https://birchbox.com/" similarWebGlobalRank={38199}>
+    <BirchboxLogo />
   </CompanyLogo>,
 ];
 
