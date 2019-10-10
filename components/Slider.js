@@ -23,9 +23,11 @@ const Section = styled.section`
   min-height: 0;
   min-width: 0;
   width: 100%;
+  height: calc(100vh - 90px);
   justify-content: space-between;
   align-items: center;
   overflow-x: hidden;
+  overflow-y: visible;
   padding-bottom: 60px;
 `;
 
@@ -127,6 +129,7 @@ const Nav = styled.div`
 `;
 
 const Body = styled.div`
+  position: relative;
   max-width: 1280px;
   width: calc(100% - ${NavWidth * ScreenMultipliers.xs * 2}px);
 
@@ -160,9 +163,12 @@ const ImageSlider = styled.div`
 `;
 
 const Caption = styled.div`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: translateY(calc(-100% - 16px));
   text-align: center;
   font-size: 16px;
-  margin-bottom: 16px;
 `;
 
 const Title = styled.h1`
