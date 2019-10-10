@@ -28,7 +28,11 @@ const Section = styled.section`
   align-items: center;
   overflow-x: hidden;
   overflow-y: visible;
-  padding-bottom: 60px;
+
+  /* Handle landscape mobile devices */
+  @media screen and (max-height: 420px) {
+    padding-top: 80px;
+  }
 `;
 
 const Nav = styled.div`
@@ -44,13 +48,13 @@ const Nav = styled.div`
     height: ${NavHeight * ScreenMultipliers.sm}px;
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 800px) and (min-height: 421px) {
     width: ${NavWidth * ScreenMultipliers.md}px;
     min-width: ${NavWidth * ScreenMultipliers.md}px;
     height: ${NavHeight * ScreenMultipliers.md}px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1280px) and (min-height: 421px) {
     width: ${NavWidth * ScreenMultipliers.lg}px;
     min-width: ${NavWidth * ScreenMultipliers.lg}px;
     height: ${NavHeight * ScreenMultipliers.lg}px;
@@ -78,7 +82,7 @@ const Nav = styled.div`
       }
     }
     
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 800px) and (min-height: 421px) {
       margin-left: -${NavOffset * ScreenMultipliers.md}px;
 
       &:hover {
@@ -86,7 +90,7 @@ const Nav = styled.div`
       }
     }
     
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 1280px) and (min-height: 421px) {
       margin-left: -${NavOffset * ScreenMultipliers.lg}px;
 
       &:hover {
@@ -110,7 +114,7 @@ const Nav = styled.div`
       }
     }
     
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 800px) and (min-height: 421px) {
       margin-right: -${NavOffset * ScreenMultipliers.md}px;
 
       &:hover {
@@ -118,7 +122,7 @@ const Nav = styled.div`
       }
     }
     
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 1280px) and (min-height: 421px) {
       margin-right: -${NavOffset * ScreenMultipliers.lg}px;
 
       &:hover {
@@ -137,11 +141,11 @@ const Body = styled.div`
     width: calc(100% - ${NavWidth * ScreenMultipliers.sm * 2}px);
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 800px) and (min-height: 421px) {
     width: calc(100% - ${NavWidth * ScreenMultipliers.md * 2}px);
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1280px) and (min-height: 421px) {
     width: calc(100% - ${NavWidth * ScreenMultipliers.lg * 2}px);
   }
 `;
@@ -154,11 +158,22 @@ const ImageSlider = styled.div`
   border-radius: 4px;
   overflow: hidden;
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 800px) and (min-height: 421px) {
     margin: 0 32px;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1280px) and (min-height: 421px) {
     margin: 0 48px;
+  }
+
+  /* Handle landscape mobile devices */
+  @media screen and (max-height: 420px) {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  /* Handle landscape mobile devices with an 18:9 screen-ratio */
+  @media screen and (max-height: 420px) and (min-width: 760px) {
+    max-width: 55%;
   }
 `;
 
@@ -178,6 +193,10 @@ const Title = styled.h1`
   font-weight: bold;
   font-family: ${headerFont};
   margin: 0;
+
+  @media screen and (max-height: 420px) {
+    font-size: ${rem(32)};
+  }
 `;
 
 const Slider = ({ previousSlide, currentSlide, nextSlide }) => (
