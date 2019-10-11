@@ -23,11 +23,16 @@ const Section = styled.section`
   min-height: 0;
   min-width: 0;
   width: 100%;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 50px);
   justify-content: space-between;
   align-items: center;
   overflow-x: hidden;
   overflow-y: visible;
+  padding-top: 32px;
+
+  @media screen and (max-width: 1100px) {
+    height: calc(100vh - 90px);
+  }
 
   /* Handle landscape mobile devices */
   @media screen and (max-height: 420px) {

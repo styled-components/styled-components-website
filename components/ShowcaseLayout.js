@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import Head from './SeoHead';
 import Nav from './Nav';
+
+const Layout = styled.div`
+  padding-top: 50px;
+
+  @media screen and (max-width: 1100px) {
+    padding-top: 90px;
+  }
+`;
 
 class ShowcaseLayout extends Component {
   state = {
@@ -24,7 +33,7 @@ class ShowcaseLayout extends Component {
 
         <Nav showSideNav={false} />
 
-        <div style={{ paddingTop: 90 }}>{children}</div>
+        <Layout>{children}</Layout>
       </div>
     );
   }
