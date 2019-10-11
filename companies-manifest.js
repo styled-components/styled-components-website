@@ -311,7 +311,5 @@ const companies = [
 
 export default companies;
 
-module.exports = {
-  // sorting logic: the more popular a website, the higher it gets listed
-  sortedCompanies: companies.sort((a, b) => a.similarWebGlobalRank - b.similarWebGlobalRank),
-};
+// sorting logic: the more popular a website, the higher it gets listed
+export const sortedCompanies = companies.sort((a, b) => a.similarWebGlobalRank - b.similarWebGlobalRank);
