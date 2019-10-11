@@ -7,7 +7,6 @@ import Link from './Link';
 import rem from '../utils/rem';
 import { headerFont } from '../utils/fonts';
 
-// TODO: replace these variables if needed
 const NavWidth = 192;
 const NavHeight = 144;
 const NavOffset = 32;

@@ -1,11 +1,8 @@
 import React, { PureComponent } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
-import { Favorite } from 'styled-icons/material';
 
 import rem from '../utils/rem';
-import { monospace } from '../utils/fonts';
-import { mobile } from '../utils/media';
 import { violetRed, gold } from '../utils/colors';
 import { editorMixin, StyledError } from '../components/LiveEdit';
 import Link from '../components/Link';
@@ -213,37 +210,6 @@ const Editor = styled(LiveEditor)`
 
 const Links = styled.div`
   margin: ${rem(36)} 0;
-`;
-
-const Footer = styled.footer`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: ${grey};
-  background: ${paleGrey};
-  box-sizing: border-box;
-  margin-top: ${rem(50)};
-`;
-
-const Heart = styled(Favorite)`
-  display: inline-block;
-  width: ${rem(17)};
-  color: ${red};
-  transform: translateY(-10%);
-`;
-
-const FooterLink = styled(Link)`
-  color: ${grey};
-`;
-
-const FooterContent = styled(Content)`
-  padding: ${rem(30)} ${rem(40)} ${rem(30)} ${rem(40)};
-
-  ${mobile(css`
-    padding: ${rem(30)} ${rem(20)} ${rem(30)} ${rem(20)};
-  `)};
 `;
 
 const SortedLogos = ({ children }) => {
