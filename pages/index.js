@@ -1,18 +1,16 @@
 import React, { PureComponent } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
-import { Favorite } from 'styled-icons/material';
 
 import rem from '../utils/rem';
-import { monospace } from '../utils/fonts';
-import { mobile } from '../utils/media';
-import { violetRed, gold, grey, paleGrey, red } from '../utils/colors';
+import { violetRed, gold } from '../utils/colors';
 import { editorMixin, StyledError } from '../components/LiveEdit';
 import Link from '../components/Link';
 import { Content } from '../components/Layout';
 import SeoHead from '../components/SeoHead';
 import HomepageGettingStarted from '../sections/homepage/getting-started.md';
 import WithIsScrolled from '../components/WithIsScrolled';
+import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 
 const Tagline = styled.h1`
@@ -212,37 +210,6 @@ const Editor = styled(LiveEditor)`
 
 const Links = styled.div`
   margin: ${rem(36)} 0;
-`;
-
-const Footer = styled.footer`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: ${grey};
-  background: ${paleGrey};
-  box-sizing: border-box;
-  margin-top: ${rem(50)};
-`;
-
-const Heart = styled(Favorite)`
-  display: inline-block;
-  width: ${rem(17)};
-  color: ${red};
-  transform: translateY(-10%);
-`;
-
-const FooterLink = styled(Link)`
-  color: ${grey};
-`;
-
-const FooterContent = styled(Content)`
-  padding: ${rem(30)} ${rem(40)} ${rem(30)} ${rem(40)};
-
-  ${mobile(css`
-    padding: ${rem(30)} ${rem(20)} ${rem(30)} ${rem(20)};
-  `)};
 `;
 
 const SortedLogos = ({ children }) => {
@@ -511,52 +478,7 @@ class Index extends PureComponent {
 
         <HomepageGettingStarted />
 
-        <Footer>
-          <FooterContent hero>
-            {' '}
-            {'Hosted on ▲ ZEIT Now'}
-            <br />
-            {'Made with '}
-            <Heart />
-            {' by '}
-            <FooterLink inline href="https://twitter.com/glenmaddern">
-              @glenmaddern
-            </FooterLink>
-            {', '}
-            <FooterLink inline href="https://twitter.com/mxstbr">
-              @mxstbr
-            </FooterLink>
-            {', '}
-            <FooterLink inline href="https://twitter.com/_philpl">
-              @_philpl‬
-            </FooterLink>
-            {', '}
-            <FooterLink inline href="https://twitter.com/probablyup">
-              @probablyup
-            </FooterLink>
-            {', '}
-            <FooterLink inline href="https://twitter.com/imbhargav5">
-              @imbhargav5
-            </FooterLink>
-            {' and '}
-            <FooterLink inline href="https://github.com/orgs/styled-components/people">
-              contributors
-            </FooterLink>
-            {'.'}
-            <br />
-            {'All code examples use '}
-            <FooterLink
-              css={`
-                font-face: ${monospace};
-              `}
-              inline
-              href="https://dank.sh"
-            >
-              Dank Mono
-            </FooterLink>
-            {'.'}
-          </FooterContent>
-        </Footer>
+        <Footer />
       </div>
     );
   }
