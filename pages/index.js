@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
 
 import rem from '../utils/rem';
@@ -13,6 +13,7 @@ import WithIsScrolled from '../components/WithIsScrolled';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 import { sortedCompanies } from '../companies-manifest';
+import UsersLogos from '../components/UsersLogos';
 
 const Tagline = styled.h1`
   font-weight: 600;
@@ -79,36 +80,6 @@ const Logo = styled.img.attrs((/* props */) => ({
   height: ${rem(125)};
 `;
 
-const slideAnimation = keyframes`
-  from{
-    transform:translate3d(0,0,0);
-  }
-
-  to{
-    transform:translate3d(-50%,0,0);
-  }
-`;
-
-const UsersSliderContainer = styled.div`
-  width: 100%;
-  overflow: hidden;
-`;
-
-const UsersSlider = styled.div`
-  display: inline-block;
-  animation: ${slideAnimation} 60s linear infinite;
-  white-space: nowrap;
-  overflow: hidden;
-`;
-
-const UsersWrapper = styled.section`
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 0.5rem;
-  display: flex;
-  margin-bottom: 2rem;
-`;
-
 const UsersHeading = styled.p`
   text-transform: uppercase;
   color: #fff;
@@ -116,20 +87,6 @@ const UsersHeading = styled.p`
   font-weight: 600;
   margin: 2.5rem 0 0.5rem;
   opacity: 0.8;
-`;
-
-const CompanyLogo = styled.span`
-  position: relative;
-  height: ${p => p.height || '2rem'};
-  margin: 0.5rem 1rem;
-  bottom: ${p => p.bottom || 0};
-  opacity: 0.8;
-  filter: brightness(0) invert(1);
-  transition: opacity 125ms ease-in-out;
-
-  &:hover {
-    opacity: 1;
-  }
 `;
 
 const Wrapper = styled.div.attrs((/* props */) => ({
@@ -167,16 +124,6 @@ const Editor = styled(LiveEditor)`
 const Links = styled.div`
   margin: ${rem(36)} 0;
 `;
-
-const SortedLogos = () => (
-  <UsersWrapper>
-    {sortedCompanies.map(({ key, logo: Logo, ...rest }) => (
-      <CompanyLogo key={key} {...rest}>
-        <Logo />
-      </CompanyLogo>
-    ))}
-  </UsersWrapper>
-);
 
 class Index extends PureComponent {
   state = {
@@ -239,11 +186,7 @@ class Index extends PureComponent {
 
             <UsersHeading>Used by folks at</UsersHeading>
           </Content>
-          <UsersSliderContainer>
-            <UsersSlider>
-              <SortedLogos />
-            </UsersSlider>
-          </UsersSliderContainer>
+          <UsersLogos users={sortedCompanies} />
         </Wrapper>
 
         <HomepageGettingStarted />
