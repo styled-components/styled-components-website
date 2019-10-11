@@ -75,6 +75,7 @@ exports[`NavLinks renders correctly 1`] = `
     className="c1"
     href="/showcase"
     onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     Showcase
   </a>
