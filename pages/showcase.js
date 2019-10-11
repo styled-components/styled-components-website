@@ -2,6 +2,7 @@ import React from 'react';
 import ShowcaseLayout from '../components/ShowcaseLayout';
 import { sortOrder, mapping } from '../showcase-manifest';
 import styled from 'styled-components';
+import Footer from '../components/Footer';
 import Slider from '../components/Slider';
 import { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
 import { withRouter } from 'next/router';
@@ -87,12 +88,15 @@ const Showcase = ({ router }) => {
   const { item } = router.query;
   const { currentSlide, previousSlide, nextSlide } = calculateSlides(sortOrder, item);
   return (
-    <ShowcaseLayout title="Showcase" description="Screenshots of websites that use styled-components">
-      <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
-      <Screen offset={90}>
-        <Slider currentSlide={currentSlide} previousSlide={previousSlide} nextSlide={nextSlide} />
-      </Screen>
-    </ShowcaseLayout>
+    <>
+      <ShowcaseLayout title="Showcase" description="Screenshots of websites that use styled-components">
+        <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
+        <Screen offset={90}>
+          <Slider currentSlide={currentSlide} previousSlide={previousSlide} nextSlide={nextSlide} />
+        </Screen>
+      </ShowcaseLayout>
+      <Footer />
+    </>
   );
 };
 

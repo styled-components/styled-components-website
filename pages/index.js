@@ -6,13 +6,14 @@ import { Favorite } from 'styled-icons/material';
 import rem from '../utils/rem';
 import { monospace } from '../utils/fonts';
 import { mobile } from '../utils/media';
-import { violetRed, gold, grey, paleGrey, red } from '../utils/colors';
+import { violetRed, gold } from '../utils/colors';
 import { editorMixin, StyledError } from '../components/LiveEdit';
 import Link from '../components/Link';
 import { Content } from '../components/Layout';
 import SeoHead from '../components/SeoHead';
 import HomepageGettingStarted from '../sections/homepage/getting-started.md';
 import WithIsScrolled from '../components/WithIsScrolled';
+import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 
 const Tagline = styled.h1`
@@ -511,52 +512,7 @@ class Index extends PureComponent {
 
         <HomepageGettingStarted />
 
-        <Footer>
-          <FooterContent hero>
-            {' '}
-            {'Hosted on ▲ ZEIT Now'}
-            <br />
-            {'Made with '}
-            <Heart />
-            {' by '}
-            <FooterLink inline href="https://twitter.com/glenmaddern">
-              @glenmaddern
-            </FooterLink>
-            {', '}
-            <FooterLink inline href="https://twitter.com/mxstbr">
-              @mxstbr
-            </FooterLink>
-            {', '}
-            <FooterLink inline href="https://twitter.com/_philpl">
-              @_philpl‬
-            </FooterLink>
-            {', '}
-            <FooterLink inline href="https://twitter.com/probablyup">
-              @probablyup
-            </FooterLink>
-            {', '}
-            <FooterLink inline href="https://twitter.com/imbhargav5">
-              @imbhargav5
-            </FooterLink>
-            {' and '}
-            <FooterLink inline href="https://github.com/orgs/styled-components/people">
-              contributors
-            </FooterLink>
-            {'.'}
-            <br />
-            {'All code examples use '}
-            <FooterLink
-              css={`
-                font-face: ${monospace};
-              `}
-              inline
-              href="https://dank.sh"
-            >
-              Dank Mono
-            </FooterLink>
-            {'.'}
-          </FooterContent>
-        </Footer>
+        <Footer />
       </div>
     );
   }
