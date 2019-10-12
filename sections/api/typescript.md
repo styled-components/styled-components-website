@@ -211,3 +211,23 @@ const StyledBox = styled(Box)`
   padding: ${props => props.theme.lateralPadding};
 `
 ```
+
+### Caveat with CSS functions
+
+Adapting CSS literals based on props can result in type errors being thrown, as the css function does not recoqnize the props.primary interpolation. By following this general approach, you should be able to avoid common type errors.
+
+```jsx
+// Declare this inside your custom theme definitions
+type MyThemedProps<P> = ThemedStyledProps<P, MyTheme>;
+
+
+// Inside your component you can import it and use with you custom props
+interface Props {
+  inverted: boolean;
+}
+
+export const MyCss = css`
+  color: ${(props) => props.theme.primaryColor};
+  background: ${(props: MyThemedProps<Props>) => props.inverted ? props.theme.backgroundColor : props.theme.primaryColor};
+`;
+```
