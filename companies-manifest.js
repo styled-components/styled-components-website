@@ -29,6 +29,7 @@ import {
   MoleskineLogo,
   PatreonLogo,
   RedditLogo,
+  RevolutLogo,
   SeatGeekLogo,
   SesameLogo,
   ShpockLogo,
@@ -196,6 +197,12 @@ const companies = [
     key: 'https://www.reddit.com/',
     similarWebGlobalRank: 20,
     logo: RedditLogo,
+  },
+  {
+    bottom: '0.15rem',
+    key: 'https://www.revolut.com',
+    similarWebGlobalRank: 8221,
+    logo: RevolutLogo,
   },
   {
     key: 'https://seatgeek.com',
