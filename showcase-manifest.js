@@ -15,6 +15,7 @@ const sortOrder = [
   'moleskinestudio',
   'prisma',
   'swipelife',
+  'lyft',
 ];
 
 const mapping = {
@@ -145,6 +146,14 @@ const mapping = {
     width: 1280,
     height: 720,
     internalUrl: 'swipelife',
+  },
+  lyft: {
+    title: 'Lyft',
+    link: 'https://www.lyft.com',
+    src: '/static/screenshots/thumbnails/lyft.com.jpg',
+    width: 1280,
+    height: 720,
+    internalUrl: 'lyft',
   },
 };
 

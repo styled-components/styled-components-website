@@ -41,6 +41,7 @@ import {
   VimeoLogo,
   VogueLogo,
   XingLogo,
+  LyftLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -306,6 +307,13 @@ const companies = [
     key: 'https://birchbox.com/',
     similarWebGlobalRank: 38199,
     logo: BirchboxLogo,
+  },
+  {
+    height: '2.3rem',
+    bottom: '0.2rem',
+    key: 'https://www.lyft.com/',
+    similarWebGlobalRank: 3183,
+    logo: LyftLogo,
   },
 ];
 
