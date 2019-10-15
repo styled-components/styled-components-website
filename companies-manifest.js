@@ -6,6 +6,7 @@ import {
   Auth0Logo,
   BBCLogo,
   BirchboxLogo,
+  BlockchainLogo,
   BloombergLogo,
   BlueTomatoLogo,
   CasperLogo,
@@ -306,6 +307,12 @@ const companies = [
     key: 'https://birchbox.com/',
     similarWebGlobalRank: 38199,
     logo: BirchboxLogo,
+  },
+  {
+    height: '1.3rem',
+    key: 'https://blockchain.com/',
+    similarWebGlobalRank: 4797,
+    logo: BlockchainLogo,
   },
 ];
 
