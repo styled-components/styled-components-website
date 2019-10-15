@@ -27,6 +27,7 @@ import {
   LegoLogo,
   MagicLeapLogo,
   MoleskineLogo,
+  OnionLogo,
   PatreonLogo,
   RedditLogo,
   SeatGeekLogo,
@@ -185,6 +186,12 @@ const companies = [
     key: 'https://www.moleskine.com',
     similarWebGlobalRank: 70404,
     logo: MoleskineLogo,
+  },
+  {
+    height: '1.5rem',
+    key: 'https://www.theonion.com',
+    similarWebGlobalRank: 8635,
+    logo: OnionLogo,
   },
   {
     key: 'https://www.patreon.com/',
