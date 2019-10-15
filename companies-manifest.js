@@ -7,6 +7,7 @@ import {
   BBCLogo,
   BraveLogo,
   BirchboxLogo,
+  BlablacarLogo,
   BloombergLogo,
   BlueTomatoLogo,
   CasperLogo,
@@ -87,6 +88,12 @@ const companies = [
     key: 'https://brave.com/',
     similarWebGlobalRank: 13395,
     logo: BraveLogo,
+  },
+  {
+    bottom: '0.35rem',
+    key: 'https://www.blablacar.com',
+    similarWebGlobalRank: 63880,
+    logo: BlablacarLogo,
   },
   {
     bottom: '-0.2rem',
