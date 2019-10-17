@@ -32,6 +32,7 @@ import {
   SeatGeekLogo,
   SesameLogo,
   ShpockLogo,
+  SmartLogo,
   TargetLogo,
   TicketmasterLogo,
   TinderLogo,
@@ -306,6 +307,13 @@ const companies = [
     key: 'https://birchbox.com/',
     similarWebGlobalRank: 38199,
     logo: BirchboxLogo,
+  },
+  {
+    bottom: '0.3rem',
+    height: '2rem',
+    key: 'https://www.smart.com/',
+    similarWebGlobalRank: 70739,
+    logo: SmartLogo,
   },
 ];
 
