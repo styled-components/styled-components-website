@@ -46,6 +46,7 @@
     "react-live": "^2.1.2",
     "styled-components": "beta",
     "styled-icons": "^8.1.0",
+    "react-transition-group": "^2.5.0",
     "styled-theming": "^2.2.0",
     "stylis-rtl": "^1.0.1",
     "webpack-bundle-analyzer": "^3.3.2"
@@ -97,7 +98,7 @@
   "bundlesize": [
     {
       "path": ".next/static/*/pages/**/*.js",
-      "maxSize": "250kB"
+      "maxSize": "300kB"
     }
   ]
 }
