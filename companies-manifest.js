@@ -83,8 +83,8 @@ const companies = [
     logo: BBCLogo,
   },
   {
-    key: 'https://www.blablacar.de',
-    similarWebGlobalRank: 13077,
+    key: 'https://www.blablacar.fr',
+    similarWebGlobalRank: 3803,
     logo: BlaBlaCarLogo,
   },
   {
