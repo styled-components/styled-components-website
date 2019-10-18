@@ -7,7 +7,7 @@ const slideAnimation = keyframes`
   }
 
   to{
-    transform:translate3d(-50%,0,0);
+    transform:translate3d(-100%,0,0);
   }
 `;
 
