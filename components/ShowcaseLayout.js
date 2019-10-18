@@ -5,9 +5,11 @@ import Nav from './Nav';
 
 const Layout = styled.div`
   padding-top: 50px;
+  min-height: calc(100vh - 50px);
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1000px) {
     padding-top: 90px;
+    min-height: calc(100vh - 44px);
   }
 `;
 
