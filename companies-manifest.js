@@ -33,6 +33,7 @@ import {
   SeatGeekLogo,
   SesameLogo,
   ShpockLogo,
+  SmartLogo,
   TargetLogo,
   TicketmasterLogo,
   TinderLogo,
@@ -219,6 +220,13 @@ const companies = [
     key: 'https://www.shpock.com',
     similarWebGlobalRank: 11112,
     logo: ShpockLogo,
+  },
+  {
+    bottom: '0.1rem',
+    height: '2rem',
+    key: 'https://smart.com',
+    similarWebGlobalRank: 70739,
+    logo: SmartLogo,
   },
   {
     key: 'https://www.target.com',
