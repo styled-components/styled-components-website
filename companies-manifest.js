@@ -5,6 +5,7 @@ import {
   AutodeskLogo,
   Auth0Logo,
   BBCLogo,
+  BraveLogo,
   BirchboxLogo,
   BlaBlaCarLogo,
   BloombergLogo,
@@ -87,6 +88,10 @@ const companies = [
     key: 'https://www.blablacar.fr',
     similarWebGlobalRank: 3803,
     logo: BlaBlaCarLogo,
+  },
+    key: 'https://brave.com/',
+    similarWebGlobalRank: 13395,
+    logo: BraveLogo,
   },
   {
     bottom: '-0.2rem',
