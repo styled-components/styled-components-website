@@ -5,6 +5,7 @@ import {
   AutodeskLogo,
   Auth0Logo,
   BBCLogo,
+  BraveLogo,
   BirchboxLogo,
   BloombergLogo,
   BlueTomatoLogo,
@@ -81,6 +82,11 @@ const companies = [
     key: 'https://www.bbc.com/',
     similarWebGlobalRank: 114,
     logo: BBCLogo,
+  },
+  {
+    key: 'https://brave.com/',
+    similarWebGlobalRank: 13395,
+    logo: BraveLogo,
   },
   {
     bottom: '-0.2rem',
