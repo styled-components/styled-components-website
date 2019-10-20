@@ -89,6 +89,7 @@ const companies = [
     similarWebGlobalRank: 3803,
     logo: BlaBlaCarLogo,
   },
+  {
     key: 'https://brave.com/',
     similarWebGlobalRank: 13395,
     logo: BraveLogo,
