@@ -42,6 +42,7 @@ import {
   UnderArmourLogo,
   VimeoLogo,
   VogueLogo,
+  Volkswagen,
   XingLogo,
 } from './components/CompanyLogos';
 
@@ -320,6 +321,13 @@ const companies = [
     key: 'https://birchbox.com/',
     similarWebGlobalRank: 38199,
     logo: BirchboxLogo,
+  },
+  {
+    bottom: '0',
+    height: '2rem',
+    key: 'https://www.autodesk.com',
+    similarWebGlobalRank: 1425,
+    logo: Volkswagen,
   },
 ];
 
