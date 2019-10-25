@@ -172,9 +172,9 @@ const Component = styled.div`
 ```js
 import styled from 'styled-components'
 
-const Input = styled.input.attrs(props => ({
-  type: props.inputType,
-}))`
+const Input = styled.input.attrs({
+  type: ({ inputType }) => inputType
+})`
   background: blue;
   color: red;
 `
