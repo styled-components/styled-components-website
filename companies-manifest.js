@@ -7,6 +7,7 @@ import {
   BBCLogo,
   BraveLogo,
   BirchboxLogo,
+  BlaBlaCarLogo,
   BlockchainLogo,
   BloombergLogo,
   BlueTomatoLogo,
@@ -44,6 +45,7 @@ import {
   VimeoLogo,
   VogueLogo,
   XingLogo,
+  VolkswagenLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -83,6 +85,11 @@ const companies = [
     key: 'https://www.bbc.com/',
     similarWebGlobalRank: 114,
     logo: BBCLogo,
+  },
+  {
+    key: 'https://www.blablacar.fr',
+    similarWebGlobalRank: 3803,
+    logo: BlaBlaCarLogo,
   },
   {
     key: 'https://brave.com/',
@@ -327,6 +334,12 @@ const companies = [
     key: 'https://blockchain.com/',
     similarWebGlobalRank: 4797,
     logo: BlockchainLogo,
+  },
+  {
+    height: '2rem',
+    key: 'https://www.volkswagen.de/de.html',
+    similarWebGlobalRank: 75049,
+    logo: VolkswagenLogo,
   },
 ];
 

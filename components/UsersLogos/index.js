@@ -15,7 +15,6 @@ const slideAnimation2 = keyframes`
   0%{
     transform:translate3d(100%,0,0);
   }
-
   50%{
     transform:translate3d(0%,0,0);
   }
