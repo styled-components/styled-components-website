@@ -43,6 +43,7 @@ import {
   VimeoLogo,
   VogueLogo,
   XingLogo,
+  VolkswagenLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -320,6 +321,12 @@ const companies = [
     key: 'https://birchbox.com/',
     similarWebGlobalRank: 38199,
     logo: BirchboxLogo,
+  },
+  {
+    height: '2rem',
+    key: 'https://www.volkswagen.de/de.html',
+    similarWebGlobalRank: 75049,
+    logo: VolkswagenLogo,
   },
 ];
 
