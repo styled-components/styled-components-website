@@ -81,7 +81,7 @@ class ArrowEvents extends React.Component {
 const Screen = styled.div`
   display: flex;
   align-items: center;
-  min-height: ${props => (props.offset ? `calc(100vh - ${props.offset}px)` : '100vh')};
+  padding-top: 32px;
 `;
 
 const Showcase = ({ router }) => {
@@ -91,7 +91,7 @@ const Showcase = ({ router }) => {
     <>
       <ShowcaseLayout title="Showcase" description="Screenshots of websites that use styled-components">
         <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
-        <Screen offset={90}>
+        <Screen>
           <Slider currentSlide={currentSlide} previousSlide={previousSlide} nextSlide={nextSlide} />
         </Screen>
       </ShowcaseLayout>
