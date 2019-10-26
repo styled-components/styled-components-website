@@ -44,8 +44,8 @@ const mapping = {
   },
   'lego-store': {
     title: 'Lego Store',
-    link: 'https://shop.lego.com',
-    src: '/static/screenshots/thumbnails/shop.lego.com.jpg',
+    link: 'https://lego.com',
+    src: '/static/screenshots/thumbnails/lego.com.jpg',
     width: 1280,
     height: 720,
     internalUrl: 'lego-store',

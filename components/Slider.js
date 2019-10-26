@@ -17,26 +17,20 @@ const ScreenMultipliers = {
   lg: 1,
 };
 
+const Wrapper = styled.div`
+  width: 100%;
+`;
+
 const Section = styled.section`
   display: flex;
   min-height: 0;
   min-width: 0;
   width: 100%;
-  height: calc(100vh - 50px);
   justify-content: space-between;
   align-items: center;
   overflow-x: hidden;
   overflow-y: visible;
   padding-top: 32px;
-
-  @media screen and (max-width: 1100px) {
-    height: calc(100vh - 90px);
-  }
-
-  /* Handle landscape mobile devices */
-  @media screen and (max-height: 420px) {
-    padding-top: 80px;
-  }
 `;
 
 const Nav = styled.div`
@@ -182,10 +176,10 @@ const ImageSlider = styled.div`
 `;
 
 const Caption = styled.div`
-  position: absolute;
-  top: 0;
+  /* position: absolute; */
+  /* top: 0; */
   width: 100%;
-  transform: translateY(calc(-100% - 16px));
+  /* transform: translateY(calc(-100% - 16px)); */
   text-align: center;
   font-size: 16px;
 `;
@@ -204,40 +198,41 @@ const Title = styled.h1`
 `;
 
 const Slider = ({ previousSlide, currentSlide, nextSlide }) => (
-  <Section>
-    <Nav prev>
-      <Navigation previous item={previousSlide} />
-    </Nav>
-    <Body>
-      <Caption>
-        <Title>{currentSlide.title}</Title>
-        <Link inline href={currentSlide.link}>
-          {currentSlide.link}
-        </Link>
-      </Caption>
-
-      <ImageSlider>
-        <Image
-          width={currentSlide.width}
-          height={currentSlide.height}
-          src={currentSlide.src}
-          margin={0}
-          renderImage={() => {
-            return (
-              <TransitionGroup>
-                <CSSTransition key={currentSlide.src} timeout={500} classNames="fade">
-                  <img src={currentSlide.src} />
-                </CSSTransition>
-              </TransitionGroup>
-            );
-          }}
-        />
-      </ImageSlider>
-    </Body>
-    <Nav>
-      <Navigation item={nextSlide} />
-    </Nav>
-  </Section>
+  <Wrapper>
+    <Caption>
+      <Title>{currentSlide.title}</Title>
+      <Link inline href={currentSlide.link}>
+        {currentSlide.link}
+      </Link>
+    </Caption>
+    <Section>
+      <Nav prev>
+        <Navigation previous item={previousSlide} />
+      </Nav>
+      <Body>
+        <ImageSlider>
+          <Image
+            width={currentSlide.width}
+            height={currentSlide.height}
+            src={currentSlide.src}
+            margin={0}
+            renderImage={() => {
+              return (
+                <TransitionGroup>
+                  <CSSTransition key={currentSlide.src} timeout={500} classNames="fade">
+                    <img src={currentSlide.src} />
+                  </CSSTransition>
+                </TransitionGroup>
+              );
+            }}
+          />
+        </ImageSlider>
+      </Body>
+      <Nav>
+        <Navigation item={nextSlide} />
+      </Nav>
+    </Section>
+  </Wrapper>
 );
 
 export default Slider;
