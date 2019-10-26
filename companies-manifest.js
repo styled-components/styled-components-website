@@ -5,7 +5,9 @@ import {
   AutodeskLogo,
   Auth0Logo,
   BBCLogo,
+  BraveLogo,
   BirchboxLogo,
+  BlaBlaCarLogo,
   BloombergLogo,
   BlueTomatoLogo,
   CasperLogo,
@@ -32,6 +34,7 @@ import {
   SeatGeekLogo,
   SesameLogo,
   ShpockLogo,
+  SmartLogo,
   TargetLogo,
   TicketmasterLogo,
   TinderLogo,
@@ -41,6 +44,7 @@ import {
   VimeoLogo,
   VogueLogo,
   XingLogo,
+  VolkswagenLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -80,6 +84,16 @@ const companies = [
     key: 'https://www.bbc.com/',
     similarWebGlobalRank: 114,
     logo: BBCLogo,
+  },
+  {
+    key: 'https://www.blablacar.fr',
+    similarWebGlobalRank: 3803,
+    logo: BlaBlaCarLogo,
+  },
+  {
+    key: 'https://brave.com/',
+    similarWebGlobalRank: 13395,
+    logo: BraveLogo,
   },
   {
     bottom: '-0.2rem',
@@ -215,6 +229,13 @@ const companies = [
     logo: ShpockLogo,
   },
   {
+    bottom: '0.1rem',
+    height: '2rem',
+    key: 'https://smart.com',
+    similarWebGlobalRank: 70739,
+    logo: SmartLogo,
+  },
+  {
     key: 'https://www.target.com',
     similarWebGlobalRank: 300,
     logo: TargetLogo,
@@ -306,6 +327,12 @@ const companies = [
     key: 'https://birchbox.com/',
     similarWebGlobalRank: 38199,
     logo: BirchboxLogo,
+  },
+  {
+    height: '2rem',
+    key: 'https://www.volkswagen.de/de.html',
+    similarWebGlobalRank: 75049,
+    logo: VolkswagenLogo,
   },
 ];
 
