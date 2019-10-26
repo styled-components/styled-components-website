@@ -5,6 +5,7 @@ import {
   AutodeskLogo,
   Auth0Logo,
   BBCLogo,
+  BraveLogo,
   BirchboxLogo,
   BloombergLogo,
   BlueTomatoLogo,
@@ -32,6 +33,7 @@ import {
   SeatGeekLogo,
   SesameLogo,
   ShpockLogo,
+  SmartLogo,
   TargetLogo,
   TicketmasterLogo,
   TinderLogo,
@@ -81,6 +83,11 @@ const companies = [
     key: 'https://www.bbc.com/',
     similarWebGlobalRank: 114,
     logo: BBCLogo,
+  },
+  {
+    key: 'https://brave.com/',
+    similarWebGlobalRank: 13395,
+    logo: BraveLogo,
   },
   {
     bottom: '-0.2rem',
@@ -214,6 +221,13 @@ const companies = [
     key: 'https://www.shpock.com',
     similarWebGlobalRank: 11112,
     logo: ShpockLogo,
+  },
+  {
+    bottom: '0.1rem',
+    height: '2rem',
+    key: 'https://smart.com',
+    similarWebGlobalRank: 70739,
+    logo: SmartLogo,
   },
   {
     key: 'https://www.target.com',
