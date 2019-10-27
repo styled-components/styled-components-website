@@ -74,7 +74,6 @@ const UsersWrapper = styled.section`
   overflow: hidden;
   padding: 0.5rem;
   display: flex;
-  margin-bottom: 2rem;
 `;
 
 const CompanyLogo = styled.span`

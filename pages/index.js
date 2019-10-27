@@ -89,6 +89,10 @@ const UsersHeading = styled.p`
   opacity: 0.8;
 `;
 
+const ShowcaseHeading = styled(UsersHeading)`
+  margin: 0.5rem 0 0.5rem;
+`;
+
 const Wrapper = styled.div.attrs((/* props */) => ({
   className: 'hero-header', // for integration tests
 }))`
@@ -103,6 +107,7 @@ const Wrapper = styled.div.attrs((/* props */) => ({
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
   min-height: 100vh;
+  padding-bottom: 2rem;
 `;
 
 const EditorContainer = styled.div`
@@ -187,6 +192,7 @@ class Index extends PureComponent {
             <UsersHeading>Used by folks at</UsersHeading>
           </Content>
           <UsersLogos users={sortedCompanies} />
+          <ShowcaseHeading>To create websites like this</ShowcaseHeading>
         </Wrapper>
 
         <HomepageGettingStarted />
