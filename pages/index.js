@@ -12,8 +12,9 @@ import HomepageGettingStarted from '../sections/homepage/getting-started.md';
 import WithIsScrolled from '../components/WithIsScrolled';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
-import { sortedCompanies } from '../companies-manifest';
+import { sortedCompanies, sortedProjects } from '../companies-manifest';
 import UsersLogos from '../components/UsersLogos';
+import SmallShowcase from '../components/SmallShowcase';
 
 const Tagline = styled.h1`
   font-weight: 600;
@@ -107,7 +108,7 @@ const Wrapper = styled.div.attrs((/* props */) => ({
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
   min-height: 100vh;
-  padding-bottom: 2rem;
+  margin-bottom: 160px;
 `;
 
 const EditorContainer = styled.div`
@@ -192,7 +193,8 @@ class Index extends PureComponent {
             <UsersHeading>Used by folks at</UsersHeading>
           </Content>
           <UsersLogos users={sortedCompanies} />
-          <ShowcaseHeading>To create websites like this</ShowcaseHeading>
+          <ShowcaseHeading>To create beautiful websites like these</ShowcaseHeading>
+          <SmallShowcase projects={sortedProjects} />
         </Wrapper>
 
         <HomepageGettingStarted />
