@@ -1,6 +1,6 @@
 import React from 'react';
 import ShowcaseLayout from '../components/ShowcaseLayout';
-import { sortOrder, mapping } from '../showcase-manifest';
+import { sortedProjects } from '../companies-manifest';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Slider from '../components/Slider';
@@ -28,8 +28,8 @@ function normalizeSlideIndex(arr, index, fn) {
 
 // Since objects don't allow for a sort order we have to map an array to the object
 function mapIndexToRoute(index) {
-  const route = sortOrder[index];
-  return mapping[route];
+  const route = Object.keys(sortedProjects)[index];
+  return sortedProjects[route];
 }
 
 function calculateSlides(sortOrder, route) {
@@ -86,7 +86,7 @@ const Screen = styled.div`
 
 const Showcase = ({ router }) => {
   const { item } = router.query;
-  const { currentSlide, previousSlide, nextSlide } = calculateSlides(sortOrder, item);
+  const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item);
   return (
     <>
       <ShowcaseLayout title="Showcase" description="Screenshots of websites that use styled-components">
