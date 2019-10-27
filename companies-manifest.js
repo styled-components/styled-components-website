@@ -57,6 +57,7 @@ const companies = [
       bottom: '-0.1rem',
       height: '2rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.airbnb.com',
@@ -65,6 +66,16 @@ const companies = [
     style: {
       bottom: '0.3rem',
       height: '2.5rem',
+    },
+    projects: {
+      airbnb: {
+        title: 'Airbnb Cereal',
+        link: 'https://airbnb.design/cereal/',
+        src: '/static/screenshots/thumbnails/airbnb.design-cereal.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'airbnb',
+      },
     },
   },
   {
@@ -75,6 +86,7 @@ const companies = [
       bottom: '0.16rem',
       height: '2.25rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.atlassian.com/',
@@ -83,30 +95,44 @@ const companies = [
     style: {
       height: '1.75rem',
     },
+    projects: {
+      atlaskit: {
+        title: 'AtlasKit',
+        link: 'https://atlaskit.atlassian.com',
+        src: '/static/screenshots/thumbnails/atlaskit.atlassian.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'atlaskit',
+      },
+    },
   },
   {
     key: 'https://auth0.com',
     similarWebGlobalRank: 5628,
     logo: Auth0Logo,
     style: {},
+    projects: {},
   },
   {
     key: 'https://www.bbc.com/',
     similarWebGlobalRank: 114,
     logo: BBCLogo,
     style: {},
+    projects: {},
   },
   {
     key: 'https://www.blablacar.fr',
     similarWebGlobalRank: 3803,
     logo: BlaBlaCarLogo,
     style: {},
+    projects: {},
   },
   {
     key: 'https://brave.com/',
     similarWebGlobalRank: 13395,
     logo: BraveLogo,
     style: {},
+    projects: {},
   },
   {
     key: 'https://www.bloomberg.com',
@@ -116,6 +142,7 @@ const companies = [
       bottom: '-0.2rem',
       height: '1.75rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.blue-tomato.com',
@@ -125,6 +152,7 @@ const companies = [
       bottom: '0.75rem',
       height: '3.3rem',
     },
+    projects: {},
   },
   {
     key: 'http://casper.com/',
@@ -132,6 +160,16 @@ const companies = [
     logo: CasperLogo,
     style: {
       bottom: '-0.2rem',
+    },
+    projects: {
+      casper: {
+        title: 'Casper',
+        link: 'https://casper.com/',
+        src: '/static/screenshots/thumbnails/casper.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'casper',
+      },
     },
   },
   {
@@ -141,6 +179,7 @@ const companies = [
     style: {
       height: '2rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.coinbase.com',
@@ -150,6 +189,16 @@ const companies = [
       bottom: '0.3rem',
       height: '2rem',
     },
+    projects: {
+      coinbase: {
+        title: 'Coinbase',
+        link: 'https://coinbase.com',
+        src: '/static/screenshots/thumbnails/coinbase.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'coinbase',
+      },
+    },
   },
   {
     key: 'https://www.doordash.com/',
@@ -158,6 +207,7 @@ const companies = [
     style: {
       bottom: '-0.2rem',
     },
+    projects: {},
   },
   {
     key: 'https://eurovision.tv/',
@@ -167,6 +217,7 @@ const companies = [
       bottom: '0.1rem',
       height: '2.5rem',
     },
+    projects: {},
   },
   {
     key: 'https://eddiebauer.com',
@@ -176,18 +227,21 @@ const companies = [
       bottom: '0.1rem',
       height: '2rem',
     },
+    projects: {},
   },
   {
     key: 'https://github.com/',
     similarWebGlobalRank: 76,
     logo: GitHubLogo,
     style: {},
+    projects: {},
   },
   {
     key: 'https://www.huffpost.com',
     similarWebGlobalRank: 950,
     logo: HuffpostLogo,
     style: {},
+    projects: {},
   },
   {
     key: 'https://www.ideo.com',
@@ -197,6 +251,7 @@ const companies = [
       bottom: '-0.15rem',
       height: '1.5rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.invisionapp.com',
@@ -205,6 +260,16 @@ const companies = [
     style: {
       bottom: '0.1rem',
       height: '2.25rem',
+    },
+    projects: {
+      invision: {
+        title: 'Invision',
+        link: 'https://invisionapp.com',
+        src: '/static/screenshots/thumbnails/invisionapp.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'invision',
+      },
     },
   },
   {
@@ -215,12 +280,23 @@ const companies = [
       bottom: '0.3rem',
       height: '2.75rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.lego.com',
     similarWebGlobalRank: 2008,
     logo: LegoLogo,
     style: {},
+    projects: {
+      'lego-store': {
+        title: 'Lego Store',
+        link: 'https://lego.com',
+        src: '/static/screenshots/thumbnails/lego.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'lego-store',
+      },
+    },
   },
   {
     key: 'https://www.magicleap.com/',
@@ -230,6 +306,7 @@ const companies = [
       bottom: '1rem',
       height: '4rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.moleskine.com',
@@ -239,12 +316,32 @@ const companies = [
       bottom: '-0.15rem',
       height: '1.3rem',
     },
+    projects: {
+      moleskinestudio: {
+        title: 'Moleskine Digital Studio',
+        link: 'https://moleskinestudio.com/',
+        src: '/static/screenshots/thumbnails/moleskinestudio.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'moleskine',
+      },
+    },
   },
   {
     key: 'https://www.patreon.com/',
     similarWebGlobalRank: 533,
     logo: PatreonLogo,
     style: {},
+    projects: {
+      patreon: {
+        title: 'Patreon',
+        link: 'https://patreon.com',
+        src: '/static/screenshots/thumbnails/patreon.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'patreon',
+      },
+    },
   },
   {
     key: 'https://www.reddit.com/',
@@ -253,18 +350,21 @@ const companies = [
     style: {
       bottom: '0.15rem',
     },
+    projects: {},
   },
   {
     key: 'https://seatgeek.com',
     similarWebGlobalRank: 7292,
     logo: SeatGeekLogo,
     style: {},
+    projects: {},
   },
   {
     key: 'https://www.sesamegifts.com/',
     similarWebGlobalRank: 500301,
     logo: SesameLogo,
     style: {},
+    projects: {},
   },
   {
     key: 'https://www.shpock.com',
@@ -274,6 +374,7 @@ const companies = [
       bottom: '0.4rem',
       height: '3rem',
     },
+    projects: {},
   },
   {
     key: 'https://smart.com',
@@ -283,12 +384,23 @@ const companies = [
       bottom: '0.1rem',
       height: '2rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.target.com',
     similarWebGlobalRank: 300,
     logo: TargetLogo,
     style: {},
+    projects: {
+      target: {
+        title: 'Target',
+        link: 'https://www.target.com',
+        src: '/static/screenshots/thumbnails/www.target.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'target',
+      },
+    },
   },
   {
     key: 'https://www.ticketmaster.com/',
@@ -297,6 +409,16 @@ const companies = [
     style: {
       height: '1.7rem',
     },
+    projects: {
+      ticketmaster: {
+        title: 'Ticketmaster',
+        link: 'https://www.ticketmaster.co.uk',
+        src: '/static/screenshots/thumbnails/www.ticketmaster.co.uk.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'ticketmaster',
+      },
+    },
   },
   {
     key: 'https://tinder.com/',
@@ -304,6 +426,16 @@ const companies = [
     logo: TinderLogo,
     style: {
       bottom: '0.2rem',
+    },
+    projects: {
+      swipelife: {
+        title: 'Swipelife',
+        link: 'https://swipelife.tinder.com/',
+        src: '/static/screenshots/thumbnails/swipelife.tinder.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'swipelife',
+      },
     },
   },
   {
@@ -314,6 +446,7 @@ const companies = [
       bottom: '0.15rem',
       height: '2.35rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.underarmour.com',
@@ -322,6 +455,7 @@ const companies = [
     style: {
       height: '2.3rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.vimeo.com',
@@ -331,6 +465,7 @@ const companies = [
       bottom: '0.3rem',
       height: '2.1rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.vogue.com',
@@ -338,6 +473,16 @@ const companies = [
     logo: VogueLogo,
     style: {
       height: '1.8rem',
+    },
+    projects: {
+      vogue: {
+        title: 'Vogue',
+        link: 'https://vogue.de',
+        src: '/static/screenshots/thumbnails/vogue.de.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'vogue',
+      },
     },
   },
   {
@@ -348,6 +493,7 @@ const companies = [
       bottom: '0.7rem',
       height: '2.5rem',
     },
+    projects: {},
   },
   {
     key: 'https://jane.com',
@@ -356,6 +502,7 @@ const companies = [
     style: {
       height: '2.0rem',
     },
+    projects: {},
   },
   {
     key: 'https://google.com',
@@ -364,6 +511,7 @@ const companies = [
     style: {
       height: '2.3rem',
     },
+    projects: {},
   },
   {
     key: 'https://genius.com',
@@ -372,6 +520,7 @@ const companies = [
     style: {
       height: '1.5rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.eurostar.com',
@@ -380,6 +529,7 @@ const companies = [
     style: {
       height: '2.3rem',
     },
+    projects: {},
   },
   {
     key: 'http://change.org/',
@@ -388,6 +538,7 @@ const companies = [
     style: {
       bottom: '-0.2rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.trulia.com/',
@@ -396,6 +547,7 @@ const companies = [
     style: {
       bottom: '0.1rem',
     },
+    projects: {},
   },
   {
     key: 'https://birchbox.com/',
@@ -405,6 +557,7 @@ const companies = [
       height: '1.3rem',
       bottom: '-0.2rem',
     },
+    projects: {},
   },
   {
     key: 'https://blockchain.com/',
@@ -413,6 +566,7 @@ const companies = [
     style: {
       height: '1.3rem',
     },
+    projects: {},
   },
   {
     key: 'https://www.volkswagen.de/de.html',
@@ -421,6 +575,71 @@ const companies = [
     style: {
       height: '2rem',
     },
+    projects: {},
+  },
+  {
+    key: 'https://spectrum.chat',
+    similarWebGlobalRank: 95528,
+    logo: null,
+    style: {},
+    projects: {
+      spectrum: {
+        title: 'Spectrum',
+        link: 'https://spectrum.chat',
+        src: '/static/screenshots/thumbnails/spectrum.chat.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'spectrum',
+      },
+    },
+  },
+  {
+    key: 'https://tsm.gg',
+    similarWebGlobalRank: 273875,
+    logo: null,
+    style: {},
+    projects: {
+      tsm: {
+        title: 'TSM',
+        link: 'https://tsm.gg',
+        src: '/static/screenshots/thumbnails/tsm.gg.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'tsm',
+      },
+    },
+  },
+  {
+    key: 'https://fortnitemaster.com',
+    similarWebGlobalRank: 332652,
+    logo: null,
+    style: {},
+    projects: {
+      fortnitemaster: {
+        title: 'Fornite Master',
+        link: 'https://fortnitemaster.com/',
+        src: '/static/screenshots/thumbnails/fortnitemaster.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'fortnitemaster',
+      },
+    },
+  },
+  {
+    key: 'https://prisma.io',
+    similarWebGlobalRank: 183831,
+    logo: null,
+    style: {},
+    projects: {
+      prisma: {
+        title: 'Prisma',
+        link: 'https://prisma.io/',
+        src: '/static/screenshots/thumbnails/prisma.io.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'prisma',
+      },
+    },
   },
 ];
 
@@ -428,3 +647,4 @@ export default companies;
 
 // sorting logic: the more popular a website, the higher it gets listed
 export const sortedCompanies = companies.sort((a, b) => a.similarWebGlobalRank - b.similarWebGlobalRank);
+export const sortedProjects = sortedCompanies.reduce((projects, company) => ({ ...projects, ...company.projects }), {});
