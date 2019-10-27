@@ -93,11 +93,15 @@ const CompanyLogo = styled.span`
 
 const SortedLogos = ({ users }) => (
   <UsersWrapper>
-    {users.map(({ key, logo: Logo, ...rest }) => (
-      <CompanyLogo key={key} {...rest}>
-        <Logo />
-      </CompanyLogo>
-    ))}
+    {/* TODO: remove this check after adding missing logos */}
+    {users.map(
+      ({ key, logo: Logo, ...rest }) =>
+        Logo && (
+          <CompanyLogo key={key} {...rest}>
+            <Logo />
+          </CompanyLogo>
+        )
+    )}
   </UsersWrapper>
 );
 
