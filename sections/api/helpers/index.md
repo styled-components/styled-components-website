@@ -5,6 +5,7 @@ import WithTheme from './with-theme.md'
 import CreateGlobalStyle from './create-global-style.md'
 import ThemeConsumer from './theme-consumer.md'
 import StyleSheetManager from './style-sheet-manager.md'
+import UseTheme from './use-theme.md'
 
 ## Helpers
 
@@ -19,5 +20,7 @@ import StyleSheetManager from './style-sheet-manager.md'
 <IsStyledComponent />
 
 <WithTheme />
+
+<UseTheme />
 
 <ThemeConsumer />
