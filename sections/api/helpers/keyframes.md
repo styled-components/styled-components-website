@@ -59,4 +59,4 @@ const PulseButton = styled.button`
 `
 ```
 
-You can learn more about styled-components with Animations in the [Animations](/docs/basics#animations)
+You can learn more about using animations with styled-components in the [Animations](/docs/basics#animations) section.
