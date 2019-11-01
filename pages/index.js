@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
+import NextLink from '../components/Link';
 import styled, { css } from 'styled-components';
 import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
 
 import rem from '../utils/rem';
-import { violetRed, gold } from '../utils/colors';
+import { violetRed, gold, darkVioletRed } from '../utils/colors';
 import { editorMixin, StyledError } from '../components/LiveEdit';
 import Link from '../components/Link';
 import { Content } from '../components/Layout';
@@ -131,6 +132,26 @@ const Links = styled.div`
   margin: ${rem(36)} 0;
 `;
 
+const ShowcaseLink = styled(NextLink)`
+  height: 48px;
+  display: block;
+  max-width: 100%;
+  width: 196px;
+  background: red;
+  line-height: 48px;
+  text-align: center;
+  color: white;
+  font-family: Avenir Next;
+  border-radius: 4px;
+  margin: 0 auto;
+  background-color: ${violetRed};
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: ${darkVioletRed};
+  }
+`;
+
 class Index extends PureComponent {
   state = {
     isMobileNavFolded: true,
@@ -196,6 +217,7 @@ class Index extends PureComponent {
           <ShowcaseHeading>To create beautiful websites like these</ShowcaseHeading>
           <SmallShowcase projects={sortedProjects} />
         </Wrapper>
+        <ShowcaseLink href="/showcase">Discover more</ShowcaseLink>
 
         <HomepageGettingStarted />
 
