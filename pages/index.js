@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
+import NextLink from '../components/Link';
 import styled, { css } from 'styled-components';
 import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
 
 import rem from '../utils/rem';
-import { violetRed, gold } from '../utils/colors';
+import { violetRed, gold, darkVioletRed } from '../utils/colors';
 import { editorMixin, StyledError } from '../components/LiveEdit';
 import Link from '../components/Link';
 import { Content } from '../components/Layout';
@@ -12,8 +13,9 @@ import HomepageGettingStarted from '../sections/homepage/getting-started.md';
 import WithIsScrolled from '../components/WithIsScrolled';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
-import { sortedCompanies } from '../companies-manifest';
+import { sortedCompanies, sortedProjects } from '../companies-manifest';
 import UsersLogos from '../components/UsersLogos';
+import SmallShowcase from '../components/SmallShowcase';
 
 const Tagline = styled.h1`
   font-weight: 600;
@@ -89,6 +91,10 @@ const UsersHeading = styled.p`
   opacity: 0.8;
 `;
 
+const ShowcaseHeading = styled(UsersHeading)`
+  margin: 0.5rem 0 0.5rem;
+`;
+
 const Wrapper = styled.div.attrs((/* props */) => ({
   className: 'hero-header', // for integration tests
 }))`
@@ -103,6 +109,7 @@ const Wrapper = styled.div.attrs((/* props */) => ({
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
   min-height: 100vh;
+  margin-bottom: 160px;
 `;
 
 const EditorContainer = styled.div`
@@ -123,6 +130,26 @@ const Editor = styled(LiveEditor)`
 
 const Links = styled.div`
   margin: ${rem(36)} 0;
+`;
+
+const ShowcaseLink = styled(NextLink)`
+  height: 48px;
+  display: block;
+  max-width: 100%;
+  width: 196px;
+  background: red;
+  line-height: 48px;
+  text-align: center;
+  color: white;
+  font-family: Avenir Next;
+  border-radius: 4px;
+  margin: 0 auto;
+  background-color: ${violetRed};
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: ${darkVioletRed};
+  }
 `;
 
 class Index extends PureComponent {
@@ -187,7 +214,10 @@ class Index extends PureComponent {
             <UsersHeading>Used by folks at</UsersHeading>
           </Content>
           <UsersLogos users={sortedCompanies} />
+          <ShowcaseHeading>To create beautiful websites like these</ShowcaseHeading>
+          <SmallShowcase projects={sortedProjects} />
         </Wrapper>
+        <ShowcaseLink href="/showcase">Discover more</ShowcaseLink>
 
         <HomepageGettingStarted />
 
