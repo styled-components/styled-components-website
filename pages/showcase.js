@@ -85,6 +85,8 @@ const Screen = styled.div`
 `;
 
 const Showcase = ({ router }) => {
+  console.log('HELLO', router.query);
+
   const { item } = router.query;
   const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item);
   return (
