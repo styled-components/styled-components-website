@@ -45,6 +45,7 @@ import {
   VimeoLogo,
   VogueLogo,
   XingLogo,
+  LyftLogo,
   VolkswagenLogo,
 } from './components/CompanyLogos';
 
@@ -638,6 +639,24 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'prisma',
+      },
+    },
+  },
+  {
+    key: 'https://www.lyft.com/',
+    similarWebGlobalRank: 3783,
+    logo: LyftLogo,
+    style: {
+      height: '2.3rem',
+    },
+    projects: {
+      lyft: {
+        title: 'Lyft',
+        link: 'https://www.lyft.com',
+        src: '/static/screenshots/thumbnails/lyft.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'lyft',
       },
     },
   },
