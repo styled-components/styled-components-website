@@ -8,7 +8,7 @@ assignees: ''
 
 <!-- Before requesting a new company addition, check to make sure that there are no duplicates -->
 
-##### Company info
+###### Company info
 
 <!-- Name of the website's owner company -->
 
