@@ -644,11 +644,10 @@ const companies = [
   },
   {
     key: 'https://www.lyft.com/',
-    similarWebGlobalRank: 3183,
+    similarWebGlobalRank: 3783,
     logo: LyftLogo,
     style: {
       height: '2.3rem',
-      bottom: '0.2rem',
     },
     projects: {
       lyft: {
