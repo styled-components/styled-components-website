@@ -1,6 +1,6 @@
 import React from 'react';
 import ShowcaseLayout from '../components/ShowcaseLayout';
-import { sortOrder, mapping } from '../showcase-manifest';
+import { sortedProjects } from '../companies-manifest';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Slider from '../components/Slider';
@@ -28,8 +28,8 @@ function normalizeSlideIndex(arr, index, fn) {
 
 // Since objects don't allow for a sort order we have to map an array to the object
 function mapIndexToRoute(index) {
-  const route = sortOrder[index];
-  return mapping[route];
+  const route = Object.keys(sortedProjects)[index];
+  return sortedProjects[route];
 }
 
 function calculateSlides(sortOrder, route) {
@@ -81,17 +81,17 @@ class ArrowEvents extends React.Component {
 const Screen = styled.div`
   display: flex;
   align-items: center;
-  min-height: ${props => (props.offset ? `calc(100vh - ${props.offset}px)` : '100vh')};
+  padding-top: 32px;
 `;
 
 const Showcase = ({ router }) => {
   const { item } = router.query;
-  const { currentSlide, previousSlide, nextSlide } = calculateSlides(sortOrder, item);
+  const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item);
   return (
     <>
       <ShowcaseLayout title="Showcase" description="Screenshots of websites that use styled-components">
         <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
-        <Screen offset={90}>
+        <Screen>
           <Slider currentSlide={currentSlide} previousSlide={previousSlide} nextSlide={nextSlide} />
         </Screen>
       </ShowcaseLayout>
