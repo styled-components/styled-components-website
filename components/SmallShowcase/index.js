@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const scaleFactor = [1.8, 1.4, 1];
 
@@ -52,7 +53,7 @@ const Label = styled.label`
   }
 `;
 
-const Website = styled.a`
+const Website = styled.div`
   display: block;
   position: relative;
   width: 100%;
@@ -103,12 +104,14 @@ const SmallShowcase = ({ projects }) => {
       {Object.values(projects)
         .slice(0, 6)
         .map((project, index) => (
-          <Website key={project.title} position={index} href={project.link} target="_blank">
-            <RatioBox>
-              <Screenshot bg={project.src} />
-              <Label>{project.title}</Label>
-            </RatioBox>
-          </Website>
+          <Link key={project.title} href={`/showcase?item=${project.internalUrl}`}>
+            <Website position={index}>
+              <RatioBox>
+                <Screenshot bg={project.src} />
+                <Label>{project.title}</Label>
+              </RatioBox>
+            </Website>
+          </Link>
         ))}
     </Wrapper>
   );
