@@ -206,7 +206,10 @@ const companies = [
     key: 'https://www.disneyplus.com/',
     similarWebGlobalRank: 7707,
     logo: DisneyPlusLogo,
-    style: {},
+    style: {
+      bottom: '0.4rem',
+      height: '3rem',
+    },
     projects: {
       disneyplus: {
         title: 'Disney+',
