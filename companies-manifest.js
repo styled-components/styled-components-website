@@ -15,6 +15,7 @@ import {
   ChangeOrgLogo,
   CoinbaseLogo,
   CultureTripLogo,
+  DisneyPlusLogo,
   DoorDashLogo,
   EddieBauerLogo,
   EurostarLogo,
@@ -198,6 +199,25 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'coinbase',
+      },
+    },
+  },
+  {
+    key: 'https://www.disneyplus.com/',
+    similarWebGlobalRank: 7707,
+    logo: DisneyPlusLogo,
+    style: {
+      bottom: '0.4rem',
+      height: '3rem',
+    },
+    projects: {
+      disneyplus: {
+        title: 'Disney+',
+        link: 'https://www.disneyplus.com/',
+        src: '/static/screenshots/thumbnails/www.disneyplus.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'disneyplus',
       },
     },
   },
