@@ -173,7 +173,7 @@ const Component = styled.div`
 import styled from 'styled-components'
 
 const Input = styled.input.attrs({
-  type: ({ inputType }) => inputType
+  type: ({ inputType }) => inputType,
 })`
   background: blue;
   color: red;
