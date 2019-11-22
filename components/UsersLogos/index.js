@@ -74,7 +74,6 @@ const UsersWrapper = styled.section`
   overflow: hidden;
   padding: 0.5rem;
   display: flex;
-  margin-bottom: 2rem;
 `;
 
 const CompanyLogo = styled.span`
@@ -93,11 +92,15 @@ const CompanyLogo = styled.span`
 
 const SortedLogos = ({ users }) => (
   <UsersWrapper>
-    {users.map(({ key, logo: Logo, ...rest }) => (
-      <CompanyLogo key={key} {...rest}>
-        <Logo />
-      </CompanyLogo>
-    ))}
+    {/* TODO: remove this check after adding missing logos */}
+    {users.map(
+      ({ key, logo: Logo, ...rest }) =>
+        Logo && (
+          <CompanyLogo key={key} {...rest}>
+            <Logo />
+          </CompanyLogo>
+        )
+    )}
   </UsersWrapper>
 );
 
