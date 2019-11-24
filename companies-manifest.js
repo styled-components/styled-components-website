@@ -48,6 +48,7 @@ import {
   XingLogo,
   LyftLogo,
   VolkswagenLogo,
+  FramerLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -677,6 +678,22 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'lyft',
+      },
+    },
+  },
+  {
+    key: 'https://framer.com/',
+    similarWebGlobalRank: 185723,
+    logo: FramerLogo,
+    style: {},
+    projects: {
+      framer: {
+        title: 'Framer',
+        link: 'https://framer.com',
+        src: '/static/screenshots/thumbnails/framer.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'framer',
       },
     },
   },
