@@ -42,7 +42,10 @@ const Footer = () => (
   <Wrapper>
     <FooterContent hero>
       {' '}
-      {'Hosted on ▲ ZEIT Now'}
+      {'Hosted on '}
+      <FooterLink inline href="https://zeit.co">
+        ▲ ZEIT Now
+      </FooterLink>
       <br />
       {'Made with '}
       <Heart />
