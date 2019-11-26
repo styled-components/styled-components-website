@@ -910,3 +910,9 @@ export const DisneyPlusLogo = () => (
     />
   </Svg>
 );
+
+export const FramerLogo = () => (
+  <Svg viewBox="0 0 32 48">
+    <path d="M 16 48 L 0 32 L 0 16 L 16 16 L 32 32 L 16 32 Z M 32 0 L 32 16 L 16 16 L 0 0 Z" fill="currentColor"></path>
+  </Svg>
+);
