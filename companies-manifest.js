@@ -48,6 +48,8 @@ import {
   XingLogo,
   LyftLogo,
   VolkswagenLogo,
+  FramerLogo,
+  PricelineLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -677,6 +679,38 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'lyft',
+      },
+    },
+  },
+  {
+    key: 'https://framer.com/',
+    similarWebGlobalRank: 185723,
+    logo: FramerLogo,
+    style: {},
+    projects: {
+      framer: {
+        title: 'Framer',
+        link: 'https://framer.com',
+        src: '/static/screenshots/thumbnails/framer.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'framer',
+      },
+    },
+  },
+  {
+    key: 'https://www.priceline.com/',
+    similarWebGlobalRank: 1509,
+    logo: PricelineLogo,
+    style: {},
+    projects: {
+      priceline: {
+        title: 'Priceline',
+        link: 'https://www.priceline.com/',
+        src: '/static/screenshots/thumbnails/priceline.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'priceline',
       },
     },
   },
