@@ -90,7 +90,16 @@ const companies = [
       bottom: '0.16rem',
       height: '2.25rem',
     },
-    projects: {},
+    projects: {
+      artsy: {
+        title: 'Artsy',
+        link: 'https://www.artsy.net/',
+        src: '/static/screenshots/thumbnails/artsy.net.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'artsy',
+      },
+    },
   },
   {
     key: 'https://www.atlassian.com/',
@@ -115,7 +124,16 @@ const companies = [
     similarWebGlobalRank: 5628,
     logo: Auth0Logo,
     style: {},
-    projects: {},
+    projects: {
+      auth0: {
+        title: 'Auth0 Website',
+        link: 'https://auth0.com/',
+        src: '/static/screenshots/thumbnails/auth0.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'auth0',
+      },
+    },
   },
   {
     key: 'https://www.bbc.com/',
@@ -129,14 +147,32 @@ const companies = [
     similarWebGlobalRank: 3803,
     logo: BlaBlaCarLogo,
     style: {},
-    projects: {},
+    projects: {
+      blablacar: {
+        title: 'BlaBlaCar website',
+        link: 'https://www.blablacar.fr/',
+        src: '/static/screenshots/thumbnails/www.blablacar.fr.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'blablacar',
+      },
+    },
   },
   {
     key: 'https://brave.com/',
     similarWebGlobalRank: 13395,
     logo: BraveLogo,
     style: {},
-    projects: {},
+    projects: {
+      brave: {
+        title: 'Brave website',
+        link: 'https://brave.com/',
+        src: '/static/screenshots/thumbnails/brave.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'brave',
+      },
+    },
   },
   {
     key: 'https://www.bloomberg.com',
