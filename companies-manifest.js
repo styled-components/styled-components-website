@@ -126,7 +126,7 @@ const companies = [
     style: {},
     projects: {
       auth0: {
-        title: 'Auth0 Website',
+        title: 'Auth0',
         link: 'https://auth0.com/',
         src: '/static/screenshots/thumbnails/auth0.com.jpg',
         width: 1280,
@@ -149,7 +149,7 @@ const companies = [
     style: {},
     projects: {
       blablacar: {
-        title: 'BlaBlaCar website',
+        title: 'BlaBlaCar',
         link: 'https://www.blablacar.fr/',
         src: '/static/screenshots/thumbnails/www.blablacar.fr.jpg',
         width: 1280,
@@ -165,7 +165,7 @@ const companies = [
     style: {},
     projects: {
       brave: {
-        title: 'Brave website',
+        title: 'Brave',
         link: 'https://brave.com/',
         src: '/static/screenshots/thumbnails/brave.com.jpg',
         width: 1280,
