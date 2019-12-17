@@ -120,7 +120,7 @@ exports[`Navbar renders correctly 1`] = `
   box-sizing: border-box;
   background-position: center;
   background-size: contain;
-  background-image: url(/static/nav-logo.png);
+  background-image: url(/nav-logo.png);
   width: 9.11111111111111rem;
   height: 2.2222222222222223rem;
 }
@@ -131,7 +131,7 @@ exports[`Navbar renders correctly 1`] = `
   box-sizing: border-box;
   background-position: center;
   background-size: contain;
-  background-image: url(/static/icon.png);
+  background-image: url(/icon.png);
   width: 5.555555555555555rem;
   height: 1.6666666666666667rem;
 }

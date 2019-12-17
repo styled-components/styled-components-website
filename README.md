@@ -46,7 +46,7 @@ styled-components-website
 ├── components/  # Shared components
 ├── pages/       # The actual pages, mostly containing layout; the directory directly correlates to the URL. (e.g. pages/docs/basics.js === styled-components.com/docs/basics)
 ├── sections/    # The content, written in Markdown
-├── static/      # Assets
+├── public/      # Assets
 ├── test/        # Tests
 ├── utils/       # Various utilities use across the site
 └── vendor/      # Cached dependencies

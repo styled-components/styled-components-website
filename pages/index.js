@@ -76,7 +76,7 @@ const Title = styled.div`
 
 const Logo = styled.img.attrs((/* props */) => ({
   alt: 'styled-components Logo',
-  src: '/static/logo.png',
+  src: '/logo.png',
 }))`
   width: ${rem(125)};
   height: ${rem(125)};
