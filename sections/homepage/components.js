@@ -5,7 +5,7 @@ export const AlignCenter = styled.div`
 `;
 
 export const Badge = styled.img`
-  margin: 0 0.5em 3em;
+  margin: 0 0.5em 1em;
   height: 1.5em;
 `;
 
