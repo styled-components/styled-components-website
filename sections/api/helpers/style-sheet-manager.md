@@ -65,7 +65,7 @@ const Box = styled.div`
 `
 
 render(
-  <StyleSheetManager stylisOptions={{ prefix: false }}>
+  <StyleSheetManager disableVendorPrefixes>
     <Box>If you inspect me, there are no vendor prefixes for the flexbox style.</Box>
   </StyleSheetManager>
 )
