@@ -50,6 +50,7 @@ import {
   VolkswagenLogo,
   FramerLogo,
   PricelineLogo,
+  TheOnionLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -749,6 +750,13 @@ const companies = [
         internalUrl: 'priceline',
       },
     },
+  },
+  {
+    key: 'https://www.theonion.com/',
+    similarWebGlobalRank: 8690,
+    logo: TheOnionLogo,
+    style: {},
+    projects: {},
   },
 ];
 

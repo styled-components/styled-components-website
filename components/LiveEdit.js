@@ -7,7 +7,7 @@ import styled, {
   StyleSheetManager,
   ThemeProvider,
 } from 'styled-components';
-import stylisRTLPlugin from 'stylis-rtl';
+import stylisRTLPlugin from 'stylis-plugin-rtl';
 import rem from '../utils/rem';
 import { darkGrey, red } from '../utils/colors';
 import { phone } from '../utils/media';
