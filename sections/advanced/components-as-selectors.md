@@ -1,5 +1,7 @@
 ## Referring to other components
 
+> This is a **web-specific** API and you **won't** be able to use it in react-native.
+
 There are many ways to apply contextual overrides to a component's styling. That being said,
 it rarely is easy without rigging up a well-known targeting CSS selector paradigm
 and then making them accessible for use in interpolations.
