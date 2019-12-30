@@ -16,8 +16,9 @@ styled-components v5 does not introduce any breaking public API changes, and add
 
 - `StyleSheetManager` has new props:
   - `disableCSSOMInjection`
-  - `stylisOptions`
+  - `disableVendorPrefixes`
   - `stylisPlugins`
+    - try it with [`stylis-plugin-rtl`](https://www.npmjs.com/package/stylis-plugin-rtl) for your bidi needs!
 
 > Note: The object-form `.attrs({})` syntax that was deprecated in v4 is removed in v5. Use function-form attrs instead `.attrs(props => ({}))` (you should have been seeing console warnings to make this update ahead of time.)
 
