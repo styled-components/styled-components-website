@@ -4,11 +4,7 @@ The one thing you used to lose when writing CSS in template literals is syntax h
 
 This is what it looks like when properly highlighted:
 
-<img
-  alt="Syntax highlighted styled component"
-  src="/static/syntax-highlight-example.jpg"
-  height="250px"
-/>
+<img alt="Syntax highlighted styled component" src="/syntax-highlight-example.jpg" height="250px" />
 
 ### Atom
 

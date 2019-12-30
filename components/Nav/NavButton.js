@@ -14,7 +14,7 @@ const NavButton = styled.button`
   text-align: center;
   vertical-align: middle;
 
-  & + ${NavButton} {
+  & + & {
     padding-left: 0;
   }
 `;

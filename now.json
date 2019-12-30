@@ -1,7 +1,17 @@
 {
+  "version": 2,
   "name": "styled-components",
   "alias": "www.styled-components.com",
   "env": {
     "NODE_ENV": "production"
-  }
+  },
+  "routes": [
+    {
+      "src": "/proxy/(.+)",
+      "status": 301,
+      "headers": {
+        "Location": "/api/proxy/$1"
+      }
+    }
+  ]
 }

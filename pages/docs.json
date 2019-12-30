@@ -152,7 +152,7 @@
           "title": "When to use attrs?"
         },
         {
-          "title": "Why should i avoid to declare styled components in the render method?"
+          "title": "Why should I avoid declaring styled components in the render method?"
         },
         {
           "title": "I am a library author. Should I bundle styled-components with my library?"

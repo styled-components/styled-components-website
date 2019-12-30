@@ -162,8 +162,8 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <link rel="icon" type="image/png" href="/static/favicon.png" />
-          <link rel="manifest" href="/static/manifest.json" />
+          <link rel="icon" type="image/png" href="/favicon.png" />
+          <link rel="manifest" href="/manifest.json" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
@@ -193,7 +193,7 @@ export default class MyDocument extends Document {
 
           <NextScript />
 
-          <link rel="stylesheet" type="text/css" href="/static/dmvendor.css" />
+          <link rel="stylesheet" type="text/css" href="/dmvendor.css" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
         </body>
       </html>

@@ -101,35 +101,9 @@ and comparisons with alternatives, in [Styled Components: To Use or Not to Use?]
 
 ### Pseudoelements, pseudoselectors, and nesting
 
-The preprocessor we use, [stylis](https://github.com/thysultan/stylis.js), supports scss-like syntax for automatically nesting styles. Using an example component:
+The preprocessor we use, [stylis](https://github.com/thysultan/stylis.js), supports scss-like syntax for automatically nesting styles.
 
-```jsx
-const Thing = styled.div`
-  color: blue;
-`
-```
-
-Pseudoselectors and pseudoelements without further refinement automatically are attached to the component:
-
-```react
-const Thing = styled.button`
-  color: blue;
-
-  ::before {
-    content: '🚀';
-  }
-
-  :hover {
-    color: red;
-  }
-`
-
-render(
-  <Thing>Hello world!</Thing>
-)
-```
-
-For more complex selector patterns, the ampersand (`&`) can be used to refer back to the main component. Here are some more examples of its potential usage:
+The ampersand (`&`) can be used to refer back to the main component. Here are some more examples of its potential usage:
 
 ```react
 const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
