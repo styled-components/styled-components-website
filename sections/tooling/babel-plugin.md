@@ -43,7 +43,7 @@ You can disable it if necessary with the `ssr` option:
 
 This option enhances the attached CSS class name on each component with richer output to help identify your components in the DOM without React DevTools. In your page source you'll see: `<button class="Button-asdf123 asdf123" />` instead of just `<button class="asdf123" />`.
 
-It also adds allows you to see the component's `displayName` in React DevTools. For example, consider writing a styled component that renders a `button` element, called `MyButton`. It will normally show up in DevTools as `styled.button`, but with the `displayName` option enabled, it has the name you gave it: `MyButton`.
+It also allows you to see the component's `displayName` in React DevTools. For example, consider writing a styled component that renders a `button` element, called `MyButton`. It will normally show up in DevTools as `styled.button`, but with the `displayName` option enabled, it has the name you gave it: `MyButton`.
 
 This makes it easier to find your components and to figure out where they live in your app.
 

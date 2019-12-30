@@ -43,6 +43,7 @@ exports[`Link renders correctly 1`] = `
   className="c0"
   href="/"
   onClick={[Function]}
+  onMouseEnter={[Function]}
 />
 `;
 

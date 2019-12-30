@@ -36,7 +36,7 @@ const Ecosystem = ({ readme, sidebarPages }) => (
   </DocsLayout>
 );
 
-Ecosystem.getInitialProps = async () => {
+Ecosystem.getInitialProps = async ({ res }) => {
   const readme = await getReadme('awesome-styled-components');
   const editedReadme = readme
     .replace(/\n---\n/g, '\n\n---\n\n')
@@ -44,6 +44,11 @@ Ecosystem.getInitialProps = async () => {
     .split('### Contribute')[0];
 
   const sidePages = collectPagesFromMd(readme);
+
+  if (res) {
+    // Revalidate this data once an hour
+    res.setHeader('cache-control', 's-maxage=3600,stale-while-revalidate');
+  }
 
   return {
     readme: editedReadme,

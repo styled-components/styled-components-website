@@ -64,6 +64,7 @@ exports[`NavLinks renders correctly 1`] = `
     className="c1"
     href="/docs"
     onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     Documentation
   </a>
@@ -72,8 +73,20 @@ exports[`NavLinks renders correctly 1`] = `
   />
   <a
     className="c1"
+    href="/showcase"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    Showcase
+  </a>
+  <span
+    className="c2"
+  />
+  <a
+    className="c1"
     href="/ecosystem"
     onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     Ecosystem
   </a>
@@ -84,6 +97,7 @@ exports[`NavLinks renders correctly 1`] = `
     className="c1"
     href="/releases"
     onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     Releases
   </a>
