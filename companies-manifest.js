@@ -76,7 +76,7 @@ const companies = [
       airbnb: {
         title: 'Airbnb Cereal',
         link: 'https://airbnb.design/cereal/',
-        src: '/static/screenshots/thumbnails/airbnb.design-cereal.jpg',
+        src: '/screenshots/thumbnails/airbnb.design-cereal.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'airbnb',
@@ -95,7 +95,7 @@ const companies = [
       artsy: {
         title: 'Artsy',
         link: 'https://www.artsy.net/',
-        src: '/static/screenshots/thumbnails/artsy.net.jpg',
+        src: '/screenshots/thumbnails/artsy.net.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'artsy',
@@ -113,7 +113,7 @@ const companies = [
       atlaskit: {
         title: 'AtlasKit',
         link: 'https://atlaskit.atlassian.com',
-        src: '/static/screenshots/thumbnails/atlaskit.atlassian.com.jpg',
+        src: '/screenshots/thumbnails/atlaskit.atlassian.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'atlaskit',
@@ -129,7 +129,7 @@ const companies = [
       auth0: {
         title: 'Auth0',
         link: 'https://auth0.com/',
-        src: '/static/screenshots/thumbnails/auth0.com.jpg',
+        src: '/screenshots/thumbnails/auth0.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'auth0',
@@ -152,7 +152,7 @@ const companies = [
       blablacar: {
         title: 'BlaBlaCar',
         link: 'https://www.blablacar.fr/',
-        src: '/static/screenshots/thumbnails/www.blablacar.fr.jpg',
+        src: '/screenshots/thumbnails/www.blablacar.fr.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'blablacar',
@@ -168,7 +168,7 @@ const companies = [
       brave: {
         title: 'Brave',
         link: 'https://brave.com/',
-        src: '/static/screenshots/thumbnails/brave.com.jpg',
+        src: '/screenshots/thumbnails/brave.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'brave',
@@ -206,7 +206,7 @@ const companies = [
       casper: {
         title: 'Casper',
         link: 'https://casper.com/',
-        src: '/static/screenshots/thumbnails/casper.com.jpg',
+        src: '/screenshots/thumbnails/casper.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'casper',
@@ -234,7 +234,7 @@ const companies = [
       coinbase: {
         title: 'Coinbase',
         link: 'https://coinbase.com',
-        src: '/static/screenshots/thumbnails/coinbase.com.jpg',
+        src: '/screenshots/thumbnails/coinbase.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'coinbase',
@@ -253,7 +253,7 @@ const companies = [
       disneyplus: {
         title: 'Disney+',
         link: 'https://www.disneyplus.com/',
-        src: '/static/screenshots/thumbnails/www.disneyplus.com.jpg',
+        src: '/screenshots/thumbnails/www.disneyplus.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'disneyplus',
@@ -325,7 +325,7 @@ const companies = [
       invision: {
         title: 'Invision',
         link: 'https://invisionapp.com',
-        src: '/static/screenshots/thumbnails/invisionapp.com.jpg',
+        src: '/screenshots/thumbnails/invisionapp.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'invision',
@@ -351,7 +351,7 @@ const companies = [
       'lego-store': {
         title: 'Lego Store',
         link: 'https://lego.com',
-        src: '/static/screenshots/thumbnails/lego.com.jpg',
+        src: '/screenshots/thumbnails/lego.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'lego-store',
@@ -380,7 +380,7 @@ const companies = [
       moleskinestudio: {
         title: 'Moleskine Digital Studio',
         link: 'https://moleskinestudio.com/',
-        src: '/static/screenshots/thumbnails/moleskinestudio.com.jpg',
+        src: '/screenshots/thumbnails/moleskinestudio.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'moleskine',
@@ -396,7 +396,7 @@ const companies = [
       patreon: {
         title: 'Patreon',
         link: 'https://patreon.com',
-        src: '/static/screenshots/thumbnails/patreon.com.jpg',
+        src: '/screenshots/thumbnails/patreon.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'patreon',
@@ -455,7 +455,7 @@ const companies = [
       target: {
         title: 'Target',
         link: 'https://www.target.com',
-        src: '/static/screenshots/thumbnails/www.target.com.jpg',
+        src: '/screenshots/thumbnails/www.target.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'target',
@@ -473,7 +473,7 @@ const companies = [
       ticketmaster: {
         title: 'Ticketmaster',
         link: 'https://www.ticketmaster.co.uk',
-        src: '/static/screenshots/thumbnails/www.ticketmaster.co.uk.jpg',
+        src: '/screenshots/thumbnails/www.ticketmaster.co.uk.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'ticketmaster',
@@ -491,7 +491,7 @@ const companies = [
       swipelife: {
         title: 'Swipelife',
         link: 'https://swipelife.tinder.com/',
-        src: '/static/screenshots/thumbnails/swipelife.tinder.com.jpg',
+        src: '/screenshots/thumbnails/swipelife.tinder.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'swipelife',
@@ -538,7 +538,7 @@ const companies = [
       vogue: {
         title: 'Vogue',
         link: 'https://vogue.de',
-        src: '/static/screenshots/thumbnails/vogue.de.jpg',
+        src: '/screenshots/thumbnails/vogue.de.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'vogue',
@@ -646,7 +646,7 @@ const companies = [
       spectrum: {
         title: 'Spectrum',
         link: 'https://spectrum.chat',
-        src: '/static/screenshots/thumbnails/spectrum.chat.jpg',
+        src: '/screenshots/thumbnails/spectrum.chat.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'spectrum',
@@ -662,7 +662,7 @@ const companies = [
       tsm: {
         title: 'TSM',
         link: 'https://tsm.gg',
-        src: '/static/screenshots/thumbnails/tsm.gg.jpg',
+        src: '/screenshots/thumbnails/tsm.gg.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'tsm',
@@ -678,7 +678,7 @@ const companies = [
       fortnitemaster: {
         title: 'Fornite Master',
         link: 'https://fortnitemaster.com/',
-        src: '/static/screenshots/thumbnails/fortnitemaster.com.jpg',
+        src: '/screenshots/thumbnails/fortnitemaster.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'fortnitemaster',
@@ -694,7 +694,7 @@ const companies = [
       prisma: {
         title: 'Prisma',
         link: 'https://prisma.io/',
-        src: '/static/screenshots/thumbnails/prisma.io.jpg',
+        src: '/screenshots/thumbnails/prisma.io.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'prisma',
@@ -712,7 +712,7 @@ const companies = [
       lyft: {
         title: 'Lyft',
         link: 'https://www.lyft.com',
-        src: '/static/screenshots/thumbnails/lyft.com.jpg',
+        src: '/screenshots/thumbnails/lyft.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'lyft',
@@ -728,7 +728,7 @@ const companies = [
       framer: {
         title: 'Framer',
         link: 'https://framer.com',
-        src: '/static/screenshots/thumbnails/framer.com.jpg',
+        src: '/screenshots/thumbnails/framer.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'framer',
@@ -744,7 +744,7 @@ const companies = [
       priceline: {
         title: 'Priceline',
         link: 'https://www.priceline.com/',
-        src: '/static/screenshots/thumbnails/priceline.com.jpg',
+        src: '/screenshots/thumbnails/priceline.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'priceline',
