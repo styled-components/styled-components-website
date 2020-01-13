@@ -3,7 +3,7 @@
 Ready for this?
 
 ```sh
-npm install styled-components@beta react@^16.8 react-dom@^16.8 react-is@^16.8
+npm install styled-components@latest react@^16.8 react-dom@^16.8 react-is@^16.8
 ```
 
 _That's it._ 💥
