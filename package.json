@@ -22,10 +22,10 @@
     "size": "bundlesize"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.0.20",
-    "@mdx-js/mdx": "^0.15.4",
-    "@mdx-js/react": "^1.0.20",
-    "@next/mdx": "^8.1.0",
+    "@mdx-js/loader": "^1.5.3",
+    "@mdx-js/mdx": "^1.5.3",
+    "@mdx-js/react": "^1.5.3",
+    "@next/mdx": "^9.1.7",
     "@types/react": "^16.4.14",
     "@zeit/next-mdx": "^1.2.0",
     "@zeit/next-source-maps": "^0.0.3",
