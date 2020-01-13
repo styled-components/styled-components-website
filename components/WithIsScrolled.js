@@ -1,36 +1,21 @@
-import { Component } from 'react';
 import invariant from 'invariant';
+import { useCallback, useEffect, useState } from 'react';
 
-class WithIsScrolled extends Component {
-  state = {
-    isScrolled: false,
-  };
+export default function WithIsScrolled(props) {
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  componentWillMount() {
-    invariant(typeof this.props.children === 'function', 'The children prop is expected to be a function');
-  }
+  const onScroll = useCallback(() => {
+    setIsScrolled((window.pageYOffset || document.body.scrollTop) > 0);
+  }, []);
 
-  componentDidMount() {
+  useEffect(() => {
+    invariant(typeof props.children === 'function', 'The children prop is expected to be a function');
+
     // Learn more about how { passive: true } improves scrolling performance
     // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners
-    window.addEventListener('scroll', this.onScroll, { passive: true });
-  }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll, { passive: true });
+  }, []);
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.onScroll, { passive: true });
-  }
-
-  onScroll = () => {
-    const isScrolled = (window.pageYOffset || document.body.scrollTop) > 0;
-
-    if (isScrolled !== this.state.isScrolled) {
-      this.setState({ isScrolled });
-    }
-  };
-
-  render() {
-    return this.props.children(this.state);
-  }
+  return props.children({ isScrolled });
 }
-
-export default WithIsScrolled;
