@@ -54,8 +54,6 @@ exports[`NextPage renders correctly 1`] = `
 <a
   className="c0"
   href=""
-  onClick={[Function]}
-  onMouseEnter={[Function]}
 >
   <div>
     <h3

@@ -49,8 +49,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       <a
         className="c3"
         href="/docs/basics"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
         Basics
       </a>
@@ -66,8 +64,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       <a
         className="c3"
         href="/docs/advanced"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
         Advanced
       </a>
@@ -83,8 +79,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       <a
         className="c3"
         href="/docs/api"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
         API Reference
       </a>
@@ -100,8 +94,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       <a
         className="c3"
         href="/docs/tooling"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
         Tooling
       </a>
@@ -117,8 +109,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       <a
         className="c3"
         href="/docs/faqs"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
         FAQs
       </a>
