@@ -172,9 +172,9 @@ const Component = styled.div`
 ```js
 import styled from 'styled-components'
 
-const Input = styled.input.attrs(props => ({
-  type: props.inputType,
-}))`
+const Input = styled.input.attrs({
+  type: props => props.inputType,
+})`
   background: blue;
   color: red;
 `
@@ -185,8 +185,8 @@ const Input = styled.input.attrs(props => ({
 ```js
 import styled from 'styled-components'
 
-const Input = styled.input.attrs(({ inputType }) => ({
-  type: inputType,
+const Input = styled.input.attrs(props => ({
+  type: props.inputType,
 }))`
   background: blue;
   color: red;
