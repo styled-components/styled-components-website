@@ -4,7 +4,8 @@ A convenience method for finding instances of a particular styled component with
 
 ```jsx
 import { mount } from 'enzyme'
-import styled, { enzymeFind } from 'styled-components/test-utils'
+import styled from 'styled-components'
+import { enzymeFind } from 'styled-components/test-utils'
 
 const Foo = styled.div`
   color: red;

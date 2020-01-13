@@ -3,7 +3,8 @@
 A convenience method to find a single instance of a styled component's rendered DOM node within a given DOM root.
 
 ```js
-import styled, { find } from 'styled-components/test-utils'
+import styled from 'styled-components'
+import { find } from 'styled-components/test-utils'
 
 const Foo = styled.div`
   color: red;
