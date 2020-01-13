@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { KeyboardArrowRight } from 'styled-icons/material';
+import { KeyboardArrowRight } from '@styled-icons/material';
 
 import rem from '../utils/rem';
 import Link from './Link';

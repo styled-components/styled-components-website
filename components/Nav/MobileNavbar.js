@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Search, KeyboardArrowDown } from 'styled-icons/material';
+import { Search, KeyboardArrowDown } from '@styled-icons/material';
 import rem from '../../utils/rem';
 import { navbarHeight } from '../../utils/sizes';
 import { paleGrey } from '../../utils/colors';

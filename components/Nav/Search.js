@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styled, { css, createGlobalStyle } from 'styled-components';
-import { Search as SearchIcon } from 'styled-icons/material';
+import { Search as SearchIcon } from '@styled-icons/material';
 import PropTypes from 'prop-types';
 import { grey, lightVioletRed, violetRed, darkGrey } from '../../utils/colors';
 import rem from '../../utils/rem';

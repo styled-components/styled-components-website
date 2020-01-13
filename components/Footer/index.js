@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Favorite } from 'styled-icons/material';
+import { Favorite } from '@styled-icons/material';
 import rem from '../../utils/rem';
 import { mobile } from '../../utils/media';
 import { grey, paleGrey, red } from '../../utils/colors';

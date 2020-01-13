@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import rem from '../utils/rem';
 
-import { Link as LinkIcon } from 'styled-icons/material';
+import { Link as LinkIcon } from '@styled-icons/material';
 import { Header, SubHeader, TertiaryHeader } from './Layout';
 import { mobile } from '../utils/media';
 

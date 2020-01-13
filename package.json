@@ -26,6 +26,8 @@
     "@mdx-js/mdx": "^1.5.3",
     "@mdx-js/react": "^1.5.3",
     "@next/mdx": "^9.1.7",
+    "@styled-icons/fa-brands": "^9.1.0",
+    "@styled-icons/material": "^9.0.1",
     "@types/react": "^16.4.14",
     "@zeit/next-mdx": "^1.2.0",
     "@zeit/next-source-maps": "^0.0.3",
@@ -45,7 +47,6 @@
     "react-live": "^2.1.2",
     "react-transition-group": "^2.5.0",
     "styled-components": "^5.0.0",
-    "styled-icons": "^8.1.0",
     "styled-theming": "^2.2.0",
     "stylis-plugin-rtl": "^1.0.0",
     "webpack-bundle-analyzer": "^3.3.2"
