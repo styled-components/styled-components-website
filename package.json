@@ -13,7 +13,6 @@
     "dev": "next dev",
     "prebuild": "rimraf .next",
     "build": "NODE_ENV=production next build",
-    "deploy": "now -t $NOW_TOKEN -T styledcomponents && now alias -t $NOW_TOKEN -T styledcomponents",
     "lint:fix": "eslint . --fix",
     "lint": "eslint .",
     "start": "NODE_ENV=production next start",
@@ -70,7 +69,6 @@
     "jest": "^24.8.0",
     "jest-styled-components": "7.0.0",
     "lint-staged": "^9.5.0",
-    "now": "^15.4.0",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.5.2",
     "rimraf": "^2.6.2"
