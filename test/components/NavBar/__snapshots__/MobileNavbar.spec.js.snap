@@ -292,8 +292,6 @@ exports[`MobileNavbar renders correctly 1`] = `
     aria-label="styled components"
     className="c4"
     href="/"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
   >
     <div
       className="c5"
@@ -330,8 +328,6 @@ exports[`MobileNavbar renders correctly 1`] = `
       <a
         className="c12"
         href="/docs"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
         Documentation
       </a>
@@ -341,8 +337,6 @@ exports[`MobileNavbar renders correctly 1`] = `
       <a
         className="c12"
         href="/showcase"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
         Showcase
       </a>
@@ -352,8 +346,6 @@ exports[`MobileNavbar renders correctly 1`] = `
       <a
         className="c12"
         href="/ecosystem"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
         Ecosystem
       </a>
@@ -363,8 +355,6 @@ exports[`MobileNavbar renders correctly 1`] = `
       <a
         className="c12"
         href="/releases"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
         Releases
       </a>
@@ -378,8 +368,6 @@ exports[`MobileNavbar renders correctly 1`] = `
         <a
           className="c16"
           href="https://spectrum.chat/styled-components/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           <svg
             className="c17"
@@ -399,8 +387,6 @@ exports[`MobileNavbar renders correctly 1`] = `
         <a
           className="c16"
           href="https://github.com/styled-components"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           <svg
             className="c18"
@@ -410,8 +396,6 @@ exports[`MobileNavbar renders correctly 1`] = `
         <a
           className="c16"
           href="https://medium.com/styled-components"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           <svg
             className="c18"

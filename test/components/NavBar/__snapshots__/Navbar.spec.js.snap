@@ -588,8 +588,6 @@ exports[`Navbar renders correctly 1`] = `
       <a
         className="c4"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
         <div
           className="c5"
@@ -601,8 +599,6 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c7"
           href="/docs"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           Documentation
         </a>
@@ -612,8 +608,6 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c7"
           href="/showcase"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           Showcase
         </a>
@@ -623,8 +617,6 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c7"
           href="/ecosystem"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           Ecosystem
         </a>
@@ -634,8 +626,6 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c7"
           href="/releases"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           Releases
         </a>
@@ -690,8 +680,6 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c21"
           href="https://spectrum.chat/styled-components/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           <svg
             className="c22"
@@ -711,8 +699,6 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c21"
           href="https://github.com/styled-components"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           <svg
             className="c23"
@@ -722,8 +708,6 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c21"
           href="https://medium.com/styled-components"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           <svg
             className="c23"
@@ -766,8 +750,6 @@ exports[`Navbar renders correctly 1`] = `
       aria-label="styled components"
       className="c28"
       href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
     >
       <div
         className="c29"
@@ -805,8 +787,6 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c7"
           href="/docs"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           Documentation
         </a>
@@ -816,8 +796,6 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c7"
           href="/showcase"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           Showcase
         </a>
@@ -827,8 +805,6 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c7"
           href="/ecosystem"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           Ecosystem
         </a>
@@ -838,8 +814,6 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c7"
           href="/releases"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           Releases
         </a>
@@ -853,8 +827,6 @@ exports[`Navbar renders correctly 1`] = `
           <a
             className="c21"
             href="https://spectrum.chat/styled-components/"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
           >
             <svg
               className="c22"
@@ -874,8 +846,6 @@ exports[`Navbar renders correctly 1`] = `
           <a
             className="c21"
             href="https://github.com/styled-components"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
           >
             <svg
               className="c23"
@@ -885,8 +855,6 @@ exports[`Navbar renders correctly 1`] = `
           <a
             className="c21"
             href="https://medium.com/styled-components"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
           >
             <svg
               className="c23"

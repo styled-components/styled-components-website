@@ -59,9 +59,7 @@ const Documentation = () => (
 
           {sections.map(({ title }) => (
             <SubHeader key={title}>
-              <Link prefetch href={`/docs/${pathname}#${titleToDash(title)}`}>
-                {title}
-              </Link>
+              <Link href={`/docs/${pathname}#${titleToDash(title)}`}>{title}</Link>
             </SubHeader>
           ))}
         </Column>

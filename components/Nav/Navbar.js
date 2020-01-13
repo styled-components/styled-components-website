@@ -1,6 +1,6 @@
 import React, { PureComponent, createRef } from 'react';
 import styled, { css } from 'styled-components';
-import { Close } from 'styled-icons/material';
+import { Close } from '@styled-icons/material';
 import rem from '../../utils/rem';
 import { violetRed, paleGrey } from '../../utils/colors';
 import { navbarHeight } from '../../utils/sizes';

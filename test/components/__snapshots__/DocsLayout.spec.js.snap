@@ -716,8 +716,6 @@ exports[`DocsLayout renders correctly 1`] = `
                               <a
                                 className="c5"
                                 href="/"
-                                onClick={[Function]}
-                                onMouseEnter={[Function]}
                               >
                                 <styled.div>
                                   <div
@@ -739,18 +737,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                 <Link
                                   className="c8"
                                   href="/docs"
-                                  prefetch={true}
                                   unstyled={true}
                                 >
                                   <Link
                                     href="/docs"
-                                    prefetch={true}
                                   >
                                     <a
                                       className="c8"
                                       href="/docs"
-                                      onClick={[Function]}
-                                      onMouseEnter={[Function]}
                                     >
                                       Documentation
                                     </a>
@@ -768,18 +762,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                 <Link
                                   className="c8"
                                   href="/showcase"
-                                  prefetch={true}
                                   unstyled={true}
                                 >
                                   <Link
                                     href="/showcase"
-                                    prefetch={true}
                                   >
                                     <a
                                       className="c8"
                                       href="/showcase"
-                                      onClick={[Function]}
-                                      onMouseEnter={[Function]}
                                     >
                                       Showcase
                                     </a>
@@ -797,18 +787,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                 <Link
                                   className="c8"
                                   href="/ecosystem"
-                                  prefetch={true}
                                   unstyled={true}
                                 >
                                   <Link
                                     href="/ecosystem"
-                                    prefetch={true}
                                   >
                                     <a
                                       className="c8"
                                       href="/ecosystem"
-                                      onClick={[Function]}
-                                      onMouseEnter={[Function]}
                                     >
                                       Ecosystem
                                     </a>
@@ -826,18 +812,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                 <Link
                                   className="c8"
                                   href="/releases"
-                                  prefetch={true}
                                   unstyled={true}
                                 >
                                   <Link
                                     href="/releases"
-                                    prefetch={true}
                                   >
                                     <a
                                       className="c8"
                                       href="/releases"
-                                      onClick={[Function]}
-                                      onMouseEnter={[Function]}
                                     >
                                       Releases
                                     </a>
@@ -964,8 +946,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <a
                                         className="c22"
                                         href="https://spectrum.chat/styled-components/"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         <Spectrum>
                                           <styled.svg
@@ -1007,8 +987,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <a
                                         className="c22"
                                         href="https://github.com/styled-components"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         <styled.div
                                           as={[Function]}
@@ -1042,8 +1020,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <a
                                         className="c22"
                                         href="https://medium.com/styled-components"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         <styled.div
                                           as={[Function]}
@@ -1137,8 +1113,6 @@ exports[`DocsLayout renders correctly 1`] = `
                               aria-label="styled components"
                               className="c29"
                               href="/"
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
                             >
                               <styled.div
                                 compact={true}
@@ -1219,18 +1193,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                   <Link
                                     className="c8"
                                     href="/docs"
-                                    prefetch={true}
                                     unstyled={true}
                                   >
                                     <Link
                                       href="/docs"
-                                      prefetch={true}
                                     >
                                       <a
                                         className="c8"
                                         href="/docs"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         Documentation
                                       </a>
@@ -1248,18 +1218,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                   <Link
                                     className="c8"
                                     href="/showcase"
-                                    prefetch={true}
                                     unstyled={true}
                                   >
                                     <Link
                                       href="/showcase"
-                                      prefetch={true}
                                     >
                                       <a
                                         className="c8"
                                         href="/showcase"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         Showcase
                                       </a>
@@ -1277,18 +1243,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                   <Link
                                     className="c8"
                                     href="/ecosystem"
-                                    prefetch={true}
                                     unstyled={true}
                                   >
                                     <Link
                                       href="/ecosystem"
-                                      prefetch={true}
                                     >
                                       <a
                                         className="c8"
                                         href="/ecosystem"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         Ecosystem
                                       </a>
@@ -1306,18 +1268,14 @@ exports[`DocsLayout renders correctly 1`] = `
                                   <Link
                                     className="c8"
                                     href="/releases"
-                                    prefetch={true}
                                     unstyled={true}
                                   >
                                     <Link
                                       href="/releases"
-                                      prefetch={true}
                                     >
                                       <a
                                         className="c8"
                                         href="/releases"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         Releases
                                       </a>
@@ -1350,8 +1308,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <a
                                             className="c22"
                                             href="https://spectrum.chat/styled-components/"
-                                            onClick={[Function]}
-                                            onMouseEnter={[Function]}
                                           >
                                             <Spectrum>
                                               <styled.svg
@@ -1393,8 +1349,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <a
                                             className="c22"
                                             href="https://github.com/styled-components"
-                                            onClick={[Function]}
-                                            onMouseEnter={[Function]}
                                           >
                                             <styled.div
                                               as={[Function]}
@@ -1428,8 +1382,6 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <a
                                             className="c22"
                                             href="https://medium.com/styled-components"
-                                            onClick={[Function]}
-                                            onMouseEnter={[Function]}
                                           >
                                             <styled.div
                                               as={[Function]}
@@ -1476,12 +1428,14 @@ exports[`DocsLayout renders correctly 1`] = `
                 >
                   <Component
                     onRouteChange={[Function]}
+                    router={null}
                   >
                     <styled.div>
                       <div
                         className="c37"
                       >
                         <Folder
+                          isOpenDefault={null}
                           key="Basics"
                         >
                           <styled.div
@@ -1506,14 +1460,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                     >
                                       <styled.a
                                         href="/docs/basics"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         <a
                                           className="c40"
                                           href="/docs/basics"
-                                          onClick={[Function]}
-                                          onMouseEnter={[Function]}
                                         >
                                           Basics
                                         </a>
@@ -1526,6 +1476,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.div>
                         </Folder>
                         <Folder
+                          isOpenDefault={null}
                           key="Advanced"
                         >
                           <styled.div
@@ -1550,14 +1501,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                     >
                                       <styled.a
                                         href="/docs/advanced"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         <a
                                           className="c40"
                                           href="/docs/advanced"
-                                          onClick={[Function]}
-                                          onMouseEnter={[Function]}
                                         >
                                           Advanced
                                         </a>
@@ -1570,6 +1517,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.div>
                         </Folder>
                         <Folder
+                          isOpenDefault={null}
                           key="API Reference"
                         >
                           <styled.div
@@ -1594,14 +1542,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                     >
                                       <styled.a
                                         href="/docs/api"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         <a
                                           className="c40"
                                           href="/docs/api"
-                                          onClick={[Function]}
-                                          onMouseEnter={[Function]}
                                         >
                                           API Reference
                                         </a>
@@ -1614,6 +1558,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.div>
                         </Folder>
                         <Folder
+                          isOpenDefault={null}
                           key="Tooling"
                         >
                           <styled.div
@@ -1638,14 +1583,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                     >
                                       <styled.a
                                         href="/docs/tooling"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         <a
                                           className="c40"
                                           href="/docs/tooling"
-                                          onClick={[Function]}
-                                          onMouseEnter={[Function]}
                                         >
                                           Tooling
                                         </a>
@@ -1658,6 +1599,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.div>
                         </Folder>
                         <Folder
+                          isOpenDefault={null}
                           key="FAQs"
                         >
                           <styled.div
@@ -1682,14 +1624,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                     >
                                       <styled.a
                                         href="/docs/faqs"
-                                        onClick={[Function]}
-                                        onMouseEnter={[Function]}
                                       >
                                         <a
                                           className="c40"
                                           href="/docs/faqs"
-                                          onClick={[Function]}
-                                          onMouseEnter={[Function]}
                                         >
                                           FAQs
                                         </a>

@@ -664,8 +664,6 @@ exports[`Nav renders correctly 1`] = `
                         <a
                           className="c4"
                           href="/"
-                          onClick={[Function]}
-                          onMouseEnter={[Function]}
                         >
                           <styled.div>
                             <div
@@ -687,18 +685,14 @@ exports[`Nav renders correctly 1`] = `
                           <Link
                             className="c7"
                             href="/docs"
-                            prefetch={true}
                             unstyled={true}
                           >
                             <Link
                               href="/docs"
-                              prefetch={true}
                             >
                               <a
                                 className="c7"
                                 href="/docs"
-                                onClick={[Function]}
-                                onMouseEnter={[Function]}
                               >
                                 Documentation
                               </a>
@@ -716,18 +710,14 @@ exports[`Nav renders correctly 1`] = `
                           <Link
                             className="c7"
                             href="/showcase"
-                            prefetch={true}
                             unstyled={true}
                           >
                             <Link
                               href="/showcase"
-                              prefetch={true}
                             >
                               <a
                                 className="c7"
                                 href="/showcase"
-                                onClick={[Function]}
-                                onMouseEnter={[Function]}
                               >
                                 Showcase
                               </a>
@@ -745,18 +735,14 @@ exports[`Nav renders correctly 1`] = `
                           <Link
                             className="c7"
                             href="/ecosystem"
-                            prefetch={true}
                             unstyled={true}
                           >
                             <Link
                               href="/ecosystem"
-                              prefetch={true}
                             >
                               <a
                                 className="c7"
                                 href="/ecosystem"
-                                onClick={[Function]}
-                                onMouseEnter={[Function]}
                               >
                                 Ecosystem
                               </a>
@@ -774,18 +760,14 @@ exports[`Nav renders correctly 1`] = `
                           <Link
                             className="c7"
                             href="/releases"
-                            prefetch={true}
                             unstyled={true}
                           >
                             <Link
                               href="/releases"
-                              prefetch={true}
                             >
                               <a
                                 className="c7"
                                 href="/releases"
-                                onClick={[Function]}
-                                onMouseEnter={[Function]}
                               >
                                 Releases
                               </a>
@@ -912,8 +894,6 @@ exports[`Nav renders correctly 1`] = `
                                 <a
                                   className="c21"
                                   href="https://spectrum.chat/styled-components/"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   <Spectrum>
                                     <styled.svg
@@ -955,8 +935,6 @@ exports[`Nav renders correctly 1`] = `
                                 <a
                                   className="c21"
                                   href="https://github.com/styled-components"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   <styled.div
                                     as={[Function]}
@@ -990,8 +968,6 @@ exports[`Nav renders correctly 1`] = `
                                 <a
                                   className="c21"
                                   href="https://medium.com/styled-components"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   <styled.div
                                     as={[Function]}
@@ -1079,8 +1055,6 @@ exports[`Nav renders correctly 1`] = `
                         aria-label="styled components"
                         className="c28"
                         href="/"
-                        onClick={[Function]}
-                        onMouseEnter={[Function]}
                       >
                         <styled.div
                           compact={true}
@@ -1159,18 +1133,14 @@ exports[`Nav renders correctly 1`] = `
                             <Link
                               className="c7"
                               href="/docs"
-                              prefetch={true}
                               unstyled={true}
                             >
                               <Link
                                 href="/docs"
-                                prefetch={true}
                               >
                                 <a
                                   className="c7"
                                   href="/docs"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   Documentation
                                 </a>
@@ -1188,18 +1158,14 @@ exports[`Nav renders correctly 1`] = `
                             <Link
                               className="c7"
                               href="/showcase"
-                              prefetch={true}
                               unstyled={true}
                             >
                               <Link
                                 href="/showcase"
-                                prefetch={true}
                               >
                                 <a
                                   className="c7"
                                   href="/showcase"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   Showcase
                                 </a>
@@ -1217,18 +1183,14 @@ exports[`Nav renders correctly 1`] = `
                             <Link
                               className="c7"
                               href="/ecosystem"
-                              prefetch={true}
                               unstyled={true}
                             >
                               <Link
                                 href="/ecosystem"
-                                prefetch={true}
                               >
                                 <a
                                   className="c7"
                                   href="/ecosystem"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   Ecosystem
                                 </a>
@@ -1246,18 +1208,14 @@ exports[`Nav renders correctly 1`] = `
                             <Link
                               className="c7"
                               href="/releases"
-                              prefetch={true}
                               unstyled={true}
                             >
                               <Link
                                 href="/releases"
-                                prefetch={true}
                               >
                                 <a
                                   className="c7"
                                   href="/releases"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   Releases
                                 </a>
@@ -1290,8 +1248,6 @@ exports[`Nav renders correctly 1`] = `
                                     <a
                                       className="c21"
                                       href="https://spectrum.chat/styled-components/"
-                                      onClick={[Function]}
-                                      onMouseEnter={[Function]}
                                     >
                                       <Spectrum>
                                         <styled.svg
@@ -1333,8 +1289,6 @@ exports[`Nav renders correctly 1`] = `
                                     <a
                                       className="c21"
                                       href="https://github.com/styled-components"
-                                      onClick={[Function]}
-                                      onMouseEnter={[Function]}
                                     >
                                       <styled.div
                                         as={[Function]}
@@ -1368,8 +1322,6 @@ exports[`Nav renders correctly 1`] = `
                                     <a
                                       className="c21"
                                       href="https://medium.com/styled-components"
-                                      onClick={[Function]}
-                                      onMouseEnter={[Function]}
                                     >
                                       <styled.div
                                         as={[Function]}
@@ -1408,12 +1360,15 @@ exports[`Nav renders correctly 1`] = `
           className="c36"
         >
           <withRouter(Unknown)>
-            <Component>
+            <Component
+              router={null}
+            >
               <styled.div>
                 <div
                   className="c37"
                 >
                   <Folder
+                    isOpenDefault={null}
                     key="Basics"
                   >
                     <styled.div>
@@ -1435,14 +1390,10 @@ exports[`Nav renders correctly 1`] = `
                               >
                                 <styled.a
                                   href="/docs/basics"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   <a
                                     className="c40"
                                     href="/docs/basics"
-                                    onClick={[Function]}
-                                    onMouseEnter={[Function]}
                                   >
                                     Basics
                                   </a>
@@ -1455,6 +1406,7 @@ exports[`Nav renders correctly 1`] = `
                     </styled.div>
                   </Folder>
                   <Folder
+                    isOpenDefault={null}
                     key="Advanced"
                   >
                     <styled.div>
@@ -1476,14 +1428,10 @@ exports[`Nav renders correctly 1`] = `
                               >
                                 <styled.a
                                   href="/docs/advanced"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   <a
                                     className="c40"
                                     href="/docs/advanced"
-                                    onClick={[Function]}
-                                    onMouseEnter={[Function]}
                                   >
                                     Advanced
                                   </a>
@@ -1496,6 +1444,7 @@ exports[`Nav renders correctly 1`] = `
                     </styled.div>
                   </Folder>
                   <Folder
+                    isOpenDefault={null}
                     key="API Reference"
                   >
                     <styled.div>
@@ -1517,14 +1466,10 @@ exports[`Nav renders correctly 1`] = `
                               >
                                 <styled.a
                                   href="/docs/api"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   <a
                                     className="c40"
                                     href="/docs/api"
-                                    onClick={[Function]}
-                                    onMouseEnter={[Function]}
                                   >
                                     API Reference
                                   </a>
@@ -1537,6 +1482,7 @@ exports[`Nav renders correctly 1`] = `
                     </styled.div>
                   </Folder>
                   <Folder
+                    isOpenDefault={null}
                     key="Tooling"
                   >
                     <styled.div>
@@ -1558,14 +1504,10 @@ exports[`Nav renders correctly 1`] = `
                               >
                                 <styled.a
                                   href="/docs/tooling"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   <a
                                     className="c40"
                                     href="/docs/tooling"
-                                    onClick={[Function]}
-                                    onMouseEnter={[Function]}
                                   >
                                     Tooling
                                   </a>
@@ -1578,6 +1520,7 @@ exports[`Nav renders correctly 1`] = `
                     </styled.div>
                   </Folder>
                   <Folder
+                    isOpenDefault={null}
                     key="FAQs"
                   >
                     <styled.div>
@@ -1599,14 +1542,10 @@ exports[`Nav renders correctly 1`] = `
                               >
                                 <styled.a
                                   href="/docs/faqs"
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
                                 >
                                   <a
                                     className="c40"
                                     href="/docs/faqs"
-                                    onClick={[Function]}
-                                    onMouseEnter={[Function]}
                                   >
                                     FAQs
                                   </a>
