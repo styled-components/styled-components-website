@@ -5,7 +5,7 @@ This is a pretty big release with lots of changes both under the hood and at the
 1. Upgrade to the latest styled-components:
 
 ```
-npm install styled-components
+npm install styled-components@^4.0.0
 ```
 
 2. Make sure your application is using `react` >= 16.3; internally we are using the new `React.forwardRef` API and new context APIs if you wish to try and polyfill for older React version support
