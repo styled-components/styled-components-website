@@ -17,23 +17,17 @@ A helper component for modifying how your styles are processed. For a given subt
 
 <Row>
   <Column>
-    <Code>sheet</Code>
+    <Code>disableVendorPrefixes (v5+)</Code>
   </Column>
-  <Column>
-    <em>Thar be dragons ahead.</em> Create and provide your own StyleSheet if necessary for advanced SSR scenarios.
-  </Column>
+  <Column>Opts the given subtree out of adding legacy CSS properties for rendered components.</Column>
 </Row>
 
 <Row>
   <Column>
-    <Code>stylisOptions (v5+)</Code>
+    <Code>sheet</Code>
   </Column>
   <Column>
-    An object of overrides to our default stylis settings. See{' '}
-    <a href="https://github.com/thysultan/stylis.js#set" target="_blank">
-      available settings here
-    </a>
-    .
+    <em>Thar be dragons ahead.</em> Create and provide your own StyleSheet if necessary for advanced SSR scenarios.
   </Column>
 </Row>
 
@@ -71,17 +65,17 @@ const Box = styled.div`
 `
 
 render(
-  <StyleSheetManager stylisOptions={{ prefix: false }}>
+  <StyleSheetManager disableVendorPrefixes>
     <Box>If you inspect me, there are no vendor prefixes for the flexbox style.</Box>
   </StyleSheetManager>
 )
 ```
 
-Another example would be enabling right-to-left translation for your styles via the userland `stylis-rtl` plugin:
+Another example would be enabling right-to-left translation for your styles via the userland `stylis-plugin-rtl` plugin:
 
 ```react
 // import styled, { StyleSheetManager } from 'styled-components'
-// import stylisRTLPlugin from 'stylis-rtl';
+// import stylisRTLPlugin from 'stylis-plugin-rtl';
 
 const Box = styled.div`
   background: mediumseagreen;

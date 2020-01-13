@@ -5,7 +5,7 @@
 ### Installation
 
 ```
-npm install --dev jest-styled-components
+npm install --save-dev jest-styled-components
 ```
 
 ### Snapshot Testing

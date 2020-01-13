@@ -44,11 +44,11 @@
     "react-dom": "^16.5.2",
     "react-is": "^16.8.6",
     "react-live": "^2.1.2",
-    "styled-components": "beta",
-    "styled-icons": "^8.1.0",
     "react-transition-group": "^2.5.0",
+    "styled-components": "^5.0.0",
+    "styled-icons": "^8.1.0",
     "styled-theming": "^2.2.0",
-    "stylis-rtl": "^1.0.1",
+    "stylis-plugin-rtl": "^1.0.0",
     "webpack-bundle-analyzer": "^3.3.2"
   },
   "devDependencies": {
@@ -68,7 +68,7 @@
     "eslint-plugin-react": "^7.11.1",
     "husky": "^2.4.0",
     "jest": "^24.8.0",
-    "jest-styled-components": "beta",
+    "jest-styled-components": "7.0.0",
     "lint-staged": "^9.3.0",
     "now": "^15.4.0",
     "prettier": "^1.18.2",
