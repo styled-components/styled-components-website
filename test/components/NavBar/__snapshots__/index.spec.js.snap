@@ -687,12 +687,10 @@ exports[`Nav renders correctly 1`] = `
                           <Link
                             className="c7"
                             href="/docs"
-                            prefetch={true}
                             unstyled={true}
                           >
                             <Link
                               href="/docs"
-                              prefetch={true}
                             >
                               <a
                                 className="c7"
@@ -716,12 +714,10 @@ exports[`Nav renders correctly 1`] = `
                           <Link
                             className="c7"
                             href="/showcase"
-                            prefetch={true}
                             unstyled={true}
                           >
                             <Link
                               href="/showcase"
-                              prefetch={true}
                             >
                               <a
                                 className="c7"
@@ -745,12 +741,10 @@ exports[`Nav renders correctly 1`] = `
                           <Link
                             className="c7"
                             href="/ecosystem"
-                            prefetch={true}
                             unstyled={true}
                           >
                             <Link
                               href="/ecosystem"
-                              prefetch={true}
                             >
                               <a
                                 className="c7"
@@ -774,12 +768,10 @@ exports[`Nav renders correctly 1`] = `
                           <Link
                             className="c7"
                             href="/releases"
-                            prefetch={true}
                             unstyled={true}
                           >
                             <Link
                               href="/releases"
-                              prefetch={true}
                             >
                               <a
                                 className="c7"
@@ -1159,12 +1151,10 @@ exports[`Nav renders correctly 1`] = `
                             <Link
                               className="c7"
                               href="/docs"
-                              prefetch={true}
                               unstyled={true}
                             >
                               <Link
                                 href="/docs"
-                                prefetch={true}
                               >
                                 <a
                                   className="c7"
@@ -1188,12 +1178,10 @@ exports[`Nav renders correctly 1`] = `
                             <Link
                               className="c7"
                               href="/showcase"
-                              prefetch={true}
                               unstyled={true}
                             >
                               <Link
                                 href="/showcase"
-                                prefetch={true}
                               >
                                 <a
                                   className="c7"
@@ -1217,12 +1205,10 @@ exports[`Nav renders correctly 1`] = `
                             <Link
                               className="c7"
                               href="/ecosystem"
-                              prefetch={true}
                               unstyled={true}
                             >
                               <Link
                                 href="/ecosystem"
-                                prefetch={true}
                               >
                                 <a
                                   className="c7"
@@ -1246,12 +1232,10 @@ exports[`Nav renders correctly 1`] = `
                             <Link
                               className="c7"
                               href="/releases"
-                              prefetch={true}
                               unstyled={true}
                             >
                               <Link
                                 href="/releases"
-                                prefetch={true}
                               >
                                 <a
                                   className="c7"

@@ -58,7 +58,7 @@ render(
       GitHub
     </Button>
 
-    <Button as={Link} href="/docs" prefetch>
+    <Button as={Link} href="/docs">
       Documentation
     </Button>
   </div>
