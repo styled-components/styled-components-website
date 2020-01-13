@@ -23,3 +23,15 @@ styled-components v5 does not introduce any breaking public API changes, and add
 > Note: The object-form `.attrs({})` syntax that was deprecated in v4 is removed in v5. Use function-form attrs instead `.attrs(props => ({}))` (you should have been seeing console warnings to make this update ahead of time.)
 
 Check out the [official announcement post](https://medium.com/styled-components/389747abd987) for more information and to learn about what went into v5!
+
+### For jest users
+
+Update to jest-styled-components v7:
+
+```sh
+npm install jest-styled-components@^7.0.0
+```
+
+### Note regarding css `@import` and `createGlobalStyle`
+
+At this time we do not recommend using `@import` within cGS due to some issues with how browsers process `@import` via the CSSOM APIs. Instead it's best to place these in your core `index.html` file (generated or static) within a typical `<style>` tag.
