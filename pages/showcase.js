@@ -102,7 +102,7 @@ const InsetWrapper = styled.div`
 const SlideNav = styled.nav`
   position: absolute;
   pointer-events: none;
-  z-index: 10;
+  z-index: 2;
   top: 0;
   left: 0;
   display: flex;
@@ -235,7 +235,8 @@ const SlideMetaLinks = styled.div`
 
   ${phone(css`
     margin-left: 0;
-    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 
     span {
       display: none;
@@ -321,6 +322,7 @@ const HeaderActions = styled.div`
   }
 
   button,
+  a,
   ${NativeSelect} {
     height: 50px;
     border-radius: 4px;
@@ -336,10 +338,18 @@ const HeaderActions = styled.div`
     `)}
   }
 
-  button {
+  button,
+  a {
+    display: block;
+    text-align: center;
     background-color: #ffffff;
     color: rgb(219, 112, 147);
     border: none;
+    transition: 200ms;
+
+    &:hover {
+      background-color: #f3f3f3;
+    }
   }
 `;
 
@@ -434,7 +444,13 @@ const Showcase = ({ router }) => {
                   <NativeSelect name="category" id="categorySelect" value="all">
                     <option value="all">All</option>
                   </NativeSelect>
-                  <button>Share yours!</button>
+                  <a
+                    href="https://github.com/styled-components/styled-components-website/issues/new?template=company-showcase-request.md&title=Add+%5Bproject%5D+by+%5Bcompany%5D+to+showcase"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Share yours!
+                  </a>
                 </HeaderActions>
               </HeaderContent>
             </InsetWrapper>
