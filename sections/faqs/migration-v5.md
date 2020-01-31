@@ -6,7 +6,11 @@ Ready for this?
 npm install styled-components@^5.0.0 react@^16.8 react-dom@^16.8 react-is@^16.8
 ```
 
+If you're using React Native, you'll need at least v0.59 (the first version to support hooks.)
+
 _That's it._ 💥
+
+---
 
 styled-components v5 does not introduce any breaking public API changes, and adds the following:
 
