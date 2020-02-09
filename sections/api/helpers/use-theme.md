@@ -1,4 +1,4 @@
-### `useTheme`
+### `useTheme` | v5
 
 This is a custom hook to get the current theme from a `ThemeProvider`.
 
