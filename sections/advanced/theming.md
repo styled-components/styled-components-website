@@ -97,30 +97,29 @@ If you ever need to use the current theme outside styled components (e.g. inside
 the `withTheme` higher order component.
 
 ```jsx
-import { withTheme } from 'styled-components';
+import { withTheme } from 'styled-components'
 
 class MyComponent extends React.Component {
   render() {
-    console.log('Current theme: ', this.props.theme);
+    console.log('Current theme: ', this.props.theme)
     // ...
   }
 }
 
-export default withTheme(MyComponent);
+export default withTheme(MyComponent)
 ```
 
-#### via `useContext` React hook | v4
+#### via `useTheme` React hook | v5
 
-You can also use `useContext` to access the current theme outside of styled components when working with React Hooks.
+You can also use `useTheme` to access the current theme outside of styled components when working with React Hooks.
 
 ```jsx
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import { useTheme } from 'styled-components'
 
 const MyComponent = () => {
-  const themeContext = useContext(ThemeContext);
+  const theme = useTheme()
 
-  console.log('Current theme: ', themeContext);
+  console.log('Current theme: ', theme)
   // ...
 }
 ```
