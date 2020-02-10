@@ -819,12 +819,12 @@ const companies = [
     projects: {},
   },
   {
-    key: 'http://www.welcometothejungle.com',
+    key: 'https://www.welcometothejungle.com',
     similarWebGlobalRank: 32472,
-    name: 'Welcome to the jungle',
+    name: 'Welcome to the Jungle',
     logo: WelcomeToTheJungleLogo,
     projects: {
-      welcomeui: {
+      "welcome-ui": {
         title: 'Welcome UI',
         link: 'http://www.welcome-ui.com',
         src: '/screenshots/thumbnails/welcome-ui.com.jpg',
