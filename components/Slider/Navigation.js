@@ -1,93 +1,149 @@
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { NavigateNext, NavigateBefore } from 'styled-icons/material';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ShowcaseLink from './ShowcaseLink';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Image from '../Image';
+import { phone } from '../../utils/media';
 
-function Navigation({ previous, item }) {
+const navHeight = 192;
+
+const SlideNav = styled.nav`
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  transform: translateY(-50%);
+
+  ${phone(css`
+    position: relative;
+    transform: translateY(0%);
+    top: -64px;
+  `)}
+`;
+
+const NavButton = styled.div`
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: ${navHeight}px;
+  height: ${navHeight * 0.5625}px;
+  color: white;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: 200ms ease-out;
+  padding: 0 16px;
+  pointer-events: all;
+
+  ${phone(css`
+    width: ${navHeight * 0.5}px;
+    height: ${navHeight * 0.5 * 0.5625}px;
+  `)}
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  figure {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 100%;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    transition: 200ms ease-out;
+  }
+
+  svg {
+    display: inline-block;
+    color: #ffffff;
+    height: 32px;
+  }
+
+  &:first-child {
+    transform: translateX(-66%);
+    justify-content: flex-end;
+
+    &:hover {
+      transform: translateX(-60%);
+    }
+  }
+  &:last-child {
+    transform: translateX(66%);
+    justify-content: flex-start;
+
+    &:hover {
+      transform: translateX(60%);
+    }
+  }
+
+  &:hover {
+    figure {
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  }
+`;
+
+const Navigation = ({ prev, next }) => {
   return (
-    <ShowcaseLink item={item}>
-      <a className={`button ${previous ? 'prev' : 'next'}`}>
-        <div className="thumbnail">
+    <SlideNav>
+      <ShowcaseLink item={prev}>
+        <NavButton>
           <Image
-            width={item.width}
-            height={item.height}
-            src={item.src}
+            width={1920}
+            height={1080}
+            src={prev.src}
             margin={0}
             renderImage={props => {
               return (
                 <TransitionGroup>
                   <CSSTransition key={props.src} timeout={100} classNames="fade">
-                    <img src={item.src} />
+                    <img src={prev.src} />
                   </CSSTransition>
                 </TransitionGroup>
               );
             }}
           />
-        </div>
-        <div className="arrow">{previous ? '<' : '>'}</div>
-        <style jsx>{`
-          a :global(.fade-enter) {
-            opacity: 0.01;
-          }
+          <NavigateBefore />
+        </NavButton>
+      </ShowcaseLink>
 
-          a :global(.fade-enter.fade-enter-active) {
-            opacity: 1;
-            transition: opacity 500ms ease-in;
-          }
-
-          a :global(.fade-exit) {
-            opacity: 1;
-          }
-
-          a :global(.fade-exit.fade-exit-active) {
-            opacity: 0.01;
-            transition: opacity 300ms ease-in;
-          }
-          a {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.12);
-          }
-          a :global(img) {
-            width: 100%;
-          }
-          .thumbnail {
-            max-width: 200%;
-            position: absolute;
-            top: 0;
-            transition: all 0.2s ease;
-          }
-          .thumbnail::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-          }
-          .button:hover .thumbnail {
-            transform: scale(1.4);
-          }
-          .prev .thumbnail {
-            left: 0;
-          }
-          .next .thumbnail {
-            right: 0;
-          }
-          .arrow {
-            position: absolute;
-            color: #fff;
-          }
-        `}</style>
-      </a>
-    </ShowcaseLink>
+      <ShowcaseLink item={next}>
+        <NavButton>
+          <Image
+            width={1920}
+            height={1080}
+            src={next.src}
+            margin={0}
+            renderImage={props => {
+              return (
+                <TransitionGroup>
+                  <CSSTransition key={props.src} timeout={100} classNames="fade">
+                    <img src={next.src} />
+                  </CSSTransition>
+                </TransitionGroup>
+              );
+            }}
+          />
+          <NavigateNext />
+        </NavButton>
+      </ShowcaseLink>
+    </SlideNav>
   );
-}
+};
 
 export default Navigation;

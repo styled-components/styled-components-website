@@ -6,14 +6,12 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import { Github, Bitbucket, Gitlab, Git } from 'styled-icons/fa-brands';
 import { Globe } from 'styled-icons/boxicons-regular';
-import { NavigateNext, NavigateBefore } from 'styled-icons/material';
 import { withRouter } from 'next/router';
 import WithIsScrolled from '../components/WithIsScrolled';
-import ShowcaseLink, { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
+import { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { mobile, phone } from '../utils/media';
-
-const navHeight = 192;
+import Navigation from '../components/Slider/Navigation';
 
 const Container = styled.div`
   overflow-x: hidden;
@@ -97,96 +95,6 @@ const InsetWrapper = styled.div`
   ${mobile(css`
     padding: 0;
   `)}
-`;
-
-const SlideNav = styled.nav`
-  position: absolute;
-  pointer-events: none;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  transform: translateY(-50%);
-
-  ${phone(css`
-    position: relative;
-    transform: translateY(0%);
-    top: -64px;
-  `)}
-`;
-
-const NavButton = styled.div`
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: ${navHeight}px;
-  height: ${navHeight * 0.5625}px;
-  color: white;
-  overflow: hidden;
-  border-radius: 12px;
-  transition: 200ms ease-out;
-  padding: 0 16px;
-  pointer-events: all;
-
-  ${phone(css`
-    width: ${navHeight * 0.5}px;
-    height: ${navHeight * 0.5 * 0.5625}px;
-  `)}
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-
-  img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: 100%;
-    z-index: -2;
-    transform: translate(-50%, -50%);
-    transition: 200ms ease-out;
-  }
-
-  svg {
-    display: inline-block;
-    color: #ffffff;
-    height: 32px;
-  }
-
-  &:first-child {
-    transform: translateX(-66%);
-    justify-content: flex-end;
-
-    &:hover {
-      transform: translateX(-60%);
-    }
-  }
-  &:last-child {
-    transform: translateX(66%);
-    justify-content: flex-start;
-
-    &:hover {
-      transform: translateX(60%);
-    }
-  }
-
-  &:hover {
-    img {
-      transform: translate(-50%, -50%) scale(1.2);
-    }
-  }
 `;
 
 const Body = styled.div`
@@ -421,8 +329,6 @@ const Showcase = ({ router }) => {
   const { item } = router.query;
   const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item);
   const { title, src, owner, link, repo, description } = currentSlide;
-  const { src: prevSrc } = previousSlide;
-  const { src: nextSrc } = nextSlide;
 
   return (
     <>
@@ -478,21 +384,7 @@ const Showcase = ({ router }) => {
                 }}
               />
             </BodyWrapper>
-            <SlideNav>
-              <ShowcaseLink item={previousSlide}>
-                <NavButton>
-                  <img src={prevSrc} alt="" />
-                  <NavigateBefore />
-                </NavButton>
-              </ShowcaseLink>
-
-              <ShowcaseLink item={nextSlide}>
-                <NavButton item={nextSlide}>
-                  <img src={nextSrc} alt="" />
-                  <NavigateNext />
-                </NavButton>
-              </ShowcaseLink>
-            </SlideNav>
+            <Navigation prev={previousSlide} next={nextSlide} />
             <BodyWrapper>
               <InsetWrapper>
                 <SlideMeta>
