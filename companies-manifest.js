@@ -38,6 +38,7 @@ import {
   ShpockLogo,
   SmartLogo,
   TargetLogo,
+  TaskadeLogo,
   TicketmasterLogo,
   TinderLogo,
   TypeformLogo,
@@ -816,6 +817,22 @@ const companies = [
     logo: TheOnionLogo,
     style: {},
     projects: {},
+  },
+  {
+    key: 'http://taskade.com/',
+    similarWebGlobalRank: 136144,
+    name: 'Taskade',
+    logo: TaskadeLogo,
+    projects: {
+      taskade: {
+        title: 'Taskade',
+        link: 'http://taskade.com/',
+        src: '/screenshots/thumbnails/taskade.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'taskade',
+      },
+    },
   },
 ];
 
