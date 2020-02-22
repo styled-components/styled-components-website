@@ -51,6 +51,7 @@ import {
   FramerLogo,
   PricelineLogo,
   TheOnionLogo,
+  StreamLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -814,6 +815,14 @@ const companies = [
     similarWebGlobalRank: 8690,
     name: 'TheOnion',
     logo: TheOnionLogo,
+    style: {},
+    projects: {},
+  },
+  {
+    key: 'https://getstream.io/',
+    similarWebGlobalRank: 388663,
+    name: 'Stream',
+    logo: StreamLogo,
     style: {},
     projects: {},
   },
