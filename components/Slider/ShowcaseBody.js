@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Github, Bitbucket, Gitlab, Git } from 'styled-icons/fa-brands';
-import { Globe } from 'styled-icons/boxicons-regular';
+// import { Globe } from 'styled-icons/boxicons-regular';
 import { phone } from '../../utils/media';
 
 const SlideMeta = styled.div`
@@ -93,7 +93,7 @@ const ShowcaseBody = ({ title, owner, description, link, repo }) => (
     <SlideMetaLinks>
       <SlideMetaLink href={link} target="_blank">
         <span>Go to website</span>
-        <Globe />
+        {/* <Globe /> */}
       </SlideMetaLink>
       {repo && (
         <SlideMetaLink href={repo} target="_blank">
