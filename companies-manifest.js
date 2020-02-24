@@ -51,6 +51,7 @@ import {
   FramerLogo,
   PricelineLogo,
   TheOnionLogo,
+  WelcomeToTheJungleLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -816,6 +817,22 @@ const companies = [
     logo: TheOnionLogo,
     style: {},
     projects: {},
+  },
+  {
+    key: 'https://www.welcometothejungle.com',
+    similarWebGlobalRank: 32472,
+    name: 'Welcome to the Jungle',
+    logo: WelcomeToTheJungleLogo,
+    projects: {
+      "welcome-ui": {
+        title: 'Welcome UI',
+        link: 'http://www.welcome-ui.com',
+        src: '/screenshots/thumbnails/welcome-ui.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'welcome-ui',
+      },
+    },
   },
 ];
 
