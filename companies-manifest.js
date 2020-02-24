@@ -824,7 +824,16 @@ const companies = [
     name: 'Stream',
     logo: StreamLogo,
     style: {},
-    projects: {},
+    projects: {
+      getStream: {
+        title: 'Stream',
+        link: 'https://getstream.io/',
+        src: '/screenshots/thumbnails/www.getstream.io.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'getStream',
+      },
+    },
   },
 ];
 
