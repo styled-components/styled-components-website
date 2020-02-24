@@ -825,13 +825,13 @@ const companies = [
     logo: StreamLogo,
     style: {},
     projects: {
-      getStream: {
+      stream: {
         title: 'Stream',
         link: 'https://getstream.io/',
         src: '/screenshots/thumbnails/www.getstream.io.jpg',
         width: 1280,
         height: 720,
-        internalUrl: 'getStream',
+        internalUrl: 'stream',
       },
     },
   },
