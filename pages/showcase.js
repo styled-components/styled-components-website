@@ -5,7 +5,7 @@ import { sortedProjects } from '../companies-manifest';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import { Github, Bitbucket, Gitlab, Git } from 'styled-icons/fa-brands';
-import { Globe } from 'styled-icons/boxicons-regular/Globe';
+import { Globe } from 'styled-icons/fa-solid/Globe';
 import { withRouter } from 'next/router';
 import WithIsScrolled from '../components/WithIsScrolled';
 import { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
