@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { NavigateNext, NavigateBefore } from 'styled-icons/material';
+import { NavigateNext, NavigateBefore } from '@styled-icons/material';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ShowcaseLink from './ShowcaseLink';
 import Image from '../Image';

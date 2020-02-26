@@ -1620,7 +1620,7 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@emotion/is-prop-valid@^0.8.3", "@emotion/is-prop-valid@^0.8.5":
+"@emotion/is-prop-valid@^0.8.3", "@emotion/is-prop-valid@^0.8.5", "@emotion/is-prop-valid@^0.8.6":
   version "0.8.6"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.6.tgz#4757646f0a58e9dec614c47c838e7147d88c263c"
   integrity sha512-mnZMho3Sq8BfzkYYRVc8ilQTnc8U02Ytp6J1AwM6taQStZ3AhsEJBX2LzhA/LJirNCwM2VtHL3VFIZ+sNJUgUQ==
@@ -1898,6 +1898,14 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@styled-icons/boxicons-regular@^9.4.1":
+  version "9.4.1"
+  resolved "https://registry.yarnpkg.com/@styled-icons/boxicons-regular/-/boxicons-regular-9.4.1.tgz#742a1d0b5798c54f189b9278810d8110df8f9754"
+  integrity sha512-910zIWCB0JkEgk9I7zIIEdPc8xibg3xrT4Wo7gIu4lGEr4u9OOQT3c0ajJD7F+JlhWcWBVumzjfjOT8A5UjPJw==
+  dependencies:
+    "@styled-icons/styled-icon" "^9.4.1"
+    tslib "^1.9.3"
+
 "@styled-icons/fa-brands@^9.1.0":
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/@styled-icons/fa-brands/-/fa-brands-9.1.0.tgz#3604e56a57894bf445141ef965e1e9276eaec387"
@@ -1920,6 +1928,14 @@
   integrity sha512-ey16SAYEQ5MPOdTdk/7CRtjHN4DvAAi8+iXR/vjKlHfcS19giLBIXYquE+3t3Lp5CaKikHHqC5xPngYJB+wgng==
   dependencies:
     "@emotion/is-prop-valid" "^0.8.5"
+    tslib "^1.9.3"
+
+"@styled-icons/styled-icon@^9.4.1":
+  version "9.4.1"
+  resolved "https://registry.yarnpkg.com/@styled-icons/styled-icon/-/styled-icon-9.4.1.tgz#9dc236c85afd89edc2bc7265ec7858cbc35d4234"
+  integrity sha512-qF0E2QOcyR1e6rh1QkKGsFt9vuayhZBJEKRa8erbHpOYLRNiEmoF1dLEVVMUKjnj5jAzzk0fNd8jSz0su3kpKg==
+  dependencies:
+    "@emotion/is-prop-valid" "^0.8.6"
     tslib "^1.9.3"
 
 "@types/babel__core@^7.1.0":
