@@ -1,12 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search renders correctly 1`] = `
-.c2 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -25,7 +19,7 @@ exports[`Search renders correctly 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c3 {
   background: none;
   outline: none;
   border: none;
@@ -41,47 +35,47 @@ exports[`Search renders correctly 1`] = `
   color: currentColor;
 }
 
-.c4::-webkit-input-placeholder {
+.c3::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c4::-moz-placeholder {
+.c3::-moz-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c4:-ms-input-placeholder {
+.c3:-ms-input-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c4::placeholder {
+.c3::placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c4:focus::-webkit-input-placeholder {
+.c3:focus::-webkit-input-placeholder {
   opacity: 0.8;
 }
 
-.c4:focus::-moz-placeholder {
+.c3:focus::-moz-placeholder {
   opacity: 0.8;
 }
 
-.c4:focus:-ms-input-placeholder {
+.c3:focus:-ms-input-placeholder {
   opacity: 0.8;
 }
 
-.c4:focus::placeholder {
+.c3:focus::placeholder {
   opacity: 0.8;
 }
 
@@ -117,7 +111,7 @@ exports[`Search renders correctly 1`] = `
   background: rgba(0,0,0,0.1);
 }
 
-.c1 .c3 {
+.c1 .c2 {
   width: 1.4444444444444444rem;
   height: 1.4444444444444444rem;
 }
@@ -138,7 +132,7 @@ exports[`Search renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c4 {
+  .c3 {
     padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
@@ -180,24 +174,11 @@ exports[`Search renders correctly 1`] = `
     htmlFor="docs-search-input"
   >
     <svg
-      aria-hidden="true"
-      className="c2 c3 "
-      fill="currentColor"
-      focusable="false"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-      />
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-    </svg>
+      className="c2 "
+    />
   </label>
   <input
-    className="c4"
+    className="c3"
     id="docs-search-input"
     placeholder="Search docs ..."
     type="search"

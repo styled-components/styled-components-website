@@ -1,12 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NextPage renders correctly 1`] = `
-.c3 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -41,7 +35,7 @@ exports[`NextPage renders correctly 1`] = `
   margin: 0;
 }
 
-.c4 {
+.c3 {
   color: #282a36;
   width: 1.6666666666666667rem;
 }
@@ -73,21 +67,8 @@ exports[`NextPage renders correctly 1`] = `
   </div>
   <div>
     <svg
-      aria-hidden="true"
-      className="c3 c4"
-      fill="currentColor"
-      focusable="false"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
-      />
-      <path
-        d="M0 0h24v24H0V0z"
-        fill="none"
-      />
-    </svg>
+      className="c3"
+    />
   </div>
 </a>
 `;
