@@ -1,28 +1,212 @@
 import React from 'react';
-import ShowcaseLayout from '../components/ShowcaseLayout';
+import styled, { css, keyframes } from 'styled-components';
+import Image from '../components/Image';
 import { sortedProjects } from '../companies-manifest';
-import styled from 'styled-components';
+import Nav from '../components/Nav';
 import Footer from '../components/Footer';
-import Slider from '../components/Slider';
-import { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
 import { withRouter } from 'next/router';
+import WithIsScrolled from '../components/WithIsScrolled';
+import { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { mobile, phone } from '../utils/media';
+import Navigation from '../components/Slider/Navigation';
+import ShowcaseBody from '../components/Slider/ShowcaseBody';
 
-// Returns the right slide index based on the current position
+const Container = styled.div`
+  overflow-x: hidden;
+
+  * {
+    font-family: Avenir Next;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+
+    ${phone(css`
+      font-size: 2rem;
+    `)}
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.5;
+
+    ${phone(css`
+      font-size: 1.5rem;
+    `)}
+  }
+
+  h5 {
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.6;
+  }
+
+  p {
+    opacity: 0.6;
+  }
+`;
+
+const Header = styled.header`
+  position: relative;
+  height: 512px;
+  padding-top: 48px;
+  background-color: #daa357;
+  background: linear-gradient(20deg, rgb(219, 112, 147), #daa357);
+  overflow: hidden;
+
+  ${mobile(css`
+    padding-top: 92px;
+  `)}
+`;
+
+const HeaderContent = styled.div`
+  width: 100%;
+  padding: 48px 0;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: minmax(0px, 512px) minmax(128px, 192px);
+  grid-column-gap: 24px;
+  color: #ffffff;
+
+  ${phone(css`
+    grid-template-columns: 1fr;
+  `)}
+`;
+
+const Wrapper = styled.div`
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 80px;
+
+  ${phone(css`
+    padding: 0 16px;
+  `)}
+`;
+
+const InsetWrapper = styled.div`
+  padding: 0 64px;
+
+  ${mobile(css`
+    padding: 0;
+  `)}
+`;
+
+const Body = styled.div`
+  position: relative;
+`;
+
+const BodyWrapper = styled.div`
+  position: relative;
+  top: -192px;
+
+  ${mobile(css`
+    top: -96px;
+  `)}
+`;
+
+const Slide = styled(Image)`
+  border-radius: 12px;
+  box-shadow: 0 32px 48px rgba(0, 0, 0, 0.12);
+`;
+
+const getSlide = childIndex => keyframes`
+  from {
+    transform: translateX(${childIndex * 105}%);
+  }
+  to {
+    transform: translateX(${-105 + 105 * childIndex}%);
+  }
+`;
+
+const HeaderDecoration = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-family: Avenir Next;
+  font-size: 16rem;
+  line-height: 16rem;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.1);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  animation: ${({ offset }) => getSlide(offset || 0)} 30s linear infinite;
+`;
+
+const NativeSelect = styled.select`
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-align-last: center;
+`;
+
+const HeaderActions = styled.div`
+  width: 100%;
+
+  ${phone(css`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 24px;
+  `)}
+
+  * {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  button,
+  a,
+  ${NativeSelect} {
+    height: 50px;
+    border-radius: 4px;
+    font-family: Avenir Next;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 50px;
+    padding: 0;
+
+    ${phone(css`
+      height: 40px;
+      line-height: 40px;
+    `)}
+  }
+
+  button,
+  a {
+    display: block;
+    text-align: center;
+    background-color: #ffffff;
+    color: rgb(219, 112, 147);
+    border: none;
+    transition: 200ms;
+
+    &:hover {
+      background-color: #f3f3f3;
+    }
+  }
+`;
+
 function normalizeSlideIndex(arr, index, fn) {
-  // The logic doesn't care about the implementation, just the result
   const result = fn(index);
-
-  // If the result is bigger than the length of the array we return the start of the array
   if (result > arr.length - 1) {
     return 0;
   }
-
-  // If the result is lower than the start of the array we return the end of the array
   if (result < 0) {
     return arr.length - 1;
   }
-
-  // If the result is within the array parameters we return it
   return result;
 }
 
@@ -50,19 +234,13 @@ class ArrowEvents extends React.Component {
   handleKeyDown = event => {
     const isLeft = event.keyCode === 37;
     const isRight = event.keyCode === 39;
-
     const { router, previousSlide, nextSlide } = this.props;
-    if (isLeft) {
-      const { href, as } = generateShowcaseUrl(previousSlide);
-      router.replace(href, as);
-      return;
-    }
 
-    if (isRight) {
-      const { href, as } = generateShowcaseUrl(nextSlide);
-      router.replace(href, as);
-      return;
-    }
+    if (!isLeft && !isRight) return;
+
+    const { href, as } = generateShowcaseUrl(isLeft ? previousSlide : nextSlide);
+    router.replace(href, as);
+    return;
   };
 
   componentDidMount() {
@@ -78,23 +256,74 @@ class ArrowEvents extends React.Component {
   }
 }
 
-const Screen = styled.div`
-  display: flex;
-  align-items: center;
-  padding-top: 32px;
-`;
-
 const Showcase = ({ router }) => {
   const { item } = router.query;
   const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item);
+  const { title, src, owner, link, repo, description } = currentSlide;
+
   return (
     <>
-      <ShowcaseLayout title="Showcase" description="Screenshots of websites that use styled-components">
-        <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
-        <Screen>
-          <Slider currentSlide={currentSlide} previousSlide={previousSlide} nextSlide={nextSlide} />
-        </Screen>
-      </ShowcaseLayout>
+      <WithIsScrolled>{({ isScrolled }) => <Nav showSideNav={false} transparent={!isScrolled} />}</WithIsScrolled>
+      <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
+      <Container>
+        <Header>
+          <Wrapper>
+            <InsetWrapper>
+              <HeaderContent>
+                <div>
+                  <h2>Awesome websites, by awesome humans beings.</h2>
+                  <h5>
+                    Styled components is used by teams all around the world to create beautiful websites, like these
+                    ones:
+                  </h5>
+                </div>
+                <HeaderActions>
+                  <NativeSelect name="category" id="categorySelect" value="all">
+                    <option value="all">All</option>
+                  </NativeSelect>
+                  <a
+                    href="https://github.com/styled-components/styled-components-website/issues/new?template=company-showcase-request.md&title=Add+%5Bproject%5D+by+%5Bcompany%5D+to+showcase"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Share yours!
+                  </a>
+                </HeaderActions>
+              </HeaderContent>
+            </InsetWrapper>
+          </Wrapper>
+          <HeaderDecoration>Showcase</HeaderDecoration>
+          <HeaderDecoration offset={1}>Showcase</HeaderDecoration>
+          <HeaderDecoration offset={2}>Showcase</HeaderDecoration>
+        </Header>
+        <Body>
+          <Wrapper>
+            <BodyWrapper>
+              <Slide
+                width={1920}
+                height={1080}
+                src={src}
+                margin={0}
+                renderImage={props => {
+                  return (
+                    <TransitionGroup>
+                      <CSSTransition key={src} timeout={500} classNames="fade">
+                        <img src={src} {...props} />
+                      </CSSTransition>
+                    </TransitionGroup>
+                  );
+                }}
+              />
+            </BodyWrapper>
+            <Navigation prev={previousSlide} next={nextSlide} />
+            <BodyWrapper>
+              <InsetWrapper>
+                <ShowcaseBody title={title} description={description} owner={owner} link={link} repo={repo} />
+              </InsetWrapper>
+            </BodyWrapper>
+          </Wrapper>
+        </Body>
+      </Container>
       <Footer />
     </>
   );
