@@ -150,6 +150,17 @@ const NativeSelect = styled.select`
   border: 1px solid #ffffff;
   color: #ffffff;
   text-align-last: center;
+  appearance: none;
+  padding: 0 8px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' fill='white'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-position: 98% 50%;
+
+  &::after {
+    content: '';
+    height: 10px;
+    width: 10px;
+    border: 8px solid black;
+  }
 `;
 
 const HeaderActions = styled.div`
@@ -176,7 +187,6 @@ const HeaderActions = styled.div`
     font-weight: 500;
     font-size: 1rem;
     line-height: 50px;
-    padding: 0;
 
     ${phone(css`
       height: 40px;
@@ -192,6 +202,7 @@ const HeaderActions = styled.div`
     color: rgb(219, 112, 147);
     border: none;
     transition: 200ms;
+    padding: 0;
 
     &:hover {
       background-color: #f3f3f3;
