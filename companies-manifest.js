@@ -650,7 +650,7 @@ const companies = [
   },
   {
     key: 'https://chemondis.com/',
-    similarWebGlobalRank: 1,
+    similarWebGlobalRank: 404819,
     name: 'CheMondis',
     logo: CheMondisLogo,
     style: {
