@@ -13,6 +13,7 @@ import {
   BlueTomatoLogo,
   CasperLogo,
   ChangeOrgLogo,
+  CheMondisLogo,
   CoinbaseLogo,
   CultureTripLogo,
   DisneyPlusLogo,
@@ -645,6 +646,25 @@ const companies = [
       bottom: '-0.2rem',
     },
     projects: {},
+  },
+  {
+    key: 'https://chemondis.com/',
+    similarWebGlobalRank: 404819,
+    name: 'CheMondis',
+    logo: CheMondisLogo,
+    style: {
+      bottom: '-0.2rem',
+    },
+    projects: {
+      marketplace: {
+        title: 'CheMondis - Marketplace',
+        link: 'https://chemondis.com/marketplace',
+        src: '/screenshots/thumbnails/chemondis.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'chemondis',
+      },
+    },
   },
   {
     key: 'https://www.trulia.com/',
