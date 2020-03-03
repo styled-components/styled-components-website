@@ -658,7 +658,7 @@ const companies = [
     },
     projects: {
       marketplace: {
-        title: 'Leading B2B Marketplace for chemicals',
+        title: 'CheMondis Marketplace',
         description:
           'Discover a new way to trade chemical products online today. CheMondis is the leading B2B Marketplace for chemicals in Europe helping buyers and suppliers to develop their business and thrive in the chemical industry.',
         link: 'https://chemondis.com/marketplace',
