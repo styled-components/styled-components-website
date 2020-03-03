@@ -92,7 +92,7 @@ const UsersHeading = styled.p`
 `;
 
 const ShowcaseHeading = styled(UsersHeading)`
-  margin: 0.5rem 0 0.5rem;
+  margin: 2rem 0 0.5rem;
 `;
 
 const Wrapper = styled.div.attrs((/* props */) => ({

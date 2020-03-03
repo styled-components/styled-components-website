@@ -10,9 +10,18 @@ const getSlide = (childIndex, reverse) => keyframes`
   }
 `;
 
+const UsersWrapper = styled.section`
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  display: flex;
+`;
+
 const UsersSliderContainer = styled.div`
+  display: flex;
+  align-items: center;
   width: 100%;
-  height: 96px;
+  height: 5rem;
   overflow: hidden;
   position: relative;
 `;
@@ -23,23 +32,25 @@ const UsersSlider = styled.span`
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
-`;
 
-const UsersWrapper = styled.section`
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 0.5rem;
-  display: flex;
+  ${UsersWrapper} {
+    flex-direction: ${({ reverse }) => (reverse ? 'row' : 'row-reverse')};
+  }
 `;
 
 const CompanyLogo = styled.span`
   position: relative;
   height: ${p => p.height || '2rem'};
-  margin: 0.5rem 1rem;
+  margin: 0 1rem;
   bottom: ${p => p.bottom || 0};
   opacity: 0.8;
   filter: brightness(0) invert(1);
   transition: opacity 125ms ease-in-out;
+
+  svg {
+    height: 100%;
+    max-width: 128px;
+  }
 
   &:hover {
     opacity: 1;
@@ -50,9 +61,9 @@ const SortedLogos = ({ users }) => (
   <UsersWrapper>
     {/* TODO: remove this check after adding missing logos */}
     {users.map(
-      ({ key, logo: Logo, ...rest }) =>
+      ({ key, logo: Logo }) =>
         Logo && (
-          <CompanyLogo key={key} {...rest}>
+          <CompanyLogo key={key}>
             <Logo />
           </CompanyLogo>
         )
