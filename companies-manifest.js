@@ -650,7 +650,7 @@ const companies = [
   },
   {
     key: 'https://chemondis.com/',
-    similarWebGlobalRank: 404819,
+    similarWebGlobalRank: 1,
     name: 'CheMondis',
     logo: CheMondisLogo,
     style: {
@@ -658,7 +658,9 @@ const companies = [
     },
     projects: {
       marketplace: {
-        title: 'CheMondis - Marketplace',
+        title: 'Leading B2B Marketplace for chemicals',
+        description:
+          'Discover a new way to trade chemical products online today. CheMondis is the leading B2B Marketplace for chemicals in Europe helping buyers and suppliers to develop their business and thrive in the chemical industry.',
         link: 'https://chemondis.com/marketplace',
         src: '/screenshots/thumbnails/chemondis.com.jpg',
         width: 1280,
