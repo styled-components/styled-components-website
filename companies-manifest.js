@@ -52,6 +52,7 @@ import {
   FramerLogo,
   PricelineLogo,
   TheOnionLogo,
+  StreamLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -819,18 +820,19 @@ const companies = [
     projects: {},
   },
   {
-    key: 'http://taskade.com/',
-    similarWebGlobalRank: 136144,
-    name: 'Taskade',
-    logo: TaskadeLogo,
+    key: 'https://getstream.io/',
+    similarWebGlobalRank: 388663,
+    name: 'Stream',
+    logo: StreamLogo,
+    style: {},
     projects: {
-      taskade: {
-        title: 'Taskade',
-        link: 'http://taskade.com/',
-        src: '/screenshots/thumbnails/taskade.com.jpg',
+      stream: {
+        title: 'Stream',
+        link: 'https://getstream.io/',
+        src: '/screenshots/thumbnails/www.getstream.io.jpg',
         width: 1280,
         height: 720,
-        internalUrl: 'taskade',
+        internalUrl: 'stream',
       },
     },
   },
