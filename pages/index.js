@@ -212,7 +212,8 @@ class Index extends PureComponent {
 
             <UsersHeading>Used by folks at</UsersHeading>
           </Content>
-          <UsersLogos users={sortedCompanies} />
+          <UsersLogos users={sortedCompanies.filter((v, i) => i % 2)} />
+          <UsersLogos reverse users={sortedCompanies.filter((v, i) => !(i % 2))} />
           <ShowcaseHeading>To create beautiful websites like these</ShowcaseHeading>
           <SmallShowcase projects={sortedProjects} />
         </Wrapper>
