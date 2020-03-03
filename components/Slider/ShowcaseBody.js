@@ -11,7 +11,7 @@ const SlideMeta = styled.div`
 
   ${phone(css`
     position: relative;
-    top: -86px;
+    margin-top: -134px;
     flex-direction: column-reverse;
   `)}
 

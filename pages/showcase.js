@@ -327,11 +327,9 @@ const Showcase = ({ router }) => {
               />
             </BodyWrapper>
             <Navigation prev={previousSlide} next={nextSlide} />
-            <BodyWrapper>
-              <InsetWrapper>
-                <ShowcaseBody title={title} description={description} owner={owner} link={link} repo={repo} />
-              </InsetWrapper>
-            </BodyWrapper>
+            <InsetWrapper>
+              <ShowcaseBody title={title} description={description} owner={owner} link={link} repo={repo} />
+            </InsetWrapper>
           </Wrapper>
         </Body>
       </Container>
