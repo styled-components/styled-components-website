@@ -11,7 +11,7 @@ Read the [introductory blog post](http://thejameskyle.com/styled-theming.html)
 
 ### Install
 
-Install the babel-plugin first:
+Install the library first:
 
 ```
 npm install --save styled-theming
