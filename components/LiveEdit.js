@@ -69,7 +69,6 @@ const StyledEditor = styled(LiveEditor)`
 const StyledPreview = styled(LivePreview)`
   position: relative;
   padding: 0.5rem;
-  background: white;
   color: black;
   height: auto;
   overflow: hidden;
