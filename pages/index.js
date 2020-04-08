@@ -1,11 +1,9 @@
 import React, { PureComponent } from 'react';
 import NextLink from '../components/Link';
 import styled, { css } from 'styled-components';
-import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
 
 import rem from '../utils/rem';
 import { violetRed, gold, darkVioletRed } from '../utils/colors';
-import { editorMixin, StyledError } from '../components/LiveEdit';
 import Link from '../components/Link';
 import { Content } from '../components/Layout';
 import SeoHead from '../components/SeoHead';
@@ -112,26 +110,6 @@ const Wrapper = styled.div.attrs((/* props */) => ({
   margin-bottom: 160px;
 `;
 
-const EditorContainer = styled.div`
-  display: inline-block;
-  box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
-  margin: ${rem(35)} 0;
-  text-align: left;
-  width: 100%;
-  max-width: 34rem;
-`;
-
-const Editor = styled(LiveEditor)`
-  ${editorMixin};
-  height: 24rem;
-  white-space: pre;
-  width: 100%;
-`;
-
-const Links = styled.div`
-  margin: ${rem(36)} 0;
-`;
-
 const ShowcaseLink = styled(NextLink)`
   height: 48px;
   display: block;
@@ -155,7 +133,14 @@ const ShowcaseLink = styled(NextLink)`
 class Index extends PureComponent {
   state = {
     isMobileNavFolded: true,
+    LiveEdit: null,
   };
+
+  componentDidMount() {
+    import('../components/LiveEdit').then(component => {
+      this.setState({ LiveEdit: component.default });
+    });
+  }
 
   toggleMobileNav = () => {
     this.setState(prevState => ({
@@ -170,7 +155,7 @@ class Index extends PureComponent {
   };
 
   render() {
-    const { isMobileNavFolded } = this.state;
+    const { isMobileNavFolded, LiveEdit } = this.state;
     return (
       <div>
         <SeoHead title="styled-components">
@@ -191,25 +176,17 @@ class Index extends PureComponent {
 
         <Wrapper>
           <Content hero>
-            <LiveProvider code={headerCode} noInline mountStylesheet={false} scope={{ React, styled, css, rem, Link }}>
-              <Logo />
+            <Logo />
 
-              <Title>
-                <Tagline>Visual primitives for the component age.</Tagline>
-                <SupportingTagline>
-                  Use the best bits of ES6 and CSS to style your apps without stress 💅
-                </SupportingTagline>
-              </Title>
-
-              <Links>
-                <LivePreview />
-              </Links>
-
-              <EditorContainer>
-                <Editor />
-                <StyledError />
-              </EditorContainer>
-            </LiveProvider>
+            <Title>
+              <Tagline>Visual primitives for the component age.</Tagline>
+              <SupportingTagline>
+                Use the best bits of ES6 and CSS to style your apps without stress 💅
+              </SupportingTagline>
+            </Title>
+            {LiveEdit && (
+              <LiveEdit code={headerCode} noInline mountStylesheet={false} scope={{ React, styled, css, rem, Link }} />
+            )}
 
             <UsersHeading>Used by folks at</UsersHeading>
           </Content>
