@@ -25,6 +25,6 @@ const Component = window.styled.div`
 `
 ```
 
-> This style of usage requires the [react CDN bundles](https://reactjs.org/docs/cdn-links.html) to be on the page as well (before the styled-components script.)
+> This style of usage requires the [react CDN bundles](https://reactjs.org/docs/cdn-links.html) and the [`react-is` CDN bundle](https://unpkg.com/react-is/umd/react-is.production.min.js) to be on the page as well (before the styled-components script.)
 
 </details>
