@@ -61,4 +61,4 @@ To prevent TypeScript errors on the `css` prop on arbitrary elements, install `@
 ```ts
 import {} from 'styled-components/cssprop'
 ```
-See https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31245#issuecomment-446011384 for more information.
+See <https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31245#issuecomment-446011384> for more information.
