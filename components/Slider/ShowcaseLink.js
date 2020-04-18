@@ -9,7 +9,7 @@ export function generateShowcaseUrl(item) {
 function ShowcaseLink({ item, children }) {
   const { href } = generateShowcaseUrl(item);
   return (
-    <Link href={href} replace>
+    <Link href={href} scroll={false} replace>
       {children}
     </Link>
   );
