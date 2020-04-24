@@ -20,6 +20,7 @@ const Button = styled.button`
   border: 2px solid ${props => props.theme.main};
 `;
 
+
 // We are passing a default theme for Buttons that arent wrapped in the ThemeProvider
 Button.defaultProps = {
   theme: {
@@ -41,6 +42,14 @@ render(
     </ThemeProvider>
   </div>
 );
+```
+
+```
+// Example with object notation:
+const HighlightedSpan = Styled.Text(props => ({
+    color: props.theme.highlightTextColor,
+}));
+
 ```
 
 ### Function themes
