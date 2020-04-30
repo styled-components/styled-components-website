@@ -53,6 +53,7 @@ import {
   PricelineLogo,
   TheOnionLogo,
   StreamLogo,
+  SwissDevJobsLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -850,6 +851,26 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'taskade',
+      },
+    },
+  },
+  {
+    key: 'https://swissdevjobs.ch',
+    similarWebGlobalRank: 583400,
+    name: 'SwissDev Jobs',
+    logo: SwissDevJobsLogo,
+    style: {
+      bottom: '0.3rem',
+      height: '2.5rem',
+    },
+    projects: {
+      swissdevjobs: {
+        title: 'SwissDev Jobs transparent tech job board',
+        link: 'https://swissdevjobs.ch',
+        src: '/screenshots/thumbnails/swissdevjobs-project.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'swissdevjobs',
       },
     },
   },
