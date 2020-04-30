@@ -865,7 +865,8 @@ const companies = [
     },
     projects: {
       swissdevjobs: {
-        title: 'SwissDev Jobs transparent tech job board',
+        title: 'SwissDev Jobs',
+        description: 'Transparent tech job board',
         link: 'https://swissdevjobs.ch',
         src: '/screenshots/thumbnails/swissdevjobs-project.jpg',
         width: 1280,
