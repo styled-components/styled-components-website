@@ -38,6 +38,7 @@ import {
   ShpockLogo,
   SmartLogo,
   TargetLogo,
+  TaskadeLogo,
   TicketmasterLogo,
   TinderLogo,
   TypeformLogo,
@@ -51,6 +52,7 @@ import {
   FramerLogo,
   PricelineLogo,
   TheOnionLogo,
+  StreamLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -816,6 +818,40 @@ const companies = [
     logo: TheOnionLogo,
     style: {},
     projects: {},
+  },
+  {
+    key: 'https://getstream.io/',
+    similarWebGlobalRank: 388663,
+    name: 'Stream',
+    logo: StreamLogo,
+    style: {},
+    projects: {
+      stream: {
+        title: 'Stream',
+        link: 'https://getstream.io/',
+        src: '/screenshots/thumbnails/www.getstream.io.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'stream',
+      },
+    },
+  },
+  {
+    key: 'http://taskade.com/',
+    similarWebGlobalRank: 136144,
+    name: 'Taskade',
+    logo: TaskadeLogo,
+    style: {},
+    projects: {
+      taskade: {
+        title: 'Taskade',
+        link: 'http://taskade.com/',
+        src: '/screenshots/thumbnails/taskade.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'taskade',
+      },
+    },
   },
 ];
 
