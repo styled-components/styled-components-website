@@ -853,6 +853,23 @@ const companies = [
       },
     },
   },
+  {
+    key: 'https://wazirx.com/',
+    similarWebGlobalRank: 48011,
+    name: 'WazirX',
+    logo: null,
+    style: {},
+    projects: {
+      taskade: {
+        title: 'WazirX',
+        link: 'https://wazirx.com/',
+        src: '/screenshots/thumbnails/wazirx.com.png',
+        width: 1280,
+        height: 720,
+        internalUrl: 'wazirx',
+      },
+    },
+  },
 ];
 
 export default companies;
