@@ -870,6 +870,23 @@ const companies = [
       },
     },
   },
+  {
+    key: 'https://www.riotgames.com/en',
+    similarWebGlobalRank: 1819,
+    name: 'Riot Games',
+    logo: null,
+    style: {},
+    projects: {
+      taskade: {
+        title: 'League of Legends Website',
+        link: 'https://leagueoflegends.com/',
+        src: '/screenshots/thumbnails/leageoflegends.com.PNG',
+        width: 1280,
+        height: 720,
+        internalUrl: 'leagueoflegends',
+      },
+    },
+  },
 ];
 
 export default companies;
