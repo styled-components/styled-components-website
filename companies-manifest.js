@@ -859,10 +859,7 @@ const companies = [
     similarWebGlobalRank: 583400,
     name: 'SwissDev Jobs',
     logo: SwissDevJobsLogo,
-    style: {
-      bottom: '0.3rem',
-      height: '2.5rem',
-    },
+    style: {},
     projects: {
       swissdevjobs: {
         title: 'SwissDev Jobs',
