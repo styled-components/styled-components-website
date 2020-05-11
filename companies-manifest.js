@@ -731,7 +731,7 @@ const companies = [
     style: {},
     projects: {
       fortnitemaster: {
-        title: 'Fornite Master',
+        title: 'Fortnite Master',
         link: 'https://fortnitemaster.com/',
         src: '/screenshots/thumbnails/fortnitemaster.com.jpg',
         width: 1280,
