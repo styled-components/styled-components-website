@@ -109,7 +109,23 @@ class MyComponent extends React.Component {
 export default withTheme(MyComponent)
 ```
 
-#### via `useTheme` React hook | v5
+#### via `useContext` React hook | v4
+
+You can also use `useContext` to access the current theme outside of styled components when working with React Hooks.
+
+```jsx
+import { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+
+const MyComponent = () => {
+  const themeContext = useContext(ThemeContext)
+
+  console.log('Current theme: ', themeContext)
+  // ...
+}
+```
+
+#### via `useTheme` custom hook | v5
 
 You can also use `useTheme` to access the current theme outside of styled components when working with React Hooks.
 
