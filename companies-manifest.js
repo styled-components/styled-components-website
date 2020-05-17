@@ -53,6 +53,7 @@ import {
   PricelineLogo,
   TheOnionLogo,
   StreamLogo,
+  RiotGamesLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -850,6 +851,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'taskade',
+      },
+    },
+  },
+  {
+    key: 'https://www.riotgames.com/',
+    similarWebGlobalRank: 1819,
+    name: 'Riot Games',
+    logo: RiotGamesLogo,
+    style: {},
+    projects: {
+      leagueoflegends: {
+        title: 'League of Legends',
+        link: 'https://leagueoflegends.com/',
+        src: '/screenshots/thumbnails/leagueoflegends.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'leagueoflegends',
       },
     },
   },
