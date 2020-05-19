@@ -1,7 +1,6 @@
 import DocsLayout from '../../components/DocsLayout'
 import NextPage from '../../components/NextPage'
 
-import Motivation from '../../sections/basics/motivation.md'
 import GettingStarted from '../../sections/basics/getting-started.md'
 import ComingFromCSS from '../../sections/basics/coming-from-css.md'
 import Installation from '../../sections/basics/installation.md'
@@ -19,7 +18,6 @@ export default ({ children }) => (
   </DocsLayout>
 )
 
-<Motivation />
 <Installation />
 <GettingStarted />
 <AdaptingBasedOnProps />
@@ -30,5 +28,4 @@ export default ({ children }) => (
 <AttachingAdditionalProps />
 <Animations />
 <ReactNative />
-
 <NextPage href="/docs/advanced" title="Advanced" />

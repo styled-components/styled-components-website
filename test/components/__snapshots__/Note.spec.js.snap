@@ -14,8 +14,8 @@ exports[`Note renders correctly 1`] = `
   margin: 0 0 0.2777777777777778rem 0;
 }
 
-.sc-AykKG + .c0,
-.sc-AykKE + .c0 {
+.sc-AxhUy + .c0,
+.sc-AxiKw + .c0 {
   margin-top: 1.9444444444444444rem;
 }
 

@@ -9,7 +9,7 @@ import { editorMixin, StyledError } from '../components/LiveEdit';
 import Link from '../components/Link';
 import { Content } from '../components/Layout';
 import SeoHead from '../components/SeoHead';
-import HomepageGettingStarted from '../sections/homepage/getting-started.md';
+import Motivation from '../sections/homepage/motivation.md';
 import WithIsScrolled from '../components/WithIsScrolled';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
@@ -218,7 +218,7 @@ class Index extends PureComponent {
         </Wrapper>
         <ShowcaseLink href="/showcase">Discover more</ShowcaseLink>
 
-        <HomepageGettingStarted />
+        <Motivation />
 
         <Footer />
       </div>
