@@ -53,6 +53,7 @@ import {
   PricelineLogo,
   TheOnionLogo,
   StreamLogo,
+  RevolutLogo,
   RiotGamesLogo,
   WazirXLogo,
 } from './components/CompanyLogos';
@@ -852,6 +853,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'taskade',
+      },
+    },
+  },
+  {
+    key: 'https://www.revolut.com',
+    similarWebGlobalRank: 12225,
+    name: 'Revolut',
+    logo: RevolutLogo,
+    style: {},
+    projects: {
+      revolut: {
+        title: 'Revolut',
+        link: 'https://www.revolut.com/',
+        src: '/screenshots/thumbnails/revolut.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'revolut',
       },
     },
   },
