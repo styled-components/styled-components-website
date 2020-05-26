@@ -117,3 +117,49 @@ This sort of thing is very useful in use cases like a navigation bar where some 
 #### "forwardedAs" prop | v4.3
 
 If you choose to wrap another component with the `styled()` HOC that also accepts an `"as"` prop, use `"forwardedAs"` to pass along the desired prop to the wrapped component.
+
+#### Transient props | v5.1
+
+If you want to prevent props meant to be consumed by styled components from being passed to the underlying React node or rendered to the DOM element, you can prefix the prop name with a dollar sign (`$`), turning it into a transient prop.
+
+In this example, `$draggable` isn't rendered to the DOM like `draggable` is.
+
+```react
+const Comp = styled.div`
+  color: ${props =>
+    props.$draggable || 'black'};
+`;
+
+render(
+  <Comp $draggable="red" draggable="true">
+    Drag me!
+  </Comp>
+);
+```
+
+#### shouldForwardProp | v5.1
+
+This is a more dynamic, granular filtering mechanism than transient props. It's handy in situations where multiple higher-order components are being composed together and happen to share the same prop name.`shouldForwardProp` works much like the predicate callback of `Array.filter`. A prop that fails the test isn't passed down to underlying components, just like a transient prop.
+
+Keep in mind that, as in this example, other chainable methods should always be executed after `.withConfig`.
+
+```react
+const Comp = styled('div').withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) =>
+      !['hidden'].includes(prop)
+      && defaultValidatorFn(prop),
+}).attrs({ className: 'foo' })`
+  color: red;
+  &.foo {
+    text-decoration: underline;
+  }
+`;
+
+render(
+  <Comp hidden draggable="true">
+    Drag Me!
+  </Comp>
+);
+```
+
+Optionally, `shouldForwardProp` can take a second parameter that provides access to the default validator function. This function can be used as a fallback, and of course, it also works like a predicate, filtering based on known HTML attributes.

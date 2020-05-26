@@ -55,6 +55,7 @@ import {
   StreamLogo,
   RevolutLogo,
   RiotGamesLogo,
+  WazirXLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -886,6 +887,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'leagueoflegends',
+      },
+    },
+  },
+  {
+    key: 'https://wazirx.com/',
+    similarWebGlobalRank: 48011,
+    name: 'WazirX',
+    logo: WazirXLogo,
+    style: {},
+    projects: {
+      wazirx: {
+        title: 'WazirX Exchange Platform',
+        link: 'https://wazirx.com/',
+        src: '/screenshots/thumbnails/wazirx.com.png',
+        width: 1280,
+        height: 720,
+        internalUrl: 'wazirx',
       },
     },
   },
