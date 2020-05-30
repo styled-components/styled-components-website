@@ -133,7 +133,6 @@ const Links = styled.div`
 `;
 
 const ShowcaseLink = styled(NextLink)`
-  height: 48px;
   display: block;
   max-width: 100%;
   width: 196px;

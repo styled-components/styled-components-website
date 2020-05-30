@@ -53,6 +53,9 @@ import {
   PricelineLogo,
   TheOnionLogo,
   StreamLogo,
+  RevolutLogo,
+  RiotGamesLogo,
+  WazirXLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -850,6 +853,57 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'taskade',
+      },
+    },
+  },
+  {
+    key: 'https://www.revolut.com',
+    similarWebGlobalRank: 12225,
+    name: 'Revolut',
+    logo: RevolutLogo,
+    style: {},
+    projects: {
+      revolut: {
+        title: 'Revolut',
+        link: 'https://www.revolut.com/',
+        src: '/screenshots/thumbnails/revolut.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'revolut',
+      },
+    },
+  },
+  {
+    key: 'https://www.riotgames.com/',
+    similarWebGlobalRank: 1819,
+    name: 'Riot Games',
+    logo: RiotGamesLogo,
+    style: {},
+    projects: {
+      leagueoflegends: {
+        title: 'League of Legends',
+        link: 'https://leagueoflegends.com/',
+        src: '/screenshots/thumbnails/leagueoflegends.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'leagueoflegends',
+      },
+    },
+  },
+  {
+    key: 'https://wazirx.com/',
+    similarWebGlobalRank: 48011,
+    name: 'WazirX',
+    logo: WazirXLogo,
+    style: {},
+    projects: {
+      wazirx: {
+        title: 'WazirX Exchange Platform',
+        link: 'https://wazirx.com/',
+        src: '/screenshots/thumbnails/wazirx.com.png',
+        width: 1280,
+        height: 720,
+        internalUrl: 'wazirx',
       },
     },
   },
