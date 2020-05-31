@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import Image from '../components/Image';
 import { sortedProjects } from '../companies-manifest';
@@ -11,6 +11,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { mobile, phone } from '../utils/media';
 import Navigation from '../components/Slider/Navigation';
 import ShowcaseBody from '../components/Slider/ShowcaseBody';
+import { ShowcaseGrid } from '../components/ShowcaseGrid';
 import { blmGrey, blmMetal } from '../utils/colors';
 
 const Container = styled.div`
@@ -269,6 +270,7 @@ class ArrowEvents extends React.Component {
 }
 
 const Showcase = ({ router }) => {
+  const [displayMode, setDisplayMode] = useState('SLIDESHOW');
   const { item } = router.query;
   const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item);
   const { title, src, owner, link, repo, description } = currentSlide;
@@ -301,6 +303,10 @@ const Showcase = ({ router }) => {
                     Share yours!
                   </a>
                 </HeaderActions>
+                <div>
+                  <button onClick={() => setDisplayMode('GRID')}>G</button>
+                  <button onClick={() => setDisplayMode('SLIDESHOW')}>S</button>
+                </div>
               </HeaderContent>
             </InsetWrapper>
           </Wrapper>
@@ -309,31 +315,40 @@ const Showcase = ({ router }) => {
           <HeaderDecoration offset={2}>Showcase</HeaderDecoration>
         </Header>
         <Body>
-          <Wrapper>
-            <BodyWrapper>
-              <Slide
-                width={1920}
-                height={1080}
-                src={src}
-                margin={0}
-                renderImage={props => {
-                  return (
-                    <TransitionGroup>
-                      <CSSTransition key={src} timeout={500} classNames="fade">
-                        <img src={src} {...props} />
-                      </CSSTransition>
-                    </TransitionGroup>
-                  );
-                }}
-              />
-            </BodyWrapper>
-            <Navigation prev={previousSlide} next={nextSlide} />
-            <BodyWrapper>
-              <InsetWrapper>
-                <ShowcaseBody title={title} description={description} owner={owner} link={link} repo={repo} />
-              </InsetWrapper>
-            </BodyWrapper>
-          </Wrapper>
+          {displayMode === 'GRID' && (
+            <Wrapper>
+              <BodyWrapper>
+                <ShowcaseGrid items={Object.values(sortedProjects)} />
+              </BodyWrapper>
+            </Wrapper>
+          )}
+          {displayMode === 'SLIDESHOW' && (
+            <Wrapper>
+              <BodyWrapper>
+                <Slide
+                  width={1920}
+                  height={1080}
+                  src={src}
+                  margin={0}
+                  renderImage={props => {
+                    return (
+                      <TransitionGroup>
+                        <CSSTransition key={src} timeout={500} classNames="fade">
+                          <img src={src} {...props} />
+                        </CSSTransition>
+                      </TransitionGroup>
+                    );
+                  }}
+                />
+              </BodyWrapper>
+              <Navigation prev={previousSlide} next={nextSlide} />
+              <BodyWrapper>
+                <InsetWrapper>
+                  <ShowcaseBody title={title} description={description} owner={owner} link={link} repo={repo} />
+                </InsetWrapper>
+              </BodyWrapper>
+            </Wrapper>
+          )}
         </Body>
       </Container>
       <Footer />
