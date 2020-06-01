@@ -26,4 +26,4 @@ This is a bit cumbersome to work with, but it means that we can receive variable
 (`css` helper) in styled components and can flatten that into pure CSS.
 
 If you want to learn more about tagged template literals, check out Max Stoiber's article:
-[The magic behind 💅 styled-components](https://mxstbr.blog/2016/11/styled-components-magic-explained/)
+[The magic behind 💅🏾 styled-components](https://mxstbr.blog/2016/11/styled-components-magic-explained/)
