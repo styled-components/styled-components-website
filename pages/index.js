@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
 
 import rem from '../utils/rem';
-import { violetRed, gold, darkVioletRed } from '../utils/colors';
+import { blmGrey, blmMetal, blmBlack } from '../utils/colors';
 import { editorMixin, StyledError } from '../components/LiveEdit';
 import Link from '../components/Link';
 import { Content } from '../components/Layout';
@@ -43,7 +43,7 @@ const Button = styled.a\`
    * edit this to target it specifically! */
   \${props => props.primary && css\`
     background: white;
-    color: palevioletred;
+    color: black;
   \`}
 \`
 
@@ -105,7 +105,7 @@ const Wrapper = styled.div.attrs((/* props */) => ({
   text-align: center;
   color: white;
 
-  background: linear-gradient(20deg, ${violetRed}, ${gold});
+  background: linear-gradient(20deg, ${blmGrey}, ${blmMetal});
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
   min-height: 100vh;
@@ -143,11 +143,11 @@ const ShowcaseLink = styled(NextLink)`
   font-family: Avenir Next;
   border-radius: 4px;
   margin: 0 auto;
-  background-color: ${violetRed};
+  background-color: ${blmGrey};
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${darkVioletRed};
+    background-color: ${blmBlack};
   }
 `;
 
