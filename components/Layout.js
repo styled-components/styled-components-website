@@ -17,13 +17,13 @@ export const Content = styled.div`
   width: ${rem(1024)};
   max-width: 100%;
   margin: 0 auto;
-  padding: ${rem(90)} ${rem(40)} ${rem(30)} ${rem(40)};
+  padding: ${rem(100)} ${rem(40)} ${rem(30)} ${rem(40)};
   box-sizing: border-box;
   font-family: ${bodyFont};
   transition: transform 150ms ease-out;
 
   ${mobile(css`
-    padding: ${rem(70)} ${rem(20)} ${rem(30)} ${rem(20)};
+    padding: ${rem(100)} ${rem(20)} ${rem(30)} ${rem(20)};
     transform: translateX(${p => (p.moveRight ? rem(sidebarWidth) : 0)});
   `)};
 

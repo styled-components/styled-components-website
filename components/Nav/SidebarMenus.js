@@ -11,7 +11,7 @@ const MenuInner = styled.div`
   display: block;
   box-sizing: border-box;
   height: 100%;
-  padding-top: ${rem(25)};
+  padding-top: ${rem(60)};
 `;
 
 const TopLevelLink = styled.div`
