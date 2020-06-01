@@ -22,6 +22,6 @@ const StyledLoading = styled.div`
   left: 50%;
 `;
 
-const Loading = () => <StyledLoading>&lt; 💅 &gt;</StyledLoading>;
+const Loading = () => <StyledLoading>&lt; 💅🏾 &gt;</StyledLoading>;
 
 export default Loading;

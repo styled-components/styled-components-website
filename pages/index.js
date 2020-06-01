@@ -196,7 +196,7 @@ class Index extends PureComponent {
               <Title>
                 <Tagline>Visual primitives for the component age.</Tagline>
                 <SupportingTagline>
-                  Use the best bits of ES6 and CSS to style your apps without stress 💅
+                  Use the best bits of ES6 and CSS to style your apps without stress 💅🏾
                 </SupportingTagline>
               </Title>
 
