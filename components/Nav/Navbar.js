@@ -20,7 +20,7 @@ const Wrapper = styled.nav`
   z-index: 3;
 
   width: 100%;
-  height: ${rem(navbarHeight)};
+  height: ${rem(navbarHeight * 2)};
 
   font-family: ${headerFont};
   font-size: ${rem(15)};
@@ -170,6 +170,21 @@ class Navbar extends PureComponent {
 
     return (
       <Wrapper transparent={transparent}>
+        <a
+          href="https://support.eji.org/give/153413/#!/donation/checkout"
+          style={{
+            top: 0,
+            height: rem(navbarHeight),
+            background: 'black',
+            width: '100%',
+            padding: `1rem 0.5rem`,
+            display: `flex`,
+            alignItems: `center`,
+            justifyContent: `center`,
+          }}
+        >
+          #BlackLivesMatter ✊🏿
+        </a>
         <NormalNavbar>
           <StartWrapper>
             <LogoLink>
