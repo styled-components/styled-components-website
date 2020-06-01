@@ -171,7 +171,7 @@ class Navbar extends PureComponent {
     return (
       <Wrapper transparent={transparent}>
         <a
-          href="https://tatianamac.com/posts/white-guyde/"
+          href="https://support.eji.org/give/153413/#!/donation/checkout"
           style={{
             top: 0,
             height: rem(navbarHeight),
