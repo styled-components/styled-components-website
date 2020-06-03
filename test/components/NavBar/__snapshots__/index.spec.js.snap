@@ -672,7 +672,16 @@ exports[`Nav renders correctly 1`] = `
                 className="c1"
                 href="https://support.eji.org/give/153413/#!/donation/checkout"
               >
-                #BlackLivesMatter ✊🏿
+                #BlackLivesMatter ✊🏿 
+                <span
+                  style={
+                    Object {
+                      "textDecoration": "underline",
+                    }
+                  }
+                >
+                  Support the Equal Justice Initiative
+                </span>
               </a>
             </styled.a>
           </BlmBanner>
