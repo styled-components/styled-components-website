@@ -1,13 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import CardContent from './CardContent';
 import { SlideMeta } from './CardContent';
+import { mobile, phone } from '../../utils/media';
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 24px;
   grid-row-gap: 24px;
+
+  ${mobile(css`
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+  `)}
+
+  ${phone(css`
+    grid-template-columns: 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+  `)}
 `;
 
 const CardContentWrapper = styled.div`

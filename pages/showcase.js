@@ -121,6 +121,15 @@ const BodyWrapper = styled.div`
   `)}
 `;
 
+const GridWrapper = styled.div`
+  position: relative;
+  top: -160px;
+
+  ${mobile(css`
+    top: -96px;
+  `)}
+`;
+
 const Slide = styled(Image)`
   border-radius: 12px;
   box-shadow: 0 32px 48px rgba(0, 0, 0, 0.12);
@@ -377,9 +386,9 @@ const Showcase = ({ router }) => {
         <Body>
           {displayMode === 'GRID' && (
             <Wrapper>
-              <BodyWrapper>
+              <GridWrapper>
                 <ShowcaseGrid items={Object.values(sortedProjects)} />
-              </BodyWrapper>
+              </GridWrapper>
             </Wrapper>
           )}
           {displayMode === 'SLIDESHOW' && (
