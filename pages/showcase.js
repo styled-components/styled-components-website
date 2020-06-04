@@ -211,7 +211,7 @@ const HeaderActions = styled.div`
     display: block;
     text-align: center;
     background-color: #ffffff;
-    color: rgb(219, 112, 147);
+    color: ${blmGrey};
     border: none;
     transition: 200ms;
     padding: 0;
@@ -264,7 +264,7 @@ const DisplayModePickerOption = styled.button`
   ${({ $active }) =>
     $active &&
     css`
-      color: ${violetRed};
+      color: ${blmGrey};
     `};
 
   svg {
