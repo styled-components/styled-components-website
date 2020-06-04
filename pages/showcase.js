@@ -13,6 +13,7 @@ import Navigation from '../components/Slider/Navigation';
 import ShowcaseBody from '../components/Slider/ShowcaseBody';
 import { ShowcaseGrid } from '../components/ShowcaseGrid';
 import { blmGrey, blmMetal } from '../utils/colors';
+import { GridAlt as GridIcon, Image as SlideshowIcon } from '@styled-icons/boxicons-regular';
 
 const Container = styled.div`
   overflow-x: hidden;
@@ -63,7 +64,7 @@ const Container = styled.div`
 
 const Header = styled.header`
   position: relative;
-  height: 512px;
+  height: 568px;
   padding-top: 48px;
   background-color: #daa357;
   background: linear-gradient(20deg, ${blmGrey}, ${blmMetal});
@@ -76,7 +77,7 @@ const Header = styled.header`
 
 const HeaderContent = styled.div`
   width: 100%;
-  padding: 48px 0;
+  padding: 48px 0 32px;
   display: grid;
   justify-content: space-between;
   grid-template-columns: minmax(0px, 512px) minmax(128px, 192px);
@@ -212,6 +213,56 @@ const HeaderActions = styled.div`
   }
 `;
 
+const HeaderToolbar = styled.div`
+  display: flex;
+  justify-content: center;
+  color: white;
+`;
+
+const DisplayModePicker = styled.div`
+  position: relative;
+  border: 1px solid white;
+  justify-self: center;
+  border-radius: 4px;
+  padding: 4px 2px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    border-radius: 2px;
+    display: block;
+    top: 4px;
+    left: 0;
+    z-index: 0;
+    height: 32px;
+    width: 32px;
+    background-color: white;
+    transition: 0.2s;
+    transform: translateX(${({ $activeIndex }) => $activeIndex * 32 + ($activeIndex + 1) * 4}px);
+  }
+`;
+
+const DisplayModePickerOption = styled.button`
+  position: relative;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  margin: 0 2px;
+
+  ${({ $active }) =>
+    $active &&
+    css`
+      color: ${violetRed};
+    `};
+
+  svg {
+    width: 24px;
+  }
+`;
+
 function normalizeSlideIndex(arr, index, fn) {
   const result = fn(index);
   if (result > arr.length - 1) {
@@ -303,11 +354,20 @@ const Showcase = ({ router }) => {
                     Share yours!
                   </a>
                 </HeaderActions>
-                <div>
-                  <button onClick={() => setDisplayMode('GRID')}>G</button>
-                  <button onClick={() => setDisplayMode('SLIDESHOW')}>S</button>
-                </div>
               </HeaderContent>
+              <HeaderToolbar>
+                <DisplayModePicker $activeIndex={['SLIDESHOW', 'GRID'].indexOf(displayMode)}>
+                  <DisplayModePickerOption
+                    $active={displayMode === 'SLIDESHOW'}
+                    onClick={() => setDisplayMode('SLIDESHOW')}
+                  >
+                    <SlideshowIcon />
+                  </DisplayModePickerOption>
+                  <DisplayModePickerOption $active={displayMode === 'GRID'} onClick={() => setDisplayMode('GRID')}>
+                    <GridIcon />
+                  </DisplayModePickerOption>
+                </DisplayModePicker>
+              </HeaderToolbar>
             </InsetWrapper>
           </Wrapper>
           <HeaderDecoration>Showcase</HeaderDecoration>
