@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import UnstyledLink from 'next/link';
 
 import rem from '../utils/rem';
-import { red, violetRed, lightGrey } from '../utils/colors';
+import { red, blmGrey, lightGrey } from '../utils/colors';
 
 export const StyledLink = styled.a`
   display: inline-block;
@@ -24,7 +24,7 @@ export const InlineLink = styled.a.attrs((/* props */) => ({
   target: '_blank',
   rel: 'noopener',
 }))`
-  color: ${p => (p['data-white'] ? 'white' : violetRed)};
+  color: ${p => (p['data-white'] ? 'white' : blmGrey)};
   cursor: pointer;
   text-decoration: underline;
 

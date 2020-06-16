@@ -2,7 +2,7 @@ import React, { PureComponent, createRef } from 'react';
 import styled, { css } from 'styled-components';
 import { Close } from '@styled-icons/material';
 import rem from '../../utils/rem';
-import { violetRed, paleGrey } from '../../utils/colors';
+import { blmGrey, paleGrey } from '../../utils/colors';
 import { navbarHeight } from '../../utils/sizes';
 import { headerFont } from '../../utils/fonts';
 import { mobile } from '../../utils/media';
@@ -12,6 +12,7 @@ import Social from './Social';
 import Logo from './Logo';
 import MobileNavbar from './MobileNavbar';
 import SearchWithAlgolia from './SearchWithAlgolia';
+import { BlmBanner } from '../BlmBanner';
 
 const Wrapper = styled.nav`
   position: fixed;
@@ -20,12 +21,12 @@ const Wrapper = styled.nav`
   z-index: 3;
 
   width: 100%;
-  height: ${rem(navbarHeight)};
+  height: ${rem(navbarHeight * 2)};
 
   font-family: ${headerFont};
   font-size: ${rem(15)};
   font-weight: 500;
-  background: ${props => (props.transparent ? 'transparent' : violetRed)};
+  background: ${props => (props.transparent ? 'transparent' : blmGrey)};
   transition: background 300ms ease-out;
   color: white;
   padding: 0;
@@ -170,6 +171,7 @@ class Navbar extends PureComponent {
 
     return (
       <Wrapper transparent={transparent}>
+        <BlmBanner />
         <NormalNavbar>
           <StartWrapper>
             <LogoLink>

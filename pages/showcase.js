@@ -11,6 +11,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { mobile, phone } from '../utils/media';
 import Navigation from '../components/Slider/Navigation';
 import ShowcaseBody from '../components/Slider/ShowcaseBody';
+import { blmGrey, blmMetal } from '../utils/colors';
 
 const Container = styled.div`
   overflow-x: hidden;
@@ -64,7 +65,7 @@ const Header = styled.header`
   height: 512px;
   padding-top: 48px;
   background-color: #daa357;
-  background: linear-gradient(20deg, rgb(219, 112, 147), #daa357);
+  background: linear-gradient(20deg, ${blmGrey}, ${blmMetal});
   overflow: hidden;
 
   ${mobile(css`

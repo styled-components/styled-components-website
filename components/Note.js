@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 import rem from '../utils/rem';
-import { lightVioletRed, violetRed } from '../utils/colors';
+import { blmLightGrey, blmGrey } from '../utils/colors';
 import { bodyFont, headerFont } from '../utils/fonts';
 
 import { SubHeader, Title } from './Layout';
 
 export const Note = styled.div`
   font-family: ${bodyFont};
-  background: ${lightVioletRed};
+  background: ${blmLightGrey};
   padding: ${rem(7)} ${rem(10)} ${rem(5)} ${rem(14)};
-  border-left: ${rem(4)} solid ${violetRed};
+  border-left: ${rem(4)} solid ${blmGrey};
   margin: ${rem(45)} 0;
   border-radius: ${rem(3)};
 

@@ -2,7 +2,7 @@
 
 exports[`InlineLink renders correctly 1`] = `
 .c0 {
-  color: rgb(219,112,147);
+  color: rgb(33,33,33);
   cursor: pointer;
   -webkit-text-decoration: underline;
   text-decoration: underline;

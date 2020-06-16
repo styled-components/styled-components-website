@@ -23,7 +23,7 @@ const Rotate = styled.div`
 `;
 
 render(
-  <Rotate>&lt; 💅 &gt;</Rotate>
+  <Rotate>&lt; 💅🏾 &gt;</Rotate>
 );
 ```
 
@@ -37,7 +37,7 @@ const rotate = keyframes``
 // ❌ This will throw an error!
 const styles = `
   animation: ${rotate} 2s linear infinite;
-`;
+`
 
 // ✅ This will work as intended
 const styles = css`
