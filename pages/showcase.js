@@ -299,6 +299,12 @@ const DisplayModePickerOption = styled.button`
 
 const Showcase = () => {
   const [gridDensity, setGridDensity] = useState('REGULAR');
+  const [sortingCriterium, setSortingCriterium] = useState('POPULARITY');
+
+  const projects = Object.values(sortedProjects).sort((a, b) => {
+    if (sortingCriterium === 'NAME') return a.title.localeCompare(b.title);
+    return 0;
+  });
 
   return (
     <>
@@ -344,12 +350,16 @@ const Showcase = () => {
                     <option value="all">All</option>
                   </select>
                 </NativeSelect>
-                <NativeSelect name="category" id="categorySelect" value="all">
+                <NativeSelect
+                  name="category"
+                  id="categorySelect"
+                  value={sortingCriterium}
+                  onChange={evt => setSortingCriterium(evt.target.value)}
+                >
                   <SortIcon />
                   <select>
-                    <option value="all">Popular</option>
-                    <option value="all">New</option>
-                    <option value="all">Name</option>
+                    <option value="POPULARITY">Popular</option>
+                    <option value="NAME">Name</option>
                   </select>
                 </NativeSelect>
               </HeaderToolbar>
@@ -362,7 +372,7 @@ const Showcase = () => {
         <Body>
           <Wrapper>
             <GridWrapper>
-              <ShowcaseGrid items={Object.values(sortedProjects)} density={gridDensity} />
+              <ShowcaseGrid items={projects} density={gridDensity} />
             </GridWrapper>
           </Wrapper>
         </Body>
