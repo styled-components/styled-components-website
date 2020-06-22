@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import Image from '../components/Image';
 import { sortedProjects } from '../companies-manifest';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import { withRouter } from 'next/router';
 import WithIsScrolled from '../components/WithIsScrolled';
-import { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { mobile, phone } from '../utils/media';
-import Navigation from '../components/Slider/Navigation';
-import ShowcaseBody from '../components/Slider/ShowcaseBody';
 import { ShowcaseGrid } from '../components/ShowcaseGrid';
 import { blmGrey, blmMetal } from '../utils/colors';
-import { GridAlt as GridIcon, Image as SlideshowIcon } from '@styled-icons/boxicons-regular';
+import { GridTwoUp as GridIcon, GridThreeUp as DenseGridIcon } from '@styled-icons/open-iconic';
+import { FilterAlt as FilterIcon, Sort as SortIcon } from '@styled-icons/boxicons-regular';
 
 const Container = styled.div`
   overflow-x: hidden;
@@ -112,15 +108,6 @@ const Body = styled.div`
   position: relative;
 `;
 
-const BodyWrapper = styled.div`
-  position: relative;
-  top: -192px;
-
-  ${mobile(css`
-    top: -96px;
-  `)}
-`;
-
 const GridWrapper = styled.div`
   position: relative;
   top: -160px;
@@ -128,11 +115,6 @@ const GridWrapper = styled.div`
   ${mobile(css`
     top: -96px;
   `)}
-`;
-
-const Slide = styled(Image)`
-  border-radius: 12px;
-  box-shadow: 0 32px 48px rgba(0, 0, 0, 0.12);
 `;
 
 const getSlide = childIndex => keyframes`
@@ -158,20 +140,55 @@ const HeaderDecoration = styled.div`
   animation: ${({ offset }) => getSlide(offset || 0)} 30s linear infinite;
 `;
 
-const NativeSelect = styled.select`
+const NativeSelect = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
   border: 1px solid #ffffff;
   color: #ffffff;
-  text-align-last: center;
-  appearance: none;
   padding: 0 8px;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' fill='white'><path d='M7 10l5 5 5-5z'/></svg>");
   background-position: 98% 50%;
+  border-radius: 4px;
+  min-width: 128px;
 
-  &::after {
-    content: '';
-    height: 10px;
-    width: 10px;
-    border: 8px solid black;
+  ${phone(css`
+    min-width: 40px;
+    width: 40px;
+    background-image: none;
+  `)}
+
+  svg {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+
+  select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 36px;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    border: none;
+    outline: none;
+    padding-right: 24px;
+    line-height: 25px;
+
+    ${phone(css`
+      opacity: 0;
+    `)}
+
+    &::after {
+      content: '';
+      height: 10px;
+      width: 10px;
+      border: 8px solid black;
+    }
   }
 `;
 
@@ -194,11 +211,11 @@ const HeaderActions = styled.div`
   a,
   ${NativeSelect} {
     height: 50px;
-    border-radius: 4px;
     font-family: Avenir Next;
     font-weight: 500;
     font-size: 1rem;
     line-height: 50px;
+    border-radius: 4px;
 
     ${phone(css`
       height: 40px;
@@ -226,6 +243,14 @@ const HeaderToolbar = styled.div`
   display: flex;
   justify-content: center;
   color: white;
+
+  ${NativeSelect} {
+    margin-left: 16px;
+  }
+`;
+
+const FlexSpacer = styled.div`
+  flex-grow: 1;
 `;
 
 const DisplayModePicker = styled.div`
@@ -268,77 +293,16 @@ const DisplayModePickerOption = styled.button`
     `};
 
   svg {
-    width: 24px;
+    width: 16px;
   }
 `;
 
-function normalizeSlideIndex(arr, index, fn) {
-  const result = fn(index);
-  if (result > arr.length - 1) {
-    return 0;
-  }
-  if (result < 0) {
-    return arr.length - 1;
-  }
-  return result;
-}
-
-// Since objects don't allow for a sort order we have to map an array to the object
-function mapIndexToRoute(index) {
-  const route = Object.keys(sortedProjects)[index];
-  return sortedProjects[route];
-}
-
-function calculateSlides(sortOrder, route) {
-  let currentSlideIndex = sortOrder.indexOf(route);
-  if (currentSlideIndex === -1) {
-    currentSlideIndex = 0;
-  }
-  const previousSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, x => x - 1);
-  const nextSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, x => x + 1);
-  return {
-    currentSlide: mapIndexToRoute(currentSlideIndex),
-    previousSlide: mapIndexToRoute(previousSlideIndex),
-    nextSlide: mapIndexToRoute(nextSlideIndex),
-  };
-}
-
-class ArrowEvents extends React.Component {
-  handleKeyDown = event => {
-    const isLeft = event.keyCode === 37;
-    const isRight = event.keyCode === 39;
-    const { router, previousSlide, nextSlide } = this.props;
-
-    if (!isLeft && !isRight) return;
-
-    const { href, as } = generateShowcaseUrl(isLeft ? previousSlide : nextSlide);
-    router.replace(href, as);
-    return;
-  };
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyDown);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeyDown);
-  }
-
-  render() {
-    return null;
-  }
-}
-
-const Showcase = ({ router }) => {
-  const [displayMode, setDisplayMode] = useState('SLIDESHOW');
-  const { item } = router.query;
-  const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item);
-  const { title, src, owner, link, repo, description } = currentSlide;
+const Showcase = () => {
+  const [gridDensity, setGridDensity] = useState('REGULAR');
 
   return (
     <>
       <WithIsScrolled>{({ isScrolled }) => <Nav showSideNav={false} transparent={!isScrolled} />}</WithIsScrolled>
-      <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
       <Container>
         <Header>
           <Wrapper>
@@ -352,9 +316,6 @@ const Showcase = ({ router }) => {
                   </h5>
                 </div>
                 <HeaderActions>
-                  <NativeSelect name="category" id="categorySelect" value="all">
-                    <option value="all">All</option>
-                  </NativeSelect>
                   <a
                     href="https://github.com/styled-components/styled-components-website/issues/new?template=company-showcase-request.md&title=Add+%5Bproject%5D+by+%5Bcompany%5D+to+showcase"
                     target="_blank"
@@ -365,17 +326,32 @@ const Showcase = ({ router }) => {
                 </HeaderActions>
               </HeaderContent>
               <HeaderToolbar>
-                <DisplayModePicker $activeIndex={['SLIDESHOW', 'GRID'].indexOf(displayMode)}>
+                <DisplayModePicker $activeIndex={['REGULAR', 'DENSE'].indexOf(gridDensity)}>
                   <DisplayModePickerOption
-                    $active={displayMode === 'SLIDESHOW'}
-                    onClick={() => setDisplayMode('SLIDESHOW')}
+                    $active={gridDensity === 'REGULAR'}
+                    onClick={() => setGridDensity('REGULAR')}
                   >
-                    <SlideshowIcon />
-                  </DisplayModePickerOption>
-                  <DisplayModePickerOption $active={displayMode === 'GRID'} onClick={() => setDisplayMode('GRID')}>
                     <GridIcon />
                   </DisplayModePickerOption>
+                  <DisplayModePickerOption $active={gridDensity === 'DENSE'} onClick={() => setGridDensity('DENSE')}>
+                    <DenseGridIcon />
+                  </DisplayModePickerOption>
                 </DisplayModePicker>
+                <FlexSpacer />
+                <NativeSelect name="category" id="categorySelect" value="all">
+                  <FilterIcon />
+                  <select>
+                    <option value="all">All</option>
+                  </select>
+                </NativeSelect>
+                <NativeSelect name="category" id="categorySelect" value="all">
+                  <SortIcon />
+                  <select>
+                    <option value="all">Popular</option>
+                    <option value="all">New</option>
+                    <option value="all">Name</option>
+                  </select>
+                </NativeSelect>
               </HeaderToolbar>
             </InsetWrapper>
           </Wrapper>
@@ -384,40 +360,11 @@ const Showcase = ({ router }) => {
           <HeaderDecoration offset={2}>Showcase</HeaderDecoration>
         </Header>
         <Body>
-          {displayMode === 'GRID' && (
-            <Wrapper>
-              <GridWrapper>
-                <ShowcaseGrid items={Object.values(sortedProjects)} />
-              </GridWrapper>
-            </Wrapper>
-          )}
-          {displayMode === 'SLIDESHOW' && (
-            <Wrapper>
-              <BodyWrapper>
-                <Slide
-                  width={1920}
-                  height={1080}
-                  src={src}
-                  margin={0}
-                  renderImage={props => {
-                    return (
-                      <TransitionGroup>
-                        <CSSTransition key={src} timeout={500} classNames="fade">
-                          <img src={src} {...props} />
-                        </CSSTransition>
-                      </TransitionGroup>
-                    );
-                  }}
-                />
-              </BodyWrapper>
-              <Navigation prev={previousSlide} next={nextSlide} />
-              <BodyWrapper>
-                <InsetWrapper>
-                  <ShowcaseBody title={title} description={description} owner={owner} link={link} repo={repo} />
-                </InsetWrapper>
-              </BodyWrapper>
-            </Wrapper>
-          )}
+          <Wrapper>
+            <GridWrapper>
+              <ShowcaseGrid items={Object.values(sortedProjects)} density={gridDensity} />
+            </GridWrapper>
+          </Wrapper>
         </Body>
       </Container>
       <Footer />

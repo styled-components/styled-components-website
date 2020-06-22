@@ -1613,7 +1613,7 @@
   dependencies:
     "@emotion/memoize" "0.7.4"
 
-"@emotion/is-prop-valid@^0.8.8":
+"@emotion/is-prop-valid@^0.8.7", "@emotion/is-prop-valid@^0.8.8":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
   integrity sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
@@ -1919,6 +1919,22 @@
   dependencies:
     "@styled-icons/styled-icon" "^9.0.1"
     tslib "^1.9.3"
+
+"@styled-icons/open-iconic@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/open-iconic/-/open-iconic-10.0.0.tgz#6703acab18a4ceaa20a8aae0a995449d8024ddb6"
+  integrity sha512-dHs+3uLaXAzwPl8wJbE793I7VMcsgxgEIgHo3cff+kbCOPEa29C97qmsYU8lcnuvce7twJYT6ViaUKc3skhYZw==
+  dependencies:
+    "@styled-icons/styled-icon" "^10.0.0"
+    tslib "^1.11.1"
+
+"@styled-icons/styled-icon@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/styled-icon/-/styled-icon-10.0.0.tgz#9fe6511cd4aac1c0d57dbe5c773a6aaac23666e4"
+  integrity sha512-owIKYlIOv+daYscp6vnymOXiOAR6lsDoB2HYI10KrreovX0Ny48qbyqKjirvtxLFyEiHoz8QXSNO6QbanINv9Q==
+  dependencies:
+    "@emotion/is-prop-valid" "^0.8.7"
+    tslib "^1.11.1"
 
 "@styled-icons/styled-icon@^9.0.1":
   version "9.0.1"
@@ -10985,6 +11001,11 @@ ts-pnp@^1.1.2:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.1.5.tgz#840e0739c89fce5f3abd9037bb091dbff16d9dec"
   integrity sha512-ti7OGMOUOzo66wLF3liskw6YQIaSsBgc4GOAlWRnIEj8htCxJUxskanMUoJOD6MDCRAXo36goXJZch+nOS0VMA==
+
+tslib@^1.11.1:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
+  integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
 
 tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"

@@ -6,7 +6,7 @@ import { mobile, phone } from '../../utils/media';
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(${({ $density }) => ($density === 'DENSE' ? 3 : 2)}, 1fr);
   grid-column-gap: 24px;
   grid-row-gap: 24px;
 
@@ -70,9 +70,9 @@ const ShowcaseCellContent = styled.div`
   padding: 8px;
 `;
 
-export const ShowcaseGrid = ({ items }) => {
+export const ShowcaseGrid = ({ items, density }) => {
   return (
-    <Grid>
+    <Grid $density={density}>
       {(items || []).map(project => (
         <ShowcaseCell key={project.title}>
           <ShowcaseImage src={project.src} />
