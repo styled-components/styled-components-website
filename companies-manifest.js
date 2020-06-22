@@ -495,7 +495,7 @@ const companies = [
     },
     projects: {
       spotify: {
-        title: 'Spotify',
+        title: 'Spotify Website',
         link: 'https://spotify.com/',
         src: '/screenshots/thumbnails/spotify.com.jpg',
         width: 1280,
