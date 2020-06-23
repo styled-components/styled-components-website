@@ -17,7 +17,7 @@ export const Content = styled.div`
   width: ${rem(1024)};
   max-width: 100%;
   margin: 0 auto;
-  padding: ${rem(100)} ${rem(40)} ${rem(30)} ${rem(40)};
+  padding: ${rem(90)} ${rem(40)} 0 ${rem(40)};
   box-sizing: border-box;
   font-family: ${bodyFont};
   transition: transform 150ms ease-out;

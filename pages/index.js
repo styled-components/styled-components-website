@@ -92,7 +92,7 @@ const UsersHeading = styled.p`
 `;
 
 const ShowcaseHeading = styled(UsersHeading)`
-  margin: 0.5rem 0 0.5rem;
+  margin: 2rem 0 0.5rem;
 `;
 
 const Wrapper = styled.div.attrs((/* props */) => ({
@@ -212,7 +212,8 @@ class Index extends PureComponent {
 
             <UsersHeading>Used by folks at</UsersHeading>
           </Content>
-          <UsersLogos users={sortedCompanies} />
+          <UsersLogos users={sortedCompanies.filter((v, i) => i % 2)} />
+          <UsersLogos reverse users={sortedCompanies.filter((v, i) => !(i % 2))} />
           <ShowcaseHeading>To create beautiful websites like these</ShowcaseHeading>
           <SmallShowcase projects={sortedProjects} />
         </Wrapper>
