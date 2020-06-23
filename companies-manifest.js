@@ -37,6 +37,7 @@ import {
   SesameLogo,
   ShpockLogo,
   SmartLogo,
+  SpotifyLogo,
   TargetLogo,
   TaskadeLogo,
   TicketmasterLogo,
@@ -482,6 +483,26 @@ const companies = [
       height: '2rem',
     },
     projects: {},
+  },
+  {
+    key: 'https://spotify.com',
+    similarWebGlobalRank: 111,
+    name: 'Spotify',
+    logo: SpotifyLogo,
+    style: {
+      bottom: '0.3rem',
+      height: '2.5rem',
+    },
+    projects: {
+      spotify: {
+        title: 'Spotify Website',
+        link: 'https://spotify.com/',
+        src: '/screenshots/thumbnails/spotify.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'spotify',
+      },
+    },
   },
   {
     key: 'https://www.target.com',
