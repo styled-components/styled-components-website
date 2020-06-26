@@ -25,6 +25,7 @@ import {
   GoogleLogo,
   HuffpostLogo,
   IdeoLogo,
+  IMDbLogo,
   InVisionLogo,
   JaneLogo,
   KiwiComLogo,
@@ -339,6 +340,23 @@ const companies = [
       height: '1.5rem',
     },
     projects: {},
+  },
+  {
+    key: 'https://www.imdb.com',
+    similarWebGlobalRank: 54,
+    name: 'IMDb',
+    logo: IMDbLogo,
+    style: {},
+    projects: {
+      imdb: {
+        title: 'IMDb Website',
+        link: 'https://imdb.com/',
+        src: '/screenshots/thumbnails/imdb.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'imdb',
+      },
+    },
   },
   {
     key: 'https://www.invisionapp.com',
