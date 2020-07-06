@@ -61,6 +61,7 @@ import {
   UnrealEngineLogo,
   SmallPdfLogo,
   OverWatchLeagueLogo,
+  PageXlLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -997,6 +998,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'overwatchleague',
+      },
+    },
+  },
+  {
+    key: 'https://www.lauyan.com',
+    similarWebGlobalRank: 'N/A',
+    name: 'Lauyan Software Sarl',
+    logo: PageXlLogo,
+    style: {},
+    projects: {
+      pagexl: {
+        title: 'PageXL',
+        link: 'https://pagexl.com',
+        src: '/screenshots/thumbnails/pagexl.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'pagexl',
       },
     },
   },
