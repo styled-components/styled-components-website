@@ -60,6 +60,7 @@ import {
   WazirXLogo,
   UnrealEngineLogo,
   SmallPdfLogo,
+  OverWatchLeagueLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -979,6 +980,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'smallpdf',
+      },
+    },
+  },
+  {
+    key: 'https://overwatchleague.com',
+    similarWebGlobalRank: 22316,
+    name: 'Blizzard',
+    logo: OverWatchLeagueLogo,
+    style: {},
+    projects: {
+      overwatchleague: {
+        title: 'Overwatch League',
+        link: 'https://overwatchleague.com',
+        src: '/screenshots/thumbnails/overwatchleague.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'overwatchleague',
       },
     },
   },
