@@ -59,6 +59,7 @@ import {
   RiotGamesLogo,
   WazirXLogo,
   UnrealEngineLogo,
+  SmallPdfLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -949,7 +950,7 @@ const companies = [
   },
   {
     key: 'https://www.unrealengine.com/',
-    similarWebGlobalRank: 3178,
+    similarWebGlobalRank: 5206,
     name: 'Unreal Engine',
     logo: UnrealEngineLogo,
     style: {},
@@ -961,6 +962,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'unrealengine',
+      },
+    },
+  },
+  {
+    key: 'https://smallpdf.com',
+    similarWebGlobalRank: 783,
+    name: 'Smallpdf',
+    logo: SmallPdfLogo,
+    style: {},
+    projects: {
+      smallpdf: {
+        title: 'Smallpdf',
+        link: 'https://smallpdf.com',
+        src: '/screenshots/thumbnails/smallpdf.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'smallpdf',
       },
     },
   },
