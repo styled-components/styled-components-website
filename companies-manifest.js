@@ -62,6 +62,7 @@ import {
   SmallPdfLogo,
   OverWatchLeagueLogo,
   PageXlLogo,
+  HomelyLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -1015,6 +1016,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'pagexl',
+      },
+    },
+  },
+  {
+    key: 'https://www.homely.com.au/',
+    similarWebGlobalRank: 48470,
+    name: 'Homely',
+    logo: HomelyLogo,
+    style: {},
+    projects: {
+      homely: {
+        title: 'Homely',
+        link: 'https://www.homely.com.au/',
+        src: '/screenshots/thumbnails/homely.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'homely',
       },
     },
   },
