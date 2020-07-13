@@ -61,6 +61,7 @@ const Website = styled.div`
 
   &:hover {
     transform: scale(1.1);
+    cursor: pointer;
 
     ${Label} {
       opacity: 1;
@@ -75,6 +76,7 @@ const Website = styled.div`
 
     &:hover {
       transform: scale(${props => scaleFactor[Math.abs(props.position - 2)] + 0.2});
+      z-index: ${props => 2 + Math.abs(props.position + 2)};
     }
   }
 `;
