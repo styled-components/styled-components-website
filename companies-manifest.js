@@ -1004,7 +1004,7 @@ const companies = [
   },
   {
     key: 'https://www.lauyan.com',
-    similarWebGlobalRank: 'N/A',
+    similarWebGlobalRank: Number.MAX_SAFE_INTEGER,
     name: 'Lauyan Software Sarl',
     logo: PageXlLogo,
     style: {},
