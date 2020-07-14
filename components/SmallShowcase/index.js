@@ -76,7 +76,21 @@ const Website = styled.div`
 
     &:hover {
       transform: scale(${props => scaleFactor[Math.abs(props.position - 2)] + 0.2});
-      z-index: ${props => 2 + Math.abs(props.position + 2)};
+
+      &:nth-of-type(-n + 2) {
+        ${Label} {
+          left: 0;
+          transform: translate(0, 50%);
+        }
+      }
+
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        ${Label} {
+          right: 0;
+          transform: translate(0, 50%);
+        }
+      }
     }
   }
 `;
