@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import rem from '../utils/rem';
-import { violetRed } from '../utils/colors';
+import { blmGrey } from '../utils/colors';
 import { headerFont } from '../utils/fonts';
 
 export const LabelGroup = styled.div`
@@ -12,7 +12,7 @@ export const LabelGroup = styled.div`
 
 const Label = styled.small`
   display: inline-block;
-  background: ${p => (p.isVersion ? 'cornflowerblue' : violetRed)};
+  background: ${p => (p.isVersion ? 'cornflowerblue' : blmGrey)};
   color: white;
   font-size: 0.75rem;
   font-family: ${headerFont};

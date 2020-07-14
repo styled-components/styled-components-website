@@ -39,7 +39,7 @@
     "invariant": "^2.2.4",
     "isomorphic-fetch": "^2.2.1",
     "markdown-to-jsx": "^6.10.2",
-    "next": "^9.0.6",
+    "next": "^9.3.2",
     "polished": "^3.4.0",
     "prismjs": "^1.6.0",
     "react": "^16.5.2",
@@ -47,7 +47,7 @@
     "react-is": "^16.8.6",
     "react-live": "^2.1.2",
     "react-transition-group": "^4.3.0",
-    "styled-components": "^5.0.0",
+    "styled-components": "^5.1.0",
     "styled-theming": "^2.2.0",
     "stylis-plugin-rtl": "^1.0.0",
     "webpack-bundle-analyzer": "^3.3.2"

@@ -8,10 +8,11 @@ import Anchor from '../components/Anchor';
 import Loading from '../components/Loading';
 import rem from '../utils/rem';
 import { getFormattedDate } from '../utils/dates';
+import { blmMetal } from '../utils/colors';
 
 const ReleaseAnchor = styled(Anchor)`
   &::after {
-    color: rgb(243, 182, 97);
+    color: ${blmMetal};
     content: attr(data-created-at);
     display: block;
     font-size: 16px;

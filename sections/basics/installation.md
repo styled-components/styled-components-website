@@ -6,6 +6,18 @@ Installing styled-components only takes a single command and you're ready to rol
 npm install --save styled-components
 ```
 
+If you use a package manager like [yarn](https://yarnpkg.com/) that supports the "resolutions" package.json field, we also highly recommend you add an entry to it as well corresponding to the major version range. This helps avoid an entire class of problems that arise from multiple versions of styled-components being installed in your project.
+
+In `package.json`:
+
+```json
+{
+  "resolutions": {
+    "styled-components": "^5"
+  }
+}
+```
+
 > It's highly recommended (but not required) to also use the [Babel plugin](/docs/tooling#babel-plugin). It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
 
 <details>
@@ -25,6 +37,6 @@ const Component = window.styled.div`
 `
 ```
 
-> This style of usage requires the [react CDN bundles](https://reactjs.org/docs/cdn-links.html) to be on the page as well (before the styled-components script.)
+> This style of usage requires the [react CDN bundles](https://reactjs.org/docs/cdn-links.html) and the [`react-is` CDN bundle](https://unpkg.com/react-is/umd/react-is.production.min.js) to be on the page as well (before the styled-components script.)
 
 </details>

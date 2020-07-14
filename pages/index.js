@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
 
 import rem from '../utils/rem';
-import { violetRed, gold, darkVioletRed } from '../utils/colors';
+import { blmGrey, blmMetal, blmBlack } from '../utils/colors';
 import { editorMixin, StyledError } from '../components/LiveEdit';
 import Link from '../components/Link';
 import { Content } from '../components/Layout';
@@ -43,7 +43,7 @@ const Button = styled.a\`
    * edit this to target it specifically! */
   \${props => props.primary && css\`
     background: white;
-    color: palevioletred;
+    color: black;
   \`}
 \`
 
@@ -92,7 +92,7 @@ const UsersHeading = styled.p`
 `;
 
 const ShowcaseHeading = styled(UsersHeading)`
-  margin: 0.5rem 0 0.5rem;
+  margin: 2rem 0 0.5rem;
 `;
 
 const Wrapper = styled.div.attrs((/* props */) => ({
@@ -105,7 +105,7 @@ const Wrapper = styled.div.attrs((/* props */) => ({
   text-align: center;
   color: white;
 
-  background: linear-gradient(20deg, ${violetRed}, ${gold});
+  background: linear-gradient(20deg, ${blmGrey}, ${blmMetal});
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
   min-height: 100vh;
@@ -133,7 +133,6 @@ const Links = styled.div`
 `;
 
 const ShowcaseLink = styled(NextLink)`
-  height: 48px;
   display: block;
   max-width: 100%;
   width: 196px;
@@ -144,11 +143,11 @@ const ShowcaseLink = styled(NextLink)`
   font-family: Avenir Next;
   border-radius: 4px;
   margin: 0 auto;
-  background-color: ${violetRed};
+  background-color: ${blmGrey};
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${darkVioletRed};
+    background-color: ${blmBlack};
   }
 `;
 
@@ -197,7 +196,7 @@ class Index extends PureComponent {
               <Title>
                 <Tagline>Visual primitives for the component age.</Tagline>
                 <SupportingTagline>
-                  Use the best bits of ES6 and CSS to style your apps without stress 💅
+                  Use the best bits of ES6 and CSS to style your apps without stress 💅🏾
                 </SupportingTagline>
               </Title>
 
@@ -213,7 +212,8 @@ class Index extends PureComponent {
 
             <UsersHeading>Used by folks at</UsersHeading>
           </Content>
-          <UsersLogos users={sortedCompanies} />
+          <UsersLogos users={sortedCompanies.filter((v, i) => i % 2)} />
+          <UsersLogos reverse users={sortedCompanies.filter((v, i) => !(i % 2))} />
           <ShowcaseHeading>To create beautiful websites like these</ShowcaseHeading>
           <SmallShowcase projects={sortedProjects} />
         </Wrapper>
