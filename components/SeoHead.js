@@ -7,7 +7,7 @@ export default class SeoHead extends Component {
   render() {
     const {
       title = 'styled-components',
-      description = 'Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress 💅',
+      description = 'Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress 💅🏾',
       image = 'https://www.styled-components.com/atom.png',
       children,
       canonical,
