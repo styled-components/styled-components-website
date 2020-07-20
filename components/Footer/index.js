@@ -4,7 +4,6 @@ import { Favorite } from '@styled-icons/material';
 import rem from '../../utils/rem';
 import { mobile } from '../../utils/media';
 import { grey, paleGrey, red } from '../../utils/colors';
-import Link from '../Link';
 import { Content } from '../Layout';
 
 const Wrapper = styled.footer`
@@ -26,7 +25,7 @@ const Heart = styled(Favorite)`
   transform: translateY(-10%);
 `;
 
-const FooterLink = styled(Link)`
+const FooterLink = styled.a`
   color: ${grey};
 `;
 

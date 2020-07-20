@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Github, MediumM } from '@styled-icons/fa-brands';
 import rem from '../../utils/rem';
 import { navbarHeight } from '../../utils/sizes';
-import Link from '../Link';
 
 const Wrapper = styled.nav`
   display: flex;
@@ -11,7 +10,7 @@ const Wrapper = styled.nav`
   flex: 1 1 auto;
 `;
 
-const SocialLink = styled(Link).attrs((/* props */) => ({
+const SocialLink = styled.a.attrs((/* props */) => ({
   unstyled: true,
 }))`
   display: flex;
