@@ -64,6 +64,7 @@ import {
   OverWatchLeagueLogo,
   PageXlLogo,
   HomelyLogo,
+  WishLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -1054,6 +1055,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'homely',
+      },
+    },
+  },
+  {
+    key: 'https://www.wish.com/',
+    similarWebGlobalRank: 194,
+    name: 'Wish',
+    logo: WishLogo,
+    style: {},
+    projects: {
+      wish: {
+        title: 'Wish',
+        link: 'https://www.wish.com/',
+        src: '/screenshots/thumbnails/wish.com.png',
+        width: 1280,
+        height: 720,
+        internalUrl: 'wish',
       },
     },
   },
