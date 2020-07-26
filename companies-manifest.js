@@ -64,6 +64,7 @@ import {
   OverWatchLeagueLogo,
   PageXlLogo,
   HomelyLogo,
+  DeadspinLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -1054,6 +1055,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'homely',
+      },
+    },
+  },
+  {
+    key: 'https://deadspin.com/',
+    similarWebGlobalRank: 29343,
+    name: 'Deadspin',
+    logo: DeadspinLogo,
+    style: {},
+    projects: {
+      deadspin: {
+        title: 'Deadspin',
+        link: 'https://deadspin.com/',
+        src: '/screenshots/thumbnails/deadspin.com.png',
+        width: 1280,
+        height: 720,
+        internalUrl: 'deadspin',
       },
     },
   },
