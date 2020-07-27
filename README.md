@@ -37,6 +37,10 @@ If you add a new section or materially change the website, it probably will trig
 yarn test -u
 ```
 
+### Adding icons & sites to the showcase
+
+There's a small guide on how to add new site icons to the website [here](/docs/ADDING_ICONS.md).
+
 ### Folder structure
 
 This is what each folder correlates to:
