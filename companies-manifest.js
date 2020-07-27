@@ -65,6 +65,7 @@ import {
   PageXlLogo,
   HomelyLogo,
   DeadspinLogo,
+  MiuiLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -1072,6 +1073,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'deadspin',
+      },
+    },
+  },
+  {
+    key: 'https://home.miui.com/',
+    similarWebGlobalRank: 891,
+    name: 'Miui',
+    logo: MiuiLogo,
+    style: {},
+    projects: {
+      miui: {
+        title: 'Miui',
+        link: 'https://home.miui.com/',
+        src: '/screenshots/thumbnails/miui.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'miui',
       },
     },
   },
