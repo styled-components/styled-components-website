@@ -1068,7 +1068,7 @@ const companies = [
       wish: {
         title: 'Wish',
         link: 'https://www.wish.com/',
-        src: '/screenshots/thumbnails/wish.com.png',
+        src: '/screenshots/thumbnails/wish.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'wish',
