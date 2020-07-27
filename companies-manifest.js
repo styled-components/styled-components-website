@@ -64,6 +64,7 @@ import {
   OverWatchLeagueLogo,
   PageXlLogo,
   HomelyLogo,
+  WishLogo,
   DeadspinLogo,
   JimdoLogo,
 } from './components/CompanyLogos';
@@ -1073,6 +1074,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'deadspin',
+      },
+    },
+  },
+  {
+    key: 'https://www.wish.com/',
+    similarWebGlobalRank: 194,
+    name: 'Wish',
+    logo: WishLogo,
+    style: {},
+    projects: {
+      wish: {
+        title: 'Wish',
+        link: 'https://www.wish.com/',
+        src: '/screenshots/thumbnails/wish.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'wish',
       },
     },
   },
