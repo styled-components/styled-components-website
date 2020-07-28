@@ -1415,6 +1415,18 @@ export const DeadspinLogo = () => (
   </svg>
 );
 
+export const MiuiLogo = () => (
+  <svg viewBox="0 0 256.8 92.1" fill="#4B4B4B">
+    <path d="M85.2,0l-38,48.3L9.1,0H0v89.7h9V15l38.2,48.7l38.2-48.8v74.9h9V0H85.2z" />
+    <path
+      d="M228.1,0h0.2l0,0H220l0,0l0,0h-0.1v52.6c0,17.1-13.8,30.9-30.9,30.9h0c-17.1,0-30.9-13.8-30.9-30.9V0.2h-8.8
+	l0,0l0,0l0,0l0,0v52.5c0,21.8,17.7,39.4,39.4,39.4h0c21.8,0,39.4-17.6,39.4-39.4L228.3,0H228.1z"
+    />
+    <polygon points="117.1,0 117.1,89.8 125.4,89.8 125.4,0 " />
+    <polygon points="248.5,0 248.5,89.8 256.8,89.8 256.8,0 " />
+  </svg>
+);
+
 export const JimdoLogo = () => (
   <svg viewBox="0 0 543 117">
     <g fill="none" fillRule="evenodd">
