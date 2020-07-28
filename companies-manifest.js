@@ -66,6 +66,7 @@ import {
   HomelyLogo,
   WishLogo,
   DeadspinLogo,
+  JimdoLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -1090,6 +1091,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'wish',
+      },
+    },
+  },
+  {
+    key: 'https://www.jimdo.com/',
+    similarWebGlobalRank: 4810,
+    name: 'Jimdo',
+    logo: JimdoLogo,
+    style: {},
+    projects: {
+      jimdo: {
+        title: 'Jimdo',
+        link: 'https://www.jimdo.com/',
+        src: '/screenshots/thumbnails/jimdo.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'jimdo',
       },
     },
   },
