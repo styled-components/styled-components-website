@@ -65,6 +65,10 @@ import {
   PageXlLogo,
   HomelyLogo,
   KumparanLogo,
+  WishLogo,
+  DeadspinLogo,
+  MiuiLogo,
+  JimdoLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -1055,6 +1059,74 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'homely',
+      },
+    },
+  },
+  {
+    key: 'https://deadspin.com/',
+    similarWebGlobalRank: 29343,
+    name: 'Deadspin',
+    logo: DeadspinLogo,
+    style: {},
+    projects: {
+      deadspin: {
+        title: 'Deadspin',
+        link: 'https://deadspin.com/',
+        src: '/screenshots/thumbnails/deadspin.com.png',
+        width: 1280,
+        height: 720,
+        internalUrl: 'deadspin',
+      },
+    },
+  },
+  {
+    key: 'https://www.wish.com/',
+    similarWebGlobalRank: 194,
+    name: 'Wish',
+    logo: WishLogo,
+    style: {},
+    projects: {
+      wish: {
+        title: 'Wish',
+        link: 'https://www.wish.com/',
+        src: '/screenshots/thumbnails/wish.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'wish',
+      },
+    },
+  },
+  {
+    key: 'https://home.miui.com/',
+    similarWebGlobalRank: 891,
+    name: 'Miui',
+    logo: MiuiLogo,
+    style: {},
+    projects: {
+      miui: {
+        title: 'Miui',
+        link: 'https://home.miui.com/',
+        src: '/screenshots/thumbnails/miui.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'miui',
+      },
+    },
+  },
+  {
+    key: 'https://www.jimdo.com/',
+    similarWebGlobalRank: 4810,
+    name: 'Jimdo',
+    logo: JimdoLogo,
+    style: {},
+    projects: {
+      jimdo: {
+        title: 'Jimdo',
+        link: 'https://www.jimdo.com/',
+        src: '/screenshots/thumbnails/jimdo.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'jimdo',
       },
     },
   },
