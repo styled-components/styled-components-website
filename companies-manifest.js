@@ -84,7 +84,7 @@ const companies = [
   },
   {
     key: "https://www.airbnb.com",
-    similarWebGlobalRank: 20,
+    similarWebGlobalRank: 341439,
     name: "AirBnB",
     logo: AirBnBLogo,
     style: {
