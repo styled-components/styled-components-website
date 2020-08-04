@@ -690,8 +690,8 @@ exports[`DocsLayout renders correctly 1`] = `
         title="styled-components"
       >
         <Head>
-          <_default
-            headManager={Object {}}
+          <Component
+            handleStateChange={null}
             inAmpMode={false}
             reduceComponentsToState={[Function]}
           />
