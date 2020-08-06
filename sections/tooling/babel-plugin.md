@@ -199,3 +199,5 @@ _styledComponents2.default.div.withConfig({
   componentId: 'my-app__sc-3rfj0a-1',
 })(['color:blue;'])
 ```
+
+> ⚠️ This feature is available from version **_1.11_**.
