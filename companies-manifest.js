@@ -13,6 +13,7 @@ import {
   BlueTomatoLogo,
   CasperLogo,
   ChangeOrgLogo,
+  CheMondisLogo,
   CoinbaseLogo,
   CoinMarketCapLogo,
   CultureTripLogo,
@@ -718,6 +719,27 @@ const companies = [
       bottom: "-0.2rem",
     },
     projects: {},
+  },
+  {
+    key: 'https://chemondis.com/',
+    similarWebGlobalRank: 476507,
+    name: 'CheMondis',
+    logo: CheMondisLogo,
+    style: {
+      bottom: '-0.2rem',
+    },
+    projects: {
+      marketplace: {
+        title: 'CheMondis',
+        description:
+          'Discover a new way to trade chemical products online today. CheMondis is the leading B2B Marketplace for chemicals in Europe helping buyers and suppliers to develop their business and thrive in the chemical industry.',
+        link: 'https://chemondis.com/marketplace',
+        src: '/screenshots/thumbnails/chemondis.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'chemondis',
+      },
+    },
   },
   {
     key: "https://www.trulia.com/",
