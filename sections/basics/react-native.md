@@ -32,7 +32,7 @@ be an array, and shorthands (e.g. for `margin`) thanks to
 
 > Note that the `flex` property works like CSS shorthand, and not the legacy
 > `flex` property in React Native. Setting `flex: 1` sets `flexShrink`
-> to `1`.
+> to `1` in addition to setting `flexGrow` to `1` and `flexBasis` to `0`.
 
 Imagine how you'd write the property in React Native, guess how you'd transfer
 it to CSS, and you're probably right:
@@ -57,4 +57,4 @@ nest your CSS.
 
 ### Simpler usage with the metro bundler
 
-If you'd prefer to just import `styled-components` instead of `styled-components/native`, you can add a [`resolverMainFields` configuration](https://facebook.github.io/metro/docs/en/configuration.html#resolver-options) that includes `"react-native"`. This used to be supported in metro by default (and currently does work in haul) but appears to have been removed at some point.
+If you'd prefer to just import `styled-components` instead of `styled-components/native`, you can add a [`resolverMainFields` configuration](https://facebook.github.io/metro/docs/configuration#resolvermainfields) that includes `"react-native"`. This used to be supported in metro by default (and currently does work in haul) but appears to have been removed at some point.

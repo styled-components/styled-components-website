@@ -3,7 +3,8 @@
 A convenience method to find all instances of a styled component's rendered DOM node within a given DOM root.
 
 ```js
-import styled, { findAll } from 'styled-components/test-utils'
+import styled from 'styled-components'
+import { findAll } from 'styled-components/test-utils'
 
 const Foo = styled.div`
   color: ${props => props.color};

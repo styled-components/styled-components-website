@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled, { css, createGlobalStyle } from 'styled-components';
-import { Search as SearchIcon } from 'styled-icons/material';
+import { Search as SearchIcon } from '@styled-icons/material';
 import PropTypes from 'prop-types';
-import { grey, lightVioletRed, violetRed, darkGrey } from '../../utils/colors';
+import { grey, blmLightGrey, blmGrey, darkGrey } from '../../utils/colors';
 import rem from '../../utils/rem';
 import { navbarHeight } from '../../utils/sizes';
 import { resetInput } from '../../utils/form';
@@ -54,7 +54,7 @@ const Input = styled.input`
     padding: ${rem(10)} ${rem(48)};
     display: block;
     width: 100%;
-    background: ${violetRed};
+    background: ${blmGrey};
     color: white;
   `)};
 `;
@@ -114,7 +114,7 @@ const GlobalStyles = createGlobalStyle`
     .ds-dropdown-menu
     .ds-suggestion.ds-cursor
     .algolia-docsearch-suggestion--content {
-    background: ${lightVioletRed} !important;
+    background: ${blmLightGrey} !important;
   }
 
   /* Main category (eg. Getting Started) */
@@ -141,7 +141,7 @@ const GlobalStyles = createGlobalStyle`
   /* Highlighted text */
   .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
     box-shadow: none !important;
-    color: ${violetRed} !important;
+    color: ${blmGrey} !important;
     background: transparent !important;
   }
 
@@ -154,15 +154,23 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const Search = ({ isDocs, className }) => (
-  <Wrapper className={className}>
-    <GlobalStyles />
-    <Button>
-      <StyledSearchIcon />
-    </Button>
-    <Input id={INPUT_ID} placeholder={isDocs ? `Search ...` : `Search docs ...`} type="search" />
-  </Wrapper>
-);
+const Search = ({ isDocs, className }) => {
+  const searchInput = useRef(null);
+
+  useEffect(() => {
+    if (searchInput.current) searchInput.current.focus();
+  }, [searchInput.current]);
+
+  return (
+    <Wrapper className={className}>
+      <GlobalStyles />
+      <Button>
+        <StyledSearchIcon />
+      </Button>
+      <Input id={INPUT_ID} placeholder={isDocs ? `Search ...` : `Search docs ...`} ref={searchInput} type="search" />
+    </Wrapper>
+  );
+};
 
 Search.propTypes = {
   className: PropTypes.string,

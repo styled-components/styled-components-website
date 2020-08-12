@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { KeyboardArrowRight } from 'styled-icons/material';
+import { KeyboardArrowRight } from '@styled-icons/material';
 
 import rem from '../utils/rem';
 import Link from './Link';
@@ -9,7 +9,6 @@ import { headerFont } from '../utils/fonts';
 
 const Wrapper = styled(Link).attrs((/* props */) => ({
   unstyled: true,
-  prefetch: true,
 }))`
   display: flex;
   flex-direction: row;
@@ -46,7 +45,7 @@ const Icon = styled(KeyboardArrowRight)`
 `;
 
 const NextPage = ({ title, href }) => (
-  <Wrapper unstyled prefetch href={href}>
+  <Wrapper unstyled href={href}>
     <div>
       <Text>Continue on the next page</Text>
       <PageName>{title}</PageName>

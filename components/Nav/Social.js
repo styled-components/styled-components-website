@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Github, MediumM } from 'styled-icons/fa-brands';
+import { Github, MediumM } from '@styled-icons/fa-brands';
 import rem from '../../utils/rem';
 import { navbarHeight } from '../../utils/sizes';
 import Link from '../Link';
