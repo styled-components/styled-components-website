@@ -68,6 +68,7 @@ import {
   DeadspinLogo,
   MiuiLogo,
   JimdoLogo,
+  LifehackerLogo,
 } from "./components/CompanyLogos";
 
 const companies = [
@@ -1126,6 +1127,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: "jimdo",
+      },
+    },
+  },
+  {
+    key: "https://www.lifehacker.com/",
+    similarWebGlobalRank: 4821,
+    name: "Lifehacker",
+    logo: LifehackerLogo,
+    style: {},
+    projects: {
+      lifehacker: {
+        title: "Lifehacker",
+        link: "https://www.lifehacker.com/",
+        src: "/screenshots/thumbnails/lifehacker.com.jpg",
+        width: 1280,
+        height: 720,
+        internalUrl: "lifehacker",
       },
     },
   },
