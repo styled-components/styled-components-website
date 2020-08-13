@@ -973,113 +973,83 @@ exports[`DocsLayout renders correctly 1`] = `
                               <nav
                                 className="c22 c21 "
                               >
-                                <Styled(Link)
+                                <styled.a
                                   href="https://spectrum.chat/styled-components/"
                                 >
-                                  <Link
+                                  <a
                                     className="c23"
                                     href="https://spectrum.chat/styled-components/"
-                                    unstyled={true}
                                   >
-                                    <Link
-                                      href="https://spectrum.chat/styled-components/"
-                                    >
-                                      <a
-                                        className="c23"
-                                        href="https://spectrum.chat/styled-components/"
+                                    <Spectrum>
+                                      <styled.svg
+                                        height="14"
+                                        viewBox="0 0 15 15"
+                                        width="14"
                                       >
-                                        <Spectrum>
-                                          <styled.svg
-                                            height="14"
-                                            viewBox="0 0 15 15"
-                                            width="14"
-                                          >
-                                            <svg
-                                              className="c24"
-                                              height="14"
-                                              viewBox="0 0 15 15"
-                                              width="14"
-                                            >
-                                              <title>
-                                                spectrum
-                                              </title>
-                                              <path
-                                                d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
-                                                fill="#FFF"
-                                              />
-                                            </svg>
-                                          </styled.svg>
-                                        </Spectrum>
-                                      </a>
-                                    </Link>
-                                  </Link>
-                                </Styled(Link)>
-                                <Styled(Link)
+                                        <svg
+                                          className="c24"
+                                          height="14"
+                                          viewBox="0 0 15 15"
+                                          width="14"
+                                        >
+                                          <title>
+                                            spectrum
+                                          </title>
+                                          <path
+                                            d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
+                                            fill="#FFF"
+                                          />
+                                        </svg>
+                                      </styled.svg>
+                                    </Spectrum>
+                                  </a>
+                                </styled.a>
+                                <styled.a
                                   href="https://github.com/styled-components"
                                 >
-                                  <Link
+                                  <a
                                     className="c23"
                                     href="https://github.com/styled-components"
-                                    unstyled={true}
                                   >
-                                    <Link
-                                      href="https://github.com/styled-components"
+                                    <styled.div
+                                      as={[Function]}
+                                      height="18"
                                     >
-                                      <a
-                                        className="c23"
-                                        href="https://github.com/styled-components"
+                                      <DummyIcon
+                                        className="c25"
+                                        height="18"
                                       >
-                                        <styled.div
-                                          as={[Function]}
+                                        <svg
+                                          className="c25"
                                           height="18"
-                                        >
-                                          <DummyIcon
-                                            className="c25"
-                                            height="18"
-                                          >
-                                            <svg
-                                              className="c25"
-                                              height="18"
-                                            />
-                                          </DummyIcon>
-                                        </styled.div>
-                                      </a>
-                                    </Link>
-                                  </Link>
-                                </Styled(Link)>
-                                <Styled(Link)
+                                        />
+                                      </DummyIcon>
+                                    </styled.div>
+                                  </a>
+                                </styled.a>
+                                <styled.a
                                   href="https://medium.com/styled-components"
                                 >
-                                  <Link
+                                  <a
                                     className="c23"
                                     href="https://medium.com/styled-components"
-                                    unstyled={true}
                                   >
-                                    <Link
-                                      href="https://medium.com/styled-components"
+                                    <styled.div
+                                      as={[Function]}
+                                      height="18"
                                     >
-                                      <a
-                                        className="c23"
-                                        href="https://medium.com/styled-components"
+                                      <DummyIcon
+                                        className="c25"
+                                        height="18"
                                       >
-                                        <styled.div
-                                          as={[Function]}
+                                        <svg
+                                          className="c25"
                                           height="18"
-                                        >
-                                          <DummyIcon
-                                            className="c25"
-                                            height="18"
-                                          >
-                                            <svg
-                                              className="c25"
-                                              height="18"
-                                            />
-                                          </DummyIcon>
-                                        </styled.div>
-                                      </a>
-                                    </Link>
-                                  </Link>
-                                </Styled(Link)>
+                                        />
+                                      </DummyIcon>
+                                    </styled.div>
+                                  </a>
+                                </styled.a>
                               </nav>
                             </styled.nav>
                           </Social>
@@ -1335,113 +1305,83 @@ exports[`DocsLayout renders correctly 1`] = `
                                   <nav
                                     className="c22"
                                   >
-                                    <Styled(Link)
+                                    <styled.a
                                       href="https://spectrum.chat/styled-components/"
                                     >
-                                      <Link
+                                      <a
                                         className="c23"
                                         href="https://spectrum.chat/styled-components/"
-                                        unstyled={true}
                                       >
-                                        <Link
-                                          href="https://spectrum.chat/styled-components/"
-                                        >
-                                          <a
-                                            className="c23"
-                                            href="https://spectrum.chat/styled-components/"
+                                        <Spectrum>
+                                          <styled.svg
+                                            height="14"
+                                            viewBox="0 0 15 15"
+                                            width="14"
                                           >
-                                            <Spectrum>
-                                              <styled.svg
-                                                height="14"
-                                                viewBox="0 0 15 15"
-                                                width="14"
-                                              >
-                                                <svg
-                                                  className="c24"
-                                                  height="14"
-                                                  viewBox="0 0 15 15"
-                                                  width="14"
-                                                >
-                                                  <title>
-                                                    spectrum
-                                                  </title>
-                                                  <path
-                                                    d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
-                                                    fill="#FFF"
-                                                  />
-                                                </svg>
-                                              </styled.svg>
-                                            </Spectrum>
-                                          </a>
-                                        </Link>
-                                      </Link>
-                                    </Styled(Link)>
-                                    <Styled(Link)
+                                            <svg
+                                              className="c24"
+                                              height="14"
+                                              viewBox="0 0 15 15"
+                                              width="14"
+                                            >
+                                              <title>
+                                                spectrum
+                                              </title>
+                                              <path
+                                                d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
+                                                fill="#FFF"
+                                              />
+                                            </svg>
+                                          </styled.svg>
+                                        </Spectrum>
+                                      </a>
+                                    </styled.a>
+                                    <styled.a
                                       href="https://github.com/styled-components"
                                     >
-                                      <Link
+                                      <a
                                         className="c23"
                                         href="https://github.com/styled-components"
-                                        unstyled={true}
                                       >
-                                        <Link
-                                          href="https://github.com/styled-components"
+                                        <styled.div
+                                          as={[Function]}
+                                          height="18"
                                         >
-                                          <a
-                                            className="c23"
-                                            href="https://github.com/styled-components"
+                                          <DummyIcon
+                                            className="c25"
+                                            height="18"
                                           >
-                                            <styled.div
-                                              as={[Function]}
+                                            <svg
+                                              className="c25"
                                               height="18"
-                                            >
-                                              <DummyIcon
-                                                className="c25"
-                                                height="18"
-                                              >
-                                                <svg
-                                                  className="c25"
-                                                  height="18"
-                                                />
-                                              </DummyIcon>
-                                            </styled.div>
-                                          </a>
-                                        </Link>
-                                      </Link>
-                                    </Styled(Link)>
-                                    <Styled(Link)
+                                            />
+                                          </DummyIcon>
+                                        </styled.div>
+                                      </a>
+                                    </styled.a>
+                                    <styled.a
                                       href="https://medium.com/styled-components"
                                     >
-                                      <Link
+                                      <a
                                         className="c23"
                                         href="https://medium.com/styled-components"
-                                        unstyled={true}
                                       >
-                                        <Link
-                                          href="https://medium.com/styled-components"
+                                        <styled.div
+                                          as={[Function]}
+                                          height="18"
                                         >
-                                          <a
-                                            className="c23"
-                                            href="https://medium.com/styled-components"
+                                          <DummyIcon
+                                            className="c25"
+                                            height="18"
                                           >
-                                            <styled.div
-                                              as={[Function]}
+                                            <svg
+                                              className="c25"
                                               height="18"
-                                            >
-                                              <DummyIcon
-                                                className="c25"
-                                                height="18"
-                                              >
-                                                <svg
-                                                  className="c25"
-                                                  height="18"
-                                                />
-                                              </DummyIcon>
-                                            </styled.div>
-                                          </a>
-                                        </Link>
-                                      </Link>
-                                    </Styled(Link)>
+                                            />
+                                          </DummyIcon>
+                                        </styled.div>
+                                      </a>
+                                    </styled.a>
                                   </nav>
                                 </styled.nav>
                               </Social>
