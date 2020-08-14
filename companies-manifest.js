@@ -70,6 +70,7 @@ import {
   JimdoLogo,
   ZillowLogo,
   GizmodoLogo,
+  LifeHackerLogo,
 } from "./components/CompanyLogos";
 
 const companies = [
@@ -1162,6 +1163,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: "gizmodo",
+      },
+    },
+  },
+  {
+    key: "https://www.lifehacker.com/",
+    similarWebGlobalRank: 4821,
+    name: "Life Hacker",
+    logo:  LifeHackerLogo,
+    style: {},
+    projects: {
+      lifehacker: {
+        title: "Life Hacker",
+        link: "https://lifehacker.com",
+        src: "/screenshots/thumbnails/lifehacker.com.jpg",
+        width: 1280,
+        height: 720,
+        internalUrl: "lifehacker",
       },
     },
   },
