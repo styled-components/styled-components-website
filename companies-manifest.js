@@ -71,6 +71,7 @@ import {
   ZillowLogo,
   GizmodoLogo,
   LifeHackerLogo,
+  RedBullMusicLogo,
 } from "./components/CompanyLogos";
 
 const companies = [
@@ -1180,6 +1181,22 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: "lifehacker",
+      },
+    },
+  },
+  {
+    key: "https://www.redbullmusicacademy.com/",
+    similarWebGlobalRank: 470372,
+    name: "Redbull Music Academy",
+    logo: RedBullMusicLogo,
+    style: {},
+    projects: {
+      redbullmusicacademy: {
+        title: "Redbull Music Academy",
+        link: "https://www.redbullmusicacademy.com/",
+        src: "/screenshots/thumbnails/redbullmusicacademy.com.jpg",
+        width: 1280,
+        height: 720,
       },
     },
   },
