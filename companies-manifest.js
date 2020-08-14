@@ -69,6 +69,7 @@ import {
   MiuiLogo,
   JimdoLogo,
   ZillowLogo,
+  GizmodoLogo,
 } from "./components/CompanyLogos";
 
 const companies = [
@@ -1144,6 +1145,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: "zillow",
+      },
+    },
+  },
+  {
+    key: "https://gizmodo.com/",
+    similarWebGlobalRank: 3189,
+    name: "Gizmodo",
+    logo: GizmodoLogo,
+    style: {},
+    projects: {
+      gizmodo: {
+        title: "Gizmodo",
+        link: "https://gizmodo.com/",
+        src: "/screenshots/thumbnails/gizmodo.com.jpg",
+        width: 1280,
+        height: 720,
+        internalUrl: "gizmodo",
       },
     },
   },
