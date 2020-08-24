@@ -68,6 +68,7 @@ import {
   DeadspinLogo,
   MiuiLogo,
   JimdoLogo,
+  RedBullLogo,
 } from "./components/CompanyLogos";
 
 const companies = [
@@ -1126,6 +1127,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: "jimdo",
+      },
+    },
+  },
+  {
+    key: "https://www.redbullmusicacademy.com/",
+    similarWebGlobalRank: 470372,
+    name: "Red Bull Music",
+    logo: RedBullLogo,
+    style: {},
+    projects: {
+      redbull: {
+        title: "Red Bull Music",
+        link: "https://www.redbullmusicacademy.com/",
+        src: "/screenshots/thumbnails/redbullmusicacademy.com.png",
+        width: 1280,
+        height: 720,
+        internalUrl: "redbull",
       },
     },
   },
