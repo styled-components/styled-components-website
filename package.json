@@ -40,14 +40,14 @@
     "isomorphic-fetch": "^2.2.1",
     "markdown-to-jsx": "^6.10.2",
     "next": "^9.3.2",
-    "polished": "^3.4.0",
+    "polished": "^4.0.1",
     "prismjs": "^1.6.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-is": "^16.8.6",
     "react-live": "^2.1.2",
     "react-transition-group": "^4.3.0",
-    "styled-components": "^5.1.0",
+    "styled-components": "^5.2.0",
     "styled-theming": "^2.2.0",
     "stylis-plugin-rtl": "^1.0.0",
     "webpack-bundle-analyzer": "^3.3.2"
@@ -57,7 +57,7 @@
     "@babel/preset-env": "^7.8.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.8.0",
+    "babel-jest": "^26.3.0",
     "babel-plugin-dynamic-import-node": "^2.1.0",
     "bundlesize": "^0.18.0",
     "enzyme": "^3.11.0",
@@ -68,10 +68,10 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "husky": "^4.0.7",
-    "jest": "^24.8.0",
-    "jest-styled-components": "7.0.0",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.18.2",
+    "jest": "^26.4.2",
+    "jest-styled-components": "7.0.3",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
     "react-test-renderer": "^16.5.2",
     "rimraf": "^3.0.0"
   },
@@ -87,12 +87,10 @@
     "*.js": [
       "jest -c .jest.config.js --findRelatedTests",
       "eslint --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.md": [
-      "prettier --parser mdx --no-semi --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "bundlesize": [
