@@ -53,7 +53,7 @@ export const editorMixin = `
   font-size: 0.8rem;
   font-family: ${monospace};
   font-weight: 300;
-  height: ${rem(400)};
+  min-height: ${rem(400)};
   overflow-y: auto !important;
   overflow-x: hidden;
   cursor: text;
