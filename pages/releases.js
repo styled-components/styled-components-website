@@ -27,7 +27,7 @@ const Releases = ({ releases, sidebarPages }) => (
       introduce breaking changes (noted in the following release notes).
     </Markdown>
     {releases ? (
-      releases.map(release => (
+      releases.map((release) => (
         <section key={release.id}>
           <ReleaseAnchor id={release.name} data-created-at={getFormattedDate(release.created_at)}>
             {release.name}
@@ -51,7 +51,7 @@ Releases.getInitialProps = async ({ res }) => {
 
   return {
     releases,
-    sidebarPages: releases.map(release => ({
+    sidebarPages: releases.map((release) => ({
       title: release.name,
       href: release.name,
     })),

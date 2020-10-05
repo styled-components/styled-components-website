@@ -40,7 +40,7 @@
     "isomorphic-fetch": "^2.2.1",
     "markdown-to-jsx": "^6.10.2",
     "next": "^9.3.2",
-    "polished": "^3.4.0",
+    "polished": "^4.0.1",
     "prismjs": "^1.6.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -70,8 +70,8 @@
     "husky": "^4.0.7",
     "jest": "^26.4.2",
     "jest-styled-components": "7.0.3",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.18.2",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
     "react-test-renderer": "^16.5.2",
     "rimraf": "^3.0.0"
   },
@@ -87,12 +87,10 @@
     "*.js": [
       "jest -c .jest.config.js --findRelatedTests",
       "eslint --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.md": [
-      "prettier --parser mdx --no-semi --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "bundlesize": [
