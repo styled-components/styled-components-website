@@ -47,7 +47,7 @@
     "react-is": "^16.8.6",
     "react-live": "^2.1.2",
     "react-transition-group": "^4.3.0",
-    "styled-components": "^5.1.0",
+    "styled-components": "^5.2.0",
     "styled-theming": "^2.2.0",
     "stylis-plugin-rtl": "^1.0.0",
     "webpack-bundle-analyzer": "^3.3.2"
@@ -69,7 +69,7 @@
     "eslint-plugin-react": "^7.17.0",
     "husky": "^4.0.7",
     "jest": "^26.4.2",
-    "jest-styled-components": "7.0.0",
+    "jest-styled-components": "7.0.3",
     "lint-staged": "^9.5.0",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.5.2",
