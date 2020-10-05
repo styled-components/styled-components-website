@@ -22,6 +22,7 @@ import {
   EurostarLogo,
   EuroVisionLogo,
   GeniusLogo,
+  GiphyLogo,
   GitHubLogo,
   GizmodoLogo,
   GoogleLogo,
@@ -347,7 +348,27 @@ const companies = [
     projects: {},
   },
   {
-    key: 'https://github.com/',
+    key: "https://giphy.com/",
+    similarWebGlobalRank: 830,
+    name: "Giphy",
+    logo: GiphyLogo,
+    style: {
+      bottom: "0.3rem",
+      height: "2.5rem",
+    },
+    projects: {
+      giphy: {
+        title: "Giphy",
+        link: "https://giphy.com/",
+        src: "/screenshots/thumbnails/giphy.com.jpg",
+        width: 1280,
+        height: 720,
+        internalUrl: "giphy",
+      },
+    },
+  },
+  {
+    key: "https://github.com/",
     similarWebGlobalRank: 76,
     name: 'GitHub',
     logo: GitHubLogo,
