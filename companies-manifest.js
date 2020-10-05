@@ -69,6 +69,7 @@ import {
   DeadspinLogo,
   MiuiLogo,
   JimdoLogo,
+  ZillowLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -1144,6 +1145,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'jimdo',
+      },
+    },
+  },
+  {
+    key: "https://www.zillow.com/",
+    similarWebGlobalRank: 42,
+    name: "Zillow",
+    logo: ZillowLogo,
+    style: {},
+    projects: {
+      zillow: {
+        title: "Zillow",
+        link: "https://www.zillow.com/",
+        src: "/screenshots/thumbnails/zillow.com.jpg",
+        width: 1280,
+        height: 720,
+        internalUrl: "zillow",
       },
     },
   },
