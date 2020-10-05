@@ -148,7 +148,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c2 + .c1 {
+.c1 + .c1 {
   padding-left: 0;
 }
 
@@ -167,7 +167,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c6 + .c1 {
+.c1 + .c1 {
   padding-left: 0;
 }
 

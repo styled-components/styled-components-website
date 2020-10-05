@@ -19,7 +19,7 @@ const Heading = ({ level, children }) => {
   // The pipe indicates labels after the initial title
   const [_, ...labels] = elementToText(children).split('|');
 
-  const title = React.Children.map(children, child => {
+  const title = React.Children.map(children, (child) => {
     if (typeof child === 'string') {
       const pipeIndex = child.indexOf('|');
       return pipeIndex > -1 ? child.slice(0, pipeIndex) : child;
