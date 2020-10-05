@@ -994,7 +994,7 @@
     "@babel/helper-plugin-utils" "^7.10.4"
     "@babel/plugin-transform-typescript" "^7.10.4"
 
-"@babel/runtime@7.11.2", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@7.11.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -1056,7 +1056,7 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@emotion/is-prop-valid@^0.8.6", "@emotion/is-prop-valid@^0.8.8":
+"@emotion/is-prop-valid@^0.8.7", "@emotion/is-prop-valid@^0.8.8":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
   integrity sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
@@ -1381,37 +1381,37 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@styled-icons/boxicons-regular@^9.4.1":
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/@styled-icons/boxicons-regular/-/boxicons-regular-9.4.1.tgz#742a1d0b5798c54f189b9278810d8110df8f9754"
-  integrity sha512-910zIWCB0JkEgk9I7zIIEdPc8xibg3xrT4Wo7gIu4lGEr4u9OOQT3c0ajJD7F+JlhWcWBVumzjfjOT8A5UjPJw==
+"@styled-icons/boxicons-regular@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/boxicons-regular/-/boxicons-regular-10.18.0.tgz#7858c27a5461126b45b0de5d8fedb42eac3c4613"
+  integrity sha512-o/i+54HOUXCzmDyRI4fTVlR616QBYBH/rmZtLqZ4MTyRiBAB4WRFGu4X29b78euiJfNNOWXxyKZHyS81BuuFUA==
   dependencies:
-    "@styled-icons/styled-icon" "^9.4.1"
-    tslib "^1.9.3"
+    "@babel/runtime" "^7.10.5"
+    "@styled-icons/styled-icon" "^10.6.0"
 
-"@styled-icons/fa-brands@^9.1.0":
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/@styled-icons/fa-brands/-/fa-brands-9.4.1.tgz#ad329324875bb7db00ff5fb68ce98203fbe03b7a"
-  integrity sha512-zqlS/Y3mQLdBgRhZo1op5+twKYYwfS7OjqL90N+etokIWPqv1b7nwPWzwKoRpqDfCt/gyqmgxXqWufFd0CAx7Q==
+"@styled-icons/fa-brands@^10.22.0":
+  version "10.22.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/fa-brands/-/fa-brands-10.22.0.tgz#e2edccacc63c54fe229ecb0042628a7c0f2b4c2b"
+  integrity sha512-2nVy0/eSAETvqOdj6POmztAwbMLKnczpTMKJupk5xtRxebFValu9gL4lhA3G4BfrUFgexFEeh/2r9/3vmJjJ5A==
   dependencies:
-    "@styled-icons/styled-icon" "^9.4.1"
-    tslib "^1.9.3"
+    "@babel/runtime" "^7.10.5"
+    "@styled-icons/styled-icon" "^10.6.0"
 
-"@styled-icons/material@^9.0.1":
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/@styled-icons/material/-/material-9.4.1.tgz#26169db802a10e333a5608aec2611878dd45f6fe"
-  integrity sha512-7Ucsm7RxCrnznZb+WDptBrGE45ZVBODm6J0e+fy0hvO9sjWAcuoKffYTcQEhDS2pqC1Rcc/nSZHDbqwZrpGJVw==
+"@styled-icons/material@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/material/-/material-10.18.0.tgz#60a410e8f5896e69f3855de3a3b617e07b3c204b"
+  integrity sha512-Dij/c82R3mgh1bD+O1CCS3zakEId0crcEb7Nqz6OCgyR24KNjBOMZ5k4JJIxjL/KQJvxJgxUhm0F4pdjMeh9Vg==
   dependencies:
-    "@styled-icons/styled-icon" "^9.4.1"
-    tslib "^1.9.3"
+    "@babel/runtime" "^7.10.5"
+    "@styled-icons/styled-icon" "^10.6.0"
 
-"@styled-icons/styled-icon@^9.4.1":
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/@styled-icons/styled-icon/-/styled-icon-9.4.1.tgz#9dc236c85afd89edc2bc7265ec7858cbc35d4234"
-  integrity sha512-qF0E2QOcyR1e6rh1QkKGsFt9vuayhZBJEKRa8erbHpOYLRNiEmoF1dLEVVMUKjnj5jAzzk0fNd8jSz0su3kpKg==
+"@styled-icons/styled-icon@^10.6.0":
+  version "10.6.3"
+  resolved "https://registry.yarnpkg.com/@styled-icons/styled-icon/-/styled-icon-10.6.3.tgz#eae0e5e18fd601ac47e821bb9c2e099810e86403"
+  integrity sha512-/A95L3peioLoWFiy+/eKRhoQ9r/oRrN/qzbSX4hXU1nGP2rUXcX3LWUhoBNAOp9Rw38ucc/4ralY427UUNtcGQ==
   dependencies:
-    "@emotion/is-prop-valid" "^0.8.6"
-    tslib "^1.9.3"
+    "@babel/runtime" "^7.10.5"
+    "@emotion/is-prop-valid" "^0.8.7"
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.10"
@@ -9671,7 +9671,7 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-tslib@^1.9.0, tslib@^1.9.3:
+tslib@^1.9.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
