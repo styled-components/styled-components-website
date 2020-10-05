@@ -14,7 +14,7 @@ import styled from 'styled-components';
 const Figure = styled.figure`
   display: block;
   text-align: center;
-  margin: ${props => props.margin}px 0;
+  margin: ${(props) => props.margin}px 0;
   max-width: 100%;
 
   & img {
@@ -47,7 +47,7 @@ const Figure = styled.figure`
 const Main = styled.main`
   margin: 0 auto;
   max-width: 100%;
-  width: ${props => props.width}px;
+  width: ${(props) => props.width}px;
 `;
 
 const Caption = styled.p`
@@ -55,12 +55,12 @@ const Caption = styled.p`
   font-size: 12px;
   margin: 0;
   text-align: center;
-  ${props => (props.captionSpacing ? `margin-top: ${props.captionSpacing}px;` : '')};
+  ${(props) => (props.captionSpacing ? `margin-top: ${props.captionSpacing}px;` : '')};
 `;
 
 const ImageWrapper = styled.div`
   position: relative;
-  padding-bottom: ${props => props.aspectRatio};
+  padding-bottom: ${(props) => props.aspectRatio};
 `;
 
 class Image extends Component {
@@ -86,6 +86,6 @@ class Image extends Component {
   }
 }
 
-export const Video = props => <Image {...props} video />;
+export const Video = (props) => <Image {...props} video />;
 
 export default Image;

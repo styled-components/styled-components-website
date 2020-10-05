@@ -11,7 +11,7 @@ const pathnameDict = pages.reduce(
   {}
 );
 
-const pathnameToTitle = pathname => {
+const pathnameToTitle = (pathname) => {
   let routeArr = pathname.split('/').filter(Boolean);
 
   if (routeArr[0] === 'docs') {
