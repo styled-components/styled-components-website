@@ -9,7 +9,7 @@ import { monospace } from '../utils/fonts';
 
 import { Note } from './Note';
 
-const CodeBlock = styled(props => {
+const CodeBlock = styled((props) => {
   const language = (props.language || 'clike').toLowerCase().trim();
 
   return <Editor {...props} disabled language={language} />;
