@@ -36,13 +36,17 @@ const UsersSlider = styled.span`
   ${UsersWrapper} {
     flex-direction: ${({ reverse }) => (reverse ? 'row' : 'row-reverse')};
   }
+
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 `;
 
 const CompanyLogo = styled.span`
   position: relative;
-  height: ${p => p.height || '2rem'};
+  height: ${(p) => p.height || '2rem'};
   margin: 0 1rem;
-  bottom: ${p => p.bottom || 0};
+  bottom: ${(p) => p.bottom || 0};
   opacity: 0.8;
   filter: brightness(0) invert(1);
   transition: opacity 125ms ease-in-out;
