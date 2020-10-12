@@ -48,6 +48,10 @@ const columnMixin = css`
   `)};
 `;
 
+const Code = styled.code`
+  ${columnMixin};
+`;
+
 export const editorMixin = `
   background: ${darkGrey};
   font-size: 0.8rem;
@@ -63,7 +67,6 @@ export const editorMixin = `
 
 const StyledEditor = styled(LiveEditor)`
   ${editorMixin};
-  ${columnMixin};
 `;
 
 const StyledPreview = styled(LivePreview)`
@@ -112,10 +115,12 @@ const LiveEdit = ({ noInline, code, scope = {} }) => {
       }}
     >
       <Row>
-        <StyledEditor />
+        <Code>
+          <StyledEditor />
+        </Code>
 
         {/* because react-live uses a different babel compiler, the classnames it generates aren't stable and a remount is needed after SSR */}
-        <StyledPreview key={mounted ? 'preview-client' : 'preview-ssr'} />
+        <StyledPreview className="notranslate" key={mounted ? 'preview-client' : 'preview-ssr'} />
       </Row>
 
       <StyledError />
