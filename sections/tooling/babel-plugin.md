@@ -174,3 +174,30 @@ You can disable this feature with the `transpileTemplateLiterals` option:
 
 Read more about [Tagged Template Literals](/docs/advanced#tagged-template-literals) in
 our dedicated section explaining them.
+
+### Namespace
+
+The namespace will ensure that your class names will be unique; this setting is handy when you are working with micro frontends where class name collision can occur.
+
+If desired, you can enable this behavior via babel configuration:
+
+```js
+{
+  "plugins": [
+    ["babel-plugin-styled-components", {
+      "namespace": "my-app"
+    }]
+  ]
+}
+```
+
+Here's an example of the transpiled code processed with `namespace` enabled:
+
+```js
+_styledComponents2.default.div.withConfig({
+  displayName: 'code__before',
+  componentId: 'my-app__sc-3rfj0a-1',
+})(['color:blue;'])
+```
+
+> ⚠️ This feature is available from version **_1.11_**.

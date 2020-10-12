@@ -19,7 +19,7 @@ exports[`Search renders correctly 1`] = `
   flex: 0 0 auto;
 }
 
-.c3 {
+.c2 {
   background: none;
   outline: none;
   border: none;
@@ -35,47 +35,47 @@ exports[`Search renders correctly 1`] = `
   color: currentColor;
 }
 
-.c3::-webkit-input-placeholder {
+.c2::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c3::-moz-placeholder {
+.c2::-moz-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c3:-ms-input-placeholder {
+.c2:-ms-input-placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c3::placeholder {
+.c2::placeholder {
   color: currentColor;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c3:focus::-webkit-input-placeholder {
+.c2:focus::-webkit-input-placeholder {
   opacity: 0.8;
 }
 
-.c3:focus::-moz-placeholder {
+.c2:focus::-moz-placeholder {
   opacity: 0.8;
 }
 
-.c3:focus:-ms-input-placeholder {
+.c2:focus:-ms-input-placeholder {
   opacity: 0.8;
 }
 
-.c3:focus::placeholder {
+.c2:focus::placeholder {
   opacity: 0.8;
 }
 
@@ -111,7 +111,7 @@ exports[`Search renders correctly 1`] = `
   background: rgba(0,0,0,0.1);
 }
 
-.c1 .c2 {
+.c1 .{
   width: 1.4444444444444444rem;
   height: 1.4444444444444444rem;
 }
@@ -132,7 +132,7 @@ exports[`Search renders correctly 1`] = `
 }
 
 @media (max-width:62.5em) {
-  .c3 {
+  .c2 {
     padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
@@ -174,11 +174,11 @@ exports[`Search renders correctly 1`] = `
     htmlFor="docs-search-input"
   >
     <svg
-      className="c2 "
+      className=""
     />
   </label>
   <input
-    className="c3"
+    className="c2"
     id="docs-search-input"
     placeholder="Search docs ..."
     type="search"

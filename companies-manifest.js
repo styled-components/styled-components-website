@@ -22,7 +22,9 @@ import {
   EurostarLogo,
   EuroVisionLogo,
   GeniusLogo,
+  GiphyLogo,
   GitHubLogo,
+  GizmodoLogo,
   GoogleLogo,
   HuffpostLogo,
   IdeoLogo,
@@ -31,10 +33,12 @@ import {
   JaneLogo,
   KiwiComLogo,
   LegoLogo,
+  LifehackerLogo,
   MagicLeapLogo,
   MoleskineLogo,
   PatreonLogo,
   RedditLogo,
+  RedBullLogo,
   SeatGeekLogo,
   SesameLogo,
   ShpockLogo,
@@ -64,6 +68,11 @@ import {
   OverWatchLeagueLogo,
   PageXlLogo,
   HomelyLogo,
+  WishLogo,
+  DeadspinLogo,
+  MiuiLogo,
+  JimdoLogo,
+  ZillowLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -80,7 +89,7 @@ const companies = [
   },
   {
     key: 'https://www.airbnb.com',
-    similarWebGlobalRank: 20,
+    similarWebGlobalRank: 341439,
     name: 'AirBnB',
     logo: AirBnBLogo,
     style: {
@@ -341,12 +350,49 @@ const companies = [
     projects: {},
   },
   {
+    key: 'https://giphy.com/',
+    similarWebGlobalRank: 830,
+    name: 'Giphy',
+    logo: GiphyLogo,
+    style: {
+      bottom: '0.3rem',
+      height: '2.5rem',
+    },
+    projects: {
+      giphy: {
+        title: 'Giphy',
+        link: 'https://giphy.com/',
+        src: '/screenshots/thumbnails/giphy.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'giphy',
+      },
+    },
+  },
+  {
     key: 'https://github.com/',
     similarWebGlobalRank: 76,
     name: 'GitHub',
     logo: GitHubLogo,
     style: {},
     projects: {},
+  },
+  {
+    key: 'https://gizmodo.com/',
+    similarWebGlobalRank: 76,
+    name: 'Gizmodo',
+    logo: GizmodoLogo,
+    style: {},
+    projects: {
+      gizmodo: {
+        title: 'Gizmodo',
+        link: 'https://gizmodo.com/',
+        src: '/screenshots/thumbnails/gizmodo.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'gizmodo',
+      },
+    },
   },
   {
     key: 'https://www.huffpost.com',
@@ -375,7 +421,7 @@ const companies = [
     style: {},
     projects: {
       imdb: {
-        title: 'IMDb Website',
+        title: 'The Internet Movie Database',
         link: 'https://imdb.com/',
         src: '/screenshots/thumbnails/imdb.com.jpg',
         width: 1280,
@@ -539,7 +585,7 @@ const companies = [
     },
     projects: {
       spotify: {
-        title: 'Spotify Website',
+        title: 'Spotify',
         link: 'https://spotify.com/',
         src: '/screenshots/thumbnails/spotify.com.jpg',
         width: 1280,
@@ -1054,6 +1100,125 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'homely',
+      },
+    },
+  },
+  {
+    key: 'https://deadspin.com/',
+    similarWebGlobalRank: 29343,
+    name: 'Deadspin',
+    logo: DeadspinLogo,
+    style: {},
+    projects: {
+      deadspin: {
+        title: 'Deadspin',
+        link: 'https://deadspin.com/',
+        src: '/screenshots/thumbnails/deadspin.com.png',
+        width: 1280,
+        height: 720,
+        internalUrl: 'deadspin',
+      },
+    },
+  },
+  {
+    key: 'https://www.wish.com/',
+    similarWebGlobalRank: 194,
+    name: 'Wish',
+    logo: WishLogo,
+    style: {},
+    projects: {
+      wish: {
+        title: 'Wish',
+        link: 'https://www.wish.com/',
+        src: '/screenshots/thumbnails/wish.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'wish',
+      },
+    },
+  },
+  {
+    key: 'https://home.miui.com/',
+    similarWebGlobalRank: 891,
+    name: 'Miui',
+    logo: MiuiLogo,
+    style: {},
+    projects: {
+      miui: {
+        title: 'Miui',
+        link: 'https://home.miui.com/',
+        src: '/screenshots/thumbnails/miui.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'miui',
+      },
+    },
+  },
+  {
+    key: 'https://www.jimdo.com/',
+    similarWebGlobalRank: 4810,
+    name: 'Jimdo',
+    logo: JimdoLogo,
+    style: {},
+    projects: {
+      jimdo: {
+        title: 'Jimdo',
+        link: 'https://www.jimdo.com/',
+        src: '/screenshots/thumbnails/jimdo.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'jimdo',
+      },
+    },
+  },
+  {
+    key: 'https://www.redbullmusicacademy.com/',
+    similarWebGlobalRank: 470372,
+    name: 'Red Bull Music',
+    logo: RedBullLogo,
+    style: {},
+    projects: {
+      redbull: {
+        title: 'Red Bull Music',
+        link: 'https://www.redbullmusicacademy.com/',
+        src: '/screenshots/thumbnails/redbullmusicacademy.com.png',
+        width: 1280,
+        height: 720,
+        internalUrl: 'redbull',
+      },
+    },
+  },
+  {
+    key: 'https://www.zillow.com/',
+    similarWebGlobalRank: 42,
+    name: 'Zillow',
+    logo: ZillowLogo,
+    style: {},
+    projects: {
+      zillow: {
+        title: 'Zillow',
+        link: 'https://www.zillow.com/',
+        src: '/screenshots/thumbnails/zillow.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'zillow',
+      },
+    },
+  },
+  {
+    key: 'https://www.lifehacker.com/',
+    similarWebGlobalRank: 4821,
+    name: 'Lifehacker',
+    logo: LifehackerLogo,
+    style: {},
+    projects: {
+      lifehacker: {
+        title: 'Lifehacker',
+        link: 'https://www.lifehacker.com/',
+        src: '/screenshots/thumbnails/lifehacker.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'lifehacker',
       },
     },
   },

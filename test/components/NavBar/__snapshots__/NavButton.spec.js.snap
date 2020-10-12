@@ -16,7 +16,7 @@ exports[`NavButton renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c1 + .c0 {
+.c0 + .c0 {
   padding-left: 0;
 }
 

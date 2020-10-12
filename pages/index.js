@@ -157,7 +157,7 @@ class Index extends PureComponent {
   };
 
   toggleMobileNav = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isMobileNavFolded: !prevState.isMobileNavFolded,
     }));
   };

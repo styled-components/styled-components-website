@@ -24,12 +24,12 @@ export const InlineLink = styled.a.attrs((/* props */) => ({
   target: '_blank',
   rel: 'noopener',
 }))`
-  color: ${p => (p['data-white'] ? 'white' : blmGrey)};
+  color: ${(p) => (p['data-white'] ? 'white' : blmGrey)};
   cursor: pointer;
   text-decoration: underline;
 
   &:hover {
-    color: ${p => (p['data-white'] ? 'white' : red)};
+    color: ${(p) => (p['data-white'] ? 'white' : red)};
   }
 `;
 
