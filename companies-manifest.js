@@ -1096,7 +1096,7 @@ const companies = [
       homely: {
         title: 'Homely',
         link: 'https://www.homely.com.au/',
-        src: '/screenshots/thumbnails/homely.com.jpg',
+        src: '/screenshots/thumbnails/homely.com.au.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'homely',
