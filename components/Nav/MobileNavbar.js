@@ -29,7 +29,7 @@ const SecondaryMenu = styled.div`
   left: 0;
   right: 0;
 
-  ${p =>
+  ${(p) =>
     p.isOpen
       ? css`
           height: ${rem(navbarHeight)};
@@ -64,7 +64,7 @@ const LogoLink = styled(Link).attrs((/* props */) => ({
 const ArrowWrapper = styled.div`
   transition: transform 0.2s;
 
-  ${p =>
+  ${(p) =>
     p.shouldRotate &&
     css`
       transform-origin: center center;
@@ -78,12 +78,12 @@ const SecondaryMenuItem = styled.div`
 
 const StyledIcon = styled.div`
   && {
-    width: ${p => rem(p.size || 20)};
-    height: ${p => rem(p.size || 20)};
+    width: ${(p) => rem(p.size || 20)};
+    height: ${(p) => rem(p.size || 20)};
   }
 `;
 
-const MobileNavbar = props => {
+const MobileNavbar = (props) => {
   const { isSideFolded, isMobileNavFolded, onSideToggle, onMobileNavToggle, showSideNav, onSearchButtonClick } = props;
 
   return (
