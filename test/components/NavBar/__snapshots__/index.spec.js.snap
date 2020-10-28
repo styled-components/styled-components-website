@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav renders correctly 1`] = `
-.c39 {
+.c40 {
   display: inline-block;
   color: inherit;
   cursor: pointer;
@@ -133,7 +133,7 @@ exports[`Nav renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c28 {
+.c29 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -144,15 +144,15 @@ exports[`Nav renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c26 svg {
+.c27 svg {
   display: inline-block;
 }
 
-.c26 svg path {
+.c27 svg path {
   fill: currentColor;
 }
 
-.c25 {
+.c26 {
   background: none;
   outline: none;
   border: none;
@@ -167,11 +167,11 @@ exports[`Nav renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c24 + .c24 {
+.c25 + .c25 {
   padding-left: 0;
 }
 
-.c29 {
+.c30 {
   background: none;
   outline: none;
   border: none;
@@ -186,7 +186,7 @@ exports[`Nav renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c24 + .c24 {
+.c25 + .c25 {
   padding-left: 0;
 }
 
@@ -194,11 +194,23 @@ exports[`Nav renders correctly 1`] = `
   display: none;
 }
 
-.c33 {
-  position: absolute;
-  top: 2.7777777777777777rem;
-  left: 0;
-  right: 0;
+.c24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 2.7777777777777777rem;
+}
+
+.c34 {
   height: 2.7777777777777777rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -229,12 +241,12 @@ exports[`Nav renders correctly 1`] = `
   color: #868686;
 }
 
-.c27 {
+.c28 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c31 {
+.c32 {
   -webkit-transition: -webkit-transform 0.2s;
   -webkit-transition: transform 0.2s;
   transition: transform 0.2s;
@@ -246,16 +258,16 @@ exports[`Nav renders correctly 1`] = `
   transform: rotate(180deg);
 }
 
-.c34 {
+.c35 {
   padding-right: 1.1111111111111112rem;
 }
 
-.c30.c30 {
+.c31.c31 {
   width: 1.5555555555555556rem;
   height: 1.5555555555555556rem;
 }
 
-.c32.c32 {
+.c33.c33 {
   width: 2rem;
   height: 2rem;
 }
@@ -479,7 +491,7 @@ exports[`Nav renders correctly 1`] = `
   margin-right: 1.9444444444444444rem;
 }
 
-.c35 {
+.c36 {
   position: fixed;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -501,48 +513,36 @@ exports[`Nav renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c36 {
+.c37 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 3.3333333333333335rem;
 }
 
-.c37 {
+.c38 {
   margin-bottom: 1.1111111111111112rem;
 }
 
-.c38 {
+.c39 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
 }
 
 @media (min-width:62.5em) {
-  .c39 {
+  .c40 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c39:hover {
+  .c40:hover {
     background: rgba(20,20,20,0.1);
   }
 }
 
 @media (max-width:62.5em) {
   .c23 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    height: 2.7777777777777777rem;
+    display: initial;
   }
 }
 
@@ -1043,125 +1043,131 @@ exports[`Nav renders correctly 1`] = `
               <div
                 className="c23"
               >
-                <styled.button
-                  active={true}
-                >
-                  <button
-                    className="c24 c25"
+                <styled.div>
+                  <div
+                    className="c24"
                   >
-                    <CloseIcon>
-                      <styled.svg
-                        height="15"
-                        width="15"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlnsXlink="http://www.w3.org/1999/xlink"
-                      >
-                        <svg
-                          className="c26"
-                          height="15"
-                          width="15"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlnsXlink="http://www.w3.org/1999/xlink"
-                        >
-                          <title>
-                            close
-                          </title>
-                          <use
-                            fill="#FFF"
-                            transform="translate(1 1)"
-                            xlinkHref="#close"
-                          />
-                          <defs>
-                            <path
-                              d="M-.7.7l13 13 1.4-1.4-13-13L-.7.7zm13-1.4l-13 13 1.4 1.4 13-13-1.4-1.4z"
-                              id="close"
-                            />
-                          </defs>
-                        </svg>
-                      </styled.svg>
-                    </CloseIcon>
-                  </button>
-                </styled.button>
-                <Styled(Link)>
-                  <Link
-                    aria-label="styled components"
-                    className="c27"
-                    href="/"
-                    unstyled={true}
-                  >
-                    <Link
-                      href="/"
+                    <styled.button
+                      active={true}
                     >
-                      <a
+                      <button
+                        className="c25 c26"
+                      >
+                        <CloseIcon>
+                          <styled.svg
+                            height="15"
+                            width="15"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                          >
+                            <svg
+                              className="c27"
+                              height="15"
+                              width="15"
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlnsXlink="http://www.w3.org/1999/xlink"
+                            >
+                              <title>
+                                close
+                              </title>
+                              <use
+                                fill="#FFF"
+                                transform="translate(1 1)"
+                                xlinkHref="#close"
+                              />
+                              <defs>
+                                <path
+                                  d="M-.7.7l13 13 1.4-1.4-13-13L-.7.7zm13-1.4l-13 13 1.4 1.4 13-13-1.4-1.4z"
+                                  id="close"
+                                />
+                              </defs>
+                            </svg>
+                          </styled.svg>
+                        </CloseIcon>
+                      </button>
+                    </styled.button>
+                    <Styled(Link)>
+                      <Link
                         aria-label="styled components"
-                        className="c27"
+                        className="c28"
                         href="/"
+                        unstyled={true}
                       >
-                        <styled.div
-                          compact={true}
+                        <Link
+                          href="/"
                         >
-                          <div
+                          <a
+                            aria-label="styled components"
                             className="c28"
-                          />
-                        </styled.div>
-                      </a>
-                    </Link>
-                  </Link>
-                </Styled(Link)>
-                <div>
-                  <styled.button
-                    onClick={[Function]}
-                  >
-                    <button
-                      className="c24 c29"
-                      onClick={[Function]}
-                    >
-                      <styled.div
-                        as={[Function]}
-                        size={28}
+                            href="/"
+                          >
+                            <styled.div
+                              compact={true}
+                            >
+                              <div
+                                className="c29"
+                              />
+                            </styled.div>
+                          </a>
+                        </Link>
+                      </Link>
+                    </Styled(Link)>
+                    <div>
+                      <styled.button
+                        onClick={[Function]}
                       >
-                        <DummyIcon
-                          className="c30"
-                          size={28}
-                        >
-                          <svg
-                            className="c30"
-                            size={28}
-                          />
-                        </DummyIcon>
-                      </styled.div>
-                    </button>
-                  </styled.button>
-                  <styled.button
-                    active={true}
-                  >
-                    <button
-                      className="c24 c25"
-                    >
-                      <styled.div
-                        shouldRotate={true}
-                      >
-                        <div
-                          className="c31"
+                        <button
+                          className="c25 c30"
+                          onClick={[Function]}
                         >
                           <styled.div
-                            size={36}
+                            as={[Function]}
+                            size={28}
+                          >
+                            <DummyIcon
+                              className="c31"
+                              size={28}
+                            >
+                              <svg
+                                className="c31"
+                                size={28}
+                              />
+                            </DummyIcon>
+                          </styled.div>
+                        </button>
+                      </styled.button>
+                      <styled.button
+                        active={true}
+                      >
+                        <button
+                          className="c25 c26"
+                        >
+                          <styled.div
+                            shouldRotate={true}
                           >
                             <div
                               className="c32"
-                              size={36}
-                            />
+                            >
+                              <styled.div
+                                size={36}
+                              >
+                                <div
+                                  className="c33"
+                                  size={36}
+                                />
+                              </styled.div>
+                            </div>
                           </styled.div>
-                        </div>
-                      </styled.div>
-                    </button>
-                  </styled.button>
-                </div>
+                        </button>
+                      </styled.button>
+                    </div>
+                  </div>
+                </styled.div>
                 <styled.div
                   isOpen={true}
                 >
                   <div
-                    className="c33"
+                    className="c34"
                   >
                     <NavLinks>
                       <styled.nav>
@@ -1268,7 +1274,7 @@ exports[`Nav renders correctly 1`] = `
                     </NavLinks>
                     <styled.div>
                       <div
-                        className="c34"
+                        className="c35"
                       >
                         <Social>
                           <styled.nav>
@@ -1398,7 +1404,7 @@ exports[`Nav renders correctly 1`] = `
     <CaptureScroll>
       <styled.nav>
         <nav
-          className="c35"
+          className="c36"
         >
           <withRouter(Unknown)>
             <Component
@@ -1406,7 +1412,7 @@ exports[`Nav renders correctly 1`] = `
             >
               <styled.div>
                 <div
-                  className="c36"
+                  className="c37"
                 >
                   <Folder
                     isOpenDefault={null}
@@ -1414,13 +1420,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c37"
+                        className="c38"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c38"
+                            className="c39"
                             onClick={[Function]}
                           >
                             <Link
@@ -1433,7 +1439,7 @@ exports[`Nav renders correctly 1`] = `
                                   href="/docs/basics"
                                 >
                                   <a
-                                    className="c39"
+                                    className="c40"
                                     href="/docs/basics"
                                   >
                                     Basics
@@ -1452,13 +1458,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c37"
+                        className="c38"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c38"
+                            className="c39"
                             onClick={[Function]}
                           >
                             <Link
@@ -1471,7 +1477,7 @@ exports[`Nav renders correctly 1`] = `
                                   href="/docs/advanced"
                                 >
                                   <a
-                                    className="c39"
+                                    className="c40"
                                     href="/docs/advanced"
                                   >
                                     Advanced
@@ -1490,13 +1496,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c37"
+                        className="c38"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c38"
+                            className="c39"
                             onClick={[Function]}
                           >
                             <Link
@@ -1509,7 +1515,7 @@ exports[`Nav renders correctly 1`] = `
                                   href="/docs/api"
                                 >
                                   <a
-                                    className="c39"
+                                    className="c40"
                                     href="/docs/api"
                                   >
                                     API Reference
@@ -1528,13 +1534,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c37"
+                        className="c38"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c38"
+                            className="c39"
                             onClick={[Function]}
                           >
                             <Link
@@ -1547,7 +1553,7 @@ exports[`Nav renders correctly 1`] = `
                                   href="/docs/tooling"
                                 >
                                   <a
-                                    className="c39"
+                                    className="c40"
                                     href="/docs/tooling"
                                   >
                                     Tooling
@@ -1566,13 +1572,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c37"
+                        className="c38"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c38"
+                            className="c39"
                             onClick={[Function]}
                           >
                             <Link
@@ -1585,7 +1591,7 @@ exports[`Nav renders correctly 1`] = `
                                   href="/docs/faqs"
                                 >
                                   <a
-                                    className="c39"
+                                    className="c40"
                                     href="/docs/faqs"
                                   >
                                     FAQs
