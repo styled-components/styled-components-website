@@ -16,19 +16,18 @@ const Wrapper = styled.div`
   display: none;
 
   ${mobile(css`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: ${rem(navbarHeight)};
+    display: initial;
   `)};
 `;
 
-const SecondaryMenu = styled.div`
-  position: absolute;
-  top: ${rem(navbarHeight)};
-  left: 0;
-  right: 0;
+const PrimaryMenu = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: ${rem(navbarHeight)};
+`;
 
+const SecondaryMenu = styled.div`
   ${(p) =>
     p.isOpen
       ? css`
@@ -88,26 +87,28 @@ const MobileNavbar = (props) => {
 
   return (
     <Wrapper>
-      {showSideNav !== false && (
-        <NavButton active={!isSideFolded} onClick={onSideToggle}>
-          {isSideFolded ? <FoldIcon /> : <CloseIcon />}
-        </NavButton>
-      )}
+      <PrimaryMenu>
+        {showSideNav !== false && (
+          <NavButton active={!isSideFolded} onClick={onSideToggle}>
+            {isSideFolded ? <FoldIcon /> : <CloseIcon />}
+          </NavButton>
+        )}
 
-      <LogoLink>
-        <Logo compact />
-      </LogoLink>
-      <div>
-        <NavButton onClick={onSearchButtonClick}>
-          <StyledIcon as={Search} size={28} />
-        </NavButton>
+        <LogoLink>
+          <Logo compact />
+        </LogoLink>
+        <div>
+          <NavButton onClick={onSearchButtonClick}>
+            <StyledIcon as={Search} size={28} />
+          </NavButton>
 
-        <NavButton onClick={onMobileNavToggle} active={!isMobileNavFolded}>
-          <ArrowWrapper shouldRotate={!isMobileNavFolded}>
-            <StyledIcon as={KeyboardArrowDown} size={36} />
-          </ArrowWrapper>
-        </NavButton>
-      </div>
+          <NavButton onClick={onMobileNavToggle} active={!isMobileNavFolded}>
+            <ArrowWrapper shouldRotate={!isMobileNavFolded}>
+              <StyledIcon as={KeyboardArrowDown} size={36} />
+            </ArrowWrapper>
+          </NavButton>
+        </div>
+      </PrimaryMenu>
 
       <SecondaryMenu isOpen={!isMobileNavFolded}>
         <NavLinks />

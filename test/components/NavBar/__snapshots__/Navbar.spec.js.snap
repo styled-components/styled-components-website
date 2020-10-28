@@ -125,7 +125,7 @@ exports[`Navbar renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c28 {
+.c29 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -136,15 +136,15 @@ exports[`Navbar renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c26 svg {
+.c27 svg {
   display: inline-block;
 }
 
-.c26 svg path {
+.c27 svg path {
   fill: currentColor;
 }
 
-.c25 {
+.c26 {
   background: none;
   outline: none;
   border: none;
@@ -159,11 +159,11 @@ exports[`Navbar renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c24 + .c24 {
+.c25 + .c25 {
   padding-left: 0;
 }
 
-.c29 {
+.c30 {
   background: none;
   outline: none;
   border: none;
@@ -178,7 +178,7 @@ exports[`Navbar renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c24 + .c24 {
+.c25 + .c25 {
   padding-left: 0;
 }
 
@@ -186,11 +186,23 @@ exports[`Navbar renders correctly 1`] = `
   display: none;
 }
 
-.c33 {
-  position: absolute;
-  top: 2.7777777777777777rem;
-  left: 0;
-  right: 0;
+.c24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 2.7777777777777777rem;
+}
+
+.c34 {
   height: 2.7777777777777777rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -221,12 +233,12 @@ exports[`Navbar renders correctly 1`] = `
   color: #868686;
 }
 
-.c27 {
+.c28 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c31 {
+.c32 {
   -webkit-transition: -webkit-transform 0.2s;
   -webkit-transition: transform 0.2s;
   transition: transform 0.2s;
@@ -238,16 +250,16 @@ exports[`Navbar renders correctly 1`] = `
   transform: rotate(180deg);
 }
 
-.c34 {
+.c35 {
   padding-right: 1.1111111111111112rem;
 }
 
-.c30.c30 {
+.c31.c31 {
   width: 1.5555555555555556rem;
   height: 1.5555555555555556rem;
 }
 
-.c32.c32 {
+.c33.c33 {
   width: 2rem;
   height: 2rem;
 }
@@ -473,19 +485,7 @@ exports[`Navbar renders correctly 1`] = `
 
 @media (max-width:62.5em) {
   .c23 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    height: 2.7777777777777777rem;
+    display: initial;
   }
 }
 
@@ -755,66 +755,70 @@ exports[`Navbar renders correctly 1`] = `
   <div
     className="c23"
   >
-    <button
-      className="c24 c25"
+    <div
+      className="c24"
     >
-      <svg
-        className="c26"
-        height="15"
-        width="15"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
-        <title>
-          close
-        </title>
-        <use
-          fill="#FFF"
-          transform="translate(1 1)"
-          xlinkHref="#close"
-        />
-        <defs>
-          <path
-            d="M-.7.7l13 13 1.4-1.4-13-13L-.7.7zm13-1.4l-13 13 1.4 1.4 13-13-1.4-1.4z"
-            id="close"
-          />
-        </defs>
-      </svg>
-    </button>
-    <a
-      aria-label="styled components"
-      className="c27"
-      href="/"
-    >
-      <div
-        className="c28"
-      />
-    </a>
-    <div>
       <button
-        className="c24 c29"
-        onClick={[Function]}
+        className="c25 c26"
       >
         <svg
-          className="c30"
-          size={28}
-        />
+          className="c27"
+          height="15"
+          width="15"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        >
+          <title>
+            close
+          </title>
+          <use
+            fill="#FFF"
+            transform="translate(1 1)"
+            xlinkHref="#close"
+          />
+          <defs>
+            <path
+              d="M-.7.7l13 13 1.4-1.4-13-13L-.7.7zm13-1.4l-13 13 1.4 1.4 13-13-1.4-1.4z"
+              id="close"
+            />
+          </defs>
+        </svg>
       </button>
-      <button
-        className="c24 c25"
+      <a
+        aria-label="styled components"
+        className="c28"
+        href="/"
       >
         <div
-          className="c31"
+          className="c29"
+        />
+      </a>
+      <div>
+        <button
+          className="c25 c30"
+          onClick={[Function]}
+        >
+          <svg
+            className="c31"
+            size={28}
+          />
+        </button>
+        <button
+          className="c25 c26"
         >
           <div
             className="c32"
-            size={36}
-          />
-        </div>
-      </button>
+          >
+            <div
+              className="c33"
+              size={36}
+            />
+          </div>
+        </button>
+      </div>
     </div>
     <div
-      className="c33"
+      className="c34"
     >
       <nav
         className="c7"
@@ -854,7 +858,7 @@ exports[`Navbar renders correctly 1`] = `
         </a>
       </nav>
       <div
-        className="c34"
+        className="c35"
       >
         <nav
           className="c19"
