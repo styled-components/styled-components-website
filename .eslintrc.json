@@ -5,7 +5,6 @@
   "rules": {
     "class-methods-use-this": 0,
     "symbol-description": 0,
-    "no-undef": "error",
     "no-unused-vars": [
       2,
       {
