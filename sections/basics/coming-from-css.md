@@ -103,46 +103,123 @@ and comparisons with alternatives, in [Styled Components: To Use or Not to Use?]
 
 The preprocessor we use, [stylis](https://github.com/thysultan/stylis.js), supports scss-like syntax for automatically nesting styles.
 
-The ampersand (`&`) can be used to refer back to the main component. Here are some more examples of its potential usage:
+Through this preprocessing, styled-components supports some advanced selector patterns:
 
-```react
-const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
-  color: blue;
+* `&` a single ampersand refers to **all instances** of the component; it is used for applying broad overrides:
+  
+  ```react
+  const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
+    color: blue;
 
-  &:hover {
-    color: red; // <Thing> when hovered
-  }
+    &:hover {
+      color: red; // <Thing> when hovered
+    }
 
-  & ~ & {
-    background: tomato; // <Thing> as a sibling of <Thing>, but maybe not directly next to it
-  }
+    & ~ & {
+      background: tomato; // <Thing> as a sibling of <Thing>, but maybe not directly next to it
+    }
 
-  & + & {
-    background: lime; // <Thing> next to <Thing>
-  }
+    & + & {
+      background: lime; // <Thing> next to <Thing>
+    }
 
-  &.something {
-    background: orange; // <Thing> tagged with an additional CSS class ".something"
-  }
+    &.something {
+      background: orange; // <Thing> tagged with an additional CSS class ".something"
+    }
 
-  .something-else & {
-    border: 1px solid; // <Thing> inside another element labeled ".something-else"
-  }
-`
+    .something-else & {
+      border: 1px solid; // <Thing> inside another element labeled ".something-else"
+    }
+  `
 
-render(
-  <React.Fragment>
-    <Thing>Hello world!</Thing>
-    <Thing>How ya doing?</Thing>
-    <Thing className="something">The sun is shining...</Thing>
-    <div>Pretty nice day today.</div>
-    <Thing>Don't you think?</Thing>
-    <div className="something-else">
-      <Thing>Splendid.</Thing>
-    </div>
-  </React.Fragment>
-)
-```
+  render(
+    <React.Fragment>
+      <Thing>Hello world!</Thing>
+      <Thing>How ya doing?</Thing>
+      <Thing className="something">The sun is shining...</Thing>
+      <div>Pretty nice day today.</div>
+      <Thing>Don't you think?</Thing>
+      <div className="something-else">
+        <Thing>Splendid.</Thing>
+      </div>
+    </React.Fragment>
+  )
+  ```
+
+* `&&` a double ampersand refers to **an instance** of the component; this is useful if you're doing conditional styling overrides and don't want a style to apply to *all instances* of a particular component:
+
+  ```react
+  const Input = styled.input.attrs({ type: "checkbox" })``;
+
+  const Label = styled.span`
+    ${(props) => {
+      switch (props.$mode) {
+        case "dark":
+          return css`
+            background-color: black;
+            color: white;
+            ${Input}:checked + && {
+              color: blue;
+            }
+          `;
+        default:
+          return css`
+            background-color: white;
+            color: black;
+            ${Input}:checked + && {
+              color: red;
+            }
+          `;
+      }
+    }}
+  `;
+
+  render(
+    <React.Fragment>
+      <label>
+        <Input defaultChecked />
+        <Label>Foo</Label>
+      </label>
+      <label>
+        <Input />
+        <Label $mode="dark">Foo</Label>
+      </label>
+      <label>
+        <Input defaultChecked />
+        <Label>Foo</Label>
+      </label>
+      <label>
+        <Input defaultChecked />
+        <Label $mode="dark">Foo</Label>
+      </label>
+    </React.Fragment>
+  )
+  ```  
+
+* `&&` a double ampersand alone has a special behavior called a "precedence boost"; this can be useful if you are dealing with a mixed styled-components and vanilla CSS environment where there might be conflicting styles:
+
+   ```react
+    const Thing = styled.div`
+      && {
+        color: blue;
+      }
+    `
+
+    const GlobalStyle = createGlobalStyle`
+      div${Thing} {
+        color: red;
+      }
+    `
+
+    render(
+      <React.Fragment>
+        <GlobalStyle />
+        <Thing>
+          I'm blue, da ba dee da ba daa
+        </Thing>
+      </React.Fragment>
+    )
+    ```
 
 If you put selectors in without the ampersand, they will refer to children of the component.
 
@@ -161,30 +238,5 @@ render(
     <label htmlFor="foo-button" className="something">Mystery button</label>
     <button id="foo-button">What do I do?</button>
   </Thing>
-)
-```
-
-Finally, the ampersand can be used to increase the specificity of rules on the component; this can be useful if you are dealing with a mixed styled-components and vanilla CSS environment where there might be conflicting styles:
-
-```react
-const Thing = styled.div`
-  && {
-    color: blue;
-  }
-`
-
-const GlobalStyle = createGlobalStyle`
-  div${Thing} {
-    color: red;
-  }
-`
-
-render(
-  <React.Fragment>
-    <GlobalStyle />
-    <Thing>
-      I'm blue, da ba dee da ba daa
-    </Thing>
-  </React.Fragment>
 )
 ```
