@@ -1,9 +1,13 @@
 ## TypeScript
 
-styled-components has community-organized [TypeScript definitions](https://www.npmjs.com/package/@types/styled-components) from [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) to allow the library to be used in any TypeScript project. To install them, run:
+styled-components has community-organized [TypeScript definitions](https://www.npmjs.com/package/@types/styled-components) on [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) which powers the editing experience in IDEs and can provide types for TypeScript projects. To install them, run:
 
-```
+```sh
+# Web
 npm install @types/styled-components
+
+# React Native
+npm install @types/styled-components @types/styled-components-react-native
 ```
 
 > Now that Babel 7 is out and the [TypeScript preset](https://babeljs.io/docs/en/babel-preset-typescript) is available, it's now possible to use the [styled-components babel plugin](/docs/tooling#babel-plugin) in conjunction with TypeScript.
@@ -18,17 +22,17 @@ So the first step is creating a declarations file. Let's name it `styled.d.ts` f
 
 ```ts
 // import original module declarations
-import 'styled-components'
+import 'styled-components';
 
 // and extend them!
 declare module 'styled-components' {
   export interface DefaultTheme {
-    borderRadius: string
+    borderRadius: string;
 
     colors: {
-      main: string
-      secondary: string
-    }
+      main: string;
+      secondary: string;
+    };
   }
 }
 ```
@@ -41,7 +45,7 @@ Now we can create a theme just by using the `DefaultTheme` declared at the step 
 
 ```ts
 // my-theme.ts
-import { DefaultTheme } from 'styled-components'
+import { DefaultTheme } from 'styled-components';
 
 const myTheme: DefaultTheme = {
   borderRadius: '5px',
@@ -50,9 +54,9 @@ const myTheme: DefaultTheme = {
     main: 'cyan',
     secondary: 'magenta',
   },
-}
+};
 
-export { myTheme }
+export { myTheme };
 ```
 
 React-Native:
@@ -123,45 +127,45 @@ You will need to define both the custom props and the type of tag which will be 
 the type of tag is not required.
 
 ```jsx
-import styled from 'styled-components'
-import Header from './Header'
+import styled from 'styled-components';
+import Header from './Header';
 
 const Title =
   styled <
   { isActive: boolean } >
   Header`
-  color: ${props => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
-`
+  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
+`;
 ```
 
 If the **isActive** property should not be passed into the **Header** component you will have to extract it using the
 following convention:
 
 ```jsx
-import styled from 'styled-components'
-import Header, { Props as HeaderProps } from './Header'
+import styled from 'styled-components';
+import Header, { Props as HeaderProps } from './Header';
 
 const Title =
   styled <
   { isActive: boolean } >
   (({ isActive, ...rest }) => <Header {...rest} />)`
-  color: ${props => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
-`
+  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
+`;
 ```
 
 But it might be the opposite. Maybe your styled component needs to proxy props required by the **Header**. Then
 you follow this convention:
 
 ```jsx
-import styled from 'styled-components'
-import Header, { Props as HeaderProps } from './Header'
+import styled from 'styled-components';
+import Header, { Props as HeaderProps } from './Header';
 
 const Title =
   (styled < { isActive: boolean }) &
   (HeaderProps >
     (({ isActive, ...rest }) => <Header {...rest} />)`
-  color: ${props => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
-`)
+  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
+`);
 ```
 
 This is the most complex example where we have specific properties for the styling of the component and pass
@@ -181,7 +185,7 @@ interface LogoProps {
 
 class Logo extends React.Component<LogoProps, {}> {
   render() {
-    return <div className={this.props.className}>Logo</div>
+    return <div className={this.props.className}>Logo</div>;
   }
 }
 
@@ -189,7 +193,7 @@ const LogoStyled = styled(Logo)`
   font-family: 'Helvetica';
   font-weight: bold;
   font-size: 1.8rem;
-`
+`;
 ```
 
 ### Caveat with Function Components
@@ -205,9 +209,9 @@ interface BoxProps {
   className?: string;
 }
 
-const Box: React.FunctionComponent<BoxProps> = props => <div className={props.className}>{props.children}</div>
+const Box: React.FunctionComponent<BoxProps> = (props) => <div className={props.className}>{props.children}</div>;
 
 const StyledBox = styled(Box)`
-  padding: ${props => props.theme.lateralPadding};
-`
+  padding: ${(props) => props.theme.lateralPadding};
+`;
 ```
