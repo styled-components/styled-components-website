@@ -36,7 +36,7 @@ render(
   <div>
     <Button>Normal</Button>
 
-    <ThemeProvider theme={theme}>
+    <ThemeProvider value={theme}>
       <Button>Themed</Button>
     </ThemeProvider>
   </div>
