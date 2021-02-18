@@ -112,11 +112,11 @@ import Header from './Header';
 
 interface TitleProps {
   readonly isActive: boolean;
-};
+}
 
 const Title = styled.h1<TitleProps>`
-  color: ${props => props.isActive ? props.theme.colors.main : props.theme.colors.secondary};
-`
+  color: ${(props) => (props.isActive ? props.theme.colors.main : props.theme.colors.secondary)};
+`;
 ```
 
 Note: styled-components does not transfer the custom properties (i.e. anything different from legal attributes) to standard tags (to avoid the [Unknown Prop Warning](https://reactjs.org/warnings/unknown-prop.html)).
@@ -151,9 +151,7 @@ Depending on your use case, you can achieve a similar result by extracting the c
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
-const NewHeader3 = styled(
-  ({ customColor, ...rest }: { customColor: string } & HeaderProps) => <Header {...rest} />
-)`
+const NewHeader3 = styled(({ customColor, ...rest }: { customColor: string } & HeaderProps) => <Header {...rest} />)`
   color: ${(props) => props.customColor};
 `;
 ```
@@ -165,8 +163,8 @@ import styled from 'styled-components';
 import Header from './Header';
 
 const NewHeader4 = styled(Header).withConfig({
-    shouldForwardProp: (prop, defaultValidatorFn) => !['customColor'].includes(prop),
-  })<{ customColor: string }>`
+  shouldForwardProp: (prop, defaultValidatorFn) => !['customColor'].includes(prop),
+})<{ customColor: string }>`
   color: ${(props) => props.customColor};
 `;
 ```
