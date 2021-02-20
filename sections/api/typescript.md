@@ -104,7 +104,7 @@ export cssHelper = css`
 
 ### Using custom props
 
-If you are passing custom properties to your styled component it's a good idea to pass type arguments to tagged template like this ([TypeScript `v2.9+` is required](https://github.com/Microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#generic-type-arguments-in-generic-tagged-templates)):
+If you are [adapting the styles based on props](https://styled-components.com/docs/basics#adapting-based-on-props), and those props are not part of the base tag / component props, you can tell TypeScript what those extra custom props are, with type arguments like this ([TypeScript `v2.9+` is required](https://github.com/Microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#generic-type-arguments-in-generic-tagged-templates)):
 
 ```tsx
 import styled from 'styled-components';
@@ -119,9 +119,9 @@ const Title = styled.h1<TitleProps>`
 `;
 ```
 
-Note: styled-components does not transfer the custom properties (i.e. anything different from legal attributes) to standard tags (to avoid the [Unknown Prop Warning](https://reactjs.org/warnings/unknown-prop.html)).
+Note: if you style a standard tag (like `<h1>` in above example), styled-components [will not pass the custom props](https://styled-components.com/docs/basics#passed-props) (to avoid the [Unknown Prop Warning](https://reactjs.org/warnings/unknown-prop.html)).
 
-If you use a custom component, you can use a similar syntax, but all properties will be transferred to the custom component:
+However, it will pass all of them to a custom React component:
 
 ```tsx
 import styled from 'styled-components';
