@@ -10,6 +10,12 @@ npm install @types/styled-components
 npm install @types/styled-components @types/styled-components-react-native
 ```
 
+React Native only: If your `tsconfig` assigns `types` then you will need to add "styled-components-react-native" there.  For example:
+
+```json
+"types": ["jest", "styled-components-react-native"],
+```
+
 > Now that Babel 7 is out and the [TypeScript preset](https://babeljs.io/docs/en/babel-preset-typescript) is available, it's now possible to use the [styled-components babel plugin](/docs/tooling#babel-plugin) in conjunction with TypeScript.
 
 Before you can effectively start to use TypeScript you will have to do a little bit of configuration.
