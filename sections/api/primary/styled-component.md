@@ -17,27 +17,26 @@ next to the styles defined by the styled call.
 
 This is a chainable method that attaches some props to a styled component.
 The first and only argument is an object that will be merged into the rest of the
-component's props. The `attrs` object accepts the following values:
+component's props. The `attrs` method accepts the following values:
 
-<Table head={['Values', 'Description']}>
+<Table head={['Value', 'Description']}>
   <Row>
     <Column>
-      <Code>Prop Value</Code>
+      <Code>Props Object</Code>
     </Column>
     <Column>
-      These can be of any type, except functions. They'll stay static and
+      A static object mapping prop names to prop values. Prop values can be of any type except functions. This object
       will be merged into the existing component props.
     </Column>
   </Row>
 
   <Row>
     <Column>
-      <Code>Prop Factory</Code>
+      <Code>Props Factory</Code>
     </Column>
     <Column>
-      A function that receives the props that are passed into the component
-      and computes a value, that is then going to be merged into the
-      existing component props.
+      A function that receives the props that are passed into the component and returns a props object that will be
+      merged into the existing component props.
     </Column>
   </Row>
 </Table>
