@@ -2,9 +2,7 @@
   "name": "styled-components-docs",
   "version": "1.0.0",
   "license": "MIT",
-  "engines": {
-    "node": ">= 12.0.0"
-  },
+  "private": true,
   "sideEffects": [
     "./utils/prismTemplateString.js"
   ],
