@@ -85,7 +85,7 @@ export default styled;
 
 ### Styling components
 
-That's it! We're able to use styled-components as it just by using any original import.
+That's it! We're able to use styled-components just by using any original import.
 
 ```jsx
 import styled, { createGlobalStyle, css } from 'styled-components';
