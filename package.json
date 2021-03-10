@@ -19,6 +19,7 @@
     "test": "jest -c .jest.config.js",
     "precommit": "lint-staged",
     "prettier": "prettier **/*.js --write",
+    "postinstall": "husky install",
     "size": "bundlesize"
   },
   "dependencies": {
@@ -77,11 +78,6 @@
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run precommit"
-    }
   },
   "lint-staged": {
     "*.js": [
