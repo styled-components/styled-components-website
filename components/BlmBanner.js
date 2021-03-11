@@ -5,14 +5,16 @@ import rem from '../utils/rem';
 import { navbarHeight } from '../utils/sizes';
 
 const Banner = styled.a`
-  top: 0;
-  height: ${rem(navbarHeight)};
-  background: black;
-  width: 100%;
-  padding: 1rem 0.5rem;
-  display: flex;
   align-items: center;
+  background: black;
+  color: white;
+  display: flex;
+  font-size: ${rem(15)};
+  font-weight: 500;
+  height: ${rem(navbarHeight)};
   justify-content: center;
+  padding: 1rem 0.5rem;
+  width: 100%;
 `;
 
 export const BlmBanner = () => {
