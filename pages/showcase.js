@@ -12,12 +12,13 @@ import { mobile, phone } from '../utils/media';
 import Navigation from '../components/Slider/Navigation';
 import ShowcaseBody from '../components/Slider/ShowcaseBody';
 import { blmGrey, blmMetal } from '../utils/colors';
+import { headerFont } from '../utils/fonts';
 
 const Container = styled.div`
   overflow-x: hidden;
 
   * {
-    font-family: Avenir Next;
+    font-family: ${headerFont};
   }
 
   h1,
