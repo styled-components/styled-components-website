@@ -13,8 +13,8 @@ export default ({ children }) => (
       </a>
       <Badge src="/api/proxy/downloads.svg" alt="Monthly downloads" />
       <Badge src="/api/proxy/size.svg" alt="Gzipped size" />
-      <a href="https://spectrum.chat/styled-components">
-        <Badge alt="Join the community on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
+      <a href="https://discord.gg/hfGUrbrxaU">
+        <Badge alt="Discord" src="https://img.shields.io/discord/818449605409767454" />
       </a>
     </AlignCenter>
     {children}
