@@ -14,7 +14,7 @@ export default ({ children }) => (
       <Badge src="/api/proxy/downloads.svg" alt="Monthly downloads" />
       <Badge src="/api/proxy/size.svg" alt="Gzipped size" />
       <a href="https://discord.gg/hfGUrbrxaU">
-        <img alt="Discord" src="https://img.shields.io/discord/818449605409767454" />
+        <Badge alt="Discord" src="https://img.shields.io/discord/818449605409767454" />
       </a>
     </AlignCenter>
     {children}
