@@ -148,7 +148,7 @@ following convention:
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
-const Title = styled(({ isActive, ...rest }) => <Header {...rest} />)<{ isActive: boolean }>`
+const Title = styled(({ isActive, ...rest }: { isActive: boolean }) => <Header {...rest} />)`
   color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
 `;
 ```
