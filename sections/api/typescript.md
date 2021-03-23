@@ -136,11 +136,8 @@ the type of tag is not required.
 import styled from 'styled-components';
 import Header from './Header';
 
-const Title =
-  styled <
-  { isActive: boolean } >
-  Header`
-  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
+const Title = styled(Header)<{ isActive: boolean }>`
+  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
 `;
 ```
 
@@ -151,11 +148,8 @@ following convention:
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
-const Title =
-  styled <
-  { isActive: boolean } >
-  (({ isActive, ...rest }) => <Header {...rest} />)`
-  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
+const Title = styled(({ isActive, ...rest }) => <Header {...rest} />)<{ isActive: boolean }>`
+  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
 `;
 ```
 
@@ -166,12 +160,11 @@ you follow this convention:
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
-const Title =
-  (styled < { isActive: boolean }) &
-  (HeaderProps >
-    (({ isActive, ...rest }) => <Header {...rest} />)`
-  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
-`);
+const Title = styled(({ isActive, ...rest }) => <Header {...rest} />)<
+  { isActive: boolean } & HeaderProps
+>`
+  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
+`;
 ```
 
 This is the most complex example where we have specific properties for the styling of the component and pass
