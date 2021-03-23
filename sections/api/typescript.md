@@ -197,6 +197,8 @@ const Title = styled(Header).attrs<TitleProps>({ isActive: true })<TitleProps>`
 `;
 ```
 
+> There's a good explanation for the current need for the duplication in https://stackoverflow.com/a/61980137/462849
+
 For the function case, you may type it like this:
 
 ```jsx
