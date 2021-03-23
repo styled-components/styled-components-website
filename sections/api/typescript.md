@@ -178,6 +178,48 @@ This is the most complex example where we have specific properties for the styli
 the rest of the required properties by the **Header** through. That means when you use **Title** it will have
 the combined typing of both the styled requirements and the actual component requirements.
 
+### Using `attrs` method
+
+The `attrs` method accepts an Interpolation object, which can be either a string that will be merged into the rest of the component's props, or a function that receives the styled component's `props` as the first and only argument.
+
+For the string case, make sure to type it "twice", like this:
+
+```jsx
+import styled from 'styled-components';
+import Header from './Header';
+
+interface TitleProps {
+  readonly isActive: boolean;
+};
+
+const Title = styled(Header).attrs<TitleProps>({ isActive: true })<TitleProps>`
+  color: ${(props) => (props.isActive ? props.theme.colors.main : props.theme.colors.secondary)};
+`;
+```
+
+For the function case, you may type it like this:
+
+```jsx
+import styled from "styled-components";
+import Header from "./Header";
+
+const Title = styled(Header).attrs<
+  TitleProps, // The props consumed by .attrs()
+  { color: string; textDecoration: string } // The props returned by .attrs()
+>((props) => {
+  return {
+    color: props.isActive ? "blue" : "darkgrey",
+    textDecoration: props.isActive ? "underline" : "none"
+  };
+})<TitleProps>`
+  // The consumed props
+  color: ${(props) => props.color};
+  text-decoration: ${(props) => props.textDecoration};
+`;
+
+const container = <Title isActive />;
+```
+
 ### Caveat with `className`
 
 When defining a component you will need to mark `className` as optional
