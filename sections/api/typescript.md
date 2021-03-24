@@ -136,10 +136,7 @@ the type of tag is not required.
 import styled from 'styled-components';
 import Header from './Header';
 
-const Title =
-  styled(Header) <
-  { isActive: boolean } >
-  `
+const Title = styled(Header)<{ isActive: boolean }>`
   color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
 `;
 ```
@@ -163,12 +160,11 @@ you follow this convention:
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
-const Title =
-  (styled(({ isActive, ...rest }) => <Header {...rest} />) < { isActive: boolean }) &
-  (HeaderProps >
-    `
+const Title = styled(({ isActive, ...rest }) => <Header {...rest} />)<
+  { isActive: boolean } & HeaderProps
+>`
   color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
-`);
+`;
 ```
 
 This is the most complex example where we have specific properties for the styling of the component and pass
