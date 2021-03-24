@@ -10,7 +10,7 @@ npm install @types/styled-components
 npm install @types/styled-components @types/styled-components-react-native
 ```
 
-React Native only: If your `tsconfig` assigns `types` then you will need to add "styled-components-react-native" there.  For example:
+React Native only: If your `tsconfig` assigns `types` then you will need to add "styled-components-react-native" there. For example:
 
 ```json
 "types": ["jest", "styled-components-react-native"],
@@ -213,8 +213,7 @@ const Title = styled(Header).attrs<
     color: props.isActive ? "blue" : "darkgrey",
     textDecoration: props.isActive ? "underline" : "none"
   };
-})<TitleProps>`
-  // The consumed props
+})<TitleProps>/* Again, the props consumed by .attrs() */ `
   color: ${(props) => props.color};
   text-decoration: ${(props) => props.textDecoration};
 `;
