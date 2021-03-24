@@ -10,7 +10,7 @@ npm install @types/styled-components
 npm install @types/styled-components @types/styled-components-react-native
 ```
 
-React Native only: If your `tsconfig` assigns `types` then you will need to add "styled-components-react-native" there.  For example:
+React Native only: If your `tsconfig` assigns `types` then you will need to add "styled-components-react-native" there. For example:
 
 ```json
 "types": ["jest", "styled-components-react-native"],
@@ -136,7 +136,10 @@ the type of tag is not required.
 import styled from 'styled-components';
 import Header from './Header';
 
-const Title = styled(Header)<{ isActive: boolean }>`
+const Title =
+  styled(Header) <
+  { isActive: boolean } >
+  `
   color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
 `;
 ```
@@ -148,7 +151,7 @@ following convention:
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
-const Title = styled(({ isActive, ...rest }: { isActive: boolean }) => <Header {...rest} />)`
+const Title = styled(({ isActive, ...rest }: HeaderProps & { isActive: boolean }) => <Header {...rest} />)`
   color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
 `;
 ```
@@ -160,11 +163,12 @@ you follow this convention:
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
-const Title = styled(({ isActive, ...rest }) => <Header {...rest} />)<
-  { isActive: boolean } & HeaderProps
->`
+const Title =
+  (styled(({ isActive, ...rest }) => <Header {...rest} />) < { isActive: boolean }) &
+  (HeaderProps >
+    `
   color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
-`;
+`);
 ```
 
 This is the most complex example where we have specific properties for the styling of the component and pass
