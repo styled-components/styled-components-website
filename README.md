@@ -8,8 +8,8 @@ Thank you so much for wanting to contribute to the website! We could really use 
 
 If you've never worked with the technologies used in this repo, here are some links that may help:
 
-- [**Learn Next.js**](https://learnnextjs.com/)
-- [Next.js documentation](https://github.com/zeit/next.js)
+- [**Learn Next.js**](https://nextjs.org/learn)
+- [Next.js documentation](https://github.com/vercel/next.js)
 - [styled-components documentation](https://styled-components.com) (this very website!)
 
 ### Running locally
@@ -22,12 +22,12 @@ git clone https://github.com/styled-components/styled-components-website
 # Enter the repo
 cd styled-components-website
 # Install the dependencies
-npm install
+yarn install
 # Start local development
-npm run dev
+yarn dev
 ```
 
-> Note: This requires Node.js and npm to be set up locally, see [nodejs.org](https://nodejs.org) for more information.
+> Note: This requires Node.js and yarn to be set up locally, see [nodejs.org](https://nodejs.org) for more information.
 
 ### Updating the visual diffs
 

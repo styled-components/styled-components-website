@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "styled-components",
+  "alias": "www.styled-components.com",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "rewrites": [{ "source": "/proxy/(.+)", "destination": "/api/proxy/$1" }]
+}

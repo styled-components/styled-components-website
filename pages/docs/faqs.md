@@ -15,11 +15,12 @@ import CRA from '../../sections/faqs/create-react-app.md'
 import NPMLink from '../../sections/faqs/npm-link.md'
 import FlickeringText from '../../sections/faqs/flickering-text.md'
 import DeclareComponentsInRenderMethod from '../../sections/faqs/declare-components-in-render-method.md'
+import MissingNativeImport from '../../sections/faqs/missing-native-import.md'
 
 export default ({ children }) => (
-  <DocsLayout title="FAQs" description="Commonly asked questions about styled-components">
-    {children}
-  </DocsLayout>
+<DocsLayout title="FAQs" description="Commonly asked questions about styled-components">
+{children}
+</DocsLayout>
 )
 
 <MigrationV5 />
@@ -38,3 +39,4 @@ export default ({ children }) => (
 <CRA />
 <NPMLink />
 <FlickeringText />
+<MissingNativeImport />
