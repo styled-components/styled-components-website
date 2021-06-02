@@ -68,7 +68,7 @@ Note that we added a "Styled" prefix to `StyledCounter` so that the React compon
 
 ### Define Styled Components outside of the render method
 
-It is important to define your styled components outside of the render method, otherwise it will be recreated on every single render pass. Defining a styled component within the render method will thwart caching and drastically slow down rendering speed, and should be avoided.
+It is important to define your styled components outside of the render method; otherwise it will be recreated on every single render pass. Defining a styled component within the render method will thwart caching and drastically slow down rendering speed, and should be avoided.
 
 Write your styled components the recommended way:
 
@@ -86,7 +86,7 @@ Instead of:
 
 ```jsx
 const Wrapper = ({ message }) => {
-  // WARNING: THIS IS VERY VERY BAD AND SLOW, DO NOT DO THIS!!!
+  // WARNING: THIS IS VERY VERY BAD AND SLOW. DO NOT DO THIS!!!
   const StyledWrapper = styled.div`
     /* ... */
   `
