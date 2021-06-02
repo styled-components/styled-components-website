@@ -10,7 +10,7 @@ npm install @types/styled-components
 npm install @types/styled-components @types/styled-components-react-native
 ```
 
-React Native only: If your `tsconfig` assigns `types` then you will need to add "styled-components-react-native" there.  For example:
+React Native only: If your `tsconfig` assigns `types` then you will need to add "styled-components-react-native" there. For example:
 
 ```json
 "types": ["jest", "styled-components-react-native"],
@@ -67,16 +67,16 @@ export { myTheme };
 
 React-Native:
 
-```jsx
+```tsx
 // styled-components.ts
-import * as styledComponents from "styled-components/native";
+import * as styledComponents from 'styled-components/native';
 
-import ThemeInterface from "./theme";
+import ThemeInterface from './theme';
 
 const {
   default: styled,
   css,
-  ThemeProvider
+  ThemeProvider,
 } = styledComponents as styledComponents.ReactNativeThemedStyledComponentsModule<ThemeInterface>;
 
 export { css, ThemeProvider };
@@ -87,7 +87,7 @@ export default styled;
 
 That's it! We're able to use styled-components just by using any original import.
 
-```jsx
+```tsx
 import styled, { createGlobalStyle, css } from 'styled-components';
 
 // theme is now fully typed
@@ -112,66 +112,57 @@ export cssHelper = css`
 
 If you are passing custom properties to your styled component it's a good idea to pass type arguments to tagged template like this ([TypeScript `v2.9+` is required](https://github.com/Microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#generic-type-arguments-in-generic-tagged-templates)):
 
-```jsx
+```tsx
 import styled from 'styled-components';
 import Header from './Header';
 
 interface TitleProps {
   readonly isActive: boolean;
-};
+}
 
 const Title = styled.h1<TitleProps>`
-  color: ${props => props.isActive ? props.theme.colors.main : props.theme.colors.secondary};
-`
+  color: ${(props) => (props.isActive ? props.theme.colors.main : props.theme.colors.secondary)};
+`;
 
 const NewHeader = styled(Header)<{ customColor: string }>`
-  color: ${props => props.customColor};
-`
+  color: ${(props) => props.customColor};
+`;
 ```
 
 You will need to define both the custom props and the type of tag which will be used. When you pass a custom component,
 the type of tag is not required.
 
-```jsx
+```tsx
 import styled from 'styled-components';
 import Header from './Header';
 
-const Title =
-  styled <
-  { isActive: boolean } >
-  Header`
-  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
+const Title = styled(Header)<{ isActive: boolean }>`
+  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
 `;
 ```
 
 If the **isActive** property should not be passed into the **Header** component you will have to extract it using the
 following convention:
 
-```jsx
+```tsx
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
-const Title =
-  styled <
-  { isActive: boolean } >
-  (({ isActive, ...rest }) => <Header {...rest} />)`
-  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
+const Title = styled(({ isActive, ...rest }: HeaderProps & { isActive: boolean }) => <Header {...rest} />)`
+  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
 `;
 ```
 
 But it might be the opposite. Maybe your styled component needs to proxy props required by the **Header**. Then
 you follow this convention:
 
-```jsx
+```tsx
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
-const Title =
-  (styled < { isActive: boolean }) &
-  (HeaderProps >
-    (({ isActive, ...rest }) => <Header {...rest} />)`
-  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
-`);
+const Title = styled(({ isActive, ...rest }) => <Header {...rest} />)<{ isActive: boolean } & HeaderProps>`
+  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)};
+`;
 ```
 
 This is the most complex example where we have specific properties for the styling of the component and pass
@@ -183,7 +174,7 @@ the combined typing of both the styled requirements and the actual component req
 When defining a component you will need to mark `className` as optional
 in your Props interface:
 
-```jsx
+```tsx
 interface LogoProps {
   /* This prop is optional, since TypeScript won't know that it's passed by the wrapper */
   className?: string;
@@ -208,7 +199,7 @@ To use function components and have typechecking for the props you'll need to de
 the component alongside with its type. This is not special to styled-components, this is just
 how React works:
 
-```jsx
+```tsx
 interface BoxProps {
   theme?: ThemeInterface;
   borders?: boolean;
