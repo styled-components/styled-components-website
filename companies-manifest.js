@@ -73,6 +73,7 @@ import {
   MiuiLogo,
   JimdoLogo,
   ZillowLogo,
+  KumparanLogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -1202,6 +1203,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'zillow',
+      },
+    },
+  },
+  {
+    key: 'https://kumparan.com/',
+    similarWebGlobalRank: 2717,
+    name: 'Kumparan',
+    logo: KumparanLogo,
+    style: {},
+    projects: {
+      kumparan: {
+        title: 'Kumparan',
+        link: 'https://kumparan.com/',
+        src: '/screenshots/thumbnails/kumparan.com.png',
+        width: 1280,
+        height: 720,
+        internalUrl: 'kumparan',
       },
     },
   },
