@@ -1,7 +1,7 @@
 ## React Native
 
 styled-components can be used with React Native in the same way and with the
-same import. Try this example with [Snack by Expo](https://snack.expo.io/@danielmschmidt/styled-components).
+same import. Try this example with [Snack by Expo](https://snack.expo.io/@danielmschmidt/styled-components?sdkVersion=latest&dependencies=styled-components/native,styled-components,react-is).
 
 ```jsx
 import React from 'react'
