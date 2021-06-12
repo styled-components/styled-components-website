@@ -110,73 +110,70 @@ export cssHelper = css`
 
 ### Using custom props
 
-If you are passing custom properties to your styled component it's a good idea to pass type arguments to tagged template like this ([TypeScript `v2.9+` is required](https://github.com/Microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#generic-type-arguments-in-generic-tagged-templates)):
+If you are [adapting the styles based on props](https://styled-components.com/docs/basics#adapting-based-on-props), and those props are not part of the base tag / component props, you can tell TypeScript what those extra custom props are, with type arguments like this ([TypeScript `v2.9+` is required](https://github.com/Microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#generic-type-arguments-in-generic-tagged-templates)):
 
-```jsx
+```tsx
 import styled from 'styled-components';
 import Header from './Header';
 
 interface TitleProps {
   readonly isActive: boolean;
-};
+}
 
 const Title = styled.h1<TitleProps>`
-  color: ${props => props.isActive ? props.theme.colors.main : props.theme.colors.secondary};
-`
-
-const NewHeader = styled(Header)<{ customColor: string }>`
-  color: ${props => props.customColor};
-`
+  color: ${(props) => (props.isActive ? props.theme.colors.main : props.theme.colors.secondary)};
+`;
 ```
 
-You will need to define both the custom props and the type of tag which will be used. When you pass a custom component,
-the type of tag is not required.
+Note: if you style a standard tag (like `<h1>` in above example), styled-components [will not pass the custom props](https://styled-components.com/docs/basics#passed-props) (to avoid the [Unknown Prop Warning](https://reactjs.org/warnings/unknown-prop.html)).
 
-```jsx
+However, it will pass all of them to a custom React component:
+
+```tsx
 import styled from 'styled-components';
 import Header from './Header';
 
-const Title =
-  styled <
-  { isActive: boolean } >
-  Header`
-  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
+const NewHeader = styled(Header)<{ customColor: string }>`
+  color: ${(props) => props.customColor};
 `;
+// Header will also receive props.customColor
 ```
 
-If the **isActive** property should not be passed into the **Header** component you will have to extract it using the
-following convention:
+If the **customColor** property should not be transferred to the **Header** component, you can leverage [transient props](https://styled-components.com/docs/api#transient-props), by prefixing it with a dollar sign ($):
 
-```jsx
+```tsx
+import styled from 'styled-components';
+import Header from './Header';
+
+const NewHeader2 = styled(Header)<{ $customColor: string }>`
+  color: ${(props) => props.$customColor};
+`;
+// Header does NOT receive props.$customColor
+```
+
+Depending on your use case, you can achieve a similar result by extracting the custom props yourself:
+
+```tsx
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
-const Title =
-  styled <
-  { isActive: boolean } >
-  (({ isActive, ...rest }) => <Header {...rest} />)`
-  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
+const NewHeader3 = styled(({ customColor, ...rest }: { customColor: string } & HeaderProps) => <Header {...rest} />)`
+  color: ${(props) => props.customColor};
 `;
 ```
 
-But it might be the opposite. Maybe your styled component needs to proxy props required by the **Header**. Then
-you follow this convention:
+Or using [shouldForwardProp](https://styled-components.com/docs/api#shouldforwardprop):
 
-```jsx
+```tsx
 import styled from 'styled-components';
-import Header, { Props as HeaderProps } from './Header';
+import Header from './Header';
 
-const Title =
-  (styled < { isActive: boolean }) &
-  (HeaderProps >
-    (({ isActive, ...rest }) => <Header {...rest} />)`
-  color: ${(props) => (props.isActive ? props.theme.primaryColor : props.theme.secondaryColor)}
-`);
+const NewHeader4 = styled(Header).withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) => !['customColor'].includes(prop),
+})<{ customColor: string }>`
+  color: ${(props) => props.customColor};
+`;
 ```
-
-This is the most complex example where we have specific properties for the styling of the component and pass
-the rest of the required properties by the **Header** through. That means when you use **Title** it will have
-the combined typing of both the styled requirements and the actual component requirements.
 
 ### Caveat with `className`
 
