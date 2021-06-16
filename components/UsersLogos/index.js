@@ -28,7 +28,7 @@ const UsersSliderContainer = styled.div`
 
 const UsersSlider = styled.span`
   display: inline-block;
-  animation: ${({ offset, reverse }) => getSlide(offset || 0, reverse)} 30s linear infinite;
+  animation: ${({ offset, reverse }) => getSlide(offset || 0, reverse)} 150s linear infinite;
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
