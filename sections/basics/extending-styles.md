@@ -75,7 +75,7 @@ const Button = styled.button`
   display: block;
 `;
 
-const ReversedButton = props => <Button {...props} children={props.children.split('').reverse()} />
+const ReversedButton = props => <Button {...props} children={props.children.split('').reverse().join('')} />
 
 render(
   <div>
