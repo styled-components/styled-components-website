@@ -51,6 +51,9 @@ Some of the differences to the web-version are, that you cannot use the
 keyframes or global styles. We will also warn you if you use media queries or
 nest your CSS.
 
+> Note that React Native does not support Styling Children from the Parent
+> (Meaning * > {Styles} in the parent View for underlying Text components will not work)
+
 > In v2 we support percentages. To make this possible we need to enforce units
 > for all shorthands. If you're migrating to v2,
 > [a codemod is available](https://github.com/styled-components/styled-components-native-code-mod).
