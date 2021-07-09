@@ -35,7 +35,7 @@ And here's an example of the resulting snapshot:
 ```jsx
 exports[`it works 1`] = `
 .c0 {
-  color: green;
+  color: red;
 }
 
 <button
