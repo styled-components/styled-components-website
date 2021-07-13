@@ -125,6 +125,21 @@ const MyComponent = () => {
 }
 ```
 
+#### via `useTheme` React hook | v4
+
+You can also use `useTheme` to access the current theme outside of styled components when working with React Hooks.
+
+```jsx
+import { useTheme } from 'styled-components';
+
+const MyComponent = () => {
+  const theme = useTheme();
+
+  console.log('Current theme: ', theme);
+  // ...
+}
+```
+
 ### The `theme` prop
 
 A theme can also be passed down to a component using the `theme` prop.
