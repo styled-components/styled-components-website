@@ -127,7 +127,7 @@ const MyComponent = () => {
 
 #### via `useTheme` React hook | v4
 
-You can also use `useTheme` to access the current theme outside of styled components when working with React Hooks.
+You can also use `useTheme` to access the current theme outside of styled components when working with React Hooks. `useTheme` is abstraction over `useContext`. 
 
 ```jsx
 import { useTheme } from 'styled-components';
