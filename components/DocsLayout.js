@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+import { RssFeed as RssFeedIcon } from '@styled-icons/material';
 import Head from './SeoHead';
+import Link from './Link';
 import Nav from './Nav';
 import { Container, Content, Title } from './Layout';
 
@@ -33,13 +36,14 @@ class DocsLayout extends Component {
   };
 
   render() {
-    const { children, title, description, useDocsSidebarMenu = true, pages } = this.props;
+    const { children, title, description, useDocsSidebarMenu = true, pages, rssFeedLink } = this.props;
     const { isSideFolded, isMobileNavFolded } = this.state;
 
     return (
       <Container>
         <Head title={`styled-components${title ? `: ${title}` : ''}`} description={description}>
           <meta name="robots" content="noodp" />
+          {rssFeedLink && <link rel="alternate" type="application/rss+xml" title="RSS Feed" href={rssFeedLink} />}
         </Head>
 
         <Nav
@@ -53,7 +57,14 @@ class DocsLayout extends Component {
         />
 
         <Content moveRight={!isSideFolded} data-e2e-id="content">
-          <Title>{title}</Title>
+          <TitleRow>
+            <Title>{title}</Title>
+            {rssFeedLink && (
+              <RssFeedLink inline target="__blank" href={rssFeedLink}>
+                <RssFeedIcon />
+              </RssFeedLink>
+            )}
+          </TitleRow>
 
           {children}
         </Content>
@@ -61,5 +72,20 @@ class DocsLayout extends Component {
     );
   }
 }
+
+const TitleRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  ${() => RssFeedLink} {
+    flex-shrink: 0;
+  }
+`;
+
+const RssFeedLink = styled(Link)`
+  width: 1.5em;
+`;
 
 export default DocsLayout;
