@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import DocsLayout from '../components/DocsLayout';
 import components from '../utils/mdx-components';
-import { getReleases } from '../utils/githubApi';
+import { getReleases, getReleasesAtomFeedURI } from '../utils/githubApi';
 import Anchor from '../components/Anchor';
 import Loading from '../components/Loading';
 import rem from '../utils/rem';
@@ -21,7 +21,13 @@ const ReleaseAnchor = styled(Anchor)`
 `;
 
 const Releases = ({ releases, sidebarPages }) => (
-  <DocsLayout useDocsSidebarMenu={false} pages={sidebarPages} title="Releases" description="Styled Components Releases">
+  <DocsLayout
+    useDocsSidebarMenu={false}
+    pages={sidebarPages}
+    title="Releases"
+    description="Styled Components Releases"
+    rssFeedLink={getReleasesAtomFeedURI()}
+  >
     <Markdown>
       Updating styled components is usually as simple as `npm install`. Only major versions have the potential to
       introduce breaking changes (noted in the following release notes).
