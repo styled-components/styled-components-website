@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { RssFeed as RssFeedIcon } from '@styled-icons/material';
+import { RssFeed as FeedIcon } from '@styled-icons/material';
 import Head from './SeoHead';
 import Link from './Link';
 import Nav from './Nav';
@@ -36,14 +36,15 @@ class DocsLayout extends Component {
   };
 
   render() {
-    const { children, title, description, useDocsSidebarMenu = true, pages, rssFeedLink } = this.props;
+    const { children, title, description, useDocsSidebarMenu = true, pages, feedLink } = this.props;
     const { isSideFolded, isMobileNavFolded } = this.state;
+    const prefixedTitle = `styled-components${title ? `: ${title}` : ''}`;
 
     return (
       <Container>
-        <Head title={`styled-components${title ? `: ${title}` : ''}`} description={description}>
+        <Head title={prefixedTitle} description={description}>
           <meta name="robots" content="noodp" />
-          {rssFeedLink && <link rel="alternate" type="application/rss+xml" title="RSS Feed" href={rssFeedLink} />}
+          {feedLink && <link rel="alternate" type="application/atom+xml" title={prefixedTitle} href={feedLink} />}
         </Head>
 
         <Nav
@@ -59,10 +60,10 @@ class DocsLayout extends Component {
         <Content moveRight={!isSideFolded} data-e2e-id="content">
           <TitleRow>
             <Title>{title}</Title>
-            {rssFeedLink && (
-              <RssFeedLink inline target="__blank" href={rssFeedLink}>
-                <RssFeedIcon />
-              </RssFeedLink>
+            {feedLink && (
+              <FeedLink inline target="__blank" href={feedLink}>
+                <FeedIcon />
+              </FeedLink>
             )}
           </TitleRow>
 
@@ -79,12 +80,12 @@ const TitleRow = styled.div`
   justify-content: space-between;
   gap: 1rem;
 
-  ${() => RssFeedLink} {
+  ${() => FeedLink} {
     flex-shrink: 0;
   }
 `;
 
-const RssFeedLink = styled(Link)`
+const FeedLink = styled(Link)`
   width: 1.5em;
 `;
 

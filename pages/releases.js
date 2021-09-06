@@ -26,7 +26,7 @@ const Releases = ({ releases, sidebarPages }) => (
     pages={sidebarPages}
     title="Releases"
     description="Styled Components Releases"
-    rssFeedLink={getReleasesAtomFeedURI()}
+    feedLink={getReleasesAtomFeedURI()}
   >
     <Markdown>
       Updating styled components is usually as simple as `npm install`. Only major versions have the potential to
