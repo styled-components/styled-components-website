@@ -12,6 +12,7 @@ import { mobile, phone } from '../utils/media';
 import Navigation from '../components/Slider/Navigation';
 import ShowcaseBody from '../components/Slider/ShowcaseBody';
 import { blmGrey, blmMetal } from '../utils/colors';
+import SeoHead from '../components/SeoHead';
 
 const Container = styled.div`
   overflow-x: hidden;
@@ -275,6 +276,9 @@ const Showcase = ({ router }) => {
 
   return (
     <>
+      <SeoHead title={`styled-components: Showcase ${title}`}>
+        <meta name="robots" content="noodp" />
+      </SeoHead>
       <WithIsScrolled>{({ isScrolled }) => <Nav showSideNav={false} transparent={!isScrolled} />}</WithIsScrolled>
       <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
       <Container>
