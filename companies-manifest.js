@@ -538,7 +538,7 @@ const companies = [
   },
   {
     key: 'https://seatgeek.com',
-    similarWebGlobalRank: 7292,
+    similarWebGlobalRank: 5590,
     name: 'SeatGeek',
     logo: SeatGeekLogo,
     style: {},
