@@ -111,11 +111,6 @@ exports[`Search renders correctly 1`] = `
   background: rgba(0,0,0,0.1);
 }
 
-.c1 .{
-  width: 1.4444444444444444rem;
-  height: 1.4444444444444444rem;
-}
-
 @media (max-width:62.5em) {
   .c0 {
     display: block;
