@@ -47,6 +47,8 @@ function Folder({ children, isOpenDefault = false, ...props }) {
 
   useEffect(() => {
     if (isOpen !== isOpenDefault) setIsOpen(!!isOpenDefault);
+    // it's fine to grab the current value of isOpen when isOpenDefault changes, if ever
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpenDefault]);
 
   return typeof children === 'function'

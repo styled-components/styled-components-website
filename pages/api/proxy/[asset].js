@@ -9,7 +9,7 @@ const proxyMap = {
     'https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600',
 };
 
-export default function (req, res) {
+export default function serveProxiedRequest(req, res) {
   const { asset } = req.query;
   const remoteUrl = proxyMap[asset];
 

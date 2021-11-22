@@ -162,6 +162,9 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link rel="stylesheet" type="text/css" href="/dmvendor.css" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
           <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
           {styleElements}
         </Head>
@@ -172,9 +175,6 @@ export default class MyDocument extends Document {
           </div>
 
           <NextScript />
-
-          <link rel="stylesheet" type="text/css" href="/dmvendor.css" />
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
         </body>
       </Html>
     );

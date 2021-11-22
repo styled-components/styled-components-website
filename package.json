@@ -11,8 +11,8 @@
     "dev": "next dev",
     "prebuild": "rimraf .next",
     "build": "NODE_ENV=production next build",
-    "lint:fix": "eslint . --fix",
-    "lint": "eslint .",
+    "lint:fix": "next lint --fix",
+    "lint": "next lint",
     "start": "NODE_ENV=production next start",
     "test": "jest -c .jest.config.js",
     "precommit": "lint-staged",
@@ -55,6 +55,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
+    "@next/eslint-plugin-next": "^12.0.4",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^27.3.1",
@@ -64,8 +65,7 @@
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
     "eslint": "^7.10.0",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-config-next": "12.0.4",
     "eslint-plugin-react": "^7.17.0",
     "husky": "^5.1.3",
     "jest": "^27.3.1",
@@ -74,16 +74,6 @@
     "prettier": "^2.1.2",
     "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.0"
-  },
-  "lint-staged": {
-    "*.js": [
-      "jest -c .jest.config.js --findRelatedTests",
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.md": [
-      "prettier --write"
-    ]
   },
   "bundlesize": [
     {
