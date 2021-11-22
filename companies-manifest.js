@@ -31,6 +31,7 @@ import {
   IMDbLogo,
   InVisionLogo,
   JaneLogo,
+  KabumLogo,
   KiwiComLogo,
   LegoLogo,
   LifehackerLogo,
@@ -1238,6 +1239,23 @@ const companies = [
         height: 720,
         internalUrl: 'welcome-ui',
       },
+    },
+  },
+  {
+    key: 'https://www.kabum.com.br/',
+    similarWebGlobalRank: 3679,
+    name: 'KaBuM!',
+    logo: KabumLogo,
+    style: {},
+    projects: {
+      kabum: {
+        title: 'KaBuM!',
+        link: 'https://www.kabum.com.br/',
+        src: '/screenshots/thumbnails/kabum.com.br.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'kabum',
+      }
     },
   },
 ];
