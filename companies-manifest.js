@@ -73,6 +73,7 @@ import {
   MiuiLogo,
   JimdoLogo,
   ZillowLogo,
+  WelcomeUILogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -1219,6 +1220,23 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'lifehacker',
+      },
+    },
+  },
+  {
+    key: 'https://www.welcometothejungle.com/',
+    similarWebGlobalRank: 23268,
+    name: 'Welcome to the jungle',
+    logo: WelcomeUILogo,
+    style: {},
+    projects: {
+      welcomeui: {
+        title: 'Welcome UI',
+        link: 'https://www.welcome-ui.com',
+        src: '/screenshots/thumbnails/welcome-ui.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'welcome-ui',
       },
     },
   },
