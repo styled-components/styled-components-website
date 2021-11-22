@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 import { bodyFont } from '../utils/fonts';
@@ -160,25 +160,10 @@ export default class MyDocument extends Document {
     const { styleElements } = this.props;
 
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head>
-          <link rel="icon" type="image/png" href="/favicon.png" />
-          <link rel="manifest" href="/manifest.json" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-
-          <meta name="theme-color" content="#da936a" />
-          <meta name="author" content="styled-components" />
-
           <style dangerouslySetInnerHTML={{ __html: resetStyles }} />
-
           {styleElements}
-
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WDWNSLK');`,
-            }}
-          />
         </Head>
 
         <body>
@@ -196,7 +181,7 @@ export default class MyDocument extends Document {
           <link rel="stylesheet" type="text/css" href="/dmvendor.css" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
         </body>
-      </html>
+      </Html>
     );
   }
 }
