@@ -4,8 +4,10 @@ import { withRouter } from 'next/router';
 
 import rem from '../../utils/rem';
 import titleToDash from '../../utils/titleToDash';
-import { pages } from '../../pages/docs.json';
+import json from '../../pages/docs.json';
 import Link, { StyledLink } from '../Link';
+
+const { pages } = json;
 
 const MenuInner = styled.div`
   display: block;

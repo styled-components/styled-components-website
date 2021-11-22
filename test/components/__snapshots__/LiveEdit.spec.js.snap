@@ -160,10 +160,12 @@ exports[`LiveEdit renders correctly 1`] = `
                   >
                     <Editor
                       className="c3"
+                      code=""
                       disabled={false}
                       highlight={[Function]}
                       ignoreTabKey={false}
                       insertSpaces={true}
+                      language="jsx"
                       onValueChange={[Function]}
                       padding={10}
                       style={
@@ -177,6 +179,8 @@ exports[`LiveEdit renders correctly 1`] = `
                     >
                       <div
                         className="c3"
+                        code=""
+                        language="jsx"
                         style={
                           Object {
                             "boxSizing": "border-box",

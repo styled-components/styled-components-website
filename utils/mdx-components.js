@@ -1,3 +1,5 @@
+import React from 'react';
+
 import elementToText from '../utils/elementToText';
 import titleToDash from '../utils/titleToDash';
 
