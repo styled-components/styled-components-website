@@ -1,12 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-import rem from '../utils/rem';
-
-import '../utils/prismTemplateString';
 import { Editor } from 'react-live';
+import styled from 'styled-components';
 import { darkGrey } from '../utils/colors';
 import { monospace } from '../utils/fonts';
-
+import rem from '../utils/rem';
 import { Note } from './Note';
 
 const CodeBlock = styled((props) => {

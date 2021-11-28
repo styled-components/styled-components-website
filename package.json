@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
-  "sideEffects": [
-    "./utils/prismTemplateString.js"
-  ],
   "scripts": {
     "analyze": "ANALYZE=true yarn build",
     "dev": "next dev",
@@ -38,7 +35,6 @@
     "markdown-to-jsx": "^7.1.3",
     "next": "^12.0.4",
     "polished": "^4.1.3",
-    "prismjs": "^1.25.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
