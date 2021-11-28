@@ -3,7 +3,11 @@
 Installing styled-components only takes a single command and you're ready to roll:
 
 ```
+# with npm
 npm install --save styled-components
+
+# with yarn
+yarn add styled-components
 ```
 
 If you use a package manager like [yarn](https://yarnpkg.com/) that supports the "resolutions" package.json field, we also highly recommend you add an entry to it as well corresponding to the major version range. This helps avoid an entire class of problems that arise from multiple versions of styled-components being installed in your project.
