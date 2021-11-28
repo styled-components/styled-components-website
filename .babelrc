@@ -1,5 +1,7 @@
 {
+  "presets": ["next/babel"],
   "plugins": [
+    "babel-plugin-styled-components",
     "babel-plugin-polished",
     [
       "module-resolver",
@@ -11,24 +13,7 @@
     ]
   ],
   "env": {
-    "development": {
-      "presets": ["next/babel"],
-      "plugins": ["babel-plugin-styled-components"]
-    },
-    "production": {
-      "presets": ["next/babel"],
-      "plugins": ["babel-plugin-styled-components"]
-    },
     "test": {
-      "presets": [
-        [
-          "@babel/preset-env",
-          {
-            "modules": "commonjs"
-          }
-        ],
-        "next/babel"
-      ],
       "plugins": ["babel-plugin-dynamic-import-node"]
     }
   }

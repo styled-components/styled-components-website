@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from 'react';
-import styled, { css, createGlobalStyle } from 'styled-components';
 import { Search as SearchIcon } from '@styled-icons/material';
 import PropTypes from 'prop-types';
-import { grey, blmLightGrey, blmGrey, darkGrey } from '../../utils/colors';
-import rem from '../../utils/rem';
-import { navbarHeight } from '../../utils/sizes';
+import React, { useEffect, useRef } from 'react';
+import styled, { createGlobalStyle, css } from 'styled-components';
+import { blmGrey, blmLightGrey, darkGrey, grey } from '../../utils/colors';
 import { resetInput } from '../../utils/form';
 import { mobile } from '../../utils/media';
+import rem from '../../utils/rem';
+import { navbarHeight } from '../../utils/sizes';
 
 const StyledSearchIcon = styled(SearchIcon)``;
 
@@ -159,7 +159,7 @@ const Search = ({ isDocs, className }) => {
 
   useEffect(() => {
     if (searchInput.current) searchInput.current.focus();
-  }, [searchInput.current]);
+  }, []);
 
   return (
     <Wrapper className={className}>

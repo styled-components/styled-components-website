@@ -170,7 +170,7 @@ render(
     <ThemeProvider theme={theme}>
       <div>
         <Button>Themed</Button>
-        <Button theme={{ main: "darkorange" }}>Overidden</Button>
+        <Button theme={{ main: "darkorange" }}>Overridden</Button>
       </div>
     </ThemeProvider>
   </div>

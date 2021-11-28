@@ -33,3 +33,7 @@ render(
 This is a live editor, so play around with the code to get a feel for what it's like to work with styled-components!
 
 > The CSS rules are automatically vendor prefixed, styled-components takes care of that for you!
+>
+> Styled components uses [stylis.js](https://stylis.js.org/) package under the hood for prefixing the css rules.
+>
+> For additional information about the supported prefixes in stylis.js visit their [repository](https://github.com/thysultan/stylis.js).

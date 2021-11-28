@@ -2,17 +2,17 @@ import React from 'react';
 
 import styled from 'styled-components';
 import rem from '../utils/rem';
-import { navbarHeight } from '../utils/sizes';
 
 const Banner = styled.a`
-  top: 0;
-  height: ${rem(navbarHeight)};
   background: black;
-  width: 100%;
-  padding: 1rem 0.5rem;
-  display: flex;
-  align-items: center;
+  color: white;
+  display: block;
+  text-align: center;
+  font-size: ${rem(15)};
+  font-weight: 500;
   justify-content: center;
+  padding: 0.75rem 0.5rem;
+  width: 100%;
 `;
 
 export const BlmBanner = () => {

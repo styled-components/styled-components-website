@@ -14,11 +14,6 @@ exports[`Note renders correctly 1`] = `
   margin: 0 0 0.2777777777777778rem 0;
 }
 
-.sc-AxhUy + .c0,
-.sc-AxiKw + .c0 {
-  margin-top: 1.9444444444444444rem;
-}
-
 .c1 {
   display: block;
   font-weight: 600;
