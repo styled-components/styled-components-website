@@ -1,14 +1,13 @@
 import Markdown from 'markdown-to-jsx';
 import React from 'react';
 import styled from 'styled-components';
-import DocsLayout from '../components/DocsLayout';
-import components from '../utils/mdx-components';
-import { getReleases } from '../utils/githubApi';
 import Anchor from '../components/Anchor';
+import DocsLayout from '../components/DocsLayout';
 import Loading from '../components/Loading';
-import rem from '../utils/rem';
-import { getFormattedDate } from '../utils/dates';
 import { blmMetal } from '../utils/colors';
+import { getReleases } from '../utils/githubApi';
+import components from '../utils/mdx-components';
+import rem from '../utils/rem';
 
 const ReleaseAnchor = styled(Anchor)`
   &::after {
@@ -22,16 +21,17 @@ const ReleaseAnchor = styled(Anchor)`
 
 const Releases = ({ releases, sidebarPages }) => (
   <DocsLayout useDocsSidebarMenu={false} pages={sidebarPages} title="Releases" description="Styled Components Releases">
-    <Markdown>
+    <Markdown options={{ wrapper: 'p' }}>
       Updating styled components is usually as simple as `npm install`. Only major versions have the potential to
       introduce breaking changes (noted in the following release notes).
     </Markdown>
     {releases ? (
       releases.map((release) => (
         <section key={release.id}>
-          <ReleaseAnchor id={release.name} data-created-at={getFormattedDate(release.created_at)}>
+          <ReleaseAnchor id={release.name} data-created-at={release.created_at.replace(/T.*?$/, '')}>
             {release.name}
           </ReleaseAnchor>
+
           <Markdown overrides={components}>{release.body}</Markdown>
         </section>
       ))
