@@ -5,14 +5,14 @@
 If you're familiar with importing CSS into your components (e.g. like CSSModules) you'll be used to doing something like this:
 
 ```jsx
-import React from 'react'
-import styles from './styles.css'
+import React from 'react';
+import styles from './styles.css';
 
 export default class Counter extends React.Component {
-  state = { count: 0 }
+  state = { count: 0 };
 
-  increment = () => this.setState({ count: this.state.count + 1 })
-  decrement = () => this.setState({ count: this.state.count - 1 })
+  increment = () => this.setState({ count: this.state.count + 1 });
+  decrement = () => this.setState({ count: this.state.count - 1 });
 
   render() {
     return (
@@ -25,7 +25,7 @@ export default class Counter extends React.Component {
           -
         </button>
       </div>
-    )
+    );
   }
 }
 ```
@@ -33,24 +33,24 @@ export default class Counter extends React.Component {
 Because a Styled Component is the _combination_ of the element and the rules that style it, we'd write `Counter` like this:
 
 ```jsx
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledCounter = styled.div`
   /* ... */
-`
+`;
 const Paragraph = styled.p`
   /* ... */
-`
+`;
 const Button = styled.button`
   /* ... */
-`
+`;
 
 export default class Counter extends React.Component {
-  state = { count: 0 }
+  state = { count: 0 };
 
-  increment = () => this.setState({ count: this.state.count + 1 })
-  decrement = () => this.setState({ count: this.state.count - 1 })
+  increment = () => this.setState({ count: this.state.count + 1 });
+  decrement = () => this.setState({ count: this.state.count - 1 });
 
   render() {
     return (
@@ -59,7 +59,7 @@ export default class Counter extends React.Component {
         <Button onClick={this.increment}>+</Button>
         <Button onClick={this.decrement}>-</Button>
       </StyledCounter>
-    )
+    );
   }
 }
 ```
@@ -75,11 +75,11 @@ Write your styled components the recommended way:
 ```jsx
 const StyledWrapper = styled.div`
   /* ... */
-`
+`;
 
 const Wrapper = ({ message }) => {
-  return <StyledWrapper>{message}</StyledWrapper>
-}
+  return <StyledWrapper>{message}</StyledWrapper>;
+};
 ```
 
 Instead of:
@@ -89,10 +89,10 @@ const Wrapper = ({ message }) => {
   // WARNING: THIS IS VERY VERY BAD AND SLOW, DO NOT DO THIS!!!
   const StyledWrapper = styled.div`
     /* ... */
-  `
+  `;
 
-  return <StyledWrapper>{message}</StyledWrapper>
-}
+  return <StyledWrapper>{message}</StyledWrapper>;
+};
 ```
 
 **Recommended reading**: [Talia Marcassa](https://twitter.com/talialongname)
@@ -105,8 +105,8 @@ The preprocessor we use, [stylis](https://github.com/thysultan/stylis.js), suppo
 
 Through this preprocessing, styled-components supports some advanced selector patterns:
 
-* `&` a single ampersand refers to **all instances** of the component; it is used for applying broad overrides:
-  
+- `&` a single ampersand refers to **all instances** of the component; it is used for applying broad overrides:
+
   ```react
   const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
     color: blue;
@@ -146,12 +146,19 @@ Through this preprocessing, styled-components supports some advanced selector pa
   )
   ```
 
-* `&&` a double ampersand refers to **an instance** of the component; this is useful if you're doing conditional styling overrides and don't want a style to apply to *all instances* of a particular component:
+- `&&` a double ampersand refers to **an instance** of the component; this is useful if you're doing conditional styling overrides and don't want a style to apply to _all instances_ of a particular component:
 
   ```react
   const Input = styled.input.attrs({ type: "checkbox" })``;
 
-  const Label = styled.span`
+  const Label = styled.label`
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+  `
+
+  const LabelText = styled.span`
     ${(props) => {
       switch (props.$mode) {
         case "dark":
@@ -176,50 +183,50 @@ Through this preprocessing, styled-components supports some advanced selector pa
 
   render(
     <React.Fragment>
-      <label>
+      <Label>
         <Input defaultChecked />
-        <Label>Foo</Label>
-      </label>
-      <label>
+        <LabelText>Foo</LabelText>
+      </Label>
+      <Label>
         <Input />
-        <Label $mode="dark">Foo</Label>
-      </label>
-      <label>
+        <LabelText $mode="dark">Foo</LabelText>
+      </Label>
+      <Label>
         <Input defaultChecked />
-        <Label>Foo</Label>
-      </label>
-      <label>
+        <LabelText>Foo</LabelText>
+      </Label>
+      <Label>
         <Input defaultChecked />
-        <Label $mode="dark">Foo</Label>
-      </label>
+        <LabelText $mode="dark">Foo</LabelText>
+      </Label>
     </React.Fragment>
   )
-  ```  
+  ```
 
-* `&&` a double ampersand alone has a special behavior called a "precedence boost"; this can be useful if you are dealing with a mixed styled-components and vanilla CSS environment where there might be conflicting styles:
+- `&&` a double ampersand alone has a special behavior called a "precedence boost"; this can be useful if you are dealing with a mixed styled-components and vanilla CSS environment where there might be conflicting styles:
 
-   ```react
-    const Thing = styled.div`
-      && {
-        color: blue;
-      }
-    `
+  ```react
+   const Thing = styled.div`
+     && {
+       color: blue;
+     }
+   `
 
-    const GlobalStyle = createGlobalStyle`
-      div${Thing} {
-        color: red;
-      }
-    `
+   const GlobalStyle = createGlobalStyle`
+     div${Thing} {
+       color: red;
+     }
+   `
 
-    render(
-      <React.Fragment>
-        <GlobalStyle />
-        <Thing>
-          I'm blue, da ba dee da ba daa
-        </Thing>
-      </React.Fragment>
-    )
-    ```
+   render(
+     <React.Fragment>
+       <GlobalStyle />
+       <Thing>
+         I'm blue, da ba dee da ba daa
+       </Thing>
+     </React.Fragment>
+   )
+  ```
 
 If you put selectors in without the ampersand, they will refer to children of the component.
 
