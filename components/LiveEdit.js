@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import styled, {
   createGlobalStyle,
   css,
   keyframes,
-  withTheme,
   StyleSheetManager,
   ThemeProvider,
+  withTheme,
 } from 'styled-components';
 import stylisRTLPlugin from 'stylis-plugin-rtl';
-import rem from '../utils/rem';
 import { darkGrey, red } from '../utils/colors';
-import { phone } from '../utils/media';
 import { headerFont, monospace } from '../utils/fonts';
-
-import '../utils/prismTemplateString';
-
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { phone } from '../utils/media';
+import rem from '../utils/rem';
 
 const StyledProvider = styled(LiveProvider)`
   box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
