@@ -15,7 +15,7 @@ export default function WithIsScrolled(props) {
     // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll, { passive: true });
-  }, []);
+  }, [onScroll, props.children]);
 
   return props.children({ isScrolled });
 }

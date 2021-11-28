@@ -33,7 +33,7 @@ to conditionally add CSS rules.
 ```jsx
 const Title = styled.h1`
   /* Text centering won't break if props.upsidedown is falsy */
-  ${props.upsidedown && 'transform: rotate(180deg);'}
+  ${props => props.upsidedown && 'transform: rotate(180deg);'}
   text-align: center;
 `;
 ```
