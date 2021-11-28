@@ -4,14 +4,13 @@ import styled from 'styled-components';
 import Anchor from '../components/Anchor';
 import DocsLayout from '../components/DocsLayout';
 import Loading from '../components/Loading';
-import { blmMetal } from '../utils/colors';
 import { getReleases } from '../utils/githubApi';
 import components from '../utils/mdx-components';
 import rem from '../utils/rem';
 
 const ReleaseAnchor = styled(Anchor)`
   &::after {
-    color: ${blmMetal};
+    color: rosybrown;
     content: attr(data-created-at);
     display: block;
     font-size: 16px;
