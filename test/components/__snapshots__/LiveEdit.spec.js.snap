@@ -104,7 +104,7 @@ exports[`LiveEdit renders correctly 1`] = `
 }
 
 <LiveEdit>
-  <Styled(LiveProvider)
+  <LiveEdit__StyledProvider
     mountStylesheet={false}
     scope={
       Object {
@@ -139,15 +139,15 @@ exports[`LiveEdit renders correctly 1`] = `
         }
       }
     >
-      <styled.div>
+      <LiveEdit__Row>
         <div
           className="c1"
         >
-          <styled.code>
+          <LiveEdit__Code>
             <code
               className="c2"
             >
-              <Styled(LiveEditor)>
+              <LiveEdit__StyledEditor>
                 <LiveEditor
                   className="c3"
                 >
@@ -160,10 +160,12 @@ exports[`LiveEdit renders correctly 1`] = `
                   >
                     <Editor
                       className="c3"
+                      code=""
                       disabled={false}
                       highlight={[Function]}
                       ignoreTabKey={false}
                       insertSpaces={true}
+                      language="jsx"
                       onValueChange={[Function]}
                       padding={10}
                       style={
@@ -177,6 +179,8 @@ exports[`LiveEdit renders correctly 1`] = `
                     >
                       <div
                         className="c3"
+                        code=""
+                        language="jsx"
                         style={
                           Object {
                             "boxSizing": "border-box",
@@ -37086,10 +37090,10 @@ exports[`LiveEdit renders correctly 1`] = `
                     </Editor>
                   </CodeEditor>
                 </LiveEditor>
-              </Styled(LiveEditor)>
+              </LiveEdit__StyledEditor>
             </code>
-          </styled.code>
-          <Styled(LivePreview)
+          </LiveEdit__Code>
+          <LiveEdit__StyledPreview
             className="notranslate"
             key="preview-client"
           >
@@ -37101,10 +37105,10 @@ exports[`LiveEdit renders correctly 1`] = `
                 className="c4 notranslate"
               />
             </LivePreview>
-          </Styled(LivePreview)>
+          </LiveEdit__StyledPreview>
         </div>
-      </styled.div>
-      <Styled(LiveError)>
+      </LiveEdit__Row>
+      <LiveEdit__StyledError>
         <LiveError
           className="c5"
         >
@@ -37116,9 +37120,9 @@ exports[`LiveEdit renders correctly 1`] = `
             ^
           </pre>
         </LiveError>
-      </Styled(LiveError)>
+      </LiveEdit__StyledError>
     </LiveProvider>
-  </Styled(LiveProvider)>
+  </LiveEdit__StyledProvider>
 </LiveEdit>
 `;
 
@@ -37134,9 +37138,9 @@ exports[`StyledError renders correctly 1`] = `
   white-space: pre;
 }
 
-<Styled(LiveError)>
+<LiveEdit__StyledError>
   <LiveError
     className="c0"
   />
-</Styled(LiveError)>
+</LiveEdit__StyledError>
 `;

@@ -31,6 +31,7 @@ import {
   IMDbLogo,
   InVisionLogo,
   JaneLogo,
+  KabumLogo,
   KiwiComLogo,
   LegoLogo,
   LifehackerLogo,
@@ -73,6 +74,7 @@ import {
   MiuiLogo,
   JimdoLogo,
   ZillowLogo,
+  WelcomeUILogo,
 } from './components/CompanyLogos';
 
 const companies = [
@@ -538,7 +540,7 @@ const companies = [
   },
   {
     key: 'https://seatgeek.com',
-    similarWebGlobalRank: 7292,
+    similarWebGlobalRank: 5590,
     name: 'SeatGeek',
     logo: SeatGeekLogo,
     style: {},
@@ -1220,6 +1222,40 @@ const companies = [
         height: 720,
         internalUrl: 'lifehacker',
       },
+    },
+  },
+  {
+    key: 'https://www.welcometothejungle.com/',
+    similarWebGlobalRank: 23268,
+    name: 'Welcome to the jungle',
+    logo: WelcomeUILogo,
+    style: {},
+    projects: {
+      welcomeui: {
+        title: 'Welcome UI',
+        link: 'https://www.welcome-ui.com',
+        src: '/screenshots/thumbnails/welcome-ui.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'welcome-ui',
+      },
+    },
+  },
+  {
+    key: 'https://www.kabum.com.br/',
+    similarWebGlobalRank: 3679,
+    name: 'KaBuM!',
+    logo: KabumLogo,
+    style: {},
+    projects: {
+      kabum: {
+        title: 'KaBuM!',
+        link: 'https://www.kabum.com.br/',
+        src: '/screenshots/thumbnails/kabum.com.br.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'kabum',
+      }
     },
   },
 ];
