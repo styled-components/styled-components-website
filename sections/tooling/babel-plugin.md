@@ -83,6 +83,31 @@ You can force the component `displayName` to be solely the component name by dis
 
 One example you might want to do this, is testing components with enzyme. While you can always use `.find(ComponentName)` it's definitely possible to search component by its displayName with `.find("ComponentName")`. In the latter case you will need to disable the `fileName` option. If you do want this for testing only, make sure to add this only under your test environment.
 
+#### Control which file names are meaningless
+
+A common pattern is to put components in `Button/index.jsx` instead of `Button.jsx`. By default, if the `fileName` option is set to `true`, the plugin will generate the display name using the directory name (`<button class="Button-asdf123 asdf123" />`) instead of the file name (`<button class="index-asdf123 asdf123" />`), because the former provides more information.
+
+The `meaninglessFileNames` option allows to customize the list of file names that are not relevant to the description of a styled component's functionality, and hence the directory name should be used instead:
+
+```json
+{
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "meaninglessFileNames": ["index", "styles"]
+      }
+    ]
+  ]
+}
+```
+
+For example, adding `styles` to the list would enable you to store your styled components in a `Button/styles.js` file.
+
+This option defaults to `["index"]`.
+
+If either `fileName` or `displayName` are set to `false`, this option has no effect.
+
 ### Minification
 
 Two types of minifications are performed by this plugin: one removes all whitespace & comments from your CSS and the other [transpiles tagged template literals](#template-string-transpilation), keeping valuable bytes out of your bundles.
