@@ -54,4 +54,11 @@ import styled from 'styled-components/macro'
 />
 ```
 
+#### Usage with TypeScript
 
+To prevent TypeScript errors on the `css` prop on arbitrary elements, install `@types/styled-components` and add the following import once in your project:
+
+```ts
+import {} from 'styled-components/cssprop'
+```
+See <https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31245#issuecomment-446011384> for more information.

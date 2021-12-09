@@ -5,9 +5,11 @@ import DocsLayout from '../../components/DocsLayout';
 import { Header } from '../../components/Layout';
 import Link from '../../components/Link';
 import titleToDash from '../../utils/titleToDash';
-import { pages } from '../docs.json';
+import json from '../docs.json';
 import { mobile, phone } from '../../utils/media';
 import { headerFont } from '../../utils/fonts';
+
+const { pages } = json;
 
 const Row = styled.div`
   display: flex;
@@ -59,9 +61,7 @@ const Documentation = () => (
 
           {sections.map(({ title }) => (
             <SubHeader key={title}>
-              <Link prefetch href={`/docs/${pathname}#${titleToDash(title)}`}>
-                {title}
-              </Link>
+              <Link href={`/docs/${pathname}#${titleToDash(title)}`}>{title}</Link>
             </SubHeader>
           ))}
         </Column>

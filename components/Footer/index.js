@@ -1,11 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Favorite } from 'styled-icons/material';
+import { Favorite } from '@styled-icons/material';
 import rem from '../../utils/rem';
 import { mobile } from '../../utils/media';
 import { grey, paleGrey, red } from '../../utils/colors';
 import Link from '../Link';
 import { Content } from '../Layout';
+import { BlmBanner } from '../BlmBanner';
 
 const Wrapper = styled.footer`
   display: flex;
@@ -39,40 +40,46 @@ const FooterContent = styled(Content)`
 `;
 
 const Footer = () => (
-  <Wrapper>
-    <FooterContent hero>
-      {' '}
-      {'Hosted on ▲ ZEIT Now'}
-      <br />
-      {'Made with '}
-      <Heart />
-      {' by '}
-      <FooterLink inline href="https://twitter.com/glenmaddern">
-        @glenmaddern
-      </FooterLink>
-      {', '}
-      <FooterLink inline href="https://twitter.com/mxstbr">
-        @mxstbr
-      </FooterLink>
-      {', '}
-      <FooterLink inline href="https://twitter.com/_philpl">
-        @_philpl‬
-      </FooterLink>
-      {', '}
-      <FooterLink inline href="https://twitter.com/probablyup">
-        @probablyup
-      </FooterLink>
-      {', '}
-      <FooterLink inline href="https://twitter.com/imbhargav5">
-        @imbhargav5
-      </FooterLink>
-      {' and '}
-      <FooterLink inline href="https://github.com/orgs/styled-components/people">
-        contributors
-      </FooterLink>
-      {'.'}
-    </FooterContent>
-  </Wrapper>
+  <>
+    <Wrapper>
+      <FooterContent hero>
+        {' '}
+        {'Hosted on '}
+        <FooterLink inline href="https://vercel.com">
+          ▲ Vercel
+        </FooterLink>
+        <br />
+        {'Made with '}
+        <Heart />
+        {' by '}
+        <FooterLink inline href="https://twitter.com/glenmaddern">
+          @glenmaddern
+        </FooterLink>
+        {', '}
+        <FooterLink inline href="https://twitter.com/mxstbr">
+          @mxstbr
+        </FooterLink>
+        {', '}
+        <FooterLink inline href="https://twitter.com/_philpl">
+          @_philpl‬
+        </FooterLink>
+        {', '}
+        <FooterLink inline href="https://twitter.com/probablyup">
+          @probablyup
+        </FooterLink>
+        {', '}
+        <FooterLink inline href="https://twitter.com/imbhargav5">
+          @imbhargav5
+        </FooterLink>
+        {' and '}
+        <FooterLink inline href="https://github.com/orgs/styled-components/people">
+          contributors
+        </FooterLink>
+        {'.'}
+      </FooterContent>
+    </Wrapper>
+    <BlmBanner />
+  </>
 );
 
 export default Footer;

@@ -5,7 +5,7 @@
 ### Installation
 
 ```
-npm install --dev jest-styled-components
+npm install --save-dev jest-styled-components
 ```
 
 ### Snapshot Testing
@@ -35,7 +35,7 @@ And here's an example of the resulting snapshot:
 ```jsx
 exports[`it works 1`] = `
 .c0 {
-  color: green;
+  color: red;
 }
 
 <button

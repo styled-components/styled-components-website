@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import styled, {
   createGlobalStyle,
   css,
   keyframes,
-  withTheme,
   StyleSheetManager,
   ThemeProvider,
+  withTheme,
 } from 'styled-components';
-import stylisRTLPlugin from 'stylis-rtl';
-import rem from '../utils/rem';
+import stylisRTLPlugin from 'stylis-plugin-rtl';
 import { darkGrey, red } from '../utils/colors';
-import { phone } from '../utils/media';
 import { headerFont, monospace } from '../utils/fonts';
-
-import '../utils/prismTemplateString';
-
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { phone } from '../utils/media';
+import rem from '../utils/rem';
 
 const StyledProvider = styled(LiveProvider)`
   box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
@@ -48,12 +45,16 @@ const columnMixin = css`
   `)};
 `;
 
+const Code = styled.code`
+  ${columnMixin};
+`;
+
 export const editorMixin = `
   background: ${darkGrey};
   font-size: 0.8rem;
   font-family: ${monospace};
   font-weight: 300;
-  height: ${rem(400)};
+  min-height: ${rem(400)};
   overflow-y: auto !important;
   overflow-x: hidden;
   cursor: text;
@@ -63,7 +64,6 @@ export const editorMixin = `
 
 const StyledEditor = styled(LiveEditor)`
   ${editorMixin};
-  ${columnMixin};
 `;
 
 const StyledPreview = styled(LivePreview)`
@@ -112,10 +112,12 @@ const LiveEdit = ({ noInline, code, scope = {} }) => {
       }}
     >
       <Row>
-        <StyledEditor />
+        <Code>
+          <StyledEditor />
+        </Code>
 
         {/* because react-live uses a different babel compiler, the classnames it generates aren't stable and a remount is needed after SSR */}
-        <StyledPreview key={mounted ? 'preview-client' : 'preview-ssr'} />
+        <StyledPreview className="notranslate" key={mounted ? 'preview-client' : 'preview-ssr'} />
       </Row>
 
       <StyledError />

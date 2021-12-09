@@ -10,11 +10,11 @@ assignees: ''
 
 ##### Company info
 
-<!-- Name of the website's owner company -->
+<!-- Name of the website owner's company -->
 
 **Company name:**
 
-<!-- Link to the website's owner company -->
+<!-- Link to the website owner's company -->
 
 **Company website:**
 
@@ -28,14 +28,14 @@ assignees: ''
 
 ##### Project info
 
-<!-- Name of the companie's website or websites made using s-c -->
+<!-- Name of the company's website or websites made using s-c -->
 
 **project name:**
 
-<!-- Link to the companie's website or websites made using s-c -->
+<!-- Link to the company's website or websites made using s-c -->
 
 **project link:**
 
-<!-- Screeenshot of the landing page of the companie's website or websites made using s-c. Screenshots are required to be 1280x720px  -->
+<!-- Screeenshot of the landing page of the company's website or websites made using s-c. Screenshots are required to be 1280x720px  -->
 
 **project screenshot:**
