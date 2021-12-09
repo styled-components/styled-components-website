@@ -7,23 +7,36 @@ If you pass no interpolations, the first argument your function receives is an a
 
 ```jsx
 // These are equivalent:
-fn`some string here`
-fn(['some string here'])
+fn`some string here`;
+fn(['some string here']);
 ```
 
 Once you pass interpolations, the array contains the passed string, split at the positions of the interpolations.
 The rest of the arguments will be the interpolations, in order.
 
 ```jsx
-const aVar = 'good'
+const aVar = 'good';
 
 // These are equivalent:
-fn`this is a ${aVar} day`
-fn(['this is a ', ' day'], aVar)
+fn`this is a ${aVar} day`;
+fn(['this is a ', ' day'], aVar);
 ```
 
 This is a bit cumbersome to work with, but it means that we can receive variables, functions, or mixins
 (`css` helper) in styled components and can flatten that into pure CSS.
 
+Speaking of which, during flattening, styled-components ignores interpolations that evaluate to `undefined`, `null`,
+`false`, or an empty string (`""`), which means you're free to use
+[short-circuit evaluation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#Short-circuit_evaluation)
+to conditionally add CSS rules.
+
+```jsx
+const Title = styled.h1`
+  /* Text centering won't break if props.upsidedown is falsy */
+  ${props => props.upsidedown && 'transform: rotate(180deg);'}
+  text-align: center;
+`;
+```
+
 If you want to learn more about tagged template literals, check out Max Stoiber's article:
-[The magic behind 💅 styled-components](https://mxstbr.blog/2016/11/styled-components-magic-explained/)
+[The magic behind 💅🏾 styled-components](https://mxstbr.blog/2016/11/styled-components-magic-explained/)

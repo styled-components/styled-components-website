@@ -15,7 +15,6 @@ const Wrapper = styled.nav`
 
 const NavLink = styled(Link).attrs((/* props */) => ({
   unstyled: true,
-  prefetch: true,
 }))`
   flex: 0 0 auto;
   display: inline-block;

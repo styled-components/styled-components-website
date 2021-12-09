@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { withRouter } from 'next/router';
 
 import rem from '../../utils/rem';
 import titleToDash from '../../utils/titleToDash';
-import { pages } from '../../pages/docs.json';
+import json from '../../pages/docs.json';
 import Link, { StyledLink } from '../Link';
+
+const { pages } = json;
 
 const MenuInner = styled.div`
   display: block;
   box-sizing: border-box;
   height: 100%;
-  padding-top: ${rem(25)};
+  padding-top: ${rem(60)};
 `;
 
 const TopLevelLink = styled.div`
@@ -36,36 +38,26 @@ const SubSection = styled.h5`
   font-weight: normal;
 `;
 
-class Folder extends Component {
-  state = {
-    isOpen: false,
-  };
+function Folder({ children, isOpenDefault = false, ...props }) {
+  const [isOpen, setIsOpen] = useState(isOpenDefault);
 
-  toggleSubSections = () => {
-    this.setState({ isOpen: !this.state.isOpen });
-  };
+  const toggleSubSections = useCallback(() => {
+    setIsOpen(!isOpen);
+  }, [isOpen]);
 
-  componentWillMount() {
-    this.setState({ isOpen: this.props.isOpenDefault });
-  }
+  useEffect(() => {
+    if (isOpen !== isOpenDefault) setIsOpen(!!isOpenDefault);
+    // it's fine to grab the current value of isOpen when isOpenDefault changes, if ever
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpenDefault]);
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ isOpen: nextProps.isOpenDefault });
-  }
-
-  render() {
-    // eslint-disable-next-line
-    const { children, isOpenDefault, ...props } = this.props;
-    const { isOpen } = this.state;
-
-    return typeof children === 'function'
-      ? children({
-          rootProps: props,
-          toggleSubSections: this.toggleSubSections,
-          isOpen,
-        })
-      : null;
-  }
+  return typeof children === 'function'
+    ? children({
+        rootProps: props,
+        toggleSubSections,
+        isOpen,
+      })
+    : null;
 }
 
 export const DocsSidebarMenu = withRouter(({ onRouteChange, router }) => (

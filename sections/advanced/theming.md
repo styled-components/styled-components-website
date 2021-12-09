@@ -4,8 +4,6 @@ styled-components has full theming support by exporting a `<ThemeProvider>` wrap
 This component provides a theme to all React components underneath itself via the context API. In the render
 tree all styled-components will have access to the provided theme, even when they are multiple levels deep.
 
-> `<ThemeProvider>` returns its children when rendering, so it must only wrap a [single child node](https://github.com/styled-components/styled-components/issues/1325#issuecomment-346564775) as it may be used as the root of the `render()` method.
-
 To illustrate this, let's create our Button component, but this time we'll pass some variables down
 as a theme.
 
@@ -99,16 +97,16 @@ If you ever need to use the current theme outside styled components (e.g. inside
 the `withTheme` higher order component.
 
 ```jsx
-import { withTheme } from 'styled-components';
+import { withTheme } from 'styled-components'
 
 class MyComponent extends React.Component {
   render() {
-    console.log('Current theme: ', this.props.theme);
+    console.log('Current theme: ', this.props.theme)
     // ...
   }
 }
 
-export default withTheme(MyComponent);
+export default withTheme(MyComponent)
 ```
 
 #### via `useContext` React hook | v4
@@ -116,13 +114,28 @@ export default withTheme(MyComponent);
 You can also use `useContext` to access the current theme outside of styled components when working with React Hooks.
 
 ```jsx
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
 
 const MyComponent = () => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext)
 
-  console.log('Current theme: ', themeContext);
+  console.log('Current theme: ', themeContext)
+  // ...
+}
+```
+
+#### via `useTheme` custom hook | v5
+
+You can also use `useTheme` to access the current theme outside of styled components when working with React Hooks.
+
+```jsx
+import { useTheme } from 'styled-components'
+
+const MyComponent = () => {
+  const theme = useTheme()
+
+  console.log('Current theme: ', theme)
   // ...
 }
 ```
@@ -157,7 +170,7 @@ render(
     <ThemeProvider theme={theme}>
       <div>
         <Button>Themed</Button>
-        <Button theme={{ main: "darkorange" }}>Overidden</Button>
+        <Button theme={{ main: "darkorange" }}>Overridden</Button>
       </div>
     </ThemeProvider>
   </div>

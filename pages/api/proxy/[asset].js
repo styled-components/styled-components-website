@@ -3,13 +3,13 @@ import axios from 'axios';
 // Proxy imageshield.io images
 const proxyMap = {
   'npm-v.svg': 'https://img.shields.io/npm/v/styled-components.svg',
-  'size.svg': 'https://img.shields.io/badge/gzip%20size-14.6%20kB-brightgreen.svg',
+  'size.svg': 'https://img.shields.io/badge/gzip%20size-12.4%20kB-brightgreen.svg',
   'downloads.svg': 'https://img.shields.io/npm/dm/styled-components.svg?maxAge=3600',
   'stars.svg':
     'https://img.shields.io/github/stars/styled-components/styled-components.svg?style=social&label=Star&maxAge=3600',
 };
 
-export default function(req, res) {
+export default function serveProxiedRequest(req, res) {
   const { asset } = req.query;
   const remoteUrl = proxyMap[asset];
 
@@ -18,7 +18,7 @@ export default function(req, res) {
     return res.status(404).end('Not Found');
   }
 
-  axios
+  return axios
     .get(remoteUrl, {
       responseType: 'arraybuffer',
     })

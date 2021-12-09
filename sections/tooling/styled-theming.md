@@ -93,8 +93,8 @@ theme("whatever", {...});
 value provided to `<ThemeProvider>` theme.
 
 ```jsx
-<ThemeProvider theme={{ mode: "light" }}/>
-<ThemeProvider theme={{ mode: "dark" }}/>
+<ThemeProvider theme={{ mode: "light" }} />
+<ThemeProvider theme={{ mode: "dark" }} />
 
 theme("mode", {
   light: "...",
@@ -111,8 +111,8 @@ theme("mode", {
 });
 
 theme("font", {
-  sansSerif: ""Helvetica Neue", Helvetica, Arial, sans-serif",
-  serif: "Georgia, Times, "Times New Roman", serif",
+  sansSerif: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+  serif: 'Georgia, Times, "Times New Roman", serif',
   monoSpaced: "Consolas, monaco, monospace",
 });
 ```
@@ -174,8 +174,8 @@ Button.defaultProps = {
   variant: "default",
 };
 
-<Button/>
-<Button variant="primary"/>
-<Button variant="success"/>
-<Button variant="warning"/>
+<Button />
+<Button variant="primary" />
+<Button variant="success" />
+<Button variant="warning" />
 ```

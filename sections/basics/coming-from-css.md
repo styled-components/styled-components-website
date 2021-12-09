@@ -5,14 +5,14 @@
 If you're familiar with importing CSS into your components (e.g. like CSSModules) you'll be used to doing something like this:
 
 ```jsx
-import React from 'react'
-import styles from './styles.css'
+import React from 'react';
+import styles from './styles.css';
 
 export default class Counter extends React.Component {
-  state = { count: 0 }
+  state = { count: 0 };
 
-  increment = () => this.setState({ count: this.state.count + 1 })
-  decrement = () => this.setState({ count: this.state.count - 1 })
+  increment = () => this.setState({ count: this.state.count + 1 });
+  decrement = () => this.setState({ count: this.state.count - 1 });
 
   render() {
     return (
@@ -25,7 +25,7 @@ export default class Counter extends React.Component {
           -
         </button>
       </div>
-    )
+    );
   }
 }
 ```
@@ -33,24 +33,24 @@ export default class Counter extends React.Component {
 Because a Styled Component is the _combination_ of the element and the rules that style it, we'd write `Counter` like this:
 
 ```jsx
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledCounter = styled.div`
   /* ... */
-`
+`;
 const Paragraph = styled.p`
   /* ... */
-`
+`;
 const Button = styled.button`
   /* ... */
-`
+`;
 
 export default class Counter extends React.Component {
-  state = { count: 0 }
+  state = { count: 0 };
 
-  increment = () => this.setState({ count: this.state.count + 1 })
-  decrement = () => this.setState({ count: this.state.count - 1 })
+  increment = () => this.setState({ count: this.state.count + 1 });
+  decrement = () => this.setState({ count: this.state.count - 1 });
 
   render() {
     return (
@@ -59,7 +59,7 @@ export default class Counter extends React.Component {
         <Button onClick={this.increment}>+</Button>
         <Button onClick={this.decrement}>-</Button>
       </StyledCounter>
-    )
+    );
   }
 }
 ```
@@ -75,11 +75,11 @@ Write your styled components the recommended way:
 ```jsx
 const StyledWrapper = styled.div`
   /* ... */
-`
+`;
 
 const Wrapper = ({ message }) => {
-  return <StyledWrapper>{message}</StyledWrapper>
-}
+  return <StyledWrapper>{message}</StyledWrapper>;
+};
 ```
 
 Instead of:
@@ -89,10 +89,10 @@ const Wrapper = ({ message }) => {
   // WARNING: THIS IS VERY VERY BAD AND SLOW, DO NOT DO THIS!!!
   const StyledWrapper = styled.div`
     /* ... */
-  `
+  `;
 
-  return <StyledWrapper>{message}</StyledWrapper>
-}
+  return <StyledWrapper>{message}</StyledWrapper>;
+};
 ```
 
 **Recommended reading**: [Talia Marcassa](https://twitter.com/talialongname)
@@ -101,74 +101,132 @@ and comparisons with alternatives, in [Styled Components: To Use or Not to Use?]
 
 ### Pseudoelements, pseudoselectors, and nesting
 
-The preprocessor we use, [stylis](https://github.com/thysultan/stylis.js), supports scss-like syntax for automatically nesting styles. Using an example component:
+The preprocessor we use, [stylis](https://github.com/thysultan/stylis.js), supports scss-like syntax for automatically nesting styles.
 
-```jsx
-const Thing = styled.div`
-  color: blue;
-`
-```
+Through this preprocessing, styled-components supports some advanced selector patterns:
 
-Pseudoselectors and pseudoelements without further refinement automatically are attached to the component:
+- `&` a single ampersand refers to **all instances** of the component; it is used for applying broad overrides:
 
-```react
-const Thing = styled.button`
-  color: blue;
+  ```react
+  const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
+    color: blue;
 
-  ::before {
-    content: '🚀';
-  }
+    &:hover {
+      color: red; // <Thing> when hovered
+    }
 
-  :hover {
-    color: red;
-  }
-`
+    & ~ & {
+      background: tomato; // <Thing> as a sibling of <Thing>, but maybe not directly next to it
+    }
 
-render(
-  <Thing>Hello world!</Thing>
-)
-```
+    & + & {
+      background: lime; // <Thing> next to <Thing>
+    }
 
-For more complex selector patterns, the ampersand (`&`) can be used to refer back to the main component. Here are some more examples of its potential usage:
+    &.something {
+      background: orange; // <Thing> tagged with an additional CSS class ".something"
+    }
 
-```react
-const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
-  color: blue;
+    .something-else & {
+      border: 1px solid; // <Thing> inside another element labeled ".something-else"
+    }
+  `
 
-  &:hover {
-    color: red; // <Thing> when hovered
-  }
+  render(
+    <React.Fragment>
+      <Thing>Hello world!</Thing>
+      <Thing>How ya doing?</Thing>
+      <Thing className="something">The sun is shining...</Thing>
+      <div>Pretty nice day today.</div>
+      <Thing>Don't you think?</Thing>
+      <div className="something-else">
+        <Thing>Splendid.</Thing>
+      </div>
+    </React.Fragment>
+  )
+  ```
 
-  & ~ & {
-    background: tomato; // <Thing> as a sibling of <Thing>, but maybe not directly next to it
-  }
+- `&&` a double ampersand refers to **an instance** of the component; this is useful if you're doing conditional styling overrides and don't want a style to apply to _all instances_ of a particular component:
 
-  & + & {
-    background: lime; // <Thing> next to <Thing>
-  }
+  ```react
+  const Input = styled.input.attrs({ type: "checkbox" })``;
 
-  &.something {
-    background: orange; // <Thing> tagged with an additional CSS class ".something"
-  }
+  const Label = styled.label`
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+  `
 
-  .something-else & {
-    border: 1px solid; // <Thing> inside another element labeled ".something-else"
-  }
-`
+  const LabelText = styled.span`
+    ${(props) => {
+      switch (props.$mode) {
+        case "dark":
+          return css`
+            background-color: black;
+            color: white;
+            ${Input}:checked + && {
+              color: blue;
+            }
+          `;
+        default:
+          return css`
+            background-color: white;
+            color: black;
+            ${Input}:checked + && {
+              color: red;
+            }
+          `;
+      }
+    }}
+  `;
 
-render(
-  <React.Fragment>
-    <Thing>Hello world!</Thing>
-    <Thing>How ya doing?</Thing>
-    <Thing className="something">The sun is shining...</Thing>
-    <div>Pretty nice day today.</div>
-    <Thing>Don't you think?</Thing>
-    <div className="something-else">
-      <Thing>Splendid.</Thing>
-    </div>
-  </React.Fragment>
-)
-```
+  render(
+    <React.Fragment>
+      <Label>
+        <Input defaultChecked />
+        <LabelText>Foo</LabelText>
+      </Label>
+      <Label>
+        <Input />
+        <LabelText $mode="dark">Foo</LabelText>
+      </Label>
+      <Label>
+        <Input defaultChecked />
+        <LabelText>Foo</LabelText>
+      </Label>
+      <Label>
+        <Input defaultChecked />
+        <LabelText $mode="dark">Foo</LabelText>
+      </Label>
+    </React.Fragment>
+  )
+  ```
+
+- `&&` a double ampersand alone has a special behavior called a "precedence boost"; this can be useful if you are dealing with a mixed styled-components and vanilla CSS environment where there might be conflicting styles:
+
+  ```react
+   const Thing = styled.div`
+     && {
+       color: blue;
+     }
+   `
+
+   const GlobalStyle = createGlobalStyle`
+     div${Thing} {
+       color: red;
+     }
+   `
+
+   render(
+     <React.Fragment>
+       <GlobalStyle />
+       <Thing>
+         I'm blue, da ba dee da ba daa
+       </Thing>
+     </React.Fragment>
+   )
+  ```
 
 If you put selectors in without the ampersand, they will refer to children of the component.
 
@@ -187,30 +245,5 @@ render(
     <label htmlFor="foo-button" className="something">Mystery button</label>
     <button id="foo-button">What do I do?</button>
   </Thing>
-)
-```
-
-Finally, the ampersand can be used to increase the specificity of rules on the component; this can be useful if you are dealing with a mixed styled-components and vanilla CSS environment where there might be conflicting styles:
-
-```react
-const Thing = styled.div`
-  && {
-    color: blue;
-  }
-`
-
-const GlobalStyle = createGlobalStyle`
-  div${Thing} {
-    color: red;
-  }
-`
-
-render(
-  <React.Fragment>
-    <GlobalStyle />
-    <Thing>
-      I'm blue, da ba dee da ba daa
-    </Thing>
-  </React.Fragment>
 )
 ```
