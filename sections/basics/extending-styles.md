@@ -55,8 +55,8 @@ const TomatoButton = styled(Button)`
 render(
   <div>
     <Button>Normal Button</Button>
-    <Button as="a" href="/">Link with Button styles</Button>
-    <TomatoButton as="a" href="/">Link with Tomato Button styles</TomatoButton>
+    <Button as="a" href="#">Link with Button styles</Button>
+    <TomatoButton as="a" href="#">Link with Tomato Button styles</TomatoButton>
   </div>
 );
 ```

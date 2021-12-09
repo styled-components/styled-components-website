@@ -1,18 +1,19 @@
-import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
-import Image from '../components/Image';
-import { sortedProjects } from '../companies-manifest';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
 import { withRouter } from 'next/router';
-import WithIsScrolled from '../components/WithIsScrolled';
-import { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
+import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { mobile, phone } from '../utils/media';
+import styled, { css, keyframes } from 'styled-components';
+import { sortedProjects } from '../companies-manifest';
+import Footer from '../components/Footer';
+import Image from '../components/Image';
+import Nav from '../components/Nav';
+import SeoHead from '../components/SeoHead';
 import Navigation from '../components/Slider/Navigation';
 import ShowcaseBody from '../components/Slider/ShowcaseBody';
+import { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
+import WithIsScrolled from '../components/WithIsScrolled';
 import { blmGrey, blmMetal } from '../utils/colors';
 import { headerFont } from '../utils/fonts';
+import { mobile, phone } from '../utils/media';
 
 const Container = styled.div`
   overflow-x: hidden;
@@ -125,7 +126,7 @@ const Slide = styled(Image)`
   box-shadow: 0 32px 48px rgba(0, 0, 0, 0.12);
 `;
 
-const getSlide = childIndex => keyframes`
+const getSlide = (childIndex) => keyframes`
   from {
     transform: translateX(${childIndex * 105}%);
   }
@@ -234,8 +235,8 @@ function calculateSlides(sortOrder, route) {
   if (currentSlideIndex === -1) {
     currentSlideIndex = 0;
   }
-  const previousSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, x => x - 1);
-  const nextSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, x => x + 1);
+  const previousSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, (x) => x - 1);
+  const nextSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, (x) => x + 1);
   return {
     currentSlide: mapIndexToRoute(currentSlideIndex),
     previousSlide: mapIndexToRoute(previousSlideIndex),
@@ -244,7 +245,7 @@ function calculateSlides(sortOrder, route) {
 }
 
 class ArrowEvents extends React.Component {
-  handleKeyDown = event => {
+  handleKeyDown = (event) => {
     const isLeft = event.keyCode === 37;
     const isRight = event.keyCode === 39;
     const { router, previousSlide, nextSlide } = this.props;
@@ -276,6 +277,9 @@ const Showcase = ({ router }) => {
 
   return (
     <>
+      <SeoHead title={`styled-components: Showcase ${title}`}>
+        <meta name="robots" content="noodp" />
+      </SeoHead>
       <WithIsScrolled>{({ isScrolled }) => <Nav showSideNav={false} transparent={!isScrolled} />}</WithIsScrolled>
       <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
       <Container>
@@ -317,7 +321,7 @@ const Showcase = ({ router }) => {
                 height={1080}
                 src={src}
                 margin={0}
-                renderImage={props => {
+                renderImage={(props) => {
                   return (
                     <TransitionGroup>
                       <CSSTransition key={src} timeout={500} classNames="fade">

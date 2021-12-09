@@ -18,15 +18,18 @@ exports[`Container renders correctly 1`] = `
 
 exports[`Content renders correctly 1`] = `
 .c0 {
-  width: 56.888888888888886rem;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 5rem 2.2222222222222223rem 0 2.2222222222222223rem;
+  margin: 0;
+  padding: 5rem 3.3333333333333335rem 0 3.3333333333333335rem;
   box-sizing: border-box;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   -webkit-transition: -webkit-transform 150ms ease-out;
   -webkit-transition: transform 150ms ease-out;
   transition: transform 150ms ease-out;
+}
+
+.c0 p,
+.c0 li {
+  max-width: 80ch;
 }
 
 @media (max-width:62.5em) {
@@ -48,7 +51,7 @@ exports[`Header renders correctly 1`] = `
   font-size: 1.7777777777777777rem;
   font-weight: 600;
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  margin: 2em 0 0.75em;
+  margin: 1.5em 0 0.5em;
 }
 
 <h2
@@ -58,8 +61,7 @@ exports[`Header renders correctly 1`] = `
 
 exports[`SubHeader renders correctly 1`] = `
 .c0 {
-  display: block;
-  margin: 2em 0 0.75em;
+  margin: 1.5em 0 0.5em;
   font-size: 1.3333333333333333rem;
   font-weight: 600;
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -72,7 +74,6 @@ exports[`SubHeader renders correctly 1`] = `
 
 exports[`Title renders correctly 1`] = `
 .c0 {
-  display: block;
   text-align: left;
   width: 100%;
   color: rgb(66,66,66);

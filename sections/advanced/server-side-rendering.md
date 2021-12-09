@@ -73,10 +73,10 @@ If rendering fails for any reason it's a good idea to use `try...catch...finally
 ### Next.js
 
 Basically you need to add a custom `pages/_document.js` (if you don't have one). Then
-[copy the logic](https://github.com/zeit/next.js/tree/master/examples/with-styled-components/pages/_document.js)
+[copy the logic](https://github.com/vercel/next.js/tree/master/examples/with-styled-components/pages/_document.js)
 for styled-components to inject the server side rendered styles into the `<head>`.
 
-Refer to [our example](https://github.com/zeit/next.js/tree/master/examples/with-styled-components) in the Next.js repo for an up-to-date usage example.
+Refer to [our example](https://github.com/vercel/next.js/tree/master/examples/with-styled-components) in the Next.js repo for an up-to-date usage example.
 
 ### Gatsby
 

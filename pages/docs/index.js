@@ -5,9 +5,11 @@ import DocsLayout from '../../components/DocsLayout';
 import { Header } from '../../components/Layout';
 import Link from '../../components/Link';
 import titleToDash from '../../utils/titleToDash';
-import { pages } from '../docs.json';
+import json from '../docs.json';
 import { mobile, phone } from '../../utils/media';
 import { headerFont } from '../../utils/fonts';
+
+const { pages } = json;
 
 const Row = styled.div`
   display: flex;

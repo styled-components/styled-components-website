@@ -44,7 +44,7 @@ const Figure = styled.figure`
   }
 `;
 
-const Main = styled.main`
+const Main = styled.div`
   margin: 0 auto;
   max-width: 100%;
   width: ${props => props.width}px;

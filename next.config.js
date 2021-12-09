@@ -9,7 +9,7 @@ module.exports = withMDX({
   withSourceMaps({
     pageExtensions: ['js', 'jsx', 'md'],
     poweredByHeader: false,
-    webpack: function(config, { dev, isServer }) {
+    webpack: function (config, { dev, isServer }) {
       if (dev) {
         return config;
       }
@@ -24,16 +24,6 @@ module.exports = withMDX({
             statsFilename: 'stats.json',
           })
         );
-      }
-
-      if (!isServer) {
-        const oldEntry = config.entry;
-
-        config.entry = () =>
-          oldEntry().then(entry => {
-            entry.commons = ['./utils/prismTemplateString.js'];
-            return entry;
-          });
       }
 
       return config;
