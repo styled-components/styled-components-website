@@ -12,13 +12,14 @@ import ShowcaseBody from '../components/Slider/ShowcaseBody';
 import { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
 import WithIsScrolled from '../components/WithIsScrolled';
 import { blmGrey, blmMetal } from '../utils/colors';
+import { headerFont } from '../utils/fonts';
 import { mobile, phone } from '../utils/media';
 
 const Container = styled.div`
   overflow-x: hidden;
 
   * {
-    font-family: Avenir Next;
+    font-family: ${headerFont};
   }
 
   h1,
