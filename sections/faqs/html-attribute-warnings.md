@@ -39,7 +39,7 @@ To fix this, you can use transient props or destructure props:
 
 ### transient props (since 5.1)
 
-You can use transient props to fix this:
+You can use [transient props](https://styled-components.com/docs/api#transient-props) to fix this:
 
 
 ```jsx
