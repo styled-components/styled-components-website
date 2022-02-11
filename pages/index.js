@@ -87,7 +87,7 @@ const UsersHeading = styled.p`
   color: #fff;
   font-size: 0.8rem;
   font-weight: 600;
-  margin: 2.5rem 0 0.5rem;
+  margin: 2.5rem auto 0.5rem;
   opacity: 0.8;
 `;
 
