@@ -58,6 +58,7 @@ export const editorMixin = `
   overflow-y: auto !important;
   overflow-x: hidden;
   cursor: text;
+  color: white;
   white-space: pre-wrap;
   position: relative;
 `;
