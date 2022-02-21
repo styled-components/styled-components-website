@@ -41,9 +41,8 @@ const Label = styled.label`
   background-color: white;
   color: #333;
   font-family: ${headerFont};
-  font-weight: bold;
-  font-size: 0.8rem;
   padding: 2px 12px;
+  white-space: nowrap;
   border-radius: 6px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 5px 12px rgba(0, 0, 0, 0.1);
   opacity: 0;
