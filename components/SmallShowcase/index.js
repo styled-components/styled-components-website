@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
+import { headerFont } from '../../utils/fonts';
 
 const scaleFactor = [1.8, 1.4, 1];
 
@@ -39,7 +40,7 @@ const Label = styled.label`
   transform: translate(-50%, 50%);
   background-color: white;
   color: #333;
-  font-family: Avenir Next;
+  font-family: ${headerFont};
   font-weight: bold;
   font-size: 0.8rem;
   padding: 2px 12px;

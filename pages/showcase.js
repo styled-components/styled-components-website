@@ -139,7 +139,7 @@ const HeaderDecoration = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  font-family: Avenir Next;
+  font-family: ${headerFont};
   font-size: 16rem;
   line-height: 16rem;
   font-weight: 800;
@@ -186,7 +186,7 @@ const HeaderActions = styled.div`
   ${NativeSelect} {
     height: 50px;
     border-radius: 4px;
-    font-family: Avenir Next;
+    font-family: ${headerFont};
     font-weight: 500;
     font-size: 1rem;
     line-height: 50px;
