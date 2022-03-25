@@ -87,7 +87,7 @@ export default styled;
 
 That's it! We're able to use styled-components just by using any original import.
 
-```jsx
+```tsx
 import styled, { createGlobalStyle, css } from 'styled-components';
 
 // theme is now fully typed
@@ -112,7 +112,7 @@ export cssHelper = css`
 
 If you are passing custom properties to your styled component it's a good idea to pass type arguments to tagged template like this ([TypeScript `v2.9+` is required](https://github.com/Microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#generic-type-arguments-in-generic-tagged-templates)):
 
-```jsx
+```tsx
 import styled from 'styled-components';
 import Header from './Header';
 
@@ -132,7 +132,7 @@ const NewHeader = styled(Header)<{ customColor: string }>`
 You will need to define both the custom props and the type of tag which will be used. When you pass a custom component,
 the type of tag is not required.
 
-```jsx
+```tsx
 import styled from 'styled-components';
 import Header from './Header';
 
@@ -147,7 +147,7 @@ const Title =
 If the **isActive** property should not be passed into the **Header** component you will have to extract it using the
 following convention:
 
-```jsx
+```tsx
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
@@ -162,7 +162,7 @@ const Title =
 But it might be the opposite. Maybe your styled component needs to proxy props required by the **Header**. Then
 you follow this convention:
 
-```jsx
+```tsx
 import styled from 'styled-components';
 import Header, { Props as HeaderProps } from './Header';
 
@@ -184,7 +184,7 @@ This is a chainable method that attaches some props to a styled component. It ac
 
 For the string case, make sure to type it "twice", like this:
 
-```jsx
+```tsx
 import styled from 'styled-components';
 import Header from './Header';
 
@@ -201,7 +201,7 @@ const Title = styled(Header).attrs<TitleProps>({ isActive: true })<TitleProps>`
 
 For the function case, you may type it like this:
 
-```jsx
+```tsx
 import styled from "styled-components";
 import Header from "./Header";
 
@@ -226,7 +226,7 @@ const container = <Title isActive />;
 When defining a component you will need to mark `className` as optional
 in your Props interface:
 
-```jsx
+``tsx
 interface LogoProps {
   /* This prop is optional, since TypeScript won't know that it's passed by the wrapper */
   className?: string;
@@ -251,7 +251,7 @@ To use function components and have typechecking for the props you'll need to de
 the component alongside with its type. This is not special to styled-components, this is just
 how React works:
 
-```jsx
+```tsx
 interface BoxProps {
   theme?: ThemeInterface;
   borders?: boolean;
