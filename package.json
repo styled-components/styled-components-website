@@ -38,7 +38,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
-    "react-live": "^2.3.0",
+    "react-live-runner": "^1.0.0-rc.2",
     "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.3",
     "styled-theming": "^2.2.0",
