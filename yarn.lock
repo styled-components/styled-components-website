@@ -6509,19 +6509,19 @@ react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-live-runner@^1.0.0-rc.2:
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-live-runner/-/react-live-runner-1.0.0-rc.2.tgz#68fcab1738110e4aca34dadcac633b7708447bf5"
-  integrity sha512-R0kIdKU0pmtXrk9E6a2yAOJ7Pj7dqh/jDGdNcu/pmrxt5ig8GWOZ2s4sFGnD1hVl7uB4Sci47eKcqhBnEqcmVw==
+react-live-runner@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-live-runner/-/react-live-runner-1.0.0.tgz#f38ea23b81f73e1e7f8fc7c397558b82986575c9"
+  integrity sha512-ZeZ/huaDWQqpazBwOeGwc7FwDuyzTDuVohmF2Y4MO2Z7aucs/AmP68vH9/qyF/gfv12DpNJFrV+pylvKbwvEhA==
   dependencies:
     prism-react-renderer "^1.2.1"
-    react-runner "^1.0.0-rc.2"
+    react-runner "^1.0.0"
     react-simple-code-editor "^0.11.0"
 
-react-runner@^1.0.0-rc.2:
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-runner/-/react-runner-1.0.0-rc.2.tgz#3591d3893a6262af345154292627e76612968850"
-  integrity sha512-caUnpbSawzX1cF7f38tmM9+CMDNZNUypIeYPROWKW5UALmo28pfHrad7XL2HRbTku76hiGE60Kxp6CWItW1jRg==
+react-runner@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-runner/-/react-runner-1.0.0.tgz#297a4e0e6a784c1befc874cd88e3e9b3d5d40444"
+  integrity sha512-rkcWe7MZpUxsqQ6m7NzwPi99hd/CQYXgw/VEdyUDyuhdaLoskVg02tbG6+DDrIvL5HquVIJjnxlARM0fE+3Oyg==
   dependencies:
     sucrase "^3.10.1"
 
