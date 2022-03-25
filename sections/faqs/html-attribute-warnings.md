@@ -33,7 +33,32 @@ This will render:
 <a text="Click" href="https://www.styled-components.com/" red="true" class="[generated class]">Click</a>
 ```
 
-React will warn on non-standard attributes being attached such as "red" and "text", which are not valid HTML attributes for the `<a>` element. To fix this, you can use argument destructuring to pull out those known styling props:
+React will warn on non-standard attributes being attached such as "red" and "text", which are not valid HTML attributes for the `<a>` element. 
+
+To fix this, you can use transient props or destructure props:
+
+### transient props (since 5.1)
+
+You can use [transient props](https://styled-components.com/docs/api#transient-props) to fix this:
+
+
+```jsx
+const Link = ({ className, red, text, ...props }) => (
+  <a {...props} className={className}>
+    {text}
+  </a>
+)
+
+const StyledComp = styled(Link)`
+  color: ${props => (props.$red ? 'red' : 'blue')};
+`
+
+<StyledComp text="Click" href="https://www.styled-components.com/" $red />
+```
+
+### destructure props
+
+If you use a version < 5.1 or if you can't use transient props, you can use argument destructuring to pull out those known styling props:
 
 ```jsx
 const Link = ({ className, red, text, ...props }) => (
