@@ -29,7 +29,7 @@ render(
 
 > Keyframes are not supported by `react-native`. Instead, use the [`ReactNative.Animated` API](https://stackoverflow.com/questions/50891046/rotate-an-svg-in-react-native/50891225#50891225).
 
-Keyframes are lazily injected when they're used, which is how they can be code-splitted, so you have to use [the `css` helper](/docs/api#css) for shared style fragments:
+Keyframes are lazily injected when they're used, which is how they can be code-split, so you have to use [the `css` helper](/docs/api#css) for shared style fragments:
 
 ```javascript
 const rotate = keyframes``
