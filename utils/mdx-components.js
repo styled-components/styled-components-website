@@ -62,8 +62,6 @@ const components = {
   code({ children, className = '' }) {
     const language = className.replace(/language-/, '');
     if (language === 'react') {
-      return <LiveEdit code={children.trim()} noInline />;
-    } else if (language === 'react-inline') {
       return <LiveEdit code={children.trim()} />;
     } else if (language === 'sh') {
       return <CodeBlock code={children.trim()} language="bash" />;
