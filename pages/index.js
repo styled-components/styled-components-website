@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import NextLink from '../components/Link';
 import styled, { css } from 'styled-components';
-import { LiveProvider, LiveEditor, LivePreview } from 'react-live';
+import { LiveProvider, LiveEditor, LivePreview } from 'react-live-runner';
 
 import rem from '../utils/rem';
 import { blmGrey, blmMetal, blmBlack } from '../utils/colors';
@@ -17,6 +17,7 @@ import { sortedCompanies, sortedProjects } from '../companies-manifest';
 import UsersLogos from '../components/UsersLogos';
 import SmallShowcase from '../components/SmallShowcase';
 import { headerFont } from '../utils/fonts';
+import baseScope from '../utils/scope';
 
 const Tagline = styled.h1`
   font-weight: 600;
@@ -191,7 +192,7 @@ class Index extends PureComponent {
 
         <Wrapper>
           <Content hero>
-            <LiveProvider code={headerCode} noInline mountStylesheet={false} scope={{ React, styled, css, rem, Link }}>
+            <LiveProvider code={headerCode} scope={{ styled: baseScope.styled, css, rem, Link }}>
               <Logo />
 
               <Title>
