@@ -4,10 +4,10 @@ styled-components has community-organized [TypeScript definitions](https://www.n
 
 ```sh
 # Web
-npm install @types/styled-components
+npm install --save @types/styled-components
 
 # React Native
-npm install @types/styled-components @types/styled-components-react-native
+npm install --save @types/styled-components @types/styled-components-react-native
 ```
 
 React Native only: If your `tsconfig` assigns `types` then you will need to add "styled-components-react-native" there.  For example:

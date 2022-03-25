@@ -1,18 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
-import styled, {
-  createGlobalStyle,
-  css,
-  keyframes,
-  StyleSheetManager,
-  ThemeProvider,
-  withTheme,
-} from 'styled-components';
-import stylisRTLPlugin from 'stylis-plugin-rtl';
+import React from 'react';
+import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live-runner';
+import styled, { css } from 'styled-components';
 import { darkGrey, red } from '../utils/colors';
 import { headerFont, monospace } from '../utils/fonts';
 import { phone } from '../utils/media';
 import rem from '../utils/rem';
+import baseScope from '../utils/scope';
 
 const StyledProvider = styled(LiveProvider)`
   box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
@@ -90,35 +83,20 @@ export const StyledError = styled(LiveError)`
   white-space: pre;
 `;
 
-const LiveEdit = ({ noInline, code, scope = {} }) => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
+const LiveEdit = ({ code, scope = {} }) => {
   return (
     <StyledProvider
       code={code}
-      noInline={noInline}
-      mountStylesheet={false}
       scope={{
+        ...baseScope,
         ...scope,
-        createGlobalStyle,
-        css,
-        keyframes,
-        styled,
-        ThemeProvider,
-        StyleSheetManager,
-        withTheme,
-        stylisRTLPlugin,
       }}
     >
       <Row>
         <Code>
           <StyledEditor />
         </Code>
-
-        {/* because react-live uses a different babel compiler, the classnames it generates aren't stable and a remount is needed after SSR */}
-        <StyledPreview className="notranslate" key={mounted ? 'preview-client' : 'preview-ssr'} />
+        <StyledPreview className="notranslate" />
       </Row>
 
       <StyledError />

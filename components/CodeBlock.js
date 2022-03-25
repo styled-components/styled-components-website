@@ -1,15 +1,19 @@
 import React from 'react';
-import { Editor } from 'react-live';
+import { CodeBlock as Code } from 'react-live-runner';
 import styled from 'styled-components';
 import { darkGrey } from '../utils/colors';
 import { monospace } from '../utils/fonts';
 import rem from '../utils/rem';
 import { Note } from './Note';
 
-const CodeBlock = styled((props) => {
-  const language = (props.language || 'clike').toLowerCase().trim();
+const CodeBlock = styled(({ code, ...rest }) => {
+  const language = (rest.language || 'clike').toLowerCase().trim();
 
-  return <Editor {...props} disabled language={language} />;
+  return (
+    <Code {...rest} disabled language={language}>
+      {code}
+    </Code>
+  );
 })`
   background: ${darkGrey};
   border-radius: ${rem(3)};
