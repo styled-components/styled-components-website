@@ -180,7 +180,7 @@ the combined typing of both the styled requirements and the actual component req
 
 ### Using `attrs` method
 
-The `attrs` method accepts an Interpolation object, which can be either a string that will be merged into the rest of the component's props, or a function that receives the styled component's `props` as the first and only argument.
+This is a chainable method that attaches some props to a styled component. It accepts an object with partial props that will be merged into the rest of the component's props. Alternatively, a function can be passed that takes interior props and returns an object to merge.
 
 For the string case, make sure to type it "twice", like this:
 
