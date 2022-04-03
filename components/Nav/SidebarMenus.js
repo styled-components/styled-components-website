@@ -5,7 +5,8 @@ import { withRouter } from 'next/router';
 import rem from '../../utils/rem';
 import titleToDash from '../../utils/titleToDash';
 import json from '../../pages/docs.json';
-import Link, { StyledLink } from '../Link';
+import Link, { StyledLink, StyledSidebarLink, StyledSidebarSectionLink } from '../Link';
+import { lightGrey } from '../../utils/colors';
 
 const { pages } = json;
 
@@ -27,15 +28,27 @@ const Section = styled.div`
 
 const SectionTitle = styled.h4`
   display: block;
-  margin: ${rem(10)} ${rem(40)};
-  font-weight: normal;
+  margin: ${rem(10)} ${rem(30)};
+  font-weight: 500;
+  position: relative;
+
+  & ::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    background: ${lightGrey};
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
 `;
 
 const SubSection = styled.h5`
   display: block;
-  margin: ${rem(10)} ${rem(40)} ${rem(10)} ${rem(55)};
+  margin: ${rem(10)} ${rem(25)} ${rem(10)} ${rem(40)};
   font-size: 0.9rem;
-  font-weight: normal;
+  font-weight: 400;
 `;
 
 function Folder({ children, isOpenDefault = false, ...props }) {
@@ -67,13 +80,13 @@ export const DocsSidebarMenu = withRouter(({ onRouteChange, router }) => (
         {({ rootProps, toggleSubSections, isOpen }) => (
           <Section {...rootProps} onClick={onRouteChange}>
             <SectionTitle onClick={toggleSubSections}>
-              <Link href={`/docs/${pathname}`}>{title}</Link>
+              <StyledSidebarSectionLink href={`/docs/${pathname}`}>{title}</StyledSidebarSectionLink>
             </SectionTitle>
 
             {isOpen &&
               sections.map(({ title }) => (
                 <SubSection key={title}>
-                  <StyledLink href={`/docs/${pathname}#${titleToDash(title)}`}>{title}</StyledLink>
+                  <StyledSidebarLink href={`/docs/${pathname}#${titleToDash(title)}`}>{title}</StyledSidebarLink>
                 </SubSection>
               ))}
           </Section>
@@ -115,15 +128,15 @@ export const SimpleSidebarMenu = ({ onRouteChange, pages = [] }) => (
           {({ rootProps, toggleSubSections, isOpen }) => (
             <Section {...rootProps} onClick={onRouteChange}>
               <SectionTitle onClick={toggleSubSections}>
-                <Link href={pathname || '#' + titleToDash(title)}>{title}</Link>
+                <StyledSidebarSectionLink href={pathname || '#' + titleToDash(title)}>{title}</StyledSidebarSectionLink>
               </SectionTitle>
 
               {isOpen &&
                 sections.map(({ title }) => (
                   <SubSection key={title}>
-                    <StyledLink unstyled href={getSectionPath(pathname, title)}>
+                    <StyledSidebarLink unstyled href={getSectionPath(pathname, title)}>
                       {title}
-                    </StyledLink>
+                    </StyledSidebarLink>
                   </SubSection>
                 ))}
             </Section>

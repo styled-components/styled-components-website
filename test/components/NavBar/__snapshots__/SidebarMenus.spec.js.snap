@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DocsSidebarMenu renders correctly 1`] = `
-.c3 {
-  display: inline-block;
-  color: inherit;
-  cursor: pointer;
-  padding: 0.1111111111111111rem 0.4444444444444444rem;
-  margin: -0.1111111111111111rem -0.4444444444444444rem;
-}
-
 .c0 {
   display: block;
   box-sizing: border-box;
@@ -22,18 +14,24 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
 
 .c2 {
   display: block;
-  margin: 0.5555555555555556rem 2.2222222222222223rem;
-  font-weight: normal;
+  margin: 0.5555555555555556rem 1.6666666666666667rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.c2::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  background: rgba(20,20,20,0.1);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
 }
 
 @media (min-width:62.5em) {
-  .c3 {
-    border-radius: 0.16666666666666666rem;
-  }
 
-  .c3:hover {
-    background: rgba(20,20,20,0.1);
-  }
 }
 
 <div
@@ -46,12 +44,7 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       className="c2"
       onClick={[Function]}
     >
-      <a
-        className="c3"
-        href="/docs/basics"
-      >
-        Basics
-      </a>
+      Basics
     </h4>
   </div>
   <div
@@ -61,12 +54,7 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       className="c2"
       onClick={[Function]}
     >
-      <a
-        className="c3"
-        href="/docs/advanced"
-      >
-        Advanced
-      </a>
+      Advanced
     </h4>
   </div>
   <div
@@ -76,12 +64,7 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       className="c2"
       onClick={[Function]}
     >
-      <a
-        className="c3"
-        href="/docs/api"
-      >
-        API Reference
-      </a>
+      API Reference
     </h4>
   </div>
   <div
@@ -91,12 +74,7 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       className="c2"
       onClick={[Function]}
     >
-      <a
-        className="c3"
-        href="/docs/tooling"
-      >
-        Tooling
-      </a>
+      Tooling
     </h4>
   </div>
   <div
@@ -106,12 +84,7 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
       className="c2"
       onClick={[Function]}
     >
-      <a
-        className="c3"
-        href="/docs/faqs"
-      >
-        FAQs
-      </a>
+      FAQs
     </h4>
   </div>
 </div>

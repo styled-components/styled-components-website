@@ -1,5 +1,6 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { darkVioletRed, violetRed_Selection } from '../utils/colors';
 
 import { bodyFont } from '../utils/fonts';
 import { reset } from '../utils/scope';
@@ -56,7 +57,7 @@ const resetStyles = `
   }
 
   ::selection {
-    background: rgba(245, 184, 61, 0.25);
+    background: ${violetRed_Selection};
   }
 
   @media all and (max-width: 1000px) {

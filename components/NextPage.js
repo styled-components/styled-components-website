@@ -3,7 +3,7 @@ import { KeyboardArrowRight } from '@styled-icons/material';
 
 import rem from '../utils/rem';
 import Link from './Link';
-import { grey } from '../utils/colors';
+import { blmGrey, blmLightGrey, grey } from '../utils/colors';
 import { mobile } from '../utils/media';
 import { headerFont } from '../utils/fonts';
 
@@ -14,6 +14,10 @@ const Wrapper = styled(Link).attrs((/* props */) => ({
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-end;
+
+  border-radius: 8px;
+  background: ${blmLightGrey};
+  margin-bottom: 10px;
 
   width: 100%;
   padding: ${rem(40)} ${rem(20)};
@@ -31,6 +35,7 @@ const Text = styled.h3`
   font-weight: normal;
   padding-right: ${rem(20)};
   margin: 0;
+  opacity: 0.75;
 `;
 
 const PageName = styled.h2`

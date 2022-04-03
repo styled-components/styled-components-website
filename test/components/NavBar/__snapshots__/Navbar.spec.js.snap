@@ -265,6 +265,10 @@ exports[`Navbar renders correctly 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding-inline: 6px;
+  gap: 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -372,7 +376,7 @@ exports[`Navbar renders correctly 1`] = `
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 0.8333333333333334rem;
   font-weight: 500;
-  background: rgb(33,33,33);
+  background: rgb(10 16 26);
   -webkit-transition: background 300ms ease-out;
   transition: background 300ms ease-out;
   color: white;
@@ -484,7 +488,7 @@ exports[`Navbar renders correctly 1`] = `
     padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
-    background: rgb(33,33,33);
+    background: rgb(10 16 26);
     color: white;
   }
 }

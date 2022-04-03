@@ -7,6 +7,10 @@ exports[`DocsLayout renders correctly 1`] = `
   cursor: pointer;
   padding: 0.1111111111111111rem 0.4444444444444444rem;
   margin: -0.1111111111111111rem -0.4444444444444444rem;
+  font-weight: 500;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  font-size: 16px;
 }
 
 .c8 {
@@ -248,6 +252,10 @@ exports[`DocsLayout renders correctly 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding-inline: 6px;
+  gap: 4px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -355,7 +363,7 @@ exports[`DocsLayout renders correctly 1`] = `
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 0.8333333333333334rem;
   font-weight: 500;
-  background: rgb(33,33,33);
+  background: rgb(10 16 26);
   -webkit-transition: background 300ms ease-out;
   transition: background 300ms ease-out;
   color: white;
@@ -464,8 +472,20 @@ exports[`DocsLayout renders correctly 1`] = `
 
 .c35 {
   display: block;
-  margin: 0.5555555555555556rem 2.2222222222222223rem;
-  font-weight: normal;
+  margin: 0.5555555555555556rem 1.6666666666666667rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.c35::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  background: rgba(20,20,20,0.1);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
 }
 
 .c0 {
@@ -490,7 +510,7 @@ exports[`DocsLayout renders correctly 1`] = `
 .c38 {
   text-align: left;
   width: 100%;
-  color: rgb(66,66,66);
+  color: rgb(20 27 44);
   font-size: 2.3333333333333335rem;
   font-weight: bold;
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -499,10 +519,6 @@ exports[`DocsLayout renders correctly 1`] = `
 @media (min-width:62.5em) {
   .c36 {
     border-radius: 0.16666666666666666rem;
-  }
-
-  .c36:hover {
-    background: rgba(20,20,20,0.1);
   }
 }
 
@@ -544,7 +560,7 @@ exports[`DocsLayout renders correctly 1`] = `
     padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
-    background: rgb(33,33,33);
+    background: rgb(10 16 26);
     color: white;
   }
 }
@@ -1446,24 +1462,16 @@ exports[`DocsLayout renders correctly 1`] = `
                                   className="c35"
                                   onClick={[Function]}
                                 >
-                                  <Link
+                                  <Link__StyledSidebarSectionLink
                                     href="/docs/basics"
                                   >
                                     <Link
+                                      className="c36"
                                       href="/docs/basics"
                                     >
-                                      <Link__StyledLink
-                                        href="/docs/basics"
-                                      >
-                                        <a
-                                          className="c36"
-                                          href="/docs/basics"
-                                        >
-                                          Basics
-                                        </a>
-                                      </Link__StyledLink>
+                                      Basics
                                     </Link>
-                                  </Link>
+                                  </Link__StyledSidebarSectionLink>
                                 </h4>
                               </SidebarMenus__SectionTitle>
                             </div>
@@ -1487,24 +1495,16 @@ exports[`DocsLayout renders correctly 1`] = `
                                   className="c35"
                                   onClick={[Function]}
                                 >
-                                  <Link
+                                  <Link__StyledSidebarSectionLink
                                     href="/docs/advanced"
                                   >
                                     <Link
+                                      className="c36"
                                       href="/docs/advanced"
                                     >
-                                      <Link__StyledLink
-                                        href="/docs/advanced"
-                                      >
-                                        <a
-                                          className="c36"
-                                          href="/docs/advanced"
-                                        >
-                                          Advanced
-                                        </a>
-                                      </Link__StyledLink>
+                                      Advanced
                                     </Link>
-                                  </Link>
+                                  </Link__StyledSidebarSectionLink>
                                 </h4>
                               </SidebarMenus__SectionTitle>
                             </div>
@@ -1528,24 +1528,16 @@ exports[`DocsLayout renders correctly 1`] = `
                                   className="c35"
                                   onClick={[Function]}
                                 >
-                                  <Link
+                                  <Link__StyledSidebarSectionLink
                                     href="/docs/api"
                                   >
                                     <Link
+                                      className="c36"
                                       href="/docs/api"
                                     >
-                                      <Link__StyledLink
-                                        href="/docs/api"
-                                      >
-                                        <a
-                                          className="c36"
-                                          href="/docs/api"
-                                        >
-                                          API Reference
-                                        </a>
-                                      </Link__StyledLink>
+                                      API Reference
                                     </Link>
-                                  </Link>
+                                  </Link__StyledSidebarSectionLink>
                                 </h4>
                               </SidebarMenus__SectionTitle>
                             </div>
@@ -1569,24 +1561,16 @@ exports[`DocsLayout renders correctly 1`] = `
                                   className="c35"
                                   onClick={[Function]}
                                 >
-                                  <Link
+                                  <Link__StyledSidebarSectionLink
                                     href="/docs/tooling"
                                   >
                                     <Link
+                                      className="c36"
                                       href="/docs/tooling"
                                     >
-                                      <Link__StyledLink
-                                        href="/docs/tooling"
-                                      >
-                                        <a
-                                          className="c36"
-                                          href="/docs/tooling"
-                                        >
-                                          Tooling
-                                        </a>
-                                      </Link__StyledLink>
+                                      Tooling
                                     </Link>
-                                  </Link>
+                                  </Link__StyledSidebarSectionLink>
                                 </h4>
                               </SidebarMenus__SectionTitle>
                             </div>
@@ -1610,24 +1594,16 @@ exports[`DocsLayout renders correctly 1`] = `
                                   className="c35"
                                   onClick={[Function]}
                                 >
-                                  <Link
+                                  <Link__StyledSidebarSectionLink
                                     href="/docs/faqs"
                                   >
                                     <Link
+                                      className="c36"
                                       href="/docs/faqs"
                                     >
-                                      <Link__StyledLink
-                                        href="/docs/faqs"
-                                      >
-                                        <a
-                                          className="c36"
-                                          href="/docs/faqs"
-                                        >
-                                          FAQs
-                                        </a>
-                                      </Link__StyledLink>
+                                      FAQs
                                     </Link>
-                                  </Link>
+                                  </Link__StyledSidebarSectionLink>
                                 </h4>
                               </SidebarMenus__SectionTitle>
                             </div>

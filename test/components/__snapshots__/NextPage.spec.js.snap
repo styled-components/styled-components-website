@@ -17,6 +17,9 @@ exports[`NextPage renders correctly 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  border-radius: 8px;
+  background: #e0e0e0;
+  margin-bottom: 10px;
   width: 100%;
   padding: 2.2222222222222223rem 1.1111111111111112rem;
   text-align: right;
@@ -27,6 +30,7 @@ exports[`NextPage renders correctly 1`] = `
   font-weight: normal;
   padding-right: 1.1111111111111112rem;
   margin: 0;
+  opacity: 0.75;
 }
 
 .c2 {

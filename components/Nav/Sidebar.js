@@ -26,7 +26,7 @@ const Sidebar = styled.nav`
   transition: transform 150ms ease-out;
 
   ${mobile(css`
-    ${p =>
+    ${(p) =>
       p.isFolded
         ? css`
             transform: translateX(${rem(-sidebarWidth)});

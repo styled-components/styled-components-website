@@ -39,17 +39,17 @@ const Label = styled.label`
   transform: translate(-50%, 50%);
   background-color: white;
   color: #333;
-  font-family: Avenir Next;
+  font-family: Avenir Next, 'dm', Tahoma;
   font-weight: bold;
   font-size: 0.8rem;
-  padding: 2px 12px;
-  border-radius: 6px;
+  padding: 1px 6px;
+  border-radius: 3px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 5px 12px rgba(0, 0, 0, 0.1);
   opacity: 0;
   transition: all 0.2s ease-out;
 
   @media (min-width: 800px) {
-    font-size: 0.65rem;
+    font-size: 0.5rem;
   }
 `;
 

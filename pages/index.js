@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { LiveProvider, LiveEditor, LivePreview } from 'react-live-runner';
 
 import rem from '../utils/rem';
-import { blmGrey, blmMetal, blmBlack } from '../utils/colors';
+import { blmGrey, blmMetal, blmBlack, lightGrey, darkGrey, grey, blmLightMetal } from '../utils/colors';
 import { editorMixin, StyledError } from '../components/LiveEdit';
 import Link from '../components/Link';
 import { Content } from '../components/Layout';
@@ -32,7 +32,7 @@ const headerCode = `
 const Button = styled.a\`
   /* This renders the buttons above... Edit me! */
   display: inline-block;
-  border-radius: 3px;
+  border-radius: 8px;
   padding: 0.5rem 0;
   margin: 0.5rem 1rem;
   width: 11rem;
@@ -127,6 +127,16 @@ const Editor = styled(LiveEditor)`
   height: 24rem;
   white-space: pre;
   width: 100%;
+  border-radius: 8px !important;
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+  }
 `;
 
 const Links = styled.div`
@@ -141,14 +151,14 @@ const ShowcaseLink = styled(NextLink)`
   line-height: 48px;
   text-align: center;
   color: white;
-  font-family: Avenir Next;
-  border-radius: 4px;
+  font-family: Avenir Next, 'dm', Tahoma;
+  border-radius: 8px;
   margin: 0 auto;
-  background-color: ${blmGrey};
+  background-color: ${blmMetal};
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${blmBlack};
+    background-color: ${blmLightMetal};
   }
 `;
 

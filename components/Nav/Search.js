@@ -2,7 +2,7 @@ import { Search as SearchIcon } from '@styled-icons/material';
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef } from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
-import { blmGrey, blmLightGrey, darkGrey, grey } from '../../utils/colors';
+import { blmGrey, blmLightGrey, darkGrey, darkVioletRed, grey, violetRed } from '../../utils/colors';
 import { resetInput } from '../../utils/form';
 import { mobile } from '../../utils/media';
 import rem from '../../utils/rem';
@@ -16,6 +16,10 @@ const Wrapper = styled.form`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding-inline: 6px;
+  gap: 4px;
   flex: 0 0 auto;
   ${mobile(css`
     display: block;
@@ -102,24 +106,41 @@ const GlobalStyles = createGlobalStyle`
   .algolia-autocomplete
   .ds-dropdown-menu
   .ds-suggestion
-  .algolia-docsearch-suggestion--content {
+  .algolia-docsearch-suggestion--content,
+  .algolia-docsearch-suggestion {
     width: 100% !important;
-
+    background: transparent !important;
+    align-items: center;
+    
     &::before {
       content: none;
     }
   }
 
   .algolia-autocomplete
-    .ds-dropdown-menu
-    .ds-suggestion.ds-cursor
-    .algolia-docsearch-suggestion--content {
-    background: ${blmLightGrey} !important;
+  .ds-dropdown-menu
+  .ds-suggestion.ds-cursor
+  .algolia-docsearch-suggestion--content:hover {
+    background: rgba(240, 240, 255, 0.1) !important;
+    border-radius: 6px;
+  }
+  
+  .algolia-autocomplete [class*="ds-dataset-"],
+  .algolia-autocomplete .algolia-docsearch-suggestion.algolia-docsearch-suggestion__secondary  {
+    background: #424755 !important;
+  }
+
+  [class*="ds-with-"]::before {
+    background: #424755 !important;
+    border: none !important;
+    border-top-right-radius: 6px !important;
+    top: -6px;
   }
 
   /* Main category (eg. Getting Started) */
   .algolia-autocomplete .algolia-docsearch-suggestion--category-header {
-    color: ${darkGrey};
+    color: white;
+    border-bottom-color: rgba(200, 220, 255, 0.2);
   }
 
   /* Category (eg. Downloads) */
@@ -130,23 +151,25 @@ const GlobalStyles = createGlobalStyle`
   /* Title (eg. Bootstrap CDN) */
   .algolia-autocomplete .algolia-docsearch-suggestion--title {
     font-weight: bold;
-    color: black;
+    color: white;
   }
 
   /* Description description (eg. Bootstrap currently works...) */
   .algolia-autocomplete .algolia-docsearch-suggestion--text {
-    color: ${grey};
+    color: rgba(240, 240, 240, 1);
   }
 
   /* Highlighted text */
   .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
     box-shadow: none !important;
-    color: ${blmGrey} !important;
-    background: transparent !important;
+    color: ${violetRed} !important;
+    background: ${grey} !important;
+    border-radius: 4px;
   }
 
   .algolia-autocomplete .ds-dropdown-menu {
     margin-top: 0;
+    transform: translateY(14px);
 
     > *:first-child {
       border: 0;
