@@ -43,6 +43,21 @@ declare module 'styled-components' {
 }
 ```
 
+React-Native:
+
+```ts
+declare module 'styled-components/native' {
+  export interface DefaultTheme {
+    borderRadius: string;
+
+    colors: {
+      main: string;
+      secondary: string;
+    };
+  }
+}
+```
+
 `DefaultTheme` is being used as an interface of `props.theme` out of the box. By default the interface `DefaultTheme` is empty so that's why we need to extend it.
 
 ### Create a theme
