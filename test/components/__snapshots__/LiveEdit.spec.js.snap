@@ -43,6 +43,7 @@ exports[`LiveEdit renders correctly 1`] = `
   overflow-y: auto !important;
   overflow-x: hidden;
   cursor: text;
+  color: white;
   white-space: pre-wrap;
   position: relative;
 }
