@@ -14,6 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  max-width: 100%;
   margin: 0;
   padding: ${rem(90)} ${rem(60)} 0 ${rem(60)};
   box-sizing: border-box;

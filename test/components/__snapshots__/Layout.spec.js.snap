@@ -18,6 +18,7 @@ exports[`Container renders correctly 1`] = `
 
 exports[`Content renders correctly 1`] = `
 .c0 {
+  max-width: 100%;
   margin: 0;
   padding: 5rem 3.3333333333333335rem 0 3.3333333333333335rem;
   box-sizing: border-box;
