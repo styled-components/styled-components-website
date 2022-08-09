@@ -171,7 +171,7 @@ exports[`LiveEdit renders correctly 1`] = `
                           },
                           Object {
                             "style": Object {
-                              "color": "#b2b2b2",
+                              "color": "#5a9bcf",
                             },
                             "types": Array [
                               "property",
@@ -204,6 +204,7 @@ exports[`LiveEdit renders correctly 1`] = `
                             },
                             "types": Array [
                               "string",
+                              "attr-value",
                             ],
                           },
                           Object {
@@ -257,6 +258,7 @@ exports[`LiveEdit renders correctly 1`] = `
                               "color": "#fac863",
                             },
                             "types": Array [
+                              "atrule",
                               "class-name",
                             ],
                           },
@@ -440,7 +442,7 @@ exports[`LiveEdit renders correctly 1`] = `
                                   },
                                   Object {
                                     "style": Object {
-                                      "color": "#b2b2b2",
+                                      "color": "#5a9bcf",
                                     },
                                     "types": Array [
                                       "property",
@@ -473,6 +475,7 @@ exports[`LiveEdit renders correctly 1`] = `
                                     },
                                     "types": Array [
                                       "string",
+                                      "attr-value",
                                     ],
                                   },
                                   Object {
@@ -526,6 +529,7 @@ exports[`LiveEdit renders correctly 1`] = `
                                       "color": "#fac863",
                                     },
                                     "types": Array [
+                                      "atrule",
                                       "class-name",
                                     ],
                                   },
@@ -37233,7 +37237,7 @@ exports[`LiveEdit renders correctly 1`] = `
                                     },
                                     Object {
                                       "style": Object {
-                                        "color": "#b2b2b2",
+                                        "color": "#5a9bcf",
                                       },
                                       "types": Array [
                                         "property",
@@ -37266,6 +37270,7 @@ exports[`LiveEdit renders correctly 1`] = `
                                       },
                                       "types": Array [
                                         "string",
+                                        "attr-value",
                                       ],
                                     },
                                     Object {
@@ -37319,6 +37324,7 @@ exports[`LiveEdit renders correctly 1`] = `
                                         "color": "#fac863",
                                       },
                                       "types": Array [
+                                        "atrule",
                                         "class-name",
                                       ],
                                     },
