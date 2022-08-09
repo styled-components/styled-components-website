@@ -74,7 +74,7 @@ If rendering fails for any reason it's a good idea to use `try...catch...finally
 
 #### With Babel
 
-Basically you need to add a custom `pages/_document.js` (if you don't have one). Then [copy the logic](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components-babel/pages/_document.js) for styled-components to inject the server side rendered styles into the `<head>`.
+Basically you need to add a custom `pages/_document.js` (if you don't have one). Then [copy the logic](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components-babel/pages/_document.tsx) for styled-components to inject the server side rendered styles into the `<head>`.
 
 Refer to [our example](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components-babel) in the Next.js repo for an up-to-date usage example.
 
@@ -82,7 +82,7 @@ Refer to [our example](https://github.com/vercel/next.js/tree/canary/examples/wi
 
 [Since version 12](https://nextjs.org/blog/next-12), Next.js uses a Rust compiler called SWC. If you're not using any babel plugin, you should refer to [this example](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) instead.
 
-On this version, you [only need to add](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components/next.config.js) `styledComponents: true,` at the compiler options in the `next.config.js` file.
+On this version, you [only need to add](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components/next.config.js) `styledComponents: true,` at the compiler options in the `next.config.js` file and modify `_document` file with `getInitialProps` as in this [example](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components/pages/_document.tsx) to support SSR.
 
 ### Gatsby
 
