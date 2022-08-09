@@ -82,7 +82,7 @@ Refer to [our example](https://github.com/vercel/next.js/tree/canary/examples/wi
 
 [Since version 12](https://nextjs.org/blog/next-12), Next.js uses a Rust compiler called SWC. If you're not using any babel plugin, you should refer to [this example](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) instead.
 
-On this version, you [only need to add](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components/next.config.js) `styledComponents: true,` at the compiler options in the `next.config.js` file.
+On this version, you [only need to add](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components/next.config.js) `styledComponents: true,` at the compiler options in the `next.config.js` file and modify `_document` file with `getInitialProps` as in this [example](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components/pages/_document.tsx) to support SSR.
 
 ### Gatsby
 
