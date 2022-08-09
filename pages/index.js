@@ -47,6 +47,10 @@ const Button = styled.a\`
     color: black;
   \`}
 \`
+`.trim();
+
+const transformHeaderCode = (code) => `
+${code}
 
 render(
   <div>
@@ -64,7 +68,7 @@ render(
     </Button>
   </div>
 )
-`.trim();
+`;
 
 const Title = styled.div`
   margin: 2rem 0;
@@ -191,7 +195,7 @@ class Index extends PureComponent {
 
         <Wrapper>
           <Content hero>
-            <LiveProvider code={headerCode} scope={{ styled: baseScope.styled, css, rem, Link }}>
+            <LiveProvider code={headerCode} transformCode={transformHeaderCode} scope={{ ...baseScope, rem, Link }}>
               <Logo />
 
               <Title>

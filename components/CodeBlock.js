@@ -10,7 +10,7 @@ const CodeBlock = styled(({ code, ...rest }) => {
   const language = (rest.language || 'clike').toLowerCase().trim();
 
   return (
-    <Code {...rest} disabled language={language}>
+    <Code {...rest} language={language}>
       {code}
     </Code>
   );
