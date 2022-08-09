@@ -16,6 +16,7 @@ import Nav from '../components/Nav';
 import { sortedCompanies, sortedProjects } from '../companies-manifest';
 import UsersLogos from '../components/UsersLogos';
 import SmallShowcase from '../components/SmallShowcase';
+import { headerFont } from '../utils/fonts';
 import baseScope from '../utils/scope';
 
 const Tagline = styled.h1`
@@ -145,7 +146,7 @@ const ShowcaseLink = styled(NextLink)`
   line-height: 48px;
   text-align: center;
   color: white;
-  font-family: Avenir Next;
+  font-family: ${headerFont};
   border-radius: 4px;
   margin: 0 auto;
   background-color: ${blmGrey};
