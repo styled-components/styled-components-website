@@ -368,6 +368,7 @@ exports[`MobileNavbar renders correctly 1`] = `
         <a
           className="c16"
           href="https://spectrum.chat/styled-components/"
+          target="_blank"
         >
           <svg
             className="c17"
@@ -387,6 +388,7 @@ exports[`MobileNavbar renders correctly 1`] = `
         <a
           className="c16"
           href="https://github.com/styled-components"
+          target="_blank"
         >
           <svg
             className="c18"
@@ -396,6 +398,7 @@ exports[`MobileNavbar renders correctly 1`] = `
         <a
           className="c16"
           href="https://medium.com/styled-components"
+          target="_blank"
         >
           <svg
             className="c18"

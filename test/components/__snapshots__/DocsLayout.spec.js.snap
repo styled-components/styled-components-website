@@ -929,10 +929,12 @@ exports[`DocsLayout renders correctly 1`] = `
                               >
                                 <Social__SocialLink
                                   href="https://spectrum.chat/styled-components/"
+                                  isExternal={true}
                                 >
                                   <Link
                                     className="c18"
                                     href="https://spectrum.chat/styled-components/"
+                                    isExternal={true}
                                     unstyled={true}
                                   >
                                     <Link
@@ -941,6 +943,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <a
                                         className="c18"
                                         href="https://spectrum.chat/styled-components/"
+                                        target="_blank"
                                       >
                                         <Spectrum>
                                           <Social__Svg
@@ -970,10 +973,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                 </Social__SocialLink>
                                 <Social__SocialLink
                                   href="https://github.com/styled-components"
+                                  isExternal={true}
                                 >
                                   <Link
                                     className="c18"
                                     href="https://github.com/styled-components"
+                                    isExternal={true}
                                     unstyled={true}
                                   >
                                     <Link
@@ -982,6 +987,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <a
                                         className="c18"
                                         href="https://github.com/styled-components"
+                                        target="_blank"
                                       >
                                         <Social__StyledIcon
                                           as={[Function]}
@@ -1003,10 +1009,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                 </Social__SocialLink>
                                 <Social__SocialLink
                                   href="https://medium.com/styled-components"
+                                  isExternal={true}
                                 >
                                   <Link
                                     className="c18"
                                     href="https://medium.com/styled-components"
+                                    isExternal={true}
                                     unstyled={true}
                                   >
                                     <Link
@@ -1015,6 +1023,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <a
                                         className="c18"
                                         href="https://medium.com/styled-components"
+                                        target="_blank"
                                       >
                                         <Social__StyledIcon
                                           as={[Function]}
@@ -1291,10 +1300,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                   >
                                     <Social__SocialLink
                                       href="https://spectrum.chat/styled-components/"
+                                      isExternal={true}
                                     >
                                       <Link
                                         className="c18"
                                         href="https://spectrum.chat/styled-components/"
+                                        isExternal={true}
                                         unstyled={true}
                                       >
                                         <Link
@@ -1303,6 +1314,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <a
                                             className="c18"
                                             href="https://spectrum.chat/styled-components/"
+                                            target="_blank"
                                           >
                                             <Spectrum>
                                               <Social__Svg
@@ -1332,10 +1344,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                     </Social__SocialLink>
                                     <Social__SocialLink
                                       href="https://github.com/styled-components"
+                                      isExternal={true}
                                     >
                                       <Link
                                         className="c18"
                                         href="https://github.com/styled-components"
+                                        isExternal={true}
                                         unstyled={true}
                                       >
                                         <Link
@@ -1344,6 +1358,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <a
                                             className="c18"
                                             href="https://github.com/styled-components"
+                                            target="_blank"
                                           >
                                             <Social__StyledIcon
                                               as={[Function]}
@@ -1365,10 +1380,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                     </Social__SocialLink>
                                     <Social__SocialLink
                                       href="https://medium.com/styled-components"
+                                      isExternal={true}
                                     >
                                       <Link
                                         className="c18"
                                         href="https://medium.com/styled-components"
+                                        isExternal={true}
                                         unstyled={true}
                                       >
                                         <Link
@@ -1377,6 +1394,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <a
                                             className="c18"
                                             href="https://medium.com/styled-components"
+                                            target="_blank"
                                           >
                                             <Social__StyledIcon
                                               as={[Function]}
