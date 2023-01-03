@@ -33,7 +33,7 @@ export const InlineLink = styled.a.attrs((/* props */) => ({
   }
 `;
 
-const Link = ({ ['aria-label']: ariaLabel, children, className, inline, unstyled, white, ...rest }) => {
+const Link = ({ ['aria-label']: ariaLabel, children, className, inline, unstyled, white, isExternal, ...rest }) => {
   let Child = StyledLink;
   if (inline) {
     Child = InlineLink;
@@ -46,9 +46,14 @@ const Link = ({ ['aria-label']: ariaLabel, children, className, inline, unstyled
     dataAttrs = { 'data-white': white };
   }
 
+  let target;
+  if (isExternal) {
+    target = '_blank';
+  }
+
   return (
     <UnstyledLink {...rest}>
-      <Child aria-label={ariaLabel} href={rest.href} className={className} {...dataAttrs}>
+      <Child aria-label={ariaLabel} href={rest.href} className={className} {...dataAttrs} target={target}>
         {children}
       </Child>
     </UnstyledLink>
