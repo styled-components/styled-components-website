@@ -78,12 +78,11 @@ const Social = (props) => (
     <SocialLink href="https://spectrum.chat/styled-components/" isExternal>
       <Spectrum />
     </SocialLink>
-    {/* <SocialLink href="https://twitter.com/someone">
-      <Twitter />
-    </SocialLink> */}
+
     <SocialLink href="https://github.com/styled-components" isExternal>
       <StyledIcon as={Github} height="18" />
     </SocialLink>
+
     <SocialLink href="https://medium.com/styled-components" isExternal>
       <StyledIcon as={MediumM} height="18" />
     </SocialLink>
