@@ -669,6 +669,14 @@ const companies = [
         height: 720,
         internalUrl: 'tonightpass',
       },
+      kitchen: {
+        title: 'Kitchen',
+        link: 'https://kitchen.tonightpass.com/',
+        src: '/screenshots/thumbnails/kitchen.tonightpass.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'kitchen',
+      },
     },
   },
   {
