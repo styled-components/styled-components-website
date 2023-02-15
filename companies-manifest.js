@@ -49,6 +49,7 @@ import {
   TaskadeLogo,
   TicketmasterLogo,
   TinderLogo,
+  TonightPassLogo,
   TypeformLogo,
   TruliaLogo,
   UnderArmourLogo,
@@ -648,6 +649,25 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'swipelife',
+      },
+    },
+  },
+  {
+    key: 'https://tonightpass.com/',
+    similarWebGlobalRank: 17872218,
+    name: 'Tonight Pass',
+    logo: TonightPassLogo,
+    style: {
+      bottom: '0.2rem',
+    },
+    projects: {
+      tonightpass: {
+        title: 'Tonight Pass',
+        link: 'https://tonightpass.com/',
+        src: '/screenshots/thumbnails/tonightpass.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'tonightpass',
       },
     },
   },
@@ -1255,7 +1275,7 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'kabum',
-      }
+      },
     },
   },
 ];
