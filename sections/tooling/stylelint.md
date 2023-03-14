@@ -15,10 +15,10 @@ You need:
 - The [postcss-styled-syntax](https://github.com/hudochenkov/postcss-styled-syntax), to parse your styled components and extract the CSS from them
 
 ```
-(npm install --save-dev \
+npm install --save-dev \
   stylelint \
   stylelint-config-standard \
-  postcss-styled-syntax)
+  postcss-styled-syntax
 ```
 
 Add a `.stylelintrc` file to the root of your project:
@@ -44,11 +44,11 @@ You need:
 > We recommend using Stylelint v9+ as this has added features that allow us to report correct line numbers on CSS syntax errors
 
 ```
-(npm install --save-dev \
+npm install --save-dev \
   stylelint \
   stylelint-processor-styled-components \
   stylelint-config-styled-components \
-  stylelint-config-recommended)
+  stylelint-config-recommended
 ```
 
 Add a `.stylelintrc` file to the root of your project:
