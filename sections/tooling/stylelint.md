@@ -4,6 +4,36 @@ Lint your [styled components](https://github.com/styled-components/styled-compon
 
 ### Installation
 
+#### For stylelint v15+ (recommended)
+
+Configuring stylelint (v15+) for the first time? Follow these steps:
+
+You need:
+
+- `stylelint`
+- The [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard), to extend the standard stylelint config
+- The [postcss-styled-syntax](https://github.com/hudochenkov/postcss-styled-syntax), to parse your styled components and extract the CSS from them
+
+```
+(npm install --save-dev \
+  stylelint \
+  stylelint-config-standard \
+  postcss-styled-syntax)
+```
+
+Add a `.stylelintrc` file to the root of your project:
+
+```JSON
+{
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "customSyntax": "postcss-styled-syntax"
+}
+```
+
+#### For stylelint v14 and below
+
 You need:
 
 - `stylelint`
@@ -21,8 +51,6 @@ You need:
   stylelint-config-recommended)
 ```
 
-### Setup
-
 Add a `.stylelintrc` file to the root of your project:
 
 ```JSON
@@ -37,7 +65,9 @@ Add a `.stylelintrc` file to the root of your project:
 }
 ```
 
-Then you need to run `stylelint`. Add a `lint:css` script to your `package.json` which runs `stylelint` with a glob to all of your styled components:
+### Setup
+
+You need to run `stylelint`. Add a `lint:css` script to your `package.json` which runs `stylelint` with a glob to all of your styled components:
 
 ```JSON
 {
@@ -55,7 +85,7 @@ Now you can lint your CSS by running the script! 🎉
 npm run lint:css
 ```
 
-> Beware that due to limitations on what is possible for Stylelint custom processors we cannot support the `--fix` option
+> Stylelint `--fix` option works with same rules on version 15+.
 
 #### Webpack
 
@@ -76,11 +106,11 @@ Some other libraries also implement the `styled.x` pattern with tagged template 
 If you want to use the processor with another library but you also want to change the keyword (e.g. to write `cool.div` instead of `styled.div`) use the `moduleName` option:
 
 ```js
-import cool from 'other-library'
+import cool from 'other-library';
 
 const Button = cool.button`
   color: blue;
-`
+`;
 ```
 
 ```json
@@ -100,18 +130,18 @@ const Button = cool.button`
 
 > We only officially support `styled-components`, but the hope is that other libraries can also benefit from the processor.
 
-### Interpolation tagging
+### Interpolation tagging (with `stylelint-processor-styled-components`)
 
 Sometimes `stylelint` can throw an error (e.g. `CssSyntaxError`) even though nothing is wrong with your CSS. This is often due to an interpolation, more specifically the fact that the processor doesn't know what you're interpolating.
 
 A simplified example:
 
 ```js
-const something = 'background'
+const something = 'background';
 
 const Button = styled.div`
   ${something}: papayawhip;
-`
+`;
 ```
 
 When you have interpolations in your styles the processor can't know what they are, so it makes a good guess and replaces them with a syntactically equivalent placeholder value. Since `stylelint` is not a code flow analysis tool this doesn't cover all edge cases and the processor will get it wrong every now and then.
@@ -121,12 +151,12 @@ Interpolation tagging allows you to tell the processor what an interpolation is 
 For example:
 
 ```js
-const something = 'background'
+const something = 'background';
 
 const Button = styled.div`
   // Tell the processor that "something" is a property
   ${/* sc-prop */ something}: papayawhip;
-`
+`;
 ```
 
 Now the processor knows that the `something` interpolation is a property, and it can replace the interpolation with a property for linting.
@@ -152,7 +182,7 @@ const Wrapper = styled.div`
   ${/* sc-selector */ Button} {
     color: red;
   }
-`
+`;
 ```
 
 You can also use shorthand tags to avoid cluttering the code. For example:
@@ -162,7 +192,7 @@ const Wrapper = styled.div`
   ${/* sc-sel */ Button} {
     color: red;
   }
-`
+`;
 ```
 
 ##### `sc-custom`
@@ -175,14 +205,14 @@ For example:
 
 ```js
 // Switch between left and right based on language settings passed through via the theme
-const rtlSwitch = props => (props.theme.dir === 'rtl' ? 'left' : 'right')
+const rtlSwitch = (props) => (props.theme.dir === 'rtl' ? 'left' : 'right');
 
 const Button = styled.button`
   background: green;
   // Tell the processor to replace the interpolation with "left"
   // when linting
   margin-${/* sc-custom "left" */ rtlSwitch}: 12.5px;
-`
+`;
 ```
 
 ### Syntax notes
@@ -192,20 +222,20 @@ const Button = styled.button`
 Turn off rules with `stylelint-disable` comments (see the [stylelint documentation](https://stylelint.io/user-guide/configuration/#turning-rules-off-from-within-your-css) for all allowed syntax) both inside and outside of the tagged template literals.
 
 ```js
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 // Disable stylelint from within the tagged template literal
 const Wrapper = styled.div`
   /* stylelint-disable */
   background-color: 123;
-`
+`;
 
 // Or from the JavaScript around the tagged template literal
 /* stylelint-disable */
 const Wrapper = styled.div`
   background-color: 123;
-`
+`;
 ```
 
 #### Template literal style and indentation
@@ -220,7 +250,7 @@ The important thing is that you put the closing backtick on the base level of in
 if (condition) {
   const Button = styled.button`
     color: red;
-  `
+  `;
 }
 ```
 
