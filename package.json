@@ -7,6 +7,7 @@
     "analyze": "ANALYZE=true yarn build",
     "dev": "next dev",
     "prebuild": "rimraf .next",
+    "precommit": "lint-staged",
     "build": "NODE_ENV=production next build",
     "lint:fix": "next lint --fix",
     "lint": "next lint",
@@ -74,9 +75,5 @@
       "maxSize": "300kB"
     }
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
+  "packageManager": "yarn@3.5.0"
 }
