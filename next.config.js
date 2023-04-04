@@ -1,13 +1,16 @@
-const withSourceMaps = require('@zeit/next-source-maps');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const withMDX = require('@next/mdx');
+const withSourceMaps = require('@zeit/next-source-maps');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = withMDX({
   // Use .md extension
-  extension: /\.md$/,
+  extension: /\.mdx?$/,
 })(
   withSourceMaps({
-    pageExtensions: ['js', 'jsx', 'md'],
+    compiler: {
+      styledComponents: true,
+    },
+    pageExtensions: ['js', 'jsx', 'md', 'mdx'],
     poweredByHeader: false,
     webpack: function (config, { dev, isServer }) {
       if (dev) {

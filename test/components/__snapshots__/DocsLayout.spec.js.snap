@@ -656,7 +656,7 @@ exports[`DocsLayout renders correctly 1`] = `
   description=""
   title=""
 >
-  <Layout__Container>
+  <styled.div>
     <div
       className="c0"
     >
@@ -665,8 +665,12 @@ exports[`DocsLayout renders correctly 1`] = `
         title="styled-components"
       >
         <Head>
-          <_class
-            headManager={Object {}}
+          <SideEffect
+            headManager={
+              {
+                "_pendingUpdate": null,
+              }
+            }
             inAmpMode={false}
             reduceComponentsToState={[Function]}
           />
@@ -687,19 +691,19 @@ exports[`DocsLayout renders correctly 1`] = `
             onMobileNavToggle={[Function]}
             onSideToggle={[Function]}
           >
-            <Navbar__Wrapper>
+            <styled.nav>
               <nav
                 className="c1"
               >
-                <Navbar__NormalNavbar>
+                <styled.div>
                   <div
                     className="c2"
                   >
-                    <Navbar__StartWrapper>
+                    <styled.div>
                       <div
                         className="c3"
                       >
-                        <Navbar__LogoLink>
+                        <Styled(Link)>
                           <Link
                             className="c4"
                             href="/"
@@ -712,21 +716,21 @@ exports[`DocsLayout renders correctly 1`] = `
                                 className="c4"
                                 href="/"
                               >
-                                <Logo>
+                                <styled.div>
                                   <div
                                     className="c5"
                                   />
-                                </Logo>
+                                </styled.div>
                               </a>
                             </Link>
                           </Link>
-                        </Navbar__LogoLink>
+                        </Styled(Link)>
                         <NavLinks>
-                          <NavLinks__Wrapper>
+                          <styled.nav>
                             <nav
                               className="c6"
                             >
-                              <NavLinks__NavLink
+                              <Styled(Link)
                                 href="/docs"
                               >
                                 <Link
@@ -745,13 +749,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                     </a>
                                   </Link>
                                 </Link>
-                              </NavLinks__NavLink>
-                              <NavSeparator>
+                              </Styled(Link)>
+                              <styled.span>
                                 <span
                                   className="c8"
                                 />
-                              </NavSeparator>
-                              <NavLinks__NavLink
+                              </styled.span>
+                              <Styled(Link)
                                 href="/showcase"
                               >
                                 <Link
@@ -770,13 +774,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                     </a>
                                   </Link>
                                 </Link>
-                              </NavLinks__NavLink>
-                              <NavSeparator>
+                              </Styled(Link)>
+                              <styled.span>
                                 <span
                                   className="c8"
                                 />
-                              </NavSeparator>
-                              <NavLinks__NavLink
+                              </styled.span>
+                              <Styled(Link)
                                 href="/ecosystem"
                               >
                                 <Link
@@ -795,13 +799,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                     </a>
                                   </Link>
                                 </Link>
-                              </NavLinks__NavLink>
-                              <NavSeparator>
+                              </Styled(Link)>
+                              <styled.span>
                                 <span
                                   className="c8"
                                 />
-                              </NavSeparator>
-                              <NavLinks__NavLink
+                              </styled.span>
+                              <Styled(Link)
                                 href="/releases"
                               >
                                 <Link
@@ -820,13 +824,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                     </a>
                                   </Link>
                                 </Link>
-                              </NavLinks__NavLink>
+                              </Styled(Link)>
                             </nav>
-                          </NavLinks__Wrapper>
+                          </styled.nav>
                         </NavLinks>
                       </div>
-                    </Navbar__StartWrapper>
-                    <Navbar__EndWrapper>
+                    </styled.div>
+                    <styled.div>
                       <div
                         className="c9"
                       >
@@ -834,7 +838,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           isOpen={false}
                           requestModalClose={[Function]}
                         >
-                          <Navbar__AlgoliaModalHeader
+                          <styled.div
                             isOpen={false}
                           >
                             <div
@@ -843,7 +847,7 @@ exports[`DocsLayout renders correctly 1`] = `
                               <button
                                 onClick={[Function]}
                               >
-                                <Navbar__StyledModalCloseIcon>
+                                <Styled(DummyIcon)>
                                   <DummyIcon
                                     className="c11"
                                   >
@@ -851,11 +855,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                       className="c11"
                                     />
                                   </DummyIcon>
-                                </Navbar__StyledModalCloseIcon>
+                                </Styled(DummyIcon)>
                               </button>
                             </div>
-                          </Navbar__AlgoliaModalHeader>
-                          <Navbar__AlgoliaModalOverlay
+                          </styled.div>
+                          <styled.div
                             isOpen={false}
                             onClick={[Function]}
                           >
@@ -863,7 +867,7 @@ exports[`DocsLayout renders correctly 1`] = `
                               className="c12"
                               onClick={[Function]}
                             >
-                              <Navbar__AlgoliaModal>
+                              <styled.div>
                                 <div
                                   className="c13"
                                 >
@@ -874,17 +878,17 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <Search
                                         isDocs={false}
                                       >
-                                        <Search__Wrapper>
+                                        <styled.form>
                                           <form
                                             className="c14"
                                           >
                                             <Memo(l) />
-                                            <Search__Button>
+                                            <styled.label>
                                               <label
                                                 className="c15"
                                                 htmlFor="docs-search-input"
                                               >
-                                                <Search__StyledSearchIcon>
+                                                <Styled(DummyIcon)>
                                                   <DummyIcon
                                                     className=""
                                                   >
@@ -892,10 +896,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                                       className=""
                                                     />
                                                   </DummyIcon>
-                                                </Search__StyledSearchIcon>
+                                                </Styled(DummyIcon)>
                                               </label>
-                                            </Search__Button>
-                                            <Search__Input
+                                            </styled.label>
+                                            <styled.input
                                               id="docs-search-input"
                                               placeholder="Search docs ..."
                                               type="search"
@@ -906,28 +910,28 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 placeholder="Search docs ..."
                                                 type="search"
                                               />
-                                            </Search__Input>
+                                            </styled.input>
                                           </form>
-                                        </Search__Wrapper>
+                                        </styled.form>
                                       </Search>
                                     </AlgoliaSearch>
                                   </div>
                                 </div>
-                              </Navbar__AlgoliaModal>
+                              </styled.div>
                             </div>
-                          </Navbar__AlgoliaModalOverlay>
+                          </styled.div>
                         </ModalContainer>
-                        <Navbar__StyledSocial>
+                        <Styled(Social)>
                           <Social
                             className=""
                           >
-                            <Social__Wrapper
+                            <styled.nav
                               className=""
                             >
                               <nav
                                 className="c17 "
                               >
-                                <Social__SocialLink
+                                <Styled(Link)
                                   href="https://spectrum.chat/styled-components/"
                                 >
                                   <Link
@@ -943,7 +947,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         href="https://spectrum.chat/styled-components/"
                                       >
                                         <Spectrum>
-                                          <Social__Svg
+                                          <styled.svg
                                             height="14"
                                             viewBox="0 0 15 15"
                                             width="14"
@@ -962,13 +966,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                                 fill="#FFF"
                                               />
                                             </svg>
-                                          </Social__Svg>
+                                          </styled.svg>
                                         </Spectrum>
                                       </a>
                                     </Link>
                                   </Link>
-                                </Social__SocialLink>
-                                <Social__SocialLink
+                                </Styled(Link)>
+                                <Styled(Link)
                                   href="https://github.com/styled-components"
                                 >
                                   <Link
@@ -983,7 +987,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         className="c18"
                                         href="https://github.com/styled-components"
                                       >
-                                        <Social__StyledIcon
+                                        <styled.div
                                           as={[Function]}
                                           height="18"
                                         >
@@ -996,12 +1000,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                               height="18"
                                             />
                                           </DummyIcon>
-                                        </Social__StyledIcon>
+                                        </styled.div>
                                       </a>
                                     </Link>
                                   </Link>
-                                </Social__SocialLink>
-                                <Social__SocialLink
+                                </Styled(Link)>
+                                <Styled(Link)
                                   href="https://medium.com/styled-components"
                                 >
                                   <Link
@@ -1016,7 +1020,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                         className="c18"
                                         href="https://medium.com/styled-components"
                                       >
-                                        <Social__StyledIcon
+                                        <styled.div
                                           as={[Function]}
                                           height="18"
                                         >
@@ -1029,19 +1033,19 @@ exports[`DocsLayout renders correctly 1`] = `
                                               height="18"
                                             />
                                           </DummyIcon>
-                                        </Social__StyledIcon>
+                                        </styled.div>
                                       </a>
                                     </Link>
                                   </Link>
-                                </Social__SocialLink>
+                                </Styled(Link)>
                               </nav>
-                            </Social__Wrapper>
+                            </styled.nav>
                           </Social>
-                        </Navbar__StyledSocial>
+                        </Styled(Social)>
                       </div>
-                    </Navbar__EndWrapper>
+                    </styled.div>
                   </div>
-                </Navbar__NormalNavbar>
+                </styled.div>
                 <MobileNavbar
                   isMobileNavFolded={true}
                   isSideFolded={true}
@@ -1049,11 +1053,11 @@ exports[`DocsLayout renders correctly 1`] = `
                   onSearchButtonClick={[Function]}
                   onSideToggle={[Function]}
                 >
-                  <MobileNavbar__Wrapper>
+                  <styled.div>
                     <div
                       className="c21"
                     >
-                      <NavButton
+                      <styled.button
                         active={false}
                         onClick={[Function]}
                       >
@@ -1062,7 +1066,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           onClick={[Function]}
                         >
                           <FoldIcon>
-                            <NavIcons__Svg
+                            <styled.svg
                               height="14"
                               width="17"
                               xmlns="http://www.w3.org/2000/svg"
@@ -1090,11 +1094,11 @@ exports[`DocsLayout renders correctly 1`] = `
                                   />
                                 </defs>
                               </svg>
-                            </NavIcons__Svg>
+                            </styled.svg>
                           </FoldIcon>
                         </button>
-                      </NavButton>
-                      <MobileNavbar__LogoLink>
+                      </styled.button>
+                      <Styled(Link)>
                         <Link
                           aria-label="styled components"
                           className="c25"
@@ -1109,26 +1113,26 @@ exports[`DocsLayout renders correctly 1`] = `
                               className="c25"
                               href="/"
                             >
-                              <Logo
+                              <styled.div
                                 compact={true}
                               >
                                 <div
                                   className="c26"
                                 />
-                              </Logo>
+                              </styled.div>
                             </a>
                           </Link>
                         </Link>
-                      </MobileNavbar__LogoLink>
+                      </Styled(Link)>
                       <div>
-                        <NavButton
+                        <styled.button
                           onClick={[Function]}
                         >
                           <button
                             className="c22 c23"
                             onClick={[Function]}
                           >
-                            <MobileNavbar__StyledIcon
+                            <styled.div
                               as={[Function]}
                               size={28}
                             >
@@ -1141,10 +1145,10 @@ exports[`DocsLayout renders correctly 1`] = `
                                   size={28}
                                 />
                               </DummyIcon>
-                            </MobileNavbar__StyledIcon>
+                            </styled.div>
                           </button>
-                        </NavButton>
-                        <NavButton
+                        </styled.button>
+                        <styled.button
                           active={false}
                           onClick={[Function]}
                         >
@@ -1152,37 +1156,37 @@ exports[`DocsLayout renders correctly 1`] = `
                             className="c22 c23"
                             onClick={[Function]}
                           >
-                            <MobileNavbar__ArrowWrapper
+                            <styled.div
                               shouldRotate={false}
                             >
                               <div
                                 className="c28"
                               >
-                                <MobileNavbar__StyledIcon
+                                <styled.div
                                   size={36}
                                 >
                                   <div
                                     className="c29"
                                     size={36}
                                   />
-                                </MobileNavbar__StyledIcon>
+                                </styled.div>
                               </div>
-                            </MobileNavbar__ArrowWrapper>
+                            </styled.div>
                           </button>
-                        </NavButton>
+                        </styled.button>
                       </div>
-                      <MobileNavbar__SecondaryMenu
+                      <styled.div
                         isOpen={false}
                       >
                         <div
                           className="c30"
                         >
                           <NavLinks>
-                            <NavLinks__Wrapper>
+                            <styled.nav>
                               <nav
                                 className="c6"
                               >
-                                <NavLinks__NavLink
+                                <Styled(Link)
                                   href="/docs"
                                 >
                                   <Link
@@ -1201,13 +1205,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                       </a>
                                     </Link>
                                   </Link>
-                                </NavLinks__NavLink>
-                                <NavSeparator>
+                                </Styled(Link)>
+                                <styled.span>
                                   <span
                                     className="c8"
                                   />
-                                </NavSeparator>
-                                <NavLinks__NavLink
+                                </styled.span>
+                                <Styled(Link)
                                   href="/showcase"
                                 >
                                   <Link
@@ -1226,13 +1230,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                       </a>
                                     </Link>
                                   </Link>
-                                </NavLinks__NavLink>
-                                <NavSeparator>
+                                </Styled(Link)>
+                                <styled.span>
                                   <span
                                     className="c8"
                                   />
-                                </NavSeparator>
-                                <NavLinks__NavLink
+                                </styled.span>
+                                <Styled(Link)
                                   href="/ecosystem"
                                 >
                                   <Link
@@ -1251,13 +1255,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                       </a>
                                     </Link>
                                   </Link>
-                                </NavLinks__NavLink>
-                                <NavSeparator>
+                                </Styled(Link)>
+                                <styled.span>
                                   <span
                                     className="c8"
                                   />
-                                </NavSeparator>
-                                <NavLinks__NavLink
+                                </styled.span>
+                                <Styled(Link)
                                   href="/releases"
                                 >
                                   <Link
@@ -1276,20 +1280,20 @@ exports[`DocsLayout renders correctly 1`] = `
                                       </a>
                                     </Link>
                                   </Link>
-                                </NavLinks__NavLink>
+                                </Styled(Link)>
                               </nav>
-                            </NavLinks__Wrapper>
+                            </styled.nav>
                           </NavLinks>
-                          <MobileNavbar__SecondaryMenuItem>
+                          <styled.div>
                             <div
                               className="c31"
                             >
                               <Social>
-                                <Social__Wrapper>
+                                <styled.nav>
                                   <nav
                                     className="c17"
                                   >
-                                    <Social__SocialLink
+                                    <Styled(Link)
                                       href="https://spectrum.chat/styled-components/"
                                     >
                                       <Link
@@ -1305,7 +1309,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             href="https://spectrum.chat/styled-components/"
                                           >
                                             <Spectrum>
-                                              <Social__Svg
+                                              <styled.svg
                                                 height="14"
                                                 viewBox="0 0 15 15"
                                                 width="14"
@@ -1324,13 +1328,13 @@ exports[`DocsLayout renders correctly 1`] = `
                                                     fill="#FFF"
                                                   />
                                                 </svg>
-                                              </Social__Svg>
+                                              </styled.svg>
                                             </Spectrum>
                                           </a>
                                         </Link>
                                       </Link>
-                                    </Social__SocialLink>
-                                    <Social__SocialLink
+                                    </Styled(Link)>
+                                    <Styled(Link)
                                       href="https://github.com/styled-components"
                                     >
                                       <Link
@@ -1345,7 +1349,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             className="c18"
                                             href="https://github.com/styled-components"
                                           >
-                                            <Social__StyledIcon
+                                            <styled.div
                                               as={[Function]}
                                               height="18"
                                             >
@@ -1358,12 +1362,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   height="18"
                                                 />
                                               </DummyIcon>
-                                            </Social__StyledIcon>
+                                            </styled.div>
                                           </a>
                                         </Link>
                                       </Link>
-                                    </Social__SocialLink>
-                                    <Social__SocialLink
+                                    </Styled(Link)>
+                                    <Styled(Link)
                                       href="https://medium.com/styled-components"
                                     >
                                       <Link
@@ -1378,7 +1382,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                             className="c18"
                                             href="https://medium.com/styled-components"
                                           >
-                                            <Social__StyledIcon
+                                            <styled.div
                                               as={[Function]}
                                               height="18"
                                             >
@@ -1391,28 +1395,28 @@ exports[`DocsLayout renders correctly 1`] = `
                                                   height="18"
                                                 />
                                               </DummyIcon>
-                                            </Social__StyledIcon>
+                                            </styled.div>
                                           </a>
                                         </Link>
                                       </Link>
-                                    </Social__SocialLink>
+                                    </Styled(Link)>
                                   </nav>
-                                </Social__Wrapper>
+                                </styled.nav>
                               </Social>
                             </div>
-                          </MobileNavbar__SecondaryMenuItem>
+                          </styled.div>
                         </div>
-                      </MobileNavbar__SecondaryMenu>
+                      </styled.div>
                     </div>
-                  </MobileNavbar__Wrapper>
+                  </styled.div>
                 </MobileNavbar>
               </nav>
-            </Navbar__Wrapper>
+            </styled.nav>
           </Navbar>
           <CaptureScroll
             isFolded={true}
           >
-            <Sidebar
+            <styled.nav
               isFolded={true}
             >
               <nav
@@ -1425,7 +1429,7 @@ exports[`DocsLayout renders correctly 1`] = `
                     onRouteChange={[Function]}
                     router={null}
                   >
-                    <SidebarMenus__MenuInner>
+                    <styled.div>
                       <div
                         className="c33"
                       >
@@ -1433,14 +1437,14 @@ exports[`DocsLayout renders correctly 1`] = `
                           isOpenDefault={null}
                           key="Basics"
                         >
-                          <SidebarMenus__Section
+                          <styled.div
                             onClick={[Function]}
                           >
                             <div
                               className="c34"
                               onClick={[Function]}
                             >
-                              <SidebarMenus__SectionTitle
+                              <styled.h4
                                 onClick={[Function]}
                               >
                                 <h4
@@ -1453,7 +1457,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     <Link
                                       href="/docs/basics"
                                     >
-                                      <Link__StyledLink
+                                      <styled.a
                                         href="/docs/basics"
                                       >
                                         <a
@@ -1462,26 +1466,26 @@ exports[`DocsLayout renders correctly 1`] = `
                                         >
                                           Basics
                                         </a>
-                                      </Link__StyledLink>
+                                      </styled.a>
                                     </Link>
                                   </Link>
                                 </h4>
-                              </SidebarMenus__SectionTitle>
+                              </styled.h4>
                             </div>
-                          </SidebarMenus__Section>
+                          </styled.div>
                         </Folder>
                         <Folder
                           isOpenDefault={null}
                           key="Advanced"
                         >
-                          <SidebarMenus__Section
+                          <styled.div
                             onClick={[Function]}
                           >
                             <div
                               className="c34"
                               onClick={[Function]}
                             >
-                              <SidebarMenus__SectionTitle
+                              <styled.h4
                                 onClick={[Function]}
                               >
                                 <h4
@@ -1494,7 +1498,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     <Link
                                       href="/docs/advanced"
                                     >
-                                      <Link__StyledLink
+                                      <styled.a
                                         href="/docs/advanced"
                                       >
                                         <a
@@ -1503,26 +1507,26 @@ exports[`DocsLayout renders correctly 1`] = `
                                         >
                                           Advanced
                                         </a>
-                                      </Link__StyledLink>
+                                      </styled.a>
                                     </Link>
                                   </Link>
                                 </h4>
-                              </SidebarMenus__SectionTitle>
+                              </styled.h4>
                             </div>
-                          </SidebarMenus__Section>
+                          </styled.div>
                         </Folder>
                         <Folder
                           isOpenDefault={null}
                           key="API Reference"
                         >
-                          <SidebarMenus__Section
+                          <styled.div
                             onClick={[Function]}
                           >
                             <div
                               className="c34"
                               onClick={[Function]}
                             >
-                              <SidebarMenus__SectionTitle
+                              <styled.h4
                                 onClick={[Function]}
                               >
                                 <h4
@@ -1535,7 +1539,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     <Link
                                       href="/docs/api"
                                     >
-                                      <Link__StyledLink
+                                      <styled.a
                                         href="/docs/api"
                                       >
                                         <a
@@ -1544,26 +1548,26 @@ exports[`DocsLayout renders correctly 1`] = `
                                         >
                                           API Reference
                                         </a>
-                                      </Link__StyledLink>
+                                      </styled.a>
                                     </Link>
                                   </Link>
                                 </h4>
-                              </SidebarMenus__SectionTitle>
+                              </styled.h4>
                             </div>
-                          </SidebarMenus__Section>
+                          </styled.div>
                         </Folder>
                         <Folder
                           isOpenDefault={null}
                           key="Tooling"
                         >
-                          <SidebarMenus__Section
+                          <styled.div
                             onClick={[Function]}
                           >
                             <div
                               className="c34"
                               onClick={[Function]}
                             >
-                              <SidebarMenus__SectionTitle
+                              <styled.h4
                                 onClick={[Function]}
                               >
                                 <h4
@@ -1576,7 +1580,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     <Link
                                       href="/docs/tooling"
                                     >
-                                      <Link__StyledLink
+                                      <styled.a
                                         href="/docs/tooling"
                                       >
                                         <a
@@ -1585,26 +1589,26 @@ exports[`DocsLayout renders correctly 1`] = `
                                         >
                                           Tooling
                                         </a>
-                                      </Link__StyledLink>
+                                      </styled.a>
                                     </Link>
                                   </Link>
                                 </h4>
-                              </SidebarMenus__SectionTitle>
+                              </styled.h4>
                             </div>
-                          </SidebarMenus__Section>
+                          </styled.div>
                         </Folder>
                         <Folder
                           isOpenDefault={null}
                           key="FAQs"
                         >
-                          <SidebarMenus__Section
+                          <styled.div
                             onClick={[Function]}
                           >
                             <div
                               className="c34"
                               onClick={[Function]}
                             >
-                              <SidebarMenus__SectionTitle
+                              <styled.h4
                                 onClick={[Function]}
                               >
                                 <h4
@@ -1617,7 +1621,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                     <Link
                                       href="/docs/faqs"
                                     >
-                                      <Link__StyledLink
+                                      <styled.a
                                         href="/docs/faqs"
                                       >
                                         <a
@@ -1626,24 +1630,24 @@ exports[`DocsLayout renders correctly 1`] = `
                                         >
                                           FAQs
                                         </a>
-                                      </Link__StyledLink>
+                                      </styled.a>
                                     </Link>
                                   </Link>
                                 </h4>
-                              </SidebarMenus__SectionTitle>
+                              </styled.h4>
                             </div>
-                          </SidebarMenus__Section>
+                          </styled.div>
                         </Folder>
                       </div>
-                    </SidebarMenus__MenuInner>
+                    </styled.div>
                   </Component>
                 </withRouter(Unknown)>
               </nav>
-            </Sidebar>
+            </styled.nav>
           </CaptureScroll>
         </div>
       </Nav>
-      <Layout__Content
+      <styled.div
         data-e2e-id="content"
         moveRight={false}
       >
@@ -1651,14 +1655,14 @@ exports[`DocsLayout renders correctly 1`] = `
           className="c37"
           data-e2e-id="content"
         >
-          <Layout__Title>
+          <styled.h1>
             <h1
               className="c38"
             />
-          </Layout__Title>
+          </styled.h1>
         </div>
-      </Layout__Content>
+      </styled.div>
     </div>
-  </Layout__Container>
+  </styled.div>
 </DocsLayout>
 `;
