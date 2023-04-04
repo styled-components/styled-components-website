@@ -7,7 +7,6 @@ import {
   BBCLogo,
   BraveLogo,
   BirchboxLogo,
-  BlaBlaCarLogo,
   BlockchainLogo,
   BloombergLogo,
   BlueTomatoLogo,
@@ -173,23 +172,6 @@ const companies = [
     logo: BBCLogo,
     style: {},
     projects: {},
-  },
-  {
-    key: 'https://www.blablacar.fr',
-    similarWebGlobalRank: 3803,
-    name: 'BlaBlaCar',
-    logo: BlaBlaCarLogo,
-    style: {},
-    projects: {
-      blablacar: {
-        title: 'BlaBlaCar',
-        link: 'https://www.blablacar.fr/',
-        src: '/screenshots/thumbnails/www.blablacar.fr.jpg',
-        width: 1280,
-        height: 720,
-        internalUrl: 'blablacar',
-      },
-    },
   },
   {
     key: 'https://brave.com/',
