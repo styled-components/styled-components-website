@@ -6,6 +6,7 @@
   "scripts": {
     "analyze": "ANALYZE=true yarn build",
     "dev": "next dev",
+    "prepare": "husky install",
     "prebuild": "rimraf .next",
     "precommit": "lint-staged",
     "build": "NODE_ENV=production next build",
@@ -14,7 +15,8 @@
     "start": "NODE_ENV=production next start",
     "test": "jest -c .jest.config.js",
     "prettier": "prettier **/*.js --write",
-    "size": "bundlesize"
+    "size": "bundlesize",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.5.3",
@@ -61,10 +63,10 @@
     "enzyme-to-json": "^3.6.2",
     "eslint": "^8.4.1",
     "eslint-config-next": "12.0.7",
-    "husky-v4": "^4.3.8",
+    "husky": "^8.0.0",
     "jest": "^27.4.3",
     "jest-styled-components": "^7.0.8",
-    "lint-staged": "^12.1.2",
+    "lint-staged": "^13",
     "prettier": "^2.5.1",
     "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.0"
