@@ -126,7 +126,7 @@ const Slide = styled(Image)`
   box-shadow: 0 32px 48px rgba(0, 0, 0, 0.12);
 `;
 
-const getSlide = (childIndex) => keyframes`
+const getSlide = childIndex => keyframes`
   from {
     transform: translateX(${childIndex * 105}%);
   }
@@ -235,8 +235,8 @@ function calculateSlides(sortOrder, route) {
   if (currentSlideIndex === -1) {
     currentSlideIndex = 0;
   }
-  const previousSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, (x) => x - 1);
-  const nextSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, (x) => x + 1);
+  const previousSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, x => x - 1);
+  const nextSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, x => x + 1);
   return {
     currentSlide: mapIndexToRoute(currentSlideIndex),
     previousSlide: mapIndexToRoute(previousSlideIndex),
@@ -245,7 +245,7 @@ function calculateSlides(sortOrder, route) {
 }
 
 class ArrowEvents extends React.Component {
-  handleKeyDown = (event) => {
+  handleKeyDown = event => {
     const isLeft = event.keyCode === 37;
     const isRight = event.keyCode === 39;
     const { router, previousSlide, nextSlide } = this.props;
@@ -321,7 +321,7 @@ const Showcase = ({ router }) => {
                 height={1080}
                 src={src}
                 margin={0}
-                renderImage={(props) => {
+                renderImage={props => {
                   return (
                     <TransitionGroup>
                       <CSSTransition key={src} timeout={500} classNames="fade">

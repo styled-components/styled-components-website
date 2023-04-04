@@ -50,7 +50,7 @@ const Button = styled.a\`
 \`
 `.trim();
 
-const transformHeaderCode = (code) => `
+const transformHeaderCode = code => `
 ${code}
 
 render(
@@ -163,7 +163,7 @@ class Index extends PureComponent {
   };
 
   toggleMobileNav = () => {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       isMobileNavFolded: !prevState.isMobileNavFolded,
     }));
   };

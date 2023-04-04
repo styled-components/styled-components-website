@@ -70,12 +70,12 @@ const Website = styled.div`
 
   @media (min-width: 800px) {
     padding: 12px;
-    z-index: ${(props) => 2 - Math.abs(props.position - 2)};
-    display: ${(props) => (props.position > 4 ? 'none' : 'block')};
-    transform: scale(${(props) => scaleFactor[Math.abs(props.position - 2)]});
+    z-index: ${props => 2 - Math.abs(props.position - 2)};
+    display: ${props => (props.position > 4 ? 'none' : 'block')};
+    transform: scale(${props => scaleFactor[Math.abs(props.position - 2)]});
 
     &:hover {
-      transform: scale(${(props) => scaleFactor[Math.abs(props.position - 2)] + 0.2});
+      transform: scale(${props => scaleFactor[Math.abs(props.position - 2)] + 0.2});
 
       &:nth-of-type(-n + 2) {
         ${Label} {
@@ -105,7 +105,7 @@ const Screenshot = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(${(props) => props.bg});
+  background-image: url(${props => props.bg});
   background-size: cover;
   display: block;
   width: 100%;
