@@ -1,2 +1,14 @@
 node_modules
-.next
+/.next
+/.yarn
+/public
+
+*.*
+!*.css
+!*.js
+!*.json
+!*.jsx
+!*.less
+!*.ts
+!*.tsx
+!*.yml

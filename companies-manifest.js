@@ -1237,7 +1237,7 @@ const companies = [
         width: 1280,
         height: 720,
         internalUrl: 'kabum',
-      }
+      },
     },
   },
 ];

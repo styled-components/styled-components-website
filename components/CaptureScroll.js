@@ -14,13 +14,13 @@ if (typeof window !== 'undefined' && window.matchMedia) {
   }
 }
 
-const captureScroll = (Component) => {
+const captureScroll = Component => {
   if (isMobile) {
     return Component;
   }
 
   class CaptureScroll extends React.Component {
-    onScroll = (evt) => {
+    onScroll = evt => {
       // Don't access window wheel listener
       evt.stopImmediatePropagation();
 
@@ -79,7 +79,7 @@ const captureScroll = (Component) => {
     }
 
     render() {
-      return <Component {...this.props} ref={(x) => (this.ref = x)} />;
+      return <Component {...this.props} ref={x => (this.ref = x)} />;
     }
   }
 

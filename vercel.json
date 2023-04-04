@@ -1,9 +1,5 @@
 {
-  "version": 2,
   "name": "styled-components",
-  "alias": "www.styled-components.com",
-  "env": {
-    "NODE_ENV": "production"
-  },
+  "github": { "silent": true },
   "rewrites": [{ "source": "/proxy/(.+)", "destination": "/api/proxy/$1" }]
 }

@@ -9,7 +9,7 @@ export default function AlgoliaSearch({ className, requestModalClose }) {
     if (process.browser && Router.pathname.startsWith('/docs')) setIsDocs(true);
 
     if (process.env.NODE_ENV !== 'test') {
-      import('docsearch.js').then((mdl) => {
+      import('docsearch.js').then(mdl => {
         mdl.default({
           apiKey: '79886fb59ad3ebe2002b481cffbbe7cb',
           indexName: 'styled-components',

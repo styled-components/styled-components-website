@@ -12,7 +12,7 @@
     "build": "NODE_ENV=production next build",
     "start": "NODE_ENV=production next start",
     "test": "jest -c .jest.config.js",
-    "prettier": "prettier **/*.js --write",
+    "prettier": "prettier --write \"**/*.*\"",
     "size": "bundlesize",
     "postinstall": "husky install"
   },
