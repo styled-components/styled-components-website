@@ -13,7 +13,6 @@
     "start": "NODE_ENV=production next start",
     "test": "jest -c .jest.config.js",
     "prettier": "prettier --write \"**/*.*\"",
-    "size": "bundlesize",
     "postinstall": "husky install"
   },
   "dependencies": {
@@ -53,7 +52,6 @@
     "@types/webpack-bundle-analyzer": "^4.6.0",
     "@types/zeit__next-source-maps": "^0.0.2",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
-    "bundlesize": "^0.18.1",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
     "husky": "^8.0.3",
@@ -67,11 +65,5 @@
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.3"
   },
-  "bundlesize": [
-    {
-      "path": ".next/static/*/pages/**/*.js",
-      "maxSize": "300kB"
-    }
-  ],
   "packageManager": "yarn@3.5.0"
 }
