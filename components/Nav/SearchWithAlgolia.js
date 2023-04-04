@@ -9,11 +9,11 @@ export default function AlgoliaSearch({ className, requestModalClose }) {
     if (process.browser && Router.pathname.startsWith('/docs')) setIsDocs(true);
 
     if (process.env.NODE_ENV !== 'test') {
-      import('docsearch.js').then(mdl => {
+      import('docsearch.js').then((mdl) => {
         mdl.default({
           apiKey: '79886fb59ad3ebe2002b481cffbbe7cb',
           indexName: 'styled-components',
-          inputSelector: '[class^="Search__Input"]',
+          inputSelector: '#docs-search-input',
           debug: true, // Set debug to true if you want to inspect the dropdown
           handleSelected: (input, event, suggestion) => {
             // original handleselect
