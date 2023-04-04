@@ -28,10 +28,10 @@ exports[`Sidebar renders correctly 1`] = `
 }
 
 <CaptureScroll>
-  <Sidebar>
+  <styled.nav>
     <nav
       className="c0"
     />
-  </Sidebar>
+  </styled.nav>
 </CaptureScroll>
 `;

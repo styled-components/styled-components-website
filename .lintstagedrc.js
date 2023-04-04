@@ -1,5 +1,5 @@
 module.exports = {
-  '**/*.js?(x)': [
+  '**/*.(t|j)sx?': [
     'jest -c .jest.config.js --findRelatedTests',
     (filenames) =>
       `next lint --fix --file ${filenames

@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "ph1p.zeit-co-vscode-schemas",
+    "styled-components.vscode-styled-components",
+    "christian-kohler.npm-intellisense",
+    "unifiedjs.vscode-mdx",
+    "christian-kohler.path-intellisense"
+  ]
+}
