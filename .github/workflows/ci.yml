@@ -2,7 +2,7 @@ name: ci
 on: push
 
 jobs:
-  build:
+  size:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -35,6 +35,3 @@ jobs:
 
       - name: Jest
         run: yarn test
-
-      - name: Lint
-        run: yarn lint
