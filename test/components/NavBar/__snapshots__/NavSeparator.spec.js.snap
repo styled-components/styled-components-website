@@ -2,8 +2,6 @@
 
 exports[`NavSeparator renders correctly 1`] = `
 .c0 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 0.2777777777777778rem;
   height: 0.2777777777777778rem;

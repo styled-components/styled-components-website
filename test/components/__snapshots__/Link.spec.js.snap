@@ -2,9 +2,8 @@
 
 exports[`InlineLink renders correctly 1`] = `
 .c0 {
-  color: rgb(33,33,33);
+  color: rgb(33, 33, 33);
   cursor: pointer;
-  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -29,13 +28,13 @@ exports[`Link renders correctly 1`] = `
   margin: -0.1111111111111111rem -0.4444444444444444rem;
 }
 
-@media (min-width:62.5em) {
+@media (min-width: 62.5em) {
   .c0 {
     border-radius: 0.16666666666666666rem;
   }
 
   .c0:hover {
-    background: rgba(20,20,20,0.1);
+    background: rgba(20, 20, 20, 0.1);
   }
 }
 
@@ -54,13 +53,13 @@ exports[`StyledLink renders correctly 1`] = `
   margin: -0.1111111111111111rem -0.4444444444444444rem;
 }
 
-@media (min-width:62.5em) {
+@media (min-width: 62.5em) {
   .c0 {
     border-radius: 0.16666666666666666rem;
   }
 
   .c0:hover {
-    background: rgba(20,20,20,0.1);
+    background: rgba(20, 20, 20, 0.1);
   }
 }
 

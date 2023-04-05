@@ -2,33 +2,20 @@
 
 exports[`LiveEdit renders correctly 1`] = `
 .c0 {
-  box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20,20,20,0.27);
+  box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20, 20, 20, 0.27);
   overflow: hidden;
   margin: 1.9444444444444444rem 0;
   text-align: left;
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: stretch;
-  -webkit-justify-content: stretch;
-  -ms-flex-pack: stretch;
   justify-content: stretch;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
 }
 
 .c2 {
-  -webkit-flex-basis: 50%;
-  -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
   width: 50%;
   max-width: 50%;
@@ -40,7 +27,7 @@ exports[`LiveEdit renders correctly 1`] = `
   font-family: dm,monospace;
   font-weight: 300;
   min-height: 22.22222222222222rem;
-  overflow-y: auto !important;
+  overflow-y: auto!important;
   overflow-x: hidden;
   cursor: text;
   color: white;
@@ -56,8 +43,6 @@ exports[`LiveEdit renders correctly 1`] = `
   height: auto;
   overflow: hidden;
   white-space: normal;
-  -webkit-flex-basis: 50%;
-  -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
   width: 50%;
   max-width: 50%;
@@ -74,18 +59,14 @@ exports[`LiveEdit renders correctly 1`] = `
   white-space: pre;
 }
 
-@media (max-width:40.625em) {
+@media (max-width: 40.625em) {
   .c1 {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
   }
 }
 
-@media (max-width:40.625em) {
+@media (max-width: 40.625em) {
   .c2 {
-    -webkit-flex-basis: auto;
-    -ms-flex-preferred-size: auto;
     flex-basis: auto;
     width: 100%;
     max-width: 100%;
@@ -93,10 +74,8 @@ exports[`LiveEdit renders correctly 1`] = `
   }
 }
 
-@media (max-width:40.625em) {
+@media (max-width: 40.625em) {
   .c4 {
-    -webkit-flex-basis: auto;
-    -ms-flex-preferred-size: auto;
     flex-basis: auto;
     width: 100%;
     max-width: 100%;
