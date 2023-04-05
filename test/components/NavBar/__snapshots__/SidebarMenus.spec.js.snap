@@ -26,13 +26,13 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
   font-weight: normal;
 }
 
-@media (min-width:62.5em) {
+@media (min-width: 62.5em) {
   .c3 {
     border-radius: 0.16666666666666666rem;
   }
 
   .c3:hover {
-    background: rgba(20,20,20,0.1);
+    background: rgba(20, 20, 20, 0.1);
   }
 }
 

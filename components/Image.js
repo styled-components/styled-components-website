@@ -60,7 +60,7 @@ const Caption = styled.p`
 
 const ImageWrapper = styled.div`
   position: relative;
-  padding-bottom: ${props => props.aspectRatio};
+  padding-bottom: ${props => props.$aspectRatio};
 `;
 
 class Image extends Component {
@@ -77,7 +77,7 @@ class Image extends Component {
     return (
       <Figure margin={margin}>
         <Main width={width}>
-          <ImageWrapper aspectRatio={aspectRatio}>{renderImage && renderImage(rest)}</ImageWrapper>
+          <ImageWrapper $aspectRatio={aspectRatio}>{renderImage && renderImage(rest)}</ImageWrapper>
 
           {caption && <Caption captionSpacing={captionSpacing}>{caption}</Caption>}
         </Main>

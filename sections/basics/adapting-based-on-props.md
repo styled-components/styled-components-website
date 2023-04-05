@@ -4,13 +4,13 @@ import Code from '../../components/Code.js'
 
 You can pass a function ("interpolations") to a styled component's template literal to adapt it based on its props.
 
-This button component has a primary state that changes its color. When setting the <Code>primary</Code> prop to true, we are swapping out its background and text color.
+This button component has a primary state that changes its color. When setting the <Code>$primary</Code> prop to true, we are swapping out its background and text color.
 
 ```react
 const Button = styled.button`
   /* Adapt the colors based on primary prop */
-  background: ${props => props.primary ? "palevioletred" : "white"};
-  color: ${props => props.primary ? "white" : "palevioletred"};
+  background: ${props => props.$primary ? "palevioletred" : "white"};
+  color: ${props => props.$primary ? "white" : "palevioletred"};
 
   font-size: 1em;
   margin: 1em;
@@ -22,7 +22,7 @@ const Button = styled.button`
 render(
   <div>
     <Button>Normal</Button>
-    <Button primary>Primary</Button>
+    <Button $primary>Primary</Button>
   </div>
 );
 ```

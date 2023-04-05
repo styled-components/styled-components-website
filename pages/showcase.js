@@ -149,24 +149,10 @@ const HeaderDecoration = styled.div`
   animation: ${({ offset }) => getSlide(offset || 0)} 30s linear infinite;
 `;
 
-const NativeSelect = styled.select`
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  text-align-last: center;
-  appearance: none;
-  padding: 0 8px;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' fill='white'><path d='M7 10l5 5 5-5z'/></svg>");
-  background-position: 98% 50%;
-
-  &::after {
-    content: '';
-    height: 10px;
-    width: 10px;
-    border: 8px solid black;
-  }
-`;
-
 const HeaderActions = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
 
   ${phone(css`
@@ -182,8 +168,7 @@ const HeaderActions = styled.div`
   }
 
   button,
-  a,
-  ${NativeSelect} {
+  a {
     height: 50px;
     border-radius: 4px;
     font-family: ${headerFont};
@@ -295,9 +280,6 @@ const Showcase = ({ router }) => {
                   </h5>
                 </div>
                 <HeaderActions>
-                  <NativeSelect name="category" id="categorySelect" value="all">
-                    <option value="all">All</option>
-                  </NativeSelect>
                   <a
                     href="https://github.com/styled-components/styled-components-website/issues/new?template=company-showcase-request.md&title=Add+%5Bproject%5D+by+%5Bcompany%5D+to+showcase"
                     target="_blank"

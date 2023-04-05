@@ -10,8 +10,6 @@ exports[`MobileNavbar renders correctly 1`] = `
 }
 
 .c13 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 0.2777777777777778rem;
   height: 0.2777777777777778rem;
@@ -22,33 +20,18 @@ exports[`MobileNavbar renders correctly 1`] = `
 }
 
 .c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-right: 1.6666666666666667rem;
 }
 
 .c12 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   display: inline-block;
   line-height: 2.7777777777777777rem;
-  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
-  -webkit-transition: opacity 0.2s,transform 0.2s;
   transition: opacity 0.2s,transform 0.2s;
   cursor: pointer;
-  -webkit-letter-spacing: 0.022222222222222223rem;
-  -moz-letter-spacing: 0.022222222222222223rem;
-  -ms-letter-spacing: 0.022222222222222223rem;
   letter-spacing: 0.022222222222222223rem;
   color: currentColor;
 }
@@ -59,35 +42,20 @@ exports[`MobileNavbar renders correctly 1`] = `
 }
 
 .c12:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
 .c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 
 .c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
-  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
-  -webkit-transition: opacity 0.2s,transform 0.2s;
   transition: opacity 0.2s,transform 0.2s;
   cursor: pointer;
 }
@@ -102,8 +70,6 @@ exports[`MobileNavbar renders correctly 1`] = `
 }
 
 .c16:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
@@ -137,10 +103,8 @@ exports[`MobileNavbar renders correctly 1`] = `
   background: none;
   outline: none;
   border: none;
-  background: rgba(0,0,0,0.07);
+  background: rgba(0, 0, 0, 0.07);
   cursor: pointer;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   height: 2.7777777777777777rem;
   padding: 0 0.5555555555555556rem;
@@ -148,7 +112,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c1 + .c1 {
+.c1+.c1 {
   padding-left: 0;
 }
 
@@ -158,8 +122,6 @@ exports[`MobileNavbar renders correctly 1`] = `
   border: none;
   background: none;
   cursor: pointer;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   height: 2.7777777777777777rem;
   padding: 0 0.5555555555555556rem;
@@ -167,7 +129,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c1 + .c1 {
+.c1+.c1 {
   padding-left: 0;
 }
 
@@ -181,27 +143,12 @@ exports[`MobileNavbar renders correctly 1`] = `
   left: 0;
   right: 0;
   height: 2.7777777777777777rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 1.1111111111111112rem;
-  -webkit-transition: height 0.1s;
   transition: height 0.1s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
@@ -216,14 +163,8 @@ exports[`MobileNavbar renders correctly 1`] = `
 }
 
 .c8 {
-  -webkit-transition: -webkit-transform 0.2s;
-  -webkit-transition: transform 0.2s;
   transition: transform 0.2s;
-  -webkit-transform-origin: center center;
-  -ms-transform-origin: center center;
   transform-origin: center center;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -241,19 +182,10 @@ exports[`MobileNavbar renders correctly 1`] = `
   height: 2rem;
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between;
     height: 2.7777777777777777rem;
   }

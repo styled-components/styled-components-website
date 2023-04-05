@@ -7,8 +7,6 @@ exports[`NavButton renders correctly 1`] = `
   border: none;
   background: none;
   cursor: pointer;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   height: 2.7777777777777777rem;
   padding: 0 0.5555555555555556rem;
@@ -16,7 +14,7 @@ exports[`NavButton renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c0 + .c0 {
+.c0+.c0 {
   padding-left: 0;
 }
 

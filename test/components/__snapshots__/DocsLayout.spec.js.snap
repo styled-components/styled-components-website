@@ -10,8 +10,6 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c8 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 0.2777777777777778rem;
   height: 0.2777777777777778rem;
@@ -22,33 +20,18 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-right: 1.6666666666666667rem;
 }
 
 .c7 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   display: inline-block;
   line-height: 2.7777777777777777rem;
-  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
-  -webkit-transition: opacity 0.2s,transform 0.2s;
   transition: opacity 0.2s,transform 0.2s;
   cursor: pointer;
-  -webkit-letter-spacing: 0.022222222222222223rem;
-  -moz-letter-spacing: 0.022222222222222223rem;
-  -ms-letter-spacing: 0.022222222222222223rem;
   letter-spacing: 0.022222222222222223rem;
   color: currentColor;
 }
@@ -59,35 +42,20 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c7:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
 
 .c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 
 .c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   margin-right: 1.1111111111111112rem;
   line-height: 2.7777777777777777rem;
-  -webkit-transition: opacity 0.2s,-webkit-transform 0.2s;
-  -webkit-transition: opacity 0.2s,transform 0.2s;
   transition: opacity 0.2s,transform 0.2s;
   cursor: pointer;
 }
@@ -102,8 +70,6 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c18:active {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
   transform: scale(0.95);
   opacity: 0.6;
 }
@@ -158,8 +124,6 @@ exports[`DocsLayout renders correctly 1`] = `
   border: none;
   background: none;
   cursor: pointer;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   height: 2.7777777777777777rem;
   padding: 0 0.5555555555555556rem;
@@ -167,7 +131,7 @@ exports[`DocsLayout renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c22 + .c22 {
+.c22+.c22 {
   padding-left: 0;
 }
 
@@ -181,27 +145,12 @@ exports[`DocsLayout renders correctly 1`] = `
   left: 0;
   right: 0;
   height: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 1.1111111111111112rem;
-  -webkit-transition: height 0.1s;
   transition: height 0.1s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
@@ -216,8 +165,6 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c28 {
-  -webkit-transition: -webkit-transform 0.2s;
-  -webkit-transition: transform 0.2s;
   transition: transform 0.2s;
 }
 
@@ -236,20 +183,9 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -257,11 +193,7 @@ exports[`DocsLayout renders correctly 1`] = `
   background: none;
   outline: none;
   border: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 7.222222222222222rem;
   line-height: 1.6666666666666667rem;
@@ -269,47 +201,13 @@ exports[`DocsLayout renders correctly 1`] = `
   color: currentColor;
 }
 
-.c16::-webkit-input-placeholder {
+.c16 ::placeholder {
   color: currentColor;
   opacity: 0.5;
-  -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c16::-moz-placeholder {
-  color: currentColor;
-  opacity: 0.5;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.c16:-ms-input-placeholder {
-  color: currentColor;
-  opacity: 0.5;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.c16::placeholder {
-  color: currentColor;
-  opacity: 0.5;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.c16:focus::-webkit-input-placeholder {
-  opacity: 0.8;
-}
-
-.c16:focus::-moz-placeholder {
-  opacity: 0.8;
-}
-
-.c16:focus:-ms-input-placeholder {
-  opacity: 0.8;
-}
-
-.c16:focus::placeholder {
+.c16 :focus ::placeholder {
   opacity: 0.8;
 }
 
@@ -317,32 +215,24 @@ exports[`DocsLayout renders correctly 1`] = `
   background: none;
   outline: none;
   border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   background: none;
   outline: none;
   border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-right: 0.2222222222222222rem;
   cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .c15:hover,
 .c15:focus {
   opacity: 0.7;
-  -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 .c15:active {
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .c1 {
@@ -355,56 +245,28 @@ exports[`DocsLayout renders correctly 1`] = `
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 0.8333333333333334rem;
   font-weight: 500;
-  background: rgb(33,33,33);
-  -webkit-transition: background 300ms ease-out;
+  background: rgb(33, 33, 33);
   transition: background 300ms ease-out;
   color: white;
   padding: 0;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
 .c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   padding: 0 1.1111111111111112rem;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -431,8 +293,6 @@ exports[`DocsLayout renders correctly 1`] = `
 
 .c32 {
   position: fixed;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
   transform: translateZ(0);
   display: block;
   z-index: 1;
@@ -446,8 +306,6 @@ exports[`DocsLayout renders correctly 1`] = `
   box-sizing: border-box;
   color: inherit;
   overflow-y: auto;
-  -webkit-transition: -webkit-transform 150ms ease-out;
-  -webkit-transition: transform 150ms ease-out;
   transition: transform 150ms ease-out;
 }
 
@@ -478,8 +336,6 @@ exports[`DocsLayout renders correctly 1`] = `
   padding: 5rem 3.3333333333333335rem 0 3.3333333333333335rem;
   box-sizing: border-box;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  -webkit-transition: -webkit-transform 150ms ease-out;
-  -webkit-transition: transform 150ms ease-out;
   transition: transform 150ms ease-out;
 }
 
@@ -491,48 +347,39 @@ exports[`DocsLayout renders correctly 1`] = `
 .c38 {
   text-align: left;
   width: 100%;
-  color: rgb(66,66,66);
+  color: rgb(66, 66, 66);
   font-size: 2.3333333333333335rem;
   font-weight: bold;
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-@media (min-width:62.5em) {
+@media (min-width: 62.5em) {
   .c36 {
     border-radius: 0.16666666666666666rem;
   }
 
   .c36:hover {
-    background: rgba(20,20,20,0.1);
+    background: rgba(20, 20, 20, 0.1);
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c21 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between;
     height: 2.7777777777777777rem;
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c14 {
     display: block;
     padding: 0;
   }
 
   .c14 span.algolia-autocomplete {
-    display: block !important;
+    display: block!important;
   }
 
   .c14 span.ds-dropdown-menu::before {
@@ -540,33 +387,24 @@ exports[`DocsLayout renders correctly 1`] = `
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c16 {
     padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
-    background: rgb(33,33,33);
+    background: rgb(33, 33, 33);
     color: white;
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c15 {
     position: absolute;
     top: 0.5rem;
     left: 0.5555555555555556rem;
     height: 1.7777777777777777rem;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
     justify-content: center;
     width: 1.7777777777777777rem;
     z-index: 1;
@@ -575,11 +413,11 @@ exports[`DocsLayout renders correctly 1`] = `
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
 
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c13 {
     background: currentColor;
     overflow: auto;
@@ -590,7 +428,7 @@ exports[`DocsLayout renders correctly 1`] = `
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c10 {
     display: none;
   }
@@ -606,7 +444,7 @@ exports[`DocsLayout renders correctly 1`] = `
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c12 {
     position: fixed;
     top: 0;
@@ -622,32 +460,28 @@ exports[`DocsLayout renders correctly 1`] = `
   }
 
   .c12 .algolia-autocomplete .ds-dropdown-menu {
-    position: static !important;
+    position: static!important;
     display: block;
     max-width: 100%;
     min-width: 0;
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c32 {
-    -webkit-transform: translateX(-16.666666666666668rem);
-    -ms-transform: translateX(-16.666666666666668rem);
     transform: translateX(-16.666666666666668rem);
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c0 {
     padding-left: 0;
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c37 {
     padding: 5.555555555555555rem 1.1111111111111112rem 1.6666666666666667rem 1.1111111111111112rem;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
     transform: translateX(0);
   }
 }
@@ -839,7 +673,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           requestModalClose={[Function]}
                         >
                           <styled.div
-                            isOpen={false}
+                            $isOpen={false}
                           >
                             <div
                               className="c10"
@@ -860,7 +694,7 @@ exports[`DocsLayout renders correctly 1`] = `
                             </div>
                           </styled.div>
                           <styled.div
-                            isOpen={false}
+                            $isOpen={false}
                             onClick={[Function]}
                           >
                             <div
@@ -882,7 +716,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <form
                                             className="c14"
                                           >
-                                            <Memo(l) />
+                                            <Memo(c) />
                                             <styled.label>
                                               <label
                                                 className="c15"
@@ -1058,7 +892,7 @@ exports[`DocsLayout renders correctly 1`] = `
                       className="c21"
                     >
                       <styled.button
-                        active={false}
+                        $active={false}
                         onClick={[Function]}
                       >
                         <button
@@ -1114,7 +948,7 @@ exports[`DocsLayout renders correctly 1`] = `
                               href="/"
                             >
                               <styled.div
-                                compact={true}
+                                $compact={true}
                               >
                                 <div
                                   className="c26"
@@ -1149,7 +983,7 @@ exports[`DocsLayout renders correctly 1`] = `
                           </button>
                         </styled.button>
                         <styled.button
-                          active={false}
+                          $active={false}
                           onClick={[Function]}
                         >
                           <button
@@ -1157,7 +991,7 @@ exports[`DocsLayout renders correctly 1`] = `
                             onClick={[Function]}
                           >
                             <styled.div
-                              shouldRotate={false}
+                              $shouldRotate={false}
                             >
                               <div
                                 className="c28"
@@ -1176,7 +1010,7 @@ exports[`DocsLayout renders correctly 1`] = `
                         </styled.button>
                       </div>
                       <styled.div
-                        isOpen={false}
+                        $isOpen={false}
                       >
                         <div
                           className="c30"
@@ -1414,10 +1248,10 @@ exports[`DocsLayout renders correctly 1`] = `
             </styled.nav>
           </Navbar>
           <CaptureScroll
-            isFolded={true}
+            $isFolded={true}
           >
             <styled.nav
-              isFolded={true}
+              $isFolded={true}
             >
               <nav
                 className="c32"
@@ -1648,8 +1482,8 @@ exports[`DocsLayout renders correctly 1`] = `
         </div>
       </Nav>
       <styled.div
+        $moveRight={false}
         data-e2e-id="content"
-        moveRight={false}
       >
         <div
           className="c37"

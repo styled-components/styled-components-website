@@ -3,8 +3,6 @@
 exports[`Sidebar renders correctly 1`] = `
 .c0 {
   position: fixed;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
   transform: translateZ(0);
   display: block;
   z-index: 1;
@@ -18,13 +16,7 @@ exports[`Sidebar renders correctly 1`] = `
   box-sizing: border-box;
   color: inherit;
   overflow-y: auto;
-  -webkit-transition: -webkit-transform 150ms ease-out;
-  -webkit-transition: transform 150ms ease-out;
   transition: transform 150ms ease-out;
-}
-
-@media (max-width:62.5em) {
-
 }
 
 <CaptureScroll>

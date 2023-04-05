@@ -11,13 +11,13 @@ const EqualDivider = styled.div`
   margin: 0.5rem;
   padding: 1rem;
   background: papayawhip;
-  ${props => props.vertical && "flex-direction: column;"}
+  ${props => props.$vertical && "flex-direction: column;"}
 
   > * {
     flex: 1;
 
     &:not(:first-child) {
-      ${props => props.vertical ? "margin-top" : "margin-left"}: 1rem;
+      ${props => props.$vertical ? "margin-top" : "margin-left"}: 1rem;
     }
   }
 `;
@@ -34,7 +34,7 @@ render(
     <Child>Second</Child>
     <Child>Third</Child>
   </EqualDivider>
-  <EqualDivider vertical>
+  <EqualDivider $vertical>
     <Child>First</Child>
     <Child>Second</Child>
     <Child>Third</Child>
