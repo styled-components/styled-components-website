@@ -145,9 +145,8 @@ Keep in mind that, as in this example, other chainable methods should always be 
 
 ```react
 const Comp = styled('div').withConfig({
-  shouldForwardProp: (prop, defaultValidatorFn) =>
-      !['hidden'].includes(prop)
-      && defaultValidatorFn(prop),
+  shouldForwardProp: (prop) =>
+      !['hidden'].includes(prop),
 }).attrs({ className: 'foo' })`
   color: red;
   &.foo {
@@ -156,7 +155,7 @@ const Comp = styled('div').withConfig({
 `;
 
 render(
-  <Comp hidden draggable="true">
+  <Comp hidden>
     Drag Me!
   </Comp>
 );
