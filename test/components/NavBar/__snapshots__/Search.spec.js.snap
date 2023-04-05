@@ -2,20 +2,9 @@
 
 exports[`Search renders correctly 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
@@ -23,11 +12,7 @@ exports[`Search renders correctly 1`] = `
   background: none;
   outline: none;
   border: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 7.222222222222222rem;
   line-height: 1.6666666666666667rem;
@@ -35,47 +20,13 @@ exports[`Search renders correctly 1`] = `
   color: currentColor;
 }
 
-.c2::-webkit-input-placeholder {
+.c2 ::placeholder {
   color: currentColor;
   opacity: 0.5;
-  -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-.c2::-moz-placeholder {
-  color: currentColor;
-  opacity: 0.5;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.c2:-ms-input-placeholder {
-  color: currentColor;
-  opacity: 0.5;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.c2::placeholder {
-  color: currentColor;
-  opacity: 0.5;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.c2:focus::-webkit-input-placeholder {
-  opacity: 0.8;
-}
-
-.c2:focus::-moz-placeholder {
-  opacity: 0.8;
-}
-
-.c2:focus:-ms-input-placeholder {
-  opacity: 0.8;
-}
-
-.c2:focus::placeholder {
+.c2 :focus ::placeholder {
   opacity: 0.8;
 }
 
@@ -83,42 +34,34 @@ exports[`Search renders correctly 1`] = `
   background: none;
   outline: none;
   border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   background: none;
   outline: none;
   border: none;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-right: 0.2222222222222222rem;
   cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .c1:hover,
 .c1:focus {
   opacity: 0.7;
-  -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 .c1:active {
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c0 {
     display: block;
     padding: 0;
   }
 
   .c0 span.algolia-autocomplete {
-    display: block !important;
+    display: block!important;
   }
 
   .c0 span.ds-dropdown-menu::before {
@@ -126,33 +69,24 @@ exports[`Search renders correctly 1`] = `
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c2 {
     padding: 0.5555555555555556rem 2.6666666666666665rem;
     display: block;
     width: 100%;
-    background: rgb(33,33,33);
+    background: rgb(33, 33, 33);
     color: white;
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c1 {
     position: absolute;
     top: 0.5rem;
     left: 0.5555555555555556rem;
     height: 1.7777777777777777rem;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
     justify-content: center;
     width: 1.7777777777777777rem;
     z-index: 1;

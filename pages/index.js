@@ -43,7 +43,7 @@ const Button = styled.a\`
 
   /* The GitHub button is a primary button
    * edit this to target it specifically! */
-  \${props => props.primary && css\`
+  \${props => props.$primary && css\`
     background: white;
     color: black;
   \`}
@@ -56,10 +56,10 @@ ${code}
 render(
   <div>
     <Button
+      $primary
       href="https://github.com/styled-components/styled-components"
       target="_blank"
       rel="noopener"
-      primary
     >
       GitHub
     </Button>
@@ -195,7 +195,7 @@ class Index extends PureComponent {
         </WithIsScrolled>
 
         <Wrapper>
-          <Content hero>
+          <Content $hero>
             <LiveProvider code={headerCode} transformCode={transformHeaderCode} scope={{ ...baseScope, rem, Link }}>
               <Logo />
 

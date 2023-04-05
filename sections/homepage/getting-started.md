@@ -48,7 +48,7 @@ Let's say you want to create a simple and reusable `<Button />` component that y
     Normal button
   </ExampleButton>
   <ExampleButton
-    primary
+    $primary
     onClick={() => {
       alert('You clicked the primary button!')
     }}
@@ -109,7 +109,7 @@ const Button = styled.button`
   padding: 0.25em 1em;
 
   ${props =>
-    props.primary &&
+    props.$primary &&
     css`
       background: palevioletred;
       color: white;
@@ -117,7 +117,7 @@ const Button = styled.button`
 `
 ```
 
-Here we're saying that when the `primary` property is set we want to add some more `css` to our component, in this case change the background and color.
+Here we're saying that when the `$primary` property is set we want to add some more `css` to our component, in this case change the background and color.
 
 That's all, we're done! Take a look at our finished component:
 
@@ -130,7 +130,7 @@ const Button = styled.button`
   margin: 0.5em 1em;
   padding: 0.25em 1em;
 
-  ${props => props.primary && css`
+  ${props => props.$primary && css`
     background: palevioletred;
     color: white;
   `}
@@ -143,7 +143,7 @@ const Container = styled.div`
 render(
   <Container>
     <Button>Normal Button</Button>
-    <Button primary>Primary Button</Button>
+    <Button $primary>Primary Button</Button>
   </Container>
 );
 ```

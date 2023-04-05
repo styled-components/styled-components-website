@@ -42,7 +42,7 @@ const FooterContent = styled(Content)`
 const Footer = () => (
   <>
     <Wrapper>
-      <FooterContent hero>
+      <FooterContent $hero>
         {' '}
         {'Hosted on '}
         <FooterLink inline href="https://vercel.com">

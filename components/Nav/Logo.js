@@ -11,7 +11,7 @@ const Logo = styled.div`
   background-size: contain;
 
   ${p =>
-    p.compact
+    p.$compact
       ? css`
           background-image: url(/icon.png);
           width: ${rem(100)};

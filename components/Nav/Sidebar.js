@@ -27,7 +27,7 @@ const Sidebar = styled.nav`
 
   ${mobile(css`
     ${p =>
-      p.isFolded
+      p.$isFolded
         ? css`
             transform: translateX(${rem(-sidebarWidth)});
           `

@@ -184,7 +184,7 @@ import styled from 'styled-components';
 import Header from './Header';
 
 const NewHeader4 = styled(Header).withConfig({
-  shouldForwardProp: (prop, defaultValidatorFn) => !['customColor'].includes(prop),
+  shouldForwardProp: (prop) => !['customColor'].includes(prop),
 })<{ customColor: string }>`
   color: ${(props) => props.customColor};
 `;
