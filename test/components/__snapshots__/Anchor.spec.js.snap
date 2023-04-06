@@ -40,13 +40,13 @@ exports[`Anchor renders correctly 1`] = `
   display: inline-block;
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c2 {
     top: -5rem;
   }
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c1 .c3 {
     display: inline-block;
   }

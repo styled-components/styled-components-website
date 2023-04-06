@@ -5,6 +5,8 @@ import Router from 'next/router';
 
 // Mock next/router, otherwise <Link prefetch> breaks tests
 const mockedRouter = { push: () => {}, prefetch: () => {} };
+
+// @ts-expect-error mock
 Router.router = mockedRouter;
 
 Enzyme.configure({ adapter: new Adapter() });

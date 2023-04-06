@@ -19,7 +19,7 @@ const hijackedStyled = (...args) => {
 };
 
 const ignoredProps = Object.getOwnPropertyNames(Function);
-Object.getOwnPropertyNames(styled).forEach((tag) => {
+Object.getOwnPropertyNames(styled).forEach(tag => {
   if (ignoredProps.includes(tag)) return;
   Object.defineProperty(hijackedStyled, tag, {
     get() {

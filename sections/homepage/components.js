@@ -18,7 +18,7 @@ export const ExampleButton = styled.button`
   border: 2px solid palevioletred;
 
   ${p =>
-    p.primary &&
+    p.$primary &&
     css`
       background: palevioletred;
       color: white;

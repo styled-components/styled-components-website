@@ -15,3 +15,12 @@ __diff_output__
 
 # build
 .next
+
+# Yarn 3
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

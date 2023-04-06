@@ -4,10 +4,10 @@ styled-components has community-organized [TypeScript definitions](https://www.n
 
 ```sh
 # Web
-npm install --save @types/styled-components
+npm install --save-dev @types/styled-components
 
 # React Native
-npm install --save @types/styled-components @types/styled-components-react-native
+npm install --save-dev @types/styled-components @types/styled-components-react-native
 ```
 
 React Native only: If your `tsconfig` assigns `types` then you will need to add "styled-components-react-native" there.  For example:
@@ -32,6 +32,21 @@ import 'styled-components';
 
 // and extend them!
 declare module 'styled-components' {
+  export interface DefaultTheme {
+    borderRadius: string;
+
+    colors: {
+      main: string;
+      secondary: string;
+    };
+  }
+}
+```
+
+React-Native:
+
+```ts
+declare module 'styled-components/native' {
   export interface DefaultTheme {
     borderRadius: string;
 
@@ -169,7 +184,7 @@ import styled from 'styled-components';
 import Header from './Header';
 
 const NewHeader4 = styled(Header).withConfig({
-  shouldForwardProp: (prop, defaultValidatorFn) => !['customColor'].includes(prop),
+  shouldForwardProp: (prop) => !['customColor'].includes(prop),
 })<{ customColor: string }>`
   color: ${(props) => props.customColor};
 `;

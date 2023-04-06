@@ -28,13 +28,13 @@ const UsersSliderContainer = styled.div`
 
 const UsersSlider = styled.span`
   display: inline-block;
-  animation: ${({ offset, reverse }) => getSlide(offset || 0, reverse)} 150s linear infinite;
+  animation: ${({ $offset, $reverse }) => getSlide($offset || 0, $reverse)} 150s linear infinite;
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
 
   ${UsersWrapper} {
-    flex-direction: ${({ reverse }) => (reverse ? 'row' : 'row-reverse')};
+    flex-direction: ${({ $reverse }) => ($reverse ? 'row' : 'row-reverse')};
   }
 
   @media (prefers-reduced-motion) {
@@ -44,9 +44,9 @@ const UsersSlider = styled.span`
 
 const CompanyLogo = styled.span`
   position: relative;
-  height: ${(p) => p.height || '2rem'};
+  height: 2rem;
   margin: 0 1rem;
-  bottom: ${(p) => p.bottom || 0};
+  bottom: 0;
   opacity: 0.8;
   filter: brightness(0) invert(1);
   transition: opacity 125ms ease-in-out;
@@ -78,13 +78,13 @@ const SortedLogos = ({ users }) => (
 const UsersLogos = ({ users, reverse }) => {
   return (
     <UsersSliderContainer>
-      <UsersSlider offset={-1} reverse={reverse}>
+      <UsersSlider $offset={-1} $reverse={reverse}>
         <SortedLogos users={users} />
       </UsersSlider>
-      <UsersSlider offset={0} reverse={reverse}>
+      <UsersSlider $offset={0} $reverse={reverse}>
         <SortedLogos users={users} />
       </UsersSlider>
-      <UsersSlider offset={1} reverse={reverse}>
+      <UsersSlider $offset={1} $reverse={reverse}>
         <SortedLogos users={users} />
       </UsersSlider>
     </UsersSliderContainer>

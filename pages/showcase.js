@@ -126,7 +126,7 @@ const Slide = styled(Image)`
   box-shadow: 0 32px 48px rgba(0, 0, 0, 0.12);
 `;
 
-const getSlide = (childIndex) => keyframes`
+const getSlide = childIndex => keyframes`
   from {
     transform: translateX(${childIndex * 105}%);
   }
@@ -139,7 +139,7 @@ const HeaderDecoration = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  font-family: Avenir Next;
+  font-family: ${headerFont};
   font-size: 16rem;
   line-height: 16rem;
   font-weight: 800;
@@ -149,24 +149,10 @@ const HeaderDecoration = styled.div`
   animation: ${({ offset }) => getSlide(offset || 0)} 30s linear infinite;
 `;
 
-const NativeSelect = styled.select`
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  text-align-last: center;
-  appearance: none;
-  padding: 0 8px;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' fill='white'><path d='M7 10l5 5 5-5z'/></svg>");
-  background-position: 98% 50%;
-
-  &::after {
-    content: '';
-    height: 10px;
-    width: 10px;
-    border: 8px solid black;
-  }
-`;
-
 const HeaderActions = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
 
   ${phone(css`
@@ -182,11 +168,10 @@ const HeaderActions = styled.div`
   }
 
   button,
-  a,
-  ${NativeSelect} {
+  a {
     height: 50px;
     border-radius: 4px;
-    font-family: Avenir Next;
+    font-family: ${headerFont};
     font-weight: 500;
     font-size: 1rem;
     line-height: 50px;
@@ -235,8 +220,8 @@ function calculateSlides(sortOrder, route) {
   if (currentSlideIndex === -1) {
     currentSlideIndex = 0;
   }
-  const previousSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, (x) => x - 1);
-  const nextSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, (x) => x + 1);
+  const previousSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, x => x - 1);
+  const nextSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, x => x + 1);
   return {
     currentSlide: mapIndexToRoute(currentSlideIndex),
     previousSlide: mapIndexToRoute(previousSlideIndex),
@@ -245,7 +230,7 @@ function calculateSlides(sortOrder, route) {
 }
 
 class ArrowEvents extends React.Component {
-  handleKeyDown = (event) => {
+  handleKeyDown = event => {
     const isLeft = event.keyCode === 37;
     const isRight = event.keyCode === 39;
     const { router, previousSlide, nextSlide } = this.props;
@@ -295,9 +280,6 @@ const Showcase = ({ router }) => {
                   </h5>
                 </div>
                 <HeaderActions>
-                  <NativeSelect name="category" id="categorySelect" value="all">
-                    <option value="all">All</option>
-                  </NativeSelect>
                   <a
                     href="https://github.com/styled-components/styled-components-website/issues/new?template=company-showcase-request.md&title=Add+%5Bproject%5D+by+%5Bcompany%5D+to+showcase"
                     target="_blank"
@@ -321,7 +303,7 @@ const Showcase = ({ router }) => {
                 height={1080}
                 src={src}
                 margin={0}
-                renderImage={(props) => {
+                renderImage={props => {
                   return (
                     <TransitionGroup>
                       <CSSTransition key={src} timeout={500} classNames="fade">

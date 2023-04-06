@@ -2,20 +2,9 @@
 
 exports[`NextPage renders correctly 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
   width: 100%;
   padding: 2.2222222222222223rem 1.1111111111111112rem;
@@ -40,12 +29,9 @@ exports[`NextPage renders correctly 1`] = `
   width: 1.6666666666666667rem;
 }
 
-@media (max-width:62.5em) {
+@media (max-width: 62.5em) {
   .c0 {
     text-align: left;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
     justify-content: center;
     padding: 1.6666666666666667rem 1.1111111111111112rem;
   }

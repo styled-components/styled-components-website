@@ -30,7 +30,7 @@ const SecondaryMenu = styled.div`
   right: 0;
 
   ${p =>
-    p.isOpen
+    p.$isOpen
       ? css`
           height: ${rem(navbarHeight)};
         `
@@ -65,7 +65,7 @@ const ArrowWrapper = styled.div`
   transition: transform 0.2s;
 
   ${p =>
-    p.shouldRotate &&
+    p.$shouldRotate &&
     css`
       transform-origin: center center;
       transform: rotate(180deg);
@@ -89,27 +89,27 @@ const MobileNavbar = props => {
   return (
     <Wrapper>
       {showSideNav !== false && (
-        <NavButton active={!isSideFolded} onClick={onSideToggle}>
+        <NavButton $active={!isSideFolded} onClick={onSideToggle}>
           {isSideFolded ? <FoldIcon /> : <CloseIcon />}
         </NavButton>
       )}
 
       <LogoLink>
-        <Logo compact />
+        <Logo $compact />
       </LogoLink>
       <div>
         <NavButton onClick={onSearchButtonClick}>
           <StyledIcon as={Search} size={28} />
         </NavButton>
 
-        <NavButton onClick={onMobileNavToggle} active={!isMobileNavFolded}>
-          <ArrowWrapper shouldRotate={!isMobileNavFolded}>
+        <NavButton onClick={onMobileNavToggle} $active={!isMobileNavFolded}>
+          <ArrowWrapper $shouldRotate={!isMobileNavFolded}>
             <StyledIcon as={KeyboardArrowDown} size={36} />
           </ArrowWrapper>
         </NavButton>
       </div>
 
-      <SecondaryMenu isOpen={!isMobileNavFolded}>
+      <SecondaryMenu $isOpen={!isMobileNavFolded}>
         <NavLinks />
         <SecondaryMenuItem>
           <Social />

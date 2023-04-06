@@ -25,7 +25,7 @@ const Wrapper = styled.nav`
   font-family: ${headerFont};
   font-size: ${rem(15)};
   font-weight: 500;
-  background: ${(props) => (props.transparent ? 'transparent' : blmGrey)};
+  background: ${props => (props.$transparent ? 'transparent' : blmGrey)};
   transition: background 300ms ease-out;
   color: white;
   padding: 0;
@@ -82,7 +82,7 @@ const AlgoliaModalHeader = styled.div`
   color: currentColor;
 
   ${mobile(css`
-    display: ${(props) => (props.isOpen ? 'block' : 'none')};
+    display: ${props => (props.$isOpen ? 'block' : 'none')};
 
     button {
       cursor: pointer;
@@ -107,7 +107,7 @@ const AlgoliaModalOverlay = styled.div`
     right: 0;
     z-index: ${baseZ};
     left: 0;
-    display: ${(props) => (props.isOpen ? 'block' : 'none')};
+    display: ${props => (props.$isOpen ? 'block' : 'none')};
     background: ${paleGrey};
     overflow-y: auto;
     margin: 0;
@@ -123,24 +123,24 @@ const AlgoliaModalOverlay = styled.div`
 
 class ModalContainer extends PureComponent {
   modalElement = createRef();
-  onModalOverlayClick = (e) => {
+  onModalOverlayClick = e => {
     if (!this.modalElement.current.contains(e.target)) {
       this.props.requestModalClose();
     }
   };
-  onCloseButtonClick = (e) => {
+  onCloseButtonClick = e => {
     e.stopPropagation();
     this.props.requestModalClose();
   };
   render() {
     return (
       <>
-        <AlgoliaModalHeader isOpen={this.props.isOpen}>
+        <AlgoliaModalHeader $isOpen={this.props.isOpen}>
           <button onClick={this.onCloseButtonClick}>
             <StyledModalCloseIcon />
           </button>
         </AlgoliaModalHeader>
-        <AlgoliaModalOverlay onClick={this.onModalOverlayClick} isOpen={this.props.isOpen}>
+        <AlgoliaModalOverlay onClick={this.onModalOverlayClick} $isOpen={this.props.isOpen}>
           <AlgoliaModal ref={this.modalElement}>
             <div>{this.props.children}</div>
           </AlgoliaModal>
@@ -169,7 +169,7 @@ class Navbar extends PureComponent {
     const { onSideToggle, onMobileNavToggle, isSideFolded, isMobileNavFolded, showSideNav, transparent } = this.props;
 
     return (
-      <Wrapper transparent={transparent}>
+      <Wrapper $transparent={transparent}>
         <NormalNavbar>
           <StartWrapper>
             <LogoLink>

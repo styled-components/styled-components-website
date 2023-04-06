@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
+import { headerFont } from '../../utils/fonts';
 
 const scaleFactor = [1.8, 1.4, 1];
 
@@ -39,10 +40,9 @@ const Label = styled.label`
   transform: translate(-50%, 50%);
   background-color: white;
   color: #333;
-  font-family: Avenir Next;
-  font-weight: bold;
-  font-size: 0.8rem;
+  font-family: ${headerFont};
   padding: 2px 12px;
+  white-space: nowrap;
   border-radius: 6px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 5px 12px rgba(0, 0, 0, 0.1);
   opacity: 0;
@@ -70,12 +70,12 @@ const Website = styled.div`
 
   @media (min-width: 800px) {
     padding: 12px;
-    z-index: ${(props) => 2 - Math.abs(props.position - 2)};
-    display: ${(props) => (props.position > 4 ? 'none' : 'block')};
-    transform: scale(${(props) => scaleFactor[Math.abs(props.position - 2)]});
+    z-index: ${props => 2 - Math.abs(props.position - 2)};
+    display: ${props => (props.position > 4 ? 'none' : 'block')};
+    transform: scale(${props => scaleFactor[Math.abs(props.position - 2)]});
 
     &:hover {
-      transform: scale(${(props) => scaleFactor[Math.abs(props.position - 2)] + 0.2});
+      transform: scale(${props => scaleFactor[Math.abs(props.position - 2)] + 0.2});
 
       &:nth-of-type(-n + 2) {
         ${Label} {
@@ -105,7 +105,7 @@ const Screenshot = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(${(props) => props.bg});
+  background-image: url(${props => props.bg});
   background-size: cover;
   display: block;
   width: 100%;

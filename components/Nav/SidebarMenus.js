@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { withRouter } from 'next/router';
+import { useRouter, withRouter } from 'next/router';
 
 import rem from '../../utils/rem';
 import titleToDash from '../../utils/titleToDash';
@@ -89,47 +89,44 @@ function getSectionPath(parentPathname, title) {
 
 function isFolderOpen(currentHref, { pathname, title, sections }) {
   return (
-    sections.reduce((sum, v) => sum || window.location.href.endsWith(getSectionPath(pathname, v.title)), false) ||
-    window.location.href.endsWith(pathname || '#' + titleToDash(title))
+    sections.reduce((sum, v) => sum || currentHref.endsWith(getSectionPath(pathname, v.title)), false) ||
+    currentHref.endsWith(pathname || '#' + titleToDash(title))
   );
 }
 
-export const SimpleSidebarMenu = ({ onRouteChange, pages = [] }) => (
-  <MenuInner>
-    {pages.map(({ title, pathname, sections, href }) => {
-      if (!sections) {
+export const SimpleSidebarMenu = ({ onRouteChange, pages = [] }) => {
+  const router = useRouter();
+
+  return (
+    <MenuInner>
+      {pages.map(({ title, pathname, sections, href }, idx) => {
+        if (!sections) {
+          return (
+            <TopLevelLink key={idx}>
+              <StyledLink href={pathname || '#' + (href || titleToDash(title))}>{title}</StyledLink>
+            </TopLevelLink>
+          );
+        }
+
         return (
-          <TopLevelLink key={title}>
-            <StyledLink href={pathname || '#' + (href || titleToDash(title))}>{title}</StyledLink>
-          </TopLevelLink>
+          <Folder key={idx} isOpenDefault={isFolderOpen(router.asPath, { title, pathname, sections })}>
+            {({ rootProps, toggleSubSections, isOpen }) => (
+              <Section {...rootProps} onClick={onRouteChange}>
+                <SectionTitle onClick={toggleSubSections}>
+                  <Link href={pathname || '#' + titleToDash(title)}>{title}</Link>
+                </SectionTitle>
+
+                {isOpen &&
+                  sections.map(({ title }) => (
+                    <SubSection key={title}>
+                      <StyledLink href={getSectionPath(pathname, title)}>{title}</StyledLink>
+                    </SubSection>
+                  ))}
+              </Section>
+            )}
+          </Folder>
         );
-      }
-
-      return (
-        <Folder
-          key={title}
-          isOpenDefault={
-            typeof window !== 'undefined' && isFolderOpen(window.location.href, { title, pathname, sections })
-          }
-        >
-          {({ rootProps, toggleSubSections, isOpen }) => (
-            <Section {...rootProps} onClick={onRouteChange}>
-              <SectionTitle onClick={toggleSubSections}>
-                <Link href={pathname || '#' + titleToDash(title)}>{title}</Link>
-              </SectionTitle>
-
-              {isOpen &&
-                sections.map(({ title }) => (
-                  <SubSection key={title}>
-                    <StyledLink unstyled href={getSectionPath(pathname, title)}>
-                      {title}
-                    </StyledLink>
-                  </SubSection>
-                ))}
-            </Section>
-          )}
-        </Folder>
-      );
-    })}
-  </MenuInner>
-);
+      })}
+    </MenuInner>
+  );
+};

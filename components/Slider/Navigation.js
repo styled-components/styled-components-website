@@ -108,7 +108,7 @@ const Navigation = ({ prev, next }) => {
             height={1080}
             src={prev.src}
             margin={0}
-            renderImage={(props) => {
+            renderImage={props => {
               return (
                 <TransitionGroup>
                   <CSSTransition key={props.src} timeout={100} classNames="fade">
@@ -129,7 +129,7 @@ const Navigation = ({ prev, next }) => {
             height={1080}
             src={next.src}
             margin={0}
-            renderImage={(props) => {
+            renderImage={props => {
               return (
                 <TransitionGroup>
                   <CSSTransition key={props.src} timeout={100} classNames="fade">

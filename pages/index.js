@@ -16,6 +16,7 @@ import Nav from '../components/Nav';
 import { sortedCompanies, sortedProjects } from '../companies-manifest';
 import UsersLogos from '../components/UsersLogos';
 import SmallShowcase from '../components/SmallShowcase';
+import { headerFont } from '../utils/fonts';
 import baseScope from '../utils/scope';
 
 const Tagline = styled.h1`
@@ -42,19 +43,23 @@ const Button = styled.a\`
 
   /* The GitHub button is a primary button
    * edit this to target it specifically! */
-  \${props => props.primary && css\`
+  \${props => props.$primary && css\`
     background: white;
     color: black;
   \`}
 \`
+`.trim();
+
+const transformHeaderCode = code => `
+${code}
 
 render(
   <div>
     <Button
+      $primary
       href="https://github.com/styled-components/styled-components"
       target="_blank"
       rel="noopener"
-      primary
     >
       GitHub
     </Button>
@@ -64,7 +69,7 @@ render(
     </Button>
   </div>
 )
-`.trim();
+`;
 
 const Title = styled.div`
   margin: 2rem 0;
@@ -141,7 +146,7 @@ const ShowcaseLink = styled(NextLink)`
   line-height: 48px;
   text-align: center;
   color: white;
-  font-family: Avenir Next;
+  font-family: ${headerFont};
   border-radius: 4px;
   margin: 0 auto;
   background-color: ${blmGrey};
@@ -158,7 +163,7 @@ class Index extends PureComponent {
   };
 
   toggleMobileNav = () => {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       isMobileNavFolded: !prevState.isMobileNavFolded,
     }));
   };
@@ -190,8 +195,8 @@ class Index extends PureComponent {
         </WithIsScrolled>
 
         <Wrapper>
-          <Content hero>
-            <LiveProvider code={headerCode} scope={{ styled: baseScope.styled, css, rem, Link }}>
+          <Content $hero>
+            <LiveProvider code={headerCode} transformCode={transformHeaderCode} scope={{ ...baseScope, rem, Link }}>
               <Logo />
 
               <Title>

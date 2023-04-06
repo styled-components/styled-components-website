@@ -14,6 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  max-width: 100%;
   margin: 0;
   padding: ${rem(90)} ${rem(60)} 0 ${rem(60)};
   box-sizing: border-box;
@@ -27,11 +28,11 @@ export const Content = styled.div`
 
   ${mobile(css`
     padding: ${rem(100)} ${rem(20)} ${rem(30)} ${rem(20)};
-    transform: translateX(${(p) => (p.moveRight ? rem(sidebarWidth) : 0)});
+    transform: translateX(${p => (p.$moveRight ? rem(sidebarWidth) : 0)});
   `)};
 
-  ${(p) =>
-    p.hero &&
+  ${p =>
+    p.$hero &&
     css`
       font-family: ${headerFont};
       width: 75rem;

@@ -6,7 +6,7 @@ import { resetInput } from '../../utils/form';
 
 const NavButton = styled.button`
   ${resetInput};
-  background: ${p => (p.active ? 'rgba(0, 0, 0, 0.07)' : 'none')};
+  background: ${p => (p.$active ? 'rgba(0, 0, 0, 0.07)' : 'none')};
   cursor: pointer;
   flex: 0 0 auto;
   height: ${rem(navbarHeight)};
