@@ -4,7 +4,7 @@ Installing styled-components only takes a single command and you're ready to rol
 
 ```
 # with npm
-npm install --save styled-components
+npm i styled-components
 
 # with yarn
 yarn add styled-components
