@@ -46,6 +46,8 @@ declare module 'styled-components' {
 React-Native:
 
 ```ts
+import 'styled-components/native'
+
 declare module 'styled-components/native' {
   export interface DefaultTheme {
     borderRadius: string;
@@ -85,14 +87,13 @@ React-Native:
 ```jsx
 // styled-components.ts
 import * as styledComponents from "styled-components/native";
-
-import ThemeInterface from "./theme";
+import DefaultTheme from "styled-components/native";
 
 const {
   default: styled,
   css,
   ThemeProvider
-} = styledComponents as styledComponents.ReactNativeThemedStyledComponentsModule<ThemeInterface>;
+} = styledComponents as styledComponents.ReactNativeThemedStyledComponentsModule<DefaultTheme>;
 
 export { css, ThemeProvider };
 export default styled;
