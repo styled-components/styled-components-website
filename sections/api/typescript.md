@@ -82,23 +82,6 @@ const myTheme: DefaultTheme = {
 export { myTheme };
 ```
 
-React-Native:
-
-```jsx
-// styled-components.ts
-import * as styledComponents from "styled-components/native";
-import DefaultTheme from "styled-components/native";
-
-const {
-  default: styled,
-  css,
-  ThemeProvider
-} = styledComponents as styledComponents.ReactNativeThemedStyledComponentsModule<DefaultTheme>;
-
-export { css, ThemeProvider };
-export default styled;
-```
-
 ### Styling components
 
 That's it! We're able to use styled-components just by using any original import.
