@@ -28,7 +28,7 @@ export default ({ children }) => (
 To download styled-components run:
 
 ```
-npm i styled-components
+npm install styled-components
 ```
 
 That's all you need to do, you are now ready to use it in your app! (yep, no build step needed 👌)
