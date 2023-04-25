@@ -102,7 +102,7 @@ const Navigation = ({ prev, next }) => {
   return (
     <SlideNav>
       <ShowcaseLink item={prev}>
-        <NavButton>
+        <NavButton role="button" aria-label="previous image">
           <Image
             width={1920}
             height={1080}
@@ -123,7 +123,7 @@ const Navigation = ({ prev, next }) => {
       </ShowcaseLink>
 
       <ShowcaseLink item={next}>
-        <NavButton>
+        <NavButton role="button" aria-label="next image">
           <Image
             width={1920}
             height={1080}

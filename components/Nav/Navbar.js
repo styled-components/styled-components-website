@@ -173,7 +173,7 @@ class Navbar extends PureComponent {
       <Wrapper $transparent={transparent}>
         <NormalNavbar>
           <StartWrapper>
-            <LogoLink ariaLabel="Home Page">
+            <LogoLink ariaLabel="Styled Components Home Page">
               <Logo />
             </LogoLink>
             <NavLinks />

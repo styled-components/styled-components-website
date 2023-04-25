@@ -85,11 +85,15 @@ const StyledIcon = styled.div`
 
 const MobileNavbar = props => {
   const { isSideFolded, isMobileNavFolded, onSideToggle, onMobileNavToggle, showSideNav, onSearchButtonClick } = props;
-  console.log(isMobileNavFolded);
+
   return (
     <Wrapper>
       {showSideNav !== false && (
-        <NavButton $active={!isSideFolded} onClick={onSideToggle}>
+        <NavButton
+          $active={!isSideFolded}
+          onClick={onSideToggle}
+          aria-label={!isSideFolded ? 'Close side menu' : 'Open side menu'}
+        >
           {isSideFolded ? <FoldIcon /> : <CloseIcon />}
         </NavButton>
       )}

@@ -91,12 +91,12 @@ const ShowcaseBody = ({ title, owner, description, link, repo }) => (
       {description && <p>{description}</p>}
     </div>
     <SlideMetaLinks>
-      <SlideMetaLink href={link} target="_blank">
+      <SlideMetaLink href={link} target="_blank" aria-label={`${title} website`}>
         <span>Go to website</span>
         <Globe />
       </SlideMetaLink>
       {repo && (
-        <SlideMetaLink href={repo} target="_blank">
+        <SlideMetaLink href={repo} target="_blank" aria-label={`${title} repository`}>
           <span>Go to repository</span>
           <RepoIcon url={repo} />
         </SlideMetaLink>
