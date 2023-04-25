@@ -85,7 +85,7 @@ const StyledIcon = styled.div`
 
 const MobileNavbar = props => {
   const { isSideFolded, isMobileNavFolded, onSideToggle, onMobileNavToggle, showSideNav, onSearchButtonClick } = props;
-
+  console.log(isMobileNavFolded);
   return (
     <Wrapper>
       {showSideNav !== false && (
@@ -98,11 +98,15 @@ const MobileNavbar = props => {
         <Logo $compact />
       </LogoLink>
       <div>
-        <NavButton onClick={onSearchButtonClick}>
+        <NavButton aria-label="Search" onClick={onSearchButtonClick}>
           <StyledIcon as={Search} size={28} />
         </NavButton>
 
-        <NavButton onClick={onMobileNavToggle} $active={!isMobileNavFolded}>
+        <NavButton
+          onClick={onMobileNavToggle}
+          $active={!isMobileNavFolded}
+          aria-label={!isMobileNavFolded ? 'Close Navigation' : 'Open Navigation'}
+        >
           <ArrowWrapper $shouldRotate={!isMobileNavFolded}>
             <StyledIcon as={KeyboardArrowDown} size={36} />
           </ArrowWrapper>

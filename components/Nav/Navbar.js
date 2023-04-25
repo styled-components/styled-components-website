@@ -136,7 +136,7 @@ class ModalContainer extends PureComponent {
     return (
       <>
         <AlgoliaModalHeader $isOpen={this.props.isOpen}>
-          <button onClick={this.onCloseButtonClick}>
+          <button onClick={this.onCloseButtonClick} aria-label="Close Search Bar">
             <StyledModalCloseIcon />
           </button>
         </AlgoliaModalHeader>
