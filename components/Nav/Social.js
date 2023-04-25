@@ -11,8 +11,9 @@ const Wrapper = styled.nav`
   flex: 1 1 auto;
 `;
 
-const SocialLink = styled(Link).attrs((/* props */) => ({
+const SocialLink = styled(Link).attrs(props => ({
   unstyled: true,
+  'aria-label': props.ariaLabel,
 }))`
   display: flex;
   margin-right: ${rem(20)};
@@ -75,16 +76,16 @@ const Spectrum = () => (
 
 const Social = props => (
   <Wrapper {...props}>
-    <SocialLink href="https://spectrum.chat/styled-components/">
+    <SocialLink href="https://spectrum.chat/styled-components/" ariaLabel="Spectrum Chat">
       <Spectrum />
     </SocialLink>
     {/* <SocialLink href="https://twitter.com/someone">
       <Twitter />
     </SocialLink> */}
-    <SocialLink href="https://github.com/styled-components">
+    <SocialLink href="https://github.com/styled-components" ariaLabel="GitHub">
       <StyledIcon as={Github} height="18" />
     </SocialLink>
-    <SocialLink href="https://medium.com/styled-components">
+    <SocialLink href="https://medium.com/styled-components" ariaLabel="Medium.com">
       <StyledIcon as={MediumM} height="18" />
     </SocialLink>
   </Wrapper>
