@@ -704,10 +704,12 @@ exports[`Nav renders correctly 1`] = `
                         >
                           <Styled(Link)
                             href="https://spectrum.chat/styled-components/"
+                            isExternal={true}
                           >
                             <Link
                               className="c17"
                               href="https://spectrum.chat/styled-components/"
+                              isExternal={true}
                               unstyled={true}
                             >
                               <Link
@@ -716,6 +718,7 @@ exports[`Nav renders correctly 1`] = `
                                 <a
                                   className="c17"
                                   href="https://spectrum.chat/styled-components/"
+                                  target="_blank"
                                 >
                                   <Spectrum>
                                     <styled.svg
@@ -745,10 +748,12 @@ exports[`Nav renders correctly 1`] = `
                           </Styled(Link)>
                           <Styled(Link)
                             href="https://github.com/styled-components"
+                            isExternal={true}
                           >
                             <Link
                               className="c17"
                               href="https://github.com/styled-components"
+                              isExternal={true}
                               unstyled={true}
                             >
                               <Link
@@ -757,6 +762,7 @@ exports[`Nav renders correctly 1`] = `
                                 <a
                                   className="c17"
                                   href="https://github.com/styled-components"
+                                  target="_blank"
                                 >
                                   <styled.div
                                     as={[Function]}
@@ -778,10 +784,12 @@ exports[`Nav renders correctly 1`] = `
                           </Styled(Link)>
                           <Styled(Link)
                             href="https://medium.com/styled-components"
+                            isExternal={true}
                           >
                             <Link
                               className="c17"
                               href="https://medium.com/styled-components"
+                              isExternal={true}
                               unstyled={true}
                             >
                               <Link
@@ -790,6 +798,7 @@ exports[`Nav renders correctly 1`] = `
                                 <a
                                   className="c17"
                                   href="https://medium.com/styled-components"
+                                  target="_blank"
                                 >
                                   <styled.div
                                     as={[Function]}
@@ -1058,10 +1067,12 @@ exports[`Nav renders correctly 1`] = `
                             >
                               <Styled(Link)
                                 href="https://spectrum.chat/styled-components/"
+                                isExternal={true}
                               >
                                 <Link
                                   className="c17"
                                   href="https://spectrum.chat/styled-components/"
+                                  isExternal={true}
                                   unstyled={true}
                                 >
                                   <Link
@@ -1070,6 +1081,7 @@ exports[`Nav renders correctly 1`] = `
                                     <a
                                       className="c17"
                                       href="https://spectrum.chat/styled-components/"
+                                      target="_blank"
                                     >
                                       <Spectrum>
                                         <styled.svg
@@ -1099,10 +1111,12 @@ exports[`Nav renders correctly 1`] = `
                               </Styled(Link)>
                               <Styled(Link)
                                 href="https://github.com/styled-components"
+                                isExternal={true}
                               >
                                 <Link
                                   className="c17"
                                   href="https://github.com/styled-components"
+                                  isExternal={true}
                                   unstyled={true}
                                 >
                                   <Link
@@ -1111,6 +1125,7 @@ exports[`Nav renders correctly 1`] = `
                                     <a
                                       className="c17"
                                       href="https://github.com/styled-components"
+                                      target="_blank"
                                     >
                                       <styled.div
                                         as={[Function]}
@@ -1132,10 +1147,12 @@ exports[`Nav renders correctly 1`] = `
                               </Styled(Link)>
                               <Styled(Link)
                                 href="https://medium.com/styled-components"
+                                isExternal={true}
                               >
                                 <Link
                                   className="c17"
                                   href="https://medium.com/styled-components"
+                                  isExternal={true}
                                   unstyled={true}
                                 >
                                   <Link
@@ -1144,6 +1161,7 @@ exports[`Nav renders correctly 1`] = `
                                     <a
                                       className="c17"
                                       href="https://medium.com/styled-components"
+                                      target="_blank"
                                     >
                                       <styled.div
                                         as={[Function]}

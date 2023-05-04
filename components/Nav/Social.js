@@ -42,14 +42,14 @@ const SocialLink = styled(Link).attrs((/* props */) => ({
 `;
 
 const Svg = styled.svg`
-  width: ${p => rem(Number(p.width))};
-  height: ${p => rem(Number(p.height))};
+  width: ${(p) => rem(Number(p.width))};
+  height: ${(p) => rem(Number(p.height))};
 `;
 
 const StyledIcon = styled.div`
   && {
-    width: ${p => rem(Number(p.width))};
-    height: ${p => rem(Number(p.height))};
+    width: ${(p) => rem(Number(p.width))};
+    height: ${(p) => rem(Number(p.height))};
   }
 `;
 
@@ -73,18 +73,17 @@ const Spectrum = () => (
   </Svg>
 );
 
-const Social = props => (
+const Social = (props) => (
   <Wrapper {...props}>
-    <SocialLink href="https://spectrum.chat/styled-components/">
+    <SocialLink href="https://spectrum.chat/styled-components/" isExternal>
       <Spectrum />
     </SocialLink>
-    {/* <SocialLink href="https://twitter.com/someone">
-      <Twitter />
-    </SocialLink> */}
-    <SocialLink href="https://github.com/styled-components">
+
+    <SocialLink href="https://github.com/styled-components" isExternal>
       <StyledIcon as={Github} height="18" />
     </SocialLink>
-    <SocialLink href="https://medium.com/styled-components">
+
+    <SocialLink href="https://medium.com/styled-components" isExternal>
       <StyledIcon as={MediumM} height="18" />
     </SocialLink>
   </Wrapper>

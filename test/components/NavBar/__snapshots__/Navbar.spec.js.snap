@@ -510,6 +510,7 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c17"
           href="https://spectrum.chat/styled-components/"
+          target="_blank"
         >
           <svg
             className="c18"
@@ -529,6 +530,7 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c17"
           href="https://github.com/styled-components"
+          target="_blank"
         >
           <svg
             className="c19"
@@ -538,6 +540,7 @@ exports[`Navbar renders correctly 1`] = `
         <a
           className="c17"
           href="https://medium.com/styled-components"
+          target="_blank"
         >
           <svg
             className="c19"
@@ -657,6 +660,7 @@ exports[`Navbar renders correctly 1`] = `
           <a
             className="c17"
             href="https://spectrum.chat/styled-components/"
+            target="_blank"
           >
             <svg
               className="c18"
@@ -676,6 +680,7 @@ exports[`Navbar renders correctly 1`] = `
           <a
             className="c17"
             href="https://github.com/styled-components"
+            target="_blank"
           >
             <svg
               className="c19"
@@ -685,6 +690,7 @@ exports[`Navbar renders correctly 1`] = `
           <a
             className="c17"
             href="https://medium.com/styled-components"
+            target="_blank"
           >
             <svg
               className="c19"

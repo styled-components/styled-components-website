@@ -767,10 +767,12 @@ exports[`DocsLayout renders correctly 1`] = `
                               >
                                 <Styled(Link)
                                   href="https://spectrum.chat/styled-components/"
+                                  isExternal={true}
                                 >
                                   <Link
                                     className="c18"
                                     href="https://spectrum.chat/styled-components/"
+                                    isExternal={true}
                                     unstyled={true}
                                   >
                                     <Link
@@ -779,6 +781,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <a
                                         className="c18"
                                         href="https://spectrum.chat/styled-components/"
+                                        target="_blank"
                                       >
                                         <Spectrum>
                                           <styled.svg
@@ -808,10 +811,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                 </Styled(Link)>
                                 <Styled(Link)
                                   href="https://github.com/styled-components"
+                                  isExternal={true}
                                 >
                                   <Link
                                     className="c18"
                                     href="https://github.com/styled-components"
+                                    isExternal={true}
                                     unstyled={true}
                                   >
                                     <Link
@@ -820,6 +825,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <a
                                         className="c18"
                                         href="https://github.com/styled-components"
+                                        target="_blank"
                                       >
                                         <styled.div
                                           as={[Function]}
@@ -841,10 +847,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                 </Styled(Link)>
                                 <Styled(Link)
                                   href="https://medium.com/styled-components"
+                                  isExternal={true}
                                 >
                                   <Link
                                     className="c18"
                                     href="https://medium.com/styled-components"
+                                    isExternal={true}
                                     unstyled={true}
                                   >
                                     <Link
@@ -853,6 +861,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                       <a
                                         className="c18"
                                         href="https://medium.com/styled-components"
+                                        target="_blank"
                                       >
                                         <styled.div
                                           as={[Function]}
@@ -1129,10 +1138,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                   >
                                     <Styled(Link)
                                       href="https://spectrum.chat/styled-components/"
+                                      isExternal={true}
                                     >
                                       <Link
                                         className="c18"
                                         href="https://spectrum.chat/styled-components/"
+                                        isExternal={true}
                                         unstyled={true}
                                       >
                                         <Link
@@ -1141,6 +1152,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <a
                                             className="c18"
                                             href="https://spectrum.chat/styled-components/"
+                                            target="_blank"
                                           >
                                             <Spectrum>
                                               <styled.svg
@@ -1170,10 +1182,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                     </Styled(Link)>
                                     <Styled(Link)
                                       href="https://github.com/styled-components"
+                                      isExternal={true}
                                     >
                                       <Link
                                         className="c18"
                                         href="https://github.com/styled-components"
+                                        isExternal={true}
                                         unstyled={true}
                                       >
                                         <Link
@@ -1182,6 +1196,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <a
                                             className="c18"
                                             href="https://github.com/styled-components"
+                                            target="_blank"
                                           >
                                             <styled.div
                                               as={[Function]}
@@ -1203,10 +1218,12 @@ exports[`DocsLayout renders correctly 1`] = `
                                     </Styled(Link)>
                                     <Styled(Link)
                                       href="https://medium.com/styled-components"
+                                      isExternal={true}
                                     >
                                       <Link
                                         className="c18"
                                         href="https://medium.com/styled-components"
+                                        isExternal={true}
                                         unstyled={true}
                                       >
                                         <Link
@@ -1215,6 +1232,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                           <a
                                             className="c18"
                                             href="https://medium.com/styled-components"
+                                            target="_blank"
                                           >
                                             <styled.div
                                               as={[Function]}
