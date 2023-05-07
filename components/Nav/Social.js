@@ -11,7 +11,7 @@ const Wrapper = styled.nav`
   flex: 1 1 auto;
 `;
 
-const SocialLink = styled(Link).attrs(props => ({
+const SocialLink = styled(Link).attrs((/* props */) => ({
   unstyled: true,
 }))`
   display: flex;
