@@ -89,7 +89,11 @@ const MobileNavbar = props => {
   return (
     <Wrapper>
       {showSideNav !== false && (
-        <NavButton $active={!isSideFolded} onClick={onSideToggle}>
+        <NavButton
+          $active={!isSideFolded}
+          onClick={onSideToggle}
+          aria-label={!isSideFolded ? 'Close side menu' : 'Open side menu'}
+        >
           {isSideFolded ? <FoldIcon /> : <CloseIcon />}
         </NavButton>
       )}
@@ -98,11 +102,15 @@ const MobileNavbar = props => {
         <Logo $compact />
       </LogoLink>
       <div>
-        <NavButton onClick={onSearchButtonClick}>
+        <NavButton aria-label="Search" onClick={onSearchButtonClick}>
           <StyledIcon as={Search} size={28} />
         </NavButton>
 
-        <NavButton onClick={onMobileNavToggle} $active={!isMobileNavFolded}>
+        <NavButton
+          onClick={onMobileNavToggle}
+          $active={!isMobileNavFolded}
+          aria-label={!isMobileNavFolded ? 'Close Navigation' : 'Open Navigation'}
+        >
           <ArrowWrapper $shouldRotate={!isMobileNavFolded}>
             <StyledIcon as={KeyboardArrowDown} size={36} />
           </ArrowWrapper>

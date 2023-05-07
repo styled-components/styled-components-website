@@ -164,7 +164,7 @@ const Search = ({ isDocs, className }) => {
   return (
     <Wrapper className={className}>
       <GlobalStyles />
-      <Button>
+      <Button aria-label="Search">
         <StyledSearchIcon />
       </Button>
       <Input id={INPUT_ID} placeholder={isDocs ? `Search ...` : `Search docs ...`} ref={searchInput} type="search" />
