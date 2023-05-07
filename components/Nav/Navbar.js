@@ -150,10 +150,9 @@ class ModalContainer extends PureComponent {
   }
 }
 
-const LogoLink = styled(Link).attrs(({ ariaLabel }) => ({
+const LogoLink = styled(Link).attrs((/* props */) => ({
   unstyled: true,
   href: '/',
-  'aria-label': ariaLabel,
 }))`
   display: inline-block;
   vertical-align: center;
@@ -173,7 +172,7 @@ class Navbar extends PureComponent {
       <Wrapper $transparent={transparent}>
         <NormalNavbar>
           <StartWrapper>
-            <LogoLink ariaLabel="Styled Components Home Page">
+            <LogoLink aria-label="Styled Components Home Page">
               <Logo />
             </LogoLink>
             <NavLinks />
