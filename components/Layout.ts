@@ -13,7 +13,7 @@ export const Container = styled.div`
   `)};
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<{ $hero: boolean; $moveRight: boolean }>`
   max-width: 100%;
   margin: 0;
   padding: ${rem(90)} ${rem(60)} 0 ${rem(60)};
@@ -26,10 +26,11 @@ export const Content = styled.div`
     max-width: 80ch;
   }
 
-  ${mobile(css`
-    padding: ${rem(100)} ${rem(20)} ${rem(30)} ${rem(20)};
-    transform: translateX(${p => (p.$moveRight ? rem(sidebarWidth) : 0)});
-  `)};
+  ${p =>
+    mobile(css`
+      padding: ${rem(100)} ${rem(20)} ${rem(30)} ${rem(20)};
+      transform: translateX(${p.$moveRight ? rem(sidebarWidth) : 0});
+    `)};
 
   ${p =>
     p.$hero &&
