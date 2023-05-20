@@ -173,7 +173,7 @@ The full list of supported tags:
 - `sc-property`
 - `sc-value`
 
-> If you are in doubt of the vocabulary you can refer to [this CSS vocabulary list](http://apps.workflower.fi/vocabs/css/en) with examples.
+> If you are in doubt of the vocabulary you can refer to [this CSS vocabulary list](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) with examples.
 
 For example, when you interpolate another styled component, what you really interpolate is its unique selector. Since the processor doesn't know that, you can tell it to replace it with a selector when linting:
 

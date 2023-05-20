@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav renders correctly 1`] = `
-.c36 {
+.c35 {
   display: inline-block;
   color: inherit;
   cursor: pointer;
@@ -78,12 +78,7 @@ exports[`Nav renders correctly 1`] = `
   fill: currentColor;
 }
 
-.c18 {
-  width: 0.7777777777777778rem;
-  height: 0.7777777777777778rem;
-}
-
-.c19.c19 {
+.c18.c18 {
   width: NaNrem;
   height: 1rem;
 }
@@ -99,7 +94,7 @@ exports[`Nav renders correctly 1`] = `
   height: 2.2222222222222223rem;
 }
 
-.c25 {
+.c24 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -110,15 +105,15 @@ exports[`Nav renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c23 svg {
+.c22 svg {
   display: inline-block;
 }
 
-.c23 svg path {
+.c22 svg path {
   fill: currentColor;
 }
 
-.c22 {
+.c21 {
   background: none;
   outline: none;
   border: none;
@@ -131,11 +126,11 @@ exports[`Nav renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c21+.c21 {
+.c20+.c20 {
   padding-left: 0;
 }
 
-.c26 {
+.c25 {
   background: none;
   outline: none;
   border: none;
@@ -148,15 +143,15 @@ exports[`Nav renders correctly 1`] = `
   vertical-align: middle;
 }
 
-.c21+.c21 {
+.c20+.c20 {
   padding-left: 0;
 }
 
-.c20 {
+.c19 {
   display: none;
 }
 
-.c30 {
+.c29 {
   position: absolute;
   top: 2.7777777777777777rem;
   left: 0;
@@ -176,27 +171,27 @@ exports[`Nav renders correctly 1`] = `
   color: #868686;
 }
 
-.c24 {
+.c23 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c28 {
+.c27 {
   transition: transform 0.2s;
   transform-origin: center center;
   transform: rotate(180deg);
 }
 
-.c31 {
+.c30 {
   padding-right: 1.1111111111111112rem;
 }
 
-.c27.c27 {
+.c26.c26 {
   width: 1.5555555555555556rem;
   height: 1.5555555555555556rem;
 }
 
-.c29.c29 {
+.c28.c28 {
   width: 2rem;
   height: 2rem;
 }
@@ -310,7 +305,7 @@ exports[`Nav renders correctly 1`] = `
   margin-right: 1.9444444444444444rem;
 }
 
-.c32 {
+.c31 {
   position: fixed;
   transform: translateZ(0);
   display: block;
@@ -328,35 +323,35 @@ exports[`Nav renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c33 {
+.c32 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 3.3333333333333335rem;
 }
 
-.c34 {
+.c33 {
   margin-bottom: 1.1111111111111112rem;
 }
 
-.c35 {
+.c34 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
   font-weight: normal;
 }
 
 @media (min-width: 62.5em) {
-  .c36 {
+  .c35 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c36:hover {
+  .c35:hover {
     background: rgba(20, 20, 20, 0.1);
   }
 }
 
 @media (max-width: 62.5em) {
-  .c20 {
+  .c19 {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -707,50 +702,6 @@ exports[`Nav renders correctly 1`] = `
                           className="c16 "
                         >
                           <Styled(Link)
-                            aria-label="Spectrum chat"
-                            href="https://spectrum.chat/styled-components/"
-                          >
-                            <Link
-                              aria-label="Spectrum chat"
-                              className="c17"
-                              href="https://spectrum.chat/styled-components/"
-                              unstyled={true}
-                            >
-                              <Link
-                                href="https://spectrum.chat/styled-components/"
-                              >
-                                <a
-                                  aria-label="Spectrum chat"
-                                  className="c17"
-                                  href="https://spectrum.chat/styled-components/"
-                                >
-                                  <Spectrum>
-                                    <styled.svg
-                                      height="14"
-                                      viewBox="0 0 15 15"
-                                      width="14"
-                                    >
-                                      <svg
-                                        className="c18"
-                                        height="14"
-                                        viewBox="0 0 15 15"
-                                        width="14"
-                                      >
-                                        <title>
-                                          spectrum
-                                        </title>
-                                        <path
-                                          d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
-                                          fill="#FFF"
-                                        />
-                                      </svg>
-                                    </styled.svg>
-                                  </Spectrum>
-                                </a>
-                              </Link>
-                            </Link>
-                          </Styled(Link)>
-                          <Styled(Link)
                             aria-label="Github"
                             href="https://github.com/styled-components"
                           >
@@ -773,11 +724,11 @@ exports[`Nav renders correctly 1`] = `
                                     height="18"
                                   >
                                     <DummyIcon
-                                      className="c19"
+                                      className="c18"
                                       height="18"
                                     >
                                       <svg
-                                        className="c19"
+                                        className="c18"
                                         height="18"
                                       />
                                     </DummyIcon>
@@ -809,11 +760,11 @@ exports[`Nav renders correctly 1`] = `
                                     height="18"
                                   >
                                     <DummyIcon
-                                      className="c19"
+                                      className="c18"
                                       height="18"
                                     >
                                       <svg
-                                        className="c19"
+                                        className="c18"
                                         height="18"
                                       />
                                     </DummyIcon>
@@ -835,13 +786,13 @@ exports[`Nav renders correctly 1`] = `
           >
             <styled.div>
               <div
-                className="c20"
+                className="c19"
               >
                 <styled.button
                   $active={true}
                 >
                   <button
-                    className="c21 c22"
+                    className="c20 c21"
                   >
                     <CloseIcon>
                       <styled.svg
@@ -851,7 +802,7 @@ exports[`Nav renders correctly 1`] = `
                         xmlnsXlink="http://www.w3.org/1999/xlink"
                       >
                         <svg
-                          className="c23"
+                          className="c22"
                           height="15"
                           width="15"
                           xmlns="http://www.w3.org/2000/svg"
@@ -879,7 +830,7 @@ exports[`Nav renders correctly 1`] = `
                 <Styled(Link)>
                   <Link
                     aria-label="styled components"
-                    className="c24"
+                    className="c23"
                     href="/"
                     unstyled={true}
                   >
@@ -888,14 +839,14 @@ exports[`Nav renders correctly 1`] = `
                     >
                       <a
                         aria-label="styled components"
-                        className="c24"
+                        className="c23"
                         href="/"
                       >
                         <styled.div
                           $compact={true}
                         >
                           <div
-                            className="c25"
+                            className="c24"
                           />
                         </styled.div>
                       </a>
@@ -907,7 +858,7 @@ exports[`Nav renders correctly 1`] = `
                     onClick={[Function]}
                   >
                     <button
-                      className="c21 c26"
+                      className="c20 c25"
                       onClick={[Function]}
                     >
                       <styled.div
@@ -915,11 +866,11 @@ exports[`Nav renders correctly 1`] = `
                         size={28}
                       >
                         <DummyIcon
-                          className="c27"
+                          className="c26"
                           size={28}
                         >
                           <svg
-                            className="c27"
+                            className="c26"
                             size={28}
                           />
                         </DummyIcon>
@@ -930,19 +881,19 @@ exports[`Nav renders correctly 1`] = `
                     $active={true}
                   >
                     <button
-                      className="c21 c22"
+                      className="c20 c21"
                     >
                       <styled.div
                         $shouldRotate={true}
                       >
                         <div
-                          className="c28"
+                          className="c27"
                         >
                           <styled.div
                             size={36}
                           >
                             <div
-                              className="c29"
+                              className="c28"
                               size={36}
                             />
                           </styled.div>
@@ -955,7 +906,7 @@ exports[`Nav renders correctly 1`] = `
                   $isOpen={true}
                 >
                   <div
-                    className="c30"
+                    className="c29"
                   >
                     <NavLinks>
                       <styled.nav>
@@ -1062,57 +1013,13 @@ exports[`Nav renders correctly 1`] = `
                     </NavLinks>
                     <styled.div>
                       <div
-                        className="c31"
+                        className="c30"
                       >
                         <Social>
                           <styled.nav>
                             <nav
                               className="c16"
                             >
-                              <Styled(Link)
-                                aria-label="Spectrum chat"
-                                href="https://spectrum.chat/styled-components/"
-                              >
-                                <Link
-                                  aria-label="Spectrum chat"
-                                  className="c17"
-                                  href="https://spectrum.chat/styled-components/"
-                                  unstyled={true}
-                                >
-                                  <Link
-                                    href="https://spectrum.chat/styled-components/"
-                                  >
-                                    <a
-                                      aria-label="Spectrum chat"
-                                      className="c17"
-                                      href="https://spectrum.chat/styled-components/"
-                                    >
-                                      <Spectrum>
-                                        <styled.svg
-                                          height="14"
-                                          viewBox="0 0 15 15"
-                                          width="14"
-                                        >
-                                          <svg
-                                            className="c18"
-                                            height="14"
-                                            viewBox="0 0 15 15"
-                                            width="14"
-                                          >
-                                            <title>
-                                              spectrum
-                                            </title>
-                                            <path
-                                              d="M0 6.5V1c0-.6.4-1 1-1 9 .3 13.7 5 14 14 0 .6-.4 1-1 1H8.5c-.6 0-1-.4-1-1-.3-4.4-2-6.2-6.5-6.5-.6 0-1-.4-1-1z"
-                                              fill="#FFF"
-                                            />
-                                          </svg>
-                                        </styled.svg>
-                                      </Spectrum>
-                                    </a>
-                                  </Link>
-                                </Link>
-                              </Styled(Link)>
                               <Styled(Link)
                                 aria-label="Github"
                                 href="https://github.com/styled-components"
@@ -1136,11 +1043,11 @@ exports[`Nav renders correctly 1`] = `
                                         height="18"
                                       >
                                         <DummyIcon
-                                          className="c19"
+                                          className="c18"
                                           height="18"
                                         >
                                           <svg
-                                            className="c19"
+                                            className="c18"
                                             height="18"
                                           />
                                         </DummyIcon>
@@ -1172,11 +1079,11 @@ exports[`Nav renders correctly 1`] = `
                                         height="18"
                                       >
                                         <DummyIcon
-                                          className="c19"
+                                          className="c18"
                                           height="18"
                                         >
                                           <svg
-                                            className="c19"
+                                            className="c18"
                                             height="18"
                                           />
                                         </DummyIcon>
@@ -1201,7 +1108,7 @@ exports[`Nav renders correctly 1`] = `
     <CaptureScroll>
       <styled.nav>
         <nav
-          className="c32"
+          className="c31"
         >
           <withRouter(Unknown)>
             <Component
@@ -1209,7 +1116,7 @@ exports[`Nav renders correctly 1`] = `
             >
               <styled.div>
                 <div
-                  className="c33"
+                  className="c32"
                 >
                   <Folder
                     isOpenDefault={null}
@@ -1217,13 +1124,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c34"
+                        className="c33"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c35"
+                            className="c34"
                             onClick={[Function]}
                           >
                             <Link
@@ -1236,7 +1143,7 @@ exports[`Nav renders correctly 1`] = `
                                   href="/docs/basics"
                                 >
                                   <a
-                                    className="c36"
+                                    className="c35"
                                     href="/docs/basics"
                                   >
                                     Basics
@@ -1255,13 +1162,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c34"
+                        className="c33"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c35"
+                            className="c34"
                             onClick={[Function]}
                           >
                             <Link
@@ -1274,7 +1181,7 @@ exports[`Nav renders correctly 1`] = `
                                   href="/docs/advanced"
                                 >
                                   <a
-                                    className="c36"
+                                    className="c35"
                                     href="/docs/advanced"
                                   >
                                     Advanced
@@ -1293,13 +1200,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c34"
+                        className="c33"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c35"
+                            className="c34"
                             onClick={[Function]}
                           >
                             <Link
@@ -1312,7 +1219,7 @@ exports[`Nav renders correctly 1`] = `
                                   href="/docs/api"
                                 >
                                   <a
-                                    className="c36"
+                                    className="c35"
                                     href="/docs/api"
                                   >
                                     API Reference
@@ -1331,13 +1238,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c34"
+                        className="c33"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c35"
+                            className="c34"
                             onClick={[Function]}
                           >
                             <Link
@@ -1350,7 +1257,7 @@ exports[`Nav renders correctly 1`] = `
                                   href="/docs/tooling"
                                 >
                                   <a
-                                    className="c36"
+                                    className="c35"
                                     href="/docs/tooling"
                                   >
                                     Tooling
@@ -1369,13 +1276,13 @@ exports[`Nav renders correctly 1`] = `
                   >
                     <styled.div>
                       <div
-                        className="c34"
+                        className="c33"
                       >
                         <styled.h4
                           onClick={[Function]}
                         >
                           <h4
-                            className="c35"
+                            className="c34"
                             onClick={[Function]}
                           >
                             <Link
@@ -1388,7 +1295,7 @@ exports[`Nav renders correctly 1`] = `
                                   href="/docs/faqs"
                                 >
                                   <a
-                                    className="c36"
+                                    className="c35"
                                     href="/docs/faqs"
                                   >
                                     FAQs
