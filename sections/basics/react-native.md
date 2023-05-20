@@ -12,7 +12,7 @@ const StyledView = styled.View`
 `
 
 const StyledText = styled.Text`
-  color: palevioletred;
+  color: #BF4F74;
 `
 
 class MyReactNativeComponent extends React.Component {

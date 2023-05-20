@@ -52,13 +52,13 @@ const Input = styled.input.attrs(props => ({
   size: props.small ? 5 : undefined,
 }))`
   border-radius: 3px;
-  border: 1px solid palevioletred;
+  border: 1px solid #BF4F74;
   display: block;
   margin: 0 0 1em;
   padding: ${props => props.padding};
 
   ::placeholder {
-    color: palevioletred;
+    color: #BF4F74;
   }
 `
 

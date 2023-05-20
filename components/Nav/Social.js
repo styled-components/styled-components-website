@@ -75,16 +75,16 @@ const Spectrum = () => (
 
 const Social = props => (
   <Wrapper {...props}>
-    <SocialLink href="https://spectrum.chat/styled-components/">
+    <SocialLink href="https://spectrum.chat/styled-components/" aria-label="Spectrum chat">
       <Spectrum />
     </SocialLink>
     {/* <SocialLink href="https://twitter.com/someone">
       <Twitter />
     </SocialLink> */}
-    <SocialLink href="https://github.com/styled-components">
+    <SocialLink href="https://github.com/styled-components" aria-label="Github">
       <StyledIcon as={Github} height="18" />
     </SocialLink>
-    <SocialLink href="https://medium.com/styled-components">
+    <SocialLink href="https://medium.com/styled-components" aria-label="Medium">
       <StyledIcon as={MediumM} height="18" />
     </SocialLink>
   </Wrapper>

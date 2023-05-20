@@ -9,7 +9,7 @@ Passing a `ref` prop to a styled component will give you one of two things depen
 const Input = styled.input`
   padding: 0.5em;
   margin: 0.5em;
-  color: palevioletred;
+  color: #BF4F74;
   background: papayawhip;
   border: none;
   border-radius: 3px;

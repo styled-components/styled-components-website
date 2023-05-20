@@ -23,7 +23,7 @@ const Button = styled.button`
 // We are passing a default theme for Buttons that arent wrapped in the ThemeProvider
 Button.defaultProps = {
   theme: {
-    main: "palevioletred"
+    main: "#BF4F74"
   }
 }
 
@@ -66,7 +66,7 @@ const Button = styled.button`
 
 // Define our `fg` and `bg` on the theme
 const theme = {
-  fg: "palevioletred",
+  fg: "#BF4F74",
   bg: "white"
 };
 

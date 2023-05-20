@@ -29,7 +29,7 @@ let TargetedComponent = isStyledComponent(MaybeStyledComponent)
   : styled(MaybeStyledComponent)``
 
 const ParentComponent = styled.div`
-  color: cornflowerblue;
+  color: royalblue;
 
   ${TargetedComponent} {
     color: tomato;

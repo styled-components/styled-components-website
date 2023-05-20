@@ -7,7 +7,7 @@ We recommend the following technique:
 ```js
 const MyStyledComponent = styled(AlreadyStyledComponent)`
   &&& {
-    color: palevioletred;
+    color: #BF4F74;
     font-weight: bold;
   }
 `
@@ -17,7 +17,7 @@ Each `&` gets replaced with the generated class, so the injected CSS then looks 
 
 ```css
 .MyStyledComponent-asdf123.MyStyledComponent-asdf123.MyStyledComponent-asdf123 {
-  color: palevioletred;
+  color: #BF4F74;
   font-weight: bold;
 }
 ```

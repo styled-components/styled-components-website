@@ -298,6 +298,7 @@ exports[`MobileNavbar renders correctly 1`] = `
         className="c15"
       >
         <a
+          aria-label="Spectrum chat"
           className="c16"
           href="https://spectrum.chat/styled-components/"
         >
@@ -317,6 +318,7 @@ exports[`MobileNavbar renders correctly 1`] = `
           </svg>
         </a>
         <a
+          aria-label="Github"
           className="c16"
           href="https://github.com/styled-components"
         >
@@ -326,6 +328,7 @@ exports[`MobileNavbar renders correctly 1`] = `
           />
         </a>
         <a
+          aria-label="Medium"
           className="c16"
           href="https://medium.com/styled-components"
         >

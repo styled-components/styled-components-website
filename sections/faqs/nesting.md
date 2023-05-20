@@ -24,7 +24,7 @@ const EqualDivider = styled.div`
 
 const Child = styled.div`
   padding: 0.25rem 0.5rem;
-  background: palevioletred;
+  background: #BF4F74;
 `;
 
 render(
@@ -49,7 +49,7 @@ exactly how the component will respond at any resolution.
 ```react
 const ColorChanger = styled.section`
   background: papayawhip;
-  color: palevioletred;
+  color: #BF4F74;
 
   @media(min-width: 768px) {
     background: mediumseagreen;

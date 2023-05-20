@@ -7,11 +7,11 @@ To easily make a new component that inherits the styling of another, just wrap i
 ```react
 // The Button from the last section without the interpolations
 const Button = styled.button`
-  color: palevioletred;
+  color: #BF4F74;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid palevioletred;
+  border: 2px solid #BF4F74;
   border-radius: 3px;
 `;
 
@@ -38,11 +38,11 @@ For this situation, we have an escape hatch. You can use the [`"as" polymorphic 
 ```react
 const Button = styled.button`
   display: inline-block;
-  color: palevioletred;
+  color: #BF4F74;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid palevioletred;
+  border: 2px solid #BF4F74;
   border-radius: 3px;
   display: block;
 `;
@@ -66,11 +66,11 @@ This works perfectly fine with custom components too!
 ```react
 const Button = styled.button`
   display: inline-block;
-  color: palevioletred;
+  color: #BF4F74;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid palevioletred;
+  border: 2px solid #BF4F74;
   border-radius: 3px;
   display: block;
 `;

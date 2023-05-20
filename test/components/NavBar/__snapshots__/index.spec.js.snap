@@ -474,8 +474,11 @@ exports[`Nav renders correctly 1`] = `
                 <div
                   className="c2"
                 >
-                  <Styled(Link)>
+                  <Styled(Link)
+                    aria-label="Styled-components logo"
+                  >
                     <Link
+                      aria-label="Styled-components logo"
                       className="c3"
                       href="/"
                       unstyled={true}
@@ -484,6 +487,7 @@ exports[`Nav renders correctly 1`] = `
                         href="/"
                       >
                         <a
+                          aria-label="Styled-components logo"
                           className="c3"
                           href="/"
                         >
@@ -703,9 +707,11 @@ exports[`Nav renders correctly 1`] = `
                           className="c16 "
                         >
                           <Styled(Link)
+                            aria-label="Spectrum chat"
                             href="https://spectrum.chat/styled-components/"
                           >
                             <Link
+                              aria-label="Spectrum chat"
                               className="c17"
                               href="https://spectrum.chat/styled-components/"
                               unstyled={true}
@@ -714,6 +720,7 @@ exports[`Nav renders correctly 1`] = `
                                 href="https://spectrum.chat/styled-components/"
                               >
                                 <a
+                                  aria-label="Spectrum chat"
                                   className="c17"
                                   href="https://spectrum.chat/styled-components/"
                                 >
@@ -744,9 +751,11 @@ exports[`Nav renders correctly 1`] = `
                             </Link>
                           </Styled(Link)>
                           <Styled(Link)
+                            aria-label="Github"
                             href="https://github.com/styled-components"
                           >
                             <Link
+                              aria-label="Github"
                               className="c17"
                               href="https://github.com/styled-components"
                               unstyled={true}
@@ -755,6 +764,7 @@ exports[`Nav renders correctly 1`] = `
                                 href="https://github.com/styled-components"
                               >
                                 <a
+                                  aria-label="Github"
                                   className="c17"
                                   href="https://github.com/styled-components"
                                 >
@@ -777,9 +787,11 @@ exports[`Nav renders correctly 1`] = `
                             </Link>
                           </Styled(Link)>
                           <Styled(Link)
+                            aria-label="Medium"
                             href="https://medium.com/styled-components"
                           >
                             <Link
+                              aria-label="Medium"
                               className="c17"
                               href="https://medium.com/styled-components"
                               unstyled={true}
@@ -788,6 +800,7 @@ exports[`Nav renders correctly 1`] = `
                                 href="https://medium.com/styled-components"
                               >
                                 <a
+                                  aria-label="Medium"
                                   className="c17"
                                   href="https://medium.com/styled-components"
                                 >
@@ -1057,9 +1070,11 @@ exports[`Nav renders correctly 1`] = `
                               className="c16"
                             >
                               <Styled(Link)
+                                aria-label="Spectrum chat"
                                 href="https://spectrum.chat/styled-components/"
                               >
                                 <Link
+                                  aria-label="Spectrum chat"
                                   className="c17"
                                   href="https://spectrum.chat/styled-components/"
                                   unstyled={true}
@@ -1068,6 +1083,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="https://spectrum.chat/styled-components/"
                                   >
                                     <a
+                                      aria-label="Spectrum chat"
                                       className="c17"
                                       href="https://spectrum.chat/styled-components/"
                                     >
@@ -1098,9 +1114,11 @@ exports[`Nav renders correctly 1`] = `
                                 </Link>
                               </Styled(Link)>
                               <Styled(Link)
+                                aria-label="Github"
                                 href="https://github.com/styled-components"
                               >
                                 <Link
+                                  aria-label="Github"
                                   className="c17"
                                   href="https://github.com/styled-components"
                                   unstyled={true}
@@ -1109,6 +1127,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="https://github.com/styled-components"
                                   >
                                     <a
+                                      aria-label="Github"
                                       className="c17"
                                       href="https://github.com/styled-components"
                                     >
@@ -1131,9 +1150,11 @@ exports[`Nav renders correctly 1`] = `
                                 </Link>
                               </Styled(Link)>
                               <Styled(Link)
+                                aria-label="Medium"
                                 href="https://medium.com/styled-components"
                               >
                                 <Link
+                                  aria-label="Medium"
                                   className="c17"
                                   href="https://medium.com/styled-components"
                                   unstyled={true}
@@ -1142,6 +1163,7 @@ exports[`Nav renders correctly 1`] = `
                                     href="https://medium.com/styled-components"
                                   >
                                     <a
+                                      aria-label="Medium"
                                       className="c17"
                                       href="https://medium.com/styled-components"
                                     >

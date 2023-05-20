@@ -49,7 +49,7 @@ const Section = styled.section`
 `
 
 render(
-  <Section background="cornflowerblue">
+  <Section background="royalblue">
     ✨ Magic
   </Section>
 )

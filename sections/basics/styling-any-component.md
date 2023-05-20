@@ -13,7 +13,7 @@ const Link = ({ className, children }) => (
 );
 
 const StyledLink = styled(Link)`
-  color: palevioletred;
+  color: #BF4F74;
   font-weight: bold;
 `;
 
