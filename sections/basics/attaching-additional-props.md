@@ -14,9 +14,9 @@ const Input = styled.input.attrs(props => ({
   // or we can define dynamic ones
   size: props.size || "1em",
 }))`
-  color: palevioletred;
+  color: #BF4F74;
   font-size: 1em;
-  border: 2px solid palevioletred;
+  border: 2px solid #BF4F74;
   border-radius: 3px;
 
   /* here we use the dynamically computed prop */
@@ -46,7 +46,7 @@ const Input = styled.input.attrs(props => ({
   type: "text",
   size: props.size || "1em",
 }))`
-  border: 2px solid palevioletred;
+  border: 2px solid #BF4F74;
   margin: ${props => props.size};
   padding: ${props => props.size};
 `;

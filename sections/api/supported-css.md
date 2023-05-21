@@ -11,7 +11,7 @@ const Example = styled.div`
 
   /* pseudo selectors work as well */
   &:hover {
-    background: palevioletred;
+    background: #BF4F74;
   }
 
   /* media queries are no problem */

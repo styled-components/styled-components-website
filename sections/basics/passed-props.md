@@ -10,7 +10,7 @@ DOM node that is mounted, as with React elements.
 const Input = styled.input`
   padding: 0.5em;
   margin: 0.5em;
-  color: ${props => props.inputColor || "palevioletred"};
+  color: ${props => props.inputColor || "#BF4F74"};
   background: papayawhip;
   border: none;
   border-radius: 3px;

@@ -5,7 +5,7 @@ styled-components optionally supports writing CSS as JavaScript objects instead 
 ```react
 // Static object
 const Box = styled.div({
-  background: 'palevioletred',
+  background: '#BF4F74',
   height: '50px',
   width: '50px'
 });

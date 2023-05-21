@@ -23,7 +23,7 @@ Returns a function that accepts a tagged template literal and turns it into a `S
 // import styled from 'styled-components'
 
 const Button = styled.button`
-  background: palevioletred;
+  background: #BF4F74;
   border-radius: 3px;
   border: none;
   color: white;

@@ -10,7 +10,7 @@ const Link = styled.a`
   align-items: center;
   padding: 5px 10px;
   background: papayawhip;
-  color: palevioletred;
+  color: #BF4F74;
 `;
 
 const Icon = styled.svg`
