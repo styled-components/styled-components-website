@@ -11,6 +11,7 @@ If you've never worked with the technologies used in this repo, here are some li
 - [**Learn Next.js**](https://nextjs.org/learn)
 - [Next.js documentation](https://github.com/vercel/next.js)
 - [styled-components documentation](https://styled-components.com) (this very website!)
+- [Typescript documentation](https://www.typescriptlang.org/docs)
 
 ### Running locally
 
