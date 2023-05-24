@@ -1,7 +1,7 @@
 import React from 'react';
 
-import elementToText from '../utils/elementToText';
-import titleToDash from '../utils/titleToDash';
+import elementToText from './elementToText';
+import titleToDash from './titleToDash';
 
 // Components to be used as renderers
 import Code from '../components/Code';
@@ -38,7 +38,7 @@ const Heading = ({ level, children }) => {
       {labels.length > 0 && (
         <LabelGroup>
           {labels.map((label, index) => (
-            <Label key={index} isVersion={label.trim().startsWith('v')}>
+            <Label key={index} $isVersion={label.trim().startsWith('v')}>
               {label.trim()}
             </Label>
           ))}
@@ -55,19 +55,17 @@ const components = {
     return <p>{children}</p>;
   },
 
-  inlineCode({ children }) {
-    return <Code>{children}</Code>;
-  },
-
   code({ children, className = '' }) {
     const language = className.replace(/language-/, '');
     if (language === 'react') {
       return <LiveEdit code={children.trim()} />;
     } else if (language === 'sh') {
       return <CodeBlock code={children.trim()} language="bash" />;
+    } else if (language) {
+      return <CodeBlock code={children.trim()} language={language} />;
     }
 
-    return <CodeBlock code={children.trim()} language={language} />;
+    return <Code>{children}</Code>;
   },
 
   blockquote({ children }) {

@@ -1,10 +1,14 @@
-const withMDX = require('@next/mdx');
-const withSourceMaps = require('@zeit/next-source-maps');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+import withMDX from '@next/mdx';
+import withSourceMaps from '@zeit/next-source-maps';
+import remarkPlugin from 'remark-gfm'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-module.exports = withMDX({
+export default withMDX({
   // Use .md extension
   extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkPlugin],
+  },
 })(
   withSourceMaps({
     compiler: {

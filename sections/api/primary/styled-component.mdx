@@ -49,13 +49,13 @@ Returns another `StyledComponent`.
 
 const Input = styled.input.attrs(props => ({
   type: 'text',
-  size: props.small ? 5 : undefined,
-}))`
+  size: props.$small ? 5 : undefined,
+}))<{ $padding?: string; $small?: boolean; }>`
   border-radius: 3px;
   border: 1px solid #BF4F74;
   display: block;
   margin: 0 0 1em;
-  padding: ${props => props.padding};
+  padding: ${props => props.$padding};
 
   ::placeholder {
     color: #BF4F74;
@@ -64,9 +64,9 @@ const Input = styled.input.attrs(props => ({
 
 render(
   <>
-    <Input small placeholder="Small" />
+    <Input $small placeholder="Small" />
     <Input placeholder="Normal" />
-    <Input padding="2em" placeholder="Padded" />
+    <Input $padding="2em" placeholder="Padded" />
   </>
 )
 ```
