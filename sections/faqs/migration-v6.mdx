@@ -1,0 +1,93 @@
+## Migrating to styled-components v6
+
+First, let's start by updating the necessary packages to their latest versions.
+
+If you're using NPM:
+
+```sh
+npm install styled-components@^6.0.0 stylis@^4.0.0
+npm uninstall @types/styled-components
+```
+
+If you're using Yarn:
+
+```sh
+yarn add styled-components@^6.0.0 stylis@^4.0.0
+yarn remove @types/styled-components
+```
+
+As styled-components now provides its own types, there's no longer a need for community ones.
+
+### TypeScript
+
+Good news for TypeScript enthusiasts – styled-components is now natively written in TypeScript! Even if you haven't used TypeScript before, it's recommended for improving the reliability of your project as it can alert you when you're using an unknown prop or if a prop has a different value than expected.
+
+However, if you don't use TypeScript in your project, don't worry! IDEs like VS Code will still pick up the types and provide hints as you write your code.
+
+### `shouldForwardProp` is no longer provided by default
+
+If haven't migrated your styling to use [transient props (`$prefix`)](/docs/faqs#transient-props-since-51), you might notice React warnings about styling props getting through to the DOM in v6. To restore the v5 behavior, use `StyleSheetManager`:
+
+```tsx
+import isPropValid from '@emotion/is-prop-valid';
+import { StyleSheetManager } from 'styled-components';
+
+function MyApp() {
+    return (
+        <StyleSheetManager shouldForwardProp={isPropValid}>
+            {/* other providers or your application's JSX */}
+        </StyleSheetManager>
+    )
+}
+```
+
+### Vendor prefixes are omitted by default
+
+As the web and browsers have matured significantly by 2023, vendor prefixing is often unnecessary. Therefore, for the v6 release, we've decided to omit automatic prefixing by default to reduce the amount of CSS delivered to a page. If you prefer the v5 behavior, you can restore it via `StyleSheetManager`:
+
+```tsx
+import { StyleSheetManager } from 'styled-components';
+
+function MyApp() {
+    return (
+        <StyleSheetManager enableVendorPrefixes>
+            {/* other providers or your application's JSX */}
+        </StyleSheetManager>
+    )
+}
+```
+
+To accommodate this change, the original `disableVendorPrefixes` prop was inverted to `enableVendorPrefixes`; if you have `disableVendorPrefixes` set, you can now remove it as it's the new default.
+
+### Update stylis plugins
+
+With styled-components v6 utilizing the newer stylis v4, make sure to update any `stylisPlugins` you're providing to StyleSheetManager.
+
+styled-components v6 uses the newer stylis v4; if you are providing `stylisPlugins` to `StyleSheetManager`, ensure the plugins are up-to-date. For instance, [`stylis-plugin-rtl`](https://www.npmjs.com/package/stylis-plugin-rtl) released a new version to support the updated stylis.
+
+### Transient `$as` and `$forwardedAs` props have been dropped
+
+To reduce confusion around application order, we've dropped the transient `$as` and `$forwardedAs` props. Please use the regular `as` and `forwardedAs` props instead.
+
+### Dropped legacy `withComponent()` API
+
+This change has been a long time coming. The `withComponent` API is no longer supported, so please use the `as` prop instead. You can specify `as` at definition time via `attrs` or at runtime:
+
+```tsx
+import styled from 'styled-components';
+
+const Button = styled.button`
+    background: blue;
+    color: white;
+`;
+
+const ButtonLink = styled(Button).attrs({ as: 'a' })``;
+
+// These are equivalent, but `ButtonLink` allows for attaching further styling if desired.
+<Button as="a" href="https://styled-components.com">
+<ButtonLink href="https://styled-components.com">
+```
+
+### Minimum Node support raised to v16+
+
+In line with the [maintenance schedule](https://github.com/nodejs/release#release-schedule) for Node, we now support v16 as the oldest runtime that's still receiving security patches.
