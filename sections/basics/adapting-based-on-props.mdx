@@ -7,7 +7,7 @@ You can pass a function ("interpolations") to a styled component's template lite
 This button component has a primary state that changes its color. When setting the <Code>$primary</Code> prop to true, we are swapping out its background and text color.
 
 ```react
-const Button = styled.button`
+const Button = styled.button<{ $primary?: boolean; }>`
   /* Adapt the colors based on primary prop */
   background: ${props => props.$primary ? "#BF4F74" : "white"};
   color: ${props => props.$primary ? "white" : "#BF4F74"};

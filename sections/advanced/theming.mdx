@@ -96,7 +96,7 @@ render(
 If you ever need to use the current theme outside styled components (e.g. inside big components), you can use
 the `withTheme` higher order component.
 
-```jsx
+```tsx
 import { withTheme } from 'styled-components'
 
 class MyComponent extends React.Component {
@@ -113,7 +113,7 @@ export default withTheme(MyComponent)
 
 You can also use `useContext` to access the current theme outside of styled components when working with React Hooks.
 
-```jsx
+```tsx
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 
@@ -129,7 +129,7 @@ const MyComponent = () => {
 
 You can also use `useTheme` to access the current theme outside of styled components when working with React Hooks.
 
-```jsx
+```tsx
 import { useTheme } from 'styled-components'
 
 const MyComponent = () => {

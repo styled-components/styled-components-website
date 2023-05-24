@@ -105,7 +105,7 @@ Some other libraries also implement the `styled.x` pattern with tagged template 
 
 If you want to use the processor with another library but you also want to change the keyword (e.g. to write `cool.div` instead of `styled.div`) use the `moduleName` option:
 
-```js
+```tsx
 import cool from 'other-library';
 
 const Button = cool.button`
@@ -136,7 +136,7 @@ Sometimes `stylelint` can throw an error (e.g. `CssSyntaxError`) even though not
 
 A simplified example:
 
-```js
+```tsx
 const something = 'background';
 
 const Button = styled.div`
@@ -150,7 +150,7 @@ Interpolation tagging allows you to tell the processor what an interpolation is 
 
 For example:
 
-```js
+```tsx
 const something = 'background';
 
 const Button = styled.div`
@@ -177,7 +177,7 @@ The full list of supported tags:
 
 For example, when you interpolate another styled component, what you really interpolate is its unique selector. Since the processor doesn't know that, you can tell it to replace it with a selector when linting:
 
-```js
+```tsx
 const Wrapper = styled.div`
   ${/* sc-selector */ Button} {
     color: red;
@@ -187,7 +187,7 @@ const Wrapper = styled.div`
 
 You can also use shorthand tags to avoid cluttering the code. For example:
 
-```js
+```tsx
 const Wrapper = styled.div`
   ${/* sc-sel */ Button} {
     color: red;
@@ -203,7 +203,7 @@ On top of the above standard tags the processor also has the `sc-custom` tag to 
 
 For example:
 
-```js
+```tsx
 // Switch between left and right based on language settings passed through via the theme
 const rtlSwitch = (props) => (props.theme.dir === 'rtl' ? 'left' : 'right');
 
@@ -221,7 +221,7 @@ const Button = styled.button`
 
 Turn off rules with `stylelint-disable` comments (see the [stylelint documentation](https://stylelint.io/user-guide/configuration/#turning-rules-off-from-within-your-css) for all allowed syntax) both inside and outside of the tagged template literals.
 
-```js
+```tsx
 import React from 'react';
 import styled from 'styled-components';
 
@@ -246,7 +246,7 @@ The important thing is that you put the closing backtick on the base level of in
 
 **Right**
 
-```js
+```tsx
 if (condition) {
   const Button = styled.button`
     color: red;
@@ -256,7 +256,7 @@ if (condition) {
 
 **Wrong**
 
-```js
+```tsx
 if (condition) {
   const Button = styled.button`
     color: red;
@@ -264,7 +264,7 @@ if (condition) {
 }
 ```
 
-```js
+```tsx
 if (condition) {
   const Button = styled.button`
     color: red;`

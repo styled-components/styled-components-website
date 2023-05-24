@@ -4,7 +4,7 @@ styled-components optionally supports writing CSS as JavaScript objects instead 
 
 ```react
 // Static object
-const Box = styled.div({
+const Box = styled.div<{ $background?: string; }>({
   background: '#BF4F74',
   height: '50px',
   width: '50px'
@@ -12,7 +12,7 @@ const Box = styled.div({
 
 // Adapting based on props
 const PropsBox = styled.div(props => ({
-  background: props.background,
+  background: props.$background,
   height: '50px',
   width: '50px'
 }));
@@ -20,7 +20,7 @@ const PropsBox = styled.div(props => ({
 render(
   <div>
     <Box />
-    <PropsBox background="blue" />
+    <PropsBox $background="blue" />
   </div>
 );
 ```

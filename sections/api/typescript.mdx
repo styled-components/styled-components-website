@@ -86,7 +86,7 @@ export { myTheme };
 
 That's it! We're able to use styled-components just by using any original import.
 
-```jsx
+```tsx
 import styled, { createGlobalStyle, css } from 'styled-components';
 
 // theme is now fully typed
@@ -116,11 +116,11 @@ import styled from 'styled-components';
 import Header from './Header';
 
 interface TitleProps {
-  readonly isActive: boolean;
+  readonly $isActive: boolean;
 }
 
 const Title = styled.h1<TitleProps>`
-  color: ${(props) => (props.isActive ? props.theme.colors.main : props.theme.colors.secondary)};
+  color: ${(props) => (props.$isActive ? props.theme.colors.main : props.theme.colors.secondary)};
 `;
 ```
 
@@ -179,7 +179,7 @@ const NewHeader4 = styled(Header).withConfig({
 When defining a component you will need to mark `className` as optional
 in your Props interface:
 
-```jsx
+```tsx
 interface LogoProps {
   /* This prop is optional, since TypeScript won't know that it's passed by the wrapper */
   className?: string;
@@ -204,7 +204,7 @@ To use function components and have typechecking for the props you'll need to de
 the component alongside with its type. This is not special to styled-components, this is just
 how React works:
 
-```jsx
+```tsx
 interface BoxProps {
   theme?: ThemeInterface;
   borders?: boolean;

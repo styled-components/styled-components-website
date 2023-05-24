@@ -19,7 +19,7 @@ npm install --save styled-theming
 
 ### Example
 
-```jsx
+```tsx
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import theme from 'styled-theming'
@@ -51,21 +51,21 @@ See [styled-components docs](https://www.styled-components.com/docs/advanced#the
 `<ThemeProvider>` is part of styled-components, but is required for
 styled-theming.
 
-```js
+```tsx
 import { ThemeProvider } from 'styled-components'
 ```
 
 `<ThemeProvider>` accepts a single prop `theme` which you should pass an
 object with either strings or getter functions. For example:
 
-```jsx
+```tsx
 <ThemeProvider theme={{ mode: "dark", size: "large" }}>
 <ThemeProvider theme={{ mode: modes => modes.dark, size: sizes => sizes.large }}>
 ```
 
 You should generally set up a `<ThemeProvider>` at the root of your app:
 
-```jsx
+```tsx
 function App() {
   return (
     <ThemeProvider theme={...}>
@@ -81,18 +81,18 @@ Most of your theming will be done with this function.
 
 `name` should match one of the keys in your `<ThemeProvider>` theme.
 
-```jsx
+```tsx
 ;<ThemeProvider theme={{ whatever: '...' }} />
 ```
 
-```js
+```tsx
 theme("whatever", {...});
 ```
 
 `values` should be an object where one of the keys will be selected by the
 value provided to `<ThemeProvider>` theme.
 
-```jsx
+```tsx
 <ThemeProvider theme={{ mode: "light" }} />
 <ThemeProvider theme={{ mode: "dark" }} />
 
@@ -104,7 +104,7 @@ theme("mode", {
 
 The values of this object can be any CSS value.
 
-```jsx
+```tsx
 theme("mode", {
   light: "#fff",
   dark: "#000",
@@ -119,7 +119,7 @@ theme("font", {
 
 These values can also be functions that return CSS values.
 
-```jsx
+```tsx
 theme('mode', {
   light: props => props.theme.userProfileAccentColor.light,
   dark: props => props.theme.userProfileAccentColor.dark,
@@ -129,7 +129,7 @@ theme('mode', {
 `theme` will create a function that you can use as a value in
 styled-component's `styled` function.
 
-```jsx
+```tsx
 import styled from 'styled-components'
 import theme from 'styled-theming'
 
@@ -151,7 +151,7 @@ via an additional prop.
 To make this easier with theming, styled-theming provides a
 `theme.variants` function.
 
-```jsx
+```tsx
 import styled from "styled-components";
 import theme from "styled-theming";
 

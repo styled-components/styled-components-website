@@ -20,16 +20,21 @@ If you're interpolating a string you do not need to use this, only if you're int
 Returns an array of interpolations, which is a flattened data structure that you can pass as an interpolation
 itself.
 
-```jsx
+```tsx
 import styled, { css } from 'styled-components'
 
-const complexMixin = css`
-  color: ${props => (props.whiteColor ? 'white' : 'black')};
+interface ComponentProps {
+  $complex?: boolean;
+  $whiteColor?: boolean;
+}
+
+const complexMixin = css<ComponentProps>`
+  color: ${props => (props.$whiteColor ? 'white' : 'black')};
 `
 
-const StyledComp = styled.div`
+const StyledComp = styled.div<ComponentProps>`
   /* This is an example of a nested interpolation */
-  ${props => (props.complex ? complexMixin : 'color: blue;')};
+  ${props => (props.$complex ? complexMixin : 'color: blue;')};
 `
 ```
 

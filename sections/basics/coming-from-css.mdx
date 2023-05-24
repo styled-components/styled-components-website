@@ -4,7 +4,7 @@
 
 If you're familiar with importing CSS into your components (e.g. like CSSModules) you'll be used to doing something like this:
 
-```jsx
+```tsx
 import React from 'react';
 import styles from './styles.css';
 
@@ -32,7 +32,7 @@ export default class Counter extends React.Component {
 
 Because a Styled Component is the _combination_ of the element and the rules that style it, we'd write `Counter` like this:
 
-```jsx
+```tsx
 import React from 'react';
 import styled from 'styled-components';
 
@@ -72,7 +72,7 @@ It is important to define your styled components outside of the render method, o
 
 Write your styled components the recommended way:
 
-```jsx
+```tsx
 const StyledWrapper = styled.div`
   /* ... */
 `;
@@ -84,7 +84,7 @@ const Wrapper = ({ message }) => {
 
 Instead of:
 
-```jsx
+```tsx
 const Wrapper = ({ message }) => {
   // WARNING: THIS IS VERY VERY BAD AND SLOW, DO NOT DO THIS!!!
   const StyledWrapper = styled.div`

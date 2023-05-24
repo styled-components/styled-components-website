@@ -13,7 +13,7 @@ To learn more about how props are passed, see [this section](/docs/basics#passed
 
 For example:
 
-```jsx
+```tsx
 const Link = props => (
   <a {...props} className={props.className}>
     {props.text}
@@ -41,7 +41,7 @@ To fix this, you can use transient props or destructure props:
 
 You can use [transient props](https://styled-components.com/docs/api#transient-props) to fix this:
 
-```jsx
+```tsx
 const Link = ({ className, text, ...props }) => (
   <a {...props} className={className}>
     {text}
@@ -59,7 +59,7 @@ const StyledComp = styled(Link)`
 
 If you use a version < 5.1 or if you can't use transient props, you can use argument destructuring to pull out those known styling props:
 
-```jsx
+```tsx
 const Link = ({ className, red, text, ...props }) => (
   <a {...props} className={className}>
     {text}

@@ -63,7 +63,7 @@ This behaviour is only supported within the context of _Styled_ Components:
 attempting to mount `B` in the following example will fail because component
 `A` is an instance of React.Component not a Styled Component.
 
-```jsx
+```tsx
 class A extends React.Component {
   render() {
     return <div />
@@ -82,7 +82,7 @@ styled component is attempting to call the component as an interpolation functio
 However, wrapping `A` in a styled() factory makes it eligible for interpolation -- just
 make sure the wrapped component passes along `className`.
 
-```jsx
+```tsx
 class A extends React.Component {
   render() {
     return <div className={this.props.className} />
