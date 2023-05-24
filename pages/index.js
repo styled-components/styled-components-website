@@ -9,7 +9,7 @@ import { editorMixin, StyledError } from '../components/LiveEdit';
 import Link from '../components/Link';
 import { Content } from '../components/Layout';
 import SeoHead from '../components/SeoHead';
-import HomepageGettingStarted from '../sections/homepage/getting-started.md';
+import HomepageGettingStarted from '../sections/homepage/getting-started.mdx';
 import WithIsScrolled from '../components/WithIsScrolled';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
