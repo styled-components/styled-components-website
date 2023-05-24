@@ -15,34 +15,41 @@ A helper component for modifying how your styles are processed. For a given subt
     </Column>
   </Row>
 
-<Row>
-  <Column>
-    <Code>disableVendorPrefixes (v5+)</Code>
-  </Column>
-  <Column>Opts the given subtree out of adding legacy CSS properties for rendered components.</Column>
-</Row>
+  <Row>
+    <Column>
+      <Code>disableVendorPrefixes (v5, removed in v6)</Code>
+    </Column>
+    <Column>Opts the given subtree out of adding legacy CSS properties for rendered components.</Column>
+  </Row>
 
-<Row>
-  <Column>
-    <Code>sheet</Code>
-  </Column>
-  <Column>
-    <em>Thar be dragons ahead.</em> Create and provide your own StyleSheet if necessary for advanced SSR scenarios.
-  </Column>
-</Row>
+  <Row>
+    <Column>
+      <Code>enableVendorPrefixes (v6+)</Code>
+    </Column>
+    <Column>Opts the given subtree into adding legacy CSS properties for rendered components.</Column>
+  </Row>
 
-<Row>
-  <Column>
-    <Code>stylisPlugins (v5+)</Code>
-  </Column>
-  <Column>
-    An array of plugins to be run by stylis during compilation. Check out{' '}
-    <a href="https://www.npmjs.com/search?q=keywords%3Astylis" target="_blank">
-      what's available on npm
-    </a>
-    .
-  </Column>
-</Row>
+  <Row>
+    <Column>
+      <Code>sheet</Code>
+    </Column>
+    <Column>
+      <em>Thar be dragons ahead.</em> Create and provide your own StyleSheet if necessary for advanced SSR scenarios.
+    </Column>
+  </Row>
+
+  <Row>
+    <Column>
+      <Code>stylisPlugins (v5+)</Code>
+    </Column>
+    <Column>
+      An array of plugins to be run by stylis during compilation. Check out{' '}
+      <a href="https://www.npmjs.com/search?q=keywords%3Astylis" target="_blank">
+        what's available on npm
+      </a>
+      .
+    </Column>
+  </Row>
 
   <Row>
     <Column>
@@ -54,7 +61,7 @@ A helper component for modifying how your styles are processed. For a given subt
   </Row>
 </Table>
 
-For example if your app runs only in modern browsers, you may want to disable vendor prefixing for your styles:
+For example if your app is intended for legacy browsers, you may want to enable vendor prefixing for your styles:
 
 ```react
 // import styled, { StyleSheetManager } from 'styled-components'
@@ -65,8 +72,8 @@ const Box = styled.div`
 `
 
 render(
-  <StyleSheetManager disableVendorPrefixes>
-    <Box>If you inspect me, there are no vendor prefixes for the flexbox style.</Box>
+  <StyleSheetManager enableVendorPrefixes>
+    <Box>If you inspect me, there are vendor prefixes for the flexbox style.</Box>
   </StyleSheetManager>
 )
 ```
