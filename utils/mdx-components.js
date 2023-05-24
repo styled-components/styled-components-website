@@ -38,7 +38,7 @@ const Heading = ({ level, children }) => {
       {labels.length > 0 && (
         <LabelGroup>
           {labels.map((label, index) => (
-            <Label key={index} isVersion={label.trim().startsWith('v')}>
+            <Label key={index} $isVersion={label.trim().startsWith('v')}>
               {label.trim()}
             </Label>
           ))}

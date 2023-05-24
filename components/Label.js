@@ -12,7 +12,7 @@ export const LabelGroup = styled.div`
 
 const Label = styled.small`
   display: inline-block;
-  background: ${p => (p.isVersion ? 'royalblue' : blmGrey)};
+  background: ${p => (p.$isVersion ? 'royalblue' : blmGrey)};
   color: white;
   font-size: 0.75rem;
   font-family: ${headerFont};
