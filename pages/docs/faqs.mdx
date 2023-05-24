@@ -11,6 +11,7 @@ import HTMLAttributeWarnings from '../../sections/faqs/html-attribute-warnings.m
 import BrowserSupport from '../../sections/faqs/browser-support.mdx'
 import MigrationV4 from '../../sections/faqs/migration-v4.mdx'
 import MigrationV5 from '../../sections/faqs/migration-v5.mdx'
+import MigrationV6 from '../../sections/faqs/migration-v6.mdx'
 import CRA from '../../sections/faqs/create-react-app.mdx'
 import NPMLink from '../../sections/faqs/npm-link.mdx'
 import FlickeringText from '../../sections/faqs/flickering-text.mdx'
@@ -18,11 +19,12 @@ import DeclareComponentsInRenderMethod from '../../sections/faqs/declare-compone
 import MissingNativeImport from '../../sections/faqs/missing-native-import.mdx'
 
 export default ({ children }) => (
-<DocsLayout title="FAQs" description="Commonly asked questions about styled-components">
-{children}
-</DocsLayout>
+    <DocsLayout title="FAQs" description="Commonly asked questions about styled-components">
+        {children}
+    </DocsLayout>
 )
 
+<MigrationV6 />
 <MigrationV5 />
 <MigrationV4 />
 <Nesting />
