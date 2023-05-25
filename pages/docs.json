@@ -86,9 +86,6 @@
           "title": "Supported CSS"
         },
         {
-          "title": "Flow"
-        },
-        {
           "title": "TypeScript"
         },
         {
@@ -127,6 +124,9 @@
       "title": "FAQs",
       "pathname": "faqs",
       "sections": [
+        {
+          "title": "What do I need to do to migrate to v6?"
+        },
         {
           "title": "What do I need to do to migrate to v5?"
         },

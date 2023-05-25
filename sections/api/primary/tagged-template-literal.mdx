@@ -38,18 +38,18 @@ Check the section on [Theming](/docs/advanced#theming) for more information on t
 
 const padding = '3em'
 
-const Section = styled.section`
+const Section = styled.section<{ $background?: string; }>`
   color: white;
 
   /* Pass variables as inputs */
   padding: ${padding};
 
   /* Adjust the background from the properties */
-  background: ${props => props.background};
+  background: ${props => props.$background};
 `
 
 render(
-  <Section background="royalblue">
+  <Section $background="royalblue">
     ✨ Magic
   </Section>
 )

@@ -16,31 +16,31 @@ A helper function to generate a special `StyledComponent` that handles global st
 
 Returns a `StyledComponent` that does not accept children. Place it at the top of your React tree and the global styles will be injected when the component is "rendered".
 
-```jsx
+```tsx
 import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean; }>`
   body {
-    color: ${props => (props.whiteColor ? 'white' : 'black')};
+    color: ${props => (props.$whiteColor ? 'white' : 'black')};
   }
 `
 
 // later in your app
 
 <React.Fragment>
-  <GlobalStyle whiteColor />
+  <GlobalStyle $whiteColor />
   <Navigation /> {/* example of other top-level stuff */}
 </React.Fragment>
 ```
 
 Since the `GlobalStyle` component is a `StyledComponent`, that means it also has access to theming from the [`<ThemeProvider>` component](/docs/api#themeprovider) if provided.
 
-```jsx
+```tsx
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean; }>`
   body {
-    color: ${props => (props.whiteColor ? 'white' : 'black')};
+    color: ${props => (props.$whiteColor ? 'white' : 'black')};
     font-family: ${props => props.theme.fontFamily};
   }
 `
@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
 <ThemeProvider theme={{ fontFamily: 'Helvetica Neue' }}>
   <React.Fragment>
     <Navigation /> {/* example of other top-level stuff */}
-    <GlobalStyle whiteColor />
+    <GlobalStyle $whiteColor />
   </React.Fragment>
 </ThemeProvider>
 ```

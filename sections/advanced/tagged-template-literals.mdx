@@ -5,7 +5,7 @@ which is how we're able to create styled components.
 
 If you pass no interpolations, the first argument your function receives is an array with a string in it.
 
-```jsx
+```tsx
 // These are equivalent:
 fn`some string here`;
 fn(['some string here']);
@@ -14,7 +14,7 @@ fn(['some string here']);
 Once you pass interpolations, the array contains the passed string, split at the positions of the interpolations.
 The rest of the arguments will be the interpolations, in order.
 
-```jsx
+```tsx
 const aVar = 'good';
 
 // These are equivalent:
@@ -30,10 +30,10 @@ Speaking of which, during flattening, styled-components ignores interpolations t
 [short-circuit evaluation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#Short-circuit_evaluation)
 to conditionally add CSS rules.
 
-```jsx
-const Title = styled.h1`
-  /* Text centering won't break if props.upsidedown is falsy */
-  ${props => props.upsidedown && 'transform: rotate(180deg);'}
+```tsx
+const Title = styled.h1<{ $upsideDown?: boolean; }>`
+  /* Text centering won't break if props.$upsideDown is falsy */
+  ${props => props.$upsideDown && 'transform: rotate(180deg);'}
   text-align: center;
 `;
 ```

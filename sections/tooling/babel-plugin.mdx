@@ -14,7 +14,7 @@ Then add it to your babel configuration like so:
 
 > ⚠️ The plugin call order in your `.babelrc` file matters. If you're using the env property in your babel configuration, then putting this plugin into the plugins array won't suffice. Instead it needs to be put into each env's plugins array to maintain it being executed first. See [this](https://github.com/styled-components/babel-plugin-styled-components/issues/78) for more information.
 
-```js
+```tsx
 {
   "plugins": ["babel-plugin-styled-components"]
 }
@@ -114,7 +114,7 @@ Two types of minifications are performed by this plugin: one removes all whitesp
 
 If desired, you can disable this behavior via babel configuration:
 
-```js
+```tsx
 {
   "plugins": [
     ["babel-plugin-styled-components", {
@@ -129,7 +129,7 @@ If desired, you can disable this behavior via babel configuration:
 
 Due to how styled components are transpiled and constructed, by default minifiers cannot properly perform dead code elimination on them because they are assumed to have side effects. However, there is a feature that can be enabled to aid this process called "pure annotation".
 
-```js
+```tsx
 {
   "plugins": [
     ["babel-plugin-styled-components", {
@@ -150,7 +150,7 @@ With Babel, you're likely transpiling ES2015+ JavaScript to ES5-compliant code f
 
 Here's an example of the transpiled code processed with `babel-preset-latest`:
 
-```js
+```tsx
 var _templateObject = _taggedTemplateLiteral(['width: 100%;'], ['width: 100%;'])
 function _taggedTemplateLiteral(strings, raw) {
   return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }))
@@ -162,13 +162,13 @@ var Simple = _styledComponents2.default.div(_templateObject)
 
 Here's the previous example with the styled-components babel plugin on and the `{ transpileTemplateLiterals: true }` option:
 
-```js
+```tsx
 var Simple = _styledComponents2.default.div(['width: 100%;'])
 ```
 
 The plugin is also smart enough to not modify tagged template literals belonging to other libraries and use cases:
 
-````js
+````tsx
 // Following will be converted:
 styled.div``
 keyframe``
@@ -206,7 +206,7 @@ The namespace will ensure that your class names will be unique; this setting is 
 
 If desired, you can enable this behavior via babel configuration:
 
-```js
+```tsx
 {
   "plugins": [
     ["babel-plugin-styled-components", {
@@ -218,7 +218,7 @@ If desired, you can enable this behavior via babel configuration:
 
 Here's an example of the transpiled code processed with `namespace` enabled:
 
-```js
+```tsx
 _styledComponents2.default.div.withConfig({
   displayName: 'code__before',
   componentId: 'my-app__sc-3rfj0a-1',

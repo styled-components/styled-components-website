@@ -4,7 +4,7 @@
 
 If your scaffold is set up with [`babel-plugin-macros`](https://github.com/kentcdodds/babel-plugin-macros), then simply use the new `styled-components/macro` import instead of `styled-components`:
 
-```js
+```tsx
 import styled, { createGlobalStyle } from 'styled-components/macro'
 
 const Thing = styled.div`
@@ -36,7 +36,7 @@ importing file:
 
 You can then specify the same options as [our babel plugin](/docs/tooling#babel-plugin) in `styledComponents` entry:
 
-```js
+```tsx
 // babel-plugin-macros.config.js
 module.exports = {
   // ...

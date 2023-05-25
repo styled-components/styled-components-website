@@ -7,10 +7,10 @@ DOM node that is mounted, as with React elements.
 
 ```react
 // Create an Input component that'll render an <input> tag with some styles
-const Input = styled.input`
+const Input = styled.input<{ $inputColor?: string; }>`
   padding: 0.5em;
   margin: 0.5em;
-  color: ${props => props.inputColor || "#BF4F74"};
+  color: ${props => props.$inputColor || "#BF4F74"};
   background: papayawhip;
   border: none;
   border-radius: 3px;
@@ -20,7 +20,7 @@ const Input = styled.input`
 render(
   <div>
     <Input defaultValue="@probablyup" type="text" />
-    <Input defaultValue="@geelen" type="text" inputColor="rebeccapurple" />
+    <Input defaultValue="@geelen" type="text" $inputColor="rebeccapurple" />
   </div>
 );
 ```

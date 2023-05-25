@@ -18,7 +18,7 @@ Returns a Keyframes model, to be used in your animation declarations. You can us
 
 > In styled-components v3 and below, the `keyframes` helper directly returned the animation name instead of an object with the `getName` method.
 
-```jsx
+```tsx
 import styled, { keyframes } from 'styled-components'
 
 const fadeIn = keyframes`
@@ -37,8 +37,12 @@ const FadeInButton = styled.button`
 
 If you are composing your style rule as a partial, make sure to use the `css` helper.
 
-```jsx
+```tsx
 import styled, { css, keyframes } from 'styled-components'
+
+interface AnimationProps {
+  $animationLength: number;
+}
 
 const pulse = keyframes`
   0% {
@@ -50,11 +54,11 @@ const pulse = keyframes`
 `
 
 const animation = props =>
-  css`
-    ${pulse} ${props.animationLength} infinite alternate;
+  css<AnimationProps>`
+    ${pulse} ${props.$animationLength} infinite alternate;
   `
 
-const PulseButton = styled.button`
+const PulseButton = styled.button<AnimationProps>`
   animation: ${animation};
 `
 ```

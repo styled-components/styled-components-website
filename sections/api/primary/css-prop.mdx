@@ -4,7 +4,7 @@ Sometimes you don't want to create an extra component just to apply a bit of sty
 
 > To enable support for the `css` prop you have to use the [Babel plugin](/docs/tooling#babel-plugin).
 
-```jsx
+```tsx
 <div
   css={`
     background: papayawhip;
@@ -40,7 +40,7 @@ Note that you don't even have to add the import, the Babel plugin does that auto
 
 You can use the [Babel macro](/docs/tooling#babel-macro) to make this work in `create-react-app`. Unfortunately, Babel macros only run when imported so **the import can not be added automatically.** The above code works perfectly if you add the import to the macro manually:
 
-```jsx
+```tsx
 import styled from 'styled-components/macro'
 
 <div

@@ -59,7 +59,7 @@ Let's say you want to create a simple and reusable `<Button />` component that y
 
 First, let's import styled-components and create a `styled.button`:
 
-```jsx
+```tsx
 import styled from 'styled-components'
 
 const Button = styled.button``
@@ -78,7 +78,7 @@ If you render our lovely component now (just like any other component: `<Button 
 It renders a button! That's not a very nice button though 😕 we can do better than this,
 let's give it a bit of styling and tickle out the hidden beauty within!
 
-```jsx
+```tsx
 const Button = styled.button`
   background: transparent;
   border-radius: 3px;
@@ -97,10 +97,10 @@ As you can see, styled-components lets you write actual CSS in your JavaScript. 
 
 The last step is that we need to define what a primary button looks like. To do that we also import `{ css }` from `styled-components` and interpolate a function into our template literal, which gets passed the props of our component:
 
-```jsx
+```tsx
 import styled, { css } from 'styled-components'
 
-const Button = styled.button`
+const Button = styled.button<{ $primary?: boolean; }>`
   background: transparent;
   border-radius: 3px;
   border: 2px solid #BF4F74;
@@ -122,7 +122,7 @@ Here we're saying that when the `$primary` property is set we want to add some m
 That's all, we're done! Take a look at our finished component:
 
 ```react
-const Button = styled.button`
+const Button = styled.button<{ $primary?: boolean; }>`
   background: transparent;
   border-radius: 3px;
   border: 2px solid #BF4F74;

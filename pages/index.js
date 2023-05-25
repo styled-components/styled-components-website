@@ -30,7 +30,7 @@ const SupportingTagline = styled.h2`
 `;
 
 const headerCode = `
-const Button = styled.a\`
+const Button = styled.a<{ $primary?: boolean; }>\`
   /* This renders the buttons above... Edit me! */
   display: inline-block;
   border-radius: 3px;
