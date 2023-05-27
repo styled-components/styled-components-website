@@ -1,34 +1,37 @@
-import React, { PureComponent, createRef } from 'react';
-import styled, { css } from 'styled-components';
 import { Close } from '@styled-icons/material';
-import rem from '../../utils/rem';
+import { PureComponent, createRef } from 'react';
+import styled, { css } from 'styled-components';
 import { blmGrey, paleGrey } from '../../utils/colors';
-import { navbarHeight } from '../../utils/sizes';
 import { headerFont } from '../../utils/fonts';
 import { mobile } from '../../utils/media';
+import rem from '../../utils/rem';
+import { navbarHeight } from '../../utils/sizes';
 import Link from '../Link';
-import NavLinks from './NavLinks';
-import Social from './Social';
 import Logo from './Logo';
 import MobileNavbar from './MobileNavbar';
+import NavLinks from './NavLinks';
 import SearchWithAlgolia from './SearchWithAlgolia';
+import Social from './Social';
 
-const Wrapper = styled.nav`
-  position: fixed;
-  left: 0;
+const Wrapper = styled.nav<{ $transparent?: boolean }>`
+  align-items: center;
+  background-color: rgba(12, 13, 15, 0.7);
+  backdrop-filter: blur(5px);
   box-sizing: border-box;
-  z-index: 3;
-
-  width: 100%;
-  height: ${rem(navbarHeight)};
-
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
   font-family: ${headerFont};
   font-size: ${rem(15)};
   font-weight: 500;
-  background: ${props => (props.$transparent ? 'transparent' : blmGrey)};
-  transition: background 300ms ease-out;
-  color: white;
+  justify-content: center;
+  height: ${rem(navbarHeight)};
+  left: 0;
   padding: 0;
+  position: fixed;
+  transition: background 300ms ease-out;
+  width: 100%;
+  z-index: 3;
 `;
 
 const StartWrapper = styled.div`
@@ -51,6 +54,7 @@ const NormalNavbar = styled.div`
   align-items: center;
   padding: 0 ${rem(20)};
   justify-content: space-between;
+
   ${StartWrapper}, ${EndWrapper} ${StyledSocial} {
     ${mobile(css`
       display: none;
@@ -77,11 +81,11 @@ const AlgoliaModal = styled.div`
 
 const baseZ = 1;
 
-const AlgoliaModalHeader = styled.div`
+const AlgoliaModalHeader = styled.div<{ $isOpen?: boolean }>`
   display: none;
   color: currentColor;
 
-  ${mobile(css`
+  ${mobile(css<{ $isOpen?: boolean }>`
     display: ${props => (props.$isOpen ? 'block' : 'none')};
 
     button {
@@ -96,10 +100,10 @@ const AlgoliaModalHeader = styled.div`
   `)};
 `;
 
-const AlgoliaModalOverlay = styled.div`
+const AlgoliaModalOverlay = styled.div<{ $isOpen?: boolean }>`
   margin-right: ${rem(10)};
 
-  ${mobile(css`
+  ${mobile(css<{ $isOpen?: boolean }>`
     position: fixed;
     top: 0;
     bottom: 0;
@@ -121,17 +125,20 @@ const AlgoliaModalOverlay = styled.div`
   `)};
 `;
 
-class ModalContainer extends PureComponent {
-  modalElement = createRef();
-  onModalOverlayClick = e => {
-    if (!this.modalElement.current.contains(e.target)) {
+class ModalContainer extends PureComponent<{ isOpen?: boolean; requestModalClose: () => void }> {
+  modalElement = createRef<HTMLDivElement>();
+
+  onModalOverlayClick = (e: React.MouseEvent) => {
+    if (!this.modalElement.current?.contains(e.target as Node)) {
       this.props.requestModalClose();
     }
   };
-  onCloseButtonClick = e => {
+
+  onCloseButtonClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     this.props.requestModalClose();
   };
+
   render() {
     return (
       <>
@@ -159,42 +166,49 @@ const LogoLink = styled(Link).attrs((/* props */) => ({
   margin-right: ${rem(35)};
 `;
 
-class Navbar extends PureComponent {
-  state = {
-    isOpen: false,
-  };
-  openModal = () => this.setState(() => ({ isOpen: true }));
-  closeModal = () => this.setState(({ isOpen }) => (isOpen ? { isOpen: false } : null));
-  render() {
-    const { onSideToggle, onMobileNavToggle, isSideFolded, isMobileNavFolded, showSideNav, transparent } = this.props;
+export interface NavbarProps {
+  onSideToggle?: () => void;
+  onMobileNavToggle?: () => void;
+  isSideFolded?: boolean;
+  isMobileNavFolded?: boolean;
+  showSideNav?: boolean;
+}
 
-    return (
-      <Wrapper $transparent={transparent}>
-        <NormalNavbar>
-          <StartWrapper>
-            <LogoLink aria-label="Styled-components logo">
-              <Logo />
-            </LogoLink>
-            <NavLinks />
-          </StartWrapper>
-          <EndWrapper>
-            <ModalContainer isOpen={this.state.isOpen} requestModalClose={this.closeModal}>
-              <SearchWithAlgolia requestModalClose={this.closeModal} />
-            </ModalContainer>
-            <StyledSocial />
-          </EndWrapper>
-        </NormalNavbar>
-        <MobileNavbar
-          isSideFolded={isSideFolded}
-          onSearchButtonClick={this.openModal}
-          isMobileNavFolded={isMobileNavFolded}
-          onSideToggle={onSideToggle}
-          onMobileNavToggle={onMobileNavToggle}
-          showSideNav={showSideNav}
-        />
-      </Wrapper>
-    );
-  }
+function Navbar({ onSideToggle, onMobileNavToggle, isSideFolded, isMobileNavFolded, showSideNav }: NavbarProps) {
+  return (
+    <Wrapper>
+      <MobileNavbar
+        isSideFolded={isSideFolded}
+        isMobileNavFolded={isMobileNavFolded}
+        onSideToggle={onSideToggle}
+        onMobileNavToggle={onMobileNavToggle}
+        showSideNav={showSideNav}
+      />
+
+      <NormalNavbar>
+        <StartWrapper>
+          <LogoLink aria-label="Styled-components logo">
+            <Logo />
+          </LogoLink>
+          <NavLinks />
+        </StartWrapper>
+      </NormalNavbar>
+
+      <EndWrapper
+        css={css`
+          margin-left: auto;
+          margin-right: 16px;
+
+          ${mobile(css`
+            margin-right: 48px;
+          `)}
+        `}
+      >
+        <SearchWithAlgolia />
+        <StyledSocial style={{ marginLeft: 16 }} />
+      </EndWrapper>
+    </Wrapper>
+  );
 }
 
 export default Navbar;

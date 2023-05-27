@@ -1,10 +1,9 @@
-import React, { useCallback, useState, useEffect } from 'react';
-import styled from 'styled-components';
 import { useRouter, withRouter } from 'next/router';
-
+import React, { useCallback, useEffect, useState } from 'react';
+import styled from 'styled-components';
+import json from '../../pages/docs.json';
 import rem from '../../utils/rem';
 import titleToDash from '../../utils/titleToDash';
-import json from '../../pages/docs.json';
 import Link, { StyledLink } from '../Link';
 
 const { pages } = json;
@@ -38,7 +37,12 @@ const SubSection = styled.h5`
   font-weight: normal;
 `;
 
-function Folder({ children, isOpenDefault = false, ...props }) {
+export interface FolderProps {
+  children?: (options: { rootProps: FolderProps; toggleSubSections: () => void; isOpen?: boolean }) => JSX.Element;
+  isOpenDefault?: boolean;
+}
+
+function Folder({ children, isOpenDefault = false, ...props }: FolderProps) {
   const [isOpen, setIsOpen] = useState(isOpenDefault);
 
   const toggleSubSections = useCallback(() => {
@@ -60,41 +64,57 @@ function Folder({ children, isOpenDefault = false, ...props }) {
     : null;
 }
 
-export const DocsSidebarMenu = withRouter(({ onRouteChange, router }) => (
-  <MenuInner>
-    {pages.map(({ title, pathname, sections }) => (
-      <Folder key={title} isOpenDefault={router && router.pathname === `/docs/${pathname}`}>
-        {({ rootProps, toggleSubSections, isOpen }) => (
-          <Section {...rootProps} onClick={onRouteChange}>
-            <SectionTitle onClick={toggleSubSections}>
-              <Link href={`/docs/${pathname}`}>{title}</Link>
-            </SectionTitle>
-
-            {isOpen &&
-              sections.map(({ title }) => (
-                <SubSection key={title}>
-                  <StyledLink href={`/docs/${pathname}#${titleToDash(title)}`}>{title}</StyledLink>
-                </SubSection>
-              ))}
-          </Section>
-        )}
-      </Folder>
-    ))}
-  </MenuInner>
-));
-
-function getSectionPath(parentPathname, title) {
-  return `${parentPathname || ''}#${titleToDash(title)}`;
+export interface DocsSidebarMenuProps {
+  onRouteChange?: () => void;
 }
 
-function isFolderOpen(currentHref, { pathname, title, sections }) {
+export const DocsSidebarMenu = ({ onRouteChange }: DocsSidebarMenuProps) => {
+  const router = useRouter();
+
   return (
-    sections.reduce((sum, v) => sum || currentHref.endsWith(getSectionPath(pathname, v.title)), false) ||
+    <MenuInner>
+      {pages.map(({ title, pathname, sections }) => (
+        <Folder key={title} isOpenDefault={router && router.pathname === `/docs/${pathname}`}>
+          {({ rootProps, toggleSubSections, isOpen }) => (
+            <Section {...rootProps} onClick={onRouteChange}>
+              <SectionTitle onClick={toggleSubSections}>
+                <Link href={`/docs/${pathname}`}>{title}</Link>
+              </SectionTitle>
+
+              {isOpen &&
+                sections.map(({ title }) => (
+                  <SubSection key={title}>
+                    <StyledLink href={`/docs/${pathname}#${titleToDash(title)}`}>{title}</StyledLink>
+                  </SubSection>
+                ))}
+            </Section>
+          )}
+        </Folder>
+      ))}
+    </MenuInner>
+  );
+};
+
+function getSectionPath(parentPathname: string, title: string) {
+  return `${parentPathname}#${titleToDash(title)}`;
+}
+
+function isFolderOpen(
+  currentHref: string,
+  { pathname, title, sections }: { pathname: string; title: string; sections: { title: string }[] }
+) {
+  return (
+    sections.reduce((sum, v) => sum || currentHref.endsWith(getSectionPath(pathname, v.title) || ''), false) ||
     currentHref.endsWith(pathname || '#' + titleToDash(title))
   );
 }
 
-export const SimpleSidebarMenu = ({ onRouteChange, pages = [] }) => {
+export interface SimpleSidebarMenuProps {
+  onRouteChange?: () => void;
+  pages?: { title: string; pathname: string; sections: { title: string }[]; href: string }[];
+}
+
+export const SimpleSidebarMenu = ({ onRouteChange, pages = [] }: SimpleSidebarMenuProps) => {
   const router = useRouter();
 
   return (

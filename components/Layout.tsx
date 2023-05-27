@@ -13,7 +13,7 @@ export const Container = styled.div`
   `)};
 `;
 
-export const Content = styled.div<{ $hero: boolean; $moveRight: boolean }>`
+export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean }>`
   max-width: 100%;
   margin: 0;
   padding: ${rem(90)} ${rem(60)} 0 ${rem(60)};

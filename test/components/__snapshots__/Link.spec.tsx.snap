@@ -11,6 +11,10 @@ exports[`InlineLink renders correctly 1`] = `
   color: #ff5555;
 }
 
+.c0[data-white] {
+  color: white!important;
+}
+
 <a
   className="c0"
   href="/"
@@ -40,7 +44,6 @@ exports[`Link renders correctly 1`] = `
 
 <a
   className="c0"
-  href="/"
 />
 `;
 

@@ -1,9 +1,20 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import { DocsSidebarMenu, SimpleSidebarMenu } from './SidebarMenus';
+import { DocsSidebarMenu, SimpleSidebarMenu, SimpleSidebarMenuProps } from './SidebarMenus';
 
-const Nav = props => {
+interface NavProps {
+  isSideFolded?: boolean;
+  isMobileNavFolded?: boolean;
+  onSideToggle?: () => void;
+  onMobileNavToggle?: () => void;
+  onRouteChange?: () => void;
+  showSideNav?: boolean;
+  useDocsSidebarMenu?: boolean;
+  pages?: SimpleSidebarMenuProps['pages'];
+}
+
+const Nav = (props: NavProps) => {
   const {
     isSideFolded,
     isMobileNavFolded,
@@ -12,7 +23,6 @@ const Nav = props => {
     onRouteChange,
     showSideNav,
     useDocsSidebarMenu,
-    transparent,
     pages,
   } = props;
 
@@ -20,7 +30,6 @@ const Nav = props => {
     <div>
       <Navbar
         showSideNav={showSideNav}
-        transparent={transparent}
         isSideFolded={isSideFolded}
         isMobileNavFolded={isMobileNavFolded}
         onSideToggle={onSideToggle}

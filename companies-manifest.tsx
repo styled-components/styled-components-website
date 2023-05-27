@@ -1242,6 +1242,8 @@ const companies = [
   },
 ];
 
+export type ICompany = (typeof companies)[number];
+
 export default companies;
 
 // sorting logic: the more popular a website, the higher it gets listed

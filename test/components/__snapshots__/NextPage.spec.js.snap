@@ -39,7 +39,6 @@ exports[`NextPage renders correctly 1`] = `
 
 <a
   className="c0"
-  href=""
 >
   <div>
     <h3

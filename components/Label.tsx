@@ -10,7 +10,7 @@ export const LabelGroup = styled.div`
   bottom: ${rem(3)};
 `;
 
-const Label = styled.small`
+const Label = styled.small<{ $isVersion?: boolean }>`
   display: inline-block;
   background: ${p => (p.$isVersion ? 'royalblue' : blmGrey)};
   color: white;

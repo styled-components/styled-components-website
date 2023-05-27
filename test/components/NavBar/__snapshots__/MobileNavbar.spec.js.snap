@@ -1,88 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MobileNavbar renders correctly 1`] = `
-.c3 svg {
-  display: inline-block;
-}
-
-.c3 svg path {
-  fill: currentColor;
-}
-
-.c13 {
-  flex: 0 0 auto;
-  width: 0.2777777777777778rem;
-  height: 0.2777777777777778rem;
-  margin: 0 0.8333333333333334rem;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.35;
-}
-
-.c11 {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  margin-right: 1.6666666666666667rem;
-}
-
-.c12 {
-  flex: 0 0 auto;
-  display: inline-block;
-  line-height: 2.7777777777777777rem;
-  transition: opacity 0.2s,transform 0.2s;
-  cursor: pointer;
-  letter-spacing: 0.022222222222222223rem;
-  color: currentColor;
-}
-
-.c12:hover,
-.c12:focus {
-  opacity: 0.8;
-}
-
-.c12:active {
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
-.c15 {
-  display: flex;
-  align-items: center;
-  flex: 1 1 auto;
-}
-
-.c16 {
-  display: flex;
-  margin-right: 1.1111111111111112rem;
-  line-height: 2.7777777777777777rem;
-  transition: opacity 0.2s,transform 0.2s;
-  cursor: pointer;
-}
-
-.c16:last-child {
-  margin-right: 0;
-}
-
-.c16:hover,
-.c16:focus {
-  opacity: 0.8;
-}
-
-.c16:active {
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
-.c16 svg path {
-  fill: currentColor;
-}
-
-.c17.c17 {
-  width: NaNrem;
-  height: 1rem;
-}
-
 .c5 {
   display: inline-block;
   vertical-align: middle;
@@ -101,7 +19,7 @@ exports[`MobileNavbar renders correctly 1`] = `
   background: rgba(0, 0, 0, 0.07);
   cursor: pointer;
   flex: 0 0 auto;
-  height: 2.7777777777777777rem;
+  height: 3.3333333333333335rem;
   padding: 0 0.5555555555555556rem;
   text-align: center;
   vertical-align: middle;
@@ -111,33 +29,98 @@ exports[`MobileNavbar renders correctly 1`] = `
   padding-left: 0;
 }
 
-.c6 {
-  background: none;
-  outline: none;
-  border: none;
-  background: none;
-  cursor: pointer;
+.c3 svg {
+  display: inline-block;
+}
+
+.c3 svg path {
+  fill: currentColor;
+}
+
+.c11 {
   flex: 0 0 auto;
-  height: 2.7777777777777777rem;
-  padding: 0 0.5555555555555556rem;
-  text-align: center;
-  vertical-align: middle;
+  width: 0.2777777777777778rem;
+  height: 0.2777777777777778rem;
+  margin: 0 0.8333333333333334rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
 }
 
-.c1+.c1 {
-  padding-left: 0;
+.c9 {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-right: 1.6666666666666667rem;
+}
+
+.c10 {
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: 3.3333333333333335rem;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.022222222222222223rem;
+  color: currentColor;
+}
+
+.c10:hover,
+.c10:focus {
+  opacity: 0.8;
+}
+
+.c10:active {
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c13 {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.c14 {
+  display: flex;
+  margin-right: 1.1111111111111112rem;
+  line-height: 3.3333333333333335rem;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+}
+
+.c14:last-child {
+  margin-right: 0;
+}
+
+.c14:hover,
+.c14:focus {
+  opacity: 0.8;
+}
+
+.c14:active {
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c14 svg path {
+  fill: currentColor;
+}
+
+.c15.c15 {
+  width: NaNrem;
+  height: 1rem;
 }
 
 .c0 {
   display: none;
 }
 
-.c10 {
+.c8 {
   position: absolute;
-  top: 2.7777777777777777rem;
+  top: 3.3333333333333335rem;
   left: 0;
   right: 0;
-  height: 2.7777777777777777rem;
+  height: 3.3333333333333335rem;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -157,32 +140,28 @@ exports[`MobileNavbar renders correctly 1`] = `
   vertical-align: center;
 }
 
-.c8 {
+.c6 {
   transition: transform 0.2s;
   transform-origin: center center;
   transform: rotate(180deg);
 }
 
-.c14 {
+.c12 {
   padding-right: 1.1111111111111112rem;
 }
 
 .c7.c7 {
-  width: 1.5555555555555556rem;
-  height: 1.5555555555555556rem;
-}
-
-.c9.c9 {
   width: 2rem;
   height: 2rem;
 }
 
 @media (max-width: 62.5em) {
   .c0 {
-    display: flex;
     align-items: center;
+    display: flex;
+    flex-grow: 1;
+    height: 3.3333333333333335rem;
     justify-content: space-between;
-    height: 2.7777777777777777rem;
   }
 }
 
@@ -218,98 +197,84 @@ exports[`MobileNavbar renders correctly 1`] = `
   <a
     aria-label="styled components"
     className="c4"
-    href="/"
   >
     <div
       className="c5"
     />
   </a>
-  <div>
-    <button
-      className="c1 c6"
-    >
-      <svg
-        className="c7"
-        size={28}
-      />
-    </button>
-    <button
-      className="c1 c2"
+  <button
+    className="c1 c2"
+    style={
+      {
+        "position": "absolute",
+        "right": 0,
+      }
+    }
+  >
+    <div
+      className="c6"
     >
       <div
-        className="c8"
-      >
-        <div
-          className="c9"
-          size={36}
-        />
-      </div>
-    </button>
-  </div>
+        className="c7"
+      />
+    </div>
+  </button>
   <div
-    className="c10"
+    className="c8"
   >
     <nav
-      className="c11"
+      className="c9"
     >
       <a
-        className="c12"
-        href="/docs"
+        className="c10"
       >
         Documentation
       </a>
       <span
-        className="c13"
+        className="c11"
       />
       <a
-        className="c12"
-        href="/showcase"
+        className="c10"
       >
         Showcase
       </a>
       <span
-        className="c13"
+        className="c11"
       />
       <a
-        className="c12"
-        href="/ecosystem"
+        className="c10"
       >
         Ecosystem
       </a>
       <span
-        className="c13"
+        className="c11"
       />
       <a
-        className="c12"
-        href="/releases"
+        className="c10"
       >
         Releases
       </a>
     </nav>
     <div
-      className="c14"
+      className="c12"
     >
       <nav
-        className="c15"
+        className="c13"
       >
         <a
           aria-label="Github"
-          className="c16"
-          href="https://github.com/styled-components"
+          className="c14"
         >
           <svg
-            className="c17"
-            height="18"
+            className="c15"
           />
         </a>
         <a
           aria-label="Medium"
-          className="c16"
-          href="https://medium.com/styled-components"
+          className="c14"
         >
           <svg
-            className="c17"
-            height="18"
+            className="c15"
           />
         </a>
       </nav>

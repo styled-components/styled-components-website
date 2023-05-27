@@ -14,7 +14,7 @@ export default withMDX({
     compiler: {
       styledComponents: true,
     },
-    pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+    pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
     poweredByHeader: false,
     webpack: function (config, { dev, isServer }) {
       if (dev) {

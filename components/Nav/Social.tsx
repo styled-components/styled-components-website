@@ -41,10 +41,10 @@ const SocialLink = styled(Link).attrs((/* props */) => ({
   }
 `;
 
-const StyledIcon = styled.div`
+const StyledIcon = styled.div<{ $height?: number; $width?: number }>`
   && {
-    width: ${p => rem(Number(p.width))};
-    height: ${p => rem(Number(p.height))};
+    width: ${p => rem(Number(p.$width))};
+    height: ${p => rem(Number(p.$height))};
   }
 `;
 
@@ -58,16 +58,16 @@ const StyledIcon = styled.div`
 //   </Svg>
 // )
 
-const Social = props => (
+const Social = (props: React.ComponentProps<typeof Wrapper>) => (
   <Wrapper {...props}>
     {/* <SocialLink href="https://twitter.com/someone">
       <Twitter />
     </SocialLink> */}
     <SocialLink href="https://github.com/styled-components" aria-label="Github">
-      <StyledIcon as={Github} height="18" />
+      <StyledIcon as={Github} $height={18} />
     </SocialLink>
     <SocialLink href="https://medium.com/styled-components" aria-label="Medium">
-      <StyledIcon as={MediumM} height="18" />
+      <StyledIcon as={MediumM} $height={18} />
     </SocialLink>
   </Wrapper>
 );

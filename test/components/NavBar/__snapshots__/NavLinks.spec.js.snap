@@ -21,7 +21,7 @@ exports[`NavLinks renders correctly 1`] = `
 .c1 {
   flex: 0 0 auto;
   display: inline-block;
-  line-height: 2.7777777777777777rem;
+  line-height: 3.3333333333333335rem;
   transition: opacity 0.2s,transform 0.2s;
   cursor: pointer;
   letter-spacing: 0.022222222222222223rem;
@@ -43,7 +43,6 @@ exports[`NavLinks renders correctly 1`] = `
 >
   <a
     className="c1"
-    href="/docs"
   >
     Documentation
   </a>
@@ -52,7 +51,6 @@ exports[`NavLinks renders correctly 1`] = `
   />
   <a
     className="c1"
-    href="/showcase"
   >
     Showcase
   </a>
@@ -61,7 +59,6 @@ exports[`NavLinks renders correctly 1`] = `
   />
   <a
     className="c1"
-    href="/ecosystem"
   >
     Ecosystem
   </a>
@@ -70,7 +67,6 @@ exports[`NavLinks renders correctly 1`] = `
   />
   <a
     className="c1"
-    href="/releases"
   >
     Releases
   </a>

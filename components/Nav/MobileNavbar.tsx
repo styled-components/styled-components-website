@@ -1,29 +1,29 @@
-import React from 'react';
+import { KeyboardArrowDown } from '@styled-icons/material';
 import styled, { css } from 'styled-components';
-import { Search, KeyboardArrowDown } from '@styled-icons/material';
-import rem from '../../utils/rem';
-import { navbarHeight } from '../../utils/sizes';
 import { paleGrey } from '../../utils/colors';
 import { mobile } from '../../utils/media';
-import { CloseIcon, FoldIcon } from './NavIcons';
+import rem from '../../utils/rem';
+import { navbarHeight } from '../../utils/sizes';
 import Link from '../Link';
-import NavLinks from './NavLinks';
-import Social from './Social';
 import Logo from './Logo';
 import NavButton from './NavButton';
+import { CloseIcon, FoldIcon } from './NavIcons';
+import NavLinks from './NavLinks';
+import Social from './Social';
 
 const Wrapper = styled.div`
   display: none;
 
   ${mobile(css`
-    display: flex;
     align-items: center;
-    justify-content: space-between;
+    display: flex;
+    flex-grow: 1;
     height: ${rem(navbarHeight)};
+    justify-content: space-between;
   `)};
 `;
 
-const SecondaryMenu = styled.div`
+const SecondaryMenu = styled.div<{ $isOpen?: boolean }>`
   position: absolute;
   top: ${rem(navbarHeight)};
   left: 0;
@@ -61,7 +61,7 @@ const LogoLink = styled(Link).attrs((/* props */) => ({
   vertical-align: center;
 `;
 
-const ArrowWrapper = styled.div`
+const ArrowWrapper = styled.div<{ $shouldRotate?: boolean }>`
   transition: transform 0.2s;
 
   ${p =>
@@ -76,16 +76,29 @@ const SecondaryMenuItem = styled.div`
   padding-right: ${rem(20)};
 `;
 
-const StyledIcon = styled.div`
+const StyledIcon = styled.div<{ $size?: number }>`
   && {
-    width: ${p => rem(p.size || 20)};
-    height: ${p => rem(p.size || 20)};
+    width: ${p => rem(p.$size || 20)};
+    height: ${p => rem(p.$size || 20)};
   }
 `;
 
-const MobileNavbar = props => {
-  const { isSideFolded, isMobileNavFolded, onSideToggle, onMobileNavToggle, showSideNav, onSearchButtonClick } = props;
+export interface MobileNavbarProps {
+  isMobileNavFolded?: boolean;
+  isSideFolded?: boolean;
+  onMobileNavToggle?: () => void;
+  onSideToggle?: () => void;
+  showSideNav?: boolean;
+}
 
+const MobileNavbar = ({
+  children,
+  isMobileNavFolded,
+  isSideFolded,
+  onMobileNavToggle,
+  onSideToggle,
+  showSideNav,
+}: React.PropsWithChildren<MobileNavbarProps>) => {
   return (
     <Wrapper>
       {showSideNav !== false && (
@@ -97,17 +110,14 @@ const MobileNavbar = props => {
       <LogoLink>
         <Logo $compact />
       </LogoLink>
-      <div>
-        <NavButton onClick={onSearchButtonClick}>
-          <StyledIcon as={Search} size={28} />
-        </NavButton>
 
-        <NavButton onClick={onMobileNavToggle} $active={!isMobileNavFolded}>
-          <ArrowWrapper $shouldRotate={!isMobileNavFolded}>
-            <StyledIcon as={KeyboardArrowDown} size={36} />
-          </ArrowWrapper>
-        </NavButton>
-      </div>
+      {children}
+
+      <NavButton onClick={onMobileNavToggle} $active={!isMobileNavFolded} style={{ position: 'absolute', right: 0 }}>
+        <ArrowWrapper $shouldRotate={!isMobileNavFolded}>
+          <StyledIcon as={KeyboardArrowDown} $size={36} />
+        </ArrowWrapper>
+      </NavButton>
 
       <SecondaryMenu $isOpen={!isMobileNavFolded}>
         <NavLinks />

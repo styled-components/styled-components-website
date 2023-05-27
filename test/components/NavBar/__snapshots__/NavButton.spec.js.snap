@@ -8,7 +8,7 @@ exports[`NavButton renders correctly 1`] = `
   background: none;
   cursor: pointer;
   flex: 0 0 auto;
-  height: 2.7777777777777777rem;
+  height: 3.3333333333333335rem;
   padding: 0 0.5555555555555556rem;
   text-align: center;
   vertical-align: middle;

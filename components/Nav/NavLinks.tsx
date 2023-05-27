@@ -1,10 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
-
 import rem from '../../utils/rem';
 import { navbarHeight } from '../../utils/sizes';
-import NavSeparator from './NavSeparator';
 import Link from '../Link';
+import NavSeparator from './NavSeparator';
 
 const Wrapper = styled.nav`
   display: flex;

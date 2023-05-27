@@ -48,7 +48,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
     >
       <a
         className="c3"
-        href="/docs/basics"
       >
         Basics
       </a>
@@ -63,7 +62,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
     >
       <a
         className="c3"
-        href="/docs/advanced"
       >
         Advanced
       </a>
@@ -78,7 +76,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
     >
       <a
         className="c3"
-        href="/docs/api"
       >
         API Reference
       </a>
@@ -93,7 +90,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
     >
       <a
         className="c3"
-        href="/docs/tooling"
       >
         Tooling
       </a>
@@ -108,7 +104,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
     >
       <a
         className="c3"
-        href="/docs/faqs"
       >
         FAQs
       </a>

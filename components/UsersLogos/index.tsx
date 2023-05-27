@@ -1,7 +1,8 @@
+import { ICompany } from 'companies-manifest';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const getSlide = (childIndex, reverse) => keyframes`
+const getSlide = (childIndex: number, reverse?: boolean) => keyframes`
   from {
     transform: translateX(${childIndex * 100}%);
   }
@@ -26,7 +27,7 @@ const UsersSliderContainer = styled.div`
   position: relative;
 `;
 
-const UsersSlider = styled.span`
+const UsersSlider = styled.span<{ $offset?: number; $reverse?: boolean }>`
   display: inline-block;
   animation: ${({ $offset, $reverse }) => getSlide($offset || 0, $reverse)} 150s linear infinite;
   white-space: nowrap;
@@ -61,7 +62,11 @@ const CompanyLogo = styled.span`
   }
 `;
 
-const SortedLogos = ({ users }) => (
+export interface ISortedLogos {
+  users: ICompany[];
+}
+
+const SortedLogos = ({ users }: ISortedLogos) => (
   <UsersWrapper>
     {/* TODO: remove this check after adding missing logos */}
     {users.map(
@@ -75,7 +80,7 @@ const SortedLogos = ({ users }) => (
   </UsersWrapper>
 );
 
-const UsersLogos = ({ users, reverse }) => {
+const UsersLogos = ({ users, reverse }: { reverse?: boolean; users: ISortedLogos['users'] }) => {
   return (
     <UsersSliderContainer>
       <UsersSlider $offset={-1} $reverse={reverse}>

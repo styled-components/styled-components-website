@@ -1,92 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navbar renders correctly 1`] = `
-.c7 {
-  flex: 0 0 auto;
-  width: 0.2777777777777778rem;
-  height: 0.2777777777777778rem;
-  margin: 0 0.8333333333333334rem;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.35;
-}
-
-.c5 {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  margin-right: 1.6666666666666667rem;
-}
-
 .c6 {
-  flex: 0 0 auto;
-  display: inline-block;
-  line-height: 2.7777777777777777rem;
-  transition: opacity 0.2s,transform 0.2s;
-  cursor: pointer;
-  letter-spacing: 0.022222222222222223rem;
-  color: currentColor;
-}
-
-.c6:hover,
-.c6:focus {
-  opacity: 0.8;
-}
-
-.c6:active {
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
-.c16 {
-  display: flex;
-  align-items: center;
-  flex: 1 1 auto;
-}
-
-.c17 {
-  display: flex;
-  margin-right: 1.1111111111111112rem;
-  line-height: 2.7777777777777777rem;
-  transition: opacity 0.2s,transform 0.2s;
-  cursor: pointer;
-}
-
-.c17:last-child {
-  margin-right: 0;
-}
-
-.c17:hover,
-.c17:focus {
-  opacity: 0.8;
-}
-
-.c17:active {
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
-.c17 svg path {
-  fill: currentColor;
-}
-
-.c18.c18 {
-  width: NaNrem;
-  height: 1rem;
-}
-
-.c4 {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
-  background-position: center;
-  background-size: contain;
-  background-image: url(/nav-logo.png);
-  width: 9.11111111111111rem;
-  height: 2.2222222222222223rem;
-}
-
-.c24 {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -97,58 +12,126 @@ exports[`Navbar renders correctly 1`] = `
   height: 1.6666666666666667rem;
 }
 
-.c22 svg {
+.c20 {
   display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: contain;
+  background-image: url(/nav-logo.png);
+  width: 9.11111111111111rem;
+  height: 2.2222222222222223rem;
 }
 
-.c22 svg path {
-  fill: currentColor;
-}
-
-.c21 {
+.c3 {
   background: none;
   outline: none;
   border: none;
   background: rgba(0, 0, 0, 0.07);
   cursor: pointer;
   flex: 0 0 auto;
-  height: 2.7777777777777777rem;
+  height: 3.3333333333333335rem;
   padding: 0 0.5555555555555556rem;
   text-align: center;
   vertical-align: middle;
 }
 
-.c20+.c20 {
+.c2+.c2 {
   padding-left: 0;
 }
 
-.c25 {
-  background: none;
-  outline: none;
-  border: none;
-  background: none;
-  cursor: pointer;
+.c4 svg {
+  display: inline-block;
+}
+
+.c4 svg path {
+  fill: currentColor;
+}
+
+.c12 {
   flex: 0 0 auto;
-  height: 2.7777777777777777rem;
-  padding: 0 0.5555555555555556rem;
-  text-align: center;
-  vertical-align: middle;
+  width: 0.2777777777777778rem;
+  height: 0.2777777777777778rem;
+  margin: 0 0.8333333333333334rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
 }
 
-.c20+.c20 {
-  padding-left: 0;
+.c10 {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-right: 1.6666666666666667rem;
 }
 
-.c19 {
+.c11 {
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: 3.3333333333333335rem;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.022222222222222223rem;
+  color: currentColor;
+}
+
+.c11:hover,
+.c11:focus {
+  opacity: 0.8;
+}
+
+.c11:active {
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c14 {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.c15 {
+  display: flex;
+  margin-right: 1.1111111111111112rem;
+  line-height: 3.3333333333333335rem;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+}
+
+.c15:last-child {
+  margin-right: 0;
+}
+
+.c15:hover,
+.c15:focus {
+  opacity: 0.8;
+}
+
+.c15:active {
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c15 svg path {
+  fill: currentColor;
+}
+
+.c16.c16 {
+  width: NaNrem;
+  height: 1rem;
+}
+
+.c1 {
   display: none;
 }
 
-.c29 {
+.c9 {
   position: absolute;
-  top: 2.7777777777777777rem;
+  top: 3.3333333333333335rem;
   left: 0;
   right: 0;
-  height: 2.7777777777777777rem;
+  height: 3.3333333333333335rem;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -163,242 +146,84 @@ exports[`Navbar renders correctly 1`] = `
   color: #868686;
 }
 
-.c23 {
+.c5 {
   display: inline-block;
   vertical-align: center;
 }
 
-.c27 {
+.c7 {
   transition: transform 0.2s;
   transform-origin: center center;
   transform: rotate(180deg);
 }
 
-.c30 {
+.c13 {
   padding-right: 1.1111111111111112rem;
 }
 
-.c26.c26 {
-  width: 1.5555555555555556rem;
-  height: 1.5555555555555556rem;
-}
-
-.c28.c28 {
+.c8.c8 {
   width: 2rem;
   height: 2rem;
 }
 
-.c13 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex: 0 0 auto;
-}
-
-.c15 {
-  background: none;
-  outline: none;
-  border: none;
-  appearance: none;
-  flex: 0 0 auto;
-  width: 7.222222222222222rem;
-  line-height: 1.6666666666666667rem;
-  font-size: 0.8333333333333334rem;
-  color: currentColor;
-}
-
-.c15 ::placeholder {
-  color: currentColor;
-  opacity: 0.5;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.c15 :focus ::placeholder {
-  opacity: 0.8;
-}
-
-.c14 {
-  background: none;
-  outline: none;
-  border: none;
-  flex: 0 0 auto;
-  background: none;
-  outline: none;
-  border: none;
-  flex: 0 0 auto;
-  margin-right: 0.2222222222222222rem;
-  cursor: pointer;
-  display: flex;
-}
-
-.c14:hover,
-.c14:focus {
-  opacity: 0.7;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
-}
-
-.c14:active {
-  background: rgba(0, 0, 0, 0.1);
-}
-
 .c0 {
-  position: fixed;
-  left: 0;
+  align-items: center;
+  background-color: rgba(12, 13, 15, 0.7);
+  backdrop-filter: blur(5px);
   box-sizing: border-box;
-  z-index: 3;
-  width: 100%;
-  height: 2.7777777777777777rem;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
   font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 0.8333333333333334rem;
   font-weight: 500;
-  background: rgb(33, 33, 33);
-  transition: background 300ms ease-out;
-  color: white;
+  justify-content: center;
+  height: 3.3333333333333335rem;
+  left: 0;
   padding: 0;
+  position: fixed;
+  transition: background 300ms ease-out;
+  width: 100%;
+  z-index: 3;
 }
 
-.c2 {
+.c18 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.c8 {
+.c21 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.c1 {
+.c17 {
   display: flex;
   align-items: center;
   padding: 0 1.1111111111111112rem;
   justify-content: space-between;
 }
 
-.c10 {
-  width: 1.4444444444444444rem;
-  height: 1.4444444444444444rem;
-  color: white;
-}
-
-.c9 {
-  display: none;
-  color: currentColor;
-}
-
-.c11 {
-  margin-right: 0.5555555555555556rem;
-}
-
-.c3 {
+.c19 {
   display: inline-block;
   vertical-align: center;
   margin-right: 1.9444444444444444rem;
 }
 
 @media (max-width: 62.5em) {
-  .c19 {
-    display: flex;
+  .c1 {
     align-items: center;
+    display: flex;
+    flex-grow: 1;
+    height: 3.3333333333333335rem;
     justify-content: space-between;
-    height: 2.7777777777777777rem;
-  }
-}
-
-@media (max-width: 62.5em) {
-  .c13 {
-    display: block;
-    padding: 0;
-  }
-
-  .c13 span.algolia-autocomplete {
-    display: block!important;
-  }
-
-  .c13 span.ds-dropdown-menu::before {
-    display: none;
-  }
-}
-
-@media (max-width: 62.5em) {
-  .c15 {
-    padding: 0.5555555555555556rem 2.6666666666666665rem;
-    display: block;
-    width: 100%;
-    background: rgb(33, 33, 33);
-    color: white;
-  }
-}
-
-@media (max-width: 62.5em) {
-  .c14 {
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5555555555555556rem;
-    height: 1.7777777777777777rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.7777777777777777rem;
-    z-index: 1;
-    background: none;
-    color: white;
   }
 }
 
 @media (max-width: 62.5em) {
 
-}
-
-@media (max-width: 62.5em) {
-  .c12 {
-    background: currentColor;
-    overflow: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-}
-
-@media (max-width: 62.5em) {
-  .c9 {
-    display: none;
-  }
-
-  .c9 button {
-    cursor: pointer;
-    padding: 0;
-    position: fixed;
-    right: 0.5555555555555556rem;
-    top: 0.6111111111111112rem;
-    border: none;
-    z-index: 2;
-  }
-}
-
-@media (max-width: 62.5em) {
-  .c11 {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    left: 0;
-    display: none;
-    background: #efefef;
-    overflow-y: auto;
-    margin: 0;
-  }
-
-  .c11 .algolia-autocomplete .ds-dropdown-menu {
-    position: static!important;
-    display: block;
-    max-width: 100%;
-    min-width: 0;
-  }
 }
 
 <nav
@@ -407,133 +232,11 @@ exports[`Navbar renders correctly 1`] = `
   <div
     className="c1"
   >
-    <div
-      className="c2"
-    >
-      <a
-        aria-label="Styled-components logo"
-        className="c3"
-        href="/"
-      >
-        <div
-          className="c4"
-        />
-      </a>
-      <nav
-        className="c5"
-      >
-        <a
-          className="c6"
-          href="/docs"
-        >
-          Documentation
-        </a>
-        <span
-          className="c7"
-        />
-        <a
-          className="c6"
-          href="/showcase"
-        >
-          Showcase
-        </a>
-        <span
-          className="c7"
-        />
-        <a
-          className="c6"
-          href="/ecosystem"
-        >
-          Ecosystem
-        </a>
-        <span
-          className="c7"
-        />
-        <a
-          className="c6"
-          href="/releases"
-        >
-          Releases
-        </a>
-      </nav>
-    </div>
-    <div
-      className="c8"
-    >
-      <div
-        className="c9"
-      >
-        <button
-          onClick={[Function]}
-        >
-          <svg
-            className="c10"
-          />
-        </button>
-      </div>
-      <div
-        className="c11"
-        onClick={[Function]}
-      >
-        <div
-          className="c12"
-        >
-          <div>
-            <form
-              className="c13"
-            >
-              <label
-                className="c14"
-                htmlFor="docs-search-input"
-              >
-                <svg
-                  className=""
-                />
-              </label>
-              <input
-                className="c15"
-                id="docs-search-input"
-                placeholder="Search docs ..."
-                type="search"
-              />
-            </form>
-          </div>
-        </div>
-      </div>
-      <nav
-        className="c16 "
-      >
-        <a
-          aria-label="Github"
-          className="c17"
-          href="https://github.com/styled-components"
-        >
-          <svg
-            className="c18"
-            height="18"
-          />
-        </a>
-        <a
-          aria-label="Medium"
-          className="c17"
-          href="https://medium.com/styled-components"
-        >
-          <svg
-            className="c18"
-            height="18"
-          />
-        </a>
-      </nav>
-    </div>
-  </div>
-  <div
-    className="c19"
-  >
     <button
-      className="c20 c21"
+      className="c2 c3"
     >
       <svg
-        className="c22"
+        className="c4"
         height="15"
         width="15"
         xmlns="http://www.w3.org/2000/svg"
@@ -557,105 +260,193 @@ exports[`Navbar renders correctly 1`] = `
     </button>
     <a
       aria-label="styled components"
-      className="c23"
-      href="/"
+      className="c5"
     >
       <div
-        className="c24"
+        className="c6"
       />
     </a>
-    <div>
-      <button
-        className="c20 c25"
-        onClick={[Function]}
-      >
-        <svg
-          className="c26"
-          size={28}
-        />
-      </button>
-      <button
-        className="c20 c21"
+    <button
+      className="c2 c3"
+      style={
+        {
+          "position": "absolute",
+          "right": 0,
+        }
+      }
+    >
+      <div
+        className="c7"
       >
         <div
-          className="c27"
-        >
-          <div
-            className="c28"
-            size={36}
-          />
-        </div>
-      </button>
-    </div>
+          className="c8"
+        />
+      </div>
+    </button>
     <div
-      className="c29"
+      className="c9"
     >
       <nav
-        className="c5"
+        className="c10"
       >
         <a
-          className="c6"
-          href="/docs"
+          className="c11"
         >
           Documentation
         </a>
         <span
-          className="c7"
+          className="c12"
         />
         <a
-          className="c6"
-          href="/showcase"
+          className="c11"
         >
           Showcase
         </a>
         <span
-          className="c7"
+          className="c12"
         />
         <a
-          className="c6"
-          href="/ecosystem"
+          className="c11"
         >
           Ecosystem
         </a>
         <span
-          className="c7"
+          className="c12"
         />
         <a
-          className="c6"
-          href="/releases"
+          className="c11"
         >
           Releases
         </a>
       </nav>
       <div
-        className="c30"
+        className="c13"
       >
         <nav
-          className="c16"
+          className="c14"
         >
           <a
             aria-label="Github"
-            className="c17"
-            href="https://github.com/styled-components"
+            className="c15"
           >
             <svg
-              className="c18"
-              height="18"
+              className="c16"
             />
           </a>
           <a
             aria-label="Medium"
-            className="c17"
-            href="https://medium.com/styled-components"
+            className="c15"
           >
             <svg
-              className="c18"
-              height="18"
+              className="c16"
             />
           </a>
         </nav>
       </div>
     </div>
+  </div>
+  <div
+    className="c17"
+  >
+    <div
+      className="c18"
+    >
+      <a
+        aria-label="Styled-components logo"
+        className="c19"
+      >
+        <div
+          className="c20"
+        />
+      </a>
+      <nav
+        className="c10"
+      >
+        <a
+          className="c11"
+        >
+          Documentation
+        </a>
+        <span
+          className="c12"
+        />
+        <a
+          className="c11"
+        >
+          Showcase
+        </a>
+        <span
+          className="c12"
+        />
+        <a
+          className="c11"
+        >
+          Ecosystem
+        </a>
+        <span
+          className="c12"
+        />
+        <a
+          className="c11"
+        >
+          Releases
+        </a>
+      </nav>
+    </div>
+  </div>
+  <div
+    className="c21"
+    css={
+      [
+        "
+          margin-left: auto;
+          margin-right: 16px;
+
+          ",
+        "
+  @media (max-width: ",
+        "62.5",
+        "em) {
+    ",
+        "
+            margin-right: 48px;
+          ",
+        ";
+  }
+",
+        "
+        ",
+      ]
+    }
+  >
+    <div
+      id="docs-search-input"
+    />
+    <nav
+      className="c14 "
+      style={
+        {
+          "marginLeft": 16,
+        }
+      }
+    >
+      <a
+        aria-label="Github"
+        className="c15"
+      >
+        <svg
+          className="c16"
+        />
+      </a>
+      <a
+        aria-label="Medium"
+        className="c15"
+      >
+        <svg
+          className="c16"
+        />
+      </a>
+    </nav>
   </div>
 </nav>
 `;

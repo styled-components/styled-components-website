@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-
+import { resetInput } from '../../utils/form';
 import rem from '../../utils/rem';
 import { navbarHeight } from '../../utils/sizes';
-import { resetInput } from '../../utils/form';
 
-const NavButton = styled.button`
+const NavButton = styled.button<{ $active?: boolean }>`
   ${resetInput};
   background: ${p => (p.$active ? 'rgba(0, 0, 0, 0.07)' : 'none')};
   cursor: pointer;
