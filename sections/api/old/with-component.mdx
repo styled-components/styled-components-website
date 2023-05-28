@@ -1,0 +1,21 @@
+import Code from 'components/Code'
+import Table, { Row, Column } from 'components/Table'
+
+
+### `.withComponent`
+
+> The `withComponent` API was replaced by [`"as"` prop](#as-polymorphic-prop) in styled-components v4, and fully-removed in v6.
+
+This is a method that creates a new `StyledComponent` with a different tag or component
+applied to it, but all the same rules of the one it's called on.
+
+<Table head={['Arguments', 'Description']}>
+  <Row>
+    <Column>
+      1. <Code>component</Code> / <Code>tagname</Code>
+    </Column>
+    <Column>Either a valid react component or a tagname like `'div'`.</Column>
+  </Row>
+</Table>
+
+Returns a new `StyledComponent` with the new tag / component being applied when it's used.

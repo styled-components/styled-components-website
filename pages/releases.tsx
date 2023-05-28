@@ -21,10 +21,11 @@ export default function Releases({ releases, sidebarPages }: ReleasesProps) {
       title="Releases"
       description="Styled Components Releases"
     >
-      <Markdown options={{ wrapper: 'p' }}>
-        Updating styled components is usually as simple as `npm install`. Only major versions have the potential to
-        introduce breaking changes (noted in the following release notes).
-      </Markdown>
+      <p>
+        Updating styled components is usually as simple as <code>npm update styled-components</code>. Only major
+        versions have the potential to introduce breaking changes (noted in the following release notes).
+      </p>
+
       {releases ? (
         releases.map(release => (
           <section key={release.id}>
@@ -32,7 +33,11 @@ export default function Releases({ releases, sidebarPages }: ReleasesProps) {
               {release.name}
             </ReleaseAnchor>
 
-            {release.body && <Markdown overrides={components}>{release.body}</Markdown>}
+            {release.body && (
+              <Markdown css="padding-left: 1em;" overrides={components}>
+                {release.body}
+              </Markdown>
+            )}
           </section>
         ))
       ) : (
@@ -50,10 +55,12 @@ Releases.getInitialProps = async ({ res }: { res: ServerResponse }): Promise<Rel
     res.setHeader('cache-control', 's-maxage=30,stale-while-revalidate');
   }
 
+  console.log(releases[0]);
+
   return {
     releases,
     sidebarPages: releases.map(release => ({
-      href: release.name!,
+      href: release.tag_name!,
       pathname: '',
       sections: [],
       title: release.name!,

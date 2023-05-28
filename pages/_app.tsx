@@ -75,7 +75,7 @@ const ResetStyles = createGlobalStyle`
   }
 
   code {
-    background: rgba(10, 10, 12, 0.5);
+    background: rgba(10, 10, 12, 0.1);
     border-radius: 2px;
     font-family: ${bodyFont}, monospace;
     padding: 0 0.1em;
@@ -91,6 +91,7 @@ const ResetStyles = createGlobalStyle`
 
   ul li, ol li {
     margin-bottom: 0.75em;
+    margin-left: 1em;
     line-height: 1.6;
   }
 

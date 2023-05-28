@@ -261,8 +261,8 @@ const HeaderActions = styled.div`
   a {
     display: block;
     text-align: center;
-    background-color: #ffffff;
-    color: rgb(219, 112, 147);
+    background-color: #fff;
+    color: #000;
     border: none;
     transition: 200ms;
     padding: 0;
