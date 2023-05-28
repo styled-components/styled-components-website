@@ -5,13 +5,22 @@ exports[`NavButton renders correctly 1`] = `
   background: none;
   outline: none;
   border: none;
-  background: none;
+  background: transparent;
   cursor: pointer;
   flex: 0 0 auto;
   height: 3.3333333333333335rem;
   padding: 0 0.5555555555555556rem;
   text-align: center;
+  transition: all 200ms ease-in-out;
   vertical-align: middle;
+}
+
+.c1:hover {
+  filter: brightness(0.85);
+}
+
+.c1:active {
+  filter: brightness(1);
 }
 
 .c0+.c0 {

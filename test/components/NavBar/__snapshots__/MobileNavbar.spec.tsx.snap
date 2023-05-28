@@ -2,27 +2,36 @@
 
 exports[`MobileNavbar renders correctly 1`] = `
 .c5 {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
+  background-image: url(/nav-logo.png);
   background-position: center;
   background-size: contain;
-  background-image: url(/icon.png);
-  width: 5.555555555555555rem;
-  height: 1.6666666666666667rem;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 2.2222222222222223rem;
+  width: 9.11111111111111rem;
+  vertical-align: middle;
 }
 
 .c2 {
   background: none;
   outline: none;
   border: none;
-  background: rgba(0, 0, 0, 0.07);
+  background: transparent;
   cursor: pointer;
   flex: 0 0 auto;
   height: 3.3333333333333335rem;
   padding: 0 0.5555555555555556rem;
   text-align: center;
+  transition: all 200ms ease-in-out;
   vertical-align: middle;
+}
+
+.c2:hover {
+  filter: brightness(0.85);
+}
+
+.c2:active {
+  filter: brightness(1);
 }
 
 .c1+.c1 {
@@ -74,43 +83,6 @@ exports[`MobileNavbar renders correctly 1`] = `
   opacity: 0.6;
 }
 
-.c13 {
-  display: flex;
-  align-items: center;
-  flex: 1 1 auto;
-}
-
-.c14 {
-  display: flex;
-  margin-right: 1.1111111111111112rem;
-  line-height: 3.3333333333333335rem;
-  transition: opacity 0.2s,transform 0.2s;
-  cursor: pointer;
-}
-
-.c14:last-child {
-  margin-right: 0;
-}
-
-.c14:hover,
-.c14:focus {
-  opacity: 0.8;
-}
-
-.c14:active {
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
-.c14 svg path {
-  fill: currentColor;
-}
-
-.c15.c15 {
-  width: NaNrem;
-  height: 1rem;
-}
-
 .c0 {
   display: none;
 }
@@ -131,23 +103,19 @@ exports[`MobileNavbar renders correctly 1`] = `
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
   overflow-y: hidden;
-  background: #efefef;
-  color: #868686;
+  background: rgb(33, 33, 33);
+  color: #fff;
 }
 
 .c4 {
-  display: inline-block;
-  vertical-align: center;
+  margin-right: auto;
+  transform: translateY(-1px);
 }
 
 .c6 {
   transition: transform 0.2s;
   transform-origin: center center;
   transform: rotate(180deg);
-}
-
-.c12 {
-  padding-right: 1.1111111111111112rem;
 }
 
 .c7.c7 {
@@ -255,30 +223,6 @@ exports[`MobileNavbar renders correctly 1`] = `
         Releases
       </a>
     </nav>
-    <div
-      className="c12"
-    >
-      <nav
-        className="c13"
-      >
-        <a
-          aria-label="Github"
-          className="c14"
-        >
-          <svg
-            className="c15"
-          />
-        </a>
-        <a
-          aria-label="Medium"
-          className="c14"
-        >
-          <svg
-            className="c15"
-          />
-        </a>
-      </nav>
-    </div>
   </div>
 </div>
 `;

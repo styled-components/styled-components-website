@@ -13,6 +13,57 @@ import NavLinks from './NavLinks';
 import SearchWithAlgolia from './SearchWithAlgolia';
 import Social from './Social';
 
+export interface NavbarProps {
+  onSideToggle?: () => void;
+  onMobileNavToggle?: () => void;
+  isSideFolded?: boolean;
+  isMobileNavFolded?: boolean;
+  showSideNav?: boolean;
+}
+
+export default function Navbar({
+  onSideToggle,
+  onMobileNavToggle,
+  isSideFolded,
+  isMobileNavFolded,
+  showSideNav,
+}: NavbarProps) {
+  return (
+    <Wrapper>
+      <MobileNavbar
+        isSideFolded={isSideFolded}
+        isMobileNavFolded={isMobileNavFolded}
+        onSideToggle={onSideToggle}
+        onMobileNavToggle={onMobileNavToggle}
+        showSideNav={showSideNav}
+      />
+
+      <NormalNavbar>
+        <StartWrapper>
+          <LogoLink aria-label="Styled-components logo">
+            <Logo />
+          </LogoLink>
+          <NavLinks />
+        </StartWrapper>
+      </NormalNavbar>
+
+      <EndWrapper
+        css={css`
+          margin-left: auto;
+          margin-right: 16px;
+
+          ${mobile(css`
+            margin-right: 48px;
+          `)}
+        `}
+      >
+        <SearchWithAlgolia />
+        <StyledSocial style={{ marginLeft: 16 }} />
+      </EndWrapper>
+    </Wrapper>
+  );
+}
+
 const Wrapper = styled.nav<{ $transparent?: boolean }>`
   align-items: center;
   background-color: rgba(12, 13, 15, 0.7);
@@ -165,50 +216,3 @@ const LogoLink = styled(Link).attrs((/* props */) => ({
   vertical-align: center;
   margin-right: ${rem(35)};
 `;
-
-export interface NavbarProps {
-  onSideToggle?: () => void;
-  onMobileNavToggle?: () => void;
-  isSideFolded?: boolean;
-  isMobileNavFolded?: boolean;
-  showSideNav?: boolean;
-}
-
-function Navbar({ onSideToggle, onMobileNavToggle, isSideFolded, isMobileNavFolded, showSideNav }: NavbarProps) {
-  return (
-    <Wrapper>
-      <MobileNavbar
-        isSideFolded={isSideFolded}
-        isMobileNavFolded={isMobileNavFolded}
-        onSideToggle={onSideToggle}
-        onMobileNavToggle={onMobileNavToggle}
-        showSideNav={showSideNav}
-      />
-
-      <NormalNavbar>
-        <StartWrapper>
-          <LogoLink aria-label="Styled-components logo">
-            <Logo />
-          </LogoLink>
-          <NavLinks />
-        </StartWrapper>
-      </NormalNavbar>
-
-      <EndWrapper
-        css={css`
-          margin-left: auto;
-          margin-right: 16px;
-
-          ${mobile(css`
-            margin-right: 48px;
-          `)}
-        `}
-      >
-        <SearchWithAlgolia />
-        <StyledSocial style={{ marginLeft: 16 }} />
-      </EndWrapper>
-    </Wrapper>
-  );
-}
-
-export default Navbar;

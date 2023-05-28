@@ -8,23 +8,14 @@ export interface NavProps {
   isMobileNavFolded?: boolean;
   onSideToggle?: () => void;
   onMobileNavToggle?: () => void;
-  onRouteChange?: () => void;
   showSideNav?: boolean;
   useDocsSidebarMenu?: boolean;
   pages?: SimpleSidebarMenuProps['pages'];
 }
 
 const Nav = (props: NavProps) => {
-  const {
-    isSideFolded,
-    isMobileNavFolded,
-    onSideToggle,
-    onMobileNavToggle,
-    onRouteChange,
-    showSideNav,
-    useDocsSidebarMenu,
-    pages,
-  } = props;
+  const { isSideFolded, isMobileNavFolded, onSideToggle, onMobileNavToggle, showSideNav, useDocsSidebarMenu, pages } =
+    props;
 
   return (
     <div>
@@ -38,11 +29,7 @@ const Nav = (props: NavProps) => {
 
       {showSideNav !== false && (
         <Sidebar $isFolded={isSideFolded}>
-          {useDocsSidebarMenu !== false ? (
-            <DocsSidebarMenu onRouteChange={onRouteChange} />
-          ) : (
-            <SimpleSidebarMenu onRouteChange={onRouteChange} pages={pages} />
-          )}
+          {useDocsSidebarMenu !== false ? <DocsSidebarMenu /> : <SimpleSidebarMenu pages={pages} />}
         </Sidebar>
       )}
     </div>

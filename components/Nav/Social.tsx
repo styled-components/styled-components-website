@@ -63,10 +63,10 @@ const Social = (props: React.ComponentProps<typeof Wrapper>) => (
     {/* <SocialLink href="https://twitter.com/someone">
       <Twitter />
     </SocialLink> */}
-    <SocialLink href="https://github.com/styled-components" aria-label="Github">
+    <SocialLink href="https://github.com/styled-components" title="GitHub: Source code">
       <StyledIcon as={Github} $height={18} />
     </SocialLink>
-    <SocialLink href="https://medium.com/styled-components" aria-label="Medium">
+    <SocialLink href="https://medium.com/styled-components" title="Medium: Announcements, blog posts, and more">
       <StyledIcon as={MediumM} $height={18} />
     </SocialLink>
   </Wrapper>

@@ -23,16 +23,16 @@ exports[`LiveEdit renders correctly 1`] = `
 
 .c3 {
   background: #1d1f27;
-  font-size: 0.8rem;
+  color: white;
+  cursor: text;
   font-family: dm,monospace;
+  font-size: 0.8rem;
   font-weight: 300;
   min-height: 22.22222222222222rem;
-  overflow-y: auto!important;
   overflow-x: hidden;
-  cursor: text;
-  color: white;
-  white-space: pre-wrap;
+  overflow-y: auto!important;
   position: relative;
+  white-space: pre-wrap;
 }
 
 .c4 {

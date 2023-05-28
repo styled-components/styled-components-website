@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav renders correctly 1`] = `
-.c26 {
+.c24 {
   display: inline-block;
   color: inherit;
   cursor: pointer;
@@ -10,38 +10,36 @@ exports[`Nav renders correctly 1`] = `
 }
 
 .c6 {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
-  background-position: center;
-  background-size: contain;
-  background-image: url(/icon.png);
-  width: 5.555555555555555rem;
-  height: 1.6666666666666667rem;
-}
-
-.c20 {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
-  background-position: center;
-  background-size: contain;
   background-image: url(/nav-logo.png);
-  width: 9.11111111111111rem;
+  background-position: center;
+  background-size: contain;
+  box-sizing: border-box;
+  display: inline-block;
   height: 2.2222222222222223rem;
+  width: 9.11111111111111rem;
+  vertical-align: middle;
 }
 
 .c3 {
   background: none;
   outline: none;
   border: none;
-  background: rgba(0, 0, 0, 0.07);
+  background: transparent;
   cursor: pointer;
   flex: 0 0 auto;
   height: 3.3333333333333335rem;
   padding: 0 0.5555555555555556rem;
   text-align: center;
+  transition: all 200ms ease-in-out;
   vertical-align: middle;
+}
+
+.c3:hover {
+  filter: brightness(0.85);
+}
+
+.c3:active {
+  filter: brightness(1);
 }
 
 .c2+.c2 {
@@ -93,43 +91,6 @@ exports[`Nav renders correctly 1`] = `
   opacity: 0.6;
 }
 
-.c14 {
-  display: flex;
-  align-items: center;
-  flex: 1 1 auto;
-}
-
-.c15 {
-  display: flex;
-  margin-right: 1.1111111111111112rem;
-  line-height: 3.3333333333333335rem;
-  transition: opacity 0.2s,transform 0.2s;
-  cursor: pointer;
-}
-
-.c15:last-child {
-  margin-right: 0;
-}
-
-.c15:hover,
-.c15:focus {
-  opacity: 0.8;
-}
-
-.c15:active {
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
-.c15 svg path {
-  fill: currentColor;
-}
-
-.c16.c16 {
-  width: NaNrem;
-  height: 1rem;
-}
-
 .c1 {
   display: none;
 }
@@ -150,13 +111,13 @@ exports[`Nav renders correctly 1`] = `
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
   overflow-y: hidden;
-  background: #efefef;
-  color: #868686;
+  background: rgb(33, 33, 33);
+  color: #fff;
 }
 
 .c5 {
-  display: inline-block;
-  vertical-align: center;
+  margin-right: auto;
+  transform: translateY(-1px);
 }
 
 .c7 {
@@ -165,13 +126,46 @@ exports[`Nav renders correctly 1`] = `
   transform: rotate(180deg);
 }
 
-.c13 {
-  padding-right: 1.1111111111111112rem;
-}
-
 .c8.c8 {
   width: 2rem;
   height: 2rem;
+}
+
+.c17 {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.c18 {
+  display: flex;
+  margin-right: 1.1111111111111112rem;
+  line-height: 3.3333333333333335rem;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+}
+
+.c18:last-child {
+  margin-right: 0;
+}
+
+.c18:hover,
+.c18:focus {
+  opacity: 0.8;
+}
+
+.c18:active {
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c18 svg path {
+  fill: currentColor;
+}
+
+.c19.c19 {
+  width: NaNrem;
+  height: 1rem;
 }
 
 .c0 {
@@ -195,32 +189,32 @@ exports[`Nav renders correctly 1`] = `
   z-index: 3;
 }
 
-.c18 {
+.c14 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.c21 {
+.c16 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.c17 {
+.c13 {
   display: flex;
   align-items: center;
   padding: 0 1.1111111111111112rem;
   justify-content: space-between;
 }
 
-.c19 {
+.c15 {
   display: inline-block;
   vertical-align: center;
   margin-right: 1.9444444444444444rem;
 }
 
-.c22 {
+.c20 {
   position: fixed;
   transform: translateZ(0);
   display: block;
@@ -238,29 +232,35 @@ exports[`Nav renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c23 {
+.c21 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 3.3333333333333335rem;
 }
 
-.c24 {
+.c22 {
   margin-bottom: 1.1111111111111112rem;
+}
+
+.c23 {
+  display: block;
+  margin: 0.5555555555555556rem 2.2222222222222223rem;
 }
 
 .c25 {
   display: block;
-  margin: 0.5555555555555556rem 2.2222222222222223rem;
+  margin: 0.5555555555555556rem 2.2222222222222223rem 0.5555555555555556rem 3.0555555555555554rem;
+  font-size: 0.9rem;
   font-weight: normal;
 }
 
 @media (min-width: 62.5em) {
-  .c26 {
+  .c24 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c26:hover {
+  .c24:hover {
     background: rgba(20, 20, 20, 0.1);
   }
 }
@@ -291,9 +291,7 @@ exports[`Nav renders correctly 1`] = `
               <div
                 className="c1"
               >
-                <styled.button
-                  $active={true}
-                >
+                <styled.button>
                   <button
                     className="c2 c3"
                   >
@@ -345,9 +343,7 @@ exports[`Nav renders correctly 1`] = `
                         aria-label="styled components"
                         className="c5"
                       >
-                        <styled.div
-                          $compact={true}
-                        >
+                        <styled.div>
                           <div
                             className="c6"
                           />
@@ -357,7 +353,6 @@ exports[`Nav renders correctly 1`] = `
                   </Link>
                 </Styled(Link)>
                 <styled.button
-                  $active={true}
                   style={
                     {
                       "position": "absolute",
@@ -500,88 +495,6 @@ exports[`Nav renders correctly 1`] = `
                         </nav>
                       </styled.nav>
                     </NavLinks>
-                    <styled.div>
-                      <div
-                        className="c13"
-                      >
-                        <Social>
-                          <styled.nav>
-                            <nav
-                              className="c14"
-                            >
-                              <Styled(Link)
-                                aria-label="Github"
-                                href="https://github.com/styled-components"
-                              >
-                                <Link
-                                  aria-label="Github"
-                                  className="c15"
-                                  href="https://github.com/styled-components"
-                                  unstyled={true}
-                                >
-                                  <Link
-                                    href="https://github.com/styled-components"
-                                    passHref={true}
-                                  >
-                                    <a
-                                      aria-label="Github"
-                                      className="c15"
-                                    >
-                                      <styled.div
-                                        $height={18}
-                                        as={[Function]}
-                                      >
-                                        <DummyIcon
-                                          className="c16"
-                                        >
-                                          <svg
-                                            className="c16"
-                                          />
-                                        </DummyIcon>
-                                      </styled.div>
-                                    </a>
-                                  </Link>
-                                </Link>
-                              </Styled(Link)>
-                              <Styled(Link)
-                                aria-label="Medium"
-                                href="https://medium.com/styled-components"
-                              >
-                                <Link
-                                  aria-label="Medium"
-                                  className="c15"
-                                  href="https://medium.com/styled-components"
-                                  unstyled={true}
-                                >
-                                  <Link
-                                    href="https://medium.com/styled-components"
-                                    passHref={true}
-                                  >
-                                    <a
-                                      aria-label="Medium"
-                                      className="c15"
-                                    >
-                                      <styled.div
-                                        $height={18}
-                                        as={[Function]}
-                                      >
-                                        <DummyIcon
-                                          className="c16"
-                                        >
-                                          <svg
-                                            className="c16"
-                                          />
-                                        </DummyIcon>
-                                      </styled.div>
-                                    </a>
-                                  </Link>
-                                </Link>
-                              </Styled(Link)>
-                            </nav>
-                          </styled.nav>
-                        </Social>
-                      </div>
-                    </styled.div>
                   </div>
                 </styled.div>
               </div>
@@ -589,18 +502,18 @@ exports[`Nav renders correctly 1`] = `
           </MobileNavbar>
           <styled.div>
             <div
-              className="c17"
+              className="c13"
             >
               <styled.div>
                 <div
-                  className="c18"
+                  className="c14"
                 >
                   <Styled(Link)
                     aria-label="Styled-components logo"
                   >
                     <Link
                       aria-label="Styled-components logo"
-                      className="c19"
+                      className="c15"
                       href="/"
                       unstyled={true}
                     >
@@ -610,11 +523,11 @@ exports[`Nav renders correctly 1`] = `
                       >
                         <a
                           aria-label="Styled-components logo"
-                          className="c19"
+                          className="c15"
                         >
                           <styled.div>
                             <div
-                              className="c20"
+                              className="c6"
                             />
                           </styled.div>
                         </a>
@@ -753,7 +666,7 @@ exports[`Nav renders correctly 1`] = `
             }
           >
             <div
-              className="c21"
+              className="c16"
               css={
                 [
                   "
@@ -806,7 +719,7 @@ exports[`Nav renders correctly 1`] = `
                     }
                   >
                     <nav
-                      className="c14 "
+                      className="c17 "
                       style={
                         {
                           "marginLeft": 16,
@@ -814,13 +727,13 @@ exports[`Nav renders correctly 1`] = `
                       }
                     >
                       <Styled(Link)
-                        aria-label="Github"
                         href="https://github.com/styled-components"
+                        title="GitHub: Source code"
                       >
                         <Link
-                          aria-label="Github"
-                          className="c15"
+                          className="c18"
                           href="https://github.com/styled-components"
+                          title="GitHub: Source code"
                           unstyled={true}
                         >
                           <Link
@@ -828,18 +741,18 @@ exports[`Nav renders correctly 1`] = `
                             passHref={true}
                           >
                             <a
-                              aria-label="Github"
-                              className="c15"
+                              className="c18"
+                              title="GitHub: Source code"
                             >
                               <styled.div
                                 $height={18}
                                 as={[Function]}
                               >
                                 <DummyIcon
-                                  className="c16"
+                                  className="c19"
                                 >
                                   <svg
-                                    className="c16"
+                                    className="c19"
                                   />
                                 </DummyIcon>
                               </styled.div>
@@ -848,13 +761,13 @@ exports[`Nav renders correctly 1`] = `
                         </Link>
                       </Styled(Link)>
                       <Styled(Link)
-                        aria-label="Medium"
                         href="https://medium.com/styled-components"
+                        title="Medium: Announcements, blog posts, and more"
                       >
                         <Link
-                          aria-label="Medium"
-                          className="c15"
+                          className="c18"
                           href="https://medium.com/styled-components"
+                          title="Medium: Announcements, blog posts, and more"
                           unstyled={true}
                         >
                           <Link
@@ -862,18 +775,18 @@ exports[`Nav renders correctly 1`] = `
                             passHref={true}
                           >
                             <a
-                              aria-label="Medium"
-                              className="c15"
+                              className="c18"
+                              title="Medium: Announcements, blog posts, and more"
                             >
                               <styled.div
                                 $height={18}
                                 as={[Function]}
                               >
                                 <DummyIcon
-                                  className="c16"
+                                  className="c19"
                                 >
                                   <svg
-                                    className="c16"
+                                    className="c19"
                                   />
                                 </DummyIcon>
                               </styled.div>
@@ -893,193 +806,1053 @@ exports[`Nav renders correctly 1`] = `
     <CaptureScroll>
       <styled.nav>
         <nav
-          className="c22"
+          className="c20"
         >
           <DocsSidebarMenu>
             <styled.div>
               <div
-                className="c23"
+                className="c21"
               >
-                <Folder
-                  isOpenDefault={null}
-                  key="Basics"
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
-                    >
-                      <styled.h4
-                        onClick={[Function]}
+                <styled.div>
+                  <div
+                    className="c22"
+                  >
+                    <styled.h4>
+                      <h4
+                        className="c23"
                       >
-                        <h4
-                          className="c25"
-                          onClick={[Function]}
+                        <Link
+                          href="/docs/basics"
                         >
                           <Link
                             href="/docs/basics"
+                            passHref={true}
                           >
-                            <Link
-                              href="/docs/basics"
-                              passHref={true}
-                            >
-                              <styled.a>
-                                <a
-                                  className="c26"
-                                >
-                                  Basics
-                                </a>
-                              </styled.a>
-                            </Link>
+                            <styled.a>
+                              <a
+                                className="c24"
+                              >
+                                Basics
+                              </a>
+                            </styled.a>
                           </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={null}
-                  key="Advanced"
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
+                        </Link>
+                      </h4>
+                    </styled.h4>
+                    <styled.h5
+                      key="Motivation"
                     >
-                      <styled.h4
-                        onClick={[Function]}
+                      <h5
+                        className="c25"
                       >
-                        <h4
-                          className="c25"
-                          onClick={[Function]}
+                        <styled.a
+                          href="/docs/basics#motivation"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/basics#motivation"
+                          >
+                            Motivation
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Installation"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/basics#installation"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/basics#installation"
+                          >
+                            Installation
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Getting Started"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/basics#getting-started"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/basics#getting-started"
+                          >
+                            Getting Started
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Adapting based on props"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/basics#adapting-based-on-props"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/basics#adapting-based-on-props"
+                          >
+                            Adapting based on props
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Extending styles"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/basics#extending-styles"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/basics#extending-styles"
+                          >
+                            Extending styles
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Styling any component"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/basics#styling-any-component"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/basics#styling-any-component"
+                          >
+                            Styling any component
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Passed props"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/basics#passed-props"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/basics#passed-props"
+                          >
+                            Passed props
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Coming from CSS"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/basics#coming-from-css"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/basics#coming-from-css"
+                          >
+                            Coming from CSS
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Attaching additional props"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/basics#attaching-additional-props"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/basics#attaching-additional-props"
+                          >
+                            Attaching additional props
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Animations"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/basics#animations"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/basics#animations"
+                          >
+                            Animations
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="React Native"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/basics#react-native"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/basics#react-native"
+                          >
+                            React Native
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                  </div>
+                </styled.div>
+                <styled.div>
+                  <div
+                    className="c22"
+                  >
+                    <styled.h4>
+                      <h4
+                        className="c23"
+                      >
+                        <Link
+                          href="/docs/advanced"
                         >
                           <Link
                             href="/docs/advanced"
+                            passHref={true}
                           >
-                            <Link
-                              href="/docs/advanced"
-                              passHref={true}
-                            >
-                              <styled.a>
-                                <a
-                                  className="c26"
-                                >
-                                  Advanced
-                                </a>
-                              </styled.a>
-                            </Link>
+                            <styled.a>
+                              <a
+                                className="c24"
+                              >
+                                Advanced
+                              </a>
+                            </styled.a>
                           </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={null}
-                  key="API Reference"
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
+                        </Link>
+                      </h4>
+                    </styled.h4>
+                    <styled.h5
+                      key="Theming"
                     >
-                      <styled.h4
-                        onClick={[Function]}
+                      <h5
+                        className="c25"
                       >
-                        <h4
-                          className="c25"
-                          onClick={[Function]}
+                        <styled.a
+                          href="/docs/advanced#theming"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/advanced#theming"
+                          >
+                            Theming
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Refs"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/advanced#refs"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/advanced#refs"
+                          >
+                            Refs
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Security"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/advanced#security"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/advanced#security"
+                          >
+                            Security
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Existing CSS"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/advanced#existing-css"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/advanced#existing-css"
+                          >
+                            Existing CSS
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Tagged Template Literals"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/advanced#tagged-template-literals"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/advanced#tagged-template-literals"
+                          >
+                            Tagged Template Literals
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Server Side Rendering"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/advanced#server-side-rendering"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/advanced#server-side-rendering"
+                          >
+                            Server Side Rendering
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Referring to other components"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/advanced#referring-to-other-components"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/advanced#referring-to-other-components"
+                          >
+                            Referring to other components
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Style Objects"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/advanced#style-objects"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/advanced#style-objects"
+                          >
+                            Style Objects
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                  </div>
+                </styled.div>
+                <styled.div>
+                  <div
+                    className="c22"
+                  >
+                    <styled.h4>
+                      <h4
+                        className="c23"
+                      >
+                        <Link
+                          href="/docs/api"
                         >
                           <Link
                             href="/docs/api"
+                            passHref={true}
                           >
-                            <Link
-                              href="/docs/api"
-                              passHref={true}
-                            >
-                              <styled.a>
-                                <a
-                                  className="c26"
-                                >
-                                  API Reference
-                                </a>
-                              </styled.a>
-                            </Link>
+                            <styled.a>
+                              <a
+                                className="c24"
+                              >
+                                API Reference
+                              </a>
+                            </styled.a>
                           </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={null}
-                  key="Tooling"
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
+                        </Link>
+                      </h4>
+                    </styled.h4>
+                    <styled.h5
+                      key="Primary"
                     >
-                      <styled.h4
-                        onClick={[Function]}
+                      <h5
+                        className="c25"
                       >
-                        <h4
-                          className="c25"
-                          onClick={[Function]}
+                        <styled.a
+                          href="/docs/api#primary"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/api#primary"
+                          >
+                            Primary
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Helpers"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/api#helpers"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/api#helpers"
+                          >
+                            Helpers
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Test Utilities"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/api#test-utilities"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/api#test-utilities"
+                          >
+                            Test Utilities
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Supported CSS"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/api#supported-css"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/api#supported-css"
+                          >
+                            Supported CSS
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="TypeScript"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/api#typescript"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/api#typescript"
+                          >
+                            TypeScript
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Previous APIs"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/api#previous-apis"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/api#previous-apis"
+                          >
+                            Previous APIs
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                  </div>
+                </styled.div>
+                <styled.div>
+                  <div
+                    className="c22"
+                  >
+                    <styled.h4>
+                      <h4
+                        className="c23"
+                      >
+                        <Link
+                          href="/docs/tooling"
                         >
                           <Link
                             href="/docs/tooling"
+                            passHref={true}
                           >
-                            <Link
-                              href="/docs/tooling"
-                              passHref={true}
-                            >
-                              <styled.a>
-                                <a
-                                  className="c26"
-                                >
-                                  Tooling
-                                </a>
-                              </styled.a>
-                            </Link>
+                            <styled.a>
+                              <a
+                                className="c24"
+                              >
+                                Tooling
+                              </a>
+                            </styled.a>
                           </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
-                <Folder
-                  isOpenDefault={null}
-                  key="FAQs"
-                >
-                  <styled.div>
-                    <div
-                      className="c24"
+                        </Link>
+                      </h4>
+                    </styled.h4>
+                    <styled.h5
+                      key="Babel Plugin"
                     >
-                      <styled.h4
-                        onClick={[Function]}
+                      <h5
+                        className="c25"
                       >
-                        <h4
-                          className="c25"
-                          onClick={[Function]}
+                        <styled.a
+                          href="/docs/tooling#babel-plugin"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/tooling#babel-plugin"
+                          >
+                            Babel Plugin
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Babel Macro"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/tooling#babel-macro"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/tooling#babel-macro"
+                          >
+                            Babel Macro
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="TypeScript Plugin"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/tooling#typescript-plugin"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/tooling#typescript-plugin"
+                          >
+                            TypeScript Plugin
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Jest Integration"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/tooling#jest-integration"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/tooling#jest-integration"
+                          >
+                            Jest Integration
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Stylelint"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/tooling#stylelint"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/tooling#stylelint"
+                          >
+                            Stylelint
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Styled Theming"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/tooling#styled-theming"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/tooling#styled-theming"
+                          >
+                            Styled Theming
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Syntax Highlighting"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/tooling#syntax-highlighting"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/tooling#syntax-highlighting"
+                          >
+                            Syntax Highlighting
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                  </div>
+                </styled.div>
+                <styled.div>
+                  <div
+                    className="c22"
+                  >
+                    <styled.h4>
+                      <h4
+                        className="c23"
+                      >
+                        <Link
+                          href="/docs/faqs"
                         >
                           <Link
                             href="/docs/faqs"
+                            passHref={true}
                           >
-                            <Link
-                              href="/docs/faqs"
-                              passHref={true}
-                            >
-                              <styled.a>
-                                <a
-                                  className="c26"
-                                >
-                                  FAQs
-                                </a>
-                              </styled.a>
-                            </Link>
+                            <styled.a>
+                              <a
+                                className="c24"
+                              >
+                                FAQs
+                              </a>
+                            </styled.a>
                           </Link>
-                        </h4>
-                      </styled.h4>
-                    </div>
-                  </styled.div>
-                </Folder>
+                        </Link>
+                      </h4>
+                    </styled.h4>
+                    <styled.h5
+                      key="What do I need to do to migrate to v6?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v6"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v6"
+                          >
+                            What do I need to do to migrate to v6?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="What do I need to do to migrate to v5?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v5"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v5"
+                          >
+                            What do I need to do to migrate to v5?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="What do I need to do to migrate to v4?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4"
+                          >
+                            What do I need to do to migrate to v4?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Can I nest rules?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#can-i-nest-rules"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#can-i-nest-rules"
+                          >
+                            Can I nest rules?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Can I use css frameworks?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#can-i-use-css-frameworks"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#can-i-use-css-frameworks"
+                          >
+                            Can I use css frameworks?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="How can I override styles with higher specificity?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#how-can-i-override-styles-with-higher-specificity"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#how-can-i-override-styles-with-higher-specificity"
+                          >
+                            How can I override styles with higher specificity?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="How can I override inline styles?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#how-can-i-override-inline-styles"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#how-can-i-override-inline-styles"
+                          >
+                            How can I override inline styles?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Why do my DOM nodes have two classes?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#why-do-my-dom-nodes-have-two-classes"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#why-do-my-dom-nodes-have-two-classes"
+                          >
+                            Why do my DOM nodes have two classes?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="When to use attrs?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#when-to-use-attrs"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#when-to-use-attrs"
+                          >
+                            When to use attrs?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Why should I avoid declaring styled components in the render method?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#why-should-i-avoid-declaring-styled-components-in-the-render-method"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#why-should-i-avoid-declaring-styled-components-in-the-render-method"
+                          >
+                            Why should I avoid declaring styled components in the render method?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="I am a library author. Should I bundle styled-components with my library?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#i-am-a-library-author.-should-i-bundle-styled-components-with-my-library"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#i-am-a-library-author.-should-i-bundle-styled-components-with-my-library"
+                          >
+                            I am a library author. Should I bundle styled-components with my library?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Why am I getting a warning about several instances of module on the page?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#why-am-i-getting-a-warning-about-several-instances-of-module-on-the-page"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#why-am-i-getting-a-warning-about-several-instances-of-module-on-the-page"
+                          >
+                            Why am I getting a warning about several instances of module on the page?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Why am I getting HTML attribute warnings?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#why-am-i-getting-html-attribute-warnings"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#why-am-i-getting-html-attribute-warnings"
+                          >
+                            Why am I getting HTML attribute warnings?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Which browsers are supported?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#which-browsers-are-supported"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#which-browsers-are-supported"
+                          >
+                            Which browsers are supported?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="How do I use styled-components with create-react-app?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#how-do-i-use-styled-components-with-create-react-app"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#how-do-i-use-styled-components-with-create-react-app"
+                          >
+                            How do I use styled-components with create-react-app?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="How can I fix issues when using npm link or yarn link?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#how-can-i-fix-issues-when-using-npm-link-or-yarn-link"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#how-can-i-fix-issues-when-using-npm-link-or-yarn-link"
+                          >
+                            How can I fix issues when using npm link or yarn link?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="How do I fix flickering text after server side rendering?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#how-do-i-fix-flickering-text-after-server-side-rendering"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#how-do-i-fix-flickering-text-after-server-side-rendering"
+                          >
+                            How do I fix flickering text after server side rendering?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
+                      key="Missing Declarations for styled-components/native?"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/faqs#missing-declarations-for-styled-componentsnative"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/faqs#missing-declarations-for-styled-componentsnative"
+                          >
+                            Missing Declarations for styled-components/native?
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                  </div>
+                </styled.div>
               </div>
             </styled.div>
           </DocsSidebarMenu>

@@ -2,38 +2,36 @@
 
 exports[`Navbar renders correctly 1`] = `
 .c6 {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
-  background-position: center;
-  background-size: contain;
-  background-image: url(/icon.png);
-  width: 5.555555555555555rem;
-  height: 1.6666666666666667rem;
-}
-
-.c20 {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
-  background-position: center;
-  background-size: contain;
   background-image: url(/nav-logo.png);
-  width: 9.11111111111111rem;
+  background-position: center;
+  background-size: contain;
+  box-sizing: border-box;
+  display: inline-block;
   height: 2.2222222222222223rem;
+  width: 9.11111111111111rem;
+  vertical-align: middle;
 }
 
 .c3 {
   background: none;
   outline: none;
   border: none;
-  background: rgba(0, 0, 0, 0.07);
+  background: transparent;
   cursor: pointer;
   flex: 0 0 auto;
   height: 3.3333333333333335rem;
   padding: 0 0.5555555555555556rem;
   text-align: center;
+  transition: all 200ms ease-in-out;
   vertical-align: middle;
+}
+
+.c3:hover {
+  filter: brightness(0.85);
+}
+
+.c3:active {
+  filter: brightness(1);
 }
 
 .c2+.c2 {
@@ -85,43 +83,6 @@ exports[`Navbar renders correctly 1`] = `
   opacity: 0.6;
 }
 
-.c14 {
-  display: flex;
-  align-items: center;
-  flex: 1 1 auto;
-}
-
-.c15 {
-  display: flex;
-  margin-right: 1.1111111111111112rem;
-  line-height: 3.3333333333333335rem;
-  transition: opacity 0.2s,transform 0.2s;
-  cursor: pointer;
-}
-
-.c15:last-child {
-  margin-right: 0;
-}
-
-.c15:hover,
-.c15:focus {
-  opacity: 0.8;
-}
-
-.c15:active {
-  transform: scale(0.95);
-  opacity: 0.6;
-}
-
-.c15 svg path {
-  fill: currentColor;
-}
-
-.c16.c16 {
-  width: NaNrem;
-  height: 1rem;
-}
-
 .c1 {
   display: none;
 }
@@ -142,13 +103,13 @@ exports[`Navbar renders correctly 1`] = `
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
   overflow-y: hidden;
-  background: #efefef;
-  color: #868686;
+  background: rgb(33, 33, 33);
+  color: #fff;
 }
 
 .c5 {
-  display: inline-block;
-  vertical-align: center;
+  margin-right: auto;
+  transform: translateY(-1px);
 }
 
 .c7 {
@@ -157,13 +118,46 @@ exports[`Navbar renders correctly 1`] = `
   transform: rotate(180deg);
 }
 
-.c13 {
-  padding-right: 1.1111111111111112rem;
-}
-
 .c8.c8 {
   width: 2rem;
   height: 2rem;
+}
+
+.c17 {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.c18 {
+  display: flex;
+  margin-right: 1.1111111111111112rem;
+  line-height: 3.3333333333333335rem;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+}
+
+.c18:last-child {
+  margin-right: 0;
+}
+
+.c18:hover,
+.c18:focus {
+  opacity: 0.8;
+}
+
+.c18:active {
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c18 svg path {
+  fill: currentColor;
+}
+
+.c19.c19 {
+  width: NaNrem;
+  height: 1rem;
 }
 
 .c0 {
@@ -187,26 +181,26 @@ exports[`Navbar renders correctly 1`] = `
   z-index: 3;
 }
 
-.c18 {
+.c14 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.c21 {
+.c16 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.c17 {
+.c13 {
   display: flex;
   align-items: center;
   padding: 0 1.1111111111111112rem;
   justify-content: space-between;
 }
 
-.c19 {
+.c15 {
   display: inline-block;
   vertical-align: center;
   margin-right: 1.9444444444444444rem;
@@ -319,44 +313,20 @@ exports[`Navbar renders correctly 1`] = `
           Releases
         </a>
       </nav>
-      <div
-        className="c13"
-      >
-        <nav
-          className="c14"
-        >
-          <a
-            aria-label="Github"
-            className="c15"
-          >
-            <svg
-              className="c16"
-            />
-          </a>
-          <a
-            aria-label="Medium"
-            className="c15"
-          >
-            <svg
-              className="c16"
-            />
-          </a>
-        </nav>
-      </div>
     </div>
   </div>
   <div
-    className="c17"
+    className="c13"
   >
     <div
-      className="c18"
+      className="c14"
     >
       <a
         aria-label="Styled-components logo"
-        className="c19"
+        className="c15"
       >
         <div
-          className="c20"
+          className="c6"
         />
       </a>
       <nav
@@ -395,7 +365,7 @@ exports[`Navbar renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="c21"
+    className="c16"
     css={
       [
         "
@@ -423,7 +393,7 @@ exports[`Navbar renders correctly 1`] = `
       id="docs-search-input"
     />
     <nav
-      className="c14 "
+      className="c17 "
       style={
         {
           "marginLeft": 16,
@@ -431,19 +401,19 @@ exports[`Navbar renders correctly 1`] = `
       }
     >
       <a
-        aria-label="Github"
-        className="c15"
+        className="c18"
+        title="GitHub: Source code"
       >
         <svg
-          className="c16"
+          className="c19"
         />
       </a>
       <a
-        aria-label="Medium"
-        className="c15"
+        className="c18"
+        title="Medium: Announcements, blog posts, and more"
       >
         <svg
-          className="c16"
+          className="c19"
         />
       </a>
     </nav>

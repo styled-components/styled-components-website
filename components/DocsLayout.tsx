@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Content, Title } from './Layout';
 import Nav, { NavProps } from './Nav';
 import Head from './SeoHead';
+import { useRouter } from 'next/router';
 
 export interface DocsLayoutProps {
   description?: string;
@@ -17,6 +18,7 @@ export default function DocsLayout({
   useDocsSidebarMenu = true,
   pages,
 }: React.PropsWithChildren<DocsLayoutProps>) {
+  const router = useRouter();
   const [isSideFolded, setIsSideFolded] = React.useState(true);
   const [isMobileNavFolded, setIsMobileNavFolded] = React.useState(true);
 
@@ -30,10 +32,10 @@ export default function DocsLayout({
     setIsSideFolded(true);
   }, []);
 
-  const onRouteChange = React.useCallback(() => {
+  React.useEffect(() => {
     setIsMobileNavFolded(true);
     setIsSideFolded(true);
-  }, []);
+  }, [router.asPath]);
 
   return (
     <Container>
@@ -48,7 +50,6 @@ export default function DocsLayout({
         pages={pages}
         onSideToggle={onSideToggle}
         onMobileNavToggle={onMobileNavToggle}
-        onRouteChange={onRouteChange}
       />
 
       <Content $moveRight={!isSideFolded} data-e2e-id="content">

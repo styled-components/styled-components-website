@@ -29,7 +29,6 @@ export default function Index() {
         showSideNav={false}
         isMobileNavFolded={isMobileNavFolded}
         onMobileNavToggle={() => setIsMobileNavFolded(x => !x)}
-        onRouteChange={() => setIsMobileNavFolded(false)}
       />
 
       <Wrapper>

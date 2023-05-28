@@ -5,6 +5,7 @@ import Link from '../components/Link';
 import Loading from '../components/Loading';
 import escape from '../utils/escape';
 import { getReadme } from '../utils/githubApi';
+import components from 'utils/mdx-components';
 
 export interface EcosystemProps {
   readme: string;
@@ -27,17 +28,18 @@ export default function Ecosystem({ readme, sidebarPages }: EcosystemProps) {
         </Link>{' '}
         repo on GitHub and it will automatically show up here!
       </p>
+
       {typeof readme !== 'string' ? (
         <Loading />
       ) : (
-        <Markdown>{`
-          ${readme}
+        <Markdown overrides={components}>
+          {`
+## Contribute
 
-  ### Contribute
-
-  If you know any projects build with styled components contributions and suggestions are always welcome!
-  Please read the [contribution guidelines](https://github.com/styled-components/awesome-styled-components/blob/master/contributing.md) first and submit a PR.
-        `}</Markdown>
+If you know any projects build with styled components contributions and suggestions are always welcome!
+Please read the [contribution guidelines](https://github.com/styled-components/awesome-styled-components/blob/master/contributing.md) first and submit a PR.${readme}
+        `.trim()}
+        </Markdown>
       )}
     </DocsLayout>
   );
@@ -45,10 +47,9 @@ export default function Ecosystem({ readme, sidebarPages }: EcosystemProps) {
 
 Ecosystem.getInitialProps = async ({ res }: { res: NextApiResponse }) => {
   const readme = await getReadme('awesome-styled-components');
-  const editedReadme = readme
-    .replace(/\n---\n/g, '\n\n---\n\n')
-    .slice(readme.indexOf('\n---\n### Built with styled-components'))
-    .split('### Contribute')[0];
+
+  const editedReadme =
+    '\n' + readme.slice(readme.indexOf('### Built with styled-components'), readme.indexOf('### Contribute') + 1);
 
   const sidePages = collectPagesFromMd(readme);
 

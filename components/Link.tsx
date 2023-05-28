@@ -18,6 +18,7 @@ export default function Link({
   children,
   className,
   inline,
+  title,
   unstyled,
   white,
   ...rest
@@ -37,7 +38,7 @@ export default function Link({
 
   return (
     <UnstyledLink passHref {...rest}>
-      <Child aria-label={ariaLabel} className={className} {...dataAttrs}>
+      <Child aria-label={ariaLabel} className={className} title={title} {...dataAttrs}>
         {children}
       </Child>
     </UnstyledLink>

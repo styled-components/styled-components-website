@@ -66,16 +66,16 @@ const Code = styled.code`
 
 export const editorMixin = `
   background: ${darkGrey};
-  font-size: 0.8rem;
+  color: white;
+  cursor: text;
   font-family: ${monospace};
+  font-size: 0.8rem;
   font-weight: 300;
   min-height: ${rem(400)};
-  overflow-y: auto !important;
   overflow-x: hidden;
-  cursor: text;
-  color: white;
-  white-space: pre-wrap;
+  overflow-y: auto !important;
   position: relative;
+  white-space: pre-wrap;
 `;
 
 const StyledEditor = styled(LiveEditor)`

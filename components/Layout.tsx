@@ -14,11 +14,11 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean }>`
-  max-width: 120ch;
-  margin: 0 auto;
-  padding: ${rem(90)} ${rem(60)} 0 ${rem(60)};
   box-sizing: border-box;
   font-family: ${bodyFont};
+  margin: 0 auto;
+  max-width: 120ch;
+  padding: ${rem(90)} ${rem(60)} 0 ${rem(60)};
   transition: transform 150ms ease-out;
 
   @layer base {
@@ -38,7 +38,6 @@ export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean }>`
     p.$hero &&
     css`
       font-family: ${headerFont};
-      width: 75rem;
     `};
 `;
 

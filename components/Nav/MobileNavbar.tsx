@@ -1,6 +1,6 @@
 import { KeyboardArrowDown } from '@styled-icons/material';
 import styled, { css } from 'styled-components';
-import { paleGrey } from '../../utils/colors';
+import { blmGrey } from '../../utils/colors';
 import { mobile } from '../../utils/media';
 import rem from '../../utils/rem';
 import { navbarHeight } from '../../utils/sizes';
@@ -9,7 +9,47 @@ import Logo from './Logo';
 import NavButton from './NavButton';
 import { CloseIcon, FoldIcon } from './NavIcons';
 import NavLinks from './NavLinks';
-import Social from './Social';
+
+export interface MobileNavbarProps {
+  isMobileNavFolded?: boolean;
+  isSideFolded?: boolean;
+  onMobileNavToggle?: () => void;
+  onSideToggle?: () => void;
+  showSideNav?: boolean;
+}
+
+export default function MobileNavbar({
+  children,
+  isMobileNavFolded,
+  isSideFolded,
+  onMobileNavToggle,
+  onSideToggle,
+  showSideNav,
+}: React.PropsWithChildren<MobileNavbarProps>) {
+  return (
+    <Wrapper>
+      {showSideNav !== false && (
+        <NavButton onClick={onSideToggle}>{isSideFolded ? <FoldIcon /> : <CloseIcon />}</NavButton>
+      )}
+
+      <LogoLink>
+        <Logo />
+      </LogoLink>
+
+      {children}
+
+      <NavButton onClick={onMobileNavToggle} style={{ position: 'absolute', right: 0 }}>
+        <ArrowWrapper $shouldRotate={!isMobileNavFolded}>
+          <StyledIcon as={KeyboardArrowDown} $size={36} />
+        </ArrowWrapper>
+      </NavButton>
+
+      <SecondaryMenu $isOpen={!isMobileNavFolded}>
+        <NavLinks />
+      </SecondaryMenu>
+    </Wrapper>
+  );
+}
 
 const Wrapper = styled.div`
   display: none;
@@ -48,8 +88,8 @@ const SecondaryMenu = styled.div<{ $isOpen?: boolean }>`
   overflow-x: scroll;
   overflow-y: hidden;
 
-  background: ${paleGrey};
-  color: #868686;
+  background: ${blmGrey};
+  color: #fff;
 `;
 
 const LogoLink = styled(Link).attrs((/* props */) => ({
@@ -57,8 +97,8 @@ const LogoLink = styled(Link).attrs((/* props */) => ({
   href: '/',
   'aria-label': 'styled components',
 }))`
-  display: inline-block;
-  vertical-align: center;
+  margin-right: auto;
+  transform: translateY(-1px);
 `;
 
 const ArrowWrapper = styled.div<{ $shouldRotate?: boolean }>`
@@ -72,61 +112,9 @@ const ArrowWrapper = styled.div<{ $shouldRotate?: boolean }>`
     `};
 `;
 
-const SecondaryMenuItem = styled.div`
-  padding-right: ${rem(20)};
-`;
-
 const StyledIcon = styled.div<{ $size?: number }>`
   && {
     width: ${p => rem(p.$size || 20)};
     height: ${p => rem(p.$size || 20)};
   }
 `;
-
-export interface MobileNavbarProps {
-  isMobileNavFolded?: boolean;
-  isSideFolded?: boolean;
-  onMobileNavToggle?: () => void;
-  onSideToggle?: () => void;
-  showSideNav?: boolean;
-}
-
-const MobileNavbar = ({
-  children,
-  isMobileNavFolded,
-  isSideFolded,
-  onMobileNavToggle,
-  onSideToggle,
-  showSideNav,
-}: React.PropsWithChildren<MobileNavbarProps>) => {
-  return (
-    <Wrapper>
-      {showSideNav !== false && (
-        <NavButton $active={!isSideFolded} onClick={onSideToggle}>
-          {isSideFolded ? <FoldIcon /> : <CloseIcon />}
-        </NavButton>
-      )}
-
-      <LogoLink>
-        <Logo $compact />
-      </LogoLink>
-
-      {children}
-
-      <NavButton onClick={onMobileNavToggle} $active={!isMobileNavFolded} style={{ position: 'absolute', right: 0 }}>
-        <ArrowWrapper $shouldRotate={!isMobileNavFolded}>
-          <StyledIcon as={KeyboardArrowDown} $size={36} />
-        </ArrowWrapper>
-      </NavButton>
-
-      <SecondaryMenu $isOpen={!isMobileNavFolded}>
-        <NavLinks />
-        <SecondaryMenuItem>
-          <Social />
-        </SecondaryMenuItem>
-      </SecondaryMenu>
-    </Wrapper>
-  );
-};
-
-export default MobileNavbar;
