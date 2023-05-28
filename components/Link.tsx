@@ -4,39 +4,6 @@ import styled from 'styled-components';
 import { blmGrey, lightGrey, red } from '../utils/colors';
 import rem from '../utils/rem';
 
-export const StyledLink = styled.a`
-  display: inline-block;
-  color: inherit;
-  cursor: pointer;
-  padding: ${rem(2)} ${rem(8)};
-  margin: ${rem(-2)} ${rem(-8)};
-
-  @media (min-width: ${1000 / 16}em) {
-    border-radius: ${rem(3)};
-
-    &:hover {
-      background: ${lightGrey};
-    }
-  }
-`;
-
-export const InlineLink = styled.a.attrs((/* props */) => ({
-  target: '_blank',
-  rel: 'noopener',
-}))`
-  color: ${blmGrey};
-  cursor: pointer;
-  text-decoration: underline;
-
-  &:hover {
-    color: ${red};
-  }
-
-  &[data-white] {
-    color: white !important;
-  }
-`;
-
 type AnchorProps = JSX.IntrinsicElements['a'];
 
 export interface LinkProps extends UnstyledLinkProps, Omit<AnchorProps, keyof UnstyledLinkProps | 'ref'> {
@@ -76,3 +43,36 @@ export default function Link({
     </UnstyledLink>
   );
 }
+
+export const StyledLink = styled.a`
+  display: inline-block;
+  color: inherit;
+  cursor: pointer;
+  padding: ${rem(2)} ${rem(8)};
+  margin: ${rem(-2)} ${rem(-8)};
+
+  @media (min-width: ${1000 / 16}em) {
+    border-radius: ${rem(3)};
+
+    &:hover {
+      background: ${lightGrey};
+    }
+  }
+`;
+
+export const InlineLink = styled.a.attrs((/* props */) => ({
+  target: '_blank',
+  rel: 'noopener',
+}))`
+  color: ${blmGrey};
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: ${red};
+  }
+
+  &[data-white] {
+    color: white !important;
+  }
+`;

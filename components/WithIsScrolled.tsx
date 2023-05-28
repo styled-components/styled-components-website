@@ -12,7 +12,7 @@ export default function WithIsScrolled(props: { children: React.FC<{ isScrolled:
     // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    return () => window.removeEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, [onScroll, props.children]);
 
   return props.children({ isScrolled });

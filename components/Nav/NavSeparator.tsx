@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import rem from '../../utils/rem';
 
 const NavSeparator = styled.span`

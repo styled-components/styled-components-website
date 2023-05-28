@@ -28,6 +28,9 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="stylesheet" type="text/css" href="/dmvendor.css" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap" rel="stylesheet" />
         </Head>
 
         <body>

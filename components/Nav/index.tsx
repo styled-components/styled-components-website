@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import { DocsSidebarMenu, SimpleSidebarMenu, SimpleSidebarMenuProps } from './SidebarMenus';
 
-interface NavProps {
+export interface NavProps {
   isSideFolded?: boolean;
   isMobileNavFolded?: boolean;
   onSideToggle?: () => void;

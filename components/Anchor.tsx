@@ -1,9 +1,41 @@
-import styled, { css } from 'styled-components';
-import rem from '../utils/rem';
-
 import { Link as LinkIcon } from '@styled-icons/material';
-import { Header, SubHeader, TertiaryHeader } from './Layout';
+import styled, { css } from 'styled-components';
 import { mobile } from '../utils/media';
+import rem from '../utils/rem';
+import { Header, SubHeader, TertiaryHeader } from './Layout';
+
+export interface AnchorProps {
+  id?: string;
+  level?: number;
+}
+
+export default function Anchor({ children, level, id, ...props }: React.PropsWithChildren<AnchorProps>) {
+  let override = undefined;
+
+  switch (level) {
+    case 3:
+      override = SubHeader;
+      break;
+    case 4:
+      override = TertiaryHeader;
+      break;
+    default:
+      override = Header;
+      break;
+  }
+
+  return (
+    <AnchorHeader {...props} as={override}>
+      <InvisibleAnchor id={id} />
+
+      {children}
+
+      <AnchorPrimitive href={`#${id}`} aria-label={id}>
+        <AnchorIcon />
+      </AnchorPrimitive>
+    </AnchorHeader>
+  );
+}
 
 const InvisibleAnchor = styled.div.attrs((/* props */) => ({
   'aria-hidden': true,
@@ -20,7 +52,7 @@ const InvisibleAnchor = styled.div.attrs((/* props */) => ({
   `)};
 `;
 
-const Anchor = styled.a`
+const AnchorPrimitive = styled.a`
   display: none;
   color: inherit;
   margin-left: ${rem(10)};
@@ -44,42 +76,12 @@ const AnchorHeader = styled.div`
 
   ${mobile(css`
     /* stylelint-disable-next-line */
-    ${Anchor} {
+    ${AnchorPrimitive} {
       display: inline-block;
     }
   `)}
 
-  &:hover ${Anchor} {
+  &:hover ${AnchorPrimitive} {
     display: inline-block;
   }
 `;
-
-const Link = ({ children, level, id, ...props }) => {
-  let override = undefined;
-
-  switch (level) {
-    case 3:
-      override = SubHeader;
-      break;
-    case 4:
-      override = TertiaryHeader;
-      break;
-    default:
-      override = Header;
-      break;
-  }
-
-  return (
-    <AnchorHeader {...props} as={override}>
-      <InvisibleAnchor id={id} />
-
-      {children}
-
-      <Anchor href={`#${id}`} aria-label={id}>
-        <AnchorIcon />
-      </Anchor>
-    </AnchorHeader>
-  );
-};
-
-export default Link;

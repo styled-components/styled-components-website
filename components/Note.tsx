@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-
-import rem from '../utils/rem';
-import { blmLightGrey, blmGrey } from '../utils/colors';
+import { blmGrey, blmLightGrey } from '../utils/colors';
 import { bodyFont, headerFont } from '../utils/fonts';
-
+import rem from '../utils/rem';
 import { SubHeader, Title } from './Layout';
 
 export const Note = styled.div`
@@ -32,7 +30,11 @@ const NoteLabel = styled.strong`
   margin-bottom: ${rem(7)};
 `;
 
-const NoteWrapper = ({ label = 'Note', children }) => (
+export interface NoteWrapper {
+  label?: string;
+}
+
+const NoteWrapper = ({ label = 'Note', children }: React.PropsWithChildren<NoteWrapper>) => (
   <Note>
     <NoteLabel>{label}</NoteLabel>
     {children}

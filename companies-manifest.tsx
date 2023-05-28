@@ -1,87 +1,30 @@
-import {
-  AirBnBLogo,
-  ArtsyLogo,
-  AtlassianLogo,
-  AutodeskLogo,
-  Auth0Logo,
-  BBCLogo,
-  BraveLogo,
-  BirchboxLogo,
-  BlockchainLogo,
-  BloombergLogo,
-  BlueTomatoLogo,
-  CasperLogo,
-  ChangeOrgLogo,
-  CoinbaseLogo,
-  CoinMarketCapLogo,
-  CultureTripLogo,
-  DisneyPlusLogo,
-  DoorDashLogo,
-  EddieBauerLogo,
-  EurostarLogo,
-  EuroVisionLogo,
-  GeniusLogo,
-  GiphyLogo,
-  GitHubLogo,
-  GizmodoLogo,
-  GoogleLogo,
-  HuffpostLogo,
-  IdeoLogo,
-  IMDbLogo,
-  InVisionLogo,
-  JaneLogo,
-  KabumLogo,
-  KiwiComLogo,
-  LegoLogo,
-  LifehackerLogo,
-  MagicLeapLogo,
-  MoleskineLogo,
-  PatreonLogo,
-  RedditLogo,
-  RedBullLogo,
-  SeatGeekLogo,
-  SesameLogo,
-  ShpockLogo,
-  SmartLogo,
-  SpotifyLogo,
-  TargetLogo,
-  TaskadeLogo,
-  TicketmasterLogo,
-  TinderLogo,
-  TypeformLogo,
-  TruliaLogo,
-  UnderArmourLogo,
-  VimeoLogo,
-  VogueLogo,
-  XingLogo,
-  LyftLogo,
-  VolkswagenLogo,
-  FramerLogo,
-  PricelineLogo,
-  TheOnionLogo,
-  StreamLogo,
-  RevolutLogo,
-  RiotGamesLogo,
-  WazirXLogo,
-  UnrealEngineLogo,
-  SmallPdfLogo,
-  OverWatchLeagueLogo,
-  PageXlLogo,
-  HomelyLogo,
-  WishLogo,
-  DeadspinLogo,
-  MiuiLogo,
-  JimdoLogo,
-  ZillowLogo,
-  WelcomeUILogo,
-} from './components/CompanyLogos';
+import * as CompanyLogos from './components/CompanyLogos';
 
-const companies = [
+export interface Project {
+  height: number;
+  internalUrl?: string;
+  link: string;
+  repo?: string;
+  src: string;
+  title: string;
+  width: number;
+}
+
+export interface Company {
+  key: string;
+  logo?: React.ComponentType;
+  name: string;
+  projects: Record<string, Project>;
+  similarWebGlobalRank: number;
+  style: React.HTMLAttributes<HTMLElement>['style'];
+}
+
+const companies: Company[] = [
   {
     key: 'https://www.autodesk.com',
     similarWebGlobalRank: 1425,
     name: 'Autodesk',
-    logo: AutodeskLogo,
+    logo: CompanyLogos.AutodeskLogo,
     style: {
       bottom: '-0.1rem',
       height: '2rem',
@@ -92,7 +35,7 @@ const companies = [
     key: 'https://www.airbnb.com',
     similarWebGlobalRank: 341439,
     name: 'AirBnB',
-    logo: AirBnBLogo,
+    logo: CompanyLogos.AirBnBLogo,
     style: {
       bottom: '0.3rem',
       height: '2.5rem',
@@ -112,7 +55,7 @@ const companies = [
     key: 'https://www.artsy.net',
     similarWebGlobalRank: 17576,
     name: 'Artsy',
-    logo: ArtsyLogo,
+    logo: CompanyLogos.ArtsyLogo,
     style: {
       bottom: '0.16rem',
       height: '2.25rem',
@@ -132,7 +75,7 @@ const companies = [
     key: 'https://www.atlassian.com/',
     similarWebGlobalRank: 2505,
     name: 'Atlassian',
-    logo: AtlassianLogo,
+    logo: CompanyLogos.AtlassianLogo,
     style: {
       height: '1.75rem',
     },
@@ -152,7 +95,7 @@ const companies = [
     key: 'https://auth0.com',
     similarWebGlobalRank: 5628,
     name: 'Auth0',
-    logo: Auth0Logo,
+    logo: CompanyLogos.Auth0Logo,
     style: {},
     projects: {
       auth0: {
@@ -169,7 +112,7 @@ const companies = [
     key: 'https://www.bbc.com/',
     similarWebGlobalRank: 114,
     name: 'BBC',
-    logo: BBCLogo,
+    logo: CompanyLogos.BBCLogo,
     style: {},
     projects: {},
   },
@@ -177,7 +120,7 @@ const companies = [
     key: 'https://brave.com/',
     similarWebGlobalRank: 13395,
     name: 'Brave',
-    logo: BraveLogo,
+    logo: CompanyLogos.BraveLogo,
     style: {},
     projects: {
       brave: {
@@ -194,7 +137,7 @@ const companies = [
     key: 'https://www.bloomberg.com',
     similarWebGlobalRank: 507,
     name: 'Bloomberg',
-    logo: BloombergLogo,
+    logo: CompanyLogos.BloombergLogo,
     style: {
       bottom: '-0.2rem',
       height: '1.75rem',
@@ -205,7 +148,7 @@ const companies = [
     key: 'https://www.blue-tomato.com',
     similarWebGlobalRank: 21322,
     name: 'BlueTomato',
-    logo: BlueTomatoLogo,
+    logo: CompanyLogos.BlueTomatoLogo,
     style: {
       bottom: '0.75rem',
       height: '3.3rem',
@@ -216,7 +159,7 @@ const companies = [
     key: 'http://casper.com/',
     similarWebGlobalRank: 33785,
     name: 'Casper',
-    logo: CasperLogo,
+    logo: CompanyLogos.CasperLogo,
     style: {
       bottom: '-0.2rem',
     },
@@ -235,7 +178,7 @@ const companies = [
     key: 'https://theculturetrip.com',
     similarWebGlobalRank: 4945,
     name: 'CultureTrip',
-    logo: CultureTripLogo,
+    logo: CompanyLogos.CultureTripLogo,
     style: {
       height: '2rem',
     },
@@ -245,7 +188,7 @@ const companies = [
     key: 'https://www.coinbase.com',
     similarWebGlobalRank: 2001,
     name: 'Coinbase',
-    logo: CoinbaseLogo,
+    logo: CompanyLogos.CoinbaseLogo,
     style: {
       bottom: '0.3rem',
       height: '2rem',
@@ -265,7 +208,7 @@ const companies = [
     key: 'https://coinmarketcap.com/',
     similarWebGlobalRank: 2155,
     name: 'CoinMarketCap',
-    logo: CoinMarketCapLogo,
+    logo: CompanyLogos.CoinMarketCapLogo,
     style: {
       bottom: '0.3rem',
       height: '2.5rem',
@@ -285,7 +228,7 @@ const companies = [
     key: 'https://www.disneyplus.com/',
     similarWebGlobalRank: 7707,
     name: 'DisneyPlus',
-    logo: DisneyPlusLogo,
+    logo: CompanyLogos.DisneyPlusLogo,
     style: {
       bottom: '0.4rem',
       height: '3rem',
@@ -305,7 +248,7 @@ const companies = [
     key: 'https://www.doordash.com/',
     similarWebGlobalRank: 2831,
     name: 'DoorDash',
-    logo: DoorDashLogo,
+    logo: CompanyLogos.DoorDashLogo,
     style: {
       bottom: '-0.2rem',
     },
@@ -315,7 +258,7 @@ const companies = [
     key: 'https://eurovision.tv/',
     similarWebGlobalRank: 38132,
     name: 'EuroVision',
-    logo: EuroVisionLogo,
+    logo: CompanyLogos.EuroVisionLogo,
     style: {
       bottom: '0.1rem',
       height: '2.5rem',
@@ -326,7 +269,7 @@ const companies = [
     key: 'https://eddiebauer.com',
     similarWebGlobalRank: 11625,
     name: 'EddieBauer',
-    logo: EddieBauerLogo,
+    logo: CompanyLogos.EddieBauerLogo,
     style: {
       bottom: '0.1rem',
       height: '2rem',
@@ -337,7 +280,7 @@ const companies = [
     key: 'https://giphy.com/',
     similarWebGlobalRank: 830,
     name: 'Giphy',
-    logo: GiphyLogo,
+    logo: CompanyLogos.GiphyLogo,
     style: {
       bottom: '0.3rem',
       height: '2.5rem',
@@ -357,7 +300,7 @@ const companies = [
     key: 'https://github.com/',
     similarWebGlobalRank: 76,
     name: 'GitHub',
-    logo: GitHubLogo,
+    logo: CompanyLogos.GitHubLogo,
     style: {},
     projects: {},
   },
@@ -365,7 +308,7 @@ const companies = [
     key: 'https://gizmodo.com/',
     similarWebGlobalRank: 76,
     name: 'Gizmodo',
-    logo: GizmodoLogo,
+    logo: CompanyLogos.GizmodoLogo,
     style: {},
     projects: {
       gizmodo: {
@@ -382,7 +325,7 @@ const companies = [
     key: 'https://www.huffpost.com',
     similarWebGlobalRank: 950,
     name: 'Huffpost',
-    logo: HuffpostLogo,
+    logo: CompanyLogos.HuffpostLogo,
     style: {},
     projects: {},
   },
@@ -390,7 +333,7 @@ const companies = [
     key: 'https://www.ideo.com',
     similarWebGlobalRank: 117384,
     name: 'Ideo',
-    logo: IdeoLogo,
+    logo: CompanyLogos.IdeoLogo,
     style: {
       bottom: '-0.15rem',
       height: '1.5rem',
@@ -401,7 +344,7 @@ const companies = [
     key: 'https://www.imdb.com',
     similarWebGlobalRank: 54,
     name: 'IMDb',
-    logo: IMDbLogo,
+    logo: CompanyLogos.IMDbLogo,
     style: {},
     projects: {
       imdb: {
@@ -418,7 +361,7 @@ const companies = [
     key: 'https://www.invisionapp.com',
     similarWebGlobalRank: 2368,
     name: 'InVision',
-    logo: InVisionLogo,
+    logo: CompanyLogos.InVisionLogo,
     style: {
       bottom: '0.1rem',
       height: '2.25rem',
@@ -438,7 +381,7 @@ const companies = [
     key: 'https://www.kiwi.com',
     similarWebGlobalRank: 4612,
     name: 'KiwiCom',
-    logo: KiwiComLogo,
+    logo: CompanyLogos.KiwiComLogo,
     style: {
       bottom: '0.3rem',
       height: '2.75rem',
@@ -449,7 +392,7 @@ const companies = [
     key: 'https://www.lego.com',
     similarWebGlobalRank: 2008,
     name: 'Lego',
-    logo: LegoLogo,
+    logo: CompanyLogos.LegoLogo,
     style: {},
     projects: {
       'lego-store': {
@@ -466,7 +409,7 @@ const companies = [
     key: 'https://www.magicleap.com/',
     similarWebGlobalRank: 119765,
     name: 'MagicLeap',
-    logo: MagicLeapLogo,
+    logo: CompanyLogos.MagicLeapLogo,
     style: {
       bottom: '1rem',
       height: '4rem',
@@ -477,7 +420,7 @@ const companies = [
     key: 'https://www.moleskine.com',
     similarWebGlobalRank: 70404,
     name: 'Moleskine',
-    logo: MoleskineLogo,
+    logo: CompanyLogos.MoleskineLogo,
     style: {
       bottom: '-0.15rem',
       height: '1.3rem',
@@ -497,7 +440,7 @@ const companies = [
     key: 'https://www.patreon.com/',
     similarWebGlobalRank: 533,
     name: 'Patreon',
-    logo: PatreonLogo,
+    logo: CompanyLogos.PatreonLogo,
     style: {},
     projects: {
       patreon: {
@@ -514,7 +457,7 @@ const companies = [
     key: 'https://www.reddit.com/',
     similarWebGlobalRank: 20,
     name: 'Reddit',
-    logo: RedditLogo,
+    logo: CompanyLogos.RedditLogo,
     style: {
       bottom: '0.15rem',
     },
@@ -524,7 +467,7 @@ const companies = [
     key: 'https://seatgeek.com',
     similarWebGlobalRank: 5590,
     name: 'SeatGeek',
-    logo: SeatGeekLogo,
+    logo: CompanyLogos.SeatGeekLogo,
     style: {},
     projects: {},
   },
@@ -532,7 +475,7 @@ const companies = [
     key: 'https://www.sesamegifts.com/',
     similarWebGlobalRank: 500301,
     name: 'Sesame',
-    logo: SesameLogo,
+    logo: CompanyLogos.SesameLogo,
     style: {},
     projects: {},
   },
@@ -540,7 +483,7 @@ const companies = [
     key: 'https://www.shpock.com',
     similarWebGlobalRank: 11112,
     name: 'Shpock',
-    logo: ShpockLogo,
+    logo: CompanyLogos.ShpockLogo,
     style: {
       bottom: '0.4rem',
       height: '3rem',
@@ -551,7 +494,7 @@ const companies = [
     key: 'https://smart.com',
     similarWebGlobalRank: 70739,
     name: 'Smart',
-    logo: SmartLogo,
+    logo: CompanyLogos.SmartLogo,
     style: {
       bottom: '0.1rem',
       height: '2rem',
@@ -562,7 +505,7 @@ const companies = [
     key: 'https://spotify.com',
     similarWebGlobalRank: 111,
     name: 'Spotify',
-    logo: SpotifyLogo,
+    logo: CompanyLogos.SpotifyLogo,
     style: {
       bottom: '0.3rem',
       height: '2.5rem',
@@ -582,7 +525,7 @@ const companies = [
     key: 'https://www.target.com',
     similarWebGlobalRank: 300,
     name: 'Target',
-    logo: TargetLogo,
+    logo: CompanyLogos.TargetLogo,
     style: {},
     projects: {
       target: {
@@ -599,7 +542,7 @@ const companies = [
     key: 'https://www.ticketmaster.com/',
     similarWebGlobalRank: 1079,
     name: 'Ticketmaster',
-    logo: TicketmasterLogo,
+    logo: CompanyLogos.TicketmasterLogo,
     style: {
       height: '1.7rem',
     },
@@ -618,7 +561,7 @@ const companies = [
     key: 'https://tinder.com/',
     similarWebGlobalRank: 561,
     name: 'Tinder',
-    logo: TinderLogo,
+    logo: CompanyLogos.TinderLogo,
     style: {
       bottom: '0.2rem',
     },
@@ -637,7 +580,7 @@ const companies = [
     key: 'https://www.typeform.com',
     similarWebGlobalRank: 3279,
     name: 'Typeform',
-    logo: TypeformLogo,
+    logo: CompanyLogos.TypeformLogo,
     style: {
       bottom: '0.15rem',
       height: '2.35rem',
@@ -648,7 +591,7 @@ const companies = [
     key: 'https://www.underarmour.com',
     similarWebGlobalRank: 6221,
     name: 'UnderArmour',
-    logo: UnderArmourLogo,
+    logo: CompanyLogos.UnderArmourLogo,
     style: {
       height: '2.3rem',
     },
@@ -658,7 +601,7 @@ const companies = [
     key: 'https://www.vimeo.com',
     similarWebGlobalRank: 239,
     name: 'Vimeo',
-    logo: VimeoLogo,
+    logo: CompanyLogos.VimeoLogo,
     style: {
       bottom: '0.3rem',
       height: '2.1rem',
@@ -669,7 +612,7 @@ const companies = [
     key: 'https://www.vogue.com',
     similarWebGlobalRank: 3075,
     name: 'Vogue',
-    logo: VogueLogo,
+    logo: CompanyLogos.VogueLogo,
     style: {
       height: '1.8rem',
     },
@@ -688,7 +631,7 @@ const companies = [
     key: 'https://www.xing.com',
     similarWebGlobalRank: 2203,
     name: 'Xing',
-    logo: XingLogo,
+    logo: CompanyLogos.XingLogo,
     style: {
       bottom: '0.7rem',
       height: '2.5rem',
@@ -699,7 +642,7 @@ const companies = [
     key: 'https://jane.com',
     similarWebGlobalRank: 21426,
     name: 'Jane',
-    logo: JaneLogo,
+    logo: CompanyLogos.JaneLogo,
     style: {
       height: '2.0rem',
     },
@@ -709,7 +652,7 @@ const companies = [
     key: 'https://google.com',
     similarWebGlobalRank: 1,
     name: 'Google',
-    logo: GoogleLogo,
+    logo: CompanyLogos.GoogleLogo,
     style: {
       height: '2.3rem',
     },
@@ -719,7 +662,7 @@ const companies = [
     key: 'https://genius.com',
     similarWebGlobalRank: 366,
     name: 'Genius',
-    logo: GeniusLogo,
+    logo: CompanyLogos.GeniusLogo,
     style: {
       height: '1.5rem',
     },
@@ -729,7 +672,7 @@ const companies = [
     key: 'https://www.eurostar.com',
     similarWebGlobalRank: 11380,
     name: 'Eurostar',
-    logo: EurostarLogo,
+    logo: CompanyLogos.EurostarLogo,
     style: {
       height: '2.3rem',
     },
@@ -739,7 +682,7 @@ const companies = [
     key: 'http://change.org/',
     similarWebGlobalRank: 551,
     name: 'ChangeOrg',
-    logo: ChangeOrgLogo,
+    logo: CompanyLogos.ChangeOrgLogo,
     style: {
       bottom: '-0.2rem',
     },
@@ -749,7 +692,7 @@ const companies = [
     key: 'https://www.trulia.com/',
     similarWebGlobalRank: 257,
     name: 'Trulia',
-    logo: TruliaLogo,
+    logo: CompanyLogos.TruliaLogo,
     style: {
       bottom: '0.1rem',
     },
@@ -759,7 +702,7 @@ const companies = [
     key: 'https://birchbox.com/',
     similarWebGlobalRank: 38199,
     name: 'Birchbox',
-    logo: BirchboxLogo,
+    logo: CompanyLogos.BirchboxLogo,
     style: {
       height: '1.3rem',
       bottom: '-0.2rem',
@@ -770,7 +713,7 @@ const companies = [
     key: 'https://blockchain.com/',
     similarWebGlobalRank: 4797,
     name: 'Blockchain',
-    logo: BlockchainLogo,
+    logo: CompanyLogos.BlockchainLogo,
     style: {
       height: '1.3rem',
     },
@@ -780,7 +723,7 @@ const companies = [
     key: 'https://www.volkswagen.de/de.html',
     similarWebGlobalRank: 75049,
     name: 'Volkswagen',
-    logo: VolkswagenLogo,
+    logo: CompanyLogos.VolkswagenLogo,
     style: {
       height: '2rem',
     },
@@ -790,7 +733,6 @@ const companies = [
     key: 'https://spectrum.chat',
     similarWebGlobalRank: 95528,
     name: 'Spectrum',
-    logo: null,
     style: {},
     projects: {
       spectrum: {
@@ -808,7 +750,6 @@ const companies = [
     key: 'https://tsm.gg',
     similarWebGlobalRank: 273875,
     name: 'TSM',
-    logo: null,
     style: {},
     projects: {
       tsm: {
@@ -825,7 +766,6 @@ const companies = [
     key: 'https://fortnitemaster.com',
     similarWebGlobalRank: 332652,
     name: 'Solomid Corp',
-    logo: null,
     style: {},
     projects: {
       fortnitemaster: {
@@ -842,7 +782,6 @@ const companies = [
     key: 'https://prisma.io',
     similarWebGlobalRank: 183831,
     name: 'Prisma',
-    logo: null,
     style: {},
     projects: {
       prisma: {
@@ -860,7 +799,7 @@ const companies = [
     key: 'https://www.lyft.com/',
     similarWebGlobalRank: 3783,
     name: 'Lyft',
-    logo: LyftLogo,
+    logo: CompanyLogos.LyftLogo,
     style: {
       height: '2.3rem',
     },
@@ -879,7 +818,7 @@ const companies = [
     key: 'https://framer.com/',
     similarWebGlobalRank: 185723,
     name: 'Framer',
-    logo: FramerLogo,
+    logo: CompanyLogos.FramerLogo,
     style: {},
     projects: {
       framer: {
@@ -896,7 +835,7 @@ const companies = [
     key: 'https://www.priceline.com/',
     similarWebGlobalRank: 1509,
     name: 'Priceline',
-    logo: PricelineLogo,
+    logo: CompanyLogos.PricelineLogo,
     style: {},
     projects: {
       priceline: {
@@ -913,7 +852,7 @@ const companies = [
     key: 'https://www.theonion.com/',
     similarWebGlobalRank: 8690,
     name: 'TheOnion',
-    logo: TheOnionLogo,
+    logo: CompanyLogos.TheOnionLogo,
     style: {},
     projects: {},
   },
@@ -921,7 +860,7 @@ const companies = [
     key: 'https://getstream.io/',
     similarWebGlobalRank: 388663,
     name: 'Stream',
-    logo: StreamLogo,
+    logo: CompanyLogos.StreamLogo,
     style: {},
     projects: {
       stream: {
@@ -938,7 +877,7 @@ const companies = [
     key: 'http://taskade.com/',
     similarWebGlobalRank: 136144,
     name: 'Taskade',
-    logo: TaskadeLogo,
+    logo: CompanyLogos.TaskadeLogo,
     style: {},
     projects: {
       taskade: {
@@ -955,7 +894,7 @@ const companies = [
     key: 'https://www.revolut.com',
     similarWebGlobalRank: 12225,
     name: 'Revolut',
-    logo: RevolutLogo,
+    logo: CompanyLogos.RevolutLogo,
     style: {},
     projects: {
       revolut: {
@@ -972,7 +911,7 @@ const companies = [
     key: 'https://www.riotgames.com/',
     similarWebGlobalRank: 1819,
     name: 'Riot Games',
-    logo: RiotGamesLogo,
+    logo: CompanyLogos.RiotGamesLogo,
     style: {},
     projects: {
       leagueoflegends: {
@@ -989,7 +928,7 @@ const companies = [
     key: 'https://wazirx.com/',
     similarWebGlobalRank: 48011,
     name: 'WazirX',
-    logo: WazirXLogo,
+    logo: CompanyLogos.WazirXLogo,
     style: {},
     projects: {
       wazirx: {
@@ -1006,7 +945,7 @@ const companies = [
     key: 'https://www.unrealengine.com/',
     similarWebGlobalRank: 5206,
     name: 'Unreal Engine',
-    logo: UnrealEngineLogo,
+    logo: CompanyLogos.UnrealEngineLogo,
     style: {},
     projects: {
       unrealengine: {
@@ -1023,7 +962,7 @@ const companies = [
     key: 'https://smallpdf.com',
     similarWebGlobalRank: 783,
     name: 'Smallpdf',
-    logo: SmallPdfLogo,
+    logo: CompanyLogos.SmallPdfLogo,
     style: {},
     projects: {
       smallpdf: {
@@ -1040,7 +979,7 @@ const companies = [
     key: 'https://overwatchleague.com',
     similarWebGlobalRank: 22316,
     name: 'Blizzard',
-    logo: OverWatchLeagueLogo,
+    logo: CompanyLogos.OverWatchLeagueLogo,
     style: {},
     projects: {
       overwatchleague: {
@@ -1057,7 +996,7 @@ const companies = [
     key: 'https://www.lauyan.com',
     similarWebGlobalRank: Number.MAX_SAFE_INTEGER,
     name: 'Lauyan Software Sarl',
-    logo: PageXlLogo,
+    logo: CompanyLogos.PageXlLogo,
     style: {},
     projects: {
       pagexl: {
@@ -1074,7 +1013,7 @@ const companies = [
     key: 'https://www.homely.com.au/',
     similarWebGlobalRank: 48470,
     name: 'Homely',
-    logo: HomelyLogo,
+    logo: CompanyLogos.HomelyLogo,
     style: {},
     projects: {
       homely: {
@@ -1091,7 +1030,7 @@ const companies = [
     key: 'https://deadspin.com/',
     similarWebGlobalRank: 29343,
     name: 'Deadspin',
-    logo: DeadspinLogo,
+    logo: CompanyLogos.DeadspinLogo,
     style: {},
     projects: {
       deadspin: {
@@ -1108,7 +1047,7 @@ const companies = [
     key: 'https://www.wish.com/',
     similarWebGlobalRank: 194,
     name: 'Wish',
-    logo: WishLogo,
+    logo: CompanyLogos.WishLogo,
     style: {},
     projects: {
       wish: {
@@ -1125,7 +1064,7 @@ const companies = [
     key: 'https://home.miui.com/',
     similarWebGlobalRank: 891,
     name: 'Miui',
-    logo: MiuiLogo,
+    logo: CompanyLogos.MiuiLogo,
     style: {},
     projects: {
       miui: {
@@ -1142,7 +1081,7 @@ const companies = [
     key: 'https://www.jimdo.com/',
     similarWebGlobalRank: 4810,
     name: 'Jimdo',
-    logo: JimdoLogo,
+    logo: CompanyLogos.JimdoLogo,
     style: {},
     projects: {
       jimdo: {
@@ -1159,7 +1098,7 @@ const companies = [
     key: 'https://www.redbullmusicacademy.com/',
     similarWebGlobalRank: 470372,
     name: 'Red Bull Music',
-    logo: RedBullLogo,
+    logo: CompanyLogos.RedBullLogo,
     style: {},
     projects: {
       redbull: {
@@ -1176,7 +1115,7 @@ const companies = [
     key: 'https://www.zillow.com/',
     similarWebGlobalRank: 42,
     name: 'Zillow',
-    logo: ZillowLogo,
+    logo: CompanyLogos.ZillowLogo,
     style: {},
     projects: {
       zillow: {
@@ -1193,7 +1132,7 @@ const companies = [
     key: 'https://www.lifehacker.com/',
     similarWebGlobalRank: 4821,
     name: 'Lifehacker',
-    logo: LifehackerLogo,
+    logo: CompanyLogos.LifehackerLogo,
     style: {},
     projects: {
       lifehacker: {
@@ -1210,7 +1149,7 @@ const companies = [
     key: 'https://www.welcometothejungle.com/',
     similarWebGlobalRank: 23268,
     name: 'Welcome to the jungle',
-    logo: WelcomeUILogo,
+    logo: CompanyLogos.WelcomeUILogo,
     style: {},
     projects: {
       welcomeui: {
@@ -1227,7 +1166,7 @@ const companies = [
     key: 'https://www.kabum.com.br/',
     similarWebGlobalRank: 3679,
     name: 'KaBuM!',
-    logo: KabumLogo,
+    logo: CompanyLogos.KabumLogo,
     style: {},
     projects: {
       kabum: {
@@ -1242,12 +1181,15 @@ const companies = [
   },
 ];
 
-export type ICompany = (typeof companies)[number];
-
 export default companies;
 
 // sorting logic: the more popular a website, the higher it gets listed
 export const sortedCompanies = companies.sort((a, b) => a.similarWebGlobalRank - b.similarWebGlobalRank);
+
+export interface SortedProject extends Project {
+  owner: Company['name'];
+}
+
 export const sortedProjects = sortedCompanies.reduce(
   (projects, company) => ({
     ...projects,
@@ -1262,5 +1204,5 @@ export const sortedProjects = sortedCompanies.reduce(
       {}
     ),
   }),
-  {}
+  {} as Record<string, Project>
 );

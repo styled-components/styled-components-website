@@ -39,9 +39,10 @@ const ResetStyles = createGlobalStyle`
   }
 
   html, body {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     font-family: ${bodyFont};
+    font-variant-ligatures: common-ligatures;
     font-style: normal;
     padding: 0;
     margin: 0;
@@ -67,6 +68,17 @@ const ResetStyles = createGlobalStyle`
   .big {
     color: white;
     font-size: 1.4em;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  code {
+    background: rgba(10, 10, 12, 0.5);
+    border-radius: 2px;
+    font-family: ${bodyFont}, monospace;
+    padding: 0 0.1em;
   }
 
   ul, ol {

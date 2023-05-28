@@ -1,7 +1,30 @@
+import { Project } from 'companies-manifest';
 import Link from 'next/link';
-import React from 'react';
 import styled from 'styled-components';
 import { headerFont } from '../../utils/fonts';
+
+export interface SmallShowcaseProps {
+  projects: Record<string, Project>;
+}
+
+export default function SmallShowcase({ projects }: SmallShowcaseProps) {
+  return (
+    <Wrapper>
+      {Object.values(projects)
+        .slice(0, 6)
+        .map((project, index) => (
+          <Link key={project.title} passHref href={`/showcase?item=${project.internalUrl}`}>
+            <Website as="a" $position={index}>
+              <RatioBox>
+                <Screenshot style={{ backgroundImage: project.src }} />
+                <Label>{project.title}</Label>
+              </RatioBox>
+            </Website>
+          </Link>
+        ))}
+    </Wrapper>
+  );
+}
 
 const scaleFactor = [1.8, 1.4, 1];
 
@@ -53,7 +76,7 @@ const Label = styled.label`
   }
 `;
 
-const Website = styled.div`
+const Website = styled.div<{ $position: number }>`
   display: block;
   position: relative;
   width: 100%;
@@ -70,12 +93,12 @@ const Website = styled.div`
 
   @media (min-width: 800px) {
     padding: 12px;
-    z-index: ${props => 2 - Math.abs(props.position - 2)};
-    display: ${props => (props.position > 4 ? 'none' : 'block')};
-    transform: scale(${props => scaleFactor[Math.abs(props.position - 2)]});
+    z-index: ${props => 2 - Math.abs(props.$position - 2)};
+    display: ${props => (props.$position > 4 ? 'none' : 'block')};
+    transform: scale(${props => scaleFactor[Math.abs(props.$position - 2)]});
 
     &:hover {
-      transform: scale(${props => scaleFactor[Math.abs(props.position - 2)] + 0.2});
+      transform: scale(${props => scaleFactor[Math.abs(props.$position - 2)] + 0.2});
 
       &:nth-of-type(-n + 2) {
         ${Label} {
@@ -96,41 +119,19 @@ const Website = styled.div`
 `;
 
 const RatioBox = styled.div`
+  padding-top: 56.25%;
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
 `;
 
 const Screenshot = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url(${props => props.bg});
   background-size: cover;
-  display: block;
-  width: 100%;
-  height: 100%;
   border-radius: 4px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 5px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 `;
-
-const SmallShowcase = ({ projects }) => {
-  return (
-    <Wrapper>
-      {Object.values(projects)
-        .slice(0, 6)
-        .map((project, index) => (
-          <Link key={project.title} passHref href={`/showcase?item=${project.internalUrl}`}>
-            <Website as="a" position={index}>
-              <RatioBox>
-                <Screenshot bg={project.src} />
-                <Label>{project.title}</Label>
-              </RatioBox>
-            </Website>
-          </Link>
-        ))}
-    </Wrapper>
-  );
-};
-
-export default SmallShowcase;

@@ -1,11 +1,33 @@
-import React from 'react';
-import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live-runner';
+import { LiveEditor, LiveError, LivePreview, LiveProvider, LiveProviderProps } from 'react-live-runner';
 import styled, { css } from 'styled-components';
 import { darkGrey, red } from '../utils/colors';
 import { headerFont, monospace } from '../utils/fonts';
 import { phone } from '../utils/media';
 import rem from '../utils/rem';
 import baseScope from '../utils/scope';
+
+export interface LiveEditProps extends Pick<LiveProviderProps, 'code' | 'scope'> {}
+
+export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
+  return (
+    <StyledProvider
+      code={code}
+      scope={{
+        ...baseScope,
+        ...scope,
+      }}
+    >
+      <Row>
+        <Code>
+          <StyledEditor />
+        </Code>
+        <StyledPreview className="notranslate" />
+      </Row>
+
+      <StyledError />
+    </StyledProvider>
+  );
+}
 
 const StyledProvider = styled(LiveProvider)`
   box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
@@ -82,26 +104,3 @@ export const StyledError = styled(LiveError)`
   font-family: ${headerFont};
   white-space: pre;
 `;
-
-const LiveEdit = ({ code, scope = {} }) => {
-  return (
-    <StyledProvider
-      code={code}
-      scope={{
-        ...baseScope,
-        ...scope,
-      }}
-    >
-      <Row>
-        <Code>
-          <StyledEditor />
-        </Code>
-        <StyledPreview className="notranslate" />
-      </Row>
-
-      <StyledError />
-    </StyledProvider>
-  );
-};
-
-export default LiveEdit;

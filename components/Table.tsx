@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-
-import rem from '../utils/rem';
 import { lightGrey } from '../utils/colors';
 import { headerFont } from '../utils/fonts';
+import rem from '../utils/rem';
 
 export const TableWrapper = styled.table`
   width: 100%;
@@ -36,7 +35,11 @@ const TableHeadColumn = styled(Column)`
   opacity: 0.8;
 `;
 
-const Table = ({ head, children }) => (
+export interface TableProps {
+  head: string[];
+}
+
+const Table = ({ head, children }: React.PropsWithChildren<TableProps>) => (
   <TableWrapper>
     <TableHead>
       <tr>

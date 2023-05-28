@@ -1,5 +1,4 @@
-import { ICompany } from 'companies-manifest';
-import React from 'react';
+import { Company } from 'companies-manifest';
 import styled, { keyframes } from 'styled-components';
 
 const getSlide = (childIndex: number, reverse?: boolean) => keyframes`
@@ -63,7 +62,7 @@ const CompanyLogo = styled.span`
 `;
 
 export interface ISortedLogos {
-  users: ICompany[];
+  users: Company[];
 }
 
 const SortedLogos = ({ users }: ISortedLogos) => (

@@ -1,11 +1,10 @@
-import styled, { css } from 'styled-components';
 import { KeyboardArrowRight } from '@styled-icons/material';
-
-import rem from '../utils/rem';
-import Link from './Link';
+import styled, { css } from 'styled-components';
 import { grey } from '../utils/colors';
-import { mobile } from '../utils/media';
 import { headerFont } from '../utils/fonts';
+import { mobile } from '../utils/media';
+import rem from '../utils/rem';
+import Link, { LinkProps } from './Link';
 
 const Wrapper = styled(Link).attrs((/* props */) => ({
   unstyled: true,
@@ -44,7 +43,11 @@ const Icon = styled(KeyboardArrowRight)`
   width: ${rem(30)};
 `;
 
-const NextPage = ({ title, href }) => (
+export interface NextPageProps extends Pick<LinkProps, 'href'> {
+  title: string;
+}
+
+const NextPage = ({ title, href }: NextPageProps) => (
   <Wrapper unstyled href={href}>
     <div>
       <Text>Continue on the next page</Text>

@@ -5,6 +5,60 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ShowcaseLink from './ShowcaseLink';
 import Image from '../Image';
 import { phone } from '../../utils/media';
+import { Project } from 'companies-manifest';
+
+export interface NavigationProps {
+  prev: Project;
+  next: Project;
+}
+
+export default function Navigation({ prev, next }: NavigationProps) {
+  return (
+    <SlideNav>
+      <ShowcaseLink item={prev}>
+        <NavButton>
+          <Image
+            width={1920}
+            height={1080}
+            src={prev.src}
+            margin={0}
+            renderImage={props => {
+              return (
+                <TransitionGroup>
+                  <CSSTransition key={props.src} timeout={100} classNames="fade">
+                    <img src={prev.src} />
+                  </CSSTransition>
+                </TransitionGroup>
+              );
+            }}
+          />
+          <NavigateBefore />
+        </NavButton>
+      </ShowcaseLink>
+
+      <ShowcaseLink item={next}>
+        <NavButton>
+          <Image
+            width={1920}
+            height={1080}
+            src={next.src}
+            margin={0}
+            renderImage={props => {
+              return (
+                <TransitionGroup>
+                  <CSSTransition key={props.src} timeout={100} classNames="fade">
+                    <img src={next.src} />
+                  </CSSTransition>
+                </TransitionGroup>
+              );
+            }}
+          />
+          <NavigateNext />
+        </NavButton>
+      </ShowcaseLink>
+    </SlideNav>
+  );
+}
 
 const navHeight = 192;
 
@@ -97,53 +151,3 @@ const NavButton = styled.div`
     }
   }
 `;
-
-const Navigation = ({ prev, next }) => {
-  return (
-    <SlideNav>
-      <ShowcaseLink item={prev}>
-        <NavButton>
-          <Image
-            width={1920}
-            height={1080}
-            src={prev.src}
-            margin={0}
-            renderImage={props => {
-              return (
-                <TransitionGroup>
-                  <CSSTransition key={props.src} timeout={100} classNames="fade">
-                    <img src={prev.src} />
-                  </CSSTransition>
-                </TransitionGroup>
-              );
-            }}
-          />
-          <NavigateBefore />
-        </NavButton>
-      </ShowcaseLink>
-
-      <ShowcaseLink item={next}>
-        <NavButton>
-          <Image
-            width={1920}
-            height={1080}
-            src={next.src}
-            margin={0}
-            renderImage={props => {
-              return (
-                <TransitionGroup>
-                  <CSSTransition key={props.src} timeout={100} classNames="fade">
-                    <img src={next.src} />
-                  </CSSTransition>
-                </TransitionGroup>
-              );
-            }}
-          />
-          <NavigateNext />
-        </NavButton>
-      </ShowcaseLink>
-    </SlideNav>
-  );
-};
-
-export default Navigation;

@@ -1,12 +1,10 @@
 import React from 'react';
 import { LiveEditor, LivePreview, LiveProvider } from 'react-live-runner';
 import styled from 'styled-components';
-import NextLink from '../components/Link';
-
 import { sortedCompanies, sortedProjects } from '../companies-manifest';
 import Footer from '../components/Footer';
 import { Content } from '../components/Layout';
-import Link from '../components/Link';
+import { default as Link, default as NextLink } from '../components/Link';
 import { StyledError, editorMixin } from '../components/LiveEdit';
 import Nav from '../components/Nav';
 import SeoHead from '../components/SeoHead';
@@ -38,8 +36,10 @@ export default function Index() {
         <Content $hero>
           <LiveProvider code={headerCode} transformCode={transformHeaderCode} scope={{ ...baseScope, rem, Link }}>
             <Title>
-              <Tagline>CSS for the Component Age</Tagline>
-              <SupportingTagline>Style your way with speed, strong typing, and flexibility.</SupportingTagline>
+              <Tagline>
+                CSS for the <code>&lt;Component&gt;</code> Age
+              </Tagline>
+              <SupportingTagline>Styling your way with speed, strong typing, and flexibility.</SupportingTagline>
             </Title>
 
             <Links>
@@ -74,59 +74,70 @@ export default function Index() {
 }
 
 const Tagline = styled.h1`
-  font-weight: 600;
-  font-size: 1.3rem;
+  font-weight: 200;
+  font-size: 2.5rem;
 `;
 
 const SupportingTagline = styled.h2`
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
 `;
 
 const headerCode = `
 const Button = styled.a<{ $primary?: boolean; }>\`
+  --accent-color: white;
+
   /* This renders the buttons above... Edit me! */
-  display: inline-block;
-  border-radius: 3px;
-  padding: 0.5rem 0;
-  margin: 0.5rem 1rem;
-  width: 11rem;
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  border-radius: 3px;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  display: inline-block;
+  margin: 0.5rem 1rem;
+  padding: 0.5rem 0;
+  transition: all 200ms ease-in-out;
+  width: 11rem;
+
+  &:hover {
+    filter: brightness(0.85);
+  }
+
+  &:active {
+    filter: brightness(1);
+  }
 
   /* The GitHub button is a primary button
    * edit this to target it specifically! */
   \${props => props.$primary && css\`
-    background: white;
+    background: var(--accent-color);
     color: black;
   \`}
 \`
 `.trim();
 
 const transformHeaderCode = (code: string) => `
-${code}
+  ${code}
 
-render(
-  <div>
-    <Button
-      $primary
-      href="https://github.com/styled-components/styled-components"
-      target="_blank"
-      rel="noopener"
-    >
-      GitHub
-    </Button>
+  render(
+    <div>
+      <Button
+        $primary
+        href="https://github.com/styled-components/styled-components"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub
+      </Button>
 
-    <Button as={Link} href="/docs">
-      Documentation
-    </Button>
-  </div>
-)
+      <Button as={Link} href="/docs">
+        Documentation
+      </Button>
+    </div>
+  )
 `;
 
 const Title = styled.div`
-  margin: 2rem 0;
+  margin: 3rem 0;
 
   h1,
   h2 {
@@ -134,21 +145,15 @@ const Title = styled.div`
   }
 `;
 
-const Logo = styled.img.attrs((/* props */) => ({
-  alt: 'styled-components Logo',
-  src: '/logo.png',
-}))`
-  width: ${rem(125)};
-  height: ${rem(125)};
-`;
-
 const UsersHeading = styled.p`
-  text-transform: uppercase;
   color: #fff;
   font-size: 0.8rem;
   font-weight: 600;
   margin: 2.5rem 0 0.5rem;
+  max-width: none;
   opacity: 0.8;
+  text-align: center;
+  text-transform: uppercase;
 `;
 
 const ShowcaseHeading = styled(UsersHeading)`

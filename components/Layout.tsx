@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import rem from '../utils/rem';
-import { mobile } from '../utils/media';
-import { sidebarWidth } from '../utils/sizes';
-import { bodyFont, headerFont } from '../utils/fonts';
 import { blmMetal } from '../utils/colors';
+import { bodyFont, headerFont } from '../utils/fonts';
+import { mobile } from '../utils/media';
+import rem from '../utils/rem';
+import { sidebarWidth } from '../utils/sizes';
 
 export const Container = styled.div`
   padding-left: ${rem(sidebarWidth)};
@@ -14,16 +14,18 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean }>`
-  max-width: 100%;
-  margin: 0;
+  max-width: 100ch;
+  margin: 0 auto;
   padding: ${rem(90)} ${rem(60)} 0 ${rem(60)};
   box-sizing: border-box;
   font-family: ${bodyFont};
   transition: transform 150ms ease-out;
 
-  p,
-  li {
-    max-width: 80ch;
+  @layer base {
+    p,
+    li {
+      max-width: 80ch;
+    }
   }
 
   ${p =>

@@ -15,6 +15,9 @@
     "prettier": "prettier --write \"**/*.*\"",
     "postinstall": "husky install"
   },
+  "resolutions": {
+    "@types/react": "^17.0.0"
+  },
   "dependencies": {
     "@docsearch/js": "^3.0.0",
     "@mdx-js/loader": "^2.3.0",
@@ -43,12 +46,15 @@
     "stylis-plugin-rtl": "^2.1.1"
   },
   "devDependencies": {
+    "@octokit/types": "^9.2.3",
     "@types/enzyme": "^3.10.13",
     "@types/jest": "^29.5.1",
     "@types/mdx": "^2.0.5",
     "@types/node": "^18.16.14",
     "@types/react": "^17.0.59",
+    "@types/react-dom": "^17.0.0",
     "@types/react-test-renderer": "^17.0.0",
+    "@types/react-transition-group": "^4.4.6",
     "@types/webpack-bundle-analyzer": "^4.6.0",
     "@types/zeit__next-source-maps": "^0.0.2",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",

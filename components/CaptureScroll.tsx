@@ -1,8 +1,7 @@
 import React from 'react'; // eslint-disable-line
-import { findDOMNode } from 'react-dom';
 
-let isMobile;
-let lastWheelTimestamp;
+let isMobile: boolean;
+let lastWheelTimestamp: number;
 
 if (typeof window !== 'undefined' && window.matchMedia) {
   isMobile = window.matchMedia(`(max-width: ${1000 / 16}em)`).matches;
@@ -14,18 +13,22 @@ if (typeof window !== 'undefined' && window.matchMedia) {
   }
 }
 
-const captureScroll = Component => {
+export default function captureScroll<T extends React.ComponentType>(Component: T) {
   if (isMobile) {
     return Component;
   }
 
-  class CaptureScroll extends React.Component {
-    onScroll = evt => {
+  return function CaptureScroll(props: React.ComponentProps<T>) {
+    const ref = React.useRef<HTMLElement>(null);
+
+    const handleScroll = React.useCallback((evt: Event & { deltaY: number }) => {
+      if (!ref.current) return;
+
       // Don't access window wheel listener
       evt.stopImmediatePropagation();
 
       const { timeStamp, deltaY } = evt;
-      const { offsetHeight, scrollHeight, scrollTop } = this.node;
+      const { offsetHeight, scrollHeight, scrollTop } = ref.current;
 
       // If the window is being scrolled, don't scroll the captured scroll area
       if (timeStamp - lastWheelTimestamp <= 400) {
@@ -52,38 +55,33 @@ const captureScroll = Component => {
 
       // If we're overshooting, we need to set the maximum available position
       if (isReachingTop || isReachingBottom) {
-        this.node.scrollTop = isReachingTop ? 0 : maxScrollTop;
+        ref.current!.scrollTop = isReachingTop ? 0 : maxScrollTop;
       }
-    };
+    }, []);
 
-    onResize = () => {
+    const handleResize = React.useCallback(() => {
       isMobile = window.matchMedia(`(max-width: ${1000 / 16}em)`).matches;
+
       if (isMobile) {
-        this.node.removeEventListener('wheel', this.onScroll);
+        ref.current?.removeEventListener('wheel', handleScroll);
       } else {
-        this.node.addEventListener('wheel', this.onScroll);
+        ref.current?.addEventListener('wheel', handleScroll);
       }
-    };
 
-    componentDidMount() {
-      // eslint-disable-next-line react/no-find-dom-node
-      this.node = findDOMNode(this.ref);
+      return () => ref.current?.removeEventListener('wheel', handleScroll);
+    }, []);
 
-      this.node.addEventListener('wheel', this.onScroll);
-      window.addEventListener('resize', this.onResize);
-    }
+    React.useEffect(() => {
+      ref.current?.addEventListener('wheel', handleScroll);
+      window.addEventListener('resize', handleResize);
 
-    componentWillUnmount() {
-      this.node.removeEventListener('wheel', this.onScroll);
-      window.removeEventListener('resize', this.onResize);
-    }
+      return () => {
+        ref.current?.removeEventListener('wheel', handleScroll);
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
 
-    render() {
-      return <Component {...this.props} ref={x => (this.ref = x)} />;
-    }
-  }
-
-  return CaptureScroll;
-};
-
-export default captureScroll;
+    // @ts-expect-error don't think there's a way to infer the proper ref type ahead of time
+    return <Component {...props} ref={ref} />;
+  };
+}

@@ -1,30 +1,36 @@
 import Markdown from 'markdown-to-jsx';
-import React from 'react';
-import DocsLayout from '../components/DocsLayout';
-import { getReadme } from '../utils/githubApi';
-import escape from '../utils/escape';
-import Loading from '../components/Loading';
+import { NextApiResponse } from 'next';
+import DocsLayout, { DocsLayoutProps } from '../components/DocsLayout';
 import Link from '../components/Link';
+import Loading from '../components/Loading';
+import escape from '../utils/escape';
+import { getReadme } from '../utils/githubApi';
 
-const Ecosystem = ({ readme, sidebarPages }) => (
-  <DocsLayout
-    useDocsSidebarMenu={false}
-    pages={sidebarPages}
-    title="Ecosystem"
-    description="Ecosystem of styled-components"
-  >
-    <p>
-      This is an incomplete list of awesome things built with styled-components. If you have something to share, please
-      add it to the{' '}
-      <Link href="https://github.com/styled-components/awesome-styled-components" inline>
-        awesome-styled-components
-      </Link>{' '}
-      repo on GitHub and it will automatically show up here!
-    </p>
-    {typeof readme !== 'string' ? (
-      <Loading />
-    ) : (
-      <Markdown>{`
+export interface EcosystemProps {
+  readme: string;
+  sidebarPages: DocsLayoutProps['pages'];
+}
+
+export default function Ecosystem({ readme, sidebarPages }: EcosystemProps) {
+  return (
+    <DocsLayout
+      useDocsSidebarMenu={false}
+      pages={sidebarPages}
+      title="Ecosystem"
+      description="Ecosystem of styled-components"
+    >
+      <p>
+        This is an incomplete list of awesome things built with styled-components. If you have something to share,
+        please add it to the{' '}
+        <Link href="https://github.com/styled-components/awesome-styled-components" inline>
+          awesome-styled-components
+        </Link>{' '}
+        repo on GitHub and it will automatically show up here!
+      </p>
+      {typeof readme !== 'string' ? (
+        <Loading />
+      ) : (
+        <Markdown>{`
           ${readme}
 
   ### Contribute
@@ -32,11 +38,12 @@ const Ecosystem = ({ readme, sidebarPages }) => (
   If you know any projects build with styled components contributions and suggestions are always welcome!
   Please read the [contribution guidelines](https://github.com/styled-components/awesome-styled-components/blob/master/contributing.md) first and submit a PR.
         `}</Markdown>
-    )}
-  </DocsLayout>
-);
+      )}
+    </DocsLayout>
+  );
+}
 
-Ecosystem.getInitialProps = async ({ res }) => {
+Ecosystem.getInitialProps = async ({ res }: { res: NextApiResponse }) => {
   const readme = await getReadme('awesome-styled-components');
   const editedReadme = readme
     .replace(/\n---\n/g, '\n\n---\n\n')
@@ -56,9 +63,7 @@ Ecosystem.getInitialProps = async ({ res }) => {
   };
 };
 
-export default Ecosystem;
-
-function collectPagesFromMd(md) {
+function collectPagesFromMd(md: string) {
   const TocStartPos = md.indexOf('\n- [Built with styled-components]');
   const TocEndPos = md.indexOf('\n- [Contribute]', TocStartPos);
   const Toc = md.slice(TocStartPos, TocEndPos);
@@ -67,7 +72,7 @@ function collectPagesFromMd(md) {
   const headingIdentifier = '- ';
   const subHeadingIdentifier = '  - ';
 
-  const sidePages = [];
+  const sidePages: { sections?: { href: string; title: string }[]; title?: string }[] = [];
 
   let lastHeadingIndex = 0;
 
@@ -95,7 +100,7 @@ function collectPagesFromMd(md) {
   return sidePages;
 }
 
-function parseMarkdownLink(mdString) {
-  const [, title, href] = /\[([^\]]+)\]\(([^)]+)\)/.exec(mdString);
+function parseMarkdownLink(mdString: string) {
+  const [, title, href] = /\[([^\]]+)\]\(([^)]+)\)/.exec(mdString)!;
   return { title: escape(title), href: escape(href) };
 }

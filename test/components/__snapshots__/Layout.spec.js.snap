@@ -18,17 +18,12 @@ exports[`Container renders correctly 1`] = `
 
 exports[`Content renders correctly 1`] = `
 .c0 {
-  max-width: 100%;
-  margin: 0;
+  max-width: 100ch;
+  margin: 0 auto;
   padding: 5rem 3.3333333333333335rem 0 3.3333333333333335rem;
   box-sizing: border-box;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: "Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   transition: transform 150ms ease-out;
-}
-
-.c0 p,
-.c0 li {
-  max-width: 80ch;
 }
 
 @media (max-width: 62.5em) {
@@ -47,7 +42,7 @@ exports[`Header renders correctly 1`] = `
 .c0 {
   font-size: 1.7777777777777777rem;
   font-weight: 600;
-  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: "Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   margin: 1.5em 0 0.5em;
 }
 
@@ -61,7 +56,7 @@ exports[`SubHeader renders correctly 1`] = `
   margin: 1.5em 0 0.5em;
   font-size: 1.3333333333333333rem;
   font-weight: 600;
-  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: "Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 <h3
@@ -76,7 +71,7 @@ exports[`Title renders correctly 1`] = `
   color: rgb(66, 66, 66);
   font-size: 2.3333333333333335rem;
   font-weight: bold;
-  font-family: "Avenir Next",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: "Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 <h1

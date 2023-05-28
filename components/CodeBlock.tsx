@@ -1,18 +1,22 @@
 import React from 'react';
-import { CodeBlock as Code } from 'react-live-runner';
+import { Language, CodeBlock as RLR, CodeBlockProps as RLRProps } from 'react-live-runner';
 import styled from 'styled-components';
 import { darkGrey } from '../utils/colors';
 import { monospace } from '../utils/fonts';
 import rem from '../utils/rem';
 import { Note } from './Note';
 
-const CodeBlock = styled(({ code, ...rest }) => {
-  const language = (rest.language || 'clike').toLowerCase().trim();
+export interface CodeBlockProps extends RLRProps {
+  code: string;
+}
+
+const CodeBlock = styled(({ code, ...rest }: CodeBlockProps) => {
+  const language = (rest.language || 'clike').toLowerCase().trim() as Language;
 
   return (
-    <Code {...rest} language={language}>
+    <RLR {...rest} language={language}>
       {code}
-    </Code>
+    </RLR>
   );
 })`
   background: ${darkGrey};
@@ -24,6 +28,7 @@ const CodeBlock = styled(({ code, ...rest }) => {
   margin: ${rem(35)} 0;
   overflow-x: hidden;
   white-space: pre-wrap;
+  width: 100%;
 
   ${Note} & {
     margin: ${rem(20)} 0;
