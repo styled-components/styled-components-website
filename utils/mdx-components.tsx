@@ -5,14 +5,15 @@ import elementToText from './elementToText';
 import titleToDash from './titleToDash';
 
 // Components to be used as renderers
-import Code from '../components/Code';
-import LiveEdit from '../components/LiveEdit';
-import CodeBlock from '../components/CodeBlock';
-import Note from '../components/Note';
-import Link from '../components/Link';
-import { Title } from '../components/Layout';
 import Anchor from '../components/Anchor';
+import Code from '../components/Code';
+import CodeBlock from '../components/CodeBlock';
 import Label, { LabelGroup } from '../components/Label';
+import { Title } from '../components/Layout';
+import Link from '../components/Link';
+import LiveEdit from '../components/LiveEdit';
+import Note from '../components/Note';
+import { Language } from 'react-live-runner';
 
 const Heading = ({ level, children }: React.PropsWithChildren<{ level: number }>) => {
   if (level === 1) {
@@ -58,7 +59,7 @@ const components: React.ComponentProps<typeof MDXProvider>['components'] = {
 
   code({ children: providedChildren, className = '' }) {
     const children = providedChildren as unknown as string;
-    const language = className.replace(/language-/, '');
+    const language = className.replace(/language-/, '') as Language | 'react' | 'sh';
 
     if (language === 'react') {
       return <LiveEdit code={children.trim()} />;

@@ -12,14 +12,14 @@ import stylisRTLPlugin from 'stylis-plugin-rtl';
 const hash = 'runner';
 let counter = 0;
 
-const hijackedStyled = (...args) => {
+const hijackedStyled = (...args: Parameters<typeof styled>) => {
   return styled(...args).withConfig({
     componentId: `sc-${hash}-${counter++}`,
   });
 };
 
 const ignoredProps = Object.getOwnPropertyNames(Function);
-Object.getOwnPropertyNames(styled).forEach(tag => {
+(Object.getOwnPropertyNames(styled) as (keyof typeof styled)[]).forEach(tag => {
   if (ignoredProps.includes(tag)) return;
   Object.defineProperty(hijackedStyled, tag, {
     get() {

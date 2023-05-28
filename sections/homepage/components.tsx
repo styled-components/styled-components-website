@@ -10,7 +10,7 @@ export const Badge = styled.img`
   height: 1.5em;
 `;
 
-export const ExampleButton = styled.button`
+export const ExampleButton = styled.button<{ $primary?: boolean }>`
   border-radius: 3px;
   padding: 0.25em 1em;
   margin: 0.5em 1em;

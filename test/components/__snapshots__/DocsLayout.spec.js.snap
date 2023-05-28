@@ -6,7 +6,7 @@ exports[`DocsLayout renders correctly 1`] = `
 }
 
 .c28 {
-  max-width: 100ch;
+  max-width: 120ch;
   margin: 0 auto;
   padding: 5rem 3.3333333333333335rem 0 3.3333333333333335rem;
   box-sizing: border-box;

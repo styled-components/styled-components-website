@@ -4,14 +4,14 @@ const pathnameDict = pages.reduce(
   (acc, { pathname, sections }) => ({
     ...acc,
     ...sections.reduce((subAcc, { pathname: subPathname, title }) => {
-      subAcc[`${pathname}/${subPathname}`] = title;
+      if (subPathname) subAcc[`${pathname}/${subPathname}`] = title;
       return subAcc;
-    }, {}),
+    }, {} as Record<string, string>),
   }),
-  {}
+  {} as Record<string, string>
 );
 
-const pathnameToTitle = pathname => {
+const pathnameToTitle = (pathname: string): string => {
   let routeArr = pathname.split('/').filter(Boolean);
 
   if (routeArr[0] === 'docs') {

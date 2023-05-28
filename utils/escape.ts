@@ -1,4 +1,4 @@
-function escape(html, encode) {
+function escape(html: string, encode?: boolean) {
   return html
     .replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;')
     .replace(/</g, '&lt;')

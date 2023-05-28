@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean }>`
-  max-width: 100ch;
+  max-width: 120ch;
   margin: 0 auto;
   padding: ${rem(90)} ${rem(60)} 0 ${rem(60)};
   box-sizing: border-box;
@@ -24,7 +24,7 @@ export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean }>`
   @layer base {
     p,
     li {
-      max-width: 80ch;
+      max-width: 100ch;
     }
   }
 

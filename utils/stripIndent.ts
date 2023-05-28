@@ -1,6 +1,6 @@
 // https://github.com/sindresorhus/strip-indent
 
-const stripIndent = str => {
+const stripIndent = (str: string) => {
   const match = str.match(/^[ \t]*(?=\S)/gm);
 
   if (!match) {
