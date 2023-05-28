@@ -16,7 +16,7 @@ export default function SmallShowcase({ projects }: SmallShowcaseProps) {
           <Link key={project.title} passHref href={`/showcase?item=${project.internalUrl}`}>
             <Website as="a" $position={index}>
               <RatioBox>
-                <Screenshot style={{ backgroundImage: project.src }} />
+                <Screenshot style={{ backgroundImage: `url(${project.src})` }} />
                 <Label>{project.title}</Label>
               </RatioBox>
             </Website>
