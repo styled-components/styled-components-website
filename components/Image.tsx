@@ -6,7 +6,7 @@ export interface ImageProps {
   captionSpacing?: number;
   height: number;
   margin?: number;
-  renderImage: (props: Pick<ImageProps, 'src' | 'video'>) => JSX.Element;
+  renderImage: (props: Pick<ImageProps, 'src' | 'video'>) => React.ReactNode;
   src: string;
   video?: boolean;
   width: number;

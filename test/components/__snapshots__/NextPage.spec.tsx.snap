@@ -48,7 +48,9 @@ exports[`NextPage renders correctly 1`] = `
     </h3>
     <h2
       className="c2"
-    />
+    >
+      
+    </h2>
   </div>
   <div>
     <svg

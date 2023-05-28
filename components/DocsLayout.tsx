@@ -5,7 +5,7 @@ import Head from './SeoHead';
 
 export interface DocsLayoutProps {
   description?: string;
-  pages: NavProps['pages'];
+  pages?: NavProps['pages'];
   title?: string;
   useDocsSidebarMenu?: boolean;
 }

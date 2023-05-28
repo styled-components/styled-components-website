@@ -1,19 +1,94 @@
-import { withRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css, keyframes } from 'styled-components';
-import { sortedProjects } from '../companies-manifest';
+import { SortedProject, sortedProjects } from '../companies-manifest';
 import Footer from '../components/Footer';
-import Image from '../components/Image';
+import Image, { ImageProps } from '../components/Image';
 import Nav from '../components/Nav';
 import SeoHead from '../components/SeoHead';
 import Navigation from '../components/Slider/Navigation';
 import ShowcaseBody from '../components/Slider/ShowcaseBody';
 import { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
-import WithIsScrolled from '../components/WithIsScrolled';
 import { blmGrey, blmMetal } from '../utils/colors';
 import { headerFont } from '../utils/fonts';
 import { mobile, phone } from '../utils/media';
+
+export default function Showcase() {
+  const router = useRouter();
+  const { item } = router.query;
+  const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item as string);
+  const { title, src } = currentSlide;
+
+  return (
+    <>
+      <SeoHead title={`styled-components: Showcase ${title}`}>
+        <meta name="robots" content="noodp" />
+      </SeoHead>
+
+      <Nav showSideNav={false} />
+      <ArrowEvents previousSlide={previousSlide} nextSlide={nextSlide} />
+
+      <Container>
+        <Header>
+          <Wrapper>
+            <InsetWrapper>
+              <HeaderContent>
+                <div>
+                  <h2>Awesome websites, by awesome humans beings.</h2>
+                  <h5>
+                    Styled components is used by teams all around the world to create beautiful websites, like these
+                    ones:
+                  </h5>
+                </div>
+                <HeaderActions>
+                  <a
+                    href="https://github.com/styled-components/styled-components-website/issues/new?template=company-showcase-request.md&title=Add+%5Bproject%5D+by+%5Bcompany%5D+to+showcase"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Share yours!
+                  </a>
+                </HeaderActions>
+              </HeaderContent>
+            </InsetWrapper>
+          </Wrapper>
+          <HeaderDecoration>Showcase</HeaderDecoration>
+          <HeaderDecoration $offset={1}>Showcase</HeaderDecoration>
+          <HeaderDecoration $offset={2}>Showcase</HeaderDecoration>
+        </Header>
+        <Body>
+          <Wrapper>
+            <BodyWrapper>
+              <Slide
+                width={1920}
+                height={1080}
+                src={src}
+                margin={0}
+                renderImage={(props: Parameters<ImageProps['renderImage']>[0]) => {
+                  return (
+                    <TransitionGroup>
+                      <CSSTransition key={src} timeout={500} classNames="fade">
+                        <img {...props} />
+                      </CSSTransition>
+                    </TransitionGroup>
+                  );
+                }}
+              />
+            </BodyWrapper>
+            <Navigation prev={previousSlide} next={nextSlide} />
+            <BodyWrapper>
+              <InsetWrapper>
+                <ShowcaseBody {...currentSlide} />
+              </InsetWrapper>
+            </BodyWrapper>
+          </Wrapper>
+        </Body>
+      </Container>
+      <Footer />
+    </>
+  );
+}
 
 const Container = styled.div`
   overflow-x: hidden;
@@ -126,7 +201,7 @@ const Slide = styled(Image)`
   box-shadow: 0 32px 48px rgba(0, 0, 0, 0.12);
 `;
 
-const getSlide = childIndex => keyframes`
+const getSlide = (childIndex: number) => keyframes`
   from {
     transform: translateX(${childIndex * 105}%);
   }
@@ -135,7 +210,7 @@ const getSlide = childIndex => keyframes`
   }
 `;
 
-const HeaderDecoration = styled.div`
+const HeaderDecoration = styled.div<{ $offset?: number }>`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -146,7 +221,7 @@ const HeaderDecoration = styled.div`
   color: rgba(0, 0, 0, 0.1);
   mix-blend-mode: overlay;
   pointer-events: none;
-  animation: ${({ offset }) => getSlide(offset || 0)} 30s linear infinite;
+  animation: ${({ $offset }) => getSlide($offset || 0)} 30s linear infinite;
 `;
 
 const HeaderActions = styled.div`
@@ -198,7 +273,7 @@ const HeaderActions = styled.div`
   }
 `;
 
-function normalizeSlideIndex(arr, index, fn) {
+function normalizeSlideIndex<T extends any[]>(arr: T, index: number, fn: (x: number) => number) {
   const result = fn(index);
   if (result > arr.length - 1) {
     return 0;
@@ -210,12 +285,12 @@ function normalizeSlideIndex(arr, index, fn) {
 }
 
 // Since objects don't allow for a sort order we have to map an array to the object
-function mapIndexToRoute(index) {
+function mapIndexToRoute(index: number) {
   const route = Object.keys(sortedProjects)[index];
   return sortedProjects[route];
 }
 
-function calculateSlides(sortOrder, route) {
+function calculateSlides(sortOrder: string[], route: string) {
   let currentSlideIndex = sortOrder.indexOf(route);
   if (currentSlideIndex === -1) {
     currentSlideIndex = 0;
@@ -229,103 +304,33 @@ function calculateSlides(sortOrder, route) {
   };
 }
 
-class ArrowEvents extends React.Component {
-  handleKeyDown = event => {
-    const isLeft = event.keyCode === 37;
-    const isRight = event.keyCode === 39;
-    const { router, previousSlide, nextSlide } = this.props;
-
-    if (!isLeft && !isRight) return;
-
-    const { href, as } = generateShowcaseUrl(isLeft ? previousSlide : nextSlide);
-    router.replace(href, as);
-    return;
-  };
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyDown);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeyDown);
-  }
-
-  render() {
-    return null;
-  }
+interface ArrowEventsProps {
+  previousSlide: SortedProject;
+  nextSlide: SortedProject;
 }
 
-const Showcase = ({ router }) => {
-  const { item } = router.query;
-  const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item);
-  const { title, src, owner, link, repo, description } = currentSlide;
+function ArrowEvents({ previousSlide, nextSlide }: ArrowEventsProps) {
+  const router = useRouter();
 
-  return (
-    <>
-      <SeoHead title={`styled-components: Showcase ${title}`}>
-        <meta name="robots" content="noodp" />
-      </SeoHead>
-      <WithIsScrolled>{({ isScrolled }) => <Nav showSideNav={false} transparent={!isScrolled} />}</WithIsScrolled>
-      <ArrowEvents router={router} previousSlide={previousSlide} nextSlide={nextSlide} />
-      <Container>
-        <Header>
-          <Wrapper>
-            <InsetWrapper>
-              <HeaderContent>
-                <div>
-                  <h2>Awesome websites, by awesome humans beings.</h2>
-                  <h5>
-                    Styled components is used by teams all around the world to create beautiful websites, like these
-                    ones:
-                  </h5>
-                </div>
-                <HeaderActions>
-                  <a
-                    href="https://github.com/styled-components/styled-components-website/issues/new?template=company-showcase-request.md&title=Add+%5Bproject%5D+by+%5Bcompany%5D+to+showcase"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Share yours!
-                  </a>
-                </HeaderActions>
-              </HeaderContent>
-            </InsetWrapper>
-          </Wrapper>
-          <HeaderDecoration>Showcase</HeaderDecoration>
-          <HeaderDecoration offset={1}>Showcase</HeaderDecoration>
-          <HeaderDecoration offset={2}>Showcase</HeaderDecoration>
-        </Header>
-        <Body>
-          <Wrapper>
-            <BodyWrapper>
-              <Slide
-                width={1920}
-                height={1080}
-                src={src}
-                margin={0}
-                renderImage={props => {
-                  return (
-                    <TransitionGroup>
-                      <CSSTransition key={src} timeout={500} classNames="fade">
-                        <img src={src} {...props} />
-                      </CSSTransition>
-                    </TransitionGroup>
-                  );
-                }}
-              />
-            </BodyWrapper>
-            <Navigation prev={previousSlide} next={nextSlide} />
-            <BodyWrapper>
-              <InsetWrapper>
-                <ShowcaseBody title={title} description={description} owner={owner} link={link} repo={repo} />
-              </InsetWrapper>
-            </BodyWrapper>
-          </Wrapper>
-        </Body>
-      </Container>
-      <Footer />
-    </>
+  const handleKeyDown = React.useCallback(
+    (event: KeyboardEvent) => {
+      const isLeft = event.keyCode === 37;
+      const isRight = event.keyCode === 39;
+
+      if (!isLeft && !isRight) return;
+
+      const { href } = generateShowcaseUrl(isLeft ? previousSlide : nextSlide);
+
+      router.replace(href);
+    },
+    [previousSlide, nextSlide]
   );
-};
 
-export default withRouter(Showcase);
+  React.useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
+
+  return null;
+}

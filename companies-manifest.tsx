@@ -1204,5 +1204,5 @@ export const sortedProjects = sortedCompanies.reduce(
       {}
     ),
   }),
-  {} as Record<string, Project>
+  {} as Record<string, SortedProject>
 );

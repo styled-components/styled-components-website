@@ -3,7 +3,7 @@ import React, { isValidElement } from 'react';
 const whitespacesRe = /\s+/g;
 const _format = (str = '') => str.trim().replace(whitespacesRe, ' ');
 
-const elementToTextRec = (x: React.ReactNode): string => {
+const elementToTextRec = (x?: React.ReactNode): string => {
   if (Array.isArray(x)) {
     return x.map(elementToTextRec).join('');
   } else if (isValidElement(x)) {
@@ -15,6 +15,6 @@ const elementToTextRec = (x: React.ReactNode): string => {
   return '';
 };
 
-const elementToText = (node: React.ReactNode) => _format(elementToTextRec(node));
+const elementToText = (node?: React.ReactNode) => _format(elementToTextRec(node));
 
 export default elementToText;
