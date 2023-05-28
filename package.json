@@ -15,7 +15,11 @@
     "prettier": "prettier --write \"**/*.*\"",
     "postinstall": "husky install"
   },
+  "resolutions": {
+    "@types/react": "^17.0.0"
+  },
   "dependencies": {
+    "@docsearch/js": "^3.0.0",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
@@ -26,7 +30,6 @@
     "@zeit/next-mdx": "^1.2.0",
     "@zeit/next-source-maps": "^0.0.3",
     "axios": "^0.24.0",
-    "docsearch.js": "2.6.3",
     "invariant": "^2.2.4",
     "isomorphic-fetch": "^3.0.0",
     "markdown-to-jsx": "^7.2.0",
@@ -43,14 +46,20 @@
     "stylis-plugin-rtl": "^2.1.1"
   },
   "devDependencies": {
+    "@octokit/types": "^9.2.3",
     "@types/enzyme": "^3.10.13",
     "@types/jest": "^29.5.1",
     "@types/mdx": "^2.0.5",
     "@types/node": "^18.16.14",
     "@types/react": "^17.0.59",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-test-renderer": "^17.0.0",
+    "@types/react-transition-group": "^4.4.6",
+    "@types/styled-theming": "^2.2.5",
     "@types/webpack-bundle-analyzer": "^4.6.0",
     "@types/zeit__next-source-maps": "^0.0.2",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "csstype": "^3.1.2",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
     "husky": "^8.0.3",
@@ -59,7 +68,7 @@
     "jest-styled-components": "^7.1.1",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
-    "react-test-renderer": "^17.0.2",
+    "react-test-renderer": "^17.0.0",
     "remark-gfm": "^3.0.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^29.1.0",

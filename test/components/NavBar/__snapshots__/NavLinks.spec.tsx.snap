@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavLinks renders correctly 1`] = `
+.c2 {
+  flex: 0 0 auto;
+  width: 0.2777777777777778rem;
+  height: 0.2777777777777778rem;
+  margin: 0 0.8333333333333334rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.c0 {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-right: 1.6666666666666667rem;
+}
+
+.c1 {
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: 3.3333333333333335rem;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.022222222222222223rem;
+  color: currentColor;
+}
+
+.c1:hover,
+.c1:focus {
+  opacity: 0.8;
+}
+
+.c1:active {
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+<nav
+  className="c0"
+>
+  <a
+    className="c1"
+  >
+    Documentation
+  </a>
+  <span
+    className="c2"
+  />
+  <a
+    className="c1"
+  >
+    Showcase
+  </a>
+  <span
+    className="c2"
+  />
+  <a
+    className="c1"
+  >
+    Ecosystem
+  </a>
+  <span
+    className="c2"
+  />
+  <a
+    className="c1"
+  >
+    Releases
+  </a>
+</nav>
+`;

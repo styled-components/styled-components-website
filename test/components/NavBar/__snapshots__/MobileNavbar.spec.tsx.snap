@@ -1,0 +1,228 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MobileNavbar renders correctly 1`] = `
+.c5 {
+  background-image: url(/nav-logo.png);
+  background-position: center;
+  background-size: contain;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 2.2222222222222223rem;
+  width: 9.11111111111111rem;
+  vertical-align: middle;
+}
+
+.c2 {
+  background: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex: 0 0 auto;
+  height: 3.3333333333333335rem;
+  padding: 0 0.5555555555555556rem;
+  text-align: center;
+  transition: all 200ms ease-in-out;
+  vertical-align: middle;
+}
+
+.c2:hover {
+  filter: brightness(0.85);
+}
+
+.c2:active {
+  filter: brightness(1);
+}
+
+.c1+.c1 {
+  padding-left: 0;
+}
+
+.c3 svg {
+  display: inline-block;
+}
+
+.c3 svg path {
+  fill: currentColor;
+}
+
+.c11 {
+  flex: 0 0 auto;
+  width: 0.2777777777777778rem;
+  height: 0.2777777777777778rem;
+  margin: 0 0.8333333333333334rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.c9 {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-right: 1.6666666666666667rem;
+}
+
+.c10 {
+  flex: 0 0 auto;
+  display: inline-block;
+  line-height: 3.3333333333333335rem;
+  transition: opacity 0.2s,transform 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.022222222222222223rem;
+  color: currentColor;
+}
+
+.c10:hover,
+.c10:focus {
+  opacity: 0.8;
+}
+
+.c10:active {
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.c0 {
+  display: none;
+}
+
+.c8 {
+  position: absolute;
+  top: 3.3333333333333335rem;
+  left: 0;
+  right: 0;
+  height: 3.3333333333333335rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.1111111111111112rem;
+  transition: height 0.1s;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background: rgb(33, 33, 33);
+  color: #fff;
+}
+
+.c4 {
+  margin-right: auto;
+  transform: translateY(-1px);
+}
+
+.c6 {
+  transition: transform 0.2s;
+  transform-origin: center center;
+  transform: rotate(180deg);
+}
+
+.c7.c7 {
+  width: 2rem;
+  height: 2rem;
+}
+
+@media (max-width: 62.5em) {
+  .c0 {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    height: 3.3333333333333335rem;
+    justify-content: space-between;
+  }
+}
+
+<div
+  className="c0"
+>
+  <button
+    className="c1 c2"
+  >
+    <svg
+      className="c3"
+      height="15"
+      width="15"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    >
+      <title>
+        close
+      </title>
+      <use
+        fill="#FFF"
+        transform="translate(1 1)"
+        xlinkHref="#close"
+      />
+      <defs>
+        <path
+          d="M-.7.7l13 13 1.4-1.4-13-13L-.7.7zm13-1.4l-13 13 1.4 1.4 13-13-1.4-1.4z"
+          id="close"
+        />
+      </defs>
+    </svg>
+  </button>
+  <a
+    aria-label="styled components"
+    className="c4"
+  >
+    <div
+      className="c5"
+    />
+  </a>
+  <button
+    className="c1 c2"
+    style={
+      {
+        "position": "absolute",
+        "right": 0,
+      }
+    }
+  >
+    <div
+      className="c6"
+    >
+      <div
+        className="c7"
+      />
+    </div>
+  </button>
+  <div
+    className="c8"
+  >
+    <nav
+      className="c9"
+    >
+      <a
+        className="c10"
+      >
+        Documentation
+      </a>
+      <span
+        className="c11"
+      />
+      <a
+        className="c10"
+      >
+        Showcase
+      </a>
+      <span
+        className="c11"
+      />
+      <a
+        className="c10"
+      >
+        Ecosystem
+      </a>
+      <span
+        className="c11"
+      />
+      <a
+        className="c10"
+      >
+        Releases
+      </a>
+    </nav>
+  </div>
+</div>
+`;

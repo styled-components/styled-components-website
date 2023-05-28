@@ -14,7 +14,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es5"
+    "target": "ESNext"
   },
   "exclude": ["node_modules"],
   "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx"]

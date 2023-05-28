@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo renders correctly 1`] = `
+.c0 {
+  background-image: url(/nav-logo.png);
+  background-position: center;
+  background-size: contain;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 2.2222222222222223rem;
+  width: 9.11111111111111rem;
+  vertical-align: middle;
+}
+
+<div
+  className="c0"
+/>
+`;

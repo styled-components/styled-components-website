@@ -5,6 +5,7 @@
       "pathname": "basics",
       "sections": [
         {
+          "pathname": "motivation",
           "title": "Motivation"
         },
         {
