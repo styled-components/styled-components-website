@@ -55,8 +55,6 @@ Releases.getInitialProps = async ({ res }: { res: ServerResponse }): Promise<Rel
     res.setHeader('cache-control', 's-maxage=30,stale-while-revalidate');
   }
 
-  console.log(releases[0]);
-
   return {
     releases,
     sidebarPages: releases.map(release => ({
