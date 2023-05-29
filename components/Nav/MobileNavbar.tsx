@@ -60,6 +60,11 @@ const Wrapper = styled.div`
     flex-grow: 1;
     height: ${rem(navbarHeight)};
     justify-content: space-between;
+    margin-left: 16px;
+
+    > ${NavButton} {
+      margin-left: -8px;
+    }
   `)};
 `;
 
@@ -76,20 +81,20 @@ const SecondaryMenu = styled.div<{ $isOpen?: boolean }>`
         `
       : css`
           height: 0;
-        `} display: flex;
-  flex-wrap: nowrap;
+        `};
+  -webkit-overflow-scrolling: touch;
   align-items: center;
-  justify-content: space-between;
+  background: rgba(33, 33, 33, 0.9);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  overflow-x: overlay;
+  overflow-y: hidden;
   padding: 0 ${rem(20)};
   transition: height 0.1s;
-
   user-select: none;
-  -webkit-overflow-scrolling: touch;
-  overflow-x: scroll;
-  overflow-y: hidden;
-
-  background: ${blmGrey};
-  color: #fff;
 `;
 
 const LogoLink = styled(Link).attrs((/* props */) => ({

@@ -15,6 +15,7 @@ import { blmBlack, blmGrey } from '../utils/colors';
 import { headerFont } from '../utils/fonts';
 import rem from '../utils/rem';
 import baseScope from '../utils/scope';
+import theme from '../components/prismTheme';
 
 export default function Index() {
   const [isMobileNavFolded, setIsMobileNavFolded] = React.useState(true);
@@ -33,7 +34,13 @@ export default function Index() {
 
       <Wrapper>
         <Content $hero>
-          <LiveProvider code={headerCode} transformCode={transformHeaderCode} scope={{ ...baseScope, rem, Link }}>
+          <LiveProvider
+            code={headerCode}
+            language="tsx"
+            transformCode={transformHeaderCode}
+            scope={{ ...baseScope, rem, Link }}
+            theme={theme}
+          >
             <Title>
               <Tagline>
                 CSS for the <code>&lt;Component&gt;</code> Age
@@ -46,7 +53,7 @@ export default function Index() {
             </Links>
 
             <EditorContainer>
-              <Editor />
+              <Editor theme={theme} />
               <StyledError />
             </EditorContainer>
           </LiveProvider>

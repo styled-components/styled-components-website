@@ -1,10 +1,18 @@
-import { LiveEditor, LiveError, LivePreview, LiveProvider, LiveProviderProps } from 'react-live-runner';
+import {
+  LiveEditor,
+  LiveEditorProps,
+  LiveError,
+  LivePreview,
+  LiveProvider,
+  LiveProviderProps,
+} from 'react-live-runner';
 import styled, { css } from 'styled-components';
-import { darkGrey, red } from '../utils/colors';
+import { red } from '../utils/colors';
 import { headerFont, monospace } from '../utils/fonts';
 import { phone } from '../utils/media';
 import rem from '../utils/rem';
 import baseScope from '../utils/scope';
+import theme from './prismTheme';
 
 export interface LiveEditProps extends Pick<LiveProviderProps, 'code' | 'scope'> {}
 
@@ -12,10 +20,12 @@ export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
   return (
     <StyledProvider
       code={code}
+      language="tsx"
       scope={{
         ...baseScope,
         ...scope,
       }}
+      theme={theme}
     >
       <Row>
         <Code>
@@ -65,7 +75,7 @@ const Code = styled.code`
 `;
 
 export const editorMixin = `
-  background: ${darkGrey};
+  border-radius: 3px;
   color: white;
   cursor: text;
   font-family: ${monospace};
@@ -78,8 +88,20 @@ export const editorMixin = `
   white-space: pre-wrap;
 `;
 
-const StyledEditor = styled(LiveEditor)`
+const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
+  <LiveEditor
+    {...props}
+    // @ts-expect-error clashing types
+    theme={theme}
+  />
+))`
   ${editorMixin};
+
+  pre,
+  textarea {
+    font-family: ${monospace} !important;
+    padding: 1.5em 1.5em !important;
+  }
 `;
 
 const StyledPreview = styled(LivePreview)`

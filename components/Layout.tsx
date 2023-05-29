@@ -30,7 +30,7 @@ export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean }>`
 
   ${p =>
     mobile(css`
-      padding: ${rem(100)} ${rem(20)} ${rem(30)} ${rem(20)};
+      padding: ${rem(100)} ${rem(36)} ${rem(30)} ${rem(36)};
       transform: translateX(${p.$moveRight ? rem(sidebarWidth) : 0});
     `)};
 
@@ -48,24 +48,36 @@ export const Title = styled.h1`
   font-size: ${rem(42)};
   font-weight: bold;
   font-family: ${headerFont};
+
+  + h2 {
+    margin-top: -0.5em;
+  }
 `;
 
 export const Header = styled.h2`
   font-size: ${rem(32)};
   font-weight: 600;
   font-family: ${headerFont};
-  margin: 1.5em 0 0.5em;
+  margin: 2em 0 1em;
+
+  + h3 {
+    margin-top: -0.5em;
+  }
 `;
 
 export const SubHeader = styled.h3`
-  margin: 1.5em 0 0.5em;
+  margin: 2em 0 1em;
   font-size: ${rem(24)};
   font-weight: 600;
   font-family: ${headerFont};
+
+  + h4 {
+    margin-top: -0.5em;
+  }
 `;
 
 export const TertiaryHeader = styled.h4`
-  margin: 1.5em 0 0.5em;
+  margin: 2em 0 1em;
   font-size: ${rem(18)};
   font-weight: 600;
   font-family: ${headerFont};
