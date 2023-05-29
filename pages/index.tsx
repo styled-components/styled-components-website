@@ -75,11 +75,16 @@ export default function Index() {
 const Tagline = styled.h1`
   font-weight: 200;
   font-size: 2.5rem;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
 `;
 
 const SupportingTagline = styled.h2`
   font-size: 1rem;
   font-weight: 400;
+  margin: 0;
+  max-inline-size: 30ch;
+  text-wrap: balance;
 `;
 
 const headerCode = `
@@ -136,11 +141,13 @@ const transformHeaderCode = (code: string) => `
 `;
 
 const Title = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   margin: 3rem 0;
 
-  h1,
-  h2 {
-    margin: 0;
+  > * {
+    flex-shrink: 0;
   }
 `;
 
