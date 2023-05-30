@@ -3,7 +3,7 @@
 exports[`Code renders correctly 1`] = `
 .c0 {
   border-radius: 3px;
-  background: rgba(10, 10, 10, 0.1);
+  background: rgba(50, 50, 150, 0.1);
   display: inline-block;
   font-family: dm,monospace;
   font-size: 90%;

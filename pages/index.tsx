@@ -15,6 +15,7 @@ import { blmBlack, blmGrey } from '../utils/colors';
 import { headerFont } from '../utils/fonts';
 import rem from '../utils/rem';
 import baseScope from '../utils/scope';
+import theme from '../components/prismTheme';
 
 export default function Index() {
   const [isMobileNavFolded, setIsMobileNavFolded] = React.useState(true);
@@ -33,7 +34,13 @@ export default function Index() {
 
       <Wrapper>
         <Content $hero>
-          <LiveProvider code={headerCode} transformCode={transformHeaderCode} scope={{ ...baseScope, rem, Link }}>
+          <LiveProvider
+            code={headerCode}
+            language="tsx"
+            transformCode={transformHeaderCode}
+            scope={{ ...baseScope, rem, Link }}
+            theme={theme}
+          >
             <Title>
               <Tagline>
                 CSS for the <code>&lt;Component&gt;</code> Age
@@ -46,7 +53,7 @@ export default function Index() {
             </Links>
 
             <EditorContainer>
-              <Editor />
+              <Editor theme={theme} />
               <StyledError />
             </EditorContainer>
           </LiveProvider>
@@ -75,11 +82,16 @@ export default function Index() {
 const Tagline = styled.h1`
   font-weight: 200;
   font-size: 2.5rem;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
 `;
 
 const SupportingTagline = styled.h2`
   font-size: 1rem;
   font-weight: 400;
+  margin: 0;
+  max-inline-size: 30ch;
+  text-wrap: balance;
 `;
 
 const headerCode = `
@@ -136,11 +148,13 @@ const transformHeaderCode = (code: string) => `
 `;
 
 const Title = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   margin: 3rem 0;
 
-  h1,
-  h2 {
-    margin: 0;
+  > * {
+    flex-shrink: 0;
   }
 `;
 

@@ -3,7 +3,7 @@ import { monospace } from '../utils/fonts';
 
 const Code = styled.code`
   border-radius: 3px;
-  background: rgba(10, 10, 10, 0.1);
+  background: rgba(50, 50, 150, 0.1);
   display: inline-block;
   font-family: ${monospace};
   font-size: 90%;
