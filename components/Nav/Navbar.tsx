@@ -68,6 +68,7 @@ const Wrapper = styled.nav<{ $transparent?: boolean }>`
   align-items: center;
   background-color: rgba(12, 13, 15, 0.7);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   box-sizing: border-box;
   color: white;
   display: flex;
