@@ -1,7 +1,7 @@
 ## React Native
 
 styled-components can be used with React Native in the same way and with the
-same import. Try this example with [Snack by Expo](https://snack.expo.io/@danielmschmidt/styled-components).
+same import. Try this example with [Snack by Expo](https://snack.expo.dev/@danielmschmidt/styled-components).
 
 ```tsx
 import React from 'react'
@@ -58,3 +58,38 @@ nest your CSS.
 ### Simpler usage with the metro bundler
 
 If you'd prefer to just import `styled-components` instead of `styled-components/native`, you can add a [`resolverMainFields` configuration](https://facebook.github.io/metro/docs/configuration#resolvermainfields) that includes `"react-native"`. This used to be supported in metro by default (and currently does work in haul) but appears to have been removed at some point.
+
+## Expo
+
+styled-components can be used in an [Expo](https://github.com/expo/expo) project the same way in a React Native project for native platforms.
+
+### Usage with Expo and Next.js
+
+Using Expo and Next.js to create a [universal app](https://docs.expo.dev/workflow/web/) is a bit different. You'll need to apply the React Native aliases manually. This is done by `@expo/webpack-config` (which is in [`@expo/next-adapter`](https://github.com/expo/expo-cli/tree/main/packages/next-adapter#readme)).
+
+- Add `@expo/next-adapter` to your project:
+
+```sh
+npx @expo/next-adapter
+```
+
+- Install the styled-components Babel plugin:
+
+```sh
+$ npm install -D babel-plugin-styled-components
+```
+
+- Use the Babel plugin in your **babel.config.js** file:
+
+```diff
+module.exports = {
+  presets: ['@expo/next-adapter/babel'],
++ plugins: [['styled-components', { ssr: true }]]
+}
+```
+
+Now you can use `styled-components/native` just like in a regular Expo project!
+
+### Tree-Shaking
+
+styled-components imports all of `react-native-web` which [breaks React Native web tree-shaking](https://github.com/styled-components/styled-components/pull/2797#issuecomment-574955289). This means your bundle size will be larger and include all of the components exported from `react-native-web`.
