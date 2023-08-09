@@ -38,7 +38,7 @@ As you can see, we get access to our newly created props in the interpolations, 
 ### Overriding .attrs
 Notice that when wrapping styled components, `.attrs` are applied from the innermost styled component to the outermost styled component.
 
-This allows each wrapper to **override** nested uses of `.attrs`, similarly to how css properties defined later in a stylesheet override previous declarations.
+This allows each wrapper to **override** nested uses of `.attrs`, similarly to how CSS properties defined later in a stylesheet override previous declarations.
 
 `Input`'s `.attrs` are applied first, and then `PasswordInput`'s `.attrs`:
 ```react
@@ -68,4 +68,4 @@ render(
   </div>
 );
 ```
-This is why `PasswordInput` is of a password type, but still uses the `size` attribute from `Input`.
+This is why `PasswordInput` is of a `'password'` type, but still uses the `$size` attribute from `Input`.
