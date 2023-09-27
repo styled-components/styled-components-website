@@ -16,7 +16,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
   return (
     <SlideNav>
       <ShowcaseLink item={prev}>
-        <NavButton role="button" tabIndex={0} aria-label="previous showcase use left arrow">
+        <NavButton role="button" tabIndex={0} aria-label="previous showcase, use left arrow to navigate">
           <Image
             width={1920}
             height={1080}
@@ -37,7 +37,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
       </ShowcaseLink>
 
       <ShowcaseLink item={next}>
-        <NavButton role="button" tabIndex={0} aria-label="next showcase use right arrow">
+        <NavButton role="button" tabIndex={0} aria-label="next showcase, use right arrow to navigate">
           <Image
             width={1920}
             height={1080}
