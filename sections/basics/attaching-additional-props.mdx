@@ -45,7 +45,7 @@ This allows each wrapper to **override** nested uses of `.attrs`, similarly to h
 const Input = styled.input.attrs(props => ({
   type: "text",
   $size: props.$size || "1em",
-})<{ $size?: string; }>`
+}))<{ $size?: string; }>`
   border: 2px solid #BF4F74;
   margin: ${props => props.$size};
   padding: ${props => props.$size};
