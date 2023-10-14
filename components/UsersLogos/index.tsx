@@ -1,5 +1,6 @@
 import { Company } from 'companies-manifest';
 import styled, { keyframes } from 'styled-components';
+import { useState } from 'react';
 
 const getSlide = (childIndex: number, reverse?: boolean) => keyframes`
   from {
@@ -32,6 +33,7 @@ const UsersSlider = styled.span<{ $offset?: number; $reverse?: boolean }>`
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
+  cursor: pointer; // Add cursor pointer to indicate it's clickable
 
   ${UsersWrapper} {
     flex-direction: ${({ $reverse }) => ($reverse ? 'row' : 'row-reverse')};
@@ -80,15 +82,38 @@ const SortedLogos = ({ users }: ISortedLogos) => (
 );
 
 const UsersLogos = ({ users, reverse }: { reverse?: boolean; users: ISortedLogos['users'] }) => {
+  // State to track animation pause
+  const [animationPaused, setAnimationPaused] = useState(false);
+
+  // Function to toggle animation pause state
+  const toggleAnimation = () => {
+    setAnimationPaused(prevState => !prevState);
+  };
+
   return (
     <UsersSliderContainer>
-      <UsersSlider $offset={-1} $reverse={reverse}>
+      <UsersSlider
+        $offset={-1}
+        $reverse={reverse}
+        onClick={toggleAnimation} // Attach click event handler
+        style={{ animationPlayState: animationPaused ? 'paused' : 'running' }} // Apply animationPlayState style
+      >
         <SortedLogos users={users} />
       </UsersSlider>
-      <UsersSlider $offset={0} $reverse={reverse}>
+      <UsersSlider
+        $offset={0}
+        $reverse={reverse}
+        onClick={toggleAnimation} // Attach click event handler
+        style={{ animationPlayState: animationPaused ? 'paused' : 'running' }} // Apply animationPlayState style
+      >
         <SortedLogos users={users} />
       </UsersSlider>
-      <UsersSlider $offset={1} $reverse={reverse}>
+      <UsersSlider
+        $offset={1}
+        $reverse={reverse}
+        onClick={toggleAnimation} // Attach click event handler
+        style={{ animationPlayState: animationPaused ? 'paused' : 'running' }} // Apply animationPlayState style
+      >
         <SortedLogos users={users} />
       </UsersSlider>
     </UsersSliderContainer>
