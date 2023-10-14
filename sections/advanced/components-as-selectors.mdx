@@ -7,7 +7,7 @@ it rarely is easy without rigging up a well-known targeting CSS selector paradig
 and then making them accessible for use in interpolations.
 
 styled-components solves this use case cleanly via the "component selector" pattern. Whenever
-a component is created or wrapped by the styled() factory function, it is also assigned a
+a component is created or wrapped by the `styled()` factory function, it is also assigned a
 stable CSS class for use in targeting. This allows for extremely powerful composition patterns
 without having to fuss around with naming and avoiding selector collisions.
 
@@ -61,7 +61,7 @@ consider both sets of rules to understand why Icon behaves as it does.
 
 This behaviour is only supported within the context of _Styled_ Components:
 attempting to mount `B` in the following example will fail because component
-`A` is an instance of React.Component not a Styled Component.
+`A` is an instance of `React.Component` not a Styled Component.
 
 ```tsx
 class A extends React.Component {
@@ -79,7 +79,7 @@ const B = styled.div`
 The error thrown - `Cannot call a class as a function` - occurs because the
 styled component is attempting to call the component as an interpolation function.
 
-However, wrapping `A` in a styled() factory makes it eligible for interpolation -- just
+However, wrapping `A` in a `styled()` factory makes it eligible for interpolation -- just
 make sure the wrapped component passes along `className`.
 
 ```tsx
