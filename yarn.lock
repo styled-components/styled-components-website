@@ -1660,6 +1660,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/is-prop-valid@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@emotion/is-prop-valid@npm:1.2.1"
+  dependencies:
+    "@emotion/memoize": ^0.8.1
+  checksum: 8f42dc573a3fad79b021479becb639b8fe3b60bdd1081a775d32388bca418ee53074c7602a4c845c5f75fa6831eb1cbdc4d208cc0299f57014ed3a02abcad16a
+  languageName: node
+  linkType: hard
+
+"@emotion/memoize@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "@emotion/memoize@npm:0.8.1"
+  checksum: a19cc01a29fcc97514948eaab4dc34d8272e934466ed87c07f157887406bc318000c69ae6f813a9001c6a225364df04249842a50e692ef7a9873335fbcc141b0
+  languageName: node
+  linkType: hard
+
 "@emotion/unitless@npm:^0.8.0":
   version: 0.8.0
   resolution: "@emotion/unitless@npm:0.8.0"
@@ -2641,6 +2657,13 @@ __metadata:
     "@types/styled-components": "*"
     csstype: ^3.0.2
   checksum: 4afc95c72a73fbcf99cdf5dcd025f46554b551bcd6129f5c041dbf253d779a9b6cf105f69dc828399fc1a91a34766799da6ff7585818ec405d3adc98d56be334
+  languageName: node
+  linkType: hard
+
+"@types/stylis@npm:^4.0.2":
+  version: 4.2.1
+  resolution: "@types/stylis@npm:4.2.1"
+  checksum: 556e7e4c3140f70afba4b1eacd2af48f6877c86eef43ce5d10d9d607e68f46ab25fe2cf9ae8a2f93765ca59aede98b6a1fd3cb66b4f8d73769932c50b614c8c3
   languageName: node
   linkType: hard
 
@@ -7468,7 +7491,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.3.4":
+"nanoid@npm:^3.3.4, nanoid@npm:^3.3.6":
   version: 3.3.6
   resolution: "nanoid@npm:3.3.6"
   bin:
@@ -8097,6 +8120,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: fe58766ff32e4becf65a7d57678995cfd239df6deed2fe0557f038b47c94e4132e7e5f68b5aa820c13adfec32e523b693efaeb65798efb995ce49ccd83953816
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.23":
+  version: 8.4.31
+  resolution: "postcss@npm:8.4.31"
+  dependencies:
+    nanoid: ^3.3.6
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 1d8611341b073143ad90486fcdfeab49edd243377b1f51834dc4f6d028e82ce5190e4f11bb2633276864503654fb7cab28e67abdc0fbf9d1f88cad4a0ff0beea
   languageName: node
   linkType: hard
 
@@ -9204,7 +9238,7 @@ __metadata:
     react-transition-group: ^4.4.5
     remark-gfm: ^3.0.1
     rimraf: ^3.0.2
-    styled-components: ^6.0.0-rc.2
+    styled-components: ^6.0.0
     styled-theming: ^2.2.0
     stylis: ^4.2.0
     stylis-plugin-rtl: ^2.1.1
@@ -9214,9 +9248,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"styled-components@npm:^6.0.0-rc.2":
-  version: 6.0.0-rc.2
-  resolution: "styled-components@npm:6.0.0-rc.2"
+"styled-components@npm:^6.0.0":
+  version: 6.0.9
+  resolution: "styled-components@npm:6.0.9"
   dependencies:
     "@babel/cli": ^7.21.0
     "@babel/core": ^7.21.0
@@ -9228,10 +9262,14 @@ __metadata:
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.21.0
     "@babel/traverse": ^7.21.2
+    "@emotion/is-prop-valid": ^1.2.1
     "@emotion/unitless": ^0.8.0
+    "@types/stylis": ^4.0.2
     css-to-react-native: ^3.2.0
+    csstype: ^3.1.2
+    postcss: ^8.4.23
     shallowequal: ^1.1.0
-    stylis: ^4.2.0
+    stylis: ^4.3.0
     tslib: ^2.5.0
   peerDependencies:
     babel-plugin-styled-components: ">= 2"
@@ -9240,7 +9278,7 @@ __metadata:
   peerDependenciesMeta:
     babel-plugin-styled-components:
       optional: true
-  checksum: 3c52399aab749ac547bd266fde4c9ca107e4c3ed41dd6caffdade9265b0af58dfc539841069efb357a2f16c08aa31175710ed2d41b103de798304cb68a26c40e
+  checksum: 2ef1fb67b4b690b969e1efd2dd56943f45399203fe4f6f8a821bb6c8722c1bb28f0eef57b8614ddd751c50f0e19de2baa08f3ada8b3b2dc28109e5650be3c0e9
   languageName: node
   linkType: hard
 
@@ -9280,6 +9318,13 @@ __metadata:
   version: 4.2.0
   resolution: "stylis@npm:4.2.0"
   checksum: 0eb6cc1b866dc17a6037d0a82ac7fa877eba6a757443e79e7c4f35bacedbf6421fadcab4363b39667b43355cbaaa570a3cde850f776498e5450f32ed2f9b7584
+  languageName: node
+  linkType: hard
+
+"stylis@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "stylis@npm:4.3.0"
+  checksum: 6120de3f03eacf3b5adc8e7919c4cca991089156a6badc5248752a3088106afaaf74996211a6817a7760ebeadca09004048eea31875bd8d4df51386365c50025
   languageName: node
   linkType: hard
 
