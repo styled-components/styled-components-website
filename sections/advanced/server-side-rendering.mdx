@@ -84,6 +84,10 @@ Refer to [our example](https://github.com/vercel/next.js/tree/canary/examples/wi
 
 On this version, you [only need to add](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components/next.config.js) `styledComponents: true,` at the compiler options in the `next.config.js` file and modify `_document` file with `getInitialProps` as in this [example](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components/pages/_document.tsx) to support SSR.
 
+#### App directory
+
+For routes defined in the `app/` directory, in Next.js v13+, you'll need to put a sytled-components registry in one of your layout files, as [described in Next.js docs](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components). Note that this depends on styled-components v6+. Also note that the `'use client'` directive is used - so while your page will be server-side rendered, styled-components will still appear in your client bundle.
+
 ### Gatsby
 
 [Gatsby](https://www.gatsbyjs.org/) has an official plugin that enables server-side rendering for styled-components.
