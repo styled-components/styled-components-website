@@ -40,7 +40,7 @@
     "react-is": "^17.0.2",
     "react-live-runner": "^1.0.5",
     "react-transition-group": "^4.4.5",
-    "styled-components": "^6.0.0-rc.2",
+    "styled-components": "^6.0.0",
     "styled-theming": "^2.2.0",
     "stylis": "^4.2.0",
     "stylis-plugin-rtl": "^2.1.1"
