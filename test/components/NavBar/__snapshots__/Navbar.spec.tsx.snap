@@ -409,6 +409,7 @@ exports[`Navbar renders correctly 1`] = `
     >
       <a
         className="c18"
+        target="_blank"
         title="GitHub: Source code"
       >
         <svg
@@ -417,6 +418,7 @@ exports[`Navbar renders correctly 1`] = `
       </a>
       <a
         className="c18"
+        target="_blank"
         title="Medium: Announcements, blog posts, and more"
       >
         <svg

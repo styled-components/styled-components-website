@@ -2,7 +2,7 @@ import renderer from 'react-test-renderer';
 import Link, { InlineLink, StyledLink } from '../../components/Link';
 
 test('Link renders correctly', () => {
-  const tree = renderer.create(<Link href="/" />).toJSON();
+  const tree = renderer.create(<Link href="/" target="_blank" />).toJSON();
 
   expect(tree).toMatchSnapshot();
 });

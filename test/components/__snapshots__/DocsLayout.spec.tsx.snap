@@ -820,11 +820,13 @@ exports[`DocsLayout renders correctly 1`] = `
                           >
                             <Styled(Link)
                               href="https://github.com/styled-components"
+                              target="_blank"
                               title="GitHub: Source code"
                             >
                               <Link
                                 className="c19"
                                 href="https://github.com/styled-components"
+                                target="_blank"
                                 title="GitHub: Source code"
                                 unstyled={true}
                               >
@@ -834,6 +836,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 >
                                   <a
                                     className="c19"
+                                    target="_blank"
                                     title="GitHub: Source code"
                                   >
                                     <styled.div
@@ -854,11 +857,13 @@ exports[`DocsLayout renders correctly 1`] = `
                             </Styled(Link)>
                             <Styled(Link)
                               href="https://medium.com/styled-components"
+                              target="_blank"
                               title="Medium: Announcements, blog posts, and more"
                             >
                               <Link
                                 className="c19"
                                 href="https://medium.com/styled-components"
+                                target="_blank"
                                 title="Medium: Announcements, blog posts, and more"
                                 unstyled={true}
                               >
@@ -868,6 +873,7 @@ exports[`DocsLayout renders correctly 1`] = `
                                 >
                                   <a
                                     className="c19"
+                                    target="_blank"
                                     title="Medium: Announcements, blog posts, and more"
                                   >
                                     <styled.div
