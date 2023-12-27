@@ -73,6 +73,38 @@ To accommodate this change, the original `disableVendorPrefixes` prop was invert
 
 styled-components v6 uses the newer stylis v4; if you are providing `stylisPlugins` to `StyleSheetManager`, ensure the plugins are up-to-date. For instance, [`stylis-plugin-rtl`](https://www.npmjs.com/package/stylis-plugin-rtl) released a new version to support the updated stylis.
 
+### Nested syntax handling
+
+With the stylis v4 upgrade [came a change to how nested selectors are handled](https://github.com/thysultan/stylis/issues/323) which now correctly mirrors browser behavior. Specifically, pseudoselectors (e.g. `:before`) that do not start with `&` will not have the ampersand implicitly added anymore.
+
+v5 behavior
+
+```tsx
+styled.div`
+  :hover { color: red; }
+`
+// .[classname]:hover { color: red; }
+
+styled.div`
+  &:hover { color: red; }
+`
+// .[classname]:hover { color: red; }
+```
+
+v6 behavior
+
+```tsx
+styled.div`
+  :hover { color: red; }
+`
+// .[classname] :hover { color: red; } (equivalent to .[classname] *:hover)
+
+styled.div`
+  &:hover { color: red; }
+`
+// .[classname]:hover { color: red; }
+```
+
 ### Transient `$as` and `$forwardedAs` props have been dropped
 
 To reduce confusion around application order, we've dropped the transient `$as` and `$forwardedAs` props. Please use the regular `as` and `forwardedAs` props instead.
