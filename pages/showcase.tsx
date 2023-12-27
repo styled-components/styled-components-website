@@ -69,7 +69,7 @@ export default function Showcase() {
                   return (
                     <TransitionGroup>
                       <CSSTransition key={src} timeout={500} classNames="fade">
-                        <img {...props} />
+                        <img {...props} role="presentation" />
                       </CSSTransition>
                     </TransitionGroup>
                   );

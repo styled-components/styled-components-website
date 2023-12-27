@@ -26,7 +26,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
               return (
                 <TransitionGroup>
                   <CSSTransition key={props.src} timeout={100} classNames="fade">
-                    <img src={prev.src} />
+                    <img src={prev.src} role="presentation" />
                   </CSSTransition>
                 </TransitionGroup>
               );
@@ -47,7 +47,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
               return (
                 <TransitionGroup>
                   <CSSTransition key={props.src} timeout={100} classNames="fade">
-                    <img src={next.src} />
+                    <img src={next.src} role="presentation" />
                   </CSSTransition>
                 </TransitionGroup>
               );

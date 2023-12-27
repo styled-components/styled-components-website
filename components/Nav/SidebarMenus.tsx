@@ -75,7 +75,7 @@ export const DocsSidebarMenu = (props: DocsSidebarMenuProps) => {
   return (
     <MenuInner>
       {pages.map(({ title, pathname, sections }) => (
-        <Section>
+        <Section key={title}>
           <SectionTitle>
             <Link href={`/docs/${pathname}`}>{title}</Link>
           </SectionTitle>
