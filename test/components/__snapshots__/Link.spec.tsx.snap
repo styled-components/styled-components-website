@@ -44,6 +44,7 @@ exports[`Link renders correctly 1`] = `
 
 <a
   className="c0"
+  target="_blank"
 />
 `;
 

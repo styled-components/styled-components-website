@@ -11,6 +11,7 @@ export interface LinkProps extends UnstyledLinkProps, Omit<AnchorProps, keyof Un
   ref?: React.Ref<HTMLAnchorElement>;
   unstyled?: boolean;
   white?: boolean;
+  target?: '_self' | '_blank' | '_parent' | '_top';
 }
 
 export default function Link({
@@ -21,6 +22,7 @@ export default function Link({
   title,
   unstyled,
   white,
+  target,
   ...rest
 }: LinkProps) {
   let Child: keyof JSX.IntrinsicElements | React.ComponentType<any> = StyledLink;
@@ -38,7 +40,7 @@ export default function Link({
 
   return (
     <UnstyledLink passHref {...rest}>
-      <Child aria-label={ariaLabel} className={className} title={title} {...dataAttrs}>
+      <Child aria-label={ariaLabel} className={className} title={title} {...dataAttrs} target={target}>
         {children}
       </Child>
     </UnstyledLink>
