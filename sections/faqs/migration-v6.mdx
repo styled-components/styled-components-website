@@ -131,3 +131,9 @@ const ButtonLink = styled(Button).attrs({ as: 'a' })``;
 ### Minimum Node support raised to v16+
 
 In line with the [maintenance schedule](https://github.com/nodejs/release#release-schedule) for Node, we now support v16 as the oldest runtime that's still receiving security patches.
+
+### If you are using react-select
+
+If you are creating a custom component using a styled-components theme, such as react-select, you need to pass the theme explicitly using [`attrs prop`](https://styled-components.com/docs/basics#attaching-additional-props).  
+
+See [codesandbox](https://codesandbox.io/p/sandbox/styled-component-with-react-select-forked-m62nj4?file=%2Fexample.js) for specific example.
