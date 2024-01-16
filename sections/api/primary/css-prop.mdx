@@ -63,4 +63,19 @@ To prevent TypeScript errors on the `css` prop on arbitrary elements, install `@
 ```ts
 import {} from 'styled-components/cssprop'
 ```
+
 See https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31245#issuecomment-446011384 for more information.
+
+If you're using a higher version than v6, you do not need to install `@types/styled-components`. 
+Instead, you can directly import the `CSSProp` in your project like this:
+
+```ts
+import {} from 'react'
+import type { CSSProp } from 'styled-components'
+
+declare module 'react' {
+  interface Attributes {
+    css?: CSSProp | undefined
+  }
+}
+```
