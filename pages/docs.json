@@ -102,6 +102,9 @@
           "title": "Babel Plugin"
         },
         {
+          "title": "SWC Plugin"
+        },
+        {
           "title": "Babel Macro"
         },
         {

@@ -1,0 +1,257 @@
+## SWC Plugin
+
+This plugin adds support for server-side rendering, minification of styles, and better debugging experience when using styled-components with the SWC compiler.
+
+### Usage
+
+First, install the `@swc/plugin-styled-components` and `@swc/core` packages:
+
+```bash
+npm install --save-dev @swc/plugin-styled-components @swc/core
+```
+
+Then, add the plugin to your `.swcrc` configuration file:
+
+```json
+{
+  "jsc": {
+    "experimental": {
+      "plugins": [
+        [
+          "@swc/plugin-styled-components",
+          {
+            "displayName": true,
+            "ssr": true
+          }
+        ]
+      ]
+    }
+  }
+}
+```
+
+### Options
+
+* `displayName`:
+  * Description: Enhances the attached CSS class name on each component with richer output to help identify your components in the DOM without React DevTools. It also allows you to see the component's `displayName` in React DevTools.
+  * Type: Boolean
+  * Default: `true`
+  * Values: `true` or `false`
+* `ssr`:
+  * Description: Adds a unique identifier to every styled component to avoid checksum mismatches due to different class generation on the client and on the server. Helps in server-side rendering (SSR).
+  * Type: Boolean
+  * Default: `true`
+  * Values: `true` or `false`
+* `fileName`:
+  * Description: Controls whether the `displayName` of a component will be prefixed with the filename or solely the component name.
+  * Type: Boolean
+  * Default: `true`
+  * Values: `true` or `false`
+* `meaninglessFileNames`:
+  * Description: Allows customizing the list of file names that are not relevant to the description of a styled component's functionality. Uses directory names instead.
+  * Type: Array of strings
+  * Default: `["index", "styles"]`
+  * Values: Any array of strings representing meaningless file names.
+* `minify`:
+  * Description: Minifies your CSS by removing all whitespace and comments. Also transpiles tagged template literals to a smaller representation.
+  * Type: Boolean
+  * Default: `true`
+  * Values: `true` or `false`
+* `transpileTemplateLiterals`:
+  * Description: Transpiles `styled-components` tagged template literals to a smaller representation. Helps reduce bundle size.
+  * Type: Boolean
+  * Default: `true`
+  * Values: `true` or `false`
+* `pure`:
+  * Description: Enables a feature called "pure annotation" to aid dead code elimination process on styled components.
+  * Type: Boolean
+  * Default: `false`
+  * Values: `true` or `false`
+* `namespace`:
+  * Description: Ensures that your class names will be unique, useful when working with micro-frontends where class name collisions can occur.
+  * Type: String
+  * Default: `undefined`
+  * Values: Any string representing the desired namespace.
+
+### Server-side rendering
+
+By adding a unique identifier to every styled component, this plugin avoids checksum mismatches due to different class generation on the client and on the server. If you don't use this plugin and try to server-side render styled components, React will complain with an HTML attribute mismatch warning during rehydration.
+
+You can disable this feature by setting the `ssr` option to `false`:
+
+```json
+{
+  "jsc": {
+    "experimental": {
+      "plugins": [
+        [
+          "@swc/plugin-styled-components",
+          {
+            "ssr": false
+          }
+        ]
+      ]
+    }
+  }
+}
+```
+
+### Better Debugging
+
+This option enhances the attached CSS class name on each component with richer output to help identify your components in the DOM without React DevTools. It also allows you to see the component's `displayName` in `React` DevTools.
+
+If you don't need this feature, you can disable it by setting the `displayName` option to `false`:
+
+```json
+{
+  "jsc": {
+    "experimental": {
+      "plugins": [
+        [
+          "@swc/plugin-styled-components",
+          {
+            "displayName": false
+          }
+        ]
+      ]
+    }
+  }
+}
+```
+
+#### Control the components `displayName`
+
+By default, the `displayName` of a component will be prefixed with the filename in order to make the component name as unique as possible.
+
+You can force the component `displayName` to be solely the component name by disabling the `fileName` option:
+
+```json
+{
+ "jsc": {
+   "experimental": {
+     "plugins": [
+       [
+         "@swc/plugin-styled-components",
+         {
+           "fileName": false
+         }
+       ]
+     ]
+   }
+ }
+}
+```
+
+#### Control which file names are meaningless
+
+A common pattern is to put components in `Button/index.jsx` instead of `Button.jsx`. By default, if the `fileName` option is set to `true`, the plugin will generate the `displayName` using the directory name (`<button class="Button-asdf123 asdf123" />`) instead of the file name (`<button class="index-asdf123 asdf123" />`), because the former provides more information.
+
+The `meaninglessFileNames` option allows you to customize the list of file names that are not relevant to the description of a styled component's functionality, and hence the directory name should be used instead:
+
+```json
+{
+ "jsc": {
+   "experimental": {
+     "plugins": [
+       [
+         "@swc/plugin-styled-components",
+         {
+           "meaninglessFileNames": ["index", "styles"]
+         }
+       ]
+     ]
+   }
+ }
+}
+```
+
+### Minification
+
+This plugin minifies your CSS by removing all whitespace and comments. It also transpiles tagged template literals to a smaller representation, keeping valuable bytes out of your bundles.
+
+If desired, you can disable this behavior by setting the `minify` option to `false`:
+
+```json
+{
+ "jsc": {
+   "experimental": {
+     "plugins": [
+       [
+         "@swc/plugin-styled-components",
+         {
+           "minify": false,
+           "transpileTemplateLiterals": false
+         }
+       ]
+     ]
+   }
+ }
+}
+```
+
+### Dead Code Elimination
+
+Due to how styled components are transpiled and constructed, by default, minifiers cannot properly perform dead code elimination on them because they are assumed to have side effects. However, there is a feature that can be enabled to aid this process called "pure annotation".
+
+```json
+{
+ "jsc": {
+   "experimental": {
+     "plugins": [
+       [
+         "@swc/plugin-styled-components",
+         {
+           "pure": true
+         }
+       ]
+     ]
+   }
+ }
+}
+```
+
+### Template String Transpilation
+
+Similar to the Babel plugin, this plugin transpiles `styled-components` tagged template literals to a smaller representation than what SWC normally creates. This helps reduce the bundle size.
+
+You can disable this feature by setting the `transpileTemplateLiterals` option to `false`:
+
+```json
+{
+ "jsc": {
+   "experimental": {
+     "plugins": [
+       [
+         "@swc/plugin-styled-components",
+         {
+           "transpileTemplateLiterals": false
+         }
+       ]
+     ]
+   }
+ }
+}
+```
+
+### Namespace
+
+The `namespace` option ensures that your class names will be unique, which is handy when working with micro-frontends where class name collisions can occur.
+
+To enable this behavior, set the `namespace` option in your configuration:
+
+```json
+{
+ "jsc": {
+   "experimental": {
+     "plugins": [
+       [
+         "@swc/plugin-styled-components",
+         {
+           "namespace": "my-app"
+         }
+       ]
+     ]
+   }
+ }
+}
+```
