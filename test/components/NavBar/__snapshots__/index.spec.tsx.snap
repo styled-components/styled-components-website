@@ -1405,6 +1405,24 @@ exports[`Nav renders correctly 1`] = `
                       </h5>
                     </styled.h5>
                     <styled.h5
+                      key="SWC Plugin"
+                    >
+                      <h5
+                        className="c25"
+                      >
+                        <styled.a
+                          href="/docs/tooling#swc-plugin"
+                        >
+                          <a
+                            className="c24"
+                            href="/docs/tooling#swc-plugin"
+                          >
+                            SWC Plugin
+                          </a>
+                        </styled.a>
+                      </h5>
+                    </styled.h5>
+                    <styled.h5
                       key="Babel Macro"
                     >
                       <h5
