@@ -14,7 +14,7 @@ exports[`DocsLayout renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c28 {
+.c29 {
   text-align: left;
   width: 100%;
   color: rgb(66, 66, 66);
@@ -23,7 +23,7 @@ exports[`DocsLayout renders correctly 1`] = `
   font-family: "Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c28 +h2 {
+.c29 +h2 {
   margin-top: -0.5em;
 }
 
@@ -33,6 +33,20 @@ exports[`DocsLayout renders correctly 1`] = `
   cursor: pointer;
   padding: 0.1111111111111111rem 0.4444444444444444rem;
   margin: -0.1111111111111111rem -0.4444444444444444rem;
+}
+
+.c32 {
+  color: rgb(33, 33, 33);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.c32:hover {
+  color: #ff5555;
+}
+
+.c32[data-white] {
+  color: white!important;
 }
 
 .c7 {
@@ -279,6 +293,31 @@ exports[`DocsLayout renders correctly 1`] = `
   margin: 0.5555555555555556rem 2.2222222222222223rem 0.5555555555555556rem 3.0555555555555554rem;
   font-size: 0.9rem;
   font-weight: normal;
+}
+
+.c33 {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c28 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.c28 .c30 {
+  flex-shrink: 0;
+}
+
+.c31 {
+  width: 1.5em;
 }
 
 @media (max-width: 62.5em) {
@@ -1989,11 +2028,56 @@ exports[`DocsLayout renders correctly 1`] = `
           className="c27"
           data-e2e-id="content"
         >
-          <styled.h1>
-            <h1
+          <styled.div>
+            <div
               className="c28"
-            />
-          </styled.h1>
+            >
+              <styled.h1>
+                <h1
+                  className="c29"
+                />
+              </styled.h1>
+              <Styled(Link)
+                href="https://github.com/styled-components/styled-components/releases.atom"
+                inline={true}
+                target="_blank"
+              >
+                <Link
+                  className="c30 c31"
+                  href="https://github.com/styled-components/styled-components/releases.atom"
+                  inline={true}
+                  target="_blank"
+                >
+                  <Link
+                    href="https://github.com/styled-components/styled-components/releases.atom"
+                    passHref={true}
+                  >
+                    <styled.a
+                      className="c30 c31"
+                      target="_blank"
+                    >
+                      <a
+                        className="c32 c30 c31"
+                        rel="noopener"
+                        target="_blank"
+                      >
+                        <DummyIcon>
+                          <svg />
+                        </DummyIcon>
+                        <styled.div>
+                          <div
+                            className="c33"
+                          >
+                            RSS feed
+                          </div>
+                        </styled.div>
+                      </a>
+                    </styled.a>
+                  </Link>
+                </Link>
+              </Styled(Link)>
+            </div>
+          </styled.div>
         </div>
       </styled.div>
     </div>
