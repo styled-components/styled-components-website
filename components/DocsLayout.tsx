@@ -42,7 +42,7 @@ export default function DocsLayout({
   const [isSideFolded, setIsSideFolded] = React.useState(true);
   const [isMobileNavFolded, setIsMobileNavFolded] = React.useState(true);
 
-  const feedLink = getReleasesAtomFeedURI();
+  const feedLink = title === 'Releases' ? getReleasesAtomFeedURI() : null;
   const prefixedTitle = `styled-components${title ? `: ${title}` : ''}`;
 
   const onSideToggle = React.useCallback(() => {

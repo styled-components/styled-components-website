@@ -35,20 +35,6 @@ exports[`DocsLayout renders correctly 1`] = `
   margin: -0.1111111111111111rem -0.4444444444444444rem;
 }
 
-.c32 {
-  color: rgb(33, 33, 33);
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.c32:hover {
-  color: #ff5555;
-}
-
-.c32[data-white] {
-  color: white!important;
-}
-
 .c7 {
   background-image: url(/nav-logo.png);
   background-position: center;
@@ -295,29 +281,11 @@ exports[`DocsLayout renders correctly 1`] = `
   font-weight: normal;
 }
 
-.c33 {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
 .c28 {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-}
-
-.c28 .c30 {
-  flex-shrink: 0;
-}
-
-.c31 {
-  width: 1.5em;
 }
 
 @media (max-width: 62.5em) {
@@ -2037,45 +2005,6 @@ exports[`DocsLayout renders correctly 1`] = `
                   className="c29"
                 />
               </styled.h1>
-              <Styled(Link)
-                href="https://github.com/styled-components/styled-components/releases.atom"
-                inline={true}
-                target="_blank"
-              >
-                <Link
-                  className="c30 c31"
-                  href="https://github.com/styled-components/styled-components/releases.atom"
-                  inline={true}
-                  target="_blank"
-                >
-                  <Link
-                    href="https://github.com/styled-components/styled-components/releases.atom"
-                    passHref={true}
-                  >
-                    <styled.a
-                      className="c30 c31"
-                      target="_blank"
-                    >
-                      <a
-                        className="c32 c30 c31"
-                        rel="noopener"
-                        target="_blank"
-                      >
-                        <DummyIcon>
-                          <svg />
-                        </DummyIcon>
-                        <styled.div>
-                          <div
-                            className="c33"
-                          >
-                            RSS feed
-                          </div>
-                        </styled.div>
-                      </a>
-                    </styled.a>
-                  </Link>
-                </Link>
-              </Styled(Link)>
             </div>
           </styled.div>
         </div>
