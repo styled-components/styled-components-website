@@ -8,3 +8,6 @@ export const getReleases = (
   repo = 'styled-components'
 ): Promise<Endpoints['GET /repos/{owner}/{repo}/releases']['response']['data']> =>
   fetch(`https://api.github.com/repos/styled-components/${repo}/releases?per_page=999`).then(resp => resp.json());
+
+export const getReleasesAtomFeedURI = (repo = 'styled-components') =>
+  `https://github.com/styled-components/${repo}/releases.atom`;

@@ -14,7 +14,7 @@ exports[`DocsLayout renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c28 {
+.c29 {
   text-align: left;
   width: 100%;
   color: rgb(66, 66, 66);
@@ -23,7 +23,7 @@ exports[`DocsLayout renders correctly 1`] = `
   font-family: "Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.c28 +h2 {
+.c29 +h2 {
   margin-top: -0.5em;
 }
 
@@ -279,6 +279,13 @@ exports[`DocsLayout renders correctly 1`] = `
   margin: 0.5555555555555556rem 2.2222222222222223rem 0.5555555555555556rem 3.0555555555555554rem;
   font-size: 0.9rem;
   font-weight: normal;
+}
+
+.c28 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 @media (max-width: 62.5em) {
@@ -1989,11 +1996,17 @@ exports[`DocsLayout renders correctly 1`] = `
           className="c27"
           data-e2e-id="content"
         >
-          <styled.h1>
-            <h1
+          <styled.div>
+            <div
               className="c28"
-            />
-          </styled.h1>
+            >
+              <styled.h1>
+                <h1
+                  className="c29"
+                />
+              </styled.h1>
+            </div>
+          </styled.div>
         </div>
       </styled.div>
     </div>

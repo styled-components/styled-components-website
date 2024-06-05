@@ -9,4 +9,5 @@ module.exports = {
   KeyboardDown: DummyIcon,
   Link: DummyIcon,
   Search: DummyIcon,
+  RssFeed: DummyIcon,
 };
