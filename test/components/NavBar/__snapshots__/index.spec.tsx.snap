@@ -826,7 +826,9 @@ exports[`Nav renders correctly 1`] = `
               <div
                 className="c21"
               >
-                <styled.div>
+                <styled.div
+                  key="Basics"
+                >
                   <div
                     className="c22"
                   >
@@ -1052,7 +1054,9 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                   </div>
                 </styled.div>
-                <styled.div>
+                <styled.div
+                  key="Advanced"
+                >
                   <div
                     className="c22"
                   >
@@ -1224,7 +1228,9 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                   </div>
                 </styled.div>
-                <styled.div>
+                <styled.div
+                  key="API Reference"
+                >
                   <div
                     className="c22"
                   >
@@ -1360,7 +1366,9 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                   </div>
                 </styled.div>
-                <styled.div>
+                <styled.div
+                  key="Tooling"
+                >
                   <div
                     className="c22"
                   >
@@ -1532,7 +1540,9 @@ exports[`Nav renders correctly 1`] = `
                     </styled.h5>
                   </div>
                 </styled.div>
-                <styled.div>
+                <styled.div
+                  key="FAQs"
+                >
                   <div
                     className="c22"
                   >

@@ -922,7 +922,9 @@ exports[`DocsLayout renders correctly 1`] = `
                     <div
                       className="c22"
                     >
-                      <styled.div>
+                      <styled.div
+                        key="Basics"
+                      >
                         <div
                           className="c23"
                         >
@@ -1148,7 +1150,9 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                         </div>
                       </styled.div>
-                      <styled.div>
+                      <styled.div
+                        key="Advanced"
+                      >
                         <div
                           className="c23"
                         >
@@ -1320,7 +1324,9 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                         </div>
                       </styled.div>
-                      <styled.div>
+                      <styled.div
+                        key="API Reference"
+                      >
                         <div
                           className="c23"
                         >
@@ -1456,7 +1462,9 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                         </div>
                       </styled.div>
-                      <styled.div>
+                      <styled.div
+                        key="Tooling"
+                      >
                         <div
                           className="c23"
                         >
@@ -1628,7 +1636,9 @@ exports[`DocsLayout renders correctly 1`] = `
                           </styled.h5>
                         </div>
                       </styled.div>
-                      <styled.div>
+                      <styled.div
+                        key="FAQs"
+                      >
                         <div
                           className="c23"
                         >
