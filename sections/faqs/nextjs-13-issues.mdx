@@ -1,0 +1,73 @@
+## Why do I see a flash of unstyled content (FOUC) in my Next.js 13 app?
+
+When using Next.js 13 with styled-components, you may experience a flash of unstyled content (FOUC) due to "delay bugs" in client-side rendering. This happens because styled-components' styles are not immediately applied when the page is rendered, causing unstyled elements to appear for a split second.
+
+To resolve this issue, follow these steps:
+
+1. Add the following to your next.config.js file.
+
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
+}
+
+module.exports = nextConfig
+```
+2. Create the registry.tsx file with the following code:
+```tsx
+'use client'
+ 
+import React, { useState } from 'react';
+import { useServerInsertedHTML } from 'next/navigation';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+ 
+export default function StyledComponentsRegistry({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  // Only create stylesheet once with lazy initial state
+  // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
+  const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet())
+ 
+  useServerInsertedHTML(() => {
+    const styles = styledComponentsStyleSheet.getStyleElement()
+    styledComponentsStyleSheet.instance.clearTag()
+    return styles
+  })
+ 
+  if (typeof window !== 'undefined') return <>{children}</>
+ 
+  return (
+    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
+      {children}
+    </StyleSheetManager>
+  )
+};
+```
+
+3. Add the ```'use client'``` directive to your layout.tsx file and wrap all the children components on your layout with the StyledComponentsRegistry component.
+```tsx
+'use client'
+import StyledComponentsRegistry from './registry';
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+    return (
+      <html lang="en">
+        <StyledComponentsRegistry>
+          <body>
+            {children}
+          </body>
+        </StyledComponentsRegistry>
+      </html>
+    )
+};
+```
