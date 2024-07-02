@@ -28,7 +28,7 @@ const Nav = (props: NavProps) => {
       />
 
       {showSideNav !== false && (
-        <Sidebar $isFolded={isSideFolded}>
+        <Sidebar id="navbar" $isFolded={isSideFolded}>
           {useDocsSidebarMenu !== false ? <DocsSidebarMenu /> : <SimpleSidebarMenu pages={pages} />}
         </Sidebar>
       )}

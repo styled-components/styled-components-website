@@ -12,6 +12,7 @@ import MobileNavbar from './MobileNavbar';
 import NavLinks from './NavLinks';
 import SearchWithAlgolia from './SearchWithAlgolia';
 import Social from './Social';
+import { ToggleButton } from './Toggle';
 
 export interface NavbarProps {
   onSideToggle?: () => void;
@@ -57,6 +58,7 @@ export default function Navbar({
           `)}
         `}
       >
+        <ToggleButton />
         <SearchWithAlgolia />
         <StyledSocial style={{ marginLeft: 16 }} />
       </EndWrapper>
