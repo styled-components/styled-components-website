@@ -51,6 +51,22 @@ const ResetStyles = createGlobalStyle`
     -webkit-font-smoothing: subpixel-antialiased;
   }
 
+  body:has(input#toggle:checked) {
+    color: rgb(245, 245, 245);
+  }
+
+  body:has(input#toggle:checked) h1 {
+    color: rgb(245, 245, 245);
+  }
+
+  body:has(input#toggle:checked) #panel {
+    background-color: #222;
+  }
+
+  body:has(input#toggle:checked) #navbar {
+    background-color: #444;
+  }
+
   body.sticky {
     overflow: hidden;
   }

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav renders correctly 1`] = `
-.c24 {
+.c27 {
   display: inline-block;
   color: inherit;
   cursor: pointer;
@@ -132,13 +132,13 @@ exports[`Nav renders correctly 1`] = `
   height: 2rem;
 }
 
-.c17 {
+.c20 {
   display: flex;
   align-items: center;
   flex: 1 1 auto;
 }
 
-.c18 {
+.c21 {
   display: flex;
   margin-right: 1.1111111111111112rem;
   line-height: 3.3333333333333335rem;
@@ -146,27 +146,123 @@ exports[`Nav renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c18:last-child {
+.c21:last-child {
   margin-right: 0;
 }
 
-.c18:hover,
-.c18:focus {
+.c21:hover,
+.c21:focus {
   opacity: 0.8;
 }
 
-.c18:active {
+.c21:active {
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c18 svg path {
+.c21 svg path {
   fill: currentColor;
 }
 
-.c19.c19 {
+.c22.c22 {
   width: NaNrem;
   height: 1rem;
+}
+
+.c19 {
+  width: 5px;
+  height: 3px;
+  border-radius: 3px;
+  position: relative;
+  background-color: #fff;
+  left: 37px;
+  top: 12px;
+  transition: all 150ms ease-in;
+}
+
+.c19::before,
+.c19::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: #fff;
+  transition: all 150ms ease-in;
+}
+
+.c19::before {
+  top: -5px;
+  left: -5px;
+}
+
+.c19::after {
+  top: 5px;
+  left: -2px;
+}
+
+.c17 {
+  display: none;
+}
+
+.c17:checked+label {
+  background-color: #6b7abb;
+  border-color: #5d6baa;
+}
+
+.c17:checked+label>span {
+  left: 15px;
+  width: 3px;
+}
+
+.c17:checked+label>span::before {
+  width: 3px;
+  height: 3px;
+  top: -5px;
+}
+
+.c17:checked+label>span::after {
+  width: 3px;
+  height: 3px;
+  left: -8px;
+  top: 7px;
+}
+
+.c17:checked+label::before {
+  background-color: #fff;
+  border-color: #e8e8e8;
+  animation: eVutBq 350ms forwards;
+}
+
+.c17:checked+label::after {
+  transition-delay: 350ms;
+  opacity: 1;
+}
+
+.c18 {
+  width: 60px;
+  height: 30px;
+  background-color: #96dcee;
+  border-radius: 100px;
+  border: 2px solid #72cce3;
+  display: flex;
+  position: relative;
+  transition: all 350ms ease-in;
+  cursor: pointer;
+}
+
+.c18::before {
+  animation: jnkQbK 350ms forwards;
+  transition: all 350ms ease-in;
+  content: '';
+  width: 18px;
+  height: 18px;
+  border: 2px solid #f5eb71;
+  top: 4px;
+  left: 0px;
+  position: absolute;
+  border-radius: 82px;
+  background-color: #fffaa8;
 }
 
 .c0 {
@@ -216,7 +312,7 @@ exports[`Nav renders correctly 1`] = `
   margin-right: 1.9444444444444444rem;
 }
 
-.c20 {
+.c23 {
   position: fixed;
   transform: translateZ(0);
   display: block;
@@ -234,23 +330,23 @@ exports[`Nav renders correctly 1`] = `
   transition: transform 150ms ease-out;
 }
 
-.c21 {
+.c24 {
   display: block;
   box-sizing: border-box;
   height: 100%;
   padding-top: 3.3333333333333335rem;
 }
 
-.c22 {
+.c25 {
   margin-bottom: 1.1111111111111112rem;
 }
 
-.c23 {
+.c26 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem;
 }
 
-.c25 {
+.c28 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem 0.5555555555555556rem 3.0555555555555554rem;
   font-size: 0.9rem;
@@ -258,11 +354,11 @@ exports[`Nav renders correctly 1`] = `
 }
 
 @media (min-width: 62.5em) {
-  .c24 {
+  .c27 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c24:hover {
+  .c27:hover {
     background: rgba(20, 20, 20, 0.1);
   }
 }
@@ -697,6 +793,34 @@ exports[`Nav renders correctly 1`] = `
                 ]
               }
             >
+              <ToggleButton>
+                <span>
+                  <styled.input
+                    id="toggle"
+                    type="checkbox"
+                  >
+                    <input
+                      className="c17"
+                      id="toggle"
+                      type="checkbox"
+                    />
+                  </styled.input>
+                  <styled.label
+                    htmlFor="toggle"
+                  >
+                    <label
+                      className="c18"
+                      htmlFor="toggle"
+                    >
+                      <styled.span>
+                        <span
+                          className="c19"
+                        />
+                      </styled.span>
+                    </label>
+                  </styled.label>
+                </span>
+              </ToggleButton>
               <AlgoliaSearch>
                 <div
                   id="docs-search-input"
@@ -726,7 +850,7 @@ exports[`Nav renders correctly 1`] = `
                     }
                   >
                     <nav
-                      className="c17 "
+                      className="c20 "
                       style={
                         {
                           "marginLeft": 16,
@@ -739,7 +863,7 @@ exports[`Nav renders correctly 1`] = `
                         title="GitHub: Source code"
                       >
                         <Link
-                          className="c18"
+                          className="c21"
                           href="https://github.com/styled-components"
                           target="_blank"
                           title="GitHub: Source code"
@@ -750,7 +874,7 @@ exports[`Nav renders correctly 1`] = `
                             passHref={true}
                           >
                             <a
-                              className="c18"
+                              className="c21"
                               target="_blank"
                               title="GitHub: Source code"
                             >
@@ -759,10 +883,10 @@ exports[`Nav renders correctly 1`] = `
                                 as={[Function]}
                               >
                                 <DummyIcon
-                                  className="c19"
+                                  className="c22"
                                 >
                                   <svg
-                                    className="c19"
+                                    className="c22"
                                   />
                                 </DummyIcon>
                               </styled.div>
@@ -776,7 +900,7 @@ exports[`Nav renders correctly 1`] = `
                         title="Medium: Announcements, blog posts, and more"
                       >
                         <Link
-                          className="c18"
+                          className="c21"
                           href="https://medium.com/styled-components"
                           target="_blank"
                           title="Medium: Announcements, blog posts, and more"
@@ -787,7 +911,7 @@ exports[`Nav renders correctly 1`] = `
                             passHref={true}
                           >
                             <a
-                              className="c18"
+                              className="c21"
                               target="_blank"
                               title="Medium: Announcements, blog posts, and more"
                             >
@@ -796,10 +920,10 @@ exports[`Nav renders correctly 1`] = `
                                 as={[Function]}
                               >
                                 <DummyIcon
-                                  className="c19"
+                                  className="c22"
                                 >
                                   <svg
-                                    className="c19"
+                                    className="c22"
                                   />
                                 </DummyIcon>
                               </styled.div>
@@ -816,23 +940,28 @@ exports[`Nav renders correctly 1`] = `
         </nav>
       </styled.nav>
     </Navbar>
-    <CaptureScroll>
-      <styled.nav>
+    <CaptureScroll
+      id="navbar"
+    >
+      <styled.nav
+        id="navbar"
+      >
         <nav
-          className="c20"
+          className="c23"
+          id="navbar"
         >
           <DocsSidebarMenu>
             <styled.div>
               <div
-                className="c21"
+                className="c24"
               >
                 <styled.div>
                   <div
-                    className="c22"
+                    className="c25"
                   >
                     <styled.h4>
                       <h4
-                        className="c23"
+                        className="c26"
                       >
                         <Link
                           href="/docs/basics"
@@ -843,7 +972,7 @@ exports[`Nav renders correctly 1`] = `
                           >
                             <styled.a>
                               <a
-                                className="c24"
+                                className="c27"
                               >
                                 Basics
                               </a>
@@ -856,13 +985,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Motivation"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/basics#motivation"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/basics#motivation"
                           >
                             Motivation
@@ -874,13 +1003,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Installation"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/basics#installation"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/basics#installation"
                           >
                             Installation
@@ -892,13 +1021,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Getting Started"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/basics#getting-started"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/basics#getting-started"
                           >
                             Getting Started
@@ -910,13 +1039,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Adapting based on props"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/basics#adapting-based-on-props"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/basics#adapting-based-on-props"
                           >
                             Adapting based on props
@@ -928,13 +1057,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Extending styles"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/basics#extending-styles"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/basics#extending-styles"
                           >
                             Extending styles
@@ -946,13 +1075,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Styling any component"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/basics#styling-any-component"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/basics#styling-any-component"
                           >
                             Styling any component
@@ -964,13 +1093,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Passed props"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/basics#passed-props"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/basics#passed-props"
                           >
                             Passed props
@@ -982,13 +1111,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Coming from CSS"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/basics#coming-from-css"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/basics#coming-from-css"
                           >
                             Coming from CSS
@@ -1000,13 +1129,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Attaching additional props"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/basics#attaching-additional-props"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/basics#attaching-additional-props"
                           >
                             Attaching additional props
@@ -1018,13 +1147,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Animations"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/basics#animations"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/basics#animations"
                           >
                             Animations
@@ -1036,13 +1165,13 @@ exports[`Nav renders correctly 1`] = `
                       key="React Native"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/basics#react-native"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/basics#react-native"
                           >
                             React Native
@@ -1054,11 +1183,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c22"
+                    className="c25"
                   >
                     <styled.h4>
                       <h4
-                        className="c23"
+                        className="c26"
                       >
                         <Link
                           href="/docs/advanced"
@@ -1069,7 +1198,7 @@ exports[`Nav renders correctly 1`] = `
                           >
                             <styled.a>
                               <a
-                                className="c24"
+                                className="c27"
                               >
                                 Advanced
                               </a>
@@ -1082,13 +1211,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Theming"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/advanced#theming"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/advanced#theming"
                           >
                             Theming
@@ -1100,13 +1229,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Refs"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/advanced#refs"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/advanced#refs"
                           >
                             Refs
@@ -1118,13 +1247,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Security"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/advanced#security"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/advanced#security"
                           >
                             Security
@@ -1136,13 +1265,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Existing CSS"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/advanced#existing-css"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/advanced#existing-css"
                           >
                             Existing CSS
@@ -1154,13 +1283,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Tagged Template Literals"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/advanced#tagged-template-literals"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/advanced#tagged-template-literals"
                           >
                             Tagged Template Literals
@@ -1172,13 +1301,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Server Side Rendering"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/advanced#server-side-rendering"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/advanced#server-side-rendering"
                           >
                             Server Side Rendering
@@ -1190,13 +1319,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Referring to other components"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/advanced#referring-to-other-components"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/advanced#referring-to-other-components"
                           >
                             Referring to other components
@@ -1208,13 +1337,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Style Objects"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/advanced#style-objects"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/advanced#style-objects"
                           >
                             Style Objects
@@ -1226,11 +1355,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c22"
+                    className="c25"
                   >
                     <styled.h4>
                       <h4
-                        className="c23"
+                        className="c26"
                       >
                         <Link
                           href="/docs/api"
@@ -1241,7 +1370,7 @@ exports[`Nav renders correctly 1`] = `
                           >
                             <styled.a>
                               <a
-                                className="c24"
+                                className="c27"
                               >
                                 API Reference
                               </a>
@@ -1254,13 +1383,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Primary"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/api#primary"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/api#primary"
                           >
                             Primary
@@ -1272,13 +1401,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Helpers"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/api#helpers"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/api#helpers"
                           >
                             Helpers
@@ -1290,13 +1419,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Test Utilities"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/api#test-utilities"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/api#test-utilities"
                           >
                             Test Utilities
@@ -1308,13 +1437,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Supported CSS"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/api#supported-css"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/api#supported-css"
                           >
                             Supported CSS
@@ -1326,13 +1455,13 @@ exports[`Nav renders correctly 1`] = `
                       key="TypeScript"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/api#typescript"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/api#typescript"
                           >
                             TypeScript
@@ -1344,13 +1473,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Previous APIs"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/api#previous-apis"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/api#previous-apis"
                           >
                             Previous APIs
@@ -1362,11 +1491,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c22"
+                    className="c25"
                   >
                     <styled.h4>
                       <h4
-                        className="c23"
+                        className="c26"
                       >
                         <Link
                           href="/docs/tooling"
@@ -1377,7 +1506,7 @@ exports[`Nav renders correctly 1`] = `
                           >
                             <styled.a>
                               <a
-                                className="c24"
+                                className="c27"
                               >
                                 Tooling
                               </a>
@@ -1390,13 +1519,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Babel Plugin"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/tooling#babel-plugin"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/tooling#babel-plugin"
                           >
                             Babel Plugin
@@ -1408,13 +1537,13 @@ exports[`Nav renders correctly 1`] = `
                       key="SWC Plugin"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/tooling#swc-plugin"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/tooling#swc-plugin"
                           >
                             SWC Plugin
@@ -1426,13 +1555,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Babel Macro"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/tooling#babel-macro"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/tooling#babel-macro"
                           >
                             Babel Macro
@@ -1444,13 +1573,13 @@ exports[`Nav renders correctly 1`] = `
                       key="TypeScript Plugin"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/tooling#typescript-plugin"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/tooling#typescript-plugin"
                           >
                             TypeScript Plugin
@@ -1462,13 +1591,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Jest Integration"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/tooling#jest-integration"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/tooling#jest-integration"
                           >
                             Jest Integration
@@ -1480,13 +1609,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Stylelint"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/tooling#stylelint"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/tooling#stylelint"
                           >
                             Stylelint
@@ -1498,13 +1627,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Styled Theming"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/tooling#styled-theming"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/tooling#styled-theming"
                           >
                             Styled Theming
@@ -1516,13 +1645,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Syntax Highlighting"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/tooling#syntax-highlighting"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/tooling#syntax-highlighting"
                           >
                             Syntax Highlighting
@@ -1534,11 +1663,11 @@ exports[`Nav renders correctly 1`] = `
                 </styled.div>
                 <styled.div>
                   <div
-                    className="c22"
+                    className="c25"
                   >
                     <styled.h4>
                       <h4
-                        className="c23"
+                        className="c26"
                       >
                         <Link
                           href="/docs/faqs"
@@ -1549,7 +1678,7 @@ exports[`Nav renders correctly 1`] = `
                           >
                             <styled.a>
                               <a
-                                className="c24"
+                                className="c27"
                               >
                                 FAQs
                               </a>
@@ -1562,13 +1691,13 @@ exports[`Nav renders correctly 1`] = `
                       key="What do I need to do to migrate to v6?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v6"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v6"
                           >
                             What do I need to do to migrate to v6?
@@ -1580,13 +1709,13 @@ exports[`Nav renders correctly 1`] = `
                       key="What do I need to do to migrate to v5?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v5"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v5"
                           >
                             What do I need to do to migrate to v5?
@@ -1598,13 +1727,13 @@ exports[`Nav renders correctly 1`] = `
                       key="What do I need to do to migrate to v4?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4"
                           >
                             What do I need to do to migrate to v4?
@@ -1616,13 +1745,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Can I nest rules?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#can-i-nest-rules"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#can-i-nest-rules"
                           >
                             Can I nest rules?
@@ -1634,13 +1763,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Can I use css frameworks?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#can-i-use-css-frameworks"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#can-i-use-css-frameworks"
                           >
                             Can I use css frameworks?
@@ -1652,13 +1781,13 @@ exports[`Nav renders correctly 1`] = `
                       key="How can I override styles with higher specificity?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#how-can-i-override-styles-with-higher-specificity"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#how-can-i-override-styles-with-higher-specificity"
                           >
                             How can I override styles with higher specificity?
@@ -1670,13 +1799,13 @@ exports[`Nav renders correctly 1`] = `
                       key="How can I override inline styles?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#how-can-i-override-inline-styles"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#how-can-i-override-inline-styles"
                           >
                             How can I override inline styles?
@@ -1688,13 +1817,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Why do my DOM nodes have two classes?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#why-do-my-dom-nodes-have-two-classes"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#why-do-my-dom-nodes-have-two-classes"
                           >
                             Why do my DOM nodes have two classes?
@@ -1706,13 +1835,13 @@ exports[`Nav renders correctly 1`] = `
                       key="When to use attrs?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#when-to-use-attrs"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#when-to-use-attrs"
                           >
                             When to use attrs?
@@ -1724,13 +1853,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Why should I avoid declaring styled components in the render method?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#why-should-i-avoid-declaring-styled-components-in-the-render-method"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#why-should-i-avoid-declaring-styled-components-in-the-render-method"
                           >
                             Why should I avoid declaring styled components in the render method?
@@ -1742,13 +1871,13 @@ exports[`Nav renders correctly 1`] = `
                       key="I am a library author. Should I bundle styled-components with my library?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#i-am-a-library-author.-should-i-bundle-styled-components-with-my-library"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#i-am-a-library-author.-should-i-bundle-styled-components-with-my-library"
                           >
                             I am a library author. Should I bundle styled-components with my library?
@@ -1760,13 +1889,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Why am I getting a warning about several instances of module on the page?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#why-am-i-getting-a-warning-about-several-instances-of-module-on-the-page"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#why-am-i-getting-a-warning-about-several-instances-of-module-on-the-page"
                           >
                             Why am I getting a warning about several instances of module on the page?
@@ -1778,13 +1907,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Why am I getting HTML attribute warnings?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#why-am-i-getting-html-attribute-warnings"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#why-am-i-getting-html-attribute-warnings"
                           >
                             Why am I getting HTML attribute warnings?
@@ -1796,13 +1925,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Which browsers are supported?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#which-browsers-are-supported"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#which-browsers-are-supported"
                           >
                             Which browsers are supported?
@@ -1814,13 +1943,13 @@ exports[`Nav renders correctly 1`] = `
                       key="How do I use styled-components with create-react-app?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#how-do-i-use-styled-components-with-create-react-app"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#how-do-i-use-styled-components-with-create-react-app"
                           >
                             How do I use styled-components with create-react-app?
@@ -1832,13 +1961,13 @@ exports[`Nav renders correctly 1`] = `
                       key="How can I fix issues when using npm link or yarn link?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#how-can-i-fix-issues-when-using-npm-link-or-yarn-link"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#how-can-i-fix-issues-when-using-npm-link-or-yarn-link"
                           >
                             How can I fix issues when using npm link or yarn link?
@@ -1850,13 +1979,13 @@ exports[`Nav renders correctly 1`] = `
                       key="How do I fix flickering text after server side rendering?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#how-do-i-fix-flickering-text-after-server-side-rendering"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#how-do-i-fix-flickering-text-after-server-side-rendering"
                           >
                             How do I fix flickering text after server side rendering?
@@ -1868,13 +1997,13 @@ exports[`Nav renders correctly 1`] = `
                       key="Missing Declarations for styled-components/native?"
                     >
                       <h5
-                        className="c25"
+                        className="c28"
                       >
                         <styled.a
                           href="/docs/faqs#missing-declarations-for-styled-componentsnative"
                         >
                           <a
-                            className="c24"
+                            className="c27"
                             href="/docs/faqs#missing-declarations-for-styled-componentsnative"
                           >
                             Missing Declarations for styled-components/native?

@@ -61,7 +61,7 @@ export default function DocsLayout({
   }, [router.asPath]);
 
   return (
-    <Container>
+    <Container id="panel">
       <Head title={prefixedTitle} description={description}>
         <meta name="robots" content="noodp" />
         {feedLink && <link rel="alternate" type="application/atom+xml" title={prefixedTitle} href={feedLink} />}
