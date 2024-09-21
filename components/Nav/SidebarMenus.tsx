@@ -8,7 +8,7 @@ import Link, { StyledLink } from '../Link';
 const { pages } = json;
 
 export interface SimpleSidebarMenuProps {
-  pages?: { title: string; pathname: string; sections: { title: string }[]; href: string }[];
+  pages?: { title: string; pathname?: string; sections: { title: string }[]; href: string }[];
 }
 
 export const SimpleSidebarMenu = ({ pages = [] }: SimpleSidebarMenuProps) => {
@@ -91,6 +91,6 @@ export const DocsSidebarMenu = (props: DocsSidebarMenuProps) => {
   );
 };
 
-function getSectionPath(parentPathname: string, title: string) {
-  return `${parentPathname}#${titleToDash(title)}`;
+function getSectionPath(parentPathname: string | undefined, title: string) {
+  return `${parentPathname ?? ''}#${titleToDash(title)}`;
 }
