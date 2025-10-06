@@ -62,11 +62,11 @@ const components: React.ComponentProps<typeof MDXProvider>['components'] = {
     const language = className.replace(/language-/, '') as Language | 'react' | 'sh';
 
     if (language === 'react') {
-      return <LiveEdit code={children.trim()} />;
+      return <LiveEdit code={children.trim()} aria-label="Live code editor" />;
     } else if (language === 'sh') {
-      return <CodeBlock code={children.trim()} language="bash" />;
+      return <CodeBlock code={children.trim()} language="bash" aria-label="Code snippet in Bash" />;
     } else if (language) {
-      return <CodeBlock code={children.trim()} language={language} />;
+      return <CodeBlock code={children.trim()} language={language} aria-label={`Code snippet in ${language}`} />;
     }
 
     return <Code>{children}</Code>;
@@ -77,8 +77,9 @@ const components: React.ComponentProps<typeof MDXProvider>['components'] = {
   },
 
   a({ href, children }) {
+    const content = children || href;
     return (
-      <Link href={href || ''} inline>
+      <Link href={href || ''} inline aria-label={typeof children === 'string' ? undefined : href}>
         {children}
       </Link>
     );
