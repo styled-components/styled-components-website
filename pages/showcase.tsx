@@ -35,7 +35,7 @@ export default function Showcase() {
             <InsetWrapper>
               <HeaderContent>
                 <div>
-                  <h2>Awesome websites, by awesome humans beings.</h2>
+                  <h2>Awesome websites, by awesome human beings.</h2>
                   <h5>
                     Styled components is used by teams all around the world to create beautiful websites, like these
                     ones:
