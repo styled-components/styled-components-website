@@ -24,11 +24,16 @@ Another option is [Naomi](https://github.com/borela/naomi) by [Alexandre Borela]
 
 If you would like to keep your current JavaScript syntax highlighting, you can use the [vscode-styled-components](https://github.com/styled-components/vscode-styled-components) extension to provide styled-components syntax highlighting inside your Javascript files. You can install it as usual from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components).
 
-### VIM / NeoVim
-
-The [`vim-styled-components`](https://github.com/fleischie/vim-styled-components) plugin gives you syntax highlighting inside your Javascript files. Install it with your usual plugin manager like [Plug](https://github.com/junegunn/vim-plug), [Vundle](https://github.com/VundleVim/Vundle.vim), [Pathogen](https://github.com/tpope/vim-pathogen), etc.
-
-Also if you're looking for an awesome javascript syntax package you can never go wrong with [YAJS.vim](https://github.com/othree/yajs.vim).
+### NeoVim
+If you're using NeoVim with TreeSitter, you can add `styled` into your config's `ensure_installed` table:
+```lua
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { ..., "styled" },
+  highlight = {
+    enable = true,
+  },
+}
+```
 
 ### WebStorm, IntelliJ IDEA, PhpStorm, PyCharm, and RubyMine
 
