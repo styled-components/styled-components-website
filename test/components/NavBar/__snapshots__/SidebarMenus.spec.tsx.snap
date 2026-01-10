@@ -371,16 +371,6 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
     >
       <a
         className="c3"
-        href="/docs/tooling#babel-macro"
-      >
-        Babel Macro
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
         href="/docs/tooling#typescript-plugin"
       >
         TypeScript Plugin

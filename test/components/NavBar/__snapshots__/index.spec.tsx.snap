@@ -1423,24 +1423,6 @@ exports[`Nav renders correctly 1`] = `
                       </h5>
                     </styled.h5>
                     <styled.h5
-                      key="Babel Macro"
-                    >
-                      <h5
-                        className="c25"
-                      >
-                        <styled.a
-                          href="/docs/tooling#babel-macro"
-                        >
-                          <a
-                            className="c24"
-                            href="/docs/tooling#babel-macro"
-                          >
-                            Babel Macro
-                          </a>
-                        </styled.a>
-                      </h5>
-                    </styled.h5>
-                    <styled.h5
                       key="TypeScript Plugin"
                     >
                       <h5
