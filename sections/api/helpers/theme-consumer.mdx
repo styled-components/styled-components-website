@@ -1,6 +1,8 @@
 ### `ThemeConsumer` | v4
 
-This is the ["consumer" component](https://reactjs.org/docs/context.html#consumer) created by `React.createContext` as the companion component to `ThemeProvider`. It uses the [render prop pattern](https://reactjs.org/docs/render-props.html) to allow for dynamic access to the theme during rendering.
+> **Prefer `useTheme` hook:** For function components, the [`useTheme`](/docs/api#usetheme) hook provides a simpler API. `ThemeConsumer` is primarily useful for class components.
+
+This is the "consumer" component created by `React.createContext` as the companion component to `ThemeProvider`. It uses the render prop pattern to allow for dynamic access to the theme during rendering.
 
 It passes the current theme (based on a [`ThemeProvider`](/docs/api#themeprovider) higher in your component tree) as an argument to the child function. From this function, you may return further JSX or nothing.
 

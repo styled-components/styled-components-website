@@ -1,6 +1,8 @@
 ## What do I need to do to migrate to v4?
 
-This is a pretty big release with lots of changes both under the hood and at the API level. As the beta progresses, we will try to release codemods to make the items below simpler. Also, if you find any issues with the steps below, please [leave constructive feedback](https://github.com/styled-components/styled-components-website/issues/296)!
+> **Historical note:** This migration guide is for upgrading from v3 to v4 (released 2018). If you're on a recent version, see the [v6 migration guide](/docs/faqs#what-do-i-need-to-do-to-migrate-to-v6) instead.
+
+This is a pretty big release with lots of changes both under the hood and at the API level.
 
 1. Upgrade to the latest styled-components:
 
@@ -193,10 +195,6 @@ const Input = styled.input.attrs(props => ({
 `
 ```
 
-8. If you're using TypeScript, the typings are now located in DefinitelyTyped:
+8. If you're using TypeScript, note that as of v6, types are bundled with styled-components directly (no separate `@types/styled-components` needed).
 
-```sh
-npm install @types/styled-components
-```
-
-That's it! Aside from migrating, we also highly recommend reading up on the new [`"as" prop`](/docs/api#as-polymorphic-prop) which is intended to replace the [`withComponent API`](/docs/api#withcomponent) in the future.
+That's it! Aside from migrating, we also highly recommend reading up on the [`"as" prop`](/docs/api#as-polymorphic-prop) which replaced the `withComponent` API (removed in v6).
