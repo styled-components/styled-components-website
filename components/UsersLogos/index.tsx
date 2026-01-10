@@ -75,11 +75,13 @@ export interface ISortedLogos {
 
 const SortedLogos = ({ users }: ISortedLogos) => (
   <UsersWrapper>
-    {users.map(({ key, name, logo: Logo }) => (
-      <CompanyLogo key={key} title={name}>
-        <Logo />
-      </CompanyLogo>
-    ))}
+    {users.map(({ key, name, logo: Logo }) =>
+      Logo ? (
+        <CompanyLogo key={key} title={name}>
+          <Logo />
+        </CompanyLogo>
+      ) : null
+    )}
   </UsersWrapper>
 );
 
