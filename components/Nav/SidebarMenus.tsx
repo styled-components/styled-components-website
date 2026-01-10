@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
-import json from '~/app/docs.json';
+import json from '@/app/docs.json';
 import rem from '../../utils/rem';
 import titleToDash from '../../utils/titleToDash';
 import Link, { StyledLink } from '../Link';

@@ -8,6 +8,6 @@ module.exports = {
   },
   moduleNameMapper: {
     '^next/navigation$': '<rootDir>/test/__mocks__/next/navigation.ts',
-    '^~/(.*)$': '<rootDir>/$1',
+    '^@/(.*)$': '<rootDir>/$1',
   },
 };

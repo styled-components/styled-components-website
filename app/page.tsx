@@ -3,7 +3,7 @@
 import React from 'react';
 import { LiveEditor, LivePreview, LiveProvider } from 'react-live-runner';
 import styled from 'styled-components';
-import { sortedCompanies, sortedProjects } from '~/companies-manifest';
+import { sortedCompanies, sortedProjects } from '@/companies-manifest';
 import Footer from '../components/Footer';
 import { Content } from '../components/Layout';
 import { default as Link, default as NextLink } from '../components/Link';

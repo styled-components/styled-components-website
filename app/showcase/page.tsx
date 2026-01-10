@@ -4,17 +4,17 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import React, { Suspense } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css, keyframes } from 'styled-components';
-import { SortedProject, sortedProjects } from '~/companies-manifest';
-import Footer from '~/components/Footer';
-import Image, { ImageProps } from '~/components/Image';
-import Nav from '~/components/Nav';
-import SeoHead from '~/components/SeoHead';
-import Navigation from '~/components/Slider/Navigation';
-import ShowcaseBody from '~/components/Slider/ShowcaseBody';
-import { generateShowcaseUrl } from '~/components/Slider/ShowcaseLink';
-import { blmGrey, blmMetal } from '~/utils/colors';
-import { headerFont } from '~/utils/fonts';
-import { mobile, phone } from '~/utils/media';
+import { SortedProject, sortedProjects } from '@/companies-manifest';
+import Footer from '@/components/Footer';
+import Image, { ImageProps } from '@/components/Image';
+import Nav from '@/components/Nav';
+import SeoHead from '@/components/SeoHead';
+import Navigation from '@/components/Slider/Navigation';
+import ShowcaseBody from '@/components/Slider/ShowcaseBody';
+import { generateShowcaseUrl } from '@/components/Slider/ShowcaseLink';
+import { blmGrey, blmMetal } from '@/utils/colors';
+import { headerFont } from '@/utils/fonts';
+import { mobile, phone } from '@/utils/media';
 
 function ShowcaseContent() {
   const searchParams = useSearchParams();

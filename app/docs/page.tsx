@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components';
 
-import { Header } from '~/components/Layout';
-import { headerFont } from '~/utils/fonts';
-import { mobile, phone } from '~/utils/media';
-import DocsLayout from '~/components/DocsLayout';
-import json from '~/app/docs.json';
-import Link from '~/components/Link';
-import rem from '~/utils/rem';
-import titleToDash from '~/utils/titleToDash';
+import { Header } from '@/components/Layout';
+import { headerFont } from '@/utils/fonts';
+import { mobile, phone } from '@/utils/media';
+import DocsLayout from '@/components/DocsLayout';
+import json from '@/app/docs.json';
+import Link from '@/components/Link';
+import rem from '@/utils/rem';
+import titleToDash from '@/utils/titleToDash';
 
 const { pages } = json;
 

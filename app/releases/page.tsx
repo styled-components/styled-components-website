@@ -1,8 +1,8 @@
 import Markdown from 'markdown-to-jsx';
-import DocsLayout, { type DocsLayoutProps } from '~/components/DocsLayout';
-import ReleaseAnchor from '~/components/ReleaseAnchor';
-import { getReleases } from '~/utils/githubApi';
-import components from '~/utils/mdx-components';
+import DocsLayout, { type DocsLayoutProps } from '@/components/DocsLayout';
+import ReleaseAnchor from '@/components/ReleaseAnchor';
+import { getReleases } from '@/utils/githubApi';
+import components from '@/utils/mdx-components';
 
 export const revalidate = 30;
 
