@@ -139,96 +139,98 @@ exports[`MobileNavbar renders correctly 1`] = `
   }
 }
 
-<div
-  className="c0"
->
-  <button
-    className="c1 c2"
+<div>
+  <div
+    class="c0"
   >
-    <svg
-      className="c3"
-      height="15"
-      width="15"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
+    <button
+      class="c1 c2"
     >
-      <title>
-        close
-      </title>
-      <use
-        fill="#FFF"
-        transform="translate(1 1)"
-        xlinkHref="#close"
-      />
-      <defs>
-        <path
-          d="M-.7.7l13 13 1.4-1.4-13-13L-.7.7zm13-1.4l-13 13 1.4 1.4 13-13-1.4-1.4z"
-          id="close"
+      <svg
+        class="c3"
+        height="15"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <title>
+          close
+        </title>
+        <use
+          fill="#FFF"
+          transform="translate(1 1)"
+          xlink:href="#close"
         />
-      </defs>
-    </svg>
-  </button>
-  <a
-    aria-label="styled components"
-    className="c4"
-  >
-    <div
-      className="c5"
-    />
-  </a>
-  <button
-    className="c1 c2"
-    style={
-      {
-        "position": "absolute",
-        "right": 0,
-      }
-    }
-  >
-    <div
-      className="c6"
+        <defs>
+          <path
+            d="M-.7.7l13 13 1.4-1.4-13-13L-.7.7zm13-1.4l-13 13 1.4 1.4 13-13-1.4-1.4z"
+            id="close"
+          />
+        </defs>
+      </svg>
+    </button>
+    <a
+      aria-label="styled components"
+      class="c4"
+      href="/"
     >
       <div
-        className="c7"
+        class="c5"
       />
-    </div>
-  </button>
-  <div
-    className="c8"
-  >
-    <nav
-      className="c9"
+    </a>
+    <button
+      class="c1 c2"
+      style="position: absolute; right: 0px;"
     >
-      <a
-        className="c10"
+      <div
+        class="c6"
       >
-        Documentation
-      </a>
-      <span
-        className="c11"
-      />
-      <a
-        className="c10"
+        <div
+          class="c7"
+        />
+      </div>
+    </button>
+    <div
+      class="c8"
+    >
+      <nav
+        class="c9"
       >
-        Showcase
-      </a>
-      <span
-        className="c11"
-      />
-      <a
-        className="c10"
-      >
-        Ecosystem
-      </a>
-      <span
-        className="c11"
-      />
-      <a
-        className="c10"
-      >
-        Releases
-      </a>
-    </nav>
+        <a
+          class="c10"
+          href="/docs"
+        >
+          Documentation
+        </a>
+        <span
+          class="c11"
+        />
+        <a
+          class="c10"
+          href="/showcase"
+        >
+          Showcase
+        </a>
+        <span
+          class="c11"
+        />
+        <a
+          class="c10"
+          href="/ecosystem"
+        >
+          Ecosystem
+        </a>
+        <span
+          class="c11"
+        />
+        <a
+          class="c10"
+          href="/releases"
+        >
+          Releases
+        </a>
+      </nav>
+    </div>
   </div>
 </div>
 `;

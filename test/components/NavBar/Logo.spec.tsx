@@ -1,9 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Logo from '../../../components/Nav/Logo';
 
 test('Logo renders correctly', () => {
-  const tree = renderer.create(<Logo />).toJSON();
+  const { container } = render(<Logo />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

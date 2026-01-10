@@ -1,3 +1,5 @@
+'use client';
+
 import styled from 'styled-components';
 import { blmGrey, blmLightGrey } from '../utils/colors';
 import { bodyFont, headerFont } from '../utils/fonts';

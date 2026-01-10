@@ -9,7 +9,7 @@ export const BlmBanner = () => {
   );
 };
 
-const Banner = styled.a`
+const Banner = styled.a<{ href?: string; children?: React.ReactNode }>`
   background: black;
   color: white;
   display: block;

@@ -1,33 +1,33 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Container, Content, Title, Header, SubHeader } from '../../components/Layout';
 
 test('Container renders correctly', () => {
-  const tree = renderer.create(<Container />).toJSON();
+  const { container } = render(<Container />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 test('Content renders correctly', () => {
-  const tree = renderer.create(<Content />).toJSON();
+  const { container } = render(<Content />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 test('Title renders correctly', () => {
-  const tree = renderer.create(<Title />).toJSON();
+  const { container } = render(<Title />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 test('Header renders correctly', () => {
-  const tree = renderer.create(<Header />).toJSON();
+  const { container } = render(<Header />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 test('SubHeader renders correctly', () => {
-  const tree = renderer.create(<SubHeader />).toJSON();
+  const { container } = render(<SubHeader />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

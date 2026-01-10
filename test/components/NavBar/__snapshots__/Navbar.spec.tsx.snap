@@ -124,13 +124,13 @@ exports[`Navbar renders correctly 1`] = `
   height: 2rem;
 }
 
-.c17 {
+.c18 {
   display: flex;
   align-items: center;
   flex: 1 1 auto;
 }
 
-.c18 {
+.c19 {
   display: flex;
   margin-right: 1.1111111111111112rem;
   line-height: 3.3333333333333335rem;
@@ -138,25 +138,25 @@ exports[`Navbar renders correctly 1`] = `
   cursor: pointer;
 }
 
-.c18:last-child {
+.c19:last-child {
   margin-right: 0;
 }
 
-.c18:hover,
-.c18:focus {
+.c19:hover,
+.c19:focus {
   opacity: 0.8;
 }
 
-.c18:active {
+.c19:active {
   transform: scale(0.95);
   opacity: 0.6;
 }
 
-.c18 svg path {
+.c19 svg path {
   fill: currentColor;
 }
 
-.c19.c19 {
+.c20.c20 {
   width: NaNrem;
   height: 1rem;
 }
@@ -195,6 +195,11 @@ exports[`Navbar renders correctly 1`] = `
   justify-content: flex-end;
 }
 
+.c17 {
+  margin-left: auto;
+  margin-right: 16px;
+}
+
 .c13 {
   display: flex;
   align-items: center;
@@ -224,208 +229,188 @@ exports[`Navbar renders correctly 1`] = `
 }
 
 @media (max-width: 62.5em) {
+  .c17 {
+    margin-right: 48px;
+  }
+}
+
+@media (max-width: 62.5em) {
 
 }
 
-<nav
-  className="c0"
->
-  <div
-    className="c1"
+<div>
+  <nav
+    class="c0"
   >
-    <button
-      className="c2 c3"
+    <div
+      class="c1"
     >
-      <svg
-        className="c4"
-        height="15"
-        width="15"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
+      <button
+        class="c2 c3"
       >
-        <title>
-          close
-        </title>
-        <use
-          fill="#FFF"
-          transform="translate(1 1)"
-          xlinkHref="#close"
-        />
-        <defs>
-          <path
-            d="M-.7.7l13 13 1.4-1.4-13-13L-.7.7zm13-1.4l-13 13 1.4 1.4 13-13-1.4-1.4z"
-            id="close"
+        <svg
+          class="c4"
+          height="15"
+          width="15"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title>
+            close
+          </title>
+          <use
+            fill="#FFF"
+            transform="translate(1 1)"
+            xlink:href="#close"
           />
-        </defs>
-      </svg>
-    </button>
-    <a
-      aria-label="styled components"
-      className="c5"
-    >
-      <div
-        className="c6"
-      />
-    </a>
-    <button
-      className="c2 c3"
-      style={
-        {
-          "position": "absolute",
-          "right": 0,
-        }
-      }
-    >
-      <div
-        className="c7"
+          <defs>
+            <path
+              d="M-.7.7l13 13 1.4-1.4-13-13L-.7.7zm13-1.4l-13 13 1.4 1.4 13-13-1.4-1.4z"
+              id="close"
+            />
+          </defs>
+        </svg>
+      </button>
+      <a
+        aria-label="styled components"
+        class="c5"
+        href="/"
       >
         <div
-          className="c8"
+          class="c6"
         />
+      </a>
+      <button
+        class="c2 c3"
+        style="position: absolute; right: 0px;"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          />
+        </div>
+      </button>
+      <div
+        class="c9"
+      >
+        <nav
+          class="c10"
+        >
+          <a
+            class="c11"
+            href="/docs"
+          >
+            Documentation
+          </a>
+          <span
+            class="c12"
+          />
+          <a
+            class="c11"
+            href="/showcase"
+          >
+            Showcase
+          </a>
+          <span
+            class="c12"
+          />
+          <a
+            class="c11"
+            href="/ecosystem"
+          >
+            Ecosystem
+          </a>
+          <span
+            class="c12"
+          />
+          <a
+            class="c11"
+            href="/releases"
+          >
+            Releases
+          </a>
+        </nav>
       </div>
-    </button>
+    </div>
     <div
-      className="c9"
+      class="c13"
     >
-      <nav
-        className="c10"
+      <div
+        class="c14"
       >
         <a
-          className="c11"
+          aria-label="Styled-components logo"
+          class="c15"
+          href="/"
         >
-          Documentation
+          <div
+            class="c6"
+          />
         </a>
-        <span
-          className="c12"
-        />
-        <a
-          className="c11"
+        <nav
+          class="c10"
         >
-          Showcase
-        </a>
-        <span
-          className="c12"
-        />
+          <a
+            class="c11"
+            href="/docs"
+          >
+            Documentation
+          </a>
+          <span
+            class="c12"
+          />
+          <a
+            class="c11"
+            href="/showcase"
+          >
+            Showcase
+          </a>
+          <span
+            class="c12"
+          />
+          <a
+            class="c11"
+            href="/ecosystem"
+          >
+            Ecosystem
+          </a>
+          <span
+            class="c12"
+          />
+          <a
+            class="c11"
+            href="/releases"
+          >
+            Releases
+          </a>
+        </nav>
+      </div>
+    </div>
+    <div
+      class="c16 c17"
+    >
+      <div
+        id="docs-search-input"
+      />
+      <nav
+        class="c18 "
+        style="margin-left: 16px;"
+      >
         <a
-          className="c11"
+          class="c19"
+          href="https://github.com/styled-components"
+          rel="noopener"
+          target="_blank"
+          title="GitHub: Source code"
         >
-          Ecosystem
-        </a>
-        <span
-          className="c12"
-        />
-        <a
-          className="c11"
-        >
-          Releases
+          <svg
+            class="c20"
+          />
         </a>
       </nav>
     </div>
-  </div>
-  <div
-    className="c13"
-  >
-    <div
-      className="c14"
-    >
-      <a
-        aria-label="Styled-components logo"
-        className="c15"
-      >
-        <div
-          className="c6"
-        />
-      </a>
-      <nav
-        className="c10"
-      >
-        <a
-          className="c11"
-        >
-          Documentation
-        </a>
-        <span
-          className="c12"
-        />
-        <a
-          className="c11"
-        >
-          Showcase
-        </a>
-        <span
-          className="c12"
-        />
-        <a
-          className="c11"
-        >
-          Ecosystem
-        </a>
-        <span
-          className="c12"
-        />
-        <a
-          className="c11"
-        >
-          Releases
-        </a>
-      </nav>
-    </div>
-  </div>
-  <div
-    className="c16"
-    css={
-      [
-        "
-          margin-left: auto;
-          margin-right: 16px;
-
-          ",
-        "
-  @media (max-width: ",
-        "62.5",
-        "em) {
-    ",
-        "
-            margin-right: 48px;
-          ",
-        ";
-  }
-",
-        "
-        ",
-      ]
-    }
-  >
-    <div
-      id="docs-search-input"
-    />
-    <nav
-      className="c17 "
-      style={
-        {
-          "marginLeft": 16,
-        }
-      }
-    >
-      <a
-        className="c18"
-        target="_blank"
-        title="GitHub: Source code"
-      >
-        <svg
-          className="c19"
-        />
-      </a>
-      <a
-        className="c18"
-        target="_blank"
-        title="Medium: Announcements, blog posts, and more"
-      >
-        <svg
-          className="c19"
-        />
-      </a>
-    </nav>
-  </div>
-</nav>
+  </nav>
+</div>
 `;

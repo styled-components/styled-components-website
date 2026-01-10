@@ -1,20 +1,20 @@
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Link, { InlineLink, StyledLink } from '../../components/Link';
 
 test('Link renders correctly', () => {
-  const tree = renderer.create(<Link href="/" target="_blank" />).toJSON();
+  const { container } = render(<Link href="/" target="_blank" />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 test('StyledLink renders correctly', () => {
-  const tree = renderer.create(<StyledLink href="/" />).toJSON();
+  const { container } = render(<StyledLink href="/" />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 test('InlineLink renders correctly', () => {
-  const tree = renderer.create(<InlineLink href="/" />).toJSON();
+  const { container } = render(<InlineLink href="/" />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

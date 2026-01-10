@@ -1,8 +1,10 @@
+'use client';
+
 import React from 'react';
 import { Container, Content, Title } from './Layout';
 import Nav, { NavProps } from './Nav';
 import Head from './SeoHead';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 import { RssFeed as FeedIcon } from '@styled-icons/material';
 import Link from './Link';
@@ -12,7 +14,7 @@ import { getReleasesAtomFeedURI } from '../utils/githubApi';
 export interface DocsLayoutProps {
   description?: string;
   pages?: NavProps['pages'];
-  title?: string;
+  title: string;
   useDocsSidebarMenu?: boolean;
 }
 
@@ -38,7 +40,7 @@ export default function DocsLayout({
   useDocsSidebarMenu = true,
   pages,
 }: React.PropsWithChildren<DocsLayoutProps>) {
-  const router = useRouter();
+  const pathname = usePathname();
   const [isSideFolded, setIsSideFolded] = React.useState(true);
   const [isMobileNavFolded, setIsMobileNavFolded] = React.useState(true);
 
@@ -55,10 +57,11 @@ export default function DocsLayout({
     setIsSideFolded(true);
   }, []);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: intentional to fold nav on change
   React.useEffect(() => {
     setIsMobileNavFolded(true);
     setIsSideFolded(true);
-  }, [router.asPath]);
+  }, [pathname]);
 
   return (
     <Container>

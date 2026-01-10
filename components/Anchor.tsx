@@ -1,3 +1,5 @@
+'use client';
+
 import { Link as LinkIcon } from '@styled-icons/material';
 import styled, { css } from 'styled-components';
 import { mobile } from '../utils/media';
@@ -37,9 +39,10 @@ export default function Anchor({ children, level, id, ...props }: React.PropsWit
   );
 }
 
-const InvisibleAnchor = styled.div.attrs((/* props */) => ({
+const InvisibleAnchor = styled.div.attrs<{ id?: string }>(props => ({
   'aria-hidden': true,
-}))`
+  id: props.id,
+}))<{ id?: string }>`
   position: relative;
   display: block;
   visibility: hidden;
@@ -52,15 +55,15 @@ const InvisibleAnchor = styled.div.attrs((/* props */) => ({
   `)};
 `;
 
-const AnchorPrimitive = styled.a`
+const AnchorPrimitive = styled.a<{ href?: string; 'aria-label'?: string; children?: React.ReactNode }>`
   display: none;
   color: inherit;
   margin-left: ${rem(10)};
 `;
 
 const AnchorIcon = styled(LinkIcon).attrs((/* props */) => ({
-  width: null,
-  height: null,
+  width: undefined,
+  height: undefined,
 }))`
   width: ${rem(20)};
   opacity: 0.7;

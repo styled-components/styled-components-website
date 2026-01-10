@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useEffect, useState } from 'react';
 
 export default function WithIsScrolled(props: { children: React.FC<{ isScrolled: boolean }> }) {

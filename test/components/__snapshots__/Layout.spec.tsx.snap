@@ -11,9 +11,11 @@ exports[`Container renders correctly 1`] = `
   }
 }
 
-<div
-  className="c0"
-/>
+<div>
+  <div
+    class="c0"
+  />
+</div>
 `;
 
 exports[`Content renders correctly 1`] = `
@@ -33,9 +35,11 @@ exports[`Content renders correctly 1`] = `
   }
 }
 
-<div
-  className="c0"
-/>
+<div>
+  <div
+    class="c0"
+  />
+</div>
 `;
 
 exports[`Header renders correctly 1`] = `
@@ -50,9 +54,11 @@ exports[`Header renders correctly 1`] = `
   margin-top: -0.5em;
 }
 
-<h2
-  className="c0"
-/>
+<div>
+  <h2
+    class="c0"
+  />
+</div>
 `;
 
 exports[`SubHeader renders correctly 1`] = `
@@ -67,9 +73,11 @@ exports[`SubHeader renders correctly 1`] = `
   margin-top: -0.5em;
 }
 
-<h3
-  className="c0"
-/>
+<div>
+  <h3
+    class="c0"
+  />
+</div>
 `;
 
 exports[`Title renders correctly 1`] = `
@@ -86,7 +94,9 @@ exports[`Title renders correctly 1`] = `
   margin-top: -0.5em;
 }
 
-<h1
-  className="c0"
-/>
+<div>
+  <h1
+    class="c0"
+  />
+</div>
 `;

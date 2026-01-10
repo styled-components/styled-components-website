@@ -62,7 +62,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
 
 const navHeight = 192;
 
-const SlideNav = styled.nav`
+const SlideNav = styled.nav<{ children?: React.ReactNode }>`
   position: absolute;
   pointer-events: none;
   z-index: 2;
@@ -80,7 +80,7 @@ const SlideNav = styled.nav`
   `)}
 `;
 
-const NavButton = styled.div`
+const NavButton = styled.div<React.HTMLAttributes<HTMLDivElement>>`
   display: flex;
   cursor: pointer;
   align-items: center;

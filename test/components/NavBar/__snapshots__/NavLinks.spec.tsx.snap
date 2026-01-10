@@ -38,37 +38,43 @@ exports[`NavLinks renders correctly 1`] = `
   opacity: 0.6;
 }
 
-<nav
-  className="c0"
->
-  <a
-    className="c1"
+<div>
+  <nav
+    class="c0"
   >
-    Documentation
-  </a>
-  <span
-    className="c2"
-  />
-  <a
-    className="c1"
-  >
-    Showcase
-  </a>
-  <span
-    className="c2"
-  />
-  <a
-    className="c1"
-  >
-    Ecosystem
-  </a>
-  <span
-    className="c2"
-  />
-  <a
-    className="c1"
-  >
-    Releases
-  </a>
-</nav>
+    <a
+      class="c1"
+      href="/docs"
+    >
+      Documentation
+    </a>
+    <span
+      class="c2"
+    />
+    <a
+      class="c1"
+      href="/showcase"
+    >
+      Showcase
+    </a>
+    <span
+      class="c2"
+    />
+    <a
+      class="c1"
+      href="/ecosystem"
+    >
+      Ecosystem
+    </a>
+    <span
+      class="c2"
+    />
+    <a
+      class="c1"
+      href="/releases"
+    >
+      Releases
+    </a>
+  </nav>
+</div>
 `;

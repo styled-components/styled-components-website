@@ -1,23 +1,25 @@
-import { useRouter } from 'next/router';
-import React from 'react';
+'use client';
+
+import { useRouter, useSearchParams } from 'next/navigation';
+import React, { Suspense } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css, keyframes } from 'styled-components';
-import { SortedProject, sortedProjects } from '../companies-manifest';
-import Footer from '../components/Footer';
-import Image, { ImageProps } from '../components/Image';
-import Nav from '../components/Nav';
-import SeoHead from '../components/SeoHead';
-import Navigation from '../components/Slider/Navigation';
-import ShowcaseBody from '../components/Slider/ShowcaseBody';
-import { generateShowcaseUrl } from '../components/Slider/ShowcaseLink';
-import { blmGrey, blmMetal } from '../utils/colors';
-import { headerFont } from '../utils/fonts';
-import { mobile, phone } from '../utils/media';
+import { SortedProject, sortedProjects } from '@/companies-manifest';
+import Footer from '@/components/Footer';
+import Image, { ImageProps } from '@/components/Image';
+import Nav from '@/components/Nav';
+import SeoHead from '@/components/SeoHead';
+import Navigation from '@/components/Slider/Navigation';
+import ShowcaseBody from '@/components/Slider/ShowcaseBody';
+import { generateShowcaseUrl } from '@/components/Slider/ShowcaseLink';
+import { blmGrey, blmMetal } from '@/utils/colors';
+import { headerFont } from '@/utils/fonts';
+import { mobile, phone } from '@/utils/media';
 
-export default function Showcase() {
-  const router = useRouter();
-  const { item } = router.query;
-  const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item as string);
+function ShowcaseContent() {
+  const searchParams = useSearchParams();
+  const item = searchParams.get('item');
+  const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item || '');
   const { title, src } = currentSlide;
 
   return (
@@ -87,6 +89,14 @@ export default function Showcase() {
       </Container>
       <Footer />
     </>
+  );
+}
+
+export default function Showcase() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ShowcaseContent />
+    </Suspense>
   );
 }
 
@@ -210,7 +220,7 @@ const getSlide = (childIndex: number) => keyframes`
   }
 `;
 
-const HeaderDecoration = styled.div<{ $offset?: number }>`
+const HeaderDecoration = styled.div<{ $offset?: number; children?: React.ReactNode }>`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -284,7 +294,6 @@ function normalizeSlideIndex<T extends any[]>(arr: T, index: number, fn: (x: num
   return result;
 }
 
-// Since objects don't allow for a sort order we have to map an array to the object
 function mapIndexToRoute(index: number) {
   const route = Object.keys(sortedProjects)[index];
   return sortedProjects[route];
@@ -323,7 +332,7 @@ function ArrowEvents({ previousSlide, nextSlide }: ArrowEventsProps) {
 
       router.replace(href);
     },
-    [previousSlide, nextSlide]
+    [previousSlide, nextSlide, router]
   );
 
   React.useEffect(() => {

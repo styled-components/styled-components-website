@@ -36,7 +36,7 @@ const RepoIcon = ({ url = '' }: { url?: string }) => {
   return <Git />;
 };
 
-const SlideMeta = styled.div`
+const SlideMeta = styled.div<{ children?: React.ReactNode }>`
   display: flex;
   justify-content: space-between;
   margin-top: 48px;
@@ -53,7 +53,7 @@ const SlideMeta = styled.div`
   }
 `;
 
-const SlideMetaLinks = styled.div`
+const SlideMetaLinks = styled.div<{ children?: React.ReactNode }>`
   display: flex;
   flex-direction: column;
   margin-left: 64px;
@@ -73,7 +73,7 @@ const SlideMetaLinks = styled.div`
   `)}
 `;
 
-const SlideMetaLink = styled.a`
+const SlideMetaLink = styled.a<React.AnchorHTMLAttributes<HTMLAnchorElement>>`
   display: flex;
   align-items: center;
   justify-content: flex-end;

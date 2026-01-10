@@ -1,9 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import Nav from '../../../components/Nav';
 
 test('Nav renders correctly', () => {
-  const wrapper = mount(<Nav />);
+  const { container } = render(<Nav />);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

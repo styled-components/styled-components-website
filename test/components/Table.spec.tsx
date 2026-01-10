@@ -1,17 +1,15 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Table, { Row, Column } from '../../components/Table';
 
 test('Table renders correctly', () => {
-  const tree = renderer
-    .create(
-      <Table head={['head']}>
-        <Row>
-          <Column />
-        </Row>
-      </Table>
-    )
-    .toJSON();
+  const { container } = render(
+    <Table head={['head']}>
+      <Row>
+        <Column />
+      </Row>
+    </Table>
+  );
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

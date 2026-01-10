@@ -1,12 +1,13 @@
 import styled, { css } from 'styled-components';
-import DocsLayout from '../../components/DocsLayout';
-import { Header } from '../../components/Layout';
-import Link from '../../components/Link';
-import { headerFont } from '../../utils/fonts';
-import { mobile, phone } from '../../utils/media';
-import rem from '../../utils/rem';
-import titleToDash from '../../utils/titleToDash';
-import json from '../docs.json';
+
+import { Header } from '@/components/Layout';
+import { headerFont } from '@/utils/fonts';
+import { mobile, phone } from '@/utils/media';
+import DocsLayout from '@/components/DocsLayout';
+import json from '@/app/docs.json';
+import Link from '@/components/Link';
+import rem from '@/utils/rem';
+import titleToDash from '@/utils/titleToDash';
 
 const { pages } = json;
 
@@ -46,7 +47,7 @@ const Row = styled.div`
   flex-flow: row wrap;
 `;
 
-const Column = styled.div`
+const Column = styled.div<{ children?: React.ReactNode }>`
   width: 33%;
   max-width: 33%;
   flex-basis: 33%;
@@ -56,14 +57,16 @@ const Column = styled.div`
     width: 50%;
     max-width: 50%;
     flex-basis: 50%;
-  `)} ${phone(css`
+  `)}
+
+  ${phone(css`
     width: 100%;
     max-width: 100%;
     flex-basis: 100%;
-  `)};
+  `)}
 `;
 
-const SubHeader = styled.h3`
+const SubHeader = styled.h3<{ children?: React.ReactNode }>`
   display: block;
   margin: ${rem(8)} 0;
   font-size: ${rem(18)};

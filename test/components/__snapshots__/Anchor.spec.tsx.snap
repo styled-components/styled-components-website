@@ -56,22 +56,22 @@ exports[`Anchor renders correctly 1`] = `
   }
 }
 
-<h2
-  className="c0 c1"
->
-  <div
-    aria-hidden={true}
-    className="c2"
-  />
-  <a
-    className="c3 c4"
-    href="#undefined"
+<div>
+  <h2
+    class="c0 c1"
   >
-    <svg
-      className="c5"
-      height={null}
-      width={null}
+    <div
+      aria-hidden="true"
+      class="c2"
     />
-  </a>
-</h2>
+    <a
+      class="c3 c4"
+      href="#undefined"
+    >
+      <svg
+        class="c5"
+      />
+    </a>
+  </h2>
+</div>
 `;

@@ -1,3 +1,5 @@
+'use client';
+
 import { Language, CodeBlock as RLR, CodeBlockProps as RLRProps } from 'react-live-runner';
 import styled from 'styled-components';
 import { monospace } from '../utils/fonts';

@@ -1,19 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import LiveEdit, { StyledError } from '../../components/LiveEdit';
 
 test('LiveEdit renders correctly', () => {
-  const wrapper = mount(<LiveEdit />);
+  const { container } = render(<LiveEdit code="const test = 'hello';" />);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 test('StyledError renders correctly', () => {
-  const tree = mount(<StyledError />, {
-    context: { live: {} },
-    childContextTypes: { live: PropTypes.object },
-  });
+  const { container } = render(<StyledError />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

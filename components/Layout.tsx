@@ -1,3 +1,5 @@
+'use client';
+
 import styled, { css } from 'styled-components';
 import { blmMetal } from '../utils/colors';
 import { bodyFont, headerFont } from '../utils/fonts';
@@ -13,7 +15,7 @@ export const Container = styled.div`
   `)};
 `;
 
-export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean }>`
+export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean; children?: React.ReactNode }>`
   box-sizing: border-box;
   font-family: ${bodyFont};
   margin: 0 auto;

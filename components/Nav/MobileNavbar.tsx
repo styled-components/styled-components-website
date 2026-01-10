@@ -1,6 +1,5 @@
 import { KeyboardArrowDown } from '@styled-icons/material';
 import styled, { css } from 'styled-components';
-import { blmGrey } from '../../utils/colors';
 import { mobile } from '../../utils/media';
 import rem from '../../utils/rem';
 import { navbarHeight } from '../../utils/sizes';
@@ -32,7 +31,7 @@ export default function MobileNavbar({
         <NavButton onClick={onSideToggle}>{isSideFolded ? <FoldIcon /> : <CloseIcon />}</NavButton>
       )}
 
-      <LogoLink>
+      <LogoLink href="/">
         <Logo />
       </LogoLink>
 
@@ -68,7 +67,7 @@ const Wrapper = styled.div`
   `)};
 `;
 
-const SecondaryMenu = styled.div<{ $isOpen?: boolean }>`
+const SecondaryMenu = styled.div<{ $isOpen?: boolean; children?: React.ReactNode }>`
   position: absolute;
   top: ${rem(navbarHeight)};
   left: 0;
@@ -97,7 +96,7 @@ const SecondaryMenu = styled.div<{ $isOpen?: boolean }>`
   user-select: none;
 `;
 
-const LogoLink = styled(Link).attrs((/* props */) => ({
+const LogoLink = styled(Link).attrs(() => ({
   unstyled: true,
   href: '/',
   'aria-label': 'styled components',
@@ -106,7 +105,7 @@ const LogoLink = styled(Link).attrs((/* props */) => ({
   transform: translateY(-1px);
 `;
 
-const ArrowWrapper = styled.div<{ $shouldRotate?: boolean }>`
+const ArrowWrapper = styled.div<{ $shouldRotate?: boolean; children?: React.ReactNode }>`
   transition: transform 0.2s;
 
   ${p =>

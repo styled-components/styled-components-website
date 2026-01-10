@@ -7,32 +7,40 @@ export const TableWrapper = styled.table`
   width: 100%;
   text-align: left;
   margin: ${rem(40)} 0;
+  border-collapse: separate;
+  border-spacing: 0;
 `;
 
-const TableHead = styled.thead`
-  border-bottom: 2px solid ${lightGrey};
+const TableHead = styled.thead<{ children?: React.ReactNode }>`
   font-family: ${headerFont};
+
+  tr {
+    border-bottom: 2px solid ${lightGrey};
+  }
 `;
 
 export const Row = styled.tr`
-  padding: 0 ${rem(20)};
-  padding-left: 0;
-
   &:not(:last-child) {
     border-bottom: 1px solid ${lightGrey};
   }
 `;
 
-export const Column = styled.th`
+export const Column = styled.th<{ children?: React.ReactNode }>`
   font-weight: normal;
-  padding: ${rem(10)} ${rem(12)};
-  padding-left: 0;
+  padding: ${rem(12)} ${rem(16)};
+  vertical-align: top;
+
+  &:first-child {
+    padding-left: 0;
+  }
 `;
 
-const TableHeadColumn = styled(Column)`
+const TableHeadColumn = styled(Column)<{ children?: React.ReactNode }>`
   text-transform: uppercase;
   font-size: 85%;
+  font-weight: 600;
   opacity: 0.8;
+  padding-bottom: ${rem(14)};
 `;
 
 export interface TableProps {
@@ -44,9 +52,7 @@ const Table = ({ head, children }: React.PropsWithChildren<TableProps>) => (
     <TableHead>
       <tr>
         {head.map((text, i) => (
-          <TableHeadColumn key={i} title={text}>
-            {text}
-          </TableHeadColumn>
+          <TableHeadColumn key={i}>{text}</TableHeadColumn>
         ))}
       </tr>
     </TableHead>

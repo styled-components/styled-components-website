@@ -1,9 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import NavSeparator from '../../../components/Nav/NavSeparator';
 
 test('NavSeparator renders correctly', () => {
-  const tree = renderer.create(<NavSeparator />).toJSON();
+  const { container } = render(<NavSeparator />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

@@ -1,9 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Navbar from '../../../components/Nav/Navbar';
 
 test('Navbar renders correctly', () => {
-  const tree = renderer.create(<Navbar />).toJSON();
+  const { container } = render(<Navbar />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

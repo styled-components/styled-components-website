@@ -1,10 +1,12 @@
+'use client';
+
 import UnstyledLink, { LinkProps as UnstyledLinkProps } from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 import { blmGrey, lightGrey, red } from '../utils/colors';
 import rem from '../utils/rem';
 
-type AnchorProps = JSX.IntrinsicElements['a'];
+type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export interface LinkProps extends UnstyledLinkProps, Omit<AnchorProps, keyof UnstyledLinkProps | 'ref'> {
   inline?: boolean;
@@ -23,31 +25,51 @@ export default function Link({
   unstyled,
   white,
   target,
+  href,
   ...rest
 }: LinkProps) {
-  let Child: keyof JSX.IntrinsicElements | React.ComponentType<any> = StyledLink;
+  const hrefString = typeof href === 'string' ? href : href?.toString() || '';
+  const isExternal = hrefString.startsWith('http') || hrefString.startsWith('//');
 
-  if (inline) {
-    Child = InlineLink;
-  } else if (unstyled) {
-    Child = 'a';
-  }
+  if (unstyled || isExternal) {
+    const Child = unstyled ? 'a' : inline ? InlineLink : StyledLink;
+    const dataAttrs = white ? { 'data-white': white } : {};
+    const finalTarget = target || (isExternal ? '_blank' : undefined);
 
-  let dataAttrs;
-  if (white) {
-    dataAttrs = { 'data-white': white };
-  }
-
-  return (
-    <UnstyledLink passHref {...rest}>
-      <Child aria-label={ariaLabel} className={className} title={title} {...dataAttrs} target={target}>
+    return (
+      <Child
+        href={hrefString}
+        aria-label={ariaLabel}
+        className={className}
+        title={title}
+        target={finalTarget as any}
+        rel={isExternal ? 'noopener' : undefined}
+        {...dataAttrs}
+      >
         {children}
       </Child>
-    </UnstyledLink>
+    );
+  }
+
+  const Child = inline ? InlineLink : StyledLink;
+  const dataAttrs = white ? { 'data-white': white } : {};
+
+  return (
+    <Child
+      as={UnstyledLink as any}
+      href={href as any}
+      aria-label={ariaLabel}
+      className={className}
+      title={title}
+      {...dataAttrs}
+      {...rest}
+    >
+      {children}
+    </Child>
   );
 }
 
-export const StyledLink = styled.a`
+export const StyledLink = styled.a<{ href?: string; children?: React.ReactNode }>`
   display: inline-block;
   color: inherit;
   cursor: pointer;
@@ -63,10 +85,10 @@ export const StyledLink = styled.a`
   }
 `;
 
-export const InlineLink = styled.a.attrs((/* props */) => ({
+export const InlineLink = styled.a.attrs<{ target?: string; rel?: string }>((/* props */) => ({
   target: '_blank',
   rel: 'noopener',
-}))`
+}))<{ target?: string; rel?: string }>`
   color: ${blmGrey};
   cursor: pointer;
   text-decoration: underline;

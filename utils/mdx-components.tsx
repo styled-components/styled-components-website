@@ -1,5 +1,6 @@
-import { MDXProvider } from '@mdx-js/react';
+import type { MDXComponents } from 'mdx/types';
 import React from 'react';
+import type { Language } from 'react-live-runner';
 
 import elementToText from './elementToText';
 import titleToDash from './titleToDash';
@@ -13,7 +14,6 @@ import { Title } from '../components/Layout';
 import Link from '../components/Link';
 import LiveEdit from '../components/LiveEdit';
 import Note from '../components/Note';
-import { Language } from 'react-live-runner';
 
 const Heading = ({ level, children }: React.PropsWithChildren<{ level: number }>) => {
   if (level === 1) {
@@ -39,8 +39,8 @@ const Heading = ({ level, children }: React.PropsWithChildren<{ level: number }>
       {title}
       {labels.length > 0 && (
         <LabelGroup>
-          {labels.map((label, index) => (
-            <Label key={index} $isVersion={label.trim().startsWith('v')}>
+          {labels.map(label => (
+            <Label key={label.trim()} $isVersion={label.trim().startsWith('v')}>
               {label.trim()}
             </Label>
           ))}
@@ -52,7 +52,7 @@ const Heading = ({ level, children }: React.PropsWithChildren<{ level: number }>
 
 Heading.displayName = 'Heading';
 
-const components: React.ComponentProps<typeof MDXProvider>['components'] = {
+const components = {
   p({ children }) {
     return <p>{children}</p>;
   },
@@ -98,6 +98,6 @@ const components: React.ComponentProps<typeof MDXProvider>['components'] = {
   h5(props) {
     return <Heading {...props} level={5} />;
   },
-};
+} satisfies MDXComponents;
 
 export default components;

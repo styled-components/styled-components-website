@@ -12,7 +12,9 @@ exports[`Logo renders correctly 1`] = `
   vertical-align: middle;
 }
 
-<div
-  className="c0"
-/>
+<div>
+  <div
+    class="c0"
+  />
+</div>
 `;

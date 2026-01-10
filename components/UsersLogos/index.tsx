@@ -1,24 +1,26 @@
+'use client';
+
 import { Company } from 'companies-manifest';
 import styled, { keyframes } from 'styled-components';
 import { useState } from 'react';
 
-const getSlide = (childIndex: number, reverse?: boolean) => keyframes`
+const slideAnimation = (reverse?: boolean) => keyframes`
   from {
-    transform: translateX(${childIndex * 100}%);
+    transform: translateX(${reverse ? '0%' : '-50%'});
   }
   to {
-    transform: translateX(${(reverse ? -100 : 100) + 100 * childIndex}%);
+    transform: translateX(${reverse ? '-50%' : '0%'});
   }
 `;
 
-const UsersWrapper = styled.section`
+const UsersWrapper = styled.section<{ children?: React.ReactNode }>`
   white-space: nowrap;
   overflow: hidden;
   padding: 0.5rem 0;
   display: flex;
 `;
 
-const UsersSliderContainer = styled.div`
+const UsersSliderContainer = styled.div<{ children?: React.ReactNode }>`
   display: flex;
   align-items: center;
   width: 100%;
@@ -27,13 +29,16 @@ const UsersSliderContainer = styled.div`
   position: relative;
 `;
 
-const UsersSlider = styled.span<{ $offset?: number; $reverse?: boolean }>`
-  display: inline-block;
-  animation: ${({ $offset, $reverse }) => getSlide($offset || 0, $reverse)} 150s linear infinite;
+const UsersSliderTrack = styled.div<{
+  $reverse?: boolean;
+  children?: React.ReactNode;
+  onClick?: () => void;
+  style?: React.CSSProperties;
+}>`
+  display: flex;
+  animation: ${({ $reverse }) => slideAnimation($reverse)} 75s linear infinite;
   white-space: nowrap;
-  overflow: hidden;
-  position: absolute;
-  cursor: pointer; // Add cursor pointer to indicate it's clickable
+  cursor: pointer;
 
   ${UsersWrapper} {
     flex-direction: ${({ $reverse }) => ($reverse ? 'row' : 'row-reverse')};
@@ -44,7 +49,7 @@ const UsersSlider = styled.span<{ $offset?: number; $reverse?: boolean }>`
   }
 `;
 
-const CompanyLogo = styled.span`
+const CompanyLogo = styled.span<{ children?: React.ReactNode }>`
   position: relative;
   height: 2rem;
   margin: 0 1rem;
@@ -52,6 +57,7 @@ const CompanyLogo = styled.span`
   opacity: 0.8;
   filter: brightness(0) invert(1);
   transition: opacity 125ms ease-in-out;
+  flex-shrink: 0;
 
   svg {
     height: 100%;
@@ -69,53 +75,33 @@ export interface ISortedLogos {
 
 const SortedLogos = ({ users }: ISortedLogos) => (
   <UsersWrapper>
-    {/* TODO: remove this check after adding missing logos */}
-    {users.map(
-      ({ key, logo: Logo }) =>
-        Logo && (
-          <CompanyLogo key={key}>
-            <Logo />
-          </CompanyLogo>
-        )
+    {users.map(({ key, name, logo: Logo }) =>
+      Logo ? (
+        <CompanyLogo key={key} title={name}>
+          <Logo />
+        </CompanyLogo>
+      ) : null
     )}
   </UsersWrapper>
 );
 
 const UsersLogos = ({ users, reverse }: { reverse?: boolean; users: ISortedLogos['users'] }) => {
-  // State to track animation pause
   const [animationPaused, setAnimationPaused] = useState(false);
 
-  // Function to toggle animation pause state
   const toggleAnimation = () => {
     setAnimationPaused(prevState => !prevState);
   };
 
   return (
     <UsersSliderContainer>
-      <UsersSlider
-        $offset={-1}
+      <UsersSliderTrack
         $reverse={reverse}
-        onClick={toggleAnimation} // Attach click event handler
-        style={{ animationPlayState: animationPaused ? 'paused' : 'running' }} // Apply animationPlayState style
+        onClick={toggleAnimation}
+        style={{ animationPlayState: animationPaused ? 'paused' : 'running' }}
       >
         <SortedLogos users={users} />
-      </UsersSlider>
-      <UsersSlider
-        $offset={0}
-        $reverse={reverse}
-        onClick={toggleAnimation} // Attach click event handler
-        style={{ animationPlayState: animationPaused ? 'paused' : 'running' }} // Apply animationPlayState style
-      >
         <SortedLogos users={users} />
-      </UsersSlider>
-      <UsersSlider
-        $offset={1}
-        $reverse={reverse}
-        onClick={toggleAnimation} // Attach click event handler
-        style={{ animationPlayState: animationPaused ? 'paused' : 'running' }} // Apply animationPlayState style
-      >
-        <SortedLogos users={users} />
-      </UsersSlider>
+      </UsersSliderTrack>
     </UsersSliderContainer>
   );
 };

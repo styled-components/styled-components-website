@@ -1,15 +1,15 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Label, { LabelGroup } from '../../components/Label';
 
 test('Label renders correctly', () => {
-  const tree = renderer.create(<Label />).toJSON();
+  const { container } = render(<Label />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 test('LabelGroup renders correctly', () => {
-  const tree = renderer.create(<LabelGroup />).toJSON();
+  const { container } = render(<LabelGroup />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

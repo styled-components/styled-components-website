@@ -13,7 +13,9 @@ exports[`Code renders correctly 1`] = `
   vertical-align: baseline;
 }
 
-<code
-  className="c0"
-/>
+<div>
+  <code
+    class="c0"
+  />
+</div>
 `;

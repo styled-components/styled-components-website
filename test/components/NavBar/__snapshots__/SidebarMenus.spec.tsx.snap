@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DocsSidebarMenu renders correctly 1`] = `
-.c3 {
+.c4 {
   display: inline-block;
   color: inherit;
   cursor: pointer;
@@ -25,7 +25,7 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
   margin: 0.5555555555555556rem 2.2222222222222223rem;
 }
 
-.c4 {
+.c3 {
   display: block;
   margin: 0.5555555555555556rem 2.2222222222222223rem 0.5555555555555556rem 3.0555555555555554rem;
   font-size: 0.9rem;
@@ -33,582 +33,564 @@ exports[`DocsSidebarMenu renders correctly 1`] = `
 }
 
 @media (min-width: 62.5em) {
-  .c3 {
+  .c4 {
     border-radius: 0.16666666666666666rem;
   }
 
-  .c3:hover {
+  .c4:hover {
     background: rgba(20, 20, 20, 0.1);
   }
 }
 
-<div
-  className="c0"
->
+<div>
   <div
-    className="c1"
+    class="c0"
   >
-    <h4
-      className="c2"
+    <div
+      class="c1"
     >
-      <a
-        className="c3"
+      <h4
+        class="c2"
       >
         Basics
-      </a>
-    </h4>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#motivation"
+      </h4>
+      <h5
+        class="c3"
       >
-        Motivation
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#installation"
+        <a
+          class="c4"
+          href="/docs/basics#motivation"
+        >
+          Motivation
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Installation
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#getting-started"
+        <a
+          class="c4"
+          href="/docs/basics#installation"
+        >
+          Installation
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Getting Started
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#adapting-based-on-props"
+        <a
+          class="c4"
+          href="/docs/basics#getting-started"
+        >
+          Getting Started
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Adapting based on props
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#extending-styles"
+        <a
+          class="c4"
+          href="/docs/basics#adapting-based-on-props"
+        >
+          Adapting based on props
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Extending styles
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#styling-any-component"
+        <a
+          class="c4"
+          href="/docs/basics#extending-styles"
+        >
+          Extending styles
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Styling any component
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#passed-props"
+        <a
+          class="c4"
+          href="/docs/basics#styling-any-component"
+        >
+          Styling any component
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Passed props
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#coming-from-css"
+        <a
+          class="c4"
+          href="/docs/basics#passed-props"
+        >
+          Passed props
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Coming from CSS
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#attaching-additional-props"
+        <a
+          class="c4"
+          href="/docs/basics#coming-from-css"
+        >
+          Coming from CSS
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Attaching additional props
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#animations"
+        <a
+          class="c4"
+          href="/docs/basics#attaching-additional-props"
+        >
+          Attaching additional props
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Animations
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/basics#react-native"
+        <a
+          class="c4"
+          href="/docs/basics#animations"
+        >
+          Animations
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        React Native
-      </a>
-    </h5>
-  </div>
-  <div
-    className="c1"
-  >
-    <h4
-      className="c2"
+        <a
+          class="c4"
+          href="/docs/basics#react-native"
+        >
+          React Native
+        </a>
+      </h5>
+    </div>
+    <div
+      class="c1"
     >
-      <a
-        className="c3"
+      <h4
+        class="c2"
       >
         Advanced
-      </a>
-    </h4>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#theming"
+      </h4>
+      <h5
+        class="c3"
       >
-        Theming
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#refs"
+        <a
+          class="c4"
+          href="/docs/advanced#theming"
+        >
+          Theming
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Refs
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#security"
+        <a
+          class="c4"
+          href="/docs/advanced#refs"
+        >
+          Refs
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Security
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#existing-css"
+        <a
+          class="c4"
+          href="/docs/advanced#security"
+        >
+          Security
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Existing CSS
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#tagged-template-literals"
+        <a
+          class="c4"
+          href="/docs/advanced#existing-css"
+        >
+          Existing CSS
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Tagged Template Literals
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#server-side-rendering"
+        <a
+          class="c4"
+          href="/docs/advanced#tagged-template-literals"
+        >
+          Tagged Template Literals
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Server Side Rendering
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#referring-to-other-components"
+        <a
+          class="c4"
+          href="/docs/advanced#server-side-rendering"
+        >
+          Server Side Rendering
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Referring to other components
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/advanced#style-objects"
+        <a
+          class="c4"
+          href="/docs/advanced#referring-to-other-components"
+        >
+          Referring to other components
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Style Objects
-      </a>
-    </h5>
-  </div>
-  <div
-    className="c1"
-  >
-    <h4
-      className="c2"
+        <a
+          class="c4"
+          href="/docs/advanced#style-objects"
+        >
+          Style Objects
+        </a>
+      </h5>
+    </div>
+    <div
+      class="c1"
     >
-      <a
-        className="c3"
+      <h4
+        class="c2"
       >
         API Reference
-      </a>
-    </h4>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/api#primary"
+      </h4>
+      <h5
+        class="c3"
       >
-        Primary
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/api#helpers"
+        <a
+          class="c4"
+          href="/docs/api#primary"
+        >
+          Primary
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Helpers
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/api#test-utilities"
+        <a
+          class="c4"
+          href="/docs/api#helpers"
+        >
+          Helpers
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Test Utilities
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/api#supported-css"
+        <a
+          class="c4"
+          href="/docs/api#test-utilities"
+        >
+          Test Utilities
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Supported CSS
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/api#typescript"
+        <a
+          class="c4"
+          href="/docs/api#supported-css"
+        >
+          Supported CSS
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        TypeScript
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/api#previous-apis"
+        <a
+          class="c4"
+          href="/docs/api#typescript"
+        >
+          TypeScript
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Previous APIs
-      </a>
-    </h5>
-  </div>
-  <div
-    className="c1"
-  >
-    <h4
-      className="c2"
+        <a
+          class="c4"
+          href="/docs/api#previous-apis"
+        >
+          Previous APIs
+        </a>
+      </h5>
+    </div>
+    <div
+      class="c1"
     >
-      <a
-        className="c3"
+      <h4
+        class="c2"
       >
         Tooling
-      </a>
-    </h4>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/tooling#babel-plugin"
+      </h4>
+      <h5
+        class="c3"
       >
-        Babel Plugin
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/tooling#swc-plugin"
+        <a
+          class="c4"
+          href="/docs/tooling#babel-plugin"
+        >
+          Babel Plugin
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        SWC Plugin
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/tooling#typescript-plugin"
+        <a
+          class="c4"
+          href="/docs/tooling#swc-plugin"
+        >
+          SWC Plugin
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        TypeScript Plugin
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/tooling#jest-integration"
+        <a
+          class="c4"
+          href="/docs/tooling#typescript-plugin"
+        >
+          TypeScript Plugin
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Jest Integration
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/tooling#stylelint"
+        <a
+          class="c4"
+          href="/docs/tooling#jest-integration"
+        >
+          Jest Integration
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Stylelint
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/tooling#styled-theming"
+        <a
+          class="c4"
+          href="/docs/tooling#stylelint"
+        >
+          Stylelint
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Styled Theming
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/tooling#syntax-highlighting"
+        <a
+          class="c4"
+          href="/docs/tooling#styled-theming"
+        >
+          Styled Theming
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Syntax Highlighting
-      </a>
-    </h5>
-  </div>
-  <div
-    className="c1"
-  >
-    <h4
-      className="c2"
+        <a
+          class="c4"
+          href="/docs/tooling#syntax-highlighting"
+        >
+          Syntax Highlighting
+        </a>
+      </h5>
+    </div>
+    <div
+      class="c1"
     >
-      <a
-        className="c3"
+      <h4
+        class="c2"
       >
         FAQs
-      </a>
-    </h4>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v6"
+      </h4>
+      <h5
+        class="c3"
       >
-        What do I need to do to migrate to v6?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v5"
+        <a
+          class="c4"
+          href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v6"
+        >
+          What do I need to do to migrate to v6?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        What do I need to do to migrate to v5?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4"
+        <a
+          class="c4"
+          href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v5"
+        >
+          What do I need to do to migrate to v5?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        What do I need to do to migrate to v4?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#can-i-nest-rules"
+        <a
+          class="c4"
+          href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4"
+        >
+          What do I need to do to migrate to v4?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Can I nest rules?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#can-i-use-css-frameworks"
+        <a
+          class="c4"
+          href="/docs/faqs#can-i-nest-rules"
+        >
+          Can I nest rules?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Can I use css frameworks?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#how-can-i-override-styles-with-higher-specificity"
+        <a
+          class="c4"
+          href="/docs/faqs#can-i-use-css-frameworks"
+        >
+          Can I use css frameworks?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        How can I override styles with higher specificity?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#how-can-i-override-inline-styles"
+        <a
+          class="c4"
+          href="/docs/faqs#how-can-i-override-styles-with-higher-specificity"
+        >
+          How can I override styles with higher specificity?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        How can I override inline styles?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#why-do-my-dom-nodes-have-two-classes"
+        <a
+          class="c4"
+          href="/docs/faqs#how-can-i-override-inline-styles"
+        >
+          How can I override inline styles?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Why do my DOM nodes have two classes?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#when-to-use-attrs"
+        <a
+          class="c4"
+          href="/docs/faqs#why-do-my-dom-nodes-have-two-classes"
+        >
+          Why do my DOM nodes have two classes?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        When to use attrs?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#why-should-i-avoid-declaring-styled-components-in-the-render-method"
+        <a
+          class="c4"
+          href="/docs/faqs#when-to-use-attrs"
+        >
+          When to use attrs?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Why should I avoid declaring styled components in the render method?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#i-am-a-library-author.-should-i-bundle-styled-components-with-my-library"
+        <a
+          class="c4"
+          href="/docs/faqs#why-should-i-avoid-declaring-styled-components-in-the-render-method"
+        >
+          Why should I avoid declaring styled components in the render method?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        I am a library author. Should I bundle styled-components with my library?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#why-am-i-getting-a-warning-about-several-instances-of-module-on-the-page"
+        <a
+          class="c4"
+          href="/docs/faqs#i-am-a-library-author.-should-i-bundle-styled-components-with-my-library"
+        >
+          I am a library author. Should I bundle styled-components with my library?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Why am I getting a warning about several instances of module on the page?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#why-am-i-getting-html-attribute-warnings"
+        <a
+          class="c4"
+          href="/docs/faqs#why-am-i-getting-a-warning-about-several-instances-of-module-on-the-page"
+        >
+          Why am I getting a warning about several instances of module on the page?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Why am I getting HTML attribute warnings?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#which-browsers-are-supported"
+        <a
+          class="c4"
+          href="/docs/faqs#why-am-i-getting-html-attribute-warnings"
+        >
+          Why am I getting HTML attribute warnings?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Which browsers are supported?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#how-do-i-use-styled-components-with-create-react-app"
+        <a
+          class="c4"
+          href="/docs/faqs#which-browsers-are-supported"
+        >
+          Which browsers are supported?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        How do I use styled-components with create-react-app?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#how-can-i-fix-issues-when-using-npm-link-or-yarn-link"
+        <a
+          class="c4"
+          href="/docs/faqs#how-do-i-use-styled-components-with-create-react-app"
+        >
+          How do I use styled-components with create-react-app?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        How can I fix issues when using npm link or yarn link?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#how-do-i-fix-flickering-text-after-server-side-rendering"
+        <a
+          class="c4"
+          href="/docs/faqs#how-can-i-fix-issues-when-using-npm-link-or-yarn-link"
+        >
+          How can I fix issues when using npm link or yarn link?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        How do I fix flickering text after server side rendering?
-      </a>
-    </h5>
-    <h5
-      className="c4"
-    >
-      <a
-        className="c3"
-        href="/docs/faqs#missing-declarations-for-styled-componentsnative"
+        <a
+          class="c4"
+          href="/docs/faqs#how-do-i-fix-flickering-text-after-server-side-rendering"
+        >
+          How do I fix flickering text after server side rendering?
+        </a>
+      </h5>
+      <h5
+        class="c3"
       >
-        Missing Declarations for styled-components/native?
-      </a>
-    </h5>
+        <a
+          class="c4"
+          href="/docs/faqs#missing-declarations-for-styled-componentsnative"
+        >
+          Missing Declarations for styled-components/native?
+        </a>
+      </h5>
+    </div>
   </div>
 </div>
 `;
@@ -621,7 +603,9 @@ exports[`SimpleSidebarMenu renders correctly 1`] = `
   padding-top: 3.3333333333333335rem;
 }
 
-<div
-  className="c0"
-/>
+<div>
+  <div
+    class="c0"
+  />
+</div>
 `;

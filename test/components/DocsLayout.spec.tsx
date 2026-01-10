@@ -1,9 +1,13 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import DocsLayout from '../../components/DocsLayout';
 
-test('DocsLayout renders correctly', () => {
-  const wrapper = mount(<DocsLayout />);
+jest.mock('next/navigation', () => ({
+  usePathname: () => '/docs/test',
+}));
 
-  expect(wrapper).toMatchSnapshot();
+test('DocsLayout renders correctly', () => {
+  const { container } = render(<DocsLayout title="Test" />);
+
+  expect(container).toMatchSnapshot();
 });
