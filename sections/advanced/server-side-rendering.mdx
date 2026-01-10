@@ -8,6 +8,40 @@ via a context API.
 This doesn't interfere with global styles, such as `keyframes` or `createGlobalStyle` and
 allows you to use styled-components with React DOM's various SSR APIs.
 
+### React Server Components | v6.3.0+
+
+styled-components now natively supports React Server Components (RSC) with zero configuration. In RSC environments, styled components automatically emit inline `<style>` tags that React 19 hoists and deduplicates.
+
+**Key behaviors in RSC:**
+
+- No `'use client'` directive required
+- `ThemeProvider` and `StyleSheetManager` become pass-through components (no-ops)
+- CSS is automatically injected inline
+
+**Best practices for RSC:**
+
+| Do | Don't |
+|---|---|
+| Use static styles | Use dynamic interpolations (serialization overhead) |
+| Use data attributes for variants (`&[data-size='lg']`) | Use props for discrete style variants |
+| Use CSS custom properties via inline `style` prop | Rely on `ThemeProvider` (no-op in RSC) |
+| Use build-time CSS variable generation for theming | Use runtime theme context |
+
+**Theming with CSS custom properties:**
+
+Since `ThemeProvider` is a no-op in RSC, use CSS custom properties for theming instead. Variables set on a parent element cascade to all DOM children:
+
+```tsx
+const Container = styled.div``;
+const Button = styled.button`
+  background: var(--color-primary, blue);
+`;
+
+<Container style={{ '--color-primary': 'orchid' }}>
+  <Button>Inherits orchid background</Button>
+</Container>
+```
+
 ### Tooling setup
 
 In order to reliably perform server side rendering and have the client side bundle pick up without issues, you'll need to use our [babel plugin](/docs/tooling#babel-plugin). It prevents checksum mismatches by adding a deterministic ID to each styled component. Refer to the [tooling documentation](/docs/tooling#serverside-rendering) for more information.
@@ -86,17 +120,23 @@ On this version, you [only need to add](https://github.com/vercel/next.js/blob/c
 
 #### App directory
 
-For routes defined in the `app/` directory, in Next.js v13+, you'll need to put a styled-components registry in one of your layout files, as [described in Next.js docs](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components). Note that this depends on styled-components v6+. Also note that the `'use client'` directive is used - so while your page will be server-side rendered, styled-components will still appear in your client bundle.
+**With styled-components v6.3.0+:** RSC is natively supported with zero configuration. Styled components work in Server Components without a `'use client'` directive or registry setup. See the [React Server Components](#react-server-components) section above for best practices.
+
+**With styled-components v6.0–6.2:** You'll need to put a styled-components registry in one of your layout files, as [described in Next.js docs](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components). Note that the `'use client'` directive is required, so styled-components will appear in your client bundle.
 
 ### Gatsby
 
-[Gatsby](https://www.gatsbyjs.org/) has an official plugin that enables server-side rendering for styled-components.
+[Gatsby](https://www.gatsbyjs.com/) has an official plugin that enables server-side rendering for styled-components.
 
-Refer to [the plugin's page](https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/) for setup and usage instructions.
+Refer to [the plugin's page](https://www.gatsbyjs.com/plugins/gatsby-plugin-styled-components/) for setup and usage instructions.
 
 ### Streaming Rendering
 
-styled-components offers a streaming API for use with [ReactDOMServer.renderToNodeStream()](https://reactjs.org/docs/react-dom-server.html#rendertonodestream). There are two parts to a streaming implementation:
+styled-components offers a streaming API for use with ReactDOMServer streaming methods.
+
+> **React 18+:** `renderToNodeStream` is deprecated. Use [`renderToPipeableStream`](https://react.dev/reference/react-dom/server/renderToPipeableStream) instead for modern streaming SSR.
+
+There are two parts to a streaming implementation:
 
 _On the server:_
 

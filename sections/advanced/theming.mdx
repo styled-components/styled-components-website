@@ -4,6 +4,8 @@ styled-components has full theming support by exporting a `<ThemeProvider>` wrap
 This component provides a theme to all React components underneath itself via the context API. In the render
 tree all styled-components will have access to the provided theme, even when they are multiple levels deep.
 
+> **React Server Components (v6.3.0+):** `ThemeProvider` is a no-op in RSC environments since React context is unavailable. Use CSS custom properties for theming in RSC instead. See the [RSC section](/docs/advanced#react-server-components) for best practices.
+
 To illustrate this, let's create our Button component, but this time we'll pass some variables down
 as a theme.
 

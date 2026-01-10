@@ -5,6 +5,8 @@ import Code from 'components/Code'
 
 A helper component for modifying how your styles are processed. For a given subtree involving styled-components, you can customize various behaviors like how the CSS runtime processor (stylis) handles styles via userland plugins and option overrides.
 
+> **React Server Components (v6.3.0+):** `StyleSheetManager` becomes a pass-through component (no-op) in RSC environments. CSS is automatically delivered via inline `<style>` tags. See the [RSC section](/docs/advanced#react-server-components) for details.
+
 <Table head={['Props', 'Description']}>
   <Row>
     <Column>

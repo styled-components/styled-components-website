@@ -7,6 +7,8 @@ A helper component for theming. Injects the theme into all styled components any
 beneath it in the component tree, via the context API.
 Check the section on [Theming](/docs/advanced#theming).
 
+> **React Server Components (v6.3.0+):** `ThemeProvider` becomes a pass-through component (no-op) in RSC environments since React context is unavailable. Use CSS custom properties for theming instead. See the [RSC section](/docs/advanced#react-server-components) for details.
+
 <Table head={['Props', 'Description']}>
   <Row>
     <Column>
