@@ -339,6 +339,7 @@ const companies: Company[] = [
     key: 'https://prisma.io',
     similarWebGlobalRank: 183831,
     name: 'Prisma',
+    logo: CompanyLogos.PrismaLogo,
     style: {},
     projects: {
       prisma: {

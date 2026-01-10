@@ -4,12 +4,12 @@ import { Company } from 'companies-manifest';
 import styled, { keyframes } from 'styled-components';
 import { useState } from 'react';
 
-const getSlide = (childIndex: number, reverse?: boolean) => keyframes`
+const slideAnimation = (reverse?: boolean) => keyframes`
   from {
-    transform: translateX(${childIndex * 100}%);
+    transform: translateX(${reverse ? '0%' : '-50%'});
   }
   to {
-    transform: translateX(${(reverse ? -100 : 100) + 100 * childIndex}%);
+    transform: translateX(${reverse ? '-50%' : '0%'});
   }
 `;
 
@@ -29,19 +29,16 @@ const UsersSliderContainer = styled.div<{ children?: React.ReactNode }>`
   position: relative;
 `;
 
-const UsersSlider = styled.span<{
-  $offset?: number;
+const UsersSliderTrack = styled.div<{
   $reverse?: boolean;
   children?: React.ReactNode;
   onClick?: () => void;
   style?: React.CSSProperties;
 }>`
-  display: inline-block;
-  animation: ${({ $offset, $reverse }) => getSlide($offset || 0, $reverse)} 150s linear infinite;
+  display: flex;
+  animation: ${({ $reverse }) => slideAnimation($reverse)} 75s linear infinite;
   white-space: nowrap;
-  overflow: hidden;
-  position: absolute;
-  cursor: pointer; // Add cursor pointer to indicate it's clickable
+  cursor: pointer;
 
   ${UsersWrapper} {
     flex-direction: ${({ $reverse }) => ($reverse ? 'row' : 'row-reverse')};
@@ -60,6 +57,7 @@ const CompanyLogo = styled.span<{ children?: React.ReactNode }>`
   opacity: 0.8;
   filter: brightness(0) invert(1);
   transition: opacity 125ms ease-in-out;
+  flex-shrink: 0;
 
   svg {
     height: 100%;
@@ -77,40 +75,31 @@ export interface ISortedLogos {
 
 const SortedLogos = ({ users }: ISortedLogos) => (
   <UsersWrapper>
-    {/* TODO: remove this check after adding missing logos */}
-    {users.map(
-      ({ key, logo: Logo }) =>
-        Logo && (
-          <CompanyLogo key={key}>
-            <Logo />
-          </CompanyLogo>
-        )
-    )}
+    {users.map(({ key, name, logo: Logo }) => (
+      <CompanyLogo key={key} title={name}>
+        <Logo />
+      </CompanyLogo>
+    ))}
   </UsersWrapper>
 );
 
 const UsersLogos = ({ users, reverse }: { reverse?: boolean; users: ISortedLogos['users'] }) => {
-  // State to track animation pause
   const [animationPaused, setAnimationPaused] = useState(false);
 
-  // Function to toggle animation pause state
   const toggleAnimation = () => {
     setAnimationPaused(prevState => !prevState);
   };
 
   return (
     <UsersSliderContainer>
-      {[0, 1, 2].map(idx => (
-        <UsersSlider
-          key={`slider-${idx}`}
-          $offset={idx}
-          $reverse={reverse}
-          onClick={toggleAnimation}
-          style={{ animationPlayState: animationPaused ? 'paused' : 'running' }}
-        >
-          <SortedLogos users={users} />
-        </UsersSlider>
-      ))}
+      <UsersSliderTrack
+        $reverse={reverse}
+        onClick={toggleAnimation}
+        style={{ animationPlayState: animationPaused ? 'paused' : 'running' }}
+      >
+        <SortedLogos users={users} />
+        <SortedLogos users={users} />
+      </UsersSliderTrack>
     </UsersSliderContainer>
   );
 };

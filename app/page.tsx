@@ -63,9 +63,7 @@ export default function Index() {
           <UsersHeading>Used by folks at</UsersHeading>
         </Content>
 
-        <UsersLogos users={sortedCompanies.filter((v, i) => i % 2)} />
-
-        <UsersLogos reverse users={sortedCompanies.filter((v, i) => !(i % 2))} />
+        <UsersLogos users={sortedCompanies} />
 
         <ShowcaseHeading>To create beautiful websites like these</ShowcaseHeading>
 
