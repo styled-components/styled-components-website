@@ -34,27 +34,7 @@ const StyledButton = styled(Button)`
 <StyledButton />
 ```
 
-Note that you don't even have to add the import, the Babel plugin does that automatically! (unless you're using the Babel macro, see below)
-
-#### Usage with the Babel macro
-
-> This functionality was removed in v6.1 due to lack of usage and unnecessary bloat for other consumers. [More info](https://github.com/styled-components/styled-components/issues/4064)
-
-You can use the [Babel macro](/docs/tooling#babel-macro) to make this work in `create-react-app`. Unfortunately, Babel macros only run when imported so **the import can not be added automatically.** The above code works perfectly if you add the import to the macro manually:
-
-```tsx
-import styled from 'styled-components/macro'
-
-<div
-  css={`
-    background: papayawhip;
-    color: ${props => props.theme.colors.text};
-  `}
-/>
-<Button
-  css="padding: 0.5em 1em;"
-/>
-```
+Note that you don't even have to add the import, the Babel plugin does that automatically!
 
 #### Usage with TypeScript
 
@@ -66,7 +46,7 @@ import {} from 'styled-components/cssprop'
 
 See https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31245#issuecomment-446011384 for more information.
 
-If you're using a higher version than v6, you do not need to install `@types/styled-components`. 
+If you're using a higher version than v6, you do not need to install `@types/styled-components`.
 Instead, you can directly import the `CSSProp` in your project like this:
 
 ```ts
