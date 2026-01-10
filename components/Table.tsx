@@ -9,7 +9,7 @@ export const TableWrapper = styled.table`
   margin: ${rem(40)} 0;
 `;
 
-const TableHead = styled.thead`
+const TableHead = styled.thead<{ children?: React.ReactNode }>`
   border-bottom: 2px solid ${lightGrey};
   font-family: ${headerFont};
 `;
@@ -23,13 +23,13 @@ export const Row = styled.tr`
   }
 `;
 
-export const Column = styled.th`
+export const Column = styled.th<{ children?: React.ReactNode }>`
   font-weight: normal;
   padding: ${rem(10)} ${rem(12)};
   padding-left: 0;
 `;
 
-const TableHeadColumn = styled(Column)`
+const TableHeadColumn = styled(Column)<{ children?: React.ReactNode }>`
   text-transform: uppercase;
   font-size: 85%;
   opacity: 0.8;
@@ -44,9 +44,7 @@ const Table = ({ head, children }: React.PropsWithChildren<TableProps>) => (
     <TableHead>
       <tr>
         {head.map((text, i) => (
-          <TableHeadColumn key={i} title={text}>
-            {text}
-          </TableHeadColumn>
+          <TableHeadColumn key={i}>{text}</TableHeadColumn>
         ))}
       </tr>
     </TableHead>

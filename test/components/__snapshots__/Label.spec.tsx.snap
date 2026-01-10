@@ -12,9 +12,11 @@ exports[`Label renders correctly 1`] = `
   vertical-align: middle;
 }
 
-<small
-  className="c0"
-/>
+<div>
+  <small
+    class="c0"
+  />
+</div>
 `;
 
 exports[`LabelGroup renders correctly 1`] = `
@@ -25,7 +27,9 @@ exports[`LabelGroup renders correctly 1`] = `
   bottom: 0.16666666666666666rem;
 }
 
-<div
-  className="c0"
-/>
+<div>
+  <div
+    class="c0"
+  />
+</div>
 `;

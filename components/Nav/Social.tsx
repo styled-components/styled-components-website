@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Github, MediumM } from '@styled-icons/fa-brands';
+import { Github } from '@styled-icons/fa-brands';
 import rem from '../../utils/rem';
 import { navbarHeight } from '../../utils/sizes';
 import Link from '../Link';
@@ -65,13 +65,6 @@ const Social = (props: React.ComponentProps<typeof Wrapper>) => (
     </SocialLink> */}
     <SocialLink href="https://github.com/styled-components" title="GitHub: Source code" target="_blank">
       <StyledIcon as={Github} $height={18} />
-    </SocialLink>
-    <SocialLink
-      href="https://medium.com/styled-components"
-      title="Medium: Announcements, blog posts, and more"
-      target="_blank"
-    >
-      <StyledIcon as={MediumM} $height={18} />
     </SocialLink>
   </Wrapper>
 );

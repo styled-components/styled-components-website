@@ -1,9 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import Sidebar from '../../../components/Nav/Sidebar';
 
 test('Sidebar renders correctly', () => {
-  const wrapper = mount(<Sidebar />);
+  const { container } = render(<Sidebar />);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

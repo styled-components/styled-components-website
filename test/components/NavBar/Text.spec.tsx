@@ -1,9 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Text from '../../../components/Nav/Text';
 
 test('Text renders correctly', () => {
-  const tree = renderer.create(<Text />).toJSON();
+  const { container } = render(<Text />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

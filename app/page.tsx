@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
 import { LiveEditor, LivePreview, LiveProvider } from 'react-live-runner';
 import styled from 'styled-components';
-import { sortedCompanies, sortedProjects } from '../companies-manifest';
+import { sortedCompanies, sortedProjects } from '~/companies-manifest';
 import Footer from '../components/Footer';
 import { Content } from '../components/Layout';
 import { default as Link, default as NextLink } from '../components/Link';
@@ -12,7 +14,7 @@ import SmallShowcase from '../components/SmallShowcase';
 import UsersLogos from '../components/UsersLogos';
 import HomepageGettingStarted from '../sections/homepage/getting-started.mdx';
 import { blmBlack, blmGrey } from '../utils/colors';
-import { headerFont } from '../utils/fonts';
+import { headerFont, monospace } from '../utils/fonts';
 import rem from '../utils/rem';
 import baseScope from '../utils/scope';
 import theme from '../components/prismTheme';
@@ -174,8 +176,8 @@ const ShowcaseHeading = styled(UsersHeading)`
 `;
 
 const Wrapper = styled.div.attrs((/* props */) => ({
-  className: 'hero-header', // for integration tests
-}))`
+  className: 'hero-header',
+}))<{ children?: React.ReactNode }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -202,8 +204,16 @@ const EditorContainer = styled.div`
 const Editor = styled(LiveEditor)`
   ${editorMixin};
   height: 24rem;
-  white-space: pre;
+  white-space: pre-wrap;
   width: 100%;
+  tab-size: 2;
+
+  pre,
+  textarea {
+    font-family: ${monospace} !important;
+    padding: 1.5em 1.5em !important;
+    tab-size: 2;
+  }
 `;
 
 const Links = styled.div`

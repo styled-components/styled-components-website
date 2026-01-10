@@ -1,9 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import NavButton from '../../../components/Nav/NavButton';
 
 test('NavButton renders correctly', () => {
-  const tree = renderer.create(<NavButton />).toJSON();
+  const { container } = render(<NavButton />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

@@ -1,4 +1,4 @@
-# styled-components RSC Best Practices (v6.3.0+)
+# styled-components RSC Best Practices (v6.3.3+)
 
 | Do | Don't |
 |---|---|

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Svg = styled.svg`
+const Svg = styled.svg<React.SVGProps<SVGSVGElement>>`
   svg {
     display: inline-block;
 

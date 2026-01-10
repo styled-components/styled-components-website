@@ -1,9 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import MobileNavbar from '../../../components/Nav/MobileNavbar';
 
 test('MobileNavbar renders correctly', () => {
-  const tree = renderer.create(<MobileNavbar />).toJSON();
+  const { container } = render(<MobileNavbar />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

@@ -1,15 +1,15 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { DocsSidebarMenu, SimpleSidebarMenu } from '../../../components/Nav/SidebarMenus';
 
 test('DocsSidebarMenu renders correctly', () => {
-  const tree = renderer.create(<DocsSidebarMenu />).toJSON();
+  const { container } = render(<DocsSidebarMenu />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 test('SimpleSidebarMenu renders correctly', () => {
-  const tree = renderer.create(<SimpleSidebarMenu />).toJSON();
+  const { container } = render(<SimpleSidebarMenu />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

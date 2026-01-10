@@ -1,4 +1,6 @@
-import React from 'react'; // eslint-disable-line
+'use client';
+
+import React from 'react';
 
 let isMobile: boolean;
 let lastWheelTimestamp: number;

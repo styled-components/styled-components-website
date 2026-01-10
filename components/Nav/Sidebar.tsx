@@ -8,6 +8,7 @@ import captureScroll from '../CaptureScroll';
 
 export interface SidebarProps {
   $isFolded?: boolean;
+  children?: React.ReactNode;
 }
 
 const Sidebar = styled.nav<SidebarProps>`

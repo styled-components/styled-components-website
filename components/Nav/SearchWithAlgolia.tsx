@@ -1,12 +1,15 @@
-import Router from 'next/router';
+'use client';
+
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 const INPUT_ID = 'docs-search-input';
 
-export default function AlgoliaSearch(props: JSX.IntrinsicElements['div']) {
+export default function AlgoliaSearch(props: React.HTMLAttributes<HTMLDivElement>) {
+  const pathname = usePathname();
   const [isDocs, setIsDocs] = useState(false);
 
   useEffect(() => {
-    if (process.browser && Router.pathname.startsWith('/docs')) setIsDocs(true);
+    if (typeof window !== 'undefined' && pathname.startsWith('/docs')) setIsDocs(true);
 
     if (process.env.NODE_ENV !== 'test') {
       import('@docsearch/js').then(mdl => {
@@ -19,7 +22,7 @@ export default function AlgoliaSearch(props: JSX.IntrinsicElements['div']) {
         });
       });
     }
-  }, []);
+  }, [pathname, isDocs]);
 
   return <div {...props} id={INPUT_ID} />;
 }

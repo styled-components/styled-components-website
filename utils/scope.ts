@@ -10,28 +10,35 @@ import stylisRTLPlugin from 'stylis-plugin-rtl';
 
 // mimic babel plugin's behaviour to support SSR
 const hash = 'runner';
-let counter = 0;
+const componentIdCache = new Map<string, number>();
+
+const getComponentId = (key: string) => {
+  if (!componentIdCache.has(key)) {
+    componentIdCache.set(key, componentIdCache.size);
+  }
+  return `sc-${hash}-${componentIdCache.get(key)}`;
+};
 
 const hijackedStyled = (...args: Parameters<typeof styled>) => {
   return styled(...args).withConfig({
-    componentId: `sc-${hash}-${counter++}`,
+    componentId: getComponentId('base'),
   });
 };
 
 const ignoredProps = Object.getOwnPropertyNames(Function);
 (Object.getOwnPropertyNames(styled) as (keyof typeof styled)[]).forEach(tag => {
-  if (ignoredProps.includes(tag)) return;
+  if (ignoredProps.includes(String(tag))) return;
   Object.defineProperty(hijackedStyled, tag, {
     get() {
       return styled[tag].withConfig({
-        componentId: `sc-${hash}-${counter++}`,
+        componentId: getComponentId(String(tag)),
       });
     },
   });
 });
 
 export const reset = () => {
-  counter = 0;
+  componentIdCache.clear();
 };
 
 const baseScope = {

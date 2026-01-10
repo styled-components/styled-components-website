@@ -1,9 +1,19 @@
-import { pages } from '../pages/docs.json';
+import { pages } from '../app/docs.json';
 
-const pathnameDict = pages.reduce(
-  (acc, { pathname, sections }) => ({
+interface Section {
+  pathname?: string;
+  title: string;
+}
+
+interface Page {
+  pathname: string;
+  sections: Section[];
+}
+
+const pathnameDict = (pages as Page[]).reduce(
+  (acc: Record<string, string>, { pathname, sections }: Page) => ({
     ...acc,
-    ...sections.reduce((subAcc, { pathname: subPathname, title }) => {
+    ...sections.reduce((subAcc: Record<string, string>, { pathname: subPathname, title }: Section) => {
       if (subPathname) subAcc[`${pathname}/${subPathname}`] = title;
       return subAcc;
     }, {} as Record<string, string>),

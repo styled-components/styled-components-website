@@ -14,8 +14,8 @@ exports[`Note renders correctly 1`] = `
   margin: 0 0 0.2777777777777778rem 0;
 }
 
-.sc-eDDNPB+.c0,
-.sc-dmqGxT+.c0 {
+.sc-eCImPc+.c0,
+.sc-dkPtRK+.c0 {
   margin-top: 1.9444444444444444rem;
 }
 
@@ -28,13 +28,15 @@ exports[`Note renders correctly 1`] = `
   margin-bottom: 0.3888888888888889rem;
 }
 
-<div
-  className="c0"
->
-  <strong
-    className="c1"
+<div>
+  <div
+    class="c0"
   >
-    Note
-  </strong>
+    <strong
+      class="c1"
+    >
+      Note
+    </strong>
+  </div>
 </div>
 `;

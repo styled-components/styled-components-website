@@ -1,9 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Anchor from '../../components/Anchor';
 
 test('Anchor renders correctly', () => {
-  const tree = renderer.create(<Anchor />).toJSON();
+  const { container } = render(<Anchor />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

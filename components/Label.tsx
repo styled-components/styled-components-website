@@ -1,3 +1,5 @@
+'use client';
+
 import styled from 'styled-components';
 import rem from '../utils/rem';
 import { blmGrey } from '../utils/colors';
@@ -10,7 +12,7 @@ export const LabelGroup = styled.div`
   bottom: ${rem(3)};
 `;
 
-const Label = styled.small<{ $isVersion?: boolean }>`
+const Label = styled.small<{ $isVersion?: boolean; children?: React.ReactNode }>`
   display: inline-block;
   background: ${p => (p.$isVersion ? 'royalblue' : blmGrey)};
   color: white;

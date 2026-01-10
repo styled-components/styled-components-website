@@ -1,3 +1,5 @@
+'use client';
+
 import styled, { ThemeProvider } from 'styled-components';
 import theme, { VariantSet } from 'styled-theming';
 import React from 'react';
@@ -53,7 +55,7 @@ const boxColor = theme('mode', {
   dark: '#C5C8C6',
 });
 
-const Box = styled.div`
+const Box = styled.div<{ children?: React.ReactNode }>`
   padding: 4em 2em;
   text-align: center;
   font-size: ${fontSize};
@@ -81,7 +83,11 @@ const buttonMargin = theme('size', {
 
 type ExtractVariants<Type> = Type extends VariantSet<string, infer X> ? X : never;
 
-const Button = styled.button<{ $kind?: ExtractVariants<typeof buttonBackgroundColor> }>`
+const Button = styled.button<{
+  $kind?: ExtractVariants<typeof buttonBackgroundColor>;
+  onClick?: () => void;
+  children?: React.ReactNode;
+}>`
   font: inherit;
   border: none;
   border-radius: 0.25em;
@@ -92,6 +98,4 @@ const Button = styled.button<{ $kind?: ExtractVariants<typeof buttonBackgroundCo
   color: white;
 `;
 
-Button.defaultProps = {
-  $kind: 'default',
-};
+// Button.defaultProps is deprecated in React 19

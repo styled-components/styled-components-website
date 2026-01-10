@@ -33,29 +33,30 @@ exports[`Table renders correctly 1`] = `
   opacity: 0.8;
 }
 
-<table
-  className="c0"
->
-  <thead
-    className="c1"
+<div>
+  <table
+    class="c0"
   >
-    <tr>
-      <th
-        className="c2 c3"
-        title="head"
-      >
-        head
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      className="c4"
+    <thead
+      class="c1"
     >
-      <th
-        className="c2"
-      />
-    </tr>
-  </tbody>
-</table>
+      <tr>
+        <th
+          class="c2 c3"
+        >
+          head
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="c4"
+      >
+        <th
+          class="c2"
+        />
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;

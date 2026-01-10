@@ -1,9 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Note from '../../components/Note';
 
 test('Note renders correctly', () => {
-  const tree = renderer.create(<Note />).toJSON();
+  const { container } = render(<Note />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

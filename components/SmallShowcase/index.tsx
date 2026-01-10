@@ -13,14 +13,12 @@ export default function SmallShowcase({ projects }: SmallShowcaseProps) {
       {Object.values(projects)
         .slice(0, 6)
         .map((project, index) => (
-          <Link key={project.title} passHref href={`/showcase?item=${project.internalUrl}`}>
-            <Website as="a" $position={index}>
-              <RatioBox>
-                <Screenshot style={{ backgroundImage: `url(${project.src})` }} />
-                <Label>{project.title}</Label>
-              </RatioBox>
-            </Website>
-          </Link>
+          <Website key={project.title} as={Link} href={`/showcase?item=${project.internalUrl}`} $position={index}>
+            <RatioBox>
+              <Screenshot style={{ backgroundImage: `url(${project.src})` }} />
+              <Label>{project.title}</Label>
+            </RatioBox>
+          </Website>
         ))}
     </Wrapper>
   );
@@ -55,7 +53,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Label = styled.label`
+const Label = styled.label<React.LabelHTMLAttributes<HTMLLabelElement>>`
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -76,7 +74,7 @@ const Label = styled.label`
   }
 `;
 
-const Website = styled.div<{ $position: number }>`
+const Website = styled.div<{ $position: number; as?: React.ElementType; children?: React.ReactNode }>`
   display: block;
   position: relative;
   width: 100%;
@@ -124,7 +122,7 @@ const RatioBox = styled.div`
   width: 100%;
 `;
 
-const Screenshot = styled.div`
+const Screenshot = styled.div<{ style?: React.CSSProperties }>`
   background-size: cover;
   border-radius: 4px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 5px 12px rgba(0, 0, 0, 0.1);

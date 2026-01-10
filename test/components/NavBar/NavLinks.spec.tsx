@@ -1,9 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import NavLinks from '../../../components/Nav/NavLinks';
 
 test('NavLinks renders correctly', () => {
-  const tree = renderer.create(<NavLinks />).toJSON();
+  const { container } = render(<NavLinks />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

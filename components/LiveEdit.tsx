@@ -1,3 +1,5 @@
+'use client';
+
 import {
   LiveEditor,
   LiveEditorProps,
@@ -86,6 +88,7 @@ export const editorMixin = `
   overflow-y: auto !important;
   position: relative;
   white-space: pre-wrap;
+  tab-size: 2;
 `;
 
 const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
@@ -101,6 +104,7 @@ const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
   textarea {
     font-family: ${monospace} !important;
     padding: 1.5em 1.5em !important;
+    tab-size: 2;
   }
 `;
 
