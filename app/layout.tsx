@@ -1,6 +1,6 @@
 import { Metadata, Viewport } from 'next';
-import StyledComponentsRegistry from '../lib/registry';
-import ClientLayout from '../components/ClientLayout';
+import StyledComponentsRegistry from '~/lib/registry';
+import ClientLayout from '~/components/ClientLayout';
 
 export const metadata: Metadata = {
   title: {

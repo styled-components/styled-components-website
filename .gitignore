@@ -15,6 +15,7 @@ __diff_output__
 
 # build
 .next
+next-env.d.ts
 
 # Yarn 3
 .pnp.*
