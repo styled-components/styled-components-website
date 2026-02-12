@@ -24,6 +24,11 @@ exports[`MobileNavbar renders correctly 1`] = `
   text-align: center;
   transition: all 200ms ease-in-out;
   vertical-align: middle;
+  min-width: 2.4444444444444446rem;
+  min-height: 2.4444444444444446rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .c2:hover {
@@ -144,7 +149,9 @@ exports[`MobileNavbar renders correctly 1`] = `
     class="c0"
   >
     <button
+      aria-label="Show Side Navigation"
       class="c1 c2"
+      type="button"
     >
       <svg
         class="c3"
@@ -179,8 +186,10 @@ exports[`MobileNavbar renders correctly 1`] = `
       />
     </a>
     <button
+      aria-label="Toggle Navigation"
       class="c1 c2"
       style="position: absolute; right: 0px;"
+      type="button"
     >
       <div
         class="c6"

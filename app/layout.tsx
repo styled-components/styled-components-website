@@ -38,7 +38,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <StyledComponentsRegistry>
-          <ClientLayout>{children}</ClientLayout>
+          <ClientLayout>
+            <main id="main-content">{children}</main>
+          </ClientLayout>
         </StyledComponentsRegistry>
       </body>
     </html>

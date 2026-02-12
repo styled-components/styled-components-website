@@ -28,7 +28,9 @@ export default function MobileNavbar({
   return (
     <Wrapper>
       {showSideNav !== false && (
-        <NavButton onClick={onSideToggle}>{isSideFolded ? <FoldIcon /> : <CloseIcon />}</NavButton>
+        <NavButton aria-label={'Show Side Navigation'} onClick={onSideToggle}>
+          {isSideFolded ? <FoldIcon /> : <CloseIcon />}
+        </NavButton>
       )}
 
       <LogoLink href="/">
@@ -37,7 +39,11 @@ export default function MobileNavbar({
 
       {children}
 
-      <NavButton onClick={onMobileNavToggle} style={{ position: 'absolute', right: 0 }}>
+      <NavButton
+        aria-label={'Toggle Navigation'}
+        onClick={onMobileNavToggle}
+        style={{ position: 'absolute', right: 0 }}
+      >
         <ArrowWrapper $shouldRotate={!isMobileNavFolded}>
           <StyledIcon as={KeyboardArrowDown} $size={36} />
         </ArrowWrapper>
