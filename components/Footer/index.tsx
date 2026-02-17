@@ -19,7 +19,7 @@ export default function Footer() {
           </FooterLink>
           <br />
           {'Made with '}
-          <Heart />
+          <Heart aria-hidden="true" />
           {' by '}
           <FooterLink inline href="https://twitter.com/glenmaddern">
             @glenmaddern

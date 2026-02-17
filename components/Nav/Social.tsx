@@ -5,7 +5,7 @@ import rem from '../../utils/rem';
 import { navbarHeight } from '../../utils/sizes';
 import Link from '../Link';
 
-const Wrapper = styled.nav`
+const Wrapper = styled.nav.attrs({ 'aria-label': 'Social links' })`
   display: flex;
   align-items: center;
   flex: 1 1 auto;
@@ -63,7 +63,7 @@ const Social = (props: React.ComponentProps<typeof Wrapper>) => (
     {/* <SocialLink href="https://twitter.com/someone">
       <Twitter />
     </SocialLink> */}
-    <SocialLink href="https://github.com/styled-components" title="GitHub: Source code" target="_blank">
+    <SocialLink href="https://github.com/styled-components" aria-label="Styled Components on GitHub" title="GitHub: Source code" target="_blank">
       <StyledIcon as={Github} $height={18} />
     </SocialLink>
   </Wrapper>

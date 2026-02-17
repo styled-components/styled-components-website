@@ -97,6 +97,10 @@ const UsersLogos = ({ users, reverse }: { reverse?: boolean; users: ISortedLogos
       <UsersSliderTrack
         $reverse={reverse}
         onClick={toggleAnimation}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleAnimation(); } }}
+        role="region"
+        aria-label={animationPaused ? "Company logos carousel (paused)" : "Company logos carousel (playing, click to pause)"}
+        tabIndex={0}
         style={{ animationPlayState: animationPaused ? 'paused' : 'running' }}
       >
         <SortedLogos users={users} />
