@@ -36,7 +36,7 @@
     "react-is": "^19.0.0",
     "react-live-runner": "^1.0.7",
     "react-transition-group": "^4.4.5",
-    "styled-components": "^6.3.11",
+    "styled-components": "^6.3.12",
     "styled-theming": "^2.2.0",
     "stylis": "^4.2.0",
     "stylis-plugin-rtl": "^2.1.1"

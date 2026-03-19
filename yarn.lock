@@ -6781,7 +6781,7 @@ __metadata:
     react-transition-group: "npm:^4.4.5"
     remark-gfm: "npm:^4.0.0"
     rimraf: "npm:^3.0.2"
-    styled-components: "npm:^6.3.11"
+    styled-components: "npm:^6.3.12"
     styled-theming: "npm:^2.2.0"
     stylis: "npm:^4.2.0"
     stylis-plugin-rtl: "npm:^2.1.1"
@@ -6790,9 +6790,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"styled-components@npm:^6.3.11":
-  version: 6.3.11
-  resolution: "styled-components@npm:6.3.11"
+"styled-components@npm:^6.3.12":
+  version: 6.3.12
+  resolution: "styled-components@npm:6.3.12"
   dependencies:
     "@emotion/is-prop-valid": "npm:1.4.0"
     "@emotion/unitless": "npm:0.10.0"
@@ -6809,7 +6809,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10/24c33eabee38240e8c2511983c4d8a373487e8132dc8b4b00b7e043280362924aa66240662002f9ba8e8f6e7b1de0ae0b024a07d3a7687f733f782011637f4c0
+  checksum: 10/0825d2ad39395f10f8abf60b87aca0673bd653fbff84b3da1298479eb32e44ff1b744f5ef026dd06c24fcb3b9c35886f5cbe8163622c05719d8e754ed42640f1
   languageName: node
   linkType: hard
 
