@@ -12,7 +12,6 @@ const nextConfig = {
   },
   experimental: {
     prefetchInlining: true,
-    sri: { algorithm: 'sha256' },
     appNewScrollHandler: true,
     useLightningcss: true,
   },
