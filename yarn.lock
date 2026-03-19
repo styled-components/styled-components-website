@@ -6020,14 +6020,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^19.0.0":
-  version: 19.2.3
-  resolution: "react-dom@npm:19.2.3"
+"react-dom@npm:^19.2.4":
+  version: 19.2.4
+  resolution: "react-dom@npm:19.2.4"
   dependencies:
     scheduler: "npm:^0.27.0"
   peerDependencies:
-    react: ^19.2.3
-  checksum: 10/5780f6d4c8e8ece09f82c5500ba2d55e01c30b5273f9281734d7d3b65013cd1fa52ec4e4436e5248c0a9e5bc340836044051168bbad8d7eac4d33ee6c2a867a1
+    react: ^19.2.4
+  checksum: 10/ec17721a8cb131bc33480a9f738bc5bbfe4bd11b11cf69f3f473605346578a329ad26ceef6ef0761ea67a4b455803407dd7ed4ba3d8a5abd2cee8c32d221e498
   languageName: node
   linkType: hard
 
@@ -6110,10 +6110,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^19.0.0":
-  version: 19.2.3
-  resolution: "react@npm:19.2.3"
-  checksum: 10/d16b7f35c0d35a56f63d9d1693819762e4abc479c57dd6310298920bed3820fcec7e17a99d44983416d8f5049143ea45b8005d3ab8324bae8973224400502b08
+"react@npm:^19.2.4":
+  version: 19.2.4
+  resolution: "react@npm:19.2.4"
+  checksum: 10/18179fe217f67eb2d0bc61cd04e7ad3c282ea09a1dface7eacd71816f62609f4bbf566c447c704335284deb8397b00bca084e0cd60e6f437279a7498e2d0bfe0
   languageName: node
   linkType: hard
 
@@ -6774,14 +6774,14 @@ __metadata:
     next: "npm:^16.2"
     polished: "npm:^4.2.2"
     prettier: "npm:^2.8.8"
-    react: "npm:^19.0.0"
-    react-dom: "npm:^19.0.0"
+    react: "npm:^19.2.4"
+    react-dom: "npm:^19.2.4"
     react-is: "npm:^19.0.0"
     react-live-runner: "npm:^1.0.7"
     react-transition-group: "npm:^4.4.5"
     remark-gfm: "npm:^4.0.0"
     rimraf: "npm:^3.0.2"
-    styled-components: "npm:6.3.3"
+    styled-components: "npm:^6.3.11"
     styled-theming: "npm:^2.2.0"
     stylis: "npm:^4.2.0"
     stylis-plugin-rtl: "npm:^2.1.1"
@@ -6790,9 +6790,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"styled-components@npm:6.3.3":
-  version: 6.3.3
-  resolution: "styled-components@npm:6.3.3"
+"styled-components@npm:^6.3.11":
+  version: 6.3.11
+  resolution: "styled-components@npm:6.3.11"
   dependencies:
     "@emotion/is-prop-valid": "npm:1.4.0"
     "@emotion/unitless": "npm:0.10.0"
@@ -6806,7 +6806,10 @@ __metadata:
   peerDependencies:
     react: ">= 16.8.0"
     react-dom: ">= 16.8.0"
-  checksum: 10/12f7c539dc21480bc75af770604967faf78e4604f167b14f165c8c8f9badaa40920b2f62322225aa361e226f1722957c48a8188511145e6e52a2cfcdab8d946b
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+  checksum: 10/24c33eabee38240e8c2511983c4d8a373487e8132dc8b4b00b7e043280362924aa66240662002f9ba8e8f6e7b1de0ae0b024a07d3a7687f733f782011637f4c0
   languageName: node
   linkType: hard
 
