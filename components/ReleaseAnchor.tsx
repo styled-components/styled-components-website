@@ -5,6 +5,8 @@ import Anchor from './Anchor';
 import rem from '../utils/rem';
 
 const ReleaseAnchor = styled(Anchor)`
+  margin-bottom: 0;
+
   &::after {
     color: rosybrown;
     content: attr(data-created-at);
