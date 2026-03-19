@@ -4598,9 +4598,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-to-jsx@npm:^9.7.10":
-  version: 9.7.10
-  resolution: "markdown-to-jsx@npm:9.7.10"
+"markdown-to-jsx@npm:^9.7.11":
+  version: 9.7.11
+  resolution: "markdown-to-jsx@npm:9.7.11"
   peerDependencies:
     react: ">= 16.0.0"
     solid-js: ">=1.0.0"
@@ -4614,7 +4614,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10/ba598852c05056d358ced4cb8ec7de646121dad3426c5e68f4b59941abf7e12290fbab486b9d616c6807fdadfca0a4ce9a348b629012db9fd679b7c1cbe838a5
+  checksum: 10/0c8ebbaa3258dad1b4882a56ae65a3de2ecb3f1159fb13bf5c88f6d050f906ae19cf9d8e8dce050bb775ec31d6cf2701992fd4d5a3372040c18bf8cbab156ff5
   languageName: node
   linkType: hard
 
@@ -6770,7 +6770,7 @@ __metadata:
     jest-environment-jsdom: "npm:30.2.0"
     jest-styled-components: "npm:^7.1.1"
     lint-staged: "npm:^13.2.2"
-    markdown-to-jsx: "npm:^9.7.10"
+    markdown-to-jsx: "npm:^9.7.11"
     next: "npm:^16.2"
     polished: "npm:^4.2.2"
     prettier: "npm:^2.8.8"

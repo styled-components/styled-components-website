@@ -28,7 +28,7 @@
     "axios": "^1.13.6",
     "invariant": "^2.2.4",
     "isomorphic-fetch": "^3.0.0",
-    "markdown-to-jsx": "^9.7.10",
+    "markdown-to-jsx": "^9.7.11",
     "next": "^16.2",
     "polished": "^4.2.2",
     "react": "^19.2.4",
