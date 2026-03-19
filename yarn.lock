@@ -6085,13 +6085,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-simple-code-editor@npm:^0.13.1":
-  version: 0.13.1
-  resolution: "react-simple-code-editor@npm:0.13.1"
+"react-simple-code-editor@npm:0.14.1":
+  version: 0.14.1
+  resolution: "react-simple-code-editor@npm:0.14.1"
   peerDependencies:
-    react: "*"
-    react-dom: "*"
-  checksum: 10/6374b164b4d0f30d7a5c7ad424539cfea2f367e6f1ce78a52d207058835e3628645a88439af22012b5b00d72867f84d17173b49ec37df1145a5994e367937dcf
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10/26fa7ce89daf4d2f80e3dcaebdfa7387549ca4648eb50c6102129e1dda890ecb123fa7312dd1063f2b54324f560e31c8b22acc4a30c9ea3971c7d14640300cdd
   languageName: node
   linkType: hard
 
