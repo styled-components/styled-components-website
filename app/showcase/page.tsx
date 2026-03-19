@@ -71,7 +71,7 @@ function ShowcaseContent() {
                   return (
                     <TransitionGroup>
                       <CSSTransition key={src} timeout={500} classNames="fade">
-                        <img {...props} />
+                        <img {...props} alt={`Screenshot of ${title}`} />
                       </CSSTransition>
                     </TransitionGroup>
                   );

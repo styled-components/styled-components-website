@@ -26,7 +26,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
               return (
                 <TransitionGroup>
                   <CSSTransition key={props.src} timeout={100} classNames="fade">
-                    <img src={prev.src} />
+                    <img src={prev.src} alt={`Preview of ${prev.title}`} />
                   </CSSTransition>
                 </TransitionGroup>
               );
@@ -47,7 +47,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
               return (
                 <TransitionGroup>
                   <CSSTransition key={props.src} timeout={100} classNames="fade">
-                    <img src={next.src} />
+                    <img src={next.src} alt={`Preview of ${next.title}`} />
                   </CSSTransition>
                 </TransitionGroup>
               );
@@ -62,7 +62,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
 
 const navHeight = 192;
 
-const SlideNav = styled.nav<{ children?: React.ReactNode }>`
+const SlideNav = styled.nav.attrs({ 'aria-label': 'Showcase navigation' })<{ children?: React.ReactNode }>`
   position: absolute;
   pointer-events: none;
   z-index: 2;

@@ -11,7 +11,7 @@ export interface SidebarProps {
   children?: React.ReactNode;
 }
 
-const Sidebar = styled.nav<SidebarProps>`
+const Sidebar = styled.nav.attrs({ 'aria-label': 'Documentation sidebar' })<SidebarProps>`
   position: fixed;
   transform: translateZ(0);
   display: block;

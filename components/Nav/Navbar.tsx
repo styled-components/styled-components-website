@@ -52,7 +52,7 @@ export default function Navbar({
   );
 }
 
-const Wrapper = styled.nav<{ $transparent?: boolean; children?: React.ReactNode }>`
+const Wrapper = styled.nav.attrs({ 'aria-label': 'Main' })<{ $transparent?: boolean; children?: React.ReactNode }>`
   align-items: center;
   background-color: rgba(12, 13, 15, 0.7);
   backdrop-filter: blur(5px);
