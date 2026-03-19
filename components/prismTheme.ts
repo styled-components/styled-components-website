@@ -4,7 +4,6 @@ export default {
   plain: {
     backgroundColor: '#27212e',
     color: '#ffffff',
-    padding: '0.25em',
   },
   styles: [
     {

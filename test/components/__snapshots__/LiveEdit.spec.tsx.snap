@@ -97,7 +97,7 @@ exports[`LiveEdit renders correctly 1`] = `
     >
       <div
         class="c2"
-        style="position: relative; text-align: left; box-sizing: border-box; padding: 0.25em; overflow: hidden; background-color: rgb(39, 33, 46); color: rgb(255, 255, 255);"
+        style="position: relative; text-align: left; box-sizing: border-box; padding: 0px; overflow: hidden; background-color: rgb(39, 33, 46); color: rgb(255, 255, 255);"
       >
         <pre
           aria-hidden="true"
@@ -105,7 +105,7 @@ exports[`LiveEdit renders correctly 1`] = `
         >
           <span
             class="token-line"
-            style="color: rgb(255, 255, 255); padding: 0.25em;"
+            style="color: rgb(255, 255, 255);"
           >
             <span
               class="token keyword"
