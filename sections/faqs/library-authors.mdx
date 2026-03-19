@@ -14,10 +14,10 @@ and include it in the [`peerDependencies`](https://docs.npmjs.com/files/package.
   {
 -   "dependencies" : {
 +   "devDependencies" : {
-      "styled-components": "^3.4.9"
+      "styled-components": "^6"
     },
 +   "peerDependencies" : {
-+     "styled-components": ">= 3"
++     "styled-components": ">= 6"
 +   }
   }
 ```
@@ -26,7 +26,7 @@ Moving `styled-components` to `devDependencies` will guarantee that it wouldn't 
 
 Adding `styled-components` to `peerDependencies` will signal your library consumers that `styled-components` is not included with the library and they need to install it themselves.
 
-Also, note that in the `peerDependencies` section the version string has been made a more permissive `>= 3`. This allows future versions of styled-components to work automatically and you can simply narrow the range with a patch update to your library if a breaking change is eventually added.
+The `peerDependencies` version range is deliberately permissive (`>= 6`) to allow future versions of styled-components to work automatically. Narrow the range with a patch update to your library if a breaking change is eventually introduced.
 
 ### Removing `styled-components` from your library bundle
 
@@ -42,7 +42,7 @@ If you are using [Rollup.js](https://rollupjs.org), you should provide an [`exte
 
 ```diff
   export default {
-    entry: "my-awesome-library.js",
+    input: "my-awesome-library.js",
 +   external: [
 +     "styled-components"
 +   ]
@@ -55,7 +55,7 @@ Another approach is to use the [rollup-plugin-peer-deps-external](https://www.np
 + import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
   export default {
-    entry: "my-awesome-library.js",
+    input: "my-awesome-library.js",
 +   plugins: [
 +    // Preferably set as first plugin.
 +    peerDepsExternal(),
@@ -68,8 +68,8 @@ Another approach is to use the [rollup-plugin-peer-deps-external](https://www.np
 If you are using [Webpack](https://webpack.js.org), you should provide an [`externals`](https://webpack.js.org/configuration/externals/) option in your config:
 
 ```diff
-  modules.export = {
-    entry: "my-awesome-library.js",
+  module.exports = {
+    input: "my-awesome-library.js",
 +   externals: {
 +     "styled-components": {
 +       commonjs: "styled-components",

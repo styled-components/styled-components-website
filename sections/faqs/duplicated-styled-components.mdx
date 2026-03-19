@@ -24,23 +24,20 @@ There are several common reasons for this to happen:
 
 ### Running multiple applications on one page
 
-If you have several applications running on one page, consider using one `styled-components` module for all of them. If you are using webpack, you can use [CommonsChunkPlugin](https://webpack.js.org/plugins/commons-chunk-plugin/)
-to create an [explicit vendor chunk](https://webpack.js.org/plugins/commons-chunk-plugin/#explicit-vendor-chunk),
-that will contain the `styled-components` module:
+If you have several applications running on one page, consider using one `styled-components` module for all of them. If you are using webpack, you can use [`resolve.alias`](https://webpack.js.org/configuration/resolve/#resolvealias)
+to ensure all applications reference the same `styled-components` instance:
 
 ```diff
   module.exports = {
     entry: {
-+     vendor: ["styled-components"],
       app1: "./src/app.1.js",
       app2: "./src/app.2.js",
     },
-    plugins: [
-+     new webpack.optimize.CommonsChunkPlugin({
-+       name: "vendor",
-+       minChunks: Infinity,
-+     }),
-    ]
++   resolve: {
++     alias: {
++       "styled-components": path.resolve(__dirname, "node_modules", "styled-components"),
++     },
++   },
   }
 ```
 
@@ -68,32 +65,21 @@ the `styled-components` module. You can overwrite the default order in which web
   }
 ```
 
-### Usage with Lerna
+### Usage with monorepos
 
-One possible fix to get styled-components to run in a Lerna monorepo across packages, is to [hoist](https://github.com/lerna/lerna/blob/master/doc/hoist.md#disadvantages-with-hoisting) shared dependencies to the root of your monorepo file. Try running the bootstrap option with the --hoist flag.
+If you use a monorepo (e.g. with npm, yarn, or pnpm workspaces), ensure `styled-components` is hoisted to the root of your monorepo so that all packages share a single copy. Most modern package managers handle this automatically when you configure workspaces.
 
-```sh
-lerna bootstrap --hoist
-```
-
-Alternatively, you can remove `styled-components` from your `package.json` file and hoist it manually to your top-level package.json file.
-
-Example of a package.json file in a Lerna root folder
+Add `styled-components` as a dependency in your root `package.json`:
 
 ```json
 {
   "name": "my-styled-monorepo",
-  "devDependencies": {
-    "lerna": "3.6.0"
-  },
   "dependencies": {
-    "styled-components": "3.4.5"
+    "styled-components": "^6"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "clean": "lerna clean",
-    "start": "lerna run start",
-    "build": "lerna run build"
+    "start": "turbo run start",
+    "build": "turbo run build"
   }
 }
 ```

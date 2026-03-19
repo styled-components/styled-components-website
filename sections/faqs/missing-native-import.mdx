@@ -6,4 +6,6 @@ If you're getting the error message:
 Could not find a declaration file for module 'styled-components/native'
 ```
 
-In a React Native project using TypeScript, it is because you need to add `@types/styled-components-react-native`.
+If you're using styled-components v6+, TypeScript types are included out of the box and you should not need a separate types package.
+
+For older versions, you need to install `@types/styled-components-react-native` to resolve this error.

@@ -1,7 +1,7 @@
 ## Server Side Rendering | v2+
 
 styled-components supports concurrent server side rendering, with stylesheet rehydration.
-The basic idea is that everytime you render your app on the server, you can create
+The basic idea is that every time you render your app on the server, you can create
 a `ServerStyleSheet` and add a provider to your React tree, that accepts styles
 via a context API.
 
@@ -12,13 +12,13 @@ allows you to use styled-components with React DOM's various SSR APIs.
 
 styled-components now natively supports React Server Components (RSC) with zero configuration. In RSC environments, styled components automatically emit inline `<style>` tags that React 19 hoists and deduplicates.
 
-**Key behaviors in RSC:**
+Key behaviors in RSC:
 
 - No `'use client'` directive required
 - `ThemeProvider` and `StyleSheetManager` become pass-through components (no-ops)
 - CSS is automatically injected inline
 
-**Best practices for RSC:**
+Best practices for RSC:
 
 | Do | Don't |
 |---|---|
@@ -27,7 +27,7 @@ styled-components now natively supports React Server Components (RSC) with zero 
 | Use CSS custom properties via inline `style` prop | Rely on `ThemeProvider` (no-op in RSC) |
 | Use build-time CSS variable generation for theming | Use runtime theme context |
 
-**Theming with CSS custom properties:**
+Theming with CSS custom properties:
 
 Since `ThemeProvider` is a no-op in RSC, use CSS custom properties for theming instead. Variables set on a parent element cascade to all DOM children:
 
@@ -44,11 +44,11 @@ const Button = styled.button`
 
 ### Tooling setup
 
-In order to reliably perform server side rendering and have the client side bundle pick up without issues, you'll need to use our [babel plugin](/docs/tooling#babel-plugin). It prevents checksum mismatches by adding a deterministic ID to each styled component. Refer to the [tooling documentation](/docs/tooling#serverside-rendering) for more information.
+To ensure deterministic component IDs for server/client consistency, use our [Babel plugin](/docs/tooling#babel-plugin) or [SWC plugin](/docs/tooling#swc-plugin). Both provide equivalent functionality including SSR support, minification, and better debugging.
 
-For TypeScript users, our resident TS guru Igor Oleinikov put together a [TypeScript plugin](/docs/tooling#typescript-plugin) for the webpack ts-loader / awesome-typescript-loader toolchain that accomplishes some similar tasks.
+> If you use React Server Components (v6.3.0+), the plugins are optional for SSR since styled-components generates deterministic IDs automatically in RSC mode. They still provide benefits like minification and better debugging.
 
-If possible, we definitely recommend using the babel plugin though because it is updated the most frequently. It's now possible to [compile TypeScript using Babel](https://babeljs.io/docs/en/babel-preset-typescript), so it may be worth switching off TS loader and onto a pure Babel implementation to reap the ecosystem benefits.
+For Next.js users, the SWC plugin is built-in — just add `styledComponents: true` to your `next.config.js` compiler options.
 
 ### Example
 
@@ -106,23 +106,17 @@ If rendering fails for any reason it's a good idea to use `try...catch...finally
 
 ### Next.js
 
-#### With Babel
+#### App Router (recommended)
 
-Basically you need to add a custom `pages/_document.js` (if you don't have one). Then [copy the logic](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components-babel/pages/_document.tsx) for styled-components to inject the server side rendered styles into the `<head>`.
+With styled-components v6.3.0+, RSC is natively supported with zero configuration. Styled components work in Server Components without a `'use client'` directive or registry setup. See the [React Server Components](#react-server-components) section above for best practices.
 
-Refer to [our example](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components-babel) in the Next.js repo for an up-to-date usage example.
+With styled-components v6.0-6.2, you need to put a styled-components registry in one of your layout files, as [described in Next.js docs](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components). The `'use client'` directive is required, so styled-components will appear in your client bundle.
 
-#### With SWC
+#### Pages Router
 
-[Since version 12](https://nextjs.org/blog/next-12), Next.js uses a Rust compiler called SWC. If you're not using any babel plugin, you should refer to [this example](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) instead.
+Add `styledComponents: true` to the compiler options in `next.config.js`, then modify `_document` with `getInitialProps` to support SSR. See the [Next.js styled-components example](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) for reference.
 
-On this version, you [only need to add](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components/next.config.js) `styledComponents: true,` at the compiler options in the `next.config.js` file and modify `_document` file with `getInitialProps` as in this [example](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components/pages/_document.tsx) to support SSR.
-
-#### App directory
-
-**With styled-components v6.3.0+:** RSC is natively supported with zero configuration. Styled components work in Server Components without a `'use client'` directive or registry setup. See the [React Server Components](#react-server-components) section above for best practices.
-
-**With styled-components v6.0–6.2:** You'll need to put a styled-components registry in one of your layout files, as [described in Next.js docs](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components). Note that the `'use client'` directive is required, so styled-components will appear in your client bundle.
+If you're using Babel instead of SWC, refer to the [Babel-based example](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components-babel).
 
 ### Gatsby
 
@@ -132,47 +126,59 @@ Refer to [the plugin's page](https://www.gatsbyjs.com/plugins/gatsby-plugin-styl
 
 ### Streaming Rendering
 
-styled-components offers a streaming API for use with ReactDOMServer streaming methods.
+styled-components offers streaming APIs for use with React's server rendering methods.
 
-> **React 18+:** `renderToNodeStream` is deprecated. Use [`renderToPipeableStream`](https://react.dev/reference/react-dom/server/renderToPipeableStream) instead for modern streaming SSR.
+#### `renderToPipeableStream` (React 18+) | v6.2.0+
 
-There are two parts to a streaming implementation:
+The recommended approach for streaming SSR uses React 18's `renderToPipeableStream`:
 
 _On the server:_
 
-`ReactDOMServer.renderToNodeStream` emits a "readable" stream that styled-components wraps. As whole chunks of HTML are pushed onto the stream, if any corresponding styles are ready to be rendered, a style block is prepended to React's HTML and forwarded on to the client browser.
-
 ```tsx
-import { renderToNodeStream } from 'react-dom/server';
-import styled, { ServerStyleSheet } from 'styled-components';
-
-// if you're using express.js, you'd have access to the response object "res"
-
-// typically you'd want to write some preliminary HTML, since React doesn't handle this
-res.write('<html><head><title>Test</title></head><body>');
-
-const Heading = styled.h1`
-  color: red;
-`;
+import { renderToPipeableStream } from 'react-dom/server';
+import { ServerStyleSheet } from 'styled-components';
 
 const sheet = new ServerStyleSheet();
-const jsx = sheet.collectStyles(<Heading>Hello SSR!</Heading>);
-const stream = sheet.interleaveWithNodeStream(renderToNodeStream(jsx));
 
-// you'd then pipe the stream into the response object until it's done
-stream.pipe(res, { end: false });
-
-// and finalize the response with closing HTML
-stream.on('end', () => res.end('</body></html>'));
+const { pipe } = renderToPipeableStream(
+  sheet.collectStyles(<YourApp />),
+  {
+    onShellReady() {
+      // Set headers and pipe
+      res.setHeader('content-type', 'text/html');
+      pipe(res);
+    },
+    onAllReady() {
+      sheet.seal();
+    },
+  }
+);
 ```
 
 _On the client:_
 
 ```tsx
-import { hydrate } from 'react-dom';
+import { hydrateRoot } from 'react-dom/client';
 
-hydrate();
-// your client-side react implementation
+hydrateRoot(document.getElementById('root'), <YourApp />);
+```
+
+#### `renderToNodeStream` (legacy)
+
+> `renderToNodeStream` is deprecated in React 18. Use `renderToPipeableStream` instead.
+
+For legacy codebases still using `renderToNodeStream`, styled-components wraps the readable stream to interleave style blocks as HTML chunks are emitted:
+
+```tsx
+import { renderToNodeStream } from 'react-dom/server';
+import styled, { ServerStyleSheet } from 'styled-components';
+
+const sheet = new ServerStyleSheet();
+const jsx = sheet.collectStyles(<Heading>Hello SSR!</Heading>);
+const stream = sheet.interleaveWithNodeStream(renderToNodeStream(jsx));
+
+stream.pipe(res, { end: false });
+stream.on('end', () => res.end('</body></html>'));
 ```
 
 After client-side rehydration is complete, styled-components will take over as usual and inject any further dynamic styles after the relocated streaming ones.

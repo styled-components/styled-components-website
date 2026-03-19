@@ -4,6 +4,21 @@ styled-components provides TypeScript definitions which empowers the editing exp
 
 > For older versions of styled-components, there are community definitions available via the `@types/styled-components` NPM package.
 
+### Exported Types | v6.0.8+
+
+styled-components exports several CSS type utilities:
+
+```ts
+import type {
+  CSSProperties,   // Standard CSS property/value pairs
+  CSSObject,       // Object styles with nested selectors
+  CSSPseudos,      // Pseudo-class and pseudo-element selectors
+  CSSKeyframes,    // Keyframe animation definitions
+} from 'styled-components';
+```
+
+CSS custom properties (`--var`) also work without TypeScript errors in `.attrs()` and JSX `style` props as of v6.3.0.
+
 ### Create a declarations file
 
 TypeScript definitions for styled-components can be extended by using [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) since version `v4.1.4` of the definitions.
@@ -79,21 +94,21 @@ export const MyComponent = styled.div`
 `;
 
 // theme is also fully typed
-export MyGlobalStyle = createGlobalStyle`
+export const MyGlobalStyle = createGlobalStyle`
   body {
     background-color: ${props => props.theme.colors.secondary};
   }
 `;
 
 // and this theme is fully typed as well
-export cssHelper = css`
+export const cssHelper = css`
   border: 1px solid ${props => props.theme.borderRadius};
 `;
 ```
 
 ### Using custom props
 
-If you are [adapting the styles based on props](https://styled-components.com/docs/basics#adapting-based-on-props), and those props are not part of the base tag / component props, you can tell TypeScript what those extra custom props are, with type arguments like this ([TypeScript `v2.9+` is required](https://github.com/Microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#generic-type-arguments-in-generic-tagged-templates)):
+If you are [adapting the styles based on props](https://styled-components.com/docs/basics#adapting-based-on-props), and those props are not part of the base tag / component props, you can tell TypeScript what those extra custom props are, with type arguments like this:
 
 ```tsx
 import styled from 'styled-components';
@@ -108,7 +123,7 @@ const Title = styled.h1<TitleProps>`
 `;
 ```
 
-Note: if you style a standard tag (like `<h1>` in above example), styled-components [will not pass the custom props](https://styled-components.com/docs/basics#passed-props) (to avoid the [Unknown Prop Warning](https://reactjs.org/warnings/unknown-prop.html)).
+Note: if you style a standard tag (like `<h1>` in above example), styled-components [will not pass the custom props](https://styled-components.com/docs/basics#passed-props) (to avoid the [Unknown Prop Warning](https://react.dev/warnings/unknown-prop)).
 
 However, it will pass all of them to a custom React component:
 
@@ -122,7 +137,7 @@ const NewHeader = styled(Header)<{ customColor: string }>`
 // Header will also receive props.customColor
 ```
 
-If the **customColor** property should not be transferred to the **Header** component, you can leverage [transient props](https://styled-components.com/docs/api#transient-props), by prefixing it with a dollar sign ($):
+If the `customColor` property should not be transferred to the `Header` component, you can leverage [transient props](https://styled-components.com/docs/api#transient-props), by prefixing it with a dollar sign ($):
 
 ```tsx
 import styled from 'styled-components';
@@ -169,10 +184,8 @@ interface LogoProps {
   className?: string;
 }
 
-class Logo extends React.Component<LogoProps, {}> {
-  render() {
-    return <div className={this.props.className}>Logo</div>;
-  }
+function Logo({ className }: LogoProps) {
+  return <div className={className}>Logo</div>;
 }
 
 const LogoStyled = styled(Logo)`
@@ -190,12 +203,14 @@ how React works:
 
 ```tsx
 interface BoxProps {
-  theme?: ThemeInterface;
   borders?: boolean;
   className?: string;
+  children?: React.ReactNode;
 }
 
-const Box: React.FunctionComponent<BoxProps> = (props) => <div className={props.className}>{props.children}</div>;
+function Box({ className, children }: BoxProps) {
+  return <div className={className}>{children}</div>;
+}
 
 const StyledBox = styled(Box)`
   padding: ${(props) => props.theme.lateralPadding};

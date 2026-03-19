@@ -10,6 +10,12 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    prefetchInlining: true,
+    sri: { algorithm: 'sha256' },
+    appNewScrollHandler: true,
+    useLightningcss: true,
+  },
 };
 
 const withMDX = createMDX({

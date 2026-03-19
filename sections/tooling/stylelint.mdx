@@ -34,6 +34,8 @@ Add a `.stylelintrc` file to the root of your project:
 
 #### For stylelint v14 and below
 
+> Deprecated: `stylelint-processor-styled-components` is archived and no longer maintained. Upgrade to stylelint v15+ with `postcss-styled-syntax` if possible.
+
 You need:
 
 - `stylelint`
@@ -79,7 +81,7 @@ You need to run `stylelint`. Add a `lint:css` script to your `package.json` whic
 
 > The processor ignores javascript files that don't contain any `styled-components`, so don't worry about being too broad as long as you restrict it to javascript (or TypeScript).
 
-Now you can lint your CSS by running the script! 🎉
+Now you can lint your CSS by running the script:
 
 ```
 npm run lint:css
@@ -90,6 +92,10 @@ npm run lint:css
 #### Webpack
 
 If you want to lint on build, rather than as a separate command, you can use the [`stylelint-custom-processor-loader`](https://github.com/emilgoldsmith/stylelint-custom-processor-loader) for webpack.
+
+### Legacy: `stylelint-processor-styled-components` specific sections
+
+> The following sections (`stylelint-config-styled-components`, `Usage with other libraries`, and `Interpolation tagging`) apply only to the deprecated `stylelint-processor-styled-components` (stylelint v14 and below). If you are using the recommended `postcss-styled-syntax` setup with stylelint v15+, you can skip these sections.
 
 ### `stylelint-config-styled-components`
 
@@ -197,7 +203,7 @@ const Wrapper = styled.div`
 
 ##### `sc-custom`
 
-**`sc-custom` is meant to be used as a last resort escape hatch. Prefer to use the standard tags if possible!**
+`sc-custom` is meant to be used as a last resort escape hatch. Prefer the standard tags if possible.
 
 On top of the above standard tags the processor also has the `sc-custom` tag to allow you to cover more unique and uncommon edge cases. With the `sc-custom` tag you can decide yourself what the placeholder value will be.
 
@@ -244,7 +250,7 @@ In order to have stylelint correctly apply indentation rules the processor needs
 
 The important thing is that you put the closing backtick on the base level of indentation as follows:
 
-**Right**
+Right:
 
 ```tsx
 if (condition) {
@@ -254,7 +260,7 @@ if (condition) {
 }
 ```
 
-**Wrong**
+Wrong:
 
 ```tsx
 if (condition) {

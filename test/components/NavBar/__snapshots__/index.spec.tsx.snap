@@ -178,7 +178,7 @@ exports[`Nav renders correctly 1`] = `
   color: white;
   display: flex;
   flex-wrap: wrap;
-  font-family: "Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: var(--font-body),-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 0.8333333333333334rem;
   font-weight: 500;
   justify-content: center;
@@ -226,7 +226,7 @@ exports[`Nav renders correctly 1`] = `
   transform: translateZ(0);
   display: block;
   z-index: 1;
-  font-family: "Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: var(--font-body),-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   left: 0;
   top: 3.3333333333333335rem;
   bottom: 0;
@@ -620,9 +620,9 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
-              href="/docs/advanced#refs"
+              href="/docs/advanced#server-side-rendering"
             >
-              Refs
+              Server Side Rendering
             </a>
           </h5>
           <h5
@@ -630,9 +630,9 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
-              href="/docs/advanced#security"
+              href="/docs/advanced#performance"
             >
-              Security
+              Performance
             </a>
           </h5>
           <h5
@@ -643,26 +643,6 @@ exports[`Nav renders correctly 1`] = `
               href="/docs/advanced#existing-css"
             >
               Existing CSS
-            </a>
-          </h5>
-          <h5
-            class="c25"
-          >
-            <a
-              class="c26"
-              href="/docs/advanced#tagged-template-literals"
-            >
-              Tagged Template Literals
-            </a>
-          </h5>
-          <h5
-            class="c25"
-          >
-            <a
-              class="c26"
-              href="/docs/advanced#server-side-rendering"
-            >
-              Server Side Rendering
             </a>
           </h5>
           <h5
@@ -683,6 +663,46 @@ exports[`Nav renders correctly 1`] = `
               href="/docs/advanced#style-objects"
             >
               Style Objects
+            </a>
+          </h5>
+          <h5
+            class="c25"
+          >
+            <a
+              class="c26"
+              href="/docs/advanced#accessibility"
+            >
+              Accessibility
+            </a>
+          </h5>
+          <h5
+            class="c25"
+          >
+            <a
+              class="c26"
+              href="/docs/advanced#refs"
+            >
+              Refs
+            </a>
+          </h5>
+          <h5
+            class="c25"
+          >
+            <a
+              class="c26"
+              href="/docs/advanced#security"
+            >
+              Security
+            </a>
+          </h5>
+          <h5
+            class="c25"
+          >
+            <a
+              class="c26"
+              href="/docs/advanced#tagged-template-literals"
+            >
+              Tagged Template Literals
             </a>
           </h5>
         </div>
@@ -768,9 +788,9 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
-              href="/docs/tooling#babel-plugin"
+              href="/docs/tooling#vite"
             >
-              Babel Plugin
+              Vite
             </a>
           </h5>
           <h5
@@ -788,9 +808,9 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
-              href="/docs/tooling#typescript-plugin"
+              href="/docs/tooling#babel-plugin"
             >
-              TypeScript Plugin
+              Babel Plugin
             </a>
           </h5>
           <h5
@@ -798,9 +818,9 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
-              href="/docs/tooling#jest-integration"
+              href="/docs/tooling#testing"
             >
-              Jest Integration
+              Testing
             </a>
           </h5>
           <h5
@@ -818,9 +838,9 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
-              href="/docs/tooling#styled-theming"
+              href="/docs/tooling#typescript-plugin"
             >
-              Styled Theming
+              TypeScript Plugin
             </a>
           </h5>
           <h5
@@ -831,6 +851,16 @@ exports[`Nav renders correctly 1`] = `
               href="/docs/tooling#syntax-highlighting"
             >
               Syntax Highlighting
+            </a>
+          </h5>
+          <h5
+            class="c25"
+          >
+            <a
+              class="c26"
+              href="/docs/tooling#styled-theming"
+            >
+              Styled Theming
             </a>
           </h5>
         </div>
@@ -857,69 +887,9 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
-              href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v5"
+              href="/docs/faqs#how-should-i-handle-dynamic-styles"
             >
-              What do I need to do to migrate to v5?
-            </a>
-          </h5>
-          <h5
-            class="c25"
-          >
-            <a
-              class="c26"
-              href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4"
-            >
-              What do I need to do to migrate to v4?
-            </a>
-          </h5>
-          <h5
-            class="c25"
-          >
-            <a
-              class="c26"
-              href="/docs/faqs#can-i-nest-rules"
-            >
-              Can I nest rules?
-            </a>
-          </h5>
-          <h5
-            class="c25"
-          >
-            <a
-              class="c26"
-              href="/docs/faqs#can-i-use-css-frameworks"
-            >
-              Can I use css frameworks?
-            </a>
-          </h5>
-          <h5
-            class="c25"
-          >
-            <a
-              class="c26"
-              href="/docs/faqs#how-can-i-override-styles-with-higher-specificity"
-            >
-              How can I override styles with higher specificity?
-            </a>
-          </h5>
-          <h5
-            class="c25"
-          >
-            <a
-              class="c26"
-              href="/docs/faqs#how-can-i-override-inline-styles"
-            >
-              How can I override inline styles?
-            </a>
-          </h5>
-          <h5
-            class="c25"
-          >
-            <a
-              class="c26"
-              href="/docs/faqs#why-do-my-dom-nodes-have-two-classes"
-            >
-              Why do my DOM nodes have two classes?
+              How should I handle dynamic styles?
             </a>
           </h5>
           <h5
@@ -947,9 +917,9 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
-              href="/docs/faqs#i-am-a-library-author.-should-i-bundle-styled-components-with-my-library"
+              href="/docs/faqs#can-i-nest-rules"
             >
-              I am a library author. Should I bundle styled-components with my library?
+              Can I nest rules?
             </a>
           </h5>
           <h5
@@ -957,9 +927,19 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
-              href="/docs/faqs#why-am-i-getting-a-warning-about-several-instances-of-module-on-the-page"
+              href="/docs/faqs#how-can-i-override-styles-with-higher-specificity"
             >
-              Why am I getting a warning about several instances of module on the page?
+              How can I override styles with higher specificity?
+            </a>
+          </h5>
+          <h5
+            class="c25"
+          >
+            <a
+              class="c26"
+              href="/docs/faqs#how-can-i-override-inline-styles"
+            >
+              How can I override inline styles?
             </a>
           </h5>
           <h5
@@ -987,9 +967,9 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
-              href="/docs/faqs#how-do-i-use-styled-components-with-create-react-app"
+              href="/docs/faqs#why-do-my-dom-nodes-have-two-classes"
             >
-              How do I use styled-components with create-react-app?
+              Why do my DOM nodes have two classes?
             </a>
           </h5>
           <h5
@@ -997,9 +977,29 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
-              href="/docs/faqs#how-can-i-fix-issues-when-using-npm-link-or-yarn-link"
+              href="/docs/faqs#why-am-i-getting-a-warning-about-several-instances-of-module-on-the-page"
             >
-              How can I fix issues when using npm link or yarn link?
+              Why am I getting a warning about several instances of module on the page?
+            </a>
+          </h5>
+          <h5
+            class="c25"
+          >
+            <a
+              class="c26"
+              href="/docs/faqs#can-i-use-css-frameworks"
+            >
+              Can I use css frameworks?
+            </a>
+          </h5>
+          <h5
+            class="c25"
+          >
+            <a
+              class="c26"
+              href="/docs/faqs#i-am-a-library-author.-should-i-bundle-styled-components-with-my-library"
+            >
+              I am a library author. Should I bundle styled-components with my library?
             </a>
           </h5>
           <h5
@@ -1017,9 +1017,29 @@ exports[`Nav renders correctly 1`] = `
           >
             <a
               class="c26"
+              href="/docs/faqs#how-can-i-fix-issues-when-using-npm-link-or-yarn-link"
+            >
+              How can I fix issues when using npm link or yarn link?
+            </a>
+          </h5>
+          <h5
+            class="c25"
+          >
+            <a
+              class="c26"
               href="/docs/faqs#missing-declarations-for-styled-componentsnative"
             >
               Missing Declarations for styled-components/native?
+            </a>
+          </h5>
+          <h5
+            class="c25"
+          >
+            <a
+              class="c26"
+              href="/docs/faqs#what-do-i-need-to-do-to-migrate-to-v5"
+            >
+              What do I need to do to migrate to v5?
             </a>
           </h5>
         </div>

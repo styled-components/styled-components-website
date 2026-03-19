@@ -1,8 +1,8 @@
-## Attaching additional props | v2
+## Attaching additional props
 
 To avoid unnecessary wrappers that just pass on some props to the rendered component or element, you can use the [`.attrs` constructor](/docs/api#attrs). It allows you to attach additional props (or "attributes") to a component.
 
-This way you can for example attach static props to an element or pass a third-party prop like `activeClassName` to React Router's Link component. Furthermore, you can also attach more dynamic props to a component. The `.attrs` object also takes functions, that receive the props that the component receives. The return value will be merged into the resulting props as well.
+This way you can for example attach static props to an element or pass a third-party prop like `data-testid` to a component. Furthermore, you can also attach more dynamic props to a component. The `.attrs` object also takes functions, that receive the props that the component receives. The return value will be merged into the resulting props as well.
 
 Here we render an `Input` component and attach some dynamic and static attributes to it:
 
@@ -38,7 +38,7 @@ As you can see, we get access to our newly created props in the interpolations, 
 ### Overriding .attrs
 Notice that when wrapping styled components, `.attrs` are applied from the innermost styled component to the outermost styled component.
 
-This allows each wrapper to **override** nested uses of `.attrs`, similarly to how CSS properties defined later in a stylesheet override previous declarations.
+This allows each wrapper to override nested uses of `.attrs`, similarly to how CSS properties defined later in a stylesheet override previous declarations.
 
 `Input`'s `.attrs` are applied first, and then `PasswordInput`'s `.attrs`:
 ```react

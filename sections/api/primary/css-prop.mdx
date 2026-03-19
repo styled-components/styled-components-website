@@ -2,7 +2,7 @@
 
 Sometimes you don't want to create an extra component just to apply a bit of styling. The `css` prop is a convenient way to iterate on your components without settling on fixed component boundaries yet. It works on both normal HTML tags as well as components, and supports everything any styled component supports, including adapting based on props, theming and custom components.
 
-> To enable support for the `css` prop you have to use the [Babel plugin](/docs/tooling#babel-plugin).
+> To enable support for the `css` prop you have to use the [Babel plugin](/docs/tooling#babel-plugin) or the [SWC plugin](/docs/tooling#swc-plugin).
 
 ```tsx
 <div
@@ -38,16 +38,8 @@ Note that you don't even have to add the import, the Babel plugin does that auto
 
 #### Usage with TypeScript
 
-To prevent TypeScript errors on the `css` prop on arbitrary elements, install `@types/styled-components` and add the following import once in your project:
-
-```ts
-import {} from 'styled-components/cssprop'
-```
-
-See https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31245#issuecomment-446011384 for more information.
-
-If you're using a higher version than v6, you do not need to install `@types/styled-components`.
-Instead, you can directly import the `CSSProp` in your project like this:
+For v6+, you do not need to install `@types/styled-components`.
+You can directly import the `CSSProp` in your project like this:
 
 ```ts
 import {} from 'react'
@@ -59,3 +51,11 @@ declare module 'react' {
   }
 }
 ```
+
+For older versions, install `@types/styled-components` and add the following import once in your project:
+
+```ts
+import {} from 'styled-components/cssprop'
+```
+
+See https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31245#issuecomment-446011384 for more information.

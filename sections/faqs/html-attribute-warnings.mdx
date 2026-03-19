@@ -37,7 +37,7 @@ React will warn on non-standard attributes being attached such as "red" and "tex
 
 To fix this, you can use transient props or destructure props:
 
-### transient props (since 5.1)
+### Transient props
 
 You can use [transient props](https://styled-components.com/docs/api#transient-props) to fix this:
 
@@ -55,9 +55,9 @@ const StyledComp = styled(Link)`
 <StyledComp text="Click" href="https://www.styled-components.com/" $red />
 ```
 
-### destructure props
+### Destructure props
 
-If you use a version < 5.1 or if you can't use transient props, you can use argument destructuring to pull out those known styling props:
+Alternatively, you can use argument destructuring to pull out those known styling props:
 
 ```tsx
 const Link = ({ className, red, text, ...props }) => (
@@ -79,4 +79,4 @@ This will render:
 <a href="https://www.styled-components.com/" class="[generated class]">Click</a>
 ```
 
-When you use argument destructuring, any variables pulled out of the props object will not be included when spread-applying the remaining props (`...props`);
+When you use argument destructuring, any variables pulled out of the props object will not be included when spread-applying the remaining props (`...props`).

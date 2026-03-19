@@ -1,6 +1,6 @@
 ## Referring to other components
 
-> This is a **web-specific** API and you **won't** be able to use it in react-native.
+> This is a web-specific API. It is not available in React Native.
 
 There are many ways to apply contextual overrides to a component's styling. That being said,
 it rarely is easy without rigging up a well-known targeting CSS selector paradigm
@@ -61,14 +61,10 @@ consider both sets of rules to understand why Icon behaves as it does.
 
 This behaviour is only supported within the context of _Styled_ Components:
 attempting to mount `B` in the following example will fail because component
-`A` is an instance of `React.Component` not a Styled Component.
+`A` is not a Styled Component.
 
 ```tsx
-class A extends React.Component {
-  render() {
-    return <div />
-  }
-}
+const A = () => <div />;
 
 const B = styled.div`
   ${A} {
@@ -76,18 +72,14 @@ const B = styled.div`
 `
 ```
 
-The error thrown - `Cannot call a class as a function` - occurs because the
-styled component is attempting to call the component as an interpolation function.
+The error occurs because the styled component is attempting to call the component
+as an interpolation function, but it is not a Styled Component.
 
 However, wrapping `A` in a `styled()` factory makes it eligible for interpolation -- just
 make sure the wrapped component passes along `className`.
 
 ```tsx
-class A extends React.Component {
-  render() {
-    return <div className={this.props.className} />
-  }
-}
+const A = ({ className }) => <div className={className} />;
 
 const StyledA = styled(A)``
 

@@ -1,0 +1,134 @@
+## Performance
+
+styled-components generates CSS classes dynamically. Understanding when and why new classes are created helps you write faster components.
+
+### Avoid declaring styled components in render
+
+Defining a styled component inside a render function creates a new component identity on every render. React discards and remounts the entire subtree, losing DOM state (focus, scroll position, input values) and injecting new style rules each time.
+
+```tsx
+// Bad: new component identity every render
+const Header = () => {
+  const Title = styled.h1`font-size: 10px;`;
+  return <Title>Hello</Title>;
+};
+
+// Good: stable identity, defined at module scope
+const Title = styled.h1`font-size: 10px;`;
+const Header = () => <Title>Hello</Title>;
+```
+
+### CSS custom properties vs prop interpolation
+
+Every unique interpolation result generates a new CSS class. For values that change frequently (colors from a picker, positions from mouse events, animation progress), this can produce hundreds of classes. styled-components warns at 200+.
+
+CSS custom properties avoid this entirely — the CSS rule stays the same and the browser updates the variable natively:
+
+```tsx
+// Bad: new CSS class for every distinct color
+const Box = styled.div<{ $color: string }>`
+  background: ${props => props.$color};
+`;
+
+// Good: one CSS class, variable updated via inline style
+const Box = styled.div`
+  background: var(--box-color, blue);
+`;
+
+<Box style={{ '--box-color': `hsl(${hue}, 70%, 50%)` } as React.CSSProperties} />
+```
+
+### Use `attrs` for rapidly-changing values
+
+When a value changes on every frame (mouse position, scroll offset), use `attrs` with a `style` object. This applies values as inline styles — no class generation at all:
+
+```tsx
+// Bad: generates a new CSS class on every mouse move
+const Cursor = styled.div<{ $x: number; $y: number }>`
+  position: fixed;
+  left: ${props => props.$x}px;
+  top: ${props => props.$y}px;
+`;
+
+// Good: inline style, zero class generation
+const Cursor = styled.div.attrs<{ $x: number; $y: number }>(props => ({
+  style: {
+    left: `${props.$x}px`,
+    top: `${props.$y}px`,
+  },
+}))`
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+`;
+```
+
+### Data attributes for discrete variants
+
+For finite variant sets (size, color scheme, state), data attributes keep styles fully static — no interpolation functions, one cached class:
+
+```tsx
+// Dynamic: interpolation function runs every render
+const Button = styled.button<{ $variant: 'primary' | 'secondary' }>`
+  background: ${props => props.$variant === 'primary' ? '#BF4F74' : '#ccc'};
+`;
+
+// Static: CSS attribute selectors, no JS in the template
+const Button = styled.button`
+  background: #ccc;
+  color: #333;
+
+  &[data-variant='primary'] {
+    background: #BF4F74;
+    color: white;
+  }
+`;
+
+<Button data-variant="primary">Click</Button>
+```
+
+This pattern is especially valuable in RSC environments, where dynamic interpolations incur serialization overhead.
+
+### Static vs dynamic components
+
+A styled component is static if its template contains no function interpolations (references to other styled components are fine). Static components generate their class once and cache it — subsequent renders skip style generation entirely.
+
+```tsx
+// Static: cached after first render
+const Card = styled.div`
+  padding: 16px;
+  border: 1px solid #eee;
+`;
+
+// Dynamic: hash recomputed every render
+const Card = styled.div<{ $elevated: boolean }>`
+  box-shadow: ${props => props.$elevated ? '0 4px 12px rgba(0,0,0,0.1)' : 'none'};
+`;
+
+// Static alternative using data attribute
+const Card = styled.div`
+  &[data-elevated] {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+`;
+```
+
+### SSR payload considerations
+
+In SSR (and especially RSC), every unique dynamic class is serialized into the HTML. A list of 500 items with unique interpolated colors produces 500 CSS rules in the server output. Prefer static styles with inline `style` for per-item uniqueness:
+
+```tsx
+// Bad: 500 CSS rules in SSR output
+const Item = styled.li<{ $hue: number }>`
+  background: hsl(${props => props.$hue}, 70%, 90%);
+`;
+
+// Good: 1 CSS rule + compact inline styles
+const Item = styled.li`
+  padding: 8px;
+`;
+
+<Item style={{ background: `hsl(${hue}, 70%, 90%)` }}>...</Item>
+```

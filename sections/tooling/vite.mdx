@@ -1,0 +1,88 @@
+## Vite
+
+[Vite](https://vite.dev/) is the recommended build tool for new React projects. styled-components works with Vite out of the box, but adding a compiler plugin enables server-side rendering support, better debugging with component display names, and CSS minification.
+
+### With SWC (recommended)
+
+The fastest setup uses the SWC-based React plugin with the styled-components SWC plugin:
+
+```
+npm install --save-dev @vitejs/plugin-react-swc @swc/plugin-styled-components
+```
+
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+
+export default defineConfig({
+  plugins: [
+    react({
+      plugins: [
+        ['@swc/plugin-styled-components', {
+          displayName: true,
+          ssr: true,
+        }],
+      ],
+    }),
+  ],
+});
+```
+
+> The SWC plugin version must be compatible with the SWC core version bundled in `@vitejs/plugin-react-swc`. If you encounter Wasm errors, check the [plugin's compatibility table](https://www.npmjs.com/package/@swc/plugin-styled-components).
+
+### With Babel
+
+If your project already uses Babel plugins, you can use the Babel-based React plugin instead:
+
+```
+npm install --save-dev @vitejs/plugin-react babel-plugin-styled-components
+```
+
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [
+    react({
+      babel: {
+        plugins: [
+          ['babel-plugin-styled-components', {
+            displayName: true,
+            ssr: true,
+            pure: true,
+          }],
+        ],
+      },
+    }),
+  ],
+});
+```
+
+> `@vitejs/plugin-react` v6+ (Vite 8) removed Babel as a built-in dependency. If you are on v6+, use the SWC approach above or add `@rolldown/plugin-babel` separately.
+
+### SSR with Vite
+
+For server-side rendering with Vite (e.g., using [Vike](https://vike.dev/)), use styled-components' `ServerStyleSheet` in your server entry:
+
+```tsx
+// entry-server.tsx
+import { renderToString } from 'react-dom/server';
+import { ServerStyleSheet } from 'styled-components';
+import App from './App';
+
+export function render() {
+  const sheet = new ServerStyleSheet();
+  try {
+    const html = renderToString(sheet.collectStyles(<App />));
+    const styleTags = sheet.getStyleTags();
+    return { html, styleTags };
+  } finally {
+    sheet.seal();
+  }
+}
+```
+
+If you use [Vike](https://vike.dev/) (formerly vite-plugin-ssr), the `vike-react-styled-components` extension handles style collection automatically.

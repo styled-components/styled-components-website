@@ -2,16 +2,18 @@ import StyledThemingExample from './styled-theming-example'
 
 ## Styled Theming
 
+> The `styled-theming` package is no longer actively maintained. It may still work with current versions of styled-components, but consider using the built-in theming API directly for new projects.
+
 Create themes for your styled components using
 [styled-theming](https://github.com/styled-components/styled-theming)
 
 <StyledThemingExample />
 
-Read the [introductory blog post](http://thejameskyle.com/styled-theming.html)
+Read more on the [npm page](https://www.npmjs.com/package/styled-theming)
 
 ### Install
 
-Install the babel-plugin first:
+Install the package:
 
 ```
 npm install --save styled-theming
@@ -165,14 +167,6 @@ const backgroundColor = theme.variants("mode", "variant", {
 const Button = styled.button`
   background-color: ${backgroundColor};
 `;
-
-Button.propTypes = {
-  variant: PropTypes.oneOf(["default", "primary", "success", "warning"])
-};
-
-Button.defaultProps = {
-  variant: "default",
-};
 
 <Button />
 <Button variant="primary" />

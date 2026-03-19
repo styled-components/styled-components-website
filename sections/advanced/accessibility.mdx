@@ -1,0 +1,96 @@
+## Accessibility
+
+styled-components generates CSS classes dynamically, which means standard JSX accessibility linting tools may not detect issues. Here's how to maintain accessible components.
+
+### Start with semantic elements
+
+Use the correct HTML element as the base for your styled component. This gives you built-in keyboard handling, focus management, and screen reader semantics for free:
+
+```tsx
+// Good: semantic base elements
+const Nav = styled.nav`...`;
+const Button = styled.button`...`;
+const Article = styled.article`...`;
+
+// Avoid: div soup
+const Nav = styled.div`...`;
+const Button = styled.div`...`;
+```
+
+Use the `as` prop when the same visual component needs different semantics depending on context:
+
+```tsx
+const Text = styled.p`
+  font-size: 1rem;
+  line-height: 1.5;
+`;
+
+<Text>Body paragraph</Text>
+<Text as="label" htmlFor="name">Name</Text>
+<Text as="span">Inline text</Text>
+```
+
+### Default accessible attributes with `attrs`
+
+Use `.attrs()` to set accessible defaults that apply to every instance:
+
+```tsx
+const IconButton = styled.button.attrs<{ $label: string }>(props => ({
+  'aria-label': props.$label,
+  type: 'button',
+}))`
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
+
+<IconButton $label="Close dialog">
+  <CloseIcon />
+</IconButton>
+```
+
+### Linting
+
+Standard `eslint-plugin-jsx-a11y` does not recognize styled-components — it only inspects JSX element names and cannot determine that `<StyledButton>` is a `<button>`. Use [`eslint-plugin-styled-components-a11y`](https://www.npmjs.com/package/eslint-plugin-styled-components-a11y) instead, which parses styled-components' tagged template literals to identify the underlying HTML element.
+
+```
+npm install --save-dev eslint-plugin-styled-components-a11y
+```
+
+ESLint flat config:
+
+```js
+import styledA11y from 'eslint-plugin-styled-components-a11y';
+
+export default [
+  styledA11y.flatConfigs.recommended,
+];
+```
+
+The plugin provides 36 rules mirroring `eslint-plugin-jsx-a11y`, including `alt-text`, `aria-role`, `click-events-have-key-events`, `label-has-associated-control`, and more.
+
+### Runtime auditing
+
+For runtime accessibility checks, use [`@axe-core/react`](https://www.npmjs.com/package/@axe-core/react) in development. It audits the rendered DOM and logs violations to the browser console — it works with any styling approach since it inspects the final HTML:
+
+```tsx
+if (process.env.NODE_ENV === 'development') {
+  import('@axe-core/react').then(({ default: axe }) => {
+    axe(React, ReactDOM, 1000);
+  });
+}
+```
+
+For test-time auditing, [`jest-axe`](https://www.npmjs.com/package/jest-axe) (or [`vitest-axe`](https://www.npmjs.com/package/vitest-axe)) runs axe-core against rendered components:
+
+```tsx
+import { render } from '@testing-library/react';
+import { axe, toHaveNoViolations } from 'jest-axe';
+
+expect.extend(toHaveNoViolations);
+
+test('button is accessible', async () => {
+  const { container } = render(<StyledButton>Click me</StyledButton>);
+  expect(await axe(container)).toHaveNoViolations();
+});
+```

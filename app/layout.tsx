@@ -1,6 +1,21 @@
 import { Metadata, Viewport } from 'next';
+import { Karla, JetBrains_Mono } from 'next/font/google';
 import StyledComponentsRegistry from '../lib/registry';
 import ClientLayout from '../components/ClientLayout';
+
+const karla = Karla({
+  subsets: ['latin'],
+  weight: ['200', '400', '700'],
+  display: 'swap',
+  variable: '--font-body',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-mono',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -14,9 +29,6 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   authors: [{ name: 'styled-components' }],
-  other: {
-    'X-UA-Compatible': 'IE=edge,chrome=1',
-  },
 };
 
 export const viewport: Viewport = {
@@ -28,13 +40,9 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html data-theme="dark" lang="en">
+    <html data-theme="dark" lang="en" className={`${karla.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <link rel="stylesheet" type="text/css" href="/dmvendor.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap" rel="stylesheet" />
       </head>
       <body>
         <StyledComponentsRegistry>
