@@ -5,7 +5,17 @@ import Anchor from './Anchor';
 import rem from '../utils/rem';
 
 const ReleaseAnchor = styled(Anchor)`
-  margin-bottom: 0;
+  && {
+    margin-bottom: ${rem(5)};
+  }
+
+  & + * {
+    margin-top: 0;
+
+    > h3 {
+      margin-top: ${rem(5)};
+    }
+  }
 
   &::after {
     color: rosybrown;
