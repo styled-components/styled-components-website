@@ -21,6 +21,7 @@ exports[`Sidebar renders correctly 1`] = `
 
 <div>
   <nav
+    aria-label="Documentation sidebar"
     class="c0"
   />
 </div>

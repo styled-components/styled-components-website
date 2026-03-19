@@ -131,6 +131,7 @@ exports[`LiveEdit renders correctly 1`] = `
 
         </pre>
         <textarea
+          aria-label="Live code editor"
           autocapitalize="off"
           autocomplete="off"
           autocorrect="off"

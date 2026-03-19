@@ -24,6 +24,11 @@ exports[`Navbar renders correctly 1`] = `
   text-align: center;
   transition: all 200ms ease-in-out;
   vertical-align: middle;
+  min-width: 2.4444444444444446rem;
+  min-height: 2.4444444444444446rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .c3:hover {
@@ -136,6 +141,10 @@ exports[`Navbar renders correctly 1`] = `
   line-height: 3.3333333333333335rem;
   transition: opacity 0.2s,transform 0.2s;
   cursor: pointer;
+  min-width: 2.4444444444444446rem;
+  min-height: 2.4444444444444446rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .c19:last-child {
@@ -240,13 +249,16 @@ exports[`Navbar renders correctly 1`] = `
 
 <div>
   <nav
+    aria-label="Main"
     class="c0"
   >
     <div
       class="c1"
     >
       <button
+        aria-label="Close sidebar"
         class="c2 c3"
+        type="button"
       >
         <svg
           class="c4"
@@ -281,8 +293,10 @@ exports[`Navbar renders correctly 1`] = `
         />
       </a>
       <button
+        aria-label="Close navigation menu"
         class="c2 c3"
         style="position: absolute; right: 0px;"
+        type="button"
       >
         <div
           class="c7"
@@ -395,10 +409,12 @@ exports[`Navbar renders correctly 1`] = `
         id="docs-search-input"
       />
       <nav
+        aria-label="Social links"
         class="c18 "
         style="margin-left: 16px;"
       >
         <a
+          aria-label="styled-components on GitHub"
           class="c19"
           href="https://github.com/styled-components"
           rel="noopener"
