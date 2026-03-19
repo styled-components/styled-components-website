@@ -119,8 +119,15 @@ const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
   pre,
   textarea {
     font-family: ${monospace} !important;
-    padding: 1.5em 1.5em !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    padding: 1.5em !important;
+    margin: 0 !important;
+    border: 0 !important;
+    outline: 0 !important;
     tab-size: 2;
+    box-sizing: border-box !important;
   }
 `;
 
