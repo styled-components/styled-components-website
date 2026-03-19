@@ -29,9 +29,6 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   authors: [{ name: 'styled-components' }],
-  other: {
-    'X-UA-Compatible': 'IE=edge,chrome=1',
-  },
 };
 
 export const viewport: Viewport = {
