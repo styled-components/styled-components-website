@@ -97,6 +97,8 @@ export const editorMixin = `
   font-family: ${monospace};
   font-size: 0.8rem;
   font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: normal;
   min-height: ${rem(400)};
   overflow-x: hidden;
   overflow-y: auto !important;

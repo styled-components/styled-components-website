@@ -21,6 +21,8 @@ exports[`LiveEdit renders correctly 1`] = `
   font-family: var(--font-mono),ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
   font-size: 0.8rem;
   font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: normal;
   min-height: 22.22222222222222rem;
   overflow-x: hidden;
   overflow-y: auto!important;
