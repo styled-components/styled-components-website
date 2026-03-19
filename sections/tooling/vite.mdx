@@ -86,3 +86,36 @@ export function render() {
 ```
 
 If you use [Vike](https://vike.dev/) (formerly vite-plugin-ssr), the `vike-react-styled-components` extension handles style collection automatically.
+
+### CSP Nonce with Vite | v6.4+
+
+Vite has built-in CSP nonce support via `html.cspNonce`. styled-components auto-detects the nonce from Vite's `<meta property="csp-nonce">` tag:
+
+```ts
+// vite.config.ts
+export default defineConfig({
+  html: {
+    cspNonce: 'NONCE_PLACEHOLDER',
+  },
+});
+```
+
+Your server must replace `NONCE_PLACEHOLDER` with a per-request random value. For example, with an Express middleware:
+
+```ts
+app.use((req, res, next) => {
+  res.locals.nonce = crypto.randomUUID();
+  next();
+});
+
+app.get('*', (req, res) => {
+  let html = getViteHtml();
+  html = html.replaceAll('NONCE_PLACEHOLDER', res.locals.nonce);
+  res.setHeader('Content-Security-Policy', `style-src 'nonce-${res.locals.nonce}';`);
+  res.send(html);
+});
+```
+
+styled-components reads the nonce at runtime from the `<meta>` tag's `.nonce` DOM property. No additional configuration is needed.
+
+> In pure SPA deployments without server-side nonce replacement, the nonce is static and does not provide security benefits. CSP nonces are only effective when generated per-request.

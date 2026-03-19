@@ -112,11 +112,119 @@ With styled-components v6.3.0+, RSC is natively supported with zero configuratio
 
 With styled-components v6.0-6.2, you need to put a styled-components registry in one of your layout files, as [described in Next.js docs](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components). The `'use client'` directive is required, so styled-components will appear in your client bundle.
 
+#### Next.js CSP Nonce | v6.4+ 
+If your Next.js app enforces a Content Security Policy, pass the nonce from your middleware to `StyleSheetManager`:
+
+```tsx
+// middleware.ts
+import { NextResponse } from 'next/server';
+
+export function middleware(request) {
+  const nonce = crypto.randomUUID();
+  const response = NextResponse.next();
+  response.headers.set('x-nonce', nonce);
+  response.headers.set(
+    'Content-Security-Policy',
+    `style-src 'nonce-${nonce}'; script-src 'nonce-${nonce}';`
+  );
+  return response;
+}
+```
+
+```tsx
+// app/lib/registry.tsx
+'use client';
+
+import { useServerInsertedHTML } from 'next/navigation';
+import React, { useState } from 'react';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+
+export default function StyledComponentsRegistry({
+  children,
+  nonce,
+}: {
+  children: React.ReactNode;
+  nonce?: string;
+}) {
+  const [sheet] = useState(() => new ServerStyleSheet({ nonce }));
+
+  useServerInsertedHTML(() => {
+    const styles = sheet.getStyleElement();
+    sheet.instance.clearTag();
+    return <>{styles}</>;
+  });
+
+  if (typeof window !== 'undefined') return <>{children}</>;
+
+  return (
+    <StyleSheetManager sheet={sheet.instance} nonce={nonce}>
+      {children}
+    </StyleSheetManager>
+  );
+}
+```
+
+```tsx
+// app/layout.tsx
+import { headers } from 'next/headers';
+import StyledComponentsRegistry from './lib/registry';
+
+export default async function RootLayout({ children }) {
+  const nonce = (await headers()).get('x-nonce') ?? undefined;
+  return (
+    <html>
+      <body>
+        <StyledComponentsRegistry nonce={nonce}>
+          {children}
+        </StyledComponentsRegistry>
+      </body>
+    </html>
+  );
+}
+```
+
+> Note: Using a CSP nonce requires dynamic rendering. Static generation and ISR are not compatible with per-request nonces.
+
 #### Pages Router
 
 Add `styledComponents: true` to the compiler options in `next.config.js`, then modify `_document` with `getInitialProps` to support SSR. See the [Next.js styled-components example](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) for reference.
 
 If you're using Babel instead of SWC, refer to the [Babel-based example](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components-babel).
+
+### Remix / React Router v7
+
+#### Remix CSP Nonce | v6.4+ 
+In Remix, generate a nonce in your server middleware and pass it to `StyleSheetManager` via `entry.server.tsx`:
+
+```tsx
+// entry.server.tsx
+import { renderToPipeableStream } from 'react-dom/server';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+import { ServerRouter } from 'react-router';
+
+export default function handleRequest(request, responseStatusCode, responseHeaders, routerContext) {
+  const nonce = responseHeaders.get('x-nonce'); // set by your middleware
+  const sheet = new ServerStyleSheet({ nonce });
+
+  const { pipe } = renderToPipeableStream(
+    sheet.collectStyles(
+      <ServerRouter context={routerContext} url={request.url} nonce={nonce} />
+    ),
+    {
+      nonce,
+      onShellReady() {
+        responseHeaders.set('Content-Type', 'text/html');
+        pipe(response);
+      },
+      onAllReady() {
+        sheet.seal();
+      },
+    }
+  );
+}
+```
+
+> Keep the nonce server-only. Do not pass it through loaders or expose it to the client—this defeats the CSP security model.
 
 ### Gatsby
 

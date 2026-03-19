@@ -21,3 +21,55 @@ Be very careful! This is obviously a made-up example, but CSS injection can be u
 have bad repercussions.
 
 You can use [`CSS.escape`](https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape) to sanitize CSS from JavaScript. It is well-supported in all modern browsers.
+
+### Content Security Policy | v6.4+
+
+If your app uses a [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) that restricts inline styles, you need to provide a nonce so the browser allows styled-components' injected `<style>` tags.
+
+There are several ways to configure a nonce, in priority order:
+
+#### `StyleSheetManager` nonce prop (recommended)
+
+Pass the nonce explicitly via React context. This is the recommended approach for Next.js, Remix, and any framework where the nonce is available server-side:
+
+```tsx
+import { StyleSheetManager } from 'styled-components';
+
+<StyleSheetManager nonce={myNonce}>
+  <App />
+</StyleSheetManager>
+```
+
+#### `ServerStyleSheet` constructor
+
+For SSR, pass the nonce when creating the sheet:
+
+```tsx
+import { ServerStyleSheet } from 'styled-components';
+
+const sheet = new ServerStyleSheet({ nonce: myNonce });
+```
+
+#### Auto-detection via `<meta>` tag
+
+styled-components automatically detects a nonce from these `<meta>` tags in `<head>`:
+
+```html
+<!-- Vite convention -->
+<meta property="csp-nonce" nonce="abc123">
+
+<!-- styled-components convention -->
+<meta name="sc-nonce" content="abc123">
+```
+
+This is useful for Vite projects using `html.cspNonce` in `vite.config.js`.
+
+#### Legacy `__webpack_nonce__`
+
+The webpack global `__webpack_nonce__` is still supported as a fallback. Set it before any styled-components code runs:
+
+```js
+__webpack_nonce__ = 'abc123';
+```
+
+For framework-specific setup, see the CSP guides for [Next.js](/docs/advanced#nextjs-csp), [Vite](/docs/tooling#vite), and [Remix](/docs/advanced#remix-csp).
