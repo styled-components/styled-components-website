@@ -5,7 +5,7 @@ exports[`Code renders correctly 1`] = `
   border-radius: 3px;
   background: rgba(50, 50, 150, 0.1);
   display: inline-block;
-  font-family: dm,monospace;
+  font-family: var(--font-mono),ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
   font-size: 90%;
   line-height: 1;
   padding: 0.3em 0.25em;

@@ -18,7 +18,7 @@ exports[`LiveEdit renders correctly 1`] = `
   border-radius: 3px;
   color: white;
   cursor: text;
-  font-family: dm,monospace;
+  font-family: var(--font-mono),ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
   font-size: 0.8rem;
   font-weight: 300;
   min-height: 22.22222222222222rem;
@@ -31,7 +31,7 @@ exports[`LiveEdit renders correctly 1`] = `
 
 .c2 pre,
 .c2 textarea {
-  font-family: dm,monospace!important;
+  font-family: var(--font-mono),ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace!important;
   padding: 1.5em 1.5em!important;
   tab-size: 2;
 }
