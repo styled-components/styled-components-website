@@ -120,6 +120,7 @@ const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
   textarea {
     font-family: ${monospace} !important;
     font-size: inherit !important;
+    font-variant-ligatures: none !important;
     line-height: inherit !important;
     letter-spacing: inherit !important;
     padding: 1.5em !important;
@@ -128,6 +129,11 @@ const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
     outline: 0 !important;
     tab-size: 2;
     box-sizing: border-box !important;
+  }
+
+  .token-line {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 `;
 

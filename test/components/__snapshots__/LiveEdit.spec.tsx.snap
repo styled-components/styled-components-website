@@ -35,6 +35,7 @@ exports[`LiveEdit renders correctly 1`] = `
 .c2 textarea {
   font-family: var(--font-mono),ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace!important;
   font-size: inherit!important;
+  font-variant-ligatures: none!important;
   line-height: inherit!important;
   letter-spacing: inherit!important;
   padding: 1.5em!important;
@@ -43,6 +44,11 @@ exports[`LiveEdit renders correctly 1`] = `
   outline: 0!important;
   tab-size: 2;
   box-sizing: border-box!important;
+}
+
+.c2 .token-line {
+  padding-left: 0!important;
+  padding-right: 0!important;
 }
 
 .c3 {
