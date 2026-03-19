@@ -1,7 +1,7 @@
 ## React Native
 
 styled-components can be used with React Native in the same way and with the
-same import. Try this example with [Snack by Expo](https://snack.expo.io/@danielmschmidt/styled-components).
+same import. Try this example with [Snack by Expo](https://snack.expo.dev/@danielmschmidt/styled-components).
 
 ```tsx
 import React from 'react'
@@ -15,15 +15,11 @@ const StyledText = styled.Text`
   color: #BF4F74;
 `
 
-class MyReactNativeComponent extends React.Component {
-  render() {
-    return (
-      <StyledView>
-        <StyledText>Hello World!</StyledText>
-      </StyledView>
-    )
-  }
-}
+const MyReactNativeComponent = () => (
+  <StyledView>
+    <StyledText>Hello World!</StyledText>
+  </StyledView>
+)
 ```
 
 We also support more complex styles (like `transform`), which would normally
@@ -51,9 +47,19 @@ Some of the differences to the web-version are, that you cannot use the
 keyframes or global styles. We will also warn you if you use media queries or
 nest your CSS.
 
-> In v2 we support percentages. To make this possible we need to enforce units
-> for all shorthands. If you're migrating to v2,
-> [a codemod is available](https://github.com/styled-components/styled-components-native-code-mod).
+### `toStyleSheet` API
+
+As of v6.0.8, styled-components provides a `toStyleSheet` helper for React Native that converts a tagged template literal into a React Native StyleSheet-compatible object. This is useful when you need to work directly with React Native's `StyleSheet` API while still writing your styles in CSS syntax.
+
+```tsx
+import styled, { toStyleSheet } from 'styled-components/native'
+
+const styles = toStyleSheet`
+  background-color: papayawhip;
+  color: #BF4F74;
+`
+// Returns a React Native StyleSheet-compatible object
+```
 
 ### Simpler usage with the metro bundler
 

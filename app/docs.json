@@ -48,25 +48,31 @@
           "title": "Theming"
         },
         {
-          "title": "Refs"
+          "title": "Server Side Rendering"
         },
         {
-          "title": "Security"
+          "title": "Performance"
         },
         {
           "title": "Existing CSS"
-        },
-        {
-          "title": "Tagged Template Literals"
-        },
-        {
-          "title": "Server Side Rendering"
         },
         {
           "title": "Referring to other components"
         },
         {
           "title": "Style Objects"
+        },
+        {
+          "title": "Accessibility"
+        },
+        {
+          "title": "Refs"
+        },
+        {
+          "title": "Security"
+        },
+        {
+          "title": "Tagged Template Literals"
         }
       ]
     },
@@ -99,25 +105,28 @@
       "pathname": "tooling",
       "sections": [
         {
-          "title": "Babel Plugin"
+          "title": "Vite"
         },
         {
           "title": "SWC Plugin"
         },
         {
-          "title": "TypeScript Plugin"
+          "title": "Babel Plugin"
         },
         {
-          "title": "Jest Integration"
+          "title": "Testing"
         },
         {
           "title": "Stylelint"
         },
         {
-          "title": "Styled Theming"
+          "title": "TypeScript Plugin"
         },
         {
           "title": "Syntax Highlighting"
+        },
+        {
+          "title": "Styled Theming"
         }
       ]
     },
@@ -129,25 +138,7 @@
           "title": "What do I need to do to migrate to v6?"
         },
         {
-          "title": "What do I need to do to migrate to v5?"
-        },
-        {
-          "title": "What do I need to do to migrate to v4?"
-        },
-        {
-          "title": "Can I nest rules?"
-        },
-        {
-          "title": "Can I use css frameworks?"
-        },
-        {
-          "title": "How can I override styles with higher specificity?"
-        },
-        {
-          "title": "How can I override inline styles?"
-        },
-        {
-          "title": "Why do my DOM nodes have two classes?"
+          "title": "How should I handle dynamic styles?"
         },
         {
           "title": "When to use attrs?"
@@ -156,10 +147,13 @@
           "title": "Why should I avoid declaring styled components in the render method?"
         },
         {
-          "title": "I am a library author. Should I bundle styled-components with my library?"
+          "title": "Can I nest rules?"
         },
         {
-          "title": "Why am I getting a warning about several instances of module on the page?"
+          "title": "How can I override styles with higher specificity?"
+        },
+        {
+          "title": "How can I override inline styles?"
         },
         {
           "title": "Why am I getting HTML attribute warnings?"
@@ -168,16 +162,28 @@
           "title": "Which browsers are supported?"
         },
         {
-          "title": "How do I use styled-components with create-react-app?"
+          "title": "Why do my DOM nodes have two classes?"
         },
         {
-          "title": "How can I fix issues when using npm link or yarn link?"
+          "title": "Why am I getting a warning about several instances of module on the page?"
+        },
+        {
+          "title": "Can I use css frameworks?"
+        },
+        {
+          "title": "I am a library author. Should I bundle styled-components with my library?"
         },
         {
           "title": "How do I fix flickering text after server side rendering?"
         },
         {
+          "title": "How can I fix issues when using npm link or yarn link?"
+        },
+        {
           "title": "Missing Declarations for styled-components/native?"
+        },
+        {
+          "title": "What do I need to do to migrate to v5?"
         }
       ]
     }

@@ -1,6 +1,6 @@
-## Jest Integration
+## Testing
 
-[Jest Styled Components](https://github.com/styled-components/jest-styled-components) is a set of utilities for testing Styled Components with [Jest](https://github.com/facebook/jest). This package improves the snapshot testing experience and provides a brand new matcher to make expectations on the style rules.
+[jest-styled-components](https://github.com/styled-components/jest-styled-components) provides utilities for testing styled-components with [Jest](https://github.com/facebook/jest) and [Vitest](https://vitest.dev/). It offers meaningful snapshot output and the `toHaveStyleRule` matcher for asserting style rules.
 
 ### Installation
 
@@ -8,54 +8,79 @@
 npm install --save-dev jest-styled-components
 ```
 
-### Snapshot Testing
+Import it once in your test setup file to register the snapshot serializer and matchers globally:
 
-When we are building a UI with Styled Components, we want to make sure the output doesn't change unexpectedly. Snapshot testing is an excellent way to test React components, and this package makes the experience even more delightful by adding the style to the snapshots.
-
-Here's an example of a test:
-
-```tsx
-import React from 'react'
-import styled from 'styled-components'
-import renderer from 'react-test-renderer'
-import 'jest-styled-components'
-
-const Button = styled.button`
-  color: red;
-`
-
-test('it works', () => {
-  const tree = renderer.create(<Button />).toJSON()
-  expect(tree).toMatchSnapshot()
-})
+```ts
+// jest.config.js
+module.exports = {
+  setupFilesAfterEnv: ['jest-styled-components'],
+};
 ```
 
-And here's an example of the resulting snapshot:
+Or for Vitest:
+
+```ts
+// vitest.config.ts
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    setupFiles: ['jest-styled-components'],
+    environment: 'jsdom',
+  },
+});
+```
+
+### Testing with React Testing Library
+
+[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) is the recommended way to test styled-components. Query elements by role, text, or test ID, then assert styles with `toHaveStyleRule`.
+
+#### Themed components
+
+Create a custom render wrapper that includes your `ThemeProvider`:
 
 ```tsx
-exports[`it works 1`] = `
-.c0 {
-  color: red;
+// test-utils.tsx
+import { render, RenderOptions } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './theme';
+
+function Providers({ children }: { children: React.ReactNode }) {
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 }
 
-<button
-  className="c0"
-/>
-`
+const customRender = (
+  ui: React.ReactElement,
+  options?: Omit<RenderOptions, 'wrapper'>
+) => render(ui, { wrapper: Providers, ...options });
+
+export * from '@testing-library/react';
+export { customRender as render };
 ```
 
-For a real world demo, check out
-[this website's repository](https://github.com/styled-components/styled-components-website/tree/master/test).
+Then use it in your tests:
+
+```tsx
+import { render, screen } from './test-utils';
+import 'jest-styled-components';
+
+const Button = styled.button<{ $primary?: boolean }>`
+  background: ${props => props.$primary ? '#BF4F74' : '#ccc'};
+`;
+
+test('renders primary styles', () => {
+  render(<Button $primary>Click</Button>);
+  expect(screen.getByText('Click')).toHaveStyleRule('background', '#BF4F74');
+});
+```
 
 ### `toHaveStyleRule`
 
-If we only want to check whether a particular style has been applied to an element, we can use the `toHaveStyleRule` matcher. This function takes two required parameters, a property (string) and a value (string or RegExp), and an optional object to search for rules nested within an at-rule or to add modifiers to the class selector.
+The `toHaveStyleRule` matcher checks CSS rules injected by styled-components into the stylesheet. It accepts a property name, expected value (string or RegExp), and an optional options object for media queries and pseudo-classes:
 
 ```tsx
-import React from 'react'
-import styled from 'styled-components'
-import renderer from 'react-test-renderer'
-import 'jest-styled-components'
+import { render, screen } from '@testing-library/react';
+import 'jest-styled-components';
 
 const Button = styled.button`
   color: red;
@@ -64,14 +89,40 @@ const Button = styled.button`
       color: green;
     }
   }
-`
+`;
 
-test('it works', () => {
-  const tree = renderer.create(<Button />).toJSON()
-  expect(tree).toHaveStyleRule('color', 'red')
-  expect(tree).toHaveStyleRule('color', 'green', {
+test('applies styles and media queries', () => {
+  render(<Button>Click</Button>);
+  const button = screen.getByText('Click');
+
+  expect(button).toHaveStyleRule('color', 'red');
+  expect(button).toHaveStyleRule('color', 'green', {
     media: '(max-width: 640px)',
     modifier: ':hover',
-  })
-})
+  });
+});
 ```
+
+> Use `toHaveStyleRule` (from jest-styled-components) rather than `toHaveStyle` (from @testing-library/jest-dom) for styled-components. In jsdom, `getComputedStyle` does not resolve styles from `<style>` tags, so `toHaveStyle` will not see styled-components CSS.
+
+### Snapshot testing
+
+jest-styled-components replaces opaque hashed class names with stable placeholders and includes actual CSS rules in snapshot output:
+
+```tsx
+import { render } from '@testing-library/react';
+import 'jest-styled-components';
+
+const Button = styled.button`color: red;`;
+
+test('matches snapshot', () => {
+  const { container } = render(<Button />);
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+// Snapshot output:
+// .c0 { color: red; }
+// <button class="c0" />
+```
+
+Without the plugin, snapshots would show only `class="sc-bdVTJa eFzKmA"` — unstable hashes that change on unrelated modifications.

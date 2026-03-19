@@ -1,0 +1,82 @@
+## How should I handle dynamic styles?
+
+styled-components offers several ways to apply dynamic styles. Each has different trade-offs for performance, readability, and compatibility with React Server Components.
+
+### Quick reference
+
+| Approach | Best for | Generates new classes? | RSC compatible? |
+|---|---|---|---|
+| Prop interpolation | Computed styles based on props | Yes, per unique value | Yes, with overhead |
+| CSS custom properties | Theming, frequently-changing values | No | Yes |
+| Data attributes | Discrete variants (size, color scheme) | No | Yes |
+| `.attrs()` with `style` | Per-frame updates (mouse, scroll, animation) | No | Yes |
+
+### Prop interpolation
+
+Use for values that are truly dynamic and derived from component props. Each unique result produces a new CSS class.
+
+```tsx
+const Heading = styled.h1<{ $color: string }>`
+  color: ${props => props.$color};
+`;
+
+<Heading $color="tomato">Hello</Heading>
+```
+
+Best when the set of possible values is small. Avoid for continuously-varying values like slider positions or mouse coordinates — see [Performance](/docs/advanced#performance).
+
+### CSS custom properties
+
+Use for values that change frequently or cascade through a component tree. The CSS rule is static; only the variable value changes.
+
+```tsx
+const Button = styled.button`
+  background: var(--btn-bg, #ccc);
+  color: var(--btn-color, #333);
+`;
+
+<Button style={{ '--btn-bg': '#BF4F74', '--btn-color': 'white' } as React.CSSProperties}>
+  Primary
+</Button>
+```
+
+This is the recommended approach for theming in RSC environments, where `ThemeProvider` is a no-op.
+
+### Data attributes
+
+Use for a finite set of variants. Keeps the component fully static — no JavaScript in the template literal, one cached CSS class.
+
+```tsx
+const Badge = styled.span`
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #eee;
+
+  &[data-variant='success'] { background: #d4edda; color: #155724; }
+  &[data-variant='warning'] { background: #fff3cd; color: #856404; }
+  &[data-variant='error']   { background: #f8d7da; color: #721c24; }
+`;
+
+<Badge data-variant="success">Deployed</Badge>
+```
+
+### `.attrs()` with inline `style`
+
+Use for values that change on every frame. Applies values as inline styles — zero class generation.
+
+```tsx
+const Tooltip = styled.div.attrs<{ $x: number; $y: number }>(props => ({
+  style: {
+    transform: `translate(${props.$x}px, ${props.$y}px)`,
+  },
+}))`
+  position: fixed;
+  padding: 4px 8px;
+  background: #333;
+  color: white;
+  border-radius: 4px;
+  pointer-events: none;
+`;
+```
+
+See [When to use attrs?](/docs/faqs#when-to-use-attrs) and the [Performance](/docs/advanced#performance) section for more detail.

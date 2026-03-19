@@ -22,7 +22,7 @@ In `package.json`:
 }
 ```
 
-> It's highly recommended (but not required) to also use the [Babel plugin](/docs/tooling#babel-plugin). It offers many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
+> It's highly recommended (but not required) to also use the [Babel plugin](/docs/tooling#babel-plugin) or [SWC plugin](/docs/tooling#swc-plugin). They offer many benefits like more legible class names, server-side rendering compatibility, smaller bundles, and more.
 
 <details>
   <summary>Click here to see alternative CDN installation instructions</summary>
@@ -41,6 +41,6 @@ const Component = window.styled.div`
 `
 ```
 
-> This style of usage requires React CDN bundles and the [`react-is` CDN bundle](https://unpkg.com/react-is@17/umd/react-is.production.min.js) to be on the page as well (before the styled-components script.) See [React's CDN documentation](https://react.dev/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) for details.
+> This style of usage requires the React CDN bundles (`react` and `react-dom`) to be on the page as well (before the styled-components script.) See [React's CDN documentation](https://react.dev/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) for details.
 
 </details>

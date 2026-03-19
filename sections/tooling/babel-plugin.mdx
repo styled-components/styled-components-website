@@ -81,7 +81,7 @@ You can force the component `displayName` to be solely the component name by dis
 }
 ```
 
-One example you might want to do this, is testing components with enzyme. While you can always use `.find(ComponentName)` it's definitely possible to search component by its displayName with `.find("ComponentName")`. In the latter case you will need to disable the `fileName` option. If you do want this for testing only, make sure to add this only under your test environment.
+One example where you might want to do this is testing components with React Testing Library. If you use snapshot tests or other tools that reference component display names, keeping them short can improve readability. If you do want this for testing only, make sure to add this only under your test environment.
 
 #### Control which file names are meaningless
 
@@ -146,9 +146,9 @@ It utilizes a babel helper to tag each styled component and library helper with 
 This plugin transpiles `styled-components` tagged template literals down to a smaller representation than what Babel normally creates.
 
 _Wait, transpiling tagged template literals? Doesn't Babel do this natively?_ 🤔
-With Babel, you're likely transpiling ES2015+ JavaScript to ES5-compliant code for older browser support. The most popularly recommended base Babel presets (`es2015` / `env` / `latest`) include the `babel-plugin-transform-es2015-template-literals` transform to make tagged template literals work in older browsers, but there is a caveat: output of that transform is quite verbose. It's done this way to meet specification requirements.
+If you're using `@babel/preset-env` and targeting browsers that don't natively support tagged template literals, Babel's standard transform produces verbose output to meet specification requirements.
 
-Here's an example of the transpiled code processed with `babel-preset-latest`:
+Here's an example of the standard Babel-transpiled output:
 
 ```tsx
 var _templateObject = _taggedTemplateLiteral(['width: 100%;'], ['width: 100%;'])
@@ -160,7 +160,7 @@ var Simple = _styledComponents2.default.div(_templateObject)
 
 `styled-components` does not require full spec compatibility. Our Babel plugin will transpile template literals attached to styled components to a slightly different, smaller form which still works in older browsers but has a much smaller footprint.
 
-Here's the previous example with the styled-components babel plugin on and the `{ transpileTemplateLiterals: true }` option:
+Here's the same example with the styled-components Babel plugin and `transpileTemplateLiterals: true`:
 
 ```tsx
 var Simple = _styledComponents2.default.div(['width: 100%;'])
@@ -224,5 +224,3 @@ _styledComponents2.default.div.withConfig({
   componentId: 'my-app__sc-3rfj0a-1',
 })(['color:blue;'])
 ```
-
-> ⚠️ This feature is available from version **_1.11_**.

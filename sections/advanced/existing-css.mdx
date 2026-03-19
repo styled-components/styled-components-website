@@ -14,11 +14,8 @@ render the passed-in `className` prop, then no styles will be applied.
 To avoid this issue, make sure your component attaches the passed-in `className` to a DOM node:
 
 ```tsx
-class MyComponent extends React.Component {
-  render() {
-    // Attach the passed-in className to the DOM node
-    return <div className={this.props.className} />
-  }
+function MyComponent({ className }) {
+  return <div className={className} />;
 }
 ```
 
@@ -26,11 +23,8 @@ If you have pre-existing styles with a class, you can combine the global class w
 passed-in one:
 
 ```tsx
-class MyComponent extends React.Component {
-  render() {
-    // Attach the passed-in className to the DOM node
-    return <div className={`some-global-class ${this.props.className}`} />
-  }
+function MyComponent({ className }) {
+  return <div className={`some-global-class ${className}`} />;
 }
 ```
 
@@ -99,5 +93,5 @@ with `id="my-widget"`, since ID selectors have more specificity than any number 
 
 A rarer problem is conflicts between two instances of styled-components on the page. You can avoid
 this by defining `process.env.SC_ATTR` in the code bundle with your styled-components instance.
-This value overrides the default `<style>` tag attribute, `data-styled` (`data-styled-components` in v3 and lower), allowing
+This value overrides the default `<style>` tag attribute, `data-styled`, allowing
 each styled-components instance to recognize its own tags.

@@ -4,7 +4,7 @@ styled-components has full theming support by exporting a `<ThemeProvider>` wrap
 This component provides a theme to all React components underneath itself via the context API. In the render
 tree all styled-components will have access to the provided theme, even when they are multiple levels deep.
 
-> **React Server Components (v6.3.0+):** `ThemeProvider` is a no-op in RSC environments since React context is unavailable. Use CSS custom properties for theming in RSC instead. See the [RSC section](/docs/advanced#react-server-components) for best practices.
+> React Server Components (v6.3.0+): `ThemeProvider` is a no-op in RSC environments since React context is unavailable. Use CSS custom properties for theming in RSC instead. See the [RSC section](/docs/advanced#react-server-components) for best practices.
 
 To illustrate this, let's create our Button component, but this time we'll pass some variables down
 as a theme.
@@ -18,16 +18,9 @@ const Button = styled.button`
   border-radius: 3px;
 
   /* Color the border and text with theme.main */
-  color: ${props => props.theme.main};
-  border: 2px solid ${props => props.theme.main};
+  color: ${props => props.theme?.main || '#BF4F74'};
+  border: 2px solid ${props => props.theme?.main || '#BF4F74'};
 `;
-
-// We are passing a default theme for Buttons that arent wrapped in the ThemeProvider
-Button.defaultProps = {
-  theme: {
-    main: "#BF4F74"
-  }
-}
 
 // Define what props.theme will look like
 const theme = {
@@ -101,33 +94,15 @@ the `withTheme` higher order component.
 ```tsx
 import { withTheme } from 'styled-components'
 
-class MyComponent extends React.Component {
-  render() {
-    console.log('Current theme: ', this.props.theme)
-    // ...
-  }
+function MyComponent({ theme }) {
+  console.log('Current theme: ', theme)
+  // ...
 }
 
 export default withTheme(MyComponent)
 ```
 
-#### via `useContext` React hook | v4
-
-You can also use `useContext` to access the current theme outside of styled components when working with React Hooks.
-
-```tsx
-import { useContext } from 'react'
-import { ThemeContext } from 'styled-components'
-
-const MyComponent = () => {
-  const themeContext = useContext(ThemeContext)
-
-  console.log('Current theme: ', themeContext)
-  // ...
-}
-```
-
-#### via `useTheme` custom hook | v5
+#### via `useTheme` hook
 
 You can also use `useTheme` to access the current theme outside of styled components when working with React Hooks.
 

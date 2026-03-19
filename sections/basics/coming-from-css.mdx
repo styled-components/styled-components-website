@@ -5,35 +5,30 @@
 If you're familiar with importing CSS into your components (e.g. like CSSModules) you'll be used to doing something like this:
 
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './styles.css';
 
-export default class Counter extends React.Component {
-  state = { count: 0 };
+export default function Counter() {
+  const [count, setCount] = useState(0);
 
-  increment = () => this.setState({ count: this.state.count + 1 });
-  decrement = () => this.setState({ count: this.state.count - 1 });
-
-  render() {
-    return (
-      <div className={styles.counter}>
-        <p className={styles.paragraph}>{this.state.count}</p>
-        <button className={styles.button} onClick={this.increment}>
-          +
-        </button>
-        <button className={styles.button} onClick={this.decrement}>
-          -
-        </button>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.counter}>
+      <p className={styles.paragraph}>{count}</p>
+      <button className={styles.button} onClick={() => setCount(count + 1)}>
+        +
+      </button>
+      <button className={styles.button} onClick={() => setCount(count - 1)}>
+        -
+      </button>
+    </div>
+  );
 }
 ```
 
 Because a Styled Component is the _combination_ of the element and the rules that style it, we'd write `Counter` like this:
 
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledCounter = styled.div`
@@ -46,21 +41,16 @@ const Button = styled.button`
   /* ... */
 `;
 
-export default class Counter extends React.Component {
-  state = { count: 0 };
+export default function Counter() {
+  const [count, setCount] = useState(0);
 
-  increment = () => this.setState({ count: this.state.count + 1 });
-  decrement = () => this.setState({ count: this.state.count - 1 });
-
-  render() {
-    return (
-      <StyledCounter>
-        <Paragraph>{this.state.count}</Paragraph>
-        <Button onClick={this.increment}>+</Button>
-        <Button onClick={this.decrement}>-</Button>
-      </StyledCounter>
-    );
-  }
+  return (
+    <StyledCounter>
+      <Paragraph>{count}</Paragraph>
+      <Button onClick={() => setCount(count + 1)}>+</Button>
+      <Button onClick={() => setCount(count - 1)}>-</Button>
+    </StyledCounter>
+  );
 }
 ```
 
@@ -95,9 +85,7 @@ const Wrapper = ({ message }) => {
 };
 ```
 
-**Recommended reading**: [Talia Marcassa](https://twitter.com/talialongname)
-wrote a great review of real-world usage, featuring lots of solid practical insights
-and comparisons with alternatives, in [Styled Components: To Use or Not to Use?](https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21)
+Recommended reading: Talia Marcassa wrote a great review of real-world usage, featuring practical insights and comparisons with alternatives, in [Styled Components: To Use or Not to Use?](https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21)
 
 ### Pseudoelements, pseudoselectors, and nesting
 
@@ -105,7 +93,7 @@ The preprocessor we use, [stylis](https://github.com/thysultan/stylis.js), suppo
 
 Through this preprocessing, styled-components supports some advanced selector patterns:
 
-- `&` a single ampersand refers to **all instances** of the component; it is used for applying broad overrides:
+- `&` a single ampersand refers to all instances of the component; it is used for applying broad overrides:
 
   ```react
   const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
@@ -146,7 +134,7 @@ Through this preprocessing, styled-components supports some advanced selector pa
   )
   ```
 
-- `&&` a double ampersand refers to **an instance** of the component; this is useful if you're doing conditional styling overrides and don't want a style to apply to _all instances_ of a particular component:
+- `&&` a double ampersand refers to an instance of the component; this is useful if you're doing conditional styling overrides and don't want a style to apply to all instances of a particular component:
 
   ```react
   const Input = styled.input.attrs({ type: "checkbox" })``;

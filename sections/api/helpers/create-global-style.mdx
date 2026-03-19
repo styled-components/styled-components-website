@@ -5,6 +5,8 @@ import Table, { Row, Column } from 'components/Table'
 
 A helper function to generate a special `StyledComponent` that handles global styles. Normally, styled components are automatically scoped to a local CSS class and therefore isolated from other components. In the case of `createGlobalStyle`, this limitation is removed and things like CSS resets or base stylesheets can be applied.
 
+> React Server Components (v6.3.0+): `createGlobalStyle` works in RSC environments. Static global styles are injected once via inline `<style>` tags. In React 19, global styles render without the `precedence` attribute to avoid premature deduplication. `createGlobalStyle` is also StrictMode-safe as of v6.3.7.
+
 <Table head={['Arguments', 'Description']}>
   <Row>
     <Column>
@@ -54,3 +56,9 @@ const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean; }>`
   </React.Fragment>
 </ThemeProvider>
 ```
+
+> Avoid `@import` in `createGlobalStyle`. CSS `@import` rules placed inside `createGlobalStyle` may appear to work in development but will silently fail in production. This happens because styled-components uses CSSOM APIs (`insertRule`) in production, and browsers require `@import` rules to appear before all other rules in a stylesheet — an ordering that CSSOM injection cannot guarantee. Place `@import` statements in your HTML `<head>` instead:
+>
+> ```html
+> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto" />
+> ```
