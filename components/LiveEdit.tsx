@@ -8,6 +8,7 @@ import {
   LiveProvider,
   LiveProviderProps,
 } from 'react-live-runner';
+import React, { useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { red } from '../utils/colors';
 import { headerFont, monospace } from '../utils/fonts';
@@ -19,6 +20,19 @@ import theme from './prismTheme';
 export interface LiveEditProps extends Pick<LiveProviderProps, 'code' | 'scope'> {}
 
 export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
+  const editorRegionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const textarea = editorRegionRef.current?.querySelector<HTMLTextAreaElement>(
+      'textarea.npm__react-simple-code-editor__textarea'
+    );
+
+    if (!textarea) return;
+
+    const hasName = textarea.hasAttribute('aria-label') || textarea.hasAttribute('aria-labelledby');
+    if (!hasName) textarea.setAttribute('aria-label', 'Live code editor');
+  }, []);
+
   return (
     <StyledProvider
       code={code}
@@ -30,7 +44,7 @@ export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
       theme={theme}
     >
       <Row>
-        <Code>
+        <Code ref={editorRegionRef}>
           <StyledEditor />
         </Code>
         <StyledPreview className="notranslate" />

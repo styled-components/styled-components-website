@@ -21,6 +21,18 @@ import theme from '../components/prismTheme';
 
 export default function Index() {
   const [isMobileNavFolded, setIsMobileNavFolded] = React.useState(true);
+  const editorContainerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const textarea = editorContainerRef.current?.querySelector<HTMLTextAreaElement>(
+      'textarea.npm__react-simple-code-editor__textarea'
+    );
+
+    if (!textarea) return;
+
+    const hasName = textarea.hasAttribute('aria-label') || textarea.hasAttribute('aria-labelledby');
+    if (!hasName) textarea.setAttribute('aria-label', 'Homepage live code editor');
+  }, []);
 
   return (
     <div>
@@ -54,7 +66,7 @@ export default function Index() {
               <LivePreview />
             </Links>
 
-            <EditorContainer>
+            <EditorContainer ref={editorContainerRef}>
               <Editor theme={theme} />
               <StyledError />
             </EditorContainer>

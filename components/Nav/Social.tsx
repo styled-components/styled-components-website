@@ -20,6 +20,11 @@ const SocialLink = styled(Link).attrs((/* props */) => ({
   transition: opacity 0.2s, transform 0.2s;
   cursor: pointer;
 
+  min-width: ${rem(44)};
+  min-height: ${rem(44)};
+  align-items: center;
+  justify-content: center;
+
   &:last-child {
     margin-right: 0;
   }
@@ -63,7 +68,12 @@ const Social = (props: React.ComponentProps<typeof Wrapper>) => (
     {/* <SocialLink href="https://twitter.com/someone">
       <Twitter />
     </SocialLink> */}
-    <SocialLink href="https://github.com/styled-components" aria-label="Styled Components on GitHub" title="GitHub: Source code" target="_blank">
+    <SocialLink
+      href="https://github.com/styled-components"
+      aria-label="styled-components on GitHub"
+      title="GitHub: Source code"
+      target="_blank"
+    >
       <StyledIcon as={Github} $height={18} />
     </SocialLink>
   </Wrapper>
