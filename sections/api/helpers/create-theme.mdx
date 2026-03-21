@@ -1,0 +1,138 @@
+import Code from 'components/Code'
+import Table, { Row, Column } from 'components/Table'
+
+### `createTheme` | v6.4 | web-only
+
+A helper that bridges `ThemeProvider` and CSS custom properties, enabling theme values to work in both client components and React Server Components.
+
+`createTheme` takes a default theme object and returns an object with the same shape where every leaf value is replaced with a `var(--prefix-path, fallback)` CSS string. These CSS variable references can be used directly in styled component templates — in both client and RSC contexts.
+
+<Table head={['Arguments', 'Description']}>
+  <Row>
+    <Column>
+      1. <Code>defaultTheme</Code>
+    </Column>
+    <Column>A plain object representing your theme. Nested objects are supported; each leaf (string or number) becomes a CSS variable.</Column>
+  </Row>
+  <Row>
+    <Column>
+      2. <Code>options</Code> (optional)
+    </Column>
+    <Column>
+      <Code>prefix</Code> (default: <Code>"sc"</Code>) — namespace for CSS variable names.
+      <Code>selector</Code> (default: <Code>":root"</Code>) — CSS selector for variable declarations; use <Code>":host"</Code> for Shadow DOM.
+    </Column>
+  </Row>
+</Table>
+
+Returns a `ThemeContract` — an object with the same shape as your theme, plus:
+
+- **`GlobalStyle`** — a `createGlobalStyle` component that emits CSS custom property declarations from the current `ThemeProvider` context
+- **`raw`** — the original theme object you passed in
+- **`resolve(el?)`** — reads the current computed CSS variable values from the DOM and returns a plain object with the resolved values (client-only)
+
+```tsx
+import { createTheme, ThemeProvider } from 'styled-components'
+
+// 1. Define your theme and create the contract
+const theme = createTheme({
+  colors: {
+    primary: '#0070f3',
+    text: '#111827',
+    background: '#ffffff',
+  },
+  spacing: {
+    small: '8px',
+    medium: '16px',
+  },
+})
+
+// theme.colors.primary → "var(--sc-colors-primary, #0070f3)"
+// theme.spacing.medium → "var(--sc-spacing-medium, 16px)"
+// theme.raw            → { colors: { primary: '#0070f3', ... }, ... }
+```
+
+#### Setting up the provider
+
+Pass the `createTheme` result to `ThemeProvider`. This means `p.theme.colors.*` in all styled components resolves to CSS variable references — producing stable class name hashes regardless of the active theme (no hydration mismatches when switching light/dark).
+
+Mount `theme.GlobalStyle` inside your provider to emit the `:root` CSS variables. When the theme changes, the variables update automatically.
+
+```tsx
+// app/layout.tsx (client component)
+const themes = { light: lightTheme, dark: darkTheme }
+
+function Layout({ children }) {
+  const [preset, setPreset] = useState('light')
+
+  return (
+    <ThemeProvider theme={theme}>
+      <theme.GlobalStyle />
+      {children}
+    </ThemeProvider>
+  )
+}
+```
+
+> When using `createTheme`, pass the contract itself (not a raw theme object) to `ThemeProvider`. This ensures all interpolations produce CSS variable references, keeping class name hashes stable across theme switches. Handle the actual light/dark switch with CSS `@media (prefers-color-scheme: dark)` or class-based overrides on `:root`.
+
+#### Using in RSC
+
+The main motivation for `createTheme` is React Server Components, where `useContext` (and thus `ThemeProvider`) is unavailable. Since every leaf is a `var()` reference, the CSS works regardless of whether the component renders on the server or client:
+
+```tsx
+// app/rsc-page.tsx (server component — no 'use client')
+import styled from 'styled-components'
+import theme from './theme' // your createTheme result
+
+const Card = styled.div`
+  background: ${theme.colors.background};
+  color: ${theme.colors.text};
+  padding: ${theme.spacing.medium};
+  border: 1px solid ${theme.colors.primary};
+`
+
+export default function Page() {
+  return <Card>This works in RSC!</Card>
+}
+```
+
+#### Reading resolved values
+
+Use `resolve()` when you need the actual computed value in JavaScript — for example, drawing to a canvas, conditional logic, or passing colors to a non-CSS API:
+
+```tsx
+'use client'
+import theme from './theme'
+
+function CanvasComponent() {
+  useEffect(() => {
+    const ctx = canvasRef.current.getContext('2d')
+    const { colors } = theme.resolve()
+    // colors.primary → "#3b82f6" (the actual dark mode value)
+    ctx.fillStyle = colors.primary
+    ctx.fillRect(0, 0, 100, 100)
+  }, [])
+  // ...
+}
+```
+
+`resolve()` accepts an optional element to read scoped variables from (defaults to `document.documentElement`). It is client-only and throws on the server.
+
+#### Custom prefix
+
+Use the `prefix` option when multiple design systems coexist on the same page:
+
+```tsx
+const theme = createTheme(myTheme, { prefix: 'ds' })
+// → var(--ds-colors-primary, #0070f3)
+```
+
+#### Shadow DOM
+
+Use the `selector` option for web components:
+
+```tsx
+const theme = createTheme(myTheme, { selector: ':host' })
+// GlobalStyle emits: :host { --sc-colors-primary: #0070f3; ... }
+```
