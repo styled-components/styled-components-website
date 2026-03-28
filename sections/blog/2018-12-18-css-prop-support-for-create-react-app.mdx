@@ -1,0 +1,37 @@
+export const meta = {
+  title: "Releasing support for the css prop in create-react-app",
+  author: "Max Stoiber",
+  date: "2018-12-18",
+  slug: "css-prop-support-for-create-react-app",
+  description: "The styled-components css prop now works out of the box with Create React App, no eject or babel config needed.",
+  originalUrl: "https://medium.com/styled-components/css-prop-support-for-create-react-app-37e8c5d96861",
+};
+
+![](https://cdn-images-1.medium.com/max/1024/1*q88NkkPp6qx0g0kAYBplnw.png)
+
+#### The styled-components Babel macro now has full support for the brand new css prop. Go from zero to React app with css prop in fifteen seconds! 🎉
+
+We recently announced [native support for the ](https://medium.com/styled-components/announcing-native-support-for-the-css-prop-in-styled-components-245ca5252feb)[css prop in styled-components](https://medium.com/styled-components/announcing-native-support-for-the-css-prop-in-styled-components-245ca5252feb) when using our Babel plugin. Unfortunately, create-react-app doesn’t let you add any custom Babel plugins… but as of v2 they do support Babel macros.
+
+So, we got to work and rebuilt the css prop transform to also work as a macro. **Today, we’re excited to introduce support for the ****css prop in create-react-app!** 🎉
+
+### From zero to css prop in fifteen seconds 🏎💨
+
+There’s only three simple steps to kickstart your new React app with css prop support:
+
+- **Create your React app: **create-react-app myapp *(if you already have an existing cra-based app, skip this step)*
+- **Install styled-components:** npm install --save styled-components
+- **Use the Babel macro:** import 'styled-components/macro'
+That’s it, now you’re ready to css and roll! 🎉
+
+```js
+import 'styled-components/macro';
+
+<h2 css="color: palevioletred;">Hello css prop</h2>
+```
+
+*Note: Babel macros only run on files they are imported in, so you have to add the **styled-components/macro import in every file that uses the **css prop.*
+
+Huge shoutout to [Satya](https://twitter.com/satya164) and [Luc](https://twitter.com/lucleray) for their help with this feature! 💖👏
+
+From all of us in the styled-components core team, we hope you enjoy the css prop, stay stylish and merry Christmas 💅🎄🎅

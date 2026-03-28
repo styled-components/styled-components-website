@@ -1,0 +1,99 @@
+export const meta = {
+  title: "Announcing native support for the css prop in styled-components",
+  author: "Max Stoiber",
+  date: "2018-11-26",
+  slug: "announcing-native-support-for-the-css-prop-in-styled-components",
+  description: "Introducing first-class support for the css prop in styled-components, enabling inline styling with full theming and interpolation support.",
+  originalUrl: "https://medium.com/styled-components/announcing-native-support-for-the-css-prop-in-styled-components-245ca5252feb",
+};
+
+![](https://cdn-images-1.medium.com/max/1024/1*Xsw6YA26AEAWAdA98bgcGQ.png)
+
+#### A new, convenient way to quickly style and iterate on your components and their boundaries has landed in styled-components 💅
+
+As Ryan Florence [once said](https://twitter.com/ryanflorence/status/702538809569726464), the essence of working with components is worrying about the right lines to draw in your app and then filling in the shapes they create with components.
+
+Invented by Sunil Pai in [glamor](https://github.com/threepointone/glamor), the css prop has taken over the CSS-in-JS world as a convenient way to build components while staying flexible with the “lines”, their boundaries.
+
+```js
+const MyButton = () => (
+  
+    Click me!
+  
+)
+```
+
+By declaring the CSS inline, **it’s simple to move elements around your app and iterate on them**, allowing you to keep moving fast in the early stages. Then, once you feel comfortable with the boundaries you’ve chosen, you can quickly turn them into styled components and lock them into place.
+
+So far, to get support for the cssprop in styled-components, you had to use user-land libraries such as rebass. They worked great, but required a lot of manual work and the implementation wasn’t the most performant.
+
+**Today, we’re excited to announce native support for the ****css prop in **[**styled-components**](https://github.com/styled-components/styled-components)**! 🎉**
+
+### Enabling support for the css prop
+
+All you have to do** **to enable support for the css prop is to **upgrade to the latest version of the styled-components Babel plugin**:
+
+```js
+npm install --save-dev babel-plugin-styled-components@latest
+```
+
+*If you aren’t using the Babel plugin yet, you also have to add it to your **.babelrc.*
+
+That’s all there is to it, now you’re ready to css and roll! 💃🏼
+
+### Using the css prop
+
+Using the css prop is as simple as adding it to *any* element in your app. **It supports everything a normal styled component supports **💪, including custom components, adapting based on props and theming:
+
+```js
+<h2>
+  The css prop
+</h2>
+
+<button
+  css={`
+    color: ${props => props.theme.colors.text};
+    background: ${props => props.theme.colors.primary};
+    border-radius: ${props => props.primary ? '4px' : '5px'};
+  `}
+>
+  Click me
+</button>
+```
+
+Under the hood, the Babel plugin turns any element that has a css prop into a styled component. For example, if you were to write this BlueButton component:
+
+```js
+const BlueButton = (props) =>
+  <button css="color: blue; padding: 1em;" {...props} />
+
+<BlueButton css="background: blue; color: white;">Hey!</BlueButton>
+```
+
+The Babel plugin would turn it into this:
+
+```js
+import styled from 'styled-components';
+
+const StyledButton = styled('button')`
+  color: blue;
+  padding: 1em;
+`
+
+const BlueButton = (props) => <StyledButton {...props} />;
+
+const StyledBlueButton = styled(BlueButton)`
+  background: blue;
+  color: white;
+`
+
+<StyledBlueButton>Hey!</StyledBlueButton>
+```
+
+Yep, **it even adds the styled-components import automatically** so you don’t have to think about it. This mechanism also means that support for the css prop adds exactly 0.0kB to the runtime of the library. 😎
+
+Huge shoutout to [Satyajit Sahoo](https://medium.com/u/166675f65aaf), who came up with this ingenious technique!
+
+We hope you enjoy the css prop. 💜 If you want to learn more [**check out the documentation**](https://styled-components.com/docs/api#css-prop)**, **and** let us know what you think **[**in the community**](https://spectrum.chat/styled-components/general/announcing-support-for-the-css-prop~c0005836-33b5-40c2-87e4-0293078dc643)**!**
+
+As always, stay stylish out there. 💅

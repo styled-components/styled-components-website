@@ -1,0 +1,183 @@
+export const meta = {
+  title: "Announcing styled-components v4: Better, Faster, Stronger",
+  author: "Evan Jacobs",
+  date: "2018-09-04",
+  slug: "announcing-styled-components-v4-better-faster-stronger",
+  description: "A deep dive into styled-components v4: a brand new global styles API, native \"as\" prop support, .extend removal, and full React v16 StrictMode compliance.",
+  originalUrl: "https://medium.com/styled-components/announcing-styled-components-v4-better-faster-stronger-3fe1aba1a112",
+};
+
+![](https://cdn-images-1.medium.com/max/1024/1*b0k8db8_eyD47jTNd89iIQ.png)
+
+#### A brand new global styles API, native support for the “as” and “ref” props, removal of .extend, full React v16 StrictMode-compliance, tons of speed, and more 💪
+
+We’re very excited to announce that styled-components v4 is officially in beta! Get it now with your favorite package manager and help us test the changes, we’d love to hear your thoughts. ✨
+
+```js
+npm install styled-components@beta
+```
+
+[Migration instructions](https://www.styled-components.com/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4)・[v4 beta changelog](https://github.com/styled-components/styled-components/blob/develop/CHANGELOG.md)
+
+The highlights of this release:
+
+- **Smaller and much faster,** going from 16.1kB to less than 15kB (depending on your bundler and usage of the babel plugin) and speeding up mounting by ~25% and re-rendering by ~7.5% (potentially more if [this PR](https://github.com/styled-components/styled-components/pull/1994) is merged)
+- **A brand new ****createGlobalStyle API**, the hot-reloadable and themable replacement for the old injectGlobal
+- **Support for the ****"as" prop,** a more flexible alternative to .withComponent()
+- **Removal of ****Comp.extend**, with an automatic codemod to move your entire codebase to the unified styled(Comp) notation
+- **Full **[**StrictMode**](https://reactjs.org/docs/strict-mode.html)** compliance for React v16,** which also means we had to drop support for React v15 and lower (you may be able to use polyfills to get v15 working with styled-components v4)
+- **Native support for ****ref on any styled component**, no more innerRef thanks to React v16
+#### Why is it a beta?
+
+We want to make sure people have enough time to stress test the changes and to get updated typings and syntax highlighting support for all the new APIs in place. We are planning on the beta period to last about a month.
+
+### Performance, Performance, Performance!
+
+Back when we released v2 we promised to focus on performance after nailing our core APIs, and have since delivered with speedups in various patch releases and [a massive 10x boost in v3.1](https://medium.com/styled-components/v3-1-0-such-perf-wow-many-streams-c45c434dbd03).
+
+We’re happy to announce that we’re continuing the trend with this release! Thanks to internal optimizations around memory usage, JS engine implementation details, and various refactorings, **styled-components v4 mounts faster by ~25%** for both deep and wide component trees, and **updates dynamic styles faster by ~7%:**
+
+![](https://cdn-images-1.medium.com/max/1024/1*dCQb3dyLCPO17pXYJ4cWoA.png)
+
+*styled-components v3 compared to v4 in three benchmarks: the first two are mounting component trees, the last is updating components with dynamic styles*
+
+While that’s great in isolation, lets look at how v4 compares to other libraries in the wider CSS-in-JS ecosystem with its mounting speed:
+
+![](https://cdn-images-1.medium.com/max/1024/1*oGL9DMlqK_XVWebyDSXpiQ.png)
+
+As you can see, **styled-components v4 is *blazing fast*™️.** We’re within a standard deviation of all the fastest libraries out there, both in terms of mounting as well as updating speed, which means performance is officially no longer an issue! 🎉
+
+*While this is a great evolution that’s been a long time in the works, we’re nowhere near done — we’ll always continue keeping an eye on potential optimizations to improve our performance.*
+
+### New Global Styles API
+
+We’ve been cooking a new global styling API behind the scenes for a while. The old injectGlobal had three big issues: it couldn’t be dynamically updated, it wasn’t hot-reloadable and it wasn’t contextually themable.
+
+**We’re excited to introduce you to ****createGlobalStyle, our new dynamically updateable API for global styles**! Here’s what it looks like:
+
+```js
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    color: red;
+  }
+`;
+
+export default function App() {
+  return (
+    <div>
+      <GlobalStyle />
+      This is my app!
+    </div>
+  );
+}
+```
+
+With createGlobalStyle, your global styles are now part of the React component tree. While that might not sound like a big difference **it makes it possible to dynamically update, hot-reload, and **[**contextually theme**](https://www.styled-components.com/docs/advanced#theming)** your global styles**, exactly like you would any other styled component! 😍
+
+```js
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+
+// Global styles but theme- and update-able!
+const GlobalStyle = createGlobalStyle`
+  html {
+    background: ${p => p.backgroundColor};
+    color: red;
+    font-family: ${p => p.theme.fontFamily};
+  }
+`;
+
+export default function App() {
+  return (
+    <ThemeProvider theme={{ fontFamily: "Helvetica Neue" }}>
+      <GlobalStyle backgroundColor="red" />
+    </ThemeProvider>
+  );
+}
+```
+
+### Adios .extend, hello origami magic!
+
+This release also includes an internal rework so that wrapped styled components now automatically “fold” and only a single component is rendered.
+
+#### “Okay, but… what does that mean for me?”
+
+We introduced the StyledComp.extend API because it lets us do some optimizations based on the fact that the component you’re extending was a styled component. Thanks to the internal work to automatic folding, **using ****styled(StyledComp) automatically applies the same optimizations ****StyledComp.extend used to do! **That means .extend isn’t a useful part of the API anymore, so we’re removing it. One less API to think about and less code to ship — win-win! ✨
+
+### The new “as” *polymorphic *prop
+
+There’s one more thing that we’re really stoked about in this v4 release: **native support for the ****as prop on any styled component to change what is rendered dynamically at runtime!** It is best explained with an example:
+
+```js
+import styled from "styled-components"
+import { Link } from "react-router-dom"
+
+// <Component /> renders a div to the DOM
+const Component = styled.div`
+  color: red;
+`
+<Component>Hello World!</Component>
+
+// But we can also make it render any other HTML tag or component!
+<Component as="span">Hello World!</Component>
+<Component as={Link} to="/home">Hello World!</Component>
+```
+
+Compared to our existing .withComponent(something) this is way more flexible since you don’t have to define the replacement ahead of time, and **with our new internal folding mechanism you don’t lose any styling if your base component is a styled-component**!
+
+```js
+import styled from "styled-components"
+
+const RedColor = styled.div`
+  color: red;
+`
+
+const BlueBackgroundRedColor = styled(RedColor)`
+  background: blue;
+`
+
+<BlueBackgroundRedColor as="span">Hello!</BlueBackgroundRedColor>
+// Even though we switch to rendering a `span` from rendering
+// a div, this will still have a red color on top of
+// the blue background!! (.withComponent couldn't do that)
+```
+
+As you can see, the as prop is super awesome and will make it much easier to render semantic HTML everywhere in your applications. 💯 No more excuses for  soups!
+
+*Note that we’re not deprecating **.withComponent just yet while we make sure the **as prop is a suitable replacement for all use cases. Assuming it turns out to be, **.withComponent will be removed in the next major release.*
+
+### React v16 and refs
+
+During our internal migration to the new React v16 APIs, we also found that innerRef could be done away-with via the new React.forwardRef API 👏 We never enjoyed this workaround because it felt so hacky… but thanks to the lovely work by the React team, now native ref can be used:
+
+```js
+import styled from "styled-components"
+
+const Component = styled.div`
+  color: red;
+`
+
+// Later in your render function
+<Component ref={element => { this.myRef = element; }} />
+```
+
+### TypeScript improvements
+
+We’re not directly responsible for this, but we’re very excited about the new [@babel/preset-typescript](http://twitter.com/babel/preset-typescript) since it means that y’all TypeScript users can finally use the [styled-components babel plugin](https://github.com/styled-components/babel-plugin-styled-components) with all its benefits, including easier debugging with the component names in the classes, server-side rendering support and smaller bundle sizes! Highly recommended. 👏
+
+#### The types are now migrated to DefinitelyTyped!
+
+We’ve also finished the migration of TS types to DefinitelyTyped so that the community can iterate on them and fix typing bugs at their own pace outside the release cycle of styled-components. Get them on npm as [@types/styled-components](https://www.npmjs.com/package/@types/styled-components)!
+
+### Welcome Bhargav!
+
+We want to give a huge shoutout and welcome to [**Bhargav Ponnapalli**](https://github.com/imbhargav5)**, our newest core team member**!
+
+He fearlessly tackled some of the harder v4.0 roadmap items and brought some great enthusiasm to the project. We’re super excited for him to join the core team and look forward to his future contributions and community stewardship.
+
+From all of us, we hope you love v4 as much as we loved working on it! Let us know what you think in the community: [https://spectrum.chat/styled-components](https://spectrum.chat/styled-components)
+
+As always, stay stylish. ✌️💅
+
+*Like styled-components? Please consider making a donation or convincing your company to sponsor our *[*OpenCollective*](https://opencollective.com/styled-components)*! We’re a typical open source volunteer team and your contribution helps us do things like compensate collaborators, go to conferences, and make cool swag.*

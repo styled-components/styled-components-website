@@ -1,0 +1,135 @@
+export const meta = {
+  title: "How styled-components works: A deep dive under the hood",
+  author: "Eugene Gluhotorenko",
+  date: "2018-08-14",
+  slug: "how-styled-components-works",
+  description: "A technical deep dive into how styled-components processes tagged template literals, generates CSS, and injects styles into the DOM.",
+  originalUrl: "https://medium.com/styled-components/how-styled-components-works-618a69970421",
+};
+
+![](https://cdn-images-1.medium.com/max/1024/1*HjZuFobgQq6U6_4if-Heew.png)
+
+*Original icons made by [Freepik](http://www.freepik.com/) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)*
+
+CSS-in-JS is getting more and more common in the modern front-end development and especially in the React community. [styled-components](https://www.styled-components.com) stands out from [the list](https://github.com/tuchk4/awesome-css-in-js#libraries) because it is powered by [tagged templates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates) and allows to create normal react components by only defining styles. It also solves such important problem like CSS modularity, provides non-CSS features like nesting, and all these features supplied with zero-configuration. Developers no need to think about uniq names for CSS classes they even don’t need to think about classes at all. But how is this power achieved?
+
+***Note****: If you are not familiar with styled-components read *[*the official documentation*](https://www.styled-components.com/docs)* first.*
+
+### Magic Syntax
+
+Let’s create a simple button with static styles using styled-components:
+![](https://cdn-images-1.medium.com/max/306/1*8wJLnE1QXl8jtkbp2AWQmw.png)
+
+[**Live demo**](https://jsfiddle.net/gevgeny/r07th16o/?utm_source=website&utm_medium=embed&utm_campaign=r07th16o)
+
+Here styled.button is just shortcut for styled('button') and one of many functions dynamically created from [list of available html elements](https://github.com/styled-components/styled-components/blob/v3.3.3/src/utils/domElements.js#L4). If you are familiar with t[agged templates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates) you know that button is just a function and can be called with a simple string in array parameter. Let’s desugar this code:
+[**Live demo**](https://jsfiddle.net/gevgeny/o3zhc7xw/)
+
+Now as you see that styled is just a component factory we can imagine how it’s implementation could look like.
+
+### Reinvent styled-components
+[**Live demo**](https://jsfiddle.net/gevgeny/dxc6gumn/?utm_source=website&utm_medium=embed&utm_campaign=dxc6gumn)
+
+This implementation is pretty easy — the factory creates a new component based on a tag name saved in the closure and sets inline styles after mounting. But what if our component has styles based on the props?
+We need to update our implementation so that it evaluates interpolations in the styles when a component mounts or it’s props are updated:
+[**Live Demo**](https://jsfiddle.net/gevgeny/et4wu96y/?utm_source=website&utm_medium=embed&utm_campaign=et4wu96y)
+
+The most tricky part here is obtaining the style string:
+We concat all the string chunks with the results of the expressions one by one; and if an expression is a function it is called with the component’s properties passed to.
+
+API of this simple factory looks similar to the the one styled-components provides but the original implementation works much more interesting under the hood: **it does not use inline styles**. Let’s see closer what’s going on when you import styled-components and create a component.
+
+### styled-components Under The Hood
+
+#### Import styled-components
+
+When you import the library first time in you app it creates an internal counter variable to count all the components created via the styled factory.
+
+#### call styled.tag-name factory
+When styled-components creates a new component it also creates internal identifier componentId. Here is how the identifier computed:
+componentId for the first styled component in an app is sc-bdVaJa
+
+Currently styled-components uses [MurmurHash](https://www.wikiwand.com/en/MurmurHash) algorithm to create uniq identifier and then [converts the hash number to alphabetic name](https://github.com/styled-components/styled-components/blob/v3.3.3/src/utils/generateAlphabeticName.js#L13).
+
+As soon as the identifier is created, styled-components inserts new HTML  element into the  (if it is the first component and the element is not inserted yet) of your page and adds special comment marker** **with** **the componentId** **to the element which will be used later. In our case we got:
+When the new component is created, the target component passed to the factory target (in our case 'button') and the componentId are saved in the static fields:
+As you can see there is no any performance overhead when you just create a styled component. Even if you define hundred of components and don’t use them, all you got is one or more  elements with comments inside.
+
+There is one more important thing about components created via styled factory: **they are inherited from hidden****BaseStyledComponent class** which implements several lifecycle methods. Let’s consider what it is responsible for.
+
+#### componentWillMount()
+
+Lets create instance of the above Button and mount it into the page:
+Lifecycle method componentWillMount() of BaseStyledComponent comes into play. It is responsible for a few important actions:
+
+**1.** **Evaluating tagged template:** The algorithm is very similar to the one we implemented in our custom myStyled factory. For the Button component instance:
+We got such evaluatedStyles string:
+**2. Generating CSS class name: **Each component instance with uniq props has it’s own CSS class name which generated by means of the same [MurmurHash](https://www.wikiwand.com/en/MurmurHash) algorithm but from the componentId and the evaluatedStyles string:
+For our Button instance the generated className is jsZVzX.
+
+Then this class name is stored in the component state as generatedClassName.
+
+**3. CSS Preprocessing:** Here is where the super fast [stylis CSS preprocessor](https://github.com/thysultan/stylis.js) comes to the rescue and helps to obtain valid CSS string:
+Result CSS for the Button instance:
+**4. Injecting CSS string into the page: **Now the CSS should be injected into the  element in the head of the page right after the component’s comment marker:
+As you can see styled-components also injects componentId (.sc-bdVaJa) as a CSS class with no any rules.
+
+#### render()
+
+As it’s finished with CSS now styled-components just needs to create an element with corresponding className:
+styled-components renders an element with 3 class names:
+
+- this.props.className — optional passed by parent component.
+- componentId — uniq identifier of a component but not component instance. This class has no any CSS rules but it is used in nesting selectors when need to [refer to other component](https://www.styled-components.com/docs/advanced#referring-to-other-components).
+- generatedClassName — uniq per every component instance which has actual CSS rules.
+That is it! Final rendered HTML element is:
+#### componentWillReceiveProps()
+
+Now let’s try to change our button props when it is mounted. To do this we need to make more interactive example for our Button:
+[**Live version**](https://jsfiddle.net/gevgeny/0ezu72Ly/)
+
+Every time you click the button, the componentWillReceiveProps() is called with incremented sizeValue prop and does the same actions as the componentWillMount() does:
+
+- Evaluate the tagged template.
+- Generate the new CSS class name.
+- Preprocess the styles with [stylis](https://github.com/thysultan/stylis.js).
+- Inject the preprocessed CSS into the page.
+If you check generated styles in dev tools after a few clicks you will see:
+Yes, the only difference for each CSS class is font-size property and unused CSS classes are not removed. But why? Just because removing them adds performance overhead while keeping does not ([see Max’s Stoiber comment on this](https://github.com/styled-components/styled-components/issues/1431#issuecomment-358097912)).
+
+There is one small optimization here: components without interpolations in the style string are marked as isStatic and this flag is checked in componentWillReceiveProps() in order to skip unnecessary calculations of the same styles.
+
+### Performance tips
+
+Knowing how styled-components works under the hood we can focus on performance better.
+
+There is an easter egg in [the example with button](https://jsfiddle.net/gevgeny/0ezu72Ly/) (Hint: try to click the button more then 200 times and you will see the hidden message from styled-components in the console. No kidding!* 😉).
+
+If you are too eager here is the message:
+
+```js
+Over 200 classes were generated for component styled.button.
+Consider using the attrs method, together with a style object for frequently changed styles.
+
+Example:
+  const Component = styled.div.attrs({
+    style: ({ background }) => ({
+      background,
+    }),
+  })`width: 100%;`
+```
+
+Here is how the Button looks like after the refactoring:
+*But should you use this technique for all you dynamic styles ? No. But my personal rule is to **use the style attr for all dynamic styles with undermined number of results**. For example if you have a component with customizable font-size like a [word cloud](https://www.jasondavies.com/wordcloud/) or list of tags loaded from a server with different colors it is better to use the style attr. But if you have variety of buttons like default, primary, warn and etc. in one component it is ok to use interpolation with conditions in the styles string.
+
+In the examples below I use development version but in a production bundle you should always use the production build of styled-components because it is faster. Just like in React styled-components production build disables many dev warning but most importantly, it uses[CSSStyleSheet.insertRule()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/insertRule) to inject generated styles in a page while development version uses [Node.appendChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild) ([Here Evan Scott shows](https://medium.com/styled-components/v3-1-0-such-perf-wow-many-streams-c45c434dbd03) how really fast insertRule is).
+
+Also consider using [babel-plugin-styled-components](https://www.styled-components.com/docs/tooling#babel-plugin). It can minify or even preprocess styles before loading.
+
+### Conclusion
+
+styled-components workflow is pretty straightforward, it creates necessary CSS on the fly right before components render and it is fast enough despite evaluating tagged strings and preprocessing CSS right in the browser.
+
+This article does not cover all the aspects of styled-component but I tried to focus on the main ones.
+
+To write this text I used styled-components *[*v3.3.3*](https://github.com/styled-components/styled-components/tree/v3.3.3)*. Since the article is about the under-hood things a lot of them may change in the future versions.*

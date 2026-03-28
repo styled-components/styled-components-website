@@ -1,0 +1,59 @@
+export const meta = {
+  title: "Releasing styled-components v4 final",
+  author: "Evan Jacobs",
+  date: "2018-10-15",
+  slug: "styled-components-v4-new-final-finalest-for-real-final-final-psd",
+  description: "styled-components v4 is officially stable after beta testing, bringing a smaller bundle, the new createGlobalStyle API, and full React 16 StrictMode compliance.",
+  originalUrl: "https://medium.com/styled-components/styled-components-v4-new-final-finalest-for-real-final-final-psd-fa4d83398a77",
+};
+
+![](https://cdn-images-1.medium.com/max/1024/1*cJuL7RwhDnmb8uHGiavHQg.png)
+
+#### After a couple weeks of beta testing styled-components v4 is now officially ready for primetime!
+
+If you didn’t read [the styled-components v4 announcement](https://medium.com/styled-components/announcing-styled-components-v4-better-faster-stronger-3fe1aba1a112), here’s a quick primer on what’s in this release:
+
+- **Smaller and much, *much* faster**
+- **A refreshed ****createGlobalStyle API**, replacing the old injectGlobal
+- **Support for the ****"as" prop**, a dynamic alternative to .withComponent
+- **Removal of ****Comp.extend **in favor of unifying styled(Comp)
+- **Full **[**StrictMode**](https://reactjs.org/docs/strict-mode.html)** compliance for React v16**
+- **Native support for ****ref on any styled component**
+*Read *[*the announcement post*](https://medium.com/styled-components/announcing-styled-components-v4-better-faster-stronger-3fe1aba1a112)* for the full details on these.*
+
+That’s a lot already, but we haven’t been sleeping since the initial announcement! **Here’s what new in the final release:**
+
+- **A brand-new **[**Babel macro**](https://www.styled-components.com/docs/tooling#babel-macro)** **so you can get all the goodies of the Babel plugin in create-react-app! 🎣
+- **Fully automatic **[**codemods**](https://github.com/styled-components/styled-components-codemods) to auto-magically migrate most of your codebase from to v4 🎩✨
+- **A test util for Enzyme** so that unit testing your components is easier
+- **All the bugfixes** since the initial beta release (shoutout to all the early testers for their invaluable feedback)
+### Announcing the styled-components Babel Macro 🎣
+
+Thanks to our contributor Luc Leray [we’ve now got a Babel Macro](https://www.styled-components.com/docs/tooling#babel-macro)! This means **create-react-app users can get all the benefits of the styled-components **[**Babel plugin**](https://www.styled-components.com/docs/tooling#babel-plugin) (most notably, nicer class names) without needing to eject 🎉
+
+All you have to do is change your import statements to "styled-components/macro" and that’s it:
+
+```js
+// Before:
+import styled from "styled-components";
+
+// After:
+import styled from "styled-components/macro";
+```
+
+### 5 Minute Migration 🎩✨
+
+We’ve worked hard on making this upgrade as easy as possible, so for most of you **there’s only three steps to upgrade your entire codebase to v4**:
+
+- **Install the latest styled-components version** by running npm install styled-components@latest babel-plugin-styled-components@latest
+- **Install **[**the codemods**](https://github.com/styled-components/styled-components-codemods)** globally** with npm install -g styled-components-codemods
+- **Run the codemods on your codebase **with styled-components-codemods v4 src/**/*.js. They will auto-magically move all your Comp.extend usages to styled(Comp) and your injectGlobal usages to createGlobalStyle!
+If you’re using TypeScript, you’ll also need to upgrade your typings to the new ones from DefinitelyTyped: npm install @types/styled-components@latest
+
+*Note: see *[*the website for more detailed instructions*](https://www.styled-components.com/docs/faqs#what-do-i-need-to-do-to-migrate-to-v4)* and potential edge cases, and make sure that you’re on React v16.3+, which is required for styled-components v4 due to the new ref system.*
+
+From all of us, we hope you love v4 as much as we loved working on it! Let us know what you think in the community: [https://spectrum.chat/styled-components](https://spectrum.chat/styled-components)
+
+As always, stay stylish. ✌️💅
+
+*Like styled-components? Please consider making a donation or convincing your company to sponsor our *[*OpenCollective*](https://opencollective.com/styled-components)*! We’re a typical open source volunteer team and your contribution helps us do things like compensate collaborators, go to conferences, and make cool swag.*

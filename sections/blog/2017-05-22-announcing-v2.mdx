@@ -1,0 +1,53 @@
+export const meta = {
+  title: "Announcing styled-components v2: A smaller, faster drop-in upgrade",
+  author: "Max Stoiber",
+  date: "2017-05-22",
+  slug: "announcing-v2",
+  description: "styled-components v2 ships with a 45% smaller bundle, best-in-class server-side rendering, and new API helpers like .attrs, .extend, and .withComponent.",
+  originalUrl: "https://medium.com/styled-components/announcing-v2-f01ef3766ac2",
+};
+
+After six months of development and over 300 commits, we're thrilled to announce styled-components v2 — a smaller, faster drop-in upgrade with even more features!
+
+![styled-components v2 announcement](https://cdn-images-1.medium.com/fit/c/800/400/1*TO5cYT14YsCfR-j1xdp8lw.png)
+
+## Key Improvements
+
+### Smaller Bundle Size
+
+We achieved a **45% reduction in bundle size**, going from 22kB down to 12kB. This was accomplished by replacing PostCSS with a custom browser-optimized parser called [Stylis](https://github.com/thysultan/stylis.js).
+
+### Best-in-Class Server-Side Rendering
+
+v2 ships with best-in-class server-side rendering with critical CSS, style rehydration, and concurrency support. All it takes is four lines of code to enable automatic critical CSS detection and browser rehydration.
+
+### New API Helpers
+
+- **`.attrs` helper**: Pass attributes and classnames to styled components
+- **`.extend` method**: Create related component families that share styles
+- **`.withComponent` helper**: Change HTML tags contextually
+- **Contextual overrides**: Components can reference other components in CSS
+
+### Better Developer Experience
+
+The optional Babel plugin adds component names to class names and minifies styles in production. We also launched a completely redesigned website with overhauled documentation.
+
+## Upgrade Path
+
+v2 is a drop-in upgrade for most people, so you can start using it with confidence:
+
+```bash
+npm install styled-components@latest
+```
+
+## Technical Details
+
+The custom Stylis parser maintained **99.9% compatible** functionality while dramatically reducing code shipped to browsers. The release remains a semver-major version due to potential CSS edge cases with the new parser.
+
+## Future Roadmap
+
+We outlined several experimental directions:
+
+- Pre-processing styles at build time (alpha available)
+- Static CSS file extraction during builds
+- Removing internal property whitelists while maintaining developer experience

@@ -1,0 +1,130 @@
+export const meta = {
+  title: "Celebrating a Decade of styled-components",
+  author: "Evan Jacobs",
+  date: "2026-03-22",
+  slug: "celebrating-a-decade-of-styled-components",
+  description: "Ten years of visual primitives for the component age. A look back at where we've been, where we are, and where we're headed.",
+  originalUrl: "https://styled-components.com/blog/celebrating-a-decade-of-styled-components",
+};
+
+Ten years of visual primitives for the component age. A look back at where we've been, where we are, and where we're headed.
+
+## Where It All Began
+
+In October 2016, **Glen Maddern** and **Max Stoiber** asked a deceptively simple question: what if CSS lived inside your components, not alongside them? What if styled primitives *were* the component? That question changed how a generation of React developers thought about styling — and a whole lot of them never looked at a separate stylesheet the same way again.
+
+Using tagged template literals — a then-novel JavaScript feature — the library let developers write real CSS inside their JavaScript. No class name collisions, no separate stylesheet files, no mental mapping between components and their styles. It resonated immediately.
+
+```js
+import styled from 'styled-components';
+
+// The syntax that changed everything
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
+```
+
+Adoption was swift. Startups and enterprises alike picked it up. The npm downloads climbed past hundreds of thousands per month. The GitHub stars accumulated into the tens of thousands.
+
+---
+
+## A Decade in Motion
+
+**October 2016** — **The First Commit.** Glen Maddern and Max Stoiber release styled-components, introducing tagged template literal CSS to the React world.
+
+**2017** — **Community Explosion.** Phil Plückthun joins as core contributor, building the Babel plugin that powers server-side rendering and smaller bundles. The ecosystem grows rapidly — jest-styled-components, the VS Code extension, and more.
+
+**2017–2018** — **v2, v3, v4 — Rapid Evolution.** A series of major releases bring dramatic performance improvements — including a 10x speed boost in v3.1 — along with native theming, React Native support, and the .attrs API.
+
+**2017–Mid-2019** — **Evan Jacobs Becomes Primary Maintainer.** While working at Zocdoc, Evan (then **@probablyup**, now [@quantizor](https://github.com/quantizor)) started contributing in 2017. His team wanted to use React 16's new streaming server rendering, but styled-components didn't support it. So he built the first streaming SSR implementation and [contributed it upstream](https://github.com/styled-components/styled-components/pull/1430) in January 2018. That pulled him deeper into the codebase. By mid-2019 — after Phil Plückthun's last major merge (the hooks rewrite into the v5 canary branch) — Evan had become the project's primary maintainer.
+
+**January 2020** — **v5 "Beast Mode".** A rebuilt core stylesheet engine delivers 50% faster SSR, 22% faster client-side rendering, and a 31% smaller bundle. Hooks replace class components under the hood.
+
+**2020–2023** — **v6 — The TypeScript Rewrite.** The v6 planning discussion opened in November 2020 ([#3333](https://github.com/styled-components/styled-components/issues/3333)). The first alpha landed in February 2022 ([#3696](https://github.com/styled-components/styled-components/issues/3696)), the beta feedback thread opened in September 2022 ([#3800](https://github.com/styled-components/styled-components/issues/3800)), and v6.0.0 shipped in June 2023. A ground-up rewrite in TypeScript — 1 to 2 years of work, all before the age of AI-assisted coding. Shipping built-in types meant users could finally drop @types/styled-components, but it also meant the project now owned every type bug directly.
+
+**March 2025** — **Maintenance Mode & Gratitude.** A heartfelt ["Thank You"](https://opencollective.com/styled-components/updates/thank-you) post transitions the project into maintenance mode. The library continues to receive fixes and improvements.
+
+**2025–2026** — **Still Shipping.** The v6.3.x line continues to ship fixes — React 19 hydration, StrictMode compatibility, Shadow DOM SSR — and a v6.4.0 RC enters community testing with major new features.
+
+---
+
+## "Maintenance Mode" ≠ Dead
+
+When the project entered maintenance mode in March 2025, a lot of people heard "dead." Blog posts titled "RIP styled-components" started appearing. The narrative took on a life of its own — which is a polite way of saying it was wrong.
+
+Maintenance mode means no major new feature initiatives. It doesn't mean nobody's home. Bugs are being fixed. PRs are being reviewed. A v6.4.0 RC is in testing right now. But the honest picture is worth laying out: this is a solo-maintained org outside of a few utility libraries. It has been since mid-2019. It's not a major source of income for anyone — which means it competes with personal time, family, and the work that actually pays the bills. It gets evenings and weekends when there's energy left, not prime engineering hours.
+
+That's been workable for a while, but it isn't a plan. One person volunteering indefinitely is not a sustainability model.
+
+> "First and foremost, thank you to everyone who has contributed to styled-components over the years. Open Source is hard work, and many of the larger feature and refactoring drives probably would never have shipped without your support!"
+>
+> — Evan Jacobs, March 2025
+
+---
+
+## What's Happening Right Now
+
+A **v6.4.0 release candidate** is in active testing:
+
+- **createTheme for CSS Variable Theming** — A new `createTheme` utility enables CSS custom property theming that works across both RSC and client components — no React context needed. Includes `theme.resolve()` for reading computed values from the DOM. ([PR #5687](https://github.com/styled-components/styled-components/pull/5687))
+
+- **Dropped IE11 & Smaller Bundle** — ES2015 build target, inlined unitless CSS properties, removed the @emotion/unitless dependency. Bundle down from 12.8kB to 12.25kB gzip (−4.3%).
+
+- **Rearchitected Global Styles** — createGlobalStyle now uses shared stylesheet groups with deterministic definition-time ordering, fixing long-standing SSR memory leaks and multi-instance unmount bugs.
+
+- **First-Class CSP Nonce & Better .attrs()** — Nonces configurable via StyleSheetManager, ServerStyleSheet, or `<meta>` tags. Props via .attrs() are now automatically made optional.
+
+RC4 is available at `styled-components@test`. If you're running styled-components in production, give it a spin and leave a reaction on [the PR](https://github.com/styled-components/styled-components/pull/5687).
+
+---
+
+## The .attrs() Type Saga
+
+For a window into what maintaining a widely-used TypeScript library actually looks like, consider the `.attrs()` API. The concept is simple: set default props on a styled component. The typing is anything but.
+
+The issue tracker tells the story. [#4076](https://github.com/styled-components/styled-components/issues/4076) (50+ thumbs-ups): TypeScript doesn't infer that props provided via `.attrs()` should become optional — users supply a default for `foo`, then TS still demands they pass it at the call site. [#4138](https://github.com/styled-components/styled-components/issues/4138): `styled(Component).attrs(\{ color: 'red' \})` still requires `color` in JSX. [#4151](https://github.com/styled-components/styled-components/issues/4151): data attributes accepted in JSX but rejected inside `.attrs()`. [#4209](https://github.com/styled-components/styled-components/issues/4209): CSS custom properties in `style` throw type errors because `CSSProperties` lacks an index signature for `--*`. [#4302](https://github.com/styled-components/styled-components/issues/4302): still broken on React Native in v6.1.9. And in January 2026, [#5652](https://github.com/styled-components/styled-components/issues/5652): React 19's stricter `CSSProperties` is incompatible with `CSSPropertiesWithVars`, breaking `.attrs()` callbacks for anyone who upgrades.
+
+Most of these aren't styled-components bugs — they're **TypeScript limitations**. TS can't easily express "subtract these keys from this object type and make the rest optional." The workarounds involve deeply nested conditional types (`Substitute`, `FastOmit`) and overloads that fight each other. A fix for web breaks React Native. A fix for static objects breaks the callback form. A fix for both introduces [noticeable slowdowns in type evaluation](https://github.com/styled-components/styled-components/pull/3809). It's a hydra.
+
+The v6.4.0 RC takes a pragmatic approach: attrs-provided props are now automatically made optional. It doesn't cover every edge case, but it addresses the biggest pain point. Sometimes pragmatism beats purity.
+
+---
+
+## Looking Forward
+
+The team at **Sanity** opened [PR #4332](https://github.com/styled-components/styled-components/pull/4332) implementing `useInsertionEffect`, which showed up to 40% faster initial renders in testing at Linear. When the PR sat longer than anyone wanted due to the realities of solo maintenance, they [published a fork](https://www.sanity.io/blog/cut-styled-components-into-pieces-this-is-our-last-resort) to unblock their own migration timeline. Fair enough. We're actively evaluating that work — the `useInsertionEffect` integration, the modernized build output, the associated optimizations — and it will likely land in a follow-up release pending thorough testing.
+
+But the broader question is sustainability. The React core team's direction — deprecating APIs like Context in RSC — creates real technical constraints. The ecosystem's shift toward build-time CSS is undeniable. Styled-components still has 24,000+ npm dependents and 8.5 million weekly downloads. Those users need the library to stay healthy.
+
+There's a new flexible [Supporter tier on Open Collective](https://opencollective.com/styled-components) with a goal of $5,000/month. Getting there would change the equation completely: reliable, dedicated time to stay on top of issues, evaluate community contributions with the care they deserve, and maybe start roadmap planning again. Not a side project squeezed into margins — real, sustained work. Without that, or more maintainers, the pace will continue to slow. That's not a threat; it's math.
+
+---
+
+## Ten Years
+
+Styled-components made a bet that the developer experience of writing styles matters, and that colocation of styles and component logic was worth pursuing. That bet paid off. It shaped how a lot of us think about the relationship between components and their styles — and the ideas it popularized show up everywhere now, even in the tools people are migrating to. That's not a bad decade.
+
+---
+
+## Thank You
+
+To everyone who made styled-components what it is.
+
+**Core Team:** Evan Jacobs ([@quantizor](https://github.com/quantizor)), Glen Maddern ([@geelen](https://github.com/geelen)), Max Stoiber ([@mxstbr](https://github.com/mxstbr)), Phil Plückthun ([@philpl](https://github.com/philpl)), [@schwers](https://github.com/schwers), [@imbhargav5](https://github.com/imbhargav5)
+
+**Standing on the shoulders of:** Charlie Somerville, Nik Graf, Sunil Pai, Michael Chan, Andrey Popp, Jed Watson, Andrey Sitnik, @okonet (logo design)
+
+**345+ contributors.** 3,709 commits across 184 releases. An entire ecosystem — jest-styled-components, the VS Code extension, the Babel plugin, polished, xstyled, and countless community libraries in [awesome-styled-components](https://github.com/styled-components/awesome-styled-components). To every single person who opened a pull request, filed an issue, or simply chose styled-components for their project: **thank you**.
+
+**Past sponsors & backers:** Icons8, Practice Ignition, InVision AG, Coinbase, Easy Agile, Tesorio, Dutchie, Frontend Masters, Sanity, Airbnb, Trivago, and hundreds more.
+
+---
+
+If styled-components has been part of your stack, the most direct way to keep it maintained is the [Supporter tier on Open Collective](https://opencollective.com/styled-components).

@@ -1,0 +1,41 @@
+export const meta = {
+  title: "Responsive Styled Components in 3 Minutes",
+  author: "Matt Granmoe",
+  date: "2017-08-29",
+  slug: "responsive-styled-components-in-3-minutes",
+  description: "Build a declarative responsive component system in just 18 lines of code using styled-components and JavaScript's reduce function.",
+  originalUrl: "https://medium.com/styled-components/responsive-styled-components-in-3-minutes-ae3b58cca57b",
+};
+
+A declarative, elegant responsive design approach for React using styled-components — built with just 18 lines of code.
+
+![Responsive styled-components demo](https://cdn-images-1.medium.com/fit/c/800/600/1*SqCfetd7mqPvvco8Jhhb8g.gif)
+
+## Motivation
+
+The traditional approach of managing separate class names and global CSS rulesets for responsive design is cumbersome and error-prone. Inspired by the styled-components community, this article demonstrates building custom responsive utilities with minimal code.
+
+## API Design
+
+The ideal API progression starts with basic breakpoint-driven styling and evolves toward more sophisticated patterns:
+
+- Components that respond to breakpoint conditions
+- Eliminating manual prop passing through breakpoints defined at configuration time
+- Programmatic component creation supporting conditions like "small only" or "medium and greater"
+- Flexible style rule application beyond simple display toggling
+
+## Implementation
+
+The core `makeResponsiveComponent` function accepts parameters and returns a styled component. Supporting functions include:
+
+- **buildStyles:** Reduces an array of breakpoint-style pairs into a media query string
+- **hideAt:** Syntactic sugar converting arguments to the expected format
+- **Breakpoint component:** A consumer-friendly wrapper enabling JSX-style usage
+
+The implementation leverages JavaScript's `reduce` function for efficient style string construction.
+
+## Updates
+
+**January 2018:** The [facepaint](https://github.com/emotion-js/facepaint) library for Emotion implements similar concepts with additional features.
+
+**May 2022:** [Chakra UI's responsive array syntax](https://chakra-ui.com/docs/styled-system/responsive-styles) represents the best API for responsive styling, while the pattern described here remains valuable for scenarios lacking such abstractions.
