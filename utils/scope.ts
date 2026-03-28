@@ -8,20 +8,19 @@ import styled, {
 } from 'styled-components';
 import stylisRTLPlugin from 'stylis-plugin-rtl';
 
-// mimic babel plugin's behaviour to support SSR
-const hash = 'runner';
-const componentIdCache = new Map<string, number>();
-
-const getComponentId = (key: string) => {
-  if (!componentIdCache.has(key)) {
-    componentIdCache.set(key, componentIdCache.size);
-  }
-  return `sc-${hash}-${componentIdCache.get(key)}`;
-};
+// Deterministic component IDs for live editor SSR — must produce the same
+// ID on server and client regardless of render order or evaluation timing.
+const getComponentId = (key: string) => `sc-runner-${key}`;
 
 const hijackedStyled = (...args: Parameters<typeof styled>) => {
+  // For styled(Component) extensions, derive a stable ID from the component
+  const target = args[0];
+  const name =
+    (typeof target === 'function' && (target.displayName || target.name)) ||
+    (typeof target === 'string' && target) ||
+    'ext';
   return styled(...args).withConfig({
-    componentId: getComponentId('base'),
+    componentId: getComponentId(name),
   });
 };
 
@@ -36,10 +35,6 @@ const ignoredProps = Object.getOwnPropertyNames(Function);
     },
   });
 });
-
-export const reset = () => {
-  componentIdCache.clear();
-};
 
 const baseScope = {
   createGlobalStyle,

@@ -59,15 +59,15 @@ const Label = styled.label<React.LabelHTMLAttributes<HTMLLabelElement>>`
   left: 50%;
   max-width: 100%;
   transform: translate(-50%, 50%);
-  background-color: white;
-  color: #333;
-  font-family: ${headerFont};
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
   padding: 2px 12px;
   white-space: nowrap;
   border-radius: 6px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 5px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px var(--color-shadow), 0 5px 12px var(--color-shadow);
   opacity: 0;
-  transition: all 0.2s ease-out;
+  transition: all var(--duration-normal) ease-out;
 
   @media (min-width: 800px) {
     font-size: 0.65rem;
@@ -125,7 +125,7 @@ const RatioBox = styled.div`
 const Screenshot = styled.div<{ style?: React.CSSProperties }>`
   background-size: cover;
   border-radius: 4px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 5px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px var(--color-shadow), 0 5px 12px var(--color-shadow);
   display: block;
   height: 100%;
   left: 0;

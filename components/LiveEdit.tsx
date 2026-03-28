@@ -10,7 +10,7 @@ import {
 } from 'react-live-runner';
 import React, { useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
-import { red } from '../utils/colors';
+import { color } from '../utils/tokens';
 import { headerFont, monospace } from '../utils/fonts';
 import { phone } from '../utils/media';
 import rem from '../utils/rem';
@@ -56,10 +56,12 @@ export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
 }
 
 const StyledProvider = styled(LiveProvider)`
-  box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
+  box-shadow: 1px 1px 20px var(--color-shadow);
   overflow: hidden;
-  margin: ${rem(35)} 0;
+  margin: var(--space-8) 0;
   text-align: left;
+  position: relative;
+  z-index: 10;
 `;
 
 const Row = styled.div`
@@ -91,11 +93,11 @@ const Code = styled.code`
 `;
 
 export const editorMixin = `
-  border-radius: 3px;
-  color: white;
+  border-radius: var(--radius-md);
+  color: var(--color-code-text);
   cursor: text;
   font-family: ${monospace};
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: normal;
@@ -105,6 +107,18 @@ export const editorMixin = `
   position: relative;
   white-space: pre-wrap;
   tab-size: 2;
+
+  /* Fallback token colors for compound types (e.g. template-string css tokens)
+     that the theme resolver can't match */
+  .token.comment { color: var(--color-code-comment); }
+  .token.punctuation { color: var(--color-code-punctuation); }
+  .token.constant, .token.boolean, .token.builtin { color: var(--color-code-constant); }
+  .token.number { color: var(--color-code-number); }
+  .token.keyword, .token.property, .token.atrule { color: var(--color-code-keyword); }
+  .token.tag, .token.operator, .token.class-name, .token.symbol { color: var(--color-code-tag); }
+  .token.function, .token.attr-name, .token.selector { color: var(--color-code-function); }
+  .token.string, .token.attr-value, .token.regex, .token.char { color: var(--color-code-string); }
+  .token.variable, .token.url, .token.entity { color: var(--color-code-variable); }
 `;
 
 const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
@@ -140,8 +154,8 @@ const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
 const StyledPreview = styled(LivePreview)`
   position: relative;
   padding: 0.5rem;
-  background: white;
-  color: black;
+  background: ${color.bg};
+  color: ${color.text};
   height: auto;
   overflow: hidden;
   white-space: normal;
@@ -153,7 +167,7 @@ export const StyledError = styled(LiveError)`
   display: block;
   width: 100%;
   padding: ${rem(8)};
-  background: ${red};
+  background: ${color.error};
   color: white;
   font-size: 0.8rem;
   font-family: ${headerFont};

@@ -55,7 +55,17 @@ const CompanyLogo = styled.span<{ children?: React.ReactNode }>`
   margin: 0 1rem;
   bottom: 0;
   opacity: 0.8;
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
+
+  @media (prefers-color-scheme: dark) {
+    html:not(.light) & {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  html.dark & {
+    filter: brightness(0) invert(1);
+  }
   transition: opacity 125ms ease-in-out;
   flex-shrink: 0;
 
@@ -97,9 +107,16 @@ const UsersLogos = ({ users, reverse }: { reverse?: boolean; users: ISortedLogos
       <UsersSliderTrack
         $reverse={reverse}
         onClick={toggleAnimation}
-        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleAnimation(); } }}
+        onKeyDown={e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleAnimation();
+          }
+        }}
         role="region"
-        aria-label={animationPaused ? "Company logos carousel (paused)" : "Company logos carousel (playing, click to pause)"}
+        aria-label={
+          animationPaused ? 'Company logos carousel (paused)' : 'Company logos carousel (playing, click to pause)'
+        }
         tabIndex={0}
         style={{ animationPlayState: animationPaused ? 'paused' : 'running' }}
       >
