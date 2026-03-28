@@ -14,7 +14,7 @@
     "prettier": "prettier --write \"**/*.*\"",
     "postinstall": "husky install"
   },
-  "resolutions": {
+  "overrides": {
     "@types/react": "^19.0.0",
     "react-simple-code-editor": "0.14.1"
   },
@@ -26,18 +26,15 @@
     "@styled-icons/boxicons-regular": "^10.47.0",
     "@styled-icons/fa-brands": "^10.47.0",
     "@styled-icons/material": "^10.47.0",
-    "axios": "^1.13.6",
     "invariant": "^2.2.4",
-    "isomorphic-fetch": "^3.0.0",
     "markdown-to-jsx": "^9.7.11",
-    "next": "^16.2",
-    "polished": "^4.2.2",
+    "next": "16.1.7",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-is": "^19.0.0",
     "react-live-runner": "^1.0.7",
     "react-transition-group": "^4.4.5",
-    "styled-components": "^6.3.12",
+    "styled-components": "6.4.0-prerelease.8",
     "styled-theming": "^2.2.0",
     "stylis": "^4.2.0",
     "stylis-plugin-rtl": "^2.1.1"
@@ -67,5 +64,8 @@
     "ts-jest": "^29.1.0",
     "typescript": "5.9"
   },
-  "packageManager": "yarn@4.12.0"
+  "pnpm": {
+    "onlyBuiltDependencies": ["sharp"]
+  },
+  "packageManager": "pnpm@10.33.0"
 }

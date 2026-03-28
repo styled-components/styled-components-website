@@ -15,12 +15,4 @@ __diff_output__
 # build
 .next
 next-env.d.ts
-
-# Yarn 3
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+tsconfig.tsbuildinfo
