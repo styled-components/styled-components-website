@@ -2,62 +2,62 @@ import { Theme } from 'react-live-runner';
 
 export default {
   plain: {
-    backgroundColor: '#27212e',
-    color: '#ffffff',
+    backgroundColor: 'var(--color-code-bg)',
+    color: 'var(--color-code-text)',
   },
   styles: [
     {
       types: ['prolog', 'comment', 'cdata'],
       style: {
-        color: '#91889b',
+        color: 'var(--color-code-comment)',
       },
     },
     {
       types: ['punctuation'],
       style: {
-        color: '#7b6995',
+        color: 'var(--color-code-punctuation)',
       },
     },
     {
       types: ['builtin', 'constant', 'boolean'],
       style: {
-        color: '#7b6995',
+        color: 'var(--color-code-constant)',
       },
     },
     {
       types: ['number'],
       style: {
-        color: '#b381c5',
+        color: 'var(--color-code-number)',
       },
     },
     {
       types: ['important', 'atrule', 'property', 'keyword'],
       style: {
-        color: '#40b4c4',
+        color: 'var(--color-code-keyword)',
       },
     },
     {
       types: ['doctype', 'operator', 'inserted', 'tag', 'class-name', 'symbol'],
       style: {
-        color: '#74dfc4',
+        color: 'var(--color-code-tag)',
       },
     },
     {
       types: ['attr-name', 'function', 'deleted', 'selector'],
       style: {
-        color: '#eb64b9',
+        color: 'var(--color-code-function)',
       },
     },
     {
       types: ['attr-value', 'regex', 'char', 'string'],
       style: {
-        color: '#b4dce7',
+        color: 'var(--color-code-string)',
       },
     },
     {
       types: ['entity', 'url', 'variable'],
       style: {
-        color: '#ffffff',
+        color: 'var(--color-code-variable)',
       },
     },
     {

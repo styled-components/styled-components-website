@@ -1,23 +1,42 @@
-import lighten from 'polished/lib/color/lighten';
-import darken from 'polished/lib/color/darken';
-import shade from 'polished/lib/color/shade';
+import { color } from './tokens';
 
-export const paleGrey = '#efefef';
-export const lightGrey = 'rgba(20, 20, 20, 0.1)';
-export const darkGrey = darken(0.05, '#282a36');
+/**
+ * Color constants — now thin aliases over CSS custom properties.
+ * All actual color values live in GlobalStyles.tsx as OKLCH tokens.
+ *
+ * Existing component imports continue to work unchanged.
+ */
+
+// Surfaces
+export const paleGrey = color.surface;
+export const lightGrey = color.border;
+
+// Static greys (used in always-dark contexts like footer)
 export const grey = '#282a36';
+export const darkGrey = '#232530';
 
-export const red = '#ff5555';
+// Errors
+export const red = color.error;
+
+// Brand pinks (used in docs examples, not themeable)
 export const violetRed = 'rgb(219, 112, 147)';
-export const darkVioletRed = darken(0.1, 'rgb(219, 112, 147)');
-export const lightVioletRed = lighten(0.31, 'rgb(219, 112, 147)');
+export const darkVioletRed = 'rgb(197, 90, 127)';
+export const lightVioletRed = 'rgb(243, 192, 210)';
 export const palepink = '#BF4F74';
 
-export const gold = shade(0.9, 'rgb(243, 182, 97)');
+// Gold
+export const gold = 'rgb(24, 18, 10)';
 
-// BLM palette
-export const blmGrey = 'rgb(33, 33, 33)';
+// Accent
+export const accent = color.accent;
+export const accentLight = color.accentLight;
+export const accentLightest = color.accentLighter;
+export const accentDark = color.accentDark;
+
+// Neutrals (now semantic)
+export const blmGrey = color.borderStrong;
 export const blmBlack = 'rgb(0, 0, 0)';
-export const blmLightGrey = lighten(0.75, 'rgb(33, 33, 33)');
+export const blmLightGrey = color.surface;
+export const blmMetal = color.text;
 
-export const blmMetal = 'rgb(66, 66, 66)';
+export const textSecondary = color.textSecondary;

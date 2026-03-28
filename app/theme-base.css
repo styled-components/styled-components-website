@@ -1,0 +1,24 @@
+/* Static base colors — loads before JS to prevent FOUC.
+   Values must match the lightColors/darkColors partials in GlobalStyles.tsx. */
+
+:root, body {
+  background: oklch(0.99 0 0);
+  color: oklch(0.20 0.01 270);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light), :root:not(.light) body {
+    background: oklch(0.13 0.01 270);
+    color: oklch(0.93 0 0);
+  }
+}
+
+:root.light, :root.light body {
+  background: oklch(0.99 0 0);
+  color: oklch(0.20 0.01 270);
+}
+
+:root.dark, :root.dark body {
+  background: oklch(0.13 0.01 270);
+  color: oklch(0.93 0 0);
+}

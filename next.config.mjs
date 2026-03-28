@@ -10,11 +10,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  experimental: {
-    prefetchInlining: true,
-    appNewScrollHandler: true,
-    useLightningcss: true,
-  },
+  experimental: {},
 };
 
 const withMDX = createMDX({

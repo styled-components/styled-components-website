@@ -1,5 +1,10 @@
-import rem from 'polished/lib/helpers/rem';
+/**
+ * Convert a pixel value to rem string.
+ *
+ * Uses 18px base for backward compatibility with existing component layouts.
+ * New code should prefer CSS custom properties from utils/tokens.ts
+ * (e.g., space[4], text.lg) which use the standard 16px base.
+ */
+const rem = (px: number): string => `${px / 18}rem`;
 
-const _rem = (size: number) => rem(size, '18px');
-
-export default _rem;
+export default rem;
