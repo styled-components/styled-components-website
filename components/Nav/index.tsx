@@ -3,35 +3,22 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import { DocsSidebarMenu, SimpleSidebarMenu, SimpleSidebarMenuProps } from './SidebarMenus';
+import SidebarMenu from './SidebarMenus';
 
 export interface NavProps {
   isSideFolded?: boolean;
-  isMobileNavFolded?: boolean;
   onSideToggle?: () => void;
-  onMobileNavToggle?: () => void;
   showSideNav?: boolean;
-  useDocsSidebarMenu?: boolean;
-  pages?: SimpleSidebarMenuProps['pages'];
 }
 
-const Nav = (props: NavProps) => {
-  const { isSideFolded, isMobileNavFolded, onSideToggle, onMobileNavToggle, showSideNav, useDocsSidebarMenu, pages } =
-    props;
-
+const Nav = ({ isSideFolded, onSideToggle, showSideNav }: NavProps) => {
   return (
     <div>
-      <Navbar
-        showSideNav={showSideNav}
-        isSideFolded={isSideFolded}
-        isMobileNavFolded={isMobileNavFolded}
-        onSideToggle={onSideToggle}
-        onMobileNavToggle={onMobileNavToggle}
-      />
+      <Navbar showSideNav={showSideNav} isSideFolded={isSideFolded} onSideToggle={onSideToggle} />
 
       {showSideNav !== false && (
         <Sidebar $isFolded={isSideFolded}>
-          {useDocsSidebarMenu !== false ? <DocsSidebarMenu /> : <SimpleSidebarMenu pages={pages} />}
+          <SidebarMenu />
         </Sidebar>
       )}
     </div>

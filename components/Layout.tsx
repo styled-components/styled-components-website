@@ -1,14 +1,11 @@
 'use client';
 
 import styled, { css } from 'styled-components';
-import { blmMetal } from '../utils/colors';
-import { bodyFont, headerFont } from '../utils/fonts';
+import { color, font, text, fontWeight, leading, layout, space } from '../utils/tokens';
 import { mobile } from '../utils/media';
-import rem from '../utils/rem';
-import { sidebarWidth } from '../utils/sizes';
 
 export const Container = styled.div`
-  padding-left: ${rem(sidebarWidth)};
+  padding-left: ${layout.sidebarWidth};
 
   ${mobile(css`
     padding-left: 0;
@@ -17,11 +14,14 @@ export const Container = styled.div`
 
 export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean; children?: React.ReactNode }>`
   box-sizing: border-box;
-  font-family: ${bodyFont};
+  font-family: ${font.sans};
   margin: 0 auto;
   max-width: 120ch;
-  padding: ${rem(90)} ${rem(60)} 0 ${rem(60)};
+  padding: ${space[16]} ${space[16]} 0 ${space[16]};
   transition: transform 150ms ease-out;
+  width: 100%;
+  container-type: inline-size;
+  container-name: content;
 
   @layer base {
     p,
@@ -32,24 +32,28 @@ export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean; child
 
   ${p =>
     mobile(css`
-      padding: ${rem(100)} ${rem(36)} ${rem(30)} ${rem(36)};
-      transform: translateX(${p.$moveRight ? rem(sidebarWidth) : 0});
+      padding: ${space[20]} ${space[4]} ${space[6]} ${space[4]};
+      transform: translateX(${p.$moveRight ? layout.sidebarWidth : '0'});
     `)};
 
   ${p =>
-    p.$hero &&
-    css`
-      font-family: ${headerFont};
-    `};
+    p.$hero
+      ? css`
+          width: auto;
+          container-type: normal;
+        `
+      : ''};
 `;
 
 export const Title = styled.h1`
   text-align: left;
   width: 100%;
-  color: ${blmMetal};
-  font-size: ${rem(42)};
-  font-weight: bold;
-  font-family: ${headerFont};
+  color: ${color.text};
+  font-size: ${text['3xl']};
+  font-weight: 800;
+  font-family: ${font.display};
+  line-height: ${leading.tight};
+  margin-bottom: 0.4em;
 
   + h2 {
     margin-top: -0.5em;
@@ -57,30 +61,33 @@ export const Title = styled.h1`
 `;
 
 export const Header = styled.h2`
-  font-size: ${rem(32)};
-  font-weight: 600;
-  font-family: ${headerFont};
-  margin: 2em 0 1em;
+  font-size: ${text.xl};
+  font-weight: ${fontWeight.semibold};
+  font-family: ${font.sans};
+  margin: 2em 0 0.75em;
 
-  + h3 {
-    margin-top: -0.5em;
+  + h2,
+  + h3,
+  + h4 {
+    margin-top: 0.5em;
   }
 `;
 
 export const SubHeader = styled.h3`
-  margin: 2em 0 1em;
-  font-size: ${rem(24)};
-  font-weight: 600;
-  font-family: ${headerFont};
+  margin: 1.75em 0 0.75em;
+  font-size: ${text.lg};
+  font-weight: ${fontWeight.semibold};
+  font-family: ${font.sans};
 
+  + h3,
   + h4 {
-    margin-top: -0.5em;
+    margin-top: 0.5em;
   }
 `;
 
 export const TertiaryHeader = styled.h4`
-  margin: 2em 0 1em;
-  font-size: ${rem(18)};
-  font-weight: 600;
-  font-family: ${headerFont};
+  margin: 1.5em 0 0.5em;
+  font-size: ${text.md};
+  font-weight: ${fontWeight.semibold};
+  font-family: ${font.sans};
 `;

@@ -1,4 +1,3 @@
-import { KeyboardArrowDown } from '@styled-icons/material';
 import styled, { css } from 'styled-components';
 import { mobile } from '../../utils/media';
 import rem from '../../utils/rem';
@@ -7,24 +6,15 @@ import Link from '../Link';
 import Logo from './Logo';
 import NavButton from './NavButton';
 import { CloseIcon, FoldIcon } from './NavIcons';
-import NavLinks from './NavLinks';
+import ThemeToggle from '../ThemeToggle';
 
 export interface MobileNavbarProps {
-  isMobileNavFolded?: boolean;
   isSideFolded?: boolean;
-  onMobileNavToggle?: () => void;
   onSideToggle?: () => void;
   showSideNav?: boolean;
 }
 
-export default function MobileNavbar({
-  children,
-  isMobileNavFolded,
-  isSideFolded,
-  onMobileNavToggle,
-  onSideToggle,
-  showSideNav,
-}: React.PropsWithChildren<MobileNavbarProps>) {
+export default function MobileNavbar({ isSideFolded, onSideToggle, showSideNav }: MobileNavbarProps) {
   return (
     <Wrapper>
       {showSideNav !== false && (
@@ -37,21 +27,7 @@ export default function MobileNavbar({
         <Logo />
       </LogoLink>
 
-      {children}
-
-      <NavButton
-        aria-label={isMobileNavFolded ? 'Open navigation menu' : 'Close navigation menu'}
-        onClick={onMobileNavToggle}
-        style={{ position: 'absolute', right: 0 }}
-      >
-        <ArrowWrapper $shouldRotate={!isMobileNavFolded}>
-          <StyledIcon as={KeyboardArrowDown} $size={36} />
-        </ArrowWrapper>
-      </NavButton>
-
-      <SecondaryMenu $isOpen={!isMobileNavFolded}>
-        <NavLinks />
-      </SecondaryMenu>
+      <ThemeToggle style={{ marginLeft: 'auto' }} />
     </Wrapper>
   );
 }
@@ -66,6 +42,7 @@ const Wrapper = styled.div`
     height: ${rem(navbarHeight)};
     justify-content: space-between;
     margin-left: 16px;
+    margin-right: 8px;
 
     > ${NavButton} {
       margin-left: -8px;
@@ -73,58 +50,10 @@ const Wrapper = styled.div`
   `)};
 `;
 
-const SecondaryMenu = styled.div<{ $isOpen?: boolean; children?: React.ReactNode }>`
-  position: absolute;
-  top: ${rem(navbarHeight)};
-  left: 0;
-  right: 0;
-
-  ${p =>
-    p.$isOpen
-      ? css`
-          height: ${rem(navbarHeight)};
-        `
-      : css`
-          height: 0;
-        `};
-  -webkit-overflow-scrolling: touch;
-  align-items: center;
-  background: rgba(33, 33, 33, 0.9);
-  backdrop-filter: blur(5px);
-  color: #fff;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  overflow-x: overlay;
-  overflow-y: hidden;
-  padding: 0 ${rem(20)};
-  transition: height 0.1s;
-  user-select: none;
-`;
-
 const LogoLink = styled(Link).attrs(() => ({
   unstyled: true,
   href: '/',
   'aria-label': 'styled components',
 }))`
-  margin-right: auto;
   transform: translateY(-1px);
-`;
-
-const ArrowWrapper = styled.div<{ $shouldRotate?: boolean; children?: React.ReactNode }>`
-  transition: transform 0.2s;
-
-  ${p =>
-    p.$shouldRotate &&
-    css`
-      transform-origin: center center;
-      transform: rotate(180deg);
-    `};
-`;
-
-const StyledIcon = styled.div<{ $size?: number }>`
-  && {
-    width: ${p => rem(p.$size || 20)};
-    height: ${p => rem(p.$size || 20)};
-  }
 `;

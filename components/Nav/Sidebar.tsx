@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
-import { paleGrey } from '../../utils/colors';
-import { headerFont } from '../../utils/fonts';
+import { color, font } from '../../utils/tokens';
 import { mobile } from '../../utils/media';
 import rem from '../../utils/rem';
 import { navbarHeight, sidebarWidth } from '../../utils/sizes';
@@ -15,17 +14,18 @@ const Sidebar = styled.nav.attrs({ 'aria-label': 'Documentation sidebar' })<Side
   position: fixed;
   transform: translateZ(0);
   display: block;
-  z-index: 1;
-  font-family: ${headerFont};
+  z-index: 30;
+  font-family: ${font.sans};
 
   left: 0;
   top: ${rem(navbarHeight)};
   bottom: 0;
   right: auto;
   width: ${rem(sidebarWidth)};
-  background: ${paleGrey};
+  background: ${color.surface};
+  border-right: 1px solid color-mix(in oklch, ${color.text} 8%, ${color.surface});
   box-sizing: border-box;
-  color: inherit;
+  color: ${color.text};
   overflow-y: auto;
   transition: transform 150ms ease-out;
 

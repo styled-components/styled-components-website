@@ -1,99 +1,84 @@
 import styled, { css } from 'styled-components';
-import { headerFont } from '../../utils/fonts';
 import { mobile } from '../../utils/media';
 import rem from '../../utils/rem';
-import { navbarHeight } from '../../utils/sizes';
+import { navbarHeight, sidebarWidth } from '../../utils/sizes';
+import { color, duration, font } from '../../utils/tokens';
 import Link from '../Link';
+import ThemeToggle from '../ThemeToggle';
 import Logo from './Logo';
 import MobileNavbar from './MobileNavbar';
-import NavLinks from './NavLinks';
-import SearchWithAlgolia from './SearchWithAlgolia';
 import Social from './Social';
 
 export interface NavbarProps {
   onSideToggle?: () => void;
-  onMobileNavToggle?: () => void;
   isSideFolded?: boolean;
-  isMobileNavFolded?: boolean;
   showSideNav?: boolean;
 }
 
-export default function Navbar({
-  onSideToggle,
-  onMobileNavToggle,
-  isSideFolded,
-  isMobileNavFolded,
-  showSideNav,
-}: NavbarProps) {
+export default function Navbar({ onSideToggle, isSideFolded, showSideNav }: NavbarProps) {
   return (
     <Wrapper>
-      <MobileNavbar
-        isSideFolded={isSideFolded}
-        isMobileNavFolded={isMobileNavFolded}
-        onSideToggle={onSideToggle}
-        onMobileNavToggle={onMobileNavToggle}
-        showSideNav={showSideNav}
-      />
+      <MobileNavbar isSideFolded={isSideFolded} onSideToggle={onSideToggle} showSideNav={showSideNav} />
 
       <NormalNavbar>
-        <StartWrapper>
-          <LogoLink href="/" aria-label="Styled-components logo">
+        <LogoZone>
+          <LogoLink href="/" aria-label="Styled-components home">
             <Logo />
           </LogoLink>
-          <NavLinks />
-        </StartWrapper>
-      </NormalNavbar>
+        </LogoZone>
 
-      <EndWrapperWithMargin>
-        <SearchWithAlgolia />
-        <StyledSocial style={{ marginLeft: 16 }} />
-      </EndWrapperWithMargin>
+        <ContentZone>
+          <StyledSocial />
+          <ThemeToggle />
+        </ContentZone>
+      </NormalNavbar>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.nav.attrs({ 'aria-label': 'Main' })<{ $transparent?: boolean; children?: React.ReactNode }>`
+const Wrapper = styled.nav.attrs({ 'aria-label': 'Main' })<{ children?: React.ReactNode }>`
   align-items: center;
-  background-color: rgba(12, 13, 15, 0.7);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background-color: ${color.navBg};
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-sizing: border-box;
-  color: white;
+  color: ${color.navText};
   display: flex;
-  flex-wrap: wrap;
-  font-family: ${headerFont};
+  font-family: ${font.sans};
   font-size: ${rem(15)};
   font-weight: 500;
-  justify-content: center;
   height: ${rem(navbarHeight)};
   left: 0;
   padding: 0;
   position: fixed;
-  transition: background 300ms ease-out;
+  transition: background ${duration.slow} ease-out, color ${duration.slow} ease-out;
   width: 100%;
-  z-index: 3;
+  z-index: 40;
+  border-bottom: 1px solid color-mix(in oklch, ${color.text} 8%, ${color.surface});
 `;
 
-const StartWrapper = styled.div`
+const LogoZone = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  width: ${rem(sidebarWidth)};
+  flex-shrink: 0;
+  height: 100%;
+  padding-left: ${rem(24)};
+  box-sizing: border-box;
+  border-right: 1px solid color-mix(in oklch, ${color.text} 8%, ${color.surface});
 `;
 
-const EndWrapper = styled.div<{ children?: React.ReactNode }>`
+const ContentZone = styled.div`
   display: flex;
   align-items: center;
+  flex: 1;
+  min-width: 0;
+  padding: 0 ${rem(20)};
+  gap: ${rem(8)};
   justify-content: flex-end;
 `;
 
-const EndWrapperWithMargin = styled(EndWrapper)`
-  margin-left: auto;
-  margin-right: 16px;
-
-  ${mobile(css`
-    margin-right: 48px;
-  `)}
-`;
 /* stylelint-disable */
 const StyledSocial = styled(Social)``;
 /* stylelint-enable */
@@ -101,20 +86,17 @@ const StyledSocial = styled(Social)``;
 const NormalNavbar = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 ${rem(20)};
-  justify-content: space-between;
+  width: 100%;
+  height: 100%;
 
-  ${StartWrapper}, ${EndWrapper} ${StyledSocial} {
-    ${mobile(css`
-      display: none;
-    `)};
-  }
+  ${mobile(css`
+    display: none;
+  `)}
 `;
 
 const LogoLink = styled(Link).attrs(() => ({
   unstyled: true,
 }))`
-  display: inline-block;
-  vertical-align: center;
-  margin-right: ${rem(35)};
+  display: inline-flex;
+  align-items: center;
 `;
