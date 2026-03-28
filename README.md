@@ -22,19 +22,19 @@ git clone https://github.com/styled-components/styled-components-website
 # Enter the repo
 cd styled-components-website
 # Install the dependencies
-yarn install
+pnpm install
 # Start local development
-yarn dev
+pnpm dev
 ```
 
-> Note: This requires Node.js and yarn to be set up locally, see [nodejs.org](https://nodejs.org) for more information.
+> Note: This requires Node.js and pnpm to be set up locally, see [nodejs.org](https://nodejs.org) for more information.
 
 ### Updating the visual diffs
 
 If you add a new section or materially change the website, it probably will trigger the image comparison diff snapshot to fail. These can be updated via:
 
 ```sh
-yarn test -u
+pnpm test -- -u
 ```
 
 ### Folder structure

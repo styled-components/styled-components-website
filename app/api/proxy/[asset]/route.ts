@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { NextRequest, NextResponse } from 'next/server';
 
 const proxyMap: Record<string, string> = {
@@ -23,11 +22,9 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   }
 
   try {
-    const { data, headers } = await axios.get(remoteUrl, {
-      responseType: 'arraybuffer',
-    });
-
-    const contentType = headers['content-type'];
+    const resp = await fetch(remoteUrl);
+    const data = await resp.arrayBuffer();
+    const contentType = resp.headers.get('content-type') || 'application/octet-stream';
 
     return new NextResponse(data, {
       status: 200,

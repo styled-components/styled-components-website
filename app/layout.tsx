@@ -1,13 +1,21 @@
 import { Metadata, Viewport } from 'next';
-import { Karla, JetBrains_Mono } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
+import './theme-base.css';
 import StyledComponentsRegistry from '../lib/registry';
 import ClientLayout from '../components/ClientLayout';
+import { BASE_URL } from './url';
 
-const karla = Karla({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['200', '400', '700'],
   display: 'swap',
-  variable: '--font-body',
+  variable: '--font-sans',
+});
+
+const interDisplay = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['800', '900'],
+  variable: '--font-display',
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -22,13 +30,29 @@ export const metadata: Metadata = {
     default: 'styled-components',
     template: '%s | styled-components',
   },
-  description:
-    'Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress',
+  description: 'CSS for the <Component> Age',
   icons: {
     icon: '/favicon.png',
+    shortcut: '/atom.png',
   },
   manifest: '/manifest.json',
   authors: [{ name: 'styled-components' }],
+  metadataBase: new URL(BASE_URL),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'styled-components',
+    images: [{ url: '/atom.png', width: 652, height: 652 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@mxstbr',
+    creator: '@mxstbr',
+    images: ['/meta.png'],
+  },
+  verification: {
+    google: 'lWntYW6AWVMcShSIWLmOzKr8Wyek2TR-zuQn6_XGu_c',
+  },
 };
 
 export const viewport: Viewport = {
@@ -38,10 +62,35 @@ export const viewport: Viewport = {
   themeColor: '#da936a',
 };
 
+/**
+ * Inline script to set the theme before first paint, preventing FOUC.
+ * Reads localStorage, falls back to system preference, defaults to light.
+ */
+const themeScript = `
+  (function() {
+    try {
+      var d = document.documentElement;
+      var stored = localStorage.getItem('theme');
+      if (stored === 'dark' || stored === 'light') {
+        d.classList.add(stored);
+        if (stored === 'dark') d.dataset.theme = 'dark';
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        d.classList.add('dark');
+        d.dataset.theme = 'dark';
+      }
+    } catch (e) {}
+  })();
+`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html data-theme="dark" lang="en" className={`${karla.variable} ${jetbrainsMono.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${interDisplay.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
       </head>
       <body>

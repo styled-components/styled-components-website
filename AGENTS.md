@@ -1,48 +1,41 @@
 Note: CLAUDE.md is a symlink to this file. Edit AGENTS.md directly.
 
-styled-components documentation website. Next.js 16 App Router, MDX content, styled-components v6.
+styled-components documentation website. Next.js 16.1.7, MDX, styled-components 6.4.0-prerelease.8.
 
 ## Principles
 
-1. Verify before building -- Read the file before editing it. Read the nav config before adding pages. Read the live code scope before using hooks. Assumptions cause build failures.
-
-2. Wire completely -- Adding a docs page requires three changes in one commit: the MDX file, the page component import/render, and the `app/docs.json` nav entry. Missing any one breaks navigation or leaves orphaned content.
-
-3. Snapshot tests are fragile by design -- They capture rendered CSS including generated class hashes. Any change to styled-components version, font constants, or style values will break snapshots. Run `npx jest -c .jest.config.js --updateSnapshot` and commit the result.
-
-4. The SSR registry is load-bearing -- `lib/registry.tsx` wraps the root layout. It looks like a v6.3.0+ RSC artifact that can be removed, but most components use `'use client'`. Removing it causes FOUC. Do not remove without migrating components to server components first.
-
-5. Live code blocks are not regular code blocks -- Examples using ` ```react ` run in the site's live editor with `React`, `styled`, `css`, `keyframes`, `ThemeProvider`, `createGlobalStyle`, and `render()` in scope. Hooks must be qualified: `React.useRef()`, `React.useState()`. Imports are not supported.
+1. Verify before building -- read the file before editing. Assumptions cause build failures.
+2. Wire completely -- new docs pages need the MDX file, the page component, and a `docs.json` entry.
+3. The SSR registry (`lib/registry.tsx`) is load-bearing. Removing it causes FOUC.
+4. Live code blocks (` ```react `) run in a scoped editor. Hooks must be `React.useState()`, no imports.
+5. Isolate `'use client'` as deeply as possible. The homepage is a server component with client islands.
 
 ## Commands
 
-- `yarn` -- install (Yarn PnP, no package-lock.json)
-- `npx next build` -- build and verify all pages (static generation)
-- `npx jest -c .jest.config.js` -- run tests
-- `npx jest -c .jest.config.js --updateSnapshot` -- update snapshots after style changes
-- Pre-commit hooks run jest on related files + prettier via lint-staged
+- `pnpm install` — install
+- `npx next build` — do NOT run while the dev server is active
+- `npx jest -c .jest.config.js` — tests
 
-## Documentation Structure
+## Architecture
 
-- MDX content: `sections/{category}/{topic}.mdx`
-- Page components: `app/docs/{category}/page.tsx` (import MDX, render in order)
-- Nav config: `app/docs.json` (section titles must exactly match `##` headings in MDX for anchor generation)
-- `##` = top-level section heading, `###` = subsection
-- Path alias `@/` maps to project root
+**Tokens:** OKLCH CSS custom properties in `GlobalStyles.tsx`. Light/dark values are `css` partials (`lightColors`, `darkColors`) composed under `:root`, `html.light`, `html.dark`, and the dark media query. Syntax highlighting has 9 adaptive `--color-code-*` tokens. JS refs in `utils/tokens.ts`.
 
-## Key Files
+**Theme:** Three states (light/dark/auto). Raw `<script>` in `<head>` before stylesheets sets the class — not `next/script`. `data-theme="dark"` synced for DocSearch. Toggle icon shows current mode.
 
-- `app/layout.tsx` -- root layout with next/font (Karla + JetBrains Mono via CSS vars `--font-body`, `--font-mono`)
-- `lib/registry.tsx` -- SSR style collection for client components (ServerStyleSheet + useServerInsertedHTML)
-- `utils/fonts.ts` -- font-family constants referencing CSS variables
-- `components/Anchor.tsx` -- section heading with anchor link, used by all doc pages
-- `components/ReleaseAnchor.tsx` -- release page heading with date pseudo-element
-- `app/releases/page.tsx` -- fetches GitHub API releases, renders with markdown-to-jsx
-- `utils/scope.ts` -- defines the scope (available globals) for live code editor blocks
+**Navigation:** Sidebar lives in `ClientLayout` (root layout) — persists across navigations via `SidebarFoldProvider` context. Search (DocSearch, module-level singleton) at top, then Documentation (expands to categories → sections with scroll-spy), Blog, Ecosystem, Releases, Fundraising. Navbar is just logo + social + theme toggle. Mobile: hamburger for sidebar, theme toggle far-right. `Link` component uses `next/link` for all internal routes (including `unstyled`).
+
+**Homepage:** Two-column hero (copy left, live editor right) inside `LiveProvider`. Transparent background. Proof badges above CTA buttons. 10-year celebration effect (CSS bloom fireworks, respects reduced-motion). Company logos adapt via `brightness(0)` / `invert(1)`.
+
+**Docs:** MDX in `sections/`, pages in `app/docs/`, nav config in `docs.json`. Heading IDs on the element itself with `scroll-margin-top`. Scroll-spy is a rAF-throttled scroll listener in the sidebar.
+
+**Z-index:** 10 (celebration/code), 20 (content/hero), 30 (sidebar), 40 (navbar).
 
 ## Gotchas
 
-- `app/docs.json` titles are converted to URL hashes via `titleToDash`. Mismatched titles = broken sidebar links.
-- The releases page uses `markdown-to-jsx` (not MDX). Compatibility issues with React 19 dev mode are tracked upstream.
-- `next.config.mjs` has `compiler: { styledComponents: true }` for SWC transform. This is separate from RSC support.
-- Font changes require updating `utils/fonts.ts`, `app/layout.tsx` (next/font config), and all test snapshots.
+- `docs.json` titles become URL hashes via `titleToDash`. Mismatches break sidebar links.
+- Live editor `scope.ts` derives component IDs from tag/component names. Counters cause hydration mismatches.
+- SC 6.4.0-prerelease.8 may cause HMR staleness — the rearchitected `createGlobalStyle` is suspected.
+- Logo is HTML (💅 emoji + `color.text` text). Don't use PNG or CSS `filter: invert()`.
+- Borders use opaque `color-mix(in oklch, text 8%, surface)`, not alpha.
+- `utils/rem.ts` uses legacy 18px base. Prefer token spacing vars.
+- Releases page uses `markdown-to-jsx`, not MDX.

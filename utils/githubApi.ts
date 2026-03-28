@@ -1,8 +1,7 @@
 import { Endpoints } from '@octokit/types';
-import 'isomorphic-fetch';
 
 export const getReadme = (repo = 'styled-components'): Promise<string> =>
-  fetch(`https://cdn.rawgit.com/styled-components/${repo}/master/README.md`).then(resp => resp.text());
+  fetch(`https://raw.githubusercontent.com/styled-components/${repo}/master/README.md`).then(resp => resp.text());
 
 export const getReleases = (
   repo = 'styled-components'

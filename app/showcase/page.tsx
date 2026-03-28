@@ -8,7 +8,7 @@ import { SortedProject, sortedProjects } from '@/companies-manifest';
 import Footer from '@/components/Footer';
 import Image, { ImageProps } from '@/components/Image';
 import Nav from '@/components/Nav';
-import SeoHead from '@/components/SeoHead';
+import { displayFont } from '@/utils/fonts';
 import Navigation from '@/components/Slider/Navigation';
 import ShowcaseBody from '@/components/Slider/ShowcaseBody';
 import { generateShowcaseUrl } from '@/components/Slider/ShowcaseLink';
@@ -24,10 +24,6 @@ function ShowcaseContent() {
 
   return (
     <>
-      <SeoHead title={`styled-components: Showcase ${title}`}>
-        <meta name="robots" content="noodp" />
-      </SeoHead>
-
       <Nav showSideNav={false} />
       <ArrowEvents previousSlide={previousSlide} nextSlide={nextSlide} />
 
@@ -118,7 +114,10 @@ const Container = styled.div`
   }
 
   h1 {
+    font-family: ${displayFont};
     font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.15;
     margin-bottom: 0;
 
     ${phone(css`

@@ -1,84 +1,70 @@
 import { Favorite } from '@styled-icons/material';
-import styled, { css } from 'styled-components';
-import { grey, paleGrey, red } from '../../utils/colors';
-import { mobile } from '../../utils/media';
-import rem from '../../utils/rem';
-import { BlmBanner } from '../BlmBanner';
-import { Content } from '../Layout';
+import styled from 'styled-components';
+import { color, space, text } from '../../utils/tokens';
 import Link from '../Link';
 
 export default function Footer() {
   return (
-    <>
-      <Wrapper>
-        <FooterContent $hero>
-          {' '}
-          {'Hosted on '}
-          <FooterLink inline href="https://vercel.com">
-            ▲ Vercel
-          </FooterLink>
-          <br />
-          {'Made with '}
-          <Heart aria-hidden="true" />
-          {' by '}
-          <FooterLink inline href="https://twitter.com/glenmaddern">
-            @glenmaddern
-          </FooterLink>
-          {', '}
-          <FooterLink inline href="https://twitter.com/mxstbr">
-            @mxstbr
-          </FooterLink>
-          {', '}
-          <FooterLink inline href="https://twitter.com/_philpl">
-            @_philpl‬
-          </FooterLink>
-          {', '}
-          <FooterLink inline href="https://twitter.com/probablyup">
-            @probablyup
-          </FooterLink>
-          {', '}
-          <FooterLink inline href="https://twitter.com/imbhargav5">
-            @imbhargav5
-          </FooterLink>
-          {' and '}
-          <FooterLink inline href="https://github.com/orgs/styled-components/people">
-            contributors
-          </FooterLink>
-          {'.'}
-        </FooterContent>
-      </Wrapper>
-      <BlmBanner />
-    </>
+    <Wrapper>
+      <Attribution>
+        {'Hosted on '}
+        <FooterLink inline href="https://vercel.com">
+          Vercel
+        </FooterLink>
+        {'. Made with '}
+        <Heart aria-hidden="true" />
+        {' by '}
+        <FooterLink inline href="https://twitter.com/glenmaddern">
+          @glenmaddern
+        </FooterLink>
+        {', '}
+        <FooterLink inline href="https://twitter.com/mxstbr">
+          @mxstbr
+        </FooterLink>
+        {', '}
+        <FooterLink inline href="https://twitter.com/_philpl">
+          @_philpl
+        </FooterLink>
+        {', '}
+        <FooterLink inline href="https://twitter.com/probablyup">
+          @probablyup
+        </FooterLink>
+        {', '}
+        <FooterLink inline href="https://twitter.com/imbhargav5">
+          @imbhargav5
+        </FooterLink>
+        {' and '}
+        <FooterLink inline href="https://github.com/orgs/styled-components/people">
+          contributors
+        </FooterLink>
+        {'.'}
+      </Attribution>
+    </Wrapper>
   );
 }
 
 const Wrapper = styled.footer`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  color: ${grey};
-  background: ${paleGrey};
+  justify-content: center;
+  color: ${color.textSecondary};
+  border-top: 1px solid ${color.border};
+  margin-top: ${space[12]};
+  width: 100%;
   box-sizing: border-box;
-  margin-top: ${rem(50)};
+`;
+
+const Attribution = styled.div`
+  padding: ${space[6]} ${space[8]};
+  text-align: center;
+  font-size: ${text.sm};
 `;
 
 const Heart = styled(Favorite)`
   display: inline-block;
-  width: ${rem(17)};
-  color: ${red};
+  width: 1rem;
+  color: ${color.error};
   transform: translateY(-10%);
 `;
 
-const FooterLink = styled(Link)`
-  color: ${grey};
-`;
-
-const FooterContent = styled(Content)`
-  padding: ${rem(30)} ${rem(40)} ${rem(30)} ${rem(40)};
-
-  ${mobile(css`
-    padding: ${rem(30)} ${rem(20)} ${rem(30)} ${rem(20)};
-  `)};
-`;
+const FooterLink = styled(Link)``;
