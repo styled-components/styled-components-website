@@ -134,57 +134,23 @@
       "title": "FAQs",
       "pathname": "faqs",
       "sections": [
-        {
-          "title": "What do I need to do to migrate to v6?"
-        },
-        {
-          "title": "How should I handle dynamic styles?"
-        },
-        {
-          "title": "When to use attrs?"
-        },
-        {
-          "title": "Why should I avoid declaring styled components in the render method?"
-        },
-        {
-          "title": "Can I nest rules?"
-        },
-        {
-          "title": "How can I override styles with higher specificity?"
-        },
-        {
-          "title": "How can I override inline styles?"
-        },
-        {
-          "title": "Why am I getting HTML attribute warnings?"
-        },
-        {
-          "title": "Which browsers are supported?"
-        },
-        {
-          "title": "Why do my DOM nodes have two classes?"
-        },
-        {
-          "title": "Why am I getting a warning about several instances of module on the page?"
-        },
-        {
-          "title": "Can I use css frameworks?"
-        },
-        {
-          "title": "I am a library author. Should I bundle styled-components with my library?"
-        },
-        {
-          "title": "How do I fix flickering text after server side rendering?"
-        },
-        {
-          "title": "How can I fix issues when using npm link or yarn link?"
-        },
-        {
-          "title": "Missing Declarations for styled-components/native?"
-        },
-        {
-          "title": "What do I need to do to migrate to v5?"
-        }
+        { "title": "What do I need to do to migrate to v6?" },
+        { "title": "What do I need to do to migrate to v5?" },
+        { "title": "How should I handle dynamic styles?" },
+        { "title": "When to use attrs?" },
+        { "title": "Why should I avoid declaring styled components in the render method?" },
+        { "title": "Can I nest rules?" },
+        { "title": "How can I override styles with higher specificity?" },
+        { "title": "How can I override inline styles?" },
+        { "title": "Can I use css frameworks?" },
+        { "title": "Why am I getting HTML attribute warnings?" },
+        { "title": "Why do my DOM nodes have two classes?" },
+        { "title": "Why am I getting a warning about several instances of module on the page?" },
+        { "title": "How do I fix flickering text after server side rendering?" },
+        { "title": "How can I fix issues when using npm link or yarn link?" },
+        { "title": "Missing Declarations for styled-components/native?" },
+        { "title": "Which browsers are supported?" },
+        { "title": "I am a library author. Should I bundle styled-components with my library?" }
       ]
     }
   ]

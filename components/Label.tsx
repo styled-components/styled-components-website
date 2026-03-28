@@ -1,9 +1,8 @@
 'use client';
 
 import styled from 'styled-components';
+import { color, font, radius, text } from '../utils/tokens';
 import rem from '../utils/rem';
-import { blmGrey } from '../utils/colors';
-import { headerFont } from '../utils/fonts';
 
 export const LabelGroup = styled.div`
   display: inline-block;
@@ -14,11 +13,11 @@ export const LabelGroup = styled.div`
 
 const Label = styled.small<{ $isVersion?: boolean; children?: React.ReactNode }>`
   display: inline-block;
-  background: ${p => (p.$isVersion ? 'royalblue' : blmGrey)};
-  color: white;
-  font-size: 0.75rem;
-  font-family: ${headerFont};
-  border-radius: ${rem(3)};
+  background: ${p => (p.$isVersion ? color.accent : color.surfaceRaised)};
+  color: ${p => (p.$isVersion ? 'white' : color.text)};
+  font-size: ${text.xs};
+  font-family: ${font.sans};
+  border-radius: ${radius.md};
   padding: ${rem(1)} ${rem(5)};
   vertical-align: middle;
 `;

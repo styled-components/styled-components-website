@@ -87,8 +87,8 @@ const Main = styled.div<{ $width: number; children?: React.ReactNode }>`
 `;
 
 const Caption = styled.p<{ $captionSpacing?: number; children?: React.ReactNode }>`
-  color: #999;
-  font-size: 12px;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
   margin: 0;
   text-align: center;
   ${props => (props.$captionSpacing ? `margin-top: ${props.$captionSpacing}px;` : '')};

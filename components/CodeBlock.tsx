@@ -20,12 +20,14 @@ const CodeBlock = styled(({ code, ...rest }: CodeBlockProps) => {
     </RLR>
   );
 })`
-  border-radius: ${rem(3)};
-  box-shadow: 1px 1px 20px rgba(20, 20, 20, 0.27);
+  border-radius: var(--radius-md);
+  box-shadow: 1px 1px 20px var(--color-shadow);
+  position: relative;
+  z-index: 10;
   font-family: ${monospace};
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   font-weight: 300;
-  margin: ${rem(35)} 0;
+  margin: var(--space-8) 0;
   padding: 1.5em !important;
   overflow-x: hidden;
   white-space: pre-wrap;

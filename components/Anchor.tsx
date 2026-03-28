@@ -27,9 +27,7 @@ export default function Anchor({ children, level, id, ...props }: React.PropsWit
   }
 
   return (
-    <AnchorHeader {...props} as={override}>
-      <InvisibleAnchor id={id} />
-
+    <AnchorHeader {...props} as={override} id={id}>
       {children}
 
       <AnchorPrimitive href={`#${id}`} aria-label={id}>
@@ -38,22 +36,6 @@ export default function Anchor({ children, level, id, ...props }: React.PropsWit
     </AnchorHeader>
   );
 }
-
-const InvisibleAnchor = styled.div.attrs<{ id?: string }>(props => ({
-  'aria-hidden': true,
-  id: props.id,
-}))<{ id?: string }>`
-  position: relative;
-  display: block;
-  visibility: hidden;
-  height: 0;
-
-  top: ${rem(-70)};
-
-  ${mobile(css`
-    top: ${rem(-90)};
-  `)};
-`;
 
 const AnchorPrimitive = styled.a<{ href?: string; 'aria-label'?: string; children?: React.ReactNode }>`
   display: none;
@@ -76,8 +58,11 @@ const AnchorIcon = styled(LinkIcon).attrs((/* props */) => ({
 
 const AnchorHeader = styled.div`
   position: relative;
+  scroll-margin-top: ${rem(80)};
 
   ${mobile(css`
+    scroll-margin-top: ${rem(100)};
+
     /* stylelint-disable-next-line */
     ${AnchorPrimitive} {
       display: inline-block;

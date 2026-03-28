@@ -1,4 +1,8 @@
+import { Metadata } from 'next';
+import styled from 'styled-components';
 import DocsLayout from '@/components/DocsLayout';
+import DocsPageNav from '@/components/DocsPageNav';
+import { font, text, fontWeight, color, space } from '@/utils/tokens';
 
 import MigrationV6 from '@/sections/faqs/migration-v6.mdx';
 import DynamicStylingPatterns from '@/sections/faqs/dynamic-styling-patterns.mdx';
@@ -18,26 +22,53 @@ import NPMLink from '@/sections/faqs/npm-link.mdx';
 import MissingNativeImport from '@/sections/faqs/missing-native-import.mdx';
 import MigrationV5 from '@/sections/faqs/migration-v5.mdx';
 
+export const metadata: Metadata = {
+  title: 'FAQs',
+  description: 'Commonly asked questions about styled-components',
+};
+
 export default function FAQsPage() {
   return (
-    <DocsLayout title="FAQs" description="Commonly asked questions about styled-components">
+    <DocsLayout title="FAQs">
+      <Category>Migration</Category>
       <MigrationV6 />
+      <MigrationV5 />
+
+      <Category>Styling Patterns</Category>
       <DynamicStylingPatterns />
       <WhenToUseAttrs />
       <DeclareComponentsInRenderMethod />
       <Nesting />
       <OverrideStyles />
       <OverrideInlineStyles />
+      <CSSFrameworks />
+
+      <Category>Troubleshooting</Category>
       <HTMLAttributeWarnings />
-      <BrowserSupport />
       <TwoDomClasses />
       <DuplicatedStyledComponents />
-      <CSSFrameworks />
-      <LibraryAuthors />
       <FlickeringText />
       <NPMLink />
       <MissingNativeImport />
-      <MigrationV5 />
+
+      <Category>General</Category>
+      <BrowserSupport />
+      <LibraryAuthors />
+      <DocsPageNav current="faqs" />
     </DocsLayout>
   );
 }
+
+const Category = styled.h2`
+  font-family: ${font.sans};
+  font-size: ${text.xl};
+  font-weight: ${fontWeight.semibold};
+  color: ${color.text};
+  margin: ${space[10]} 0 ${space[2]};
+  padding-bottom: ${space[2]};
+  border-bottom: 1px solid ${color.border};
+
+  &:first-of-type {
+    margin-top: ${space[6]};
+  }
+`;

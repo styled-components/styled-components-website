@@ -1,4 +1,6 @@
+import { Metadata } from 'next';
 import DocsLayout from '@/components/DocsLayout';
+import DocsPageNav from '@/components/DocsPageNav';
 
 import Vite from '@/sections/tooling/vite.mdx';
 import SWCPlugin from '@/sections/tooling/swc-plugin.mdx';
@@ -9,9 +11,14 @@ import TypeScriptPlugin from '@/sections/tooling/typescript-plugin.mdx';
 import SyntaxHighlighting from '@/sections/tooling/syntax-highlighting.mdx';
 import StyledTheming from '@/sections/tooling/styled-theming.mdx';
 
+export const metadata: Metadata = {
+  title: 'Tooling',
+  description: 'Working with styled-components in your development environment',
+};
+
 export default function ToolingPage() {
   return (
-    <DocsLayout title="Tooling" description="Working with styled-components in your development environment">
+    <DocsLayout title="Tooling">
       <Vite />
       <SWCPlugin />
       <BabelPlugin />
@@ -20,6 +27,7 @@ export default function ToolingPage() {
       <TypeScriptPlugin />
       <SyntaxHighlighting />
       <StyledTheming />
+      <DocsPageNav current="tooling" />
     </DocsLayout>
   );
 }

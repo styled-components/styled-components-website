@@ -18,10 +18,10 @@ const ReleaseAnchor = styled(Anchor)`
   }
 
   &::after {
-    color: rosybrown;
+    color: var(--color-text-muted);
     content: attr(data-created-at);
     display: block;
-    font-size: 16px;
+    font-size: var(--text-base);
     margin-top: ${rem(-5)};
   }
 `;

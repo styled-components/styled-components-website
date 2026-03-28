@@ -65,8 +65,12 @@ const components = {
       return <LiveEdit code={children.trim()} />;
     } else if (language === 'sh') {
       return <CodeBlock code={children.trim()} language="bash" />;
-    } else if (language) {
-      return <CodeBlock code={children.trim()} language={language} />;
+    }
+
+    // Fenced code blocks (with or without language) get the same block treatment
+    // Inline code (no className, no newlines) gets the inline Code component
+    if (language || (typeof children === 'string' && children.includes('\n'))) {
+      return <CodeBlock code={children.trim()} language={language || ('text' as Language)} />;
     }
 
     return <Code>{children}</Code>;

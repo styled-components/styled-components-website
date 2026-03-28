@@ -1,5 +1,6 @@
+import { Metadata } from 'next';
 import DocsLayout from '@/components/DocsLayout';
-import NextPage from '@/components/NextPage';
+import DocsPageNav from '@/components/DocsPageNav';
 
 import Motivation from '@/sections/basics/motivation.mdx';
 import Installation from '@/sections/basics/installation.mdx';
@@ -13,9 +14,14 @@ import AttachingAdditionalProps from '@/sections/basics/attaching-additional-pro
 import Animations from '@/sections/basics/animations.mdx';
 import ReactNative from '@/sections/basics/react-native.mdx';
 
+export const metadata: Metadata = {
+  title: 'Basics',
+  description: 'Get Started with styled-components basics.',
+};
+
 export default function BasicsPage() {
   return (
-    <DocsLayout title="Basics" description="Get Started with styled-components basics.">
+    <DocsLayout title="Basics">
       <Motivation />
       <Installation />
       <GettingStarted />
@@ -27,7 +33,7 @@ export default function BasicsPage() {
       <AttachingAdditionalProps />
       <Animations />
       <ReactNative />
-      <NextPage href="/docs/advanced" title="Advanced" />
+      <DocsPageNav current="basics" />
     </DocsLayout>
   );
 }

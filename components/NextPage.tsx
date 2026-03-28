@@ -1,7 +1,6 @@
 import { KeyboardArrowRight } from '@styled-icons/material';
 import styled, { css } from 'styled-components';
-import { grey } from '../utils/colors';
-import { headerFont } from '../utils/fonts';
+import { color, font, fontWeight, duration } from '../utils/tokens';
 import { mobile } from '../utils/media';
 import rem from '../utils/rem';
 import Link, { LinkProps } from './Link';
@@ -17,7 +16,7 @@ const Wrapper = styled(Link).attrs((/* props */) => ({
   width: 100%;
   padding: ${rem(40)} ${rem(20)};
   text-align: right;
-  font-family: ${headerFont};
+  font-family: ${font.sans};
 
   ${mobile(css`
     text-align: left;
@@ -27,19 +26,20 @@ const Wrapper = styled(Link).attrs((/* props */) => ({
 `;
 
 const Text = styled.h3`
-  font-weight: normal;
+  font-weight: ${fontWeight.normal};
   padding-right: ${rem(20)};
   margin: 0;
 `;
 
 const PageName = styled.h2`
-  font-weight: 600;
+  font-family: ${font.display};
+  font-weight: ${fontWeight.semibold};
   padding-right: ${rem(20)};
   margin: 0;
 `;
 
 const Icon = styled(KeyboardArrowRight)`
-  color: ${grey};
+  color: ${color.textMuted};
   width: ${rem(30)};
 `;
 
