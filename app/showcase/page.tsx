@@ -8,12 +8,10 @@ import { SortedProject, sortedProjects } from '@/companies-manifest';
 import Footer from '@/components/Footer';
 import Image, { ImageProps } from '@/components/Image';
 import Nav from '@/components/Nav';
-import { displayFont } from '@/utils/fonts';
 import Navigation from '@/components/Slider/Navigation';
 import ShowcaseBody from '@/components/Slider/ShowcaseBody';
 import { generateShowcaseUrl } from '@/components/Slider/ShowcaseLink';
-import { blmGrey, blmMetal } from '@/utils/colors';
-import { headerFont } from '@/utils/fonts';
+import { theme, font } from '@/utils/theme';
 import { mobile, phone } from '@/utils/media';
 
 function ShowcaseContent() {
@@ -100,7 +98,7 @@ const Container = styled.div`
   overflow-x: hidden;
 
   * {
-    font-family: ${headerFont};
+    font-family: ${font.sans};
   }
 
   h1,
@@ -114,9 +112,9 @@ const Container = styled.div`
   }
 
   h1 {
-    font-family: ${displayFont};
-    font-size: 2.5rem;
-    font-weight: 500;
+    font-family: ${font.display};
+    font-size: ${theme.text['3xl']};
+    font-weight: ${theme.fontWeight.display};
     line-height: 1.15;
     margin-bottom: 0;
 
@@ -126,7 +124,7 @@ const Container = styled.div`
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: ${theme.text['2xl']};
     line-height: 1.5;
 
     ${phone(css`
@@ -136,8 +134,8 @@ const Container = styled.div`
 
   h5 {
     margin-bottom: 0;
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: ${theme.text.base};
+    font-weight: ${theme.fontWeight.normal};
     opacity: 0.6;
   }
 
@@ -151,7 +149,7 @@ const Header = styled.header`
   height: 512px;
   padding-top: 48px;
   background-color: #daa357;
-  background: linear-gradient(20deg, ${blmGrey}, ${blmMetal});
+  background: linear-gradient(20deg, ${theme.color.borderStrong}, ${theme.color.text});
   overflow: hidden;
 
   ${mobile(css`
@@ -198,10 +196,10 @@ const Body = styled.div`
 
 const BodyWrapper = styled.div`
   position: relative;
-  top: -192px;
+  margin-top: -192px;
 
   ${mobile(css`
-    top: -96px;
+    margin-top: -96px;
   `)}
 `;
 
@@ -223,10 +221,10 @@ const HeaderDecoration = styled.div<{ $offset?: number; children?: React.ReactNo
   position: absolute;
   bottom: 0;
   left: 0;
-  font-family: ${headerFont};
+  font-family: ${font.sans};
   font-size: 16rem;
   line-height: 16rem;
-  font-weight: 800;
+  font-weight: ${theme.fontWeight.bold};
   color: rgba(0, 0, 0, 0.1);
   mix-blend-mode: overlay;
   pointer-events: none;
@@ -255,7 +253,7 @@ const HeaderActions = styled.div`
   a {
     height: 50px;
     border-radius: 4px;
-    font-family: ${headerFont};
+    font-family: ${font.sans};
     font-weight: 500;
     font-size: 1rem;
     line-height: 50px;

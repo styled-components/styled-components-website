@@ -1,63 +1,64 @@
 import { Theme } from 'react-live-runner';
+import { theme } from '../utils/theme';
 
 export default {
   plain: {
-    backgroundColor: 'var(--color-code-bg)',
-    color: 'var(--color-code-text)',
+    backgroundColor: theme.color.codeBg,
+    color: theme.color.codeText,
   },
   styles: [
     {
       types: ['prolog', 'comment', 'cdata'],
       style: {
-        color: 'var(--color-code-comment)',
+        color: theme.color.codeComment,
       },
     },
     {
       types: ['punctuation'],
       style: {
-        color: 'var(--color-code-punctuation)',
+        color: theme.color.codePunctuation,
       },
     },
     {
       types: ['builtin', 'constant', 'boolean'],
       style: {
-        color: 'var(--color-code-constant)',
+        color: theme.color.codeConstant,
       },
     },
     {
       types: ['number'],
       style: {
-        color: 'var(--color-code-number)',
+        color: theme.color.codeNumber,
       },
     },
     {
       types: ['important', 'atrule', 'property', 'keyword'],
       style: {
-        color: 'var(--color-code-keyword)',
+        color: theme.color.codeKeyword,
       },
     },
     {
       types: ['doctype', 'operator', 'inserted', 'tag', 'class-name', 'symbol'],
       style: {
-        color: 'var(--color-code-tag)',
+        color: theme.color.codeTag,
       },
     },
     {
       types: ['attr-name', 'function', 'deleted', 'selector'],
       style: {
-        color: 'var(--color-code-function)',
+        color: theme.color.codeFunction,
       },
     },
     {
       types: ['attr-value', 'regex', 'char', 'string'],
       style: {
-        color: 'var(--color-code-string)',
+        color: theme.color.codeString,
       },
     },
     {
       types: ['entity', 'url', 'variable'],
       style: {
-        color: 'var(--color-code-variable)',
+        color: theme.color.codeVariable,
       },
     },
     {

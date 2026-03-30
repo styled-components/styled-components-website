@@ -1,14 +1,19 @@
 import styled from 'styled-components';
-import { color, font, fontWeight, text } from '../../utils/tokens';
+import { theme, font } from '../../utils/theme';
+import PlatonicLogo from '../LogoConcepts/PlatonicLogo';
 
 const Logo = () => (
   <Wrapper>
-    <Emoji aria-hidden="true">💅</Emoji>
+    <LogoIcon size={40} hideLabel />
     <Text>styled-components</Text>
   </Wrapper>
 );
 
 export default Logo;
+
+const LogoIcon = styled(PlatonicLogo)`
+  gap: 0;
+`;
 
 const Wrapper = styled.span`
   display: inline-flex;
@@ -17,14 +22,11 @@ const Wrapper = styled.span`
   white-space: nowrap;
 `;
 
-const Emoji = styled.span`
-  font-size: 1.4em;
-  line-height: 1;
-`;
-
 const Text = styled.span`
-  font-family: ${font.sans};
-  font-weight: ${fontWeight.semibold};
-  font-size: ${text.base};
-  color: ${color.text};
+  font-family: ${font.display};
+  font-weight: ${theme.fontWeight.semibold};
+  font-size: calc(${theme.text.md} * 1.1);
+  letter-spacing: -0.015em;
+  color: ${theme.color.text};
+  transform: translateY(-1px);
 `;

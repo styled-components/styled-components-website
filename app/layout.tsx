@@ -1,5 +1,5 @@
 import { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Figtree, Inter, Google_Sans_Code } from 'next/font/google';
 import './theme-base.css';
 import StyledComponentsRegistry from '../lib/registry';
 import ClientLayout from '../components/ClientLayout';
@@ -11,16 +11,14 @@ const inter = Inter({
   variable: '--font-sans',
 });
 
-const interDisplay = Inter({
+const figtree = Figtree({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['800', '900'],
   variable: '--font-display',
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const googleSansCode = Google_Sans_Code({
   subsets: ['latin'],
-  weight: ['400', '700'],
   display: 'swap',
   variable: '--font-mono',
 });
@@ -87,7 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${interDisplay.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${figtree.variable} ${googleSansCode.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

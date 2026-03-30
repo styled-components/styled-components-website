@@ -34,7 +34,7 @@
     "react-is": "^19.0.0",
     "react-live-runner": "^1.0.7",
     "react-transition-group": "^4.4.5",
-    "styled-components": "6.4.0-prerelease.8",
+    "styled-components": "6.4.0-prerelease.9",
     "styled-theming": "^2.2.0",
     "stylis": "^4.2.0",
     "stylis-plugin-rtl": "^2.1.1"
@@ -65,7 +65,9 @@
     "typescript": "5.9"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["sharp"]
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
   },
   "packageManager": "pnpm@10.33.0"
 }

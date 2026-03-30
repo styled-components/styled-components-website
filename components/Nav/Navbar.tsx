@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components';
 import { mobile } from '../../utils/media';
-import rem from '../../utils/rem';
 import { navbarHeight, sidebarWidth } from '../../utils/sizes';
-import { color, duration, font } from '../../utils/tokens';
+import { theme, font } from '../../utils/theme';
 import Link from '../Link';
 import ThemeToggle from '../ThemeToggle';
 import Logo from './Logo';
@@ -28,7 +27,7 @@ export default function Navbar({ onSideToggle, isSideFolded, showSideNav }: Navb
         </LogoZone>
 
         <ContentZone>
-          <StyledSocial />
+          <Social />
           <ThemeToggle />
         </ContentZone>
       </NormalNavbar>
@@ -38,35 +37,32 @@ export default function Navbar({ onSideToggle, isSideFolded, showSideNav }: Navb
 
 const Wrapper = styled.nav.attrs({ 'aria-label': 'Main' })<{ children?: React.ReactNode }>`
   align-items: center;
-  background-color: ${color.navBg};
+  background-color: ${theme.color.navBg};
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-sizing: border-box;
-  color: ${color.navText};
+  color: ${theme.color.navText};
   display: flex;
   font-family: ${font.sans};
-  font-size: ${rem(15)};
-  font-weight: 500;
-  height: ${rem(navbarHeight)};
+  height: ${navbarHeight}px;
   left: 0;
   padding: 0;
   position: fixed;
-  transition: background ${duration.slow} ease-out, color ${duration.slow} ease-out;
+  transition: background ${theme.duration.slow} ease-out, color ${theme.duration.slow} ease-out;
   width: 100%;
   z-index: 40;
-  border-bottom: 1px solid color-mix(in oklch, ${color.text} 8%, ${color.surface});
+  border-bottom: 1px solid color-mix(in oklch, ${theme.color.text} 8%, ${theme.color.surface});
 `;
 
 const LogoZone = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: ${rem(sidebarWidth)};
+  width: ${sidebarWidth}px;
   flex-shrink: 0;
   height: 100%;
-  padding-left: ${rem(24)};
+  padding-left: 16px;
   box-sizing: border-box;
-  border-right: 1px solid color-mix(in oklch, ${color.text} 8%, ${color.surface});
+  border-right: 1px solid color-mix(in oklch, ${theme.color.text} 8%, ${theme.color.surface});
 `;
 
 const ContentZone = styled.div`
@@ -74,14 +70,10 @@ const ContentZone = styled.div`
   align-items: center;
   flex: 1;
   min-width: 0;
-  padding: 0 ${rem(20)};
-  gap: ${rem(8)};
+  padding: 0 32px;
+  gap: 8px;
   justify-content: flex-end;
 `;
-
-/* stylelint-disable */
-const StyledSocial = styled(Social)``;
-/* stylelint-enable */
 
 const NormalNavbar = styled.div`
   display: flex;

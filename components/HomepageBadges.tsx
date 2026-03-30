@@ -1,7 +1,7 @@
 'use client';
 
 import styled from 'styled-components';
-import { space } from '../utils/tokens';
+import { theme } from '../utils/theme';
 
 export default function HomepageBadges() {
   return (
@@ -22,8 +22,8 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: ${space[4]};
-  margin-top: ${space[6]};
+  gap: ${theme.space[4]};
+  margin-top: ${theme.space[6]};
   opacity: 0.85;
 `;
 

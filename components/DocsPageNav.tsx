@@ -2,7 +2,7 @@
 
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@styled-icons/material';
 import styled, { css } from 'styled-components';
-import { color, font, fontWeight, text, space, duration, radius } from '../utils/tokens';
+import { theme, font } from '../utils/theme';
 import { mobile } from '../utils/media';
 import Link from './Link';
 import json from '@/app/docs.json';
@@ -52,10 +52,10 @@ export default function DocsPageNav({ current }: DocsPageNavProps) {
 
 const Nav = styled.nav`
   display: flex;
-  gap: ${space[4]};
-  margin-top: ${space[12]};
-  padding-top: ${space[8]};
-  border-top: 1px solid ${color.border};
+  gap: ${theme.space[4]};
+  margin-top: ${theme.space[12]};
+  padding-top: ${theme.space[8]};
+  border-top: 1px solid ${theme.color.border};
 
   ${mobile(css`
     flex-direction: column;
@@ -66,13 +66,13 @@ const NavLink = styled(Link).attrs({ unstyled: true })<{ $direction: 'prev' | 'n
   flex: 1;
   display: flex;
   align-items: center;
-  gap: ${space[3]};
-  padding: ${space[4]} ${space[5]};
-  border: 1px solid ${color.border};
-  border-radius: ${radius.lg};
+  gap: ${theme.space[3]};
+  padding: ${theme.space[4]} ${theme.space[5]};
+  border: 1px solid ${theme.color.border};
+  border-radius: ${theme.radius.lg};
   text-decoration: none;
   color: inherit;
-  transition: border-color ${duration.normal}, background-color ${duration.normal};
+  transition: border-color ${theme.duration.normal}, background-color ${theme.duration.normal};
 
   ${p =>
     p.$direction === 'next' &&
@@ -82,8 +82,8 @@ const NavLink = styled(Link).attrs({ unstyled: true })<{ $direction: 'prev' | 'n
 
   &:hover,
   &:focus-visible {
-    border-color: ${color.accent};
-    background: ${color.accentSubtle};
+    border-color: ${theme.color.accent};
+    background: ${theme.color.accentSubtle};
   }
 `;
 
@@ -95,24 +95,24 @@ const NavContent = styled.div<{ $align: 'left' | 'right' }>`
 
 const NavLabel = styled.span`
   font-family: ${font.sans};
-  font-size: ${text.xs};
-  font-weight: ${fontWeight.medium};
-  color: ${color.textMuted};
+  font-size: ${theme.text.xs};
+  font-weight: ${theme.fontWeight.medium};
+  color: ${theme.color.textMuted};
   text-transform: uppercase;
   letter-spacing: 0.05em;
 `;
 
 const NavTitle = styled.span`
   font-family: ${font.display};
-  font-size: ${text.lg};
-  font-weight: ${fontWeight.semibold};
-  color: ${color.text};
+  font-size: ${theme.text.lg};
+  font-weight: ${theme.fontWeight.semibold};
+  color: ${theme.color.text};
 `;
 
 const NavIcon = styled.div`
   width: 1.5rem;
   height: 1.5rem;
-  color: ${color.textMuted};
+  color: ${theme.color.textMuted};
   flex-shrink: 0;
 `;
 

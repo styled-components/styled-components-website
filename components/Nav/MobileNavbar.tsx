@@ -55,5 +55,6 @@ const LogoLink = styled(Link).attrs(() => ({
   href: '/',
   'aria-label': 'styled components',
 }))`
-  transform: translateY(-1px);
+  display: inline-flex;
+  align-items: center;
 `;

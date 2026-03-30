@@ -3,6 +3,7 @@
 import styled from 'styled-components';
 import Anchor from './Anchor';
 import rem from '../utils/rem';
+import { theme } from '../utils/theme';
 
 const ReleaseAnchor = styled(Anchor)`
   && {
@@ -18,10 +19,10 @@ const ReleaseAnchor = styled(Anchor)`
   }
 
   &::after {
-    color: var(--color-text-muted);
+    color: ${theme.color.textMuted};
     content: attr(data-created-at);
     display: block;
-    font-size: var(--text-base);
+    font-size: ${theme.text.base};
     margin-top: ${rem(-5)};
   }
 `;

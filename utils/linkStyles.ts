@@ -1,13 +1,13 @@
 import { css } from 'styled-components';
-import { color, duration } from './tokens';
+import { theme } from './theme';
 
 export const sidebarLinkStyle = css`
-  transition: color ${duration.fast};
+  transition: color ${theme.duration.fast};
   cursor: pointer;
 
   &:hover,
   &:focus-visible {
-    color: ${color.accentLight};
+    color: ${theme.color.accentLight};
   }
 
   &:active {

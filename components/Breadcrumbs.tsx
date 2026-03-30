@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import styled, { css } from 'styled-components';
 import { mobile } from '../utils/media';
-import { color, font, text, space } from '../utils/tokens';
+import { theme, font } from '../utils/theme';
 import Link from './Link';
 
 interface BreadcrumbSegment {
@@ -91,7 +91,7 @@ function buildSegments(pathname: string, titleOverride?: string): BreadcrumbSegm
 
 const Nav = styled.nav`
   display: none;
-  margin-bottom: ${space[4]};
+  margin-bottom: ${theme.space[4]};
 
   ${mobile(css`
     display: block;
@@ -106,7 +106,7 @@ const List = styled.ol`
   margin: 0;
   padding: 0;
   font-family: ${font.sans};
-  font-size: ${text.sm};
+  font-size: ${theme.text.sm};
 `;
 
 const Item = styled.li`
@@ -116,7 +116,7 @@ const Item = styled.li`
 `;
 
 const Separator = styled.span`
-  color: ${color.textMuted};
+  color: ${theme.color.textMuted};
   user-select: none;
   margin: 0 0.35em;
 `;
@@ -124,5 +124,5 @@ const Separator = styled.span`
 const CrumbLink = styled(Link).attrs({ inline: true })``;
 
 const Current = styled.span`
-  color: ${color.textMuted};
+  color: ${theme.color.textMuted};
 `;

@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
-import { color, font } from '../../utils/tokens';
+import { theme, font } from '../../utils/theme';
 import { mobile } from '../../utils/media';
-import rem from '../../utils/rem';
 import { navbarHeight, sidebarWidth } from '../../utils/sizes';
 import captureScroll from '../CaptureScroll';
 
@@ -18,14 +17,14 @@ const Sidebar = styled.nav.attrs({ 'aria-label': 'Documentation sidebar' })<Side
   font-family: ${font.sans};
 
   left: 0;
-  top: ${rem(navbarHeight)};
+  top: ${navbarHeight}px;
   bottom: 0;
   right: auto;
-  width: ${rem(sidebarWidth)};
-  background: ${color.surface};
-  border-right: 1px solid color-mix(in oklch, ${color.text} 8%, ${color.surface});
+  width: ${sidebarWidth}px;
+  background: ${theme.color.surface};
+  border-right: 1px solid color-mix(in oklch, ${theme.color.text} 8%, ${theme.color.surface});
   box-sizing: border-box;
-  color: ${color.text};
+  color: ${theme.color.text};
   overflow-y: auto;
   transition: transform 150ms ease-out;
 
@@ -33,7 +32,7 @@ const Sidebar = styled.nav.attrs({ 'aria-label': 'Documentation sidebar' })<Side
     ${p =>
       p.$isFolded
         ? css`
-            transform: translateX(${rem(-sidebarWidth)});
+            transform: translateX(${-sidebarWidth}px);
           `
         : ``};
   `)};

@@ -16,36 +16,36 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
           min-height: 60vh;
           text-align: center;
           font-family: var(--font-sans);
-          color: var(--color-text);
+          color: var(--sc-color-text);
           padding: 2rem;
         }
         .error-page h1 {
           font-family: var(--font-display);
-          font-size: var(--text-2xl);
+          font-size: var(--sc-text-2xl);
           font-weight: 800;
           margin: 0 0 0.5em;
         }
         .error-page p {
-          font-size: var(--text-base);
-          color: var(--color-text-secondary);
+          font-size: var(--sc-text-base);
+          color: var(--sc-color-textSecondary);
           margin: 0 0 1.5em;
           max-width: 40ch;
         }
         .error-page button {
           font-family: var(--font-sans);
-          font-size: var(--text-base);
+          font-size: var(--sc-text-base);
           font-weight: 600;
           padding: 0.6em 1.5em;
-          border: 1px solid var(--color-border);
-          border-radius: var(--radius-md);
-          background: var(--color-surface);
-          color: var(--color-text);
+          border: 1px solid var(--sc-color-border);
+          border-radius: var(--sc-radius-md);
+          background: var(--sc-color-surface);
+          color: var(--sc-color-text);
           cursor: pointer;
-          transition: background var(--duration-normal), border-color var(--duration-normal);
+          transition: background var(--sc-duration-normal), border-color var(--sc-duration-normal);
         }
         .error-page button:hover {
-          background: var(--color-accent-subtle);
-          border-color: var(--color-accent);
+          background: var(--sc-color-accentSubtle);
+          border-color: var(--sc-color-accent);
         }
       `}</style>
     </div>

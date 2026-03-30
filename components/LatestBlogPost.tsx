@@ -3,7 +3,7 @@
 import styled, { css } from 'styled-components';
 import Link from './Link';
 import rem from '../utils/rem';
-import { color, font, text, fontWeight, radius, duration, space } from '../utils/tokens';
+import { theme, font } from '../utils/theme';
 import { mobile } from '../utils/media';
 import { formatDate } from '../utils/formatDate';
 import posts from '@/sections/blog/posts.json';
@@ -12,32 +12,33 @@ const latestPost = posts[0];
 
 const Card = styled(Link)`
   display: inline-flex;
-  gap: ${space[5]};
+  gap: ${theme.space[5]};
   align-items: flex-start;
   max-width: max-content;
-  margin: ${space[6]} 0;
-  padding: ${space[4]} ${space[5]};
-  border-radius: ${radius.lg};
-  border: 1px solid ${color.border};
-  background: ${color.surfaceRaised};
+  margin: ${theme.space[6]} 0;
+  padding: ${theme.space[4]} ${theme.space[5]};
+  border-radius: ${theme.radius.lg};
+  border: 1px solid ${theme.color.border};
+  background: ${theme.color.surfaceRaised};
   position: relative;
   z-index: 20;
   text-decoration: none;
   text-align: left;
   color: inherit;
   font-family: ${font.sans};
-  transition: background ${duration.normal}, border-color ${duration.normal}, transform ${duration.fast};
+  transition: background ${theme.duration.normal}, border-color ${theme.duration.normal},
+    transform ${theme.duration.fast};
 
   &:hover {
-    background: ${color.accentSubtle};
-    border-color: ${color.accent};
+    background: ${theme.color.accentSubtle};
+    border-color: ${theme.color.accent};
     transform: translateY(-1px);
   }
 
   ${mobile(css`
-    margin: ${space[4]} 0;
-    padding: ${space[3]} ${space[4]};
-    gap: ${space[3]};
+    margin: ${theme.space[4]} 0;
+    padding: ${theme.space[3]} ${theme.space[4]};
+    gap: ${theme.space[3]};
   `)}
 `;
 
@@ -51,19 +52,19 @@ const LabelColumn = styled.div`
 `;
 
 const Label = styled.span`
-  font-weight: ${fontWeight.bold};
-  font-size: ${text.xs};
+  font-weight: ${theme.fontWeight.bold};
+  font-size: ${theme.text.xs};
   text-transform: uppercase;
   letter-spacing: ${rem(0.8)};
-  color: ${color.blogAccent};
-  background: ${color.blogAccentSubtle};
+  color: ${theme.color.blogAccent};
+  background: ${theme.color.blogAccentSubtle};
   padding: ${rem(3)} ${rem(8)} ${rem(1)};
-  border-radius: ${radius.sm};
+  border-radius: ${theme.radius.sm};
 `;
 
 const DateText = styled.time`
-  font-size: ${text.xs};
-  color: ${color.textSecondary};
+  font-size: ${theme.text.xs};
+  color: ${theme.color.textSecondary};
   margin-top: 2px;
   padding: 0 ${rem(2)};
 `;
@@ -78,14 +79,14 @@ const Body = styled.div`
 
 const Title = styled.span`
   font-family: ${font.display};
-  font-size: ${text.base};
-  font-weight: ${fontWeight.medium};
-  color: ${color.text};
+  font-size: ${theme.text.base};
+  font-weight: ${theme.fontWeight.medium};
+  color: ${theme.color.text};
 `;
 
 const Description = styled.span`
-  font-size: ${text.xs};
-  color: ${color.textMuted};
+  font-size: ${theme.text.xs};
+  color: ${theme.color.textMuted};
   line-height: 1.4;
   max-width: 52ch;
   text-wrap: balance;

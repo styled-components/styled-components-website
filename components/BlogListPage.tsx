@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import DocsLayout from './DocsLayout';
 import Link from './Link';
 import rem from '../utils/rem';
-import { color, font, text, fontWeight, duration } from '../utils/tokens';
+import { theme, font } from '../utils/theme';
 import { linkStyle } from './Link';
 import { formatDate } from '../utils/formatDate';
 import { postsByYear, years } from '../utils/blog';
@@ -45,15 +45,15 @@ export default function BlogListPage() {
 }
 
 const YearSection = styled.section`
-  margin-top: var(--space-8);
+  margin-top: ${theme.space[8]};
 `;
 
 const YearHeading = styled.h2`
-  font-size: ${text.xl};
-  font-weight: ${fontWeight.bold};
+  font-size: ${theme.text.xl};
+  font-weight: ${theme.fontWeight.bold};
   margin: 0 0 ${rem(8)} 0;
   padding-bottom: ${rem(8)};
-  border-bottom: 1px solid ${color.border};
+  border-bottom: 1px solid ${theme.color.border};
 `;
 
 const PostList = styled.div`
@@ -63,7 +63,7 @@ const PostList = styled.div`
 
 const PostItem = styled.div`
   padding: ${rem(20)} 0;
-  border-bottom: 1px solid ${color.border};
+  border-bottom: 1px solid ${theme.color.border};
 
   &:last-child {
     border-bottom: none;
@@ -76,25 +76,25 @@ const PostLink = styled(Link)`
 
 const PostTitle = styled.h3`
   font-family: ${font.display};
-  font-size: ${text.xl};
-  font-weight: ${fontWeight.medium};
+  font-size: ${theme.text.xl};
+  font-weight: ${theme.fontWeight.medium};
   margin: 0 0 ${rem(6)} 0;
   color: inherit;
-  transition: color ${duration.normal};
+  transition: color ${theme.duration.normal};
 
   ${PostLink}:hover & {
     opacity: 0.8;
   }
 
   @container content (max-width: 600px) {
-    font-size: ${text.lg};
+    font-size: ${theme.text.lg};
   }
 `;
 
 const PostMeta = styled.div`
   font-family: ${font.sans};
-  font-size: ${text.sm};
-  color: ${color.textSecondary};
+  font-size: ${theme.text.sm};
+  color: ${theme.color.textSecondary};
   display: flex;
   flex-wrap: wrap;
   gap: ${rem(8)};
@@ -102,8 +102,8 @@ const PostMeta = styled.div`
 `;
 
 const Author = styled.span`
-  font-weight: ${fontWeight.semibold};
-  color: ${color.textMuted};
+  font-weight: ${theme.fontWeight.semibold};
+  color: ${theme.color.textMuted};
 `;
 
 const Sep = styled.span`
@@ -114,10 +114,10 @@ const Sep = styled.span`
 
 const PostDescription = styled.p`
   font-family: ${font.sans};
-  font-size: ${text.base};
+  font-size: ${theme.text.base};
   margin: ${rem(8)} 0 0;
   line-height: 1.5;
-  color: ${color.textSecondary};
+  color: ${theme.color.textSecondary};
 
   @container content (max-width: 500px) {
     display: none;

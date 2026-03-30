@@ -3,7 +3,7 @@
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { color, duration, radius } from '../utils/tokens';
+import { theme } from '../utils/theme';
 import rem from '../utils/rem';
 
 // ---------------------------------------------------------------------------
@@ -14,18 +14,19 @@ export type LinkVariant = 'inline' | 'heading' | 'block' | 'unstyled';
 
 // Inline: colored text with dotted underline that turns solid on hover
 export const inlineStyle = css`
-  color: ${color.accentLight};
+  color: ${theme.color.accentLight};
   cursor: pointer;
   text-decoration: underline dotted;
-  text-decoration-color: ${color.linkUnderline};
+  text-decoration-color: ${theme.color.linkUnderline};
   text-underline-offset: 3px;
-  transition: color ${duration.fast}, text-decoration-color ${duration.fast}, text-decoration-style ${duration.fast};
+  transition: color ${theme.duration.fast}, text-decoration-color ${theme.duration.fast},
+    text-decoration-style ${theme.duration.fast};
 
   &:hover,
   &:focus-visible {
-    color: ${color.accentLighter};
+    color: ${theme.color.accentLighter};
     text-decoration-style: solid;
-    text-decoration-color: ${color.linkUnderlineHover};
+    text-decoration-color: ${theme.color.linkUnderlineHover};
   }
 `;
 
@@ -34,12 +35,12 @@ export const headingStyle = css`
   color: inherit;
   cursor: pointer;
   text-decoration: none;
-  transition: text-decoration-color ${duration.fast};
+  transition: text-decoration-color ${theme.duration.fast};
 
   &:hover,
   &:focus-visible {
     text-decoration: underline;
-    text-decoration-color: ${color.linkUnderlineHover};
+    text-decoration-color: ${theme.color.linkUnderlineHover};
     text-underline-offset: 3px;
   }
 `;
@@ -53,10 +54,10 @@ export const blockStyle = css`
   margin: ${rem(-2)} ${rem(-8)};
 
   @media (min-width: ${1000 / 16}em) {
-    border-radius: ${radius.md};
+    border-radius: ${theme.radius.md};
 
     &:hover {
-      background: ${color.accentSubtle};
+      background: ${theme.color.accentSubtle};
     }
   }
 `;

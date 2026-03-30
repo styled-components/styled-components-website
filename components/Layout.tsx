@@ -1,11 +1,11 @@
 'use client';
 
 import styled, { css } from 'styled-components';
-import { color, font, text, fontWeight, leading, layout, space } from '../utils/tokens';
+import { theme, font } from '../utils/theme';
 import { mobile } from '../utils/media';
 
 export const Container = styled.div`
-  padding-left: ${layout.sidebarWidth};
+  padding-left: ${theme.layout.sidebar};
 
   ${mobile(css`
     padding-left: 0;
@@ -17,7 +17,7 @@ export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean; child
   font-family: ${font.sans};
   margin: 0 auto;
   max-width: 120ch;
-  padding: ${space[16]} ${space[16]} 0 ${space[16]};
+  padding: ${theme.space[16]} ${theme.layout.gutter} 0 ${theme.layout.gutter};
   transition: transform 150ms ease-out;
   width: 100%;
   container-type: inline-size;
@@ -32,8 +32,8 @@ export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean; child
 
   ${p =>
     mobile(css`
-      padding: ${space[20]} ${space[4]} ${space[6]} ${space[4]};
-      transform: translateX(${p.$moveRight ? layout.sidebarWidth : '0'});
+      padding: ${theme.space[20]} ${theme.layout.gutter} ${theme.space[6]} ${theme.layout.gutter};
+      transform: translateX(${p.$moveRight ? theme.layout.sidebar : '0'});
     `)};
 
   ${p =>
@@ -48,11 +48,11 @@ export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean; child
 export const Title = styled.h1`
   text-align: left;
   width: 100%;
-  color: ${color.text};
-  font-size: ${text['3xl']};
-  font-weight: 800;
+  color: ${theme.color.text};
+  font-size: ${theme.text['3xl']};
+  font-weight: ${theme.fontWeight.display};
   font-family: ${font.display};
-  line-height: ${leading.tight};
+  line-height: ${theme.leading.tight};
   margin-bottom: 0.4em;
 
   + h2 {
@@ -61,9 +61,9 @@ export const Title = styled.h1`
 `;
 
 export const Header = styled.h2`
-  font-size: ${text.xl};
-  font-weight: ${fontWeight.semibold};
-  font-family: ${font.sans};
+  font-size: ${theme.text.xl};
+  font-weight: ${theme.fontWeight.semibold};
+  font-family: ${font.display};
   margin: 2em 0 0.75em;
 
   + h2,
@@ -75,8 +75,8 @@ export const Header = styled.h2`
 
 export const SubHeader = styled.h3`
   margin: 1.75em 0 0.75em;
-  font-size: ${text.lg};
-  font-weight: ${fontWeight.semibold};
+  font-size: ${theme.text.lg};
+  font-weight: ${theme.fontWeight.semibold};
   font-family: ${font.sans};
 
   + h3,
@@ -87,7 +87,7 @@ export const SubHeader = styled.h3`
 
 export const TertiaryHeader = styled.h4`
   margin: 1.5em 0 0.5em;
-  font-size: ${text.md};
-  font-weight: ${fontWeight.semibold};
+  font-size: ${theme.text.md};
+  font-weight: ${theme.fontWeight.semibold};
   font-family: ${font.sans};
 `;

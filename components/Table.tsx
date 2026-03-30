@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { lightGrey } from '../utils/colors';
-import { headerFont } from '../utils/fonts';
 import rem from '../utils/rem';
+import { font } from '../utils/theme';
 
 export const TableWrapper = styled.table`
   width: 100%;
@@ -12,7 +12,7 @@ export const TableWrapper = styled.table`
 `;
 
 const TableHead = styled.thead<{ children?: React.ReactNode }>`
-  font-family: ${headerFont};
+  font-family: ${font.sans};
 
   tr {
     border-bottom: 2px solid ${lightGrey};

@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 import { Github, Twitter } from '@styled-icons/fa-brands';
 import { Globe } from '@styled-icons/boxicons-regular';
-import { color, font, text, fontWeight, duration, space } from '../utils/tokens';
+import { theme, font } from '../utils/theme';
 import rem from '../utils/rem';
 import { formatDate } from '../utils/formatDate';
 import { getAuthor } from '../utils/authors';
@@ -11,9 +11,9 @@ import Link from './Link';
 
 const MetaWrapper = styled.div`
   font-family: ${font.sans};
-  font-size: ${text.sm};
-  color: ${color.textSecondary};
-  margin-bottom: ${space[6]};
+  font-size: ${theme.text.sm};
+  color: ${theme.color.textSecondary};
+  margin-bottom: ${theme.space[6]};
   display: flex;
   flex-wrap: wrap;
   gap: ${rem(8)};
@@ -21,8 +21,8 @@ const MetaWrapper = styled.div`
 `;
 
 const AuthorName = styled.span`
-  font-weight: ${fontWeight.bold};
-  color: ${color.textMuted};
+  font-weight: ${theme.fontWeight.bold};
+  color: ${theme.color.textMuted};
 `;
 
 const Separator = styled.span`
@@ -35,12 +35,12 @@ const IconLink = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: ${rem(5)};
-  font-size: ${text.xs};
-  color: ${color.accentLight};
-  transition: color ${duration.normal};
+  font-size: ${theme.text.xs};
+  color: ${theme.color.accentLight};
+  transition: color ${theme.duration.normal};
 
   &:hover {
-    color: ${color.accentLighter};
+    color: ${theme.color.accentLighter};
   }
 
   svg {
@@ -50,12 +50,12 @@ const IconLink = styled(Link)`
 `;
 
 const OriginalLink = styled(Link)`
-  font-size: ${text.xs};
-  color: ${color.accentLight};
-  transition: color ${duration.normal};
+  font-size: ${theme.text.xs};
+  color: ${theme.color.accentLight};
+  transition: color ${theme.duration.normal};
 
   &:hover {
-    color: ${color.accentLighter};
+    color: ${theme.color.accentLighter};
   }
 `;
 

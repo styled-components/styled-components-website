@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import styled from 'styled-components';
 import DocsLayout from '@/components/DocsLayout';
 import DocsPageNav from '@/components/DocsPageNav';
-import { font, text, fontWeight, color, space } from '@/utils/tokens';
+import { theme, font } from '@/utils/theme';
 
 import MigrationV6 from '@/sections/faqs/migration-v6.mdx';
 import DynamicStylingPatterns from '@/sections/faqs/dynamic-styling-patterns.mdx';
@@ -61,14 +61,14 @@ export default function FAQsPage() {
 
 const Category = styled.h2`
   font-family: ${font.sans};
-  font-size: ${text.xl};
-  font-weight: ${fontWeight.semibold};
-  color: ${color.text};
-  margin: ${space[10]} 0 ${space[2]};
-  padding-bottom: ${space[2]};
-  border-bottom: 1px solid ${color.border};
+  font-size: ${theme.text.xl};
+  font-weight: ${theme.fontWeight.semibold};
+  color: ${theme.color.text};
+  margin: ${theme.space[10]} 0 ${theme.space[2]};
+  padding-bottom: ${theme.space[2]};
+  border-bottom: 1px solid ${theme.color.border};
 
   &:first-of-type {
-    margin-top: ${space[6]};
+    margin-top: ${theme.space[6]};
   }
 `;

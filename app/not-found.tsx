@@ -3,7 +3,7 @@
 import styled, { keyframes } from 'styled-components';
 import Link from '@/components/Link';
 import docsJson from './docs.json';
-import { color, font, text, fontWeight, space, radius, duration } from '@/utils/tokens';
+import { theme, font } from '@/utils/theme';
 
 const faqPage = docsJson.pages.find(p => p.pathname === 'faqs');
 const faqs = faqPage?.sections ?? [];
@@ -79,21 +79,21 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 60vh;
-  padding: 96px ${space[8]};
+  padding: 96px ${theme.space[8]};
   font-family: ${font.sans};
-  color: ${color.text};
+  color: ${theme.color.text};
 `;
 
 const CodeBlock = styled.pre`
   font-family: ${font.mono};
-  font-size: clamp(${text.sm}, 2.5vw, ${text.lg});
+  font-size: clamp(${theme.text.sm}, 2.5vw, ${theme.text.lg});
   line-height: 1.7;
-  margin: 0 0 ${space[6]};
-  padding: ${space[6]} ${space[8]};
+  margin: 0 0 ${theme.space[6]};
+  padding: ${theme.space[6]} ${theme.space[8]};
   background: oklch(0.18 0.02 290);
   color: oklch(0.9 0 0);
-  border-radius: ${radius.lg};
-  box-shadow: 1px 1px 20px ${color.shadow};
+  border-radius: ${theme.radius.lg};
+  box-shadow: 1px 1px 20px ${theme.color.shadow};
   max-width: 100%;
   overflow-x: auto;
 
@@ -101,7 +101,7 @@ const CodeBlock = styled.pre`
     content: '|';
     animation: ${blink} 1s step-end infinite;
     color: oklch(0.75 0.15 290);
-    font-weight: ${fontWeight.bold};
+    font-weight: ${theme.fontWeight.bold};
   }
 `;
 
@@ -147,9 +147,9 @@ const Value = styled.span`
 `;
 
 const Message = styled.p`
-  font-size: ${text.base};
-  color: ${color.textSecondary};
-  margin: 0 0 ${space[10]};
+  font-size: ${theme.text.base};
+  color: ${theme.color.textSecondary};
+  margin: 0 0 ${theme.space[10]};
   text-align: center;
 `;
 
@@ -159,32 +159,32 @@ const FAQSection = styled.section`
 `;
 
 const FAQHeading = styled.h2`
-  font-size: ${text.sm};
-  font-weight: ${fontWeight.semibold};
+  font-size: ${theme.text.sm};
+  font-weight: ${theme.fontWeight.semibold};
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: ${color.textMuted};
-  margin: 0 0 ${space[4]};
+  color: ${theme.color.textMuted};
+  margin: 0 0 ${theme.space[4]};
   text-align: center;
 `;
 
 const FAQGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: ${space[2]};
+  gap: ${theme.space[2]};
   justify-content: center;
 `;
 
 const FAQLink = styled(Link)`
-  font-size: ${text.xs};
-  padding: ${space[1]} ${space[3]};
-  border-radius: ${radius.md};
-  border: 1px solid ${color.border};
-  background: ${color.surface};
-  transition: background ${duration.normal}, border-color ${duration.normal};
+  font-size: ${theme.text.xs};
+  padding: ${theme.space[1]} ${theme.space[3]};
+  border-radius: ${theme.radius.md};
+  border: 1px solid ${theme.color.border};
+  background: ${theme.color.surface};
+  transition: background ${theme.duration.normal}, border-color ${theme.duration.normal};
 
   &:hover {
-    background: ${color.accentSubtle};
-    border-color: ${color.accent};
+    background: ${theme.color.accentSubtle};
+    border-color: ${theme.color.accent};
   }
 `;

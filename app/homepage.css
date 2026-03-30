@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--color-text);
+  color: var(--sc-color-text);
   background: none;
   position: relative;
   z-index: 20;
@@ -16,13 +16,13 @@
   font-family: var(--font-sans);
   margin: 0 auto;
   max-width: 72rem;
-  padding: 4rem 2.5rem 0;
+  padding: 4rem 2rem 0;
   width: 100%;
 }
 
 .hero-tagline {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: var(--sc-fontWeight-display);
   font-size: 2.5rem;
   line-height: 1.15;
   margin: 0.75em 0 0.5em;
@@ -40,8 +40,8 @@
 }
 
 .hero-used-by {
-  color: var(--color-text-muted);
-  font-size: var(--text-sm, 0.875rem);
+  color: var(--sc-color-textMuted);
+  font-size: var(--sc-text-sm, 0.875rem);
   font-weight: 600;
   margin: 2.5rem 0 0.5rem;
   max-width: none;

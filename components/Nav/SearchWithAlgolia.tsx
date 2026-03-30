@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { color, radius } from '../../utils/tokens';
+import { theme } from '../../utils/theme';
 import posts from '@/sections/blog/posts.json';
 
 const latestPost = posts[0];
@@ -137,7 +137,7 @@ export default function AlgoliaSearch(props: React.HTMLAttributes<HTMLDivElement
 
 const Skeleton = styled.div`
   height: 2.25rem;
-  border-radius: ${radius.md};
-  border: 1px solid color-mix(in oklch, ${color.text} 10%, ${color.surface});
-  background: var(--docsearch-searchbox-background, ${color.surface});
+  border-radius: ${theme.radius.md};
+  border: 1px solid color-mix(in oklch, ${theme.color.text} 10%, ${theme.color.surface});
+  background: var(--docsearch-searchbox-background, ${theme.color.surface});
 `;

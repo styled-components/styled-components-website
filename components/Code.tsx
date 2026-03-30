@@ -1,11 +1,11 @@
 'use client';
 
 import styled from 'styled-components';
-import { color, font, radius } from '../utils/tokens';
+import { theme, font } from '../utils/theme';
 
 const Code = styled.code`
-  border-radius: ${radius.sm};
-  background: ${color.accentSubtle};
+  border-radius: ${theme.radius.sm};
+  background: ${theme.color.accentSubtle};
   display: inline-block;
   font-family: ${font.mono};
   font-size: 90%;

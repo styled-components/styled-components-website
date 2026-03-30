@@ -10,12 +10,11 @@ import {
 } from 'react-live-runner';
 import React, { useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
-import { color } from '../utils/tokens';
-import { headerFont, monospace } from '../utils/fonts';
+import { theme, font } from '../utils/theme';
 import { phone } from '../utils/media';
 import rem from '../utils/rem';
 import baseScope from '../utils/scope';
-import theme from './prismTheme';
+import prismTheme from './prismTheme';
 
 export interface LiveEditProps extends Pick<LiveProviderProps, 'code' | 'scope'> {}
 
@@ -41,7 +40,7 @@ export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
         ...baseScope,
         ...scope,
       }}
-      theme={theme}
+      theme={prismTheme}
     >
       <Row>
         <Code ref={editorRegionRef}>
@@ -56,9 +55,9 @@ export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
 }
 
 const StyledProvider = styled(LiveProvider)`
-  box-shadow: 1px 1px 20px var(--color-shadow);
+  box-shadow: 1px 1px 20px ${theme.color.shadow};
   overflow: hidden;
-  margin: var(--space-8) 0;
+  margin: ${theme.space[8]} 0;
   text-align: left;
   position: relative;
   z-index: 10;
@@ -93,14 +92,14 @@ const Code = styled.code`
 `;
 
 export const editorMixin = `
-  border-radius: var(--radius-md);
-  color: var(--color-code-text);
+  border-radius: ${theme.radius.md};
+  color: ${theme.color.codeText};
   cursor: text;
-  font-family: ${monospace};
-  font-size: var(--text-sm);
+  font-family: ${font.mono};
+  font-size: ${theme.text.sm};
   font-weight: 300;
   line-height: 1.5;
-  letter-spacing: normal;
+  letter-spacing: -0.025em;
   min-height: ${rem(400)};
   overflow-x: hidden;
   overflow-y: auto !important;
@@ -110,33 +109,30 @@ export const editorMixin = `
 
   /* Fallback token colors for compound types (e.g. template-string css tokens)
      that the theme resolver can't match */
-  .token.comment { color: var(--color-code-comment); }
-  .token.punctuation { color: var(--color-code-punctuation); }
-  .token.constant, .token.boolean, .token.builtin { color: var(--color-code-constant); }
-  .token.number { color: var(--color-code-number); }
-  .token.keyword, .token.property, .token.atrule { color: var(--color-code-keyword); }
-  .token.tag, .token.operator, .token.class-name, .token.symbol { color: var(--color-code-tag); }
-  .token.function, .token.attr-name, .token.selector { color: var(--color-code-function); }
-  .token.string, .token.attr-value, .token.regex, .token.char { color: var(--color-code-string); }
-  .token.variable, .token.url, .token.entity { color: var(--color-code-variable); }
+  .token.comment { color: ${theme.color.codeComment}; }
+  .token.punctuation { color: ${theme.color.codePunctuation}; }
+  .token.constant, .token.boolean, .token.builtin { color: ${theme.color.codeConstant}; }
+  .token.number { color: ${theme.color.codeNumber}; }
+  .token.keyword, .token.property, .token.atrule { color: ${theme.color.codeKeyword}; }
+  .token.tag, .token.operator, .token.class-name, .token.symbol { color: ${theme.color.codeTag}; }
+  .token.function, .token.attr-name, .token.selector { color: ${theme.color.codeFunction}; }
+  .token.string, .token.attr-value, .token.regex, .token.char { color: ${theme.color.codeString}; }
+  .token.variable, .token.url, .token.entity { color: ${theme.color.codeVariable}; }
 `;
 
 const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
   <LiveEditor
     {...props}
     // @ts-expect-error clashing types
-    theme={theme}
+    theme={prismTheme}
   />
 ))`
   ${editorMixin};
 
   pre,
   textarea {
-    font-family: ${monospace} !important;
-    font-size: inherit !important;
     font-variant-ligatures: none !important;
     line-height: inherit !important;
-    letter-spacing: inherit !important;
     padding: 1.5em !important;
     margin: 0 !important;
     border: 0 !important;
@@ -149,13 +145,21 @@ const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
+  .token-line,
+  .token {
+    font-family: ${font.mono};
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+  }
 `;
 
 const StyledPreview = styled(LivePreview)`
   position: relative;
   padding: 0.5rem;
-  background: ${color.bg};
-  color: ${color.text};
+  background: ${theme.color.bg};
+  color: ${theme.color.text};
   height: auto;
   overflow: hidden;
   white-space: normal;
@@ -167,9 +171,9 @@ export const StyledError = styled(LiveError)`
   display: block;
   width: 100%;
   padding: ${rem(8)};
-  background: ${color.error};
+  background: ${theme.color.error};
   color: white;
   font-size: 0.8rem;
-  font-family: ${headerFont};
+  font-family: ${font.sans};
   white-space: pre;
 `;

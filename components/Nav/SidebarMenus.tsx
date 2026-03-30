@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 import json from '@/app/docs.json';
 import titleToDash from '../../utils/titleToDash';
 import { SmartToy, MenuBook, RssFeed, Public, NewReleases, Favorite } from '@styled-icons/material';
-import { color, duration, font, space, text, fontWeight, radius } from '../../utils/tokens';
+import { theme, font } from '../../utils/theme';
 import { sidebarLinkStyle } from '../../utils/linkStyles';
 import useScrollSpy from '../../utils/useScrollSpy';
 import Link from '../Link';
@@ -144,17 +144,17 @@ export default function SidebarMenu() {
 const MenuRoot = styled.nav`
   display: flex;
   flex-direction: column;
-  padding: ${space[4]} 0 ${space[10]};
+  padding: ${theme.space[4]} 0 ${theme.space[10]};
 `;
 
 const SearchWrapper = styled.div`
-  padding: ${space[2]} ${space[4]} ${space[4]};
+  padding: ${theme.space[2]} ${theme.space[4]} ${theme.space[4]};
 
   .DocSearch-Button {
     width: 100% !important;
     margin: 0 !important;
-    border-radius: ${radius.md} !important;
-    border: 1px solid color-mix(in oklch, ${color.text} 10%, ${color.surface}) !important;
+    border-radius: ${theme.radius.md} !important;
+    border: 1px solid color-mix(in oklch, ${theme.color.text} 10%, ${theme.color.surface}) !important;
     outline: none !important;
     box-shadow: none !important;
 
@@ -162,26 +162,26 @@ const SearchWrapper = styled.div`
     &:hover {
       box-shadow: none !important;
       outline: none !important;
-      border-color: ${color.accent} !important;
+      border-color: ${theme.color.accent} !important;
     }
 
     .DocSearch-Search-Icon {
       width: 15px !important;
       height: 15px !important;
-      color: ${color.textMuted} !important;
-      transition: color ${duration.normal} !important;
+      color: ${theme.color.textMuted} !important;
+      transition: color ${theme.duration.normal} !important;
     }
 
     &:hover .DocSearch-Search-Icon,
     &:focus .DocSearch-Search-Icon {
-      color: ${color.textSecondary} !important;
+      color: ${theme.color.textSecondary} !important;
     }
 
     .DocSearch-Button-Key {
-      color: ${color.textMuted} !important;
+      color: ${theme.color.textMuted} !important;
       background: none !important;
-      border: 1px solid color-mix(in oklch, ${color.text} 15%, ${color.surface}) !important;
-      border-radius: ${radius.sm} !important;
+      border: 1px solid color-mix(in oklch, ${theme.color.text} 15%, ${theme.color.surface}) !important;
+      border-radius: ${theme.radius.sm} !important;
       box-shadow: none !important;
       padding: 0 0.3em !important;
       font-size: 0.7em !important;
@@ -191,25 +191,25 @@ const SearchWrapper = styled.div`
 `;
 
 const TopSection = styled.div`
-  margin-bottom: ${space[1]};
+  margin-bottom: ${theme.space[1]};
 `;
 
 const TopBadge = styled.span`
   display: inline-block;
-  margin-left: ${space[3]};
-  padding: 2px ${space[2]} 1px;
-  font-size: ${text.xs};
-  font-weight: ${fontWeight.medium};
-  color: ${color.blogAccent};
-  background: ${color.blogAccentSubtle};
-  border-radius: ${radius.full};
+  margin-left: ${theme.space[3]};
+  padding: 2px ${theme.space[2]} 1px;
+  font-size: ${theme.text.xs};
+  font-weight: ${theme.fontWeight.medium};
+  color: ${theme.color.blogAccent};
+  background: ${theme.color.blogAccentSubtle};
+  border-radius: ${theme.radius.full};
   line-height: 1.4;
 `;
 
 const NavIcon = styled.span`
   display: inline-flex;
   width: 20px;
-  margin-right: ${space[2]};
+  margin-right: ${theme.space[2]};
   opacity: 0.6;
   flex-shrink: 0;
 `;
@@ -217,18 +217,18 @@ const NavIcon = styled.span`
 const TopLink = styled(Link).attrs({ unstyled: true })<{ $active?: boolean }>`
   display: flex;
   align-items: center;
-  padding: ${space[2]} ${space[6]};
+  padding: ${theme.space[2]} ${theme.space[6]};
   font-family: ${font.sans};
-  font-size: ${text.base};
-  font-weight: ${fontWeight.semibold};
-  color: ${color.textSecondary};
+  font-size: ${theme.text.base};
+  font-weight: ${theme.fontWeight.semibold};
+  color: ${theme.color.textSecondary};
   text-decoration: none;
-  transition: color ${duration.fast}, background-color ${duration.fast};
+  transition: color ${theme.duration.fast}, background-color ${theme.duration.fast};
 
   ${p =>
     p.$active &&
     css`
-      color: ${color.accentLight};
+      color: ${theme.color.accentLight};
 
       ${NavIcon} {
         opacity: 1;
@@ -237,8 +237,8 @@ const TopLink = styled(Link).attrs({ unstyled: true })<{ $active?: boolean }>`
 
   &:hover,
   &:focus-visible {
-    color: ${color.text};
-    background: ${color.accentSubtle};
+    color: ${theme.color.text};
+    background: ${theme.color.accentSubtle};
 
     ${NavIcon} {
       opacity: 0.9;
@@ -249,56 +249,56 @@ const TopLink = styled(Link).attrs({ unstyled: true })<{ $active?: boolean }>`
 const ChildList = styled.div`
   display: flex;
   flex-direction: column;
-  padding: ${space[1]} 0 ${space[2]};
+  padding: ${theme.space[1]} 0 ${theme.space[2]};
 `;
 
 const CategoryLink = styled(Link).attrs({ unstyled: true })<{ $active?: boolean }>`
   display: block;
-  padding: ${space[1]} ${space[6]} ${space[1]} ${space[8]};
+  padding: ${theme.space[1]} ${theme.space[6]} ${theme.space[1]} ${theme.space[8]};
   font-family: ${font.sans};
-  font-size: ${text.sm};
-  font-weight: ${fontWeight.semibold};
-  color: ${color.text};
+  font-size: ${theme.text.sm};
+  font-weight: ${theme.fontWeight.semibold};
+  color: ${theme.color.text};
   text-decoration: none;
-  transition: color ${duration.fast};
+  transition: color ${theme.duration.fast};
 
   ${p =>
     p.$active &&
     css`
-      color: ${color.accentLight};
+      color: ${theme.color.accentLight};
     `}
 
   &:hover,
   &:focus-visible {
-    color: ${color.text};
+    color: ${theme.color.text};
   }
 `;
 
 const SectionList = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 0 ${space[2]};
+  padding: 0 0 ${theme.space[2]};
 `;
 
 const SectionLink = styled(Link).attrs({ unstyled: true })`
   display: block;
-  padding: ${space[1]} ${space[6]} ${space[1]} ${space[12]};
+  padding: ${theme.space[1]} ${theme.space[6]} ${theme.space[1]} ${theme.space[12]};
   font-family: ${font.sans};
-  font-size: ${text.sm};
-  font-weight: ${fontWeight.normal};
-  color: ${color.text};
+  font-size: ${theme.text.sm};
+  font-weight: ${theme.fontWeight.normal};
+  color: ${theme.color.text};
   text-decoration: none;
-  transition: color ${duration.fast}, background-color ${duration.fast};
-  border-radius: 0 ${radius.md} ${radius.md} 0;
+  transition: color ${theme.duration.fast}, background-color ${theme.duration.fast};
+  border-radius: 0 ${theme.radius.md} ${theme.radius.md} 0;
 
   &[aria-current='true'] {
-    color: ${color.accentLight};
-    font-weight: ${fontWeight.medium};
+    color: ${theme.color.accentLight};
+    font-weight: ${theme.fontWeight.medium};
   }
 
   &:hover,
   &:focus-visible {
-    color: ${color.text};
-    background: ${color.accentSubtle};
+    color: ${theme.color.text};
+    background: ${theme.color.accentSubtle};
   }
 `;

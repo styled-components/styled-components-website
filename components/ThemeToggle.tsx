@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { color, duration } from '../utils/tokens';
+import { theme } from '../utils/theme';
 
 type Theme = 'light' | 'dark' | 'auto';
 
@@ -56,20 +56,20 @@ function resolvedIsDark(theme: Theme): boolean {
 }
 
 export default function ThemeToggle(props: React.ComponentPropsWithoutRef<'button'>) {
-  const [theme, setThemeState] = React.useState<Theme>('auto');
+  const [currentTheme, setThemeState] = React.useState<Theme>('auto');
 
   React.useEffect(() => {
     setThemeState(getTheme());
   }, []);
 
   const toggle = () => {
-    const next = NEXT_THEME[theme];
+    const next = NEXT_THEME[currentTheme];
     applyTheme(next);
     setThemeState(next);
   };
 
-  const nextTheme = NEXT_THEME[theme];
-  const Icon = THEME_ICON[theme];
+  const nextTheme = NEXT_THEME[currentTheme];
+  const Icon = THEME_ICON[currentTheme];
 
   return (
     <Button
@@ -154,12 +154,12 @@ const Button = styled.button`
   border: none;
   border-radius: 50%;
   background: transparent;
-  color: ${color.navText};
+  color: ${theme.color.navText};
   cursor: pointer;
-  transition: opacity ${duration.normal}, background ${duration.normal};
+  transition: opacity ${theme.duration.normal}, background ${theme.duration.normal};
 
   &:hover {
-    background: ${color.accentSubtle};
+    background: ${theme.color.accentSubtle};
   }
 
   &:active {

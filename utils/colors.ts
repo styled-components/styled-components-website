@@ -1,22 +1,22 @@
-import { color } from './tokens';
+import { theme } from './theme';
 
 /**
- * Color constants — now thin aliases over CSS custom properties.
- * All actual color values live in GlobalStyles.tsx as OKLCH tokens.
+ * Color constants — thin aliases over the createTheme contract.
+ * All actual color values live in utils/theme.ts.
  *
  * Existing component imports continue to work unchanged.
  */
 
 // Surfaces
-export const paleGrey = color.surface;
-export const lightGrey = color.border;
+export const paleGrey = theme.color.surface;
+export const lightGrey = theme.color.border;
 
 // Static greys (used in always-dark contexts like footer)
 export const grey = '#282a36';
 export const darkGrey = '#232530';
 
 // Errors
-export const red = color.error;
+export const red = theme.color.error;
 
 // Brand pinks (used in docs examples, not themeable)
 export const violetRed = 'rgb(219, 112, 147)';
@@ -28,15 +28,9 @@ export const palepink = '#BF4F74';
 export const gold = 'rgb(24, 18, 10)';
 
 // Accent
-export const accent = color.accent;
-export const accentLight = color.accentLight;
-export const accentLightest = color.accentLighter;
-export const accentDark = color.accentDark;
+export const accent = theme.color.accent;
+export const accentLight = theme.color.accentLight;
+export const accentLightest = theme.color.accentLighter;
+export const accentDark = theme.color.accentDark;
 
-// Neutrals (now semantic)
-export const blmGrey = color.borderStrong;
-export const blmBlack = 'rgb(0, 0, 0)';
-export const blmLightGrey = color.surface;
-export const blmMetal = color.text;
-
-export const textSecondary = color.textSecondary;
+export const textSecondary = theme.color.textSecondary;

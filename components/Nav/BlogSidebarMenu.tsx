@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 import { sidebarLinkStyle } from '../../utils/linkStyles';
 import { formatDate } from '../../utils/formatDate';
 import { postsByYear, years } from '../../utils/blog';
-import { color, duration, font, text, space, radius, fontWeight } from '../../utils/tokens';
+import { theme, font } from '../../utils/theme';
 import Link from '../Link';
 
 export default function BlogSidebarMenu() {
@@ -43,40 +43,40 @@ export default function BlogSidebarMenu() {
 const MenuInner = styled.div`
   display: block;
   box-sizing: border-box;
-  padding: ${space[5]} 0 ${space[10]};
+  padding: ${theme.space[5]} 0 ${theme.space[10]};
 `;
 
 const BackLink = styled(Link)`
   display: block;
-  margin: ${space[2]} ${space[6]} ${space[4]};
-  font-size: ${text.sm};
-  color: ${color.textSecondary};
+  margin: ${theme.space[2]} ${theme.space[6]} ${theme.space[4]};
+  font-size: ${theme.text.sm};
+  color: ${theme.color.textSecondary};
   ${sidebarLinkStyle}
 `;
 
 const YearSection = styled.div`
-  margin-bottom: ${space[4]};
+  margin-bottom: ${theme.space[4]};
 `;
 
 const YearHeading = styled.h4`
   display: block;
-  margin: ${space[4]} ${space[6]} ${space[2]};
-  padding-bottom: ${space[1]};
+  margin: ${theme.space[4]} ${theme.space[6]} ${theme.space[2]};
+  padding-bottom: ${theme.space[1]};
   font-family: ${font.sans};
-  font-size: ${text.xs};
-  font-weight: ${fontWeight.semibold};
+  font-size: ${theme.text.xs};
+  font-weight: ${theme.fontWeight.semibold};
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: ${color.textMuted};
-  border-bottom: 1px solid ${color.border};
+  color: ${theme.color.textMuted};
+  border-bottom: 1px solid ${theme.color.border};
 `;
 
 const PostItem = styled.div<{ $active?: boolean }>`
   position: relative;
   margin: 0;
-  padding: ${space[1]} ${space[6]} ${space[1]} ${space[8]};
-  transition: background-color ${duration.normal};
-  border-radius: 0 ${radius.md} ${radius.md} 0;
+  padding: ${theme.space[1]} ${theme.space[6]} ${theme.space[1]} ${theme.space[8]};
+  transition: background-color ${theme.duration.normal};
+  border-radius: 0 ${theme.radius.md} ${theme.radius.md} 0;
 
   ${p =>
     p.$active &&
@@ -85,23 +85,23 @@ const PostItem = styled.div<{ $active?: boolean }>`
         content: '';
         position: absolute;
         left: 0;
-        top: ${space[1]};
-        bottom: ${space[1]};
+        top: ${theme.space[1]};
+        bottom: ${theme.space[1]};
         width: 2px;
-        background: ${color.accent};
-        border-radius: ${radius.full};
+        background: ${theme.color.accent};
+        border-radius: ${theme.radius.full};
       }
     `}
 
   &:hover {
-    background: ${color.accentSubtle};
+    background: ${theme.color.accentSubtle};
   }
 `;
 
 const PostLink = styled(Link)`
   display: block;
   font-family: ${font.display};
-  font-size: ${text.sm};
+  font-size: ${theme.text.sm};
   font-weight: 500;
   color: inherit;
   ${sidebarLinkStyle}
@@ -109,7 +109,7 @@ const PostLink = styled(Link)`
 
 const PostDate = styled.div`
   font-family: ${font.sans};
-  font-size: ${text.xs};
-  color: ${color.textMuted};
+  font-size: ${theme.text.xs};
+  color: ${theme.color.textMuted};
   margin-top: 1px;
 `;

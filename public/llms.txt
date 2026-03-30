@@ -26,7 +26,15 @@ import styled, { css, keyframes, createGlobalStyle, createTheme, ThemeProvider, 
 
 `createGlobalStyle` -- injects global CSS. No `@import` (fails silently in prod via CSSOM). Use `<link>` in `<head>` instead.
 
-`createTheme(obj, { prefix?, selector? })` -- CSS variable theming across RSC and client (v6.4+). Returns theme object where leaf values are `var(--prefix-path, fallback)` references. Pass to `ThemeProvider` for stable class hashing across themes. `theme.raw` has the original values. `theme.resolve(el?)` reads computed DOM values (client-only).
+`createTheme(obj, { prefix?, selector? })` -- CSS variable theming across RSC and client (v6.4+). Returns theme object where leaf values are `var(--prefix-path, fallback)` references. Pass to `ThemeProvider` for stable class hashing across themes. `theme.raw` has the original values. `theme.resolve(el?)` reads computed DOM values (client-only). Object keys become var names as-is (camelCase preserved): `{ color: { codeBg: 'x' } }` with prefix `'sc'` produces `var(--sc-color-codeBg, x)`. Framework-managed vars (e.g. next/font `--font-sans`) should stay outside the theme.
+
+CSS-first dark mode with createTheme: define light theme as default, mount `theme.GlobalStyle` inside ThemeProvider for `:root` vars, then override specific `--prefix-*` vars under `html.dark` / `@media (prefers-color-scheme: dark)` in a separate global style. The CSS class overrides beat `:root` specificity, preventing flash. Define dark overrides as a delta object (only changed keys), then derive both the full dark theme and the CSS override string from it:
+
+```tsx
+const darkColors: Partial<typeof lightTheme.color> = { bg: '...', text: '...' };
+const darkTheme = { ...lightTheme, color: { ...lightTheme.color, ...darkColors } };
+const darkCSS = Object.entries(darkColors).map(([k, v]) => `--sc-color-${k}:${v};`).join('');
+```
 
 `ThemeProvider` -- context-based theming. No-op in RSC (v6.3+); use `createTheme` or CSS custom properties instead. Also: `ThemeConsumer`, `ThemeContext`, `useTheme`, `withTheme` (HOC).
 
@@ -140,7 +148,7 @@ Breaking changes:
 7. Babel macro removed (v6.1). Standard import + plugin.
 8. Node 16+ minimum.
 
-v6.x timeline: v6.0 TypeScript rewrite + transient props | v6.1 macro removed, Shadow DOM target | v6.2 streaming SSR | v6.3 RSC support, HTML/SVG element helpers, CSS var TS support, StrictMode-safe createGlobalStyle
+v6.x timeline: v6.0 TypeScript rewrite + transient props | v6.1 macro removed, Shadow DOM target | v6.2 streaming SSR | v6.3 RSC support, HTML/SVG element helpers, CSS var TS support, StrictMode-safe createGlobalStyle | v6.4 createTheme (CSS var theming for RSC+client), attrs callback receives immutable snapshot, CSP nonce auto-detection, performance (3.3x cascading re-renders)
 
 ## Upcoming: v6.4.0
 

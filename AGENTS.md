@@ -1,6 +1,6 @@
 Note: CLAUDE.md is a symlink to this file. Edit AGENTS.md directly.
 
-styled-components documentation website. Next.js 16.1.7, MDX, styled-components 6.4.0-prerelease.8.
+styled-components documentation website. Next.js, MDX, styled-components.
 
 ## Principles
 
@@ -18,7 +18,7 @@ styled-components documentation website. Next.js 16.1.7, MDX, styled-components 
 
 ## Architecture
 
-**Tokens:** OKLCH CSS custom properties in `GlobalStyles.tsx`. Light/dark values are `css` partials (`lightColors`, `darkColors`) composed under `:root`, `html.light`, `html.dark`, and the dark media query. Syntax highlighting has 9 adaptive `--color-code-*` tokens. JS refs in `utils/tokens.ts`.
+**Tokens:** `createTheme` API from `utils/theme.ts` is the single source of truth. Generates `var(--sc-*)` CSS custom properties. Dark mode overrides in `GlobalStyles.tsx` target `--sc-*` vars under `html.dark` and `@media (prefers-color-scheme: dark)`. Font vars (`--font-sans`, `--font-display`, `--font-mono`) are managed by next/font, not the theme. Display font is Figtree; body font is Inter; mono font is Google Sans Code.
 
 **Theme:** Three states (light/dark/auto). Raw `<script>` in `<head>` before stylesheets sets the class — not `next/script`. `data-theme="dark"` synced for DocSearch. Toggle icon shows current mode.
 
@@ -34,8 +34,8 @@ styled-components documentation website. Next.js 16.1.7, MDX, styled-components 
 
 - `docs.json` titles become URL hashes via `titleToDash`. Mismatches break sidebar links.
 - Live editor `scope.ts` derives component IDs from tag/component names. Counters cause hydration mismatches.
-- SC 6.4.0-prerelease.8 may cause HMR staleness — the rearchitected `createGlobalStyle` is suspected.
-- Logo is HTML (💅 emoji + `color.text` text). Don't use PNG or CSS `filter: invert()`.
+- Logo is a CSS 3D Platonic solid (`components/LogoConcepts/PlatonicLogo.tsx`). Cycles through 5 solids with chain-matched face transitions, OKLCH spatial coloring, and hover face-highlight effect.
+- Nav/sidebar widths use `sidebarWidth` from `utils/sizes.ts` in plain px — don't use `rem()` for these.
 - Borders use opaque `color-mix(in oklch, text 8%, surface)`, not alpha.
 - `utils/rem.ts` uses legacy 18px base. Prefer token spacing vars.
 - Releases page uses `markdown-to-jsx`, not MDX.

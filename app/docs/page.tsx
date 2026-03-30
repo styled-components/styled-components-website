@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import styled, { css } from 'styled-components';
 
 import { Header } from '@/components/Layout';
-import { headerFont } from '@/utils/fonts';
 import { mobile, phone } from '@/utils/media';
+import { theme, font } from '@/utils/theme';
 import DocsLayout from '@/components/DocsLayout';
 import json from '@/app/docs.json';
 import Link from '@/components/Link';
@@ -148,7 +148,7 @@ const FaqGroup = styled.div`
   vertical-align: top;
   width: 50%;
   padding-right: ${rem(15)};
-  margin-bottom: var(--space-6);
+  margin-bottom: ${theme.space[6]};
 
   ${phone(css`
     width: 100%;
@@ -156,14 +156,14 @@ const FaqGroup = styled.div`
 `;
 
 const CategoryLabel = styled.h4`
-  font-size: var(--text-xs);
-  font-weight: var(--font-weight-semibold);
+  font-size: ${theme.text.xs};
+  font-weight: ${theme.fontWeight.semibold};
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-text-muted);
-  margin: 0 0 var(--space-2);
-  padding-bottom: var(--space-1);
-  border-bottom: 1px solid var(--color-border);
+  color: ${theme.color.textMuted};
+  margin: 0 0 ${theme.space[2]};
+  padding-bottom: ${theme.space[1]};
+  border-bottom: 1px solid ${theme.color.border};
 `;
 
 const SubHeader = styled.h3<{ children?: React.ReactNode }>`
@@ -171,9 +171,5 @@ const SubHeader = styled.h3<{ children?: React.ReactNode }>`
   margin: ${rem(8)} 0;
   font-size: ${rem(18)};
   font-weight: normal;
-  font-family: ${headerFont};
-
-  a {
-    font-family: var(--font-display);
-  }
+  font-family: ${font.sans};
 `;

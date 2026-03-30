@@ -7,19 +7,18 @@ import Link from './Link';
 import { StyledError, editorMixin } from './LiveEdit';
 import { Github } from '@styled-icons/fa-brands';
 import { MenuBook, LibraryBooks } from '@styled-icons/material';
-import { color, radius, space } from '../utils/tokens';
-import { monospace } from '../utils/fonts';
+import { theme, font } from '../utils/theme';
 import { mobile } from '../utils/media';
 import rem from '../utils/rem';
 import baseScope from '../utils/scope';
-import theme from './prismTheme';
+import prismTheme from './prismTheme';
 
 const headerCode = `
 /* Edit me! This renders the buttons on the left. */
 const Button = styled.a\`
   --bg: transparent;
-  --fg: var(--color-text);
-  --border: var(--color-border-strong);
+  --fg: \${theme.color.text};
+  --border: \${theme.color.borderStrong};
   --shadow: transparent;
 
   background: var(--bg);
@@ -34,32 +33,32 @@ const Button = styled.a\`
   transition: all 200ms ease-in-out;
 
   &:hover {
-    --border: var(--color-accent);
-    --bg: var(--color-accent-subtle);
-    transform: translateY(-2px);
+    --border: \${theme.color.accent};
+    --fg: \${theme.color.accent};
     box-shadow: 0 4px 12px var(--shadow);
   }
 
   &:active {
-    transform: translateY(0) scale(0.97);
+    scale: 0.97;
     box-shadow: none;
   }
 \`;
 
 const PrimaryButton = styled(Button)\`
-  --bg: var(--color-accent);
+  --bg: \${theme.color.accent};
   --fg: white;
-  --border: var(--color-accent);
-  --shadow: var(--color-shadow);
+  --border: \${theme.color.accent};
+  --shadow: \${theme.color.shadow};
 
   &:hover {
-    --bg: var(--color-accent-light);
-    --border: var(--color-accent-light);
+    --bg: \${theme.color.accentLight};
+    --border: \${theme.color.accentLight};
+    --fg: white;
   }
 
   &:active {
-    --bg: var(--color-accent-dark);
-    --border: var(--color-accent-dark);
+    --bg: \${theme.color.accentDark};
+    --border: \${theme.color.accentDark};
   }
 \`
 `.trim();
@@ -108,8 +107,8 @@ export default function HomepageHeroEditor({ children }: { children?: React.Reac
       code={headerCode}
       language="tsx"
       transformCode={transformHeaderCode}
-      scope={{ ...baseScope, rem, Link, Github, MenuBook, LibraryBooks }}
-      theme={theme}
+      scope={{ ...baseScope, rem, Link, Github, MenuBook, LibraryBooks, theme }}
+      theme={prismTheme}
     >
       <HeroGrid>
         <HeroLeft>
@@ -121,7 +120,7 @@ export default function HomepageHeroEditor({ children }: { children?: React.Reac
         </HeroLeft>
 
         <HeroRight ref={editorContainerRef}>
-          <Editor theme={theme} />
+          <Editor theme={prismTheme} />
           <StyledError />
         </HeroRight>
       </HeroGrid>
@@ -132,7 +131,7 @@ export default function HomepageHeroEditor({ children }: { children?: React.Reac
 const HeroGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: ${space[8]};
+  gap: ${theme.space[8]};
   align-items: stretch;
   width: 100%;
 
@@ -154,12 +153,12 @@ const HeroLeft = styled.div`
 `;
 
 const HeroRight = styled.div`
-  box-shadow: 1px 1px 20px ${color.shadow};
+  box-shadow: 1px 1px 20px ${theme.color.shadow};
   text-align: left;
   width: 100%;
   position: relative;
   z-index: 20;
-  border-radius: ${radius.lg};
+  border-radius: ${theme.radius.lg};
   overflow: hidden;
   align-self: end;
 `;
@@ -173,11 +172,8 @@ const Editor = styled(LiveEditor)`
 
   pre,
   textarea {
-    font-family: ${monospace} !important;
-    font-size: inherit !important;
     font-variant-ligatures: none !important;
     line-height: inherit !important;
-    letter-spacing: inherit !important;
     padding: 1.5em !important;
     margin: 0 !important;
     border: 0 !important;
@@ -190,8 +186,16 @@ const Editor = styled(LiveEditor)`
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
+  .token-line,
+  .token {
+    font-family: ${font.mono};
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+  }
 `;
 
 const Links = styled.div`
-  margin: ${space[8]} 0 0;
+  margin: ${theme.space[8]} 0 0;
 `;
