@@ -120,6 +120,10 @@ const GlobalStyles = createGlobalStyle`
     font-size: 110%;
   }
 
+  h2 {
+    font-weight: ${theme.fontWeight.bold};
+  }
+
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 

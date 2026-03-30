@@ -25,7 +25,7 @@ const Wrapper = styled.span`
 const Text = styled.span`
   font-family: ${font.display};
   font-weight: ${theme.fontWeight.semibold};
-  font-size: calc(${theme.text.md} * 1.1);
+  font-size: calc(${theme.text.md} * 1.1 - 2px);
   letter-spacing: -0.015em;
   color: ${theme.color.text};
   transform: translateY(-1px);

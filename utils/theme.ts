@@ -129,7 +129,7 @@ export const lightTheme = {
 
   layout: {
     sidebar: '18.75rem',
-    navbar: '3.75rem',
+    navbar: '3.125rem',
     gutter: '2rem',
   },
 };

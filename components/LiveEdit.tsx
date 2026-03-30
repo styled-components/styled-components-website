@@ -8,17 +8,19 @@ import {
   LiveProvider,
   LiveProviderProps,
 } from 'react-live-runner';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useId, useMemo, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { theme, font } from '../utils/theme';
 import { phone } from '../utils/media';
 import rem from '../utils/rem';
-import baseScope from '../utils/scope';
+import { createScope } from '../utils/scope';
 import prismTheme from './prismTheme';
 
 export interface LiveEditProps extends Pick<LiveProviderProps, 'code' | 'scope'> {}
 
 export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
+  const id = useId();
+  const liveScope = useMemo(() => createScope(id), [id]);
   const editorRegionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
       code={code}
       language="tsx"
       scope={{
-        ...baseScope,
+        ...liveScope,
         ...scope,
       }}
       theme={prismTheme}
@@ -55,7 +57,8 @@ export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
 }
 
 const StyledProvider = styled(LiveProvider)`
-  box-shadow: 1px 1px 20px ${theme.color.shadow};
+  border: 1px solid ${theme.color.border};
+  box-shadow: 0 1px 3px ${theme.color.shadow};
   overflow: hidden;
   margin: ${theme.space[8]} 0;
   text-align: left;

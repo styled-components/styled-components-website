@@ -62,7 +62,7 @@ export const Title = styled.h1`
 
 export const Header = styled.h2`
   font-size: ${theme.text.xl};
-  font-weight: ${theme.fontWeight.semibold};
+  font-weight: ${theme.fontWeight.bold};
   font-family: ${font.display};
   margin: 2em 0 0.75em;
 

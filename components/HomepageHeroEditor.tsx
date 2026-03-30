@@ -10,7 +10,7 @@ import { MenuBook, LibraryBooks } from '@styled-icons/material';
 import { theme, font } from '../utils/theme';
 import { mobile } from '../utils/media';
 import rem from '../utils/rem';
-import baseScope from '../utils/scope';
+import { createScope } from '../utils/scope';
 import prismTheme from './prismTheme';
 
 const headerCode = `
@@ -34,7 +34,7 @@ const Button = styled.a\`
 
   &:hover {
     --border: \${theme.color.accent};
-    --fg: \${theme.color.accent};
+    color: \${theme.color.accent};
     box-shadow: 0 4px 12px var(--shadow);
   }
 
@@ -51,14 +51,14 @@ const PrimaryButton = styled(Button)\`
   --shadow: \${theme.color.shadow};
 
   &:hover {
-    --bg: \${theme.color.accentLight};
-    --border: \${theme.color.accentLight};
+    --bg: \${theme.color.accentDark};
+    --border: \${theme.color.accentDark};
     --fg: white;
   }
 
   &:active {
-    --bg: \${theme.color.accentDark};
-    --border: \${theme.color.accentDark};
+    --bg: \${theme.color.accent};
+    --border: \${theme.color.accent};
   }
 \`
 `.trim();
@@ -91,6 +91,8 @@ const transformHeaderCode = (code: string) => `
 `;
 
 export default function HomepageHeroEditor({ children }: { children?: React.ReactNode }) {
+  const id = React.useId();
+  const liveScope = React.useMemo(() => createScope(id), [id]);
   const editorContainerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -107,7 +109,7 @@ export default function HomepageHeroEditor({ children }: { children?: React.Reac
       code={headerCode}
       language="tsx"
       transformCode={transformHeaderCode}
-      scope={{ ...baseScope, rem, Link, Github, MenuBook, LibraryBooks, theme }}
+      scope={{ ...liveScope, rem, Link, Github, MenuBook, LibraryBooks, theme }}
       theme={prismTheme}
     >
       <HeroGrid>
@@ -153,7 +155,8 @@ const HeroLeft = styled.div`
 `;
 
 const HeroRight = styled.div`
-  box-shadow: 1px 1px 20px ${theme.color.shadow};
+  border: 1px solid ${theme.color.border};
+  box-shadow: 0 1px 3px ${theme.color.shadow};
   text-align: left;
   width: 100%;
   position: relative;

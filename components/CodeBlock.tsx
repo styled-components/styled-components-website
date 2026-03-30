@@ -21,7 +21,8 @@ const CodeBlock = styled(({ code, ...rest }: CodeBlockProps) => {
   );
 })`
   border-radius: ${theme.radius.md};
-  box-shadow: 1px 1px 20px ${theme.color.shadow};
+  border: 1px solid ${theme.color.border};
+  box-shadow: 0 1px 3px ${theme.color.shadow};
   position: relative;
   z-index: 10;
   font-family: ${font.mono};

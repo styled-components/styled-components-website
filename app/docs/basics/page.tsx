@@ -15,13 +15,13 @@ import Animations from '@/sections/basics/animations.mdx';
 import ReactNative from '@/sections/basics/react-native.mdx';
 
 export const metadata: Metadata = {
-  title: 'Basics',
+  title: 'The Basics',
   description: 'Get Started with styled-components basics.',
 };
 
 export default function BasicsPage() {
   return (
-    <DocsLayout title="Basics">
+    <DocsLayout title="The Basics">
       <Motivation />
       <Installation />
       <GettingStarted />
