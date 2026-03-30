@@ -100,6 +100,7 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     overflow: auto;
     scroll-behavior: smooth;
+    height: 100dvh;
   }
 
   .small {
