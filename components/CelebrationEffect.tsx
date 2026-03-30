@@ -20,7 +20,7 @@ const PALETTE: [number, number][] = [
 ];
 
 function paletteColor([h, s]: [number, number]) {
-  return `light-dark(oklch(0.47 ${(s / 100) * 0.2} ${h}), oklch(0.72 ${(s / 100) * 0.2} ${h}))`;
+  return `light-dark(oklch(0.82 ${(s / 100) * 0.1} ${h}), oklch(0.72 ${(s / 100) * 0.2} ${h}))`;
 }
 
 const COLORS = PALETTE.map(paletteColor);
@@ -54,9 +54,9 @@ function getTier(): 'phone' | 'mobile' | 'desktop' {
 }
 
 const TIER_CONFIG = {
-  phone: { maxFireworks: 2, burstCount: [40, 60], fontSize: [12, 20], trailSize: 12 },
-  mobile: { maxFireworks: 3, burstCount: [60, 80], fontSize: [14, 24], trailSize: 14 },
-  desktop: { maxFireworks: 4, burstCount: [80, 120], fontSize: [16, 30], trailSize: 16 },
+  phone: { maxFireworks: 2, burstCount: [40, 60], fontSize: [12, 20], trailSize: 24 },
+  mobile: { maxFireworks: 3, burstCount: [60, 80], fontSize: [14, 24], trailSize: 28 },
+  desktop: { maxFireworks: 4, burstCount: [80, 120], fontSize: [16, 30], trailSize: 32 },
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -139,6 +139,10 @@ const Overlay = styled.div`
   }
 `;
 
+const FireworkGroup = styled.div`
+  display: contents;
+`;
+
 const Trail = styled.span.attrs<{
   $x: number;
   $startY: number;
@@ -162,7 +166,7 @@ const Trail = styled.span.attrs<{
   top: calc(var(--start-y) + (var(--end-y) - var(--start-y)) * var(--trail-progress));
   opacity: calc(0.4 + 0.3 * var(--trail-progress));
   text-shadow: 0 0 6px var(--particle-color), 0 0 16px color-mix(in oklch, var(--particle-color) 50%, transparent);
-  animation: ${trailAnim} linear forwards;
+  animation: ${trailAnim} ease-out forwards;
   will-change: opacity;
 `;
 
@@ -200,7 +204,9 @@ const particleBase = css`
         var(--progress) * 40vmin
     );
   scale: calc(1 - var(--progress) * 0.7);
-  animation: ${burstAnim} var(--dur) ease-out forwards;
+  animation: ${burstAnim} var(--dur) ease-out forwards paused;
+  animation-play-state: var(--play-state, paused);
+  visibility: var(--particle-visibility, hidden);
   will-change: translate, scale, opacity;
 `;
 
@@ -208,15 +214,9 @@ const ParticleChar = styled.span.attrs<ParticleAttrs>(particleAttrs)`
   ${particleBase}
   rotate: calc(var(--angle) * 0.3rad * var(--progress));
   opacity: calc(1 - var(--progress) * var(--progress));
-  text-shadow: 0 0 4px var(--particle-color), 0 0 12px color-mix(in oklch, var(--particle-color) 60%, transparent),
-    0 0 28px color-mix(in oklch, var(--particle-color) 30%, transparent);
-`;
-
-const GlowParticle = styled.span.attrs<ParticleAttrs>(particleAttrs)`
-  ${particleBase}
-  opacity: calc((1 - var(--progress)) * 0.6);
-  filter: blur(8px);
-  mix-blend-mode: screen;
+  text-shadow: 0 0 8px var(--particle-color), 0 0 30px color-mix(in oklch, var(--particle-color) 60%, transparent),
+    0 0 60px color-mix(in oklch, var(--particle-color) 40%, transparent),
+    0 0 100px color-mix(in oklch, var(--particle-color) 20%, transparent);
 `;
 
 // ---------------------------------------------------------------------------
@@ -266,17 +266,21 @@ export default function CelebrationEffect() {
       const w = rect.width;
       const h = rect.height;
 
+      const trailX = rand(w * 0.1, w * 0.9);
+      const trailColor = pick(COLORS);
+      const burstY = rand(h * 0.15, h * 0.45);
+
       const fw: FireworkData = {
         id: nextId++,
         phase: 'ascending',
-        trailX: rand(w * 0.1, w * 0.9),
+        trailX,
         trailChar: pick(TRAIL_CHARS),
-        trailColor: pick(COLORS),
+        trailColor,
         trailSize: cfg.trailSize,
         startY: h,
-        burstY: rand(h * 0.15, h * 0.45),
+        burstY,
         duration: rand(1.2, 1.8),
-        particles: [],
+        particles: generateParticles(trailX, burstY, trailColor),
       };
 
       setFireworks(prev => {
@@ -300,17 +304,8 @@ export default function CelebrationEffect() {
     return () => clearTimeout(timer);
   }, []);
 
-  function handleTrailEnd(fwId: number, x: number, burstY: number, color: string) {
-    setFireworks(prev =>
-      prev.map(fw => {
-        if (fw.id !== fwId) return fw;
-        return {
-          ...fw,
-          phase: 'burst' as const,
-          particles: generateParticles(x, burstY, color),
-        };
-      })
-    );
+  function handleTrailEnd(fwId: number) {
+    setFireworks(prev => prev.map(fw => (fw.id === fwId ? { ...fw, phase: 'burst' as const } : fw)));
   }
 
   // Batch particle removals — collect IDs and flush once per frame
@@ -345,7 +340,15 @@ export default function CelebrationEffect() {
       <PropertyRegistrations />
       <Overlay ref={overlayRef} aria-hidden="true">
         {fireworks.map(fw => (
-          <React.Fragment key={fw.id}>
+          <FireworkGroup
+            key={fw.id}
+            style={
+              {
+                '--play-state': fw.phase === 'burst' ? 'running' : 'paused',
+                '--particle-visibility': fw.phase === 'burst' ? 'visible' : 'hidden',
+              } as React.CSSProperties
+            }
+          >
             {fw.phase === 'ascending' && (
               <Trail
                 $x={fw.trailX}
@@ -354,42 +357,28 @@ export default function CelebrationEffect() {
                 $color={fw.trailColor}
                 $size={fw.trailSize}
                 $duration={fw.duration}
-                onAnimationEnd={() => handleTrailEnd(fw.id, fw.trailX, fw.burstY, fw.trailColor)}
+                onAnimationEnd={() => handleTrailEnd(fw.id)}
               >
                 {fw.trailChar}
               </Trail>
             )}
 
             {fw.particles.map(p => (
-              <React.Fragment key={p.id}>
-                <GlowParticle
-                  $angle={p.angle}
-                  $speed={p.speed}
-                  $color={p.color}
-                  $size={p.size * 1.2}
-                  $duration={p.duration}
-                  $x={p.x}
-                  $y={p.y}
-                  aria-hidden="true"
-                >
-                  {p.char}
-                </GlowParticle>
-
-                <ParticleChar
-                  $angle={p.angle}
-                  $speed={p.speed}
-                  $color={p.color}
-                  $size={p.size}
-                  $duration={p.duration}
-                  $x={p.x}
-                  $y={p.y}
-                  onAnimationEnd={() => handleParticleEnd(fw.id, p.id)}
-                >
-                  {p.char}
-                </ParticleChar>
-              </React.Fragment>
+              <ParticleChar
+                key={p.id}
+                $angle={p.angle}
+                $speed={p.speed}
+                $color={p.color}
+                $size={p.size}
+                $duration={p.duration}
+                $x={p.x}
+                $y={p.y}
+                onAnimationEnd={() => handleParticleEnd(fw.id, p.id)}
+              >
+                {p.char}
+              </ParticleChar>
             ))}
-          </React.Fragment>
+          </FireworkGroup>
         ))}
       </Overlay>
     </>

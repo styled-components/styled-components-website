@@ -15,4 +15,4 @@ __diff_output__
 # build
 .next
 next-env.d.ts
-tsconfig.tsbuildinfo
+*.tsbuildinfo

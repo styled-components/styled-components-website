@@ -7,7 +7,6 @@ import json from '@/app/docs.json';
 import titleToDash from '../../utils/titleToDash';
 import { SmartToy, MenuBook, RssFeed, Public, NewReleases, Favorite } from '@styled-icons/material';
 import { theme, font } from '../../utils/theme';
-import { sidebarLinkStyle } from '../../utils/linkStyles';
 import useScrollSpy from '../../utils/useScrollSpy';
 import Link from '../Link';
 import SearchWithAlgolia from './SearchWithAlgolia';
@@ -77,7 +76,6 @@ export default function SidebarMenu() {
           <TopSection key={href}>
             <TopLink
               href={href}
-              $active={isActive}
               aria-current={isActive ? 'page' : undefined}
               {...(external ? { target: '_blank', rel: 'noopener' } : {})}
             >
@@ -97,11 +95,7 @@ export default function SidebarMenu() {
 
                   return (
                     <React.Fragment key={title}>
-                      <CategoryLink
-                        href={categoryPath}
-                        $active={isCategoryActive}
-                        aria-current={isCategoryActive ? 'page' : undefined}
-                      >
+                      <CategoryLink href={categoryPath} aria-current={isCategoryActive ? 'page' : undefined}>
                         {title}
                       </CategoryLink>
 
@@ -225,15 +219,13 @@ const TopLink = styled(Link).attrs({ unstyled: true })<{ $active?: boolean }>`
   text-decoration: none;
   transition: color ${theme.duration.fast}, background-color ${theme.duration.fast};
 
-  ${p =>
-    p.$active &&
-    css`
-      color: ${theme.color.accentLight};
+  &[aria-current] {
+    color: ${theme.color.accentLight} !important;
 
-      ${NavIcon} {
-        opacity: 1;
-      }
-    `}
+    ${NavIcon} {
+      opacity: 1;
+    }
+  }
 
   &:hover,
   &:focus-visible {
@@ -257,19 +249,19 @@ const CategoryLink = styled(Link).attrs({ unstyled: true })<{ $active?: boolean 
   padding: ${theme.space[1]} ${theme.space[6]} ${theme.space[1]} ${theme.space[8]};
   font-family: ${font.sans};
   font-size: ${theme.text.sm};
-  font-weight: ${theme.fontWeight.semibold};
+  font-weight: ${theme.fontWeight.medium};
   color: ${theme.color.text};
   text-decoration: none;
   transition: color ${theme.duration.fast};
 
-  ${p =>
-    p.$active &&
-    css`
-      color: ${theme.color.accentLight};
-    `}
+  &[aria-current] {
+    color: ${theme.color.accentLight} !important;
+    font-weight: ${theme.fontWeight.semibold};
+  }
 
   &:hover,
   &:focus-visible {
+    background: ${theme.color.accentSubtle};
     color: ${theme.color.text};
   }
 `;
@@ -292,13 +284,13 @@ const SectionLink = styled(Link).attrs({ unstyled: true })`
   border-radius: 0 ${theme.radius.md} ${theme.radius.md} 0;
 
   &[aria-current='true'] {
-    color: ${theme.color.accentLight};
-    font-weight: ${theme.fontWeight.medium};
+    color: ${theme.color.accentLight} !important;
+    font-weight: ${theme.fontWeight.semibold};
   }
 
   &:hover,
   &:focus-visible {
-    color: ${theme.color.text};
     background: ${theme.color.accentSubtle};
+    color: ${theme.color.text};
   }
 `;

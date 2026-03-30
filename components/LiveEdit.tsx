@@ -121,16 +121,6 @@ export const editorMixin = `
   .token.function, .token.attr-name, .token.selector { color: ${theme.color.codeFunction}; }
   .token.string, .token.attr-value, .token.regex, .token.char { color: ${theme.color.codeString}; }
   .token.variable, .token.url, .token.entity { color: ${theme.color.codeVariable}; }
-`;
-
-const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
-  <LiveEditor
-    {...props}
-    // @ts-expect-error clashing types
-    theme={prismTheme}
-  />
-))`
-  ${editorMixin};
 
   pre,
   textarea {
@@ -156,6 +146,16 @@ const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
     font-weight: 300;
     letter-spacing: -0.025em;
   }
+`;
+
+const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
+  <LiveEditor
+    {...props}
+    // @ts-expect-error clashing types
+    theme={prismTheme}
+  />
+))`
+  ${editorMixin};
 `;
 
 const StyledPreview = styled(LivePreview)`

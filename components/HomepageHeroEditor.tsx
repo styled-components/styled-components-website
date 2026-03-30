@@ -169,34 +169,7 @@ const HeroRight = styled.div`
 const Editor = styled(LiveEditor)`
   ${editorMixin};
   height: 24rem;
-  white-space: pre-wrap;
   width: 100%;
-  tab-size: 2;
-
-  pre,
-  textarea {
-    font-variant-ligatures: none !important;
-    line-height: inherit !important;
-    padding: 1.5em !important;
-    margin: 0 !important;
-    border: 0 !important;
-    outline: 0 !important;
-    tab-size: 2;
-    box-sizing: border-box !important;
-  }
-
-  .token-line {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  .token-line,
-  .token {
-    font-family: ${font.mono};
-    font-size: 1em;
-    font-weight: 300;
-    letter-spacing: -0.025em;
-  }
 `;
 
 const Links = styled.div`

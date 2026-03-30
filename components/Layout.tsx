@@ -17,7 +17,7 @@ export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean; child
   font-family: ${font.sans};
   margin: 0 auto;
   max-width: 120ch;
-  padding: ${theme.space[16]} ${theme.layout.gutter} 0 ${theme.layout.gutter};
+  padding: ${theme.space[16]} ${theme.layout.gutter} ${theme.space[16]} ${theme.layout.gutter};
   transition: transform 150ms ease-out;
   width: 100%;
   container-type: inline-size;

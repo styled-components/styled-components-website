@@ -8,6 +8,11 @@ import styled, {
 } from 'styled-components';
 import stylisRTLPlugin from 'stylis-plugin-rtl';
 
+const IGNORED_PROPS = new Set(Object.getOwnPropertyNames(Function));
+const STYLED_TAGS = (Object.getOwnPropertyNames(styled) as (keyof typeof styled)[]).filter(
+  tag => !IGNORED_PROPS.has(String(tag))
+);
+
 function createHijackedStyled(scopeId: string) {
   const getComponentId = (key: string) => `sc-${scopeId}-${key}`;
 
@@ -22,9 +27,7 @@ function createHijackedStyled(scopeId: string) {
     });
   };
 
-  const ignoredProps = Object.getOwnPropertyNames(Function);
-  (Object.getOwnPropertyNames(styled) as (keyof typeof styled)[]).forEach(tag => {
-    if (ignoredProps.includes(String(tag))) return;
+  STYLED_TAGS.forEach(tag => {
     Object.defineProperty(hijacked, tag, {
       get() {
         return styled[tag].withConfig({
