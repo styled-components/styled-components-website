@@ -172,7 +172,41 @@ const DarkOverrides = createGlobalStyle`
 </ThemeProvider>
 ```
 
-Framework-managed vars (e.g. next/font `--font-sans`) should stay outside the createTheme object — they have their own injection mechanism.
+If your app has a manual light/dark/auto toggle, persist the choice to `localStorage` and read it in a **blocking `<script>` in `<head>` before any stylesheets**. Without this, the page flashes the wrong theme before JS hydrates:
+
+```tsx
+// Root layout <head>, BEFORE stylesheets:
+<script dangerouslySetInnerHTML={{ __html: `
+  (function() {
+    try {
+      var d = document.documentElement;
+      var stored = localStorage.getItem('theme');
+      if (stored === 'dark' || stored === 'light') {
+        d.classList.add(stored);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        d.classList.add('dark');
+      }
+    } catch (e) {}
+  })();
+`}} />
+```
+
+The script adds `.dark` or `.light` to `<html>` before first paint. Your CSS rules already handle it — `@media (prefers-color-scheme: dark) { :root:not(.light) { ... } }` for auto, `.dark { ... }` for manual. Use a raw `<script>` in `<head>`, not `next/script strategy="beforeInteractive"` — the latter doesn't guarantee execution before stylesheets.
+
+Toggle handler:
+
+```tsx
+function setTheme(theme: 'light' | 'dark' | 'auto') {
+  const root = document.documentElement.classList;
+  root.remove('dark', 'light');
+  if (theme !== 'auto') {
+    root.add(theme);
+    localStorage.setItem('theme', theme);
+  } else {
+    localStorage.removeItem('theme');
+  }
+}
+```
 
 ## stylisPluginRSC — child-index selector fix (v6.4+)
 
@@ -208,7 +242,7 @@ Rewrite rules:
 - Same for `:nth-last-child()` variants
 - Selectors already using `of` syntax are left unchanged
 
-Browser support: CSS Selectors Level 4 `of S` syntax — Chrome 111+, Firefox 113+, Safari 9+, Edge 111+ (~93% global). Selectors silently have no effect in unsupported browsers, meaning no styling is applied for those selectors — so only opt in if your audience supports it.
+Browser support: CSS Selectors Level 4 `of S` syntax — Chrome 111+, Firefox 113+, Safari 9+, Edge 111+ (~93% global). In unsupported browsers, the entire CSS rule is dropped (not just the selector), meaning no styling is applied for those selectors — so only opt in if your audience supports it.
 
 `StyleSheetManager` works in RSC environments (v6.4+). It applies `stylisPlugins` and `shouldForwardProp` even without React context. DOM-only props (`target`, `sheet`, `disableCSSOMInjection`) have no effect in RSC.
 
@@ -289,7 +323,7 @@ export default function Registry({ children, nonce }) {
 
 ## Good to know
 
-- `@import` in `createGlobalStyle` silently fails in production. Use `<link>` in `<head>` instead.
+- `@import` in `createGlobalStyle` may not work correctly in production — CSSOM injection (speedy mode) doesn't reliably handle `@import` rules. A dev-only warning is emitted. Use `<link>` in `<head>` instead.
 - Vendor prefixes are off by default in v6. Enable with `<StyleSheetManager enableVendorPrefixes>` if your support matrix includes Safari < 15.4, Chrome < 83, or Firefox < 80 (the `appearance` property was the last to drop its prefix). Flexbox and grid prefixes are only needed for much older browsers (Safari < 9, Edge < 16).
 - `shouldForwardProp` is off by default in v6. Use `$`-prefixed transient props (`$color`, `$size`) to keep props out of the DOM. Or restore filtering with `<StyleSheetManager shouldForwardProp={...}>`.
 - Two classes per element: a static `.sc-*` class (same for all instances, used for component selectors) and a dynamic class (varies per unique style). Test selectors should account for both.

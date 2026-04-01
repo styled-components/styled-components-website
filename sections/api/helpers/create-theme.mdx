@@ -109,7 +109,7 @@ const DarkOverrides = createGlobalStyle`
 <DarkOverrides />
 ```
 
-This approach is CSS-first — no JavaScript runs to detect the initial theme, so there's no flash of wrong colors on page load.
+This approach is CSS-first — the `@media (prefers-color-scheme: dark)` rule applies before any JavaScript runs, so there's no flash when following the system preference. See [Advanced Theming](/docs/advanced#dark-mode) for persisting a manual toggle without flash.
 
 #### Custom prefix and selector
 

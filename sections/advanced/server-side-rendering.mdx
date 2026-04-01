@@ -43,7 +43,7 @@ import { StyleSheetManager, stylisPluginRSC } from 'styled-components';
 </StyleSheetManager>
 ```
 
-This uses CSS Selectors Level 4 `of S` syntax ([browser support](https://caniuse.com/css-nth-child-of-s): Chrome 111+, Firefox 113+, Safari 9+). Selectors silently have no effect in unsupported browsers.
+This uses CSS Selectors Level 4 `of S` syntax ([browser support](https://caniuse.com/css-nth-child-of-s): Chrome 111+, Firefox 113+, Safari 9+). In unsupported browsers, the entire CSS rule is dropped — so only opt in if your audience supports it.
 
 #### Theming with CSS custom properties
 
