@@ -1,0 +1,122 @@
+import Code from 'components/Code'
+import Table, { Row, Column } from 'components/Table'
+
+### `createTheme` | v6.4 | web-only
+
+A helper function that converts a plain theme object into one where every leaf value is a CSS custom property reference (`var(--prefix-path, fallback)`). This enables theming that works in both client components and React Server Components without relying on React context.
+
+> `createTheme` is the recommended approach for theming in RSC environments where [`ThemeProvider`](/docs/api#themeprovider) has no effect (no React context available).
+
+<Table head={['Arguments', 'Description']}>
+  <Row>
+    <Column>
+      1. <Code>defaultTheme</Code>
+    </Column>
+    <Column>A plain object with your theme tokens. Nested objects are supported — paths become hyphenated variable names.</Column>
+  </Row>
+  <Row>
+    <Column>
+      2. <Code>options?</Code>
+    </Column>
+    <Column>
+      Optional configuration: <Code>prefix</Code> (default <Code>"sc"</Code>) and <Code>selector</Code> (default <Code>":root"</Code>, use <Code>":host"</Code> for Shadow DOM).
+    </Column>
+  </Row>
+</Table>
+
+Returns a theme object with the same shape where every leaf is a `var()` reference. The returned object also has these properties:
+
+<Table head={['Property', 'Description']}>
+  <Row>
+    <Column><Code>raw</Code></Column>
+    <Column>The original plain theme object.</Column>
+  </Row>
+  <Row>
+    <Column><Code>vars</Code></Column>
+    <Column>Same shape as the theme, but every leaf is the bare CSS custom property name (e.g. <Code>--sc-colors-primary</Code>). Use in <Code>createGlobalStyle</Code> for dark mode overrides without hand-writing variable names.</Column>
+  </Row>
+  <Row>
+    <Column><Code>resolve(el?)</Code></Column>
+    <Column>Client-only. Reads computed CSS custom property values from the DOM and returns a plain object with resolved values. Optionally pass a DOM element to resolve against (defaults to <Code>document.documentElement</Code>).</Column>
+  </Row>
+  <Row>
+    <Column><Code>GlobalStyle</Code></Column>
+    <Column>A <Code>createGlobalStyle</Code> component that emits the CSS custom property declarations on the configured selector.</Column>
+  </Row>
+</Table>
+
+```tsx
+import styled, { createTheme } from 'styled-components';
+
+const theme = createTheme({
+  colors: {
+    primary: '#0070f3',
+    accent: '#7928ca',
+    text: '#1a1a1a',
+  },
+  spacing: {
+    sm: '8px',
+    md: '16px',
+    lg: '32px',
+  },
+});
+
+// Each leaf becomes a CSS var reference:
+// theme.colors.primary → "var(--sc-colors-primary, #0070f3)"
+// theme.spacing.md     → "var(--sc-spacing-md, 16px)"
+
+const Button = styled.button`
+  background: ${theme.colors.primary};
+  color: white;
+  padding: ${theme.spacing.sm} ${theme.spacing.md};
+`;
+```
+
+Pass the theme object to [`ThemeProvider`](/docs/api#themeprovider) for stable class name hashes across themes — this prevents hydration mismatches when switching between light and dark mode:
+
+```tsx
+<ThemeProvider theme={theme}>
+  <App />
+</ThemeProvider>
+```
+
+#### Dark mode
+
+Use `vars` to reference CSS custom property names in your dark mode overrides — no hand-writing variable names:
+
+```tsx
+import { css, createGlobalStyle, createTheme } from 'styled-components';
+
+const theme = createTheme({
+  colors: { bg: '#ffffff', text: '#1a1a1a' },
+});
+const { vars } = theme;
+
+const darkVars = css`
+  ${vars.colors.bg}: #111827;
+  ${vars.colors.text}: #f9fafb;
+`;
+
+const DarkOverrides = createGlobalStyle`
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) { ${darkVars} }
+  }
+  .dark { ${darkVars} }
+`;
+
+// Mount both: GlobalStyle emits :root vars, DarkOverrides adds dark mode
+<theme.GlobalStyle />
+<DarkOverrides />
+```
+
+This approach is CSS-first — no JavaScript runs to detect the initial theme, so there's no flash of wrong colors on page load.
+
+#### Custom prefix and selector
+
+```tsx
+const theme = createTheme(
+  { colors: { primary: 'blue' } },
+  { prefix: 'myapp', selector: ':host' }
+);
+// theme.colors.primary → "var(--myapp-colors-primary, blue)"
+```

@@ -5,7 +5,7 @@ import Code from 'components/Code'
 
 A helper component for modifying how your styles are processed. For a given subtree involving styled-components, you can customize various behaviors like how the CSS runtime processor (stylis) handles styles via userland plugins and option overrides.
 
-> React Server Components (v6.3.0+): `StyleSheetManager` becomes a pass-through component (no-op) in RSC environments. CSS is automatically delivered via inline `<style>` tags. See the [RSC section](/docs/advanced#react-server-components) for details.
+> React Server Components: `StyleSheetManager` works in RSC environments (v6.4+) — `stylisPlugins` and `shouldForwardProp` are applied even without React context. Other props (`sheet`, `target`, `disableCSSOMInjection`) have no effect in RSC since CSS is delivered via inline `<style>` tags. See the [RSC section](/docs/advanced#react-server-components) for details.
 
 <Table head={['Props', 'Description']}>
   <Row>
@@ -55,6 +55,24 @@ A helper component for modifying how your styles are processed. For a given subt
 
   <Row>
     <Column>
+      <Code>shouldForwardProp (v6+)</Code>
+    </Column>
+    <Column>
+      A function that determines which props are forwarded to the DOM. Return <Code>true</Code> to forward, <Code>false</Code> to filter. Overrides the per-component <Code>shouldForwardProp</Code> from <Code>withConfig()</Code>. Works in RSC (v6.4+).
+    </Column>
+  </Row>
+
+  <Row>
+    <Column>
+      <Code>nonce (v6.4+)</Code>
+    </Column>
+    <Column>
+      CSP nonce to attach to injected <Code>&lt;style&gt;</Code> tags. Overrides auto-detection from <Code>&lt;meta property="csp-nonce"&gt;</Code>, <Code>&lt;meta name="sc-nonce"&gt;</Code>, or <Code>__webpack_nonce__</Code>.
+    </Column>
+  </Row>
+
+  <Row>
+    <Column>
       <Code>target</Code>
     </Column>
     <Column>
@@ -96,4 +114,14 @@ render(
     <Box>My border is now on the right!</Box>
   </StyleSheetManager>
 )
+```
+
+styled-components also ships `stylisPluginRSC`, which fixes `:first-child`, `:last-child`, and `:nth-child()` selectors that are broken by RSC inline `<style>` tags. See [child-index selector caveat](/docs/advanced#child-index-selector-caveat) for details.
+
+```tsx
+import { StyleSheetManager, stylisPluginRSC } from 'styled-components';
+
+<StyleSheetManager stylisPlugins={[stylisPluginRSC]}>
+  {children}
+</StyleSheetManager>
 ```

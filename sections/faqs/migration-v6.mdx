@@ -146,7 +146,7 @@ Experimental `renderToPipeableStream` support was added for React 18+ streaming 
 
 #### React Server Components (v6.3.0)
 
-Styled components now work in RSC environments without `'use client'` directives. `ThemeProvider` and `StyleSheetManager` become no-ops in RSC. Use CSS custom properties for theming instead of `ThemeProvider` in server components. See the [RSC section](/docs/advanced#react-server-components) for best practices.
+Styled components now work in RSC environments without `'use client'` directives. `ThemeProvider` is a pass-through in RSC (no React context). `StyleSheetManager` works in RSC (v6.4+) — `stylisPlugins` and `shouldForwardProp` are applied. Use [`createTheme()`](/docs/api#createtheme) or CSS custom properties for theming instead of `ThemeProvider` in server components. See the [RSC section](/docs/advanced#react-server-components) for best practices.
 
 #### New HTML & SVG element helpers (v6.3.0)
 

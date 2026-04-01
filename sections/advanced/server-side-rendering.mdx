@@ -10,26 +10,59 @@ allows you to use styled-components with React DOM's various SSR APIs.
 
 ### React Server Components | v6.3.0+
 
-styled-components now natively supports React Server Components (RSC) with zero configuration. In RSC environments, styled components automatically emit inline `<style>` tags that React 19 hoists and deduplicates.
+styled-components now natively supports React Server Components (RSC) with zero configuration. In RSC environments, styled components automatically emit inline `<style>` tags alongside each component, deduplicated per render.
 
 Key behaviors in RSC:
 
 - No `'use client'` directive required
-- `ThemeProvider` and `StyleSheetManager` become pass-through components (no-ops)
-- CSS is automatically injected inline
+- `ThemeProvider` becomes a pass-through component (no context in RSC)
+- `StyleSheetManager` works in RSC — `stylisPlugins` and `shouldForwardProp` are applied
+- CSS is automatically injected inline via `<style>` tags
 
 Best practices for RSC:
 
 | Do | Don't |
 |---|---|
-| Use static styles | Use dynamic interpolations (serialization overhead) |
-| Use data attributes for variants (`&[data-size='lg']`) | Use props for discrete style variants |
-| Use CSS custom properties via inline `style` prop | Rely on `ThemeProvider` (no-op in RSC) |
-| Use build-time CSS variable generation for theming | Use runtime theme context |
+| Use [`createTheme()`](/docs/api#createtheme) for CSS variable theming | Rely on `ThemeProvider` / `p.theme` (no context in RSC) |
+| Use data attributes for discrete variants (`&[data-size='lg']`) | Generate many classes via prop interpolations for a finite set of states |
+| Use CSS custom properties via inline `style` for dynamic per-instance values | Use `@import` in `createGlobalStyle` (silently fails in production) |
+| Use `:first-of-type` / `:nth-of-type()` | Use `:first-child` / `:nth-child()` (see [caveat below](#child-index-selector-caveat)) |
 
-Theming with CSS custom properties:
+#### Child-index selector caveat
 
-Since `ThemeProvider` is a no-op in RSC, use CSS custom properties for theming instead. Variables set on a parent element cascade to all DOM children:
+RSC emits inline `<style>` tags as siblings of your styled elements. These tags are real DOM children, so `:first-child`, `:last-child`, and `:nth-child()` count them — shifting indices and breaking your styles. Use `:first-of-type` / `:nth-of-type()` instead, which filter by element type and are immune to this issue.
+
+If you need `:nth-child()` specifically, use the built-in [`stylisPluginRSC`](/docs/api#stylesheetmanager) plugin which rewrites these selectors to exclude styled-components style tags:
+
+```tsx
+import { StyleSheetManager, stylisPluginRSC } from 'styled-components';
+
+// In your RSC layout (e.g. app/layout.tsx)
+<StyleSheetManager stylisPlugins={[stylisPluginRSC]}>
+  {children}
+</StyleSheetManager>
+```
+
+This uses CSS Selectors Level 4 `of S` syntax ([browser support](https://caniuse.com/css-nth-child-of-s): Chrome 111+, Firefox 113+, Safari 9+). Selectors silently have no effect in unsupported browsers.
+
+#### Theming with CSS custom properties
+
+Since `ThemeProvider` has no effect in RSC (no React context), use CSS custom properties for theming instead. The recommended approach is [`createTheme()`](/docs/api#createtheme):
+
+```tsx
+import styled, { createTheme } from 'styled-components';
+
+const theme = createTheme({
+  colors: { primary: '#0070f3' },
+});
+
+// theme.colors.primary → "var(--sc-colors-primary, #0070f3)"
+const Button = styled.button`
+  background: ${theme.colors.primary};
+`;
+```
+
+Or set variables manually on a parent element — they cascade to all DOM children:
 
 ```tsx
 const Container = styled.div``;
@@ -108,7 +141,7 @@ If rendering fails for any reason it's a good idea to use `try...catch...finally
 
 #### App Router (recommended)
 
-With styled-components v6.3.0+, RSC is natively supported with zero configuration. Styled components work in Server Components without a `'use client'` directive or registry setup. See the [React Server Components](#react-server-components) section above for best practices.
+With styled-components v6.3.0+, RSC is natively supported with zero configuration. Styled components work in Server Components without a `'use client'` directive or registry setup. If you use `:first-child` or `:nth-child()` selectors, add `stylisPluginRSC` via `StyleSheetManager` in your layout (see [child-index selector caveat](#child-index-selector-caveat) above). See the [React Server Components](#react-server-components) section above for best practices.
 
 With styled-components v6.0-6.2, you need to put a styled-components registry in one of your layout files, as [described in Next.js docs](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components). The `'use client'` directive is required, so styled-components will appear in your client bundle.
 

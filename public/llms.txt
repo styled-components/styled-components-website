@@ -1,194 +1,319 @@
 # styled-components
 
-> CSS-in-JS for React. Tagged template literals to style components. Scoped styles, dynamic styling via props, automatic critical CSS. v6 is TypeScript-native, uses stylis v4, supports React Server Components (v6.3+). Current prerelease: v6.4.0-prerelease.8.
+> CSS-in-JS for React using tagged template literals. TypeScript-native since v6. Supports React Server Components natively since v6.3. Current stable: v6.3.x. Prerelease: v6.4.0 on npm `styled-components@test`.
 
-## Setup
+## What's new since early 2025
+
+Your training data likely covers v6.0-6.1. Key changes since then:
+
+v6.2: Streaming SSR via `renderToPipeableStream`.
+
+v6.3: React Server Components supported. No `'use client'` needed. Styled components in server components emit inline `<style>` tags automatically. `createGlobalStyle` is StrictMode-safe. New HTML/SVG element helpers. CSS custom properties work in TypeScript without type errors. Note: `:first-child`/`:nth-child()` selectors require `stylisPluginRSC` (v6.4+) or rewriting to `:first-of-type`/`:nth-of-type()` — see child-index selector section below.
+
+v6.4 (prerelease): `createTheme()` for CSS variable theming that works in both RSC and client. `StyleSheetManager` works in RSC (was previously a no-op). `stylisPluginRSC` fixes child-index selectors in RSC. CSP nonce auto-detection. `.attrs()` provided props are automatically optional. IE11 dropped.
+
+## Recommended setup
 
 ```
 npm install styled-components
 ```
 
-Next.js: `compiler: { styledComponents: true }` in next.config.js (SWC plugin, built-in).
+Next.js: add `compiler: { styledComponents: true }` to next.config.js. That's it. RSC works out of the box in v6.3+.
 
-Vite: `react({ babel: { plugins: ['babel-plugin-styled-components'] } })` in vite config.
+Vite: `react({ babel: { plugins: ['babel-plugin-styled-components'] } })`.
 
-## API
+The SWC/Babel plugin provides deterministic class IDs (better debugging, smaller output). Optional for RSC but still recommended.
+
+## Styled-components in RSC
+
+Styled components work in server components with no `'use client'` directive. The main constraint is that `ThemeProvider` relies on React context, which doesn't exist in RSC — so `p.theme` is undefined. Use `createTheme()` instead.
+
+Dynamic prop interpolations work in RSC. But for discrete variants (a finite set of states), data attributes produce one cached class per variant instead of one per prop combination:
 
 ```tsx
-import styled, { css, keyframes, createGlobalStyle, createTheme, ThemeProvider, ThemeConsumer, ThemeContext, useTheme, withTheme, StyleSheetManager, ServerStyleSheet, isStyledComponent } from 'styled-components';
+import styled, { createTheme } from 'styled-components';
+
+const theme = createTheme({
+  colors: { primary: '#0070f3', text: '#1a1a1a', surface: '#fff' },
+});
+
+const NavLink = styled.a`
+  padding: 8px 16px;
+  color: ${theme.colors.text};
+  text-decoration: none;
+  &[aria-current='page'] {
+    color: ${theme.colors.primary};
+    font-weight: 600;
+    border-bottom: 2px solid ${theme.colors.primary};
+  }
+`;
+
+<nav>
+  <NavLink href="/" aria-current="page">Home</NavLink>
+  <NavLink href="/about">About</NavLink>
+</nav>
 ```
 
-`styled.tagname` or `styled(Component)` -- returns a styled React component.
-
-`.attrs(props => ({}))` -- attach/override props; provided props become optional on the component type (v6.4+). Use for static HTML attrs and inline `style` for per-frame updates.
-
-`css` helper -- required when interpolating `keyframes` in shared fragments.
-
-`createGlobalStyle` -- injects global CSS. No `@import` (fails silently in prod via CSSOM). Use `<link>` in `<head>` instead.
-
-`createTheme(obj, { prefix?, selector? })` -- CSS variable theming across RSC and client (v6.4+). Returns theme object where leaf values are `var(--prefix-path, fallback)` references. Pass to `ThemeProvider` for stable class hashing across themes. `theme.raw` has the original values. `theme.resolve(el?)` reads computed DOM values (client-only). Object keys become var names as-is (camelCase preserved): `{ color: { codeBg: 'x' } }` with prefix `'sc'` produces `var(--sc-color-codeBg, x)`. Framework-managed vars (e.g. next/font `--font-sans`) should stay outside the theme.
-
-CSS-first dark mode with createTheme: define light theme as default, mount `theme.GlobalStyle` inside ThemeProvider for `:root` vars, then override specific `--prefix-*` vars under `html.dark` / `@media (prefers-color-scheme: dark)` in a separate global style. The CSS class overrides beat `:root` specificity, preventing flash. Define dark overrides as a delta object (only changed keys), then derive both the full dark theme and the CSS override string from it:
+For continuous dynamic values, set CSS custom properties via the `style` prop. The styled component's CSS stays static (one class), and the value varies per element. Pair with semantic HTML attributes for progressive enhancement and accessibility:
 
 ```tsx
-const darkColors: Partial<typeof lightTheme.color> = { bg: '...', text: '...' };
-const darkTheme = { ...lightTheme, color: { ...lightTheme.color, ...darkColors } };
-const darkCSS = Object.entries(darkColors).map(([k, v]) => `--sc-color-${k}:${v};`).join('');
+const ProgressBar = styled.div`
+  height: 8px;
+  border-radius: 4px;
+  background: ${theme.colors.surface};
+
+  &::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: var(--progress);
+    border-radius: inherit;
+    background: ${theme.colors.primary};
+    transition: width 0.2s ease;
+  }
+
+  &[aria-valuenow='100']::after {
+    background: green;
+  }
+`;
+
+<ProgressBar
+  role="progressbar"
+  aria-valuenow={percent}
+  aria-valuemin={0}
+  aria-valuemax={100}
+  aria-label="Upload progress"
+  style={{ '--progress': `${percent}%` } as React.CSSProperties}
+/>
 ```
 
-`ThemeProvider` -- context-based theming. No-op in RSC (v6.3+); use `createTheme` or CSS custom properties instead. Also: `ThemeConsumer`, `ThemeContext`, `useTheme`, `withTheme` (HOC).
+This pattern gives you dynamic styling, screen reader support, and a CSS hook for completion state — all with one static class.
 
-`StyleSheetManager` props: `enableVendorPrefixes`, `shouldForwardProp`, `stylisPlugins` (v4-compat), `target` (Shadow DOM v6.1.13+), `disableCSSOMInjection`, `nonce` (CSP, v6.4+). No-op in RSC.
+Other RSC rules:
+- Use `:first-of-type` / `:nth-of-type()` instead of `:first-child` / `:nth-child()` — RSC inline `<style>` tags shift child indices (see `stylisPluginRSC` section below for an automatic fix)
+- Define components at module scope, not inside render functions
 
-`ServerStyleSheet` -- SSR support. Constructor accepts `{ nonce }` for CSP (v6.4+).
+## createTheme API (v6.4+)
 
-`isStyledComponent(comp)` -- check if a component was created by styled-components.
-
-Exported types (v6.0.8+): `CSSProperties`, `CSSObject`, `CSSPseudos`, `CSSKeyframes`, `DefaultTheme`.
-
-## Patterns
-
-Transient props -- `$`-prefix for styling-only props not intended to reach the DOM:
+`ThemeProvider` has no effect in RSC because React context doesn't exist in server components. `createTheme()` solves this by converting a plain theme object into CSS custom property references at module evaluation time — no runtime context needed.
 
 ```tsx
-const Button = styled.button<{ $primary?: boolean }>`
-  background: ${p => p.$primary ? '#BF4F74' : 'white'};
+import styled, { createTheme } from 'styled-components';
+
+const theme = createTheme({
+  colors: { primary: '#0070f3', surface: '#ffffff', text: '#1a1a1a' },
+  spacing: { sm: '8px', md: '16px', lg: '32px' },
+});
+```
+
+Every leaf becomes a `var()` reference with the original value as fallback:
+- `theme.colors.primary` → `"var(--sc-colors-primary, #0070f3)"`
+- `theme.spacing.md` → `"var(--sc-spacing-md, 16px)"`
+
+Use it directly in template literals — works in both server and client components:
+
+```tsx
+const Button = styled.button`
+  background: ${theme.colors.primary};
+  padding: ${theme.spacing.sm} ${theme.spacing.md};
+  color: ${theme.colors.text};
 `;
 ```
 
-Extending: `styled(Base)` inherits styles. Polymorphic: `<Comp as="a">` or `styled(Comp).attrs({ as: 'a' })`.
+Signature: `createTheme(defaultTheme, options?)`
 
-Component selectors: `` &:hover ${Icon} { fill: red; } `` targets another styled component. Only works between styled components -- `${PlainComponent}` throws.
+Options:
+- `prefix` (default `"sc"`) — CSS variable prefix. `{ prefix: 'myapp' }` produces `--myapp-colors-primary`.
+- `selector` (default `":root"`) — where `GlobalStyle` emits vars. Use `":host"` for Shadow DOM.
 
-Style objects: `styled.div({ display: 'flex' })` or `styled.div<Props>(p => ({ bg: p.$bg }))`.
+Returned object properties:
+- Every leaf path from the input, as `var(--prefix-path, fallback)` strings
+- `theme.raw` — the original plain object (for runtime access to actual values)
+- `theme.vars` — same shape, but every leaf is the bare CSS custom property name (e.g. `"--sc-colors-primary"`). Use in `createGlobalStyle` for dark mode overrides without hand-writing var names.
+- `theme.resolve(el?)` — client-only. Reads computed CSS var values from the DOM. Returns a plain object with resolved values. Pass an element to resolve against a specific subtree (defaults to `document.documentElement`).
+- `theme.GlobalStyle` — a `createGlobalStyle` component that emits the CSS custom property declarations on the configured selector. Mount it once near the root.
 
-Keyframes:
+Key behaviors:
+- Object keys are preserved as-is (camelCase stays camelCase): `{ codeBg: 'x' }` with prefix `'sc'` → `var(--sc-codeBg, x)`
+- Nested objects produce hyphenated paths: `{ colors: { primary: 'x' } }` → `var(--sc-colors-primary, x)`
+- Passing the `createTheme` object to `ThemeProvider` produces stable class name hashes — the `var()` strings are deterministic, so light/dark theme switches don't cause hydration mismatches
+
+### Dark mode with createTheme
+
+CSS-first approach — no JavaScript runs to detect the initial theme, so no flash. Use `vars` to reference CSS custom property names without hand-writing them:
 
 ```tsx
-const spin = keyframes`from { transform: rotate(0deg); } to { transform: rotate(360deg); }`;
-const Spinner = styled.div`animation: ${spin} 1s linear infinite;`;
+import styled, { css, createGlobalStyle, createTheme, ThemeProvider } from 'styled-components';
+
+const theme = createTheme({
+  colors: { bg: '#ffffff', text: '#1a1a1a', primary: '#0070f3' },
+});
+const { vars } = theme;
+
+// Define dark overrides once as a css partial
+const darkVars = css`
+  ${vars.colors.bg}: #111827;
+  ${vars.colors.text}: #f9fafb;
+`;
+
+// Apply via media query (auto) and class (manual toggle)
+const DarkOverrides = createGlobalStyle`
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) { ${darkVars} }
+  }
+  .dark { ${darkVars} }
+`;
+
+// In your layout:
+<ThemeProvider theme={theme}>
+  <theme.GlobalStyle />
+  <DarkOverrides />
+  <App />
+</ThemeProvider>
 ```
 
-Theme typing:
+Framework-managed vars (e.g. next/font `--font-sans`) should stay outside the createTheme object — they have their own injection mechanism.
+
+## stylisPluginRSC — child-index selector fix (v6.4+)
+
+RSC emits inline `<style>` tags as siblings of your styled elements. These are real DOM children, so `:first-child`, `:last-child`, and `:nth-child()` count them — shifting indices. For example, in `<ul><style>...</style><li>First</li><li>Second</li></ul>`, the first `<li>` is actually `:nth-child(2)`.
+
+Preferred fix — use type-based selectors (universally supported, no plugin needed):
+- `:first-child` → `:first-of-type`
+- `:nth-child(2)` → `:nth-of-type(2)`
+- `:last-child` → `:last-of-type`
+
+These filter by element type, so `<style>` tags (a different type than `<li>`, `<div>`, etc.) are ignored.
+
+Alternative — `stylisPluginRSC` automatically rewrites child-index selectors at compile time:
 
 ```tsx
-// styled.d.ts
-import 'styled-components';
-declare module 'styled-components' {
-  export interface DefaultTheme { colors: { primary: string } }
+import { StyleSheetManager, stylisPluginRSC } from 'styled-components';
+
+// In your root layout (server component)
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <StyleSheetManager stylisPlugins={[stylisPluginRSC]}>
+      {children}
+    </StyleSheetManager>
+  );
 }
 ```
 
-When wrapping custom components, `className` must be optional in props interface.
+Rewrite rules:
+- `:first-child` → `:nth-child(1 of :not(style[data-styled]))`
+- `:last-child` → `:nth-last-child(1 of :not(style[data-styled]))`
+- `:nth-child(N)` → `:nth-child(N of :not(style[data-styled]))`
+- `:nth-child(An+B)` → `:nth-child(An+B of :not(style[data-styled]))`
+- Same for `:nth-last-child()` variants
+- Selectors already using `of` syntax are left unchanged
 
-## Gotchas
+Browser support: CSS Selectors Level 4 `of S` syntax — Chrome 111+, Firefox 113+, Safari 9+, Edge 111+ (~93% global). Selectors silently have no effect in unsupported browsers, meaning no styling is applied for those selectors — so only opt in if your audience supports it.
 
-Specificity override: repeat `&` to bump specificity without `!important`:
+`StyleSheetManager` works in RSC environments (v6.4+). It applies `stylisPlugins` and `shouldForwardProp` even without React context. DOM-only props (`target`, `sheet`, `disableCSSOMInjection`) have no effect in RSC.
+
+## Migrating from client-only to RSC
+
+1. Replace `ThemeProvider` theming with `createTheme()` CSS variables — `p.theme` is undefined in RSC since there's no React context
+2. Dynamic prop interpolations (`${p => p.$color}`) work fine in RSC — no changes needed. Consider data attributes for discrete variants (fewer generated classes)
+3. Replace `:first-child`/`:nth-child()` with `:first-of-type`/`:nth-of-type()`, or add `stylisPluginRSC`
+4. Remove `'use client'` from files that only contain styled component definitions — they work in server components natively
+5. Keep `'use client'` on components that use hooks, event handlers, or browser APIs
+6. The SSR registry (`ServerStyleSheet` + `useServerInsertedHTML`) is still needed for client components in the tree — RSC handles server components automatically
+
+## .attrs() changes (v6.4+)
+
+Props provided via `.attrs()` are now automatically made optional on the component's type. Previously, TypeScript still required you to pass props that attrs already provided.
 
 ```tsx
-const Override = styled(LibraryComponent)`
-  &&& { color: #BF4F74; font-weight: bold; }
+// v6.3: TypeScript requires `href` even though attrs provides it
+// v6.4: `href` is optional — attrs provides the default
+const StyledLink = styled.a.attrs({ href: '#' })`
+  color: blue;
 `;
-// Compiles to .class.class.class { ... }
+<StyledLink />        // works in v6.4 (href defaults to '#')
+<StyledLink href="/"> // also works (overrides the default)
 ```
 
-Override inline styles: `&[style] { prop: value !important; }`.
+attrs always wins over directly passed props. The function form is the escape hatch when you need conditional behavior:
 
-Two classes per element: a static class (`.sc-*`, same for all instances, used for component selectors) and a dynamic class (changes per unique interpolation result). Know this for testing/selectors.
-
-Duplicate module warning ("several instances of styled-components"): caused by multiple copies in node_modules (monorepos, npm link, multiple entry points). Fix: dedupe, webpack `resolve.alias`, or hoist to monorepo root.
-
-Library authors: put `styled-components` in `peerDependencies` + `devDependencies`, never `dependencies`. Mark as external in your bundler.
-
-SSR font flicker: `@font-face` in `createGlobalStyle` can flicker during rehydration. Fix: `font-display: fallback` in the `@font-face` rule.
-
-## Performance Rules
-
-1. Define styled components at module scope. Inside render = new identity every render = remounts.
-2. CSS custom properties > prop interpolations for frequently-changing values. Each unique interpolation = new CSS class. Warns at 200+.
-3. `.attrs` + `style` for per-frame updates (mouse, scroll). Zero class generation.
-4. Data attributes for discrete variants (finite set). Fully static, one cached class:
-   ```tsx
-   const Button = styled.button`
-     &[data-variant='primary'] { background: #BF4F74; }
-   `;
-   ```
-5. No function interpolations = static component. Class generated once, cached forever.
-6. SSR: dynamic interpolations produce per-item CSS rules. Use inline `style` for per-item uniqueness.
-
-## SSR
-
-RSC (v6.3+): zero-config. Inline `<style>` tags, React 19 hoists/deduplicates. No `'use client'` needed. Use static styles + CSS vars for theming + data-attrs for variants.
-
-Traditional: `ServerStyleSheet` + `collectStyles` + `getStyleTags()` + `seal()` in try/finally.
-
-Streaming (v6.2+): `renderToPipeableStream` with `sheet.collectStyles`, `seal()` in `onAllReady`.
-
-Next.js App Router v6.3+: works out of the box. v6.0-6.2: needs `'use client'` registry in layout.
-
-SWC/Babel plugin provides deterministic class IDs for server/client consistency. Optional in RSC v6.3+.
-
-## Security
-
-Unsanitized user input in interpolations = CSS injection. `background: url(${userInput})` can trigger requests. Sanitize with `CSS.escape(input)`.
-
-## Migration: v5 to v6
-
-```sh
-npm install styled-components@^6 stylis@^4 && npm uninstall @types/styled-components
+```tsx
+const Button = styled.button.attrs<{ as?: string }>(({ as }) => ({
+  as: as || 'button',
+}))``;
 ```
 
-Breaking changes:
-1. Types ship with package. Remove `@types/styled-components`.
-2. `shouldForwardProp` off by default. Use transient `$`-props or restore via `StyleSheetManager` + `@emotion/is-prop-valid`.
-3. Vendor prefixes off. `<StyleSheetManager enableVendorPrefixes>` to restore.
-4. Stylis v4 -- `:hover {}` is now `& :hover {}` (descendant), not `&:hover {}`. Always use `&:hover`, `&::before`, etc.
-5. `$as`/`$forwardedAs` dropped. Use `as`/`forwardedAs`.
-6. `withComponent()` removed. Use `as` prop.
-7. Babel macro removed (v6.1). Standard import + plugin.
-8. Node 16+ minimum.
+The attrs callback now receives an immutable snapshot of props (v6.4+). Previously the object was mutable and could be changed by subsequent attrs processing.
 
-v6.x timeline: v6.0 TypeScript rewrite + transient props | v6.1 macro removed, Shadow DOM target | v6.2 streaming SSR | v6.3 RSC support, HTML/SVG element helpers, CSS var TS support, StrictMode-safe createGlobalStyle | v6.4 createTheme (CSS var theming for RSC+client), attrs callback receives immutable snapshot, CSP nonce auto-detection, performance (3.3x cascading re-renders)
+## CSP nonce support (v6.4+)
 
-## Upcoming: v6.4.0
+styled-components can attach a CSP nonce to injected `<style>` tags. Detection order (first match wins):
 
-Prerelease: `styled-components@test` (v6.4.0-prerelease.8).
+1. `<StyleSheetManager nonce="...">` prop
+2. `new ServerStyleSheet({ nonce: '...' })` constructor option
+3. `<meta property="csp-nonce" content="...">` (Vite convention)
+4. `<meta name="sc-nonce" content="...">`
+5. `__webpack_nonce__` global
 
-CSP nonce auto-detection order: `StyleSheetManager` nonce prop > `ServerStyleSheet({ nonce })` > `<meta property="csp-nonce">` > `<meta name="sc-nonce">` > `__webpack_nonce__`.
+Next.js example with `StyleSheetManager`:
 
-Performance (vs 6.3.12): parent re-render cascading to children 3.3x faster, first mount 1.7-2.5x faster, prop changes cycling values 2.3x faster, heavy dynamic layouts (10K children) 1.9x faster.
+```tsx
+// lib/registry.tsx
+'use client';
+import { useState } from 'react';
+import { useServerInsertedHTML } from 'next/navigation';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 
-Behavioral changes:
-- `createGlobalStyle` rearchitected -- CSS injection order determined at definition time, not render order. Shared stylesheet groups; unmounting one instance no longer removes styles needed by others.
-- `.attrs()` callback receives immutable snapshot (was mutable).
-- `as`/`forwardedAs` exposed in `React.ComponentProps`.
-- RSC: `:where()` zero-specificity wrapping, `React.cache` style deduplication across instances.
-- Dropped IE11. ES2015 target. Removed @emotion/unitless dep.
+export default function Registry({ children, nonce }) {
+  const [sheet] = useState(() => new ServerStyleSheet());
+  useServerInsertedHTML(() => {
+    const styles = sheet.getStyleTags();
+    sheet.instance.clearTag();
+    return <>{styles}</>;
+  });
+  return (
+    <StyleSheetManager sheet={sheet.instance} nonce={nonce}>
+      {children}
+    </StyleSheetManager>
+  );
+}
+```
 
-React Native:
-- Replaced postcss with lightweight CSS parser (4-6x faster, removes postcss/nanoid/source-map-js from production).
-- `toStyleSheet()` shares style cache with `InlineStyle`.
-- Parent re-renders with unchanged children 2.6-3.2x faster.
-- Updated component aliases: removed DatePickerIOS, DrawerLayoutAndroid, ProgressBarAndroid, ProgressViewIOS, Slider; added InputAccessoryView, StatusBar, TouchableNativeFeedback, TouchableWithoutFeedback.
+## Performance
 
-## Documentation
+- Define components at module scope. Inside render = remount every render.
+- CSS custom properties > prop interpolations for values that change often. Each unique interpolation generates a new CSS class; warns at 200+.
+- `.attrs()` + inline `style` for per-frame updates (mouse, scroll, animation). Zero class generation.
+- Data attributes for discrete variants: `&[data-size='sm']` — fully static, one cached class.
+- Components with zero function interpolations are static — class generated once, cached forever.
 
-- [Getting Started](https://styled-components.com/docs/basics#getting-started)
-- [API Reference](https://styled-components.com/docs/api)
-- [Theming](https://styled-components.com/docs/advanced#theming)
-- [Server Side Rendering](https://styled-components.com/docs/advanced#server-side-rendering)
-- [Performance](https://styled-components.com/docs/advanced#performance)
-- [TypeScript](https://styled-components.com/docs/api#typescript)
-- [FAQs](https://styled-components.com/docs/faqs)
-- [v6 Migration](https://styled-components.com/docs/faqs#what-do-i-need-to-do-to-migrate-to-v6)
+## Good to know
 
-## Optional
+- `@import` in `createGlobalStyle` silently fails in production. Use `<link>` in `<head>` instead.
+- Vendor prefixes are off by default in v6. Enable with `<StyleSheetManager enableVendorPrefixes>` if your support matrix includes Safari < 15.4, Chrome < 83, or Firefox < 80 (the `appearance` property was the last to drop its prefix). Flexbox and grid prefixes are only needed for much older browsers (Safari < 9, Edge < 16).
+- `shouldForwardProp` is off by default in v6. Use `$`-prefixed transient props (`$color`, `$size`) to keep props out of the DOM. Or restore filtering with `<StyleSheetManager shouldForwardProp={...}>`.
+- Two classes per element: a static `.sc-*` class (same for all instances, used for component selectors) and a dynamic class (varies per unique style). Test selectors should account for both.
+- Stylis v4 parses `:hover {}` as descendant `& :hover {}`, not `&:hover {}`. Always write `&:hover`, `&::before`, etc.
+- `className` must be optional in the props interface when wrapping custom components with `styled()`.
+- Unsanitized user input in interpolations = CSS injection risk. Sanitize with `CSS.escape()`.
 
-- [SWC Plugin](https://styled-components.com/docs/tooling#swc-plugin)
-- [Babel Plugin](https://styled-components.com/docs/tooling#babel-plugin)
-- [Stylelint](https://styled-components.com/docs/tooling#stylelint)
-- [Jest Testing](https://styled-components.com/docs/tooling#testing)
-- [React Native](https://styled-components.com/docs/basics#react-native)
-- [Accessibility](https://styled-components.com/docs/advanced#accessibility)
-- [Blog](https://styled-components.com/blog)
-- [Releases](https://styled-components.com/releases)
+## Quick reference
+
+```tsx
+import styled, { css, keyframes, createGlobalStyle, createTheme,
+  ThemeProvider, useTheme, StyleSheetManager, ServerStyleSheet,
+  stylisPluginRSC, isStyledComponent } from 'styled-components';
+```
+
+- `styled.div` / `styled(Component)` — create styled component
+- `styled(Base)` — extend styles (inheritance)
+- `.attrs(props => ({}))` — set default/computed props
+- `<Comp as="a">` — render as different element
+- `css` — tagged template helper for shared style fragments
+- `keyframes` — define CSS animation
+- `createGlobalStyle` — inject global CSS
+- `createTheme(obj, opts?)` — CSS variable theme (RSC-compatible)
+- `ThemeProvider` — context-based theme (client-only)
+- `StyleSheetManager` — configure stylis plugins, prop forwarding, vendor prefixes
+- `stylisPluginRSC` — fix child-index selectors in RSC
+- `ServerStyleSheet` — SSR style collection
