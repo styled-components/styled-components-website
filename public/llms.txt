@@ -1,6 +1,6 @@
 # styled-components
 
-> CSS-in-JS for React using tagged template literals. TypeScript-native since v6. Supports React Server Components natively since v6.3. Current stable: v6.4.0.
+> CSS-in-JS for React using tagged template literals. TypeScript-native since v6. Supports React Server Components natively since v6.3. Last known stable: v6.4.0 (check npm for freshness).
 
 ## What's new since early 2025
 
