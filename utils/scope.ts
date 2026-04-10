@@ -8,48 +8,47 @@ import styled, {
 } from 'styled-components';
 import stylisRTLPlugin from 'stylis-plugin-rtl';
 
-// mimic babel plugin's behaviour to support SSR
-const hash = 'runner';
-const componentIdCache = new Map<string, number>();
+const IGNORED_PROPS = new Set(Object.getOwnPropertyNames(Function));
+const STYLED_TAGS = (Object.getOwnPropertyNames(styled) as (keyof typeof styled)[]).filter(
+  tag => !IGNORED_PROPS.has(String(tag))
+);
 
-const getComponentId = (key: string) => {
-  if (!componentIdCache.has(key)) {
-    componentIdCache.set(key, componentIdCache.size);
-  }
-  return `sc-${hash}-${componentIdCache.get(key)}`;
-};
+function createHijackedStyled(scopeId: string) {
+  const getComponentId = (key: string) => `sc-${scopeId}-${key}`;
 
-const hijackedStyled = (...args: Parameters<typeof styled>) => {
-  return styled(...args).withConfig({
-    componentId: getComponentId('base'),
+  const hijacked = (...args: Parameters<typeof styled>) => {
+    const target = args[0];
+    const name =
+      (typeof target === 'function' && (target.displayName || target.name)) ||
+      (typeof target === 'string' && target) ||
+      'ext';
+    return styled(...args).withConfig({
+      componentId: getComponentId(name),
+    });
+  };
+
+  STYLED_TAGS.forEach(tag => {
+    Object.defineProperty(hijacked, tag, {
+      get() {
+        return styled[tag].withConfig({
+          componentId: getComponentId(String(tag)),
+        });
+      },
+    });
   });
-};
 
-const ignoredProps = Object.getOwnPropertyNames(Function);
-(Object.getOwnPropertyNames(styled) as (keyof typeof styled)[]).forEach(tag => {
-  if (ignoredProps.includes(String(tag))) return;
-  Object.defineProperty(hijackedStyled, tag, {
-    get() {
-      return styled[tag].withConfig({
-        componentId: getComponentId(String(tag)),
-      });
-    },
-  });
-});
+  return hijacked;
+}
 
-export const reset = () => {
-  componentIdCache.clear();
-};
-
-const baseScope = {
-  createGlobalStyle,
-  css,
-  keyframes,
-  styled: hijackedStyled,
-  ThemeProvider,
-  StyleSheetManager,
-  withTheme,
-  stylisRTLPlugin,
-};
-
-export default baseScope;
+export function createScope(id: string) {
+  return {
+    createGlobalStyle,
+    css,
+    keyframes,
+    styled: createHijackedStyled(id),
+    ThemeProvider,
+    StyleSheetManager,
+    withTheme,
+    stylisRTLPlugin,
+  };
+}

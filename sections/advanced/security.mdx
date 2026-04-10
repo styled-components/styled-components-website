@@ -21,3 +21,27 @@ Be very careful! This is obviously a made-up example, but CSS injection can be u
 have bad repercussions.
 
 You can use [`CSS.escape`](https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape) to sanitize CSS from JavaScript. It is well-supported in all modern browsers.
+
+### Content Security Policy (CSP) nonces | v6.4+
+
+If your site sets a [`style-src` CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src) that requires a `nonce`, styled-components will attach it to every injected `<style>` tag. You can supply the nonce in any of the following ways (first match wins):
+
+1. Pass `nonce` explicitly to [`StyleSheetManager`](/docs/api#stylesheetmanager) — the recommended approach for Next.js, Remix, and other frameworks where the nonce is generated per-request:
+
+   ```tsx
+   <StyleSheetManager nonce={nonce}>
+     <App />
+   </StyleSheetManager>
+   ```
+
+2. Pass `nonce` to the `ServerStyleSheet` constructor for classic SSR pipelines:
+
+   ```tsx
+   const sheet = new ServerStyleSheet({ nonce });
+   ```
+
+3. Add a `<meta property="csp-nonce" content="...">` tag to your document head (Vite convention).
+4. Add a `<meta name="sc-nonce" content="...">` tag.
+5. Set the `__webpack_nonce__` global (legacy).
+
+The nonce is applied to both client-side injected styles and SSR output so the browser accepts them under a strict CSP.

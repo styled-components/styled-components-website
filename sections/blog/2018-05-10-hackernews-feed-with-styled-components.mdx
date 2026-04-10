@@ -1,0 +1,49 @@
+export const meta = {
+  title: "How to build a simple HackerNews feed with styled-components",
+  author: "Andreas Reiterer",
+  date: "2018-05-10",
+  slug: "hackernews-feed-with-styled-components",
+  description: "A hands-on tutorial building a HackerNews feed clone to learn the fundamentals of styled-components, from basic components to the attrs helper.",
+  originalUrl: "https://medium.com/styled-components/how-to-build-a-simple-hackernews-feed-with-styled-components-a8905211e45e",
+};
+
+A hands-on exploration of styled-components by building a HackerNews feed replica, constructing reusable components with embedded styling.
+
+## Key Components
+
+### Story Component
+
+The smallest unit displays individual HackerNews entries with two sections:
+
+**Header contains:**
+- Rank number
+- Story title
+- Link to source
+
+**Footer includes:**
+- Score/points
+- Submitting user
+- Timestamp
+- Link to HackerNews discussion
+
+### Implementation Approach
+
+Rather than managing separate CSS files and class names, we embed styling directly within component definitions using ES6 tagged template literals.
+
+The `Header` component wraps child elements in a flex container, while individual styled components handle the rank, title, and external link. The `FooterLink` component manages opening links in new windows through the `attrs` function.
+
+### StoryList Component
+
+This component renders multiple Story items from an array, calculating rank based on array index since the actual API data lacks this information initially.
+
+## Setup Instructions
+
+```bash
+create-react-app hackernews-client
+npm install -S styled-components
+npm start
+```
+
+## Key Learning
+
+Once you get the hang of it, you want to make everything a styled component. The approach eliminates class-name management while keeping styling adjacent to component logic.

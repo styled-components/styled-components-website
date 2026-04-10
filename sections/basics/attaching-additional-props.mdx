@@ -69,3 +69,19 @@ render(
 );
 ```
 This is why `PasswordInput` is of a `'password'` type, but still uses the `$size` attribute from `Input`.
+
+### Props supplied via `.attrs` are optional | v6.4+
+
+Any prop that `.attrs` provides a value for is automatically made optional on the resulting component's type. You no longer need to pass props that attrs already defaults:
+
+```tsx
+const Link = styled.a.attrs({ href: '#', rel: 'noopener' })`
+  color: hotpink;
+`;
+
+// Both work — attrs provides the defaults
+<Link>Click</Link>
+<Link href="/about">About</Link>
+```
+
+Previously, TypeScript required you to pass `href` even though attrs supplied it.

@@ -24,7 +24,7 @@ describe('elementToText', () => {
   });
 
   it('stringifies an array of elements', () => {
-    expect(elementToText([<span>test</span>, <div>test</div>])).toBe('testtest');
+    expect(elementToText([<span key="a">test</span>, <div key="b">test</div>])).toBe('testtest');
     expect(
       elementToText(
         <ul>

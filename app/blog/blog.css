@@ -1,0 +1,18 @@
+/* Route-level overrides for blog pages.
+   Static CSS to avoid the createGlobalStyle SSR -> client hydration flash. */
+
+[data-e2e-id='content'] img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Magazine-style section break: short warm rule, generous air. */
+[data-e2e-id='content'] hr {
+  border: 0;
+  margin: 3.5rem auto;
+  width: 4rem;
+  height: 2px;
+  background: var(--sc-color-blogAccent);
+  opacity: 0.6;
+}

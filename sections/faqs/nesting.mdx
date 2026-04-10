@@ -43,6 +43,8 @@ render(
 );
 ```
 
+> **RSC caveat:** In React Server Components, inline `<style>` tags are emitted as siblings of your elements, which shifts `:first-child` and `:nth-child()` indices. Use `:first-of-type` / `:nth-of-type()` instead, or enable [`stylisPluginRSC`](/docs/api#stylesheetmanager) to rewrite these selectors automatically.
+
 It's also incredibly convenient to co-locate media queries, since we can see at a glance
 exactly how the component will respond at any resolution.
 

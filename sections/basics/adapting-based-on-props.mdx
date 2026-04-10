@@ -6,7 +6,7 @@ You can pass a function ("interpolations") to a styled component's template lite
 
 This button component has a primary state that changes its color. When setting the <Code>$primary</Code> prop to true, we are swapping out its background and text color.
 
-> **React Server Components (v6.3.0+):** Dynamic interpolations incur serialization overhead in RSC. For discrete variants, prefer data attributes (e.g., `&[data-primary="true"]`) with static styles. See the [RSC section](/docs/advanced#react-server-components) for best practices.
+> **React Server Components:** Each unique interpolation result produces a separate CSS rule in the SSR'd HTML. For discrete variants, prefer data attributes (e.g., `&[data-primary="true"]`) with static styles so every instance shares one cached rule. See the [RSC section](/docs/advanced#react-server-components) for best practices.
 
 ```react
 const Button = styled.button<{ $primary?: boolean; }>`

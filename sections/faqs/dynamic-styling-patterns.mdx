@@ -6,7 +6,7 @@ styled-components offers several ways to apply dynamic styles. Each has differen
 
 | Approach | Best for | Generates new classes? | RSC compatible? |
 |---|---|---|---|
-| Prop interpolation | Computed styles based on props | Yes, per unique value | Yes, with overhead |
+| Prop interpolation | Computed styles based on props | Yes, per unique value | Yes (each unique class adds to the SSR payload) |
 | CSS custom properties | Theming, frequently-changing values | No | Yes |
 | Data attributes | Discrete variants (size, color scheme) | No | Yes |
 | `.attrs()` with `style` | Per-frame updates (mouse, scroll, animation) | No | Yes |

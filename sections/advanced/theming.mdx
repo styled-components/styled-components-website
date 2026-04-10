@@ -153,3 +153,89 @@ render(
   </div>
 );
 ```
+
+### Dark mode
+
+> Requires v6.4+. See the [`createTheme` API docs](/docs/api#createtheme) for the full API reference.
+
+The recommended approach to dark mode uses [`createTheme`](/docs/api#createtheme) with CSS-first overrides — no JavaScript runs to detect the initial theme, so there's no flash of wrong colors on page load.
+
+**Step 1: Define your theme and dark overrides**
+
+```tsx
+import { css, createGlobalStyle, createTheme, ThemeProvider } from 'styled-components';
+
+const theme = createTheme({
+  colors: { bg: '#ffffff', text: '#1a1a1a', primary: '#0070f3' },
+});
+const { vars } = theme;
+
+// Define dark overrides once as a css partial (DRY)
+const darkVars = css`
+  ${vars.colors.bg}: #111827;
+  ${vars.colors.text}: #f9fafb;
+`;
+
+// Apply via media query (auto) and class (manual toggle)
+const DarkOverrides = createGlobalStyle`
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) { ${darkVars} }
+  }
+  .dark { ${darkVars} }
+`;
+```
+
+The CSS cascade does the work:
+- `@media (prefers-color-scheme: dark)` activates when the OS is in dark mode, unless `.light` is set
+- `.dark` activates when a user manually selects dark mode
+- No class at all = follow system preference
+
+**Step 2: Mount in your layout**
+
+```tsx
+<ThemeProvider theme={theme}>
+  <theme.GlobalStyle />
+  <DarkOverrides />
+  <App />
+</ThemeProvider>
+```
+
+**Step 3: Persist a manual toggle (optional)**
+
+If your app has a light/dark/auto toggle, the user's choice should survive page reloads. Store it in `localStorage` and read it in a **blocking `<script>` in `<head>` before any stylesheets load** — otherwise the page briefly renders in the wrong theme before JavaScript hydrates.
+
+```tsx
+// In your root layout's <head>, BEFORE stylesheets:
+<script dangerouslySetInnerHTML={{ __html: `
+  (function() {
+    try {
+      var d = document.documentElement;
+      var stored = localStorage.getItem('theme');
+      if (stored === 'dark' || stored === 'light') {
+        d.classList.add(stored);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        d.classList.add('dark');
+      }
+    } catch (e) {}
+  })();
+`}} />
+```
+
+The script adds `.dark` or `.light` to `<html>` before the first paint. Your CSS rules already handle each case.
+
+In your toggle handler, persist the choice and update the class:
+
+```tsx
+function setTheme(theme: 'light' | 'dark' | 'auto') {
+  const root = document.documentElement.classList;
+  root.remove('dark', 'light');
+  if (theme !== 'auto') {
+    root.add(theme);
+    localStorage.setItem('theme', theme);
+  } else {
+    localStorage.removeItem('theme');
+  }
+}
+```
+
+> **Why not `next/script` with `strategy="beforeInteractive"`?** It doesn't guarantee execution before stylesheets load. A raw `<script>` in `<head>` is the only reliable way to prevent the flash. This applies to other frameworks too — the script must block rendering.

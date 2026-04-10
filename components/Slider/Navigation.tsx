@@ -1,10 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import NextImage from 'next/image';
 import { NavigateNext, NavigateBefore } from '@styled-icons/material';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ShowcaseLink from './ShowcaseLink';
 import Image from '../Image';
 import { phone } from '../../utils/media';
+import { theme } from '../../utils/theme';
 import { Project } from 'companies-manifest';
 
 export interface NavigationProps {
@@ -16,7 +18,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
   return (
     <SlideNav>
       <ShowcaseLink item={prev}>
-        <NavButton role="button" tabIndex={0} aria-label="previous showcase, use left arrow to navigate">
+        <NavButton $direction="prev" aria-label="previous showcase, use left arrow to navigate">
           <Image
             width={1920}
             height={1080}
@@ -26,7 +28,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
               return (
                 <TransitionGroup>
                   <CSSTransition key={props.src} timeout={100} classNames="fade">
-                    <img src={prev.src} alt={`Preview of ${prev.title}`} />
+                    <NextImage src={prev.src} alt={`Preview of ${prev.title}`} fill sizes="192px" />
                   </CSSTransition>
                 </TransitionGroup>
               );
@@ -37,7 +39,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
       </ShowcaseLink>
 
       <ShowcaseLink item={next}>
-        <NavButton role="button" tabIndex={0} aria-label="next showcase, use right arrow to navigate">
+        <NavButton $direction="next" aria-label="next showcase, use right arrow to navigate">
           <Image
             width={1920}
             height={1080}
@@ -47,7 +49,7 @@ export default function Navigation({ prev, next }: NavigationProps) {
               return (
                 <TransitionGroup>
                   <CSSTransition key={props.src} timeout={100} classNames="fade">
-                    <img src={next.src} alt={`Preview of ${next.title}`} />
+                    <NextImage src={next.src} alt={`Preview of ${next.title}`} fill sizes="192px" />
                   </CSSTransition>
                 </TransitionGroup>
               );
@@ -80,11 +82,10 @@ const SlideNav = styled.nav.attrs({ 'aria-label': 'Showcase navigation' })<{ chi
   `)}
 `;
 
-const NavButton = styled.div<React.HTMLAttributes<HTMLDivElement>>`
+const NavButton = styled.div<{ $direction: 'prev' | 'next' } & React.HTMLAttributes<HTMLDivElement>>`
   display: flex;
   cursor: pointer;
   align-items: center;
-  justify-content: center;
   position: relative;
   width: ${navHeight}px;
   height: ${navHeight * 0.5625}px;
@@ -94,6 +95,12 @@ const NavButton = styled.div<React.HTMLAttributes<HTMLDivElement>>`
   transition: 200ms ease-out;
   padding: 0 16px;
   pointer-events: all;
+  justify-content: ${p => (p.$direction === 'prev' ? 'flex-end' : 'flex-start')};
+  transform: translateX(${p => (p.$direction === 'prev' ? '-66%' : '66%')});
+
+  &:hover {
+    transform: translateX(${p => (p.$direction === 'prev' ? '-60%' : '60%')});
+  }
 
   ${phone(css`
     width: ${navHeight * 0.5}px;
@@ -108,7 +115,7 @@ const NavButton = styled.div<React.HTMLAttributes<HTMLDivElement>>`
     z-index: -1;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${theme.color.shadow};
   }
 
   figure {
@@ -124,30 +131,11 @@ const NavButton = styled.div<React.HTMLAttributes<HTMLDivElement>>`
 
   svg {
     display: inline-block;
-    color: #ffffff;
+    color: ${theme.color.heroText};
     height: 32px;
   }
 
-  &:first-child {
-    transform: translateX(-66%);
-    justify-content: flex-end;
-
-    &:hover {
-      transform: translateX(-60%);
-    }
-  }
-  &:last-child {
-    transform: translateX(66%);
-    justify-content: flex-start;
-
-    &:hover {
-      transform: translateX(60%);
-    }
-  }
-
-  &:hover {
-    figure {
-      transform: translate(-50%, -50%) scale(1.2);
-    }
+  &:hover figure {
+    transform: translate(-50%, -50%) scale(1.2);
   }
 `;

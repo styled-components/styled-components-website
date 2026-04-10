@@ -93,7 +93,7 @@ This pattern is especially valuable in RSC environments, where dynamic interpola
 
 ### Static vs dynamic components
 
-A styled component is static if its template contains no function interpolations (references to other styled components are fine). Static components generate their class once and cache it — subsequent renders skip style generation entirely.
+A styled component is static if its template contains no function interpolations (references to other styled components are fine). Static components pay zero cost on re-render.
 
 ```tsx
 // Static: cached after first render
@@ -102,7 +102,7 @@ const Card = styled.div`
   border: 1px solid #eee;
 `;
 
-// Dynamic: hash recomputed every render
+// Dynamic: a new class is generated each time $elevated flips
 const Card = styled.div<{ $elevated: boolean }>`
   box-shadow: ${props => props.$elevated ? '0 4px 12px rgba(0,0,0,0.1)' : 'none'};
 `;

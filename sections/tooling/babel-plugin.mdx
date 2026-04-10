@@ -22,7 +22,7 @@ Then add it to your babel configuration like so:
 
 ### Server-side rendering
 
-By adding a unique identifier to every styled component, this plugin avoids checksum mismatches due to different class generation on the client and on the server. If you do not use this plugin and try to server-side render styled-components React will complain with an HTML attribute mismatch warning during rehydration.
+This plugin ensures styled components produce consistent output on the client and server. Without it, server-side rendering will trigger React HTML attribute mismatch warnings during rehydration.
 
 You can disable it if necessary with the `ssr` option:
 

@@ -1,84 +1,41 @@
-import { Favorite } from '@styled-icons/material';
-import styled, { css } from 'styled-components';
-import { grey, paleGrey, red } from '../../utils/colors';
-import { mobile } from '../../utils/media';
-import rem from '../../utils/rem';
-import { BlmBanner } from '../BlmBanner';
-import { Content } from '../Layout';
+import styled from 'styled-components';
+import { theme } from '../../utils/theme';
 import Link from '../Link';
 
 export default function Footer() {
   return (
-    <>
-      <Wrapper>
-        <FooterContent $hero>
-          {' '}
-          {'Hosted on '}
-          <FooterLink inline href="https://vercel.com">
-            ▲ Vercel
-          </FooterLink>
-          <br />
-          {'Made with '}
-          <Heart aria-hidden="true" />
-          {' by '}
-          <FooterLink inline href="https://twitter.com/glenmaddern">
-            @glenmaddern
-          </FooterLink>
-          {', '}
-          <FooterLink inline href="https://twitter.com/mxstbr">
-            @mxstbr
-          </FooterLink>
-          {', '}
-          <FooterLink inline href="https://twitter.com/_philpl">
-            @_philpl‬
-          </FooterLink>
-          {', '}
-          <FooterLink inline href="https://twitter.com/probablyup">
-            @probablyup
-          </FooterLink>
-          {', '}
-          <FooterLink inline href="https://twitter.com/imbhargav5">
-            @imbhargav5
-          </FooterLink>
-          {' and '}
-          <FooterLink inline href="https://github.com/orgs/styled-components/people">
-            contributors
-          </FooterLink>
-          {'.'}
-        </FooterContent>
-      </Wrapper>
-      <BlmBanner />
-    </>
+    <Wrapper>
+      <Attribution>
+        {'Hosted on '}
+        <Link variant="inline" href="https://vercel.com">
+          Vercel
+        </Link>
+        {'. For outreach, please contact '}
+        <Link variant="inline" href="https://twitter.com/quantizor">
+          @quantizor
+        </Link>
+        {'. '}
+        <Link variant="inline" href="https://github.com/styled-components/styled-components/graphs/contributors">
+          Thank you contributors!
+        </Link>
+      </Attribution>
+    </Wrapper>
   );
 }
 
 const Wrapper = styled.footer`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  color: ${grey};
-  background: ${paleGrey};
+  justify-content: center;
+  color: ${theme.color.textSecondary};
+  border-top: 1px solid ${theme.color.border};
+  margin-top: ${theme.space[12]};
+  width: 100%;
   box-sizing: border-box;
-  margin-top: ${rem(50)};
 `;
 
-const Heart = styled(Favorite)`
-  display: inline-block;
-  width: ${rem(17)};
-  color: ${red};
-  transform: translateY(-10%);
-`;
-
-const FooterLink = styled(Link)`
-  color: ${grey};
-`;
-
-const FooterContent = styled(Content)`
-  padding: ${rem(30)} ${rem(40)} ${rem(30)} ${rem(40)};
-
-  ${mobile(css`
-    padding: ${rem(30)} ${rem(20)} ${rem(30)} ${rem(20)};
-  `)};
+const Attribution = styled.div`
+  padding: ${theme.space[6]} ${theme.space[8]};
+  text-align: center;
+  font-size: ${theme.text.sm};
 `;

@@ -1,13 +1,13 @@
 'use client';
 
 import styled from 'styled-components';
-import { monospace } from '../utils/fonts';
+import { theme, font } from '../utils/theme';
 
 const Code = styled.code`
-  border-radius: 3px;
-  background: rgba(50, 50, 150, 0.1);
+  border-radius: ${theme.radius.sm};
+  background: ${theme.color.accentSubtle};
   display: inline-block;
-  font-family: ${monospace};
+  font-family: ${font.mono};
   font-size: 90%;
   line-height: 1;
   padding: 0.3em 0.25em;

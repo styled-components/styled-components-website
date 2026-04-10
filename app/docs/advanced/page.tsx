@@ -1,5 +1,6 @@
+import { Metadata } from 'next';
 import DocsLayout from '@/components/DocsLayout';
-import NextPage from '@/components/NextPage';
+import DocsPageNav from '@/components/DocsPageNav';
 
 import Theming from '@/sections/advanced/theming.mdx';
 import ServerSideRendering from '@/sections/advanced/server-side-rendering.mdx';
@@ -12,12 +13,14 @@ import Refs from '@/sections/advanced/refs.mdx';
 import Security from '@/sections/advanced/security.mdx';
 import TaggedTemplateLiterals from '@/sections/advanced/tagged-template-literals.mdx';
 
+export const metadata: Metadata = {
+  title: 'Advanced Usage',
+  description: 'Theming, Server-Side Rendering, Performance, Existing CSS, Style Objects, Accessibility and more',
+};
+
 export default function AdvancedPage() {
   return (
-    <DocsLayout
-      title="Advanced Usage"
-      description="Theming, Server-Side Rendering, Performance, Existing CSS, Style Objects, Accessibility and more"
-    >
+    <DocsLayout title="Advanced Usage">
       <Theming />
       <ServerSideRendering />
       <Performance />
@@ -28,7 +31,7 @@ export default function AdvancedPage() {
       <Refs />
       <Security />
       <TaggedTemplateLiterals />
-      <NextPage href="/docs/api" title="API Reference" />
+      <DocsPageNav current="advanced" />
     </DocsLayout>
   );
 }

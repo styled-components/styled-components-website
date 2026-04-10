@@ -11,13 +11,13 @@ const Wrapper = styled.nav.attrs({ 'aria-label': 'Social links' })`
   flex: 1 1 auto;
 `;
 
-const SocialLink = styled(Link).attrs((/* props */) => ({
-  unstyled: true,
-}))`
+const SocialLink = styled(Link).attrs({ variant: 'unstyled' as const })`
   display: flex;
   margin-right: ${rem(20)};
   line-height: ${rem(navbarHeight)};
-  transition: opacity 0.2s, transform 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
   cursor: pointer;
 
   min-width: ${rem(44)};

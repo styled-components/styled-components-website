@@ -3,6 +3,7 @@ import { Bitbucket, Git, Github, Gitlab } from '@styled-icons/fa-brands';
 import { SortedProject } from 'companies-manifest';
 import styled, { css } from 'styled-components';
 import { phone } from '../../utils/media';
+import { theme } from '../../utils/theme';
 
 export default function ShowcaseBody({ title, owner, link, repo }: SortedProject) {
   return (
@@ -48,7 +49,7 @@ const SlideMeta = styled.div<{ children?: React.ReactNode }>`
   `)}
 
   em {
-    color: rgb(219, 112, 147);
+    color: ${theme.color.brandPink};
     font-style: normal;
   }
 `;
@@ -92,7 +93,7 @@ const SlideMetaLink = styled.a<React.AnchorHTMLAttributes<HTMLAnchorElement>>`
   `)}
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: ${theme.color.border};
   }
 
   svg {

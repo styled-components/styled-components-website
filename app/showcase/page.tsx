@@ -1,19 +1,17 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
+import NextImage from 'next/image';
 import React, { Suspense } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css, keyframes } from 'styled-components';
 import { SortedProject, sortedProjects } from '@/companies-manifest';
 import Footer from '@/components/Footer';
 import Image, { ImageProps } from '@/components/Image';
-import Nav from '@/components/Nav';
-import SeoHead from '@/components/SeoHead';
 import Navigation from '@/components/Slider/Navigation';
 import ShowcaseBody from '@/components/Slider/ShowcaseBody';
 import { generateShowcaseUrl } from '@/components/Slider/ShowcaseLink';
-import { blmGrey, blmMetal } from '@/utils/colors';
-import { headerFont } from '@/utils/fonts';
+import { theme, font } from '@/utils/theme';
 import { mobile, phone } from '@/utils/media';
 
 function ShowcaseContent() {
@@ -24,11 +22,6 @@ function ShowcaseContent() {
 
   return (
     <>
-      <SeoHead title={`styled-components: Showcase ${title}`}>
-        <meta name="robots" content="noodp" />
-      </SeoHead>
-
-      <Nav showSideNav={false} />
       <ArrowEvents previousSlide={previousSlide} nextSlide={nextSlide} />
 
       <Container>
@@ -71,7 +64,13 @@ function ShowcaseContent() {
                   return (
                     <TransitionGroup>
                       <CSSTransition key={src} timeout={500} classNames="fade">
-                        <img {...props} alt={`Screenshot of ${title}`} />
+                        <NextImage
+                          src={props.src!}
+                          alt={`Screenshot of ${title}`}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 1920px"
+                          priority
+                        />
                       </CSSTransition>
                     </TransitionGroup>
                   );
@@ -104,7 +103,7 @@ const Container = styled.div`
   overflow-x: hidden;
 
   * {
-    font-family: ${headerFont};
+    font-family: ${font.sans};
   }
 
   h1,
@@ -118,7 +117,10 @@ const Container = styled.div`
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-family: ${font.display};
+    font-size: ${theme.text['3xl']};
+    font-weight: ${theme.fontWeight.display};
+    line-height: 1.15;
     margin-bottom: 0;
 
     ${phone(css`
@@ -127,7 +129,7 @@ const Container = styled.div`
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: ${theme.text['2xl']};
     line-height: 1.5;
 
     ${phone(css`
@@ -137,8 +139,8 @@ const Container = styled.div`
 
   h5 {
     margin-bottom: 0;
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: ${theme.text.base};
+    font-weight: ${theme.fontWeight.normal};
     opacity: 0.6;
   }
 
@@ -151,8 +153,7 @@ const Header = styled.header`
   position: relative;
   height: 512px;
   padding-top: 48px;
-  background-color: #daa357;
-  background: linear-gradient(20deg, ${blmGrey}, ${blmMetal});
+  background: linear-gradient(20deg, ${theme.color.borderStrong}, ${theme.color.text});
   overflow: hidden;
 
   ${mobile(css`
@@ -167,7 +168,7 @@ const HeaderContent = styled.div`
   justify-content: space-between;
   grid-template-columns: minmax(0px, 512px) minmax(128px, 192px);
   grid-column-gap: 24px;
-  color: #ffffff;
+  color: ${theme.color.heroText};
 
   ${phone(css`
     grid-template-columns: 1fr;
@@ -199,16 +200,16 @@ const Body = styled.div`
 
 const BodyWrapper = styled.div`
   position: relative;
-  top: -192px;
+  margin-top: -192px;
 
   ${mobile(css`
-    top: -96px;
+    margin-top: -96px;
   `)}
 `;
 
 const Slide = styled(Image)`
   border-radius: 12px;
-  box-shadow: 0 32px 48px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 32px 48px ${theme.color.shadow};
 `;
 
 const getSlide = (childIndex: number) => keyframes`
@@ -224,11 +225,11 @@ const HeaderDecoration = styled.div<{ $offset?: number; children?: React.ReactNo
   position: absolute;
   bottom: 0;
   left: 0;
-  font-family: ${headerFont};
+  font-family: ${font.sans};
   font-size: 16rem;
   line-height: 16rem;
-  font-weight: 800;
-  color: rgba(0, 0, 0, 0.1);
+  font-weight: ${theme.fontWeight.bold};
+  color: ${theme.color.border};
   mix-blend-mode: overlay;
   pointer-events: none;
   animation: ${({ $offset }) => getSlide($offset || 0)} 30s linear infinite;
@@ -256,7 +257,7 @@ const HeaderActions = styled.div`
   a {
     height: 50px;
     border-radius: 4px;
-    font-family: ${headerFont};
+    font-family: ${font.sans};
     font-weight: 500;
     font-size: 1rem;
     line-height: 50px;
@@ -271,14 +272,14 @@ const HeaderActions = styled.div`
   a {
     display: block;
     text-align: center;
-    background-color: #fff;
-    color: #000;
+    background-color: ${theme.color.bg};
+    color: ${theme.color.text};
     border: none;
     transition: 200ms;
     padding: 0;
 
     &:hover {
-      background-color: #f3f3f3;
+      background-color: ${theme.color.surface};
     }
   }
 `;
