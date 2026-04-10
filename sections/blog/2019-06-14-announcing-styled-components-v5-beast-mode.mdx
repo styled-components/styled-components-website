@@ -1,0 +1,115 @@
+export const meta = {
+  title: "Announcing styled-components v5: Beast Mode",
+  author: "Evan Jacobs",
+  date: "2019-06-14",
+  slug: "announcing-styled-components-v5-beast-mode",
+  description: "styled-components v5 delivers 50% faster server-side rendering, 22% smaller bundles, and RTL support with no breaking changes.",
+  originalUrl: "https://medium.com/styled-components/announcing-styled-components-v5-beast-mode-389747abd987",
+};
+
+![](/images/blog/announcing-styled-components-v5-beast-mode-5a7d0fc1.jpeg)
+
+#### 50% faster server-side rendering, 22% faster client-side rendering, 31% smaller bundle size, RTL support and no breaking changes! 😍💯🎉💅
+
+*EJ: Updated January 13, 2020 with the formal v5 release.*
+
+We are very excited to announce that the styled-components v5 is here! There are **no breaking changes***, as long as your app is running the latest version of React, styled-components v5 should* just work*. ✨(*however we did remove the deprecated “subfunctions on attrs” API)
+
+Please **try the release in your apps **and [let us know](https://github.com/styled-components/styled-components/issues/new) if you encounter any issues:
+
+```js
+npm install styled-components@^5.0.0
+```
+
+**Note that you need to be on a react version that supports hooks, e.g.
+react@^16.8 react-dom@^16.8 react-is@^16.8
+Let’s talk about the changes!
+
+### Fast, faster, styled-components 🏎💨
+
+Back when [we released v2 more than two years ago](https://medium.com/styled-components/announcing-v2-f01ef3766ac2) we promised to focus on performance. We have since delivered with massive speedups in various releases, including [a massive 10x performance boost in v3.1](https://medium.com/styled-components/v3-1-0-such-perf-wow-many-streams-c45c434dbd03) and [another 25% boost in v4](https://medium.com/styled-components/announcing-styled-components-v4-better-faster-stronger-3fe1aba1a112).
+
+styled-components v5 smashes it out of the park once again!** Compared to v4, it comes with:
+
+- **26% smaller bundle size** (16.2kB vs. 12.42kB min+gzip) ⚡️
+- **22% faster client-side mounting 😱**
+- **26% faster updating of dynamic styles 💯**
+- **45% (!!!) faster server-side rendering 🔥🔥🔥**
+styled-components was already one of the fastest CSS-in-JS libraries out there, but with this v5 update [we solidified our position](https://docs.google.com/spreadsheets/d/12KqLCMjPB7XKNhdpLCx-gPhOTNndhftiJlyg0lpsWqE/edit?usp=sharing) ahead of the pack:
+
+![](/images/blog/announcing-styled-components-v5-beast-mode-7e8f32b0.png)
+
+*Mounting a deep component tree benchmark. Lower is better.*
+
+These massive speed gains were mainly enabled by our **new core stylesheet engine**. It had not been touched in years, so we completely rebuilt it with a focus on performance and correctness.
+
+If you’d like to learn more, have a look at our [CHANGELOG](https://github.com/styled-components/styled-components/blob/master/CHANGELOG.md#v500---2020-01-13) for a detailed breakdown! Or read on to have a quicker overview…
+**If you use jest-styled-components, make sure to [update that](https://github.com/styled-components/jest-styled-components/releases/tag/v7.0.0) as well!
+### Clean, cleaner, React DevTools ✨
+
+All of your styled components are now fully hooks-powered**, so there is **significantly less component nesting** and **much cleaner React DevTools** when using styled-components! *🎣*
+
+Here is what our styled TagLine component looks like in the React DevTools when using v4:
+
+```js
+<Context.Consumer>
+  <Context.Consumer>
+    <StyledComponent forwardedRef={null}>
+      <WithTheme(Component)>
+        <Component>
+          <h2>Hello world</h2>
+        </Component>
+      </WithTheme(Component)>
+    </StyledComponent>
+  </Context.Consumer>
+</Context.Consumer>
+```
+
+Here is what *the same styled component* looks like in the React DevTools when using v5:
+
+```js
+<Styled(h2)>
+  <h2>Hello world</h2>
+</Styled(h2)>
+```
+
+How clean is that?!?! 😍 Let’s look at a real-world example:
+
+![](/images/blog/announcing-styled-components-v5-beast-mode-2f6697c6.jpeg)
+
+*React DevTools component tree output for styled-components.com. Left: styled-components v4, Right: styled-components v5*
+
+Wow. 😍😍😍
+
+*Huge shoutout to to *[*Jessica Franco*](https://github.com/Jessidhia)* and *[*Alexander Nanberg*](https://github.com/alexandernanberg)* for spearheading the refactor to hooks.*
+
+### **New, newer, StyleSheetManager 🧩**
+
+While our  has existed for a while, it got a huge upgrade in v5 with the ability to **extend our CSS parser (stylis) with plugins.**
+
+This is useful for a wide variety of scenarios, one common feature request that is now finally possible is **fully automatic RTL support for your styles!**
+
+#### RTL support 🌏
+
+Here is how you can turn your styles from left-to-right to right-to-left:
+
+```js
+import { StyleSheetManager } from 'styled-components';
+import stylisRTLPlugin from 'stylis-plugin-rtl';
+
+<StyleSheetManager stylisPlugins={[stylisRTLPlugin]}>
+  {/* your app */}
+</StyleSheetManager>
+```
+
+That is all you need to do! 🔥 We are very excited by the possibilities that this opens up and all the plugins you all are going to come up with to give styled-components *superpowers*.
+
+### Support us 🙏
+
+styled-components is used by a lot of people. Like, *a lot a lot*. The library has been downloaded over [39 million times](https://npm-stat.com/charts.html?package=styled-components&from=2000-06-01&to=2019-06-01) and is depended upon by [hundreds of thousands of public repositories](https://github.com/styled-components/styled-components/network/dependents), not including the many private ones that do not show up on GitHub! 😱
+
+styled-components is used widely, and we, the core team, take this responsibility very serious. Unfortunately, maintenance is almost entirely volunteer-based and we have very limited resources to pay anybody, attend conferences or organize summits.
+
+**If you use styled-components at your company, please consider contributing to our **[**OpenCollective**](https://opencollective.com/styled-components). We would love to get the entire core team into the same room this year, and that would help make it possible. 🙇‍♂️
+
+From the entire styled-components core team, we hope you enjoy v5. As always, stay stylish 💅

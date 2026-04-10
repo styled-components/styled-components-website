@@ -1,29 +1,16 @@
 import { Content } from 'components/Layout'
-import { AlignCenter, Badge, ExampleButton, SecondButton } from './components'
+import { AlignCenter, ExampleButton, SecondButton } from './components'
 import NextPage from '../../components/NextPage'
 
 export default ({ children }) => (
   <Content data-e2e-id="content">
-    <AlignCenter>
-      <a href="https://github.com/styled-components/styled-components">
-        <Badge src="/api/proxy/stars.svg" alt="Stars on GitHub" />
-      </a>
-      <a href="https://www.npmjs.com/package/styled-components">
-        <Badge src="/api/proxy/npm-v.svg" alt="Current version" />
-      </a>
-      <Badge src="/api/proxy/downloads.svg" alt="Monthly downloads" />
-      <Badge src="/api/proxy/size.svg" alt="Gzipped size" />
-      <a href="https://discord.gg/hfGUrbrxaU">
-        <Badge alt="Discord" src="https://img.shields.io/discord/818449605409767454" />
-      </a>
-    </AlignCenter>
     {children}
   </Content>
 )
 
-# Getting started
+## Getting started
 
-## Installation
+### Installation
 
 To download styled-components run:
 
@@ -104,14 +91,14 @@ const Button = styled.button<{ $primary?: boolean; }>`
   background: transparent;
   border-radius: 3px;
   border: 2px solid #BF4F74;
-  color: '#BF4F74';
+  color: #BF4F74;
   margin: 0 1em;
   padding: 0.25em 1em;
 
   ${props =>
     props.$primary &&
     css`
-      background: '#BF4F74';
+      background: #BF4F74;
       color: white;
     `};
 `

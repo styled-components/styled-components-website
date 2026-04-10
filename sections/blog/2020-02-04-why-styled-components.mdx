@@ -1,0 +1,43 @@
+export const meta = {
+  title: "Why styled-components?",
+  author: "Evan Jacobs",
+  date: "2020-02-04",
+  slug: "why-styled-components",
+  description: "A look at what sets styled-components apart from other CSS-in-JS libraries, from developer experience and performance to the power of staying close to CSS.",
+  originalUrl: "https://medium.com/styled-components/why-styled-components-2deeed757cfa",
+};
+
+One question I see on Twitter and such often is why a developer should choose [styled-components](https://styled-components.com/) over other CSS-in-JS libraries (and other forms of CSS in general.) Here are some of my thoughts in condensed form:
+
+#### 1. At the end of the day, it’s just CSS
+
+You can choose exactly how you want to write styles, we don’t encourage or enforce any particular syntax. Want to write [normal looking CSS](https://styled-components.com/docs/basics#coming-from-css)? Sweet. Want to write [style objects](https://styled-components.com/docs/advanced#style-objects) that look like DOM JS inline styles? Right on.
+
+We’ve got your back and will apply the relevant vendor prefixes, etc. All we care about is making it as easy as possible to write CSS that is nicely isolated per-component, while still preserving the full power of the cascade when you want it.
+
+#### 2. We focus extensively on developer experience
+
+For me, this is the big differentiator between styled-components and competitor libraries in the same space. Instead of a plethora of packages to download and consume, all of the core library and most popular pieces of functionality are [available right in the main import](https://styled-components.com/docs/api). This makes the library easier to refactor, teach, and ultimately understand.
+
+Further, we spend a lot of thought and effort on implementing helpful dev-time warnings and useful production errors to help you avoid falling into performance anti-patterns. Do we get it right every time? No, but no other competitor library is putting in the same amount of consideration.
+
+#### 3. Performance is a feature, and we’ve consistently raised the bar every release
+
+You could say we’re [mildly obsessed with performance](https://docs.google.com/spreadsheets/d/12KqLCMjPB7XKNhdpLCx-gPhOTNndhftiJlyg0lpsWqE/edit#gid=0). Generally speaking, we will never ship a release that meaningfully degrades the performance of our library and we spend a large amount of time benchmarking and tweaking to ensure the library is both fast and as small as possible for real-world use cases. The v5 release blew past most of our competitors in fact.
+
+![](/images/blog/why-styled-components-563d9468.png)
+
+#### 4. We are very careful and deliberate about shipping API changes
+
+An extension of point two but worthy of elaboration, the styled-components team is hyper-conscious about our API, how it’s used, and being extremely cautious about introducing changes until we’re sure they are the *correct* solutions that will work for both power and casual users. This means that when you write code using styled-components you can rest assured it’ll continue working and require minimal refactoring over time as the library evolves.
+
+If for some reason we do change something, we will add ample notice via dev-time warnings and, whenever possible, offer automated “codemods” to make refactoring as painless as possible.
+
+#### 5. We’ve got an amazing, robust community
+
+As I type this, styled-components has more than 5.7M monthly downloads from npm, over 27.8k stars on GitHub, and hundreds of open source contributors. We’re here to stay.
+
+If you’ve used styled-components, thank you! We welcome all contributions and love hearing from our community. As a reminder, the library is not sponsored by any big companies and is entirely driven by volunteer effort; any [financial contribution](https://opencollective.com/styled-components) you can make or encourage an employer to make would be fantastic and help facilitate further development in the space.
+
+**Thanks for being you and stay stylish 💅
+***with ♥ ️from the styled-components core team*

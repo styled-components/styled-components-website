@@ -374,7 +374,7 @@ const companies: Company[] = [
 
 export default companies;
 
-export const sortedCompanies = companies.sort((a, b) => a.similarWebGlobalRank - b.similarWebGlobalRank);
+export const sortedCompanies = companies.toSorted((a, b) => a.similarWebGlobalRank - b.similarWebGlobalRank);
 
 export interface SortedProject extends Project {
   owner: Company['name'];
@@ -384,8 +384,8 @@ export const sortedProjects = sortedCompanies.reduce(
   (projects, company) => ({
     ...projects,
     ...Object.entries(company.projects || {}).reduce(
-      (projects, [name, project]) => ({
-        ...projects,
+      (companyProjects, [name, project]) => ({
+        ...companyProjects,
         [name]: {
           ...project,
           owner: company.name,

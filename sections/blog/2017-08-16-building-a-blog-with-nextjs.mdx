@@ -1,0 +1,103 @@
+export const meta = {
+  title: "Building a Blog With Next.js and styled-components",
+  author: "Zach Sherman",
+  date: "2017-08-16",
+  slug: "building-a-blog-with-nextjs",
+  description: "A step-by-step tutorial for building a universal blog application with Next.js, styled-components, and Express.",
+  originalUrl: "https://medium.com/styled-components/building-a-blog-with-next-js-359cf1236574",
+};
+
+Next.js is an awesome framework for building universal React applications. This means you can use React for both server-side template rendering and front-end components. This tutorial demonstrates how to create a blog using Next.js V3, styled-components, next-routes, and Express.
+
+## Getting Started
+
+Installation begins with:
+
+```bash
+yarn add next@beta react react-dom --save
+```
+
+Package.json scripts are configured with:
+
+```json
+{
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
+```
+
+A basic index.js file is created in the pages folder:
+
+```js
+export default () => (
+  <div>Welcome to next.js!</div>
+)
+```
+
+Running `yarn dev` launches the application on localhost:3000 with hot reloading enabled.
+
+## Adding Style
+
+Install styled-components:
+
+```bash
+yarn add styled-components
+```
+
+A custom `_document.js` file overrides the default page layout and injects styles for server-side rendering.
+
+## Creating a Layout
+
+A Main.js layout wraps all blog views:
+
+```js
+import Head from 'next/head'
+import Wrapper from './Wrapper'
+import Nav from 'components/Nav'
+import Footer from 'components/Footer'
+
+export default ({ children, title = 'This is the default title' }) => (
+  <Wrapper>
+    <Head>
+      <title>{ title }</title>
+    </Head>
+    <header>
+      <Nav />
+    </header>
+    <main>
+      { children }
+    </main>
+    <Footer>
+      Footer
+    </Footer>
+  </Wrapper>
+)
+```
+
+## Rendering Posts
+
+The index.js page implements `getInitialProps` to fetch post data:
+
+```js
+IndexPage.getInitialProps = async ({ req }) => {
+  const res = await getPosts()
+  const json = await res.json()
+  return { posts: json }
+}
+```
+
+## Post Pages
+
+A Post.js page handles individual post viewing with dynamic routing via next-routes.
+
+Routes are defined in routes.js:
+
+```js
+routes.add('index', '/')
+routes.add('post', '/blog/:slug')
+```
+
+Express middleware is configured in server.js to handle routing.

@@ -1,0 +1,87 @@
+export const meta = {
+  title: "How to create responsive UI with styled-components",
+  author: "Andreas Reiterer",
+  date: "2017-07-25",
+  slug: "responsive-ui-with-styled-components",
+  description: "Learn to build a responsive 12-column grid system from scratch using styled-components and CSS media queries, no framework required.",
+  originalUrl: "https://medium.com/styled-components/how-to-create-responsive-ui-with-styled-components-c6b71a3ce172",
+};
+
+Building responsive web layouts using React and styled-components instead of relying on frameworks like Bootstrap. This tutorial demonstrates creating a simple grid view which allows us to split a website into columns.
+
+![Responsive UI with styled-components](https://cdn-images-1.medium.com/fit/c/800/533/1*kl8Vpj5-QUrzAVbzvSih3Q.jpeg)
+
+## How Responsive Grid Views Work
+
+### Basic Concept
+
+Responsive grids typically contain twelve columns totaling 100% width. Individual columns can merge to create wider sections. The mechanism involves `div` elements with equal widths that float left to appear in rows.
+
+```css
+.column {
+  width: 8.33%;
+  float: left;
+}
+```
+
+Flexbox offers a modern alternative to `float: left`, though older browser compatibility may be a consideration.
+
+### Column Spanning
+
+Rather than using a single column class, individual classes represent each possible span:
+
+```css
+[class*="col-"] {
+  float: left;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-3 {
+  width: 25%;
+}
+```
+
+### Mobile-First Approach with Media Queries
+
+Columns default to 100% width on small screens, then use media queries to adjust for larger viewports:
+
+```css
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+}
+```
+
+## Implementation with styled-components
+
+The implementation includes a `Row` component (to clear floats) and a `Column` component with default `float: left` and 100% width.
+
+The `Column` component accepts a `span` prop representing the number of columns to span. When set, it calculates the desired width percentage.
+
+## Advanced Grid: Multiple Breakpoints
+
+The enhanced version supports different column spans across breakpoints:
+
+- **xs:** up to 768px
+- **sm:** up to 992px
+- **md:** up to 1200px
+- **lg:** 1200px and larger
+
+Rather than calculating widths, the component generates complete width declarations. If a breakpoint lacks a column span, the next smaller breakpoint's width applies; otherwise, it defaults to 100%.
+
+## Conclusion
+
+This demonstrates creating a responsive grid with styled-components with basic functionality. Extensions could include margins, padding, and borders. The approach leverages native CSS media queries rather than JavaScript-based responsive libraries.
+
+For a more advanced alternative, check out [grid-styled](http://jxnblk.com/grid-styled/).

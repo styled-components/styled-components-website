@@ -1,11 +1,8 @@
 ## Existing CSS
 
-There are a couple of implementation details that you should be aware of, if you choose to use
-styled-components together with existing CSS.
+There are a couple of things to be aware of if you use styled-components together with existing CSS.
 
-styled-components generates an actual stylesheet with classes, and attaches those classes to
-the DOM nodes of styled components via the `className` prop.
-It injects the generated stylesheet at the end of the head of the document during runtime.
+styled-components injects a `<style>` tag at the end of `<head>`. Its rules may have lower source-order specificity than your existing stylesheets, depending on load order.
 
 ### Styling normal React components
 

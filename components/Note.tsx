@@ -1,35 +1,33 @@
 'use client';
 
 import styled from 'styled-components';
-import { blmGrey, blmLightGrey } from '../utils/colors';
-import { bodyFont, headerFont } from '../utils/fonts';
-import rem from '../utils/rem';
+import { theme, font } from '../utils/theme';
 import { SubHeader, Title } from './Layout';
 
 export const Note = styled.div`
-  font-family: ${bodyFont};
-  background: ${blmLightGrey};
-  padding: ${rem(7)} ${rem(10)} ${rem(5)} ${rem(14)};
-  border-left: ${rem(4)} solid ${blmGrey};
-  margin: ${rem(45)} 0;
-  border-radius: ${rem(3)};
+  font-family: ${font.sans};
+  background: ${theme.color.surface};
+  padding: ${theme.space[2]} ${theme.space[3]} ${theme.space[1]} ${theme.space[4]};
+  border-left: 4px solid ${theme.color.borderStrong};
+  margin: ${theme.space[10]} 0;
+  border-radius: ${theme.radius.md};
 
   > p {
-    margin: 0 0 ${rem(5)} 0;
+    margin: 0 0 ${theme.space[1]} 0;
   }
 
   ${SubHeader} + &, ${Title} + & {
-    margin-top: ${rem(35)};
+    margin-top: ${theme.space[8]};
   }
 `;
 
 const NoteLabel = styled.strong`
   display: block;
-  font-weight: 600;
-  font-family: ${headerFont};
+  font-weight: ${theme.fontWeight.semibold};
+  font-family: ${font.sans};
   text-transform: uppercase;
   font-size: 90%;
-  margin-bottom: ${rem(7)};
+  margin-bottom: ${theme.space[2]};
 `;
 
 export interface NoteWrapper {

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { palepink } from '../../utils/colors';
+import { theme } from '../../utils/theme';
 
 export const AlignCenter = styled.div`
   text-align: center;
@@ -15,14 +15,14 @@ export const ExampleButton = styled.button<{ $primary?: boolean }>`
   padding: 0.25em 1em;
   margin: 0.5em 1em;
   background: transparent;
-  color: ${palepink};
-  border: 2px solid ${palepink};
+  color: ${theme.color.brandPink};
+  border: 2px solid ${theme.color.brandPink};
 
   ${p =>
     p.$primary &&
     css`
-      background: ${palepink};
-      color: white;
+      background: ${theme.color.brandPink};
+      color: ${theme.color.heroText};
     `};
 `;
 
@@ -30,6 +30,6 @@ export const SecondButton = styled.button`
   border-radius: 3px;
   padding: 0.25em 1em;
   background: transparent;
-  color: ${palepink};
-  border: 2px solid ${palepink};
+  color: ${theme.color.brandPink};
+  border: 2px solid ${theme.color.brandPink};
 `;

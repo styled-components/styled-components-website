@@ -1,0 +1,63 @@
+export const meta = {
+  title: "v3.1.0: A massive performance boost and streaming server-side rendering support",
+  author: "Evan Jacobs",
+  date: "2018-01-26",
+  slug: "v3-1-0-streaming-ssr",
+  description: "v3.1.0 introduces insertRule-based CSS injection for up to 10-20x faster rendering in production, plus streaming server-side rendering support for React 16.",
+  originalUrl: "https://medium.com/styled-components/v3-1-0-such-perf-wow-many-streams-c45c434dbd03",
+};
+
+This release introduces two major improvements: a new CSS injection mechanism using the `insertRule` API for dramatically faster client-side rendering in production, and streaming server-side rendering support for improved Time-To-First-Byte performance.
+
+## Faster CSS Injection in Production
+
+We adopted the `insertRule` DOM API, which Sunil Pai discovered nearly two years prior. This approach enables significantly quicker CSS insertion compared to previous methods, though browser DevTools cannot edit these styles.
+
+We initially prioritized developer experience over performance, but as adoption grew with larger applications, style injection became a bottleneck for dynamic use cases. Reddit's frontend engineer Ryan Schwers contributed to implementing this optimization in v3.1.0.
+
+### Performance Results
+
+Initial mount time of the benchmark app was reduced by **~10x**, and re-render time was reduced by **~20x**! The benchmarks represent stress-testing scenarios rather than typical applications. Real-world measurements showed Time-To-First-Interactive improvements of hundreds of milliseconds in production deployments.
+
+![Performance comparison chart](https://cdn-images-1.medium.com/fit/c/800/1017/1*GaOQyktA0iQkF3yDExExgw.png)
+
+![Framework comparison](https://cdn-images-1.medium.com/fit/c/800/550/1*X0KamN6FwoOMfp-n0TZYsA.png)
+
+## Streaming Server-Side Rendering
+
+React v16 introduced streaming server-side rendering, allowing servers to send HTML progressively during rendering. This creates challenges for CSS-in-JS libraries that traditionally inject styles into the document head after rendering completes.
+
+Our solution interleaves `<style>` blocks with HTML output during component rendering, then consolidates these tags in the document head before client-side rehydration.
+
+### Server-Side Implementation
+
+```js
+import { renderToNodeStream } from 'react-dom/server'
+import styled, { ServerStyleSheet } from 'styled-components'
+
+res.write('<!DOCTYPE html><html><head><title>My Title</title></head><body><div id="root">')
+
+const sheet = new ServerStyleSheet()
+const jsx = sheet.collectStyles(<App />)
+
+const stream = sheet.interleaveWithNodeStream(
+  renderToNodeStream(jsx)
+)
+
+stream.pipe(res, { end: false })
+stream.on('end', () => res.end('</div></body></html>'))
+```
+
+### Client-Side Implementation
+
+```js
+import ReactDOM from 'react-dom'
+import { consolidateStreamedStyles } from 'styled-components'
+
+consolidateStreamedStyles()
+ReactDOM.hydrate(<App />, rootElem)
+```
+
+## Backward Compatibility
+
+The new version is backward-compatible with v2 and v1, offering a seamless upgrade path with numerous improvements integrated throughout the v3 release cycle.

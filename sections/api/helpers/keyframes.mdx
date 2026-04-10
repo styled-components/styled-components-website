@@ -14,7 +14,7 @@ A helper method to create keyframes for animations.
   </Row>
 </Table>
 
-Returns a Keyframes model, to be used in your animation declarations. You can use the `getName()` API on the returned model if you wish to obtain the generated animation name.
+Returns a Keyframes model, to be used in your animation declarations. Call `getName()` on the result if you need the animation name as a string (e.g., for use in `animation-name` outside a template literal).
 
 ```tsx
 import styled, { keyframes } from 'styled-components'

@@ -1,0 +1,191 @@
+export const meta = {
+  title: "Build Better Component Libraries with Styled System",
+  author: "Alan B Smith",
+  date: "2019-01-13",
+  slug: "build-better-component-libraries-with-styled-system",
+  description: "How Styled System brings constraint-based design to React component libraries, making it easier to build consistent, responsive UIs with props instead of custom CSS.",
+  originalUrl: "https://medium.com/styled-components/build-better-component-libraries-with-styled-system-4951653d54ee",
+};
+
+![](/images/blog/build-better-component-libraries-with-styled-system-5884bc2d.gif)
+
+*[styled-system logo](https://jxnblk.com/styled-system/)*
+
+### Introduction
+
+[Component-based design](https://medium.com/@_alanbsmith/component-based-design-168811e0c4ab) is an increasingly popular process for developing web interfaces. It was once common for organizations to rely on libraries such as [Bootstrap](https://getbootstrap.com/) or [Material UI](https://material-ui.com/). But with the advent of improved tooling, many teams today are building their own themes, component libraries, and design systems. This influx of design and development collaboration is generating [many new, exciting systems](https://adele.uxpin.com/). That said, rolling your own systems comes with its own challenges and pitfalls. A recent library, [styled-system](https://github.com/jxnblk/styled-system), is an effective tool for navigating some of these issues.
+
+This is an admittedly vast topic riddled with rabbit holes. So, I’d like to limit the scope of this article to four common problems I’ve found in less mature component libraries and how styled-system can help solve them.
+
+Before we dive in, I’d like to say thank you to [Brent Jackson](https://twitter.com/jxnblk), [John Otander](https://twitter.com/4lpine), and [everyone else](https://github.com/jxnblk/styled-system/graphs/contributors) who contributes to styled-system. 🙏
+
+### A Brief Overview of Styled System
+***Note: This post is *not* a technical overview of **styled-system. *[*Varun Vachhar*](https://twitter.com/winkerVSbecks)* has already written an *[*excellent article*](https://varun.ca/styled-system/)* on that.*
+If you’re not familiar, [styled-system](https://github.com/jxnblk/styled-system) is a library for adding theme-based style props to components using CSS-in-JS and React. It accomplishes this via [style functions](https://github.com/jxnblk/styled-system/blob/master/docs/how-it-works.md), and allows you to build components like this:
+
+```js
+// from styled-system's README
+import styled from 'styled-components'
+import { space, width, fontSize, color } from 'styled-system'
+
+// Add styled-system functions to your component
+const Box = styled.div`
+  ${space}
+  ${width}
+  ${fontSize}
+  ${color}
+`
+```
+
+and implement them like this:
+
+```js
+
+  Hello, World!
+
+```
+
+> *Note: These examples are using *[*styled-components*](https://github.com/styled-components)*, but you could also use other CSS-in-JS libraries such as *[*Emotion*](https://github.com/emotion-js/emotion)*.*
+
+The library is very simple on its face, but it provides a powerful API that solves a lot of common component library problems. Let’s take a closer look at how.
+
+### An Ideal Structure
+
+Components living in a shared library are inherently different from most application-specific components. While they may have different levels of reusability, they should be designed to look and behave consistently regardless of their application context. Also, they are generally created with reusability and extensibility in mind. I like to use this diagram to describe different component types:
+
+![](/images/blog/build-better-component-libraries-with-styled-system-44169cda.png)
+
+*types of components in a shared library*
+
+Example components for the diagram above:
+
+- Low** complexity & **High** reusability: Buttons, Text, Labels & Grid
+- **Medium** complexity & **Medium** reusability: Input fields with labels and validation text
+- **High** complexity & **Low** reusability: Date picker
+While your client applications probably have more context-specific components and fewer reusable components, a shared library should be the opposite. You generally want to have more small, interchangeable components that you can combine in different ways to create more complex components. As component complexity increases, reusability decreases. Because of that, we want to maximize our least complex components. While this is the ideal, it’s common for libraries to adopt patterns that work against it.
+
+### Common Problems & Styled System Solutions
+
+It’s important to note that the problems listed below usually don’t cause components to fail dramatically. That’s part of the reason they are so common. Instead, they gradually introduce friction into the system. Components slowly become more challenging to use and extend, and the library becomes more difficult to maintain. Updates become more time-intensive and side-effects are less predictable.
+
+> Note: [Brent Jackson](https://twitter.com/jxnblk) also discusses several of the issues mentioned [here](http://jxnblk.com/writing/posts/defining-component-apis-in-react/).
+
+#### Second-Class Theming
+
+If you’re not familiar, CSS-in-JS libraries such as styled-components or Emotion, a theme object is passed to a Providercomponent, which makes the theme's values available to any component using those libraries. Often, values for colors, font sizes, and spacing live in this theme. Theming is one of the most powerful tools in CSS-in-JS libraries, but it is also often underutilized.
+
+While theme values are passed in as props, they can be overlooked. A developer unfamiliar with the theme could easily use one-off styles for spacing instead of using theme-based values. Or, perhaps they add a custom color or font-size without referring to documentation.
+
+Styled System, in contrast, makes the theme a first-class citizen:
+
+```js
+
+  Card Text
+
+```
+
+By adding spacing props to Card, we make it very simple for developers to hook into theme-based values by default. There's no need to inspect the theme object or to read documentation explaining the reasoning behind the spacing scale. The best way to encourage and maintain consistency is by making the right choices easy.
+
+Related to this, styled-system’s style functions are designed to use scalar values. Many of the building blocks of a design system are scales: spacing, font sizes and weights, colors, shadows, motion, etc. By incorporating scales into its style functions, styled-system makes it really simple to navigate along theme scales without having to remember particular values.
+
+Using our example from above:
+
+```js
+
+  Card Text
+
+```
+
+Developers can easily move two steps up from the base padding value without having to know the particular value.
+
+#### Inconsistent Props
+
+Another common problem is inconsistent prop names and behaviors across components. For example:
+
+These two components could have been created by different developers, or perhaps the same developer who decided to change the API over time. It’s difficult to know what thin is doing in either component without consulting the documentation. And it's even more challenging to know whether thin behaves the same in ButtonSecondary and ButtonPrimary. Documentation is essential to building a quality library, but these inconsistencies introduce friction. A good system should teach people how to use it as they interact with it.
+
+> *Note: We’re very fortunate to have a great ecosystem of documentation tools for components. If you’re unfamiliar, check out *[*react-styleguidist*](https://github.com/styleguidist/react-styleguidist)*, *[*storybook*](https://github.com/storybooks/storybook)*, *[*MDX JS*](https://github.com/mdx-js/mdx)*, and *[*Docz*](https://www.docz.site/)*.*
+
+Keeping prop names and behaviors consistent across components is very challenging to do on your own. But Styled System solves this with its built-in consistent style functions:
+
+After using p once, I can know its behavior. This allows me to have confidence if I need to update it, and I can use pacross any component using the space style function.
+
+> *Note: There is definitely a use case for props such as **type="", but I would recommend limiting those to component-specific appearance and behavior alterations.*
+
+Consistent component APIs may seem like a small issue, but it becomes increasingly important as your library grows.
+
+#### Lack of Component Hierarchy
+
+A third problem I often see is a lack of component hierarchy. Instead of a pyramid structure in the diagram above, most, if not all, components are siblings and have no smaller, shared components. This lack of hierarchy creates duplication and makes predictable component updates very challenging.
+
+> Note: If you’re not familiar with ‘component hierarchy,’ I would recommend reading [Brad Frost](https://twitter.com/brad_frost)’s [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) and [Subatomic Design Systems](https://daneden.me/2018/01/05/subatomic-design-systems/) by [Daniel Eden](https://twitter.com/_dte)
+
+For example:
+
+```js
+This is a card
+
+  
+    Hello!
+  
+
+```
+
+If Card.Text isn't extending Text, we now have to update both to keep them in sync. In contrast, styled-system's API encourages you to first build small, modular components that can be easily extended and modified.
+
+#### Lack of Component Extensibility
+
+Related to all of the above, I often see problems with extensibility. Either the component API is too rigid or the component’s internal complexity makes it too fragile to predictably modify or extend.
+
+Styled System’s API is built to be highly extensible by default. If Card has a padding of 2 by default, I can easily modify it for a particular use case:
+
+```js
+
+  
+    Default Card
+  
+
+  
+    Card with Deluxe Padding™
+  
+
+```
+
+It also lends itself to building our simplest components first. If we already have Card built, we can easily create a more complex component, ProfileCard on top of it. This is also something we get from CSS-in-JS libraries, but styled-system makes the extension more declarative.
+
+### Conclusion
+
+Thanks for reading! I hope you found this helpful. Styled System provides a simple API for solving common component library problems. It reduces friction in your design system by tightly coupling components to the theme, provides a consistent API across all components, and keeps components extensible. If you’re starting a new React component library or looking for a way to improve an existing one, I’d highly recommend trying it out.
+
+You can find me on [Twitter](https://twitter.com/_alanbsmith) and [GitHub](https://github.com/alanbsmith/). If you enjoyed this, you should also subscribe to [my newsletter](https://tinyletter.com/alanbsmith)!
+
+### References
+
+#### Libraries
+
+- [styled-system](https://github.com/jxnblk/styled-system)
+- [styled-components](https://github.com/styled-components)
+- [Emotion](https://github.com/emotion-js/emotion)
+- [Bootstrap](https://getbootstrap.com/)
+- [Material UI](https://material-ui.com/)
+- [React Styleguidist](https://github.com/styleguidist/react-styleguidist)
+- [Storybook](https://github.com/storybooks/storybook)
+- [MDX JS](https://github.com/mdx-js/mdx)
+- [Docz](https://www.docz.site/)
+#### Resources
+
+- [Component-based Design](https://medium.com/@_alanbsmith/component-based-design-168811e0c4ab)
+- [Adele Design System Repo](https://adele.uxpin.com/)
+- [Component-based Design with Styled System](https://varun.ca/styled-system/)
+- [How Styled System works](https://github.com/jxnblk/styled-system/blob/master/docs/how-it-works.md)
+- [Defining Component APIs in React](http://jxnblk.com/writing/posts/defining-component-apis-in-react/)
+- [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
+- [Subatomic Design Systems](https://daneden.me/2018/01/05/subatomic-design-systems/)
+#### People
+
+- [Brent Jackson](https://twitter.com/jxnblk)
+- [John Otander](https://twitter.com/4lpine)
+- [Styled System contributors](https://github.com/jxnblk/styled-system/graphs/contributors)
+- [Varun Vachhar](https://twitter.com/winkerVSbecks)
+- [Brad Frost](https://twitter.com/brad_frost)
+- [Daniel Eden](https://twitter.com/_dte)

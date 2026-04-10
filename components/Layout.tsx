@@ -1,14 +1,11 @@
 'use client';
 
 import styled, { css } from 'styled-components';
-import { blmMetal } from '../utils/colors';
-import { bodyFont, headerFont } from '../utils/fonts';
+import { theme, font } from '../utils/theme';
 import { mobile } from '../utils/media';
-import rem from '../utils/rem';
-import { sidebarWidth } from '../utils/sizes';
 
 export const Container = styled.div`
-  padding-left: ${rem(sidebarWidth)};
+  padding-left: ${theme.layout.sidebar};
 
   ${mobile(css`
     padding-left: 0;
@@ -17,11 +14,14 @@ export const Container = styled.div`
 
 export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean; children?: React.ReactNode }>`
   box-sizing: border-box;
-  font-family: ${bodyFont};
+  font-family: ${font.sans};
   margin: 0 auto;
-  max-width: 120ch;
-  padding: ${rem(90)} ${rem(60)} 0 ${rem(60)};
+  max-width: ${theme.layout.contentWidth};
+  padding: ${theme.space[16]} ${theme.layout.gutterFluid};
   transition: transform 150ms ease-out;
+  width: 100%;
+  container-type: inline-size;
+  container-name: content;
 
   @layer base {
     p,
@@ -32,24 +32,28 @@ export const Content = styled.div<{ $hero?: boolean; $moveRight?: boolean; child
 
   ${p =>
     mobile(css`
-      padding: ${rem(100)} ${rem(36)} ${rem(30)} ${rem(36)};
-      transform: translateX(${p.$moveRight ? rem(sidebarWidth) : 0});
+      padding: ${theme.space[20]} ${theme.layout.gutter} ${theme.space[6]} ${theme.layout.gutter};
+      transform: translateX(${p.$moveRight ? theme.layout.sidebar : '0'});
     `)};
 
   ${p =>
-    p.$hero &&
-    css`
-      font-family: ${headerFont};
-    `};
+    p.$hero
+      ? css`
+          width: auto;
+          container-type: normal;
+        `
+      : ''};
 `;
 
 export const Title = styled.h1`
   text-align: left;
   width: 100%;
-  color: ${blmMetal};
-  font-size: ${rem(42)};
-  font-weight: bold;
-  font-family: ${headerFont};
+  color: ${theme.color.text};
+  font-size: ${theme.text['3xl']};
+  font-weight: ${theme.fontWeight.display};
+  font-family: ${font.display};
+  line-height: ${theme.leading.tight};
+  margin-bottom: 0.4em;
 
   + h2 {
     margin-top: -0.5em;
@@ -57,30 +61,33 @@ export const Title = styled.h1`
 `;
 
 export const Header = styled.h2`
-  font-size: ${rem(32)};
-  font-weight: 600;
-  font-family: ${headerFont};
-  margin: 2em 0 1em;
+  font-size: ${theme.text.xl};
+  font-weight: ${theme.fontWeight.bold};
+  font-family: ${font.display};
+  margin: 2em 0 0.75em;
 
-  + h3 {
-    margin-top: -0.5em;
+  + h2,
+  + h3,
+  + h4 {
+    margin-top: 0.5em;
   }
 `;
 
 export const SubHeader = styled.h3`
-  margin: 2em 0 1em;
-  font-size: ${rem(24)};
-  font-weight: 600;
-  font-family: ${headerFont};
+  margin: 1.75em 0 0.75em;
+  font-size: ${theme.text.lg};
+  font-weight: ${theme.fontWeight.semibold};
+  font-family: ${font.sans};
 
+  + h3,
   + h4 {
-    margin-top: -0.5em;
+    margin-top: 0.5em;
   }
 `;
 
 export const TertiaryHeader = styled.h4`
-  margin: 2em 0 1em;
-  font-size: ${rem(18)};
-  font-weight: 600;
-  font-family: ${headerFont};
+  margin: 1.5em 0 0.5em;
+  font-size: ${theme.text.md};
+  font-weight: ${theme.fontWeight.semibold};
+  font-family: ${font.sans};
 `;

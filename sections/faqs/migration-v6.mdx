@@ -1,6 +1,6 @@
 ## What do I need to do to migrate to v6?
 
-> v6.3.0+: Native React Server Components (RSC) support was added. Styled components now work in RSC without `'use client'` directives or registry setup. See the [RSC section](/docs/advanced#react-server-components) for details.
+> v6.3+ adds native React Server Components (RSC) support — styled components work in RSC without `'use client'` directives or registry setup. v6.4 expands RSC coverage with `createTheme()`, `stylisPluginRSC`, and first-class `StyleSheetManager` behavior. See [Notable changes in v6.4](#notable-changes-in-v64) below and the [RSC section](/docs/advanced#react-server-components) for details.
 
 First, let's start by updating the necessary packages to their latest versions.
 
@@ -146,7 +146,7 @@ Experimental `renderToPipeableStream` support was added for React 18+ streaming 
 
 #### React Server Components (v6.3.0)
 
-Styled components now work in RSC environments without `'use client'` directives. `ThemeProvider` and `StyleSheetManager` become no-ops in RSC. Use CSS custom properties for theming instead of `ThemeProvider` in server components. See the [RSC section](/docs/advanced#react-server-components) for best practices.
+Styled components now work in RSC environments without `'use client'` directives. `ThemeProvider` is a pass-through in RSC (no React context). `StyleSheetManager` works in RSC (v6.4+) — `stylisPlugins` and `shouldForwardProp` are applied. Use [`createTheme()`](/docs/api#createtheme) or CSS custom properties for theming instead of `ThemeProvider` in server components. See the [RSC section](/docs/advanced#react-server-components) for best practices.
 
 #### New HTML & SVG element helpers (v6.3.0)
 
@@ -155,3 +155,56 @@ Added `styled.search`, `styled.slot`, `styled.template`, and SVG filter primitiv
 #### CSS custom properties in TypeScript (v6.3.0)
 
 `--var` style props now work without TypeScript errors in `.attrs()` and JSX `style` props.
+
+### Notable changes in v6.4
+
+#### IE11 build target removed
+
+Internet Explorer 11 has been unsupported on v6 [since August 2021](https://github.com/styled-components/styled-components/issues/3333), when the maintainers publicly committed to dropping it for the v6 line. v6.0–6.3 still shipped an ES5 build as an incidental side-effect of the TypeScript target; v6.4 aligns the build to ES2015 to match the stated policy and [recover the bytes](https://github.com/styled-components/styled-components/issues/4292) that were being spent on an unsupported target. React 18 (the peer floor on v6) dropped IE11 itself, and Microsoft retired IE11 in June 2022.
+
+If you still need to ship to IE11 in 2026, stay on v5. See [Browser Support](/docs/faqs#which-browsers-are-supported) for the full matrix.
+
+#### `.attrs()` provides optional props
+
+Props that `.attrs()` supplies a value for are now automatically optional on the component's type. See [Attaching additional props](/docs/basics#attaching-additional-props).
+
+#### Immutable attrs callback props
+
+The props object passed to an `.attrs(props => ...)` callback is now an immutable snapshot. If you were mutating it to pass values to later attrs layers, switch to returning those values from the callback instead:
+
+```tsx
+// Before (silently worked, now a no-op)
+styled.button.attrs(props => {
+  props.type = 'button';
+  return {};
+})``;
+
+// After
+styled.button.attrs(props => ({
+  type: 'button',
+}))``;
+```
+
+#### `createTheme()` for RSC-compatible theming
+
+A new `createTheme(defaultTheme, options?)` helper produces a theme object backed by CSS custom properties. It works in both client components and React Server Components — unlike `ThemeProvider`, which is a pass-through in RSC. See the [`createTheme` API reference](/docs/api#createtheme).
+
+#### `StyleSheetManager` works in RSC
+
+Previously a no-op outside client components, `StyleSheetManager` now applies its `stylisPlugins`, `shouldForwardProp`, and `nonce` props in RSC environments.
+
+#### `stylisPluginRSC` for child-index selectors
+
+A new opt-in stylis plugin that rewrites `:first-child`, `:last-child`, and `:nth-child()` selectors so they ignore inline `<style>` tags emitted by RSC. See the [child-index selector caveat](/docs/advanced#child-index-selector-caveat) for when you need it.
+
+#### CSP nonce auto-detection
+
+styled-components now reads a CSP nonce from `<StyleSheetManager nonce>`, `new ServerStyleSheet({ nonce })`, `<meta property="csp-nonce">`, `<meta name="sc-nonce">`, or `__webpack_nonce__`. See [Security](/docs/advanced#content-security-policy-csp-nonces).
+
+#### Faster re-renders
+
+Styled components skip style work entirely on re-render when their props and theme are unchanged, so placing them under frequently-rerendering parents no longer incurs a per-render cost.
+
+#### React Native fixes
+
+`react-native` is now an optional peer dependency. React Native apps using Metro/Expo with `nanoid` no longer crash on startup (see [#5705](https://github.com/styled-components/styled-components/issues/5705)).

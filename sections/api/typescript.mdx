@@ -195,11 +195,9 @@ const LogoStyled = styled(Logo)`
 `;
 ```
 
-### Caveat with Function Components
+### Function Components
 
-To use function components and have typechecking for the props you'll need to define
-the component alongside with its type. This is not special to styled-components, this is just
-how React works:
+Function components work with `styled()` as long as props are typed (inline or via an interface) and `className` is accepted:
 
 ```tsx
 interface BoxProps {
