@@ -426,12 +426,32 @@ function computeSingleFace(solid: (typeof SOLIDS)[number], fi: number, divIdx: n
   let normal = normalize(cross(sub(verts[1], verts[0]), sub(verts[2], verts[0])));
   if (dot3(center, normal) < 0) normal = [-normal[0], -normal[1], -normal[2]];
 
-  // Align in-plane rotation to slot's U vector (projected onto this face's plane)
+  // Align in-plane rotation to the face edge nearest to the slot's U vector.
+  // First project slot U onto the face plane, then snap to the closest edge
+  // direction (respecting face symmetry). This prevents faces with high
+  // symmetry (squares, pentagons) from appearing tilted at rest.
   const d = dot3(slot.u, normal);
   const projected: Vec3 = [slot.u[0] - d * normal[0], slot.u[1] - d * normal[1], slot.u[2] - d * normal[2]];
   const pLen = Math.hypot(...projected);
-  const u: Vec3 =
-    pLen > 0.001 ? [projected[0] / pLen, projected[1] / pLen, projected[2] / pLen] : normalize(sub(verts[1], verts[0]));
+  let u: Vec3;
+  if (pLen > 0.001) {
+    const projU: Vec3 = [projected[0] / pLen, projected[1] / pLen, projected[2] / pLen];
+    // Snap to nearest face edge direction
+    let bestDot = -2;
+    let bestEdge: Vec3 = projU;
+    for (let ei = 0; ei < n; ei++) {
+      const edge = normalize(sub(verts[(ei + 1) % n], verts[ei]));
+      const alignment = Math.abs(dot3(projU, edge));
+      if (alignment > bestDot) {
+        bestDot = alignment;
+        // Preserve sign: if projected U opposes the edge, flip
+        bestEdge = dot3(projU, edge) >= 0 ? edge : [-edge[0], -edge[1], -edge[2]];
+      }
+    }
+    u = bestEdge;
+  } else {
+    u = normalize(sub(verts[1], verts[0]));
+  }
   const v: Vec3 = normalize(cross(normal, u));
 
   // Project onto face's OWN plane (correct geometry)
@@ -500,6 +520,46 @@ function computeConfigs(solidIdx: number): FaceConfig[] {
 
 const ALL_CONFIGS = SOLIDS.map((_, i) => computeConfigs(i));
 
+// Pre-computed active face indices and action slot counts per solid
+const ALL_ACTIVE_INDICES: number[][] = ALL_CONFIGS.map(configs =>
+  configs.reduce<number[]>((acc, c, i) => {
+    if (c.active) acc.push(i);
+    return acc;
+  }, [])
+);
+
+// Pre-computed size-dependent style strings (translate, rotate, stagger, iconSize)
+// keyed by solidIndex:size. Avoids ~80 toFixed() calls + string allocations per render.
+const solidStyleCache = new Map<string, { translate: string; rotate: string; stagger: string; iconSize: string }[]>();
+
+// Per-face depth bias: push each face outward along its normal by a tiny
+// unique amount (i * DEPTH_BIAS_PX). Breaks z-degeneracy for the painter's
+// algorithm when two faces are edge-on, preventing flicker without needing
+// backface-visibility:hidden. Face centers point along the outward normal
+// for platonic solids, so scaling the translation achieves the push.
+const DEPTH_BIAS_PX = 0.01;
+
+function getSolidStyles(solidIndex: number, size: number) {
+  const key = `${solidIndex}:${size}`;
+  const cached = solidStyleCache.get(key);
+  if (cached) return cached;
+  const s = size * SCALE;
+  const configs = ALL_CONFIGS[solidIndex];
+  const styles = configs.map((face, i) => {
+    // Normalize the face center to get outward direction, then add depth bias
+    const cLen = Math.hypot(face.tx, face.ty, face.tz);
+    const bias = cLen > 0.001 ? (i * DEPTH_BIAS_PX) / cLen : 0;
+    return {
+      translate: `${(face.tx * (s + bias)).toFixed(3)}px ${(face.ty * (s + bias)).toFixed(3)}px ${(face.tz * (s + bias)).toFixed(3)}px`,
+      rotate: `${face.ax.toFixed(6)} ${face.ay.toFixed(6)} ${face.az.toFixed(6)} ${face.angle.toFixed(3)}deg`,
+      stagger: `${((i / (MAX_FACES - 1)) * STAGGER_MS * 0.3).toFixed(2)}ms`,
+      iconSize: `${(face.radius * size * 0.5).toFixed(3)}px`,
+    };
+  });
+  solidStyleCache.set(key, styles);
+  return styles;
+}
+
 // ---------------------------------------------------------------------------
 // Styled components
 // ---------------------------------------------------------------------------
@@ -543,7 +603,7 @@ type TransitionPhase = 'emerging' | 'persisting' | 'collapsing' | 'static';
 
 const EASE = 'cubic-bezier(0.28, 0.11, 0.32, 1)';
 
-const Face = styled.div<{ $phase: TransitionPhase; $active: boolean; $morphing: boolean }>`
+const Face = styled.div<{ $active: boolean }>`
   position: absolute;
   inset: 0;
   /* No backface-visibility: hidden — during solid-to-solid morph transitions
@@ -552,18 +612,6 @@ const Face = styled.div<{ $phase: TransitionPhase; $active: boolean; $morphing: 
      via preserve-3d occludes back faces behind opaque front faces naturally. */
   pointer-events: ${p => (p.$active ? 'auto' : 'none')};
   opacity: ${p => (p.$active ? 1 : 0)};
-  scale: ${p => (p.$morphing ? MORPH_SCALE : 1)};
-  transition: ${p => {
-    const base = p.$phase === 'persisting' ? STAGGER_MS * 0.6 : 0;
-    return [
-      `clip-path ${MORPH_MS}ms ${EASE} calc(${base}ms + var(--stagger))`,
-      `translate ${MORPH_MS}ms ${EASE} calc(${base}ms + var(--stagger))`,
-      `rotate ${MORPH_MS}ms ${EASE} calc(${base}ms + var(--stagger))`,
-      `opacity ${MORPH_MS * 0.6}ms ${EASE} calc(${base}ms + var(--stagger))`,
-      `background 600ms ease-in-out`,
-      `scale ${p.$morphing ? MORPH_MS * 0.3 : MORPH_MS * 0.8}ms ${EASE}`,
-    ].join(', ');
-  }};
 
   &::after {
     content: '';
@@ -855,7 +903,6 @@ export default function PlatonicLogo({
   const prevConfigsRef = useRef(configs);
   const [morphing, setMorphing] = useState(false);
   const hasMountedRef = useRef(false);
-  const s = size * SCALE;
 
   useEffect(() => {
     if (!hasMountedRef.current) {
@@ -879,9 +926,9 @@ export default function PlatonicLogo({
   }, []);
 
   // --- Face action handler (ref so pointer effect always sees latest state) ---
+  const activeIndices = ALL_ACTIVE_INDICES[solidIndex];
   const handleFaceAction = (actionIdx: number) => {
-    const activeFaces = configs.filter(f => f.active);
-    const actions = getActionsForFaceCount(activeFaces.length, solidIndex, prefs);
+    const actions = getActionsForFaceCount(activeIndices.length, solidIndex, prefs);
     const action = actions[actionIdx];
     if (!action) return;
 
@@ -1003,7 +1050,7 @@ export default function PlatonicLogo({
     };
 
     scene.addEventListener('pointerdown', onPointerDown);
-    scene.addEventListener('pointermove', onPointerMove);
+    scene.addEventListener('pointermove', onPointerMove, { passive: true });
     scene.addEventListener('pointerup', onPointerUp);
     scene.addEventListener('pointercancel', onPointerUp);
     return () => {
@@ -1011,6 +1058,7 @@ export default function PlatonicLogo({
       scene.removeEventListener('pointermove', onPointerMove);
       scene.removeEventListener('pointerup', onPointerUp);
       scene.removeEventListener('pointercancel', onPointerUp);
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
     };
   }, []);
 
@@ -1018,17 +1066,14 @@ export default function PlatonicLogo({
     prevConfigsRef.current = configs;
   }, [configs]);
 
-  // Build action assignments for active faces
-  const activeFaces = configs.filter(f => f.active);
-  const actions = getActionsForFaceCount(activeFaces.length, solidIndex, prefs);
-  let actionAssignIdx = 0;
+  // Build action assignments for active faces (using precomputed active indices)
+  const actions = getActionsForFaceCount(activeIndices.length, solidIndex, prefs);
   const faceActionMap = new Map<number, { action: FaceAction; idx: number }>();
-  for (let i = 0; i < configs.length; i++) {
-    if (configs[i].active && actionAssignIdx < actions.length) {
-      faceActionMap.set(i, { action: actions[actionAssignIdx], idx: actionAssignIdx });
-      actionAssignIdx++;
-    }
+  for (let ai = 0; ai < Math.min(activeIndices.length, actions.length); ai++) {
+    faceActionMap.set(activeIndices[ai], { action: actions[ai], idx: ai });
   }
+
+  const slotStyles = getSolidStyles(solidIndex, size);
 
   return (
     <Wrapper className={className}>
@@ -1044,15 +1089,30 @@ export default function PlatonicLogo({
                   : wasActive && !face.active
                     ? 'collapsing'
                     : 'static';
-            const stagger = (i / (MAX_FACES - 1)) * STAGGER_MS * 0.3;
             const mapped = faceActionMap.get(i);
+            const cachedStyle = slotStyles[i];
+
+            // Geometry transitions activate when faces are emerging/persisting/
+            // collapsing (phase !== 'static') OR during the scale bounce
+            // (morphing). At rest, only background + scale transitions remain,
+            // preventing Safari from re-evaluating timing each rAF frame.
+            const isTransitioning = phase !== 'static' || morphing;
+            const base = phase === 'persisting' ? STAGGER_MS * 0.6 : 0;
+            const transition = isTransitioning
+              ? [
+                  `clip-path ${MORPH_MS}ms ${EASE} calc(${base}ms + var(--stagger))`,
+                  `translate ${MORPH_MS}ms ${EASE} calc(${base}ms + var(--stagger))`,
+                  `rotate ${MORPH_MS}ms ${EASE} calc(${base}ms + var(--stagger))`,
+                  `opacity ${MORPH_MS * 0.6}ms ${EASE} calc(${base}ms + var(--stagger))`,
+                  `background 600ms ease-in-out`,
+                  `scale ${morphing ? MORPH_MS * 0.3 : MORPH_MS * 0.8}ms ${EASE}`,
+                ].join(', ')
+              : 'background 600ms ease-in-out';
 
             return (
               <Face
                 key={i}
-                $phase={phase}
                 $active={face.active}
-                $morphing={morphing}
                 data-face-action={mapped ? mapped.idx : undefined}
                 style={
                   {
@@ -1062,15 +1122,17 @@ export default function PlatonicLogo({
                         ? `color-mix(in oklch, ${theme.palette[face.paletteStep]}, transparent 40%)`
                         : theme.palette[face.paletteStep]
                       : 'transparent',
-                    translate: `${(face.tx * s).toFixed(3)}px ${(face.ty * s).toFixed(3)}px ${(face.tz * s).toFixed(3)}px`,
-                    rotate: `${face.ax.toFixed(6)} ${face.ay.toFixed(6)} ${face.az.toFixed(6)} ${face.angle.toFixed(3)}deg`,
-                    '--stagger': `${stagger}ms`,
+                    translate: cachedStyle.translate,
+                    rotate: cachedStyle.rotate,
+                    scale: morphing ? MORPH_SCALE : 1,
+                    transition,
+                    '--stagger': cachedStyle.stagger,
                     '--face-opaque': face.active ? theme.palette[face.paletteStep] : 'transparent',
                   } as React.CSSProperties
                 }
               >
                 {mapped && face.active && size >= 100 && (
-                  <FaceIcon style={{ width: `${face.radius * size * 0.5}px`, height: `${face.radius * size * 0.5}px` }}>
+                  <FaceIcon style={{ width: cachedStyle.iconSize, height: cachedStyle.iconSize }}>
                     {mapped.action.icon}
                   </FaceIcon>
                 )}

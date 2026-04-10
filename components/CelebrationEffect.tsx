@@ -80,12 +80,6 @@ const PropertyRegistrations = createGlobalStyle`
     inherits: false;
     initial-value: 0;
   }
-
-  @property --trail-progress {
-    syntax: '<number>';
-    inherits: false;
-    initial-value: 0;
-  }
 `;
 
 // ---------------------------------------------------------------------------
@@ -105,9 +99,19 @@ const burstAnim = keyframes`
 // Flash peak at 92% matches the late-ignition point (particle delay =
 // duration - 0.1). Shadow count stays uniform across stops so text-shadow
 // interpolates smoothly instead of flickering between shadow counts.
+//
+// translate is baked into each keyframe stop using calc() with static
+// per-instance custom properties (--start-x/y, --end-x/y) instead of
+// animating via @property --trail-progress, which Safari doesn't reliably
+// animate inside translate calc expressions.
+// X: linear interpolation at each stop (p).
+// Y: quadratic ease-out 2p-p² evaluated at each stop — decelerating rise.
+// Y uses quadratic ease-out: f(p) = 2p - p². Evaluated at each stop:
+// p=0: 0, p=0.2: 0.36, p=0.4: 0.64, p=0.6: 0.84, p=0.8: 0.96,
+// p=0.86: 0.9804, p=0.92: 0.9936, p=1: 1
 const trailAnim = keyframes`
   0% {
-    --trail-progress: 0;
+    translate: var(--start-x) var(--start-y);
     opacity: 0.3;
     text-shadow:
       0 0 6px var(--particle-color),
@@ -115,7 +119,30 @@ const trailAnim = keyframes`
       0 0 0 transparent;
     scale: 1;
   }
+  20% {
+    translate:
+      calc(var(--start-x) + (var(--end-x) - var(--start-x)) * 0.2)
+      calc(var(--start-y) + (var(--end-y) - var(--start-y)) * 0.36);
+  }
+  40% {
+    translate:
+      calc(var(--start-x) + (var(--end-x) - var(--start-x)) * 0.4)
+      calc(var(--start-y) + (var(--end-y) - var(--start-y)) * 0.64);
+  }
+  60% {
+    translate:
+      calc(var(--start-x) + (var(--end-x) - var(--start-x)) * 0.6)
+      calc(var(--start-y) + (var(--end-y) - var(--start-y)) * 0.84);
+  }
+  80% {
+    translate:
+      calc(var(--start-x) + (var(--end-x) - var(--start-x)) * 0.8)
+      calc(var(--start-y) + (var(--end-y) - var(--start-y)) * 0.96);
+  }
   86% {
+    translate:
+      calc(var(--start-x) + (var(--end-x) - var(--start-x)) * 0.86)
+      calc(var(--start-y) + (var(--end-y) - var(--start-y)) * 0.9804);
     opacity: 1;
     text-shadow:
       0 0 10px var(--particle-color),
@@ -124,6 +151,9 @@ const trailAnim = keyframes`
     scale: 1.05;
   }
   92% {
+    translate:
+      calc(var(--start-x) + (var(--end-x) - var(--start-x)) * 0.92)
+      calc(var(--start-y) + (var(--end-y) - var(--start-y)) * 0.9936);
     opacity: 1;
     text-shadow:
       0 0 20px var(--particle-color),
@@ -132,7 +162,7 @@ const trailAnim = keyframes`
     scale: 1.3;
   }
   100% {
-    --trail-progress: 1;
+    translate: var(--end-x) var(--end-y);
     opacity: 0;
     text-shadow:
       0 0 4px var(--particle-color),
@@ -185,13 +215,6 @@ const Trail = styled.span.attrs<{
   left: 0;
   font-family: monospace;
   color: var(--particle-color);
-  /* X: linear interpolation. Y: quadratic ease-out (2p - p²) — decelerating
-     rise, zero velocity at apex, exactly how gravity slows a launched shell. */
-  translate: calc(var(--start-x) + (var(--end-x) - var(--start-x)) * var(--trail-progress))
-    calc(
-      var(--start-y) + (var(--end-y) - var(--start-y)) *
-        (2 * var(--trail-progress) - var(--trail-progress) * var(--trail-progress))
-    );
   animation: ${trailAnim} linear forwards;
   will-change: translate, opacity, scale;
 `;
@@ -239,10 +262,7 @@ const particleBase = css`
 
 const ParticleCharBase = styled.span.attrs<ParticleAttrs>(particleAttrs)`
   ${particleBase}
-  text-shadow:
-    0 0 8px var(--particle-color),
-    0 0 24px var(--particle-color),
-    0 0 60px var(--particle-color);
+  text-shadow: 0 0 10px var(--particle-color);
 `;
 
 const ParticleChar = React.memo(ParticleCharBase);
@@ -288,14 +308,12 @@ export default function CelebrationEffect() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     function spawnFirework() {
-      const el = overlayRef.current;
-      if (!el) return;
+      if (!overlayRef.current) return;
 
       const tier = getTier();
       const cfg = TIER_CONFIG[tier];
-      const rect = el.getBoundingClientRect();
-      const w = rect.width;
-      const h = rect.height;
+      const w = window.innerWidth;
+      const h = window.innerHeight;
 
       const burstX = rand(w * 0.15, w * 0.85);
       // Launch position: offset sideways from the burst point so the shell
