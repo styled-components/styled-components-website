@@ -1,33 +1,43 @@
 'use client';
 
-import { Language, CodeBlock as RLR, CodeBlockProps as RLRProps } from 'react-live-runner';
 import styled from 'styled-components';
-import { monospace } from '../utils/fonts';
 import rem from '../utils/rem';
+import { theme } from '../utils/theme';
 import { Note } from './Note';
-import theme from './prismTheme';
+import { HighlightedCode } from './liveHighlight';
+import { codeTextMixin } from './codeMixins';
 
-export interface CodeBlockProps extends RLRProps {
+export interface CodeBlockProps {
   code: string;
+  language?: string;
+  className?: string;
 }
 
-const CodeBlock = styled(({ code, ...rest }: CodeBlockProps) => {
-  const language = (rest.language || 'clike').toLowerCase().trim() as Language;
-
+/**
+ * Static (read-only) code block for docs fenced code, shell snippets,
+ * and similar. Shares `codeTextMixin` with the interactive editors so
+ * font weight, token colors, and family stay in lockstep across both
+ * renderers, and delegates to `HighlightedCode` so the tag-depth,
+ * optional-chain, and property-access-depth annotators apply here too.
+ */
+const CodeBlock = styled(({ code, language = 'clike', className }: CodeBlockProps) => {
   return (
-    <RLR {...rest} language={language} theme={theme}>
-      {code}
-    </RLR>
+    <pre className={className}>
+      <HighlightedCode code={code} language={language.toLowerCase().trim()} />
+    </pre>
   );
 })`
-  border-radius: ${rem(3)};
-  box-shadow: 1px 1px 20px rgba(20, 20, 20, 0.27);
-  font-family: ${monospace};
-  font-size: 0.8rem;
-  font-weight: 300;
-  margin: ${rem(35)} 0;
-  padding: 1.5em !important;
-  overflow-x: hidden;
+  ${codeTextMixin}
+
+  background-color: ${theme.color.codeBg};
+  border-radius: ${theme.radius.lg};
+  border: 1px solid ${theme.color.border};
+  box-shadow: 0 1px 3px ${theme.color.shadow};
+  position: relative;
+  z-index: 10;
+  margin: ${theme.space[8]} 0;
+  padding: 1.5em;
+  overflow-x: auto;
   white-space: pre-wrap;
   width: 100%;
 

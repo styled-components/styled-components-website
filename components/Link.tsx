@@ -1,75 +1,55 @@
 'use client';
 
-import UnstyledLink, { LinkProps as UnstyledLinkProps } from 'next/link';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import React from 'react';
-import styled from 'styled-components';
-import { blmGrey, lightGrey, red } from '../utils/colors';
+import styled, { css } from 'styled-components';
+import { theme } from '../utils/theme';
 import rem from '../utils/rem';
 
-type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+// ---------------------------------------------------------------------------
+// Link design system — all variants defined in one place
+// ---------------------------------------------------------------------------
 
-export interface LinkProps extends UnstyledLinkProps, Omit<AnchorProps, keyof UnstyledLinkProps | 'ref'> {
-  inline?: boolean;
-  ref?: React.Ref<HTMLAnchorElement>;
-  unstyled?: boolean;
-  white?: boolean;
-  target?: '_self' | '_blank' | '_parent' | '_top';
-}
+export type LinkVariant = 'inline' | 'heading' | 'block' | 'unstyled';
 
-export default function Link({
-  ['aria-label']: ariaLabel,
-  children,
-  className,
-  inline,
-  title,
-  unstyled,
-  white,
-  target,
-  href,
-  ...rest
-}: LinkProps) {
-  const hrefString = typeof href === 'string' ? href : href?.toString() || '';
-  const isExternal = hrefString.startsWith('http') || hrefString.startsWith('//');
+// Inline: colored text with dotted underline that turns solid on hover
+export const inlineStyle = css`
+  color: ${theme.color.accent};
+  font-weight: ${theme.fontWeight.medium};
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-decoration-color: ${theme.color.accent};
+  text-underline-offset: 3px;
+  transition:
+    color ${theme.duration.fast},
+    text-decoration-color ${theme.duration.fast},
+    text-decoration-style ${theme.duration.fast};
 
-  if (unstyled || isExternal) {
-    const Child = unstyled ? 'a' : inline ? InlineLink : StyledLink;
-    const dataAttrs = white ? { 'data-white': white } : {};
-    const finalTarget = target || (isExternal ? '_blank' : undefined);
-
-    return (
-      <Child
-        href={hrefString}
-        aria-label={ariaLabel}
-        className={className}
-        title={title}
-        target={finalTarget as any}
-        rel={isExternal ? 'noopener' : undefined}
-        {...dataAttrs}
-      >
-        {children}
-      </Child>
-    );
+  &:hover,
+  &:focus-visible {
+    color: ${theme.color.accentDark};
+    text-decoration-style: solid;
+    text-decoration-color: ${theme.color.accentDark};
   }
+`;
 
-  const Child = inline ? InlineLink : StyledLink;
-  const dataAttrs = white ? { 'data-white': white } : {};
+// Heading: inherits text color (white on dark, dark on light), underline on hover
+export const headingStyle = css`
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: text-decoration-color ${theme.duration.fast};
 
-  return (
-    <Child
-      as={UnstyledLink as any}
-      href={href as any}
-      aria-label={ariaLabel}
-      className={className}
-      title={title}
-      {...dataAttrs}
-      {...rest}
-    >
-      {children}
-    </Child>
-  );
-}
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+    text-decoration-color: ${theme.color.linkUnderlineHover};
+    text-underline-offset: 3px;
+  }
+`;
 
-export const StyledLink = styled.a<{ href?: string; children?: React.ReactNode }>`
+// Block: larger clickable area with subtle background hover, for standalone links
+export const blockStyle = css`
   display: inline-block;
   color: inherit;
   cursor: pointer;
@@ -77,27 +57,102 @@ export const StyledLink = styled.a<{ href?: string; children?: React.ReactNode }
   margin: ${rem(-2)} ${rem(-8)};
 
   @media (min-width: ${1000 / 16}em) {
-    border-radius: ${rem(3)};
+    border-radius: ${theme.radius.md};
 
     &:hover {
-      background: ${lightGrey};
+      background: ${theme.color.accentSubtle};
     }
   }
 `;
 
-export const InlineLink = styled.a.attrs<{ target?: string; rel?: string }>((/* props */) => ({
-  target: '_blank',
-  rel: 'noopener',
-}))<{ target?: string; rel?: string }>`
-  color: ${blmGrey};
-  cursor: pointer;
-  text-decoration: underline;
+// ---------------------------------------------------------------------------
+// Component
+// ---------------------------------------------------------------------------
 
-  &:hover {
-    color: ${red};
+type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+
+export interface LinkProps extends Omit<NextLinkProps, 'as'>, Omit<AnchorProps, keyof NextLinkProps | 'ref'> {
+  variant?: LinkVariant;
+  ref?: React.Ref<HTMLAnchorElement>;
+  target?: '_self' | '_blank' | '_parent' | '_top';
+}
+
+export default function Link({ children, href, variant = 'block', target, ...rest }: LinkProps) {
+  const resolved = variant;
+
+  const hrefString = typeof href === 'string' ? href : href?.toString() || '';
+  const isExternal = hrefString.startsWith('http') || hrefString.startsWith('//') || /\.\w+$/.test(hrefString);
+  const finalTarget = target || (isExternal ? '_blank' : undefined);
+  const rel = isExternal ? 'noopener' : undefined;
+
+  if (resolved === 'unstyled') {
+    if (isExternal) {
+      return (
+        <a href={hrefString} target={finalTarget} rel={rel} {...rest}>
+          {children}
+        </a>
+      );
+    }
+    return (
+      <NextLink href={href} target={finalTarget} {...rest}>
+        {children}
+      </NextLink>
+    );
   }
 
-  &[data-white] {
-    color: white !important;
+  if (resolved === 'inline' || resolved === 'heading') {
+    const Anchor = resolved === 'heading' ? HeadingLink : InlineLink;
+    const NLink = resolved === 'heading' ? HeadingNextLink : InlineNextLink;
+
+    if (isExternal) {
+      return (
+        <Anchor href={hrefString} target={finalTarget} rel={rel} {...rest}>
+          {children}
+        </Anchor>
+      );
+    }
+    return (
+      <NLink href={href} target={finalTarget} {...rest}>
+        {children}
+      </NLink>
+    );
   }
+
+  if (isExternal) {
+    return (
+      <StyledLink href={hrefString} target={finalTarget} rel={rel} {...rest}>
+        {children}
+      </StyledLink>
+    );
+  }
+  return (
+    <BlockNextLink href={href} target={finalTarget} {...rest}>
+      {children}
+    </BlockNextLink>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Styled primitives
+// ---------------------------------------------------------------------------
+
+export const InlineLink = styled.a`
+  ${inlineStyle}
+`;
+const InlineNextLink = styled(NextLink)`
+  ${inlineStyle}
+`;
+
+export const HeadingLink = styled.a`
+  ${headingStyle}
+`;
+const HeadingNextLink = styled(NextLink)`
+  ${headingStyle}
+`;
+
+export const StyledLink = styled.a`
+  ${blockStyle}
+`;
+const BlockNextLink = styled(NextLink)`
+  ${blockStyle}
 `;

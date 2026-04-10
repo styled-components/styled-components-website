@@ -8,40 +8,36 @@ import {
   LiveProvider,
   LiveProviderProps,
 } from 'react-live-runner';
-import React, { useEffect, useRef } from 'react';
+import React, { useId, useMemo, useRef } from 'react';
 import styled, { css } from 'styled-components';
-import { red } from '../utils/colors';
-import { headerFont, monospace } from '../utils/fonts';
+import { theme, font } from '../utils/theme';
 import { phone } from '../utils/media';
 import rem from '../utils/rem';
-import baseScope from '../utils/scope';
-import theme from './prismTheme';
+import { createScope } from '../utils/scope';
+import { useCodeEditorAriaLabel } from '../utils/useCodeEditorAriaLabel';
+import prismTheme from './prismTheme';
+import { highlightTSXWithTagDepth } from './liveHighlight';
+import { editorMixin } from './codeMixins';
+
+export { codeTextMixin, editorMixin } from './codeMixins';
 
 export interface LiveEditProps extends Pick<LiveProviderProps, 'code' | 'scope'> {}
 
 export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
+  const id = useId();
+  const liveScope = useMemo(() => createScope(id), [id]);
   const editorRegionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const textarea = editorRegionRef.current?.querySelector<HTMLTextAreaElement>(
-      'textarea.npm__react-simple-code-editor__textarea'
-    );
-
-    if (!textarea) return;
-
-    const hasName = textarea.hasAttribute('aria-label') || textarea.hasAttribute('aria-labelledby');
-    if (!hasName) textarea.setAttribute('aria-label', 'Live code editor');
-  }, []);
+  useCodeEditorAriaLabel(editorRegionRef, 'Live code editor');
 
   return (
     <StyledProvider
       code={code}
       language="tsx"
       scope={{
-        ...baseScope,
+        ...liveScope,
         ...scope,
       }}
-      theme={theme}
+      theme={prismTheme}
     >
       <Row>
         <Code ref={editorRegionRef}>
@@ -56,10 +52,11 @@ export default function LiveEdit({ code, scope = {} }: LiveEditProps) {
 }
 
 const StyledProvider = styled(LiveProvider)`
-  box-shadow: ${rem(1)} ${rem(1)} ${rem(20)} rgba(20, 20, 20, 0.27);
   overflow: hidden;
-  margin: ${rem(35)} 0;
+  margin: ${theme.space[8]} 0;
   text-align: left;
+  position: relative;
+  z-index: 10;
 `;
 
 const Row = styled.div`
@@ -90,58 +87,25 @@ const Code = styled.code`
   ${columnMixin};
 `;
 
-export const editorMixin = `
-  border-radius: 3px;
-  color: white;
-  cursor: text;
-  font-family: ${monospace};
-  font-size: 0.8rem;
-  font-weight: 300;
-  line-height: 1.5;
-  letter-spacing: normal;
-  min-height: ${rem(400)};
-  overflow-x: hidden;
-  overflow-y: auto !important;
-  position: relative;
-  white-space: pre-wrap;
-  tab-size: 2;
-`;
-
 const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
   <LiveEditor
     {...props}
-    // @ts-expect-error clashing types
-    theme={theme}
+    // prism-react-renderer's PrismTheme shape (plain-styles + token-styles
+    // arrays) is structurally incompatible with react-live-runner's internal
+    // theme prop — the libraries evolved independently. Runtime is fine.
+    // @ts-expect-error see note above
+    theme={prismTheme}
+    highlight={highlightTSXWithTagDepth}
   />
 ))`
   ${editorMixin};
-
-  pre,
-  textarea {
-    font-family: ${monospace} !important;
-    font-size: inherit !important;
-    font-variant-ligatures: none !important;
-    line-height: inherit !important;
-    letter-spacing: inherit !important;
-    padding: 1.5em !important;
-    margin: 0 !important;
-    border: 0 !important;
-    outline: 0 !important;
-    tab-size: 2;
-    box-sizing: border-box !important;
-  }
-
-  .token-line {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
 `;
 
 const StyledPreview = styled(LivePreview)`
   position: relative;
   padding: 0.5rem;
-  background: white;
-  color: black;
+  background: ${theme.color.bg};
+  color: ${theme.color.text};
   height: auto;
   overflow: hidden;
   white-space: normal;
@@ -153,9 +117,9 @@ export const StyledError = styled(LiveError)`
   display: block;
   width: 100%;
   padding: ${rem(8)};
-  background: ${red};
+  background: ${theme.color.error};
   color: white;
   font-size: 0.8rem;
-  font-family: ${headerFont};
+  font-family: ${font.sans};
   white-space: pre;
 `;

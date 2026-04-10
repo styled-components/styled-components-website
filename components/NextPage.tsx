@@ -1,14 +1,11 @@
 import { KeyboardArrowRight } from '@styled-icons/material';
 import styled, { css } from 'styled-components';
-import { grey } from '../utils/colors';
-import { headerFont } from '../utils/fonts';
+import { theme, font } from '../utils/theme';
 import { mobile } from '../utils/media';
 import rem from '../utils/rem';
 import Link, { LinkProps } from './Link';
 
-const Wrapper = styled(Link).attrs((/* props */) => ({
-  unstyled: true,
-}))`
+const Wrapper = styled(Link).attrs({ variant: 'unstyled' as const })`
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -17,7 +14,7 @@ const Wrapper = styled(Link).attrs((/* props */) => ({
   width: 100%;
   padding: ${rem(40)} ${rem(20)};
   text-align: right;
-  font-family: ${headerFont};
+  font-family: ${font.sans};
 
   ${mobile(css`
     text-align: left;
@@ -27,19 +24,33 @@ const Wrapper = styled(Link).attrs((/* props */) => ({
 `;
 
 const Text = styled.h3`
-  font-weight: normal;
+  font-weight: ${theme.fontWeight.normal};
   padding-right: ${rem(20)};
   margin: 0;
 `;
 
 const PageName = styled.h2`
-  font-weight: 600;
+  font-family: ${font.display};
+  font-weight: ${theme.fontWeight.semibold};
   padding-right: ${rem(20)};
   margin: 0;
+  color: ${theme.color.accent};
+  text-decoration: underline solid;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition:
+    color ${theme.duration.fast},
+    text-decoration-color ${theme.duration.fast};
+
+  ${Wrapper}:hover &,
+  ${Wrapper}:focus-visible & {
+    color: ${theme.color.accentDark};
+    text-decoration-color: ${theme.color.accentDark};
+  }
 `;
 
 const Icon = styled(KeyboardArrowRight)`
-  color: ${grey};
+  color: ${theme.color.textMuted};
   width: ${rem(30)};
 `;
 
@@ -48,7 +59,7 @@ export interface NextPageProps extends Pick<LinkProps, 'href'> {
 }
 
 const NextPage = ({ title, href }: NextPageProps) => (
-  <Wrapper unstyled href={href}>
+  <Wrapper href={href}>
     <div>
       <Text>Continue on the next page</Text>
       <PageName>{title}</PageName>
