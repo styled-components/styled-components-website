@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "arrowParens": "avoid",
+  "printWidth": 120,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "sortPackageJson": false,
+  "ignorePatterns": [
+    "node_modules",
+    "/.next",
+    "/.yarn",
+    "/public",
+    "*.*",
+    "!*.css",
+    "!*.js",
+    "!*.json",
+    "!*.jsx",
+    "!*.less",
+    "!*.ts",
+    "!*.tsx",
+    "!*.yml"
+  ]
+}

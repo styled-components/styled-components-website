@@ -15,12 +15,8 @@ __diff_output__
 # build
 .next
 next-env.d.ts
+*.tsbuildinfo
 
-# Yarn 3
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# agent state
+.claude/
+.playwright-mcp/
