@@ -1,0 +1,496 @@
+# styled-components
+
+> CSS-in-JS for React using tagged template literals. TypeScript-native since v6. Supports React Server Components natively since v6.3. Current stable: v6.4.0.
+
+## What's new since early 2025
+
+Your training data likely covers v6.0-6.1. Key changes since then:
+
+v6.2: Streaming SSR via `renderToPipeableStream`.
+
+v6.3: React Server Components supported. No `'use client'` needed. Styled components work in server components with no extra setup. `createGlobalStyle` is StrictMode-safe. New HTML/SVG element helpers. CSS custom properties work in TypeScript without type errors. Note: `:first-child`/`:nth-child()` selectors require `stylisPluginRSC` (v6.4+) or rewriting to `:first-of-type`/`:nth-of-type()` — see child-index selector section below.
+
+v6.4 (April 2026): `createTheme()` for CSS variable theming that works in both RSC and client. `StyleSheetManager` works in RSC (was previously a no-op). `stylisPluginRSC` fixes child-index selectors in RSC. CSP nonce auto-detection from `StyleSheetManager`, `ServerStyleSheet`, or meta tags. Props supplied via `.attrs()` are automatically optional on the component's type. Significant render performance improvements. Fixes SSR memory leaks and multi-instance unmount bugs in `createGlobalStyle`. Memory leak fix for components with unbounded string interpolation values. `as` and `forwardedAs` exposed in `React.ComponentProps` extraction. React Native: `react-native` is now an optional peer dep, Metro/Expo nanoid crash fixed. IE11 build target removed — IE11 has been unsupported on v6 since the 2021 v6 planning (React 18 dropped it too); v6.4 just aligns the compile target. Stay on v5 if you need IE11.
+
+## Setup
+
+```
+npm install styled-components
+```
+
+Next.js: add `compiler: { styledComponents: true }` to next.config.js. That's it. RSC works out of the box in v6.3+.
+
+Vite: `react({ babel: { plugins: ['babel-plugin-styled-components'] } })`. Or with SWC (faster): `react({ plugins: [['@swc/plugin-styled-components', { displayName: true, ssr: true }]] })` via `@vitejs/plugin-react-swc`.
+
+The SWC/Babel plugin provides deterministic class IDs (better debugging, smaller output). Optional for RSC but still recommended.
+
+## Quick reference
+
+```tsx
+import styled, { css, keyframes, createGlobalStyle, createTheme,
+  ThemeProvider, useTheme, StyleSheetManager, ServerStyleSheet,
+  stylisPluginRSC, isStyledComponent } from 'styled-components';
+```
+
+- `styled.div` / `styled(Component)` — create styled component
+- `styled(Base)` — extend styles (inheritance)
+- `.attrs(props => ({}))` — set default/computed props
+- `<Comp as="a">` — render as different element
+- `css` — tagged template helper for shared style fragments
+- `keyframes` — define CSS animation
+- `createGlobalStyle` — inject global CSS
+- `createTheme(obj, opts?)` — CSS variable theme (RSC-compatible)
+- `ThemeProvider` — context-based theme (client-only)
+- `StyleSheetManager` — configure stylis plugins, prop forwarding, vendor prefixes
+- `stylisPluginRSC` — fix child-index selectors in RSC
+- `ServerStyleSheet` — SSR style collection
+
+## Server-side rendering
+
+### Next.js
+
+Use a style registry to collect styles from client components during SSR. RSC-rendered styled components are handled automatically — the registry is only needed for the client tree.
+
+```tsx
+// lib/registry.tsx
+'use client';
+import { useState } from 'react';
+import { useServerInsertedHTML } from 'next/navigation';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+
+export default function Registry({ children, nonce }: { children: React.ReactNode; nonce?: string }) {
+  const [sheet] = useState(() => new ServerStyleSheet());
+  useServerInsertedHTML(() => {
+    const styles = sheet.getStyleTags();
+    sheet.instance.clearTag();
+    return <>{styles}</>;
+  });
+  return (
+    <StyleSheetManager sheet={sheet.instance} nonce={nonce}>
+      {children}
+    </StyleSheetManager>
+  );
+}
+```
+
+Mount `<Registry>` in your root layout. Pass a `nonce` prop if your app uses CSP (see CSP nonce section below).
+
+Next.js 16 style deduplication: render the collected styles with `precedence="styled-components"` and a stable `href` so React deduplicates them across route segments.
+
+### Vite — non-streaming
+
+Simpler approach, works with any Vite SSR framework:
+
+```tsx
+// entry-server.tsx
+import { renderToString } from 'react-dom/server';
+import { ServerStyleSheet } from 'styled-components';
+import App from './App';
+
+export function render() {
+  const sheet = new ServerStyleSheet();
+  try {
+    const html = renderToString(sheet.collectStyles(<App />));
+    const styleTags = sheet.getStyleTags();
+    return { html, styleTags };
+  } finally {
+    sheet.seal();
+  }
+}
+```
+
+Inject `styleTags` into `<head>`. If you use [Vike](https://vike.dev/), the `vike-react-styled-components` extension handles this automatically.
+
+### Vite — streaming
+
+v6.2+, works with `renderToPipeableStream`:
+
+```tsx
+// entry-server.tsx
+import { renderToPipeableStream } from 'react-dom/server';
+import { ServerStyleSheet } from 'styled-components';
+import App from './App';
+
+export function render(res) {
+  const sheet = new ServerStyleSheet();
+  const { pipe } = renderToPipeableStream(
+    sheet.collectStyles(<App />),
+    {
+      onShellReady() {
+        const styledStream = sheet.interleaveWithNodeStream({ pipe });
+        styledStream.pipe(res);
+      },
+    }
+  );
+}
+```
+
+`interleaveWithNodeStream` accepts both legacy `ReadableStream` and React 18's `PipeableStream`. It inserts `<style>` tags into the HTML stream as components render inside Suspense boundaries.
+
+## Styled-components in RSC
+
+Styled components work in server components with no `'use client'` directive. The main constraint is that `ThemeProvider` relies on React context, which doesn't exist in RSC — so `p.theme` is undefined. Use `createTheme()` instead.
+
+Dynamic prop interpolations work in RSC. But for discrete variants (a finite set of states), data attributes produce one cached class per variant instead of one per prop combination:
+
+```tsx
+import styled, { createTheme } from 'styled-components';
+
+const theme = createTheme({
+  colors: { primary: '#0070f3', text: '#1a1a1a', surface: '#fff' },
+});
+
+const NavLink = styled.a`
+  padding: 8px 16px;
+  color: ${theme.colors.text};
+  text-decoration: none;
+  &[aria-current='page'] {
+    color: ${theme.colors.primary};
+    font-weight: 600;
+    border-bottom: 2px solid ${theme.colors.primary};
+  }
+`;
+
+<nav>
+  <NavLink href="/" aria-current="page">Home</NavLink>
+  <NavLink href="/about">About</NavLink>
+</nav>
+```
+
+For continuous dynamic values, set CSS custom properties via the `style` prop. The styled component's CSS stays static (one class), and the value varies per element. Pair with semantic HTML attributes for progressive enhancement and accessibility:
+
+```tsx
+const ProgressBar = styled.div`
+  height: 8px;
+  border-radius: 4px;
+  background: ${theme.colors.surface};
+
+  &::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: var(--progress);
+    border-radius: inherit;
+    background: ${theme.colors.primary};
+    transition: width 0.2s ease;
+  }
+
+  &[aria-valuenow='100']::after {
+    background: green;
+  }
+`;
+
+<ProgressBar
+  role="progressbar"
+  aria-valuenow={percent}
+  aria-valuemin={0}
+  aria-valuemax={100}
+  aria-label="Upload progress"
+  style={{ '--progress': `${percent}%` } as React.CSSProperties}
+/>
+```
+
+This pattern gives you dynamic styling, screen reader support, and a CSS hook for completion state — all with one static class.
+
+Other RSC rules:
+- Use `:first-of-type` / `:nth-of-type()` instead of `:first-child` / `:nth-child()` in RSC (see `stylisPluginRSC` section below for an automatic fix)
+- Define components at module scope, not inside render functions
+
+## createTheme API (v6.4+)
+
+`ThemeProvider` has no effect in RSC because React context doesn't exist in server components. `createTheme()` solves this — no runtime context needed.
+
+```tsx
+import styled, { createTheme } from 'styled-components';
+
+const theme = createTheme({
+  colors: { primary: '#0070f3', surface: '#ffffff', text: '#1a1a1a' },
+  spacing: { sm: '8px', md: '16px', lg: '32px' },
+});
+```
+
+Every leaf becomes a `var()` reference with the original value as fallback:
+- `theme.colors.primary` → `"var(--sc-colors-primary, #0070f3)"`
+- `theme.spacing.md` → `"var(--sc-spacing-md, 16px)"`
+
+Use it directly in template literals — works in both server and client components:
+
+```tsx
+const Button = styled.button`
+  background: ${theme.colors.primary};
+  padding: ${theme.spacing.sm} ${theme.spacing.md};
+  color: ${theme.colors.text};
+`;
+```
+
+Signature: `createTheme(defaultTheme, options?)`
+
+Options:
+- `prefix` (default `"sc"`) — CSS variable prefix. `{ prefix: 'myapp' }` produces `--myapp-colors-primary`.
+- `selector` (default `":root"`) — where `GlobalStyle` emits vars. Use `":host"` for Shadow DOM.
+
+Returned object properties:
+- Every leaf path from the input, as `var(--prefix-path, fallback)` strings
+- `theme.raw` — the original plain object (for runtime access to actual values)
+- `theme.vars` — same shape as the input, but every leaf is the bare CSS custom property name (e.g. `"--sc-colors-primary"`). Use in `createGlobalStyle` for dark mode overrides without hand-writing var names.
+- `theme.resolve(el?)` — client-only. Reads computed CSS var values from the DOM. Returns a plain object with resolved values. Pass an element to resolve against a specific subtree (defaults to `document.documentElement`).
+- `theme.GlobalStyle` — a `createGlobalStyle` component that emits the CSS custom property declarations on the configured selector. Must be mounted inside a `ThemeProvider` that receives the raw theme object — without `ThemeProvider`, `GlobalStyle` renders nothing.
+
+Key behaviors:
+- Object keys are preserved as-is (camelCase stays camelCase): `{ codeBg: 'x' }` with prefix `'sc'` → `var(--sc-codeBg, x)`
+- Nested objects produce hyphenated paths: `{ colors: { primary: 'x' } }` → `var(--sc-colors-primary, x)`
+- `ThemeProvider` must receive the raw theme object (`{ colors: { primary: '#0070f3' } }`), not the `createTheme` output. Passing the createTheme output produces self-referential CSS like `--sc-colors-primary: var(--sc-colors-primary, #0070f3);` which is invalid.
+
+Correct wiring:
+
+```tsx
+import { ThemeProvider, createTheme } from 'styled-components';
+
+const rawTheme = { colors: { primary: '#0070f3', bg: '#fff' } };
+const theme = createTheme(rawTheme, { prefix: 'sc' });
+
+// In your layout root (client component for the ThemeProvider):
+<ThemeProvider theme={rawTheme}>
+  <theme.GlobalStyle />
+  <App />
+</ThemeProvider>
+
+// In any styled component (server OR client):
+const Card = styled.div`
+  background: ${theme.colors.bg};
+  color: ${theme.colors.primary};
+`;
+```
+
+## Three-way color mode (light / dark / auto) without FOUC
+
+Complete reference implementation. Four pieces: theme, CSS overrides, blocking script, toggle component.
+
+**1. Theme and dark overrides**
+
+Use `theme.vars` to reference CSS custom property names — stays in sync with `createTheme`'s prefix, so renaming the prefix doesn't silently break overrides.
+
+```tsx
+// utils/theme.ts
+import { css, createGlobalStyle, createTheme } from 'styled-components';
+
+const rawTheme = {
+  colors: { bg: '#ffffff', text: '#1a1a1a', primary: '#0070f3' },
+};
+export const theme = createTheme(rawTheme, { prefix: 'sc' });
+
+const darkVars = css`
+  ${theme.vars.colors.bg}: #111827;
+  ${theme.vars.colors.text}: #f9fafb;
+`;
+
+export const ColorModeStyles = createGlobalStyle`
+  @media (prefers-color-scheme: dark) {
+    html:not(.light) { ${darkVars} color-scheme: dark; }
+  }
+  html.dark { ${darkVars} color-scheme: dark; }
+  html.light { color-scheme: light; }
+`;
+
+export { rawTheme };
+```
+
+**2. Layout root — mount theme + blocking script**
+
+The script runs before first paint, reads `localStorage`, falls back to system preference. Must be a raw `<script>` in `<head>` — `next/script strategy="beforeInteractive"` does not guarantee execution before stylesheets. `suppressHydrationWarning` on `<html>` because the script modifies the element before React hydrates.
+
+```tsx
+// app/layout.tsx
+import { ThemeProvider } from 'styled-components';
+import { theme, rawTheme, ColorModeStyles } from '../utils/theme';
+
+const themeScript = `(function(){try{var d=document.documentElement,s=localStorage.getItem('theme');if(s==='dark'||s==='light'){d.classList.add(s);if(s==='dark')d.dataset.theme='dark'}else if(matchMedia('(prefers-color-scheme:dark)').matches){d.classList.add('dark');d.dataset.theme='dark'}}catch(e){}})()`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body>
+        <ThemeProvider theme={rawTheme}>
+          <theme.GlobalStyle />
+          <ColorModeStyles />
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+**3. Toggle component**
+
+Cycles light -> dark -> auto. Reads `localStorage` (not the DOM class) to distinguish "explicit dark" from "auto + system dark". Sets both `html.dark` class (for CSS) and `data-theme="dark"` (for third-party tools like DocSearch).
+
+```tsx
+// components/ThemeToggle.tsx
+'use client';
+import { useState, useEffect } from 'react';
+
+type ColorMode = 'light' | 'dark' | 'auto';
+const NEXT: Record<ColorMode, ColorMode> = { light: 'dark', dark: 'auto', auto: 'light' };
+
+function getColorMode(): ColorMode {
+  try {
+    const stored = localStorage.getItem('theme');
+    if (stored === 'dark' || stored === 'light') return stored;
+  } catch {}
+  return 'auto';
+}
+
+function applyColorMode(mode: ColorMode) {
+  const el = document.documentElement;
+  el.classList.remove('light', 'dark');
+
+  if (mode !== 'auto') {
+    el.classList.add(mode);
+    localStorage.setItem('theme', mode);
+  } else {
+    localStorage.removeItem('theme');
+  }
+
+  // Sync data-theme for third-party dark mode detection
+  const isDark =
+    mode === 'dark' ||
+    (mode === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
+  if (isDark) {
+    el.dataset.theme = 'dark';
+  } else {
+    delete el.dataset.theme;
+  }
+}
+
+export default function ThemeToggle() {
+  const [mode, setMode] = useState<ColorMode>('auto');
+  useEffect(() => setMode(getColorMode()), []);
+
+  const toggle = () => {
+    const next = NEXT[mode];
+    applyColorMode(next);
+    setMode(next);
+  };
+
+  return (
+    <button onClick={toggle} aria-label={`Switch to ${NEXT[mode]} mode`}>
+      {mode === 'light' ? '☀' : mode === 'dark' ? '●' : '◐'}
+    </button>
+  );
+}
+```
+
+How it works together:
+- **First visit, no preference stored:** blocking script does nothing -> CSS `@media (prefers-color-scheme: dark)` handles it -> no flash
+- **User picks dark:** script adds `.dark` before paint -> `html.dark` rule wins -> no flash
+- **User picks light on a dark-preference system:** script adds `.light` -> `html:not(.light)` excludes the media query override -> no flash
+- **User picks auto after previously picking dark:** `localStorage` cleared -> script falls through to system preference -> correct on next load
+
+## stylisPluginRSC — child-index selector fix (v6.4+)
+
+In RSC, `:first-child`, `:last-child`, and `:nth-child()` selectors can miscount because additional sibling elements shift indices.
+
+Preferred fix — use type-based selectors (universally supported, no plugin needed):
+- `:first-child` -> `:first-of-type`
+- `:nth-child(2)` -> `:nth-of-type(2)`
+- `:last-child` -> `:last-of-type`
+
+These filter by element type, so injected sibling elements are ignored.
+
+Alternative — `stylisPluginRSC` automatically rewrites child-index selectors at compile time:
+
+```tsx
+import { StyleSheetManager, stylisPluginRSC } from 'styled-components';
+
+// In your root layout (server component)
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <StyleSheetManager stylisPlugins={[stylisPluginRSC]}>
+      {children}
+    </StyleSheetManager>
+  );
+}
+```
+
+Rewrite rules:
+- `:first-child` -> `:nth-child(1 of :not(style[data-styled]))`
+- `:last-child` -> `:nth-last-child(1 of :not(style[data-styled]))`
+- `:nth-child(N)` -> `:nth-child(N of :not(style[data-styled]))`
+- `:nth-child(An+B)` -> `:nth-child(An+B of :not(style[data-styled]))`
+- Same for `:nth-last-child()` variants
+- Selectors already using `of` syntax are left unchanged
+
+Browser support: CSS Selectors Level 4 `of S` syntax — Chrome 111+, Firefox 113+, Safari 9+, Edge 111+ (~93% global). In unsupported browsers, the entire CSS rule is dropped (not just the selector), meaning no styling is applied for those selectors — so only opt in if your audience supports it.
+
+`StyleSheetManager` works in RSC environments (v6.4+). `stylisPlugins`, `shouldForwardProp`, and `nonce` are applied. DOM-only props (`target`, `sheet`, `disableCSSOMInjection`) have no effect in RSC.
+
+## Migrating from client-only to RSC
+
+1. Replace `ThemeProvider` theming with `createTheme()` CSS variables — `p.theme` is undefined in RSC since there's no React context
+2. Dynamic prop interpolations (`${p => p.$color}`) work fine in RSC — no changes needed. Consider data attributes for discrete variants (fewer generated classes)
+3. Replace `:first-child`/`:nth-child()` with `:first-of-type`/`:nth-of-type()`, or add `stylisPluginRSC`
+4. Remove `'use client'` from files that only contain styled component definitions — they work in server components natively
+5. Keep `'use client'` on components that use hooks, event handlers, or browser APIs
+6. The SSR registry (`ServerStyleSheet` + `useServerInsertedHTML`) is still needed for client components in the tree — RSC handles server components automatically
+
+## .attrs() changes (v6.4+)
+
+Props provided via `.attrs()` are now automatically made optional on the component's type. Previously, TypeScript still required you to pass props that attrs already provided.
+
+```tsx
+// v6.3: TypeScript requires `href` even though attrs provides it
+// v6.4: `href` is optional — attrs provides the default
+const StyledLink = styled.a.attrs({ href: '#' })`
+  color: blue;
+`;
+<StyledLink />        // works in v6.4 (href defaults to '#')
+<StyledLink href="/"> // also works (overrides the default)
+```
+
+attrs always wins over directly passed props. The function form is the escape hatch when you need conditional behavior:
+
+```tsx
+const Button = styled.button.attrs<{ as?: string }>(({ as }) => ({
+  as: as || 'button',
+}))``;
+```
+
+The props object passed to an `.attrs(props => ...)` callback is now a frozen snapshot (v6.4+). If you previously relied on mutating it to pass values to later attrs layers, return those values from the callback instead.
+
+## CSP nonce support (v6.4+)
+
+styled-components can attach a CSP nonce to injected `<style>` tags. Detection order (first match wins):
+
+1. `<StyleSheetManager nonce="...">` prop
+2. `new ServerStyleSheet({ nonce: '...' })` constructor option
+3. `<meta property="csp-nonce" content="...">` (Vite convention)
+4. `<meta name="sc-nonce" content="...">`
+5. `__webpack_nonce__` global
+
+For Next.js, pass the nonce to the style registry (see the SSR section above). For Vite, use a `<meta>` tag or pass it to `ServerStyleSheet`'s constructor.
+
+## Performance
+
+- Define components at module scope. Inside render = remount every render.
+- CSS custom properties > prop interpolations for values that change often.
+- `.attrs()` + inline `style` for per-frame updates (mouse, scroll, animation). Zero class generation.
+- Data attributes for discrete variants: `&[data-size='sm']` — fully static, one cached class.
+- Components with zero function interpolations are static — zero cost on re-render.
+
+## Good to know
+
+- `@import` in `createGlobalStyle` may not work correctly in production. Use `<link>` in `<head>` instead.
+- Vendor prefixes are off by default in v6. Enable with `<StyleSheetManager enableVendorPrefixes>` if your support matrix includes Safari < 15.4, Chrome < 83, or Firefox < 80 (the `appearance` property was the last to drop its prefix). Flexbox and grid prefixes are only needed for much older browsers (Safari < 9, Edge < 16).
+- `shouldForwardProp` is off by default in v6. Use `$`-prefixed transient props (`$color`, `$size`) to keep props out of the DOM. Or restore filtering with `<StyleSheetManager shouldForwardProp={...}>`.
+- Two classes per element: one shared across all instances of a component, one unique per style variant. Test selectors should account for both.
+- Stylis v4 parses `:hover {}` as descendant `& :hover {}`, not `&:hover {}`. Always write `&:hover`, `&::before`, etc.
+- `className` must be optional in the props interface when wrapping custom components with `styled()`.
+- Unsanitized user input in interpolations = CSS injection risk. Sanitize with `CSS.escape()`.
+- Unbounded dynamic interpolation values (e.g., user-typed colors) caused memory leaks in long-running apps on v6.3. Fixed in v6.4. If you're on v6.3, use CSS custom properties via `style` prop for unbounded values instead.
+- `as` and `forwardedAs` props are now included in `React.ComponentProps` extraction for styled components (v6.4+).
+- `createGlobalStyle` without interpolations only runs once at mount. With interpolations it re-evaluates per render, so prefer static rules where possible.
+- Register animatable theme tokens with `@property`. CSS custom properties animate as strings by default — `transition: color 300ms` won't ease between `oklch(...)` values unless the property is registered: `@property --sc-color-bg { syntax: '<color>'; inherits: true; initial-value: oklch(0.99 0 0); }`. Put these in `createGlobalStyle` or a static CSS file loaded at root.
