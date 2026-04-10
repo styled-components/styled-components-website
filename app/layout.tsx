@@ -45,13 +45,11 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'styled-components',
-    images: [{ url: '/atom.png', width: 652, height: 652 }],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@mxstbr',
-    creator: '@mxstbr',
-    images: ['/meta.png'],
+    site: '@quantizor',
+    creator: '@quantizor',
   },
   verification: {
     google: 'lWntYW6AWVMcShSIWLmOzKr8Wyek2TR-zuQn6_XGu_c',
