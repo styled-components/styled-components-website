@@ -2,73 +2,80 @@
 
 import styled from 'styled-components';
 import { Github, Twitter } from '@styled-icons/fa-brands';
-import { Globe } from '@styled-icons/boxicons-regular';
+import { ChevronDown, Globe } from '@styled-icons/boxicons-regular';
 import { theme, font } from '../utils/theme';
 import rem from '../utils/rem';
 import { formatDate } from '../utils/formatDate';
 import { getAuthor } from '../utils/authors';
-import Link from './Link';
 
-export function BlogByline({ author, date }: { author: string; date: string }) {
-  return (
-    <Byline>
-      <AuthorName>{author}</AuthorName>
-      <BlogDivider />
-      <time dateTime={date}>{formatDate(date)}</time>
-    </Byline>
-  );
-}
-
-export function BlogColophon({ author, originalUrl }: { author: string; originalUrl: string }) {
+export function BlogByline({
+  author,
+  date,
+  originalUrl,
+  showJumpToComments = false,
+}: {
+  author: string;
+  date: string;
+  originalUrl?: string;
+  showJumpToComments?: boolean;
+}) {
   const authorData = getAuthor(author);
   const websiteIsGithub = authorData.website?.includes('github.com');
   const showGithub = authorData.github && !websiteIsGithub;
-
-  const hasLinks = authorData.website || showGithub || authorData.twitter;
+  const crossPosted = originalUrl && new URL(originalUrl).hostname !== 'styled-components.com';
 
   return (
-    <Colophon>
-      <ColophonRule aria-hidden="true" />
-      <ColophonRow>
-        <ColophonLabel>About the author</ColophonLabel>
-        <ColophonAuthor>{author}</ColophonAuthor>
-      </ColophonRow>
-      {hasLinks && (
-        <ColophonLinks>
+    <Byline>
+      <AuthorName>{author}</AuthorName>
+      {(authorData.website || showGithub || authorData.twitter) && (
+        <SocialLinks>
           {authorData.website && (
-            <IconLink href={authorData.website} variant="inline">
+            <SocialIcon href={authorData.website} target="_blank" rel="noopener" aria-label={`${author} website`}>
               <Globe />
-              {authorData.websiteHost}
-            </IconLink>
+            </SocialIcon>
           )}
           {showGithub && (
-            <IconLink
+            <SocialIcon
               href={`https://github.com/${authorData.github}`}
-              variant="inline"
+              target="_blank"
+              rel="noopener"
               aria-label={`${author} on GitHub`}
             >
               <Github />
-              {authorData.github}
-            </IconLink>
+            </SocialIcon>
           )}
           {authorData.twitter && (
-            <IconLink href={`https://x.com/${authorData.twitter}`} variant="inline" aria-label={`${author} on X`}>
+            <SocialIcon
+              href={`https://x.com/${authorData.twitter}`}
+              target="_blank"
+              rel="noopener"
+              aria-label={`${author} on X`}
+            >
               <Twitter />
-              {authorData.twitter}
-            </IconLink>
+            </SocialIcon>
           )}
-        </ColophonLinks>
+        </SocialLinks>
       )}
-      {originalUrl && new URL(originalUrl).hostname !== 'styled-components.com' && (
-        <ColophonNote>
-          Originally published on{' '}
-          <Link href={originalUrl} variant="inline">
-            {new URL(originalUrl).hostname.replace('www.', '')}
-          </Link>
-          .
-        </ColophonNote>
+      <BlogDivider />
+      <time dateTime={date}>{formatDate(date)}</time>
+      {crossPosted && (
+        <>
+          <BlogDivider />
+          <CrossPostNote>
+            Originally on{' '}
+            <CrossPostLink href={originalUrl} target="_blank" rel="noopener">
+              {new URL(originalUrl).hostname.replace('www.', '')}
+            </CrossPostLink>
+          </CrossPostNote>
+        </>
       )}
-    </Colophon>
+      {showJumpToComments && (
+        <JumpToComments href="#comments">
+          Jump to comments
+          <ChevronDown />
+        </JumpToComments>
+      )}
+    </Byline>
   );
 }
 
@@ -91,63 +98,62 @@ const AuthorName = styled.span`
   letter-spacing: -0.01em;
 `;
 
-export const BlogDivider = styled.span.attrs({ 'aria-hidden': 'true', children: '—' })`
-  color: ${theme.color.blogAccentMuted};
-`;
-
-const Colophon = styled.footer`
-  margin-top: ${theme.space[16]};
-  padding-top: ${theme.space[10]};
-  font-family: ${font.sans};
-`;
-
-const ColophonRule = styled.div`
-  width: ${rem(64)};
-  height: 2px;
-  background: ${theme.color.blogAccent};
-  opacity: 0.6;
-  margin-bottom: ${theme.space[8]};
-`;
-
-const ColophonRow = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${rem(4)};
-  margin-bottom: ${theme.space[4]};
-`;
-
-const ColophonLabel = styled.span`
-  font-size: ${theme.text.xs};
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: ${theme.color.blogAccent};
-  font-weight: ${theme.fontWeight.semibold};
-`;
-
-const ColophonAuthor = styled.span`
-  font-family: ${font.display};
-  font-size: ${theme.text.xl};
-  font-weight: ${theme.fontWeight.bold};
-  color: ${theme.color.text};
-  letter-spacing: -0.01em;
-`;
-
-const ColophonLinks = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: ${rem(16)};
-  margin-bottom: ${theme.space[6]};
-`;
-
-const IconLink = styled(Link)`
+const SocialLinks = styled.span`
   display: inline-flex;
   align-items: center;
-  gap: ${rem(6)};
-  font-size: ${theme.text.sm};
-  color: ${theme.color.textSecondary};
-  transition: color ${theme.duration.normal};
+  gap: ${rem(8)};
+  align-self: center;
+`;
 
-  &:hover {
+const SocialIcon = styled.a`
+  display: inline-flex;
+  align-items: center;
+  color: ${theme.color.textMuted};
+  transition: color ${theme.duration.fast};
+
+  &:hover,
+  &:focus-visible {
+    color: ${theme.color.blogAccent};
+  }
+
+  svg {
+    width: ${rem(18)};
+    height: ${rem(18)};
+  }
+`;
+
+const CrossPostNote = styled.span`
+  font-size: ${theme.text.sm};
+  color: ${theme.color.textMuted};
+`;
+
+const CrossPostLink = styled.a`
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted ${theme.color.textMuted};
+  transition:
+    color ${theme.duration.fast},
+    border-color ${theme.duration.fast};
+
+  &:hover,
+  &:focus-visible {
+    color: ${theme.color.blogAccent};
+    border-bottom-color: ${theme.color.blogAccent};
+  }
+`;
+
+const JumpToComments = styled.a`
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: ${rem(4)};
+  font-size: ${theme.text.sm};
+  color: ${theme.color.textMuted};
+  text-decoration: none;
+  transition: color ${theme.duration.fast};
+
+  &:hover,
+  &:focus-visible {
     color: ${theme.color.blogAccent};
   }
 
@@ -157,8 +163,14 @@ const IconLink = styled(Link)`
   }
 `;
 
-const ColophonNote = styled.p`
-  font-size: ${theme.text.sm};
-  color: ${theme.color.textMuted};
-  margin: 0;
+export const BlogDivider = styled.span.attrs({ 'aria-hidden': 'true', children: '—' })`
+  color: ${theme.color.blogAccentMuted};
+`;
+
+export const ColophonRule = styled.div`
+  width: ${rem(64)};
+  height: 2px;
+  background: ${theme.color.blogAccent};
+  opacity: 0.6;
+  margin-bottom: ${theme.space[8]};
 `;

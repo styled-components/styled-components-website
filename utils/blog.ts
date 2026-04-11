@@ -5,6 +5,7 @@ export type Post = {
   date: string;
   description: string;
   originalUrl?: string;
+  blueskyPostUrl?: string;
 };
 
 export type LatestPost = Pick<Post, 'title' | 'slug'> | null;
