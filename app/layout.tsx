@@ -1,10 +1,13 @@
 import { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import { Figtree, Inter, Google_Sans_Code } from 'next/font/google';
 import './theme-base.css';
 import StyledComponentsRegistry from '../lib/registry';
 import ClientLayout from '../components/ClientLayout';
 import { BASE_URL } from './url';
 import { getPosts } from '@/utils/blog.server';
+
+const GA_ID = 'G-LGKMNEE8JJ';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -107,6 +110,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <main id="main-content">{children}</main>
           </ClientLayout>
         </StyledComponentsRegistry>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+        </Script>
       </body>
     </html>
   );
