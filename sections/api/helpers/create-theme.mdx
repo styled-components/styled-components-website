@@ -80,6 +80,52 @@ Pass the theme object to [`ThemeProvider`](/docs/api#themeprovider) for stable c
 </ThemeProvider>
 ```
 
+#### Composition rules
+
+Theme tokens are CSS variables on web and sentinel strings in React Native. They aren't the original raw values, so they only resolve when used in CSS-value positions inside a styled-components template. The single rule: interpolate tokens directly; don't combine them with JavaScript arithmetic.
+
+```tsx
+const theme = createTheme({
+  space: { md: '16px', lg: '32px' },
+  colors: { primary: '#0070f3' },
+});
+
+const Card = styled.div`
+  // works: direct interpolation
+  padding: ${theme.space.md};
+  color: ${theme.colors.primary};
+
+  // works: multi-value
+  margin: ${theme.space.md} ${theme.space.lg};
+
+  // works: function position resolves at render
+  background: ${({ $active }) => ($active ? theme.colors.primary : 'transparent')};
+
+  // works: CSS calc() composes tokens with raw numbers
+  top: calc(${insets.top}px + ${theme.space.lg});
+`;
+```
+
+Why JS arithmetic breaks: on web `theme.space.md` is the literal string `"var(--sc-space-md, 16px)"`, so `4 + theme.space.md` produces `"4var(--sc-space-md, 16px)"`. The browser sees malformed CSS and silently drops the declaration. On native the token is a sentinel string with the same coercion failure, caught by a dev-time warning.
+
+```tsx
+// breaks on both platforms
+top: ${insets.top + theme.space.md};
+top: ${({ theme }) => 4 + theme.space.md}px;
+```
+
+The two correct fixes:
+
+```tsx
+// 1. Compose in CSS via calc()
+top: calc(${insets.top}px + ${theme.space.md});
+
+// 2. Reach for the raw object when you genuinely need a JS number
+const offset = insets.top + theme.raw.space.md;  // 16 (number)
+```
+
+`theme.raw` exposes the original input object unchanged. Use it sparingly; theme overrides applied via `<ThemeProvider>` won't be reflected there because the cascade lives on the CSS side.
+
 #### Dark mode
 
 Use `vars` to reference CSS custom property names in your dark mode overrides — no hand-writing variable names:

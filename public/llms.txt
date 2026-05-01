@@ -262,6 +262,22 @@ const Card = styled.div`
 `;
 ```
 
+Composition rules — tokens are CSS variables (web) or sentinel strings (native), not raw JS values. They only resolve when interpolated directly into CSS-value positions inside a styled-components template. JS arithmetic on tokens silently breaks: `4 + theme.space.md` produces `"4var(--sc-space-md, 16px)"` (web, browser drops the rule) or a leaked sentinel string (native, dev warning fires).
+
+```tsx
+// works
+padding: ${theme.space.md};
+margin: ${theme.space.sm} ${theme.space.md};
+top: calc(${insets.top}px + ${theme.space.md});
+background: ${({ $active }) => ($active ? theme.colors.primary : 'transparent')};
+
+// breaks on both platforms
+top: ${insets.top + theme.space.md};
+top: ${({ theme }) => 4 + theme.space.md}px;
+```
+
+Two correct fixes when you need to combine a token with a runtime number: compose with CSS `calc()` (preferred), or read `theme.raw.space.md` for the original JS value when you genuinely need it outside CSS. `theme.raw` does not reflect ThemeProvider overrides because the cascade lives on the CSS side.
+
 ## Three-way color mode (light / dark / auto) without FOUC
 
 Complete reference implementation. Four pieces: theme, CSS overrides, blocking script, toggle component.
