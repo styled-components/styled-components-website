@@ -16,7 +16,7 @@ importers:
     dependencies:
       '@docsearch/js':
         specifier: ^3.0.0
-        version: 3.9.0(@algolia/client-search@5.46.2)(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(search-insights@2.17.3)
+        version: 3.9.0(@algolia/client-search@5.46.2)(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(search-insights@2.17.3)
       '@mdx-js/loader':
         specifier: ^3.0.0
         version: 3.1.1
@@ -28,49 +28,52 @@ importers:
         version: 16.1.1(@mdx-js/loader@3.1.1)
       '@styled-icons/boxicons-regular':
         specifier: ^10.47.0
-        version: 10.47.0(react@19.2.5)(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+        version: 10.47.0(react@19.2.6)(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6))
       '@styled-icons/fa-brands':
         specifier: ^10.47.0
-        version: 10.47.0(react@19.2.5)(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+        version: 10.47.0(react@19.2.6)(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6))
       '@styled-icons/material':
         specifier: ^10.47.0
-        version: 10.47.0(react@19.2.5)(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+        version: 10.47.0(react@19.2.6)(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6))
       bluesky-comments:
         specifier: ^0.13.1
-        version: 0.13.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 0.13.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      caniuse-lite:
+        specifier: ^1.0.30001792
+        version: 1.0.30001792
       invariant:
         specifier: ^2.2.4
         version: 2.2.4
       markdown-to-jsx:
         specifier: ^9.7.15
-        version: 9.7.15(react@19.2.5)
+        version: 9.7.15(react@19.2.6)
       next:
-        specifier: 16.2.3
-        version: 16.2.3(@babel/core@7.28.5)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        specifier: 16.2.6
+        version: 16.2.6(@babel/core@7.28.5)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       prism-react-renderer:
         specifier: 1.3.5
-        version: 1.3.5(react@19.2.5)
+        version: 1.3.5(react@19.2.6)
       react:
-        specifier: ^19.2.5
-        version: 19.2.5
+        specifier: ^19.2.6
+        version: 19.2.6
       react-dom:
-        specifier: ^19.2.5
-        version: 19.2.5(react@19.2.5)
+        specifier: ^19.2.6
+        version: 19.2.6(react@19.2.6)
       react-is:
         specifier: ^19.0.0
         version: 19.2.3
       react-live-runner:
         specifier: ^1.0.7
-        version: 1.0.7(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 1.0.7(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react-transition-group:
         specifier: ^4.4.5
-        version: 4.4.5(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 4.4.5(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
       styled-components:
-        specifier: 6.4.0
-        version: 6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        specifier: 7.0.0-prerelease-20260511181437
+        version: 7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       styled-theming:
         specifier: ^2.2.0
         version: 2.2.0
@@ -92,7 +95,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: ^16.0.0
-        version: 16.3.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 16.3.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@types/jest':
         specifier: ^30.0.0
         version: 30.0.0
@@ -131,7 +134,7 @@ importers:
         version: 30.2.0
       jest-styled-components:
         specifier: ^7.1.1
-        version: 7.2.0(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
+        version: 7.2.0(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6))
       lint-staged:
         specifier: ^16.4.0
         version: 16.4.0
@@ -494,12 +497,6 @@ packages:
   '@emnapi/wasi-threads@1.2.1':
     resolution: {integrity: sha512-uTII7OYF+/Mes/MrcIOYp5yOtSMLBWSIoLPpcgwipoiKbli6k322tcoFsxoIIxPDqW01SQGAgko4EzZi2BNv2w==}
 
-  '@emotion/is-prop-valid@1.4.0':
-    resolution: {integrity: sha512-QgD4fyscGcbbKwJmqNvUMSE02OsHUa+lAWKdEUIJKgqe5IwRSKd7+KhibEWdaKwgjLj0DRSHA9biAIqGBk05lw==}
-
-  '@emotion/memoize@0.9.0':
-    resolution: {integrity: sha512-30FAj7/EoJ5mwVPOWhAyCX+FPfMDrVecJAM+Iw9NRoSl4BBAQeqj4cApHHUXOVvIPgLVDsCFoz/hGD+5QQD1GQ==}
-
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
     engines: {node: '>=18'}
@@ -799,8 +796,8 @@ packages:
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
-  '@next/env@16.2.3':
-    resolution: {integrity: sha512-ZWXyj4uNu4GCWQw9cjRxWlbD+33mcDszIo9iQxFnBX3Wmgq9ulaSJcl6VhuWx5pCWqqD+9W6Wfz7N0lM5lYPMA==}
+  '@next/env@16.2.6':
+    resolution: {integrity: sha512-gd8HoHN4ufj73WmR3JmVolrpJR47ILK6LouP5xElPglaVxir6e1a7VzvTvDWkOoPXT9rkkTzyCxBu4yeZfZwcw==}
 
   '@next/mdx@16.1.1':
     resolution: {integrity: sha512-XvlZ28/K7kXb1vgTeZWHjjfxDx9BVz/s1bbVlsFOvPfYuSVRmlUkhaiyJTA/7mm9OdpeC57+uHR6k1fUcn5AaA==}
@@ -813,54 +810,54 @@ packages:
       '@mdx-js/react':
         optional: true
 
-  '@next/swc-darwin-arm64@16.2.3':
-    resolution: {integrity: sha512-u37KDKTKQ+OQLvY+z7SNXixwo4Q2/IAJFDzU1fYe66IbCE51aDSAzkNDkWmLN0yjTUh4BKBd+hb69jYn6qqqSg==}
+  '@next/swc-darwin-arm64@16.2.6':
+    resolution: {integrity: sha512-ZJGkkcNfYgrrMkqOdZ7zoLa1TOy0qpcMfk/z4Mh/FKUz40gVO+HNQWqmLxf67Z5WB64DRp0dhEbyHfel+6sJUg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@next/swc-darwin-x64@16.2.3':
-    resolution: {integrity: sha512-gHjL/qy6Q6CG3176FWbAKyKh9IfntKZTB3RY/YOJdDFpHGsUDXVH38U4mMNpHVGXmeYW4wj22dMp1lTfmu/bTQ==}
+  '@next/swc-darwin-x64@16.2.6':
+    resolution: {integrity: sha512-v/YLBHIY132Ced3puBJ7YJKw1lqsCrgcNo2aRJlCEyQrrCeRJlvGlnmxhPxNQI3KE3N1DN5r9TPNPvka3nq5RQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@next/swc-linux-arm64-gnu@16.2.3':
-    resolution: {integrity: sha512-U6vtblPtU/P14Y/b/n9ZY0GOxbbIhTFuaFR7F4/uMBidCi2nSdaOFhA0Go81L61Zd6527+yvuX44T4ksnf8T+Q==}
+  '@next/swc-linux-arm64-gnu@16.2.6':
+    resolution: {integrity: sha512-RPOvqlYBbcQjkz9VQQDZ2T2bARIjXZV1KFlt+V2Mr6SW/e4I9fcKsaA0hdyf2FHoTlsV2xnBd5Y912rP/1Ce6w==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@next/swc-linux-arm64-musl@16.2.3':
-    resolution: {integrity: sha512-/YV0LgjHUmfhQpn9bVoGc4x4nan64pkhWR5wyEV8yCOfwwrH630KpvRg86olQHTwHIn1z59uh6JwKvHq1h4QEw==}
+  '@next/swc-linux-arm64-musl@16.2.6':
+    resolution: {integrity: sha512-URUTu1+dMkxJsPFgm+OeEvq9wf5sujw0EvgYy80TDGHTSLTnIHeqb0Eu8A3sC95IRgjejQL+kC4mw+4yPxiAXA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@next/swc-linux-x64-gnu@16.2.3':
-    resolution: {integrity: sha512-/HiWEcp+WMZ7VajuiMEFGZ6cg0+aYZPqCJD3YJEfpVWQsKYSjXQG06vJP6F1rdA03COD9Fef4aODs3YxKx+RDQ==}
+  '@next/swc-linux-x64-gnu@16.2.6':
+    resolution: {integrity: sha512-DOj182mPV8G3UkrayLoREM5YEYI+Dk5wv7Ox9xl1fFibAELEsFD0lDPfHIeILlutMMfdyhlzYPELG3peuKaurw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@next/swc-linux-x64-musl@16.2.3':
-    resolution: {integrity: sha512-Kt44hGJfZSefebhk/7nIdivoDr3Ugp5+oNz9VvF3GUtfxutucUIHfIO0ZYO8QlOPDQloUVQn4NVC/9JvHRk9hw==}
+  '@next/swc-linux-x64-musl@16.2.6':
+    resolution: {integrity: sha512-HKQ5SP/V/ub73UvF7n/zeJlxk2kLmtL7Wzrg4WfmkjmNos5onJ2tKu7yZOPdL18A6Svfn3max29ym+ry7NkK4g==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@next/swc-win32-arm64-msvc@16.2.3':
-    resolution: {integrity: sha512-O2NZ9ie3Tq6xj5Z5CSwBT3+aWAMW2PIZ4egUi9MaWLkwaehgtB7YZjPm+UpcNpKOme0IQuqDcor7BsW6QBiQBw==}
+  '@next/swc-win32-arm64-msvc@16.2.6':
+    resolution: {integrity: sha512-LZXpTlPyS5v7HhSmnvsLGP3iIYgYOBnc8r8ArlT55sGHV89bR2HlDdBjWQ+PY6SJMmk8TuVGFuxalnP3k/0Dwg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@next/swc-win32-x64-msvc@16.2.3':
-    resolution: {integrity: sha512-Ibm29/GgB/ab5n7XKqlStkm54qqZE8v2FnijUPBgrd67FWrac45o/RsNlaOWjme/B5UqeWt/8KM4aWBwA1D2Kw==}
+  '@next/swc-win32-x64-msvc@16.2.6':
+    resolution: {integrity: sha512-F0+4i0h9J6C4eE3EAPWsoCk7UW/dbzOjyzxY0qnDUOYFu6FFmdZ6l97/XdV3/Nz3VYyO7UWjyEJUXkGqcoXfMA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -1536,11 +1533,8 @@ packages:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
 
-  camelize@1.0.1:
-    resolution: {integrity: sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==}
-
-  caniuse-lite@1.0.30001787:
-    resolution: {integrity: sha512-mNcrMN9KeI68u7muanUpEejSLghOKlVhRqS/Za2IeyGllJ9I9otGpR9g3nsw7n4W378TE/LyIteA0+/FOZm4Kg==}
+  caniuse-lite@1.0.30001792:
+    resolution: {integrity: sha512-hVLMUZFgR4JJ6ACt1uEESvQN1/dBVqPAKY0hgrV70eN3391K6juAfTjKZLKvOMsx8PxA7gsY1/tLMMTcfFLLpw==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -1627,13 +1621,6 @@ packages:
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
-
-  css-color-keywords@1.0.0:
-    resolution: {integrity: sha512-FyyrDHZKEjXDpNJYvVsV960FiqQyXc/LlYmsxl2BcdMb2WPx0OGRVgTg55rPSyLSNMqP52R9r8geSp7apN3Ofg==}
-    engines: {node: '>=4'}
-
-  css-to-react-native@3.2.0:
-    resolution: {integrity: sha512-e8RKaLXMOFii+02mOlqwjbD00KSEKqblnpO9e++1aXS1fPQOpS1YoqdVHBqPjHNoxeF2mimzVqawm2KCbEdtHQ==}
 
   css.escape@1.5.1:
     resolution: {integrity: sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==}
@@ -2479,8 +2466,8 @@ packages:
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
-  next@16.2.3:
-    resolution: {integrity: sha512-9V3zV4oZFza3PVev5/poB9g0dEafVcgNyQ8eTRop8GvxZjV2G15FC5ARuG1eFD42QgeYkzJBJzHghNP8Ad9xtA==}
+  next@16.2.6:
+    resolution: {integrity: sha512-qOVgKJg1+At15NpeUP+eJgCHvTCgXsogweq87Ri/Ix7PkqQHg4sdaXmSFqKlgaIXE4kW0g25LE68W87UANlHtw==}
     engines: {node: '>=20.9.0'}
     hasBin: true
     peerDependencies:
@@ -2611,9 +2598,6 @@ packages:
     resolution: {integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==}
     engines: {node: '>=8'}
 
-  postcss-value-parser@4.2.0:
-    resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
-
   postcss@8.4.31:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -2651,10 +2635,10 @@ packages:
   pure-rand@7.0.1:
     resolution: {integrity: sha512-oTUZM/NAZS8p7ANR3SHh30kXB+zK2r2BPcEn/awJIbOvq82WoMN4p62AWWp3Hhw50G0xMsw1mhIBLqHw64EcNQ==}
 
-  react-dom@19.2.5:
-    resolution: {integrity: sha512-J5bAZz+DXMMwW/wV3xzKke59Af6CHY7G4uYLN1OvBcKEsWOs4pQExj86BBKamxl/Ik5bx9whOrvBlSDfWzgSag==}
+  react-dom@19.2.6:
+    resolution: {integrity: sha512-0prMI+hvBbPjsWnxDLxlCGyM8PN6UuWjEUCYmZhO67xIV9Xasa/r/vDnq+Xyq4Lo27g8QSbO5YzARu0D1Sps3g==}
     peerDependencies:
-      react: ^19.2.5
+      react: ^19.2.6
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -2692,8 +2676,8 @@ packages:
       react: '>=16.6.0'
       react-dom: '>=16.6.0'
 
-  react@19.2.5:
-    resolution: {integrity: sha512-llUJLzz1zTUBrskt2pwZgLq59AemifIftw4aB7JxOqf1HY2FDaGDxgwpAPVzHU1kdWabH7FauP4i1oEeer2WCA==}
+  react@19.2.6:
+    resolution: {integrity: sha512-sfWGGfavi0xr8Pg0sVsyHMAOziVYKgPLNrS7ig+ivMNb3wbCBw3KxtflsGBAwD3gYQlE/AEZsTLgToRrSCjb0Q==}
     engines: {node: '>=0.10.0'}
 
   recma-build-jsx@1.0.0:
@@ -2897,20 +2881,20 @@ packages:
   style-to-object@1.0.14:
     resolution: {integrity: sha512-LIN7rULI0jBscWQYaSswptyderlarFkjQ+t79nzty8tcIAceVomEVlLzH5VP4Cmsv6MtKhs7qaAiwlcp+Mgaxw==}
 
-  styled-components@6.4.0:
-    resolution: {integrity: sha512-BL1EDFpt+q10eAeZB0q9ps6pSlPejaBQWBkiuM16pyoVTG4NhZrPrZK0cqNbrozxSsYwUsJ9SQYN6NyeKJYX9A==}
+  styled-components@7.0.0-prerelease-20260511181437:
+    resolution: {integrity: sha512-n6vFC6k1cHLMB4BvaUSNwTvoL7QcN2UZiDKuoaZYLZ3MXB46Rx81ec0vu7ICn6YCoKZZBA8fnYsJR6lci3XYJw==}
     engines: {node: '>= 16'}
     peerDependencies:
-      css-to-react-native: '>= 3.2.0'
-      react: '>= 16.8.0'
-      react-dom: '>= 16.8.0'
-      react-native: '>= 0.68.0'
+      react: '>= 19.0.0'
+      react-dom: '>= 19.0.0'
+      react-native: '>= 0.85.0'
+      react-native-reanimated: '>= 4.0.0'
     peerDependenciesMeta:
-      css-to-react-native:
-        optional: true
       react-dom:
         optional: true
       react-native:
+        optional: true
+      react-native-reanimated:
         optional: true
 
   styled-jsx@5.1.6:
@@ -3612,9 +3596,9 @@ snapshots:
 
   '@docsearch/css@3.9.0': {}
 
-  '@docsearch/js@3.9.0(@algolia/client-search@5.46.2)(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(search-insights@2.17.3)':
+  '@docsearch/js@3.9.0(@algolia/client-search@5.46.2)(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(search-insights@2.17.3)':
     dependencies:
-      '@docsearch/react': 3.9.0(@algolia/client-search@5.46.2)(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(search-insights@2.17.3)
+      '@docsearch/react': 3.9.0(@algolia/client-search@5.46.2)(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(search-insights@2.17.3)
       preact: 10.28.2
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -3623,7 +3607,7 @@ snapshots:
       - react-dom
       - search-insights
 
-  '@docsearch/react@3.9.0(@algolia/client-search@5.46.2)(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(search-insights@2.17.3)':
+  '@docsearch/react@3.9.0(@algolia/client-search@5.46.2)(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(search-insights@2.17.3)':
     dependencies:
       '@algolia/autocomplete-core': 1.17.9(@algolia/client-search@5.46.2)(algoliasearch@5.46.2)(search-insights@2.17.3)
       '@algolia/autocomplete-preset-algolia': 1.17.9(@algolia/client-search@5.46.2)(algoliasearch@5.46.2)
@@ -3631,8 +3615,8 @@ snapshots:
       algoliasearch: 5.46.2
     optionalDependencies:
       '@types/react': 19.2.14
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
       search-insights: 2.17.3
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -3652,12 +3636,6 @@ snapshots:
     dependencies:
       tslib: 2.8.1
     optional: true
-
-  '@emotion/is-prop-valid@1.4.0':
-    dependencies:
-      '@emotion/memoize': 0.9.0
-
-  '@emotion/memoize@0.9.0': {}
 
   '@img/colour@1.1.0':
     optional: true
@@ -4052,7 +4030,7 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
-  '@next/env@16.2.3': {}
+  '@next/env@16.2.6': {}
 
   '@next/mdx@16.1.1(@mdx-js/loader@3.1.1)':
     dependencies:
@@ -4060,28 +4038,28 @@ snapshots:
     optionalDependencies:
       '@mdx-js/loader': 3.1.1
 
-  '@next/swc-darwin-arm64@16.2.3':
+  '@next/swc-darwin-arm64@16.2.6':
     optional: true
 
-  '@next/swc-darwin-x64@16.2.3':
+  '@next/swc-darwin-x64@16.2.6':
     optional: true
 
-  '@next/swc-linux-arm64-gnu@16.2.3':
+  '@next/swc-linux-arm64-gnu@16.2.6':
     optional: true
 
-  '@next/swc-linux-arm64-musl@16.2.3':
+  '@next/swc-linux-arm64-musl@16.2.6':
     optional: true
 
-  '@next/swc-linux-x64-gnu@16.2.3':
+  '@next/swc-linux-x64-gnu@16.2.6':
     optional: true
 
-  '@next/swc-linux-x64-musl@16.2.3':
+  '@next/swc-linux-x64-musl@16.2.6':
     optional: true
 
-  '@next/swc-win32-arm64-msvc@16.2.3':
+  '@next/swc-win32-arm64-msvc@16.2.6':
     optional: true
 
-  '@next/swc-win32-x64-msvc@16.2.3':
+  '@next/swc-win32-x64-msvc@16.2.6':
     optional: true
 
   '@octokit/openapi-types@18.1.1': {}
@@ -4223,32 +4201,32 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
-  '@styled-icons/boxicons-regular@10.47.0(react@19.2.5)(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))':
+  '@styled-icons/boxicons-regular@10.47.0(react@19.2.6)(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6))':
     dependencies:
       '@babel/runtime': 7.28.4
-      '@styled-icons/styled-icon': 10.7.1(react@19.2.5)(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
-      react: 19.2.5
-      styled-components: 6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@styled-icons/styled-icon': 10.7.1(react@19.2.6)(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6))
+      react: 19.2.6
+      styled-components: 7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
 
-  '@styled-icons/fa-brands@10.47.0(react@19.2.5)(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))':
+  '@styled-icons/fa-brands@10.47.0(react@19.2.6)(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6))':
     dependencies:
       '@babel/runtime': 7.28.4
-      '@styled-icons/styled-icon': 10.7.1(react@19.2.5)(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
-      react: 19.2.5
-      styled-components: 6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@styled-icons/styled-icon': 10.7.1(react@19.2.6)(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6))
+      react: 19.2.6
+      styled-components: 7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
 
-  '@styled-icons/material@10.47.0(react@19.2.5)(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))':
+  '@styled-icons/material@10.47.0(react@19.2.6)(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6))':
     dependencies:
       '@babel/runtime': 7.28.4
-      '@styled-icons/styled-icon': 10.7.1(react@19.2.5)(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
-      react: 19.2.5
-      styled-components: 6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@styled-icons/styled-icon': 10.7.1(react@19.2.6)(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6))
+      react: 19.2.6
+      styled-components: 7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
 
-  '@styled-icons/styled-icon@10.7.1(react@19.2.5)(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))':
+  '@styled-icons/styled-icon@10.7.1(react@19.2.6)(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6))':
     dependencies:
       '@babel/runtime': 7.28.4
-      react: 19.2.5
-      styled-components: 6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      react: 19.2.6
+      styled-components: 7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
 
   '@swc/helpers@0.5.15':
     dependencies:
@@ -4274,12 +4252,12 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/react@16.3.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@testing-library/react@16.3.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
     dependencies:
       '@babel/runtime': 7.28.4
       '@testing-library/dom': 10.4.1
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
     optionalDependencies:
       '@types/react': 19.2.14
       '@types/react-dom': 19.2.3(@types/react@19.2.14)
@@ -4586,11 +4564,11 @@ snapshots:
 
   baseline-browser-mapping@2.10.17: {}
 
-  bluesky-comments@0.13.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  bluesky-comments@0.13.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
       '@atproto/api': 0.17.7
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
 
   brace-expansion@1.1.13:
     dependencies:
@@ -4604,7 +4582,7 @@ snapshots:
   browserslist@4.28.1:
     dependencies:
       baseline-browser-mapping: 2.10.17
-      caniuse-lite: 1.0.30001787
+      caniuse-lite: 1.0.30001792
       electron-to-chromium: 1.5.267
       node-releases: 2.0.27
       update-browserslist-db: 1.2.3(browserslist@4.28.1)
@@ -4625,10 +4603,7 @@ snapshots:
 
   camelcase@6.3.0: {}
 
-  camelize@1.0.1:
-    optional: true
-
-  caniuse-lite@1.0.30001787: {}
+  caniuse-lite@1.0.30001792: {}
 
   ccount@2.0.1: {}
 
@@ -4697,16 +4672,6 @@ snapshots:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
-
-  css-color-keywords@1.0.0:
-    optional: true
-
-  css-to-react-native@3.2.0:
-    dependencies:
-      camelize: 1.0.1
-      css-color-keywords: 1.0.0
-      postcss-value-parser: 4.2.0
-    optional: true
 
   css.escape@1.5.1: {}
 
@@ -5389,10 +5354,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jest-styled-components@7.2.0(styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)):
+  jest-styled-components@7.2.0(styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6)):
     dependencies:
       '@adobe/css-tools': 4.4.4
-      styled-components: 6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      styled-components: 7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
 
   jest-util@30.2.0:
     dependencies:
@@ -5557,9 +5522,9 @@ snapshots:
 
   markdown-table@3.0.4: {}
 
-  markdown-to-jsx@9.7.15(react@19.2.5):
+  markdown-to-jsx@9.7.15(react@19.2.6):
     optionalDependencies:
-      react: 19.2.5
+      react: 19.2.6
 
   mdast-util-find-and-replace@3.0.2:
     dependencies:
@@ -6027,25 +5992,25 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next@16.2.3(@babel/core@7.28.5)(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  next@16.2.6(@babel/core@7.28.5)(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
-      '@next/env': 16.2.3
+      '@next/env': 16.2.6
       '@swc/helpers': 0.5.15
       baseline-browser-mapping: 2.10.17
-      caniuse-lite: 1.0.30001787
+      caniuse-lite: 1.0.30001792
       postcss: 8.4.31
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
-      styled-jsx: 5.1.6(@babel/core@7.28.5)(react@19.2.5)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+      styled-jsx: 5.1.6(@babel/core@7.28.5)(react@19.2.6)
     optionalDependencies:
-      '@next/swc-darwin-arm64': 16.2.3
-      '@next/swc-darwin-x64': 16.2.3
-      '@next/swc-linux-arm64-gnu': 16.2.3
-      '@next/swc-linux-arm64-musl': 16.2.3
-      '@next/swc-linux-x64-gnu': 16.2.3
-      '@next/swc-linux-x64-musl': 16.2.3
-      '@next/swc-win32-arm64-msvc': 16.2.3
-      '@next/swc-win32-x64-msvc': 16.2.3
+      '@next/swc-darwin-arm64': 16.2.6
+      '@next/swc-darwin-x64': 16.2.6
+      '@next/swc-linux-arm64-gnu': 16.2.6
+      '@next/swc-linux-arm64-musl': 16.2.6
+      '@next/swc-linux-x64-gnu': 16.2.6
+      '@next/swc-linux-x64-musl': 16.2.6
+      '@next/swc-win32-arm64-msvc': 16.2.6
+      '@next/swc-win32-x64-msvc': 16.2.6
       sharp: 0.34.5
     transitivePeerDependencies:
       - '@babel/core'
@@ -6183,9 +6148,6 @@ snapshots:
     dependencies:
       find-up: 4.1.0
 
-  postcss-value-parser@4.2.0:
-    optional: true
-
   postcss@8.4.31:
     dependencies:
       nanoid: 3.3.11
@@ -6212,9 +6174,9 @@ snapshots:
       ansi-styles: 5.2.0
       react-is: 18.3.1
 
-  prism-react-renderer@1.3.5(react@19.2.5):
+  prism-react-renderer@1.3.5(react@19.2.6):
     dependencies:
-      react: 19.2.5
+      react: 19.2.6
 
   prop-types@15.8.1:
     dependencies:
@@ -6228,9 +6190,9 @@ snapshots:
 
   pure-rand@7.0.1: {}
 
-  react-dom@19.2.5(react@19.2.5):
+  react-dom@19.2.6(react@19.2.6):
     dependencies:
-      react: 19.2.5
+      react: 19.2.6
       scheduler: 0.27.0
 
   react-is@16.13.1: {}
@@ -6241,35 +6203,35 @@ snapshots:
 
   react-is@19.2.3: {}
 
-  react-live-runner@1.0.7(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  react-live-runner@1.0.7(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
-      prism-react-renderer: 1.3.5(react@19.2.5)
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
-      react-runner: 1.0.5(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
-      react-simple-code-editor: 0.13.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      prism-react-renderer: 1.3.5(react@19.2.6)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+      react-runner: 1.0.5(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      react-simple-code-editor: 0.13.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
 
-  react-runner@1.0.5(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  react-runner@1.0.5(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
       sucrase: 3.35.1
 
-  react-simple-code-editor@0.13.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  react-simple-code-editor@0.13.1(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
 
-  react-transition-group@4.4.5(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  react-transition-group@4.4.5(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
       '@babel/runtime': 7.28.4
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
 
-  react@19.2.5: {}
+  react@19.2.6: {}
 
   recma-build-jsx@1.0.0:
     dependencies:
@@ -6525,20 +6487,17 @@ snapshots:
     dependencies:
       inline-style-parser: 0.2.7
 
-  styled-components@6.4.0(css-to-react-native@3.2.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  styled-components@7.0.0-prerelease-20260511181437(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
     dependencies:
-      '@emotion/is-prop-valid': 1.4.0
       csstype: 3.2.3
-      react: 19.2.5
-      stylis: 4.3.6
+      react: 19.2.6
     optionalDependencies:
-      css-to-react-native: 3.2.0
-      react-dom: 19.2.5(react@19.2.5)
+      react-dom: 19.2.6(react@19.2.6)
 
-  styled-jsx@5.1.6(@babel/core@7.28.5)(react@19.2.5):
+  styled-jsx@5.1.6(@babel/core@7.28.5)(react@19.2.6):
     dependencies:
       client-only: 0.0.1
-      react: 19.2.5
+      react: 19.2.6
     optionalDependencies:
       '@babel/core': 7.28.5
 
