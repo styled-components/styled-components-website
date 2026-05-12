@@ -227,16 +227,34 @@ const KILL_STICKY_PARENT = (rootSelector) => `
   }
 `;
 
-// Reach plc (BristolLive, LiverpoolEcho) ad infrastructure. The Primis
-// floating-video player spawns a constellation of sibling slot ids that
-// must all go, and `.Gutter_gutter__*` is the skin wallpaper.
+// Reach plc (BristolLive, LiverpoolEcho) ad infrastructure across both the
+// modern Next.js template and the legacy section template. Primis floating
+// video, skin wallpaper, top/bottom ad rails, and sticky side gutters.
 const REACH_PLC_SELECTORS = [
   '[id^="primis_player"]', '#imaSlotContainer', '#layoutContainerDiv',
   '#layoutDesign', '#adContainerDiv', '#adVpaid', '#slotContainer',
   '#sekindoVpaidIframe', '#adIma', '#adDisplayBanner',
   '#displayBannerSlotContainer',
   '[class*="Gutter_gutter"]',
+  'reach-gutter', '[class*="ad-placeholder"]',
+  '.top-slot-wrapper', '.bottom-ad-slot', '[id*="div-gpt-ad"]',
 ];
+
+// Reach plc constrains content to a centered ~1000-1040px column with
+// reserved gutters for skin ads. After removing the gutters, expand any
+// element sized to that column so the page fills the viewport.
+const REACH_PLC_STRETCH = `
+  for (const el of document.body.querySelectorAll('*')) {
+    const cs = getComputedStyle(el);
+    const w = parseFloat(cs.width);
+    const mw = parseFloat(cs.maxWidth);
+    const fits = v => v >= 980 && v <= 1080;
+    if (fits(w) || fits(mw)) {
+      el.style.setProperty('max-width', 'none', 'important');
+      el.style.setProperty('width', '100%', 'important');
+    }
+  }
+`;
 
 // Per-slug overrides keyed by the slug argument. Selectors are confirmed
 // by `--inspect <slug> <url>`; keep them specific so editorial content
@@ -247,7 +265,7 @@ const SITE_OVERRIDES = {
   },
   'bristolpost.co.uk': {
     selectors: REACH_PLC_SELECTORS,
-    js: KILL_STICKY_PARENT('iframe[id^="google_ads_iframe"]'),
+    js: KILL_STICKY_PARENT('iframe[id^="google_ads_iframe"]') + REACH_PLC_STRETCH,
   },
   'entrepreneur.com': {
     selectors: [
@@ -273,22 +291,24 @@ const SITE_OVERRIDES = {
       '#ayads-html', '#ayads-dv-div', '#sublime-iframe-container',
       '.celtra-banner',
     ],
-    js: KILL_STICKY_PARENT('iframe[id^="google_ads_iframe"]'),
+    js: KILL_STICKY_PARENT('iframe[id^="google_ads_iframe"]') + REACH_PLC_STRETCH,
   },
   'smh.com.au': {
-    // The wrapper persists with an "Advertisement" label even when the
-    // adspot child is gone, so we also sweep any near-top sticky whose
-    // visible text is just "Advertisement".
     selectors: ['[id^="adspot-"]', '[class~="adWrapper"]'],
+    // SMH's masthead lives inside <header class="q608m undefined noPrint">,
+    // with the ad rail as its first child. After walk-up removes the rail,
+    // a sibling shell may remain. Remove any near-top descendants of that
+    // header that have no visible text and significant height.
     js: `
       ${KILL_STICKY_PARENT('[id^="adspot-"], [class~="adWrapper"]')}
-      for (const el of document.body.querySelectorAll('div, section, aside')) {
-        const cs = getComputedStyle(el);
-        if (cs.position !== 'sticky' && cs.position !== 'fixed') continue;
-        const r = el.getBoundingClientRect();
-        if (r.top > 100 || r.height < 100) continue;
-        const text = (el.innerText || '').trim();
-        if (text === 'Advertisement' || (text === '' && r.height < 320)) el.remove();
+      for (const header of document.querySelectorAll('header.noPrint, header[class*="noPrint"]')) {
+        for (const child of Array.from(header.children)) {
+          if (!child.isConnected) continue;
+          const r = child.getBoundingClientRect();
+          if (r.top > 50 || r.height < 80) continue;
+          const text = (child.innerText || '').trim();
+          if (text === '' || /^advertisement$/i.test(text)) child.remove();
+        }
       }
     `,
   },
@@ -306,13 +326,15 @@ function overrideScript(slug) {
   if (!o) return '';
   const sels = JSON.stringify(o.selectors || []);
   const extra = o.js || '';
+  // JS runs BEFORE the selector sweep so walk-up helpers can still find
+  // their anchor element. Selectors then clean up any survivors.
   return `
     (() => {
+      try { ${extra} } catch (e) { console.warn('override JS failed', e); }
       const sels = ${sels};
       for (const sel of sels) {
         try { document.querySelectorAll(sel).forEach(el => el.remove()); } catch {}
       }
-      try { ${extra} } catch (e) { console.warn('override JS failed', e); }
     })();
   `;
 }
