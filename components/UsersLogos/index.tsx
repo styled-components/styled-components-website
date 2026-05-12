@@ -3,6 +3,7 @@
 import { Company } from 'companies-manifest';
 import styled, { keyframes } from 'styled-components';
 import { useState } from 'react';
+import { logoMonochromeMixin } from '../logoMixins';
 
 const slideAnimation = (reverse?: boolean) => keyframes`
   from {
@@ -52,20 +53,10 @@ const UsersSliderTrack = styled.div<{
 const CompanyLogo = styled.span<{ children?: React.ReactNode }>`
   position: relative;
   height: 2rem;
-  margin: 0 1rem;
+  margin: 0 2rem 0 0;
   bottom: 0;
   opacity: 0.8;
-  filter: brightness(0);
-
-  @media (prefers-color-scheme: dark) {
-    html:not(.light) & {
-      filter: brightness(0) invert(1);
-    }
-  }
-
-  html.dark & {
-    filter: brightness(0) invert(1);
-  }
+  ${logoMonochromeMixin}
   transition: opacity 125ms ease-in-out;
   flex-shrink: 0;
 

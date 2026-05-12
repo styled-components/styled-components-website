@@ -201,6 +201,7 @@ const MobileLatestPost = styled.div`
   display: none;
   justify-content: center;
   order: -1;
+  width: 100%;
 
   ${mobile(css`
     display: flex;
@@ -210,6 +211,7 @@ const MobileLatestPost = styled.div`
 const DesktopLatestPost = styled.div`
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 
   ${mobile(css`
     display: none;

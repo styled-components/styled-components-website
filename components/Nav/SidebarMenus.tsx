@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 import json from '@/app/docs.json';
 import titleToDash from '../../utils/titleToDash';
-import { Home, SmartToy, MenuBook, RssFeed, Public, NewReleases, Favorite } from '@styled-icons/material';
+import { Home, SmartToy, MenuBook, RssFeed, Public, NewReleases, Favorite, TableChart } from '@styled-icons/material';
 import { theme, font } from '../../utils/theme';
 import useScrollSpy from '../../utils/useScrollSpy';
 import Link from '../Link';
@@ -18,10 +18,26 @@ const { pages: docsPages } = json;
 // Top-level navigation items
 // ---------------------------------------------------------------------------
 
-const TOP_LEVEL = [
+type BadgeTone = 'green' | 'pink';
+
+const TOP_LEVEL: ReadonlyArray<{
+  href: string;
+  label: string;
+  icon: typeof Home;
+  external?: boolean;
+  badge?: string;
+  badgeTone?: BadgeTone;
+}> = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/llms.txt', label: 'Agents', icon: SmartToy },
   { href: '/docs', label: 'Documentation', icon: MenuBook },
+  {
+    href: '/docs/compatibility',
+    label: 'Native CanIUse',
+    icon: TableChart,
+    badge: 'New',
+    badgeTone: 'green',
+  },
   { href: '/blog', label: 'Blog', icon: RssFeed },
   { href: '/ecosystem', label: 'Ecosystem', icon: Public },
   { href: '/releases', label: 'Releases', icon: NewReleases },
@@ -31,8 +47,23 @@ const TOP_LEVEL = [
     icon: Favorite,
     external: true,
     badge: 'Help Needed',
+    badgeTone: 'pink',
   },
 ];
+
+// When two top-level routes overlap (e.g. /docs and /docs/compatibility), only
+// the longest matching prefix should mark active so a child entry doesn't
+// double-highlight its parent.
+function activeHref(pathname: string): string | null {
+  let best: string | null = null;
+  for (const { href, external } of TOP_LEVEL) {
+    if (external) continue;
+    if (pathname === href || pathname.startsWith(href + '/')) {
+      if (best === null || href.length > best.length) best = href;
+    }
+  }
+  return best;
+}
 
 // ---------------------------------------------------------------------------
 // Smooth scroll for same-page section links
@@ -71,8 +102,8 @@ export default function SidebarMenu({ latestPost }: { latestPost: LatestPost }) 
         <SearchWithAlgolia latestPost={latestPost} />
       </SearchWrapper>
 
-      {TOP_LEVEL.map(({ href, label, icon: Icon, external, badge }) => {
-        const isActive = !external && (pathname === href || pathname.startsWith(href + '/'));
+      {TOP_LEVEL.map(({ href, label, icon: Icon, external, badge, badgeTone }) => {
+        const isActive = !external && href === activeHref(pathname);
 
         return (
           <TopSection key={href}>
@@ -85,11 +116,12 @@ export default function SidebarMenu({ latestPost }: { latestPost: LatestPost }) 
                 <Icon size={16} />
               </NavIcon>
               {label}
-              {badge && <TopBadge>{badge}</TopBadge>}
+              {badge && <TopBadge $tone={badgeTone}>{badge}</TopBadge>}
             </TopLink>
 
-            {/* Docs: expand into categories + sections */}
-            {href === '/docs' && isActive && (
+            {/* Docs: expand into categories + sections whenever the user is in the docs area,
+                even when a more-specific top-level entry (e.g. Native CanIUse) is the visually active row. */}
+            {href === '/docs' && inDocs && (
               <ChildList>
                 {docsPages.map(({ title, pathname: pagePathname, sections }) => {
                   const categoryPath = `/docs/${pagePathname}`;
@@ -190,16 +222,21 @@ const TopSection = styled.div`
   margin-bottom: ${theme.space[1]};
 `;
 
-const TopBadge = styled.span`
+const TopBadge = styled.span<{ $tone?: BadgeTone }>`
   display: inline-block;
   margin-left: ${theme.space[3]};
   padding: 2px ${theme.space[2]} 1px;
   font-size: ${theme.text.xs};
   font-weight: ${theme.fontWeight.medium};
-  color: ${theme.color.blogAccent};
-  background: ${theme.color.blogAccentSubtle};
   border-radius: ${theme.radius.full};
   line-height: 1.4;
+
+  color: ${p =>
+    p.$tone === 'pink' ? theme.palette[18] : `color-mix(in oklab, ${theme.palette[7]} 65%, ${theme.color.text})`};
+  background: ${p =>
+    p.$tone === 'pink'
+      ? `color-mix(in oklab, ${theme.palette[18]} 18%, ${theme.color.bg})`
+      : `color-mix(in oklab, color-mix(in oklab, ${theme.palette[7]} 65%, ${theme.color.text}) 22%, ${theme.color.bg})`};
 `;
 
 const NavIcon = styled.span`
