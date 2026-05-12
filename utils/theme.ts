@@ -9,11 +9,11 @@ const CODE_NEUTRAL = 54;
 const CODE_NEUTRAL_DARK = 270; // cooler neutral for dark mode
 
 // ---------------------------------------------------------------------------
-// Light theme — the default. Every value becomes a CSS custom property
+// Light theme, the default. Every value becomes a CSS custom property
 // via createTheme: theme.color.bg → "var(--sc-color-bg, oklch(0.99 0 0))"
 // ---------------------------------------------------------------------------
 
-// CVD-optimized light palette — seeded from red oklch(0.72 0.27 30), 20-step ring.
+// CVD-optimized light palette, seeded from red oklch(0.72 0.27 30), 20-step ring.
 // qlab separate --adaptive --tolerance tight --gamut p3, then harmonize.
 // Worst-pair ΔE 8.58 (normal vision), L range 0.61–0.80.
 const lightPalette: Record<number, string> = {
@@ -86,23 +86,23 @@ export const lightTheme = {
     navBg: 'oklch(1 0 0 / 0.85)',
     navText: 'oklch(0.2 0.01 270)',
 
-    // Code syntax — achromatic base tokens
+    // Code syntax, achromatic base tokens
     codeBg: 'oklch(0.97 0 0)',
     codeText: `oklch(0.22 0.02 ${CODE_NEUTRAL})`,
     codeComment: `oklch(0.60 0.03 ${CODE_NEUTRAL})`,
 
-    // Code syntax — chromatic tokens (warm palette for light mode)
-    codeDeclaration: lightPalette[12], // 239° blue — property, attr-name, selector
-    codeFunction: lightPalette[15], // 293° purple — function calls
-    codeValue: lightPalette[6], // 137° green — variables, entities
-    codeAccess: lightPalette[15], // 293° purple — property access
+    // Code syntax, chromatic tokens (warm palette for light mode)
+    codeDeclaration: lightPalette[12], // 239° blue, property, attr-name, selector
+    codeFunction: lightPalette[15], // 293° purple, function calls
+    codeValue: lightPalette[6], // 137° green, variables, entities
+    codeAccess: lightPalette[15], // 293° purple, property access
     codeString: `oklch(0.22 0.02 ${CODE_NEUTRAL})`, // dark text
     codeInterp0: lightPalette[0], // 23° red
     codeInterp1: lightPalette[0], // 23° red
     codeInterp2: lightPalette[0], // 23° red
-    // diff additions — green pulled toward code text for legibility
+    // diff additions, green pulled toward code text for legibility
     codeInserted: `color-mix(in oklab, ${lightPalette[7]} 65%, oklch(0.22 0.02 ${CODE_NEUTRAL}))`,
-    // diff removals — warm scarlet pulled toward code text for legibility
+    // diff removals, warm scarlet pulled toward code text for legibility
     codeDeleted: `color-mix(in oklab, ${lightPalette[0]} 65%, oklch(0.22 0.02 ${CODE_NEUTRAL}))`,
 
     // Hero (always light-on-dark)
@@ -180,10 +180,10 @@ export const lightTheme = {
 };
 
 // ---------------------------------------------------------------------------
-// Dark theme — only colors change
+// Dark theme, only colors change
 // ---------------------------------------------------------------------------
 
-// CVD-optimized dark palette — qlab harmonize, L+0.03 brightened.
+// CVD-optimized dark palette, qlab harmonize, L+0.03 brightened.
 // Worst-pair ΔE 8.69 (normal vision), L range 0.69–0.90.
 const darkPalette: Record<number, string> = {
   0: 'oklch(0.6994 0.2477 23.0264)',
@@ -234,11 +234,11 @@ export const darkColors: Partial<typeof lightTheme.color> = {
   codeText: `oklch(0.95 0.01 ${CODE_NEUTRAL_DARK})`,
   codeComment: `oklch(0.66 0.02 ${CODE_NEUTRAL_DARK})`,
 
-  // Code syntax — chromatic tokens (cool palette for dark mode)
-  codeDeclaration: darkPalette[12], // 236° blue — property, attr-name, selector
-  codeFunction: darkPalette[15], // 296° purple — function calls
-  codeValue: darkPalette[7], // 148° green — variables, entities
-  codeAccess: darkPalette[15], // 296° purple — property access
+  // Code syntax, chromatic tokens (cool palette for dark mode)
+  codeDeclaration: darkPalette[12], // 236° blue, property, attr-name, selector
+  codeFunction: darkPalette[15], // 296° purple, function calls
+  codeValue: darkPalette[7], // 148° green, variables, entities
+  codeAccess: darkPalette[15], // 296° purple, property access
   codeString: '#fff',
   codeInterp0: darkPalette[0], // 23° red
   codeInterp1: darkPalette[0], // 23° red
@@ -254,7 +254,7 @@ export const darkTheme = {
 };
 
 // ---------------------------------------------------------------------------
-// Theme contract — the primary export. Use in styled-components templates:
+// Theme contract, the primary export. Use in styled-components templates:
 //   import { theme } from '../utils/theme';
 //   const Box = styled.div`background: ${theme.color.bg};`;
 // ---------------------------------------------------------------------------
@@ -262,7 +262,7 @@ export const darkTheme = {
 export const theme = createTheme(lightTheme, { prefix: 'sc' });
 
 // ---------------------------------------------------------------------------
-// Font vars — managed by next/font, not part of the theme.
+// Font vars, managed by next/font, not part of the theme.
 // Kept here as simple var() refs since they're framework-controlled.
 // ---------------------------------------------------------------------------
 

@@ -1,5 +1,5 @@
 /**
- * Generates public/favicon.svg — a translucent 3D cube with palette colors.
+ * Generates public/favicon.svg, a translucent 3D cube with palette colors.
  * Run: node scripts/gen-favicon.mjs > public/favicon.svg
  */
 

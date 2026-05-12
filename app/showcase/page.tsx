@@ -8,7 +8,7 @@ import { theme, font } from '@/utils/theme';
 
 export const metadata = {
   title: 'Showcase',
-  description: 'Production interfaces shipping styled-components today — IMDb, Spotify, Coinbase, Prisma, and more.',
+  description: 'Production interfaces shipping styled-components today, IMDb, Spotify, Coinbase, Prisma, and more.',
 };
 
 const companyByOwner = new Map(sortedCompanies.map(c => [c.name, c]));

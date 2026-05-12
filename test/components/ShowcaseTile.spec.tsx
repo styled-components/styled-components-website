@@ -20,7 +20,7 @@ describe('<ShowcaseTile>', () => {
     render(<ShowcaseTile project={baseProject} />);
 
     const link = screen.getByRole('link', {
-      name: /Acme by Acme — open site in a new tab/i,
+      name: /Acme by Acme, open site in a new tab/i,
     });
     expect(link).toHaveAttribute('href', 'https://acme.example');
     expect(link).toHaveAttribute('target', '_blank');

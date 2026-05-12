@@ -92,7 +92,7 @@ const StyledEditor = styled((props: Partial<LiveEditorProps>) => (
     {...props}
     // prism-react-renderer's PrismTheme shape (plain-styles + token-styles
     // arrays) is structurally incompatible with react-live-runner's internal
-    // theme prop — the libraries evolved independently. Runtime is fine.
+    // theme prop, the libraries evolved independently. Runtime is fine.
     // @ts-expect-error see note above
     theme={prismTheme}
     highlight={highlightTSXWithTagDepth}

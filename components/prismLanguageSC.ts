@@ -1,7 +1,7 @@
 /**
  * CSS grammar enrichment for Prism.
  *
- * Prism's default CSS grammar structure is minimal — it tokenizes selectors,
+ * Prism's default CSS grammar structure is minimal, it tokenizes selectors,
  * properties, `:`, values inside `url()`/`var()`, and strings, but leaves
  * the value keywords (layout, positioning, timing, borders, etc.) as raw
  * text nodes inside a `language-css` wrapper. In a styled-components code
@@ -13,7 +13,7 @@
  * them up automatically (no edits to `prismTheme.ts`).
  *
  * Side effect: mutates the Prism bundled by `prism-react-renderer`. Import
- * it once — ordering is guaranteed by ES module caching.
+ * it once, ordering is guaranteed by ES module caching.
  */
 
 import { Prism } from 'prism-react-renderer';
@@ -179,14 +179,14 @@ const valueKeywordPattern = new RegExp(`(?<=[:\\s,(])(?:${sortedKeywords.join('|
 // ---------------------------------------------------------------------------
 // TSX grammar extension: tokenize the contents of `__html: `...`` template
 // literals (as used by React's `dangerouslySetInnerHTML`) as JavaScript.
-// Without this, the template literal renders as one flat string — loses
+// Without this, the template literal renders as one flat string, loses
 // keyword/number/function/punctuation coloring for often-hundreds of lines
 // of bootstrapping JS embedded in theme toggles, analytics snippets, etc.
 //
 // Prism's tsx grammar has its own `template-string` rule that shadows the
 // javascript one, so we have to patch tsx specifically (not javascript).
 // The `rest` grammar used inside the nested template-string is a copy of
-// tsx WITHOUT its `template-string` rule — this keeps the sub-tokenizer
+// tsx WITHOUT its `template-string` rule, this keeps the sub-tokenizer
 // from recursing infinitely on nested backticks.
 // ---------------------------------------------------------------------------
 

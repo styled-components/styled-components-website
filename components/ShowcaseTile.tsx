@@ -40,7 +40,7 @@ export default function ShowcaseTile({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`${title} by ${owner} — open site in a new tab`}
+        aria-label={`${title} by ${owner}, open site in a new tab`}
       >
         <ImageFrame>
           <NextImage

@@ -25,7 +25,7 @@ const SECTION_LABELS: Record<string, string> = {
   releases: 'Releases',
 };
 
-// Single source of truth for docs category titles — derived from docs.json
+// Single source of truth for docs category titles, derived from docs.json
 const DOCS_CATEGORY_LABELS: Record<string, string> = Object.fromEntries(
   docsJson.pages.map(page => [page.pathname, page.title])
 );

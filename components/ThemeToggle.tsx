@@ -21,7 +21,7 @@ const THEME_ICON: Record<Theme, React.ComponentType<{ size?: number }>> = {
 
 function getTheme(): Theme {
   if (typeof window === 'undefined') return 'auto';
-  // Read localStorage rather than the DOM class — the inline themeScript adds
+  // Read localStorage rather than the DOM class, the inline themeScript adds
   // a `dark` class for both "explicit dark" and "auto + system is dark", so
   // the class alone can't distinguish the two and the toggle would never
   // reach `auto` for users on system-dark.
