@@ -91,6 +91,46 @@ const Button = styled.button`
 
 This pattern is especially valuable in RSC environments, where dynamic interpolations incur serialization overhead.
 
+### Memoize the theme object
+
+`<ThemeProvider>` accepts any object, but the per-component render cache uses reference equality on the theme to skip work. An inline literal allocates a fresh object every render, so the cache always misses:
+
+```tsx
+// Bad: new theme reference every render, cache always misses
+function App() {
+  return (
+    <ThemeProvider theme={{ fg: 'red', bg: 'white' }}>
+      <Page />
+    </ThemeProvider>
+  );
+}
+
+// Good: stable reference at module scope
+const theme = { fg: 'red', bg: 'white' };
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Page />
+    </ThemeProvider>
+  );
+}
+
+// Good: memoize when the theme is computed
+function App({ mode }: { mode: 'light' | 'dark' }) {
+  const theme = useMemo(
+    () => (mode === 'dark' ? darkTheme : lightTheme),
+    [mode]
+  );
+  return (
+    <ThemeProvider theme={theme}>
+      <Page />
+    </ThemeProvider>
+  );
+}
+```
+
+This applies regardless of how deep the consumer is — every styled component in the tree pays the cache miss when the theme reference changes.
+
 ### Static vs dynamic components
 
 A styled component is static if its template contains no function interpolations (references to other styled components are fine). Static components pay zero cost on re-render.
