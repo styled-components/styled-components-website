@@ -169,7 +169,7 @@ export default function CompatibilityMatrix({ entries }: Props) {
                 </HeaderCell>
                 <HeaderCell role="columnheader" aria-label="v7" title="styled-components v7 native runtime">
                   v7
-                  <NewBadge href="/docs/v7" aria-label="What's new in v7 (opens v7 docs)">
+                  <NewBadge href="/docs/v7" aria-label="What's new in v7">
                     new
                   </NewBadge>
                 </HeaderCell>
@@ -243,7 +243,7 @@ const FeatureRow = React.memo(function FeatureRow({
       </ClickableRow>
       {expanded && (
         <DetailRow role="row">
-          <DetailCell role="cell" colSpan={5} id={`compat-detail-${entry.id}`}>
+          <DetailCell role="cell" id={`compat-detail-${entry.id}`}>
             <DetailBody>
               <DetailSummary>
                 <Markdown options={MARKDOWN_OPTIONS}>{entry.summary}</Markdown>
@@ -678,7 +678,7 @@ const DetailRow = styled.div`
   ${rowDisplay}
 `;
 
-const DetailCell = styled.div<{ colSpan?: number }>`
+const DetailCell = styled.div`
   grid-column: 1 / -1;
   padding: ${theme.space[4]} ${theme.space[5]};
   border-bottom: 1px solid ${theme.color.border};
