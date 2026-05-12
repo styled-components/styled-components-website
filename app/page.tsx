@@ -28,8 +28,8 @@ export default async function Index() {
               CSS for the <code>&lt;Component&gt;</code> Age
             </h1>
             <h2 className="hero-subtitle">
-              Fast, expressive styling for React. Server components, client components, streaming SSR, React Native—one
-              API.
+              Fast, expressive styling for React. Server components, client components, streaming SSR, React Native, all
+              one API.
             </h2>
 
             <HomepageBadges />

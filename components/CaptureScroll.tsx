@@ -86,7 +86,7 @@ export default function captureScroll<T extends React.ComponentType>(Component: 
     }, []);
 
     // React.ComponentType<P> doesn't model `ref` for generic T, so TS can't
-    // verify the callee accepts a ref. Runtime is fine — callers always pass
+    // verify the callee accepts a ref. Runtime is fine, callers always pass
     // ref-forwarding components.
     // @ts-expect-error see note above
     return <Component {...props} ref={ref} />;

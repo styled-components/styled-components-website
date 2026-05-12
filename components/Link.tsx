@@ -7,7 +7,7 @@ import { theme } from '../utils/theme';
 import rem from '../utils/rem';
 
 // ---------------------------------------------------------------------------
-// Link design system — all variants defined in one place
+// Link design system, all variants defined in one place
 // ---------------------------------------------------------------------------
 
 export type LinkVariant = 'inline' | 'heading' | 'block' | 'unstyled';

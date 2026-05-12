@@ -86,7 +86,7 @@ const PropertyRegistrations = createGlobalStyle`
 // Keyframes
 // ---------------------------------------------------------------------------
 
-// Opacity holds at 1 across the 35% plateau before fading — the eye reads
+// Opacity holds at 1 across the 35% plateau before fading, the eye reads
 // the plateau as "the explosion." With fill-mode: both the 0% state applies
 // during animation-delay, so particles stay invisible until ignition.
 const burstAnim = keyframes`
@@ -105,7 +105,7 @@ const burstAnim = keyframes`
 // animating via @property --trail-progress, which Safari doesn't reliably
 // animate inside translate calc expressions.
 // X: linear interpolation at each stop (p).
-// Y: quadratic ease-out 2p-p² evaluated at each stop — decelerating rise.
+// Y: quadratic ease-out 2p-p² evaluated at each stop, decelerating rise.
 // Y uses quadratic ease-out: f(p) = 2p - p². Evaluated at each stop:
 // p=0: 0, p=0.2: 0.36, p=0.4: 0.64, p=0.6: 0.84, p=0.8: 0.96,
 // p=0.86: 0.9804, p=0.92: 0.9936, p=1: 1

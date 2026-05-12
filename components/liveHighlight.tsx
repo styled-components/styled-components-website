@@ -5,7 +5,7 @@
  * flat token stream to assign JSX nesting depth to tag tokens.
  *
  * Prism tokenizes `<Wrapper><Title>` as a flat sequence of `tag`-typed
- * spans — `<`, `Wrapper`, `>`, `<`, `Title`, `>`. There's no native nesting
+ * spans, `<`, `Wrapper`, `>`, `<`, `Title`, `>`. There's no native nesting
  * awareness in a regex grammar. We walk the stream, watch for bracket
  * direction (`<`, `</`, `/>`, `>`), track an integer depth counter, and
  * stamp a `tag-depth-N` class on each tag token. `prismTheme.ts` has rules
@@ -64,7 +64,7 @@ type MutableToken = {
  * ancestor `tag` type (Prism propagates it downward) but also carry
  * `script` and `language-javascript` markers from the embedded-language
  * wrapper. We want the JS expression to render with its native JS colors,
- * not inherit the tag-depth color — so we skip any token whose type list
+ * not inherit the tag-depth color, so we skip any token whose type list
  * hits one of these "we're actually in a different language now" markers.
  *
  * Additionally, `attr-name` and `attr-value` tokens should retain their
@@ -102,7 +102,7 @@ function annotateTagDepth(lines: MutableToken[][]): void {
       }
 
       // Skip JSX attribute expressions like `theme={theme}`. They have
-      // `tag` + `script language-javascript` on every span — they're
+      // `tag` + `script language-javascript` on every span, they're
       // nominally inside a tag but semantically JS that should render
       // with JS syntax colors. Neither drives the state machine nor
       // receives a depth stamp.
@@ -137,7 +137,7 @@ function annotateTagDepth(lines: MutableToken[][]): void {
 
       if (currentTagDepth !== null && !token.types.includes('punctuation')) {
         const assigned = currentTagDepth % MAX_DEPTH;
-        // Skip depth 0 — the base `tag` rule already covers it.
+        // Skip depth 0, the base `tag` rule already covers it.
         if (assigned > 0) {
           token.types = [...token.types, `tag-depth-${assigned}`];
         }
@@ -153,7 +153,7 @@ function annotateTagDepth(lines: MutableToken[][]): void {
 
 /**
  * Fixes up Prism's tokenization of optional chaining (`?.`). Prism's TSX
- * grammar doesn't tag identifiers after `?.` with `property-access` — it
+ * grammar doesn't tag identifiers after `?.` with `property-access`, it
  * only tags the ones after regular `.`. This walks the stream, detects
  * `?.` operator tokens, and stamps `property-access` on the next
  * identifier-like token so the rest of the pipeline (color cascade,
@@ -165,14 +165,14 @@ function annotateOptionalChain(lines: MutableToken[][]): void {
     for (const token of line) {
       const content = typeof token.content === 'string' ? token.content.trim() : '';
 
-      // `?.` optional chaining operator — the next identifier is a member
+      // `?.` optional chaining operator, the next identifier is a member
       // access that Prism failed to classify.
       if (token.types.includes('operator') && content === '?.') {
         expectsPropertyAccess = true;
         continue;
       }
 
-      // Skip pure whitespace — the chain continues through it.
+      // Skip pure whitespace, the chain continues through it.
       if (content === '') continue;
 
       if (expectsPropertyAccess) {
@@ -273,7 +273,7 @@ function annotateInterpolationDepth(lines: MutableToken[][]): void {
 }
 
 /**
- * Stamps `function` on imported binding names — the identifiers between
+ * Stamps `function` on imported binding names, the identifiers between
  * `import` and `from` keywords. This gives `styled` and `css` in
  * `import styled, { css } from '...'` the function (purple) color.
  */
@@ -303,7 +303,7 @@ function annotateImportBindings(lines: MutableToken[][]): void {
 /**
  * Stamps `function` on plain identifiers used as tagged template literal
  * names (e.g. `css\`...\``). Prism only detects functions via the `name(`
- * pattern — tagged templates get no special type, so `css` inside an
+ * pattern, tagged templates get no special type, so `css` inside an
  * interpolation renders as neutral text instead of function-colored.
  */
 function annotateTaggedTemplateFunctions(lines: MutableToken[][]): void {
@@ -348,7 +348,7 @@ function neutralizeAmpersandSelector(lines: MutableToken[][]): void {
 /**
  * Ensures template-punctuation tokens (backticks, `${`, `}`) resolve to
  * punctuation color. prism-react-renderer's `getStyleForToken` merges
- * styles via `Object.assign(...types.map(t => dict[t]))` — the last
+ * styles via `Object.assign(...types.map(t => dict[t]))`, the last
  * type wins. Move `punctuation` to the end so it overrides `string`.
  */
 function neutralizeTemplatePunctuation(lines: MutableToken[][]): void {
@@ -370,7 +370,7 @@ function neutralizeTemplatePunctuation(lines: MutableToken[][]): void {
  * `<Highlight>` with the full annotation pipeline (tag depth, optional
  * chain, property access depth) and the token-rendering loop. This is
  * THE single source of truth for what a highlighted code block looks
- * like on the site — both static docs blocks (`CodeBlock.tsx`) and
+ * like on the site, both static docs blocks (`CodeBlock.tsx`) and
  * interactive live editors (`LiveEdit.tsx`, `HomepageHeroEditor.tsx`)
  * delegate here.
  */
@@ -398,7 +398,7 @@ export function HighlightedCode({ code, language = 'tsx' }: { code: string; lang
           <>
             {tokens.map((line, i) => {
               // React 19 disallows `key` in spread props. `getLineProps`
-              // returns an object with a `key` field — destructure it out
+              // returns an object with a `key` field, destructure it out
               // and pass to JSX directly.
               const { key: _lineKey, ...lineProps } = getLineProps({ line });
               return (

@@ -41,12 +41,12 @@ const SC_HTML_SIGNAL = /<style[^>]*data-styled[^>]*data-styled-version="([^"]+)"
 // JS bundle signals. The SC runtime calls setAttribute with the literal
 // "data-styled-version" plus a baked-in version constant. After
 // minification the version usually sits adjacent to the attribute name
-// as a quoted string literal — try to capture it; fall back to the
+// as a quoted string literal, so try to capture it; fall back to the
 // presence of the attribute literal alone when the version was hoisted.
 const SC_JS_VERSION = /data-styled-version["'`\s:,]+["'`](\d+\.\d+\.\d+(?:-[\w.]+)?)["'`]/;
 const SC_JS_LITERAL = /data-styled-version/;
 
-// Reported as context when a site has no SC signal — helps explain why
+// Reported as context when a site has no SC signal. Helps explain why
 // a previously-listed site no longer qualifies.
 const ANTI_PATTERNS = [
   { name: 'emotion', re: /<style[^>]+data-emotion|@emotion\/(?:styled|react|css)/i },
@@ -193,7 +193,7 @@ async function check({ url, label }) {
         url,
         label,
         status: 'blocked',
-        reason: `HTTP ${res.status} + bot challenge page — needs DevTools`,
+        reason: `HTTP ${res.status} + bot challenge page, needs DevTools`,
       };
     }
 

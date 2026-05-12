@@ -39,7 +39,7 @@ describe('cssCompat data', () => {
   });
 
   it('every entry that names a caniuseId resolves against caniuse-lite', () => {
-    // Mirror loadCompatMatrix's enrichment logic — if any id is bad, the page
+    // Mirror loadCompatMatrix's enrichment logic. If any id is bad, the page
     // would silently lose its browser chips.
 
     const caniuse: typeof import('caniuse-lite') = require('caniuse-lite');

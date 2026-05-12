@@ -1,4 +1,4 @@
-/* Static base colors — loads before JS to prevent FOUC.
+/* Static base colors, loads before JS to prevent FOUC.
    Values must match the lightColors/darkColors partials in GlobalStyles.tsx. */
 
 :root,

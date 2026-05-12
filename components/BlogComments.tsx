@@ -39,7 +39,7 @@ const Wrapper = styled.div`
     max-width: none;
   }
 
-  /* Hide the "Comments" heading when there's no reply list to head —
+  /* Hide the "Comments" heading when there's no reply list to head;
      the package renders it unconditionally. onEmpty() can't be used because
      it only fires on errors, not on empty-reply threads. */
   [class*='_container_']:not(:has([class*='_commentsList_'])) [class*='_commentsTitle_'] {

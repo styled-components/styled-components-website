@@ -10,7 +10,7 @@ import './prismLanguageSC';
 //   Dark (cool):  violet declarations, green functions, lime variables, purple interpolation
 //
 // Token style ordering is LOAD-BEARING. react-live-runner cascades style
-// matches — when a span has multiple class names that each match a rule, the
+// matches, when a span has multiple class names that each match a rule, the
 // LAST matching rule wins. Punctuation rules go LAST so compound-class spans
 // resolve to punctuation color, not the color of an earlier-matched type.
 
@@ -124,7 +124,7 @@ export default {
       style: { color: theme.color.codeInterp2 },
     },
 
-    // --- Punctuation (LAST — wins cascade) ---
+    // --- Punctuation (LAST, wins cascade) ---
     {
       types: ['punctuation', 'template-punctuation', 'operator', 'arrow'],
       style: { color: theme.color.codeComment },

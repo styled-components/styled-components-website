@@ -19,7 +19,7 @@ export interface Company {
    * Tranco rank (https://tranco-list.eu/). Tranco aggregates Cisco
    * Umbrella, Majestic, Farsight, Cloudflare Radar, and CrUX into a
    * single global popularity ranking that resists day-to-day churn.
-   * Used only to sort the showcase grid — lower = more prominent.
+   * Used only to sort the showcase grid: lower = more prominent.
    */
   globalRank: number;
   style: React.HTMLAttributes<HTMLElement>['style'];

@@ -78,7 +78,7 @@ function quatToCSS(q: Quat): string {
 }
 
 // ---------------------------------------------------------------------------
-// Platonic solids — vertices normalized to unit sphere
+// Platonic solids, vertices normalized to unit sphere
 // ---------------------------------------------------------------------------
 
 function nv(verts: Vec3[]): Vec3[] {
@@ -275,7 +275,7 @@ function buildChainMappings(): number[][] {
   // Icosahedron: identity mapping (all 20 slots used)
   mappings[4] = SOLIDS[4].faces.map((_, i) => i);
 
-  // Chain from largest to smallest — each inherits indices from the next larger
+  // Chain from largest to smallest, each inherits indices from the next larger
   const chain: [number, number][] = [
     [3, 4],
     [2, 3],
@@ -332,7 +332,7 @@ const SLOTS: SlotData[] = (() => {
   });
 })();
 
-// Assign palette steps by face normal azimuth — faces pointing in similar
+// Assign palette steps by face normal azimuth, faces pointing in similar
 // directions get similar hues, creating a smooth spatial gradient across
 // the surface with no high-contrast edges between neighbors.
 const SLOT_PALETTE_STEP: number[] = (() => {
@@ -606,7 +606,7 @@ const EASE = 'cubic-bezier(0.28, 0.11, 0.32, 1)';
 const Face = styled.div<{ $active: boolean }>`
   position: absolute;
   inset: 0;
-  /* No backface-visibility: hidden — during solid-to-solid morph transitions
+  /* No backface-visibility: hidden, during solid-to-solid morph transitions
      the interpolation path can briefly orient a face's normal away from the
      camera, causing it to pop out of existence mid-animation. Painter's sort
      via preserve-3d occludes back faces behind opaque front faces naturally. */
@@ -656,7 +656,7 @@ const FaceIcon = styled.span`
 `;
 
 // ---------------------------------------------------------------------------
-// Shared rotation singleton — all PlatonicLogo instances spin in sync
+// Shared rotation singleton, all PlatonicLogo instances spin in sync
 // ---------------------------------------------------------------------------
 
 const STORAGE_KEY = 'sc-logo-prefs';
@@ -675,7 +675,7 @@ const INIT_QUAT: Quat = qMul(
 
 const defaultPrefs: LogoPrefs = { autoPlay: true, spinning: true, seeThrough: false };
 
-// Persist across HMR — module re-evaluation creates a fresh object otherwise,
+// Persist across HMR, module re-evaluation creates a fresh object otherwise,
 // orphaning listeners attached by still-mounted components.
 const GLOBAL_KEY = '__scLogoRotation' as const;
 
@@ -794,7 +794,7 @@ const sharedRotation: SharedRotation = ((globalThis as Record<string, unknown>)[
 (globalThis as Record<string, unknown>)[GLOBAL_KEY] = sharedRotation;
 
 // ---------------------------------------------------------------------------
-// Face actions — assigned to active faces, more choices as face count grows
+// Face actions, assigned to active faces, more choices as face count grows
 // ---------------------------------------------------------------------------
 
 type LogoPrefs = {
@@ -867,7 +867,7 @@ export default function PlatonicLogo({
     const onPrefs = (p: LogoPrefs) => setPrefs(p);
     sharedRotation.prefsListeners.add(onPrefs);
 
-    // Sync from singleton immediately — covers the case where prefs
+    // Sync from singleton immediately, covers the case where prefs
     // were already loaded by another instance or a prior subscribe() call
     setPrefs({ ...sharedRotation.prefs });
 

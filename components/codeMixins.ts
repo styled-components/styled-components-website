@@ -2,7 +2,7 @@ import { theme, font } from '../utils/theme';
 import rem from '../utils/rem';
 
 /**
- * Shared text/color styling for any rendered code block on the site —
+ * Shared text/color styling for any rendered code block on the site:
  * static `CodeBlock` and interactive `LiveEditor` alike. Defines the
  * `--code-fw` custom property (medium in light mode, light in dark) and
  * applies the theme's token color fallbacks for compound Prism classes
