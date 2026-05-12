@@ -1,21 +1,21 @@
 import { ImageResponse } from 'next/og';
 
 export const alt = 'React Native CanIUse: CSS feature compatibility for styled-components';
-const SCALE = 2;
+const SCALE = 1.5;
 export const size = { width: 1200 * SCALE, height: 630 * SCALE };
 export const contentType = 'image/png';
 
-const BG = '#0b0d16';
-const SURFACE = '#141826';
-const SURFACE_RAISED = '#1a1f30';
-const BORDER = '#262b3d';
-const TEXT = '#f5f6fa';
-const MUTED = '#8b91a8';
+const BG = '#f8f8f8';
+const SURFACE = '#ffffff';
+const SURFACE_RAISED = '#f1f2f4';
+const BORDER = '#d8dade';
+const TEXT = '#1a1a1a';
+const MUTED = '#6b7280';
 
 const STATUS_COLOR = {
-  yes: '#4ade80',
-  partial: '#fbbf24',
-  no: '#f87171',
+  yes: '#16a34a',
+  partial: '#d97706',
+  no: '#dc2626',
 } as const;
 
 const FACES: [string, string][] = [
@@ -89,10 +89,19 @@ function StatusPill({ status }: { status: Status }) {
   );
 }
 
+async function fetchFont(url: string): Promise<ArrayBuffer> {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`font fetch failed (${res.status}): ${url}`);
+  return res.arrayBuffer();
+}
+
 export default async function Image() {
-  const figtreeBold = await fetch(
-    'https://fonts.gstatic.com/s/figtree/v9/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_eYR15e.ttf'
-  ).then(r => r.arrayBuffer());
+  const [figtreeBold, inter400, inter600, mono] = await Promise.all([
+    fetchFont('https://fonts.gstatic.com/s/figtree/v9/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_eYR15e.ttf'),
+    fetchFont('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.ttf'),
+    fetchFont('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-600-normal.ttf'),
+    fetchFont('https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-500-normal.ttf'),
+  ]);
 
   return new ImageResponse(
     <div
@@ -103,7 +112,7 @@ export default async function Image() {
         flexDirection: 'column',
         background: BG,
         padding: `${56 * SCALE}px ${64 * SCALE}px`,
-        fontFamily: 'sans-serif',
+        fontFamily: 'Inter',
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 16 * SCALE, color: MUTED, fontSize: 22 * SCALE }}>
@@ -206,7 +215,7 @@ export default async function Image() {
                 flex: 1,
                 color: TEXT,
                 fontSize: 22 * SCALE,
-                fontFamily: 'monospace',
+                fontFamily: 'JetBrains Mono',
               }}
             >
               {row.feature}
@@ -221,7 +230,12 @@ export default async function Image() {
     </div>,
     {
       ...size,
-      fonts: [{ name: 'Figtree', data: figtreeBold, weight: 700, style: 'normal' }],
+      fonts: [
+        { name: 'Figtree', data: figtreeBold, weight: 700, style: 'normal' },
+        { name: 'Inter', data: inter400, weight: 400, style: 'normal' },
+        { name: 'Inter', data: inter600, weight: 600, style: 'normal' },
+        { name: 'JetBrains Mono', data: mono, weight: 500, style: 'normal' },
+      ],
     }
   );
 }

@@ -2,6 +2,8 @@ export type Post = {
   title: string;
   slug: string;
   author: string;
+  /** Optional Twitter / X handle for the author, without the leading @. */
+  authorTwitter?: string;
   date: string;
   description: string;
   originalUrl?: string;
