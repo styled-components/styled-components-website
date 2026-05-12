@@ -15,14 +15,29 @@ export interface Company {
   logo?: React.ComponentType;
   name: string;
   projects: Record<string, Project>;
-  similarWebGlobalRank: number;
+  /**
+   * Tranco rank (https://tranco-list.eu/). Tranco aggregates Cisco
+   * Umbrella, Majestic, Farsight, Cloudflare Radar, and CrUX into a
+   * single global popularity ranking that resists day-to-day churn.
+   * Used only to sort the showcase grid — lower = more prominent.
+   */
+  globalRank: number;
   style: React.HTMLAttributes<HTMLElement>['style'];
+  /**
+   * Render the logo in its source trademark colors instead of the
+   * default monochrome silhouette. Use for multi-color marks (Warner
+   * Bros shield, etc.) where the monochrome flatten kills inner
+   * detail. White-on-X marks (Auth0, LATAM) should leave this false
+   * since they need the brightness/invert treatment to be visible
+   * on a light background.
+   */
+  colorFaithful?: boolean;
 }
 
 const companies: Company[] = [
   {
     key: 'https://www.imdb.com',
-    similarWebGlobalRank: 54,
+    globalRank: 245,
     name: 'IMDb',
     logo: CompanyLogos.IMDbLogo,
     style: {},
@@ -39,7 +54,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.bbc.com/',
-    similarWebGlobalRank: 114,
+    globalRank: 200,
     name: 'BBC',
     logo: CompanyLogos.BBCLogo,
     style: {},
@@ -47,7 +62,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://spotify.com',
-    similarWebGlobalRank: 111,
+    globalRank: 63,
     name: 'Spotify',
     logo: CompanyLogos.SpotifyLogo,
     style: {
@@ -67,7 +82,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.vimeo.com',
-    similarWebGlobalRank: 239,
+    globalRank: 66,
     name: 'Vimeo',
     logo: CompanyLogos.VimeoLogo,
     style: {
@@ -78,7 +93,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.target.com',
-    similarWebGlobalRank: 300,
+    globalRank: 584,
     name: 'Target',
     logo: CompanyLogos.TargetLogo,
     style: {},
@@ -95,7 +110,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.patreon.com/',
-    similarWebGlobalRank: 533,
+    globalRank: 541,
     name: 'Patreon',
     logo: CompanyLogos.PatreonLogo,
     style: {},
@@ -112,7 +127,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://smallpdf.com',
-    similarWebGlobalRank: 783,
+    globalRank: 3522,
     name: 'Smallpdf',
     logo: CompanyLogos.SmallPdfLogo,
     style: {},
@@ -129,7 +144,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://giphy.com/',
-    similarWebGlobalRank: 830,
+    globalRank: 485,
     name: 'Giphy',
     logo: CompanyLogos.GiphyLogo,
     style: {
@@ -149,7 +164,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.ticketmaster.com/',
-    similarWebGlobalRank: 1079,
+    globalRank: 2365,
     name: 'Ticketmaster',
     logo: CompanyLogos.TicketmasterLogo,
     style: {
@@ -168,7 +183,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.priceline.com/',
-    similarWebGlobalRank: 1509,
+    globalRank: 3873,
     name: 'Priceline',
     logo: CompanyLogos.PricelineLogo,
     style: {},
@@ -185,7 +200,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.coinbase.com',
-    similarWebGlobalRank: 2001,
+    globalRank: 2282,
     name: 'Coinbase',
     logo: CompanyLogos.CoinbaseLogo,
     style: {
@@ -205,7 +220,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.xing.com',
-    similarWebGlobalRank: 2203,
+    globalRank: 1006,
     name: 'Xing',
     logo: CompanyLogos.XingLogo,
     style: {
@@ -216,7 +231,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.vogue.com',
-    similarWebGlobalRank: 3075,
+    globalRank: 26642,
     name: 'Vogue',
     logo: CompanyLogos.VogueLogo,
     style: {
@@ -235,7 +250,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://auth0.com',
-    similarWebGlobalRank: 5628,
+    globalRank: 1777,
     name: 'Auth0',
     logo: CompanyLogos.Auth0Logo,
     style: {},
@@ -252,7 +267,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.underarmour.com',
-    similarWebGlobalRank: 6221,
+    globalRank: 10980,
     name: 'UnderArmour',
     logo: CompanyLogos.UnderArmourLogo,
     style: {
@@ -262,7 +277,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.shpock.com',
-    similarWebGlobalRank: 11112,
+    globalRank: 98889,
     name: 'Shpock',
     logo: CompanyLogos.ShpockLogo,
     style: {
@@ -273,7 +288,7 @@ const companies: Company[] = [
   },
   {
     key: 'https://www.artsy.net',
-    similarWebGlobalRank: 17576,
+    globalRank: 9054,
     name: 'Artsy',
     logo: CompanyLogos.ArtsyLogo,
     style: {
@@ -292,25 +307,8 @@ const companies: Company[] = [
     },
   },
   {
-    key: 'https://www.welcometothejungle.com/',
-    similarWebGlobalRank: 23268,
-    name: 'Welcome to the jungle',
-    logo: CompanyLogos.WelcomeUILogo,
-    style: {},
-    projects: {
-      welcomeui: {
-        title: 'Welcome UI',
-        link: 'https://www.welcome-ui.com',
-        src: '/screenshots/thumbnails/welcome-ui.com.jpg',
-        width: 1280,
-        height: 720,
-        internalUrl: 'welcome-ui',
-      },
-    },
-  },
-  {
     key: 'https://www.volkswagen.de/de.html',
-    similarWebGlobalRank: 75049,
+    globalRank: 10766,
     name: 'Volkswagen',
     logo: CompanyLogos.VolkswagenLogo,
     style: {
@@ -320,7 +318,7 @@ const companies: Company[] = [
   },
   {
     key: 'http://taskade.com/',
-    similarWebGlobalRank: 136144,
+    globalRank: 39854,
     name: 'Taskade',
     logo: CompanyLogos.TaskadeLogo,
     style: {},
@@ -336,26 +334,8 @@ const companies: Company[] = [
     },
   },
   {
-    key: 'https://prisma.io',
-    similarWebGlobalRank: 183831,
-    name: 'Prisma',
-    logo: CompanyLogos.PrismaLogo,
-    style: {},
-    projects: {
-      prisma: {
-        title: 'Prisma',
-        link: 'https://prisma.io/',
-        repo: 'https://github.com/prisma/prisma',
-        src: '/screenshots/thumbnails/prisma.io.jpg',
-        width: 1280,
-        height: 720,
-        internalUrl: 'prisma',
-      },
-    },
-  },
-  {
     key: 'https://www.redbullmusicacademy.com/',
-    similarWebGlobalRank: 470372,
+    globalRank: 85770,
     name: 'Red Bull Music',
     logo: CompanyLogos.RedBullLogo,
     style: {},
@@ -363,10 +343,294 @@ const companies: Company[] = [
       redbull: {
         title: 'Red Bull Music',
         link: 'https://www.redbullmusicacademy.com/',
-        src: '/screenshots/thumbnails/redbullmusicacademy.com.png',
+        src: '/screenshots/thumbnails/redbullmusicacademy.com.jpg',
         width: 1280,
         height: 720,
         internalUrl: 'redbull',
+      },
+    },
+  },
+  {
+    key: 'https://www.warnerbros.com',
+    globalRank: 1031,
+    name: 'Warner Bros.',
+    logo: CompanyLogos.WarnerBrosLogo,
+    colorFaithful: true,
+    style: {},
+    projects: {
+      warnerbros: {
+        title: 'Warner Bros.',
+        link: 'https://www.warnerbros.com',
+        src: '/screenshots/thumbnails/www.warnerbros.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'warnerbros',
+      },
+    },
+  },
+  {
+    key: 'https://www.latamairlines.com',
+    globalRank: 4703,
+    name: 'LATAM Airlines',
+    logo: CompanyLogos.LatamLogo,
+    style: {},
+    projects: {
+      latamairlines: {
+        title: 'LATAM Airlines',
+        link: 'https://www.latamairlines.com',
+        src: '/screenshots/thumbnails/latamairlines.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'latamairlines',
+      },
+    },
+  },
+  {
+    key: 'https://www.northwesternmutual.com',
+    globalRank: 7927,
+    name: 'Northwestern Mutual',
+    logo: CompanyLogos.NorthwesternMutualLogo,
+    colorFaithful: true,
+    style: {},
+    projects: {
+      northwesternmutual: {
+        title: 'Northwestern Mutual',
+        link: 'https://www.northwesternmutual.com',
+        src: '/screenshots/thumbnails/northwesternmutual.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'northwesternmutual',
+      },
+    },
+  },
+  {
+    key: 'https://www.sixt.com',
+    globalRank: 14028,
+    name: 'SIXT',
+    logo: CompanyLogos.SixtLogo,
+    style: {},
+    projects: {
+      sixt: {
+        title: 'SIXT',
+        link: 'https://www.sixt.com',
+        src: '/screenshots/thumbnails/sixt.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'sixt',
+      },
+    },
+  },
+  {
+    key: 'https://www.asurion.com',
+    globalRank: 11980,
+    name: 'Asurion',
+    logo: CompanyLogos.AsurionLogo,
+    style: {},
+    projects: {
+      asurion: {
+        title: 'Asurion',
+        link: 'https://www.asurion.com',
+        src: '/screenshots/thumbnails/asurion.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'asurion',
+      },
+    },
+  },
+  {
+    key: 'https://www.northropgrumman.com',
+    globalRank: 26708,
+    name: 'Northrop Grumman',
+    logo: CompanyLogos.NorthropGrummanLogo,
+    colorFaithful: true,
+    style: {},
+    projects: {
+      northropgrumman: {
+        title: 'Northrop Grumman',
+        link: 'https://www.northropgrumman.com',
+        src: '/screenshots/thumbnails/northropgrumman.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'northropgrumman',
+      },
+    },
+  },
+  {
+    key: 'https://www.smh.com.au',
+    globalRank: 2224,
+    name: 'The Sydney Morning Herald',
+    style: {},
+    projects: {
+      smh: {
+        title: 'The Sydney Morning Herald',
+        link: 'https://www.smh.com.au',
+        src: '/screenshots/thumbnails/smh.com.au.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'smh',
+      },
+    },
+  },
+  {
+    key: 'https://fortune.com',
+    globalRank: 1090,
+    name: 'Fortune',
+    logo: CompanyLogos.FortuneLogo,
+    style: {},
+    projects: {
+      fortune: {
+        title: 'Fortune',
+        link: 'https://fortune.com',
+        src: '/screenshots/thumbnails/fortune.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'fortune',
+      },
+    },
+  },
+  {
+    key: 'https://www.entrepreneur.com',
+    globalRank: 2314,
+    name: 'Entrepreneur',
+    logo: CompanyLogos.EntrepreneurLogo,
+    style: {},
+    projects: {
+      entrepreneur: {
+        title: 'Entrepreneur',
+        link: 'https://www.entrepreneur.com',
+        src: '/screenshots/thumbnails/entrepreneur.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'entrepreneur',
+      },
+    },
+  },
+  {
+    key: 'https://www.liverpoolecho.co.uk',
+    globalRank: 10515,
+    name: 'Liverpool Echo',
+    style: {},
+    projects: {
+      liverpoolecho: {
+        title: 'Liverpool Echo',
+        link: 'https://www.liverpoolecho.co.uk',
+        src: '/screenshots/thumbnails/liverpoolecho.co.uk.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'liverpoolecho',
+      },
+    },
+  },
+  {
+    key: 'https://plos.org',
+    globalRank: 1120,
+    name: 'PLOS',
+    logo: CompanyLogos.PLOSLogo,
+    style: {},
+    projects: {
+      plos: {
+        title: 'PLOS',
+        link: 'https://plos.org',
+        src: '/screenshots/thumbnails/plos.org.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'plos',
+      },
+    },
+  },
+  {
+    key: 'https://wistia.com',
+    globalRank: 3377,
+    name: 'Wistia',
+    style: {},
+    projects: {
+      wistia: {
+        title: 'Wistia',
+        link: 'https://wistia.com',
+        src: '/screenshots/thumbnails/wistia.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'wistia',
+      },
+    },
+  },
+  {
+    key: 'https://www.bristolpost.co.uk',
+    globalRank: 23277,
+    name: 'Bristol Live',
+    style: {},
+    projects: {
+      bristollive: {
+        title: 'Bristol Live',
+        link: 'https://www.bristolpost.co.uk',
+        src: '/screenshots/thumbnails/bristolpost.co.uk.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'bristollive',
+      },
+    },
+  },
+  {
+    key: 'https://www.formstack.com',
+    globalRank: 5974,
+    name: 'Formstack',
+    style: {},
+    projects: {
+      formstack: {
+        title: 'Formstack',
+        link: 'https://www.formstack.com',
+        src: '/screenshots/thumbnails/formstack.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'formstack',
+      },
+    },
+  },
+  {
+    key: 'https://movember.com',
+    globalRank: 19471,
+    name: 'Movember',
+    style: {},
+    projects: {
+      movember: {
+        title: 'Movember',
+        link: 'https://movember.com',
+        src: '/screenshots/thumbnails/movember.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'movember',
+      },
+    },
+  },
+  {
+    key: 'https://www.trustwave.com',
+    globalRank: 14048,
+    name: 'LevelBlue',
+    style: {},
+    projects: {
+      levelblue: {
+        title: 'LevelBlue',
+        link: 'https://www.trustwave.com',
+        src: '/screenshots/thumbnails/trustwave.com.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'levelblue',
+      },
+    },
+  },
+  {
+    key: 'https://www.firstnews.co.uk',
+    globalRank: 126334,
+    name: 'First News',
+    style: {},
+    projects: {
+      firstnews: {
+        title: 'First News',
+        link: 'https://www.firstnews.co.uk',
+        src: '/screenshots/thumbnails/firstnews.co.uk.jpg',
+        width: 1280,
+        height: 720,
+        internalUrl: 'firstnews',
       },
     },
   },
@@ -374,7 +638,7 @@ const companies: Company[] = [
 
 export default companies;
 
-export const sortedCompanies = companies.toSorted((a, b) => a.similarWebGlobalRank - b.similarWebGlobalRank);
+export const sortedCompanies = companies.toSorted((a, b) => a.globalRank - b.globalRank);
 
 export interface SortedProject extends Project {
   owner: Company['name'];

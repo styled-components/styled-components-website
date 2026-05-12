@@ -57,14 +57,18 @@ const Label = styled.label<React.LabelHTMLAttributes<HTMLLabelElement>>`
   position: absolute;
   bottom: 0;
   left: 50%;
+  width: max-content;
   max-width: 100%;
   transform: translate(-50%, 50%);
   background-color: ${theme.color.bg};
   color: ${theme.color.text};
   font-family: var(--font-sans);
-  padding: 2px 12px;
+  padding: 0.25em 1em;
+  text-align: center;
   white-space: nowrap;
-  border-radius: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 0.4em;
   box-shadow:
     0 10px 20px ${theme.color.shadow},
     0 5px 12px ${theme.color.shadow};
@@ -80,15 +84,20 @@ const Website = styled.div<{ $position: number; as?: React.ElementType; children
   display: block;
   position: relative;
   width: 100%;
-  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  transition: translate 180ms ease-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition-duration: 0ms;
+    translate: none;
+  }
 
   &:hover {
-    transform: scale(1.1);
-    cursor: pointer;
+    translate: 0 -6px;
+  }
 
-    ${Label} {
-      opacity: 1;
-    }
+  &:hover ${Label} {
+    opacity: 1;
   }
 
   @media (min-width: 800px) {
@@ -97,23 +106,8 @@ const Website = styled.div<{ $position: number; as?: React.ElementType; children
     display: ${props => (props.$position > 4 ? 'none' : 'block')};
     transform: scale(${props => scaleFactor[Math.abs(props.$position - 2)]});
 
-    &:hover {
-      transform: scale(${props => scaleFactor[Math.abs(props.$position - 2)] + 0.2});
-
-      &:nth-of-type(-n + 2) {
-        ${Label} {
-          left: 0;
-          transform: translate(0, 50%);
-        }
-      }
-
-      &:nth-of-type(4),
-      &:nth-of-type(5) {
-        ${Label} {
-          right: 0;
-          transform: translate(0, 50%);
-        }
-      }
+    ${Label} {
+      font-size: ${props => `${0.65 / (scaleFactor[Math.abs(props.$position - 2)] ?? 1)}rem`};
     }
   }
 `;
