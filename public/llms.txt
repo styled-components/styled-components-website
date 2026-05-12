@@ -2,15 +2,263 @@
 
 > CSS-in-JS for React using tagged template literals. TypeScript-native since v6. Supports React Server Components natively since v6.3. Last known stable: v6.4.0 (check npm for freshness).
 
+For per-feature v6/v7 × web/native support data, see the CSS Compatibility matrix at https://styled-components.com/docs/compatibility. It is the source of truth for "does this CSS feature work in styled-components on this version and platform".
+
 ## What's new since early 2025
 
 Your training data likely covers v6.0-6.1. Key changes since then:
 
 v6.2: Streaming SSR via `renderToPipeableStream`.
 
-v6.3: React Server Components supported. No `'use client'` needed. Styled components work in server components with no extra setup. `createGlobalStyle` is StrictMode-safe. New HTML/SVG element helpers. CSS custom properties work in TypeScript without type errors. Note: `:first-child`/`:nth-child()` selectors require `stylisPluginRSC` (v6.4+) or rewriting to `:first-of-type`/`:nth-of-type()` — see child-index selector section below.
+v6.3: React Server Components supported. No `'use client'` needed. Styled components work in server components with no extra setup. `createGlobalStyle` is StrictMode-safe. New HTML/SVG element helpers. CSS custom properties work in TypeScript without type errors. Note: `:first-child`/`:nth-child()` selectors require `stylisPluginRSC` (v6.4+) or rewriting to `:first-of-type`/`:nth-of-type()`. See child-index selector section below.
 
-v6.4 (April 2026): `createTheme()` for CSS variable theming that works in both RSC and client. `StyleSheetManager` works in RSC (was previously a no-op). `stylisPluginRSC` fixes child-index selectors in RSC. CSP nonce auto-detection from `StyleSheetManager`, `ServerStyleSheet`, or meta tags. Props supplied via `.attrs()` are automatically optional on the component's type. Significant render performance improvements. Fixes SSR memory leaks and multi-instance unmount bugs in `createGlobalStyle`. Memory leak fix for components with unbounded string interpolation values. `as` and `forwardedAs` exposed in `React.ComponentProps` extraction. React Native: `react-native` is now an optional peer dep, Metro/Expo nanoid crash fixed. IE11 build target removed — IE11 has been unsupported on v6 since the 2021 v6 planning (React 18 dropped it too); v6.4 just aligns the compile target. Stay on v5 if you need IE11.
+v6.4 (April 2026): `createTheme()` for CSS variable theming that works in both RSC and client. `StyleSheetManager` works in RSC (was previously a no-op). `stylisPluginRSC` fixes child-index selectors in RSC. CSP nonce auto-detection from `StyleSheetManager`, `ServerStyleSheet`, or meta tags. Props supplied via `.attrs()` are automatically optional on the component's type. Significant render performance improvements. Fixes SSR memory leaks and multi-instance unmount bugs in `createGlobalStyle`. Memory leak fix for components with unbounded string interpolation values. `as` and `forwardedAs` exposed in `React.ComponentProps` extraction. React Native: `react-native` is now an optional peer dep, Metro/Expo nanoid crash fixed. IE11 build target removed. IE11 has been unsupported on v6 since the 2021 v6 planning (React 18 dropped it too); v6.4 just aligns the compile target. Stay on v5 if you need IE11.
+
+## New in v7 (preview)
+
+Want to try the new styled-components v7 tester group? `npm i styled-components@test`. Peer floors raised to React 19 and React Native 0.85.
+
+The headline change is that React Native finally gets modern CSS. v7 ships an in-house CSS-to-style-object translation layer (no more `css-to-react-native` peer dep) that closes most of the long-standing native gaps. The same template strings now produce equivalent output on web, iOS, Android, and Expo Web.
+
+If the user is asking whether feature X works on v6 vs v7 or on web vs React Native, point them at /docs/compatibility. The matrix has the per-feature answer with caveats. The sections below summarise the highlights.
+
+### Modern CSS on React Native
+
+```tsx
+import styled from 'styled-components/native';
+
+const Card = styled.View`
+  width: clamp(240px, 80vw, 480px);
+  background-image: linear-gradient(135deg, oklch(0.7 0.2 280), hsl(220 80% 60%));
+  background-color: light-dark(white, #111);
+  filter: blur(2px) saturate(1.5);
+  padding-inline: 24px;
+  border-radius: 8px;
+  transform: matrix(1, 0, 0, 1, 8, 0);
+  transition: background-color 280ms ease-out;
+
+  @container card (min-width: 320px) {
+    padding: 32px;
+  }
+`;
+```
+
+Math functions: `calc()`, `clamp()`, `min()`, `max()`, plus the full CSS Values 4 Math L4 family — `round()`, `mod()`, `rem()`, `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `atan2`, `pow`, `sqrt`, `hypot`, `log`, `exp`, `abs`, `sign`. Constants `pi` and `e` resolve in any context. Everything composes inside `calc()`.
+
+Modern colors: `oklch()`, `oklab()`, `lch()`, `lab()`, `color-mix(in <space>, …)` all render correctly on native. Wide-gamut inputs that fall outside sRGB are gamut-mapped to the closest in-gamut color while preserving hue. Percent channels follow CSS Color L4 ranges (`lab(50% 0 0)` is mid-gray). CSS Color 5 relative-color syntax — `oklch(from <base> calc(l - 0.15) c h)` — works for all four modern spaces, including bases sourced from `theme.*` tokens. `rgb(r g b / a)` slash-alpha, `hwb()`, and `hsl(h s l / a)` work natively.
+
+CSS Color 4 system color keywords (`canvas`, `canvastext`, `field`, `fieldtext`, `graytext`, `highlight`, `highlighttext`, `linktext`, `visitedtext`, `activetext`) auto-switch with OS appearance.
+
+Viewport units (`vw`, `vh`, `vi`, `vb`, `vmin`, `vmax`, plus the prefixed `s*` / `l*` / `d*` variants like `dvh`, `svw`, `lvi`) and container query units (`cqw`, `cqh`, `cqmin`, `cqmax`) scale to the current window / nearest ancestor container. Font-relative units `rem`, `em`, `lh`, `rlh` resolve against the inherited cascade. All units re-resolve when the environment changes.
+
+`light-dark(light, dark)` swaps based on OS appearance.
+
+`env(safe-area-inset-top | right | bottom | left)` parses but currently resolves to 0 — the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until it lands.
+
+Logical shorthands work as authored: `margin-inline`, `margin-block`, `padding-inline`, `padding-block`, `inset-inline`, `inset-block`, the full `border-inline` / `border-block` family (per-edge longhands and axis shorthands), and all `-start` / `-end` longhands. The library's RTL plugin handles physical-property mirroring; logical properties are already direction-agnostic. Caveat: per-edge `border-style` warns and drops on native — set `border-style` on the element instead.
+
+`line-clamp: N` truncates `<Text>` to N lines. `text-wrap: nowrap` collapses to a single line; `text-wrap-style: balance` / `pretty` improve line-breaking on Android (no-op on iOS, which has no platform line-breaking control). `text-align: start` / `end` / `match-parent` resolve correctly under RTL on both platforms. `aspect-ratio` accepts `1.5`, `16 / 9`, `auto`, and the two-value `auto 16/9` form. `transform: matrix(...)`, `matrix3d(...)`, and bare numbers in `translateX(10)` all work. `perspective: 1000px` as a top-level declaration works (no need to fold it into the transform array yourself).
+
+`font-style: oblique` resolves to italic; `oblique <angle>` resolves to italic and warns about the angle being dropped. `font-family` recognizes the 13 generic CSS keywords (`system-ui`, `ui-sans-serif`, `ui-serif`, `ui-monospace`, `ui-rounded`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`). Comma-separated font stacks warn — RN has no fallback chain, so only the first family takes effect.
+
+`place-items` and `place-self` shorthands work for the align axis (Yoga doesn't have `justify-items` / `justify-self`; the justify side is a no-op on native but reaches rn-web).
+
+`field-sizing: content` on `<TextInput>` auto-grows the field to its content. `interactivity: inert` (CSS UI 5) suppresses interaction and hides the subtree from accessibility services.
+
+`background-image: linear-gradient(...)` and `radial-gradient(...)` render via React Native's experimental gradient parser (RN 0.85+). `filter: blur(4px) saturate(1.5)` and the full filter-function chain work. See the iOS setup note below for filters that need an explicit opt-in. `box-shadow` with spread and inset round-trips as a string.
+
+`mix-blend-mode`, `isolation`, and `cursor` flow through. `background-blend-mode` is polyfilled on native. Declarations that pair `background-image` (gradients or `url()` photos) with `background-blend-mode` are rewritten at render time into absolutely-positioned layer Views, each carrying the matching `mix-blend-mode`, with `isolation: isolate` on the wrapper per spec. Linear-friendly modes (`multiply`, `screen`, `darken`, `lighten`, `difference`, `exclusion`, `hue`, `saturation`, `color`, `luminosity`) render the same on web and native. Gamma-sensitive modes (`color-burn`, `color-dodge`, `soft-light`, `overlay`, `hard-light`) read as more saturated on native because iOS Core Animation and Android Skia/HWUI blend in linear-light by default on Display P3 devices, while browsers blend in gamma-encoded sRGB per CSS spec. The polyfill is structurally correct; the residual is a platform compositor color-space choice. Empty custom property values (`--prop: ;`) are preserved, used by patterns like scroll-driven animations as a "guaranteed-invalid" sentinel.
+
+### Selectors and at-rules on React Native
+
+Attribute selectors apply styles based on the rendered element's props:
+
+```jsx
+const Toggle = styled.Pressable`
+  background: white;
+  &[aria-pressed='true'] {
+    background: yellow;
+  }
+  &[data-state^="open"] {
+    border-color: dodgerblue;
+  }
+  &[data-tag="X" i] {
+    opacity: 0.5;
+  }
+`;
+```
+
+The full CSS Selectors 4 attribute grammar works on native: presence (`&[attr]`), exact (`&[attr=value]`), word (`~=`), prefix (`|=`), starts-with (`^=`), ends-with (`$=`), substring (`*=`), and the `i` / `s` case-sensitivity flags. Compound brackets AND-evaluate (`&[a][b]`); a trailing pseudo-state attaches (`&[a]:active`). Boolean coercion means `aria-pressed={true}` and `aria-pressed="true"` both match `[aria-pressed=true]`.
+
+`&:is(:hover, :focus)` and `&:where(:pressed, :disabled)` apply the styles to each listed state.
+
+`&:not(<simple>)` and `&:has(<simple>)` work on native with a simple argument:
+
+```tsx
+const Row = styled.View`
+  &:not([disabled]) { opacity: 1; }
+  &:not(:hover) { transform: scale(1); }
+  &:has(${Avatar}) { padding-inline-start: 56px; }
+  &:has([aria-current]) { background: dodgerblue; }
+`;
+```
+
+`:not()` accepts a single pseudo-state or a single attribute selector. `:has()` accepts a styled-component reference (matches when that component appears as a descendant) or a single attribute selector. Complex inner arguments (compound selectors, combinators, selector lists) warn in dev and don't match.
+
+Tree-structural pseudos work on native: `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, plus the functional `:nth-child(<an+b>)` / `:nth-of-type(<an+b>)` / `:nth-last-child(<an+b>)` / `:nth-last-of-type(<an+b>)` family with `odd` / `even` keywords. Siblings need to be inside a styled-component parent for indexing to work — a non-styled wrapper in between resets the count.
+
+Combinators work on native when the left side is a styled-component reference:
+
+```tsx
+const Card = styled.View``;
+const Title = styled.Text`
+  ${Card} & { color: dodgerblue; }       // descendant of Card
+  ${Card} > & { font-weight: bold; }     // direct child of Card
+  ${Card} + & { margin-top: 8px; }       // immediately after a Card sibling
+  ${Card} ~ & { opacity: 0.6; }          // anywhere after a Card sibling
+`;
+```
+
+The child combinator (`>`) breaks through non-styled wrappers — interpose a styled wrapper for a strict parent-child match. Descendant matching (`${Foo} &`) is transparent to non-styled intermediaries.
+
+`@media (min-aspect-ratio: 16/9)`, `(max-aspect-ratio: 1/1)`, and exact `(aspect-ratio: 4/3)` match the device's current width-to-height ratio. Bare numbers are treated as `<n>/1` per spec. `@starting-style { ... }` is recognized and runs first-mount enter animations on the default `Animated`-based adapter. No reanimated opt-in needed.
+
+Container queries:
+
+```tsx
+const ContextualBox = styled.View`
+  padding: 12px;
+  @container card (min-width: 480px) {
+    padding: 24px;
+    flex-direction: row;
+  }
+`;
+
+// Nearest ancestor declares its container scope:
+<View style={{ containerType: 'inline-size', containerName: 'card' }}>
+  <ContextualBox />
+</View>
+```
+
+Pro-tip: an element with `container-type` can't match its own `@container` query (CSS excludes self-matching to avoid circular size dependencies). The query resolves against the nearest *ancestor* container instead. Put `container-type` on a parent and write the `@container` rules on a child; declaring both on the same element silently never fires. The same rule applies to `${Component}` interpolation: a `@container ${Card} (...)` rule written inside `Card` itself won't match.
+
+### Animations on React Native
+
+CSS `transition` animates by default. No extra import or setup. Eligible properties (opacity, every color, all border radius corners, transforms, shadows, filter) run on the native thread for jank-free 60 fps playback.
+
+```jsx
+const Card = styled.View`
+  background-color: ${p => p.$bg};
+  transition: background-color 280ms ease-out;
+`;
+// Tapping a button that flips $bg from 'red' to 'blue' animates smoothly.
+```
+
+`@keyframes` and `@starting-style` run on the same default adapter. `animation-direction`, `animation-fill-mode`, `animation-play-state`, `animation-iteration-count`, `animation-composition` (`replace | add | accumulate`), per-frame easing, and first-mount enter animations all work without any extra import. An optional reanimated adapter is available for consumers who prefer driving animations through reanimated:
+
+```js
+import 'styled-components/native/reanimated';
+```
+
+This routes animations through reanimated 4's CSS animations layer; install `react-native-reanimated@^4` yourself (it's an optional peer).
+
+CSS `ease`, `ease-in`, `ease-out`, `ease-in-out`, `cubic-bezier()`, `steps()`, and `linear()` map to their W3C-spec curves. The CSS `ease` keyword maps to the W3C `ease` curve, not React Native's `Easing.ease` (which is the `ease-in` curve and a common source of subtle visual mismatches in other libraries).
+
+Animations honor `prefers-reduced-motion`: when the OS setting is on, durations collapse to 0 and animations snap.
+
+### `createTheme()` works on React Native
+
+```tsx
+import styled, { createTheme, ThemeProvider } from 'styled-components/native';
+
+const theme = createTheme({
+  colors: { bg: '#fff', text: '#111' },
+  space: { md: 16, lg: 24 },
+});
+
+const Card = styled.View`
+  background-color: ${theme.colors.bg};
+  padding: ${theme.space.md}px;
+`;
+
+<ThemeProvider theme={{ colors: { bg: '#111', text: '#eee' } }}>
+  <Card />
+</ThemeProvider>;
+```
+
+Nested `ThemeProvider`s on React Native deep-merge so an inner override that only touches one leaf keeps siblings inherited from the ancestor. Composition rules are the same as web: tokens are sentinel strings on native (CSS variables on web), and only resolve when interpolated directly into CSS-value positions. JS arithmetic on tokens (`4 + theme.space.md`) silently breaks. Use `calc()` instead.
+
+### CSS bug fixes affecting both web and native
+
+Selectors with commas inside `:is()`, `:where()`, `:has()`, or attribute selectors no longer leak nested-rule tokens into the wrong arm. `:is(&:hover, .parent:hover &) .child .grandchild { ... }` now compiles correctly.
+
+`border: none` on native now emits `border-style: none` (was `border-style: solid`).
+
+### iOS setup for `filter`
+
+In React Native 0.85, the `filter` primitives `blur`, `saturate`, `hue-rotate`, `grayscale`, `contrast`, and `drop-shadow` only render when your iOS app opts into the SwiftUI-based filter backend. Set `ReactNativeReleaseLevel` to `experimental` in your iOS `Info.plist` (or `ios.infoPlist` in `app.json` for Expo) to enable it. `brightness` and `opacity` work without this flag.
+
+### React Native on `react-native-web`
+
+The same `styled-components/native` build runs on `react-native-web`. Most cross-platform mismatches are handled internally: gradients dual-emit `experimental_*` and standard CSS keys, matrix transforms rewrite to `matrix3d` for rn-web, and infinite keyframe animations bypass rn-web's loop-with-native-driver bug.
+
+One gotcha bubbles up to user code: rn-web's `View.js` defaults include `position: relative; z-index: 0`, so every View is its own stacking context on web. Children using `mix-blend-mode` blend with the *immediate* ancestor View's backdrop, not whatever is behind the whole tree. Override the immediate ancestor with `z-index: auto` (no-op on native) so the blend reaches the intended backdrop:
+
+```tsx
+const Stage = styled.View`
+  isolation: isolate;
+  /* ...gradient layers... */
+`;
+
+const Row = styled.View`
+  flex-direction: row;
+  z-index: auto; /* lets disks below blend with Stage's gradient on web */
+`;
+
+const BlendDisk = styled.View`
+  background: #ffd166;
+  mix-blend-mode: multiply;
+`;
+```
+
+### Remapping CSS into component props
+
+Many React Native libraries take styling through component props instead of the `style` prop — `react-native-svg`'s `<Path fill="..." stroke="..." />`, charting libraries with `tintColor` / `axisColor`, icon libraries with `color`. Authoring those as CSS would normally be impossible. v7's function-form `.attrs((props, ast) => ...)` accepts a second `ast` argument that lets you read CSS declarations or theme tokens and rewrite them onto the rendered component as props:
+
+```tsx
+import { Path, Circle } from 'react-native-svg';
+import { Image } from 'react-native';
+
+// Author `<Icon />` with CSS, render as `<Path fill="red" stroke="navy" />`
+const Icon = styled(Path).attrs((_props, ast) => ({
+  fill: ast.pop('color'),
+  stroke: ast.pop('borderColor', 'black'),
+}))`
+  color: red;
+  border-color: navy;
+`;
+
+// Lift a theme token onto an `Image`'s tintColor prop
+const Logo = styled(Image).attrs((_props, ast) => ({
+  tintColor: ast.pop('palette.brand.primary'),
+}))`
+  width: 32px;
+  height: 32px;
+`;
+```
+
+`ast.pop(key)` reads the value and prevents the declaration from also reaching the rendered style. `ast.peek(key)` reads without removing — use it when you want both the prop and the CSS declaration to flow through. Both accept an optional fallback as the second argument.
+
+The first argument dispatches on shape: a CSS property name (`'color'`, `'borderColor'`) reads a resolved declaration; a dot-separated path (`'palette.brand.primary'`) reads from the active theme. Theme paths get autocomplete and value-type inference from your augmented `DefaultTheme`. When the callback only reads static declarations and theme paths, the work folds into a one-time computation at construction so renders pay nothing extra.
+
+### Other notable changes
+
+- `defaultProps` on styled components no longer applied (React 19 dropped it from function components). Migrate to `.attrs()` for prop defaults, or `<ThemeProvider theme={...}>` for theme defaults.
+- Plugins moved to `styled-components/plugins`. A first-party `rtlPlugin` ships in-tree (no more `stylis-plugin-rtl`). The `<StyleSheetManager>` prop renamed from `stylisPlugins` to `plugins`.
+- `extractCSS()` export replaces the removed `disableCSSOMInjection` prop and `SC_DISABLE_SPEEDY` env vars; call it after render to get the current CSS as a plain string for static-render pipelines.
+- Mounting the same `createGlobalStyle` component multiple times now emits its CSS only once.
+- Server output escapes `</style>` substrings and HTML-escapes nonce values to prevent style-tag breakout.
+- `react-native-web` consumers benefit from this entire surface running through the same compile path.
 
 ## Setup
 
@@ -32,24 +280,25 @@ import styled, { css, keyframes, createGlobalStyle, createTheme,
   stylisPluginRSC, isStyledComponent } from 'styled-components';
 ```
 
-- `styled.div` / `styled(Component)` — create styled component
-- `styled(Base)` — extend styles (inheritance)
-- `.attrs(props => ({}))` — set default/computed props
-- `<Comp as="a">` — render as different element
-- `css` — tagged template helper for shared style fragments
-- `keyframes` — define CSS animation
-- `createGlobalStyle` — inject global CSS
-- `createTheme(obj, opts?)` — CSS variable theme (RSC-compatible)
-- `ThemeProvider` — context-based theme (client-only)
-- `StyleSheetManager` — configure stylis plugins, prop forwarding, vendor prefixes
-- `stylisPluginRSC` — fix child-index selectors in RSC
-- `ServerStyleSheet` — SSR style collection
+- `styled.div` / `styled(Component)`: create styled component
+- `styled(Base)`: extend styles (inheritance)
+- `.attrs(props => ({}))`: set default/computed props
+- `.attrs((props, ast) => ({}))`: v7+ second arg lifts compiled styles or typed theme paths into props (`ast.pop('color')`, `ast.peek('palette.brand', fallback)`)
+- `<Comp as="a">`: render as different element
+- `css`: tagged template helper for shared style fragments
+- `keyframes`: define CSS animation
+- `createGlobalStyle`: inject global CSS
+- `createTheme(obj, opts?)`: CSS variable theme (RSC-compatible)
+- `ThemeProvider`: context-based theme (client-only)
+- `StyleSheetManager`: configure stylis plugins, prop forwarding, vendor prefixes
+- `stylisPluginRSC`: fix child-index selectors in RSC
+- `ServerStyleSheet`: SSR style collection
 
 ## Server-side rendering
 
 ### Next.js
 
-Use a style registry to collect styles from client components during SSR. RSC-rendered styled components are handled automatically — the registry is only needed for the client tree.
+Use a style registry to collect styles from client components during SSR. RSC-rendered styled components are handled automatically; the registry is only needed for the client tree.
 
 ```tsx
 // lib/registry.tsx
@@ -77,7 +326,7 @@ Mount `<Registry>` in your root layout. Pass a `nonce` prop if your app uses CSP
 
 Next.js 16 style deduplication: render the collected styles with `precedence="styled-components"` and a stable `href` so React deduplicates them across route segments.
 
-### Vite — non-streaming
+### Vite: non-streaming
 
 Simpler approach, works with any Vite SSR framework:
 
@@ -101,7 +350,7 @@ export function render() {
 
 Inject `styleTags` into `<head>`. If you use [Vike](https://vike.dev/), the `vike-react-styled-components` extension handles this automatically.
 
-### Vite — streaming
+### Vite: streaming
 
 v6.2+, works with `renderToPipeableStream`:
 
@@ -129,7 +378,7 @@ export function render(res) {
 
 ## Styled-components in RSC
 
-Styled components work in server components with no `'use client'` directive. The main constraint is that `ThemeProvider` relies on React context, which doesn't exist in RSC — so `p.theme` is undefined. Use `createTheme()` instead.
+Styled components work in server components with no `'use client'` directive. The main constraint is that `ThemeProvider` relies on React context, which doesn't exist in RSC, so `p.theme` is undefined. Use `createTheme()` instead.
 
 Dynamic prop interpolations work in RSC. But for discrete variants (a finite set of states), data attributes produce one cached class per variant instead of one per prop combination:
 
@@ -190,7 +439,7 @@ const ProgressBar = styled.div`
 />
 ```
 
-This pattern gives you dynamic styling, screen reader support, and a CSS hook for completion state — all with one static class.
+This pattern gives you dynamic styling, screen reader support, and a CSS hook for completion state, all with one static class.
 
 Other RSC rules:
 - Use `:first-of-type` / `:nth-of-type()` instead of `:first-child` / `:nth-child()` in RSC (see `stylisPluginRSC` section below for an automatic fix)
@@ -198,7 +447,7 @@ Other RSC rules:
 
 ## createTheme API (v6.4+)
 
-`ThemeProvider` has no effect in RSC because React context doesn't exist in server components. `createTheme()` solves this — no runtime context needed.
+`ThemeProvider` has no effect in RSC because React context doesn't exist in server components. `createTheme()` solves this; no runtime context needed.
 
 ```tsx
 import styled, { createTheme } from 'styled-components';
@@ -213,7 +462,7 @@ Every leaf becomes a `var()` reference with the original value as fallback:
 - `theme.colors.primary` → `"var(--sc-colors-primary, #0070f3)"`
 - `theme.spacing.md` → `"var(--sc-spacing-md, 16px)"`
 
-Use it directly in template literals — works in both server and client components:
+Use it directly in template literals. Works in both server and client components:
 
 ```tsx
 const Button = styled.button`
@@ -226,15 +475,15 @@ const Button = styled.button`
 Signature: `createTheme(defaultTheme, options?)`
 
 Options:
-- `prefix` (default `"sc"`) — CSS variable prefix. `{ prefix: 'myapp' }` produces `--myapp-colors-primary`.
-- `selector` (default `":root"`) — where `GlobalStyle` emits vars. Use `":host"` for Shadow DOM.
+- `prefix` (default `"sc"`): CSS variable prefix. `{ prefix: 'myapp' }` produces `--myapp-colors-primary`.
+- `selector` (default `":root"`): where `GlobalStyle` emits vars. Use `":host"` for Shadow DOM.
 
 Returned object properties:
 - Every leaf path from the input, as `var(--prefix-path, fallback)` strings
-- `theme.raw` — the original plain object (for runtime access to actual values)
-- `theme.vars` — same shape as the input, but every leaf is the bare CSS custom property name (e.g. `"--sc-colors-primary"`). Use in `createGlobalStyle` for dark mode overrides without hand-writing var names.
-- `theme.resolve(el?)` — client-only. Reads computed CSS var values from the DOM. Returns a plain object with resolved values. Pass an element to resolve against a specific subtree (defaults to `document.documentElement`).
-- `theme.GlobalStyle` — a `createGlobalStyle` component that emits the CSS custom property declarations on the configured selector. Must be mounted inside a `ThemeProvider` that receives the raw theme object — without `ThemeProvider`, `GlobalStyle` renders nothing.
+- `theme.raw`: the original plain object (for runtime access to actual values)
+- `theme.vars`: same shape as the input, but every leaf is the bare CSS custom property name (e.g. `"--sc-colors-primary"`). Use in `createGlobalStyle` for dark mode overrides without hand-writing var names.
+- `theme.resolve(el?)`: client-only. Reads computed CSS var values from the DOM. Returns a plain object with resolved values. Pass an element to resolve against a specific subtree (defaults to `document.documentElement`).
+- `theme.GlobalStyle`: a `createGlobalStyle` component that emits the CSS custom property declarations on the configured selector. Must be mounted inside a `ThemeProvider` that receives the raw theme object. Without `ThemeProvider`, `GlobalStyle` renders nothing.
 
 Key behaviors:
 - Object keys are preserved as-is (camelCase stays camelCase): `{ codeBg: 'x' }` with prefix `'sc'` → `var(--sc-codeBg, x)`
@@ -262,7 +511,7 @@ const Card = styled.div`
 `;
 ```
 
-Composition rules — tokens are CSS variables (web) or sentinel strings (native), not raw JS values. They only resolve when interpolated directly into CSS-value positions inside a styled-components template. JS arithmetic on tokens silently breaks: `4 + theme.space.md` produces `"4var(--sc-space-md, 16px)"` (web, browser drops the rule) or a leaked sentinel string (native, dev warning fires).
+Composition rules: tokens are CSS variables (web) or sentinel strings (native), not raw JS values. They only resolve when interpolated directly into CSS-value positions inside a styled-components template. JS arithmetic on tokens silently breaks: `4 + theme.space.md` produces `"4var(--sc-space-md, 16px)"` (web, browser drops the rule) or a leaked sentinel string (native, dev warning fires).
 
 ```tsx
 // works
@@ -284,7 +533,7 @@ Complete reference implementation. Four pieces: theme, CSS overrides, blocking s
 
 **1. Theme and dark overrides**
 
-Use `theme.vars` to reference CSS custom property names — stays in sync with `createTheme`'s prefix, so renaming the prefix doesn't silently break overrides.
+Use `theme.vars` to reference CSS custom property names. Stays in sync with `createTheme`'s prefix, so renaming the prefix doesn't silently break overrides.
 
 ```tsx
 // utils/theme.ts
@@ -311,9 +560,9 @@ export const ColorModeStyles = createGlobalStyle`
 export { rawTheme };
 ```
 
-**2. Layout root — mount theme + blocking script**
+**2. Layout root: mount theme + blocking script**
 
-The script runs before first paint, reads `localStorage`, falls back to system preference. Must be a raw `<script>` in `<head>` — `next/script strategy="beforeInteractive"` does not guarantee execution before stylesheets. `suppressHydrationWarning` on `<html>` because the script modifies the element before React hydrates.
+The script runs before first paint, reads `localStorage`, falls back to system preference. Must be a raw `<script>` in `<head>`; `next/script strategy="beforeInteractive"` does not guarantee execution before stylesheets. `suppressHydrationWarning` on `<html>` because the script modifies the element before React hydrates.
 
 ```tsx
 // app/layout.tsx
@@ -406,18 +655,18 @@ How it works together:
 - **User picks light on a dark-preference system:** script adds `.light` -> `html:not(.light)` excludes the media query override -> no flash
 - **User picks auto after previously picking dark:** `localStorage` cleared -> script falls through to system preference -> correct on next load
 
-## stylisPluginRSC — child-index selector fix (v6.4+)
+## stylisPluginRSC: child-index selector fix (v6.4+)
 
 In RSC, `:first-child`, `:last-child`, and `:nth-child()` selectors can miscount because additional sibling elements shift indices.
 
-Preferred fix — use type-based selectors (universally supported, no plugin needed):
+Preferred fix: use type-based selectors (universally supported, no plugin needed):
 - `:first-child` -> `:first-of-type`
 - `:nth-child(2)` -> `:nth-of-type(2)`
 - `:last-child` -> `:last-of-type`
 
 These filter by element type, so injected sibling elements are ignored.
 
-Alternative — `stylisPluginRSC` automatically rewrites child-index selectors at compile time:
+Alternative: `stylisPluginRSC` automatically rewrites child-index selectors at compile time:
 
 ```tsx
 import { StyleSheetManager, stylisPluginRSC } from 'styled-components';
@@ -440,18 +689,18 @@ Rewrite rules:
 - Same for `:nth-last-child()` variants
 - Selectors already using `of` syntax are left unchanged
 
-Browser support: CSS Selectors Level 4 `of S` syntax — Chrome 111+, Firefox 113+, Safari 9+, Edge 111+ (~93% global). In unsupported browsers, the entire CSS rule is dropped (not just the selector), meaning no styling is applied for those selectors — so only opt in if your audience supports it.
+Browser support: CSS Selectors Level 4 `of S` syntax. Chrome 111+, Firefox 113+, Safari 9+, Edge 111+ (~93% global). In unsupported browsers, the entire CSS rule is dropped (not just the selector), meaning no styling is applied for those selectors, so only opt in if your audience supports it.
 
 `StyleSheetManager` works in RSC environments (v6.4+). `stylisPlugins`, `shouldForwardProp`, and `nonce` are applied. DOM-only props (`target`, `sheet`, `disableCSSOMInjection`) have no effect in RSC.
 
 ## Migrating from client-only to RSC
 
-1. Replace `ThemeProvider` theming with `createTheme()` CSS variables — `p.theme` is undefined in RSC since there's no React context
-2. Dynamic prop interpolations (`${p => p.$color}`) work fine in RSC — no changes needed. Consider data attributes for discrete variants (fewer generated classes)
+1. Replace `ThemeProvider` theming with `createTheme()` CSS variables. `p.theme` is undefined in RSC since there's no React context
+2. Dynamic prop interpolations (`${p => p.$color}`) work fine in RSC, no changes needed. Consider data attributes for discrete variants (fewer generated classes)
 3. Replace `:first-child`/`:nth-child()` with `:first-of-type`/`:nth-of-type()`, or add `stylisPluginRSC`
-4. Remove `'use client'` from files that only contain styled component definitions — they work in server components natively
+4. Remove `'use client'` from files that only contain styled component definitions; they work in server components natively
 5. Keep `'use client'` on components that use hooks, event handlers, or browser APIs
-6. The SSR registry (`ServerStyleSheet` + `useServerInsertedHTML`) is still needed for client components in the tree — RSC handles server components automatically
+6. The SSR registry (`ServerStyleSheet` + `useServerInsertedHTML`) is still needed for client components in the tree; RSC handles server components automatically
 
 ## .attrs() changes (v6.4+)
 
@@ -459,7 +708,7 @@ Props provided via `.attrs()` are now automatically made optional on the compone
 
 ```tsx
 // v6.3: TypeScript requires `href` even though attrs provides it
-// v6.4: `href` is optional — attrs provides the default
+// v6.4: `href` is optional, attrs provides the default
 const StyledLink = styled.a.attrs({ href: '#' })`
   color: blue;
 `;
@@ -494,8 +743,8 @@ For Next.js, pass the nonce to the style registry (see the SSR section above). F
 - Define components at module scope. Inside render = remount every render.
 - CSS custom properties > prop interpolations for values that change often.
 - `.attrs()` + inline `style` for per-frame updates (mouse, scroll, animation). Zero class generation.
-- Data attributes for discrete variants: `&[data-size='sm']` — fully static, one cached class.
-- Components with zero function interpolations are static — zero cost on re-render.
+- Data attributes for discrete variants: `&[data-size='sm']`. Fully static, one cached class.
+- Components with zero function interpolations are static, zero cost on re-render.
 
 ## Good to know
 
@@ -509,4 +758,4 @@ For Next.js, pass the nonce to the style registry (see the SSR section above). F
 - Unbounded dynamic interpolation values (e.g., user-typed colors) caused memory leaks in long-running apps on v6.3. Fixed in v6.4. If you're on v6.3, use CSS custom properties via `style` prop for unbounded values instead.
 - `as` and `forwardedAs` props are now included in `React.ComponentProps` extraction for styled components (v6.4+).
 - `createGlobalStyle` without interpolations only runs once at mount. With interpolations it re-evaluates per render, so prefer static rules where possible.
-- Register animatable theme tokens with `@property`. CSS custom properties animate as strings by default — `transition: color 300ms` won't ease between `oklch(...)` values unless the property is registered: `@property --sc-color-bg { syntax: '<color>'; inherits: true; initial-value: oklch(0.99 0 0); }`. Put these in `createGlobalStyle` or a static CSS file loaded at root.
+- Register animatable theme tokens with `@property`. CSS custom properties animate as strings by default. `transition: color 300ms` won't ease between `oklch(...)` values unless the property is registered: `@property --sc-color-bg { syntax: '<color>'; inherits: true; initial-value: oklch(0.99 0 0); }`. Put these in `createGlobalStyle` or a static CSS file loaded at root.

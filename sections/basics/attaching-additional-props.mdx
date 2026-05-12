@@ -85,3 +85,37 @@ const Link = styled.a.attrs({ href: '#', rel: 'noopener' })`
 ```
 
 Previously, TypeScript required you to pass `href` even though attrs supplied it.
+
+### Bridging styles into props | v7+
+
+Some third-party components — most notably `react-native-svg`'s `<Path>` and `<Circle>`, charting libraries, `<Image tintColor>`, icon libraries that take a `color` prop — style through component props instead of the `style` prop. Authoring those as CSS would normally be impossible. The function form of `.attrs` accepts a second `ast` argument that lets you read a value out of the rendered style and rewrite it onto the component as a prop:
+
+```tsx
+import { Path } from 'react-native-svg';
+
+// Author the icon with CSS, render as <Path fill="red" stroke="black" />
+const Icon = styled(Path).attrs((_props, ast) => ({
+  fill: ast.pop('color'),
+  stroke: ast.pop('borderColor', 'black'),
+}))`
+  color: red;
+  border-color: navy;
+`;
+```
+
+`ast.pop(key)` reads the value and removes the declaration's effect on the rendered style — useful when the prop is the *only* surface that should receive the value. `ast.peek(key)` reads without removing — useful when the prop and the CSS declaration should both flow through. Both accept an optional fallback as the second argument.
+
+The first argument dispatches on shape. A CSS property name reads a declaration; a dot-separated path reads from the active theme:
+
+```tsx
+const Logo = styled(Image).attrs((_props, ast) => ({
+  tintColor: ast.pop('palette.brand.primary'),
+}))`
+  width: 32px;
+  height: 32px;
+`;
+```
+
+Theme paths get autocomplete and value-type inference from your augmented `DefaultTheme`. Path keys are walked by JS property access, so any key shape works (`palette.brand.primary`, `colors.red-500`, `space.0`, …).
+
+Callbacks that only read static declarations and theme paths are evaluated once at construction; renders pay nothing extra.

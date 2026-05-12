@@ -37,7 +37,9 @@ component's props. The `attrs` object accepts the following values:
     <Column>
       A function that receives the props that are passed into the component
       and computes a value, that is then going to be merged into the
-      existing component props.
+      existing component props. The factory accepts an optional second
+      argument, <Code>ast</Code>, for reading style declarations or theme
+      tokens — see <a href="/docs/basics#bridging-styles-into-props--v7">Bridging styles into props</a>.
     </Column>
   </Row>
 </Table>
