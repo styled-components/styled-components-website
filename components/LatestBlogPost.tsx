@@ -10,7 +10,8 @@ import type { Post } from '../utils/blog';
 
 const Card = styled(Link)`
   display: inline-flex;
-  gap: ${theme.space[5]};
+  flex-direction: column;
+  gap: ${theme.space[2]};
   align-items: flex-start;
   max-width: max-content;
   margin: ${theme.space[6]} 0 ${theme.space[8]};
@@ -38,16 +39,16 @@ const Card = styled(Link)`
   ${mobile(css`
     margin: ${theme.space[4]} 0;
     padding: ${theme.space[3]} ${theme.space[4]};
-    gap: ${theme.space[3]};
   `)}
 `;
 
 const LabelColumn = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: ${rem(4)};
-  flex-shrink: 0;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: ${theme.space[2]};
+  align-self: stretch;
   padding-top: 2px;
 `;
 
@@ -65,16 +66,13 @@ const Label = styled.span`
 const DateText = styled.time`
   font-size: ${theme.text.xs};
   color: ${theme.color.textSecondary};
-  margin-top: 2px;
-  padding: 0 ${rem(2)};
 `;
 
 const Body = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${rem(4)};
+  gap: ${theme.space[2]};
   min-width: 0;
-  padding-left: ${rem(8)};
 `;
 
 const Title = styled.span`

@@ -46,8 +46,14 @@ export default {
 
     // --- Bright neutral (text-level) ---
     {
-      types: ['doctype', 'inserted', 'class-name', 'maybe-class-name', 'symbol'],
+      types: ['doctype', 'class-name', 'maybe-class-name', 'symbol'],
       style: { color: theme.color.codeText },
+    },
+
+    // --- Diff additions ---
+    {
+      types: ['inserted'],
+      style: { color: theme.color.codeInserted },
     },
     {
       types: ['tag-depth-0'],
@@ -88,8 +94,14 @@ export default {
 
     // --- Function calls ---
     {
-      types: ['function', 'deleted'],
+      types: ['function'],
       style: { color: theme.color.codeFunction },
+    },
+
+    // --- Diff removals ---
+    {
+      types: ['deleted'],
+      style: { color: theme.color.codeDeleted },
     },
 
     // --- Strings ---

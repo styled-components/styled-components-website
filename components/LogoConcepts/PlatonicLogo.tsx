@@ -660,7 +660,7 @@ const FaceIcon = styled.span`
 // ---------------------------------------------------------------------------
 
 const STORAGE_KEY = 'sc-logo-prefs';
-const IDLE_SPEED = 0.18;
+const IDLE_SPEED = 0.09;
 const IDLE_VEL = { dx: IDLE_SPEED, dy: IDLE_SPEED * -0.4 };
 const BLEND_RATE = 0.04;
 const SENSITIVITY = 0.015;

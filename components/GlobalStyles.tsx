@@ -171,23 +171,13 @@ const GlobalStyles = createGlobalStyle`
   }
 
   code {
-    --code-tint: 12%;
-    background: linear-gradient(
-      135deg,
-      color-mix(in oklch, ${theme.palette[0]} var(--code-tint), transparent),
-      color-mix(in oklch, ${theme.palette[5]} var(--code-tint), transparent),
-      color-mix(in oklch, ${theme.palette[10]} var(--code-tint), transparent),
-      color-mix(in oklch, ${theme.palette[15]} var(--code-tint), transparent)
-    );
+    background: color-mix(in oklab, ${theme.color.text} 8%, transparent);
+    color: ${theme.color.text};
     border-radius: ${theme.radius.sm};
     font-family: ${font.mono};
+    font-size: 0.85em;
     letter-spacing: -0.025em;
     padding: 0.15em 0.4em;
-  }
-
-  html.dark code { --code-tint: 36%; }
-  @media (prefers-color-scheme: dark) {
-    html:not(.light) code { --code-tint: 36%; }
   }
 
   pre code {

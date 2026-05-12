@@ -11,23 +11,16 @@ export interface AnchorProps {
   level?: number;
 }
 
-export default function Anchor({ children, level, id, ...props }: React.PropsWithChildren<AnchorProps>) {
-  let override = undefined;
+const HEADING_BY_LEVEL: Record<number, typeof Header> = {
+  3: SubHeader,
+  4: TertiaryHeader,
+};
 
-  switch (level) {
-    case 3:
-      override = SubHeader;
-      break;
-    case 4:
-      override = TertiaryHeader;
-      break;
-    default:
-      override = Header;
-      break;
-  }
+export default function Anchor({ children, level, id, ...props }: React.PropsWithChildren<AnchorProps>) {
+  const Heading = (level !== undefined && HEADING_BY_LEVEL[level]) || Header;
 
   return (
-    <AnchorHeader {...props} as={override} id={id}>
+    <AnchorHeader {...props} as={Heading} id={id}>
       {children}
 
       <AnchorPrimitive href={`#${id}`} aria-label={id}>
@@ -37,13 +30,20 @@ export default function Anchor({ children, level, id, ...props }: React.PropsWit
   );
 }
 
-const AnchorPrimitive = styled.a<{ href?: string; 'aria-label'?: string; children?: React.ReactNode }>`
-  display: none;
+const AnchorPrimitive = styled.a`
+  display: inline-block;
   color: inherit;
   margin-left: ${rem(10)};
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+
+  &:focus-visible {
+    opacity: 1;
+    outline-offset: 2px;
+  }
 `;
 
-const AnchorIcon = styled(LinkIcon).attrs((/* props */) => ({
+const AnchorIcon = styled(LinkIcon).attrs(() => ({
   width: undefined,
   height: undefined,
 }))`
@@ -62,14 +62,16 @@ const AnchorHeader = styled.div`
 
   ${mobile(css`
     scroll-margin-top: ${rem(100)};
-
-    /* stylelint-disable-next-line */
-    ${AnchorPrimitive} {
-      display: inline-block;
-    }
   `)}
 
-  &:hover ${AnchorPrimitive} {
-    display: inline-block;
+  &:hover ${AnchorPrimitive},
+  &:focus-within ${AnchorPrimitive} {
+    opacity: 1;
+  }
+
+  @media (hover: none) {
+    ${AnchorPrimitive} {
+      opacity: 1;
+    }
   }
 `;

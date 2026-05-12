@@ -100,6 +100,10 @@ export const lightTheme = {
     codeInterp0: lightPalette[0], // 23° red
     codeInterp1: lightPalette[0], // 23° red
     codeInterp2: lightPalette[0], // 23° red
+    // diff additions — green pulled toward code text for legibility
+    codeInserted: `color-mix(in oklab, ${lightPalette[7]} 65%, oklch(0.22 0.02 ${CODE_NEUTRAL}))`,
+    // diff removals — warm scarlet pulled toward code text for legibility
+    codeDeleted: `color-mix(in oklab, ${lightPalette[0]} 65%, oklch(0.22 0.02 ${CODE_NEUTRAL}))`,
 
     // Hero (always light-on-dark)
     heroText: 'oklch(0.95 0 0)',
@@ -189,7 +193,7 @@ const darkPalette: Record<number, string> = {
   4: 'oklch(0.8628 0.2501 97.2626)',
   5: 'oklch(0.8974 0.2407 114.9615)',
   6: 'oklch(0.8894 0.2821 131.5641)',
-  7: 'oklch(0.8673 0.2627 147.8038)',
+  7: 'oklch(0.92 0.26 147.8038)',
   8: 'oklch(0.8535 0.2354 165.7866)',
   9: 'oklch(0.8809 0.2114 183.7583)',
   10: 'oklch(0.8498 0.2042 197.6572)',
@@ -197,7 +201,7 @@ const darkPalette: Record<number, string> = {
   12: 'oklch(0.7355 0.1704 235.9564)',
   13: 'oklch(0.6909 0.1774 264.5021)',
   14: 'oklch(0.7673 0.1341 276.0508)',
-  15: 'oklch(0.8268 0.1093 296.4129)',
+  15: 'oklch(0.78 0.18 296.4129)',
   16: 'oklch(0.7743 0.197 317.5406)',
   17: 'oklch(0.7418 0.2537 333.0661)',
   18: 'oklch(0.754 0.2287 349.1495)',
@@ -210,7 +214,7 @@ export const darkColors: Partial<typeof lightTheme.color> = {
   surfaceRaised: 'oklch(0.22 0.01 270)',
   text: 'oklch(0.93 0 0)',
   textSecondary: 'oklch(0.75 0 0)',
-  textMuted: 'oklch(0.5 0 0)',
+  textMuted: 'oklch(0.62 0 0)',
   accent: darkPalette[13],
   accentLight: 'oklch(0.76 0.18 264.5)',
   accentLighter: 'oklch(0.85 0.12 264.5)',
@@ -228,7 +232,7 @@ export const darkColors: Partial<typeof lightTheme.color> = {
   navText: 'oklch(0.95 0 0)',
   codeBg: 'oklch(0.18 0.01 270)',
   codeText: `oklch(0.95 0.01 ${CODE_NEUTRAL_DARK})`,
-  codeComment: `oklch(0.55 0.02 ${CODE_NEUTRAL_DARK})`,
+  codeComment: `oklch(0.66 0.02 ${CODE_NEUTRAL_DARK})`,
 
   // Code syntax — chromatic tokens (cool palette for dark mode)
   codeDeclaration: darkPalette[12], // 236° blue — property, attr-name, selector
@@ -239,6 +243,8 @@ export const darkColors: Partial<typeof lightTheme.color> = {
   codeInterp0: darkPalette[0], // 23° red
   codeInterp1: darkPalette[0], // 23° red
   codeInterp2: darkPalette[0], // 23° red
+  codeInserted: darkPalette[7],
+  codeDeleted: darkPalette[0],
 };
 
 export const darkTheme = {
