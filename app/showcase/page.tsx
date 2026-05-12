@@ -1,177 +1,90 @@
-'use client';
-
-import { useRouter, useSearchParams } from 'next/navigation';
-import NextImage from 'next/image';
-import React, { Suspense } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import styled, { css, keyframes } from 'styled-components';
-import { SortedProject, sortedProjects } from '@/companies-manifest';
+import styled, { css } from 'styled-components';
+import { ArrowOutward } from '@styled-icons/material';
+import { sortedCompanies, sortedProjects, SortedProject } from '@/companies-manifest';
 import Footer from '@/components/Footer';
-import Image, { ImageProps } from '@/components/Image';
-import Navigation from '@/components/Slider/Navigation';
-import ShowcaseBody from '@/components/Slider/ShowcaseBody';
-import { generateShowcaseUrl } from '@/components/Slider/ShowcaseLink';
-import { theme, font } from '@/utils/theme';
+import ShowcaseTile from '@/components/ShowcaseTile';
 import { mobile, phone } from '@/utils/media';
+import { theme, font } from '@/utils/theme';
 
-function ShowcaseContent() {
-  const searchParams = useSearchParams();
-  const item = searchParams.get('item');
-  const { currentSlide, previousSlide, nextSlide } = calculateSlides(Object.keys(sortedProjects), item || '');
-  const { title, src } = currentSlide;
+export const metadata = {
+  title: 'Showcase',
+  description: 'Production interfaces shipping styled-components today — IMDb, Spotify, Coinbase, Prisma, and more.',
+};
+
+const companyByOwner = new Map(sortedCompanies.map(c => [c.name, c]));
+
+function pickLogo(project: SortedProject) {
+  return companyByOwner.get(project.owner)?.logo;
+}
+
+function isColorFaithful(project: SortedProject) {
+  return companyByOwner.get(project.owner)?.colorFaithful ?? false;
+}
+
+export default function Showcase() {
+  const projects = Object.values(sortedProjects);
+  const [featured, ...rest] = projects;
 
   return (
     <>
-      <ArrowEvents previousSlide={previousSlide} nextSlide={nextSlide} />
+      <Page>
+        <Wrapper>
+          <Intro>
+            <h1>Out in the world.</h1>
+            <Lede>You've probably used a few of these this week.</Lede>
+          </Intro>
 
-      <Container>
-        <Header>
-          <Wrapper>
-            <InsetWrapper>
-              <HeaderContent>
-                <div>
-                  <h2>Awesome websites, by awesome human beings.</h2>
-                  <h5>
-                    Styled components is used by teams all around the world to create beautiful websites, like these
-                    ones:
-                  </h5>
-                </div>
-                <HeaderActions>
-                  <a
-                    href="https://github.com/styled-components/styled-components-website/issues/new?template=company-showcase-request.md&title=Add+%5Bproject%5D+by+%5Bcompany%5D+to+showcase"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Share yours!
-                  </a>
-                </HeaderActions>
-              </HeaderContent>
-            </InsetWrapper>
-          </Wrapper>
-          <HeaderDecoration>Showcase</HeaderDecoration>
-          <HeaderDecoration $offset={1}>Showcase</HeaderDecoration>
-          <HeaderDecoration $offset={2}>Showcase</HeaderDecoration>
-        </Header>
-        <Body>
-          <Wrapper>
-            <BodyWrapper>
-              <Slide
-                width={1920}
-                height={1080}
-                src={src}
-                margin={0}
-                renderImage={(props: Parameters<ImageProps['renderImage']>[0]) => {
-                  return (
-                    <TransitionGroup>
-                      <CSSTransition key={src} timeout={500} classNames="fade">
-                        <NextImage
-                          src={props.src!}
-                          alt={`Screenshot of ${title}`}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 1920px"
-                          priority
-                        />
-                      </CSSTransition>
-                    </TransitionGroup>
-                  );
-                }}
+          {featured && (
+            <ShowcaseTile
+              project={featured}
+              Logo={pickLogo(featured)}
+              colorFaithful={isColorFaithful(featured)}
+              featured
+              priority
+              index={0}
+            />
+          )}
+
+          <Grid aria-label="Production sites built with styled-components">
+            {rest.map((project, i) => (
+              <ShowcaseTile
+                key={project.internalUrl ?? project.link}
+                project={project}
+                Logo={pickLogo(project)}
+                colorFaithful={isColorFaithful(project)}
+                index={i + 1}
               />
-            </BodyWrapper>
-            <Navigation prev={previousSlide} next={nextSlide} />
-            <BodyWrapper>
-              <InsetWrapper>
-                <ShowcaseBody {...currentSlide} />
-              </InsetWrapper>
-            </BodyWrapper>
-          </Wrapper>
-        </Body>
-      </Container>
+            ))}
+          </Grid>
+
+          <ShareRow>
+            <span>Shipping something with styled-components?</span>
+            <ShareLink
+              href="https://github.com/styled-components/styled-components-website/issues/new?template=company-showcase-request.md&title=Add+%5Bproject%5D+by+%5Bcompany%5D+to+showcase"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Submit it for the wall
+              <ArrowOutward />
+            </ShareLink>
+          </ShareRow>
+        </Wrapper>
+      </Page>
       <Footer />
     </>
   );
 }
 
-export default function Showcase() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <ShowcaseContent />
-    </Suspense>
-  );
-}
-
-const Container = styled.div`
-  overflow-x: hidden;
-
-  * {
-    font-family: ${font.sans};
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    margin-top: 0;
-  }
-
-  h1 {
-    font-family: ${font.display};
-    font-size: ${theme.text['3xl']};
-    font-weight: ${theme.fontWeight.display};
-    line-height: 1.15;
-    margin-bottom: 0;
-
-    ${phone(css`
-      font-size: 2rem;
-    `)}
-  }
-
-  h2 {
-    font-size: ${theme.text['2xl']};
-    line-height: 1.5;
-
-    ${phone(css`
-      font-size: 1.5rem;
-    `)}
-  }
-
-  h5 {
-    margin-bottom: 0;
-    font-size: ${theme.text.base};
-    font-weight: ${theme.fontWeight.normal};
-    opacity: 0.6;
-  }
-
-  p {
-    opacity: 0.6;
-  }
-`;
-
-const Header = styled.header`
-  position: relative;
-  height: 512px;
-  padding-top: 48px;
-  background: linear-gradient(20deg, ${theme.color.borderStrong}, ${theme.color.text});
-  overflow: hidden;
+const Page = styled.div`
+  padding: 96px 0 64px;
+  color: ${theme.color.text};
 
   ${mobile(css`
-    padding-top: 92px;
+    padding: 72px 0 48px;
   `)}
-`;
-
-const HeaderContent = styled.div`
-  width: 100%;
-  padding: 48px 0;
-  display: grid;
-  justify-content: space-between;
-  grid-template-columns: minmax(0px, 512px) minmax(128px, 192px);
-  grid-column-gap: 24px;
-  color: ${theme.color.heroText};
 
   ${phone(css`
-    grid-template-columns: 1fr;
+    padding: 56px 0 32px;
   `)}
 `;
 
@@ -179,168 +92,102 @@ const Wrapper = styled.div`
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 80px;
-
-  ${phone(css`
-    padding: 0 16px;
-  `)}
-`;
-
-const InsetWrapper = styled.div`
   padding: 0 64px;
-
-  ${mobile(css`
-    padding: 0;
-  `)}
-`;
-
-const Body = styled.div`
-  position: relative;
-`;
-
-const BodyWrapper = styled.div`
-  position: relative;
-  margin-top: -192px;
-
-  ${mobile(css`
-    margin-top: -96px;
-  `)}
-`;
-
-const Slide = styled(Image)`
-  border-radius: 12px;
-  box-shadow: 0 32px 48px ${theme.color.shadow};
-`;
-
-const getSlide = (childIndex: number) => keyframes`
-  from {
-    transform: translateX(${childIndex * 105}%);
-  }
-  to {
-    transform: translateX(${-105 + 105 * childIndex}%);
-  }
-`;
-
-const HeaderDecoration = styled.div<{ $offset?: number; children?: React.ReactNode }>`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-family: ${font.sans};
-  font-size: 16rem;
-  line-height: 16rem;
-  font-weight: ${theme.fontWeight.bold};
-  color: ${theme.color.border};
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  animation: ${({ $offset }) => getSlide($offset || 0)} 30s linear infinite;
-`;
-
-const HeaderActions = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  gap: 48px;
 
-  ${phone(css`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 24px;
+  ${mobile(css`
+    padding: 0 32px;
+    gap: 40px;
   `)}
 
-  * {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
+  ${phone(css`
+    padding: 0 20px;
+    gap: 32px;
+  `)}
+`;
+
+const Intro = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 60ch;
+
+  h1 {
+    font-family: ${font.display};
+    font-weight: ${theme.fontWeight.display};
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+`;
+
+const Lede = styled.p`
+  margin: 0;
+  font-size: ${theme.text.md};
+  line-height: 1.55;
+  color: ${theme.color.textSecondary};
+`;
+
+const Grid = styled.section`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px 32px;
+
+  ${mobile(css`
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 24px;
+  `)}
+
+  ${phone(css`
+    grid-template-columns: 1fr;
+    gap: 40px;
+  `)}
+`;
+
+const ShareRow = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 32px 0 0;
+  border-top: 1px solid ${theme.color.border};
+  color: ${theme.color.textSecondary};
+  font-size: ${theme.text.base};
+`;
+
+const ShareLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: ${theme.color.text};
+  font-weight: ${theme.fontWeight.semibold};
+  text-decoration: none;
+  border-bottom: 1px solid ${theme.color.linkUnderline};
+  padding-bottom: 2px;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ${theme.ease.out};
+
+  svg {
+    height: 16px;
+    transition: transform 180ms ${theme.ease.out};
   }
 
-  button,
-  a {
-    height: 50px;
-    border-radius: 4px;
-    font-family: ${font.sans};
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 50px;
+  &:hover {
+    border-bottom-color: ${theme.color.linkUnderlineHover};
 
-    ${phone(css`
-      height: 40px;
-      line-height: 40px;
-    `)}
+    svg {
+      transform: translate(2px, -2px);
+    }
   }
 
-  button,
-  a {
-    display: block;
-    text-align: center;
-    background-color: ${theme.color.bg};
-    color: ${theme.color.text};
-    border: none;
-    transition: 200ms;
-    padding: 0;
-
-    &:hover {
-      background-color: ${theme.color.surface};
+  @media (prefers-reduced-motion: reduce) {
+    svg {
+      transition: none;
     }
   }
 `;
-
-function normalizeSlideIndex<T extends any[]>(arr: T, index: number, fn: (x: number) => number) {
-  const result = fn(index);
-  if (result > arr.length - 1) {
-    return 0;
-  }
-  if (result < 0) {
-    return arr.length - 1;
-  }
-  return result;
-}
-
-function mapIndexToRoute(index: number) {
-  const route = Object.keys(sortedProjects)[index];
-  return sortedProjects[route];
-}
-
-function calculateSlides(sortOrder: string[], route: string) {
-  let currentSlideIndex = sortOrder.indexOf(route);
-  if (currentSlideIndex === -1) {
-    currentSlideIndex = 0;
-  }
-  const previousSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, x => x - 1);
-  const nextSlideIndex = normalizeSlideIndex(sortOrder, currentSlideIndex, x => x + 1);
-  return {
-    currentSlide: mapIndexToRoute(currentSlideIndex),
-    previousSlide: mapIndexToRoute(previousSlideIndex),
-    nextSlide: mapIndexToRoute(nextSlideIndex),
-  };
-}
-
-interface ArrowEventsProps {
-  previousSlide: SortedProject;
-  nextSlide: SortedProject;
-}
-
-function ArrowEvents({ previousSlide, nextSlide }: ArrowEventsProps) {
-  const router = useRouter();
-
-  const handleKeyDown = React.useCallback(
-    (event: KeyboardEvent) => {
-      const isLeft = event.keyCode === 37;
-      const isRight = event.keyCode === 39;
-
-      if (!isLeft && !isRight) return;
-
-      const { href } = generateShowcaseUrl(isLeft ? previousSlide : nextSlide);
-
-      router.replace(href);
-    },
-    [previousSlide, nextSlide, router]
-  );
-
-  React.useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyDown]);
-
-  return null;
-}
