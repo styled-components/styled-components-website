@@ -14,6 +14,7 @@ import { Title } from '../components/Layout';
 import Link from '../components/Link';
 import LiveEdit from '../components/LiveEdit';
 import Note from '../components/Note';
+import { Fast } from '../components/PerfMark';
 
 const Heading = ({ level, children }: React.PropsWithChildren<{ level: number }>) => {
   if (level === 1) {
@@ -102,6 +103,7 @@ const components = {
   h5(props) {
     return <Heading {...props} level={5} />;
   },
+  Fast,
 } satisfies MDXComponents;
 
 export default components;
