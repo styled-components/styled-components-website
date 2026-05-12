@@ -4,7 +4,7 @@
  *
  * Drives macOS's installed Chrome via the DevTools Protocol so we can
  * inject JS to nuke cookie / consent banners before each screenshot.
- * Zero dependencies — Node 22+ has a built-in WebSocket client.
+ * Zero dependencies. Node 22+ has a built-in WebSocket client.
  *
  * Usage:
  *   node scripts/capture-screenshots.mjs <slug> <url> [<slug> <url> ...]
@@ -36,13 +36,13 @@ const JPG_QUALITY = 85;
 
 // JS executed inside the page after navigation to wipe out the usual
 // suspects: GDPR / cookie / consent modals, scroll-locks, and chat
-// widgets. Liberal removal — if it looks like a banner, it dies.
+// widgets. Liberal removal: if it looks like a banner, it dies.
 const KILL_BANNERS = `
 (() => {
   const KEYWORDS = /cookie|consent|privacy|gdpr|tracking|terms of use|terms of service|legal terms|we use|we value your privacy|agree (?:and|to)/i;
   const ACCEPT_TEXT = /^\\s*(accept|agree|i agree|ok|got it|allow all|accept all|continue|i accept|i understand)\\s*$/i;
 
-  // Pass 1: known vendor IDs / classes — fast path.
+  // Pass 1: known vendor IDs / classes (fast path).
   const SELECTORS = [
     '#onetrust-banner-sdk', '#onetrust-consent-sdk', '.onetrust-pc-dark-filter',
     '#CybotCookiebotDialog', '#CybotCookiebotDialogBodyUnderlay', '#CookiebotWidget',
@@ -50,7 +50,7 @@ const KILL_BANNERS = `
     '#truste-consent-track', '.truste_box_overlay', '.truste_overlay', '#consent_blackbar',
     '#qc-cmp2-container', '.qc-cmp2-summary-info',
     // Usercentrics CMP (SIXT, many EU sites). The modal is inside a closed
-    // shadow root on this host, so we can't reach the OK button — kill
+    // shadow root on this host, so we can't reach the OK button: kill
     // the host element instead.
     '#usercentrics-cmp-ui', '#usercentrics-root', '[data-testid="uc-default-wall"]',
     '.cc-window', '.cc-banner', '.cc-modal', '.cc-overlay', '.osano-cm-dialog',
@@ -213,6 +213,119 @@ const KILL_CSS = `
   html, body { overflow: auto !important; }
 `;
 
+// Walks up from each match to the first ancestor with computed position
+// sticky/fixed and removes it. Used for ad rails that wrap a Google Ads
+// iframe in a positioned slot.
+const KILL_STICKY_PARENT = (rootSelector) => `
+  for (const el of document.querySelectorAll(${JSON.stringify(rootSelector)})) {
+    let cur = el;
+    while (cur && cur !== document.body) {
+      const cs = getComputedStyle(cur);
+      if (cs.position === 'sticky' || cs.position === 'fixed') { cur.remove(); break; }
+      cur = cur.parentElement;
+    }
+  }
+`;
+
+// Reach plc (BristolLive, LiverpoolEcho) ad infrastructure. The Primis
+// floating-video player spawns a constellation of sibling slot ids that
+// must all go, and `.Gutter_gutter__*` is the skin wallpaper.
+const REACH_PLC_SELECTORS = [
+  '[id^="primis_player"]', '#imaSlotContainer', '#layoutContainerDiv',
+  '#layoutDesign', '#adContainerDiv', '#adVpaid', '#slotContainer',
+  '#sekindoVpaidIframe', '#adIma', '#adDisplayBanner',
+  '#displayBannerSlotContainer',
+  '[class*="Gutter_gutter"]',
+];
+
+// Per-slug overrides keyed by the slug argument. Selectors are confirmed
+// by `--inspect <slug> <url>`; keep them specific so editorial content
+// stays intact.
+const SITE_OVERRIDES = {
+  'asurion.com': {
+    selectors: ['iframe#_si_widget_iframe'],
+  },
+  'bristolpost.co.uk': {
+    selectors: REACH_PLC_SELECTORS,
+    js: KILL_STICKY_PARENT('iframe[id^="google_ads_iframe"]'),
+  },
+  'entrepreneur.com': {
+    selectors: [
+      '#top_leaderboard',
+      '#anchorcontainer',
+      '#skinplacement',
+      '#hs-web-interactives-top-anchor',
+      '#hs-interactives-modal-overlay',
+    ],
+    // The top ad's slate-bg wrapper is the parent of #top_leaderboard.
+    // Remove it so it doesn't leave an empty strip.
+    js: `
+      const top = document.getElementById('top_leaderboard');
+      if (top && top.parentElement) top.parentElement.remove();
+    `,
+  },
+  'fortune.com': {
+    selectors: ['.leaderboard-ad-wrapper-parent'],
+  },
+  'liverpoolecho.co.uk': {
+    selectors: [
+      ...REACH_PLC_SELECTORS,
+      '#ayads-html', '#ayads-dv-div', '#sublime-iframe-container',
+      '.celtra-banner',
+    ],
+    js: KILL_STICKY_PARENT('iframe[id^="google_ads_iframe"]'),
+  },
+  'smh.com.au': {
+    // The wrapper persists with an "Advertisement" label even when the
+    // adspot child is gone, so we also sweep any near-top sticky whose
+    // visible text is just "Advertisement".
+    selectors: ['[id^="adspot-"]', '[class~="adWrapper"]'],
+    js: `
+      ${KILL_STICKY_PARENT('[id^="adspot-"], [class~="adWrapper"]')}
+      for (const el of document.body.querySelectorAll('div, section, aside')) {
+        const cs = getComputedStyle(el);
+        if (cs.position !== 'sticky' && cs.position !== 'fixed') continue;
+        const r = el.getBoundingClientRect();
+        if (r.top > 100 || r.height < 100) continue;
+        const text = (el.innerText || '').trim();
+        if (text === 'Advertisement' || (text === '' && r.height < 320)) el.remove();
+      }
+    `,
+  },
+  'vogue.de': {
+    selectors: [
+      '[class*="AdsSpacer"]',
+      '[class*="StickyHeroAdWrapper"]',
+      '[class*="AdWrapper"][class*="ad--hero"]',
+    ],
+  },
+};
+
+function overrideScript(slug) {
+  const o = SITE_OVERRIDES[slug];
+  if (!o) return '';
+  const sels = JSON.stringify(o.selectors || []);
+  const extra = o.js || '';
+  return `
+    (() => {
+      const sels = ${sels};
+      for (const sel of sels) {
+        try { document.querySelectorAll(sel).forEach(el => el.remove()); } catch {}
+      }
+      try { ${extra} } catch (e) { console.warn('override JS failed', e); }
+    })();
+  `;
+}
+
+// Persistent CSS injected at document start so late-mounted overrides
+// (e.g. chat widgets that mount after our poll loop) stay hidden.
+function overrideCss(slug) {
+  const o = SITE_OVERRIDES[slug];
+  if (!o || !o.selectors || !o.selectors.length) return '';
+  const rule = o.selectors.join(', ');
+  return `${rule} { display: none !important; visibility: hidden !important; }`;
+}
+
 // Injected via Page.addScriptToEvaluateOnNewDocument before navigation
 // so bot-detection scripts see a believable browser environment. Not a
 // full stealth suite, but enough to get past the cheapest checks.
@@ -353,7 +466,222 @@ async function closeTarget(targetId) {
 
 // ---- Per-URL capture -----------------------------------------------------
 
-async function captureOne(slug, url) {
+// Dumps a flat list of every reasonably-sized fixed/sticky/absolute element
+// on the page so the caller can write targeted overrides. Runs after the
+// generic banner-killer so consent dialogs don't drown out the actual ads.
+const INSPECT_SCRIPT = `
+(() => {
+  const results = [];
+  // Pass A: ad/iframe markers anywhere in the doc.
+  const AD_HINTS = [
+    'iframe[id*="google_ads" i]', 'iframe[name*="google_ads" i]',
+    'iframe[src*="doubleclick" i]', 'iframe[src*="googlesyndication" i]',
+    'iframe[id*="ad" i]', 'iframe[title*="advert" i]',
+    '[id*="div-gpt-ad" i]', '[id*="google_ads_iframe" i]',
+    '[id*="ad-" i]', '[id^="ad_" i]', '[class*="ad-slot" i]',
+    '[class*="advertisement" i]', '[data-ad-unit]', '[data-ad-position]',
+    '[data-google-query-id]', '[data-name="ad" i]',
+  ];
+  const seen = new Set();
+  for (const sel of AD_HINTS) {
+    let nodes;
+    try { nodes = document.querySelectorAll(sel); } catch { continue; }
+    for (const n of nodes) {
+      // Walk up to the visible container (the "slot").
+      let cur = n;
+      let bestParent = n;
+      while (cur && cur !== document.body) {
+        const r = cur.getBoundingClientRect();
+        if (r.width >= 200 && r.height >= 40) bestParent = cur;
+        cur = cur.parentElement;
+      }
+      if (seen.has(bestParent)) continue;
+      seen.add(bestParent);
+      const r = bestParent.getBoundingClientRect();
+      if (r.width < 40 || r.height < 20) continue;
+      const cs = getComputedStyle(bestParent);
+      const id = bestParent.id || '';
+      const cls = (typeof bestParent.className === 'string' ? bestParent.className : '').slice(0, 200);
+      const text = (bestParent.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 100);
+      results.push({
+        match: sel,
+        tag: bestParent.tagName.toLowerCase(),
+        id, cls,
+        pos: cs.position,
+        x: Math.round(r.x), y: Math.round(r.y),
+        w: Math.round(r.width), h: Math.round(r.height),
+        z: cs.zIndex,
+        text,
+      });
+    }
+  }
+  // Pass B: positioned overlays (existing behavior).
+  const all = document.querySelectorAll('div, section, aside, header, footer, dialog, ins, iframe');
+  for (const el of all) {
+    const cs = getComputedStyle(el);
+    const pos = cs.position;
+    if (pos !== 'fixed' && pos !== 'sticky' && pos !== 'absolute') continue;
+    const r = el.getBoundingClientRect();
+    if (r.width < 80 || r.height < 40) continue;
+    if (r.bottom < 0 || r.top > window.innerHeight + 200) continue;
+    // Skip the page-shell wrappers (nav, header). Only flag things plausibly noise.
+    if (el.tagName === 'NAV') continue;
+    const id = el.id || '';
+    const cls = (typeof el.className === 'string' ? el.className : '').slice(0, 200);
+    const text = (el.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 120);
+    results.push({
+      match: 'overlay',
+      tag: el.tagName.toLowerCase(),
+      id,
+      cls,
+      pos,
+      x: Math.round(r.x), y: Math.round(r.y),
+      w: Math.round(r.width), h: Math.round(r.height),
+      z: cs.zIndex,
+      text,
+    });
+  }
+  return results;
+})();
+`;
+
+async function inspectOne(slug, url) {
+  const { ws, targetId } = await openTarget();
+  const cdp = new CDP(ws);
+  try {
+    await cdp.send('Page.enable');
+    await cdp.send('Runtime.enable');
+    await cdp.send('Emulation.setDeviceMetricsOverride', {
+      width: WIDTH, height: HEIGHT, deviceScaleFactor: 1, mobile: false,
+    });
+    await cdp.send('Network.setUserAgentOverride', {
+      userAgent:
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
+        '(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
+      acceptLanguage: 'en-US,en;q=0.9',
+      platform: 'MacIntel',
+    });
+    await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: STEALTH_INIT });
+
+    const navigated = Promise.race([
+      cdp.once('Page.loadEventFired'),
+      sleep(NAV_TIMEOUT_MS).then(() => null),
+    ]);
+    await cdp.send('Page.navigate', { url });
+    await navigated;
+    await sleep(HYDRATION_WAIT_MS);
+    // Knock out consent banners first so they don't drown the listing.
+    await cdp.send('Runtime.evaluate', { expression: KILL_BANNERS });
+    await sleep(POLL_KILL_INTERVAL_MS);
+
+    // Pass C-alt: every element fully within top viewport (0 <= top, bottom <= 600)
+    // and small enough that it's a real card/section, not a wrapper.
+    const blocks = await cdp.send('Runtime.evaluate', {
+      expression: `
+        (() => {
+          const out = [];
+          for (const el of document.body.querySelectorAll('div, section, aside, article, header, figure, a, ins')) {
+            const r = el.getBoundingClientRect();
+            if (r.top < 0 || r.bottom > 700) continue;
+            if (r.width < 400 || r.height < 60) continue;
+            if (r.height > 500) continue;
+            const cs = getComputedStyle(el);
+            const cls = (typeof el.className === 'string' ? el.className : '').slice(0, 120);
+            const text = (el.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 80);
+            out.push({
+              tag: el.tagName.toLowerCase(), id: el.id || '', cls, pos: cs.position,
+              w: Math.round(r.width), h: Math.round(r.height),
+              x: Math.round(r.x), y: Math.round(r.y),
+              text,
+            });
+            if (out.length > 40) break;
+          }
+          return out;
+        })();
+      `,
+      returnByValue: true,
+    });
+    const blks = blocks.result?.value || [];
+    console.log(`\n  -- top-viewport static blocks (${blks.length}) --`);
+    for (const b of blks) {
+      console.log(`    <${b.tag}> ${b.pos} ${b.w}x${b.h} @(${b.x},${b.y}) id="${b.id}" cls="${b.cls}"` + (b.text ? ` text="${b.text}"` : ''));
+    }
+
+    // Pass C: every iframe + every <ins> (DFP) in the top viewport.
+    const adFrames = await cdp.send('Runtime.evaluate', {
+      expression: `
+        (() => {
+          const out = [];
+          const nodes = document.querySelectorAll('iframe, ins, [data-ad-name], [data-ad-position], [data-ad-unit], [data-google-query-id]');
+          for (const el of nodes) {
+            const r = el.getBoundingClientRect();
+            if (r.bottom < 0 || r.top > 720) continue;
+            if (r.width < 40 || r.height < 20) continue;
+            // Walk up to a meaningful "slot" wrapper.
+            let cur = el.parentElement;
+            const chain = [];
+            for (let i = 0; i < 6 && cur && cur !== document.body; i++) {
+              const cr = cur.getBoundingClientRect();
+              const cs = getComputedStyle(cur);
+              chain.push({
+                tag: cur.tagName.toLowerCase(),
+                id: cur.id || '',
+                cls: (typeof cur.className === 'string' ? cur.className : '').slice(0, 120),
+                pos: cs.position,
+                w: Math.round(cr.width), h: Math.round(cr.height),
+              });
+              cur = cur.parentElement;
+            }
+            out.push({
+              tag: el.tagName.toLowerCase(),
+              id: el.id || '',
+              name: el.getAttribute('name') || '',
+              src: (el.getAttribute('src') || '').slice(0, 80),
+              title: el.getAttribute('title') || '',
+              w: Math.round(r.width), h: Math.round(r.height),
+              x: Math.round(r.x), y: Math.round(r.y),
+              chain,
+            });
+          }
+          return out;
+        })();
+      `,
+      returnByValue: true,
+    });
+    const frames = adFrames.result?.value || [];
+    console.log(`\n  -- iframes/ins in top viewport (${frames.length}) --`);
+    for (const f of frames) {
+      console.log(`    <${f.tag}> ${f.w}x${f.h} @(${f.x},${f.y}) id="${f.id}" name="${f.name}" src="${f.src}" title="${f.title}"`);
+      for (const c of f.chain) {
+        console.log(`      ↑ <${c.tag}> ${c.pos} ${c.w}x${c.h} id="${c.id}" cls="${c.cls}"`);
+      }
+    }
+
+    const res = await cdp.send('Runtime.evaluate', {
+      expression: INSPECT_SCRIPT,
+      returnByValue: true,
+    });
+    const items = res.result?.value || [];
+    console.log(`\n=== ${slug} (${items.length} overlay candidates) ===`);
+    for (const it of items) {
+      console.log(
+        `  [${it.tag}] ${it.match} ${it.pos} ${it.w}x${it.h} @(${it.x},${it.y}) z=${it.z}` +
+        `\n    id="${it.id}" cls="${it.cls}"` +
+        (it.text ? `\n    text="${it.text}"` : '')
+      );
+    }
+    return true;
+  } catch (err) {
+    console.error(`  ✗ ${err.message || err}`);
+    return false;
+  } finally {
+    ws.close();
+    await closeTarget(targetId);
+  }
+}
+
+async function captureOne(slug, url, { debug = false } = {}) {
+  const overrideEntry = SITE_OVERRIDES[slug];
   const { ws, targetId } = await openTarget();
   const cdp = new CDP(ws);
   try {
@@ -365,7 +693,7 @@ async function captureOne(slug, url) {
       deviceScaleFactor: 1,
       mobile: false,
     });
-    // Realistic UA — drop the "Headless" token that Chrome adds in
+    // Realistic UA. Drop the "Headless" token that Chrome adds in
     // headless mode, which is the cheapest tell for bot-detection.
     await cdp.send('Network.setUserAgentOverride', {
       userAgent:
@@ -377,6 +705,7 @@ async function captureOne(slug, url) {
     await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: STEALTH_INIT });
     // Inject the kill stylesheet at document start so it applies to
     // late-mounted dialogs, modals, and chat widgets.
+    const slugCss = overrideCss(slug);
     await cdp.send('Page.addScriptToEvaluateOnNewDocument', {
       source: `
         (() => {
@@ -385,7 +714,7 @@ async function captureOne(slug, url) {
             const head = document.head || document.documentElement;
             const s = document.createElement('style');
             s.id = '__sc_kill_css__';
-            s.textContent = ${JSON.stringify(KILL_CSS)};
+            s.textContent = ${JSON.stringify(KILL_CSS + '\n' + slugCss)};
             head.appendChild(s);
           };
           insertCSS();
@@ -404,15 +733,36 @@ async function captureOne(slug, url) {
     await cdp.send('Page.navigate', { url });
     await navigated;
 
-    // Let JS hydrate, then run the banner killer in a poll loop.
-    // Many sites lazy-mount consent modals or chat widgets a few
-    // seconds after load, so one pass isn't enough.
+    // Many sites lazy-mount consent modals or chat widgets after load,
+    // so the kill pass runs in a short poll loop.
     await sleep(HYDRATION_WAIT_MS);
+    const override = overrideScript(slug);
     for (let i = 0; i < POLL_KILL_ROUNDS; i++) {
       await cdp.send('Runtime.evaluate', { expression: KILL_BANNERS });
+      if (override) await cdp.send('Runtime.evaluate', { expression: override });
       if (i < POLL_KILL_ROUNDS - 1) await sleep(POLL_KILL_INTERVAL_MS);
     }
     await sleep(POST_KILL_WAIT_MS);
+
+    if (debug && overrideEntry) {
+      const probe = await cdp.send('Runtime.evaluate', {
+        expression: `
+          (() => {
+            const sels = ${JSON.stringify(overrideEntry.selectors || [])};
+            return sels.map(sel => {
+              const n = document.querySelectorAll(sel).length;
+              if (!n) return sel + ' = 0';
+              const first = document.querySelector(sel);
+              const r = first.getBoundingClientRect();
+              const cs = getComputedStyle(first);
+              return sel + ' = ' + n + ' (display=' + cs.display + ' vis=' + cs.visibility + ' ' + Math.round(r.width) + 'x' + Math.round(r.height) + ')';
+            }).join('\\n  ');
+          })();
+        `,
+        returnByValue: true,
+      });
+      if (probe.result?.value) console.log('  override probe:\n  ' + probe.result.value);
+    }
 
     const shot = await cdp.send('Page.captureScreenshot', {
       format: 'jpeg',
@@ -437,11 +787,14 @@ async function captureOne(slug, url) {
 // ---- Entry ---------------------------------------------------------------
 
 async function main() {
-  const argv = process.argv.slice(2).filter(a => a !== '--keep');
-  const keep = process.argv.includes('--keep');
+  const flags = new Set(process.argv.slice(2).filter(a => a.startsWith('--')));
+  const argv = process.argv.slice(2).filter(a => !a.startsWith('--'));
+  const keep = flags.has('--keep');
+  const inspect = flags.has('--inspect');
+  const debug = flags.has('--debug');
 
   if (argv.length === 0 || argv.length % 2 !== 0) {
-    console.error('usage: node scripts/capture-screenshots.mjs <slug> <url> [<slug> <url> ...]');
+    console.error('usage: node scripts/capture-screenshots.mjs [--inspect] [--debug] [--keep] <slug> <url> [<slug> <url> ...]');
     process.exit(2);
   }
 
@@ -455,7 +808,7 @@ async function main() {
       const slug = argv[i];
       const url = argv[i + 1];
       console.log(`→ ${slug}  ${url}`);
-      const success = await captureOne(slug, url);
+      const success = inspect ? await inspectOne(slug, url) : await captureOne(slug, url, { debug });
       if (success) ok++;
       else fail++;
     }
@@ -463,7 +816,7 @@ async function main() {
     if (!keep) await killChrome();
   }
 
-  console.log(`\n${ok} captured, ${fail} failed.`);
+  console.log(`\n${ok} ${inspect ? 'inspected' : 'captured'}, ${fail} failed.`);
   if (fail > 0) process.exit(1);
 }
 
