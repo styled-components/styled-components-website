@@ -1,0 +1,103 @@
+export const meta = {
+  title: 'Announcing styled-components v7 (alpha)',
+  author: 'Evan Jacobs',
+  date: '2026-05-08',
+  slug: 'announcing-v7-alpha',
+  description:
+    'styled-components v7 brings a unified parser, modern CSS on React Native, animation support on native, and faster server rendering at scale.',
+  draft: true,
+};
+
+{/* TODO(EJ): hero image. Suggest something that signals the unification of web + native runtimes; the v5 post used a single hero, that pattern works. */}
+
+#### A new core engine, modern CSS on React Native, and faster server rendering at scale.
+
+{/*
+TODO(EJ): intro prose.
+
+Talking points to weave in:
+- v6 brought RSC support; v7 brings the unification of web and native.
+- One parser, one runtime, two emitters.
+- Why this matters: native finally gets the same template-literal CSS surface
+  the web side has had for years (`@media`, `@container`, animations,
+  `createTheme`).
+- What the alpha audience should focus on: try it on real apps, file regressions,
+  hot paths to look at (RSC, complex theme cascades, large component trees).
+*/}
+
+### What's new
+
+- **New CSS engine.** Resolves long-standing edge cases with `:is()`, `:where()`, `:has()`, and nested at-rules.
+- **Modern CSS works on React Native.** `@media`, `@container`, `@supports`, container queries, viewport units (`vw`, `dvh`, `cqw`, ...), `oklch` / `oklab` / `lab` / `lch` / `color-mix()`, `light-dark()`, `clamp` / `min` / `max`, attribute selectors (`&[aria-pressed='true']`), pseudo-states (`:hover`, `:focus`, `:pressed`, `:disabled`).
+- **Native animations.** `transition`, `@keyframes`, and `@starting-style` all animate on the native thread by default, no setup or peer dependency. `styled-components/native/reanimated` is available as an opt-in for projects already on reanimated 4.
+- **`createTheme()` on native.** Same theme contract as web. Nested `<ThemeProvider>` calls deep-merge so an inner override that touches one leaf keeps inherited siblings.
+- **Plugins live on a subpath.** `import { rtlPlugin, rscPlugin } from 'styled-components/plugins'`. First-party RTL replaces `stylis-plugin-rtl`.
+- **`extractCSS()`** reads the current sheet as plain text. Replaces the legacy `disableCSSOMInjection` toggle.
+- **Deduped global styles.** Mounting the same `createGlobalStyle` component multiple times now emits its CSS once.
+- **Removed:** `defaultProps` on function components (React 19), `disableCSSOMInjection`, `enableVendorPrefixes`, the runtime vendor prefixer, `css-to-react-native` as a peer dependency.
+
+### Performance
+
+Headline numbers from the cross-library headless suite, run on Node 24 / V8, M2 Pro. Every iteration uses unique CSS so the numbers reflect fresh work rather than cached output.
+
+**Component creation** (one styled component per iteration):
+
+| Scenario                                | sc 6.4.1   | sc v7                  |
+|-----------------------------------------|------------|------------------------|
+| `` `styled.div`...` `` static           | 2.76 µs    | <Fast>1.17 µs</Fast>   |
+| `` `styled.div`...${val}...` ``         | 3.08 µs    | <Fast>1.28 µs</Fast>   |
+| `` `styled(Base)`...` `` extension      | 7.12 µs    | <Fast>3.48 µs</Fast>   |
+
+v7 creates components roughly twice as fast as v6 across every shape. The cross-library comparison lives in the SSR row below, which is where the full lifecycle is measured.
+
+**SSR `renderToString`** (creation + render of N elements per iteration):
+
+| Scale  | sc 6.4.1   | sc v7                    |
+|--------|------------|--------------------------|
+| 1      | 0.126 ms   | <Fast>0.053 ms</Fast>    |
+| 10     | 0.299 ms   | <Fast>0.136 ms</Fast>    |
+| 100    | 0.860 ms   | <Fast>0.552 ms</Fast>    |
+| 1000   | 5.62 ms    | <Fast>4.53 ms</Fast>     |
+
+v7 is consistently faster than v6.4.1 at every scale.
+
+**RSC `renderToString`** (v7 only):
+
+| Scale  | v7 RSC    |
+|--------|-----------|
+| 1      | 0.023 ms  |
+| 10     | 0.128 ms  |
+| 100    | 1.15 ms   |
+| 1000   | 10.09 ms  |
+
+{/*
+TODO(EJ): expand on perf takeaways. Suggested points:
+- v6 → v7 is roughly 2× across most SSR scales without changing application code.
+- React Native render perf is tracked separately via `packages/ios-benchmark`
+  against real Hermes V1 on iOS simulator; share a couple of those numbers if
+  the iOS bench has settled by publish time.
+*/}
+
+### Migration
+
+The full guide is at [v7 → migrating from v6](/docs/v7#migrating-from-v6). The short version:
+
+- React 19, React Native 0.85 minimum.
+- Replace `stylisPluginRSC` and `stylis-plugin-rtl` with the imports from `styled-components/plugins`.
+- Migrate any `defaultProps` on styled components to `.attrs()` (object form) or to `<ThemeProvider>` for default themes.
+- Drop `disableCSSOMInjection`, swap reads of the rendered CSS to `extractCSS()`.
+- Custom stylis plugins port to the new `SCPlugin` shape; see the migration guide for details.
+
+{/*
+TODO(EJ): closing thoughts. Suggested points:
+- This is an alpha; install via `npm install styled-components@alpha`.
+- Where to file feedback (GitHub issues, the regression patterns we care about).
+- Acknowledgments: contributors, sponsors, and shoutouts to RN core (RN 0.85
+  shared animation backend) and reanimated (the optional native animation peer).
+*/}
+
+```sh
+npm install styled-components@alpha
+```
+
+{/* TODO(EJ): close out (signature line, gif, whatever the v5 post did). */}

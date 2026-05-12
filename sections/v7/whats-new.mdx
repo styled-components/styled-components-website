@@ -1,0 +1,32 @@
+## What's new in v7
+
+> v7 is a major release. The headline change is a unified parser and runtime that the web and React Native builds share, plus a CSS-to-React-Native translation layer brought in-house. The result is faster server rendering at scale, modern CSS support on React Native, animation support on native, and a smaller dependency surface.
+
+### Highlights
+
+- **In-house CSS parser**: replaces stylis as the runtime engine. No more `:is()` / `:where()` / `:has()` recursion bugs, no more silent breakage on modern at-rules.
+- **Modern CSS on React Native**: `@media`, `@container`, `@supports`, container queries, viewport units (`vw`, `dvh`, `cqw`), font-relative units (`rem`, `em`, `lh`), `oklch` / `oklab` / `lab` / `lch` / `color-mix` / `light-dark()` / relative-color syntax, `clamp` / `min` / `max` / `round` / `sin` / `cos` and the full Math L4 family, logical shorthands (`margin-inline`, `border-inline`, …), gradients, and the full filter chain all work in `styled.View\`...\``.
+- **Selectors and combinators on React Native**: attribute selectors with every operator (`~=`, `^=`, `$=`, `*=`, `|=`, `i` flag), `:not(<simple>)` and `:has(<simple>)`, tree-structural pseudos (`:first-child`, `:nth-child(an+b)`, `:nth-of-type`), and the four combinators (`Foo &`, `Foo > &`, `Foo + &`, `Foo ~ &`) between styled-component references. Pseudo-state selectors (`:hover`, `:focus`, `:pressed`, `:disabled`) work via React Native's existing event surfaces. The [CSS Compatibility matrix](/docs/compatibility) breaks down every feature by version and platform.
+- **Native animations**: `transition`, `@keyframes`, and `@starting-style` all run on React Native out of the box via the default `Animated`-based adapter. An optional reanimated adapter is available for consumers who prefer it.
+- **`createTheme()` works on native**: the same theme contract from web. `<ThemeProvider>` deep-merges nested themes on native.
+- **Plugins subpath**: `import { rtlPlugin, rscPlugin } from 'styled-components/plugins'`. First-party RTL replaces `stylis-plugin-rtl`. Custom plugins move to a narrower `SCPlugin` interface (`name`, `rw`, `decl`).
+- **`extractCSS()`**: read the current stylesheet as plain text. Replaces the legacy `disableCSSOMInjection` toggle.
+- **Global styles emit once**: mounting the same `createGlobalStyle` component multiple times now emits its CSS only once.
+- **Faster SSR at scale**.
+- **Remapping CSS into native props**: function-form `.attrs((props, ast) => ...)` accepts a second argument that lifts declared style values or theme tokens onto the rendered component as props. Most useful for React Native libraries that style via props (e.g. `react-native-svg`'s `<Path fill="..." />`, `Image`'s `tintColor`, icon libraries). [Details →](/docs/basics#bridging-styles-into-props--v7)
+
+### Removed from v7
+
+- `defaultProps` no longer flows through styled components (React 19 removed it).
+- `disableCSSOMInjection` prop on `StyleSheetManager` and the `SC_DISABLE_SPEEDY` env vars have been removed; reach for `extractCSS()` instead.
+- `enableVendorPrefixes` has been removed. Modern browser targets handle prefixing themselves; for the few properties that still need them (e.g. `-webkit-backdrop-filter` on Safari), declare both forms in your CSS or run a build-time PostCSS transform.
+- `css-to-react-native` is no longer a peer dependency.
+- The top-level `stylisPluginRSC` export moved to `styled-components/plugins` as `rscPlugin`. The `stylisPlugins` prop on `<StyleSheetManager>` is now `plugins`.
+
+### Peer dependency floors
+
+- `react` and `react-dom` ≥ 19.0.0
+- `react-native` ≥ 0.85.0 (optional peer)
+- `react-native-reanimated` ≥ 4.0.0 (optional peer, only required if you opt into the reanimated animation adapter)
+
+Older React or React Native projects should stay on v6.

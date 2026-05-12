@@ -1,0 +1,114 @@
+## Migrating from v6
+
+Most v6 apps move to v7 by bumping the version, updating peers, and applying a few small changes. The list below is exhaustive; pick out the items that apply.
+
+### Update peers
+
+- `react` and `react-dom` to `^19`.
+- `react-native` to `^0.85` if you use it.
+- `react-native-reanimated` to `^4` if you opt into the native animation adapter.
+- Drop `css-to-react-native` if it was in your `package.json` only for styled-components.
+
+### `defaultProps` is no longer honored
+
+React 19 removed `defaultProps` from function components, so styled components can no longer inherit them either. Use `.attrs()` for prop defaults and `<ThemeProvider>` for default themes.
+
+```tsx
+// Before (v6, no longer applies in v7)
+const Button = styled.button``;
+Button.defaultProps = { type: 'button' };
+
+// After: object form always wins
+const Button = styled.button.attrs({ type: 'button' })``;
+
+// After: function form lets user props override
+const Button = styled.button.attrs<{ type?: string }>(p => ({
+  type: p.type ?? 'button',
+}))``;
+```
+
+### `disableCSSOMInjection` and `SC_DISABLE_SPEEDY` removed; use `extractCSS()`
+
+The browser build always uses the fast injection path. If you were toggling into a slower text-based mode to read the CSS as a string (for static-render pipelines, micro-frontend cloning, embedding into iframes or Shadow DOM), call the new `extractCSS()`:
+
+```js
+import { extractCSS } from 'styled-components';
+
+// after rendering
+const css = extractCSS();
+```
+
+The result is plain CSS, safe to inject into another document via `innerHTML`. The v7 SSR escaping rule applies: `</style>` substrings in interpolated values are rendered as the CSS hex escape `\3C/style` so they cannot terminate a host `<style>` tag.
+
+### `enableVendorPrefixes` removed
+
+The runtime vendor prefixer has been removed. For the properties that still need prefixing on older Safari (`backdrop-filter`, `mask`, `user-select`), declare both the prefixed and unprefixed forms in your CSS, or run a build-time PostCSS transform.
+
+### `stylisPluginRSC` moved to a subpath
+
+The top-level export has been removed. Import from `styled-components/plugins` instead, and pass via the renamed `plugins` prop:
+
+```diff
+-import { stylisPluginRSC } from 'styled-components';
++import { rscPlugin } from 'styled-components/plugins';
+
+-<StyleSheetManager stylisPlugins={[stylisPluginRSC]}>
++<StyleSheetManager plugins={[rscPlugin]}>
+```
+
+### RTL is now first-party
+
+`stylis-plugin-rtl` is no longer needed:
+
+```diff
+-import rtl from 'stylis-plugin-rtl';
++import { rtlPlugin } from 'styled-components/plugins';
+
+-<StyleSheetManager stylisPlugins={[rtl]}>
++<StyleSheetManager plugins={[rtlPlugin]}>
+```
+
+`rtlPlugin` swaps physical side properties (`padding-left` ↔ `padding-right`), flips `left` / `right` keyword values on `float` / `clear` / `text-align` / `caption-side`, and mirrors 4-value shorthand positions. Logical properties like `margin-inline-start` pass through unchanged.
+
+### Custom stylis plugins need to port
+
+Custom plugins authored against the v6 stylis contract no longer load. Implement the v7 plugin shape:
+
+```ts
+import type { SCPlugin } from 'styled-components/plugins';
+
+const scopePlugin: SCPlugin = {
+  name: 'scope',
+  // `rw` runs on every fully-resolved selector after `&` substitution and
+  // namespace prepending. Return a new selector string.
+  rw: selector => `.app ${selector}`,
+  // `decl` runs on every emitted `prop: value` pair. Return `{ prop, value }`
+  // to rewrite, or `undefined` to leave the pair unchanged.
+  decl: (prop, value) => ({ prop, value }),
+};
+```
+
+Legacy stylis function plugins are no-ops in v7 because they don't expose `rw` or `decl`. Development builds warn once per unrecognised plugin name.
+
+### Global styles emit once per component
+
+`createGlobalStyle` components now emit their CSS once even if you mount the same component multiple times. If your app deliberately remounts the same global to re-apply styles, that pattern no longer works; mount once per global rule set.
+
+### React Native bumps and changes
+
+The [CSS Compatibility matrix](/docs/compatibility) is the per-feature source of truth for what changed between v6 and v7 on web and native; the list below covers the most common cases.
+
+If you're on React Native:
+
+- The peer floor moves to RN ≥ 0.85.
+- The `lab()`, `lch()`, `oklab()`, `oklch()`, and `color-mix()` notations now resolve to displayable colors with hue-preserving gamut mapping. Wide-gamut inputs that fall outside sRGB land at the closest in-gamut color.
+- `transform: matrix(...)` / `matrix3d(...)` and bare-number `translateX(N)` work on native.
+- `linear-gradient(...)`, `radial-gradient(...)`, and the full `filter` chain (`blur`, `saturate`, `hue-rotate`, ...) work on native. iOS apps need `ReactNativeReleaseLevel: experimental` in `Info.plist` to enable the SwiftUI filter backend for `blur` / `saturate` / `hue-rotate` / `grayscale` / `contrast` / `drop-shadow`. `brightness` and `opacity` work without it.
+- `border: none` now emits `border-style: none` (previously `solid`, which produced surprising hairlines).
+- `transition`, `@keyframes`, and `@starting-style` all animate on the native thread by default — no extra import, peer dependency, or configuration. If you prefer to drive animations through reanimated 4's CSS layer, opt in once at your app entry with `import 'styled-components/native/reanimated'`; `react-native-reanimated@^4` becomes a peer dependency only in that case.
+
+### TypeScript
+
+- `IInlineStyle` and `IInlineStyleConstructor` were renamed to `INativeStyle` and `INativeStyleConstructor`. The old names are exported as deprecated aliases.
+- `Stringifier` is exported as a deprecated alias for the new `Compiler` interface (the shape differs, so consuming code that called the type as a function will need to migrate to `Compiler.compile` / `Compiler.emit`).
+- `Flattener` and `NameGenerator` are gone (private helpers, never documented).
