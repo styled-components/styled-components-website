@@ -22,7 +22,7 @@ export async function getPosts(): Promise<Post[]> {
     if (!match) continue;
     const [, date, slug] = match;
     const mod = await import(`@/sections/blog/${date}-${slug}.mdx`);
-    if (mod.meta) posts.push(mod.meta as Post);
+    if (mod.meta && !mod.meta.draft) posts.push(mod.meta as Post);
   }
 
   cached = posts;

@@ -1,0 +1,65 @@
+## Plugins moved to a dedicated subpath
+
+```tsx
+import { StyleSheetManager } from 'styled-components';
+import { rtlPlugin, rscPlugin } from 'styled-components/plugins';
+
+<StyleSheetManager plugins={[rtlPlugin, rscPlugin]}>
+  <App />
+</StyleSheetManager>
+```
+
+The `stylisPlugins` prop on `<StyleSheetManager>` is now `plugins`. The top-level `stylisPluginRSC` export moved into the new subpath as `rscPlugin`. Tree-shaking removes plugins from any app that doesn't import them.
+
+### `rtlPlugin`
+
+Replaces `stylis-plugin-rtl` for users coming from v6:
+
+- Swaps physical side properties (`padding-left` ↔ `padding-right`, `margin-left` ↔ `margin-right`, `border-left` ↔ `border-right`, etc.).
+- Flips `left` / `right` keyword values on `float`, `clear`, `text-align`, and `caption-side`.
+- Mirrors 4-value shorthand positions (`margin: 0 4px 0 8px;` becomes `margin: 0 8px 0 4px`).
+- Logical properties like `margin-inline-start` pass through unchanged because they already resolve correctly per the document direction.
+
+### `rscPlugin`
+
+Rewrites child-index selectors so they ignore inline `<style>` tags emitted by React Server Components. Without it, `:first-child` / `:last-child` / `:nth-child()` don't match the elements you'd expect inside a server component, because RSC injects an inline `<style>` ahead of each affected component.
+
+```tsx
+import { StyleSheetManager } from 'styled-components';
+import { rscPlugin } from 'styled-components/plugins';
+
+<StyleSheetManager plugins={[rscPlugin]}>
+  <App />
+</StyleSheetManager>
+```
+
+Use this in apps that render via `react-server-dom-*` (Next.js App Router server components, Vite RSC plugins, etc).
+
+### Authoring custom plugins
+
+The v7 plugin contract is narrower than the stylis-style middleware shape used in v6. A plugin is a plain object with a `name`, plus either or both of `rw` (selector rewrite) and `decl` (declaration rewrite):
+
+```ts
+import type { SCPlugin } from 'styled-components/plugins';
+
+const scopePlugin: SCPlugin = {
+  name: 'scope',
+  // `rw` runs on every fully-resolved selector after `&` substitution and
+  // namespace prepending. Return a new selector string.
+  rw: selector => `.app ${selector}`,
+  // `decl` runs on every emitted `prop: value` pair (top-level decls, decl
+  // bodies under at-rules, and decl bodies under nested rules). Return
+  // `{ prop, value }` to rewrite the pair, or `undefined` to leave it
+  // unchanged. Each plugin in a chain composes left-to-right.
+  decl: (prop, value) => {
+    if (prop === 'cursor' && value === 'pointer') {
+      return { prop, value: 'default' };
+    }
+    return undefined;
+  },
+};
+```
+
+The `name` field is required and contributes to the compiler's cache hash, so different plugin sets across nested `<StyleSheetManager>` trees stay isolated. Plugins without a name throw a styled-components error.
+
+Legacy stylis plugins (those exporting a single function) silently no-op in v7 because they don't expose `rw` or `decl`. Development builds also warn once for any plugin whose name is not recognised. Migrate them to the `SCPlugin` interface above; complex use cases that need a richer hook surface should open an issue.

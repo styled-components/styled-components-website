@@ -1,0 +1,199 @@
+## React Native gets modern CSS
+
+The same template literal syntax that works in `styled.div` works in `styled.View` in v7. Same `createTheme()`, same selectors, same animations. Differences come down to what React Native can render on the platform.
+
+### Modern CSS that works in `styled.View\`...\``
+
+```tsx
+import styled from 'styled-components/native';
+
+const Card = styled.View`
+  width: clamp(240px, 80vw, 480px);
+  background-color: light-dark(white, #111);
+  padding-top: env(safe-area-inset-top);
+  border-radius: 8px;
+
+  @container card (min-width: 320px) {
+    padding: 24px;
+  }
+`;
+```
+
+- **Math functions**: `calc()`, `clamp()`, `min()`, `max()`, plus the full CSS Values 4 Math L4 family — `round()`, `mod()`, `rem()`, `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `atan2`, `pow`, `sqrt`, `hypot`, `log`, `exp`, `abs`, `sign`. Constants `pi` and `e` resolve in any context.
+- **Modern color spaces**: `oklch(...)`, `oklab(...)`, `lch(...)`, `lab(...)`, `color-mix(in <space>, ...)`. Wide-gamut inputs that fall outside sRGB are gamut-mapped to the closest in-gamut color while preserving hue. Percent channels follow CSS Color L4 ranges (`lab(50% 0 0)` is mid-gray).
+- **Relative-color syntax** (CSS Color 5) for the four modern spaces: `oklch(from #ff0000 calc(l - 0.15) c h)`. Theme-token bases work too: `oklch(from ${theme.colors.brand} calc(l - 0.15) c h)`.
+- **`color-mix(in <space>, …)`** through `srgb`, `oklab`, `oklch`, `lab`, or `lch`.
+- **CSS Color 4 system color keywords** auto-switch with OS appearance: `canvas`, `canvastext`, `field`, `fieldtext`, `graytext`, `highlight`, `highlighttext`, `linktext`, `visitedtext`, `activetext`.
+- **Viewport units**: `vw`, `vh`, `vi`, `vb`, `vmin`, `vmax`, plus the `s*` / `l*` / `d*` variants (`dvh`, `svw`, `lvi`).
+- **Container query units**: `cqw`, `cqh`, `cqmin`, `cqmax`.
+- **Font-relative units**: `rem`, `em`, `lh`, `rlh` resolve against the cascade at render.
+- **`light-dark(light, dark)`** swaps based on OS appearance.
+- **Logical shorthands**: `margin-inline`, `margin-block`, `padding-inline`, `padding-block`, `inset-inline`, `inset-block`, plus the full `border-inline` / `border-block` family.
+- **`line-clamp: N`** truncates `<Text>` to N lines. **`text-wrap: nowrap`** collapses to a single line; `text-wrap-style: balance` / `pretty` improve line-breaking on Android.
+- **`text-align: start | end | match-parent`** resolves correctly under RTL on both platforms.
+- **`aspect-ratio`** with bare ratio, slash form, `auto`, and the two-value `auto <ratio>` form.
+- **`transform`**: `matrix(...)`, `matrix3d(...)`, and bare numbers in `translateX(10)`. Top-level **`perspective: 1000px`** works without folding it into a transform array.
+- **`font-style: oblique`** falls back to italic; **`font-family`** recognizes the 13 generic CSS keywords (`system-ui`, `ui-*`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`).
+- **`place-items`** and **`place-self`** for the align axis.
+- **`field-sizing: content`** auto-grows a `<TextInput>` to its content.
+- **`interactivity: inert`** suppresses interaction and hides the subtree from screen readers.
+
+**`env(safe-area-inset-*)` caveat.** The function parses correctly but currently resolves to 0 — the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until that lands.
+
+### Selectors on React Native
+
+```tsx
+const Toggle = styled.Pressable<{ 'aria-pressed'?: boolean }>`
+  background: white;
+
+  &[aria-pressed='true'] {
+    background: yellow;
+  }
+
+  &:pressed {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline-color: dodgerblue;
+  }
+`;
+```
+
+The same CSS works on web and native. Anchor pseudo-states with `&` (bare `:hover` parses as a descendant selector, not a state).
+
+**Pseudo-states.** `&:hover`, `&:focus`, `&:focus-visible`, `&:pressed`, `&:disabled`. Hover on native uses Pressable's pointer events; React Native ≥ 0.85.
+
+**Attribute selectors.** The full CSS Selectors 4 grammar works on native:
+
+- Presence: `&[attr]`
+- Exact: `&[attr=value]`
+- Word: `&[class~=item]`
+- Prefix: `&[lang|=en]`
+- Starts-with: `&[href^="https"]`
+- Ends-with: `&[src$=".png"]`
+- Substring: `&[data-state*="hidden"]`
+- Case-insensitive flag: `&[data-tag="X" i]`
+
+Compound brackets AND-evaluate (`&[a][b]`); a trailing pseudo-state attaches (`&[a]:active`). Booleans coerce, so `aria-pressed={true}` and `aria-pressed="true"` both match `[aria-pressed=true]`.
+
+**`:not(<simple>)` and `:has(<simple>)`.** Single-argument forms work on native:
+
+```tsx
+const Row = styled.View`
+  &:not([disabled]) { opacity: 1; }
+  &:has(${Avatar}) { padding-inline-start: 56px; }
+`;
+```
+
+`:not()` accepts a single pseudo-state or a single attribute selector. `:has()` accepts a styled-component reference (matches when that component appears as a descendant) or a single attribute selector. Complex inner arguments warn in dev and don't match.
+
+**`:is()` and `:where()`.** Apply the rule to each listed state: `&:is(:hover, :focus)`.
+
+**Tree-structural pseudos.** `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, and the functional `:nth-*(<an+b>)` family with `odd` / `even` keywords. Siblings need to be inside a styled-component parent for indexing to work — a non-styled wrapper in between resets the count.
+
+**Combinators between styled-component references.**
+
+```tsx
+const Card = styled.View``;
+const Title = styled.Text`
+  ${Card} & { color: dodgerblue; }     // any descendant of Card
+  ${Card} > & { font-weight: bold; }    // direct child of Card
+  ${Card} + & { margin-top: 8px; }      // immediately after a Card sibling
+  ${Card} ~ & { opacity: 0.6; }         // anywhere after a Card sibling
+`;
+```
+
+Descendant matching (`${Foo} &`) is transparent to non-styled wrappers. The child combinator (`>`) requires the matched element to be a direct child of a published parent — a non-styled wrapper in between will break the match.
+
+### Animations
+
+CSS `transition` animates by default. No setup, no extra imports.
+
+```jsx
+const Card = styled.View`
+  background-color: ${p => p.$bg};
+  transition: background-color 280ms ease-out;
+`;
+
+// Tapping a button that flips $bg from 'red' to 'blue' animates smoothly.
+```
+
+Eligible properties (opacity, every color, all border radius corners, transforms, shadows, filter) run on the native thread. `@keyframes` and `@starting-style` (first-mount enter animations) work the same way. `animation-direction`, `animation-fill-mode`, `animation-play-state`, `animation-iteration-count`, `animation-composition` (`replace | add | accumulate`), and per-frame easing all work without extra imports.
+
+CSS easing matches the W3C spec curves: `ease`, `ease-in`, `ease-out`, `ease-in-out`, `cubic-bezier()`, `steps()`, `linear()`. Note: the CSS `ease` keyword is the W3C `ease` curve, not React Native's `Easing.ease` (which is `ease-in`). `prefers-reduced-motion` is honored — durations collapse to 0 when the OS setting is on.
+
+If you'd rather drive animations through reanimated, the optional adapter is one import:
+
+```js
+import 'styled-components/native/reanimated';
+```
+
+`react-native-reanimated@^4` is an optional peer; install it yourself if you opt in.
+
+### Remapping CSS into native props
+
+Many React Native libraries take styling through component props rather than the `style` prop — `react-native-svg`'s `<Path fill="..." stroke="..." />`, charting libraries with `tintColor`, icon libraries with `color`. The function form of `.attrs((props, ast) => ...)` accepts a second `ast` argument that lets you read CSS declarations or theme tokens and rewrite them onto the rendered component as props:
+
+```tsx
+import styled from 'styled-components/native';
+import { Path } from 'react-native-svg';
+import { Image } from 'react-native';
+
+// Author Icon with CSS; render as <Path fill="red" stroke="navy" />
+const Icon = styled(Path).attrs((_props, ast) => ({
+  fill: ast.pop('color'),
+  stroke: ast.pop('borderColor', 'black'),
+}))`
+  color: red;
+  border-color: navy;
+`;
+
+// Lift a theme token onto Image's tintColor prop
+const Logo = styled(Image).attrs((_props, ast) => ({
+  tintColor: ast.pop('palette.brand.primary'),
+}))`
+  width: 32px;
+  height: 32px;
+`;
+```
+
+`ast.pop(key)` reads the value and prevents the declaration from reaching the rendered style. `ast.peek(key)` reads without removing — use it when both the prop and the CSS declaration should flow through. Both accept an optional fallback.
+
+The first argument dispatches on shape: a CSS property name (`'color'`, `'borderColor'`) reads a resolved declaration; a dot-separated path (`'palette.brand.primary'`) reads from the active theme with autocomplete and type inference from your augmented `DefaultTheme`.
+
+### `createTheme()` on native
+
+```tsx
+import styled, { createTheme, ThemeProvider } from 'styled-components/native';
+
+const theme = createTheme({
+  colors: { bg: '#ffffff', text: '#111111' },
+});
+
+const Card = styled.View`
+  background-color: ${theme.colors.bg};
+  border-color: ${theme.colors.text};
+`;
+
+<ThemeProvider theme={{ colors: { bg: '#111', text: '#eee' } }}>
+  <Card />
+</ThemeProvider>
+```
+
+Web and native share the same theme contract. Nested `<ThemeProvider>` calls deep-merge on native so an inner override that only touches one leaf keeps the siblings it inherited.
+
+### Limitations on native
+
+These spec features pass through to react-native-web but do not render on React Native today (the [compatibility matrix](/docs/compatibility) is the per-feature source of truth):
+
+- `position: fixed`, `position: sticky`, `position: anchor()` / `anchor-name`
+- CSS Grid (`display: grid`, `grid-template-*`)
+- `backdrop-filter`, `mask` / `mask-image` (community packages cover both)
+- `transform-style: preserve-3d` (basic `rotateX` / `rotateY` / `translateZ` / `perspective` do work)
+- Scroll-snap, view transitions, scroll-driven animations
+- Form-state pseudos (`:invalid`, `:required`, `:read-only`, `:checked`)
+- `::before` / `::after` / `::placeholder` / `::marker` / `::selection`
+- `clip-path`
+- `background-image: url()` for raster images (gradient `background-image` works)
+- `text-indent`, `word-spacing`, `text-box-trim`, `text-spacing-trim`

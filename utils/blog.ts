@@ -6,6 +6,8 @@ export type Post = {
   description: string;
   originalUrl?: string;
   blueskyPostUrl?: string;
+  /** When true, the post is excluded from every listing and slug lookup. */
+  draft?: boolean;
 };
 
 export type LatestPost = Pick<Post, 'title' | 'slug'> | null;

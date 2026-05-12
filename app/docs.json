@@ -1,6 +1,16 @@
 {
   "pages": [
     {
+      "title": "v7 (NEW)",
+      "pathname": "v7",
+      "sections": [
+        { "title": "What's new in v7" },
+        { "title": "Migrating from v6" },
+        { "title": "React Native gets modern CSS" },
+        { "title": "Plugins moved to a dedicated subpath" }
+      ]
+    },
+    {
       "title": "The Basics",
       "pathname": "basics",
       "sections": [
