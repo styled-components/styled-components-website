@@ -19,7 +19,7 @@ const Card = styled.View`
 `;
 ```
 
-- **Math functions**: `calc()`, `clamp()`, `min()`, `max()`, plus the full CSS Values 4 Math L4 family — `round()`, `mod()`, `rem()`, `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `atan2`, `pow`, `sqrt`, `hypot`, `log`, `exp`, `abs`, `sign`. Constants `pi` and `e` resolve in any context.
+- **Math functions**: `calc()`, `clamp()`, `min()`, `max()`, plus the full CSS Values 4 Math L4 family (`round()`, `mod()`, `rem()`, `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `atan2`, `pow`, `sqrt`, `hypot`, `log`, `exp`, `abs`, `sign`). Constants `pi` and `e` resolve in any context.
 - **Modern color spaces**: `oklch(...)`, `oklab(...)`, `lch(...)`, `lab(...)`, `color-mix(in <space>, ...)`. Wide-gamut inputs that fall outside sRGB are gamut-mapped to the closest in-gamut color while preserving hue. Percent channels follow CSS Color L4 ranges (`lab(50% 0 0)` is mid-gray).
 - **Relative-color syntax** (CSS Color 5) for the four modern spaces: `oklch(from #ff0000 calc(l - 0.15) c h)`. Theme-token bases work too: `oklch(from ${theme.colors.brand} calc(l - 0.15) c h)`.
 - **`color-mix(in <space>, …)`** through `srgb`, `oklab`, `oklch`, `lab`, or `lch`.
@@ -38,7 +38,7 @@ const Card = styled.View`
 - **`field-sizing: content`** auto-grows a `<TextInput>` to its content.
 - **`interactivity: inert`** suppresses interaction and hides the subtree from screen readers.
 
-**`env(safe-area-inset-*)` caveat.** The function parses correctly but currently resolves to 0 — the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until that lands.
+**`env(safe-area-inset-*)` caveat.** The function parses correctly but currently resolves to 0; the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until that lands.
 
 ### Selectors on React Native
 
@@ -62,7 +62,7 @@ const Toggle = styled.Pressable<{ 'aria-pressed'?: boolean }>`
 
 The same CSS works on web and native. Anchor pseudo-states with `&` (bare `:hover` parses as a descendant selector, not a state).
 
-**Pseudo-states.** `&:hover`, `&:focus`, `&:focus-visible`, `&:pressed`, `&:disabled`. Hover on native uses Pressable's pointer events on RN ≥ 0.85, but stock RN gates them behind a feature flag that defaults to FALSE in 0.85 — flip it at app startup to get `&:hover` to fire:
+**Pseudo-states.** `&:hover`, `&:focus`, `&:focus-visible`, `&:pressed`, `&:disabled`. Hover on native uses Pressable's pointer events on RN ≥ 0.85, but stock RN gates them behind a feature flag that defaults to FALSE in 0.85. Flip it at app startup to get `&:hover` to fire:
 
 ```js
 import { ReactNativeFeatureFlags } from 'react-native';
@@ -98,7 +98,7 @@ const Row = styled.View`
 
 **`:is()` and `:where()`.** Apply the rule to each listed state: `&:is(:hover, :focus)`.
 
-**Tree-structural pseudos.** `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, and the functional `:nth-*(<an+b>)` family with `odd` / `even` keywords. Siblings need to be inside a styled-component parent for indexing to work — a non-styled wrapper in between resets the count.
+**Tree-structural pseudos.** `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, and the functional `:nth-*(<an+b>)` family with `odd` / `even` keywords. Siblings need to be inside a styled-component parent for indexing to work; a non-styled wrapper in between resets the count.
 
 **Combinators between styled-component references.**
 
@@ -112,7 +112,7 @@ const Title = styled.Text`
 `;
 ```
 
-Descendant matching (`${Foo} &`) is transparent to non-styled wrappers. The child combinator (`>`) requires the matched element to be a direct child of a published parent — a non-styled wrapper in between will break the match.
+Descendant matching (`${Foo} &`) is transparent to non-styled wrappers. The child combinator (`>`) requires the matched element to be a direct child of a published parent; a non-styled wrapper in between will break the match.
 
 ### Animations
 
@@ -129,7 +129,7 @@ const Card = styled.View`
 
 Eligible properties (opacity, every color, all border radius corners, transforms, shadows, filter) run on the native thread. `@keyframes` and `@starting-style` (first-mount enter animations) work the same way. `animation-direction`, `animation-fill-mode`, `animation-play-state`, `animation-iteration-count`, `animation-composition` (`replace | add | accumulate`), and per-frame easing all work without extra imports.
 
-CSS easing matches the W3C spec curves: `ease`, `ease-in`, `ease-out`, `ease-in-out`, `cubic-bezier()`, `steps()`, `linear()`. Note: the CSS `ease` keyword is the W3C `ease` curve, not React Native's `Easing.ease` (which is `ease-in`). `prefers-reduced-motion` is honored — durations collapse to 0 when the OS setting is on.
+CSS easing matches the W3C spec curves: `ease`, `ease-in`, `ease-out`, `ease-in-out`, `cubic-bezier()`, `steps()`, `linear()`. Note: the CSS `ease` keyword is the W3C `ease` curve, not React Native's `Easing.ease` (which is `ease-in`). `prefers-reduced-motion` is honored; durations collapse to 0 when the OS setting is on.
 
 If you'd rather drive animations through reanimated, the optional adapter is one import:
 
@@ -141,7 +141,7 @@ import 'styled-components/native/reanimated';
 
 ### Remapping CSS into native props
 
-Many React Native libraries take styling through component props rather than the `style` prop — `react-native-svg`'s `<Path fill="..." stroke="..." />`, charting libraries with `tintColor`, icon libraries with `color`. The function form of `.attrs((props, ast) => ...)` accepts a second `ast` argument that lets you read CSS declarations or theme tokens and rewrite them onto the rendered component as props:
+Many React Native libraries take styling through component props rather than the `style` prop: `react-native-svg`'s `<Path fill="..." stroke="..." />`, charting libraries with `tintColor`, icon libraries with `color`. The function form of `.attrs((props, ast) => ...)` accepts a second `ast` argument that lets you read CSS declarations or theme tokens and rewrite them onto the rendered component as props:
 
 ```tsx
 import styled from 'styled-components/native';
@@ -166,7 +166,7 @@ const Logo = styled(Image).attrs((_props, ast) => ({
 `;
 ```
 
-`ast.pop(key)` reads the value and prevents the declaration from reaching the rendered style. `ast.peek(key)` reads without removing — use it when both the prop and the CSS declaration should flow through. Both accept an optional fallback.
+`ast.pop(key)` reads the value and prevents the declaration from reaching the rendered style. `ast.peek(key)` reads without removing; use it when both the prop and the CSS declaration should flow through. Both accept an optional fallback.
 
 The first argument dispatches on shape: a CSS property name (`'color'`, `'borderColor'`) reads a resolved declaration; a dot-separated path (`'palette.brand.primary'`) reads from the active theme with autocomplete and type inference from your augmented `DefaultTheme`.
 
@@ -204,11 +204,11 @@ These spec features pass through to react-native-web but do not render on React 
 - `transform-style: preserve-3d` (basic `rotateX` / `rotateY` / `translateZ` / `perspective` do work)
 - CSS Grid (`display: grid`, `grid-template-*`)
 - Form-state pseudos (`:invalid`, `:required`, `:read-only`, `:checked`)
-- `@supports` is parsed but its condition is never evaluated against the runtime — declarations inside always apply on native. Branch with `Platform.OS` instead.
+- `@supports` is parsed but its condition is never evaluated against the runtime, so declarations inside always apply on native. Branch with `Platform.OS` instead.
 - Scroll-snap, view transitions, scroll-driven animations
 
 Platform-conditional features (the matrix has the full story):
 
-- `filter` — only `brightness` and `opacity` apply on iOS without the SwiftUI opt-in (set `ReactNativeReleaseLevel: experimental` in `Info.plist` / `ios.infoPlist`); Android `blur` and `drop-shadow` require API 31+.
-- `mix-blend-mode` — all 16 non-Normal modes on iOS; Android needs API 29+.
-- `transform: skewX/skewY` — iOS renders correctly; Android silently drops the shear pending an upstream fix.
+- `filter`: only `brightness` and `opacity` apply on iOS without the SwiftUI opt-in (set `ReactNativeReleaseLevel: experimental` in `Info.plist` / `ios.infoPlist`); Android `blur` and `drop-shadow` require API 31+.
+- `mix-blend-mode`: all 16 non-Normal modes on iOS; Android needs API 29+.
+- `transform: skewX/skewY`: iOS renders correctly; Android silently drops the shear pending an upstream fix.
