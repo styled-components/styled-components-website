@@ -20,7 +20,11 @@ const { pages } = json;
 const faqCategories = [
   {
     label: 'Migration',
-    items: ['What do I need to do to migrate to v6?', 'What do I need to do to migrate to v5?'],
+    items: [
+      { title: 'What do I need to do to migrate to v7?', href: '/docs/v7#migrating-from-v6' },
+      'What do I need to do to migrate to v6?',
+      'What do I need to do to migrate to v5?',
+    ],
   },
   {
     label: 'Styling Patterns',
@@ -58,7 +62,7 @@ export default function Documentation() {
   return (
     <DocsLayout title="Documentation">
       <p>
-        Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components
+        Utilizing tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components
         allows you to write actual CSS code to style your components. It also removes the mapping between components and
         styles – using components as a low-level styling construct could not be easier!
       </p>
@@ -77,13 +81,18 @@ export default function Documentation() {
                 {faqCategories.map(cat => (
                   <FaqGroup key={cat.label}>
                     <CategoryLabel>{cat.label}</CategoryLabel>
-                    {cat.items.map(item => (
-                      <SubHeader key={item}>
-                        <Link variant="heading" href={`/docs/${pathname}#${titleToDash(item)}`}>
-                          {item}
-                        </Link>
-                      </SubHeader>
-                    ))}
+                    {cat.items.map(item => {
+                      const title = typeof item === 'string' ? item : item.title;
+                      const href = typeof item === 'string' ? `/docs/${pathname}#${titleToDash(item)}` : item.href;
+
+                      return (
+                        <SubHeader key={title}>
+                          <Link variant="heading" href={href}>
+                            {title}
+                          </Link>
+                        </SubHeader>
+                      );
+                    })}
                   </FaqGroup>
                 ))}
               </FaqColumn>

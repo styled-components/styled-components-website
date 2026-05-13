@@ -48,9 +48,7 @@ We could have nested the color-changing rule within our Link component, but then
 
 ### Caveat
 
-This behaviour is only supported within the context of _Styled_ Components:
-interpolating `A` in the following example will trigger a development warning because component
-`A` is not a Styled Component.
+This behavior is only supported within the context of _Styled_ Components: interpolating `A` in the following example will trigger a development warning because component `A` is not a Styled Component.
 
 ```tsx
 const A = () => <div />;
@@ -62,5 +60,4 @@ const B = styled.div`
 `
 ```
 
-In development, a `console.error` warning is emitted because `A` is a plain function component
-being used as an interpolation. The component still mounts, but the selector won't work as intended.
+In development, a `console.error` warning is emitted because `A` is a plain function component being used as an interpolation. The component still mounts, but the selector won't work as intended.

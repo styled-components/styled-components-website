@@ -10,7 +10,7 @@ import Plugins from '@/sections/v7/plugins.mdx';
 export const metadata: Metadata = {
   title: 'styled-components v7',
   description:
-    'New in v7: in-house CSS engine, modern CSS on React Native, native animations, plugins subpath, and a smaller dependency surface.',
+    'Now in alpha: in-house CSS engine, modern CSS on React Native, native animations, plugins subpath. Install with npm install styled-components@test; expect frequent updates while internals stabilize.',
 };
 
 export default function V7Page() {

@@ -3,21 +3,15 @@ import Table, { Row, Column } from 'components/Table'
 
 ### `StyledComponent`
 
-A styled React component. This is returned when you
-call `styled.tagname` or `styled(Component)` with styles.
+A styled React component. This is returned when you call `styled.tagname` or `styled(Component)` with styles.
 
-This component can take any prop. It passes it on to the HTML node if it's a valid attribute,
-otherwise it only passes it into interpolated functions. (see [Tagged Template Literal](/docs/advanced#tagged-template-literals))
+This component can take any prop. It passes it on to the HTML node if it's a valid attribute, otherwise it only passes it into interpolated functions. (see [Tagged Template Literal](/docs/advanced#tagged-template-literals))
 
-You can pass an arbitrary classname to a styled component without problem and it will be applied
-next to the styles defined by the styled call.
-(e.g. `<MyStyledComp className="bootstrap__btn" />`)
+You can pass an arbitrary classname to a styled component without problem and it will be applied next to the styles defined by the styled call. (e.g. `<MyStyledComp className="bootstrap__btn" />`)
 
 #### .attrs
 
-This is a chainable method that attaches some props to a styled component.
-The first and only argument is an object that will be merged into the rest of the
-component's props. The `attrs` object accepts the following values:
+This is a chainable method that attaches some props to a styled component. Pass either an object or a factory function; the returned attrs are merged into the component's props. The `attrs` argument accepts the following shapes:
 
 <Table head={['Values', 'Description']}>
   <Row>
@@ -25,8 +19,7 @@ component's props. The `attrs` object accepts the following values:
       <Code>Prop Value</Code>
     </Column>
     <Column>
-      These can be of any type, except functions. They'll stay static and
-      will be merged into the existing component props.
+      These can be of any type, except functions. They'll stay static and will be merged into the existing component props.
     </Column>
   </Row>
 
@@ -35,11 +28,7 @@ component's props. The `attrs` object accepts the following values:
       <Code>Prop Factory</Code>
     </Column>
     <Column>
-      A function that receives the props that are passed into the component
-      and computes a value, that is then going to be merged into the
-      existing component props. The factory accepts an optional second
-      argument, <Code>ast</Code>, for reading style declarations or theme
-      tokens — see <a href="/docs/basics#bridging-styles-into-props--v7">Bridging styles into props</a>.
+      A function that receives the props that are passed into the component and computes a value, that is then going to be merged into the existing component props. The factory accepts an optional second argument, <Code>ast</Code>, for reading style declarations or theme tokens—see <a href="/docs/basics#bridging-styles-into-props">Bridging styles into props</a>.
     </Column>
   </Row>
 </Table>

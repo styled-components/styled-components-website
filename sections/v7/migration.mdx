@@ -2,6 +2,8 @@
 
 Most v6 apps move to v7 by bumping the version, updating peers, and applying a few small changes. The list below is exhaustive; pick out the items that apply.
 
+Install the current v7 prerelease with `npm install styled-components@test`.
+
 ### Update peers
 
 - `react` and `react-dom` to `^19`.
@@ -88,7 +90,7 @@ const scopePlugin: SCPlugin = {
 };
 ```
 
-Legacy stylis function plugins are no-ops in v7 because they don't expose `rw` or `decl`. Development builds warn once per unrecognised plugin name.
+Legacy stylis function plugins don't run in v7 because they don't expose `rw` or `decl`. Production builds ignore them; development builds warn once per unrecognized plugin name.
 
 ### Global styles emit once per component
 
