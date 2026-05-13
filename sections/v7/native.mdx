@@ -62,7 +62,15 @@ const Toggle = styled.Pressable<{ 'aria-pressed'?: boolean }>`
 
 The same CSS works on web and native. Anchor pseudo-states with `&` (bare `:hover` parses as a descendant selector, not a state).
 
-**Pseudo-states.** `&:hover`, `&:focus`, `&:focus-visible`, `&:pressed`, `&:disabled`. Hover on native uses Pressable's pointer events on RN ≥ 0.85, but stock RN gates them behind `ReactNativeFeatureFlags.shouldPressibilityUseW3CPointerEventsForHover`, which defaults to FALSE in 0.85 — enable it at startup to get `&:hover` to fire.
+**Pseudo-states.** `&:hover`, `&:focus`, `&:focus-visible`, `&:pressed`, `&:disabled`. Hover on native uses Pressable's pointer events on RN ≥ 0.85, but stock RN gates them behind a feature flag that defaults to FALSE in 0.85 — flip it at app startup to get `&:hover` to fire:
+
+```js
+import { ReactNativeFeatureFlags } from 'react-native';
+
+ReactNativeFeatureFlags.override({
+  shouldPressibilityUseW3CPointerEventsForHover: () => true,
+});
+```
 
 **Attribute selectors.** The full CSS Selectors 4 grammar works on native:
 
