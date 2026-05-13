@@ -126,6 +126,19 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     caveats: ['React Native does not implement @scope on either version.'],
   },
   {
+    id: 'supports',
+    title: '@supports',
+    category: 'at-rules',
+    caniuseId: 'css-supports-api',
+    nativeV6: 'no',
+    nativeV7: 'partial',
+    summary:
+      'Web pass-through in both versions. On React Native, v7 recognises the at-rule but routes the condition through the same evaluator as `@media` / `@container`, which only understands media-query features. Feature-test conditions like `(display: grid)`, `selector(:has(...))`, `font-tech()`, and `not` are not parsed, so the inner block applies unconditionally on native rather than feature-testing the runtime.',
+    caveats: [
+      'Effectively a no-op wrapper on native today — declarations inside an `@supports` block always apply. Use `Platform.OS` checks instead of `@supports` to branch native behaviour.',
+    ],
+  },
+  {
     id: 'property',
     title: '@property (registered custom props)',
     category: 'at-rules',
