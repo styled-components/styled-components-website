@@ -24,6 +24,7 @@ Commands
 Tokens / fonts
 - `utils/theme.ts` is the single source for `var(--sc-*)`. Dark overrides in `GlobalStyles.tsx`.
 - Display Figtree, body Inter, mono Google Sans Code; injected by next/font as `--font-sans` / `--font-display` / `--font-mono`.
+- `next/og` routes cannot use those helpers; fonts come from committed TTFs under `assets/fonts/og/` (`utils/readOgFont.ts`), matching Next.js opengraph-image docs. `test/utils/opengraphImageFonts.spec.ts` guards against CDN font URLs in any `opengraph-image.tsx`.
 - Three palette tiers: `lightPalette`, `darkPalette` (CVD-optimized; see theme.ts comments for seeds and pipeline) and the ring colors from `utils/logoPalette.ts`. `theme.palette[N]` auto-switches light/dark. Don't hand-pick oklch; derive from palette indices. Accent variants = L/C shift on the same hue, never adjacent indices.
 - OKLCH hue 0° is pink/magenta, not red. See `logoPalette.ts` for the offset that places red at step 0.
 

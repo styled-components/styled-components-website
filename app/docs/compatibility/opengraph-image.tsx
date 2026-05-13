@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { readOgFont } from '@/utils/readOgFont';
 
 export const alt = 'React Native CanIUse: CSS feature compatibility for styled-components';
 const SCALE = 1.5;
@@ -89,18 +90,12 @@ function StatusPill({ status }: { status: Status }) {
   );
 }
 
-async function fetchFont(url: string): Promise<ArrayBuffer> {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`font fetch failed (${res.status}): ${url}`);
-  return res.arrayBuffer();
-}
-
 export default async function Image() {
   const [figtreeBold, inter400, inter600, mono] = await Promise.all([
-    fetchFont('https://fonts.gstatic.com/s/figtree/v9/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_eYR15e.ttf'),
-    fetchFont('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.ttf'),
-    fetchFont('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-600-normal.ttf'),
-    fetchFont('https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-500-normal.ttf'),
+    readOgFont('figtreeBold'),
+    readOgFont('interLatin400'),
+    readOgFont('interLatin600'),
+    readOgFont('jetbrainsMonoLatin500'),
   ]);
 
   return new ImageResponse(

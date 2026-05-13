@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { readOgFont } from '@/utils/readOgFont';
 
 export const alt = 'styled-components';
 export const size = { width: 1200, height: 630 };
@@ -24,9 +25,7 @@ function buildSvg(): string {
 }
 
 export default async function Image() {
-  const figtreeFont = await fetch(
-    'https://fonts.gstatic.com/s/figtree/v9/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_eYR15e.ttf'
-  ).then(res => res.arrayBuffer());
+  const figtreeFont = await readOgFont('figtreeBold');
 
   return new ImageResponse(
     <div style={{ display: 'flex', width: '100%', height: '100%', background: '#f8f8f8' }}>

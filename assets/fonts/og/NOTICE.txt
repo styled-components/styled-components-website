@@ -1,0 +1,5 @@
+Bundled TTFs used only by next/og ImageResponse (see Next.js opengraph-image docs).
+
+Figtree — SIL Open Font License 1.1 — https://github.com/googlefonts/figtree
+Inter — SIL Open Font License 1.1 — https://github.com/rsms/inter
+JetBrains Mono — SIL Open Font License 1.1 — https://github.com/JetBrains/JetBrainsMono

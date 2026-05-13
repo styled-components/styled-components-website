@@ -4,6 +4,7 @@ import { ImageResponse } from 'next/og';
 import { notFound } from 'next/navigation';
 import { parser, RuleType, type MarkdownToJSX } from 'markdown-to-jsx';
 import { getPostBySlug, getPosts } from '@/utils/blog.server';
+import { readOgFont } from '@/utils/readOgFont';
 
 export const alt = 'styled-components blog';
 const SCALE = 1.5;
@@ -36,12 +37,6 @@ function buildCube(): string {
     '</svg>',
   ].join('');
   return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
-}
-
-async function fetchFont(url: string): Promise<ArrayBuffer> {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`font fetch failed (${res.status}): ${url}`);
-  return res.arrayBuffer();
 }
 
 const MONTHS = [
@@ -119,9 +114,9 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   if (!post) notFound();
 
   const [figtreeBold, inter400, inter600, readMinutes] = await Promise.all([
-    fetchFont('https://fonts.gstatic.com/s/figtree/v9/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_eYR15e.ttf'),
-    fetchFont('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.ttf'),
-    fetchFont('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-600-normal.ttf'),
+    readOgFont('figtreeBold'),
+    readOgFont('interLatin400'),
+    readOgFont('interLatin600'),
     estimateReadTimeMinutes(post),
   ]);
   const twitter = post.authorTwitter;
