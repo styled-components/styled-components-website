@@ -62,7 +62,7 @@ const Toggle = styled.Pressable<{ 'aria-pressed'?: boolean }>`
 
 The same CSS works on web and native. Anchor pseudo-states with `&` (bare `:hover` parses as a descendant selector, not a state).
 
-**Pseudo-states.** `&:hover`, `&:focus`, `&:focus-visible`, `&:pressed`, `&:disabled`. Hover on native uses Pressable's pointer events; React Native ≥ 0.85.
+**Pseudo-states.** `&:hover`, `&:focus`, `&:focus-visible`, `&:pressed`, `&:disabled`. Hover on native uses Pressable's pointer events on RN ≥ 0.85, but stock RN gates them behind `ReactNativeFeatureFlags.shouldPressibilityUseW3CPointerEventsForHover`, which defaults to FALSE in 0.85 — enable it at startup to get `&:hover` to fire.
 
 **Attribute selectors.** The full CSS Selectors 4 grammar works on native:
 
@@ -189,11 +189,18 @@ These spec features pass through to react-native-web but do not render on React 
 
 - `::before` / `::after` / `::placeholder` / `::marker` / `::selection`
 - `backdrop-filter`, `mask` / `mask-image` (community packages cover both)
-- `background-image: url()` for raster images (gradient `background-image` works)
+- `background-image: url()` for raster images (linear / radial gradients work; conic-gradient parses but does not paint on native)
 - `clip-path`
 - `position: fixed`, `position: sticky`, `position: anchor()` / `anchor-name`
 - `text-indent`, `word-spacing`, `text-box-trim`, `text-spacing-trim`
 - `transform-style: preserve-3d` (basic `rotateX` / `rotateY` / `translateZ` / `perspective` do work)
 - CSS Grid (`display: grid`, `grid-template-*`)
 - Form-state pseudos (`:invalid`, `:required`, `:read-only`, `:checked`)
+- `@supports` is parsed but its condition is never evaluated against the runtime — declarations inside always apply on native. Branch with `Platform.OS` instead.
 - Scroll-snap, view transitions, scroll-driven animations
+
+Platform-conditional features (the matrix has the full story):
+
+- `filter` — only `brightness` and `opacity` apply on iOS without the SwiftUI opt-in (set `ReactNativeReleaseLevel: experimental` in `Info.plist` / `ios.infoPlist`); Android `blur` and `drop-shadow` require API 31+.
+- `mix-blend-mode` — all 16 non-Normal modes on iOS; Android needs API 29+.
+- `transform: skewX/skewY` — iOS renders correctly; Android silently drops the shear pending an upstream fix.
