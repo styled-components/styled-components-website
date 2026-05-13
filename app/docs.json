@@ -1,7 +1,7 @@
 {
   "pages": [
     {
-      "title": "v7 (NEW)",
+      "title": "v7 (alpha)",
       "pathname": "v7",
       "sections": [
         { "title": "What's new in v7" },

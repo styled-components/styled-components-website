@@ -228,7 +228,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
       android: 'https://github.com/facebook/react-native/pull/56162',
     },
     summary:
-      'v7 evaluates the static arms of math functions at compile time and re-evaluates dynamic arms at render. v6 supported only fully-static cases on native. Beyond `calc()` / `clamp()` / `min()` / `max()`, v7 implements the CSS Values 4 Math L4 step family (`round()` with `nearest` / `up` / `down` / `to-zero` strategies, `mod()`, `rem()`), trig (`sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `atan2`), exponential (`pow`, `sqrt`, `hypot`, `log`, `exp`), and sign (`abs`, `sign`). Math constants `pi` and `e` are recognised. An upstream Callstack PR wires Yoga dynamic-value resolution into stock React Native for layout properties (dimensions, min/max, flex-basis, gap, position, margin, padding).',
+      'v7 evaluates the static arms of math functions at compile time and re-evaluates dynamic arms at render. v6 supported only fully-static cases on native. Beyond `calc()` / `clamp()` / `min()` / `max()`, v7 implements the CSS Values 4 Math L4 step family (`round()` with `nearest` / `up` / `down` / `to-zero` strategies, `mod()`, `rem()`), trig (`sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `atan2`), exponential (`pow`, `sqrt`, `hypot`, `log`, `exp`), and sign (`abs`, `sign`). Math constants `pi` and `e` are recognized. An upstream Callstack PR wires Yoga dynamic-value resolution into stock React Native for layout properties (dimensions, min/max, flex-basis, gap, position, margin, padding).',
     caveats: [
       'CSS Values 4 §10.7 keywords `infinity`, `-infinity`, and `NaN` are valid CSS but cannot be represented in RN dimensions — v7 emits a dev-warn and drops the declaration. Use a large literal or viewport unit instead.',
       'All math functions compose inside `calc()`. A function whose every argument resolves to a static numeric folds at compile time; if any sub-expression contains viewport units, container units, theme-token sentinels, or `var()`, the whole expression re-resolves at render time.',
@@ -369,7 +369,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'yes',
     summary:
-      'v7 animates eligible properties on the native thread by default. No setup, no extra import. All CSS easing keywords plus `cubic-bezier()`, `steps()`, `step-start`, `step-end`, and `linear(<stop-list>)` are supported — non-linear curves are sampled into per-frame `outputRange`s for the native driver. Web behaviour is unchanged.',
+      'v7 animates eligible properties on the native thread by default. No setup, no extra import. All CSS easing keywords plus `cubic-bezier()`, `steps()`, `step-start`, `step-end`, and `linear(<stop-list>)` are supported — non-linear curves are sampled into per-frame `outputRange`s for the native driver. Web behavior is unchanged.',
     caveats: [
       "CSS `ease` maps to the W3C `ease` curve, not React Native's `Easing.ease` (which is `ease-in`). v7 fixes that subtle mismatch.",
       '`prefers-reduced-motion` collapses durations to 0.',
@@ -393,7 +393,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'partial',
     summary:
-      'v7 parses `env()` per CSS Environment Variables Level 1 (recognised names, fallbacks, recursive fallback substitution). Safe-area insets currently resolve to 0 on React Native; the insets surface is not yet wired to `react-native-safe-area-context`, so `env(safe-area-inset-top, 47px)` returns 0 because recognised names ignore the fallback per spec.',
+      'v7 parses `env()` per CSS Environment Variables Level 1 (recognized names, fallbacks, recursive fallback substitution). Safe-area insets currently resolve to 0 on React Native; the insets surface is not yet wired to `react-native-safe-area-context`, so `env(safe-area-inset-top, 47px)` returns 0 because recognized names ignore the fallback per spec.',
   },
   {
     id: 'custom-props',
@@ -511,7 +511,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
       android: 'https://github.com/facebook/react-native/pull/55289',
     },
     summary:
-      'Pass-through on web. Stock React Native renders text shadows on both platforms via the three legacy individual style keys (`textShadowOffset`, `textShadowRadius`, `textShadowColor`), but does NOT parse the CSS `text-shadow` shorthand string. v7 polyfills the shorthand by expanding `<offset-x> <offset-y> [<blur>] [<color>]` (any order between the colour and the length triplet) into the three legacy keys. v6 dropped the shorthand. Upstream PR #55289 adds native CSS-shorthand parsing on both platforms (single shadow per node).',
+      'Pass-through on web. Stock React Native renders text shadows on both platforms via the three legacy individual style keys (`textShadowOffset`, `textShadowRadius`, `textShadowColor`), but does NOT parse the CSS `text-shadow` shorthand string. v7 polyfills the shorthand by expanding `<offset-x> <offset-y> [<blur>] [<color>]` (any order between the color and the length triplet) into the three legacy keys. v6 dropped the shorthand. Upstream PR #55289 adds native CSS-shorthand parsing on both platforms (single shadow per node).',
   },
   {
     id: 'text-decoration-style',
@@ -609,7 +609,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'no',
     summary:
-      'Pass-through on web. React Native has its own paged-scroll APIs but does not honour CSS scroll-snap on either version.',
+      'Pass-through on web. React Native has its own paged-scroll APIs but does not honor CSS scroll-snap on either version.',
   },
   {
     id: 'focus-visible',
@@ -810,7 +810,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'partial',
     androidStock: 'no',
     summary:
-      'Pass-through on web; flows through on `react-native-web`. iOS Fabric only honours the `pointer` keyword (via `UIHoverAutomaticEffect` on iOS 17+); the 30+ other Cursor enum values (Crosshair, Move, Grab, Help, etc.) parse but have no rendering. iOS < 17 ignores the property entirely. Android has no `cursor` consumer on either renderer.',
+      'Pass-through on web; flows through on `react-native-web`. iOS Fabric only honors the `pointer` keyword (via `UIHoverAutomaticEffect` on iOS 17+); the 30+ other Cursor enum values (Crosshair, Move, Grab, Help, etc.) parse but have no rendering. iOS < 17 ignores the property entirely. Android has no `cursor` consumer on either renderer.',
   },
   {
     id: 'isolation',
@@ -959,7 +959,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     summary:
       'RN `fontFamily` is a single platform-font name. v7 reads either a single ident sequence (unquoted multi-word like `Helvetica Neue`), one quoted string, or a generic-family keyword. Comma-separated stacks (`Inter, system-ui, sans-serif`) keep the first family and drop the rest with a one-time dev-warn (`native-font-family-fallbacks-dropped`) since RN has no fallback chain. v6 dropped the whole declaration silently for stacks. Round-trips on web through normal CSS parsing.',
     caveats: [
-      'v7 normalises all 13 CSS generic-family keywords (`system-ui`, `ui-sans-serif`, `ui-serif`, `ui-monospace`, `ui-rounded`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`) to concrete face names per platform — e.g. `Times New Roman` for serif variants on iOS, `monospace` for mono variants on Android.',
+      'v7 normalizes all 13 CSS generic-family keywords (`system-ui`, `ui-sans-serif`, `ui-serif`, `ui-monospace`, `ui-rounded`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`) to concrete face names per platform — e.g. `Times New Roman` for serif variants on iOS, `monospace` for mono variants on Android.',
       'iOS Fabric also recognises `system-ui` / `ui-sans-serif` / `ui-serif` / `ui-monospace` / `ui-rounded` natively via `UIFontDescriptorSystemDesign*`. Android has no native generic-keyword handling; unknown names silently fall back to the system default.',
       'Font names are case-sensitive on native; both versions preserve the source casing.',
     ],
@@ -1359,7 +1359,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'v6 and v7 both expand the `place-content` shorthand to `{ align-content, justify-content }`. v7 also expands `place-items` to `{ align-items, justify-items }` and `place-self` to `{ align-self, justify-self }` per CSS Box Alignment 3 §6/§7. The align axis flows through Yoga on native; the justify axis is silently dropped by RN (Yoga has no `justifyItems` / `justifySelf`) but reaches the browser on rn-web. Self-position keywords (`start | self-start | end | self-end`) normalise to the Yoga `flex-*` enums.',
+      'v6 and v7 both expand the `place-content` shorthand to `{ align-content, justify-content }`. v7 also expands `place-items` to `{ align-items, justify-items }` and `place-self` to `{ align-self, justify-self }` per CSS Box Alignment 3 §6/§7. The align axis flows through Yoga on native; the justify axis is silently dropped by RN (Yoga has no `justifyItems` / `justifySelf`) but reaches the browser on rn-web. Self-position keywords (`start | self-start | end | self-end`) normalize to the Yoga `flex-*` enums.',
   },
   {
     id: 'flex-longhands',
@@ -1407,7 +1407,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'partial',
     androidStock: 'partial',
     summary:
-      'React Native renders only `solid`, `dotted`, and `dashed` on both platforms. v7 also normalises `border: none` to `border-style: none` (v6 emitted `solid` for the keyword). The other web keywords (`double`, `groove`, `ridge`, `inset`, `outset`, `hidden`) are dropped on native and remain web-only.',
+      'React Native renders only `solid`, `dotted`, and `dashed` on both platforms. v7 also normalizes `border: none` to `border-style: none` (v6 emitted `solid` for the keyword). The other web keywords (`double`, `groove`, `ridge`, `inset`, `outset`, `hidden`) are dropped on native and remain web-only.',
   },
   {
     id: 'border-color',
@@ -1736,7 +1736,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'yes',
     androidStock: 'yes',
     summary:
-      'Pass-through everywhere. React Native accepts `pointerEvents` as a style key on both platforms (the legacy `pointerEvents` View prop has been deprecated in favour of the style). Values: `auto`, `none`, `box-none` (children receive events but the view itself does not), `box-only` (the view receives events but children do not).',
+      'Pass-through everywhere. React Native accepts `pointerEvents` as a style key on both platforms (the legacy `pointerEvents` View prop has been deprecated in favor of the style). Values: `auto`, `none`, `box-none` (children receive events but the view itself does not), `box-only` (the view receives events but children do not).',
     caveats: [
       'Web only understands `auto` and `none`. `box-none` and `box-only` are RN-only extensions and silently behave as `auto` on react-native-web.',
     ],
@@ -1793,7 +1793,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'Pass-through on web. React Native does not honour `scroll-behavior` as a style: smooth scrolling is opt-in per call via `ScrollView.scrollTo({ ..., animated: true })`.',
+      'Pass-through on web. React Native does not honor `scroll-behavior` as a style: smooth scrolling is opt-in per call via `ScrollView.scrollTo({ ..., animated: true })`.',
   },
   {
     id: 'touch-action',
@@ -1805,7 +1805,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'Pass-through on web. React Native routes gestures through its own responder system; there is no `touch-action` style. Equivalent behaviour comes from `react-native-gesture-handler` or the responder lifecycle.',
+      'Pass-through on web. React Native routes gestures through its own responder system; there is no `touch-action` style. Equivalent behavior comes from `react-native-gesture-handler` or the responder lifecycle.',
   },
   {
     id: 'overscroll-behavior',
@@ -2048,7 +2048,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'partial',
     androidStock: 'partial',
     summary:
-      "RN's `normalize-colors` accepts all 147 CSS named colors plus `transparent` on both platforms (case-sensitive — lowercase only; uppercase `RED` will not match). `currentcolor` is web-only: RN has no cascading `color` to inherit, so v7 leaves it unresolved on native and the value normalises to transparent.",
+      "RN's `normalize-colors` accepts all 147 CSS named colors plus `transparent` on both platforms (case-sensitive — lowercase only; uppercase `RED` will not match). `currentcolor` is web-only: RN has no cascading `color` to inherit, so v7 leaves it unresolved on native and the value normalizes to transparent.",
     caveats: [
       'Use lowercase named-color keywords on native; the matcher is case-sensitive.',
       '`currentcolor` falls back to transparent on native; on Android `cursorColor` the value is silently ignored and the system uses its default caret regardless.',

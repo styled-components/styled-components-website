@@ -62,4 +62,4 @@ const scopePlugin: SCPlugin = {
 
 The `name` field is required and contributes to the compiler's cache hash, so different plugin sets across nested `<StyleSheetManager>` trees stay isolated. Plugins without a name throw a styled-components error.
 
-Legacy stylis plugins (those exporting a single function) silently no-op in v7 because they don't expose `rw` or `decl`. Development builds also warn once for any plugin whose name is not recognised. Migrate them to the `SCPlugin` interface above; complex use cases that need a richer hook surface should open an issue.
+Legacy stylis plugins (those exporting a single function) don't run in v7 because they don't expose `rw` or `decl`. Production builds ignore them; development builds warn once for any plugin whose name is not recognized. Migrate them to the `SCPlugin` interface above; complex use cases that need a richer hook surface should open an issue.

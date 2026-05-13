@@ -9,6 +9,7 @@ import titleToDash from './titleToDash';
 import Anchor from '../components/Anchor';
 import Code from '../components/Code';
 import CodeBlock from '../components/CodeBlock';
+import CompatibilityPreviewCard from '../components/CompatibilityPreviewCard';
 import Label, { LabelGroup } from '../components/Label';
 import { Title } from '../components/Layout';
 import Link from '../components/Link';
@@ -103,6 +104,7 @@ const components = {
   h5(props) {
     return <Heading {...props} level={5} />;
   },
+  CompatibilityPreviewCard,
   Fast,
 } satisfies MDXComponents;
 

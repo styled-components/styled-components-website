@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import DocsLayout from '@/components/DocsLayout';
 import DocsPageNav from '@/components/DocsPageNav';
 import CompatibilityMatrix from '@/components/CompatibilityMatrix';
+import Link from '@/components/Link';
 import { loadCompatMatrix } from '@/utils/cssCompat.server';
 
 export const metadata: Metadata = {
@@ -20,7 +21,15 @@ export default function CompatibilityPage() {
         A per-feature reference for which CSS works on React Native. The v6 and v7 columns show styled-components&apos;
         native runtime support; the iOS and Android columns show what stock React Native handles without any
         styled-components polyfill. Click any row for caveats, the underlying RN style key, and links to upstream PRs in
-        flight.
+        flight. Machine-readable versions are available as{' '}
+        <Link href="/docs/compatibility.json" variant="inline">
+          JSON
+        </Link>{' '}
+        and{' '}
+        <Link href="/docs/compatibility.md" variant="inline">
+          Markdown
+        </Link>
+        .
       </p>
 
       <CompatibilityMatrix entries={entries} />

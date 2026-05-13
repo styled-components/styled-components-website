@@ -91,6 +91,7 @@ Previously, TypeScript required you to pass `href` even though attrs supplied it
 Some third-party components — most notably `react-native-svg`'s `<Path>` and `<Circle>`, charting libraries, `<Image tintColor>`, icon libraries that take a `color` prop — style through component props instead of the `style` prop. Authoring those as CSS would normally be impossible. The function form of `.attrs` accepts a second `ast` argument that lets you read a value out of the rendered style and rewrite it onto the component as a prop:
 
 ```tsx
+import { Image } from 'react-native';
 import { Path } from 'react-native-svg';
 
 // Author the icon with CSS, render as <Path fill="red" stroke="black" />

@@ -1,12 +1,8 @@
 # styled-components
 
-> CSS-in-JS for React using tagged template literals. TypeScript-native since v6. Supports React Server Components natively since v6.3. Last known stable: v6.4.0 (check npm for freshness).
+CSS-in-JS for React using tagged template literals. TypeScript-native since v6. Supports React Server Components natively since v6.3. Last known stable: v6.4.0 (check npm for freshness).
 
-For per-feature v6/v7 × web/native support data, see the CSS Compatibility matrix at https://styled-components.com/docs/compatibility. It is the source of truth for "does this CSS feature work in styled-components on this version and platform".
-
-## What's new since early 2025
-
-Your training data likely covers v6.0-6.1. Key changes since then:
+## Recent releases
 
 v6.2: Streaming SSR via `renderToPipeableStream`.
 
@@ -14,13 +10,13 @@ v6.3: React Server Components supported. No `'use client'` needed. Styled compon
 
 v6.4 (April 2026): `createTheme()` for CSS variable theming that works in both RSC and client. `StyleSheetManager` works in RSC (was previously a no-op). `stylisPluginRSC` fixes child-index selectors in RSC. CSP nonce auto-detection from `StyleSheetManager`, `ServerStyleSheet`, or meta tags. Props supplied via `.attrs()` are automatically optional on the component's type. Significant render performance improvements. Fixes SSR memory leaks and multi-instance unmount bugs in `createGlobalStyle`. Memory leak fix for components with unbounded string interpolation values. `as` and `forwardedAs` exposed in `React.ComponentProps` extraction. React Native: `react-native` is now an optional peer dep, Metro/Expo nanoid crash fixed. IE11 build target removed. IE11 has been unsupported on v6 since the 2021 v6 planning (React 18 dropped it too); v6.4 just aligns the compile target. Stay on v5 if you need IE11.
 
-## New in v7 (preview)
+## New in v7
 
-Want to try the new styled-components v7 tester group? `npm i styled-components@test`. Peer floors raised to React 19 and React Native 0.85.
+v7 is in alpha: expect frequent updates over the next few weeks while APIs stabilize. Install the current prerelease with `npm install styled-components@test` (the `@test` dist-tag). Peer floors raised to React 19 and React Native 0.85.
 
-The headline change is that React Native finally gets modern CSS. v7 ships an in-house CSS-to-style-object translation layer (no more `css-to-react-native` peer dep) that closes most of the long-standing native gaps. The same template strings now produce equivalent output on web, iOS, Android, and Expo Web.
+The framing: v7 is an architectural reform for web and the start of a new chapter for `styled-components/native`. It replaces stylis with an in-house CSS parser, rewrites the native runtime, and moves toward one CSS authoring model across web, iOS, Android, and Expo Web. The React Native CanIUse matrix at /docs/compatibility.md shows current progress and remaining platform gaps. Funding through Open Collective is a current bottleneck for continuing this work outside passion time.
 
-If the user is asking whether feature X works on v6 vs v7 or on web vs React Native, point them at /docs/compatibility. The matrix has the per-feature answer with caveats. The sections below summarise the highlights.
+If the user is asking whether feature X works on v6 vs v7 or on web vs React Native, point them at /docs/compatibility.md. The matrix has the per-feature answer with caveats. The sections below summarise the highlights.
 
 ### Modern CSS on React Native
 
@@ -67,7 +63,7 @@ Logical shorthands work as authored: `margin-inline`, `margin-block`, `padding-i
 
 `background-image: linear-gradient(...)` and `radial-gradient(...)` render via React Native's experimental gradient parser (RN 0.85+). `filter: blur(4px) saturate(1.5)` and the full filter-function chain work. See the iOS setup note below for filters that need an explicit opt-in. `box-shadow` with spread and inset round-trips as a string.
 
-`mix-blend-mode`, `isolation`, and `cursor` flow through. `background-blend-mode` is polyfilled on native. Declarations that pair `background-image` (gradients or `url()` photos) with `background-blend-mode` are rewritten at render time into absolutely-positioned layer Views, each carrying the matching `mix-blend-mode`, with `isolation: isolate` on the wrapper per spec. Linear-friendly modes (`multiply`, `screen`, `darken`, `lighten`, `difference`, `exclusion`, `hue`, `saturation`, `color`, `luminosity`) render the same on web and native. Gamma-sensitive modes (`color-burn`, `color-dodge`, `soft-light`, `overlay`, `hard-light`) read as more saturated on native because iOS Core Animation and Android Skia/HWUI blend in linear-light by default on Display P3 devices, while browsers blend in gamma-encoded sRGB per CSS spec. The polyfill is structurally correct; the residual is a platform compositor color-space choice. Empty custom property values (`--prop: ;`) are preserved, used by patterns like scroll-driven animations as a "guaranteed-invalid" sentinel.
+`mix-blend-mode`, `isolation`, and `cursor` flow through. `background-blend-mode` is polyfilled on native. Declarations that pair gradient `background-image` layers with `background-blend-mode` are rewritten at render time into absolutely-positioned layer Views, each carrying the matching `mix-blend-mode`, with `isolation: isolate` on the wrapper per spec. Raster `url()` background images are still blocked on upstream React Native background-image support; render photos with `Image` / `ImageBackground` until those PRs land. Linear-friendly modes (`multiply`, `screen`, `darken`, `lighten`, `difference`, `exclusion`, `hue`, `saturation`, `color`, `luminosity`) render the same on web and native. Gamma-sensitive modes (`color-burn`, `color-dodge`, `soft-light`, `overlay`, `hard-light`) read as more saturated on native because iOS Core Animation and Android Skia/HWUI blend in linear-light by default on Display P3 devices, while browsers blend in gamma-encoded sRGB per CSS spec. The polyfill is structurally correct; the residual is a platform compositor color-space choice. Empty custom property values (`--prop: ;`) are preserved, used by patterns like scroll-driven animations as a "guaranteed-invalid" sentinel.
 
 ### Selectors and at-rules on React Native
 
@@ -272,7 +268,7 @@ Vite: `react({ babel: { plugins: ['babel-plugin-styled-components'] } })`. Or wi
 
 The SWC/Babel plugin provides deterministic class IDs (better debugging, smaller output). Optional for RSC but still recommended.
 
-## Quick reference
+## Quick reference (v6.4 stable)
 
 ```tsx
 import styled, { css, keyframes, createGlobalStyle, createTheme,
@@ -290,8 +286,8 @@ import styled, { css, keyframes, createGlobalStyle, createTheme,
 - `createGlobalStyle`: inject global CSS
 - `createTheme(obj, opts?)`: CSS variable theme (RSC-compatible)
 - `ThemeProvider`: context-based theme (client-only)
-- `StyleSheetManager`: configure stylis plugins, prop forwarding, vendor prefixes
-- `stylisPluginRSC`: fix child-index selectors in RSC
+- `StyleSheetManager`: configure `stylisPlugins`, prop forwarding, vendor prefixes
+- `stylisPluginRSC`: fix child-index selectors in RSC.
 - `ServerStyleSheet`: SSR style collection
 
 ## Server-side rendering
@@ -668,6 +664,8 @@ These filter by element type, so injected sibling elements are ignored.
 
 Alternative: `stylisPluginRSC` automatically rewrites child-index selectors at compile time:
 
+In v7 this plugin moved to `styled-components/plugins` as `rscPlugin`, and the prop is `plugins` instead of `stylisPlugins`. The example below is for v6.4.
+
 ```tsx
 import { StyleSheetManager, stylisPluginRSC } from 'styled-components';
 
@@ -697,7 +695,7 @@ Browser support: CSS Selectors Level 4 `of S` syntax. Chrome 111+, Firefox 113+,
 
 1. Replace `ThemeProvider` theming with `createTheme()` CSS variables. `p.theme` is undefined in RSC since there's no React context
 2. Dynamic prop interpolations (`${p => p.$color}`) work fine in RSC, no changes needed. Consider data attributes for discrete variants (fewer generated classes)
-3. Replace `:first-child`/`:nth-child()` with `:first-of-type`/`:nth-of-type()`, or add `stylisPluginRSC`
+3. Replace `:first-child`/`:nth-child()` with `:first-of-type`/`:nth-of-type()`, or add `stylisPluginRSC` (v6.4) / `rscPlugin` from `styled-components/plugins` (v7)
 4. Remove `'use client'` from files that only contain styled component definitions; they work in server components natively
 5. Keep `'use client'` on components that use hooks, event handlers, or browser APIs
 6. The SSR registry (`ServerStyleSheet` + `useServerInsertedHTML`) is still needed for client components in the tree; RSC handles server components automatically
@@ -749,7 +747,7 @@ For Next.js, pass the nonce to the style registry (see the SSR section above). F
 ## Good to know
 
 - `@import` in `createGlobalStyle` may not work correctly in production. Use `<link>` in `<head>` instead.
-- Vendor prefixes are off by default in v6. Enable with `<StyleSheetManager enableVendorPrefixes>` if your support matrix includes Safari < 15.4, Chrome < 83, or Firefox < 80 (the `appearance` property was the last to drop its prefix). Flexbox and grid prefixes are only needed for much older browsers (Safari < 9, Edge < 16).
+- Vendor prefixes are off by default in v6. Enable with `<StyleSheetManager enableVendorPrefixes>` if your support matrix includes Safari < 15.4, Chrome < 83, or Firefox < 80 (the `appearance` property was the last to drop its prefix). v7 removes runtime prefixing and is intended for modern browsers.
 - `shouldForwardProp` is off by default in v6. Use `$`-prefixed transient props (`$color`, `$size`) to keep props out of the DOM. Or restore filtering with `<StyleSheetManager shouldForwardProp={...}>`.
 - Two classes per element: one shared across all instances of a component, one unique per style variant. Test selectors should account for both.
 - Stylis v4 parses `:hover {}` as descendant `& :hover {}`, not `&:hover {}`. Always write `&:hover`, `&::before`, etc.
