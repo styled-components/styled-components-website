@@ -8,13 +8,23 @@ import { mobile } from '../utils/media';
 import { formatDate } from '../utils/formatDate';
 import type { Post } from '../utils/blog';
 
+/** Homepage hero: above grid breakpoint the card spans the editor column; below it stays content-sized and centered. */
+const DESKTOP_MIN = `${1000 / 16}em`;
+
 const Card = styled(Link)`
   display: inline-flex;
   flex-direction: column;
   gap: ${theme.space[2]};
   align-items: flex-start;
   max-width: max-content;
+  box-sizing: border-box;
   margin: ${theme.space[6]} 0 ${theme.space[8]};
+
+  @media (min-width: ${DESKTOP_MIN}) {
+    width: 100%;
+    max-width: none;
+    display: flex;
+  }
   padding: ${theme.space[4]} ${theme.space[5]};
   border-radius: ${theme.radius.lg};
   border: 1px solid ${theme.color.border};

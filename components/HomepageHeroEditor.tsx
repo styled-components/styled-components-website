@@ -210,8 +210,8 @@ const MobileLatestPost = styled.div`
 
 const DesktopLatestPost = styled.div`
   display: flex;
-  justify-content: flex-end;
   width: 100%;
+  align-self: stretch;
 
   ${mobile(css`
     display: none;
