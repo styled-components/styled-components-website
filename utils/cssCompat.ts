@@ -294,7 +294,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'Pass-through on web (`-webkit-line-clamp` and the standard `line-clamp` both work on Chromium / WebKit / Firefox 68+). Stock React Native has no `lineClamp` style; v7 polyfills `line-clamp: N` by lifting `numberOfLines: N` onto `<Text>` so the same template works on both targets.',
+      'Pass-through on web (`-webkit-line-clamp` and the standard `line-clamp` both work on Chromium / WebKit / Firefox 68+). v7 supports `line-clamp: N` on `<Text>` so the same template works on both targets.',
   },
   {
     id: 'filter',
@@ -370,7 +370,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'v7 polyfills `background-blend-mode` on native by compositing the layered backgrounds as stacked sibling layers. Stock RN has no `backgroundBlendMode` style. Linear-friendly modes round-trip exactly; gamma-sensitive modes differ slightly on Display P3.',
+      'v7 supports `background-blend-mode` on native. Stock RN has no `backgroundBlendMode` style. Linear-friendly modes round-trip exactly; gamma-sensitive modes differ slightly on Display P3.',
   },
   {
     id: 'transitions',
@@ -786,7 +786,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'yes',
     androidStock: 'yes',
     summary:
-      'Stock RN 0.85+ registers `objectFit` as a native style key on `<Image>` (fill / contain / cover / scale-down / none); v7 passes the CSS through unchanged. On rn-web, the Image element ignores the CSS property, so v7 also lifts `resizeMode` as a prop. `object-position` has no native equivalent on either platform and is web-only; on native, alignment falls back to the `Image` defaults.',
+      'Stock RN 0.85+ accepts the four CSS keywords on `<Image>` (fill / contain / cover / scale-down / none). v7 makes the same authored CSS work on rn-web Image too. `object-position` has no native equivalent on either platform and is web-only; on native, alignment falls back to the `Image` defaults.',
   },
   {
     id: 'aspect-ratio',
@@ -1120,10 +1120,10 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      "Pass-through on web. Stock React Native has no `textOverflow` style key. v7 polyfills `text-overflow: ellipsis | clip` by lifting `ellipsizeMode` ('tail' or 'clip') as a top-level prop on `<Text>`. Pair with `line-clamp: N` (also polyfilled to `numberOfLines: N`) for multi-line ellipsizing. v7 does not implement the spec's two-value form (`text-overflow: <start> <end>`) or string-value overflow markers; those drop on native.",
+      "Pass-through on web. v7 supports `text-overflow: ellipsis | clip` on `<Text>`. Pair with `line-clamp: N` for multi-line ellipsizing. The spec's two-value form (`text-overflow: <start> <end>`) and string-value overflow markers are not supported on native.",
     caveats: [
-      "Only meaningful on `<Text>`. v7's lift attaches `ellipsizeMode` regardless of element, but only `<Text>` consumes it.",
-      '`head` and `middle` ellipsize positions are RN-only (no CSS analog); reach them via `numberOfLines` + `ellipsizeMode` props directly.',
+      'Only `<Text>` consumes it on native.',
+      '`head` and `middle` ellipsize positions are RN-only (no CSS analog); reach them via the `numberOfLines` and `ellipsizeMode` props directly.',
     ],
   },
   {
@@ -1184,7 +1184,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'yes',
     androidStock: 'yes',
     summary:
-      "Pass-through everywhere. React Native exposes `direction` on ViewStyle (`inherit | ltr | rtl`) via Yoga; root-node default tracks the device locale. iOS Text additionally accepts `writingDirection` for paragraph-level reordering. v7 mirrors the resolved `direction` to `writingDirection` on native so `<Text>` bidi follows the cascade without an extra prop; rn-web defers to the browser. v7's RTL plugin handles physical-property mirroring; logical properties stay direction-agnostic.",
+      "Pass-through everywhere. Stock RN accepts `direction` on ViewStyle (`inherit | ltr | rtl`); root-node default tracks the device locale. v7 also drives `<Text>` paragraph-level bidi on native so reordering follows the cascade without an extra prop. v7's RTL plugin handles physical-property mirroring; logical properties stay direction-agnostic.",
   },
   {
     id: 'writing-mode',
@@ -1739,9 +1739,9 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'CSS UI 5 keyword that suppresses interaction and accessibility for a subtree. Stock React Native has no `interactivity` prop on either platform. v7 polyfills `interactivity: inert` by lifting `pointerEvents: "none"`, hiding the subtree from accessibility, and clearing focusable. `auto` is a no-op. On rn-web, the keyword passes through to the browser.',
+      'CSS UI 5 keyword that suppresses interaction and accessibility for a subtree. v7 supports `interactivity: inert` on React Native: the subtree is non-interactive and hidden from accessibility services. `auto` is a no-op. On rn-web, the keyword passes through to the browser.',
     caveats: [
-      'RN does not propagate `focusable: false` to descendants, so a focusable child inside an `inert` subtree can still receive D-pad / keyboard focus on Android / tvOS. v7 dev-warns.',
+      'A focusable child inside an `inert` subtree can still receive D-pad / keyboard focus on Android / tvOS because RN does not propagate the focusable flag to descendants. v7 dev-warns when this can happen.',
     ],
   },
   {
@@ -1785,10 +1785,8 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'partial',
     summary:
-      "Pass-through on web. v7 lifts `caret-color` to Android's `cursorColor` TextInput prop. iOS has no caret-only API in RN (the only surface tints the selection range too, violating the CSS spec), so v7 declines to wire it up and dev-warns. rn-web forwards the property to the browser.",
-    caveats: [
-      'Android `cursorColor` is reliable on API 29+; Android 9 silently no-ops, and older versions use reflection that may break.',
-    ],
+      'Pass-through on web. v7 supports `caret-color` on Android `<TextInput>`. iOS has no caret-only API in RN (the only surface tints the selection range too, violating the CSS spec) so the property has no effect on iOS and v7 dev-warns.',
+    caveats: ['Reliable on Android API 29+; Android 9 silently no-ops, and older versions are unreliable.'],
   },
   {
     id: 'accent-color',
@@ -1799,10 +1797,10 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'Pass-through on web. Stock React Native has no form-control accent: Switch / Checkbox / Slider tints are configured via dedicated props (`thumbColor`, `trackColor`, etc.) per component. v7 polyfills `accent-color: <color> | auto` by lifting `trackColor.true` onto `styled.Switch`. `auto` resolves to the platform AccentColor (systemBlue on iOS, `?attr/colorAccent` on Android) via the CSS Color 4 system-color polyfill, and any color form (named, system keyword, hex, modern color function, theme sentinel) is accepted. The lift also routes through `attrs` onto third-party wrapped components.',
+      'Pass-through on web. Stock React Native has no form-control accent on either platform. v7 supports `accent-color: <color> | auto` on `<Switch>`. `auto` resolves to the platform accent (system blue on iOS, the colorAccent attribute on Android). Any color form is accepted: named, system keyword, hex, modern color function, theme tokens. Works on third-party Switch wrappers via `attrs()`.',
     caveats: [
-      'Cascade-style inheritance from an ancestor `accent-color` is not implemented. Set the declaration directly on the form control.',
-      'Other native form controls (Checkbox, Slider, Picker) have no `trackColor` equivalent and the polyfill does not synthesize one.',
+      'Cascade-style inheritance from an ancestor `accent-color` is not supported. Set the declaration directly on the form control.',
+      'Only `<Switch>` is wired up; Checkbox, Slider, and Picker are not.',
     ],
   },
   {
@@ -1839,10 +1837,10 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      "Pass-through on web. Stock React Native's `ScrollView` configures overscroll per-platform via props (`bounces={false}` to disable iOS rubber-banding, `overScrollMode=\"never\"` to disable the Android edge glow); no CSS style key wires up to either. v7 polyfills `overscroll-behavior: contain | none` by lifting `bounces: false` and `overScrollMode: 'never'` onto `ScrollView` / `FlatList`; `auto` and `chain` restore the platform defaults.",
+      'Pass-through on web. v7 supports `overscroll-behavior: contain | none` on `<ScrollView>` and `<FlatList>`, disabling iOS rubber-banding and the Android edge glow. `auto` and `chain` use the platform defaults.',
     caveats: [
-      'Only the shorthand is polyfilled; `overscroll-behavior-x` / `-y` longhands are not split out, since RN has no per-axis overscroll surface.',
-      'The lift only takes effect on scrollable primitives. A plain `View` ignores the polyfill on native.',
+      'The `overscroll-behavior-x` / `-y` longhands are not split out; RN has no per-axis overscroll surface.',
+      'Only scrollable primitives consume it. On a plain `View`, the declaration has no effect.',
     ],
   },
   {
@@ -1925,7 +1923,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'Pass-through on web. Stock React Native has no scrollbar-thickness style; the closest stock option is hiding indicators entirely with `showsVerticalScrollIndicator={false}` / `showsHorizontalScrollIndicator={false}`. v7 polyfills `scrollbar-width: none` by lifting both flags to `false` on `ScrollView` / `FlatList`. `auto` and `thin` keep the platform defaults (RN does not expose a thin-scrollbar surface on either platform).',
+      'Pass-through on web. v7 supports `scrollbar-width: none` on `<ScrollView>` and `<FlatList>` to hide scroll indicators. `auto` and `thin` use the platform defaults (RN has no thin-scrollbar surface).',
   },
   // ── Media queries ─────────────────────────────────────────────────
   {
