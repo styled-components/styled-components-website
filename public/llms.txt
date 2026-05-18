@@ -43,7 +43,7 @@ Math functions: `calc()`, `clamp()`, `min()`, `max()`, plus the full CSS Values 
 
 Modern colors: `oklch()`, `oklab()`, `lch()`, `lab()`, `color-mix(in <space>, …)` all render correctly on native. Wide-gamut inputs that fall outside sRGB are gamut-mapped to the closest in-gamut color while preserving hue. Percent channels follow CSS Color L4 ranges (`lab(50% 0 0)` is mid-gray). CSS Color 5 relative-color syntax — `oklch(from <base> calc(l - 0.15) c h)` — works for all four modern spaces, including bases sourced from `theme.*` tokens. `rgb(r g b / a)` slash-alpha, `hwb()`, and `hsl(h s l / a)` work natively.
 
-CSS Color 4 system color keywords (`canvas`, `canvastext`, `field`, `fieldtext`, `graytext`, `highlight`, `highlighttext`, `linktext`, `visitedtext`, `activetext`) auto-switch with OS appearance.
+CSS Color 4 system color keywords (`canvas`, `canvastext`, `field`, `fieldtext`, `graytext`, `highlight`, `highlighttext`, `linktext`, `visitedtext`, `activetext`) auto-switch with OS appearance. Usable inside `box-shadow`, `filter: drop-shadow()`, `background`, and `linear-gradient` color stops.
 
 Viewport units (`vw`, `vh`, `vi`, `vb`, `vmin`, `vmax`, plus the prefixed `s*` / `l*` / `d*` variants like `dvh`, `svw`, `lvi`) and container query units (`cqw`, `cqh`, `cqmin`, `cqmax`) scale to the current window / nearest ancestor container. Font-relative units `rem`, `em`, `lh`, `rlh` resolve against the inherited cascade. All units re-resolve when the environment changes.
 
@@ -55,11 +55,11 @@ Logical shorthands work as authored: `margin-inline`, `margin-block`, `padding-i
 
 `line-clamp: N` truncates `<Text>` to N lines. `text-wrap: nowrap` collapses to a single line; `text-wrap-style: balance` / `pretty` improve line-breaking on Android (no-op on iOS, which has no platform line-breaking control). `text-align: start` / `end` / `match-parent` resolve correctly under RTL on both platforms. `aspect-ratio` accepts `1.5`, `16 / 9`, `auto`, and the two-value `auto 16/9` form. `transform: matrix(...)`, `matrix3d(...)`, and bare numbers in `translateX(10)` all work. `perspective: 1000px` as a top-level declaration works (no need to fold it into the transform array yourself).
 
-`font-style: oblique` resolves to italic; `oblique <angle>` resolves to italic and warns about the angle being dropped. `font-family` recognizes the 13 generic CSS keywords (`system-ui`, `ui-sans-serif`, `ui-serif`, `ui-monospace`, `ui-rounded`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`). Comma-separated font stacks warn — RN has no fallback chain, so only the first family takes effect.
+`font-style: oblique` resolves to italic. `font-family` recognizes the 13 generic CSS keywords (`system-ui`, `ui-sans-serif`, `ui-serif`, `ui-monospace`, `ui-rounded`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`). Comma-separated font stacks: only the first family takes effect (RN has no fallback chain). `font-size` accepts the full CSS keyword set (`xx-small`...`xxx-large`, `smaller`, `larger`). `letter-spacing` accepts `em`, `rem`, `lh`, and `rlh`.
 
 `place-items` and `place-self` shorthands work for the align axis (Yoga doesn't have `justify-items` / `justify-self`; the justify side is a no-op on native but reaches rn-web).
 
-`field-sizing: content` on `<TextInput>` auto-grows the field to its content. `interactivity: inert` (CSS UI 5) suppresses interaction and hides the subtree from accessibility services.
+`field-sizing: content` on `<TextInput>` auto-grows the field to its content. `interactivity: inert` (CSS UI 5) suppresses interaction and hides the subtree from accessibility services. `text-overflow: ellipsis | clip` truncates `<Text>` (pair with `line-clamp: N` for multi-line). `overscroll-behavior: contain | none` disables overscroll on `ScrollView` / `FlatList`; `scrollbar-width: none` hides scroll indicators. `accent-color` tints `<Switch>` (`auto` picks up the platform accent color). `direction: ltr | rtl` controls `<Text>` bidi. `styled.ScrollView` defaults to `flex-shrink: 0` so explicit `width:` / `height:` pin reliably inside a flex parent (opt back in with `flex-shrink: 1`).
 
 `background-image: linear-gradient(...)` and `radial-gradient(...)` render via React Native's experimental gradient parser (RN 0.85+). `filter: blur(4px) saturate(1.5)` and the full filter-function chain work. See the iOS setup note below for filters that need an explicit opt-in. `box-shadow` with spread and inset round-trips as a string.
 
@@ -101,7 +101,7 @@ const Row = styled.View`
 
 `:not()` accepts a single pseudo-state or a single attribute selector. `:has()` accepts a styled-component reference (matches when that component appears as a descendant) or a single attribute selector. Complex inner arguments (compound selectors, combinators, selector lists) warn in dev and don't match.
 
-Tree-structural pseudos work on native: `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, plus the functional `:nth-child(<an+b>)` / `:nth-of-type(<an+b>)` / `:nth-last-child(<an+b>)` / `:nth-last-of-type(<an+b>)` family with `odd` / `even` keywords. Siblings need to be inside a styled-component parent for indexing to work — a non-styled wrapper in between resets the count.
+Tree-structural pseudos work on native: `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, plus the functional `:nth-child(<an+b>)` / `:nth-of-type(<an+b>)` / `:nth-last-child(<an+b>)` / `:nth-last-of-type(<an+b>)` family with `odd` / `even` keywords. `:nth-child(<an+b> of S)` and `:nth-last-child(<an+b> of S)` filter the count by a styled-component reference or a single attribute selector (same simple-inner scope as `:has()`). Siblings need to be inside a styled-component parent for indexing to work; a non-styled wrapper in between resets the count.
 
 Combinators work on native when the left side is a styled-component reference:
 

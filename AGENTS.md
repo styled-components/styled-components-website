@@ -49,3 +49,11 @@ Gotchas (things you cannot discover by reading the code alone)
 - Blog posts are assembled at build time by `utils/blog.server.ts` from MDX `meta` exports. No JSON index.
 - Blog Bluesky comments are opt-in via `blueskyPostUrl` in MDX `meta`. Auto-discovery is intentionally disabled (Bluesky closed public `searchPosts`). `BlogComments.tsx` overrides hashed CSS-Module selectors via `[class*='_name_']` matches so overrides survive package upgrades.
 - CSS compatibility matrix (`utils/cssCompat.ts`) v6/v7 columns describe combined-platform native behavior. If iOS stock = yes but Android stock = no, v7 should be `partial`, not `no`. `prUrls` is keyed per column; only set entries where status is `no` and an upstream PR exists.
+- Public-facing docs (`sections/`, `public/llms.txt`, blog posts, compatibility matrix entries) describe user-observable behavior only: what is supported, what isn't, what to author. Skip mechanism (how the polyfill maps, what prop it lifts, internal field names, parser / handler / registry mechanics, ABI prefixes, dev-warn IDs, sentinel names).
+- The compatibility matrix has slightly more leeway because it explains version skew. When a matrix entry must mention a stock-RN API to explain why a CSS feature works, name the public prop (`numberOfLines`, `trackColor`) rather than the internal call site. Caveats are still gotchas the author needs to act on, not internals.
+
+Prose rules (mirrored from `~/code/styled-components/AGENTS.md`)
+- American English in all prose: color, behavior, honor, recognize, serialize, center, organize, etc. Keep original spelling only inside verbatim quotes.
+- Avoid em-dashes. Use the full family of punctuation marks (colon, semicolon, parentheses, period).
+- Don't paste CSS spec normative text into consumer-facing docs. Link to the relevant `drafts.csswg.org` section and summarize user-observable behavior. Spec `§n.n` anchors and verbatim quotes belong next to test assertions, not in prose docs (this includes the compatibility matrix).
+- Don't name specific AI coding assistants. "An AI coding assistant" is the neutral phrasing.
