@@ -41,7 +41,7 @@ const Card = styled.View`
 - **`text-overflow: ellipsis | clip`** truncates `<Text>`; pair with `line-clamp: N` for multi-line.
 - **`overscroll-behavior: contain | none`** disables overscroll on `ScrollView` / `FlatList`. **`scrollbar-width: none`** hides scroll indicators.
 - **`accent-color`** tints `<Switch>` (`auto` picks up the platform accent color).
-- **`styled.ScrollView`** now defaults to `flex-shrink: 0` so explicit `width:` / `height:` pin reliably inside a flex parent. Set `flex-shrink: 1` in your template to opt back in.
+- **`styled.ScrollView`** on native defaults to `flex-shrink: 0` so explicit `width:` / `height:` pin reliably inside a flex parent. Set `flex-shrink: 1` in your template to opt back in. rn-web keeps the default since it relies on `flex-shrink: 1` to scroll.
 
 **`env(safe-area-inset-*)` caveat.** The function parses correctly but currently resolves to 0; the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until that lands.
 

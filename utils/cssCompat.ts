@@ -786,7 +786,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'yes',
     androidStock: 'yes',
     summary:
-      'Stock RN 0.85+ registers `objectFit` as a native style key on `<Image>` (fill / contain / cover / scale-down / none). v7 passes the CSS through unchanged. `object-position` has no native equivalent on either platform and is web-only; on native, alignment falls back to the `Image` defaults.',
+      'Stock RN 0.85+ registers `objectFit` as a native style key on `<Image>` (fill / contain / cover / scale-down / none); v7 passes the CSS through unchanged. On rn-web, the Image element ignores the CSS property, so v7 also lifts `resizeMode` as a prop. `object-position` has no native equivalent on either platform and is web-only; on native, alignment falls back to the `Image` defaults.',
   },
   {
     id: 'aspect-ratio',
