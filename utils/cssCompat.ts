@@ -755,12 +755,12 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     id: 'border-radius',
     title: 'border-radius',
     category: 'props',
-    nativeV6: 'yes',
+    nativeV6: 'partial',
     nativeV7: 'yes',
-    iosStock: 'yes',
-    androidStock: 'yes',
+    iosStock: 'partial',
+    androidStock: 'partial',
     summary:
-      'Pass-through everywhere. v7 also accepts the slash-separated form (`10px / 10px`) on native when it resolves to a circular radius; truly elliptical combinations (different horizontal and vertical radii) drop with a dev-warn since RN has no per-axis radius surface.',
+      'Basic single-value and per-corner longhands pass through everywhere. v7 additionally accepts the slash-separated CSS grammar (`10px / 10px`) on native when it resolves to a circular radius; v6 and stock RN drop the slash form because RN has no per-axis radius surface to map it to. Truly elliptical combinations (different horizontal and vertical radii) drop in v7 too, with a dev-warn.',
   },
   {
     id: 'box-sizing',
@@ -1137,9 +1137,10 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      "Pass-through on web. v7 supports `text-overflow: ellipsis | clip` on `<Text>`. Pair with `line-clamp: N` for multi-line ellipsizing. The spec's two-value form (`text-overflow: <start> <end>`) and string-value overflow markers are not supported on native.",
+      "Pass-through on web. v7 supports `text-overflow: ellipsis | clip` on `<Text>` once a line limit is set; pair with `line-clamp: N` (or `text-wrap: nowrap` for one line). Without a line limit there is no line to ellipsize and the value is a no-op. The spec's two-value form (`text-overflow: <start> <end>`) and string-value overflow markers are not supported on native.",
     caveats: [
       'Only `<Text>` consumes it on native.',
+      'Requires a companion line limit (`line-clamp`, or `text-wrap: nowrap` for one line). Without one, RN has no line to ellipsize and the value is dropped.',
       '`head` and `middle` ellipsize positions are RN-only (no CSS analog); reach them via the `numberOfLines` and `ellipsizeMode` props directly.',
     ],
   },
@@ -1854,7 +1855,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'Pass-through on web. v7 supports `overscroll-behavior: contain | none` on `<ScrollView>` and `<FlatList>`, disabling iOS rubber-banding and the Android edge glow. `auto` and `chain` use the platform defaults.',
+      'Pass-through on web. v7 supports `overscroll-behavior: contain | none` on `<ScrollView>` and `<FlatList>`, disabling iOS rubber-banding and the Android edge glow. `auto` uses the platform defaults.',
     caveats: [
       'The `overscroll-behavior-x` / `-y` longhands are not split out; RN has no per-axis overscroll surface.',
       'Only scrollable primitives consume it. On a plain `View`, the declaration has no effect.',

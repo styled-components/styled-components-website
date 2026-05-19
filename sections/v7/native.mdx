@@ -38,7 +38,7 @@ const Card = styled.View`
 - **`place-items`** and **`place-self`** for the align axis.
 - **`field-sizing: content`** auto-grows a `<TextInput>` to its content.
 - **`interactivity: inert`** suppresses interaction and hides the subtree from screen readers.
-- **`text-overflow: ellipsis | clip`** truncates `<Text>`; pair with `line-clamp: N` for multi-line.
+- **`text-overflow: ellipsis | clip`** truncates `<Text>` once a line limit is set. Pair with `line-clamp: N` (or `text-wrap: nowrap` for one line); without a line limit RN has no line to ellipsize and the value is a no-op.
 - **`overscroll-behavior: contain | none`** disables overscroll on `ScrollView` / `FlatList`. **`scrollbar-width: none`** hides scroll indicators.
 - **`accent-color`** tints `<Switch>` (`auto` picks up the platform accent color).
 - **`styled.ScrollView`** on native defaults to `flex-shrink: 0` so explicit `width:` / `height:` pin reliably inside a flex parent. Override with `flex-shrink: 1` if you need it.
