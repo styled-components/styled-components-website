@@ -14,7 +14,7 @@ const Wrapper = styled.nav.attrs({ 'aria-label': 'Social links' })`
 const SocialLink = styled(Link).attrs({ variant: 'unstyled' as const })`
   display: flex;
   margin-right: ${rem(20)};
-  line-height: ${rem(navbarHeight)};
+  line-height: ${navbarHeight}px;
   transition:
     opacity 0.2s,
     transform 0.2s;

@@ -23,7 +23,7 @@ const Heading = styled.h1<{ $color: string }>`
 <Heading $color="tomato">Hello</Heading>
 ```
 
-Best when the set of possible values is small. Avoid for continuously-varying values like slider positions or mouse coordinates — see [Performance](/docs/advanced#performance).
+Best when the set of possible values is small. Avoid for continuously-varying values like slider positions or mouse coordinates; see [Performance](/docs/advanced#performance).
 
 ### CSS custom properties
 
@@ -44,7 +44,7 @@ This is the recommended approach for theming in RSC environments, where `ThemePr
 
 ### Data attributes
 
-Use for a finite set of variants. Keeps the component fully static — no JavaScript in the template literal, one cached CSS class.
+Use for a finite set of variants. Keeps the component fully static: no JavaScript in the template literal, one cached CSS class.
 
 ```tsx
 const Badge = styled.span`
@@ -62,7 +62,7 @@ const Badge = styled.span`
 
 ### `.attrs()` with inline `style`
 
-Use for values that change on every frame. Applies values as inline styles — zero class generation.
+Use for values that change on every frame. Applies values as inline styles: zero class generation.
 
 ```tsx
 const Tooltip = styled.div.attrs<{ $x: number; $y: number }>(props => ({

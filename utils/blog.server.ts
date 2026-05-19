@@ -16,14 +16,16 @@ export async function getPosts(): Promise<Post[]> {
     .toSorted()
     .toReversed();
 
-  const posts: Post[] = [];
-  for (const file of files) {
-    const match = file.match(MDX_PATTERN);
-    if (!match) continue;
-    const [, date, slug] = match;
-    const mod = await import(`@/sections/blog/${date}-${slug}.mdx`);
-    if (mod.meta && !mod.meta.draft) posts.push(mod.meta as Post);
-  }
+  const modules = await Promise.all(
+    files.map(file => {
+      const [, date, slug] = file.match(MDX_PATTERN)!;
+      return import(`@/sections/blog/${date}-${slug}.mdx`);
+    })
+  );
+
+  const posts = modules
+    .map(mod => mod.meta as Post | undefined)
+    .filter((meta): meta is Post => Boolean(meta) && !meta!.draft);
 
   cached = posts;
   return posts;

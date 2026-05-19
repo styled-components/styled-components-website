@@ -23,20 +23,27 @@ const Card = styled.View`
 - **Modern color spaces**: `oklch(...)`, `oklab(...)`, `lch(...)`, `lab(...)`, `color-mix(in <space>, ...)`. Wide-gamut inputs that fall outside sRGB are gamut-mapped to the closest in-gamut color while preserving hue. Percent channels follow CSS Color L4 ranges (`lab(50% 0 0)` is mid-gray).
 - **Relative-color syntax** (CSS Color 5) for the four modern spaces: `oklch(from #ff0000 calc(l - 0.15) c h)`. Theme-token bases work too: `oklch(from ${theme.colors.brand} calc(l - 0.15) c h)`.
 - **`color-mix(in <space>, …)`** through `srgb`, `oklab`, `oklch`, `lab`, or `lch`.
-- **CSS Color 4 system color keywords** auto-switch with OS appearance: `canvas`, `canvastext`, `field`, `fieldtext`, `graytext`, `highlight`, `highlighttext`, `linktext`, `visitedtext`, `activetext`.
+- **CSS Color 4 system color keywords** auto-switch with OS appearance: `canvas`, `canvastext`, `field`, `fieldtext`, `graytext`, `highlight`, `highlighttext`, `linktext`, `visitedtext`, `activetext`. Usable inside `box-shadow`, `filter: drop-shadow()`, `background`, and `linear-gradient` color stops.
 - **Viewport units**: `vw`, `vh`, `vi`, `vb`, `vmin`, `vmax`, plus the `s*` / `l*` / `d*` variants (`dvh`, `svw`, `lvi`).
 - **Container query units**: `cqw`, `cqh`, `cqmin`, `cqmax`.
 - **Font-relative units**: `rem`, `em`, `lh`, `rlh` resolve against the cascade at render.
 - **`light-dark(light, dark)`** swaps based on OS appearance.
 - **Logical shorthands**: `margin-inline`, `margin-block`, `padding-inline`, `padding-block`, `inset-inline`, `inset-block`, plus the full `border-inline` / `border-block` family.
 - **`line-clamp: N`** truncates `<Text>` to N lines. **`text-wrap: nowrap`** collapses to a single line; `text-wrap-style: balance` / `pretty` improve line-breaking on Android.
-- **`text-align: start | end | match-parent`** resolves correctly under RTL on both platforms.
+- **`text-align: start | end | match-parent`** resolves correctly under RTL on both platforms. **`direction: ltr | rtl`** controls `<Text>` bidi.
 - **`aspect-ratio`** with bare ratio, slash form, `auto`, and the two-value `auto <ratio>` form.
 - **`transform`**: `matrix(...)`, `matrix3d(...)`, and bare numbers in `translateX(10)`. Top-level **`perspective: 1000px`** works without folding it into a transform array.
 - **`font-style: oblique`** falls back to italic; **`font-family`** recognizes the 13 generic CSS keywords (`system-ui`, `ui-*`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`).
+- **`font-size`** accepts the full CSS keyword set (`xx-small`...`xxx-large`, `smaller`, `larger`) plus the full unit catalogue: viewport units (`vh`, `vw`, `svh`, `dvh`, `vi`, `vb`), container query units (`cqh`, `cqw`, `cqi`, `cqb`, `cqmin`, `cqmax`), font-relative (`em`, `rem`, `lh`, `rlh`), font-metric (`ex`, `cap`, `ch`, `ic` and `r`-prefixed), and absolute lengths (`pt`, `pc`, `in`, `cm`, `mm`, `Q`). **`letter-spacing`** accepts `em`, `rem`, `lh`, and `rlh`.
 - **`place-items`** and **`place-self`** for the align axis.
 - **`field-sizing: content`** auto-grows a `<TextInput>` to its content.
 - **`interactivity: inert`** suppresses interaction and hides the subtree from screen readers.
+- **`text-overflow: ellipsis | clip`** truncates `<Text>` once a line limit is set. Pair with `line-clamp: N` (or `text-wrap: nowrap` for one line); without a line limit RN has no line to ellipsize and the value is a no-op.
+- **`overscroll-behavior: contain | none`** disables overscroll on `ScrollView` / `FlatList`. **`scrollbar-width: none`** hides scroll indicators.
+- **`accent-color`** tints `<Switch>` (`auto` picks up the platform accent color).
+- **`styled.ScrollView`** on native defaults to `flex-shrink: 0` so explicit `width:` / `height:` pin reliably inside a flex parent. Override with `flex-shrink: 1` if you need it.
+- **CSS custom properties.** `--name: value` declarations cascade through styled descendants; `var(--name, fallback)` reads them back with the full CSS Variables L1 contract (fallbacks, nested resolution, cycle detection, case-sensitive names, quote-aware skip inside string values, `--foo: initial` resets). References resolve against the cascade inside every conditional bucket (`@media`, `@container`, `@supports`, attribute, pseudo-state, `:has()`, `:nth-child()`, combinator).
+- **`!important`.** Honored within the same component for base + every conditional bucket. The marker is stripped from the rendered value, beats normal declarations regardless of source order, and a `!important` shorthand propagates to every longhand. Importance flows through `var()` substitution and render-time resolvers. Web-aligned: a styled `!important` beats a runtime `style={{ ... }}` prop. `!important` inside `@keyframes` is ignored per CSS Animations. Cross-component cascade is not yet supported.
 
 **`env(safe-area-inset-*)` caveat.** The function parses correctly but currently resolves to 0; the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until that lands.
 
@@ -98,7 +105,7 @@ const Row = styled.View`
 
 **`:is()` and `:where()`.** Apply the rule to each listed state: `&:is(:hover, :focus)`.
 
-**Tree-structural pseudos.** `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, and the functional `:nth-*(<an+b>)` family with `odd` / `even` keywords. Siblings need to be inside a styled-component parent for indexing to work; a non-styled wrapper in between resets the count.
+**Tree-structural pseudos.** `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, and the functional `:nth-*(<an+b>)` family with `odd` / `even` keywords. `:nth-child(<an+b> of S)` and `:nth-last-child(<an+b> of S)` filter the count by a styled-component reference or a single attribute selector (same simple-inner forms `:has()` accepts). Siblings need to be inside a styled-component parent for indexing to work; a non-styled wrapper in between resets the count.
 
 **Combinators between styled-component references.**
 
@@ -210,5 +217,5 @@ These spec features pass through to react-native-web but do not render on React 
 Platform-conditional features (the matrix has the full story):
 
 - `filter`: only `brightness` and `opacity` apply on iOS without the SwiftUI opt-in (set `ReactNativeReleaseLevel: experimental` in `Info.plist` / `ios.infoPlist`); Android `blur` and `drop-shadow` require API 31+.
-- `mix-blend-mode`: all 16 non-Normal modes on iOS; Android needs API 29+.
+- `mix-blend-mode`: all 15 non-`normal` modes on iOS; Android needs API 29+.
 - `transform: skewX/skewY`: iOS renders correctly; Android silently drops the shear pending an upstream fix.

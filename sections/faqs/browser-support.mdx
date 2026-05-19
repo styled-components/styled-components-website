@@ -1,9 +1,9 @@
 ## Which browsers are supported?
 
-styled-components targets modern evergreen browsers: Chrome, Firefox, Edge, Safari, and their derivatives. Any React version from 16.8 onward is supported as a peer — hooks are the only runtime requirement.
+styled-components targets modern evergreen browsers: Chrome, Firefox, Edge, Safari, and their derivatives. Any React version from 16.8 onward is supported as a peer; hooks are the only runtime requirement.
 
-- **v5.x** — IE11 and all evergreen browsers
-- **v6.x** — evergreen browsers only; IE11 is not supported
+- **v5.x**: IE11 and all evergreen browsers
+- **v6.x**: evergreen browsers only; IE11 is not supported
 
 Internet Explorer 11 has not been an officially supported target on the v6 line since the [v6 planning issue](https://github.com/styled-components/styled-components/issues/3333) in August 2021, when the maintainers committed to dropping it. React 18 (the first React version to ship alongside v6) dropped IE11 itself, and IE11 was declared end-of-life by Microsoft in [June 2022](https://blogs.windows.com/windowsexperience/2022/06/15/internet-explorer-11-has-retired-and-is-officially-out-of-support-what-you-need-to-know/). v6.0–6.3 still shipped an ES5 build as an incidental side-effect of the TypeScript compile target; v6.4 aligns the build to ES2015 to match the stated support policy and recover the bundle bytes that were being spent on an unsupported target (see [#4292](https://github.com/styled-components/styled-components/issues/4292)).
 

@@ -22,7 +22,7 @@ const Header = () => <Title>Hello</Title>;
 
 Every unique interpolation result generates a new CSS class. For values that change frequently (colors from a picker, positions from mouse events, animation progress), this can produce hundreds of classes. styled-components warns at 200+.
 
-CSS custom properties avoid this entirely — the CSS rule stays the same and the browser updates the variable natively:
+CSS custom properties avoid this entirely: the CSS rule stays the same and the browser updates the variable natively.
 
 ```tsx
 // Bad: new CSS class for every distinct color
@@ -40,7 +40,7 @@ const Box = styled.div`
 
 ### Use `attrs` for rapidly-changing values
 
-When a value changes on every frame (mouse position, scroll offset), use `attrs` with a `style` object. This applies values as inline styles — no class generation at all:
+When a value changes on every frame (mouse position, scroll offset), use `attrs` with a `style` object. This applies values as inline styles, no class generation at all.
 
 ```tsx
 // Bad: generates a new CSS class on every mouse move
@@ -67,7 +67,7 @@ const Cursor = styled.div.attrs<{ $x: number; $y: number }>(props => ({
 
 ### Data attributes for discrete variants
 
-For finite variant sets (size, color scheme, state), data attributes keep styles fully static — no interpolation functions, one cached class:
+For finite variant sets (size, color scheme, state), data attributes keep styles fully static. No interpolation functions, one cached class.
 
 ```tsx
 // Dynamic: interpolation function runs every render
@@ -129,7 +129,7 @@ function App({ mode }: { mode: 'light' | 'dark' }) {
 }
 ```
 
-This applies regardless of how deep the consumer is — every styled component in the tree pays the cache miss when the theme reference changes.
+This applies regardless of how deep the consumer is: every styled component in the tree pays the cache miss when the theme reference changes.
 
 ### Static vs dynamic components
 

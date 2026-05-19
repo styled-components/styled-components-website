@@ -12,7 +12,7 @@ A helper function that converts a plain theme object into one where every leaf v
     <Column>
       1. <Code>defaultTheme</Code>
     </Column>
-    <Column>A plain object with your theme tokens. Nested objects are supported — paths become hyphenated variable names.</Column>
+    <Column>A plain object with your theme tokens. Nested objects are supported; paths become hyphenated variable names.</Column>
   </Row>
   <Row>
     <Column>
@@ -72,7 +72,7 @@ const Button = styled.button`
 `;
 ```
 
-Pass the theme object to [`ThemeProvider`](/docs/api#themeprovider) for stable class name hashes across themes — this prevents hydration mismatches when switching between light and dark mode:
+Pass the theme object to [`ThemeProvider`](/docs/api#themeprovider) for stable class name hashes across themes. This prevents hydration mismatches when switching between light and dark mode:
 
 ```tsx
 <ThemeProvider theme={theme}>
@@ -128,7 +128,7 @@ const offset = insets.top + theme.raw.space.md;  // 16 (number)
 
 #### Dark mode
 
-Use `vars` to reference CSS custom property names in your dark mode overrides — no hand-writing variable names:
+Use `vars` to reference CSS custom property names in your dark mode overrides. No hand-writing variable names:
 
 ```tsx
 import { css, createGlobalStyle, createTheme } from 'styled-components';
@@ -155,7 +155,7 @@ const DarkOverrides = createGlobalStyle`
 <DarkOverrides />
 ```
 
-This approach is CSS-first — the `@media (prefers-color-scheme: dark)` rule applies before any JavaScript runs, so there's no flash when following the system preference. See [Advanced Theming](/docs/advanced#dark-mode) for persisting a manual toggle without flash.
+This approach is CSS-first: the `@media (prefers-color-scheme: dark)` rule applies before any JavaScript runs, so there's no flash when following the system preference. See [Advanced Theming](/docs/advanced#dark-mode) for persisting a manual toggle without flash.
 
 #### Custom prefix and selector
 

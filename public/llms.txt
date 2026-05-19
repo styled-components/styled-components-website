@@ -39,31 +39,35 @@ const Card = styled.View`
 `;
 ```
 
-Math functions: `calc()`, `clamp()`, `min()`, `max()`, plus the full CSS Values 4 Math L4 family — `round()`, `mod()`, `rem()`, `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `atan2`, `pow`, `sqrt`, `hypot`, `log`, `exp`, `abs`, `sign`. Constants `pi` and `e` resolve in any context. Everything composes inside `calc()`.
+Math functions: `calc()`, `clamp()`, `min()`, `max()`, plus the full CSS Values 4 Math L4 family (`round()`, `mod()`, `rem()`, `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `atan2`, `pow`, `sqrt`, `hypot`, `log`, `exp`, `abs`, `sign`). Constants `pi` and `e` resolve in any context. Everything composes inside `calc()`.
 
-Modern colors: `oklch()`, `oklab()`, `lch()`, `lab()`, `color-mix(in <space>, …)` all render correctly on native. Wide-gamut inputs that fall outside sRGB are gamut-mapped to the closest in-gamut color while preserving hue. Percent channels follow CSS Color L4 ranges (`lab(50% 0 0)` is mid-gray). CSS Color 5 relative-color syntax — `oklch(from <base> calc(l - 0.15) c h)` — works for all four modern spaces, including bases sourced from `theme.*` tokens. `rgb(r g b / a)` slash-alpha, `hwb()`, and `hsl(h s l / a)` work natively.
+Modern colors: `oklch()`, `oklab()`, `lch()`, `lab()`, `color-mix(in <space>, …)` all render correctly on native. Wide-gamut inputs that fall outside sRGB are gamut-mapped to the closest in-gamut color while preserving hue. Percent channels follow CSS Color L4 ranges (`lab(50% 0 0)` is mid-gray). CSS Color 5 relative-color syntax (`oklch(from <base> calc(l - 0.15) c h)`) works for all four modern spaces, including bases sourced from `theme.*` tokens. `rgb(r g b / a)` slash-alpha, `hwb()`, and `hsl(h s l / a)` work natively.
 
-CSS Color 4 system color keywords (`canvas`, `canvastext`, `field`, `fieldtext`, `graytext`, `highlight`, `highlighttext`, `linktext`, `visitedtext`, `activetext`) auto-switch with OS appearance.
+CSS Color 4 system color keywords (`canvas`, `canvastext`, `field`, `fieldtext`, `graytext`, `highlight`, `highlighttext`, `linktext`, `visitedtext`, `activetext`) auto-switch with OS appearance. Usable inside `box-shadow`, `filter: drop-shadow()`, `background`, and `linear-gradient` color stops.
 
 Viewport units (`vw`, `vh`, `vi`, `vb`, `vmin`, `vmax`, plus the prefixed `s*` / `l*` / `d*` variants like `dvh`, `svw`, `lvi`) and container query units (`cqw`, `cqh`, `cqmin`, `cqmax`) scale to the current window / nearest ancestor container. Font-relative units `rem`, `em`, `lh`, `rlh` resolve against the inherited cascade. All units re-resolve when the environment changes.
 
 `light-dark(light, dark)` swaps based on OS appearance.
 
-`env(safe-area-inset-top | right | bottom | left)` parses but currently resolves to 0 — the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until it lands.
+`env(safe-area-inset-top | right | bottom | left)` parses but currently resolves to 0; the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until it lands.
 
-Logical shorthands work as authored: `margin-inline`, `margin-block`, `padding-inline`, `padding-block`, `inset-inline`, `inset-block`, the full `border-inline` / `border-block` family (per-edge longhands and axis shorthands), and all `-start` / `-end` longhands. The library's RTL plugin handles physical-property mirroring; logical properties are already direction-agnostic. Caveat: per-edge `border-style` warns and drops on native — set `border-style` on the element instead.
+Logical shorthands work as authored: `margin-inline`, `margin-block`, `padding-inline`, `padding-block`, `inset-inline`, `inset-block`, the full `border-inline` / `border-block` family (per-edge longhands and axis shorthands), and all `-start` / `-end` longhands. The library's RTL plugin handles physical-property mirroring; logical properties are already direction-agnostic. Caveat: per-edge `border-style` warns and drops on native; set `border-style` on the element instead.
 
 `line-clamp: N` truncates `<Text>` to N lines. `text-wrap: nowrap` collapses to a single line; `text-wrap-style: balance` / `pretty` improve line-breaking on Android (no-op on iOS, which has no platform line-breaking control). `text-align: start` / `end` / `match-parent` resolve correctly under RTL on both platforms. `aspect-ratio` accepts `1.5`, `16 / 9`, `auto`, and the two-value `auto 16/9` form. `transform: matrix(...)`, `matrix3d(...)`, and bare numbers in `translateX(10)` all work. `perspective: 1000px` as a top-level declaration works (no need to fold it into the transform array yourself).
 
-`font-style: oblique` resolves to italic; `oblique <angle>` resolves to italic and warns about the angle being dropped. `font-family` recognizes the 13 generic CSS keywords (`system-ui`, `ui-sans-serif`, `ui-serif`, `ui-monospace`, `ui-rounded`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`). Comma-separated font stacks warn — RN has no fallback chain, so only the first family takes effect.
+`font-style: oblique` resolves to italic. `font-family` recognizes the 13 generic CSS keywords (`system-ui`, `ui-sans-serif`, `ui-serif`, `ui-monospace`, `ui-rounded`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`). Comma-separated font stacks: only the first family takes effect (RN has no fallback chain). `font-size` accepts the full CSS keyword set (`xx-small`...`xxx-large`, `smaller`, `larger`) plus the full unit catalogue: bare numbers and `px`, viewport units (`vh`, `vw`, `svh`, `dvh`, `vi`, `vb`, etc.), container query units (`cqh`, `cqw`, `cqi`, `cqb`, `cqmin`, `cqmax`), font-relative (`em`, `rem`, `lh`, `rlh`), font-metric approximations (`ex`, `cap`, `ch`, `ic` and `r`-prefixed), and absolute lengths (`pt`, `pc`, `in`, `cm`, `mm`, `Q`). `letter-spacing` accepts `em`, `rem`, `lh`, and `rlh`.
 
 `place-items` and `place-self` shorthands work for the align axis (Yoga doesn't have `justify-items` / `justify-self`; the justify side is a no-op on native but reaches rn-web).
 
-`field-sizing: content` on `<TextInput>` auto-grows the field to its content. `interactivity: inert` (CSS UI 5) suppresses interaction and hides the subtree from accessibility services.
+`field-sizing: content` on `<TextInput>` auto-grows the field to its content. `interactivity: inert` (CSS UI 5) suppresses interaction and hides the subtree from accessibility services. `text-overflow: ellipsis | clip` truncates `<Text>` once a line limit is set; pair with `line-clamp: N` (or `text-wrap: nowrap` for one line). Without a line limit RN has no line to ellipsize and the value is a no-op. `overscroll-behavior: contain | none` disables overscroll on `ScrollView` / `FlatList`; `scrollbar-width: none` hides scroll indicators. `accent-color` tints `<Switch>` (`auto` picks up the platform accent color). `direction: ltr | rtl` controls `<Text>` bidi. `styled.ScrollView` on native defaults to `flex-shrink: 0` so explicit `width:` / `height:` pin reliably inside a flex parent (override with `flex-shrink: 1` if you need it).
 
 `background-image: linear-gradient(...)` and `radial-gradient(...)` render via React Native's experimental gradient parser (RN 0.85+). `filter: blur(4px) saturate(1.5)` and the full filter-function chain work. See the iOS setup note below for filters that need an explicit opt-in. `box-shadow` with spread and inset round-trips as a string.
 
-`mix-blend-mode`, `isolation`, and `cursor` flow through. `background-blend-mode` is polyfilled on native. Declarations that pair gradient `background-image` layers with `background-blend-mode` are rewritten at render time into absolutely-positioned layer Views, each carrying the matching `mix-blend-mode`, with `isolation: isolate` on the wrapper per spec. Raster `url()` background images are still blocked on upstream React Native background-image support; render photos with `Image` / `ImageBackground` until those PRs land. Linear-friendly modes (`multiply`, `screen`, `darken`, `lighten`, `difference`, `exclusion`, `hue`, `saturation`, `color`, `luminosity`) render the same on web and native. Gamma-sensitive modes (`color-burn`, `color-dodge`, `soft-light`, `overlay`, `hard-light`) read as more saturated on native because iOS Core Animation and Android Skia/HWUI blend in linear-light by default on Display P3 devices, while browsers blend in gamma-encoded sRGB per CSS spec. The polyfill is structurally correct; the residual is a platform compositor color-space choice. Empty custom property values (`--prop: ;`) are preserved, used by patterns like scroll-driven animations as a "guaranteed-invalid" sentinel.
+`mix-blend-mode`, `isolation`, and `cursor` flow through. `background-blend-mode` works on native when paired with gradient `background-image` layers. Raster `url()` background images are still blocked on upstream React Native background-image support; render photos with `Image` / `ImageBackground` until those PRs land. Linear-friendly modes (`multiply`, `screen`, `darken`, `lighten`, `difference`, `exclusion`, `hue`, `saturation`, `color`, `luminosity`) render the same on web and native. Gamma-sensitive modes (`color-burn`, `color-dodge`, `soft-light`, `overlay`, `hard-light`) read as more saturated on native because iOS Core Animation and Android Skia/HWUI blend in linear-light by default on Display P3 devices, while browsers blend in gamma-encoded sRGB per CSS spec. Empty custom property values (`--prop: ;`) are preserved for patterns like scroll-driven animations that rely on a guaranteed-invalid value.
+
+`--name: value` declarations on a styled component publish into the component cascade so descendants read them back through `var(--name, fallback)`. The substitution honors the full CSS Variables L1 contract: fallbacks (`var(--maybe, default)`), nested resolution in both the name and fallback argument (`var(--a, var(--b, default))`), cycle detection, case-sensitive names, quote-aware skip inside string values (a literal `var(--brand)` inside `content: "var(--brand)"` is preserved verbatim), and `--foo: initial` resetting to the guaranteed-invalid value. Substituted values flow through the same value pipeline as authored CSS, so a shorthand interpolation (`margin: var(--spacing)` with `--spacing: 4px 8px`) expands to longhands. References resolve inside every conditional bucket (`@media`, `@container`, `@supports`, attribute, pseudo-state, `:has()`, `:nth-child()`, combinator). Dev builds warn on a `var()` reference only when no ancestor declared the property and no fallback is provided.
+
+`!important` is honored on native within the same component for base + every conditional bucket. The marker is stripped from the rendered value, beats normal declarations on the same property regardless of source order, and a `!important` shorthand propagates to every longhand. Importance flows through `var()` substitution and render-time resolvers (`light-dark()`, `env()`, viewport units, theme tokens). Web-aligned: a styled component's `!important` beats a runtime `style={{ ... }}` prop; normal declarations are still overridden by the runtime `style` prop. `!important` inside `@keyframes` is ignored, matching the CSS Animations spec. Cross-component cascade of `!important` (a parent's `!important font-size` defeating a child's normal one) is not yet supported.
 
 ### Selectors and at-rules on React Native
 
@@ -101,7 +105,7 @@ const Row = styled.View`
 
 `:not()` accepts a single pseudo-state or a single attribute selector. `:has()` accepts a styled-component reference (matches when that component appears as a descendant) or a single attribute selector. Complex inner arguments (compound selectors, combinators, selector lists) warn in dev and don't match.
 
-Tree-structural pseudos work on native: `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, plus the functional `:nth-child(<an+b>)` / `:nth-of-type(<an+b>)` / `:nth-last-child(<an+b>)` / `:nth-last-of-type(<an+b>)` family with `odd` / `even` keywords. Siblings need to be inside a styled-component parent for indexing to work — a non-styled wrapper in between resets the count.
+Tree-structural pseudos work on native: `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, plus the functional `:nth-child(<an+b>)` / `:nth-of-type(<an+b>)` / `:nth-last-child(<an+b>)` / `:nth-last-of-type(<an+b>)` family with `odd` / `even` keywords. `:nth-child(<an+b> of S)` and `:nth-last-child(<an+b> of S)` filter the count by a styled-component reference or a single attribute selector (same simple-inner scope as `:has()`). Siblings need to be inside a styled-component parent for indexing to work; a non-styled wrapper in between resets the count.
 
 Combinators work on native when the left side is a styled-component reference:
 
@@ -115,7 +119,7 @@ const Title = styled.Text`
 `;
 ```
 
-The child combinator (`>`) breaks through non-styled wrappers — interpose a styled wrapper for a strict parent-child match. Descendant matching (`${Foo} &`) is transparent to non-styled intermediaries.
+The child combinator (`>`) breaks through non-styled wrappers; interpose a styled wrapper for a strict parent-child match. Descendant matching (`${Foo} &`) is transparent to non-styled intermediaries.
 
 `@media (min-aspect-ratio: 16/9)`, `(max-aspect-ratio: 1/1)`, and exact `(aspect-ratio: 4/3)` match the device's current width-to-height ratio. Bare numbers are treated as `<n>/1` per spec. `@starting-style { ... }` is recognized and runs first-mount enter animations on the default `Animated`-based adapter. No reanimated opt-in needed.
 
@@ -182,7 +186,7 @@ const Card = styled.View`
 </ThemeProvider>;
 ```
 
-Nested `ThemeProvider`s on React Native deep-merge so an inner override that only touches one leaf keeps siblings inherited from the ancestor. Composition rules are the same as web: tokens are sentinel strings on native (CSS variables on web), and only resolve when interpolated directly into CSS-value positions. JS arithmetic on tokens (`4 + theme.space.md`) silently breaks. Use `calc()` instead.
+Nested `ThemeProvider`s on React Native deep-merge so an inner override that only touches one leaf keeps siblings inherited from the ancestor. Composition rules are the same as web: tokens only resolve when interpolated directly into CSS-value positions inside a styled-components template. JS arithmetic on tokens (`4 + theme.space.md`) silently breaks. Use `calc()` instead.
 
 ### CSS bug fixes affecting both web and native
 
@@ -196,7 +200,14 @@ In React Native 0.85, the `filter` primitives `blur`, `saturate`, `hue-rotate`, 
 
 ### React Native on `react-native-web`
 
-The same `styled-components/native` build runs on `react-native-web`. Most cross-platform mismatches are handled internally: gradients dual-emit `experimental_*` and standard CSS keys, matrix transforms rewrite to `matrix3d` for rn-web, and infinite keyframe animations bypass rn-web's loop-with-native-driver bug.
+`styled-components/native` ships a dedicated build for `react-native-web` consumers. Webpack, Vite, and Metro (when targeting web) pick it up automatically: no opt-in, no import-path change, no peer dependency to install. The bundle is ~10 kB smaller than the iOS / Android entry (~4 kB gzipped) because the features the browser already handles are excluded from it.
+
+Four CSS surfaces resolve more accurately than any render-time approximation:
+
+- `light-dark()` and `prefers-color-scheme` repaint without a React re-render.
+- `dvh` / `svh` / `lvh` and the inline / block-axis viewport units (`vi`, `vb`) resolve distinctly per CSS Values 4 instead of collapsing.
+- `oklch`, `oklab`, `lch`, `lab`, and `color-mix()` render in the browser's full wide gamut (Display P3 / Rec. 2020 where the monitor supports it) instead of rounding through sRGB.
+- Static-mixed-unit `calc()` / `clamp()` / `min()` / `max()` resolve against the real containing block at paint time instead of the closest container ancestor.
 
 One gotcha bubbles up to user code: rn-web's `View.js` defaults include `position: relative; z-index: 0`, so every View is its own stacking context on web. Children using `mix-blend-mode` blend with the *immediate* ancestor View's backdrop, not whatever is behind the whole tree. Override the immediate ancestor with `z-index: auto` (no-op on native) so the blend reaches the intended backdrop:
 
@@ -219,7 +230,7 @@ const BlendDisk = styled.View`
 
 ### Remapping CSS into component props
 
-Many React Native libraries take styling through component props instead of the `style` prop — `react-native-svg`'s `<Path fill="..." stroke="..." />`, charting libraries with `tintColor` / `axisColor`, icon libraries with `color`. Authoring those as CSS would normally be impossible. v7's function-form `.attrs((props, ast) => ...)` accepts a second `ast` argument that lets you read CSS declarations or theme tokens and rewrite them onto the rendered component as props:
+Many React Native libraries take styling through component props instead of the `style` prop: `react-native-svg`'s `<Path fill="..." stroke="..." />`, charting libraries with `tintColor` / `axisColor`, icon libraries with `color`. Authoring those as CSS would normally be impossible. v7's function-form `.attrs((props, ast) => ...)` accepts a second `ast` argument that lets you read CSS declarations or theme tokens and rewrite them onto the rendered component as props:
 
 ```tsx
 import { Path, Circle } from 'react-native-svg';
@@ -243,7 +254,7 @@ const Logo = styled(Image).attrs((_props, ast) => ({
 `;
 ```
 
-`ast.pop(key)` reads the value and prevents the declaration from also reaching the rendered style. `ast.peek(key)` reads without removing — use it when you want both the prop and the CSS declaration to flow through. Both accept an optional fallback as the second argument.
+`ast.pop(key)` reads the value and prevents the declaration from also reaching the rendered style. `ast.peek(key)` reads without removing; use it when you want both the prop and the CSS declaration to flow through. Both accept an optional fallback as the second argument.
 
 The first argument dispatches on shape: a CSS property name (`'color'`, `'borderColor'`) reads a resolved declaration; a dot-separated path (`'palette.brand.primary'`) reads from the active theme. Theme paths get autocomplete and value-type inference from your augmented `DefaultTheme`. When the callback only reads static declarations and theme paths, the work folds into a one-time computation at construction so renders pay nothing extra.
 
@@ -254,7 +265,6 @@ The first argument dispatches on shape: a CSS property name (`'color'`, `'border
 - `extractCSS()` export replaces the removed `disableCSSOMInjection` prop and `SC_DISABLE_SPEEDY` env vars; call it after render to get the current CSS as a plain string for static-render pipelines.
 - Mounting the same `createGlobalStyle` component multiple times now emits its CSS only once.
 - Server output escapes `</style>` substrings and HTML-escapes nonce values to prevent style-tag breakout.
-- `react-native-web` consumers benefit from this entire surface running through the same compile path.
 
 ## Setup
 
@@ -507,7 +517,7 @@ const Card = styled.div`
 `;
 ```
 
-Composition rules: tokens are CSS variables (web) or sentinel strings (native), not raw JS values. They only resolve when interpolated directly into CSS-value positions inside a styled-components template. JS arithmetic on tokens silently breaks: `4 + theme.space.md` produces `"4var(--sc-space-md, 16px)"` (web, browser drops the rule) or a leaked sentinel string (native, dev warning fires).
+Composition rules: tokens are opaque references, not raw JS values. They only resolve when interpolated directly into CSS-value positions inside a styled-components template. JS arithmetic on tokens silently breaks: `4 + theme.space.md` produces a string concatenation that the renderer either drops (web) or warns about in dev (native).
 
 ```tsx
 // works

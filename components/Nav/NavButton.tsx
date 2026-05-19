@@ -16,7 +16,7 @@ const NavButton = styled.button.attrs(() => ({
   background: transparent;
   cursor: pointer;
   flex: 0 0 auto;
-  height: ${rem(navbarHeight)};
+  height: ${navbarHeight}px;
   padding: 0 ${rem(10)};
   text-align: center;
   transition: all 200ms ease-in-out;
