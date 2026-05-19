@@ -51,7 +51,7 @@ const IconButton = styled.button.attrs<{ $label: string }>(props => ({
 
 ### Linting
 
-Standard `eslint-plugin-jsx-a11y` does not recognize styled-components — it only inspects JSX element names and cannot determine that `<StyledButton>` is a `<button>`. Use [`eslint-plugin-styled-components-a11y`](https://www.npmjs.com/package/eslint-plugin-styled-components-a11y) instead, which parses styled-components' tagged template literals to identify the underlying HTML element.
+Standard `eslint-plugin-jsx-a11y` does not recognize styled-components: it only inspects JSX element names and cannot determine that `<StyledButton>` is a `<button>`. Use [`eslint-plugin-styled-components-a11y`](https://www.npmjs.com/package/eslint-plugin-styled-components-a11y) instead, which parses styled-components' tagged template literals to identify the underlying HTML element.
 
 ```
 npm install --save-dev eslint-plugin-styled-components-a11y
@@ -71,7 +71,7 @@ The plugin mirrors `eslint-plugin-jsx-a11y` for styled components, including rul
 
 ### Runtime auditing
 
-For runtime accessibility checks, use [`@axe-core/react`](https://www.npmjs.com/package/@axe-core/react) in development. It audits the rendered DOM and logs violations to the browser console — it works with any styling approach since it inspects the final HTML:
+For runtime accessibility checks, use [`@axe-core/react`](https://www.npmjs.com/package/@axe-core/react) in development. It audits the rendered DOM and logs violations to the browser console; it works with any styling approach since it inspects the final HTML:
 
 ```tsx
 if (process.env.NODE_ENV === 'development') {

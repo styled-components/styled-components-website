@@ -57,7 +57,7 @@ const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean; }>`
 </ThemeProvider>
 ```
 
-> Avoid `@import` in `createGlobalStyle`. CSS `@import` rules placed inside `createGlobalStyle` may appear to work in development but will silently fail in production. This happens because styled-components uses CSSOM APIs (`insertRule`) in production, and browsers require `@import` rules to appear before all other rules in a stylesheet — an ordering that CSSOM injection cannot guarantee. Place `@import` statements in your HTML `<head>` instead:
+> Avoid `@import` in `createGlobalStyle`. CSS `@import` rules placed inside `createGlobalStyle` may appear to work in development but will silently fail in production. This happens because styled-components uses CSSOM APIs (`insertRule`) in production, and browsers require `@import` rules to appear before all other rules in a stylesheet, an ordering that CSSOM injection cannot guarantee. Place `@import` statements in your HTML `<head>` instead:
 >
 > ```html
 > <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto" />

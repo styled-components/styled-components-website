@@ -2,10 +2,9 @@ export interface Author {
   github?: string;
   twitter?: string;
   website?: string;
-  websiteHost?: string;
 }
 
-const AUTHOR_DATA: Record<string, Omit<Author, 'websiteHost'>> = {
+const AUTHOR_DATA: Record<string, Author> = {
   'Evan Jacobs': {
     github: 'quantizor',
     twitter: 'quantizor',
@@ -52,14 +51,6 @@ const AUTHOR_DATA: Record<string, Omit<Author, 'websiteHost'>> = {
   },
 };
 
-// Precompute websiteHost once at module load to avoid URL parsing per render.
-const authors: Record<string, Author> = Object.fromEntries(
-  Object.entries(AUTHOR_DATA).map(([name, data]) => [
-    name,
-    data.website ? { ...data, websiteHost: new URL(data.website).hostname.replace('www.', '') } : data,
-  ])
-);
-
 export function getAuthor(name: string): Author {
-  return authors[name] ?? {};
+  return AUTHOR_DATA[name] ?? {};
 }

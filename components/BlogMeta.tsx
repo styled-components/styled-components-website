@@ -171,7 +171,7 @@ const JumpToComments = styled.a`
   }
 `;
 
-export const BlogDivider = styled.span.attrs({ 'aria-hidden': 'true', children: '—' })`
+export const BlogDivider = styled.span.attrs({ 'aria-hidden': 'true', children: '·' })`
   color: ${theme.color.blogAccentMuted};
 `;
 

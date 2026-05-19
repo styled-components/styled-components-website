@@ -51,6 +51,7 @@ export function buildCompatJson(entries: MergedEntry[]) {
 }
 
 export function buildCompatMarkdown(entries: MergedEntry[]): string {
+  const sorted = sortEntries(entries);
   const lines = [
     `# ${TITLE}`,
     '',
@@ -62,7 +63,7 @@ export function buildCompatMarkdown(entries: MergedEntry[]): string {
     '',
     '| Feature | Category | sc-v6 | sc-v7 | iOS stock | Android stock | Upstream PRs |',
     '| --- | --- | --- | --- | --- | --- | --- |',
-    ...sortEntries(entries).map(entry =>
+    ...sorted.map(entry =>
       [
         markdownLink(entry.title, `${SOURCE}#${entry.id}`),
         CATEGORY_LABELS[entry.category],
@@ -80,7 +81,7 @@ export function buildCompatMarkdown(entries: MergedEntry[]): string {
     '',
     '## Details',
     '',
-    ...sortEntries(entries).flatMap(entry => formatEntryDetails(entry)),
+    ...sorted.flatMap(entry => formatEntryDetails(entry)),
   ];
 
   return `${lines.join('\n')}\n`;

@@ -95,6 +95,7 @@ export default function SidebarMenu({ latestPost }: { latestPost: LatestPost }) 
     [currentDocsPage]
   );
   const activeId = useScrollSpy(sectionIds);
+  const currentActiveHref = activeHref(pathname);
 
   return (
     <MenuRoot aria-label="Site navigation">
@@ -103,7 +104,7 @@ export default function SidebarMenu({ latestPost }: { latestPost: LatestPost }) 
       </SearchWrapper>
 
       {TOP_LEVEL.map(({ href, label, icon: Icon, external, badge, badgeTone }) => {
-        const isActive = !external && href === activeHref(pathname);
+        const isActive = !external && href === currentActiveHref;
 
         return (
           <TopSection key={href}>

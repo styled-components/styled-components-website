@@ -73,7 +73,7 @@ const B = styled.div`
 ```
 
 In development, a `console.error` warning is emitted because `A` is a plain function component
-being used as an interpolation — styled-components calls it as a function and gets an unexpected
+being used as an interpolation; styled-components calls it as a function and gets an unexpected
 result. The component still mounts, but the selector won't work as intended.
 
 However, wrapping `A` in a `styled()` factory makes it eligible for interpolation -- just

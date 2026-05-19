@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { mobile } from '../../utils/media';
-import rem from '../../utils/rem';
 import { navbarHeight } from '../../utils/sizes';
 import { theme } from '../../utils/theme';
 import Link from '../Link';
@@ -28,7 +27,7 @@ export default function MobileNavbar({ isSideFolded, onSideToggle }: MobileNavba
         {isSideFolded ? <FoldIcon /> : <CloseIcon />}
       </NavButton>
 
-      <LogoLink href="/">
+      <LogoLink>
         <Logo />
       </LogoLink>
 
@@ -44,7 +43,7 @@ const Wrapper = styled.div`
     align-items: center;
     display: flex;
     flex-grow: 1;
-    height: ${rem(navbarHeight)};
+    height: ${navbarHeight}px;
     justify-content: space-between;
     padding-left: calc(${theme.layout.gutter} - ${NAV_BUTTON_ICON_INSET}px);
     padding-right: calc(${theme.layout.gutter} - ${THEME_TOGGLE_ICON_INSET}px);

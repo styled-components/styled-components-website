@@ -72,7 +72,7 @@ The [CSS Compatibility matrix](/docs/compatibility) is the per-feature source of
 - `border: none` now emits `border-style: none` (previously `solid`, which produced surprising hairlines).
 - The optional reanimated adapter is opt-in at app entry: `import 'styled-components/native/reanimated'`. `react-native-reanimated@^4` becomes a peer dependency only in that case. The adapter is experimental and not heavily tested yet; the default `Animated`-based adapter runs without any setup.
 
-[React Native gets modern CSS](#react-native-gets-modern-css) walks through the new surface (modern color spaces, gradients, filters, selectors, animations, `createTheme()`) and calls out the platform-level caveats — iOS SwiftUI filter opt-in, hover feature flag, conic-gradient gap, and the rest. The compatibility matrix has the per-feature breakdown.
+[React Native gets modern CSS](#react-native-gets-modern-css) walks through the new surface (modern color spaces, gradients, filters, selectors, animations, `createTheme()`) and calls out the platform-level caveats (iOS SwiftUI filter opt-in, hover feature flag, conic-gradient gap, and the rest). The compatibility matrix has the per-feature breakdown.
 
 ### TypeScript
 
