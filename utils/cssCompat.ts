@@ -412,12 +412,29 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     category: 'other',
     caniuseId: 'css-variables',
     nativeV6: 'no',
-    nativeV7: 'partial',
+    nativeV7: 'yes',
     summary:
-      '`createTheme()` (v6.4+) emits CSS custom properties and works in both client and RSC. On native, tokens resolve at render time when interpolated directly into CSS-value positions.',
+      'Declare `--name: value` on any styled component and descendants read it back through `var(--name, fallback)`. v7 honors the full CSS Variables L1 contract: fallbacks, nested resolution in both the name and fallback arguments, cycle detection, case-sensitive names, quote-aware skip inside string values, and `--foo: initial` resetting to the guaranteed-invalid value (so a downstream `var(--foo, fallback)` substitutes the fallback). References resolve against the cascade inside every conditional bucket (`@media`, `@container`, `@supports`, attribute, pseudo-state, `:has()`, `:nth-child()`, combinator). Substituted values flow through the same value pipeline as authored CSS, so a shorthand interpolation (`margin: var(--spacing)` with `--spacing: 4px 8px`) still expands to longhands. `createTheme()` (v6.4+) builds on the same primitive: every leaf becomes a `var(--prefix-path, fallback)` string usable in both web and native components.',
     caveats: [
+      'Dev builds warn on a render-time `var()` only when no ancestor declared the property AND no fallback is provided.',
       '`ThemeProvider` must receive the raw theme object, not the `createTheme()` output. Passing the output yields self-referential `var(--x, var(--x, fallback))`.',
       'JS arithmetic on tokens silently breaks (`4 + theme.space.md`). Use `calc()` instead.',
+    ],
+  },
+  {
+    id: 'important',
+    title: '!important',
+    category: 'other',
+    nativeV6: 'no',
+    nativeV7: 'partial',
+    iosStock: 'no',
+    androidStock: 'no',
+    summary:
+      "v7 honors the `!important` marker within a styled component. The marker is stripped from the rendered value, beats normal declarations on the same property regardless of source order, and applies through every conditional bucket (`@media`, `@container`, `@supports`, attribute, `:hover` / `:focus` / `:active` / `:disabled`, `:has()`, `:nth-child()`, combinator). A shorthand marked `!important` propagates to every longhand. Importance flows through `var()` substitution and render-time resolvers (`light-dark()`, `env()`, viewport units, theme tokens). Web-aligned: a styled component's `!important` beats a runtime `style={{ ... }}` prop; normal declarations are still overridden by the runtime `style` prop. Stock RN parses `red !important` as a string and leaks it onto the host element with no visible color, so authoring `!important` only became safe with v7.",
+    caveats: [
+      "Cross-component cascade is not yet supported: a parent's `!important font-size` cannot defeat a child's normal one. Coverage is within-component only.",
+      '`!important` inside `@keyframes` is ignored, matching the CSS Animations spec.',
+      'Marker is case-insensitive (`!IMPORTANT`) and whitespace between `!` and `important` is tolerated.',
     ],
   },
   {
@@ -986,7 +1003,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'yes',
     androidStock: 'yes',
     summary:
-      'RN `fontSize` is a bare point value. v7 accepts bare numbers, `Npx`, and full unit resolution at render time for `vh` / `vw` / `dvh` (viewport), `em` / `rem` (font-relative against the cascade), and `lh` / `rlh` (line-height-relative). The CSS absolute-size keywords (`xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`, `xxx-large`) resolve to 9, 10, 13, 16, 18, 24, 32, 48 across iOS, Android, and web for parity; relative keywords (`smaller` / `larger`) step the absolute-size ramp against the inherited size or scale by 1.2 otherwise. Font-width keywords (`condensed`, `expanded`) and CSS system fonts (`caption`, `menu`, etc.) drop with a dev-warn that names the offending keyword. v6 only handled bare numbers and `px`; `em` / `rem` strings dropped silently on native.',
+      'RN `fontSize` is a bare point value. v7 accepts bare numbers, `Npx`, viewport units (`vh`, `vw`, `svh`, `dvh`, `vi`, `vb`, `vmin`, `vmax` and the `s*` / `l*` / `d*` variants), container query units (`cqh`, `cqw`, `cqi`, `cqb`, `cqmin`, `cqmax`), font-relative units (`em`, `rem` against the cascade, `lh` / `rlh` against line-height, font-metric `ex` / `cap` / `ch` / `ic` and `r`-prefixed via the spec-prescribed approximations of em), and absolute lengths (`pt`, `pc`, `in`, `cm`, `mm`, `Q` fold to dp at compile time using the CSS Values 4 §5.2 fixed ratios). The CSS absolute-size keywords (`xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`, `xxx-large`) resolve to 9, 10, 13, 16, 18, 24, 32, 48 across iOS, Android, and web for parity; relative keywords (`smaller` / `larger`) step the absolute-size ramp against the inherited size or scale by 1.2 otherwise. Font-width keywords (`condensed`, `expanded`) and CSS system fonts (`caption`, `menu`, etc.) drop with a dev-warn that names the offending keyword. v6 only handled bare numbers and `px`; `em` / `rem` strings dropped silently on native.',
   },
   {
     id: 'font-weight',

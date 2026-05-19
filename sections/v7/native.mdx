@@ -34,7 +34,7 @@ const Card = styled.View`
 - **`aspect-ratio`** with bare ratio, slash form, `auto`, and the two-value `auto <ratio>` form.
 - **`transform`**: `matrix(...)`, `matrix3d(...)`, and bare numbers in `translateX(10)`. Top-level **`perspective: 1000px`** works without folding it into a transform array.
 - **`font-style: oblique`** falls back to italic; **`font-family`** recognizes the 13 generic CSS keywords (`system-ui`, `ui-*`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`).
-- **`font-size`** accepts the full CSS keyword set (`xx-small`...`xxx-large`, `smaller`, `larger`). **`letter-spacing`** accepts `em`, `rem`, `lh`, and `rlh`.
+- **`font-size`** accepts the full CSS keyword set (`xx-small`...`xxx-large`, `smaller`, `larger`) plus the full unit catalogue: viewport units (`vh`, `vw`, `svh`, `dvh`, `vi`, `vb`), container query units (`cqh`, `cqw`, `cqi`, `cqb`, `cqmin`, `cqmax`), font-relative (`em`, `rem`, `lh`, `rlh`), font-metric (`ex`, `cap`, `ch`, `ic` and `r`-prefixed), and absolute lengths (`pt`, `pc`, `in`, `cm`, `mm`, `Q`). **`letter-spacing`** accepts `em`, `rem`, `lh`, and `rlh`.
 - **`place-items`** and **`place-self`** for the align axis.
 - **`field-sizing: content`** auto-grows a `<TextInput>` to its content.
 - **`interactivity: inert`** suppresses interaction and hides the subtree from screen readers.
@@ -42,6 +42,8 @@ const Card = styled.View`
 - **`overscroll-behavior: contain | none`** disables overscroll on `ScrollView` / `FlatList`. **`scrollbar-width: none`** hides scroll indicators.
 - **`accent-color`** tints `<Switch>` (`auto` picks up the platform accent color).
 - **`styled.ScrollView`** on native defaults to `flex-shrink: 0` so explicit `width:` / `height:` pin reliably inside a flex parent. Override with `flex-shrink: 1` if you need it.
+- **CSS custom properties.** `--name: value` declarations cascade through styled descendants; `var(--name, fallback)` reads them back with the full CSS Variables L1 contract (fallbacks, nested resolution, cycle detection, case-sensitive names, quote-aware skip inside string values, `--foo: initial` resets). References resolve against the cascade inside every conditional bucket (`@media`, `@container`, `@supports`, attribute, pseudo-state, `:has()`, `:nth-child()`, combinator).
+- **`!important`.** Honored within the same component for base + every conditional bucket. The marker is stripped from the rendered value, beats normal declarations regardless of source order, and a `!important` shorthand propagates to every longhand. Importance flows through `var()` substitution and render-time resolvers. Web-aligned: a styled `!important` beats a runtime `style={{ ... }}` prop. `!important` inside `@keyframes` is ignored per CSS Animations. Cross-component cascade is not yet supported.
 
 **`env(safe-area-inset-*)` caveat.** The function parses correctly but currently resolves to 0; the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until that lands.
 
