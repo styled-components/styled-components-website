@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
+import { useEffect, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../utils/theme';
 
@@ -135,32 +134,17 @@ function qNorm(q: Quat): Quat {
   return len > 0 ? [q[0] / len, q[1] / len, q[2] / len, q[3] / len] : q;
 }
 
-// Inverse of the INIT_QUAT construction: decompose a quaternion (built
-// as qMul(qMul(qx, qy), qz)) into degrees for the X, Y, Z half-angles.
-// Matches the convention used by the initXH/initYH/initZH constants.
-function quatToXYZDeg(q: Quat): { x: number; y: number; z: number } {
-  const w = q[0],
-    qx = q[1],
-    qy = q[2],
-    qz = q[3];
-  const beta = Math.asin(2 * (qx * qz + w * qy));
-  const alpha = Math.atan2(2 * (w * qx - qy * qz), 1 - 2 * (qx * qx + qy * qy));
-  const gamma = Math.atan2(2 * (w * qz - qx * qy), 1 - 2 * (qy * qy + qz * qz));
-  const r2d = 180 / Math.PI;
-  return { x: alpha * r2d, y: beta * r2d, z: gamma * r2d };
-}
-
-const IDLE_SPEED = 0.09;
+const IDLE_SPEED = 0.22;
 const IDLE_VEL = { dx: IDLE_SPEED, dy: IDLE_SPEED * -0.4 };
 const BLEND_RATE = 0.04;
 const SENSITIVITY = 0.015;
 
 // Initial pose: X/Y/Z rotations chosen so the cube reads as mid-spin on
-// first paint (3 faces visible, slight roll). Used both as the rAF seed
-// and as the SSR transform so the unhydrated logo is already in 3D.
-const initXH = (-22 * Math.PI) / 180 / 2;
-const initYH = (35 * Math.PI) / 180 / 2;
-const initZH = (15 * Math.PI) / 180 / 2;
+// first paint. Used both as the rAF seed and as the SSR transform so the
+// unhydrated logo is already in 3D.
+const initXH = (-107.8 * Math.PI) / 180 / 2;
+const initYH = (4.4 * Math.PI) / 180 / 2;
+const initZH = (-27.6 * Math.PI) / 180 / 2;
 const INIT_QUAT: Quat = qMul(
   qMul([Math.cos(initXH), Math.sin(initXH), 0, 0], [Math.cos(initYH), 0, Math.sin(initYH), 0]),
   [Math.cos(initZH), 0, 0, Math.sin(initZH)]
@@ -192,7 +176,16 @@ const sharedRotation: SharedRotation = ((globalThis as Record<string, unknown>)[
 
   start() {
     if (this.rafId != null) return;
-    const loop = () => {
+    // Cap at ~60fps. rAF fires at the display refresh rate, so 120Hz /
+    // 144Hz screens would otherwise do 2+ times the work for no benefit.
+    // 15.4ms (1000/65) threshold survives 60Hz frame jitter without
+    // accidentally skipping a paint.
+    const FRAME_MS = 1000 / 65;
+    let lastTime = 0;
+    const loop = (time: number) => {
+      this.rafId = requestAnimationFrame(loop);
+      if (time - lastTime < FRAME_MS) return;
+      lastTime = time;
       if (!this.dragging) {
         const yHalf = (this.velocity.dx * SENSITIVITY) / 2;
         const xHalf = (-this.velocity.dy * SENSITIVITY) / 2;
@@ -203,7 +196,6 @@ const sharedRotation: SharedRotation = ((globalThis as Record<string, unknown>)[
         this.velocity.dy = this.velocity.dy * (1 - BLEND_RATE) + this.idleVel.dy * BLEND_RATE;
       }
       for (const cb of this.subscribers) cb();
-      this.rafId = requestAnimationFrame(loop);
     };
     this.rafId = requestAnimationFrame(loop);
   },
@@ -256,44 +248,11 @@ const FaceTile = styled.div`
   pointer-events: none;
 `;
 
-const Readout = styled.div`
-  position: fixed;
-  top: 12px;
-  left: 50%;
-  translate: -50% 0;
-  z-index: 9999;
-  padding: 8px 14px;
-  font-family: var(--font-mono, monospace);
-  font-size: 13px;
-  line-height: 1.5;
-  color: white;
-  background: oklch(0 0 0 / 0.82);
-  border-radius: 6px;
-  pointer-events: none;
-  white-space: pre;
-  letter-spacing: 0.02em;
-`;
-
-export default function PlatonicLogo({
-  size = 120,
-  className,
-  showReadout = false,
-}: {
-  size?: number;
-  className?: string;
-  showReadout?: boolean;
-}) {
+export default function PlatonicLogo({ size = 120, className }: { size?: number; className?: string }) {
   const sceneRef = useRef<HTMLDivElement>(null);
   const faceRefs = useRef<(HTMLDivElement | null)[]>([]);
   const lastZRef = useRef<number[]>([]);
-  const readoutRef = useRef<HTMLDivElement>(null);
   const lastPointerRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
-  // Portal target only resolved after mount, so the Readout doesn't
-  // attempt to render server-side (where document doesn't exist).
-  const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
-  useEffect(() => {
-    if (showReadout) setPortalRoot(document.body);
-  }, [showReadout]);
 
   const s = size * SCALE;
   const faceEdgePx = FACE_EDGE * s;
@@ -339,10 +298,6 @@ export default function PlatonicLogo({
           el.style.zIndex = String(z);
           lastZRef.current[i] = z;
         }
-      }
-      if (readoutRef.current) {
-        const e = quatToXYZDeg(sharedRotation.quat);
-        readoutRef.current.textContent = `X: ${e.x.toFixed(1).padStart(6)}°\nY: ${e.y.toFixed(1).padStart(6)}°\nZ: ${e.z.toFixed(1).padStart(6)}°`;
       }
     });
   }, [localMats]);
@@ -398,30 +353,25 @@ export default function PlatonicLogo({
   }, []);
 
   return (
-    <>
-      <Scene ref={sceneRef} className={className} style={{ width: size, height: size }}>
-        {FACES.map((f, i) => (
-          <FaceTile
-            key={i}
-            ref={el => {
-              faceRefs.current[i] = el;
-            }}
-            style={{
-              width: faceEdgePx,
-              height: faceEdgePx,
-              marginLeft: -halfEdge,
-              marginTop: -halfEdge,
-              background: theme.palette[f.paletteStep],
-              transform: initialFaceStyles[i].transform,
-              zIndex: initialFaceStyles[i].zIndex,
-              mixBlendMode: f.blendMode,
-            }}
-          />
-        ))}
-      </Scene>
-      {showReadout &&
-        portalRoot &&
-        createPortal(<Readout ref={readoutRef}>X: ---° Y: ---° Z: ---°</Readout>, portalRoot)}
-    </>
+    <Scene ref={sceneRef} className={className} style={{ width: size, height: size }}>
+      {FACES.map((f, i) => (
+        <FaceTile
+          key={i}
+          ref={el => {
+            faceRefs.current[i] = el;
+          }}
+          style={{
+            width: faceEdgePx,
+            height: faceEdgePx,
+            marginLeft: -halfEdge,
+            marginTop: -halfEdge,
+            background: theme.palette[f.paletteStep],
+            transform: initialFaceStyles[i].transform,
+            zIndex: initialFaceStyles[i].zIndex,
+            mixBlendMode: f.blendMode,
+          }}
+        />
+      ))}
+    </Scene>
   );
 }
