@@ -21,7 +21,7 @@ export default async function Index() {
         <HeroContent>
           <HomepageHeroEditor latestPost={<LatestBlogPost post={posts[0]} />}>
             <HeroLogoObserver>
-              <PlatonicLogo size={200} hideLabel />
+              <PlatonicLogo size={200} />
             </HeroLogoObserver>
 
             <h1 className="hero-tagline">

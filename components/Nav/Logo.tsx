@@ -4,7 +4,7 @@ import PlatonicLogo from '../LogoConcepts/PlatonicLogo';
 
 const Logo = () => (
   <Wrapper>
-    <LogoIcon size={30} hideLabel />
+    <LogoIcon size={30} />
     <Text>styled-components</Text>
   </Wrapper>
 );
