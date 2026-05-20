@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import { theme } from '../../utils/theme';
 
@@ -26,11 +27,17 @@ type FaceDef = {
   az: number;
   angle: number;
   paletteStep: number;
+  // Per-face blend override. Omit to inherit the default ('hard-light').
+  // Useful for saturated single-channel colors (e.g. palette[0] red) where
+  // hard-light's per-channel branching leaves the visual unchanged.
+  blendMode?: React.CSSProperties['mixBlendMode'];
 };
 
 const FACES: FaceDef[] = [
-  // +Z (front)
-  { tx: 0, ty: 0, tz: INV_SQRT3, ax: 0, ay: 1, az: 0, angle: 0, paletteStep: 0 },
+  // +Z (front): red. hard-light leaves saturated red unchanged because
+  // R locks at 1 via the screen branch; overlay swaps the branching to
+  // the backdrop, so red darkens against the page and engages visibly.
+  { tx: 0, ty: 0, tz: INV_SQRT3, ax: 0, ay: 1, az: 0, angle: 0, paletteStep: 0, blendMode: 'overlay' },
   // -Z (back): 180deg around Y
   { tx: 0, ty: 0, tz: -INV_SQRT3, ax: 0, ay: 1, az: 0, angle: 180, paletteStep: 10 },
   // +X (right): 90deg around Y
@@ -128,14 +135,37 @@ function qNorm(q: Quat): Quat {
   return len > 0 ? [q[0] / len, q[1] / len, q[2] / len, q[3] / len] : q;
 }
 
+// Inverse of the INIT_QUAT construction: decompose a quaternion (built
+// as qMul(qMul(qx, qy), qz)) into degrees for the X, Y, Z half-angles.
+// Matches the convention used by the initXH/initYH/initZH constants.
+function quatToXYZDeg(q: Quat): { x: number; y: number; z: number } {
+  const w = q[0],
+    qx = q[1],
+    qy = q[2],
+    qz = q[3];
+  const beta = Math.asin(2 * (qx * qz + w * qy));
+  const alpha = Math.atan2(2 * (w * qx - qy * qz), 1 - 2 * (qx * qx + qy * qy));
+  const gamma = Math.atan2(2 * (w * qz - qx * qy), 1 - 2 * (qy * qy + qz * qz));
+  const r2d = 180 / Math.PI;
+  return { x: alpha * r2d, y: beta * r2d, z: gamma * r2d };
+}
+
 const IDLE_SPEED = 0.09;
 const IDLE_VEL = { dx: IDLE_SPEED, dy: IDLE_SPEED * -0.4 };
 const BLEND_RATE = 0.04;
 const SENSITIVITY = 0.015;
 
-const initXH = (-25 * Math.PI) / 180 / 2;
+// Initial pose: X/Y/Z rotations chosen so the cube reads as mid-spin on
+// first paint (3 faces visible, slight roll). Used both as the rAF seed
+// and as the SSR transform so the unhydrated logo is already in 3D.
+const initXH = (-22 * Math.PI) / 180 / 2;
 const initYH = (35 * Math.PI) / 180 / 2;
-const INIT_QUAT: Quat = qMul([Math.cos(initXH), Math.sin(initXH), 0, 0], [Math.cos(initYH), 0, Math.sin(initYH), 0]);
+const initZH = (15 * Math.PI) / 180 / 2;
+const INIT_QUAT: Quat = qMul(
+  qMul([Math.cos(initXH), Math.sin(initXH), 0, 0], [Math.cos(initYH), 0, Math.sin(initYH), 0]),
+  [Math.cos(initZH), 0, 0, Math.sin(initZH)]
+);
+const INIT_GLOBAL_MAT = mat4FromQuat(INIT_QUAT);
 
 const GLOBAL_KEY = '__scLogoRotation' as const;
 
@@ -226,11 +256,44 @@ const FaceTile = styled.div`
   pointer-events: none;
 `;
 
-export default function PlatonicLogo({ size = 120, className }: { size?: number; className?: string }) {
+const Readout = styled.div`
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 9999;
+  padding: 8px 14px;
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  line-height: 1.5;
+  color: white;
+  background: oklch(0 0 0 / 0.82);
+  border-radius: 6px;
+  pointer-events: none;
+  white-space: pre;
+  letter-spacing: 0.02em;
+`;
+
+export default function PlatonicLogo({
+  size = 120,
+  className,
+  showReadout = false,
+}: {
+  size?: number;
+  className?: string;
+  showReadout?: boolean;
+}) {
   const sceneRef = useRef<HTMLDivElement>(null);
   const faceRefs = useRef<(HTMLDivElement | null)[]>([]);
   const lastZRef = useRef<number[]>([]);
+  const readoutRef = useRef<HTMLDivElement>(null);
   const lastPointerRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  // Portal target only resolved after mount, so the Readout doesn't
+  // attempt to render server-side (where document doesn't exist).
+  const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
+  useEffect(() => {
+    if (showReadout) setPortalRoot(document.body);
+  }, [showReadout]);
 
   const s = size * SCALE;
   const faceEdgePx = FACE_EDGE * s;
@@ -247,6 +310,22 @@ export default function PlatonicLogo({ size = 120, className }: { size?: number;
     [s]
   );
 
+  // Initial face transforms emitted at render time so the SSR HTML
+  // already shows the cube in 3D before hydration. The rAF subscriber
+  // takes over after mount and the first invocation writes the same
+  // values, so there's no flicker.
+  const initialFaceStyles = useMemo(
+    () =>
+      localMats.map(m => {
+        const combined = mat4Mul(INIT_GLOBAL_MAT, m);
+        return {
+          transform: mat4ToCss(combined),
+          zIndex: Math.round(combined[11] * 100) + 1000,
+        };
+      }),
+    [localMats]
+  );
+
   useEffect(() => {
     return sharedRotation.subscribe(() => {
       const g = mat4FromQuat(sharedRotation.quat);
@@ -260,6 +339,10 @@ export default function PlatonicLogo({ size = 120, className }: { size?: number;
           el.style.zIndex = String(z);
           lastZRef.current[i] = z;
         }
+      }
+      if (readoutRef.current) {
+        const e = quatToXYZDeg(sharedRotation.quat);
+        readoutRef.current.textContent = `X: ${e.x.toFixed(1).padStart(6)}°\nY: ${e.y.toFixed(1).padStart(6)}°\nZ: ${e.z.toFixed(1).padStart(6)}°`;
       }
     });
   }, [localMats]);
@@ -315,22 +398,30 @@ export default function PlatonicLogo({ size = 120, className }: { size?: number;
   }, []);
 
   return (
-    <Scene ref={sceneRef} className={className} style={{ width: size, height: size }}>
-      {FACES.map((f, i) => (
-        <FaceTile
-          key={i}
-          ref={el => {
-            faceRefs.current[i] = el;
-          }}
-          style={{
-            width: faceEdgePx,
-            height: faceEdgePx,
-            marginLeft: -halfEdge,
-            marginTop: -halfEdge,
-            background: theme.palette[f.paletteStep],
-          }}
-        />
-      ))}
-    </Scene>
+    <>
+      <Scene ref={sceneRef} className={className} style={{ width: size, height: size }}>
+        {FACES.map((f, i) => (
+          <FaceTile
+            key={i}
+            ref={el => {
+              faceRefs.current[i] = el;
+            }}
+            style={{
+              width: faceEdgePx,
+              height: faceEdgePx,
+              marginLeft: -halfEdge,
+              marginTop: -halfEdge,
+              background: theme.palette[f.paletteStep],
+              transform: initialFaceStyles[i].transform,
+              zIndex: initialFaceStyles[i].zIndex,
+              mixBlendMode: f.blendMode,
+            }}
+          />
+        ))}
+      </Scene>
+      {showReadout &&
+        portalRoot &&
+        createPortal(<Readout ref={readoutRef}>X: ---° Y: ---° Z: ---°</Readout>, portalRoot)}
+    </>
   );
 }
