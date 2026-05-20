@@ -257,12 +257,10 @@ const particleBase = css`
   /* backwards applies opacity:0 during animation-delay; forwards pins the
      100% state so particles don't snap back to origin before unmount. */
   animation: ${burstAnim} var(--dur) ease-out var(--delay) both;
-  will-change: translate, scale, opacity;
 `;
 
 const ParticleCharBase = styled.span.attrs<ParticleAttrs>(particleAttrs)`
   ${particleBase}
-  text-shadow: 0 0 10px var(--particle-color);
 `;
 
 const ParticleChar = React.memo(ParticleCharBase);
@@ -288,7 +286,7 @@ function generateParticles(x: number, y: number, color: string, delay: number): 
       color,
       size: rand(cfg.fontSize[0], cfg.fontSize[1]),
       duration: rand(1.8, 3.3),
-      // Stagger layer promotion across 2–3 frames instead of spiking on one.
+      // Jitter ignition across a few frames so the burst doesn't all light up on the same tick.
       delay: delay + rand(0, 0.04),
       x,
       y,
@@ -344,25 +342,42 @@ export default function CelebrationEffect() {
       });
     }
 
-    spawnFirework();
-    let timer: ReturnType<typeof setTimeout>;
+    let timer: ReturnType<typeof setTimeout> | null = null;
     let stopped = false;
+    let visible = true;
 
     function scheduleNext() {
       timer = setTimeout(
         () => {
-          if (stopped) return;
+          timer = null;
+          if (stopped || !visible) return;
           spawnFirework();
           scheduleNext();
         },
         rand(2000, 4000)
       );
     }
+
+    spawnFirework();
     scheduleNext();
+
+    // Long pages scroll the overlay off-screen. Without this, the rAF
+    // animations keep painting invisible particles at full GPU cost.
+    const io = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (!visible && timer != null) {
+        clearTimeout(timer);
+        timer = null;
+      } else if (visible && timer == null && !stopped) {
+        scheduleNext();
+      }
+    });
+    if (overlayRef.current) io.observe(overlayRef.current);
 
     return () => {
       stopped = true;
-      clearTimeout(timer);
+      if (timer != null) clearTimeout(timer);
+      io.disconnect();
     };
   }, []);
 
