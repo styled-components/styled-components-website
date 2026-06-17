@@ -1,4 +1,3 @@
-import CelebrationEffect from '../components/CelebrationEffect';
 import Footer from '../components/Footer';
 import HomepageBadges from '../components/HomepageBadges';
 import HomepageHeroEditor, { HeroContent } from '../components/HomepageHeroEditor';
@@ -15,8 +14,6 @@ export default async function Index() {
 
   return (
     <div>
-      <CelebrationEffect />
-
       <div className="hero-header">
         <HeroContent>
           <HomepageHeroEditor latestPost={<LatestBlogPost post={posts[0]} />}>

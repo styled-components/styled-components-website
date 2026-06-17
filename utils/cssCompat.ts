@@ -131,22 +131,20 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'partial',
     summary:
-      'Web pass-through in both versions. On React Native, v7 honors the at-rule but only the media-query feature set is understood; feature-test conditions like `(display: grid)`, `selector(:has(...))`, `font-tech()`, and `not` are not evaluated, so the inner block applies unconditionally on native.',
-    caveats: [
-      'Effectively a no-op wrapper on native today; declarations inside an `@supports` block always apply. Use `Platform.OS` checks to branch native behavior.',
-    ],
+      "Web answers directly. On React Native, v7 evaluates `@supports` as a real feature query against actual platform capability, with `not` / `and` / `or` per the CSS grammar. Probing a feature inside `@supports (foo: bar)` does not fire that feature's dev-warn. v6 does not evaluate the condition on native.",
+    caveats: ['Unknown `selector(...)` and test-only forms resolve to false on native.'],
   },
   {
     id: 'property',
     title: '@property (registered custom props)',
     category: 'at-rules',
     nativeV6: 'no',
-    nativeV7: 'no',
+    nativeV7: 'partial',
     summary:
-      'Both versions pass `@property` through. The gotcha is animation: a CSS custom property only eases between values (e.g. two oklch colors) once it is registered with a `<color>` syntax and an initial value.',
+      "On web, v7 forwards `@property` to the browser's `CSS.registerProperty()`. On React Native, v7 registers it: `syntax`, `inherits`, and `initial-value` apply to `var()` resolution, unset registered properties resolve to their typed initial value, and `inherits: false` blocks ancestor leakage (descendants see the initial value). Supported syntax strings: `*`, `<length>`, `<number>`, `<percentage>`, `<integer>`, `<angle>`, `<time>`, `<color>`; invalid rules warn and are ignored. v6 does not register `@property` on native.",
     caveats: [
+      'The animation gotcha holds: a CSS custom property only eases between values (e.g. two oklch colors) once it is registered with a `<color>` syntax and an initial value.',
       'Put `@property` declarations in `createGlobalStyle` so they live on the document and survive SSR.',
-      'Web-only. React Native has no CSSOM custom properties to register.',
     ],
   },
   {
@@ -181,10 +179,10 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'Pass-through on web in both versions. v7 also resolves these on React Native to sRGB, gamut-mapping wide-gamut inputs while preserving hue. Stock RN only recognizes hex / rgb / hsl / hwb, so the modern spaces would otherwise drop. v7 additionally supports CSS Color 5 relative-color syntax (`oklch(from <base> <l-expr> <c-expr> <h-expr>)`) for all four modern spaces, with channel keywords (`l`, `c`, `h`, `a`, `b`, `alpha`) usable inside `calc()`. Theme-token bases re-resolve at render time.',
+      'Pass-through on web in both versions. v7 also resolves these on React Native to sRGB, gamut-mapping wide-gamut inputs while preserving hue. Stock RN only recognizes hex / rgb / hsl / hwb, so the modern spaces would otherwise drop. v7 additionally supports CSS Color 5 relative-color syntax (`oklch(from <base> <l-expr> <c-expr> <h-expr>)`) with channel keywords (`l`, `c`, `h`, `a`, `b`, `alpha`) usable inside `calc()`. Theme-token bases re-resolve at render time.',
     caveats: [
       'Percent channels follow CSS Color 4 ranges: `lab(50% 0 0)` is mid-gray.',
-      'Relative-color is only implemented for the four modern spaces (`oklch` / `oklab` / `lch` / `lab`). `rgb()` / `hsl()` / `hwb()` relative forms are not resolved on native; use the modern-space variants.',
+      'Relative color is also resolved for `rgb()` / `hsl()` / `hwb()` / `color()` bases on native, not just the modern spaces.',
     ],
   },
   {
@@ -196,9 +194,9 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'Pass-through on web. v7 evaluates `light-dark()` on React Native against the device color scheme. Stock RN does not parse the function. v7 additionally resolves the CSS Color 4 system-color keywords (`canvas`, `canvastext`, `field`, `fieldtext`, `graytext`, `highlight`, `highlighttext`, `linktext`, `visitedtext`, `activetext`) to platform-appropriate light / dark colors, including inside composite shorthands (`box-shadow`, `filter: drop-shadow()`, `background`, `linear-gradient` color stops).',
+      'Pass-through on web. v7 evaluates `light-dark()` on React Native against the device color scheme. Stock RN does not parse the function. v7 additionally resolves the full CSS Color 4 system-color keyword set (page, field, button, highlight, link, mark, and accent surfaces: e.g. `canvas`, `canvastext`, `field`, `graytext`, `highlight`, `highlighttext`, `linktext`, `visitedtext`, `buttonface`, `buttontext`, `buttonborder`, `selecteditem`, `mark`, `accentcolor`) to platform-appropriate light / dark colors, including inside composite shorthands (`box-shadow`, `filter: drop-shadow()`, `background`, `linear-gradient` color stops).',
     caveats: [
-      'The system-color fold covers the 10 most common author-facing keywords; the wider CSS UI / Forms keywords (`ButtonFace`, `Mark`, `AccentColor`, `SelectedItem`, etc.) are not folded and pass through unchanged.',
+      'Older CSS system-color names (`ActiveBorder`, `Menu`, `Window`, `ThreeDFace`, etc.) are treated as their modern keyword equivalent.',
     ],
   },
   {
@@ -242,7 +240,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
       'v7 supports `calc()` / `clamp()` / `min()` / `max()` on React Native, plus the CSS Values 4 step family (`round()` with `nearest` / `up` / `down` / `to-zero` strategies, `mod()`, `rem()`), trig (`sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `atan2`), exponential (`pow`, `sqrt`, `hypot`, `log`, `exp`), and sign (`abs`, `sign`). Math constants `pi` and `e` are recognized. v6 supported only fully-static cases. An upstream Callstack PR wires Yoga dynamic-value resolution into stock React Native for layout properties (dimensions, min/max, flex-basis, gap, position, margin, padding).',
     caveats: [
       'The keywords `infinity`, `-infinity`, and `NaN` cannot be represented in RN dimensions; v7 drops the declaration with a dev-warn. Use a large literal or viewport unit instead.',
-      'All math functions compose inside `calc()`. Mixed dynamic operands (viewport units, container units, theme tokens, `var()`) re-resolve at render time.',
+      'All these functions compose inside `calc()`. `calc()`, `clamp()`, `min()`, and `max()` also re-resolve when their operands are dynamic (viewport / container units, theme tokens, `var()`); the step, trig, exponential, and sign functions are computed when the styles are built, so their inputs must be static values.',
     ],
   },
   {
@@ -272,7 +270,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
       'v7 covers every authoring-spec form on React Native: per-edge `border-{inline,block}-{start,end}-{color,width,style}` longhands, axis shorthands (`border-inline-color`, `border-block-width`, etc.), per-edge composite shorthands (`border-inline-start: 1px solid red`), and the two whole-axis composites (`border-inline`, `border-block`). Under horizontal-tb writing mode, inline edges map to start / end and block edges to top / bottom.',
     caveats: [
       'Stock RN 0.85 only ships the legacy `borderStart*` / `borderEnd*` / `borderBlockColor*` keys; v7 maps the newer `border-inline-*` / `border-block-*` names onto those so spec-authored CSS works regardless.',
-      'Per-edge `border-style` is not supported on native (RN has a single whole-element `borderStyle`); v7 dev-warns and drops per-edge styles. The element-level `border-style` still works.',
+      'Per-edge `border-style` is not supported on native (RN has a single whole-element `borderStyle`); v7 drops per-edge styles, dev-warning on a non-`solid` value (a per-edge `solid` is accepted silently since it already matches the default). The element-level `border-style` still works.',
     ],
   },
   {
@@ -306,7 +304,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'partial',
     androidStock: 'partial',
     summary:
-      'Stock RN 0.76+ consumes a CSS `filter` string. On iOS (default Fabric), only `brightness` and `opacity` apply; `blur`, `grayscale`, `saturate`, `contrast`, `hue-rotate`, and `drop-shadow` need the SwiftUI filter backend opt-in (off by default in 0.85 / 0.86-rc.0). `invert` and `sepia` are accepted but never applied on iOS. On Android, color-matrix filters (brightness, contrast, grayscale, sepia, saturate, hue-rotate, invert, opacity) work on minSdk 24+; `blur` and `drop-shadow` require API 31+. v7 additionally resolves CSS Color 4 system keywords inside `drop-shadow()` so they paint on native.',
+      'Stock RN 0.76+ consumes a CSS `filter` string. On iOS (default Fabric), only `brightness` and `opacity` apply; `blur`, `grayscale`, `saturate`, `contrast`, `hue-rotate`, and `drop-shadow` need the SwiftUI filter backend opt-in (off by default in 0.85 and 0.86). `invert` and `sepia` are accepted but never applied on iOS. On Android, color-matrix filters (brightness, contrast, grayscale, sepia, saturate, hue-rotate, invert, opacity) work on minSdk 24+; `blur` and `drop-shadow` require API 31+. v7 additionally resolves CSS Color 4 system keywords inside `drop-shadow()` so they paint on native.',
     caveats: [
       'iOS SwiftUI filter opt-in: set `ReactNativeReleaseLevel` to `experimental` in Info.plist (or `ios.infoPlist` in Expo).',
     ],
@@ -354,7 +352,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'yes',
     androidStock: 'partial',
     summary:
-      'v7 forwards `mix-blend-mode` to native. iOS handles all 15 non-`normal` blend modes from CSS Compositing 1. Android needs API 29+ (Android 10); the prop is silently dropped on API 24-28.',
+      'v7 forwards `mix-blend-mode` to native. iOS and Android map the 15 CSS Compositing 1 blend modes on RN 0.85+, plus `plus-lighter` (CSS Compositing 2) on RN 0.86+. Android needs API 29+ (Android 10); the prop is silently dropped on API 24-28.',
     caveats: [
       'Gamma-sensitive modes (color-burn, soft-light, overlay, hard-light) appear more saturated than on web because iOS and Android blend in linear-light on Display P3 devices.',
       'On react-native-web, every View is a stacking context by default. Override the parent with `z-index: auto` so blends reach the intended backdrop.',
@@ -442,11 +440,11 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     title: 'transform: matrix() / matrix3d()',
     category: 'props',
     nativeV6: 'partial',
-    nativeV7: 'yes',
+    nativeV7: 'partial',
     iosStock: 'partial',
     androidStock: 'partial',
     summary:
-      'Stock RN only accepts `matrix()` with 16 or 9 numbers; the spec-canonical 6-number 2D form fails validation, and `matrix3d` is rejected entirely. v7 normalizes both forms so spec-authored CSS works. Bare numbers in `translateX(10)` are treated as `10px` instead of failing to parse. On react-native-web, v7 emits `matrix()` as `matrix3d()` so browsers preserve 3D context.',
+      'On native, `transform` passes through to React Native unchanged. RN accepts `matrix()` with 9 or 16 numbers; the standard 6-number 2D form and `matrix3d()` are rejected, so neither renders on native in either version. Function transforms need explicit units (`translateX(10px)`, not `translateX(10)`). On web both versions hand the value to the browser.',
   },
   {
     id: 'transform-skew',
@@ -488,7 +486,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     category: 'layout',
     caniuseId: 'css-grid',
     nativeV6: 'no',
-    nativeV7: 'no',
+    nativeV7: 'partial',
     iosStock: 'no',
     androidStock: 'no',
     prUrls: {
@@ -496,7 +494,10 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
       android: 'https://github.com/facebook/react-native/pull/55665',
     },
     summary:
-      'Web-only today. A Meta-internal Yoga + React Native series adds `display: grid` to the layout engine across a multi-PR sequence; once it merges, stock RN gets `grid-template-columns`, `grid-template-rows`, `grid-area`, and friends on both platforms simultaneously.',
+      'Web pass-through. On React Native, v7 supports an equal-columns subset: `display: grid` with `grid-template-columns: repeat(N, 1fr)` plus `gap` lays direct styled children into N equal columns, and `grid-column: span N` spans columns. A grid container with `container-type` doubles as a container-query container. A Meta-internal Yoga + React Native series adds full `display: grid` to the layout engine across a multi-PR sequence; once it merges, stock RN gets `grid-template-columns`, `grid-template-rows`, `grid-area`, and friends on both platforms simultaneously.',
+    caveats: [
+      'Fixed px tracks, `minmax()`, `auto-fill` / `auto-fit`, unequal `fr` factors, named / line-number placement, `grid-row`, `grid-area`, and subgrid are not supported on native; they warn and fall back to a flex row.',
+    ],
   },
   {
     id: 'subgrid',
@@ -513,8 +514,15 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     category: 'layout',
     caniuseId: 'css-sticky',
     nativeV6: 'no',
-    nativeV7: 'no',
-    summary: 'Web-only. React Native has no equivalent on either version.',
+    nativeV7: 'partial',
+    summary:
+      'Web pass-through. On React Native, v7 sticks direct styled children of a styled ScrollView to the top edge, holding the pinned position through flings. v6 has no equivalent on native.',
+    caveats: [
+      'Top-edge only and direct children only.',
+      'Inset offsets (`top: 8px`) are not applied.',
+      'Consecutive sticky headers overlap; there is no push-off between them.',
+      'Nested (non-direct) sticky elements are not supported.',
+    ],
   },
   {
     id: 'position-fixed',
@@ -540,6 +548,9 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     },
     summary:
       'Pass-through on web. Stock React Native renders text shadows via individual `textShadowOffset` / `textShadowRadius` / `textShadowColor` keys but does not parse the CSS `text-shadow` shorthand string. v7 polyfills the shorthand `<offset-x> <offset-y> [<blur>] [<color>]` into those keys; v6 dropped the shorthand. Upstream PR #55289 adds native CSS-shorthand parsing on both platforms (single shadow per node).',
+    caveats: [
+      'Native renders a single shadow per `<Text>`, so a comma-separated list applies the first (topmost) layer with a dev-warn; web renders the full list.',
+    ],
   },
   {
     id: 'text-decoration-style',
@@ -609,7 +620,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
   },
   {
     id: 'transforms-3d',
-    title: '3D transforms (rotateX, perspective, translateZ)',
+    title: '3D transforms (rotateX, perspective, translate3d)',
     category: 'props',
     caniuseId: 'transforms3d',
     nativeV6: 'partial',
@@ -617,7 +628,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'partial',
     androidStock: 'partial',
     summary:
-      'Stock React Native supports `rotateX`, `rotateY`, `rotateZ`, `translateZ`, and per-view `perspective` inside the transform array on both platforms. `scaleZ`, `scale3d`, `rotate3d`, and `matrix3d` keywords are silently dropped. `transform-style: preserve-3d` is unimplemented on either platform, so nested 3D children always flatten; multi-face 3D layouts must be hand-built with absolutely-positioned siblings carrying their own `perspective`.',
+      'Stock React Native supports `rotateX`, `rotateY`, `rotateZ`, the 3-axis `translate3d()`, and per-view `perspective` inside the transform array on both platforms. Standalone `translateZ`, `scaleZ`, `scale3d`, `rotate3d`, and `matrix3d` keywords are silently dropped. `transform-style: preserve-3d` is unimplemented on either platform, so nested 3D children always flatten; multi-face 3D layouts must be hand-built with absolutely-positioned siblings carrying their own `perspective`.',
   },
   {
     id: 'view-transitions',
@@ -635,9 +646,14 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     category: 'props',
     caniuseId: 'css-snappoints',
     nativeV6: 'no',
-    nativeV7: 'no',
+    nativeV7: 'partial',
     summary:
-      'Pass-through on web. React Native has its own paged-scroll APIs but does not honor CSS scroll-snap on either version.',
+      'Web pass-through. On React Native, v7 turns `scroll-snap-type` on a styled ScrollView plus `scroll-snap-align: start | center | end` on its children into real snap positions; `scroll-snap-stop: always` keeps a fling from skipping past a child, and a settle guarantee makes `mandatory` literal on Android. v6 does not honor CSS scroll-snap on native.',
+    caveats: [
+      'Without aligned children, `mandatory` falls back to full-scrollport paging; size each slide to the scrollport in that mode.',
+      '`proximity` (and a bare axis) applies fast deceleration only; RN has no proximity engine.',
+      'Pass `snapToInterval` or `snapToOffsets` on the ScrollView to override the approximation with exact snap points.',
+    ],
   },
   {
     id: 'focus-visible',
@@ -683,10 +699,10 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'partial',
     summary:
-      'Pass-through on web in both versions. v7 implements combinators between styled-component references on React Native: descendant (`${Foo} &`), child (`${Foo} > &`), adjacent-sibling (`${Foo} + &`), and general-sibling (`${Foo} ~ &`). The left operand must be a styled-component reference; raw selector strings on the left do not match because they have no published `styledComponentId` to track. Each styled component publishes its position and ancestor chain via a `ParentContext`.',
+      'Pass-through on web in both versions. v7 implements combinators between styled-component references on React Native: descendant (`${Foo} &`), child (`${Foo} > &`), adjacent-sibling (`${Foo} + &`), and general-sibling (`${Foo} ~ &`). The left operand must be a styled-component reference; a raw selector string on the left does not match.',
     caveats: [
-      'Non-styled intermediaries (e.g. a user `<View>` between the ancestor and the matched component) are transparent for descendant combinators but break the child combinator chain because they reset the publishing `parentId`.',
-      'A non-styled component that renders styled children does not republish ParentContext, so sibling and indexed-position matches reset within its subtree.',
+      'A non-styled wrapper (e.g. a user `<View>`) between the ancestor and the matched component is transparent to both the descendant and the child combinator. To break a `>` match on purpose, interpose a styled wrapper.',
+      'Sibling and indexed-position selectors need a styled parent; under a non-styled parent, children are treated as untracked (each resolves as an only child).',
     ],
   },
   {
@@ -763,6 +779,17 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
       'Basic single-value and per-corner longhands pass through everywhere. v7 additionally accepts the slash-separated CSS grammar (`10px / 10px`) on native when it resolves to a circular radius; v6 and stock RN drop the slash form because RN has no per-axis radius surface to map it to. Truly elliptical combinations (different horizontal and vertical radii) drop in v7 too, with a dev-warn.',
   },
   {
+    id: 'corner-shape',
+    title: 'corner-shape',
+    category: 'props',
+    nativeV6: 'no',
+    nativeV7: 'partial',
+    iosStock: 'no',
+    androidStock: 'no',
+    summary:
+      'Pass-through on web (Chrome 139+). v7 maps `corner-shape: round` to iOS circular corners and `squircle` to the Apple-smooth continuous curve; other contours (`bevel`, `notch`, `scoop`, out-of-band superellipse) warn and drop. Android renders circular corners regardless. Stock RN has no corner-shape surface on either platform.',
+  },
+  {
     id: 'box-sizing',
     title: 'box-sizing',
     category: 'props',
@@ -814,7 +841,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'partial',
     androidStock: 'partial',
     summary:
-      'Pass-through on web. Stock RN 0.85 natively parses the bare number form (`1.5`) and the slash form (`16 / 9`); the `auto` and two-value `auto <ratio>` forms drop silently without v7. v7 supports the full CSS Sizing 4 grammar on React Native, including `auto` and `auto <ratio>`. v6 only handled the number form.',
+      'Pass-through on web. Stock RN 0.85 natively parses only the bare number form (`1.5`); the slash string form, `auto`, and the two-value `auto <ratio>` form drop without v7. v7 computes the ratio itself, so `16 / 9`, `auto`, and `auto <ratio>` all work on React Native. v6 only handled the number form.',
     caveats: [
       'The `auto` half of `auto <ratio>` only matters on replaced elements (`<Image>`); on regular views it is a no-op and v7 dev-warns.',
     ],
@@ -850,7 +877,10 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'partial',
     androidStock: 'no',
     summary:
-      'Required for predictable stacking contexts when using blend modes on native. Stock RN 0.85+ accepts `isolation: auto | isolate`. iOS contributes only to z-ordering, not a real compositing isolation layer. Android silently drops the prop, but auto-isolates when child views use `mix-blend-mode`.',
+      'Required for predictable stacking contexts when using blend modes on native. v7 supports `isolation: isolate` on iOS, Android, and web so blended descendants composite against the isolated group. Android has no isolation style key, so v7 also enables a hardware-texture layer to create the isolated surface there. Stock RN 0.85+ accepts `isolation: auto | isolate` on iOS for z-ordering only and drops it on Android.',
+    caveats: [
+      "While a gated `filter` function is mounted on iOS at the default release level, descendants' `mix-blend-mode` stops compositing against the backdrop; dev builds warn once when this applies.",
+    ],
   },
   {
     id: 'nth-child-of-type',
@@ -1003,7 +1033,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'yes',
     androidStock: 'yes',
     summary:
-      'RN `fontSize` is a bare point value. v7 accepts bare numbers, `Npx`, viewport units (`vh`, `vw`, `svh`, `dvh`, `vi`, `vb`, `vmin`, `vmax` and the `s*` / `l*` / `d*` variants), container query units (`cqh`, `cqw`, `cqi`, `cqb`, `cqmin`, `cqmax`), font-relative units (`em`, `rem` against the cascade, `lh` / `rlh` against line-height, font-metric `ex` / `cap` / `ch` / `ic` and `r`-prefixed via the spec-prescribed approximations of em), and absolute lengths (`pt`, `pc`, `in`, `cm`, `mm`, `Q` fold to dp at compile time using the CSS Values 4 §5.2 fixed ratios). The CSS absolute-size keywords (`xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`, `xxx-large`) resolve to 9, 10, 13, 16, 18, 24, 32, 48 across iOS, Android, and web for parity; relative keywords (`smaller` / `larger`) step the absolute-size ramp against the inherited size or scale by 1.2 otherwise. Font-width keywords (`condensed`, `expanded`) and CSS system fonts (`caption`, `menu`, etc.) drop with a dev-warn that names the offending keyword. v6 only handled bare numbers and `px`; `em` / `rem` strings dropped silently on native.',
+      'RN `fontSize` is a bare point value. v7 accepts bare numbers, `Npx`, viewport units (`vh`, `vw`, `svh`, `dvh`, `vi`, `vb`, `vmin`, `vmax` and the `s*` / `l*` / `d*` variants), container query units (`cqh`, `cqw`, `cqi`, `cqb`, `cqmin`, `cqmax`), font-relative units (`em`, `rem` against the cascade, `lh` / `rlh` against line-height, font-metric `ex` / `cap` / `ch` / `ic` and `r`-prefixed via standard approximations), and absolute lengths (`pt`, `pc`, `in`, `cm`, `mm`, `Q` resolve to dp at the standard fixed ratios). The CSS absolute-size keywords (`xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`, `xxx-large`) resolve to 9, 10, 13, 16, 18, 24, 32, 48 across iOS, Android, and web for parity; relative keywords (`smaller` / `larger`) step the absolute-size ramp against the inherited size or scale by 1.2 otherwise. Font-width keywords (`condensed`, `expanded`) and CSS system fonts (`caption`, `menu`, etc.) drop with a dev-warn that names the offending keyword. v6 only handled bare numbers and `px`; `em` / `rem` strings dropped silently on native.',
   },
   {
     id: 'font-weight',
@@ -1072,7 +1102,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'yes',
     androidStock: 'yes',
     summary:
-      'RN `lineHeight` is an absolute point value. Both v6 and v7 accept bare numbers and `Npx`; other CSS lengths (`em`, `rem`) are not coerced and pass through as raw strings which RN rejects. The CSS unitless-multiplier form (`line-height: 1.5`) is treated as `1.5` points; there is no font-size-relative resolution on native.',
+      'RN `lineHeight` is an absolute point value. Both v6 and v7 accept bare numbers and `Npx`; other CSS lengths (`em`, `rem`) are not converted and pass through as raw strings which RN rejects. The CSS unitless-multiplier form (`line-height: 1.5`) is treated as `1.5` points; there is no font-size-relative resolution on native.',
     caveats: [
       'iOS centers glyphs within the line box differently from web when `lineHeight > fontSize`; upstream fix for TextInput is in flight.',
     ],
@@ -1087,7 +1117,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'yes',
     androidStock: 'yes',
     summary:
-      'RN `letterSpacing` is a bare point value. v6 accepts only bare numbers and `Npx`; `em` / `rem` strings drop silently on native. v7 routes font-relative units (`em`, `rem`, `lh`, `rlh`) through the cascade resolver that already powers other length properties, so the inherited font-size folds in at render time. rn-web stays a pass-through.',
+      'RN `letterSpacing` is a bare point value. v6 accepts only bare numbers and `Npx`; `em` / `rem` strings drop silently on native. v7 routes font-relative units (`em`, `rem`, `lh`, `rlh`) through the cascade resolver that already powers other length properties, so the inherited font size is applied at render time. rn-web stays a pass-through.',
   },
   {
     id: 'word-spacing',
@@ -1137,7 +1167,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      "Pass-through on web. v7 supports `text-overflow: ellipsis | clip` on `<Text>` once a line limit is set; pair with `line-clamp: N` (or `text-wrap: nowrap` for one line). Without a line limit there is no line to ellipsize and the value is a no-op. The spec's two-value form (`text-overflow: <start> <end>`) and string-value overflow markers are not supported on native.",
+      "Pass-through on web. v7 supports `text-overflow: ellipsis | clip` on `<Text>` once a line limit is set; pair with `line-clamp: N` (or `text-wrap: nowrap` for one line). Without a line limit there is no line to ellipsize and the value is a no-op. The spec's two-value form (`text-overflow: <start> <end>`) parses and applies the end value with a dev-warn, and string-value overflow markers degrade to an ellipsis; for an exact match use single `clip` / `ellipsis`.",
     caveats: [
       'Only `<Text>` consumes it on native.',
       'Requires a companion line limit (`line-clamp`, or `text-wrap: nowrap` for one line). Without one, RN has no line to ellipsize and the value is dropped.',
@@ -1228,7 +1258,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     summary:
       'Stock React Native accepts `display: flex` (the default), `display: none`, and `display: contents` (RN 0.77+); v6 and v7 pass those through. Block / inline / inline-block / inline-flex / flow-root are web-only because Yoga has no inline-level box model. CSS Grid is tracked under its own entry.',
     caveats: [
-      '`display: contents` removes the node from layout and hoists its children into the parent; useful for transparent wrapper components.',
+      '`display: contents` removes the node from layout and moves its children up into the parent; useful for transparent wrapper components. RN 0.86 fixes its layout inside absolutely-positioned subtrees.',
       'There is no inline flow on React Native; bare strings must live inside a `Text` primitive.',
     ],
   },
@@ -1243,7 +1273,8 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     summary:
       'Pass-through on web. Stock RN sorts children by `zIndex` before painting on both iOS and Android. v6 and v7 both forward the value.',
     caveats: [
-      "RN's `zIndex` is a unitless integer; v6 and v7 both coerce a CSS number string (`z-index: 5`) before handing it to RN.",
+      "RN's `zIndex` is a unitless integer; v6 and v7 both convert a CSS number string (`z-index: 5`) before handing it to RN.",
+      '`z-index: auto` resolves to the platform default stacking on native.',
     ],
   },
   {
@@ -1284,7 +1315,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
       "Stock RN accepts only the `overflow` shorthand with values `visible`, `hidden`, and `scroll`. The CSS `auto` and `clip` keywords plus the `overflow-x` / `overflow-y` longhands are not implemented. iOS views don't clip by default; Android views do, so `overflow: visible` on Android can still be clipped by an ancestor `ScrollView`.",
     caveats: [
       '`overflow: scroll` on a plain `View` does not produce scrollbars; use `ScrollView` for actual scrolling.',
-      'For overflow-visible across Android scroll ancestors, hoist the element out or set `collapsable={false}` on the wrapper.',
+      'For overflow-visible across Android scroll ancestors, move the element out or set `collapsable={false}` on the wrapper.',
     ],
   },
   {
@@ -1954,7 +1985,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     summary:
       'v7 resolves width / height media queries against the React Native window. Media Queries L4 range syntax (`@media (400px <= width < 800px)`) is supported alongside the legacy `min-width` / `max-width` colon form.',
     caveats: [
-      'Sentinel theme tokens in feature values (`@media (min-width: ${t.bp.md}px)`) resolve to their `createTheme` fallback at parse time.',
+      'Theme tokens used in feature values (`@media (min-width: ${t.bp.md}px)`) resolve to their `createTheme` fallback when the styles are read.',
       '`em` / `rem` lengths inside feature values are treated as 16px.',
     ],
   },
@@ -2077,7 +2108,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
       android: 'https://github.com/facebook/react-native/pull/42831',
     },
     summary:
-      'v7 folds static `color(display-p3 …)`, `color(rec2020 …)`, etc. to sRGB hex at compile time on React Native, gamut-mapping wide-gamut inputs. An upstream RN PR adds native Display-P3 awareness (iOS largely implemented, Android on hold) so the wide-gamut value can reach the renderer untouched.',
+      'v7 converts static `color(display-p3 …)`, `color(rec2020 …)`, etc. to an sRGB hex value when the styles are built on React Native, gamut-mapping wide-gamut inputs. An upstream RN PR adds native Display-P3 awareness (iOS largely implemented, Android on hold) so the wide-gamut value can reach the renderer untouched.',
     caveats: ['Until the upstream PR lands, channels resolve through sRGB even on P3-capable displays.'],
   },
   {
@@ -2200,9 +2231,9 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     category: 'functions',
     caniuseId: 'css3-attr',
     nativeV6: 'no',
-    nativeV7: 'no',
+    nativeV7: 'yes',
     summary:
-      'Browser-side `attr()` works in `content` everywhere and is shipping in Chromium for arbitrary properties (Chrome 133+); both versions pass the string through unchanged. React Native has no DOM attributes to read; pipe values through props or state at the JS layer instead.',
+      "Browser-side `attr()` works in `content` everywhere and is shipping in Chromium for arbitrary properties (Chrome 133+); both versions pass the string through unchanged. On React Native, v7 reads the styled component's own props as typed CSS values (`width: attr(data-size px, 48px)`), supporting unit names, the `number` keyword, `raw-string`, and `type()` forms for length / number / percentage / color. Missing or mismatched props use the fallback, and the result composes inside `calc()`. v6 has no `attr()` on native.",
   },
   {
     id: 'url-function',
@@ -2275,19 +2306,27 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     category: 'layout',
     caniuseId: 'css-anchor-positioning',
     nativeV6: 'no',
-    nativeV7: 'no',
+    nativeV7: 'partial',
     summary:
-      'Pass-through on web (Chromium-only today). React Native has no positioned-anchor system; popovers and tooltips have to compose `measureInWindow` plus absolute children on iOS and Android.',
+      'Web pass-through (Chromium-only today). On React Native, v7 supports a core subset: `anchor-name`, `position-anchor`, `anchor()`, and `anchor-size()`. An absolutely positioned element binds its `top` / `left` insets to an anchor edge (`top: anchor(--x bottom)`) and its size to the anchor box (`width: anchor-size(--x width)`), composing inside `calc()`. The anchor and the positioned element must share a parent. v6 has no anchor system on native.',
+    caveats: [
+      '`bottom` / `right` and logical-side insets, `position-area`, `position-try*`, `@position-try`, and `anchor-scope` are not mapped on native; they fall back to the declared value with a dev-warn.',
+    ],
   },
   {
     id: 'scroll-driven-animations',
     title: 'scroll-timeline / view-timeline / animation-timeline',
     category: 'animation',
     nativeV6: 'no',
-    nativeV7: 'no',
+    nativeV7: 'partial',
     summary:
-      'Pass-through on web. React Native drives scroll-linked animation through `Animated.event` on a `ScrollView`; the CSS scroll-driven syntax is not parsed on iOS or Android.',
-    caveats: ['No caniuse entry yet; track spec maturity before relying on it in production.'],
+      'Web pass-through. On React Native, v7 binds `@keyframes` progress to a styled ScrollView via `animation-timeline: scroll()` and to subject visibility via `view()`, with named `scroll-timeline` and `animation-range`. Opacity and transform keyframes run on the UI thread. v6 does not parse the scroll-driven syntax on native.',
+    caveats: [
+      '`scroll(root)` / `scroll(self)`, `view-timeline-inset`, and infinite iteration counts are inactive on native with a dev-warn.',
+      'View subjects must be direct children of the styled scroll container.',
+      'Requires the default Animated adapter (the Reanimated CSS layer is time-based).',
+      'No caniuse entry yet; track spec maturity before relying on it in production.',
+    ],
   },
   {
     id: 'text-box-trim',
@@ -2309,7 +2348,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'v7 polyfills the `text-wrap` shorthand and both longhands (`text-wrap-mode`, `text-wrap-style`) on React Native. `nowrap` (and the shorthand) lift `numberOfLines: 1` on `<Text>`. `balance` and `pretty` map to Android `textBreakStrategy` (API 23+); `stable` is a no-op. iOS has no platform line-breaking control so style keywords warn there. v6 dropped the property on native.',
+      'v7 polyfills the `text-wrap` shorthand and both longhands (`text-wrap-mode`, `text-wrap-style`) on React Native. `nowrap` (and the shorthand) set `numberOfLines: 1` on `<Text>`. `balance` and `pretty` map to Android `textBreakStrategy` (API 23+); `stable` is a no-op. iOS has no platform line-breaking control so style keywords warn there. v6 dropped the property on native.',
     caveats: [
       'On web, all four values pass through in both versions.',
       'Dev-mode warns per style keyword that has no iOS or cross-platform support (`balance` / `pretty` / `stable` on iOS).',
@@ -2324,7 +2363,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'Pass-through on web (Chrome 123+). v7 polyfills `field-sizing: content` on `<TextInput>` by lifting `multiline: true`, engaging each platform native height-fitting measure pass. `fixed` is a no-op. Author-supplied `min-height` / `max-height` still bound the field. v7 dev-warns when the caller explicitly passes `multiline={false}` since that voids the lift. Stock RN has no `field-sizing` surface on either platform.',
+      'Pass-through on web (Chrome 123+). v7 polyfills `field-sizing: content` on `<TextInput>` by setting `multiline: true`, which engages the native height-fitting measure pass on each platform. `fixed` is a no-op. Author-supplied `min-height` / `max-height` still bound the field. v7 dev-warns when the caller explicitly passes `multiline={false}` since that undoes it. Stock RN has no `field-sizing` surface on either platform.',
     caveats: [
       'The polyfill applies to `<TextInput>` only; the CSS property has no analog for other input types on native.',
     ],

@@ -3,9 +3,9 @@ Note: CLAUDE.md is a symlink to this file. Edit AGENTS.md directly.
 styled-components documentation website. Next.js, MDX, styled-components.
 
 Read first
-Before editing anything that touches styled-components APIs (`createTheme`, `ThemeProvider`, `createGlobalStyle`, `ServerStyleSheet`, `StyleSheetManager`, `stylisPluginRSC`), read `public/llms.txt`. It's the battle-tested v6.4 usage guide with real gotchas that contradict training data.
+Read `public/llms.txt` at the start of every session, and again before editing any styled-components API (`createTheme`, `ThemeProvider`, `createGlobalStyle`, `ServerStyleSheet`, `StyleSheetManager`, `stylisPluginRSC`). It's the v6.4/v7 guide with gotchas that contradict training data; ground in it, not memory.
 
-`llms.txt` is a first-class doc; when MDX docs change (API, SSR, theming, gotchas), update `llms.txt` in the same pass. Behavior, not internals.
+When MDX docs change (API, SSR, theming, gotchas), update `llms.txt` in the same pass. Behavior, not internals.
 
 Principles
 1. Verify before building: read the file before editing.
@@ -18,14 +18,14 @@ Commands
 - `pnpm install`: install
 - `npx next build`: do NOT run while the dev server is active
 - `npx jest -c .jest.config.js`: tests
-- `node scripts/capture-screenshots.mjs <slug> <url> [...]`: refresh showcase thumbnails (drives headless Chrome via CDP, strips consent/chat overlays)
+- `node scripts/capture-screenshots.mjs <slug> <url> [...]`: refresh showcase thumbnails (headless Chrome via CDP, strips consent/chat overlays)
 - `node scripts/verify-showcase.mjs`: gate for additions to `companies-manifest.tsx`
 
 Tokens / fonts
 - `utils/theme.ts` is the single source for `var(--sc-*)`. Dark overrides in `GlobalStyles.tsx`.
 - Display Figtree, body Inter, mono Google Sans Code; injected by next/font as `--font-sans` / `--font-display` / `--font-mono`.
-- `next/og` routes cannot use those helpers; fonts come from committed TTFs under `assets/fonts/og/` (`utils/readOgFont.ts`), matching Next.js opengraph-image docs. `test/utils/opengraphImageFonts.spec.ts` guards against CDN font URLs in any `opengraph-image.tsx`.
-- Three palette tiers: `lightPalette`, `darkPalette` (CVD-optimized; see theme.ts comments for seeds and pipeline) and the ring colors from `utils/logoPalette.ts`. `theme.palette[N]` auto-switches light/dark. Don't hand-pick oklch; derive from palette indices. Accent variants = L/C shift on the same hue, never adjacent indices.
+- `next/og` routes can't use next/font; fonts come from committed TTFs under `assets/fonts/og/` (`utils/readOgFont.ts`). `opengraphImageFonts.spec.ts` guards against CDN font URLs in any `opengraph-image.tsx`.
+- Palette: `lightPalette` + `darkPalette` (CVD-optimized; seeds/pipeline in theme.ts comments) plus ring colors in `utils/logoPalette.ts`. `theme.palette[N]` auto-switches light/dark. Derive from palette indices, never hand-pick oklch; accent variants shift L/C on the same hue, never adjacent indices.
 - OKLCH hue 0° is pink/magenta, not red. See `logoPalette.ts` for the offset that places red at step 0.
 
 Theme switching
@@ -37,20 +37,20 @@ Z-index: 10 (celebration/code), 20 (content/hero), 30 (sidebar), 40 (navbar).
 Gotchas (things you cannot discover by reading the code alone)
 - `docs.json` titles become URL hashes via `titleToDash`. Mismatches break sidebar links.
 - Live editor `scope.ts` derives component IDs from tag/component names. Counters cause hydration mismatches.
-- `${ClientComponent} &` selector interpolation invokes `.toString()`, tripping RSC's client-reference guard. Any styled component using this pattern must stay `'use client'`. Currently `CodeBlock.tsx` (uses `${Note} &`).
-- Import code mixins (`codeTextMixin`, `editorMixin`) from `components/codeMixins.ts`, not `LiveEdit`. Importing from `LiveEdit` pulls `react-live-runner` + `sucrase` into every consumer's client bundle.
+- `${ClientComponent} &` selector interpolation calls `.toString()`, tripping RSC's client-reference guard; such components must stay `'use client'`. Currently `CodeBlock.tsx` (`${Note} &`).
+- Import code mixins (`codeTextMixin`, `editorMixin`) from `components/codeMixins.ts`, not `LiveEdit` (which pulls `react-live-runner` + `sucrase` into every consumer's client bundle).
 - `mix-blend-mode` and `filter` on children of `preserve-3d` flatten 3D. Use alpha / `color-mix` instead.
-- `PlatonicLogo.tsx` faces must NOT use `backface-visibility: hidden`. Per-face axis-angle interpolation during morph can briefly flip a normal and cull mid-animation. `preserve-3d` z-sorts back faces naturally; a tiny per-face outward bias breaks z-degeneracy.
-- `CelebrationEffect.tsx` particles are `React.memo`'d; `onAnimationEnd` is a stable `useCallback` that reads IDs from `data-*` attributes. Don't close over IDs in per-item arrow functions; it defeats memoization.
+- `PlatonicLogo.tsx` faces must NOT use `backface-visibility: hidden`: per-face morph interpolation can briefly flip a normal and cull mid-animation. `preserve-3d` z-sorts back faces; a tiny per-face outward bias breaks z-degeneracy.
+- `CelebrationEffect.tsx` particles are `React.memo`'d; `onAnimationEnd` reads IDs from `data-*` attributes via a stable `useCallback`. Don't close over IDs in per-item arrows; it defeats memoization.
 - Nav/sidebar widths use `sidebarWidth` from `utils/sizes.ts` in plain px; don't `rem()` them.
 - `utils/rem.ts` uses a legacy 18px base. Prefer token spacing vars.
 - Borders use opaque `color-mix(in oklch, text 8%, surface)`, not alpha.
 - Releases page uses `markdown-to-jsx`, not MDX.
 - Blog posts are assembled at build time by `utils/blog.server.ts` from MDX `meta` exports. No JSON index.
-- Blog Bluesky comments are opt-in via `blueskyPostUrl` in MDX `meta`. Auto-discovery is intentionally disabled (Bluesky closed public `searchPosts`). `BlogComments.tsx` overrides hashed CSS-Module selectors via `[class*='_name_']` matches so overrides survive package upgrades.
-- CSS compatibility matrix (`utils/cssCompat.ts`) v6/v7 columns describe combined-platform native behavior. If iOS stock = yes but Android stock = no, v7 should be `partial`, not `no`. `prUrls` is keyed per column; only set entries where status is `no` and an upstream PR exists.
-- Public-facing docs (`sections/`, `public/llms.txt`, blog posts) describe user-observable behavior only: what is supported, what isn't, what to author. Skip mechanism (how the polyfill maps, what prop it lifts, internal field names, parser / handler / registry mechanics, ABI prefixes, dev-warn IDs, sentinel names).
-- The compatibility matrix (`utils/cssCompat.ts`) follows the same no-mechanism rule, with one narrow exception: when explaining version skew, an entry may name a public stock-RN prop (`numberOfLines`, `trackColor`) instead of the CSS-side surface, because the matrix exists to compare authoring across versions. Everything else (parser, handler, registry, ABI prefixes, dev-warn IDs, sentinel names) is still off-limits, and caveats are gotchas the author needs to act on, not internals.
+- Blog Bluesky comments are opt-in via `blueskyPostUrl` in MDX `meta`; auto-discovery is intentionally off (Bluesky closed public `searchPosts`). `BlogComments.tsx` matches hashed CSS-Module selectors via `[class*='_name_']` so overrides survive package upgrades.
+- `utils/cssCompat.ts` v6/v7 columns describe combined-platform native behavior: iOS stock yes + Android stock no = `partial`, not `no`. `prUrls` is per-column; only set where status is `no` and an upstream PR exists.
+- Public-facing docs (`sections/`, `public/llms.txt`, blog posts) describe user-observable behavior only (what's supported, what to author). Skip mechanism: polyfill mapping, lifted props, internal field names, parser/handler/registry mechanics, ABI prefixes, dev-warn IDs, sentinel names.
+- Same no-mechanism rule applies to the matrix, with one exception: version-skew entries may name a public stock-RN prop (`numberOfLines`, `trackColor`) since the matrix compares authoring across versions. Parser, handler, registry, ABI prefixes, dev-warn IDs, and sentinel names stay off-limits; caveats are author-actionable gotchas, not internals.
 
 Prose rules (mirrored from `~/code/styled-components/AGENTS.md`)
 - American English in all prose: color, behavior, honor, recognize, serialize, center, organize, etc. Keep original spelling only inside verbatim quotes.
