@@ -421,23 +421,6 @@ const companies: Company[] = [
     },
   },
   {
-    key: 'https://www.asurion.com',
-    globalRank: 11980,
-    name: 'Asurion',
-    logo: CompanyLogos.AsurionLogo,
-    style: {},
-    projects: {
-      asurion: {
-        title: 'Asurion',
-        link: 'https://www.asurion.com',
-        src: '/screenshots/thumbnails/asurion.com.jpg',
-        width: 1280,
-        height: 720,
-        internalUrl: 'asurion',
-      },
-    },
-  },
-  {
     key: 'https://www.northropgrumman.com',
     globalRank: 26708,
     name: 'Northrop Grumman',

@@ -260,9 +260,6 @@ const REACH_PLC_STRETCH = `
 // by `--inspect <slug> <url>`; keep them specific so editorial content
 // stays intact.
 const SITE_OVERRIDES = {
-  'asurion.com': {
-    selectors: ['iframe#_si_widget_iframe'],
-  },
   'bristolpost.co.uk': {
     selectors: REACH_PLC_SELECTORS,
     js: KILL_STICKY_PARENT('iframe[id^="google_ads_iframe"]') + REACH_PLC_STRETCH,
