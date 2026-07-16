@@ -455,23 +455,6 @@ const companies: Company[] = [
     },
   },
   {
-    key: 'https://fortune.com',
-    globalRank: 1090,
-    name: 'Fortune',
-    logo: CompanyLogos.FortuneLogo,
-    style: {},
-    projects: {
-      fortune: {
-        title: 'Fortune',
-        link: 'https://fortune.com',
-        src: '/screenshots/thumbnails/fortune.com.jpg',
-        width: 1280,
-        height: 720,
-        internalUrl: 'fortune',
-      },
-    },
-  },
-  {
     key: 'https://www.entrepreneur.com',
     globalRank: 2314,
     name: 'Entrepreneur',
@@ -582,22 +565,6 @@ const companies: Company[] = [
         width: 1280,
         height: 720,
         internalUrl: 'movember',
-      },
-    },
-  },
-  {
-    key: 'https://www.trustwave.com',
-    globalRank: 14048,
-    name: 'LevelBlue',
-    style: {},
-    projects: {
-      levelblue: {
-        title: 'LevelBlue',
-        link: 'https://www.trustwave.com',
-        src: '/screenshots/thumbnails/trustwave.com.jpg',
-        width: 1280,
-        height: 720,
-        internalUrl: 'levelblue',
       },
     },
   },
