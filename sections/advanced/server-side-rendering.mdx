@@ -45,6 +45,16 @@ import { StyleSheetManager, stylisPluginRSC } from 'styled-components';
 
 This uses CSS Selectors Level 4 `of S` syntax ([browser support](https://caniuse.com/css-nth-child-of-s): Chrome 111+, Firefox 113+, Safari 9+). In unsupported browsers, the entire CSS rule is dropped, so only opt in if your audience supports it.
 
+In v7, import `rscPlugin` from the plugins subpath and pass it through the
+renamed `plugins` prop:
+
+```tsx
+import { StyleSheetManager } from 'styled-components';
+import { rscPlugin } from 'styled-components/plugins';
+
+<StyleSheetManager plugins={[rscPlugin]}>{children}</StyleSheetManager>
+```
+
 #### Theming with CSS custom properties
 
 Since `ThemeProvider` has no effect in RSC (no React context), use CSS custom properties for theming instead. The recommended approach is [`createTheme()`](/docs/api#createtheme):
@@ -133,6 +143,11 @@ You need to take this into account when adding the CSS string to your HTML outpu
 Alternatively the `ServerStyleSheet` instance also has a `getStyleElement()` method
 that returns an array of React elements.
 
+Render those elements without adding React's `precedence` or `href` props.
+React-managed precedence tags lose the styled-components attributes required
+for client adoption, so each server rule would otherwise be injected again
+during hydration.
+
 If rendering fails for any reason it's a good idea to use `try...catch...finally` to ensure that the `sheet` object will always be available for garbage collection. Make sure `sheet.seal()` is only called after `sheet.getStyleTags()` or `sheet.getStyleElement()` have been called otherwise a different error will be thrown.
 
 > `sheet.getStyleTags()` and `sheet.getStyleElement()` can only be called after your element is rendered. As a result, components from `sheet.getStyleElement()` cannot be combined with `<YourApp />` into a larger component.
@@ -141,7 +156,7 @@ If rendering fails for any reason it's a good idea to use `try...catch...finally
 
 #### App Router (recommended)
 
-With styled-components v6.3.0+, RSC is natively supported with zero configuration. Styled components work in Server Components without a `'use client'` directive or registry setup. If you use `:first-child` or `:nth-child()` selectors, add `stylisPluginRSC` (v6.4+) via `StyleSheetManager` in your layout (see [child-index selector caveat](#child-index-selector-caveat) above). See the [React Server Components](#react-server-components) section above for best practices.
+With styled-components v6.3.0+, styled components defined in Server Components work without a `'use client'` directive or registry setup. A registry is still needed to collect styles from Client Components during SSR. If you use `:first-child` or `:nth-child()` selectors, add `stylisPluginRSC` (v6.4) or `rscPlugin` (v7) via `StyleSheetManager` in your layout (see [child-index selector caveat](#child-index-selector-caveat) above). See the [React Server Components](#react-server-components) section above for best practices.
 
 With styled-components v6.0-6.2, you need to put a styled-components registry in one of your layout files, as [described in Next.js docs](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components). The `'use client'` directive is required, so styled-components will appear in your client bundle.
 

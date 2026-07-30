@@ -22,9 +22,9 @@ const MyReactNativeComponent = () => (
 )
 ```
 
-We also support more complex styles (like `transform`), which would normally
-be an array, and shorthands (e.g. for `margin`) thanks to
-[`css-to-react-native`](https://github.com/styled-components/css-to-react-native)!
+Complex styles that normally use arrays in React Native (such as `transform`)
+and CSS shorthands (such as `margin`) work in tagged templates. In v7 this
+support is built in; `css-to-react-native` is no longer a peer dependency.
 
 > Note that the `flex` property works like CSS shorthand, and not the legacy
 > `flex` property in React Native. Setting `flex: 1` sets `flexShrink`
@@ -42,10 +42,11 @@ const RotatedBox = styled.View`
 `
 ```
 
-Some of the differences to the web-version are, that you cannot use the
-`keyframes` and `createGlobalStyle` helpers since React Native doesn't support
-keyframes or global styles. We will also warn you if you use media queries or
-nest your CSS.
+In v7, `keyframes`, media queries, container queries, and nested CSS work on
+React Native. Native still has no document-level global stylesheet, so
+`createGlobalStyle` is unavailable. See [React Native gets modern
+CSS](/docs/v7#react-native-gets-modern-css) and the [compatibility
+matrix](/docs/compatibility) for the supported surface and platform caveats.
 
 ### `toStyleSheet` API
 
@@ -64,3 +65,7 @@ const styles = toStyleSheet`
 ### Simpler usage with the metro bundler
 
 If you'd prefer to just import `styled-components` instead of `styled-components/native`, you can add a [`resolverMainFields` configuration](https://facebook.github.io/metro/docs/configuration#resolvermainfields) that includes `"react-native"`. This used to be supported in metro by default (and currently does work in haul) but appears to have been removed at some point.
+
+For `react-native-web`, Webpack, Vite, and Metro web targets automatically select
+the dedicated browser bridge in v7. If your bundler does not, import
+`styled-components/native/web-bridge` directly.

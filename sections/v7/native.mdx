@@ -42,6 +42,8 @@ const Card = styled.View`
 - **`overscroll-behavior: contain | none`** disables overscroll on `ScrollView` / `FlatList`. **`scrollbar-width: none`** hides scroll indicators.
 - **`accent-color`** tints `<Switch>` (`auto` picks up the platform accent color).
 - **`styled.ScrollView`** on native defaults to `flex-shrink: 0` so explicit `width:` / `height:` pin reliably inside a flex parent. Override with `flex-shrink: 1` if you need it.
+- **`attr(name <type>?, fallback?)`** reads the component's own props as typed CSS values and composes inside `calc()`.
+- **`sibling-index()` and `sibling-count()`** resolve an element's 1-indexed position and sibling total inside a styled parent, updating when children mount, unmount, or reorder.
 - **`display: grid`** with `grid-template-columns: repeat(N, 1fr)` plus `gap` lays direct styled children into N equal columns; `grid-column: span N` spans columns. Other track shapes and placement warn and fall back to a wrapping flex row.
 - **Anchor positioning** core subset: `anchor-name`, `position-anchor`, `anchor()`, and `anchor-size()` with `top` / `left` insets, where the anchor and the positioned element share a parent.
 - **`position: sticky`** sticks direct styled children of a styled `ScrollView` to the top edge, holding through flings (top edge, direct children only).
@@ -194,6 +196,13 @@ const Card = styled.View`
 ```
 
 Web and native share the same theme contract. Nested `<ThemeProvider>` calls deep-merge on native so an inner override that only touches one leaf keeps the siblings it inherited.
+
+### React Native Web
+
+Webpack, Vite, and Metro web targets automatically select v7's dedicated
+`react-native-web` build from the normal `styled-components/native` import. If
+your bundler does not select it, import
+`styled-components/native/web-bridge` directly.
 
 ### Limitations on native
 

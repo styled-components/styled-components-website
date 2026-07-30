@@ -1,6 +1,6 @@
 # styled-components
 
-CSS-in-JS for React using tagged template literals. TypeScript-native since v6. Supports React Server Components natively since v6.3. Last known stable: v6.4.0 (check npm for freshness).
+CSS-in-JS for React using tagged template literals. TypeScript-native since v6. Supports React Server Components natively since v6.3. Last known stable: v6.4.4 (check npm for freshness).
 
 ## Recent releases
 
@@ -8,7 +8,7 @@ v6.2: Streaming SSR via `renderToPipeableStream`.
 
 v6.3: React Server Components supported. No `'use client'` needed. Styled components work in server components with no extra setup. `createGlobalStyle` is StrictMode-safe. New HTML/SVG element helpers. CSS custom properties work in TypeScript without type errors. Note: `:first-child`/`:nth-child()` selectors require `stylisPluginRSC` (v6.4+) or rewriting to `:first-of-type`/`:nth-of-type()`. See child-index selector section below.
 
-v6.4 (April 2026): `createTheme()` for CSS variable theming that works in both RSC and client. `StyleSheetManager` works in RSC (was previously a no-op). `stylisPluginRSC` fixes child-index selectors in RSC. CSP nonce auto-detection from `StyleSheetManager`, `ServerStyleSheet`, or meta tags. Props supplied via `.attrs()` are automatically optional on the component's type. Significant render performance improvements. Fixes SSR memory leaks and multi-instance unmount bugs in `createGlobalStyle`. Memory leak fix for components with unbounded string interpolation values. `as` and `forwardedAs` exposed in `React.ComponentProps` extraction. React Native: `react-native` is now an optional peer dep, Metro/Expo nanoid crash fixed. IE11 build target removed. IE11 has been unsupported on v6 since the 2021 v6 planning (React 18 dropped it too); v6.4 just aligns the compile target. Stay on v5 if you need IE11.
+v6.4 (April–July 2026): `createTheme()` for CSS variable theming that works in both RSC and client. `StyleSheetManager` works in RSC (was previously a no-op). `stylisPluginRSC` fixes child-index selectors in RSC. CSP nonce auto-detection from `StyleSheetManager`, `ServerStyleSheet`, or meta tags. Props supplied via `.attrs()` are automatically optional on the component's type. Significant render performance improvements. Fixes SSR memory leaks and multi-instance unmount bugs in `createGlobalStyle`. Memory leak fix for components with unbounded string interpolation values. `as` and `forwardedAs` exposed in `React.ComponentProps` extraction. React Native: `react-native` is now an optional peer dep, Metro/Expo nanoid crash fixed. IE11 build target removed. IE11 has been unsupported on v6 since the 2021 v6 planning (React 18 dropped it too); v6.4 just aligns the compile target. Stay on v5 if you need IE11. Use v6.4.4 rather than v6.4.0: v6.4.1 fixed a dynamic-`createGlobalStyle` render regression and restored cascade ordering, while v6.4.2–v6.4.4 added production-runtime and TypeScript compatibility/performance fixes.
 
 ## New in v7
 
@@ -51,7 +51,7 @@ Viewport units (`vw`, `vh`, `vi`, `vb`, `vmin`, `vmax`, plus the prefixed `s*` /
 
 `env(safe-area-inset-top | right | bottom | left)` parses but currently resolves to 0; the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until it lands.
 
-Logical shorthands work as authored: `margin-inline`, `margin-block`, `padding-inline`, `padding-block`, `inset-inline`, `inset-block`, the full `border-inline` / `border-block` family (per-edge longhands and axis shorthands), and all `-start` / `-end` longhands. The library's RTL plugin handles physical-property mirroring; logical properties are already direction-agnostic. Caveat: per-edge `border-style` warns and drops on native; set `border-style` on the element instead.
+Logical shorthands work as authored: `margin-inline`, `margin-block`, `padding-inline`, `padding-block`, `inset-inline`, `inset-block`, the full `border-inline` / `border-block` family (per-edge longhands and axis shorthands), and all `-start` / `-end` longhands. The library's RTL plugin handles physical-property mirroring; logical properties are already direction-agnostic. React Native has one whole-element border style: repeated per-edge styles collapse quietly, while mixed styles keep the first drawable style and warn in development.
 
 `line-clamp: N` truncates `<Text>` to N lines. `text-wrap: nowrap` collapses to a single line; `text-wrap-style: balance` / `pretty` improve line-breaking on Android (no-op on iOS, which has no platform line-breaking control). `text-align: start` / `end` / `match-parent` resolve correctly under RTL on both platforms. `aspect-ratio` accepts `1.5`, `16 / 9`, `auto`, and the two-value `auto 16/9` form. `transform` accepts the function list RN parses (use explicit units, e.g. `translateX(10px)`) and a `matrix()` with 9 or 16 values; the 6-value `matrix()` form and `matrix3d()` do not render on native. `perspective: 1000px` as a top-level declaration works (no need to put it inside the transform array yourself).
 
@@ -226,7 +226,7 @@ In React Native 0.85, the `filter` primitives `blur`, `saturate`, `hue-rotate`, 
 
 ### React Native on `react-native-web`
 
-`styled-components/native` ships a dedicated build for `react-native-web` consumers. Webpack, Vite, and Metro (when targeting web) pick it up automatically: no opt-in, no import-path change, no peer dependency to install. The bundle is ~10 kB smaller than the iOS / Android entry (~4 kB gzipped) because the features the browser already handles are excluded from it.
+`styled-components/native` ships a dedicated build for `react-native-web` consumers. Webpack, Vite, and Metro (when targeting web) pick it up automatically: no opt-in, no import-path change, no peer dependency to install. If a bundler does not select it automatically, import `styled-components/native/web-bridge` directly. The bundle is smaller than the iOS / Android entry because features the browser already handles are excluded from it.
 
 Across the rn-web build, CSS the browser already implements passes through untouched rather than being approximated through the iOS / Android polyfills:
 
@@ -284,13 +284,63 @@ const Logo = styled(Image).attrs((_props, ast) => ({
 
 The first argument dispatches on shape: a CSS property name (`'color'`, `'borderColor'`) reads a resolved declaration; a dot-separated path (`'palette.brand.primary'`) reads from the active theme. Theme paths get autocomplete and value-type inference from your augmented `DefaultTheme`. When the callback only reads static declarations and theme paths, the work folds into a one-time computation at construction so renders pay nothing extra.
 
+### Plugins (v7)
+
+Plugins live at `styled-components/plugins`. The `<StyleSheetManager>` prop is `plugins` (was `stylisPlugins`). First-party plugins:
+
+- `rtlPlugin` replaces `stylis-plugin-rtl`: swaps physical side properties, flips `left`/`right` keywords on `float` / `clear` / `text-align` / `caption-side`, mirrors 4-value shorthands. Logical properties pass through.
+- `rscPlugin` replaces the root `stylisPluginRSC` export: rewrites child-index selectors so RSC inline `<style>` tags do not shift indices.
+- `prefixPlugin` is the opt-in replacement for `enableVendorPrefixes`. Covers only what still needs a prefix at React's JS API browser floor (Chrome 45 / Firefox 36 / Safari 9 / iOS 9 / Edge 12). Flexbox, transforms, transitions, animations, and gradients pass through; already-prefixed declarations are left alone.
+
+Import the type and the first-party plugins from the same subpath (not the package root):
+
+```ts
+import { StyleSheetManager } from 'styled-components';
+import {
+  prefixPlugin,
+  rtlPlugin,
+  rscPlugin,
+  type DeclResult,
+  type DeclTransform,
+  type SCPlugin,
+  type SelectorTransform,
+} from 'styled-components/plugins';
+
+<StyleSheetManager plugins={[prefixPlugin, rtlPlugin, rscPlugin]}>
+  <App />
+</StyleSheetManager>;
+```
+
+Custom plugins are plain objects with a required `name` plus either or both of `rw` and `decl`. `rw` is a `SelectorTransform`: it runs on the fully-resolved selector after `&` substitution and namespace prepending, and returns a string or an array of selectors (one rule per entry). `decl` is a `DeclTransform`: it runs on every emitted `prop: value` pair and returns a `DeclResult`, an array of them (one declaration expands into several), or `undefined`/`void` to leave the pair unchanged. Plugins compose left-to-right; a later hook sees every result an earlier plugin emitted.
+
+```ts
+import type { SCPlugin } from 'styled-components/plugins';
+
+const scopePlugin: SCPlugin = {
+  name: 'scope',
+  rw: selector => `.app ${selector}`,
+};
+
+const remToPxPlugin: SCPlugin = {
+  name: 'rem-to-px',
+  decl: (prop, value) => {
+    const match = value.match(/^(-?\d*\.?\d+)rem$/);
+    return match ? { prop, value: `${parseFloat(match[1]) * 16}px` } : undefined;
+  },
+};
+```
+
+Legacy stylis middleware (a bare function): never runs; development builds warn once.
+
+Unused plugins tree-shake out of the consumer bundle.
+
 ### Other notable changes
 
 - `defaultProps` on styled components no longer applied (React 19 dropped it from function components). Migrate to `.attrs()` for prop defaults, or `<ThemeProvider theme={...}>` for theme defaults.
-- Plugins moved to `styled-components/plugins`. A first-party `rtlPlugin` ships in-tree (no more `stylis-plugin-rtl`), and opt-in `prefixPlugin` covers vendor prefixes at the React JS API browser floor (Chrome 45 / Firefox 36 / Safari 9 / iOS 9 / Edge 12). Custom plugins implement `{ name, rw?, decl? }`; either hook may return an array to expand one result into several, and plugins compose left-to-right. The `<StyleSheetManager>` prop renamed from `stylisPlugins` to `plugins`.
 - `extractCSS()` export replaces the removed `disableCSSOMInjection` prop and `SC_DISABLE_SPEEDY` env vars; call it after render to get the current CSS as a plain string for static-render pipelines.
 - Mounting the same `createGlobalStyle` component multiple times now emits its CSS only once.
 - Server output escapes `</style>` substrings and HTML-escapes nonce values to prevent style-tag breakout.
+- Polymorphic `as` targets drive editor attribute completion: `<VideoCard as="video" ...>` completes `loop`, `muted`, `controls`, `poster`, and the other video attributes. Runtime behavior is unchanged.
 
 ## Setup
 
@@ -342,7 +392,7 @@ import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 export default function Registry({ children, nonce }: { children: React.ReactNode; nonce?: string }) {
   const [sheet] = useState(() => new ServerStyleSheet());
   useServerInsertedHTML(() => {
-    const styles = sheet.getStyleTags();
+    const styles = sheet.getStyleElement();
     sheet.instance.clearTag();
     return <>{styles}</>;
   });
@@ -356,7 +406,7 @@ export default function Registry({ children, nonce }: { children: React.ReactNod
 
 Mount `<Registry>` in your root layout. Pass a `nonce` prop if your app uses CSP (see CSP nonce section below).
 
-Next.js 16 style deduplication: render the collected styles with `precedence="styled-components"` and a stable `href` so React deduplicates them across route segments.
+Render the elements returned by `getStyleElement()` without adding `precedence` or `href`. React-managed precedence tags lose the attributes styled-components needs for client adoption, causing every server rule to be injected again during hydration.
 
 ### Vite: non-streaming
 
@@ -814,7 +864,7 @@ For Next.js, pass the nonce to the style registry (see the SSR section above). F
 ## Good to know
 
 - `@import` in `createGlobalStyle` may not work correctly in production. Use `<link>` in `<head>` instead.
-- Vendor prefixes are off by default in v6. Enable with `<StyleSheetManager enableVendorPrefixes>` if your support matrix includes Safari < 15.4, Chrome < 83, or Firefox < 80 (the `appearance` property was the last to drop its prefix). v7 removes runtime prefixing and is intended for modern browsers.
+- Vendor prefixes are off by default in v6. Enable with `<StyleSheetManager enableVendorPrefixes>` if your support matrix includes Safari < 15.4, Chrome < 83, or Firefox < 80 (the `appearance` property was the last to drop its prefix). In v7, use `prefixPlugin` from `styled-components/plugins` for React's browser support floor, or author a custom plugin for a different prefix set.
 - `shouldForwardProp` is off by default in v6. Use `$`-prefixed transient props (`$color`, `$size`) to keep props out of the DOM. Or restore filtering with `<StyleSheetManager shouldForwardProp={...}>`.
 - Two classes per element: one shared across all instances of a component, one unique per style variant. Test selectors should account for both.
 - Stylis v4 parses `:hover {}` as descendant `& :hover {}`, not `&:hover {}`. Always write `&:hover`, `&::before`, etc.

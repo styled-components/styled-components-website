@@ -125,7 +125,25 @@ const Title = styled.h1<TitleProps>`
 
 Note: if you style a standard tag (like `<h1>` in above example), styled-components [will not pass the custom props](https://styled-components.com/docs/basics#passed-props) (to avoid the [Unknown Prop Warning](https://react.dev/warnings/unknown-prop)).
 
-However, it will pass all of them to a custom React component:
+### Polymorphic `as` targets | v7
+
+The `as` prop changes both the rendered element and the attributes TypeScript
+offers for it. For example, after writing `<Media as="video"`, your editor
+completes video attributes such as `loop`, `muted`, `controls`, and `poster`.
+Without `as`, completion stays on the styled component's own props.
+
+```tsx
+const Media = styled.div`
+  display: block;
+`;
+
+<Media as="video" controls muted />;
+```
+
+This improves editor completion only; the runtime behavior of `as` is
+unchanged.
+
+When styling a custom React component, styled-components passes all custom props:
 
 ```tsx
 import styled from 'styled-components';
