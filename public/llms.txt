@@ -287,7 +287,7 @@ The first argument dispatches on shape: a CSS property name (`'color'`, `'border
 ### Other notable changes
 
 - `defaultProps` on styled components no longer applied (React 19 dropped it from function components). Migrate to `.attrs()` for prop defaults, or `<ThemeProvider theme={...}>` for theme defaults.
-- Plugins moved to `styled-components/plugins`. A first-party `rtlPlugin` ships in-tree (no more `stylis-plugin-rtl`). The `<StyleSheetManager>` prop renamed from `stylisPlugins` to `plugins`.
+- Plugins moved to `styled-components/plugins`. A first-party `rtlPlugin` ships in-tree (no more `stylis-plugin-rtl`), and opt-in `prefixPlugin` covers vendor prefixes at the React JS API browser floor (Chrome 45 / Firefox 36 / Safari 9 / iOS 9 / Edge 12). Custom plugins implement `{ name, rw?, decl? }`; either hook may return an array to expand one result into several, and plugins compose left-to-right. The `<StyleSheetManager>` prop renamed from `stylisPlugins` to `plugins`.
 - `extractCSS()` export replaces the removed `disableCSSOMInjection` prop and `SC_DISABLE_SPEEDY` env vars; call it after render to get the current CSS as a plain string for static-render pipelines.
 - Mounting the same `createGlobalStyle` component multiple times now emits its CSS only once.
 - Server output escapes `</style>` substrings and HTML-escapes nonce values to prevent style-tag breakout.

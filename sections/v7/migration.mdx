@@ -44,11 +44,11 @@ The result is plain CSS, safe to inject into another document via `innerHTML`. T
 
 ### `enableVendorPrefixes` removed
 
-The runtime vendor prefixer has been removed. For the properties that still need prefixing on older Safari (`backdrop-filter`, `mask`, `user-select`), declare both the prefixed and unprefixed forms in your CSS, or run a build-time PostCSS transform.
+The `enableVendorPrefixes` prop and the runtime vendor prefixer have been removed in favor of the opt-in [`prefixPlugin`](#prefixplugin) from `styled-components/plugins`, which prefixes the CSS that still needs it at React's browser support floor. Declarations you author already prefixed pass through untouched, and you can [compose your own plugin](#authoring-custom-plugins) for a different prefix set.
 
 ### Plugins moved to a subpath
 
-`stylisPluginRSC` and the v6 `stylisPlugins` prop are gone. Import the first-party plugins from `styled-components/plugins` and pass them via the renamed `plugins` prop:
+`stylisPluginRSC` and the v6 `stylisPlugins` prop have been removed in favor of first-party plugins from `styled-components/plugins`, passed via the renamed `plugins` prop:
 
 ```diff
 -import { stylisPluginRSC } from 'styled-components';

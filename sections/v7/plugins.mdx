@@ -35,6 +35,21 @@ import { rscPlugin } from 'styled-components/plugins';
 
 Use this in apps that render via `react-server-dom-*` (Next.js App Router server components, Vite RSC plugins, etc).
 
+### `prefixPlugin`
+
+Adds vendor prefixes to the CSS you author, scoped to the browsers that support the JavaScript APIs React requires (Chrome 45, Firefox 36, Safari 9 / iOS 9, Edge 12). A construct is prefixed only where one of those browsers still needs it: `appearance`, `user-select`, `backdrop-filter`, `position: sticky`, `filter`, `clip-path`, the `mask*` family, `tab-size`, `writing-mode`, `hyphens`, `image-set()` in values, multi-column `column*`, `line-clamp`, `font-feature-settings`, `box-decoration-break`, `text-size-adjust`, `scroll-snap-type`, the inline logical `margin` and `padding` longhands, and the `::placeholder`, `:read-only`, and `:read-write` selectors. Prefixed declarations are emitted ahead of the standard one, so a browser that understands the standard form uses it.
+
+```tsx
+import { StyleSheetManager } from 'styled-components';
+import { prefixPlugin } from 'styled-components/plugins';
+
+<StyleSheetManager plugins={[prefixPlugin]}>
+  <App />
+</StyleSheetManager>
+```
+
+Opt in per subtree; a `<StyleSheetManager>` without it emits unprefixed CSS. Flexbox, transforms, transitions, animations, and gradients need no prefix at that floor and pass through unchanged, as do declarations you author already prefixed. For a different browser floor or prefix set, compose your own plugin after it; see [Authoring custom plugins](#authoring-custom-plugins).
+
 ### Authoring custom plugins
 
 The v7 plugin contract is narrower than the stylis-style middleware shape used in v6. A plugin is a plain object with a `name`, plus either or both of `rw` (selector rewrite) and `decl` (declaration rewrite):
@@ -45,12 +60,15 @@ import type { SCPlugin } from 'styled-components/plugins';
 const scopePlugin: SCPlugin = {
   name: 'scope',
   // `rw` runs on every fully-resolved selector after `&` substitution and
-  // namespace prepending. Return a new selector string.
+  // namespace prepending. Return a new selector string, or an array of
+  // selectors to emit one rule per entry.
   rw: selector => `.app ${selector}`,
   // `decl` runs on every emitted `prop: value` pair (top-level decls, decl
   // bodies under at-rules, and decl bodies under nested rules). Return
-  // `{ prop, value }` to rewrite the pair, or `undefined` to leave it
-  // unchanged. Each plugin in a chain composes left-to-right.
+  // `{ prop, value }` to rewrite the pair, an array of pairs to expand one
+  // declaration into several, or `undefined` to leave it unchanged. Each
+  // plugin in a chain composes left-to-right, and a later hook sees every
+  // result an earlier plugin emitted.
   decl: (prop, value) => {
     if (prop === 'cursor' && value === 'pointer') {
       return { prop, value: 'default' };
@@ -62,4 +80,4 @@ const scopePlugin: SCPlugin = {
 
 The `name` field is required and contributes to the compiler's cache hash, so different plugin sets across nested `<StyleSheetManager>` trees stay isolated. Plugins without a name throw a styled-components error.
 
-Legacy stylis plugins (those exporting a single function) don't run in v7 because they don't expose `rw` or `decl`. Production builds ignore them; development builds warn once for any plugin whose name is not recognized. Migrate them to the `SCPlugin` interface above; complex use cases that need a richer hook surface should open an issue.
+Legacy stylis plugins (those exporting a single function) don't run in v7 because they don't expose `rw` or `decl`. Development builds warn once when a plugin cannot run: a middleware function, or an object with neither hook. Migrate them to the `SCPlugin` interface above; complex use cases that need a richer hook surface should open an issue.
