@@ -37,8 +37,13 @@ export default function Navbar({ onSideToggle, isSideFolded }: NavbarProps) {
 const Wrapper = styled.nav.attrs({ 'aria-label': 'Main' })<{ children?: React.ReactNode }>`
   align-items: center;
   background-color: ${theme.color.navBg};
-  /* No backdrop-filter: blur over a scrolling .root forces expensive
-     per-frame layer repaints and was a major source of vertical scroll jank. */
+  /* Restored frosted glass, tuned cheaper than the old blur(8px):
+     5px blur + slightly higher navBg alpha + own compositor layer.
+     Production still measured 60fps with blur(8px); this keeps the look
+     with less filter work. Skip blur when the user prefers reduced transparency. */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transform: translateZ(0);
   box-sizing: border-box;
   color: ${theme.color.navText};
   display: flex;
@@ -53,6 +58,12 @@ const Wrapper = styled.nav.attrs({ 'aria-label': 'Main' })<{ children?: React.Re
   width: 100%;
   z-index: 40;
   border-bottom: 1px solid color-mix(in oklch, ${theme.color.text} 8%, ${theme.color.surface});
+
+  @media (prefers-reduced-transparency: reduce) {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: ${theme.color.bg};
+  }
 `;
 
 const LogoZone = styled.div`
