@@ -8,15 +8,25 @@ import styled, {
 } from 'styled-components';
 import stylisRTLPlugin from 'stylis-plugin-rtl';
 
-const IGNORED_PROPS = new Set(Object.getOwnPropertyNames(Function));
-const STYLED_TAGS = (Object.getOwnPropertyNames(styled) as (keyof typeof styled)[]).filter(
-  tag => !IGNORED_PROPS.has(String(tag))
-);
+type StyledFactory = ReturnType<typeof styled.div>;
 
-function createHijackedStyled(scopeId: string) {
+function hasWithConfig(value: unknown): value is StyledFactory {
+  return (
+    typeof value === 'function' && 'withConfig' in value && typeof (value as StyledFactory).withConfig === 'function'
+  );
+}
+
+/**
+ * Live editors need stable, scope-prefixed componentIds so multiple
+ * react-live previews on one page don't collide. In styled-components v7,
+ * tag shorthands (`styled.a`, `styled.div`, …) are Proxy getters — they are
+ * not own properties — so we must forward via Proxy rather than copying
+ * Object.getOwnPropertyNames(styled).
+ */
+function createHijackedStyled(scopeId: string): typeof styled {
   const getComponentId = (key: string) => `sc-${scopeId}-${key}`;
 
-  const hijacked = (...args: Parameters<typeof styled>) => {
+  const hijacked = ((...args: Parameters<typeof styled>) => {
     const target = args[0];
     const name =
       (typeof target === 'function' && (target.displayName || target.name)) ||
@@ -25,19 +35,27 @@ function createHijackedStyled(scopeId: string) {
     return styled(...args).withConfig({
       componentId: getComponentId(name),
     });
-  };
+  }) as typeof styled;
 
-  STYLED_TAGS.forEach(tag => {
-    Object.defineProperty(hijacked, tag, {
-      get() {
-        return styled[tag].withConfig({
-          componentId: getComponentId(String(tag)),
+  return new Proxy(hijacked, {
+    get(target, prop, receiver) {
+      if (typeof prop === 'symbol' || prop in target) {
+        return Reflect.get(target, prop, receiver);
+      }
+
+      const factory = Reflect.get(styled, prop);
+      if (hasWithConfig(factory)) {
+        return factory.withConfig({
+          componentId: getComponentId(String(prop)),
         });
-      },
-    });
-  });
+      }
 
-  return hijacked;
+      return factory;
+    },
+    has(target, prop) {
+      return prop in target || prop in styled;
+    },
+  });
 }
 
 export function createScope(id: string) {

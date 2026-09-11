@@ -36,7 +36,7 @@ Z-index: 10 (celebration/code), 20 (content/hero), 30 (sidebar), 40 (navbar).
 
 Gotchas (things you cannot discover by reading the code alone)
 - `docs.json` titles become URL hashes via `titleToDash`. Mismatches break sidebar links.
-- Live editor `scope.ts` derives component IDs from tag/component names. Counters cause hydration mismatches.
+- Live editor `scope.ts` derives component IDs from tag/component names. Counters cause hydration mismatches. v7 tag shorthands (`styled.a`) are Proxy getters, not own properties — hijack via Proxy, never `Object.getOwnPropertyNames(styled)`.
 - `${ClientComponent} &` selector interpolation calls `.toString()`, tripping RSC's client-reference guard; such components must stay `'use client'`. Currently `CodeBlock.tsx` (`${Note} &`).
 - Import code mixins (`codeTextMixin`, `editorMixin`) from `components/codeMixins.ts`, not `LiveEdit` (which pulls `react-live-runner` + `sucrase` into every consumer's client bundle).
 - `mix-blend-mode` and `filter` on children of `preserve-3d` flatten 3D. Use alpha / `color-mix` instead.
