@@ -104,7 +104,9 @@ const GlobalStyles = createGlobalStyle`
   .root {
     position: relative;
     overflow: auto;
-    scroll-behavior: smooth;
+    /* Native wheel/touch scroll; intentional smooth scrolling is done in
+       SidebarMenus handleSectionClick (respects prefers-reduced-motion). */
+    scroll-behavior: auto;
     height: 100dvh;
   }
 

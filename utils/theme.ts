@@ -82,8 +82,8 @@ export const lightTheme = {
     blogAccentSubtle: withAlpha(lightPalette[2], 0.08),
     blogAccentMuted: withAlpha(lightPalette[2], 0.4),
 
-    // Nav (glassmorphism)
-    navBg: 'oklch(1 0 0 / 0.85)',
+    // Nav (glass: translucent fill; blur lives on Navbar)
+    navBg: 'oklch(1 0 0 / 0.88)',
     navText: 'oklch(0.2 0.01 270)',
 
     // Code syntax, achromatic base tokens
@@ -228,7 +228,7 @@ export const darkColors: Partial<typeof lightTheme.color> = {
   linkUnderlineHover: 'oklch(1 0 0 / 0.45)',
   blogAccentSubtle: withAlpha(darkPalette[2], 0.12),
   blogAccentMuted: withAlpha(darkPalette[2], 0.25),
-  navBg: 'oklch(0.1 0.01 270 / 0.85)',
+  navBg: 'oklch(0.1 0.01 270 / 0.88)',
   navText: 'oklch(0.95 0 0)',
   codeBg: 'oklch(0.18 0.01 270)',
   codeText: `oklch(0.95 0.01 ${CODE_NEUTRAL_DARK})`,
