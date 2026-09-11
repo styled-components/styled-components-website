@@ -75,7 +75,8 @@ function handleSectionClick(e: React.MouseEvent<HTMLAnchorElement>, hash: string
 
   e.preventDefault();
   history.pushState(null, '', `#${hash}`);
-  target.scrollIntoView({ block: 'start' });
+  const prefersReduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  target.scrollIntoView({ block: 'start', behavior: prefersReduced ? 'auto' : 'smooth' });
 }
 
 // ---------------------------------------------------------------------------

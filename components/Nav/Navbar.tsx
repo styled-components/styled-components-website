@@ -37,8 +37,8 @@ export default function Navbar({ onSideToggle, isSideFolded }: NavbarProps) {
 const Wrapper = styled.nav.attrs({ 'aria-label': 'Main' })<{ children?: React.ReactNode }>`
   align-items: center;
   background-color: ${theme.color.navBg};
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  /* No backdrop-filter: blur over a scrolling .root forces expensive
+     per-frame layer repaints and was a major source of vertical scroll jank. */
   box-sizing: border-box;
   color: ${theme.color.navText};
   display: flex;
