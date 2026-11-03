@@ -106,6 +106,8 @@ import { prefixPlugin, rscPlugin, rtlPlugin } from 'styled-components/plugins';
 </StyleSheetManager>
 ```
 
+In server components (v7), a `StyleSheetManager` applies only to the server components rendered inside it, so a manager in a Next.js layout does not style its pages. Use [`configureServerStyles`](#configureserverstyles-v7) to give every server component the same plugins; client components take plugins from a `StyleSheetManager` rendered on the client.
+
 The examples below apply to v6.
 
 For example if your app is intended for legacy browsers, you may want to enable vendor prefixing for your styles:

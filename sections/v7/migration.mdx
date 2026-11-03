@@ -58,6 +58,8 @@ The `enableVendorPrefixes` prop and the runtime vendor prefixer have been remove
 +<StyleSheetManager plugins={[rscPlugin]}>
 ```
 
+In server components, a layout manager does not style your pages, so do not carry `<StyleSheetManager stylisPlugins={[stylisPluginRSC]}>` in `app/layout.tsx` over to v7. Call `configureServerStyles({ plugins: [rscPlugin] })` at the top level of the root layout file instead (see [Plugins in server components](#plugins-in-server-components)).
+
 `stylis-plugin-rtl` is replaced by the first-party `rtlPlugin`. Custom stylis plugins authored against the v6 middleware contract no longer load and must port to the new `SCPlugin` shape. See [Plugins moved to a dedicated subpath](#plugins-moved-to-a-dedicated-subpath) for details and authoring guidance.
 
 ### Global styles emit once per component

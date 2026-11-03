@@ -1,0 +1,28 @@
+import Table, { Row, Column } from 'components/Table'
+import Code from 'components/Code'
+
+### `configureServerStyles` (v7)
+
+Sets the plugins every server component starts from. Call it once, at the top level of your root layout file. It applies to server components only.
+
+<Table head={['Arguments', 'Description']}>
+  <Row>
+    <Column>
+      1. <Code>{'{ plugins }'}</Code>
+    </Column>
+    <Column>
+      An array of plugins from <Code>styled-components/plugins</Code> (or your
+      own) that every server component is styled with
+    </Column>
+  </Row>
+</Table>
+
+```tsx
+// app/layout.tsx
+import { configureServerStyles } from 'styled-components';
+import { rscPlugin } from 'styled-components/plugins';
+
+configureServerStyles({ plugins: [rscPlugin] });
+```
+
+The call reaches every page, nested layout, and client-side navigation, including pages prerendered at build time. Make one call per app. A [`StyleSheetManager`](#stylesheetmanager) in a server component starts from these plugins; `plugins={[]}` drops them for its subtree. Client components take plugins from a `StyleSheetManager` rendered on the client. See [Plugins in server components](/docs/v7#plugins-in-server-components).

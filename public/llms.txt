@@ -289,7 +289,7 @@ The first argument dispatches on shape: a CSS property name (`'color'`, `'border
 Plugins live at `styled-components/plugins`. The `<StyleSheetManager>` prop is `plugins` (was `stylisPlugins`). First-party plugins:
 
 - `rtlPlugin` replaces `stylis-plugin-rtl`: swaps physical side properties, flips `left`/`right` keywords on `float` / `clear` / `text-align` / `caption-side`, mirrors 4-value shorthands. Logical properties pass through.
-- `rscPlugin` replaces the root `stylisPluginRSC` export: rewrites child-index selectors so RSC inline `<style>` tags do not shift indices.
+- `rscPlugin` replaces the root `stylisPluginRSC` export: rewrites child-index selectors so RSC inline `<style>` tags do not shift indices. In server components, apply it app-wide with `configureServerStyles` (see "Plugins in server components" below).
 - `prefixPlugin` is the opt-in replacement for `enableVendorPrefixes`. Covers only what still needs a prefix at React's JS API browser floor (Chrome 45 / Firefox 36 / Safari 9 / iOS 9 / Edge 12). Flexbox, transforms, transitions, animations, and gradients pass through; already-prefixed declarations are left alone.
 
 Import the type and the first-party plugins from the same subpath (not the package root):
@@ -310,6 +310,8 @@ import {
   <App />
 </StyleSheetManager>;
 ```
+
+In a client component tree (for example the style registry) or around one subtree, this manager is the way to apply plugins.
 
 Custom plugins are plain objects with a required `name` plus either or both of `rw` and `decl`. `rw` is a `SelectorTransform`: it runs on the fully-resolved selector after `&` substitution and namespace prepending, and returns a string or an array of selectors (one rule per entry). `decl` is a `DeclTransform`: it runs on every emitted `prop: value` pair and returns a `DeclResult`, an array of them (one declaration expands into several), or `undefined`/`void` to leave the pair unchanged. Plugins compose left-to-right; a later hook sees every result an earlier plugin emitted.
 
@@ -333,6 +335,28 @@ const remToPxPlugin: SCPlugin = {
 Legacy stylis middleware (a bare function): never runs; development builds warn once.
 
 Unused plugins tree-shake out of the consumer bundle.
+
+#### Plugins in server components
+
+In server components, a `<StyleSheetManager>` applies only to the server components rendered inside it. A manager in a Next.js layout styles the layout's own markup, not its pages. To give every server component the same plugins, call `configureServerStyles` once at the top level of the root layout file:
+
+```tsx
+// app/layout.tsx
+import { configureServerStyles } from 'styled-components';
+import { rscPlugin } from 'styled-components/plugins';
+
+configureServerStyles({ plugins: [rscPlugin] });
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // ...
+}
+```
+
+The call is a plain statement, not a component, so it reaches every page, nested layout, and client-side navigation, including pages prerendered at build time. Make one call per app: a later call replaces an earlier one. Do not put it in `instrumentation.ts`, because Next.js does not run that file while prerendering pages at build time.
+
+A `<StyleSheetManager>` in a server component starts from these plugins; its own `plugins` prop replaces them, and `plugins={[]}` drops them for its subtree. `configureServerStyles` applies to server components only. Client components take plugins from a `<StyleSheetManager>` rendered on the client, such as the one in your registry.
+
+Placing a layout manager to style every page (the v6 `stylisPluginRSC` guidance) has been removed in favor of `configureServerStyles`.
 
 ### Other notable changes
 
@@ -781,7 +805,7 @@ These filter by element type, so injected sibling elements are ignored.
 
 Alternative: `stylisPluginRSC` automatically rewrites child-index selectors at compile time:
 
-In v7 this plugin moved to `styled-components/plugins` as `rscPlugin`, and the prop is `plugins` instead of `stylisPlugins`. The example below is for v6.4.
+In v7 this plugin moved to `styled-components/plugins` as `rscPlugin`, and the prop is `plugins` instead of `stylisPlugins`. In v7 a layout manager does not reach pages; use `configureServerStyles` (see "Plugins in server components" above). The example below is for v6.4.
 
 ```tsx
 import { StyleSheetManager, stylisPluginRSC } from 'styled-components';
@@ -812,7 +836,7 @@ Browser support: CSS Selectors Level 4 `of S` syntax. Chrome 111+, Firefox 113+,
 
 1. Replace `ThemeProvider` theming with `createTheme()` CSS variables. `p.theme` is undefined in RSC since there's no React context
 2. Dynamic prop interpolations (`${p => p.$color}`) work fine in RSC, no changes needed. Consider data attributes for discrete variants (fewer generated classes)
-3. Replace `:first-child`/`:nth-child()` with `:first-of-type`/`:nth-of-type()`, or add `stylisPluginRSC` (v6.4) / `rscPlugin` from `styled-components/plugins` (v7)
+3. Replace `:first-child`/`:nth-child()` with `:first-of-type`/`:nth-of-type()`, or add `stylisPluginRSC` (v6.4) / `rscPlugin` from `styled-components/plugins` passed to `configureServerStyles` in the root layout (v7)
 4. Remove `'use client'` from files that only contain styled component definitions; they work in server components natively
 5. Keep `'use client'` on components that use hooks, event handlers, or browser APIs
 6. The SSR registry (`ServerStyleSheet` + `useServerInsertedHTML`) is still needed for client components in the tree; RSC handles server components automatically
