@@ -24,16 +24,31 @@ Replaces `stylis-plugin-rtl` for users coming from v6:
 
 Rewrites child-index selectors so they ignore inline `<style>` tags emitted by React Server Components. Without it, `:first-child` / `:last-child` / `:nth-child()` don't match the elements you'd expect inside a server component, because RSC injects an inline `<style>` ahead of each affected component.
 
+Use this in apps that render via `react-server-dom-*` (Next.js App Router server components, Vite RSC plugins, etc). In server components, pass it to `configureServerStyles` (see [Plugins in server components](#plugins-in-server-components)).
+
+### Plugins in server components
+
+In server components, a `<StyleSheetManager>` applies only to the server components rendered inside it. A manager in a Next.js layout styles the layout's own markup, not its pages. To give every server component the same plugins, call `configureServerStyles` once at the top level of your root layout file:
+
 ```tsx
-import { StyleSheetManager } from 'styled-components';
+// app/layout.tsx
+import { configureServerStyles } from 'styled-components';
 import { rscPlugin } from 'styled-components/plugins';
 
-<StyleSheetManager plugins={[rscPlugin]}>
-  <App />
-</StyleSheetManager>
+configureServerStyles({ plugins: [rscPlugin] });
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // ...
+}
 ```
 
-Use this in apps that render via `react-server-dom-*` (Next.js App Router server components, Vite RSC plugins, etc).
+The call is a plain statement, not a component, so it reaches every page, nested layout, and client-side navigation, including pages prerendered at build time. Make one call per app: a later call replaces an earlier one.
+
+Do not put it in `instrumentation.ts`. Next.js does not run that file while prerendering pages at build time, so prerendered pages would miss the plugins.
+
+A `<StyleSheetManager>` in a server component starts from these plugins; its own `plugins` prop replaces them, and `plugins={[]}` drops them for its subtree. `configureServerStyles` applies to server components only. Client components take plugins from a `<StyleSheetManager>` rendered on the client, such as the one in your registry.
+
+Placing a layout manager to style every page (the v6 `stylisPluginRSC` guidance) has been removed in favor of `configureServerStyles`.
 
 ### `prefixPlugin`
 
