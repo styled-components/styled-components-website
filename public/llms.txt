@@ -115,7 +115,7 @@ const Row = styled.View`
 `;
 ```
 
-`:not()` accepts a single pseudo-state or a single attribute selector. `:has()` accepts a styled-component reference (matches when that component appears as a descendant) or a single attribute selector. Complex inner arguments (compound selectors, combinators, selector lists) warn in dev and don't match.
+`:not()` accepts a single pseudo-state or a single attribute selector, and either can follow other pseudo-classes in a chain (`&:hover:not([data-busy])`); `:not()` of a class does not work on native. Pseudo-classes chain (`&:active:not(:disabled)`), `&:disabled`, `&:enabled`, `&:read-only` and `&:read-write` read the props you pass, and `:hover` / `:focus` / `:active` follow the live state only `Pressable` supplies (skipped with a dev warning on `View` and `Text`). `:has()` accepts a styled-component reference (matches when that component appears as a descendant) or a single attribute selector. Complex inner arguments (compound selectors, combinators, selector lists) warn in dev and don't match.
 
 Tree-structural pseudos work on native: `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, plus the functional `:nth-child(<an+b>)` / `:nth-of-type(<an+b>)` / `:nth-last-child(<an+b>)` / `:nth-last-of-type(<an+b>)` family with `odd` / `even` keywords. `:nth-child(<an+b> of S)` and `:nth-last-child(<an+b> of S)` filter the count by a styled-component reference or a single attribute selector (same simple-inner scope as `:has()`). Siblings need to be inside a styled-component parent for indexing to work; a non-styled wrapper in between resets the count.
 

@@ -76,7 +76,7 @@ const Toggle = styled.Pressable<{ 'aria-pressed'?: boolean }>`
 
 The same CSS works on web and native. Anchor pseudo-states with `&` (bare `:hover` parses as a descendant selector, not a state).
 
-**Pseudo-states.** `&:hover`, `&:focus`, `&:focus-visible`, `&:pressed`, `&:disabled`. Hover rides on Pressable's pointer events on RN 0.85+, but stock RN ships the W3C pointer-events hover path off by default, so `&:hover` rules compile but do not fire on device until that capability is enabled in your app's native feature-flag configuration.
+**Pseudo-states.** `&:hover`, `&:focus`, `&:focus-visible`, `&:pressed`, `&:disabled`, `&:enabled`, `&:read-only`, `&:read-write`. Pseudo-classes chain (`&:active:not(:disabled)`), and each member of a selector list is judged on its own. `:hover`, `:focus` and `:active` follow the live state only `Pressable` supplies, so on a `View` or `Text` those rules are skipped with a development warning. Hover rides on Pressable's pointer events on RN 0.85+, but stock RN ships the W3C pointer-events hover path off by default, so `&:hover` rules compile but do not fire on device until that capability is enabled in your app's native feature-flag configuration.
 
 **Attribute selectors.** The full CSS Selectors 4 grammar works on native:
 
@@ -100,7 +100,7 @@ const Row = styled.View`
 `;
 ```
 
-`:not()` accepts a single pseudo-state or a single attribute selector. `:has()` accepts a styled-component reference (matches when that component appears as a descendant) or a single attribute selector. Complex inner arguments warn in dev and don't match.
+`:not()` accepts a single pseudo-state or a single attribute selector, and either can follow other pseudo-classes in a chain (`&:hover:not([data-busy])`); `:not()` of a class does not work on native. `:has()` accepts a styled-component reference (matches when that component appears as a descendant) or a single attribute selector. Complex inner arguments warn in dev and don't match.
 
 **`:is()` and `:where()`.** Apply the rule to each listed state: `&:is(:hover, :focus)`.
 
@@ -215,7 +215,7 @@ These spec features pass through to react-native-web but do not render on React 
 - `position: fixed`
 - `text-indent`, `word-spacing`, `text-box-trim`, `text-spacing-trim`
 - `transform-style: preserve-3d` (basic `rotateX` / `rotateY` / `perspective` do work)
-- Form-state pseudos (`:invalid`, `:required`, `:read-only`, `:checked`)
+- Form-state pseudos (`:invalid`, `:required`, `:checked`)
 - View transitions
 
 Platform-conditional features (the matrix has the full story):

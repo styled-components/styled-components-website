@@ -592,7 +592,10 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
       ios: 'https://github.com/facebook/react-native/pull/56774',
     },
     summary:
-      'Android honors `vertical-align` on `Text`, `Paragraph`, and multi-line `TextInput`. iOS has no platform API for vertical alignment of attributed text; v7 dev-warns on iOS and suggests wrapping `<Text>` in a `View` with `justify-content` as a workaround. On rn-web, v7 maps box-positioning keywords (`top` / `middle` / `bottom`) to `align-content` so they actually shift the content; baseline-shifting keywords (`baseline | sub | super | text-top | text-bottom | <length>`) flow through unchanged. An upstream PR adds iOS support mirroring Android.',
+      "Android honors `vertical-align` on `Text`, `Paragraph`, and multi-line `TextInput`. iOS has no platform API for vertical alignment of attributed text; v7 dev-warns on `Text` and `TextInput` on iOS and, for `Text`, suggests wrapping it in a `View` with `justify-content` as a workaround (`TextInput` has none). On rn-web, `top` / `middle` / `bottom` position the content within the box, including text inside `styled.Text`, wherever a rule styles the component's own element (`&:hover`, attribute selectors, `@media`); rules on descendants, pseudo-elements and global styles keep plain browser `vertical-align`, as do baseline-shifting values (`baseline | sub | super | text-top | text-bottom | <length>`). A later `vertical-align: baseline` undoes the alignment. An upstream PR adds iOS support mirroring Android.",
+    caveats: [
+      'On rn-web the alignment needs a browser from 2024 or later (Chrome 123, Firefox 125, Safari 17.4); older browsers ignore it.',
+    ],
   },
   {
     id: 'box-shadow',
@@ -685,12 +688,13 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
   },
   {
     id: 'form-state',
-    title: 'Form-state selectors (:invalid, :required, :read-only)',
+    title: 'Form-state selectors (:invalid, :required)',
     category: 'selectors',
     caniuseId: 'css-in-out-of-range',
     nativeV6: 'no',
     nativeV7: 'no',
-    summary: "Pass-through on web. React Native's `TextInput` does not implement form-state pseudos.",
+    summary:
+      "Pass-through on web. React Native's `TextInput` does not implement form-state pseudos such as `:invalid`, `:required`, `:user-valid` and `:placeholder-shown`; use component state. `:read-only` and `:read-write` are supported, see their own row.",
   },
   {
     id: 'combinators',
@@ -732,11 +736,43 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
   },
   {
     id: 'pseudo-disabled',
-    title: '&:disabled',
+    title: '&:disabled / &:enabled',
     category: 'selectors',
     nativeV6: 'no',
     nativeV7: 'yes',
-    summary: 'v7 implements `&:disabled` on React Native via existing disabled-state surfaces.',
+    summary:
+      'On iOS and Android, each component follows its own rule for "disabled": `Pressable` and custom components read the `disabled` prop; `TouchableOpacity` and `Text` read `disabled`, else `aria-disabled`, else `accessibilityState.disabled`; `TouchableHighlight` reads `disabled`, else `accessibilityState.disabled`; `Switch` reads `disabled` (and `accessibilityState.disabled` on Android); `TextInput` reads `disabled` or `aria-disabled`, which also makes the input uneditable and unfocusable. `&:enabled` matches every element that is not disabled, including `View` and `Text`. On the web, `Pressable`, the Touchables, `Switch`, `Text` and `TextInput` match from `disabled`, and any element rendered with `aria-disabled="true"` also matches `&:disabled`.',
+    caveats: [
+      'A `transition` does not animate a change between `:disabled` and `:enabled`; the values switch at once.',
+      '`accessibilityState.disabled` alone does not match on the web, and `aria-disabled` alone does not match `Pressable`, `TouchableHighlight`, `Switch` or `View` on iOS and Android.',
+      'Your own component that shares a React Native name (a design system `Button`, say) follows the custom-component rule: the `disabled` prop.',
+      'Rules on `TouchableWithoutFeedback`, `TouchableNativeFeedback` and `Button` never apply on iOS and Android, since those components ignore the `style` they receive. `interactivity: inert` never matches `:disabled`.',
+    ],
+  },
+  {
+    id: 'pseudo-read-only-write',
+    title: '&:read-only / &:read-write',
+    category: 'selectors',
+    caniuseId: 'css-read-only-write',
+    nativeV6: 'no',
+    nativeV7: 'yes',
+    summary:
+      "On iOS and Android, a `TextInput` is `:read-write` while it can be edited: not disabled, not `aria-readonly`, and editable by React Native's own rules (`readOnly` wins over `editable`). A custom component is `:read-write` only when it is not disabled and you pass `readOnly={false}`, or `editable={true}` without `readOnly`. Every other element, including `View`, `Text` and `Pressable`, is `:read-only`. On the web, a `TextInput` given `aria-readonly={false}` stays editable, as on iOS and Android.",
+  },
+  {
+    id: 'pseudo-chains',
+    title: 'Chained pseudo-classes and selector lists',
+    category: 'selectors',
+    nativeV6: 'no',
+    nativeV7: 'partial',
+    summary:
+      'Pass-through on web. On iOS and Android, pseudo-classes chain (`&:active:not(:disabled)`, `&:hover:enabled`) and a chained rule applies only when every part matches. A chain can start with an attribute or position selector (`&[aria-pressed="true"]:hover:not(:disabled)`). In a selector list (`&:hover, & .icon`) each member is judged on its own: supported members apply and an unsupported member is skipped with a development warning naming it.',
+    caveats: [
+      '`:active`, `:hover` and `:focus` follow the live state only `Pressable` (or a custom component forwarding its style to one) supplies. On `View`, `Text` and other elements, the base styles apply, those rules are skipped, and a development warning names the elements that support them. A rule inside a non-matching media query (web-only `@media (hover: hover)`) stays silent.',
+      'No pseudo-class rule applies on `TouchableWithoutFeedback`, `TouchableNativeFeedback` or `Button`: they never apply the `style` you give them. Your own component named `Button` or `Text` follows the custom-component rules.',
+      'A pseudo-class rule applies after any attribute-selector rule (`&[data-x]`) whatever the source order; in a browser, source order decides between rules of equal specificity.',
+      'Skipped on iOS and Android with a development warning while the web applies them: `:not()` of a class (`&:hover:not(.icon)`) and `:not()` of an attribute after a position selector (`&:first-child:hover:not([data-x])`).',
+    ],
   },
   {
     id: 'pseudo-before-after',
@@ -924,9 +960,11 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'partial',
     summary:
-      'Single-argument `:not()` works on both versions on web. The selector-list form `:not(.a, .b, [c])` tripped v6 when a comma appeared between simple selectors inside the parens (same family of bugs as `:is()` / `:has()`); v7 compiles each arm independently. On React Native, v7 supports single pseudo-states (`&:not(:hover)`, `&:not(:focus)`, `&:not(:pressed)`, `&:not(:disabled)`) and single attribute selectors with any operator (`&:not([disabled])`, `&:not([href^="https"])`).',
+      'Single-argument `:not()` works on both versions on web. The selector-list form `:not(.a, .b, [c])` tripped v6 when a comma appeared between simple selectors inside the parens (same family of bugs as `:is()` / `:has()`); v7 compiles each arm independently. On React Native, v7 supports single pseudo-states (`&:not(:hover)`, `&:not(:focus)`, `&:not(:pressed)`, `&:not(:disabled)`) and single attribute selectors with any operator (`&:not([disabled])`, `&:not([href^="https"])`). `:not()` of a pseudo-class chains after other pseudo-classes (`&:active:not(:disabled)`), and `:not()` of an attribute can sit anywhere in a chain that starts with a pseudo-class or an attribute (`&:hover:not([data-x])`).',
     caveats: [
+      'Not supported on iOS and Android, skipped with a development warning while the web applies them: `:not()` of a class (`&:hover:not(.icon)`, native elements have no class names) and `:not()` of an attribute after a position selector (`&:first-child:hover:not([data-x])`).',
       'Compound, nested, and selector-list inner arguments are not supported on native (`:not([a][b])`, `:not(:hover, :focus)`, `:not(.foo .bar)` all warn).',
+      'A `:not()` holding a plain selector (`&:not([data-on])`) adds no specificity on the web, so a later rule wins; a negated pseudo-class (`&:not(:hover)`) keeps the weight of `&:hover`.',
     ],
   },
   {
