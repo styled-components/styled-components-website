@@ -741,10 +741,10 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'yes',
     summary:
-      'On iOS and Android, each component follows its own rule for "disabled": `Pressable` and custom components read the `disabled` prop; `TouchableOpacity` and `Text` read `disabled`, else `aria-disabled`, else `accessibilityState.disabled`; `TouchableHighlight` reads `disabled`, else `accessibilityState.disabled`; `Switch` reads `disabled` (and `accessibilityState.disabled` on Android); `TextInput` reads `disabled` or `aria-disabled`, which also makes the input uneditable and unfocusable. `&:enabled` matches every element that is not disabled, including `View` and `Text`. On the web, `Pressable`, the Touchables, `Switch`, `Text` and `TextInput` match from `disabled`, and any element rendered with `aria-disabled="true"` also matches `&:disabled`.',
+      'On iOS and Android, each component follows its own rule for "disabled": `Pressable` and custom components read the `disabled` prop; `TouchableOpacity` and `Text` read `disabled`, else `aria-disabled`, else `accessibilityState.disabled`; `TouchableHighlight` reads `disabled`, else `accessibilityState.disabled`; `Switch` reads `disabled` (and `accessibilityState.disabled` on Android); `TextInput` reads `disabled` or `aria-disabled`, which also makes the input uneditable and unfocusable. `&:enabled` matches every element that is not disabled, including `View` and `Text`. On rn-web, `Pressable`, the Touchables, `Switch`, `Text` and `TextInput` match from `disabled`, and any element rendered with `aria-disabled="true"` also matches `&:disabled`.',
     caveats: [
       'A `transition` does not animate a change between `:disabled` and `:enabled`; the values switch at once.',
-      '`accessibilityState.disabled` alone does not match on the web, and `aria-disabled` alone does not match `Pressable`, `TouchableHighlight`, `Switch` or `View` on iOS and Android.',
+      '`accessibilityState.disabled` alone does not match on rn-web, and `aria-disabled` alone does not match `Pressable`, `TouchableHighlight`, `Switch` or `View` on iOS and Android.',
       'Your own component that shares a React Native name (a design system `Button`, say) follows the custom-component rule: the `disabled` prop.',
       'Rules on `TouchableWithoutFeedback`, `TouchableNativeFeedback` and `Button` never apply on iOS and Android, since those components ignore the `style` they receive. `interactivity: inert` never matches `:disabled`.',
     ],
@@ -757,7 +757,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'yes',
     summary:
-      "On iOS and Android, a `TextInput` is `:read-write` while it can be edited: not disabled, not `aria-readonly`, and editable by React Native's own rules (`readOnly` wins over `editable`). A custom component is `:read-write` only when it is not disabled and you pass `readOnly={false}`, or `editable={true}` without `readOnly`. Every other element, including `View`, `Text` and `Pressable`, is `:read-only`. On the web, a `TextInput` given `aria-readonly={false}` stays editable, as on iOS and Android.",
+      "On iOS and Android, a `TextInput` is `:read-write` while it can be edited: not disabled, not `aria-readonly`, and editable by React Native's own rules (`readOnly` wins over `editable`). A custom component is `:read-write` only when it is not disabled and you pass `readOnly={false}`, or `editable={true}` without `readOnly`. Every other element, including `View`, `Text` and `Pressable`, is `:read-only`. On rn-web, a `TextInput` given `aria-readonly={false}` stays editable, as on iOS and Android.",
   },
   {
     id: 'pseudo-chains',
@@ -771,7 +771,6 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
       '`:active`, `:hover` and `:focus` follow the live state only `Pressable` (or a custom component forwarding its style to one) supplies. On `View`, `Text` and other elements, the base styles apply, those rules are skipped, and a development warning names the elements that support them. A rule inside a non-matching media query (web-only `@media (hover: hover)`) stays silent.',
       'No pseudo-class rule applies on `TouchableWithoutFeedback`, `TouchableNativeFeedback` or `Button`: they never apply the `style` you give them. Your own component named `Button` or `Text` follows the custom-component rules.',
       'A pseudo-class rule applies after any attribute-selector rule (`&[data-x]`) whatever the source order; in a browser, source order decides between rules of equal specificity.',
-      'Skipped on iOS and Android with a development warning while the web applies them: `:not()` of a class (`&:hover:not(.icon)`) and `:not()` of an attribute after a position selector (`&:first-child:hover:not([data-x])`).',
     ],
   },
   {
@@ -964,7 +963,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     caveats: [
       'Not supported on iOS and Android, skipped with a development warning while the web applies them: `:not()` of a class (`&:hover:not(.icon)`, native elements have no class names) and `:not()` of an attribute after a position selector (`&:first-child:hover:not([data-x])`).',
       'Compound, nested, and selector-list inner arguments are not supported on native (`:not([a][b])`, `:not(:hover, :focus)`, `:not(.foo .bar)` all warn).',
-      'A `:not()` holding a plain selector (`&:not([data-on])`) adds no specificity on the web, so a later rule wins; a negated pseudo-class (`&:not(:hover)`) keeps the weight of `&:hover`.',
+      'A `:not()` holding a plain selector (`&:not([data-on])`) adds no specificity on rn-web, so a later rule wins; a negated pseudo-class (`&:not(:hover)`) keeps the weight of `&:hover`.',
     ],
   },
   {
