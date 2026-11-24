@@ -400,9 +400,9 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     category: 'functions',
     caniuseId: 'css-env-function',
     nativeV6: 'no',
-    nativeV7: 'partial',
+    nativeV7: 'yes',
     summary:
-      'v7 supports `env()` per CSS Environment Variables Level 1 (recognized names, fallbacks, recursive fallback substitution). Safe-area insets currently resolve to 0 on React Native; until the runtime wires up `react-native-safe-area-context`, `env(safe-area-inset-top, 47px)` returns 0 because recognized names ignore their fallback per spec.',
+      'v7 supports `env()` per CSS Environment Variables Level 1 (recognized names, fallbacks, recursive fallback substitution). On React Native, `env(safe-area-inset-top | right | bottom | left)` reads ambient safe-area insets from optional peer `react-native-safe-area-context` under `<SafeAreaProvider>`, or from `<SafeAreaInsetsProvider>` exported by `styled-components/native` (which works without the peer and overrides the automatic read). Without any source, recognized names resolve to 0; on rn-web the browser supplies its own `env()` values.',
   },
   {
     id: 'custom-props',
@@ -641,7 +641,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'no',
     summary:
-      "Pass-through on web. Not implemented on React Native; neither stock RN nor v7 has a same-document or cross-document view-transition surface. Use `react-native-reanimated`'s shared-element APIs or `LayoutAnimation` for analog effects.",
+      "Pass-through on web. In v7 on web, `@view-transition` emits as written, a component setting `view-transition-name` automatically receives its class as `view-transition-class` (so `::view-transition-group(*${Card})` in `createGlobalStyle` targets it directly), `view-transition-class: ${Card}` emits the component's class, and `::view-transition*` works under a `StyleSheetManager` namespace. Not implemented on React Native; use `react-native-reanimated`'s shared-element APIs or `LayoutAnimation` for analog effects.",
   },
   {
     id: 'scroll-snap',
@@ -822,7 +822,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     iosStock: 'no',
     androidStock: 'no',
     summary:
-      'Pass-through on web (Chrome 139+). v7 maps `corner-shape: round` to iOS circular corners and `squircle` to the Apple-smooth continuous curve; other contours (`bevel`, `notch`, `scoop`, out-of-band superellipse) warn and drop. Android renders circular corners regardless. Stock RN has no corner-shape surface on either platform.',
+      'Pass-through on web (Chrome 139+). In v7 on native, `round` and `square` render accurately on iOS and Android (`square` resolves per corner and can mix with one curve, e.g. `corner-shape: square round`); `squircle` maps to iOS continuous corners (an approximation; Android drops `borderCurve` and warns). Concave and beveled contours (`bevel`, `notch`, `scoop`, out-of-band superellipse) warn and drop. Stock RN has no corner-shape surface on either platform.',
   },
   {
     id: 'box-sizing',
@@ -924,11 +924,11 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'yes',
     summary:
-      'Covers `:nth-child`, `:nth-of-type`, `:nth-last-child`, `:nth-last-of-type`. v6 miscounted child positions under RSC because injected `<style data-styled>` tags shift the index; v6.4 ships an opt-in `stylisPluginRSC` that rewrites these selectors using `of S` to exclude SC style tags. v7 rewrites them by default in RSC. On React Native, v7 matches the full `<an+b>` grammar plus `odd` / `even` against the live sibling position. The `<an+b of <selector>>` form is also supported on native: the inner accepts a styled-component reference or a single attribute selector (same simple-inner scope as `:has()`).',
+      'Covers `:nth-child`, `:nth-of-type`, `:nth-last-child`, `:nth-last-of-type`. v6 miscounted child positions under RSC because inline `<style data-styled>` tags shift the index; v6.4+ ships an opt-in `stylisPluginRSC` that rewrites these selectors using `of S` to exclude SC style tags. In v7, server component styles route through the style registry with no inline `<style>` tags, so child-index selectors work natively in RSC without rewriting. On React Native, v7 matches the full `<an+b>` grammar plus `odd` / `even` against the live sibling position (including regular React Native elements inside a styled parent). The `<an+b of <selector>>` form is also supported on native: the inner accepts a styled-component reference or a single attribute selector (same simple-inner scope as `:has()`).',
     caveats: [
-      'On v6 RSC: import `stylisPluginRSC` and pass it to `StyleSheetManager.stylisPlugins`, or fall back to `:nth-of-type()` (universally compatible).',
+      'On v6 RSC: import `stylisPluginRSC` and pass it to `configureServerStyles` (v6.7+) or `StyleSheetManager.stylisPlugins` (v6.4–v6.6), or fall back to `:nth-of-type()` (universally compatible).',
       '`:nth-child(N of S)` itself needs Chrome 111+, Firefox 113+, Safari 9+.',
-      'On native, siblings outside a styled-component parent do not contribute to the count.',
+      'On native, siblings need a styled-component parent for indexing to work; regular React Native elements inside that parent count as siblings.',
       'On native, the `of S` inner does not accept compound selectors, combinators, or descendant chains; complex inners warn and fall through.',
     ],
   },
@@ -939,8 +939,10 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'yes',
     summary:
-      'Same RSC child-index shift as :nth-child(): inline `<style data-styled>` tags break first/last/only counts under v6 unless `stylisPluginRSC` is wired up. v7 rewrites them automatically. On React Native, v7 evaluates them against the live sibling index.',
-    caveats: ['Prefer `:first-of-type` / `:last-of-type` / `:only-of-type` if `stylisPluginRSC` is not available.'],
+      'Same RSC child-index shift as `:nth-child()` on v6: inline `<style data-styled>` tags break first/last/only counts under v6 unless `stylisPluginRSC` is wired up. In v7, server component styles route through the registry with no inline `<style>` tags, so they match natively in RSC. On React Native, v7 evaluates them against the live sibling index.',
+    caveats: [
+      'On v6 RSC, prefer `:first-of-type` / `:last-of-type` / `:only-of-type` if `stylisPluginRSC` is not available.',
+    ],
   },
   {
     id: 'first-last-only-of-type',
@@ -949,7 +951,7 @@ export const COMPAT_ENTRIES: CompatEntry[] = [
     nativeV6: 'no',
     nativeV7: 'yes',
     summary:
-      'Type-scoped structural pseudos are unaffected by injected `<style data-styled>` tags, since style elements are a different element type. Universally compatible alternative to the child-index family under RSC on both versions. On native, v7 evaluates them against the per-type sibling index.',
+      'Type-scoped structural pseudos are unaffected by v6 inline `<style data-styled>` tags, since style elements are a different element type. Universally compatible alternative to the child-index family under v6 RSC. On native, v7 evaluates them against the per-type sibling index.',
   },
   {
     id: 'not',

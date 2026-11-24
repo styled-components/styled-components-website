@@ -10,14 +10,15 @@ allows you to use styled-components with React DOM's various SSR APIs.
 
 ### React Server Components | v6.3.0+
 
-styled-components now natively supports React Server Components (RSC) with zero configuration.
+styled-components natively supports React Server Components (RSC) without needing `'use client'` on styled component modules.
 
 Key behaviors in RSC:
 
-- No `'use client'` directive required
-- `ThemeProvider` becomes a pass-through component (no context in RSC)
-- `StyleSheetManager` works in RSC as of v6.4 (`stylisPlugins`, `shouldForwardProp`, and `nonce` are applied)
-- CSS is automatically injected inline via `<style>` tags
+- No `'use client'` directive required on styled components
+- `ThemeProvider` becomes a pass-through component (no context in RSC); use [`createTheme()`](/docs/api#createtheme) instead
+- `StyleSheetManager` works in RSC as of v6.4 (`stylisPlugins` / `plugins`, `namespace`, and `shouldForwardProp` apply)
+- In v6.3–v6.7, server components emit inline `<style>` tags automatically. In **v7**, server component styles route through your style registry (`ServerStyleSheet` + `StyleSheetManager`) with no inline `<style>` tags: wrap `<html>` in the registry in your root layout, `:first-child` / `:nth-child()` / sibling selectors work natively without a plugin, and styles survive `<Suspense>` reveals and route transitions.
+- Server-side rendering requires the Node.js runtime (edge runtime is not supported). In Next.js, do not list `styled-components` in `serverExternalPackages`.
 
 Best practices for RSC:
 
@@ -26,36 +27,26 @@ Best practices for RSC:
 | Use [`createTheme()`](/docs/api#createtheme) for CSS variable theming | Rely on `ThemeProvider` / `p.theme` (no context in RSC) |
 | Use data attributes for discrete variants (`&[data-size='lg']`) | Generate many classes via prop interpolations for a finite set of states |
 | Use CSS custom properties via inline `style` for dynamic per-instance values | Use `@import` in `createGlobalStyle` (silently fails in production) |
-| Use `:first-of-type` / `:nth-of-type()` | Use `:first-child` / `:nth-child()` (see [caveat below](#child-index-selector-caveat)) |
+| Wrap `<html>` in your style registry in v7 (or use `:first-of-type` / `stylisPluginRSC` in v6) | Render server styled components outside the registry in v7 |
 
-#### Child-index selector caveat
+#### Child-index selector caveat | v6 only
 
-RSC emits inline `<style>` tags as siblings of your styled elements. These tags are real DOM children, so `:first-child`, `:last-child`, and `:nth-child()` count them, shifting indices and breaking your styles. Use `:first-of-type` / `:nth-of-type()` instead, which filter by element type and are immune to this issue.
+In v6.3–v6.7, RSC emits inline `<style>` tags as siblings of your styled elements. These tags are real DOM children, so `:first-child`, `:last-child`, and `:nth-child()` count them, shifting indices and breaking your styles. Use `:first-of-type` / `:nth-of-type()` instead, which filter by element type and are immune to this issue.
 
-If you need `:nth-child()` specifically, use the built-in [`stylisPluginRSC`](/docs/api#stylesheetmanager) plugin (v6.4+) which rewrites these selectors to exclude styled-components style tags:
+If you need `:nth-child()` specifically on v6, use the built-in [`stylisPluginRSC`](/docs/api#stylesheetmanager) plugin (v6.4+) which rewrites these selectors to exclude styled-components style tags. In v6.7+, call `configureServerStyles` at the top level of your root layout so it reaches every page (a layout `<StyleSheetManager>` styles only the layout's own markup):
 
 ```tsx
-import { StyleSheetManager, stylisPluginRSC } from 'styled-components';
+// app/layout.tsx (v6.7+)
+import { configureServerStyles, stylisPluginRSC } from 'styled-components';
 
-// In your RSC layout (e.g. app/layout.tsx)
-<StyleSheetManager stylisPlugins={[stylisPluginRSC]}>
-  {children}
-</StyleSheetManager>
+configureServerStyles({ stylisPlugins: [stylisPluginRSC] });
 ```
+
+On v6.4–v6.6, wrap your layout in `<StyleSheetManager stylisPlugins={[stylisPluginRSC]}>`.
 
 This uses CSS Selectors Level 4 `of S` syntax ([browser support](https://caniuse.com/css-nth-child-of-s): Chrome 111+, Firefox 113+, Safari 9+). In unsupported browsers, the entire CSS rule is dropped, so only opt in if your audience supports it.
 
-In v7, import `rscPlugin` from the plugins subpath and call `configureServerStyles` once at the top level of your root layout file. A `StyleSheetManager` in a server component applies only to the components rendered inside it, so a manager in the layout would not reach your pages:
-
-```tsx
-// app/layout.tsx
-import { configureServerStyles } from 'styled-components';
-import { rscPlugin } from 'styled-components/plugins';
-
-configureServerStyles({ plugins: [rscPlugin] });
-```
-
-See [Plugins in server components](/docs/v7#plugins-in-server-components) for details.
+In **v7**, inline `<style>` tags in server component output are removed in favor of the style registry, and `stylisPluginRSC` has been removed: `:first-child`, `:nth-child()`, sibling selectors, and SVG children work natively with no plugin and no browser floor. For other server-component plugins or namespaces in v7 (such as `rtlPlugin` or `namespace: '#app'`), call `configureServerStyles({ plugins, namespace })` at the top level of your root layout file; see [Plugins and namespaces in server components](/docs/v7#plugins-and-namespaces-in-server-components).
 
 #### Theming with CSS custom properties
 
@@ -158,9 +149,11 @@ If rendering fails for any reason it's a good idea to use `try...catch...finally
 
 #### App Router (recommended)
 
-With styled-components v6.3.0+, styled components defined in Server Components work without a `'use client'` directive or registry setup. A registry is still needed to collect styles from Client Components during SSR. If you use `:first-child` or `:nth-child()` selectors, add `stylisPluginRSC` (v6.4, via `StyleSheetManager` in your layout) or `rscPlugin` (v7, via `configureServerStyles` in your root layout) (see [child-index selector caveat](#child-index-selector-caveat) above). See the [React Server Components](#react-server-components) section above for best practices.
+In **v7**, add a style registry (`ServerStyleSheet` + `useServerInsertedHTML`) wrapping `<html>` in your root layout. It collects styles from both Server Components and Client Components in tree order, so no inline `<style>` tags are emitted and `:first-child` / `:nth-child()` work natively without a plugin. If you pass `plugins` or `namespace` for client components on `<StyleSheetManager>`, render that manager in the browser as well (not behind `if (typeof window !== 'undefined')`), or wrap the registry in a separate client `<StyleSheetManager>`.
 
-With styled-components v6.0-6.2, you need to put a styled-components registry in one of your layout files, as [described in Next.js docs](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components). The `'use client'` directive is required, so styled-components will appear in your client bundle.
+In **v6.3–v6.7**, styled components in Server Components emit inline `<style>` tags without requiring a registry; a registry is still needed to collect styles from Client Components during SSR. If you use `:first-child` or `:nth-child()` selectors on v6, add `stylisPluginRSC` (via `configureServerStyles` in v6.7+, or `StyleSheetManager` in v6.4–v6.6; see [child-index selector caveat](#child-index-selector-caveat) above). See the [React Server Components](#react-server-components) section above for best practices.
+
+With styled-components v6.0–6.2, you need to put a styled-components registry in one of your layout files, as [described in Next.js docs](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components). The `'use client'` directive is required, so styled-components will appear in your client bundle.
 
 #### Pages Router
 

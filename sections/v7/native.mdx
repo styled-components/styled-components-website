@@ -33,7 +33,7 @@ const Card = styled.View`
 - **`text-align: start | end | match-parent`** resolves correctly under RTL on both platforms. **`direction: ltr | rtl`** controls `<Text>` bidi.
 - **`aspect-ratio`** with bare ratio, slash form, `auto`, and the two-value `auto <ratio>` form.
 - **`transform`**: the function list RN parses (`translateX(10px)`, `rotate(45deg)`, `scale(2)`), plus `matrix(...)` with 9 or 16 values. Supply explicit units (`translateX(10px)`, not `translateX(10)`); `matrix3d()` and the 6-value `matrix()` form do not render on native. Top-level **`perspective: 1000px`** works; you don't need to put it inside a transform array yourself.
-- **`font-style: oblique`** falls back to italic; **`font-family`** recognizes the 13 generic CSS keywords (`system-ui`, `ui-*`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`).
+- **`font-style: oblique`** falls back to italic; **`font-family`** recognizes the 13 generic CSS keywords (`system-ui`, `ui-*`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`) and decodes CSS escapes in quoted and unquoted font names.
 - **`font-size`** accepts the full CSS keyword set (`xx-small`...`xxx-large`, `smaller`, `larger`) plus the full unit catalogue: viewport units (`vh`, `vw`, `svh`, `dvh`, `vi`, `vb`), container query units (`cqh`, `cqw`, `cqi`, `cqb`, `cqmin`, `cqmax`), font-relative (`em`, `rem`, `lh`, `rlh`), font-metric (`ex`, `cap`, `ch`, `ic` and `r`-prefixed), and absolute lengths (`pt`, `pc`, `in`, `cm`, `mm`, `Q`). **`letter-spacing`** accepts `em`, `rem`, `lh`, and `rlh`.
 - **`place-items`** and **`place-self`** for the align axis.
 - **`field-sizing: content`** auto-grows a `<TextInput>` to its content.
@@ -42,6 +42,7 @@ const Card = styled.View`
 - **`overscroll-behavior: contain | none`** disables overscroll on `ScrollView` / `FlatList`. **`scrollbar-width: none`** hides scroll indicators.
 - **`accent-color`** tints `<Switch>` (`auto` picks up the platform accent color).
 - **`styled.ScrollView`** on native defaults to `flex-shrink: 0` so explicit `width:` / `height:` pin reliably inside a flex parent. Override with `flex-shrink: 1` if you need it.
+- **`corner-shape`**: `round` and `square` render accurately on iOS and Android (`square` applies per corner and can mix with one curve, e.g. `corner-shape: square round`); `squircle` maps to iOS's continuous curve approximation (Android drops and warns); concave and beveled contours (`bevel`, `notch`, `scoop`) warn and drop.
 - **`attr(name <type>?, fallback?)`** reads the component's own props as typed CSS values and composes inside `calc()`.
 - **`sibling-index()` and `sibling-count()`** resolve an element's 1-indexed position and sibling total inside a styled parent, updating when children mount, unmount, or reorder.
 - **`display: grid`** with `grid-template-columns: repeat(N, 1fr)` plus `gap` lays direct styled children into N equal columns; `grid-column: span N` spans columns. Other track shapes and placement warn and fall back to a wrapping flex row.
@@ -51,8 +52,7 @@ const Card = styled.View`
 - **Scroll-driven animations** bind `@keyframes` to a styled `ScrollView` via `animation-timeline: scroll()` / `view()`, with named `scroll-timeline` and `animation-range`.
 - **CSS custom properties.** `--name: value` declarations cascade through styled descendants; `var(--name, fallback)` reads them back with the full CSS Variables L1 contract (fallbacks, nested resolution, cycle detection, case-sensitive names, quote-aware skip inside string values, `--foo: initial` resets). References resolve against the cascade inside every conditional bucket (`@media`, `@container`, `@supports`, attribute, pseudo-state, `:has()`, `:nth-child()`, combinator).
 - **`!important`.** Honored within the same component for base + every conditional bucket. The marker is stripped from the rendered value, beats normal declarations regardless of source order, and a `!important` shorthand propagates to every longhand. Importance flows through `var()` substitution and render-time resolvers. Web-aligned: a styled `!important` beats a runtime `style={{ ... }}` prop. `!important` inside `@keyframes` is ignored per CSS Animations. Cross-component cascade is not yet supported.
-
-**`env(safe-area-inset-*)` caveat.** The function parses correctly but currently resolves to 0; the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until that lands.
+- **`env(safe-area-inset-top | right | bottom | left)`.** Reads ambient safe-area insets automatically from optional peer `react-native-safe-area-context` when the tree is wrapped in `<SafeAreaProvider>`. To feed insets from another source (or without installing the peer), wrap a subtree in `SafeAreaInsetsProvider` from `styled-components/native`; the provided insets override the automatic read. Without any source, the names resolve to `0`. On `react-native-web`, `SafeAreaInsetsProvider` renders its children unchanged and `env(safe-area-inset-*)` uses the browser's own values.
 
 ### Selectors on React Native
 
@@ -76,7 +76,7 @@ const Toggle = styled.Pressable<{ 'aria-pressed'?: boolean }>`
 
 The same CSS works on web and native. Anchor pseudo-states with `&` (bare `:hover` parses as a descendant selector, not a state).
 
-**Pseudo-states.** `&:hover`, `&:focus`, `&:focus-visible`, `&:pressed`, `&:disabled`, `&:enabled`, `&:read-only`, `&:read-write`. Pseudo-classes chain (`&:active:not(:disabled)`), and each member of a selector list is judged on its own. `:hover`, `:focus` and `:active` follow the live state only `Pressable` supplies, so on a `View` or `Text` those rules are skipped with a development warning. Hover rides on Pressable's pointer events on RN 0.85+, but stock RN ships the W3C pointer-events hover path off by default, so `&:hover` rules compile but do not fire on device until that capability is enabled in your app's native feature-flag configuration.
+**Pseudo-states.** `&:hover`, `&:focus`, `&:focus-visible`, `&:pressed`, `&:disabled`, `&:enabled`, `&:read-only`, `&:read-write`. Pseudo-classes chain (`&:active:not(:disabled)`), and each member of a selector list is judged on its own. `styled.TextInput` also accepts a `disabled` prop (or `aria-disabled`), making it non-editable, unfocusable, announced as disabled, and matched by `&:disabled`. `:hover`, `:focus` and `:active` follow the live state only `Pressable` supplies, so on a `View` or `Text` those rules are skipped with a development warning. Hover rides on Pressable's pointer events on RN 0.85+, but stock RN ships the W3C pointer-events hover path off by default, so `&:hover` rules compile but do not fire on device until that capability is enabled in your app's native feature-flag configuration.
 
 **Attribute selectors.** The full CSS Selectors 4 grammar works on native:
 
@@ -104,7 +104,7 @@ const Row = styled.View`
 
 **`:is()` and `:where()`.** Apply the rule to each listed state: `&:is(:hover, :focus)`.
 
-**Tree-structural pseudos.** `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, and the functional `:nth-*(<an+b>)` family with `odd` / `even` keywords. `:nth-child(<an+b> of S)` and `:nth-last-child(<an+b> of S)` filter the count by a styled-component reference or a single attribute selector (same simple-inner forms `:has()` accepts). Siblings need to be inside a styled-component parent for indexing to work; a non-styled wrapper in between resets the count.
+**Tree-structural pseudos.** `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, and the functional `:nth-*(<an+b>)` family with `odd` / `even` keywords. `:nth-child(<an+b> of S)` and `:nth-last-child(<an+b> of S)` filter the count by a styled-component reference or a single attribute selector (same simple-inner forms `:has()` accepts). Siblings need to be inside a styled-component parent for indexing to work; regular React Native elements inside that parent count as siblings just as elements do in a browser.
 
 **Combinators between styled-component references.**
 
@@ -195,14 +195,14 @@ const Card = styled.View`
 </ThemeProvider>
 ```
 
-Web and native share the same theme contract. Nested `<ThemeProvider>` calls deep-merge on native so an inner override that only touches one leaf keeps the siblings it inherited.
+Web and native share the same theme contract, including inside `@keyframes` blocks (theme tokens update even while an animation is running). Nested `<ThemeProvider>` calls deep-merge on native so an inner override that only touches one leaf keeps the siblings it inherited.
 
 ### React Native Web
 
 Webpack, Vite, and Metro web targets automatically select v7's dedicated
 `react-native-web` build from the normal `styled-components/native` import. If
 your bundler does not select it, import
-`styled-components/native/web-bridge` directly.
+`styled-components/native/web-bridge` directly. On `react-native-web`, `onAnimationEnd` and `onTransitionEnd` fire on styled `View`, `Text`, `FlatList`, `SectionList`, and `VirtualizedList` primitives when their CSS animation or transition completes (`KeyboardAvoidingView` does not fire them; use an inner `View`).
 
 ### Limitations on native
 

@@ -89,3 +89,25 @@ const B = styled.div`
   }
 `
 ```
+
+### View Transitions and Container Names | v7+
+
+In v7, a component that sets `view-transition-name` automatically receives its own class as `view-transition-class`, so a rule in `createGlobalStyle` can target the component inside a view transition pseudo-element:
+
+```tsx
+const Card = styled.li`
+  view-transition-name: match-element;
+`;
+
+const Transitions = createGlobalStyle`
+  ::view-transition-group(*${Card}) {
+    animation-duration: 400ms;
+  }
+`;
+```
+
+`view-transition-class: ${Card}` and `container-name: ${Card}` also emit the component's class name so a component can be listed beside other names. Any `view-transition-class` you write yourself is kept as written.
+
+### Referencing a `'use client'` component from server styles | v7+
+
+A styled component defined in a `'use client'` module has no class a Server Component can read. When a Server Component's styles interpolate one (`${ClientCard}:hover &`, `@container ${ClientCard} (...)`), the selector, at-rule, or declaration holding it is left out of the server's CSS (with a development warning) while all other rules still apply. To target a component from server styles, define it in a module without `'use client'` and enable the build plugin (such as Next.js `compiler: { styledComponents: true }`) so the server and client graphs share one component id.

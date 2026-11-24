@@ -5,10 +5,10 @@ import Code from 'components/Code'
 
 A helper component for modifying how styles are processed for a given subtree. Supports compiler plugins, prop forwarding rules, vendor prefixing, and CSP nonces.
 
-> React Server Components: `StyleSheetManager` works in RSC environments (v6.4+); `stylisPlugins` and `shouldForwardProp` are applied even without React context. Other props (`sheet`, `target`, `disableCSSOMInjection`) have no effect in RSC. See the [RSC section](/docs/advanced#react-server-components) for details.
+> React Server Components: `StyleSheetManager` works in RSC environments (v6.4+); `stylisPlugins` (v6) / `plugins` (v7), `namespace`, and `shouldForwardProp` apply without React context. In v7, a server `StyleSheetManager` scopes only the server components rendered inside it (use [`configureServerStyles`](#configureserverstyles) for app-wide server defaults), and server component styles flow through the style registry (`target` and `nonce` on a nested manager apply in the browser, while SSR uses the registry's tag and nonce). See the [RSC section](/docs/advanced#react-server-components) for details.
 >
-> In v7, `stylisPlugins` is renamed to `plugins`; first-party plugins live at
-> `styled-components/plugins`. `disableCSSOMInjection` is removed, and
+> In v7, `stylisPlugins` is renamed to `plugins`; first-party plugins (`prefixPlugin`, `rtlPlugin`) live at
+> `styled-components/plugins`. `disableCSSOMInjection` and `stylisPluginRSC` are removed, and
 > `enableVendorPrefixes` is replaced by the opt-in `prefixPlugin`. See the
 > [v7 plugins guide](/docs/v7#plugins-moved-to-a-dedicated-subpath).
 
@@ -78,6 +78,15 @@ A helper component for modifying how styles are processed for a given subtree. S
 
   <Row>
     <Column>
+      <Code>namespace</Code>
+    </Column>
+    <Column>
+      Prepends a CSS selector to every generated rule to scope styles inside a container (e.g. <Code>#app</Code>). In v7, single-compound namespaces join onto root-anchored selectors (<Code>html.dark &amp;</Code>, <Code>:root</Code>, <Code>::view-transition-*</Code>) so they match when the namespace sits on <Code>&lt;html&gt;</Code>, and nested <Code>StyleSheetManager</Code>s inherit their parent's namespace (pass <Code>namespace=""</Code> to opt out).
+    </Column>
+  </Row>
+
+  <Row>
+    <Column>
       <Code>nonce (v6.4+)</Code>
     </Column>
     <Column>
@@ -99,14 +108,14 @@ In v7, use first-party plugins from the dedicated subpath:
 
 ```tsx
 import { StyleSheetManager } from 'styled-components';
-import { prefixPlugin, rscPlugin, rtlPlugin } from 'styled-components/plugins';
+import { prefixPlugin, rtlPlugin } from 'styled-components/plugins';
 
-<StyleSheetManager plugins={[prefixPlugin, rtlPlugin, rscPlugin]}>
+<StyleSheetManager plugins={[prefixPlugin, rtlPlugin]}>
   <App />
 </StyleSheetManager>
 ```
 
-In server components (v7), a `StyleSheetManager` applies only to the server components rendered inside it, so a manager in a Next.js layout does not style its pages. Use [`configureServerStyles`](#configureserverstyles-v7) to give every server component the same plugins; client components take plugins from a `StyleSheetManager` rendered on the client.
+In server components (v7), a `StyleSheetManager` applies only to the server components rendered inside it, so a manager in a Next.js layout does not style its pages. Use [`configureServerStyles`](#configureserverstyles) to give every server component the same plugins or namespace; client components take theirs from a `StyleSheetManager` that renders in both SSR and the browser.
 
 The examples below apply to v6.
 

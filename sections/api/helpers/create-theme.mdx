@@ -1,9 +1,9 @@
 import Code from 'components/Code'
 import Table, { Row, Column } from 'components/Table'
 
-### `createTheme` | v6.4 | web-only
+### `createTheme` | v6.4+
 
-A helper function that converts a plain theme object into one where every leaf value is a CSS custom property reference (`var(--prefix-path, fallback)`). This enables theming that works in both client components and React Server Components without relying on React context.
+A helper function that converts a plain theme object into one where every leaf value is a CSS custom property reference (`var(--prefix-path, fallback)`). Works in client components and React Server Components on the web (v6.4+), and on React Native in v7+.
 
 > `createTheme` is the recommended approach for theming in RSC environments where [`ThemeProvider`](/docs/api#themeprovider) has no effect (no React context available).
 
@@ -72,10 +72,17 @@ const Button = styled.button`
 `;
 ```
 
-Pass the theme object to [`ThemeProvider`](/docs/api#themeprovider) for stable class name hashes across themes. This prevents hydration mismatches when switching between light and dark mode:
+Pass the raw theme object (not the `createTheme` output) to [`ThemeProvider`](/docs/api#themeprovider) so `theme.GlobalStyle` emits the custom property declarations on `:root` without self-referential `var()` values:
 
 ```tsx
-<ThemeProvider theme={theme}>
+const rawTheme = {
+  colors: { primary: '#0070f3', accent: '#7928ca', text: '#1a1a1a' },
+  spacing: { sm: '8px', md: '16px', lg: '32px' },
+};
+const theme = createTheme(rawTheme);
+
+<ThemeProvider theme={rawTheme}>
+  <theme.GlobalStyle />
   <App />
 </ThemeProvider>
 ```

@@ -2,14 +2,14 @@
 
 ```tsx
 import { StyleSheetManager } from 'styled-components';
-import { rtlPlugin, rscPlugin } from 'styled-components/plugins';
+import { prefixPlugin, rtlPlugin } from 'styled-components/plugins';
 
-<StyleSheetManager plugins={[rtlPlugin, rscPlugin]}>
+<StyleSheetManager plugins={[prefixPlugin, rtlPlugin]}>
   <App />
 </StyleSheetManager>
 ```
 
-The `stylisPlugins` prop on `<StyleSheetManager>` is now `plugins`. The top-level `stylisPluginRSC` export moved into the new subpath as `rscPlugin`. Tree-shaking removes plugins from any app that doesn't import them.
+The `stylisPlugins` prop on `<StyleSheetManager>` is now `plugins`, and `enableVendorPrefixes` has been removed in favor of `prefixPlugin`. `stylisPluginRSC` has been removed completely because v7 routes server component styles through the style registry instead of emitting inline `<style>` tags. Tree-shaking removes plugins from any app that doesn't import them.
 
 ### `rtlPlugin`
 
@@ -20,35 +20,29 @@ Replaces `stylis-plugin-rtl` for users coming from v6:
 - Mirrors 4-value shorthand positions (`margin: 0 4px 0 8px;` becomes `margin: 0 8px 0 4px`).
 - Logical properties like `margin-inline-start` pass through unchanged because they already resolve correctly per the document direction.
 
-### `rscPlugin`
+### Plugins and namespaces in server components
 
-Rewrites child-index selectors so they ignore inline `<style>` tags emitted by React Server Components. Without it, `:first-child` / `:last-child` / `:nth-child()` don't match the elements you'd expect inside a server component, because RSC injects an inline `<style>` ahead of each affected component.
-
-Use this in apps that render via `react-server-dom-*` (Next.js App Router server components, Vite RSC plugins, etc). In server components, pass it to `configureServerStyles` (see [Plugins in server components](#plugins-in-server-components)).
-
-### Plugins in server components
-
-In server components, a `<StyleSheetManager>` applies only to the server components rendered inside it. A manager in a Next.js layout styles the layout's own markup, not its pages. To give every server component the same plugins, call `configureServerStyles` once at the top level of your root layout file:
+In server components, a `<StyleSheetManager>` applies only to the server components rendered inside it. A manager in a Next.js layout styles the layout's own markup, not its pages. To give every server component the same plugins or namespace, call `configureServerStyles` once at the top level of your root layout file:
 
 ```tsx
 // app/layout.tsx
 import { configureServerStyles } from 'styled-components';
-import { rscPlugin } from 'styled-components/plugins';
+import { rtlPlugin } from 'styled-components/plugins';
 
-configureServerStyles({ plugins: [rscPlugin] });
+configureServerStyles({ namespace: '#app', plugins: [rtlPlugin] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // ...
 }
 ```
 
-The call is a plain statement, not a component, so it reaches every page, nested layout, and client-side navigation, including pages prerendered at build time. Make one call per app: a later call replaces an earlier one.
+Both `namespace` and `plugins` are optional, and each call sets both (a later call without `namespace` clears it). The call is a plain statement, not a component, so it reaches every page, nested layout, and client-side navigation, including pages prerendered at build time. Make one call per app: a later call replaces an earlier one and applies to renders that start after it.
 
-Do not put it in `instrumentation.ts`. Next.js does not run that file while prerendering pages at build time, so prerendered pages would miss the plugins.
+Do not put it in `instrumentation.ts`. Next.js does not run that file while prerendering pages at build time, so prerendered pages would miss the settings.
 
-A `<StyleSheetManager>` in a server component starts from these plugins; its own `plugins` prop replaces them, and `plugins={[]}` drops them for its subtree. `configureServerStyles` applies to server components only. Client components take plugins from a `<StyleSheetManager>` rendered on the client, such as the one in your registry.
+A `<StyleSheetManager>` in a server component starts from these settings; its own `plugins` or `namespace` prop replaces them, and `plugins={[]}` or `namespace=""` drops them for its subtree. `configureServerStyles` applies to server components only. Client components take their plugins and namespace from a `<StyleSheetManager>` that renders in both SSR and the browser. Do not add `plugins` or `namespace` to a registry `<StyleSheetManager>` that sits behind an `if (typeof window !== 'undefined') return <>{children}</>;` guard: either always render `<StyleSheetManager sheet={typeof window === 'undefined' ? styledComponentsStyleSheet.instance : undefined} plugins={[rtlPlugin]}>` or wrap the registry in a separate client `<StyleSheetManager>`, otherwise SSR and client hydration hash with different compilers and mismatch.
 
-Placing a layout manager to style every page (the v6 `stylisPluginRSC` guidance) has been removed in favor of `configureServerStyles`.
+Placing a layout manager to style every page has been removed in favor of `configureServerStyles`.
 
 ### `prefixPlugin`
 
@@ -93,6 +87,6 @@ const scopePlugin: SCPlugin = {
 };
 ```
 
-The `name` field is required and contributes to the compiler's cache hash, so different plugin sets across nested `<StyleSheetManager>` trees stay isolated. Plugins without a name throw a styled-components error.
+The `name` field is required and contributes to the compiler's cache hash, so different plugin sets across nested `<StyleSheetManager>` trees stay isolated. Plugins without a name throw a styled-components error, and development builds warn when two different plugins share a `name` under the same `namespace`.
 
 Legacy stylis plugins (those exporting a single function) don't run in v7 because they don't expose `rw` or `decl`. Development builds warn once when a plugin cannot run: a middleware function, or an object with neither hook. Migrate them to the `SCPlugin` interface above; complex use cases that need a richer hook surface should open an issue.

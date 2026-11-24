@@ -3,9 +3,9 @@ Note: CLAUDE.md is a one-line @AGENTS.md import pointer to this file. Edit AGENT
 styled-components documentation website. Next.js, MDX, styled-components.
 
 Read first
-Read `public/llms.txt` at the start of every session, and again before editing any styled-components API (`createTheme`, `ThemeProvider`, `createGlobalStyle`, `ServerStyleSheet`, `StyleSheetManager`, `stylisPluginRSC`). It's the v6.4/v7 guide with gotchas that contradict training data; ground in it, not memory.
+Read `public/llms.txt` at the start of every session, and again before editing any styled-components API (`createTheme`, `ThemeProvider`, `createGlobalStyle`, `ServerStyleSheet`, `StyleSheetManager`, `configureServerStyles`). It's the v6.7/v7 guide with gotchas that contradict training data; ground in it, not memory.
 
-When MDX docs change (API, SSR, theming, gotchas), update `llms.txt` in the same pass. Behavior, not internals.
+When MDX docs change (API, SSR, theming, gotchas) or when making a minor or major version change, review and update `public/llms.txt` in the same pass so all patterns, do/don'ts, version notes, and API references stay accurate. Behavior, not internals.
 
 Principles
 1. Verify before building: read the file before editing.

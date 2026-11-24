@@ -1,22 +1,55 @@
 # styled-components
 
-CSS-in-JS for React using tagged template literals. TypeScript-native since v6. Supports React Server Components natively since v6.3. Last known stable: v6.4.4 (check npm for freshness).
+CSS-in-JS for React using tagged template literals. TypeScript-native since v6. Supports React Server Components natively since v6.3. Last known stable: v6.7.0 (check npm for freshness).
 
 ## Recent releases
 
 v6.2: Streaming SSR via `renderToPipeableStream`.
 
-v6.3: React Server Components supported. No `'use client'` needed. Styled components work in server components with no extra setup. `createGlobalStyle` is StrictMode-safe. New HTML/SVG element helpers. CSS custom properties work in TypeScript without type errors. Note: `:first-child`/`:nth-child()` selectors require `stylisPluginRSC` (v6.4+) or rewriting to `:first-of-type`/`:nth-of-type()`. See child-index selector section below.
+v6.3: React Server Components supported. No `'use client'` needed. Styled components work in server components with no extra setup. `createGlobalStyle` is StrictMode-safe. New HTML/SVG element helpers. CSS custom properties work in TypeScript without type errors. Note: in v6, `:first-child`/`:nth-child()` selectors require `stylisPluginRSC` (v6.4+) or rewriting to `:first-of-type`/`:nth-of-type()`. See child-index selector section below.
 
-v6.4 (April–July 2026): `createTheme()` for CSS variable theming that works in both RSC and client. `StyleSheetManager` works in RSC (was previously a no-op). `stylisPluginRSC` fixes child-index selectors in RSC. CSP nonce auto-detection from `StyleSheetManager`, `ServerStyleSheet`, or meta tags. Props supplied via `.attrs()` are automatically optional on the component's type. Significant render performance improvements. Fixes SSR memory leaks and multi-instance unmount bugs in `createGlobalStyle`. Memory leak fix for components with unbounded string interpolation values. `as` and `forwardedAs` exposed in `React.ComponentProps` extraction. React Native: `react-native` is now an optional peer dep, Metro/Expo nanoid crash fixed. IE11 build target removed. IE11 has been unsupported on v6 since the 2021 v6 planning (React 18 dropped it too); v6.4 just aligns the compile target. Stay on v5 if you need IE11. Use v6.4.4 rather than v6.4.0: v6.4.1 fixed a dynamic-`createGlobalStyle` render regression and restored cascade ordering, while v6.4.2–v6.4.4 added production-runtime and TypeScript compatibility/performance fixes.
+v6.4 (April–July 2026): `createTheme()` for CSS variable theming that works in both RSC and client. `StyleSheetManager` works in RSC (was previously a no-op). `stylisPluginRSC` fixes child-index selectors in RSC. CSP nonce auto-detection from `StyleSheetManager`, `ServerStyleSheet`, or meta tags. Props supplied via `.attrs()` are automatically optional on the component's type. Fixes SSR memory leaks, multi-instance unmount bugs in `createGlobalStyle`, and unbounded string interpolation memory leaks. `as` and `forwardedAs` exposed in `React.ComponentProps` extraction. React Native: `react-native` is an optional peer dep, Metro/Expo nanoid crash fixed. IE11 build target removed (stay on v5 if you need IE11).
+
+v6.5–v6.7 (August–November 2026): `StyledComponent<Target, Props>` exported on web and native for explicit export annotations and `isolatedDeclarations`, plus faster consumer type-checking. Style interpolations run on every render (fixes hook-order crashes when hooks are called inside an interpolation; wrap in `React.memo` for props-equal bailout). RSC component and `createGlobalStyle` styles survive `<Suspense>` reveals and sibling route transitions. `.attrs()` applies its default even when a prop is explicitly passed as `undefined`. v6.7 adds `configureServerStyles({ stylisPlugins })` for process-wide RSC plugins (such as `stylisPluginRSC`), fixes React 18/Next.js 13.5–14 HTML-escaping inside RSC `<style>` tags, keeps concurrent RSC requests isolated, and fixes TS2590 on Reanimated refs.
 
 ## New in v7
 
-v7 is in alpha: expect frequent updates over the next few weeks while APIs stabilize. Install the current prerelease with `npm install styled-components@test` (the `@test` dist-tag). Peer floors raised to React 19 and React Native 0.85.
+v7 is in alpha: expect frequent updates while APIs stabilize. Install the current prerelease with `npm install styled-components@test` (the `@test` dist-tag). Peer floors raised to React 19 and React Native 0.85 (optional peers: `react-native-reanimated` ≥ 4, `react-native-safe-area-context` ≥ 5, `react-native-web` ≥ 0.20).
 
-The framing: v7 is an architectural reform for web and the start of a new chapter for `styled-components/native`. It replaces stylis with an in-house CSS parser, rewrites the native runtime, and moves toward one CSS authoring model across web, iOS, Android, and Expo Web. The React Native CanIUse matrix at /docs/compatibility.md shows current progress and remaining platform gaps. Funding through Open Collective is a current bottleneck for continuing this work outside passion time.
+The framing: v7 is an architectural reform for web and the start of a new chapter for `styled-components/native`. It replaces stylis with an in-house CSS parser, routes server component styles through the style registry (no inline `<style>` tags), rewrites the native runtime, and moves toward one CSS authoring model across web, iOS, Android, and Expo Web. The React Native CanIUse matrix at /docs/compatibility.md shows current progress and remaining platform gaps. Funding through Open Collective is a current bottleneck for continuing this work outside passion time.
 
-If the user is asking whether feature X works on v6 vs v7 or on web vs React Native, point them at /docs/compatibility.md. The matrix has the per-feature answer with caveats. The sections below summarise the highlights.
+If the user is asking whether feature X works on v6 vs v7 or on web vs React Native, point them at /docs/compatibility.md. The matrix has the per-feature answer with caveats. The sections below summarize the highlights.
+
+### Server component styles and cascade ordering
+
+In v7, server component styles route through your style registry (`ServerStyleSheet` + `StyleSheetManager`), the same registry client components use. Inline `<style>` tags in server component output have been removed, and `stylisPluginRSC` (and `rscPlugin`) have been removed: `:first-child`, `:nth-child()`, sibling selectors, and SVG children match natively in server HTML with no plugin and no browser floor.
+
+- The registry is required for server component styles. Wrap `<html>` in the registry in your root layout so every server styled component (including a styled `<html>` or `<body>`) renders inside it. A server styled component rendered outside the registry gets no CSS in the server-rendered HTML (styles apply after hydration and development warns once). `global-error.tsx` renders only in the browser.
+- Supported hosts: Next.js with webpack or Turbopack (listing `styled-components` in `serverExternalPackages` is not supported) and Vite with `@vitejs/plugin-rsc` (registry in the SSR entry). Routes rendering styled-components on the server require the Node.js runtime; the edge runtime is not supported.
+- A `nonce` or `target` on a `<StyleSheetManager>` inside the registry applies in the browser; during SSR, server styles join the registry's tag with the registry's nonce.
+- Global styles from `createGlobalStyle` always sit before component styles (server globals before client globals; keyframes sit with their side's globals), so a component wins a tie with a global regardless of definition order. Raise a global selector's specificity if it needs to win a tie.
+- A component wrapping another on the same element (`styled(X)`, `as={X}`, or a forwarded `className`) always beats the component it wraps regardless of definition or load order, across server and client components alike.
+- Referencing a `'use client'` component from a server component's styles (`${ClientCard}:hover &`, `@container ${ClientCard} (...)`): the server cannot read a client module's class, so the selector, at-rule, or declaration holding it is left out of the server's CSS (with a dev warning) while all other rules apply. Define shared selector targets in a module without `'use client'` and enable the build plugin (`compiler: { styledComponents: true }` in Next.js) so both graphs share one component id.
+
+### View Transitions and modern at-rules
+
+A component that sets `view-transition-name` automatically receives its own class as `view-transition-class`, so a rule in `createGlobalStyle` can target it directly:
+
+```tsx
+const Card = styled.li`
+  view-transition-name: match-element;
+`;
+
+const Transitions = createGlobalStyle`
+  ::view-transition-group(*${Card}) {
+    animation-duration: 400ms;
+  }
+`;
+```
+
+Any `view-transition-class` you author yourself is kept as written. `view-transition-class: ${Card}` and `container-name: ${Card}` emit the component's class name. `@view-transition`, `@position-try`, `@page` margin boxes (`@top-left`, etc.), and `@font-feature-values` emit as written.
+
+Under a single-compound `<StyleSheetManager namespace="#app">` (or `.app`, `[data-app]`), root-anchored selectors (`html.dark &`, `:root`, `::view-transition*`) join onto the root so they match when the namespace sits on `<html>`. A nested `<StyleSheetManager>` without a `namespace` prop inherits its parent's namespace in both client and server components; pass `namespace=""` to opt out (for example, for a portal mounted outside the container).
 
 ### Modern CSS on React Native
 
@@ -49,13 +82,13 @@ Viewport units (`vw`, `vh`, `vi`, `vb`, `vmin`, `vmax`, plus the prefixed `s*` /
 
 `light-dark(light, dark)` swaps based on OS appearance.
 
-`env(safe-area-inset-top | right | bottom | left)` parses but currently resolves to 0; the integration with `react-native-safe-area-context` is not wired yet. Use `useSafeAreaInsets()` directly until it lands.
+`env(safe-area-inset-top | right | bottom | left)` reads ambient safe-area insets automatically from optional peer `react-native-safe-area-context` when the tree is wrapped in `<SafeAreaProvider>`. To feed insets from another source (or without installing the peer), wrap a subtree in `SafeAreaInsetsProvider` from `styled-components/native`; the provided insets override the automatic read. Without any source, recognized names resolve to `0`. On `react-native-web`, `SafeAreaInsetsProvider` renders its children unchanged and `env(safe-area-inset-*)` uses the browser's own values.
 
 Logical shorthands work as authored: `margin-inline`, `margin-block`, `padding-inline`, `padding-block`, `inset-inline`, `inset-block`, the full `border-inline` / `border-block` family (per-edge longhands and axis shorthands), and all `-start` / `-end` longhands. The library's RTL plugin handles physical-property mirroring; logical properties are already direction-agnostic. React Native has one whole-element border style: repeated per-edge styles collapse quietly, while mixed styles keep the first drawable style and warn in development.
 
 `line-clamp: N` truncates `<Text>` to N lines. `text-wrap: nowrap` collapses to a single line; `text-wrap-style: balance` / `pretty` improve line-breaking on Android (no-op on iOS, which has no platform line-breaking control). `text-align: start` / `end` / `match-parent` resolve correctly under RTL on both platforms. `aspect-ratio` accepts `1.5`, `16 / 9`, `auto`, and the two-value `auto 16/9` form. `transform` accepts the function list RN parses (use explicit units, e.g. `translateX(10px)`) and a `matrix()` with 9 or 16 values; the 6-value `matrix()` form and `matrix3d()` do not render on native. `perspective: 1000px` as a top-level declaration works (no need to put it inside the transform array yourself).
 
-`font-style: oblique` resolves to italic. `font-family` recognizes the 13 generic CSS keywords (`system-ui`, `ui-sans-serif`, `ui-serif`, `ui-monospace`, `ui-rounded`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`). Comma-separated font stacks: only the first family takes effect (RN has no fallback chain). `font-size` accepts the full CSS keyword set (`xx-small`...`xxx-large`, `smaller`, `larger`) plus the full unit catalogue: bare numbers and `px`, viewport units (`vh`, `vw`, `svh`, `dvh`, `vi`, `vb`, etc.), container query units (`cqh`, `cqw`, `cqi`, `cqb`, `cqmin`, `cqmax`), font-relative (`em`, `rem`, `lh`, `rlh`), font-metric approximations (`ex`, `cap`, `ch`, `ic` and `r`-prefixed), and absolute lengths (`pt`, `pc`, `in`, `cm`, `mm`, `Q`). `letter-spacing` accepts `em`, `rem`, `lh`, and `rlh`.
+`font-style: oblique` resolves to italic. `font-family` recognizes the 13 generic CSS keywords (`system-ui`, `ui-sans-serif`, `ui-serif`, `ui-monospace`, `ui-rounded`, `sans-serif`, `serif`, `monospace`, `cursive`, `fantasy`, `emoji`, `math`, `fangsong`) and decodes CSS escapes in quoted and unquoted font names. Comma-separated font stacks: only the first family takes effect (RN has no fallback chain). `font-size` accepts the full CSS keyword set (`xx-small`...`xxx-large`, `smaller`, `larger`) plus the full unit catalogue: bare numbers and `px`, viewport units (`vh`, `vw`, `svh`, `dvh`, `vi`, `vb`, etc.), container query units (`cqh`, `cqw`, `cqi`, `cqb`, `cqmin`, `cqmax`), font-relative (`em`, `rem`, `lh`, `rlh`), font-metric approximations (`ex`, `cap`, `ch`, `ic` and `r`-prefixed), and absolute lengths (`pt`, `pc`, `in`, `cm`, `mm`, `Q`). `letter-spacing` accepts `em`, `rem`, `lh`, and `rlh`.
 
 `place-items` and `place-self` shorthands work for the align axis (Yoga doesn't have `justify-items` / `justify-self`; the justify side is a no-op on native but reaches rn-web).
 
@@ -65,7 +98,7 @@ Logical shorthands work as authored: `margin-inline`, `margin-block`, `padding-i
 
 `display: grid` with `grid-template-columns: repeat(N, 1fr)` plus `gap` lays direct styled children into N equal columns; `grid-column: span N` spans columns, and a grid container with `container-type` doubles as a container-query container. Fixed px tracks, `minmax()`, `auto-fill` / `auto-fit`, unequal `fr`, named / line-number placement, `grid-row`, `grid-area`, and subgrid warn and fall back to a flex row.
 
-`corner-shape: round | squircle` maps to iOS's circular and Apple-smooth continuous curves; other contours (`bevel`, `notch`, `scoop`, out-of-band superellipse) warn and drop, and Android renders circular corners regardless.
+`corner-shape: round | square | squircle`: `round` and `square` render accurately on iOS and Android (`square` applies per corner and can mix with one curve, e.g. `corner-shape: square round`); `squircle` maps to iOS's continuous curve approximation (Android drops `borderCurve` and warns); concave and beveled contours (`bevel`, `notch`, `scoop`, out-of-band superellipse) warn and drop.
 
 Anchor positioning core subset: `anchor-name`, `position-anchor`, `anchor()`, and `anchor-size()` with `top` / `left` physical-side insets bind an absolutely positioned element to an anchor that shares its parent (`top: anchor(--x bottom)`), composing inside `calc()`. `bottom` / `right` and logical-side insets, `position-area`, `position-try*`, `@position-try`, and `anchor-scope` fall back to the declared value with a dev-warn.
 
@@ -115,9 +148,9 @@ const Row = styled.View`
 `;
 ```
 
-`:not()` accepts a single pseudo-state or a single attribute selector, and either can follow other pseudo-classes in a chain (`&:hover:not([data-busy])`); `:not()` of a class does not work on native. Pseudo-classes chain (`&:active:not(:disabled)`), `&:disabled`, `&:enabled`, `&:read-only` and `&:read-write` read the props you pass, and `:hover` / `:focus` / `:active` follow the live state only `Pressable` supplies (skipped with a dev warning on `View` and `Text`). `:has()` accepts a styled-component reference (matches when that component appears as a descendant) or a single attribute selector. Complex inner arguments (compound selectors, combinators, selector lists) warn in dev and don't match.
+`:not()` accepts a single pseudo-state or a single attribute selector, and either can follow other pseudo-classes in a chain (`&:hover:not([data-busy])`); `:not()` of a class does not work on native. Pseudo-classes chain (`&:active:not(:disabled)`), `&:disabled`, `&:enabled`, `&:read-only` and `&:read-write` read the props you pass (`styled.TextInput` also accepts a `disabled` prop), and `:hover` / `:focus` / `:active` follow the live state only `Pressable` supplies (skipped with a dev warning on `View` and `Text`). `:has()` accepts a styled-component reference (matches when that component appears as a descendant) or a single attribute selector. Complex inner arguments (compound selectors, combinators, selector lists) warn in dev and don't match.
 
-Tree-structural pseudos work on native: `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, plus the functional `:nth-child(<an+b>)` / `:nth-of-type(<an+b>)` / `:nth-last-child(<an+b>)` / `:nth-last-of-type(<an+b>)` family with `odd` / `even` keywords. `:nth-child(<an+b> of S)` and `:nth-last-child(<an+b> of S)` filter the count by a styled-component reference or a single attribute selector (same simple-inner scope as `:has()`). Siblings need to be inside a styled-component parent for indexing to work; a non-styled wrapper in between resets the count.
+Tree-structural pseudos work on native: `:first-child`, `:last-child`, `:only-child`, `:first-of-type`, `:last-of-type`, `:only-of-type`, plus the functional `:nth-child(<an+b>)` / `:nth-of-type(<an+b>)` / `:nth-last-child(<an+b>)` / `:nth-last-of-type(<an+b>)` family with `odd` / `even` keywords. `:nth-child(<an+b> of S)` and `:nth-last-child(<an+b> of S)` filter the count by a styled-component reference or a single attribute selector (same simple-inner scope as `:has()`). Siblings need to be inside a styled-component parent for indexing to work; regular React Native elements inside that parent count as siblings just as elements do in a browser.
 
 Combinators work on native when the left side is a styled-component reference:
 
@@ -212,7 +245,7 @@ const Card = styled.View`
 </ThemeProvider>;
 ```
 
-Nested `ThemeProvider`s on React Native deep-merge so an inner override that only touches one leaf keeps siblings inherited from the ancestor. Composition rules are the same as web: tokens only resolve when interpolated directly into CSS-value positions inside a styled-components template. JS arithmetic on tokens (`4 + theme.space.md`) silently breaks. Use `calc()` instead.
+Nested `ThemeProvider`s on React Native deep-merge so an inner override that only touches one leaf keeps siblings inherited from the ancestor. Theme tokens also work inside `@keyframes` blocks and update even while an animation is running. Composition rules are the same as web: tokens only resolve when interpolated directly into CSS-value positions inside a styled-components template. JS arithmetic on tokens (`4 + theme.space.md`) silently breaks. Use `calc()` instead.
 
 ### CSS bug fixes affecting both web and native
 
@@ -233,7 +266,7 @@ Across the rn-web build, CSS the browser already implements passes through untou
 - Math and units: static-mixed-unit `calc()` / `clamp()` / `min()` / `max()` resolve against the real containing block at paint time, and `dvh` / `svh` / `lvh` plus the inline / block-axis viewport units (`vi`, `vb`) resolve distinctly per CSS Values 4 instead of collapsing.
 - Transforms: standalone `transform`, `transform-style`, `transform-box`, and `perspective` flow to the browser.
 - Color: `light-dark()` and `prefers-color-scheme` repaint without a React re-render; CSS system colors resolve against the OS theme (including forced-colors mode); `oklch`, `oklab`, `lch`, `lab`, and `color-mix()` render in the browser's full wide gamut (Display P3 / Rec. 2020 where the monitor supports it) instead of rounding through sRGB.
-- Text and interaction: `hyphens`, `text-wrap`, `caret-color`, `accent-color`, `overscroll-behavior`, `scrollbar-width`, `field-sizing`, `interactivity`, and `direction` are handled by the browser.
+- Text and interaction: `hyphens`, `text-wrap`, `caret-color`, `accent-color`, `overscroll-behavior`, `scrollbar-width`, `field-sizing`, `interactivity`, and `direction` are handled by the browser. `onAnimationEnd` and `onTransitionEnd` fire on styled `View`, `Text`, `FlatList`, `SectionList`, and `VirtualizedList` primitives (`KeyboardAvoidingView` does not fire them; use an inner `View`).
 
 One gotcha bubbles up to user code: rn-web's `View.js` defaults include `position: relative; z-index: 0`, so every View is its own stacking context on web. Children using `mix-blend-mode` blend with the *immediate* ancestor View's backdrop, not whatever is behind the whole tree. Override the immediate ancestor with `z-index: auto` (no-op on native) so the blend reaches the intended backdrop:
 
@@ -282,14 +315,13 @@ const Logo = styled(Image).attrs((_props, ast) => ({
 
 `ast.pop(key)` reads the value and prevents the declaration from also reaching the rendered style. `ast.peek(key)` reads without removing; use it when you want both the prop and the CSS declaration to flow through. Both accept an optional fallback as the second argument.
 
-The first argument dispatches on shape: a CSS property name (`'color'`, `'borderColor'`) reads a resolved declaration; a dot-separated path (`'palette.brand.primary'`) reads from the active theme. Theme paths get autocomplete and value-type inference from your augmented `DefaultTheme`. When the callback only reads static declarations and theme paths, the work folds into a one-time computation at construction so renders pay nothing extra.
+The first argument dispatches on shape: a CSS property name (kebab-case like `'background-color'`, camelCase like `'backgroundColor'`, or a custom property `'--tint'` on web) reads a resolved declaration; a dot-separated path (`'palette.brand.primary'`) reads from the active theme. Theme paths get autocomplete and value-type inference from your augmented `DefaultTheme`. When the callback only reads static declarations and theme paths, the work folds into a one-time computation at construction so renders pay nothing extra.
 
 ### Plugins (v7)
 
-Plugins live at `styled-components/plugins`. The `<StyleSheetManager>` prop is `plugins` (was `stylisPlugins`). First-party plugins:
+Plugins live at `styled-components/plugins`. The `<StyleSheetManager>` prop is `plugins` (was `stylisPlugins`). `stylisPluginRSC` (and `rscPlugin`) have been removed because v7 routes server component styles through the style registry with no inline `<style>` tags. First-party plugins:
 
 - `rtlPlugin` replaces `stylis-plugin-rtl`: swaps physical side properties, flips `left`/`right` keywords on `float` / `clear` / `text-align` / `caption-side`, mirrors 4-value shorthands. Logical properties pass through.
-- `rscPlugin` replaces the root `stylisPluginRSC` export: rewrites child-index selectors so RSC inline `<style>` tags do not shift indices. In server components, apply it app-wide with `configureServerStyles` (see "Plugins in server components" below).
 - `prefixPlugin` is the opt-in replacement for `enableVendorPrefixes`. Covers only what still needs a prefix at React's JS API browser floor (Chrome 45 / Firefox 36 / Safari 9 / iOS 9 / Edge 12). Flexbox, transforms, transitions, animations, and gradients pass through; already-prefixed declarations are left alone.
 
 Import the type and the first-party plugins from the same subpath (not the package root):
@@ -299,21 +331,20 @@ import { StyleSheetManager } from 'styled-components';
 import {
   prefixPlugin,
   rtlPlugin,
-  rscPlugin,
   type DeclResult,
   type DeclTransform,
   type SCPlugin,
   type SelectorTransform,
 } from 'styled-components/plugins';
 
-<StyleSheetManager plugins={[prefixPlugin, rtlPlugin, rscPlugin]}>
+<StyleSheetManager plugins={[prefixPlugin, rtlPlugin]}>
   <App />
 </StyleSheetManager>;
 ```
 
-In a client component tree (for example the style registry) or around one subtree, this manager is the way to apply plugins.
+In a client component tree (for example around your app or registry) or around one subtree, this manager is the way to apply plugins. When passing `plugins` or `namespace` for client components, render that `<StyleSheetManager>` in the browser as well, never behind a registry's `if (typeof window !== 'undefined') return <>{children}</>;` guard (pass `sheet={typeof window === 'undefined' ? sheet.instance : undefined}` or wrap the registry in a separate client `<StyleSheetManager>`), otherwise SSR and client hydration hash with different compilers and mismatch.
 
-Custom plugins are plain objects with a required `name` plus either or both of `rw` and `decl`. `rw` is a `SelectorTransform`: it runs on the fully-resolved selector after `&` substitution and namespace prepending, and returns a string or an array of selectors (one rule per entry). `decl` is a `DeclTransform`: it runs on every emitted `prop: value` pair and returns a `DeclResult`, an array of them (one declaration expands into several), or `undefined`/`void` to leave the pair unchanged. Plugins compose left-to-right; a later hook sees every result an earlier plugin emitted.
+Custom plugins are plain objects with a required `name` plus either or both of `rw` and `decl`. `rw` is a `SelectorTransform`: it runs on the fully-resolved selector after `&` substitution and namespace prepending, and returns a string or an array of selectors (one rule per entry). `decl` is a `DeclTransform`: it runs on every emitted `prop: value` pair and returns a `DeclResult`, an array of them (one declaration expands into several), or `undefined`/`void` to leave the pair unchanged. Plugins compose left-to-right; a later hook sees every result an earlier plugin emitted. Development builds warn when two different plugins share a `name` under the same `namespace`.
 
 ```ts
 import type { SCPlugin } from 'styled-components/plugins';
@@ -336,34 +367,40 @@ Legacy stylis middleware (a bare function): never runs; development builds warn 
 
 Unused plugins tree-shake out of the consumer bundle.
 
-#### Plugins in server components
+#### Plugins and namespaces in server components
 
-In server components, a `<StyleSheetManager>` applies only to the server components rendered inside it. A manager in a Next.js layout styles the layout's own markup, not its pages. To give every server component the same plugins, call `configureServerStyles` once at the top level of the root layout file:
+In server components, a `<StyleSheetManager>` applies only to the server components rendered inside it. A manager in a Next.js layout styles the layout's own markup, not its pages. To give every server component the same plugins or namespace, call `configureServerStyles` once at the top level of the root layout file:
 
 ```tsx
 // app/layout.tsx
 import { configureServerStyles } from 'styled-components';
-import { rscPlugin } from 'styled-components/plugins';
+import { rtlPlugin } from 'styled-components/plugins';
 
-configureServerStyles({ plugins: [rscPlugin] });
+configureServerStyles({ namespace: '#app', plugins: [rtlPlugin] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // ...
 }
 ```
 
-The call is a plain statement, not a component, so it reaches every page, nested layout, and client-side navigation, including pages prerendered at build time. Make one call per app: a later call replaces an earlier one. Do not put it in `instrumentation.ts`, because Next.js does not run that file while prerendering pages at build time.
+Both `namespace` and `plugins` are optional, and each call sets both (a later call without `namespace` clears it). The call is a plain statement, not a component, so it reaches every page, nested layout, and client-side navigation, including pages prerendered at build time. Make one call per app: a later call replaces an earlier one. Do not put it in `instrumentation.ts`, because Next.js does not run that file while prerendering pages at build time.
 
-A `<StyleSheetManager>` in a server component starts from these plugins; its own `plugins` prop replaces them, and `plugins={[]}` drops them for its subtree. `configureServerStyles` applies to server components only. Client components take plugins from a `<StyleSheetManager>` rendered on the client, such as the one in your registry.
+A `<StyleSheetManager>` in a server component starts from these settings; its own `plugins` or `namespace` prop replaces them, and `plugins={[]}` or `namespace=""` drops them for its subtree. `configureServerStyles` applies to server components only. Client components take their plugins and namespace from a `<StyleSheetManager>` rendered in both SSR and the browser.
 
-Placing a layout manager to style every page (the v6 `stylisPluginRSC` guidance) has been removed in favor of `configureServerStyles`.
+Placing a layout manager to style every page has been removed in favor of `configureServerStyles`.
 
 ### Other notable changes
 
 - `defaultProps` on styled components no longer applied (React 19 dropped it from function components). Migrate to `.attrs()` for prop defaults, or `<ThemeProvider theme={...}>` for theme defaults.
 - `extractCSS()` export replaces the removed `disableCSSOMInjection` prop and `SC_DISABLE_SPEEDY` env vars; call it after render to get the current CSS as a plain string for static-render pipelines.
-- Mounting the same `createGlobalStyle` component multiple times now emits its CSS only once.
-- Server output escapes `</style>` substrings and HTML-escapes nonce values to prevent style-tag breakout.
+- `StyleSheet.prototype.reconstructWithOptions` has been removed; pass `target` or `nonce` to `<StyleSheetManager>` in the browser, or `nonce` to `new ServerStyleSheet({ nonce })` during SSR.
+- Mounting the same `createGlobalStyle` component multiple times emits its CSS once in client and `ServerStyleSheet` rendering.
+- Splitting a CSS block, string, or parenthesis across a template literal and an interpolation (leaving `calc(`, a string, or `[` open in the template for a value to close) has been removed; write matching delimiters in one place.
+- Style interpolations and `.attrs()` run on every render (including inside `createGlobalStyle`), so hooks inside an interpolation never cause hook-order crashes; wrap in `React.memo` to skip re-renders on equal props.
+- `.attrs()` always applies its value even when a prop is explicitly passed as `undefined` (use the function form and check `'prop' in props` to let `undefined` clear a default).
+- Server output escapes `</style>` substrings and HTML-escapes nonce values to prevent style-tag breakout, and malformed interpolated values stay contained inside their own statement.
+- Unitless numbers in object styles include `gridArea`, `lineClamp`, `fontSizeAdjust`, `hyphenateLimitChars`, `initialLetter`, `mathDepth`, `shapeImageThreshold`, and `maskBorder*`.
+- `StyledComponent<Target, Props>` is exported on web and native for explicit export annotations and `isolatedDeclarations` (also in v6.5+).
 - Polymorphic `as` targets drive editor attribute completion: `<VideoCard as="video" ...>` completes `loop`, `muted`, `controls`, `poster`, and the other video attributes. Runtime behavior is unchanged.
 
 ## Setup
@@ -378,12 +415,13 @@ Vite: `react({ babel: { plugins: ['babel-plugin-styled-components'] } })`. Or wi
 
 The SWC/Babel plugin provides deterministic class IDs (better debugging, smaller output). Optional for RSC but still recommended.
 
-## Quick reference (v6.4 stable)
+## Quick reference (v6.7 stable)
 
 ```tsx
 import styled, { css, keyframes, createGlobalStyle, createTheme,
   ThemeProvider, useTheme, StyleSheetManager, ServerStyleSheet,
-  stylisPluginRSC, isStyledComponent } from 'styled-components';
+  configureServerStyles, stylisPluginRSC, isStyledComponent,
+  type StyledComponent } from 'styled-components';
 ```
 
 - `styled.div` / `styled(Component)`: create styled component
@@ -394,17 +432,19 @@ import styled, { css, keyframes, createGlobalStyle, createTheme,
 - `css`: tagged template helper for shared style fragments
 - `keyframes`: define CSS animation
 - `createGlobalStyle`: inject global CSS
-- `createTheme(obj, opts?)`: CSS variable theme (RSC-compatible)
-- `ThemeProvider`: context-based theme (client-only)
-- `StyleSheetManager`: configure `stylisPlugins`, prop forwarding, vendor prefixes
-- `stylisPluginRSC`: fix child-index selectors in RSC.
-- `ServerStyleSheet`: SSR style collection
+- `createTheme(obj, opts?)`: CSS variable theme (RSC-compatible; also native in v7+)
+- `ThemeProvider`: context-based theme (client-only on web; deep-merges on native in v7+)
+- `StyleSheetManager`: configure `stylisPlugins` (v6) / `plugins` (v7), `namespace`, prop forwarding, nonce
+- `configureServerStyles`: process-wide RSC defaults (`{ stylisPlugins }` in v6.7, `{ plugins, namespace }` in v7)
+- `stylisPluginRSC`: fix child-index selectors in v6 RSC (removed in v7, where styles route through the registry)
+- `ServerStyleSheet`: SSR style collection (and RSC style collection in v7)
+- `StyledComponent<Target, Props>`: explicit export annotation type (v6.5+ / v7)
 
 ## Server-side rendering
 
 ### Next.js
 
-Use a style registry to collect styles from client components during SSR. RSC-rendered styled components are handled automatically; the registry is only needed for the client tree.
+Use a style registry to collect styles during SSR. In v7, the registry collects styles for BOTH server components and client components (wrap `<html>` in your root layout so even a styled `<html>` or `<body>` sits inside it). In v6.3–v6.7, RSC emits inline `<style>` tags automatically and the registry collects client-component styles.
 
 ```tsx
 // lib/registry.tsx
@@ -420,6 +460,7 @@ export default function Registry({ children, nonce }: { children: React.ReactNod
     sheet.instance.clearTag();
     return <>{styles}</>;
   });
+  if (typeof window !== 'undefined') return <>{children}</>;
   return (
     <StyleSheetManager sheet={sheet.instance} nonce={nonce}>
       {children}
@@ -428,7 +469,7 @@ export default function Registry({ children, nonce }: { children: React.ReactNod
 }
 ```
 
-Mount `<Registry>` in your root layout. Pass a `nonce` prop if your app uses CSP (see CSP nonce section below).
+Mount `<Registry>` around `<html>` in your root layout. Pass a `nonce` prop if your app uses CSP (see CSP nonce section below). If you also pass `plugins` or `namespace` for client components, render that `<StyleSheetManager>` in the browser as well (remove the `if (typeof window !== 'undefined')` early return and pass `sheet={typeof window === 'undefined' ? sheet.instance : undefined}`, or wrap the registry in a separate client `<StyleSheetManager>`).
 
 Render the elements returned by `getStyleElement()` without adding `precedence` or `href`. React-managed precedence tags lose the attributes styled-components needs for client adoption, causing every server rule to be injected again during hydration.
 
@@ -548,7 +589,7 @@ const ProgressBar = styled.div`
 This pattern gives you dynamic styling, screen reader support, and a CSS hook for completion state, all with one static class.
 
 Other RSC rules:
-- Use `:first-of-type` / `:nth-of-type()` instead of `:first-child` / `:nth-child()` in RSC (see `stylisPluginRSC` section below for an automatic fix)
+- On v6, use `:first-of-type` / `:nth-of-type()` instead of `:first-child` / `:nth-child()` in RSC, or enable `stylisPluginRSC` (see below). On v7, `:first-child` / `:nth-child()` work natively because server component styles route through the style registry with no inline `<style>` tags.
 - Define components at module scope, not inside render functions
 
 ## createTheme API (v6.4+)
@@ -792,33 +833,27 @@ How it works together:
 - **User picks light on a dark-preference system:** script adds `.light` -> `html:not(.light)` excludes the media query override -> no flash
 - **User picks auto after previously picking dark:** `localStorage` cleared -> script falls through to system preference -> correct on next load
 
-## stylisPluginRSC: child-index selector fix (v6.4+)
+## stylisPluginRSC: child-index selector fix (v6.4–v6.7 only)
 
-In RSC, `:first-child`, `:last-child`, and `:nth-child()` selectors can miscount because additional sibling elements shift indices.
+In v6 RSC, `:first-child`, `:last-child`, and `:nth-child()` selectors can miscount because inline `<style>` sibling elements shift indices. In **v7**, inline `<style>` tags are removed in favor of the style registry, so child-index selectors work natively and `stylisPluginRSC` is removed.
 
-Preferred fix: use type-based selectors (universally supported, no plugin needed):
+Preferred v6 fix: use type-based selectors (universally supported, no plugin needed):
 - `:first-child` -> `:first-of-type`
 - `:nth-child(2)` -> `:nth-of-type(2)`
 - `:last-child` -> `:last-of-type`
 
 These filter by element type, so injected sibling elements are ignored.
 
-Alternative: `stylisPluginRSC` automatically rewrites child-index selectors at compile time:
-
-In v7 this plugin moved to `styled-components/plugins` as `rscPlugin`, and the prop is `plugins` instead of `stylisPlugins`. In v7 a layout manager does not reach pages; use `configureServerStyles` (see "Plugins in server components" above). The example below is for v6.4.
+Alternative on v6: `stylisPluginRSC` automatically rewrites child-index selectors at compile time. On v6.7+, call `configureServerStyles` at the top level of your root layout so it reaches every page:
 
 ```tsx
-import { StyleSheetManager, stylisPluginRSC } from 'styled-components';
+// app/layout.tsx (v6.7+)
+import { configureServerStyles, stylisPluginRSC } from 'styled-components';
 
-// In your root layout (server component)
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <StyleSheetManager stylisPlugins={[stylisPluginRSC]}>
-      {children}
-    </StyleSheetManager>
-  );
-}
+configureServerStyles({ stylisPlugins: [stylisPluginRSC] });
 ```
+
+On v6.4–v6.6, wrap your layout in `<StyleSheetManager stylisPlugins={[stylisPluginRSC]}>`.
 
 Rewrite rules:
 - `:first-child` -> `:nth-child(1 of :not(style[data-styled]))`
@@ -830,37 +865,40 @@ Rewrite rules:
 
 Browser support: CSS Selectors Level 4 `of S` syntax. Chrome 111+, Firefox 113+, Safari 9+, Edge 111+ (~93% global). In unsupported browsers, the entire CSS rule is dropped (not just the selector), meaning no styling is applied for those selectors, so only opt in if your audience supports it.
 
-`StyleSheetManager` works in RSC environments (v6.4+). `stylisPlugins`, `shouldForwardProp`, and `nonce` are applied. DOM-only props (`target`, `sheet`, `disableCSSOMInjection`) have no effect in RSC.
+`StyleSheetManager` works in RSC environments (v6.4+). `stylisPlugins` (v6) / `plugins` (v7), `namespace`, and `shouldForwardProp` apply. On v7, `nonce` and `target` on a nested manager apply in the browser while SSR uses the registry's tag and nonce.
 
 ## Migrating from client-only to RSC
 
 1. Replace `ThemeProvider` theming with `createTheme()` CSS variables. `p.theme` is undefined in RSC since there's no React context
 2. Dynamic prop interpolations (`${p => p.$color}`) work fine in RSC, no changes needed. Consider data attributes for discrete variants (fewer generated classes)
-3. Replace `:first-child`/`:nth-child()` with `:first-of-type`/`:nth-of-type()`, or add `stylisPluginRSC` (v6.4) / `rscPlugin` from `styled-components/plugins` passed to `configureServerStyles` in the root layout (v7)
+3. On v6, replace `:first-child`/`:nth-child()` with `:first-of-type`/`:nth-of-type()`, or add `stylisPluginRSC` via `configureServerStyles` (v6.7+) / `StyleSheetManager` (v6.4–v6.6). On v7, `:first-child`/`:nth-child()` work natively without a plugin
 4. Remove `'use client'` from files that only contain styled component definitions; they work in server components natively
 5. Keep `'use client'` on components that use hooks, event handlers, or browser APIs
-6. The SSR registry (`ServerStyleSheet` + `useServerInsertedHTML`) is still needed for client components in the tree; RSC handles server components automatically
+6. Mount the SSR registry (`ServerStyleSheet` + `useServerInsertedHTML`): in v7, wrap `<html>` in the root layout so it collects both server and client component styles; in v6.3–v6.7, it collects client component styles while RSC emits inline `<style>` tags
 
-## .attrs() changes (v6.4+)
+## .attrs() changes (v6.4+ / v6.6+ / v7)
 
-Props provided via `.attrs()` are now automatically made optional on the component's type. Previously, TypeScript still required you to pass props that attrs already provided.
+Props provided via `.attrs()` are automatically made optional on the component's type. Previously, TypeScript still required you to pass props that attrs already provided.
 
 ```tsx
 // v6.3: TypeScript requires `href` even though attrs provides it
-// v6.4: `href` is optional, attrs provides the default
+// v6.4+: `href` is optional, attrs provides the default
 const StyledLink = styled.a.attrs({ href: '#' })`
   color: blue;
 `;
-<StyledLink />        // works in v6.4 (href defaults to '#')
+<StyledLink />        // works (href defaults to '#')
 <StyledLink href="/"> // also works (overrides the default)
 ```
 
-attrs always wins over directly passed props. The function form is the escape hatch when you need conditional behavior:
+attrs always wins over directly passed props, including when a caller passes `undefined` explicitly (v6.6+ / v7). The function form is the escape hatch when you need conditional behavior or want explicit `undefined` to clear a default:
 
 ```tsx
 const Button = styled.button.attrs<{ as?: string }>(({ as }) => ({
   as: as || 'button',
 }))``;
+
+// Let an explicit `rel={undefined}` clear the default:
+const Link = styled.a.attrs(props => ('rel' in props ? {} : { rel: 'noopener' }))``;
 ```
 
 The props object passed to an `.attrs(props => ...)` callback is now a frozen snapshot (v6.4+). If you previously relied on mutating it to pass values to later attrs layers, return those values from the callback instead.

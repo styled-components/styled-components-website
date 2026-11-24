@@ -14,10 +14,21 @@ import type {
   CSSObject,       // Object styles with nested selectors
   CSSPseudos,      // Pseudo-class and pseudo-element selectors
   CSSKeyframes,    // Keyframe animation definitions
+  StyledComponent, // Explicit type annotation for exported styled components (v6.5+ / v7)
 } from 'styled-components';
 ```
 
 CSS custom properties (`--var`) also work without TypeScript errors in `.attrs()` and JSX `style` props as of v6.3.0.
+
+`StyledComponent<Target, Props>` (v6.5+ / v7, exported on web and native) matches the exact type `styled(Target)<Props>` produces, for libraries emitting declaration files or using `isolatedDeclarations`:
+
+```tsx
+import styled, { type StyledComponent } from 'styled-components';
+
+export const Card: StyledComponent<'div', { $active?: boolean }> = styled.div<{
+  $active?: boolean;
+}>`...`;
+```
 
 ### Create a declarations file
 

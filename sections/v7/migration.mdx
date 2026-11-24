@@ -9,7 +9,36 @@ Install the current v7 prerelease with `npm install styled-components@test`.
 - `react` and `react-dom` to `^19`.
 - `react-native` to `^0.85` if you use it.
 - `react-native-reanimated` to `^4` if you opt into the native animation adapter.
+- `react-native-safe-area-context` to `^5` if you want `env(safe-area-inset-*)` to read automatically from `<SafeAreaProvider>` (or pass insets yourself with `SafeAreaInsetsProvider`).
+- `react-native-web` to `^0.20` if you target web from `styled-components/native`.
 - Drop `css-to-react-native` if it was in your `package.json` only for styled-components.
+
+### Server component styles require the style registry (`stylisPluginRSC` removed)
+
+Server component styles now go through your style registry (`ServerStyleSheet` + `StyleSheetManager`), the same registry client components use. Inline `<style>` tags in server component output have been removed, and `stylisPluginRSC` has been removed because no style tag sits between sibling elements anymore: `:first-child`, `:nth-child()`, sibling selectors, and SVG children match natively in server HTML.
+
+Wrap `<html>` in the registry in your root layout so every server styled component (including a styled `<html>` or `<body>`) renders inside it:
+
+```tsx
+// app/layout.tsx
+import StyledComponentsRegistry from './lib/registry';
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <StyledComponentsRegistry>
+      <html>
+        <body>{children}</body>
+      </html>
+    </StyledComponentsRegistry>
+  );
+}
+```
+
+A server styled component rendered without the registry above it gets no styles in the server-rendered HTML (its styles apply after hydration and development warns once). `global-error.tsx` renders only in the browser, so its styles always apply after hydration.
+
+- If you had a layout `<StyleSheetManager stylisPlugins={[stylisPluginRSC]}>`, delete it.
+- If you pass `plugins` or `namespace` to `<StyleSheetManager>` for client components, render that manager in the browser as well (not behind `if (typeof window !== 'undefined') return <>{children}</>;`), or wrap the registry in a separate client `<StyleSheetManager>`, otherwise SSR and client hydration hash with different compilers.
+- Supported hosts: Next.js with webpack or Turbopack (listing `styled-components` in `serverExternalPackages` is not supported) and Vite with `@vitejs/plugin-rsc` (with the registry in the SSR entry). Routes rendering styled-components on the server require the Node.js runtime; the edge runtime is not supported.
 
 ### `defaultProps` is no longer honored
 
@@ -48,23 +77,43 @@ The `enableVendorPrefixes` prop and the runtime vendor prefixer have been remove
 
 ### Plugins moved to a subpath
 
-`stylisPluginRSC` and the v6 `stylisPlugins` prop have been removed in favor of first-party plugins from `styled-components/plugins`, passed via the renamed `plugins` prop:
+The v6 `stylisPlugins` prop has been removed in favor of first-party plugins from `styled-components/plugins`, passed via the renamed `plugins` prop:
 
 ```diff
--import { stylisPluginRSC } from 'styled-components';
-+import { rscPlugin, rtlPlugin } from 'styled-components/plugins';
+-import rtl from 'stylis-plugin-rtl';
++import { prefixPlugin, rtlPlugin } from 'styled-components/plugins';
 
--<StyleSheetManager stylisPlugins={[stylisPluginRSC]}>
-+<StyleSheetManager plugins={[rscPlugin]}>
+-<StyleSheetManager stylisPlugins={[rtl]} enableVendorPrefixes>
++<StyleSheetManager plugins={[prefixPlugin, rtlPlugin]}>
 ```
 
-In server components, a layout manager does not style your pages, so do not carry `<StyleSheetManager stylisPlugins={[stylisPluginRSC]}>` in `app/layout.tsx` over to v7. Call `configureServerStyles({ plugins: [rscPlugin] })` at the top level of the root layout file instead (see [Plugins in server components](#plugins-in-server-components)).
+In server components, a layout manager styles only the layout's own markup, not its pages. Call `configureServerStyles({ plugins, namespace })` at the top level of your root layout file instead (see [Plugins and namespaces in server components](#plugins-and-namespaces-in-server-components)).
 
 `stylis-plugin-rtl` is replaced by the first-party `rtlPlugin`. Custom stylis plugins authored against the v6 middleware contract no longer load and must port to the new `SCPlugin` shape. See [Plugins moved to a dedicated subpath](#plugins-moved-to-a-dedicated-subpath) for details and authoring guidance.
 
-### Global styles emit once per component
+### Nested `StyleSheetManager` inherits `namespace`
 
-`createGlobalStyle` components now emit their CSS once even if you mount the same component multiple times. If your app deliberately remounts the same global to re-apply styles, that pattern no longer works; mount once per global rule set.
+A nested `<StyleSheetManager>` without a `namespace` prop now inherits its parent's namespace in both client and server components. To render a subtree without the inherited namespace (for example, a portal mounted outside the container), pass `namespace=""`.
+
+### Global styles precede component styles and emit once
+
+Definition-order placement of `createGlobalStyle` relative to components has been removed in favor of globals-first placement: every global style sits before every component style (server globals before client globals, keyframes with the globals of the side that defined them), so a component wins a tie with a global whichever was defined first. Raise the global selector's specificity if it needs to beat a component.
+
+Mounting the same `createGlobalStyle` component multiple times emits its CSS once in client and `ServerStyleSheet` rendering. If your app deliberately remounts the same global to re-apply styles, mount once per global rule set instead.
+
+### No split blocks across template and interpolation
+
+Splitting a CSS block, string, or parenthesis across a template literal and an interpolation (leaving `calc(`, a string, or `[` open in the template for an interpolated value to close) has been removed. Write matching delimiters in one place. A value that opens and closes its own delimiter later in the same declaration (such as ``width: ${'calc('}1px${')'};``) still works.
+
+### `StyleSheet.prototype.reconstructWithOptions` removed
+
+`StyleSheet.prototype.reconstructWithOptions` has been removed. Pass `target` or `nonce` to `<StyleSheetManager>` in the browser, or `nonce` to `new ServerStyleSheet({ nonce })` during SSR.
+
+### Interpolations run on every render and `.attrs()` wins over `undefined`
+
+Style interpolations and `.attrs()` callbacks run on every render (on web and native, and inside `createGlobalStyle` too), so calling a React hook or reading external state inside an interpolation never causes hook-order crashes or stale styles. Wrap frequently re-rendering components in `React.memo` if you want to skip re-renders when props are unchanged.
+
+`.attrs()` always applies its value even when a caller explicitly passes `undefined` (for example `<Button type={undefined} />` still receives `type="button"` from `.attrs({ type: 'button' })`). To let an explicit `undefined` clear an `.attrs()` default, use the function form and check `'prop' in props`.
 
 ### React Native bumps and changes
 

@@ -1,28 +1,40 @@
 import Table, { Row, Column } from 'components/Table'
 import Code from 'components/Code'
 
-### `configureServerStyles` (v7)
+### `configureServerStyles` | v6.7+ | v7
 
-Sets the plugins every server component starts from. Call it once, at the top level of your root layout file. It applies to server components only.
+Sets the process-wide starting settings every server component is styled with. Call it once, at the top level of your root layout file. It applies to server components only.
 
 <Table head={['Arguments', 'Description']}>
   <Row>
     <Column>
-      1. <Code>{'{ plugins }'}</Code>
+      <Code>plugins</Code> (v7) / <Code>stylisPlugins</Code> (v6.7)
     </Column>
     <Column>
-      An array of plugins from <Code>styled-components/plugins</Code> (or your
-      own) that every server component is styled with
+      Optional array of plugins that every server component starts from. In v7,
+      pass plugins from <Code>styled-components/plugins</Code> (or custom{' '}
+      <Code>SCPlugin</Code> objects). In v6.7, pass stylis plugins such as{' '}
+      <Code>stylisPluginRSC</Code>.
+    </Column>
+  </Row>
+  <Row>
+    <Column>
+      <Code>namespace</Code> (v7)
+    </Column>
+    <Column>
+      Optional CSS selector prefix that scopes every server component's styles.
     </Column>
   </Row>
 </Table>
 
 ```tsx
-// app/layout.tsx
+// app/layout.tsx (v7)
 import { configureServerStyles } from 'styled-components';
-import { rscPlugin } from 'styled-components/plugins';
+import { rtlPlugin } from 'styled-components/plugins';
 
-configureServerStyles({ plugins: [rscPlugin] });
+configureServerStyles({ namespace: '#app', plugins: [rtlPlugin] });
 ```
 
-The call reaches every page, nested layout, and client-side navigation, including pages prerendered at build time. Make one call per app. A [`StyleSheetManager`](#stylesheetmanager) in a server component starts from these plugins; `plugins={[]}` drops them for its subtree. Client components take plugins from a `StyleSheetManager` rendered on the client. See [Plugins in server components](/docs/v7#plugins-in-server-components).
+Each call sets both fields (omitting `namespace` or `plugins` clears it), reaches every page, nested layout, and client-side navigation (including pages prerendered at build time), and applies to renders that start after it. Make one call per app, and do not place it in `instrumentation.ts` (Next.js does not run that file while prerendering pages at build time).
+
+A [`StyleSheetManager`](#stylesheetmanager) in a server component starts from these settings; `plugins={[]}` and `namespace=""` drop them for its subtree. Client components take plugins and namespaces from a `StyleSheetManager` that renders in both SSR and the browser (not behind a registry's `if (typeof window !== 'undefined')` guard). See [Plugins and namespaces in server components](/docs/v7#plugins-and-namespaces-in-server-components).
