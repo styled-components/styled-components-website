@@ -8,7 +8,7 @@ import styled, {
 } from 'styled-components';
 import stylisRTLPlugin from 'stylis-plugin-rtl';
 
-type StyledFactory = ReturnType<typeof styled.div>;
+type StyledFactory = typeof styled.div;
 
 function hasWithConfig(value: unknown): value is StyledFactory {
   return (
