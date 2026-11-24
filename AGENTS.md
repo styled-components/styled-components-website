@@ -1,4 +1,4 @@
-Note: CLAUDE.md is a symlink to this file. Edit AGENTS.md directly.
+Note: CLAUDE.md is a one-line @AGENTS.md import pointer to this file. Edit AGENTS.md directly.
 
 styled-components documentation website. Next.js, MDX, styled-components.
 
