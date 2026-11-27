@@ -1,14 +1,16 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
+/**
+ * Tracks which section id is active while scrolling the `.root` scrollport.
+ * Uses IntersectionObserver so we avoid getBoundingClientRect + setState on
+ * every scroll frame (a prior source of docs sidebar jank).
+ */
 export default function useScrollSpy(ids: string[]): string | null {
   const [activeId, setActiveId] = useState<string | null>(null);
-  const lastId = useRef<string | null>(null);
-  const raf = useRef<number>(0);
 
   // Content-based dep: re-run when the set of ids changes value, not just reference.
-  // Re-derive the array inside the effect so the linter sees a single string dep.
   const idsKey = ids.join(',');
 
   useEffect(() => {
@@ -18,35 +20,51 @@ export default function useScrollSpy(ids: string[]): string | null {
     const root = document.querySelector('.root');
     if (!root) return;
 
-    const update = () => {
-      let current: string | null = null;
+    const intersecting = new Set<string>();
 
+    const pickActive = () => {
+      // Prefer the last intersecting section in document order (closest to
+      // the top offset band). Matches prior "top <= 100px" scroll-spy feel.
+      let current: string | null = null;
       for (const id of localIds) {
-        const el = document.getElementById(id);
-        if (!el) continue;
-        if (el.getBoundingClientRect().top <= 100) {
-          current = id;
+        if (intersecting.has(id)) current = id;
+      }
+
+      if (!current) {
+        for (const id of localIds) {
+          const el = document.getElementById(id);
+          if (el && el.getBoundingClientRect().top <= 100) current = id;
         }
       }
 
-      if (current !== lastId.current) {
-        lastId.current = current;
-        setActiveId(current);
+      setActiveId(prev => (prev === current ? prev : current));
+    };
+
+    const observer = new IntersectionObserver(
+      entries => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) intersecting.add(entry.target.id);
+          else intersecting.delete(entry.target.id);
+        }
+        pickActive();
+      },
+      {
+        root,
+        // Shrink the observed viewport so a section counts as active near the
+        // fixed navbar rather than only when it reaches the true top.
+        rootMargin: '-100px 0px -55% 0px',
+        threshold: 0,
       }
-    };
+    );
 
-    const onScroll = () => {
-      cancelAnimationFrame(raf.current);
-      raf.current = requestAnimationFrame(update);
-    };
+    for (const id of localIds) {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    }
 
-    root.addEventListener('scroll', onScroll, { passive: true });
-    update();
+    pickActive();
 
-    return () => {
-      root.removeEventListener('scroll', onScroll);
-      cancelAnimationFrame(raf.current);
-    };
+    return () => observer.disconnect();
   }, [idsKey]);
 
   return activeId;

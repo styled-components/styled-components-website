@@ -2,28 +2,19 @@
 
 import React from 'react';
 
-let isMobile: boolean;
-let lastWheelTimestamp: number;
+const MOBILE_MQ = `(max-width: ${1000 / 16}em)`;
 
-if (typeof window !== 'undefined' && window.matchMedia) {
-  isMobile = window.matchMedia(`(max-width: ${1000 / 16}em)`).matches;
-
-  if (!isMobile) {
-    window.addEventListener(
-      'wheel',
-      ({ timeStamp }) => {
-        lastWheelTimestamp = timeStamp;
-      },
-      { passive: true }
-    );
-  }
+function getScrollRoot(): Element | null {
+  return document.querySelector('.root');
 }
 
+/**
+ * Keeps wheel gestures on the fixed sidebar from fighting the main `.root`
+ * scrollport. When the user was recently scrolling the page, continue that
+ * scroll even if the cursor drifts over the sidebar; otherwise let the
+ * sidebar scroll until it hits an edge.
+ */
 export default function captureScroll<T extends React.ComponentType>(Component: T) {
-  if (isMobile) {
-    return Component;
-  }
-
   return function CaptureScroll(props: React.ComponentProps<T>) {
     const ref = React.useRef<HTMLElement>(null);
 
@@ -31,29 +22,36 @@ export default function captureScroll<T extends React.ComponentType>(Component: 
       const node = ref.current;
       if (!node) return;
 
-      const handleScroll = (evt: Event & { deltaY: number }) => {
-        // Don't access window wheel listener
-        evt.stopImmediatePropagation();
+      let lastMainWheel = 0;
+      let isMobile = window.matchMedia(MOBILE_MQ).matches;
+
+      const onWindowWheelCapture = (evt: WheelEvent) => {
+        // Only count wheels that originate outside the sidebar so sidebar
+        // scrolling does not keep resetting the "main scroll" window.
+        if (!node.contains(evt.target as Node)) {
+          lastMainWheel = evt.timeStamp;
+        }
+      };
+
+      const handleScroll = (evt: WheelEvent) => {
+        if (isMobile) return;
 
         const { timeStamp, deltaY } = evt;
         const { offsetHeight, scrollHeight, scrollTop } = node;
+        const root = getScrollRoot();
 
-        // If the window is being scrolled, don't scroll the captured scroll area
-        if (timeStamp - lastWheelTimestamp <= 400) {
-          lastWheelTimestamp = timeStamp;
-
+        // If the main scrollport was recently wheeled, keep scrolling it
+        // instead of the sidebar under the cursor.
+        if (root && timeStamp - lastMainWheel <= 400) {
           evt.preventDefault();
-          window.scrollBy(0, deltaY);
+          root.scrollBy(0, deltaY);
+          lastMainWheel = timeStamp;
           return;
         }
 
         const maxScrollTop = scrollHeight - offsetHeight;
-
-        // Has the scroll area reached it's beginning/end
         const hasReachedTop = deltaY < 0 && scrollTop === 0;
         const hasReachedBottom = deltaY > 0 && scrollTop >= maxScrollTop;
-
-        // Is the trajectory overshooting the scroll area
         const isReachingTop = scrollTop + deltaY <= 0;
         const isReachingBottom = scrollTop + deltaY >= maxScrollTop;
 
@@ -61,26 +59,23 @@ export default function captureScroll<T extends React.ComponentType>(Component: 
           evt.preventDefault();
         }
 
-        // If we're overshooting, we need to set the maximum available position
         if (isReachingTop || isReachingBottom) {
           node.scrollTop = isReachingTop ? 0 : maxScrollTop;
         }
       };
 
       const handleResize = () => {
-        isMobile = window.matchMedia(`(max-width: ${1000 / 16}em)`).matches;
-        if (isMobile) {
-          node.removeEventListener('wheel', handleScroll as EventListener);
-        } else {
-          node.addEventListener('wheel', handleScroll as EventListener);
-        }
+        isMobile = window.matchMedia(MOBILE_MQ).matches;
       };
 
-      node.addEventListener('wheel', handleScroll as EventListener);
+      window.addEventListener('wheel', onWindowWheelCapture, { capture: true, passive: true });
+      // preventDefault is required to redirect / clamp wheel; cannot be passive.
+      node.addEventListener('wheel', handleScroll, { passive: false });
       window.addEventListener('resize', handleResize);
 
       return () => {
-        node.removeEventListener('wheel', handleScroll as EventListener);
+        window.removeEventListener('wheel', onWindowWheelCapture, true);
+        node.removeEventListener('wheel', handleScroll);
         window.removeEventListener('resize', handleResize);
       };
     }, []);

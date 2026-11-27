@@ -26,6 +26,7 @@ const Sidebar = styled.nav.attrs({ 'aria-label': 'Documentation sidebar' })<Side
   box-sizing: border-box;
   color: ${theme.color.text};
   overflow-y: auto;
+  overscroll-behavior: contain;
   transition: transform 150ms ease-out;
 
   ${mobile(css<SidebarProps>`
